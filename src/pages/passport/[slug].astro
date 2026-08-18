@@ -1,0 +1,76 @@
+---
+import AccessList from "@/components/AccessList";
+import PassportCover from "@/components/PassportCover";
+import StatusPill from "@/components/StatusPill";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext, getPassportAccess } from "@/lib/data";
+import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
+
+const { manifest, source } = await getDataContext(Astro.locals);
+const passport = manifest.passports.find((entry) => entry.slug === Astro.params.slug);
+if (!passport) return Astro.rewrite("/404");
+const detail = await getPassportAccess(Astro.locals, passport.code, manifest.version);
+if (!detail) return Astro.rewrite("/404");
+
+const statusCounts = Object.fromEntries(ACCESS_STATUSES.map((status) => [status, 0])) as Record<AccessStatus, number>;
+for (const status of Object.values(detail.statuses)) statusCounts[status] += 1;
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric" }).format(
+  new Date(manifest.checkedAt),
+);
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
+
+const title = `${passport.name} Passport Rank & Visa-Free Destinations | Multipass Rank`;
+const description = `The ${passport.name} passport ranks #${passport.rank} with access to ${passport.mobilityScore} destinations without prior visa approval. See the complete destination list.`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Passport ranking", item: "https://multipassrank.com/" },
+      { "@type": "ListItem", position: 2, name: passport.name, item: `https://multipassrank.com/passport/${passport.slug}` },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: `${passport.name} passport destination access`,
+    description,
+    dateModified: manifest.checkedAt,
+    spatialCoverage: "Worldwide",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical={`/passport/${passport.slug}`} structuredData={structuredData}>
+  <header class="passport-hero">
+    <PassportCover codes={[passport.code]} names={[passport.name]} size="large" />
+    <div class="passport-hero__content">
+      <span class="eyebrow">{passport.region.replace("MIDDLE EAST", "Middle East")} passport</span>
+      <h1>{passport.name}</h1>
+      <span class="passport-hero__meta">A complete, destination-by-destination access view.</span>
+      <div class="metric-strip">
+        <div><span>Global rank</span><strong>#{passport.rank}</strong></div>
+        <div><span>Mobility score</span><strong>{passport.mobilityScore}</strong></div>
+        <div><span>Destinations tracked</span><strong>{manifest.destinations.length}</strong></div>
+      </div>
+      <div class="passport-hero__actions">
+        <a class="button button--primary" href={`/compare?set=${passport.code}`}>Compare this passport</a>
+        <span class:list={["freshness", source === "fallback" && "freshness--fallback"]}>{source === "live" ? "Checked" : "Bundled snapshot"} {checkedDate}</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section--tight">
+    <div class="section-heading">
+      <div><span class="eyebrow">All destinations</span><h2>Access details</h2></div>
+      <p>Entry rules can change without notice. Treat this as a comparison tool and verify official requirements before travel.</p>
+    </div>
+    <div class="status-summary" aria-label="Access type totals">
+      {ACCESS_STATUSES.filter((status) => statusCounts[status] > 0).map((status) => (
+        <span><StatusPill status={status} compact /><strong>{statusCounts[status]}</strong></span>
+      ))}
+    </div>
+    <AccessList passport={detail} destinations={manifest.destinations} client:visible />
+  </section>
+</BaseLayout>
+

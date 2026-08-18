@@ -1,0 +1,60 @@
+---
+import PassportBuilder from "@/components/PassportBuilder";
+import RankingExplorer from "@/components/RankingExplorer";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext } from "@/lib/data";
+
+const { manifest, source } = await getDataContext(Astro.locals);
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric" }).format(
+  new Date(manifest.checkedAt),
+);
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=1800, stale-while-revalidate=86400");
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Multipass Rank",
+  url: "https://multipassrank.com",
+  applicationCategory: "TravelApplication",
+  operatingSystem: "Any",
+  description: "Compare passport ranks, destination access, and multi-passport combinations.",
+  isAccessibleForFree: true,
+};
+---
+
+<BaseLayout
+  title="Passport Ranking & Multi-Passport Calculator | Multipass Rank"
+  description="Compare 199 passport ranks, inspect visa access for 227 destinations, and calculate the practical reach of multiple passports."
+  structuredData={structuredData}
+>
+  <section class="hero">
+    <div class="hero__copy">
+      <span class="eyebrow">Global passport access, made practical</span>
+      <h1>Passport ranks.<br /><em>Combined.</em></h1>
+      <p>See where one passport gets you—and what changes when you can travel with more than one.</p>
+      <div class="hero__facts" aria-label="Dataset summary">
+        <span><strong>{manifest.passports.length}</strong> passports</span>
+        <span><strong>{manifest.destinations.length}</strong> destinations</span>
+        <span><strong>5 × 5</strong> comparison</span>
+      </div>
+    </div>
+    <PassportBuilder passports={manifest.passports} client:load />
+  </section>
+
+  <section class="section" id="ranking">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Current index</span>
+        <h2>Global ranking</h2>
+      </div>
+      <div>
+        <p>Ranked by destinations available without prior visa approval: visa-free, visa on arrival, or ETA.</p>
+        <span class:list={["freshness", source === "fallback" && "freshness--fallback"]}>
+          {source === "live" ? "Data checked" : "Bundled snapshot"} {checkedDate}
+        </span>
+      </div>
+    </div>
+    <RankingExplorer passports={manifest.passports} client:visible />
+  </section>
+</BaseLayout>
+

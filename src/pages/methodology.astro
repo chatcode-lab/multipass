@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="How Passport and Combined Ranks Work | Multipass Rank"
+  description="A plain-language explanation of Multipass Rank scoring, combined passport access, rank equivalents, data refreshes, and limitations."
+  canonical="/methodology"
+>
+  <article class="prose">
+    <span class="eyebrow">Plain-language methodology</span>
+    <h1>How the numbers work.</h1>
+    <p>Multipass Rank is designed to answer one practical question: how many destinations can you reach without obtaining a government-approved visa before departure?</p>
+
+    <h2>Individual passport score</h2>
+    <p>A destination adds one point when it is <strong>visa-free</strong>, offers a <strong>visa on arrival</strong>, or requires only an <strong>electronic travel authority (ETA)</strong>. eVisas and traditional visas require approval before travel, so they do not add a point.</p>
+    <p>Passports with the same score share a rank. The next lower score receives the next consecutive rank, so ranks remain dense rather than skipping numbers.</p>
+
+    <h2>Combined passport score</h2>
+    <p>For each destination, the calculator keeps the easiest access available across every passport in a set. Citizenship is treated as the strongest access, followed by visa-free, ETA, visa on arrival, eVisa, and visa required.</p>
+    <div class="method-callout">
+      <strong>Home-country normalization:</strong> every country of citizenship is accessible, but one home destination is subtracted from the score. A one-passport set therefore matches its individual score, while combinations still capture the extra countries where the holder has a right of entry.
+    </div>
+    <p>A combined result is called a <strong>rank equivalent</strong>. It shows where the combined score would sit among current individual passport scores; it is not an official passport rank.</p>
+
+    <h2>Comparison table</h2>
+    <p>Every row represents a destination and every column represents one passport set. “Differences only” hides a row only when all visible sets resolve to the same best access category. The passport responsible for the best access remains visible in each cell.</p>
+
+    <h2>Freshness and limitations</h2>
+    <p>Data is normalized server-side and published as complete snapshots. A failed or incomplete refresh never replaces the last valid snapshot. Visa requirements can still change faster than any index, and individual circumstances may affect entry. Always confirm requirements with the destination’s official authorities before making travel arrangements.</p>
+  </article>
+</BaseLayout>
+

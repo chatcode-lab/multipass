@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "multipass-data-sync",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-08-18",
+  "workers_dev": true,
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "SOURCE_API_ROOT": "https://api.henleypassportindex.com/api/v3",
+    "SYNC_BATCH_SIZE": "10"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "PASSPORT_DATA",
+      "id": "REPLACE_WITH_PRODUCTION_KV_NAMESPACE_ID"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "5 2 * * *",
+      "25 2 * * *",
+      "45 2 * * *",
+      "5 3 * * *"
+    ]
+  }
+}
+

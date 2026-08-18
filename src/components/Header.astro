@@ -1,0 +1,16 @@
+---
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Multipass Rank home">
+    <span class="brand__mark" aria-hidden="true"><i></i><i></i></span>
+    <span>Multipass <em>Rank</em></span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="/" aria-current={pathname === "/" ? "page" : undefined}>Ranking</a>
+    <a href="/compare" aria-current={pathname === "/compare" ? "page" : undefined}>Compare</a>
+    <a href="/methodology" aria-current={pathname === "/methodology" ? "page" : undefined}>Methodology</a>
+  </nav>
+</header>
+

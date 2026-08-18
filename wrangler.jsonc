@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "multipass",
+  "compatibility_date": "2026-08-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "upload_source_maps": true,
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    {
+      "pattern": "multipassrank.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.multipassrank.com",
+      "custom_domain": true
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "PASSPORT_DATA",
+      "id": "REPLACE_WITH_PRODUCTION_KV_NAMESPACE_ID"
+    }
+  ]
+}

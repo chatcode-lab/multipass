@@ -1,0 +1,43 @@
+---
+import ComparisonTool from "@/components/ComparisonTool";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext, getPassportAccessBatch } from "@/lib/data";
+import { comparePassportSets, parsePassportSets } from "@/lib/passport";
+import type { ComparisonResult } from "@/lib/types";
+
+const { manifest } = await getDataContext(Astro.locals);
+const requestedSets = Astro.url.searchParams.getAll("set");
+const sets = parsePassportSets(requestedSets, new Set(manifest.passports.map((passport) => passport.code)));
+let initialResult: ComparisonResult | null = null;
+if (sets.length > 0) {
+  const details = await getPassportAccessBatch(Astro.locals, sets.flatMap((set) => set.codes), manifest.version);
+  try {
+    initialResult = comparePassportSets(sets, manifest, details);
+  } catch {
+    initialResult = null;
+  }
+}
+Astro.response.headers.set("Cache-Control", requestedSets.length ? "private, no-store" : "public, max-age=300, s-maxage=3600");
+---
+
+<BaseLayout
+  title="Compare Passports & Combined Access | Multipass Rank"
+  description="Compare up to five individual or combined passport sets across every destination and reveal only the access differences that matter."
+  canonical="/compare"
+  noindex={requestedSets.length > 0}
+>
+  <header class="page-intro">
+    <span class="eyebrow">Comparison workspace</span>
+    <h1>Put every option on the same map.</h1>
+    <p>Build up to five passport sets. Each set can contain one citizenship or a combination of up to five.</p>
+  </header>
+  <section class="section section--tight">
+    <ComparisonTool
+      passports={manifest.passports}
+      initialSets={sets.map((set) => set.codes)}
+      initialResult={initialResult}
+      client:load
+    />
+  </section>
+</BaseLayout>
+

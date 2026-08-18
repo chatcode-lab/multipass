@@ -1,0 +1,13 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+Astro.response.status = 404;
+---
+
+<BaseLayout title="Page Not Found | Multipass Rank" description="The requested Multipass Rank page could not be found." noindex>
+  <section class="prose">
+    <span class="eyebrow">404</span>
+    <h1>That route went somewhere else.</h1>
+    <p>The page may have moved, or the passport code is not part of the current index.</p>
+    <p><a class="button button--primary" href="/">Return to the ranking</a></p>
+  </section>
+</BaseLayout>
