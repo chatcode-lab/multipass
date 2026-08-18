@@ -34,26 +34,30 @@ export default function RankingExplorer({ passports }: { passports: PassportSumm
         </label>
         <span className="result-count" aria-live="polite">{filtered.length} passports</span>
       </div>
-      <div className="ranking-table" role="table" aria-label="Global passport ranking">
-        <div className="ranking-table__head" role="row">
-          <span role="columnheader">Rank</span>
-          <span role="columnheader">Passport</span>
-          <span role="columnheader">Region</span>
-          <span role="columnheader">Score</span>
-          <span role="columnheader" className="sr-only">Actions</span>
+      <div className="ranking-table">
+        <div className="ranking-table__head" aria-hidden="true">
+          <span>Rank</span>
+          <span>Passport</span>
+          <span>Region</span>
+          <span>Score</span>
+          <span className="sr-only">Actions</span>
         </div>
-        {filtered.map((passport) => (
-          <a className="ranking-row" role="row" href={`/passport/${passport.slug}`} key={passport.code}>
-            <strong className="ranking-row__rank" role="cell">#{passport.rank}</strong>
-            <span className="ranking-row__passport" role="cell">
-              <PassportCover codes={[passport.code]} names={[passport.name]} size="small" />
-              <span><strong>{passport.name}</strong><small>{passport.code}</small></span>
-            </span>
-            <span className="ranking-row__region" role="cell">{passport.region.replace("MIDDLE EAST", "Middle East")}</span>
-            <span className="ranking-row__score" role="cell"><strong>{passport.mobilityScore}</strong><small>destinations</small></span>
-            <ArrowUpRight className="ranking-row__arrow" size={18} aria-hidden="true" />
-          </a>
-        ))}
+        <ol className="ranking-table__list" aria-label="Global passport ranking">
+          {filtered.map((passport) => (
+            <li key={passport.code}>
+              <a className="ranking-row" href={`/passport/${passport.slug}`}>
+                <strong className="ranking-row__rank">#{passport.rank}</strong>
+                <span className="ranking-row__passport">
+                  <PassportCover codes={[passport.code]} names={[passport.name]} size="small" />
+                  <span><strong>{passport.name}</strong><small>{passport.code}</small></span>
+                </span>
+                <span className="ranking-row__region">{passport.region.replace("MIDDLE EAST", "Middle East")}</span>
+                <span className="ranking-row__score"><strong>{passport.mobilityScore}</strong><small>destinations</small></span>
+                <ArrowUpRight className="ranking-row__arrow" size={18} aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ol>
         {filtered.length === 0 && <p className="empty-state">No passports match those filters.</p>}
       </div>
     </div>

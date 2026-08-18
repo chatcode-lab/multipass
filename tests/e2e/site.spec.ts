@@ -4,9 +4,9 @@ import { expect, test } from "@playwright/test";
 test("homepage renders a searchable passport ranking", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Passport ranks");
-  await expect(page.getByRole("table", { name: "Global passport ranking" })).toBeVisible();
+  await expect(page.getByRole("list", { name: "Global passport ranking" })).toBeVisible();
   await page.getByPlaceholder("Search passports").fill("Brazil");
-  await expect(page.getByRole("row").filter({ hasText: "Brazil" })).toBeVisible();
+  await expect(page.getByRole("listitem").filter({ hasText: "Brazil" })).toBeVisible();
 });
 
 test("a shared comparison renders scenarios and difference controls", async ({ page }) => {
@@ -28,4 +28,3 @@ test("unknown passports return a real 404", async ({ page }) => {
   expect(response?.status()).toBe(404);
   await expect(page.getByText("That route went somewhere else.")).toBeVisible();
 });
-
