@@ -42,6 +42,21 @@ const SPANISH_LANGUAGE_CODES = [
   "PA", "PY", "PE", "ES", "UY", "VE",
 ] as const;
 
+const ARABIC_LANGUAGE_CODES = [
+  "AE", "BH", "DJ", "DZ", "EG", "IL", "IQ", "JO", "KM", "KW", "LB", "LY", "MA", "ML",
+  "MR", "OM", "PS", "QA", "SA", "SD", "SO", "SY", "TD", "TN", "YE",
+] as const;
+
+const FRENCH_LANGUAGE_CODES = [
+  "BE", "BJ", "BF", "BI", "CM", "CA", "CF", "TD", "KM", "CG", "CD", "CI", "DJ", "GQ",
+  "FR", "GA", "GN", "HT", "LU", "MG", "ML", "MC", "NE", "RW", "SN", "SC", "CH", "TG",
+  "VU",
+] as const;
+
+const PORTUGUESE_LANGUAGE_CODES = [
+  "AO", "BR", "CV", "GQ", "GW", "MO", "MZ", "PT", "ST", "TL",
+] as const;
+
 const EUROPEAN_UNION_CODES = [
   "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE",
   "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE",
@@ -119,6 +134,30 @@ export const PASSPORT_COLLECTIONS: readonly PassportCollection[] = [
     eyebrow: "Passport collection",
     description: "Compare passports from countries where Spanish is an official national language.",
     codes: SPANISH_LANGUAGE_CODES,
+  },
+  {
+    slug: "arabic",
+    name: "Arabic-speaking",
+    heading: "Arabic-speaking country passports",
+    eyebrow: "Passport language group",
+    description: "Compare passports from countries and territories where Arabic, or an Arabic variety, has official or formal state-language status.",
+    codes: ARABIC_LANGUAGE_CODES,
+  },
+  {
+    slug: "french",
+    name: "French-speaking",
+    heading: "French-speaking country passports",
+    eyebrow: "Passport language group",
+    description: "Compare passports from countries where French is an official language or a nationally designated working language.",
+    codes: FRENCH_LANGUAGE_CODES,
+  },
+  {
+    slug: "portuguese",
+    name: "Portuguese-speaking",
+    heading: "Portuguese-speaking country passports",
+    eyebrow: "Passport language group",
+    description: "Compare passports from Portuguese-language countries and territories, including the nine CPLP states and Macao.",
+    codes: PORTUGUESE_LANGUAGE_CODES,
   },
   {
     slug: "european-union",

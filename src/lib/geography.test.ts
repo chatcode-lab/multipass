@@ -1,10 +1,31 @@
 import { describe, expect, it } from "vitest";
-import { comparisonHref, flagEmojiFor, getFriendlyComparison, getPopularComparison } from "./geography";
+import {
+  comparisonHref,
+  flagEmojiFor,
+  getFriendlyComparison,
+  getPassportCollection,
+  getPopularComparison,
+} from "./geography";
 
 describe("country flags", () => {
   it("creates regional-indicator flags and maps the French West Indies aggregate to France", () => {
     expect(flagEmojiFor("SG")).toBe("🇸🇬");
     expect(flagEmojiFor("FW")).toBe("🇫🇷");
+  });
+});
+
+describe("language passport collections", () => {
+  it("defines Arabic, French, and Portuguese groups with explicit administrative-language edge cases", () => {
+    const arabic = getPassportCollection("arabic")?.codes;
+    const french = getPassportCollection("french")?.codes;
+    const portuguese = getPassportCollection("portuguese")?.codes;
+
+    expect(arabic).toHaveLength(25);
+    expect(arabic).toEqual(expect.arrayContaining(["IL", "ML", "PS", "TD"]));
+    expect(french).toHaveLength(29);
+    expect(french).toEqual(expect.arrayContaining(["BF", "ML", "NE", "VU"]));
+    expect(portuguese).toHaveLength(10);
+    expect(portuguese).toEqual(expect.arrayContaining(["BR", "GQ", "MO", "PT"]));
   });
 });
 

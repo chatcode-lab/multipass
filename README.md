@@ -4,6 +4,8 @@ Multipass Rank is a fast passport-ranking and multi-passport comparison tool for
 
 The application is intentionally direct: no accounts, lead forms, analytics, or commercial ranking adjustments.
 
+Regional and language collections are generated from the registry in `src/lib/geography.ts`. Language groups use official or nationally designated administrative/working-language status rather than ethnicity or assumed individual fluency.
+
 ## Stack
 
 - Astro SSR with small React islands

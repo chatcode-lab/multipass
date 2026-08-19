@@ -83,10 +83,28 @@ test("destination and Markdown directories are directly accessible", async ({ pa
   expect(await markdown.text()).toContain("# Singapore passport rank and visa access");
 });
 
-test("regional rankings and indexed comparisons render useful content", async ({ page }) => {
+test("regional, language, and indexed comparison pages render useful content", async ({ page, request }) => {
   await page.goto("/europe");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("European passport ranking");
   await expect(page.getByRole("list", { name: "European passport ranking" })).toBeVisible();
+
+  for (const [slug, heading] of [
+    ["arabic", "Arabic-speaking country passports"],
+    ["french", "French-speaking country passports"],
+    ["portuguese", "Portuguese-speaking country passports"],
+  ]) {
+    await page.goto(`/${slug}`);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
+    await expect(page.getByRole("list", { name: heading })).toBeVisible();
+    const markdown = await request.get(`/${slug}.md`);
+    expect(markdown.ok()).toBe(true);
+    expect(await markdown.text()).toContain(`# ${heading}`);
+  }
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/arabic</loc>");
+  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/french</loc>");
+  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/portuguese</loc>");
 
   await page.goto("/compare/us-vs-uk");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("US vs UK");
