@@ -20,6 +20,21 @@ Research was run on 19 August 2026 against DataForSEO's Google Ads US/English da
 | US vs Canadian passport | 50 |
 | passport mobility score | 50 |
 
+## ETA and eVisa guide query check
+
+A supplemental US/English check on 19 August 2026 informed the terminology guide:
+
+| Query | Approximate monthly volume |
+| --- | ---: |
+| what is an evisa | 1,000 |
+| is eta a visa | 140 |
+| eta vs visa | 110 |
+| eta vs evisa | 40 |
+| evisa vs eta | 20 |
+| electronic travel authorization vs visa | 10 |
+
+The page keeps the direct “eVisa vs ETA” topic in its title while using “What is an eVisa?” and “Is an ETA a visa?” as natural explanatory headings. It does not collapse the two terms into synonyms.
+
 ## Implementation decisions
 
 - Keep the global index focused on “passport index,” “passport ranking,” and “passport strength” without repeating synonyms unnaturally.

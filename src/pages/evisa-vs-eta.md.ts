@@ -17,6 +17,14 @@ Both are requested online before travel, but they are different permissions:
 | Result | Permission to travel, often linked to the passport | An electronic visa or downloadable visa document |
 | MultiPass Rank mobility score | Counts | Does not count |
 
+## Is an ETA a visa?
+
+Usually, no. An ETA is normally advance permission to travel for a traveller who is otherwise visa-exempt. It does not replace a visa when the traveller needs one.
+
+## What is an eVisa?
+
+An eVisa changes the application and issuance process, not the underlying document: it is still a visa that requires approval before travel.
+
 ## Why MultiPass Rank treats them differently
 
 The mobility score counts destinations accessible without obtaining a visa before departure: visa-free, visa-on-arrival, and ETA destinations. An eVisa remains a visa requiring prior approval, so it appears in detailed access results but does not add to the score.
