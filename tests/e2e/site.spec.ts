@@ -42,7 +42,13 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
 
 test("country access can be narrowed to one destination region", async ({ page }) => {
   await page.goto("/passport/spain");
-  await page.getByLabel("Filter destinations by region").selectOption("EUROPE");
+  const regionFilter = page.getByLabel("Filter destinations by region");
+  await regionFilter.scrollIntoViewIfNeeded();
+  await expect.poll(() => regionFilter.evaluate((element) => {
+    const island = element.closest("astro-island");
+    return Boolean(island && !island.hasAttribute("ssr"));
+  })).toBe(true);
+  await regionFilter.selectOption("EUROPE");
   await expect(page.locator(".region-group")).toHaveCount(1);
   await expect(page.locator(".region-group").getByRole("heading")).toHaveText("Europe");
 });
