@@ -100,7 +100,7 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
   await page.goto("/");
   const explorer = page.locator("[data-ranking-explorer]");
   const selectPassport = async (name: string) => {
-    const row = explorer.locator("[data-passport-row]").filter({ has: explorer.getByRole("link", { name: `View ${name} passport details` }) });
+    const row = explorer.locator("[data-passport-row]").filter({ hasText: name }).first();
     const button = row.locator("[data-ranking-select]");
     await expect(button).toHaveAttribute("aria-label", `Add ${name} to comparison`);
     const viewport = page.viewportSize();
