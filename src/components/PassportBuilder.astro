@@ -153,7 +153,10 @@ const serializedPickerData = JSON.stringify(pickerData).replaceAll("<", "\\u003c
           option.append(flag, copy);
           option.addEventListener("pointerenter", () => {
             activeIndex = index;
-            renderMenu();
+            menu.querySelectorAll("[role='option']").forEach((entry, entryIndex) => {
+              entry.setAttribute("aria-selected", String(entryIndex === activeIndex));
+            });
+            input.setAttribute("aria-activedescendant", option.id);
           });
           option.addEventListener("pointerdown", (event) => event.preventDefault());
           option.addEventListener("click", () => add(passport.code));
