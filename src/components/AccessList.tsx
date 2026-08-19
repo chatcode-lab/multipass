@@ -2,7 +2,7 @@ import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { STATUS_META } from "@/lib/passport";
 import { flagEmojiFor, formatRegion } from "@/lib/geography";
-import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Destination, type PassportAccess } from "@/lib/types";
+import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Destination, type PassportAccess, type Region } from "@/lib/types";
 import StatusPill from "./StatusPill";
 
 interface AccessListProps {
@@ -13,13 +13,16 @@ interface AccessListProps {
 export default function AccessList({ passport, destinations }: AccessListProps) {
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<AccessStatus | "all">("all");
+  const [region, setRegion] = useState<Region | "all">("all");
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return destinations.filter((destination) => {
       const destinationStatus = passport.statuses[destination.code] ?? "unknown";
-      return (status === "all" || destinationStatus === status) && (!needle || destination.name.toLowerCase().includes(needle));
+      return (status === "all" || destinationStatus === status)
+        && (region === "all" || destination.region === region)
+        && (!needle || destination.name.toLowerCase().includes(needle));
     });
-  }, [destinations, passport.statuses, query, status]);
+  }, [destinations, passport.statuses, query, region, status]);
 
   return (
     <div className="access-list">
@@ -29,11 +32,18 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
           <span className="sr-only">Search destinations</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search destinations" />
         </label>
-        <label className="select-field">
+        <label className="select-field select-field--access">
           <span className="sr-only">Filter by access type</span>
           <select value={status} onChange={(event) => setStatus(event.target.value as AccessStatus | "all")}>
             <option value="all">All access types</option>
             {ACCESS_STATUSES.map((value) => <option value={value} key={value}>{STATUS_META[value].label}</option>)}
+          </select>
+        </label>
+        <label className="select-field select-field--region">
+          <span className="sr-only">Filter destinations by region</span>
+          <select value={region} onChange={(event) => setRegion(event.target.value as Region | "all")}>
+            <option value="all">All regions</option>
+            {REGIONS.map((value) => <option value={value} key={value}>{formatRegion(value)}</option>)}
           </select>
         </label>
         <span className="result-count" aria-live="polite">{filtered.length} destinations</span>

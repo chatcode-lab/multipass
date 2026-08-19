@@ -31,7 +31,7 @@ export const STATUS_META: Record<
   eta: {
     label: "ETA",
     shortLabel: "ETA",
-    description: "Electronic travel authority required",
+    description: "Advance electronic permission for visa-exempt travel",
   },
   visa_on_arrival: {
     label: "Visa on arrival",
@@ -41,7 +41,7 @@ export const STATUS_META: Record<
   evisa: {
     label: "eVisa",
     shortLabel: "eVisa",
-    description: "Electronic visa approval required before travel",
+    description: "A visa applied for and issued electronically before travel",
   },
   visa_required: {
     label: "Visa required",

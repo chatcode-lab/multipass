@@ -2,7 +2,8 @@ import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { STATUS_META } from "@/lib/passport";
 import { comparisonHref, flagEmojiFor, formatRegion } from "@/lib/geography";
-import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary } from "@/lib/types";
+import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary, type Region } from "@/lib/types";
+import AccessLegend from "./AccessLegend";
 import PassportCover from "./PassportCover";
 import PassportPicker from "./PassportPicker";
 import StatusPill from "./StatusPill";
@@ -17,6 +18,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
   const [sets, setSets] = useState<string[][]>(initialSets.length ? initialSets : [[]]);
   const [result, setResult] = useState<ComparisonResult | null>(initialResult);
   const [differencesOnly, setDifferencesOnly] = useState(false);
+  const [region, setRegion] = useState<Region | "ALL">("ALL");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
@@ -72,7 +74,9 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
     replaceSets((current) => current.map((set, setIndex) => (setIndex === index ? codes : set)));
   };
 
-  const visibleRows = result?.rows.filter((row) => !differencesOnly || !row.isEqual) ?? [];
+  const visibleRows = result?.rows.filter((row) =>
+    (!differencesOnly || !row.isEqual) && (region === "ALL" || row.destination.region === region)
+  ) ?? [];
 
   const copyLink = async () => {
     await navigator.clipboard.writeText(window.location.href);
@@ -136,6 +140,13 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
               <input type="checkbox" checked={differencesOnly} disabled={result.scenarios.length < 2} onChange={(event) => setDifferencesOnly(event.target.checked)} />
               <span><Check size={15} aria-hidden="true" /> Differences only</span>
             </label>
+            <label className="select-field comparison-region-filter">
+              <span className="sr-only">Filter comparison destinations by region</span>
+              <select value={region} onChange={(event) => setRegion(event.target.value as Region | "ALL")}>
+                <option value="ALL">All regions</option>
+                {REGIONS.map((value) => <option value={value} key={value}>{formatRegion(value)}</option>)}
+              </select>
+            </label>
             <span>{visibleRows.length} destinations shown</span>
             <button type="button" className="button button--quiet" onClick={copyLink}>
               {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? "Copied" : "Copy link"}
@@ -174,6 +185,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
               </tbody>
             </table>
           </div>
+          <AccessLegend />
         </>
       )}
 

@@ -1,6 +1,6 @@
-# Multipass Rank
+# MultiPass Rank
 
-Multipass Rank is a fast passport-ranking and multi-passport comparison tool for [multipassrank.com](https://multipassrank.com). It ranks 199 passports, shows destination-level access across 227 countries and territories, and calculates the practical reach of combinations containing up to five passports.
+MultiPass Rank is a fast passport-ranking and multi-passport comparison tool for [multipassrank.com](https://multipassrank.com). It ranks 199 passports, shows destination-level access across 227 countries and territories, and calculates the practical reach of combinations containing up to five passports.
 
 The application is intentionally direct: no accounts, lead forms, analytics, or commercial ranking adjustments.
 

@@ -6,9 +6,9 @@ export function agentGuideMarkdown(): string {
     `- [${comparison.heading}](${absoluteUrl(`/${comparison.slug}`)}) — [Markdown](${absoluteUrl(`/${comparison.slug}.md`)})`,
   ).join("\n");
 
-  return `# Multipass Rank for AI agents
+  return `# MultiPass Rank for AI agents
 
-Multipass Rank provides current, structured passport-access information for assistants, research tools, and human readers. Use ISO alpha-2 passport codes from the manifest and preserve the data-check date in answers.
+MultiPass Rank provides current, structured passport-access information for assistants, research tools, and human readers. Use ISO alpha-2 passport codes from the manifest and preserve the data-check date in answers.
 
 ## Build comparison URLs
 

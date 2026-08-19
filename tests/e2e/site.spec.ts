@@ -28,11 +28,23 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await expect(page.getByText("United States", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("Differences only")).toBeVisible();
   await expect(page.locator("table.comparison-table")).toBeVisible();
+  await page.getByLabel("Filter comparison destinations by region").selectOption("EUROPE");
+  await expect(page.locator(".comparison-table__region")).toHaveCount(1);
+  await expect(page.locator(".comparison-table__region")).toContainText("Europe");
+  await expect(page.getByRole("heading", { name: "What the labels mean" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "eVisa vs ETA explained" })).toBeVisible();
   const tableViewport = await page.locator(".comparison-table-wrap").evaluate((element) => ({
     clientHeight: element.clientHeight,
     scrollHeight: element.scrollHeight,
   }));
   expect(tableViewport.scrollHeight - tableViewport.clientHeight).toBeLessThanOrEqual(1);
+});
+
+test("country access can be narrowed to one destination region", async ({ page }) => {
+  await page.goto("/passport/spain");
+  await page.getByLabel("Filter destinations by region").selectOption("EUROPE");
+  await expect(page.locator(".region-group")).toHaveCount(1);
+  await expect(page.locator(".region-group").getByRole("heading")).toHaveText("Europe");
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {
@@ -131,6 +143,19 @@ test("AI instructions expose URL, Markdown, and API conventions", async ({ page,
   expect(llms.ok()).toBe(true);
   expect(llms.headers()["content-type"]).toContain("text/plain");
   expect(await llms.text()).toContain("Build comparison URLs");
+});
+
+test("eVisa and ETA guide is indexable and available as Markdown", async ({ page, request }) => {
+  await page.goto("/evisa-vs-eta");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("eVisa vs ETA: what is the difference?");
+  await expect(page.getByRole("heading", { name: "How MultiPass Rank treats them" })).toBeVisible();
+
+  const markdown = await request.get("/evisa-vs-eta.md");
+  expect(markdown.ok()).toBe(true);
+  expect(await markdown.text()).toContain("# eVisa vs ETA: what is the difference?");
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/evisa-vs-eta</loc>");
 });
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {

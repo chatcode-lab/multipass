@@ -24,7 +24,7 @@ export const GET: APIRoute = async ({ locals, url }) => {
     ).join("\n");
     return markdownResponse(`# Compare passports and combined access
 
-Build up to five passport sets, with up to five passports in each set. Multipass Rank keeps the easiest entry status available for every destination and calculates a rank equivalent for combinations.
+Build up to five passport sets, with up to five passports in each set. MultiPass Rank keeps the easiest entry status available for every destination and calculates a rank equivalent for combinations.
 
 ## Popular comparisons
 

@@ -1,13 +1,13 @@
 import type { APIRoute } from "astro";
 import { absoluteUrl, markdownResponse } from "@/lib/markdown";
 
-export const GET: APIRoute = () => markdownResponse(`# How Multipass Rank works
+export const GET: APIRoute = () => markdownResponse(`# How MultiPass Rank works
 
-Multipass Rank answers one practical question: how many destinations can a passport reach without obtaining a government-approved visa before departure?
+MultiPass Rank answers one practical question: how many destinations can a passport reach without obtaining a government-approved visa before departure?
 
 ## Individual passport score
 
-Visa-free, visa-on-arrival, and ETA destinations each add one point. eVisas and traditional visas require approval before travel and do not add a point. Equal scores share a dense rank.
+Visa-free, visa-on-arrival, and ETA destinations each add one point. eVisas and traditional visas require approval before travel and do not add a point. Equal scores share a dense rank. [Learn how an eVisa differs from an ETA](${absoluteUrl("/evisa-vs-eta")}).
 
 ## Combined passport score
 

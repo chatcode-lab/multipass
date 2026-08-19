@@ -1,0 +1,124 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const description = "Understand the practical difference between an electronic visa (eVisa) and an electronic travel authorisation (ETA), including how each affects passport mobility scores.";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "eVisa vs ETA: what is the difference?",
+    description,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is an ETA the same as an eVisa?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. An ETA is usually advance permission to travel for a traveller who is otherwise visa-exempt. An eVisa is a visa obtained through an electronic application process.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does an ETA or eVisa guarantee entry?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Approval normally permits travel or supplies the required visa, but border authorities still make the final entry decision.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why does MultiPass Rank count ETA access but not eVisa access?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The mobility score measures destinations accessible without obtaining a visa before departure. ETA travel is generally visa-exempt, while an eVisa remains a visa that requires prior approval.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="eVisa vs ETA: What Is the Difference? | MultiPass Rank"
+  description={description}
+  canonical="/evisa-vs-eta"
+  markdownHref="/evisa-vs-eta.md"
+  structuredData={structuredData}
+>
+  <article class="prose term-guide">
+    <span class="eyebrow">Travel access, plainly explained</span>
+    <h1>eVisa vs ETA: what is the difference?</h1>
+    <p class="term-guide__lead">
+      Both are requested online before a trip, but they are not the same permission. An <strong>ETA</strong> is generally
+      advance permission to travel under a visa-exemption programme. An <strong>eVisa</strong> is a visa whose application
+      and issuance happen electronically.
+    </p>
+
+    <section class="term-comparison" aria-label="ETA and eVisa comparison">
+      <article>
+        <span class="status-pill status-pill--eta"><span class="status-pill__dot" aria-hidden="true"></span>ETA</span>
+        <h2>Electronic travel authorisation</h2>
+        <dl>
+          <div><dt>Legal category</dt><dd>Usually visa-exempt travel</dd></div>
+          <div><dt>Process</dt><dd>Short online pre-screening</dd></div>
+          <div><dt>Result</dt><dd>Permission to travel, often linked to the passport</dd></div>
+          <div><dt>Mobility score</dt><dd>Counts as accessible without a prior visa</dd></div>
+        </dl>
+      </article>
+      <article>
+        <span class="status-pill status-pill--evisa"><span class="status-pill__dot" aria-hidden="true"></span>eVisa</span>
+        <h2>Electronic visa</h2>
+        <dl>
+          <div><dt>Legal category</dt><dd>A visa</dd></div>
+          <div><dt>Process</dt><dd>Online visa application and review</dd></div>
+          <div><dt>Result</dt><dd>An electronic visa or downloadable visa document</dd></div>
+          <div><dt>Mobility score</dt><dd>Does not count as access without a prior visa</dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <h2>The practical distinction</h2>
+    <p>
+      An ETA is designed for travellers who do not normally need a visitor visa but must receive advance permission to
+      board and travel. The UK describes its ETA as advance travel permission for specified non-visa nationals, while
+      Canada describes its eTA as an online requirement for eligible travellers flying to or transiting through Canada.
+    </p>
+    <p>
+      An eVisa changes the application channel, not the underlying document: it is still a visa. Azerbaijan’s official
+      system, for example, reviews an online application and then issues or refuses an electronic visa before travel.
+    </p>
+
+    <div class="method-callout">
+      <strong>Names are not perfectly standardised.</strong> Governments may use “ETA,” “ESTA,” “travel authorisation,”
+      “eVisa,” or a local product name. Always follow the destination authority’s classification and current rules rather
+      than relying on the label alone.
+    </div>
+
+    <h2>How MultiPass Rank treats them</h2>
+    <p>
+      The mobility score counts visa-free, visa-on-arrival, and ETA destinations. eVisas and traditional visas are shown
+      in the detailed access table but do not add to the score because both require visa approval before departure. This
+      is a deliberately simple mobility measure—not a judgment about cost, processing speed, or traveller experience.
+    </p>
+
+    <h2>What to verify before travel</h2>
+    <ul>
+      <li>Whether your exact passport, travel purpose, route, and transit points are eligible.</li>
+      <li>How long approval remains valid and whether it permits multiple trips.</li>
+      <li>Whether the permission is linked digitally to your passport or must be printed.</li>
+      <li>Whether a new passport, dual nationality, prior travel, or criminal history changes the process.</li>
+      <li>Whether approval is only permission to travel; border officers usually retain the final entry decision.</li>
+    </ul>
+
+    <h2>Official examples</h2>
+    <ul class="official-links">
+      <li><a href="https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-electronic-travel-authorisation" rel="noreferrer">United Kingdom ETA rules</a> — advance authorisation for specified non-visa nationals.</li>
+      <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html" rel="noreferrer">Government of Canada eTA</a> — eligibility, application, and status guidance.</li>
+      <li><a href="https://www.evisa.gov.az/en/conditions" rel="noreferrer">Azerbaijan ASAN eVisa conditions</a> — an official example of an electronically issued visa.</li>
+    </ul>
+  </article>
+</BaseLayout>

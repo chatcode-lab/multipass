@@ -47,7 +47,7 @@ export function destinationsMarkdown(manifest: SnapshotManifest): string {
   });
   return `# Passport access destination directory
 
-All ${manifest.destinations.length} countries and territories tracked by Multipass Rank, grouped by region. This is the destination catalog used by passport access pages and comparison tables; it is different from the passport issuer list.
+All ${manifest.destinations.length} countries and territories tracked by MultiPass Rank, grouped by region. This is the destination catalog used by passport access pages and comparison tables; it is different from the passport issuer list.
 
 Data checked ${checkedDate(manifest)}.
 
@@ -117,6 +117,17 @@ export function comparisonMarkdown(result: ComparisonResult, title = "Passport c
 ${scenarioSummary.join("\n")}
 
 Data checked ${new Intl.DateTimeFormat("en", { dateStyle: "long", timeZone: "UTC" }).format(new Date(result.checkedAt))}.
+
+## Access legend
+
+- **Home:** right of entry as a citizen.
+- **Visa-free:** no visa required before travel.
+- **ETA:** advance electronic permission for visa-exempt travel.
+- **VOA:** visa available at the border or airport.
+- **eVisa:** a visa applied for and issued electronically before travel.
+- **Visa:** a traditional visa is required before travel.
+
+[Learn how an eVisa differs from an ETA](${absoluteUrl("/evisa-vs-eta")}).
 
 ${sections.join("\n\n")}
 

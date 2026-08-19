@@ -26,7 +26,7 @@ const regionCollection = collectionForRegion(passport.region);
 const comparisonPassports = relatedPassports(passport, manifest.passports);
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
 
-const title = `${passport.name} Passport Rank & Visa-Free Destinations | Multipass Rank`;
+const title = `${passport.name} Passport Rank & Visa-Free Destinations | MultiPass Rank`;
 const description = `The ${passport.name} passport ranks #${passport.rank} with access to ${passport.mobilityScore} destinations without prior visa approval. See the complete destination list.`;
 const structuredData = [
   {
@@ -107,6 +107,7 @@ const structuredData = [
         <span><StatusPill status={status} compact /><strong>{statusCounts[status]}</strong></span>
       ))}
     </div>
+    <a class="status-guide-link" href="/evisa-vs-eta">Not sure how an ETA differs from an eVisa?</a>
     <AccessList passport={detail} destinations={manifest.destinations} client:visible />
   </section>
 </BaseLayout>
