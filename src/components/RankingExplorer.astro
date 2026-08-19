@@ -39,6 +39,19 @@ const {
     )}
     <span class="result-count" aria-live="polite" data-ranking-count>{passports.length} passports</span>
   </div>
+  <div class="ranking-compare-bar" data-ranking-compare-bar hidden>
+    <span aria-live="polite"><strong data-ranking-selected-count>0</strong> of 5 selected</span>
+    <div class="ranking-compare-bar__actions">
+      <button class="ranking-compare-bar__cancel" type="button" data-ranking-cancel aria-label="Cancel">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+        <span>Cancel</span>
+      </button>
+      <button class="ranking-compare-bar__submit" type="button" data-ranking-compare disabled>Select one more</button>
+    </div>
+  </div>
   <div class="ranking-table">
     <div class="ranking-table__head" aria-hidden="true">
       <span>{scoped ? "Group rank" : "Rank"}</span>
@@ -52,10 +65,12 @@ const {
         <li
           data-passport-row
           data-name={passport.name.toLowerCase()}
+          data-passport-name={passport.name}
           data-code={passport.code.toLowerCase()}
           data-region={passport.region}
         >
-          <a class="ranking-row" href={`/passport/${passport.slug}`}>
+          <div class="ranking-row">
+            <a class="ranking-row__link" href={`/passport/${passport.slug}`} aria-label={`View ${passport.name} passport details`}></a>
             <strong class="ranking-row__rank">
               #{scoped ? index + 1 : passport.rank}
               {scoped && <small>global #{passport.rank}</small>}
@@ -66,11 +81,29 @@ const {
             </span>
             <span class="ranking-row__region">{formatRegion(passport.region)}</span>
             <span class="ranking-row__score"><strong>{passport.mobilityScore}</strong><small>destinations</small></span>
-            <svg class="ranking-row__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 17 17 7"></path>
-              <path d="M7 7h10v10"></path>
-            </svg>
-          </a>
+            <span class="ranking-row__actions">
+              <svg class="ranking-row__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7"></path>
+                <path d="M7 7h10v10"></path>
+              </svg>
+              <button
+                class="ranking-row__select"
+                type="button"
+                data-ranking-select
+                aria-label={`Add ${passport.name} to comparison`}
+                aria-pressed="false"
+              >
+                <svg class="ranking-row__select-add" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="M12 5v14"></path>
+                  <path d="M5 12h14"></path>
+                </svg>
+                <svg class="ranking-row__select-check" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m5 12 4 4L19 6"></path>
+                </svg>
+                <span>Compare</span>
+              </button>
+            </span>
+          </div>
         </li>
       ))}
     </ol>
@@ -85,8 +118,57 @@ const {
       const region = explorer.querySelector("[data-ranking-region]");
       const count = explorer.querySelector("[data-ranking-count]");
       const empty = explorer.querySelector("[data-ranking-empty]");
+      const compareBar = explorer.querySelector("[data-ranking-compare-bar]");
+      const selectedCount = explorer.querySelector("[data-ranking-selected-count]");
+      const compare = explorer.querySelector("[data-ranking-compare]");
+      const cancel = explorer.querySelector("[data-ranking-cancel]");
       const rows = [...explorer.querySelectorAll("[data-passport-row]")];
-      if (!search || !count || !empty) return;
+      if (!search || !count || !empty || !compareBar || !selectedCount || !compare || !cancel) return;
+      let selected = [];
+
+      const renderSelection = () => {
+        const selecting = selected.length > 0;
+        explorer.classList.toggle("is-selecting", selecting);
+        compareBar.hidden = !selecting;
+        selectedCount.textContent = String(selected.length);
+        compare.disabled = selected.length < 2;
+        compare.textContent = selected.length < 2 ? "Select one more" : `Compare ${selected.length}`;
+
+        rows.forEach((row) => {
+          const code = row.dataset.code.toUpperCase();
+          const name = row.dataset.passportName;
+          const button = row.querySelector("[data-ranking-select]");
+          const isSelected = selected.includes(code);
+          row.classList.toggle("is-selected", isSelected);
+          button.setAttribute("aria-pressed", String(isSelected));
+          button.setAttribute("aria-label", `${isSelected ? "Remove" : "Add"} ${name} ${isSelected ? "from" : "to"} comparison`);
+          button.disabled = selected.length >= 5 && !isSelected;
+        });
+      };
+
+      const toggleSelection = (row) => {
+        const code = row.dataset.code.toUpperCase();
+        selected = selected.includes(code)
+          ? selected.filter((selectedCode) => selectedCode !== code)
+          : selected.length < 5 ? [...selected, code] : selected;
+        renderSelection();
+      };
+
+      rows.forEach((row) => {
+        row.querySelector("[data-ranking-select]")?.addEventListener("click", () => toggleSelection(row));
+      });
+
+      cancel.addEventListener("click", () => {
+        selected = [];
+        renderSelection();
+      });
+
+      compare.addEventListener("click", () => {
+        if (selected.length < 2) return;
+        const params = new URLSearchParams();
+        selected.forEach((code) => params.append("set", code));
+        window.location.assign(`/compare?${params.toString()}`);
+      });
 
       const filter = () => {
         const needle = search.value.trim().toLowerCase();
@@ -105,6 +187,7 @@ const {
 
       search.addEventListener("input", filter);
       region?.addEventListener("change", filter);
+      renderSelection();
     });
   })();
 </script>

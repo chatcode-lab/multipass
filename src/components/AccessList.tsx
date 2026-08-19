@@ -10,15 +10,26 @@ interface AccessListProps {
   destinations: Destination[];
 }
 
+type AccessFilter = Exclude<AccessStatus, "citizenship"> | "all" | "easy";
+
+const EASY_ACCESS_STATUSES = new Set<AccessStatus>(["visa_free", "eta", "visa_on_arrival", "evisa"]);
+
 export default function AccessList({ passport, destinations }: AccessListProps) {
   const [query, setQuery] = useState("");
-  const [status, setStatus] = useState<AccessStatus | "all">("all");
+  const [status, setStatus] = useState<AccessFilter>("all");
   const [region, setRegion] = useState<Region | "all">("all");
+  const availableStatuses = useMemo(() => ACCESS_STATUSES.filter((value) =>
+    value !== "citizenship" && destinations.some((destination) =>
+      (passport.statuses[destination.code] ?? "unknown") === value
+    )
+  ), [destinations, passport.statuses]);
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return destinations.filter((destination) => {
       const destinationStatus = passport.statuses[destination.code] ?? "unknown";
-      return (status === "all" || destinationStatus === status)
+      const matchesStatus = status === "all"
+        || (status === "easy" ? EASY_ACCESS_STATUSES.has(destinationStatus) : destinationStatus === status);
+      return matchesStatus
         && (region === "all" || destination.region === region)
         && (!needle || destination.name.toLowerCase().includes(needle));
     });
@@ -35,9 +46,10 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
         <div className="access-list__filters">
           <label className="select-field select-field--access">
             <span className="sr-only">Filter by access type</span>
-            <select value={status} onChange={(event) => setStatus(event.target.value as AccessStatus | "all")}>
+            <select value={status} onChange={(event) => setStatus(event.target.value as AccessFilter)}>
               <option value="all">All access</option>
-              {ACCESS_STATUSES.map((value) => <option value={value} key={value}>{STATUS_META[value].label}</option>)}
+              <option value="easy">Easy access</option>
+              {availableStatuses.map((value) => <option value={value} key={value}>{STATUS_META[value].label}</option>)}
             </select>
           </label>
           <label className="select-field select-field--region">

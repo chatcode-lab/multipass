@@ -5,8 +5,20 @@ test("homepage renders a searchable passport ranking", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Passport ranks");
   await expect(page.getByRole("list", { name: "Global passport ranking" })).toBeVisible();
+  await expect(page.locator(".site-header .brand > span:last-child")).toBeVisible();
   const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
   expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 620) {
+    await expect(page.locator(".site-header .brand em")).toHaveCSS("display", "block");
+    const regionFilter = await page.getByLabel("Filter ranking by region").boundingBox();
+    const resultCount = await page.locator("[data-ranking-count]").boundingBox();
+    expect(regionFilter).not.toBeNull();
+    expect(resultCount).not.toBeNull();
+    const regionCenter = regionFilter!.y + regionFilter!.height / 2;
+    const countCenter = resultCount!.y + resultCount!.height / 2;
+    expect(Math.abs(regionCenter - countCenter)).toBeLessThanOrEqual(1);
+  }
   await page.getByPlaceholder("Search passports").fill("Brazil");
   await expect(page.getByRole("listitem").filter({ hasText: "Brazil" })).toBeVisible();
 });
@@ -57,12 +69,19 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
 
 test("country access can be narrowed to one destination region", async ({ page }) => {
   await page.goto("/passport/spain");
+  const statusFilter = page.getByLabel("Filter by access type");
   const regionFilter = page.getByLabel("Filter destinations by region");
   await regionFilter.scrollIntoViewIfNeeded();
   await expect.poll(() => regionFilter.evaluate((element) => {
     const island = element.closest("astro-island");
     return Boolean(island && !island.hasAttribute("ssr"));
   })).toBe(true);
+  await expect(statusFilter.locator("option", { hasText: "Easy access" })).toHaveCount(1);
+  await expect(statusFilter.locator("option", { hasText: "Citizenship" })).toHaveCount(0);
+  await expect(statusFilter.locator("option", { hasText: "Unknown" })).toHaveCount(0);
+  await statusFilter.selectOption("easy");
+  await expect(page.locator(".access-row")).not.toHaveCount(0);
+  await expect(page.locator(".access-row .status-pill--citizenship, .access-row .status-pill--visa_required, .access-row .status-pill--unknown")).toHaveCount(0);
   await regionFilter.selectOption("EUROPE");
   await expect(page.locator(".region-group")).toHaveCount(1);
   await expect(page.locator(".region-group").getByRole("heading")).toHaveText("Europe");
@@ -75,6 +94,35 @@ test("country access can be narrowed to one destination region", async ({ page }
     const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
     expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
   }
+});
+
+test("ranking rows support a five-passport comparison selection mode", async ({ page }) => {
+  await page.goto("/");
+  const explorer = page.locator("[data-ranking-explorer]");
+  const selectPassport = async (name: string) => {
+    const row = explorer.locator("[data-passport-row]").filter({ has: explorer.getByRole("link", { name: `View ${name} passport details` }) });
+    const button = row.locator("[data-ranking-select]");
+    await expect(button).toHaveAttribute("aria-label", `Add ${name} to comparison`);
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width > 620) await row.hover();
+    await button.click();
+    await expect(button).toHaveAttribute("aria-pressed", "true");
+  };
+
+  await selectPassport("Singapore");
+  await expect(explorer.locator("[data-ranking-compare-bar]")).toBeVisible();
+  await expect(explorer.getByRole("button", { name: "Select one more" })).toBeDisabled();
+  await explorer.getByRole("button", { name: "Cancel" }).click();
+  await expect(explorer.locator("[data-ranking-compare-bar]")).toBeHidden();
+
+  for (const name of ["Singapore", "Japan", "South Korea", "United Arab Emirates", "Denmark"]) {
+    await selectPassport(name);
+  }
+  await expect(explorer.locator("[data-ranking-selected-count]")).toHaveText("5");
+  await expect(explorer.getByRole("button", { name: "Add Brazil to comparison" })).toBeDisabled();
+  await explorer.getByRole("button", { name: "Compare 5" }).click();
+  await expect(page).toHaveURL(/\/compare\?set=SG&set=JP&set=KR&set=AE&set=DK$/);
+  await expect(page.locator(".scenario-card")).toHaveCount(5);
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {
