@@ -1,5 +1,6 @@
 import { Search, X } from "lucide-react";
 import { useId, useMemo, useState } from "react";
+import { flagEmojiFor } from "@/lib/geography";
 import type { PassportSummary } from "@/lib/types";
 
 interface PassportPickerProps {
@@ -50,7 +51,7 @@ export default function PassportPicker({
             const passport = byCode.get(code);
             return (
               <span className="passport-chip" key={code}>
-                <span className={`fi fi-${code.toLowerCase()}`} aria-hidden="true" />
+                <span className="country-flag" aria-hidden="true">{flagEmojiFor(code)}</span>
                 {passport?.name ?? code}
                 <button
                   type="button"
@@ -123,7 +124,7 @@ export default function PassportPicker({
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => add(passport.code)}
             >
-              <span className={`fi fi-${passport.code.toLowerCase()}`} aria-hidden="true" />
+              <span className="country-flag" aria-hidden="true">{flagEmojiFor(passport.code)}</span>
               <span>
                 <strong>{passport.name}</strong>
                 <small>#{passport.rank} · {passport.mobilityScore} destinations</small>

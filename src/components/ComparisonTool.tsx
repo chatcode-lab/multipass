@@ -1,7 +1,7 @@
 import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { STATUS_META } from "@/lib/passport";
-import { comparisonHref, flagCodeFor, formatRegion } from "@/lib/geography";
+import { comparisonHref, flagEmojiFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary } from "@/lib/types";
 import PassportCover from "./PassportCover";
 import PassportPicker from "./PassportPicker";
@@ -161,7 +161,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                     ...regionRows.map((row) => (
                       <tr key={row.destination.code}>
                         <th>
-                          <span className={`fi fi-${flagCodeFor(row.destination.code)}`} aria-hidden="true" />
+                          <span className="country-flag" aria-hidden="true">{flagEmojiFor(row.destination.code)}</span>
                           {row.destination.name}
                         </th>
                         {row.cells.map((cell, index) => (

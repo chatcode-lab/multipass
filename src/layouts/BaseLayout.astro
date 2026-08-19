@@ -2,6 +2,8 @@
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import "@/styles/global.css";
+import instrumentSansUrl from "@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2?url";
+import newsreaderUrl from "@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url";
 
 interface Props {
   title: string;
@@ -36,6 +38,8 @@ const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toStri
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
     <link rel="help" type="text/plain" href="/llms.txt" title="Instructions for AI agents" />
+    <link rel="preload" href={instrumentSansUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href={newsreaderUrl} as="font" type="font/woff2" crossorigin="anonymous" />
     {markdownHref && <link rel="alternate" type="text/markdown" href={new URL(markdownHref, Astro.site ?? Astro.url.origin)} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />

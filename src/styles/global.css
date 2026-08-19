@@ -1,6 +1,5 @@
 @import "@fontsource-variable/instrument-sans";
 @import "@fontsource-variable/newsreader";
-@import "flag-icons/css/flag-icons.min.css";
 
 :root {
   --ink: #372815;
@@ -263,7 +262,17 @@ main { min-height: 68vh; }
   font-size: 13px;
   font-weight: 620;
 }
-.passport-chip .fi { width: 18px; border-radius: 1px; box-shadow: 0 0 0 1px rgb(55 40 21 / 10%); }
+.country-flag {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 1;
+}
+.passport-chip .country-flag { font-size: 17px; }
 .passport-chip button { display: grid; place-items: center; padding: 2px; border: 0; background: none; color: var(--ink-soft); cursor: pointer; }
 .passport-chip button:hover { color: var(--burgundy); }
 
@@ -313,7 +322,7 @@ main { min-height: 68vh; }
 .passport-picker__menu button:last-child { border-bottom: 0; }
 .passport-picker__menu button:hover,
 .passport-picker__menu button[aria-selected="true"] { background: var(--green-tint); }
-.passport-picker__menu .fi { width: 25px; box-shadow: 0 0 0 1px rgb(55 40 21 / 12%); }
+.passport-picker__menu .country-flag { width: 25px; font-size: 21px; }
 .passport-picker__menu button span:last-child { display: grid; }
 .passport-picker__menu small { color: var(--ink-soft); font-size: 12px; }
 
@@ -378,6 +387,7 @@ main { min-height: 68vh; }
 
 .ranking-table { border-top: 1px solid var(--line-strong); }
 .ranking-table__list { margin: 0; padding: 0; list-style: none; }
+.ranking-table__list > li { content-visibility: auto; contain-intrinsic-size: auto 94px; }
 .ranking-table__head,
 .ranking-row {
   display: grid;
@@ -457,15 +467,15 @@ main { min-height: 68vh; }
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgb(20 20 20 / 18%);
 }
-.passport-cover__emblem .fi { width: 72%; aspect-ratio: 4 / 3; box-shadow: 0 0 0 1px rgb(20 20 20 / 16%); }
+.passport-cover__emblem .country-flag { font-size: 22px; filter: saturate(.9); }
 .passport-cover__mark { z-index: 1; margin-top: 12%; font-size: 12%; opacity: .7; }
 .passport-cover__label { z-index: 1; margin-top: auto; margin-bottom: 15%; font-size: clamp(4px, .65em, 10px); font-weight: 650; letter-spacing: .16em; text-transform: uppercase; }
 .passport-stack--small .passport-cover { border-radius: 3px; box-shadow: 0 4px 10px rgb(55 40 21 / 18%); }
 .passport-stack--small .passport-cover__country { font-size: 3px; letter-spacing: .04em; }
 .passport-stack--small .passport-cover__emblem { width: 32%; aspect-ratio: 1.12; border-width: 1px; }
-.passport-stack--small .passport-cover__emblem .fi { width: 76%; }
+.passport-stack--small .passport-cover__emblem .country-flag { font-size: 7px; }
 .passport-stack--large .passport-cover__emblem { width: 42%; margin-top: 3%; }
-.passport-stack--large .passport-cover__emblem .fi { width: 78%; }
+.passport-stack--large .passport-cover__emblem .country-flag { font-size: 50px; }
 .passport-stack--small .passport-cover__mark { font-size: 5px; }
 .passport-stack--small .passport-cover__label { font-size: 3px; }
 .passport-stack__more { position: absolute; z-index: 8; right: -14px; bottom: -7px; display: grid; place-items: center; width: 28px; height: 28px; border: 2px solid var(--paper); border-radius: 50%; background: var(--ink); color: var(--white); font-size: 11px; font-weight: 700; }
@@ -525,7 +535,7 @@ main { min-height: 68vh; }
 .comparison-table thead th:first-child { z-index: 5; background: var(--green); }
 .comparison-table tbody > tr:not(.comparison-table__region):hover td,
 .comparison-table tbody > tr:not(.comparison-table__region):hover th { background: #faf7f0; }
-.comparison-table tbody th .fi { width: 20px; margin-right: 9px; box-shadow: 0 0 0 1px rgb(55 40 21 / 12%); }
+.comparison-table tbody th .country-flag { width: 20px; margin-right: 9px; font-size: 17px; }
 .comparison-table__region th { position: sticky !important; left: 0; z-index: 3 !important; padding: 9px 13px; background: var(--paper-2) !important; color: var(--green); font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
 .comparison-table__region span { margin-left: 6px; color: var(--ink-soft); }
 .comparison-empty { display: flex; align-items: center; justify-content: center; gap: 34px; min-height: 330px; margin-top: 28px; border: 1px dashed var(--line-strong); }
@@ -567,7 +577,7 @@ main { min-height: 68vh; }
 .region-group__heading span { color: var(--ink-soft); font-size: 12px; }
 .access-rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 34px; }
 .access-row { display: grid; grid-template-columns: 25px minmax(0, 1fr) auto; gap: 11px; align-items: center; min-height: 58px; border-top: 1px solid var(--paper-3); }
-.access-row .fi { width: 22px; box-shadow: 0 0 0 1px rgb(55 40 21 / 12%); }
+.access-row .country-flag { width: 22px; font-size: 18px; }
 .access-row strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
 
 .country-overview {
@@ -620,7 +630,7 @@ main { min-height: 68vh; }
 .destination-group { padding: 12px 0 30px; border-bottom: 1px solid var(--line); }
 .destination-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 34px; margin: 0; padding: 0; list-style: none; }
 .destination-grid li { min-width: 0; display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 11px; align-items: center; min-height: 58px; border-top: 1px solid var(--paper-3); }
-.destination-grid .fi { width: 22px; box-shadow: 0 0 0 1px rgb(55 40 21 / 12%); }
+.destination-grid .country-flag { width: 22px; font-size: 18px; }
 .destination-grid li > span:last-child { display: grid; min-width: 0; }
 .destination-grid strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
 .destination-grid small { color: var(--ink-soft); font-size: 10px; letter-spacing: .08em; }
@@ -681,9 +691,7 @@ main { min-height: 68vh; }
 .site-footer__credits a { text-decoration: none; }
 .settlers-logo { width: 106px; display: inline-flex; }
 .settlers-logo img { width: 100%; height: auto; display: block; }
-.chatcode-logo { display: inline-flex; align-items: center; gap: 7px; color: var(--green); font-size: 13px; font-weight: 760; letter-spacing: -.02em; text-transform: none; }
-.chatcode-logo > span { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 5px; background: var(--green); color: var(--white); }
-.chatcode-logo svg { width: 16px; height: 16px; }
+.chatcode-link { color: var(--green); font-size: 13px; font-weight: 760; letter-spacing: -.02em; text-transform: none; }
 
 @media (max-width: 900px) {
   :root { --page: min(100% - 32px, 760px); }

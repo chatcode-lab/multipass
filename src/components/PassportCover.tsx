@@ -1,4 +1,5 @@
 import { PASSPORT_COLORS } from "@/data/passport-colors";
+import { flagEmojiFor } from "@/lib/geography";
 
 interface PassportCoverProps {
   codes: string[];
@@ -32,7 +33,7 @@ export default function PassportCover({ codes, names = [], size = "medium" }: Pa
           } as React.CSSProperties}
         >
           <span className="passport-cover__country">{names[index] ?? code}</span>
-          <span className="passport-cover__emblem"><span className={`fi fi-${code.toLowerCase()}`} /></span>
+          <span className="passport-cover__emblem"><span className="country-flag">{flagEmojiFor(code)}</span></span>
           <span className="passport-cover__mark">✦</span>
           <span className="passport-cover__label">Passport</span>
         </div>

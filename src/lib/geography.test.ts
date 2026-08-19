@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { comparisonHref, getFriendlyComparison, getPopularComparison } from "./geography";
+import { comparisonHref, flagEmojiFor, getFriendlyComparison, getPopularComparison } from "./geography";
+
+describe("country flags", () => {
+  it("creates regional-indicator flags and maps the French West Indies aggregate to France", () => {
+    expect(flagEmojiFor("SG")).toBe("🇸🇬");
+    expect(flagEmojiFor("FW")).toBe("🇫🇷");
+  });
+});
 
 describe("comparison URLs", () => {
   it("matches curated comparisons in either order", () => {

@@ -1,6 +1,6 @@
 ---
-import PassportBuilder from "@/components/PassportBuilder";
-import RankingExplorer from "@/components/RankingExplorer";
+import PassportBuilder from "@/components/PassportBuilder.astro";
+import RankingExplorer from "@/components/RankingExplorer.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext } from "@/lib/data";
 import { PASSPORT_COLLECTIONS } from "@/lib/geography";
@@ -40,7 +40,7 @@ const structuredData = {
         <a href="/destinations"><strong>{manifest.destinations.length}</strong> destinations</a>
       </div>
     </div>
-    <PassportBuilder passports={manifest.passports} client:load />
+    <PassportBuilder passports={manifest.passports} />
   </section>
 
   <section class="calculator-explainer" aria-labelledby="calculator-explainer-title">
@@ -71,6 +71,6 @@ const structuredData = {
     <nav class="collection-links" aria-label="Focused passport rankings">
       {PASSPORT_COLLECTIONS.map((collection) => <a href={`/${collection.slug}`}>{collection.name}</a>)}
     </nav>
-    <RankingExplorer passports={manifest.passports} client:visible />
+    <RankingExplorer passports={manifest.passports} />
   </section>
 </BaseLayout>

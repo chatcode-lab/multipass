@@ -1,0 +1,110 @@
+---
+import PassportCover from "./PassportCover";
+import { formatRegion } from "@/lib/geography";
+import { REGIONS, type PassportSummary } from "@/lib/types";
+
+interface Props {
+  passports: PassportSummary[];
+  scoped?: boolean;
+  showRegionFilter?: boolean;
+  listLabel?: string;
+}
+
+const {
+  passports,
+  scoped = false,
+  showRegionFilter = true,
+  listLabel = "Global passport ranking",
+} = Astro.props;
+---
+
+<div class="ranking-explorer" data-ranking-explorer>
+  <div class="table-toolbar">
+    <label class="search-field">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+      <span class="sr-only">Search the passport ranking</span>
+      <input data-ranking-search placeholder="Search passports" />
+    </label>
+    {showRegionFilter && (
+      <label class="select-field">
+        <span class="sr-only">Filter ranking by region</span>
+        <select data-ranking-region>
+          <option value="ALL">All regions</option>
+          {REGIONS.map((value) => <option value={value}>{formatRegion(value)}</option>)}
+        </select>
+      </label>
+    )}
+    <span class="result-count" aria-live="polite" data-ranking-count>{passports.length} passports</span>
+  </div>
+  <div class="ranking-table">
+    <div class="ranking-table__head" aria-hidden="true">
+      <span>{scoped ? "Group rank" : "Rank"}</span>
+      <span>Passport</span>
+      <span>Region</span>
+      <span>Score</span>
+      <span class="sr-only">Actions</span>
+    </div>
+    <ol class="ranking-table__list" aria-label={listLabel}>
+      {passports.map((passport, index) => (
+        <li
+          data-passport-row
+          data-name={passport.name.toLowerCase()}
+          data-code={passport.code.toLowerCase()}
+          data-region={passport.region}
+        >
+          <a class="ranking-row" href={`/passport/${passport.slug}`}>
+            <strong class="ranking-row__rank">
+              #{scoped ? index + 1 : passport.rank}
+              {scoped && <small>global #{passport.rank}</small>}
+            </strong>
+            <span class="ranking-row__passport">
+              <PassportCover codes={[passport.code]} names={[passport.name]} size="small" />
+              <span><strong>{passport.name}</strong><small>{passport.code}</small></span>
+            </span>
+            <span class="ranking-row__region">{formatRegion(passport.region)}</span>
+            <span class="ranking-row__score"><strong>{passport.mobilityScore}</strong><small>destinations</small></span>
+            <svg class="ranking-row__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </a>
+        </li>
+      ))}
+    </ol>
+    <p class="empty-state" data-ranking-empty hidden>No passports match those filters.</p>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll("[data-ranking-explorer]").forEach((explorer) => {
+      const search = explorer.querySelector("[data-ranking-search]");
+      const region = explorer.querySelector("[data-ranking-region]");
+      const count = explorer.querySelector("[data-ranking-count]");
+      const empty = explorer.querySelector("[data-ranking-empty]");
+      const rows = [...explorer.querySelectorAll("[data-passport-row]")];
+      if (!search || !count || !empty) return;
+
+      const filter = () => {
+        const needle = search.value.trim().toLowerCase();
+        const selectedRegion = region?.value || "ALL";
+        let visible = 0;
+        rows.forEach((row) => {
+          const matches = (selectedRegion === "ALL" || row.dataset.region === selectedRegion) && (
+            !needle || row.dataset.name.includes(needle) || row.dataset.code.includes(needle)
+          );
+          row.hidden = !matches;
+          if (matches) visible += 1;
+        });
+        count.textContent = `${visible} passports`;
+        empty.hidden = visible !== 0;
+      };
+
+      search.addEventListener("input", filter);
+      region?.addEventListener("change", filter);
+    });
+  })();
+</script>

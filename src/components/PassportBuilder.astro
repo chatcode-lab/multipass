@@ -1,0 +1,214 @@
+---
+import type { PassportSummary } from "@/lib/types";
+
+interface Props {
+  passports: PassportSummary[];
+}
+
+const { passports } = Astro.props;
+const pickerData = passports.map(({ code, name, rank, mobilityScore }) => ({ code, name, rank, mobilityScore }));
+const serializedPickerData = JSON.stringify(pickerData).replaceAll("<", "\\u003c");
+---
+
+<form class="builder-card" action="/compare" method="get" data-passport-builder>
+  <div class="builder-card__heading">
+    <span class="step-label">Passport combination calculator</span>
+    <p>Choose one passport to inspect its access, or combine up to five.</p>
+  </div>
+  <div class="builder-card__controls">
+    <div class="passport-picker">
+      <div class="passport-picker__selected" aria-label="Selected passports" hidden></div>
+      <div class="passport-picker__field">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <label class="sr-only" for="passport-builder-search">Add a passport</label>
+        <input
+          id="passport-builder-search"
+          role="combobox"
+          aria-expanded="false"
+          aria-controls="passport-builder-options"
+          aria-autocomplete="list"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          placeholder="Add a passport"
+        />
+      </div>
+      <div class="passport-picker__menu" id="passport-builder-options" role="listbox" hidden></div>
+    </div>
+    <input type="hidden" name="set" disabled />
+    <button class="button button--primary" type="submit" disabled>
+      See access
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="builder-card__hint" aria-live="polite">Try Brazil + Portugal, or start with your current passport.</div>
+  <script is:inline class="passport-builder__data" type="application/json" set:html={serializedPickerData}></script>
+</form>
+
+<script is:inline>
+  (() => {
+    const flagEmoji = (code) => [...code.toUpperCase()]
+      .map((letter) => String.fromCodePoint(0x1f1e6 + letter.charCodeAt(0) - 65))
+      .join("");
+
+    document.querySelectorAll("[data-passport-builder]").forEach((builder) => {
+      const data = builder.querySelector(".passport-builder__data");
+      const input = builder.querySelector("[role='combobox']");
+      const menu = builder.querySelector("[role='listbox']");
+      const selectedContainer = builder.querySelector(".passport-picker__selected");
+      const hiddenInput = builder.querySelector("input[name='set']");
+      const submit = builder.querySelector("button[type='submit']");
+      const hint = builder.querySelector(".builder-card__hint");
+      if (!data || !input || !menu || !selectedContainer || !hiddenInput || !submit || !hint) return;
+
+      const passports = JSON.parse(data.textContent || "[]");
+      let selected = [];
+      let open = false;
+      let activeIndex = 0;
+
+      const available = () => {
+        const needle = input.value.trim().toLowerCase();
+        return passports
+          .filter((passport) => !selected.includes(passport.code) && (
+            !needle || passport.name.toLowerCase().includes(needle) || passport.code.toLowerCase().includes(needle)
+          ))
+          .slice(0, 8);
+      };
+
+      const renderSelected = () => {
+        selectedContainer.replaceChildren();
+        selectedContainer.hidden = selected.length === 0;
+        selected.forEach((code) => {
+          const passport = passports.find((entry) => entry.code === code);
+          const chip = document.createElement("span");
+          chip.className = "passport-chip";
+
+          const flag = document.createElement("span");
+          flag.className = "country-flag";
+          flag.ariaHidden = "true";
+          flag.textContent = flagEmoji(code);
+          chip.append(flag, document.createTextNode(passport?.name || code));
+
+          const remove = document.createElement("button");
+          remove.type = "button";
+          remove.ariaLabel = `Remove ${passport?.name || code}`;
+          remove.textContent = "×";
+          remove.addEventListener("click", () => {
+            selected = selected.filter((selectedCode) => selectedCode !== code);
+            render();
+            input.focus();
+          });
+          chip.append(remove);
+          selectedContainer.append(chip);
+        });
+
+        hiddenInput.value = selected.join(",");
+        hiddenInput.disabled = selected.length === 0;
+        submit.disabled = selected.length === 0;
+        input.disabled = selected.length >= 5;
+        input.placeholder = selected.length >= 5 ? "5 passports selected" : "Add a passport";
+        hint.textContent = selected.length === 0
+          ? "Try Brazil + Portugal, or start with your current passport."
+          : `${selected.length} of 5 selected`;
+      };
+
+      const add = (code) => {
+        if (selected.length >= 5 || selected.includes(code)) return;
+        selected = [...selected, code];
+        input.value = "";
+        open = false;
+        activeIndex = 0;
+        render();
+        input.focus();
+      };
+
+      const renderMenu = () => {
+        const suggestions = available();
+        activeIndex = Math.min(activeIndex, Math.max(0, suggestions.length - 1));
+        menu.replaceChildren();
+        suggestions.forEach((passport, index) => {
+          const option = document.createElement("button");
+          option.id = `passport-builder-option-${passport.code}`;
+          option.type = "button";
+          option.role = "option";
+          option.ariaSelected = String(index === activeIndex);
+          option.tabIndex = -1;
+
+          const flag = document.createElement("span");
+          flag.className = "country-flag";
+          flag.ariaHidden = "true";
+          flag.textContent = flagEmoji(passport.code);
+
+          const copy = document.createElement("span");
+          const name = document.createElement("strong");
+          const details = document.createElement("small");
+          name.textContent = passport.name;
+          details.textContent = `#${passport.rank} · ${passport.mobilityScore} destinations`;
+          copy.append(name, details);
+          option.append(flag, copy);
+          option.addEventListener("pointerenter", () => {
+            activeIndex = index;
+            renderMenu();
+          });
+          option.addEventListener("pointerdown", (event) => event.preventDefault());
+          option.addEventListener("click", () => add(passport.code));
+          menu.append(option);
+        });
+
+        const visible = open && selected.length < 5 && suggestions.length > 0;
+        menu.hidden = !visible;
+        input.setAttribute("aria-expanded", String(visible));
+        if (visible) input.setAttribute("aria-activedescendant", `passport-builder-option-${suggestions[activeIndex].code}`);
+        else input.removeAttribute("aria-activedescendant");
+      };
+
+      const render = () => {
+        renderSelected();
+        renderMenu();
+      };
+
+      input.addEventListener("focus", () => {
+        open = true;
+        activeIndex = 0;
+        renderMenu();
+      });
+      input.addEventListener("blur", () => window.setTimeout(() => {
+        open = false;
+        renderMenu();
+      }, 120));
+      input.addEventListener("input", () => {
+        open = true;
+        activeIndex = 0;
+        renderMenu();
+      });
+      input.addEventListener("keydown", (event) => {
+        const suggestions = available();
+        if (event.key === "ArrowDown") {
+          event.preventDefault();
+          open = true;
+          activeIndex = Math.min(activeIndex + 1, suggestions.length - 1);
+          renderMenu();
+        } else if (event.key === "ArrowUp") {
+          event.preventDefault();
+          activeIndex = Math.max(activeIndex - 1, 0);
+          renderMenu();
+        } else if (event.key === "Enter" && open && suggestions[activeIndex]) {
+          event.preventDefault();
+          add(suggestions[activeIndex].code);
+        } else if (event.key === "Escape") {
+          open = false;
+          renderMenu();
+        }
+      });
+      builder.addEventListener("submit", (event) => {
+        if (selected.length === 0) event.preventDefault();
+      });
+      render();
+    });
+  })();
+</script>

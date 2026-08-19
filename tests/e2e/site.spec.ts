@@ -9,6 +9,19 @@ test("homepage renders a searchable passport ranking", async ({ page }) => {
   await expect(page.getByRole("listitem").filter({ hasText: "Brazil" })).toBeVisible();
 });
 
+test("homepage calculator works without a framework-hydrated island", async ({ page }) => {
+  await page.goto("/");
+  const builder = page.locator("[data-passport-builder]");
+  await expect(builder.locator("astro-island")).toHaveCount(0);
+  const input = builder.getByRole("combobox");
+  await input.fill("Portugal");
+  await builder.getByRole("option", { name: /Portugal/ }).click();
+  await input.fill("Brazil");
+  await builder.getByRole("option", { name: /Brazil/ }).click();
+  await expect(builder.locator("input[name='set']")).toHaveValue("PT,BR");
+  await expect(builder.getByRole("button", { name: "See access" })).toBeEnabled();
+});
+
 test("a shared comparison renders scenarios and difference controls", async ({ page }) => {
   await page.goto("/compare?set=BR&set=US");
   await expect(page.getByText("Brazil", { exact: true }).first()).toBeVisible();
@@ -62,7 +75,7 @@ test("destination and Markdown directories are directly accessible", async ({ pa
   await page.goto("/destinations");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Every destination");
   const frenchWestIndies = page.locator("li").filter({ hasText: "French West Indies" });
-  await expect(frenchWestIndies.locator(".fi-fr")).toBeVisible();
+  await expect(frenchWestIndies.locator(".country-flag")).toHaveText("🇫🇷");
 
   const markdown = await request.get("/passport/singapore.md");
   expect(markdown.ok()).toBe(true);

@@ -1,6 +1,6 @@
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
-import { flagCodeFor, formatRegion } from "@/lib/geography";
+import { flagEmojiFor, formatRegion } from "@/lib/geography";
 import { REGIONS, type Destination, type Region } from "@/lib/types";
 
 export default function DestinationExplorer({ destinations }: { destinations: Destination[] }) {
@@ -44,7 +44,7 @@ export default function DestinationExplorer({ destinations }: { destinations: De
               <ul className="destination-grid">
                 {rows.map((destination) => (
                   <li key={destination.code}>
-                    <span className={`fi fi-${flagCodeFor(destination.code)}`} aria-hidden="true" />
+                    <span className="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
                     <span><strong>{destination.name}</strong><small>{destination.code}</small></span>
                   </li>
                 ))}

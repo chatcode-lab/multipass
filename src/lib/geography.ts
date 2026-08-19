@@ -13,6 +13,12 @@ export function flagCodeFor(code: string): string {
   return code === "FW" ? "fr" : code.toLowerCase();
 }
 
+export function flagEmojiFor(code: string): string {
+  return [...flagCodeFor(code).toUpperCase()]
+    .map((letter) => String.fromCodePoint(0x1f1e6 + letter.charCodeAt(0) - 65))
+    .join("");
+}
+
 export interface PassportCollection {
   slug: string;
   name: string;

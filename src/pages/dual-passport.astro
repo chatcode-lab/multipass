@@ -1,5 +1,5 @@
 ---
-import PassportBuilder from "@/components/PassportBuilder";
+import PassportBuilder from "@/components/PassportBuilder.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext } from "@/lib/data";
 
@@ -58,7 +58,7 @@ const structuredData = [
       <p>A second passport helps where it provides easier entry than the first. The calculator checks every destination and keeps the best available status: citizenship, visa-free, ETA, visa on arrival, eVisa, or visa required.</p>
       <p>The resulting mobility score counts destinations reachable without prior visa approval. Its <strong>rank equivalent</strong> shows where that combined score would sit in the current individual passport index.</p>
     </div>
-    <PassportBuilder passports={manifest.passports} client:load />
+    <PassportBuilder passports={manifest.passports} />
   </section>
 
   <section class="section dual-guide__details">

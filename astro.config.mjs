@@ -7,6 +7,9 @@ export default defineConfig({
   site: "https://multipassrank.com",
   output: "server",
   session: false,
+  build: {
+    inlineStylesheets: "always",
+  },
   adapter: cloudflare({
     configPath: "./wrangler.jsonc",
     imageService: "passthrough",

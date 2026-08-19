@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { STATUS_META } from "@/lib/passport";
-import { flagCodeFor, formatRegion } from "@/lib/geography";
+import { flagEmojiFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Destination, type PassportAccess } from "@/lib/types";
 import StatusPill from "./StatusPill";
 
@@ -52,7 +52,7 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
               <div className="access-rows">
                 {rows.map((destination) => (
                   <div className="access-row" key={destination.code}>
-                    <span className={`fi fi-${flagCodeFor(destination.code)}`} aria-hidden="true" />
+                    <span className="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
                     <strong>{destination.name}</strong>
                     <StatusPill status={passport.statuses[destination.code] ?? "unknown"} />
                   </div>
