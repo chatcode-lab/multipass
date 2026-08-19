@@ -1,14 +1,9 @@
+import { PASSPORT_COLORS } from "@/data/passport-colors";
+
 interface PassportCoverProps {
   codes: string[];
   names?: string[];
   size?: "small" | "medium" | "large";
-}
-
-const TONES = ["forest", "burgundy", "navy", "umber", "charcoal"];
-
-function toneForCode(code: string): string {
-  const value = [...code].reduce((sum, character) => sum + character.charCodeAt(0), 0);
-  return TONES[value % TONES.length];
 }
 
 export default function PassportCover({ codes, names = [], size = "medium" }: PassportCoverProps) {
@@ -29,9 +24,12 @@ export default function PassportCover({ codes, names = [], size = "medium" }: Pa
     <div className={`passport-stack passport-stack--${size}`} style={stackStyle} aria-hidden="true">
       {shownCodes.map((code, index) => (
         <div
-          className={`passport-cover passport-cover--${toneForCode(code)}`}
+          className="passport-cover"
           key={code}
-          style={{ "--stack-index": index } as React.CSSProperties}
+          style={{
+            "--stack-index": index,
+            "--passport-color": PASSPORT_COLORS[code] ?? "#293633",
+          } as React.CSSProperties}
         >
           <span className="passport-cover__country">{names[index] ?? code}</span>
           <span className="passport-cover__emblem"><span className={`fi fi-${code.toLowerCase()}`} /></span>

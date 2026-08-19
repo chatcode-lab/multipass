@@ -27,10 +27,16 @@ The repository contains a generated fallback snapshot so local development and C
 npm run data:fallback
 ```
 
-The small continent diagrams use the public-domain Natural Earth land dataset through `world-atlas`. Regenerate the optimized SVG path with:
+The small country diagrams use the public-domain Natural Earth dataset through `world-atlas`. They render region-only context, the selected country outline when available, and a location marker for microstates. Regenerate the optimized SVG paths with:
 
 ```bash
 npm run assets:map
+```
+
+Passport cover colors are sampled from the corresponding Passport Index thumbnails and stored as a tiny local color map; the application does not hotlink or ship those source images. Regenerate the map with:
+
+```bash
+npm run assets:passports
 ```
 
 To seed an empty production KV namespace from the validated bundled snapshot, generate the bulk payload, upload it, and publish the pointer last:

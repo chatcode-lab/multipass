@@ -32,6 +32,32 @@ test("combined passport artwork stays clear of its result text", async ({ page }
   expect(cover!.x + cover!.width).toBeLessThan(content!.x);
 });
 
+test("long passport names wrap inside their covers", async ({ page }) => {
+  await page.goto("/compare?set=PT,IL,RU&set=US");
+  const label = page.locator(".scenario-card").first().locator(".passport-cover__country").filter({ hasText: "Russian Federation" });
+  await expect(label).toHaveText("Russian Federation");
+  const layout = await label.evaluate((element) => ({
+    clientHeight: element.clientHeight,
+    scrollHeight: element.scrollHeight,
+    whiteSpace: getComputedStyle(element).whiteSpace,
+  }));
+  expect(layout.whiteSpace).toBe("normal");
+  expect(layout.scrollHeight).toBeLessThanOrEqual(layout.clientHeight);
+});
+
+test("country maps show the correct region and a visible location marker", async ({ page }) => {
+  await page.goto("/passport/germany");
+  await expect(page.locator(".region-map svg")).toHaveAttribute("viewBox", "400 42 233 110");
+  await expect(page.locator(".region-map__country")).toBeVisible();
+  await expect(page.locator(".region-map__marker")).toBeVisible();
+  await expect(page.locator(".region-map figcaption")).toContainText("Germany in Europe");
+
+  await page.goto("/passport/singapore");
+  await expect(page.locator(".region-map svg")).toHaveAttribute("viewBox", "480 70 435 205");
+  await expect(page.locator(".region-map__marker")).toHaveAttribute("cx", "757.1");
+  await expect(page.locator(".region-map figcaption")).toContainText("Singapore in Asia");
+});
+
 test("destination and Markdown directories are directly accessible", async ({ page, request }) => {
   await page.goto("/destinations");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Every destination");

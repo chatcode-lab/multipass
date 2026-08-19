@@ -1,33 +1,30 @@
 ---
-import { WORLD_LAND_PATH } from "@/data/world-map";
+import { COUNTRY_MAPS, REGION_MAPS } from "@/data/world-map";
 import { formatRegion } from "@/lib/geography";
 import type { Region } from "@/lib/types";
 
 interface Props {
+  code: string;
   country: string;
   region: Region;
 }
 
-const { country, region } = Astro.props;
-const viewBoxes: Record<Region, string> = {
-  AFRICA: "405 170 205 235",
-  AMERICAS: "85 65 335 360",
-  CARIBBEAN: "245 190 150 105",
-  ASIA: "535 75 315 300",
-  EUROPE: "425 42 175 130",
-  "MIDDLE EAST": "500 155 180 135",
-  OCEANIA: "700 245 220 190",
-};
+const { code, country, region } = Astro.props;
+const regionMap = REGION_MAPS[region];
+const countryMap = COUNTRY_MAPS[code];
 const regionLabel = formatRegion(region);
 ---
 
 <figure class="region-map">
   <div class="region-map__canvas">
-    <svg viewBox={viewBoxes[region]} role="img" aria-labelledby="region-map-title region-map-desc">
+    <svg viewBox={regionMap.viewBox} role="img" aria-labelledby="region-map-title region-map-desc">
       <title id="region-map-title">{country} regional map</title>
-      <desc id="region-map-desc">A simplified Natural Earth outline focused on {regionLabel}.</desc>
-      <path d={WORLD_LAND_PATH} />
+      <desc id="region-map-desc">A simplified Natural Earth outline of {regionLabel}, with {country} marked.</desc>
+      <path class="region-map__context" d={regionMap.path} />
+      {countryMap.path && <path class="region-map__country" d={countryMap.path} />}
+      <circle class="region-map__marker-ring" cx={countryMap.marker[0]} cy={countryMap.marker[1]} r={regionMap.markerRadius * 1.9} />
+      <circle class="region-map__marker" cx={countryMap.marker[0]} cy={countryMap.marker[1]} r={regionMap.markerRadius} />
     </svg>
   </div>
-  <figcaption><span aria-hidden="true"></span>{regionLabel} focus</figcaption>
+  <figcaption><span aria-hidden="true"></span>{country} in {regionLabel}</figcaption>
 </figure>
