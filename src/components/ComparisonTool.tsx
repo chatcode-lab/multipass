@@ -147,7 +147,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                 {REGIONS.map((value) => <option value={value} key={value}>{formatRegion(value)}</option>)}
               </select>
             </label>
-            <span>{visibleRows.length} destinations shown</span>
+            <span className="comparison-toolbar__count" aria-live="polite">{visibleRows.length} destinations shown</span>
             <button type="button" className="button button--quiet" onClick={copyLink}>
               {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? "Copied" : "Copy link"}
             </button>
@@ -176,7 +176,9 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                           {row.destination.name}
                         </th>
                         {row.cells.map((cell, index) => (
-                          <td key={`${row.destination.code}-${index}`}><StatusPill status={cell.status} via={cell.via} compact /></td>
+                          <td data-label={result.scenarios[index]?.name} key={`${row.destination.code}-${index}`}>
+                            <StatusPill status={cell.status} via={cell.via} compact />
+                          </td>
                         ))}
                       </tr>
                     )),

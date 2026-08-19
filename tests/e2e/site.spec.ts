@@ -5,6 +5,8 @@ test("homepage renders a searchable passport ranking", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Passport ranks");
   await expect(page.getByRole("list", { name: "Global passport ranking" })).toBeVisible();
+  const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
+  expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
   await page.getByPlaceholder("Search passports").fill("Brazil");
   await expect(page.getByRole("listitem").filter({ hasText: "Brazil" })).toBeVisible();
 });
@@ -34,10 +36,23 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await expect(page.getByRole("heading", { name: "What the labels mean" })).toBeVisible();
   await expect(page.getByRole("link", { name: "eVisa vs ETA explained" })).toBeVisible();
   const tableViewport = await page.locator(".comparison-table-wrap").evaluate((element) => ({
+    clientWidth: element.clientWidth,
+    scrollWidth: element.scrollWidth,
     clientHeight: element.clientHeight,
     scrollHeight: element.scrollHeight,
   }));
   expect(tableViewport.scrollHeight - tableViewport.clientHeight).toBeLessThanOrEqual(1);
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 620) {
+    expect(tableViewport.scrollWidth - tableViewport.clientWidth).toBeLessThanOrEqual(1);
+    const firstResult = await page.locator(".comparison-table tbody tr:not(.comparison-table__region) td").first().boundingBox();
+    const copyLink = await page.getByRole("button", { name: "Copy link" }).boundingBox();
+    expect(firstResult).not.toBeNull();
+    expect(copyLink).not.toBeNull();
+    expect(firstResult!.x).toBeGreaterThanOrEqual(0);
+    expect(firstResult!.x + firstResult!.width).toBeLessThanOrEqual(viewport.width);
+    expect(copyLink!.x + copyLink!.width).toBeLessThanOrEqual(viewport.width);
+  }
 });
 
 test("country access can be narrowed to one destination region", async ({ page }) => {
@@ -51,6 +66,15 @@ test("country access can be narrowed to one destination region", async ({ page }
   await regionFilter.selectOption("EUROPE");
   await expect(page.locator(".region-group")).toHaveCount(1);
   await expect(page.locator(".region-group").getByRole("heading")).toHaveText("Europe");
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 620) {
+    const controls = await page.locator(".access-list__filters").boundingBox();
+    expect(controls).not.toBeNull();
+    expect(controls!.x).toBeGreaterThanOrEqual(0);
+    expect(controls!.x + controls!.width).toBeLessThanOrEqual(viewport.width);
+    const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
+    expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
+  }
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {

@@ -32,20 +32,22 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
           <span className="sr-only">Search destinations</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search destinations" />
         </label>
-        <label className="select-field select-field--access">
-          <span className="sr-only">Filter by access type</span>
-          <select value={status} onChange={(event) => setStatus(event.target.value as AccessStatus | "all")}>
-            <option value="all">All access types</option>
-            {ACCESS_STATUSES.map((value) => <option value={value} key={value}>{STATUS_META[value].label}</option>)}
-          </select>
-        </label>
-        <label className="select-field select-field--region">
-          <span className="sr-only">Filter destinations by region</span>
-          <select value={region} onChange={(event) => setRegion(event.target.value as Region | "all")}>
-            <option value="all">All regions</option>
-            {REGIONS.map((value) => <option value={value} key={value}>{formatRegion(value)}</option>)}
-          </select>
-        </label>
+        <div className="access-list__filters">
+          <label className="select-field select-field--access">
+            <span className="sr-only">Filter by access type</span>
+            <select value={status} onChange={(event) => setStatus(event.target.value as AccessStatus | "all")}>
+              <option value="all">All access</option>
+              {ACCESS_STATUSES.map((value) => <option value={value} key={value}>{STATUS_META[value].label}</option>)}
+            </select>
+          </label>
+          <label className="select-field select-field--region">
+            <span className="sr-only">Filter destinations by region</span>
+            <select value={region} onChange={(event) => setRegion(event.target.value as Region | "all")}>
+              <option value="all">All regions</option>
+              {REGIONS.map((value) => <option value={value} key={value}>{formatRegion(value)}</option>)}
+            </select>
+          </label>
+        </div>
         <span className="result-count" aria-live="polite">{filtered.length} destinations</span>
       </div>
 
