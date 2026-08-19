@@ -1,4 +1,4 @@
-import { formatRegion } from "./geography";
+import { collectionForRegion, comparisonHref, formatRegion, relatedPassports } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import { STATUS_META } from "./passport";
 import { REGIONS, type ComparisonResult, type PassportAccess, type PassportSummary, type SnapshotManifest } from "./types";
@@ -63,6 +63,10 @@ export function passportMarkdown(
 ): string {
   const regionalPassports = manifest.passports.filter((entry) => entry.region === passport.region);
   const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
+  const regionCollection = collectionForRegion(passport.region);
+  const comparisonLinks = relatedPassports(passport, manifest.passports).map((other) =>
+    `- [Compare ${passport.name} and ${other.name}](${absoluteUrl(comparisonHref([[passport.code], [other.code]]))})`,
+  );
   const statusCounts = Object.values(detail.statuses).reduce<Record<string, number>>((counts, status) => {
     counts[status] = (counts[status] ?? 0) + 1;
     return counts;
@@ -85,6 +89,10 @@ Current profile: ${statusCounts.visa_free ?? 0} visa-free, ${statusCounts.visa_o
 Data checked ${checkedDate(manifest)}. Entry rules can change; verify official requirements before travel.
 
 [Compare the ${passport.name} passport](${absoluteUrl(`/compare?set=${passport.code}`)})
+
+## Related rankings and comparisons
+
+${regionCollection ? `- [See the ${regionCollection.heading}](${absoluteUrl(`/${regionCollection.slug}`)})\n` : ""}${comparisonLinks.join("\n")}
 
 ${groups.join("\n\n")}`;
 }

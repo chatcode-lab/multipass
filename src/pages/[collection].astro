@@ -1,18 +1,36 @@
 ---
 import RankingExplorer from "@/components/RankingExplorer";
+import ComparisonLanding from "@/components/ComparisonLanding.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getDataContext } from "@/lib/data";
-import { getPassportCollection, PASSPORT_COLLECTIONS, passportsInCollection } from "@/lib/geography";
+import { getDataContext, getPassportAccessBatch } from "@/lib/data";
+import { getPassportCollection, getPopularComparison, PASSPORT_COLLECTIONS, passportsInCollection } from "@/lib/geography";
+import { comparePassportSets } from "@/lib/passport";
+import type { PassportAccess } from "@/lib/types";
 
 const collection = getPassportCollection(Astro.params.collection);
-if (!collection) return Astro.rewrite("/404");
+const comparison = getPopularComparison(Astro.params.collection);
+if (!collection && !comparison) return Astro.rewrite("/404");
+if (comparison && Astro.params.collection !== comparison.slug) {
+  return new Response(null, {
+    status: 308,
+    headers: {
+      Location: `/${comparison.slug}`,
+      "Cache-Control": "public, max-age=3600",
+    },
+  });
+}
 const { manifest, source } = await getDataContext(Astro.locals);
-const passports = passportsInCollection(manifest.passports, collection);
+const passports = collection ? passportsInCollection(manifest.passports, collection) : [];
+const comparisonSets = comparison?.sets.map((codes) => ({ codes: [...codes] })) ?? [];
+const comparisonDetails: Record<string, PassportAccess> = comparison
+  ? await getPassportAccessBatch(Astro.locals, comparisonSets.flatMap((set) => set.codes), manifest.version)
+  : {};
+const comparisonResult = comparison ? comparePassportSets(comparisonSets, manifest, comparisonDetails) : null;
 const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric" }).format(
   new Date(manifest.checkedAt),
 );
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
-const structuredData = {
+const structuredData = collection ? {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: collection.heading,
@@ -23,36 +41,40 @@ const structuredData = {
     name: passport.name,
     url: `https://multipassrank.com/passport/${passport.slug}`,
   })),
-};
+} : undefined;
 ---
 
-<BaseLayout
-  title={`${collection.heading} | Multipass Rank`}
-  description={collection.description}
-  canonical={`/${collection.slug}`}
-  markdownHref={`/${collection.slug}.md`}
-  structuredData={structuredData}
->
-  <header class="collection-hero">
-    <span class="eyebrow">{collection.eyebrow}</span>
-    <h1>{collection.heading}</h1>
-    <p>{collection.description}</p>
-    <div class="collection-hero__meta">
-      <strong>{passports.length}</strong> passports · {source === "live" ? "Data checked" : "Bundled snapshot"} {checkedDate}
-    </div>
-  </header>
-  <section class="section section--tight">
-    <nav class="collection-links" aria-label="Other passport rankings">
-      {PASSPORT_COLLECTIONS.map((entry) => (
-        <a href={`/${entry.slug}`} aria-current={entry.slug === collection.slug ? "page" : undefined}>{entry.name}</a>
-      ))}
-    </nav>
-    <RankingExplorer
-      passports={passports}
-      scoped
-      showRegionFilter={false}
-      listLabel={collection.heading}
-      client:visible
-    />
-  </section>
-</BaseLayout>
+{collection ? (
+  <BaseLayout
+    title={`${collection.heading} | Multipass Rank`}
+    description={collection.description}
+    canonical={`/${collection.slug}`}
+    markdownHref={`/${collection.slug}.md`}
+    structuredData={structuredData}
+  >
+    <header class="collection-hero">
+      <span class="eyebrow">{collection.eyebrow}</span>
+      <h1>{collection.heading}</h1>
+      <p>{collection.description}</p>
+      <div class="collection-hero__meta">
+        <strong>{passports.length}</strong> passports · {source === "live" ? "Data checked" : "Bundled snapshot"} {checkedDate}
+      </div>
+    </header>
+    <section class="section section--tight">
+      <nav class="collection-links" aria-label="Other passport rankings">
+        {PASSPORT_COLLECTIONS.map((entry) => (
+          <a href={`/${entry.slug}`} aria-current={entry.slug === collection.slug ? "page" : undefined}>{entry.name}</a>
+        ))}
+      </nav>
+      <RankingExplorer
+        passports={passports}
+        scoped
+        showRegionFilter={false}
+        listLabel={collection.heading}
+        client:visible
+      />
+    </section>
+  </BaseLayout>
+) : comparison && comparisonResult ? (
+  <ComparisonLanding comparison={comparison} manifest={manifest} result={comparisonResult} />
+) : null}

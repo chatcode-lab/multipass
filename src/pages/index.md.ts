@@ -11,8 +11,8 @@ export const GET: APIRoute = async ({ locals }) => {
   ).join("\n");
   const body = `${rankingMarkdown(
     manifest,
-    "Global passport ranking and combined passport calculator",
-    `Compare ${manifest.passports.length} passports across ${manifest.destinations.length} destinations.`,
+    "Passport combination calculator and global passport ranking",
+    `Calculate combined passport power and compare the strength of ${manifest.passports.length} passports across ${manifest.destinations.length} destinations.`,
     manifest.passports,
   )}\n\n## Regional and language rankings\n\n${collections}`;
   return markdownResponse(body, "/");

@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { getDataContext, getPassportAccessBatch } from "@/lib/data";
-import { POPULAR_COMPARISONS } from "@/lib/geography";
+import { getFriendlyComparison, POPULAR_COMPARISONS } from "@/lib/geography";
 import { absoluteUrl, markdownResponse } from "@/lib/markdown";
 import { comparisonMarkdown } from "@/lib/markdown-content";
 import { comparePassportSets, parsePassportSets } from "@/lib/passport";
@@ -8,9 +8,19 @@ import { comparePassportSets, parsePassportSets } from "@/lib/passport";
 export const GET: APIRoute = async ({ locals, url }) => {
   const { manifest } = await getDataContext(locals);
   const sets = parsePassportSets(url.searchParams.getAll("set"), new Set(manifest.passports.map((passport) => passport.code)));
+  const friendlyComparison = getFriendlyComparison(sets.map((set) => set.codes));
+  if (url.searchParams.has("set") && friendlyComparison) {
+    return new Response(null, {
+      status: 308,
+      headers: {
+        Location: `/${friendlyComparison.slug}.md`,
+        "Cache-Control": "public, max-age=3600",
+      },
+    });
+  }
   if (!sets.length) {
     const popular = POPULAR_COMPARISONS.map((comparison) =>
-      `- [${comparison.heading}](${absoluteUrl(`/compare/${comparison.slug}`)})`,
+      `- [${comparison.heading}](${absoluteUrl(`/${comparison.slug}`)})`,
     ).join("\n");
     return markdownResponse(`# Compare passports and combined access
 

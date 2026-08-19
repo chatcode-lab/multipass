@@ -52,6 +52,28 @@ test("regional rankings and indexed comparisons render useful content", async ({
   await page.goto("/compare/us-vs-uk");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("US vs UK");
   await expect(page.locator("table.comparison-table")).toBeVisible();
+  await expect(page).toHaveURL(/\/united-states-vs-united-kingdom-passport$/);
+});
+
+test("curated query comparisons become readable URLs with Markdown alternatives", async ({ page, request }) => {
+  await page.goto("/compare?set=US&set=PT");
+  await expect(page).toHaveURL(/\/portugal-vs-united-states-passport$/);
+  await expect(page.locator("table.comparison-table")).toBeVisible();
+
+  const markdown = await request.get("/portugal-vs-united-states-passport.md");
+  expect(markdown.ok()).toBe(true);
+  expect(await markdown.text()).toContain("# Portugal vs United States passport comparison");
+});
+
+test("AI instructions expose URL, Markdown, and API conventions", async ({ page, request }) => {
+  await page.goto("/ai");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("AI companion");
+  await expect(page.getByText("POST /api/v1/compare", { exact: true })).toBeVisible();
+
+  const llms = await request.get("/llms.txt");
+  expect(llms.ok()).toBe(true);
+  expect(llms.headers()["content-type"]).toContain("text/plain");
+  expect(await llms.text()).toContain("Build comparison URLs");
 });
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {

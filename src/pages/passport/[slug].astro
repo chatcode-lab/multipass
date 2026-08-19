@@ -5,7 +5,7 @@ import RegionMap from "@/components/RegionMap.astro";
 import StatusPill from "@/components/StatusPill";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccess } from "@/lib/data";
-import { formatRegion } from "@/lib/geography";
+import { collectionForRegion, comparisonHref, formatRegion, relatedPassports } from "@/lib/geography";
 import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
 
 const { manifest, source } = await getDataContext(Astro.locals);
@@ -22,6 +22,8 @@ const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long
 const regionLabel = formatRegion(passport.region);
 const regionalPassports = manifest.passports.filter((entry) => entry.region === passport.region);
 const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
+const regionCollection = collectionForRegion(passport.region);
+const comparisonPassports = relatedPassports(passport, manifest.passports);
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
 
 const title = `${passport.name} Passport Rank & Visa-Free Destinations | Multipass Rank`;
@@ -85,6 +87,12 @@ const structuredData = [
         {statusCounts.visa_on_arrival} visas on arrival, and {statusCounts.eta} destinations using an ETA.
         The detailed list below separates these from eVisas and traditional visas.
       </p>
+      <nav class="country-shortcuts" aria-label={`Explore ${passport.name} passport comparisons`}>
+        {regionCollection && <a href={`/${regionCollection.slug}`}>See {regionCollection.name} ranking</a>}
+        {comparisonPassports.map((other) => (
+          <a href={comparisonHref([[passport.code], [other.code]])}>Compare to {other.name}</a>
+        ))}
+      </nav>
     </div>
     <RegionMap country={passport.name} region={passport.region} />
   </section>

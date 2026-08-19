@@ -14,7 +14,7 @@ function escapeXml(value: string): string {
 
 export const GET: APIRoute = async ({ locals }) => {
   const { manifest } = await getDataContext(locals);
-  const staticPaths = ["", "destinations", "compare", "dual-passport", "methodology"];
+  const staticPaths = ["", "destinations", "compare", "dual-passport", "methodology", "ai"];
   const urls = [
     ...staticPaths.map((path) => ({ loc: `https://multipassrank.com/${path}`, priority: path ? "0.7" : "1.0" })),
     ...PASSPORT_COLLECTIONS.map((collection) => ({
@@ -22,7 +22,7 @@ export const GET: APIRoute = async ({ locals }) => {
       priority: "0.8",
     })),
     ...POPULAR_COMPARISONS.map((comparison) => ({
-      loc: `https://multipassrank.com/compare/${comparison.slug}`,
+      loc: `https://multipassrank.com/${comparison.slug}`,
       priority: "0.7",
     })),
     ...manifest.passports.map((passport) => ({

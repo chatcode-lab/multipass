@@ -1,0 +1,72 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { POPULAR_COMPARISONS } from "@/lib/geography";
+
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800");
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: "Multipass Rank instructions for AI agents",
+  description: "Build passport comparison URLs and retrieve current passport rankings in Markdown or JSON.",
+};
+---
+
+<BaseLayout
+  title="Passport Data for AI Agents | Multipass Rank"
+  description="Instructions for AI assistants to create passport comparison URLs and retrieve current rankings, destination access, and combined scores in Markdown or JSON."
+  canonical="/ai"
+  markdownHref="/ai.md"
+  structuredData={structuredData}
+>
+  <article class="prose agent-guide">
+    <span class="eyebrow">Agent-readable passport data</span>
+    <h1>Use Multipass Rank with an AI companion.</h1>
+    <p>
+      Every useful page has a stable URL and a Markdown alternative. Agents can also use the small JSON API for structured answers.
+      Always include the dataset’s checked date and treat the result as comparison context, not official travel advice.
+    </p>
+
+    <h2>Generate a comparison URL</h2>
+    <p>Use ISO alpha-2 passport codes. Add one <code>set</code> parameter per option; separate passports with commas to model a combined set.</p>
+    <pre><code>One passport
+https://multipassrank.com/compare?set=US
+
+Two individual passports
+https://multipassrank.com/compare?set=US&amp;set=PT
+
+Combined US + Canada versus Portugal
+https://multipassrank.com/compare?set=US,CA&amp;set=PT</code></pre>
+    <p>There can be up to five options and up to five passports in each option. Curated one-to-one queries automatically use a readable canonical URL; arbitrary query URLs always remain available.</p>
+
+    <h2>Request Markdown</h2>
+    <p>Add <code>.md</code> before the query string, or use the Markdown link published in each page’s HTML head.</p>
+    <pre><code>https://multipassrank.com/compare.md?set=US,CA&amp;set=PT
+https://multipassrank.com/passport/portugal.md
+https://multipassrank.com/europe.md
+https://multipassrank.com/index.md</code></pre>
+
+    <h2>Use structured JSON</h2>
+    <ul>
+      <li><a href="/api/v1/manifest"><code>GET /api/v1/manifest</code></a> lists valid codes, current ranks, scores, destinations, and the data version.</li>
+      <li><a href="/api/v1/passports/US"><code>GET /api/v1/passports/US</code></a> returns every destination status for one passport.</li>
+      <li><code>POST /api/v1/compare</code> with <code>{`{"sets":[["US","CA"],["PT"]]}`}</code> returns the complete comparison result.</li>
+    </ul>
+
+    <h2>Friendly comparison pages</h2>
+    <ul>
+      {POPULAR_COMPARISONS.map((comparison) => (
+        <li><a href={`/${comparison.slug}`}>{comparison.heading}</a> · <a href={`/${comparison.slug}.md`}>Markdown</a></li>
+      ))}
+    </ul>
+
+    <h2>Interpret scores carefully</h2>
+    <p>
+      Mobility scores count visa-free, visa-on-arrival, and ETA access. For a combined set, each destination uses the easiest
+      available status across that set. The rank equivalent compares that combined score with the single-passport ranking.
+      It does not measure residence, tax, consular, or citizenship-law benefits.
+    </p>
+    <div class="method-callout">
+      Plain-text discovery file: <a href="/llms.txt"><strong>/llms.txt</strong></a>. Full methodology: <a href="/methodology"><strong>/methodology</strong></a>.
+    </div>
+  </article>
+</BaseLayout>

@@ -1,7 +1,7 @@
 import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { STATUS_META } from "@/lib/passport";
-import { flagCodeFor, formatRegion } from "@/lib/geography";
+import { comparisonHref, flagCodeFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary } from "@/lib/types";
 import PassportCover from "./PassportCover";
 import PassportPicker from "./PassportPicker";
@@ -29,9 +29,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
       firstRender.current = false;
       return;
     }
-    const params = new URLSearchParams();
-    for (const set of validSets) params.append("set", set.join(","));
-    const nextUrl = params.size ? `/compare?${params.toString()}` : "/compare";
+    const nextUrl = comparisonHref(validSets);
     window.history.replaceState({}, "", nextUrl);
 
     if (validSets.length === 0) {

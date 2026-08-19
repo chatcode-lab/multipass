@@ -16,7 +16,7 @@ export default function PassportBuilder({ passports }: { passports: PassportSumm
   return (
     <div className="builder-card">
       <div className="builder-card__heading">
-        <span className="step-label">Build a passport set</span>
+        <span className="step-label">Passport combination calculator</span>
         <p>Choose one passport to inspect its access, or combine up to five.</p>
       </div>
       <div className="builder-card__controls">

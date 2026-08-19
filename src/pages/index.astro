@@ -14,18 +14,19 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=1800,
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Multipass Rank",
+  name: "Multipass Rank passport combination calculator",
   url: "https://multipassrank.com",
   applicationCategory: "TravelApplication",
   operatingSystem: "Any",
-  description: "Compare passport ranks, destination access, and multi-passport combinations.",
+  description: "Calculate passport strength, combined passport power, rankings, and destination access.",
+  featureList: "Passport ranking, passport combination calculator, destination access comparison",
   isAccessibleForFree: true,
 };
 ---
 
 <BaseLayout
-  title="Passport Ranking & Multi-Passport Calculator | Multipass Rank"
-  description="Explore the global passport index, compare passport strength across 227 destinations, and calculate the practical reach of multiple passports."
+  title="Passport Combination Calculator & Global Ranking | Multipass Rank"
+  description="Calculate combined passport power, compare passport strength across 227 destinations, and explore the current global passport ranking."
   markdownHref="/index.md"
   structuredData={structuredData}
 >
@@ -40,6 +41,18 @@ const structuredData = {
       </div>
     </div>
     <PassportBuilder passports={manifest.passports} client:load />
+  </section>
+
+  <section class="calculator-explainer" aria-labelledby="calculator-explainer-title">
+    <div>
+      <span class="eyebrow">Passport strength calculator</span>
+      <h2 id="calculator-explainer-title">Calculate combined passport power.</h2>
+    </div>
+    <p>
+      A combination is scored destination by destination, using the easiest access from any selected passport.
+      That exposes the practical gain from a second citizenship instead of simply adding two headline scores.
+      <a href="/methodology">See how the ranking works</a>.
+    </p>
   </section>
 
   <section class="section" id="ranking">

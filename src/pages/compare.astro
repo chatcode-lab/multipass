@@ -4,12 +4,22 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccessBatch } from "@/lib/data";
 import { comparePassportSets, parsePassportSets } from "@/lib/passport";
 import type { ComparisonResult } from "@/lib/types";
-import { POPULAR_COMPARISONS } from "@/lib/geography";
+import { getFriendlyComparison, POPULAR_COMPARISONS } from "@/lib/geography";
 
 const { manifest } = await getDataContext(Astro.locals);
 const requestedSets = Astro.url.searchParams.getAll("set");
 const markdownHref = `/compare.md${Astro.url.search}`;
 const sets = parsePassportSets(requestedSets, new Set(manifest.passports.map((passport) => passport.code)));
+const friendlyComparison = getFriendlyComparison(sets.map((set) => set.codes));
+if (requestedSets.length > 0 && friendlyComparison) {
+  return new Response(null, {
+    status: 308,
+    headers: {
+      Location: `/${friendlyComparison.slug}`,
+      "Cache-Control": "public, max-age=3600",
+    },
+  });
+}
 let initialResult: ComparisonResult | null = null;
 if (sets.length > 0) {
   const details = await getPassportAccessBatch(Astro.locals, sets.flatMap((set) => set.codes), manifest.version);
@@ -35,7 +45,7 @@ Astro.response.headers.set("Cache-Control", requestedSets.length ? "private, no-
     <p>Build up to five passport sets. Each set can contain one citizenship or a combination of up to five.</p>
     <nav class="popular-links" aria-label="Popular passport comparisons">
       <span>Popular:</span>
-      {POPULAR_COMPARISONS.map((comparison) => <a href={`/compare/${comparison.slug}`}>{comparison.shortTitle}</a>)}
+      {POPULAR_COMPARISONS.map((comparison) => <a href={`/${comparison.slug}`}>{comparison.shortTitle}</a>)}
       <a href="/dual-passport">Dual-passport guide</a>
     </nav>
   </header>

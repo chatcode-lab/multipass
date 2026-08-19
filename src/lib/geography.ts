@@ -140,29 +140,138 @@ export function passportsInCollection(
 
 export interface PopularComparison {
   slug: string;
+  legacySlugs?: readonly string[];
   shortTitle: string;
   heading: string;
   description: string;
-  sets: [string[], string[]];
+  context: string;
+  sets: readonly [readonly string[], readonly string[]];
 }
 
 export const POPULAR_COMPARISONS: readonly PopularComparison[] = [
   {
-    slug: "us-vs-uk",
+    slug: "portugal-vs-united-states-passport",
+    shortTitle: "Portugal vs US",
+    heading: "Portugal vs United States passport comparison",
+    description: "Compare Portugal and United States passport strength, mobility scores, and entry rules for every tracked destination.",
+    context: "This comparison is especially useful for US citizens evaluating the practical travel-access dimension of Portuguese or European Union citizenship. It does not cover residence, tax, consular, or citizenship-law differences.",
+    sets: [["PT"], ["US"]],
+  },
+  {
+    slug: "united-states-vs-united-kingdom-passport",
+    legacySlugs: ["us-vs-uk"],
     shortTitle: "US vs UK",
     heading: "US vs UK passport comparison",
     description: "Compare United States and United Kingdom passport strength, scores, and entry rules for every destination.",
+    context: "The destination table makes the practical mobility differences between these two widely held passports explicit, while keeping eVisa and prior-visa requirements separate from easier access.",
     sets: [["US"], ["GB"]],
   },
   {
-    slug: "us-vs-canada",
+    slug: "united-states-vs-canada-passport",
+    legacySlugs: ["us-vs-canada"],
     shortTitle: "US vs Canada",
     heading: "US vs Canada passport comparison",
     description: "Compare United States and Canadian passport strength, visa-free scores, and destination-level differences.",
+    context: "Because the headline scores are close, the destination-level differences are more useful than the global rank alone. Use the differences filter to isolate them.",
     sets: [["US"], ["CA"]],
+  },
+  {
+    slug: "portugal-vs-united-kingdom-passport",
+    shortTitle: "Portugal vs UK",
+    heading: "Portugal vs United Kingdom passport comparison",
+    description: "Compare Portuguese and British passport strength, mobility scores, and destination access in one table.",
+    context: "This page focuses on short-stay travel access. European Union movement rights and United Kingdom immigration status are separate legal questions that are not represented by a mobility score.",
+    sets: [["PT"], ["GB"]],
+  },
+  {
+    slug: "portugal-vs-spain-passport",
+    shortTitle: "Portugal vs Spain",
+    heading: "Portugal vs Spain passport comparison",
+    description: "Compare Portugal and Spain passport rankings, mobility scores, and destination-by-destination entry rules.",
+    context: "Portugal and Spain often sit close in passport rankings. The full access table shows where their current travel rules actually differ.",
+    sets: [["PT"], ["ES"]],
+  },
+  {
+    slug: "ireland-vs-united-kingdom-passport",
+    shortTitle: "Ireland vs UK",
+    heading: "Ireland vs United Kingdom passport comparison",
+    description: "Compare Irish and British passport strength, mobility scores, and access rules across every tracked destination.",
+    context: "This travel-access comparison does not attempt to score Common Travel Area or European Union citizenship rights; those benefits extend beyond destination entry rules.",
+    sets: [["IE"], ["GB"]],
+  },
+  {
+    slug: "brazil-vs-portugal-passport",
+    shortTitle: "Brazil vs Portugal",
+    heading: "Brazil vs Portugal passport comparison",
+    description: "Compare Brazilian and Portuguese passport rankings, mobility scores, and destination access requirements.",
+    context: "This page provides a practical travel-access view for a frequently relevant Lusophone comparison. It does not compare eligibility for citizenship or residence.",
+    sets: [["BR"], ["PT"]],
   },
 ] as const;
 
 export function getPopularComparison(slug: string | undefined): PopularComparison | undefined {
-  return POPULAR_COMPARISONS.find((comparison) => comparison.slug === slug);
+  return POPULAR_COMPARISONS.find((comparison) =>
+    comparison.slug === slug || comparison.legacySlugs?.includes(slug ?? ""),
+  );
+}
+
+function normalizedSets(sets: readonly (readonly string[])[]): string {
+  return sets
+    .map((set) => [...set].map((code) => code.toUpperCase()).sort().join(","))
+    .sort()
+    .join("|");
+}
+
+export function getFriendlyComparison(sets: readonly (readonly string[])[]): PopularComparison | undefined {
+  if (sets.length !== 2 || sets.some((set) => set.length !== 1)) return undefined;
+  const target = normalizedSets(sets);
+  return POPULAR_COMPARISONS.find((comparison) => normalizedSets(comparison.sets) === target);
+}
+
+export function comparisonHref(sets: readonly (readonly string[])[]): string {
+  const friendly = getFriendlyComparison(sets);
+  if (friendly) return `/${friendly.slug}`;
+  const params = new URLSearchParams();
+  for (const set of sets) {
+    if (set.length) params.append("set", set.map((code) => code.toUpperCase()).join(","));
+  }
+  return params.size ? `/compare?${params.toString()}` : "/compare";
+}
+
+export function collectionForRegion(region: Region): PassportCollection | undefined {
+  return PASSPORT_COLLECTIONS.find((collection) => collection.region === region);
+}
+
+const RELATED_CODES: Partial<Record<string, readonly string[]>> = {
+  US: ["PT", "CA", "GB", "IE"],
+  GB: ["IE", "PT", "US", "CA"],
+  PT: ["US", "BR", "GB", "ES"],
+  BR: ["PT", "US", "ES", "AR"],
+  CA: ["US", "GB", "PT", "AU"],
+  AU: ["NZ", "GB", "US", "CA"],
+  IE: ["GB", "US", "PT", "CA"],
+  ES: ["PT", "US", "BR", "FR"],
+};
+
+const REGION_REFERENCE_CODES: Record<Region, readonly string[]> = {
+  AFRICA: ["ZA", "MU", "MA", "US"],
+  AMERICAS: ["US", "CA", "BR", "PT"],
+  ASIA: ["SG", "JP", "KR", "US"],
+  CARIBBEAN: ["BB", "BS", "KN", "US"],
+  EUROPE: ["PT", "GB", "DE", "US"],
+  "MIDDLE EAST": ["AE", "IL", "TR", "US"],
+  OCEANIA: ["AU", "NZ", "GB", "US"],
+};
+
+export function relatedPassports(
+  passport: PassportSummary,
+  passports: readonly PassportSummary[],
+  limit = 4,
+): PassportSummary[] {
+  const candidates = [...(RELATED_CODES[passport.code] ?? []), ...REGION_REFERENCE_CODES[passport.region]];
+  const byCode = new Map(passports.map((entry) => [entry.code, entry]));
+  return [...new Set(candidates)]
+    .filter((code) => code !== passport.code && byCode.has(code))
+    .slice(0, limit)
+    .map((code) => byCode.get(code)!);
 }

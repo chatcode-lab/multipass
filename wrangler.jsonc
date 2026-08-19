@@ -1,11 +1,14 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "multipass",
-  "compatibility_date": "2026-08-18",
+  "compatibility_date": "2026-08-19",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "upload_source_maps": true,
   "observability": {
+    "enabled": true
+  },
+  "cache": {
     "enabled": true
   },
   "routes": [

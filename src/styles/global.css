@@ -340,6 +340,10 @@ main { min-height: 68vh; }
 
 .section { padding: clamp(76px, 9vw, 128px) 0; border-top: 1px solid var(--line); }
 .section--tight { padding-top: 58px; }
+.calculator-explainer { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); gap: clamp(42px, 8vw, 110px); align-items: end; padding: 48px 0; border-top: 1px solid var(--line); }
+.calculator-explainer h2 { max-width: 570px; margin: 8px 0 0; color: var(--green); font-family: var(--serif); font-size: clamp(34px, 4vw, 53px); font-weight: 540; line-height: 1; letter-spacing: -.03em; }
+.calculator-explainer p { max-width: 650px; margin: 0; color: var(--ink-soft); }
+.calculator-explainer a { color: var(--green); font-weight: 680; text-underline-offset: 4px; }
 .section-heading { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 40px; }
 .section-heading h2 { margin: 8px 0 0; color: var(--green); font-family: var(--serif); font-size: clamp(40px, 5vw, 68px); font-weight: 520; line-height: 1; letter-spacing: -.035em; }
 .section-heading p { max-width: 430px; margin: 0; color: var(--ink-soft); }
@@ -574,6 +578,9 @@ main { min-height: 68vh; }
 .comparison-overview p { max-width: 700px; margin: 10px 0 0; color: var(--ink-soft); font-size: 16px; }
 .country-overview p strong,
 .comparison-overview p strong { color: var(--ink); }
+.country-shortcuts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.country-shortcuts a { padding: 7px 10px; border: 1px solid var(--line); border-radius: 99px; color: var(--green); font-size: 11px; font-weight: 680; text-decoration: none; }
+.country-shortcuts a:hover { border-color: var(--green); background: var(--green-tint); }
 .region-map { min-width: 0; margin: 0; }
 .region-map__canvas {
   position: relative;
@@ -627,6 +634,12 @@ main { min-height: 68vh; }
 .prose li { color: var(--ink-soft); font-size: 17px; }
 .prose strong { color: var(--ink); }
 .prose .method-callout { margin: 34px 0; padding: 24px 28px; border-left: 3px solid var(--burgundy); background: var(--paper-2); }
+.agent-guide { max-width: 900px; }
+.agent-guide code { padding: .12em .32em; border: 1px solid var(--line); border-radius: 3px; background: var(--white); color: var(--green); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .86em; overflow-wrap: anywhere; }
+.agent-guide pre { max-width: 100%; margin: 24px 0; padding: 22px 24px; overflow-x: auto; border: 1px solid var(--line); background: var(--green); color: var(--white); line-height: 1.7; }
+.agent-guide pre code { padding: 0; border: 0; background: transparent; color: inherit; font-size: 13px; white-space: pre-wrap; }
+.agent-guide li + li { margin-top: 8px; }
+.agent-guide a { text-underline-offset: 4px; }
 
 .freshness { color: var(--ink-soft); font-size: 12px; }
 .freshness::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #4b856a; }
@@ -641,11 +654,19 @@ main { min-height: 68vh; }
   border-top: 1px solid var(--line);
 }
 .site-footer p { max-width: 590px; margin: 14px 0 0; color: var(--ink-soft); font-size: 12px; }
+.site-footer__about { min-width: 0; }
 .brand--footer { font-size: 14px; }
 .brand--footer .brand__mark { width: 20px; height: 24px; transform: scale(.8); transform-origin: left center; }
 .site-footer__links { display: flex; align-items: start; gap: 24px; }
 .site-footer__links a { color: var(--ink-soft); font-size: 12px; font-weight: 650; text-decoration: none; }
 .site-footer__links a:hover { color: var(--green); text-decoration: underline; }
+.site-footer__credits { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 24px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.site-footer__credits a { text-decoration: none; }
+.settlers-logo { width: 106px; display: inline-flex; }
+.settlers-logo img { width: 100%; height: auto; display: block; }
+.chatcode-logo { display: inline-flex; align-items: center; gap: 7px; color: var(--green); font-size: 13px; font-weight: 760; letter-spacing: -.02em; text-transform: none; }
+.chatcode-logo > span { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 5px; background: var(--green); color: var(--white); }
+.chatcode-logo svg { width: 16px; height: 16px; }
 
 @media (max-width: 900px) {
   :root { --page: min(100% - 32px, 760px); }
@@ -665,6 +686,7 @@ main { min-height: 68vh; }
   .set-builder-grid { grid-template-columns: 1fr; }
   .dual-guide { grid-template-columns: 1fr; }
   .dual-guide__details { grid-template-columns: 1fr; }
+  .calculator-explainer { grid-template-columns: 1fr; align-items: start; }
 }
 
 @media (max-width: 620px) {
@@ -696,6 +718,7 @@ main { min-height: 68vh; }
   .page-intro { padding-top: 58px; }
   .page-intro h1 { font-size: 53px; }
   .page-intro p { font-size: 17px; }
+  .agent-guide pre { margin-inline: -4px; padding: 18px; }
   .scenario-card { min-height: 190px; padding: 22px; }
   .comparison-toolbar { align-items: stretch; flex-wrap: wrap; }
   .comparison-toolbar .button { margin-left: 0; }
@@ -719,6 +742,8 @@ main { min-height: 68vh; }
   .content-formats a { top: 12px; }
   .site-footer { display: grid; }
   .site-footer__links { display: grid; gap: 8px; }
+  .site-footer__credits { gap: 9px; }
+  .settlers-logo { width: 96px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
