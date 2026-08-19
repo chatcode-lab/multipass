@@ -1,0 +1,69 @@
+---
+import PassportBuilder from "@/components/PassportBuilder";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext } from "@/lib/data";
+
+const { manifest } = await getDataContext(Astro.locals);
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Dual passport travel benefits and combined rankings",
+    description: "A practical explanation of how two or more passports can change destination access.",
+    dateModified: manifest.checkedAt,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Can two passports improve travel access?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "They can when one passport offers an easier entry category for a destination than the other. Multipass Rank keeps the best available category destination by destination.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is a combined passport rank an official ranking?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. It is a rank equivalent showing where the combined mobility score would sit among individual passport scores.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Dual Passport Benefits & Combined Ranking Calculator | Multipass Rank"
+  description="See how dual citizenship can change travel access. Combine two or more passports, calculate a rank equivalent, and inspect every destination."
+  canonical="/dual-passport"
+  markdownHref="/dual-passport.md"
+  structuredData={structuredData}
+>
+  <header class="page-intro page-intro--directory">
+    <span class="eyebrow">Multiple citizenships, one travel view</span>
+    <h1>What a second passport changes.</h1>
+    <p>Measure the travel-access benefit of two or more passports without confusing mobility with the wider legal consequences of dual citizenship.</p>
+  </header>
+
+  <section class="dual-guide">
+    <div class="dual-guide__copy">
+      <span class="eyebrow">Combined passport strength</span>
+      <h2>A destination-by-destination advantage</h2>
+      <p>A second passport helps where it provides easier entry than the first. The calculator checks every destination and keeps the best available status: citizenship, visa-free, ETA, visa on arrival, eVisa, or visa required.</p>
+      <p>The resulting mobility score counts destinations reachable without prior visa approval. Its <strong>rank equivalent</strong> shows where that combined score would sit in the current individual passport index.</p>
+    </div>
+    <PassportBuilder passports={manifest.passports} client:load />
+  </section>
+
+  <section class="section dual-guide__details">
+    <article><span>01</span><h2>Find complementary access</h2><p>Two similarly ranked passports can still differ across dozens of destinations. The detailed comparison matters more than the headline score.</p></article>
+    <article><span>02</span><h2>Keep the claim practical</h2><p>This tool measures entry access only. It does not evaluate residence rights, work rights, tax treatment, military obligations, or consular protection.</p></article>
+    <article><span>03</span><h2>Verify before travel</h2><p>Visa rules can change and personal circumstances matter. Confirm the relevant passport and entry requirements with official authorities.</p></article>
+  </section>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import RankingExplorer from "@/components/RankingExplorer";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext } from "@/lib/data";
+import { getPassportCollection, PASSPORT_COLLECTIONS, passportsInCollection } from "@/lib/geography";
+
+const collection = getPassportCollection(Astro.params.collection);
+if (!collection) return Astro.rewrite("/404");
+const { manifest, source } = await getDataContext(Astro.locals);
+const passports = passportsInCollection(manifest.passports, collection);
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric" }).format(
+  new Date(manifest.checkedAt),
+);
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: collection.heading,
+  numberOfItems: passports.length,
+  itemListElement: passports.map((passport, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: passport.name,
+    url: `https://multipassrank.com/passport/${passport.slug}`,
+  })),
+};
+---
+
+<BaseLayout
+  title={`${collection.heading} | Multipass Rank`}
+  description={collection.description}
+  canonical={`/${collection.slug}`}
+  markdownHref={`/${collection.slug}.md`}
+  structuredData={structuredData}
+>
+  <header class="collection-hero">
+    <span class="eyebrow">{collection.eyebrow}</span>
+    <h1>{collection.heading}</h1>
+    <p>{collection.description}</p>
+    <div class="collection-hero__meta">
+      <strong>{passports.length}</strong> passports · {source === "live" ? "Data checked" : "Bundled snapshot"} {checkedDate}
+    </div>
+  </header>
+  <section class="section section--tight">
+    <nav class="collection-links" aria-label="Other passport rankings">
+      {PASSPORT_COLLECTIONS.map((entry) => (
+        <a href={`/${entry.slug}`} aria-current={entry.slug === collection.slug ? "page" : undefined}>{entry.name}</a>
+      ))}
+    </nav>
+    <RankingExplorer
+      passports={passports}
+      scoped
+      showRegionFilter={false}
+      listLabel={collection.heading}
+      client:visible
+    />
+  </section>
+</BaseLayout>

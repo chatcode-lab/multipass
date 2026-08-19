@@ -4,9 +4,11 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccessBatch } from "@/lib/data";
 import { comparePassportSets, parsePassportSets } from "@/lib/passport";
 import type { ComparisonResult } from "@/lib/types";
+import { POPULAR_COMPARISONS } from "@/lib/geography";
 
 const { manifest } = await getDataContext(Astro.locals);
 const requestedSets = Astro.url.searchParams.getAll("set");
+const markdownHref = `/compare.md${Astro.url.search}`;
 const sets = parsePassportSets(requestedSets, new Set(manifest.passports.map((passport) => passport.code)));
 let initialResult: ComparisonResult | null = null;
 if (sets.length > 0) {
@@ -24,12 +26,18 @@ Astro.response.headers.set("Cache-Control", requestedSets.length ? "private, no-
   title="Compare Passports & Combined Access | Multipass Rank"
   description="Compare up to five individual or combined passport sets across every destination and reveal only the access differences that matter."
   canonical="/compare"
+  markdownHref={markdownHref}
   noindex={requestedSets.length > 0}
 >
-  <header class="page-intro">
+  <header class="page-intro page-intro--compare">
     <span class="eyebrow">Comparison workspace</span>
     <h1>Put every option on the same map.</h1>
     <p>Build up to five passport sets. Each set can contain one citizenship or a combination of up to five.</p>
+    <nav class="popular-links" aria-label="Popular passport comparisons">
+      <span>Popular:</span>
+      {POPULAR_COMPARISONS.map((comparison) => <a href={`/compare/${comparison.slug}`}>{comparison.shortTitle}</a>)}
+      <a href="/dual-passport">Dual-passport guide</a>
+    </nav>
   </header>
   <section class="section section--tight">
     <ComparisonTool
@@ -40,4 +48,3 @@ Astro.response.headers.set("Cache-Control", requestedSets.length ? "private, no-
     />
   </section>
 </BaseLayout>
-

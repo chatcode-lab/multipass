@@ -27,6 +27,12 @@ The repository contains a generated fallback snapshot so local development and C
 npm run data:fallback
 ```
 
+The small continent diagrams use the public-domain Natural Earth land dataset through `world-atlas`. Regenerate the optimized SVG path with:
+
+```bash
+npm run assets:map
+```
+
 To seed an empty production KV namespace from the validated bundled snapshot, generate the bulk payload, upload it, and publish the pointer last:
 
 ```bash

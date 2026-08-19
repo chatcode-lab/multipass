@@ -1,5 +1,9 @@
 ---
-const pathname = Astro.url.pathname;
+import { PASSPORT_COLLECTIONS } from "@/lib/geography";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const collectionPaths = new Set(PASSPORT_COLLECTIONS.map((collection) => `/${collection.slug}`));
+const rankingActive = pathname === "/" || pathname.startsWith("/passport/") || collectionPaths.has(pathname);
 ---
 
 <header class="site-header">
@@ -8,9 +12,9 @@ const pathname = Astro.url.pathname;
     <span>Multipass <em>Rank</em></span>
   </a>
   <nav aria-label="Main navigation">
-    <a href="/" aria-current={pathname === "/" ? "page" : undefined}>Ranking</a>
-    <a href="/compare" aria-current={pathname === "/compare" ? "page" : undefined}>Compare</a>
+    <a href="/" aria-current={rankingActive ? "page" : undefined}>Ranking</a>
+    <a href="/destinations" aria-current={pathname === "/destinations" ? "page" : undefined}>Destinations</a>
+    <a href="/compare" aria-current={pathname.startsWith("/compare") ? "page" : undefined}>Compare</a>
     <a href="/methodology" aria-current={pathname === "/methodology" ? "page" : undefined}>Methodology</a>
   </nav>
 </header>
-

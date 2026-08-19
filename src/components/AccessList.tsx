@@ -1,6 +1,7 @@
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { STATUS_META } from "@/lib/passport";
+import { flagCodeFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Destination, type PassportAccess } from "@/lib/types";
 import StatusPill from "./StatusPill";
 
@@ -45,13 +46,13 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
           return (
             <section className="region-group" key={region}>
               <div className="region-group__heading">
-                <h3>{region.replace("MIDDLE EAST", "Middle East")}</h3>
+                <h3>{formatRegion(region)}</h3>
                 <span>{rows.length}</span>
               </div>
               <div className="access-rows">
                 {rows.map((destination) => (
                   <div className="access-row" key={destination.code}>
-                    <span className={`fi fi-${destination.code.toLowerCase()}`} aria-hidden="true" />
+                    <span className={`fi fi-${flagCodeFor(destination.code)}`} aria-hidden="true" />
                     <strong>{destination.name}</strong>
                     <StatusPill status={passport.statuses[destination.code] ?? "unknown"} />
                   </div>
@@ -65,4 +66,3 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
     </div>
   );
 }
-

@@ -3,6 +3,7 @@ import PassportBuilder from "@/components/PassportBuilder";
 import RankingExplorer from "@/components/RankingExplorer";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext } from "@/lib/data";
+import { PASSPORT_COLLECTIONS } from "@/lib/geography";
 
 const { manifest, source } = await getDataContext(Astro.locals);
 const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric" }).format(
@@ -24,7 +25,8 @@ const structuredData = {
 
 <BaseLayout
   title="Passport Ranking & Multi-Passport Calculator | Multipass Rank"
-  description="Compare 199 passport ranks, inspect visa access for 227 destinations, and calculate the practical reach of multiple passports."
+  description="Explore the global passport index, compare passport strength across 227 destinations, and calculate the practical reach of multiple passports."
+  markdownHref="/index.md"
   structuredData={structuredData}
 >
   <section class="hero">
@@ -34,8 +36,7 @@ const structuredData = {
       <p>See where one passport gets you—and what changes when you can travel with more than one.</p>
       <div class="hero__facts" aria-label="Dataset summary">
         <span><strong>{manifest.passports.length}</strong> passports</span>
-        <span><strong>{manifest.destinations.length}</strong> destinations</span>
-        <span><strong>5 × 5</strong> comparison</span>
+        <a href="/destinations"><strong>{manifest.destinations.length}</strong> destinations</a>
       </div>
     </div>
     <PassportBuilder passports={manifest.passports} client:load />
@@ -54,7 +55,9 @@ const structuredData = {
         </span>
       </div>
     </div>
+    <nav class="collection-links" aria-label="Focused passport rankings">
+      {PASSPORT_COLLECTIONS.map((collection) => <a href={`/${collection.slug}`}>{collection.name}</a>)}
+    </nav>
     <RankingExplorer passports={manifest.passports} client:visible />
   </section>
 </BaseLayout>
-

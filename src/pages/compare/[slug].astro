@@ -1,0 +1,49 @@
+---
+import ComparisonTool from "@/components/ComparisonTool";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext, getPassportAccessBatch } from "@/lib/data";
+import { getPopularComparison } from "@/lib/geography";
+import { comparePassportSets } from "@/lib/passport";
+
+const comparison = getPopularComparison(Astro.params.slug);
+if (!comparison) return Astro.rewrite("/404");
+const { manifest } = await getDataContext(Astro.locals);
+const initialSets = comparison.sets.map((codes) => [...codes]);
+const details = await getPassportAccessBatch(Astro.locals, initialSets.flat(), manifest.version);
+const result = comparePassportSets(initialSets.map((codes) => ({ codes })), manifest, details);
+const [first, second] = result.scenarios;
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: comparison.heading,
+  description: comparison.description,
+  dateModified: manifest.checkedAt,
+};
+---
+
+<BaseLayout
+  title={`${comparison.heading} | Multipass Rank`}
+  description={comparison.description}
+  canonical={`/compare/${comparison.slug}`}
+  markdownHref={`/compare/${comparison.slug}.md`}
+  structuredData={structuredData}
+>
+  <header class="page-intro page-intro--compare">
+    <span class="eyebrow">Passport strength comparison</span>
+    <h1>{comparison.heading}</h1>
+    <p>{comparison.description}</p>
+  </header>
+  <section class="section section--tight">
+    <ComparisonTool passports={manifest.passports} initialSets={initialSets} initialResult={result} client:load />
+  </section>
+  <section class="comparison-overview">
+    <span class="eyebrow">What the scores show</span>
+    <h2>{first.name} and {second.name}, side by side</h2>
+    <p>
+      {first.name} has a mobility score of <strong>{first.mobilityScore}</strong> and a rank equivalent of
+      <strong> #{first.rankEquivalent}</strong>. {second.name} scores <strong>{second.mobilityScore}</strong>, equivalent to
+      <strong> #{second.rankEquivalent}</strong>. Use “Differences only” above to isolate destinations where their entry categories differ.
+    </p>
+  </section>
+</BaseLayout>

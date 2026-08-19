@@ -1,6 +1,7 @@
 import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { STATUS_META } from "@/lib/passport";
+import { flagCodeFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary } from "@/lib/types";
 import PassportCover from "./PassportCover";
 import PassportPicker from "./PassportPicker";
@@ -157,12 +158,12 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                   if (!regionRows.length) return null;
                   return [
                     <tr className="comparison-table__region" key={`${region}-heading`}>
-                      <th colSpan={result.scenarios.length + 1}>{region.replace("MIDDLE EAST", "Middle East")} <span>{regionRows.length}</span></th>
+                      <th colSpan={result.scenarios.length + 1}>{formatRegion(region)} <span>{regionRows.length}</span></th>
                     </tr>,
                     ...regionRows.map((row) => (
                       <tr key={row.destination.code}>
                         <th>
-                          <span className={`fi fi-${row.destination.code.toLowerCase()}`} aria-hidden="true" />
+                          <span className={`fi fi-${flagCodeFor(row.destination.code)}`} aria-hidden="true" />
                           {row.destination.name}
                         </th>
                         {row.cells.map((cell, index) => (

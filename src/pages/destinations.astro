@@ -1,0 +1,33 @@
+---
+import DestinationExplorer from "@/components/DestinationExplorer";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext } from "@/lib/data";
+
+const { manifest } = await getDataContext(Astro.locals);
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "Passport access destination directory",
+  description: "The complete set of countries and territories tracked by Multipass Rank.",
+  dateModified: manifest.checkedAt,
+  spatialCoverage: "Worldwide",
+};
+---
+
+<BaseLayout
+  title="Passport Visa Destinations Directory | Multipass Rank"
+  description={`Browse all ${manifest.destinations.length} countries and territories used to calculate passport rankings, grouped by region.`}
+  canonical="/destinations"
+  markdownHref="/destinations.md"
+  structuredData={structuredData}
+>
+  <header class="page-intro page-intro--directory">
+    <span class="eyebrow">Destination directory</span>
+    <h1>Every destination in the index.</h1>
+    <p>This is the complete geographic reference used across passport access lists and comparison tables—not a list of passport issuers.</p>
+  </header>
+  <section class="section section--tight">
+    <DestinationExplorer destinations={manifest.destinations} client:visible />
+  </section>
+</BaseLayout>

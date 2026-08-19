@@ -7,6 +7,7 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  markdownHref?: string;
   noindex?: boolean;
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -15,6 +16,7 @@ const {
   title,
   description,
   canonical = Astro.url.pathname,
+  markdownHref,
   noindex = false,
   structuredData,
 } = Astro.props;
@@ -31,6 +33,7 @@ const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toStri
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? "noindex,follow" : "index,follow,max-image-preview:large"} />
     <link rel="canonical" href={canonicalUrl} />
+    {markdownHref && <link rel="alternate" type="text/markdown" href={new URL(markdownHref, Astro.site ?? Astro.url.origin)} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Multipass Rank" />
@@ -49,7 +52,14 @@ const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toStri
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="page-shell">
       <Header />
-      <main id="main-content"><slot /></main>
+      <main id="main-content">
+        {markdownHref && (
+          <div class="content-formats">
+            <a href={markdownHref} aria-label="View this page as Markdown"><span aria-hidden="true">.md</span> Markdown</a>
+          </div>
+        )}
+        <slot />
+      </main>
       <Footer />
     </div>
   </body>

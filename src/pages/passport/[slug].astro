@@ -1,9 +1,11 @@
 ---
 import AccessList from "@/components/AccessList";
 import PassportCover from "@/components/PassportCover";
+import RegionMap from "@/components/RegionMap.astro";
 import StatusPill from "@/components/StatusPill";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccess } from "@/lib/data";
+import { formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
 
 const { manifest, source } = await getDataContext(Astro.locals);
@@ -17,6 +19,9 @@ for (const status of Object.values(detail.statuses)) statusCounts[status] += 1;
 const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric" }).format(
   new Date(manifest.checkedAt),
 );
+const regionLabel = formatRegion(passport.region);
+const regionalPassports = manifest.passports.filter((entry) => entry.region === passport.region);
+const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
 
 const title = `${passport.name} Passport Rank & Visa-Free Destinations | Multipass Rank`;
@@ -41,11 +46,17 @@ const structuredData = [
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical={`/passport/${passport.slug}`} structuredData={structuredData}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={`/passport/${passport.slug}`}
+  markdownHref={`/passport/${passport.slug}.md`}
+  structuredData={structuredData}
+>
   <header class="passport-hero">
     <PassportCover codes={[passport.code]} names={[passport.name]} size="large" />
     <div class="passport-hero__content">
-      <span class="eyebrow">{passport.region.replace("MIDDLE EAST", "Middle East")} passport</span>
+      <span class="eyebrow">{regionLabel} passport</span>
       <h1>{passport.name}</h1>
       <span class="passport-hero__meta">A complete, destination-by-destination access view.</span>
       <div class="metric-strip">
@@ -60,9 +71,27 @@ const structuredData = [
     </div>
   </header>
 
+  <section class="country-overview">
+    <div class="country-overview__copy">
+      <span class="eyebrow">Passport overview</span>
+      <h2>About the {passport.name} passport</h2>
+      <p>
+        The {passport.name} passport is grouped with {regionLabel} in this index. It ranks
+        <strong> #{passport.rank} globally</strong> and <strong>#{regionalRank} among {regionalPassports.length} {regionLabel} passports</strong>,
+        with a mobility score of {passport.mobilityScore}.
+      </p>
+      <p>
+        Its current access profile includes {statusCounts.visa_free} visa-free destinations,
+        {statusCounts.visa_on_arrival} visas on arrival, and {statusCounts.eta} destinations using an ETA.
+        The detailed list below separates these from eVisas and traditional visas.
+      </p>
+    </div>
+    <RegionMap country={passport.name} region={passport.region} />
+  </section>
+
   <section class="section section--tight">
     <div class="section-heading">
-      <div><span class="eyebrow">All destinations</span><h2>Access details</h2></div>
+      <div><span class="eyebrow">All destinations</span><h2>Access details</h2><a class="text-link" href="/destinations">Browse the destination directory</a></div>
       <p>Entry rules can change without notice. Treat this as a comparison tool and verify official requirements before travel.</p>
     </div>
     <div class="status-summary" aria-label="Access type totals">
@@ -73,4 +102,3 @@ const structuredData = [
     <AccessList passport={detail} destinations={manifest.destinations} client:visible />
   </section>
 </BaseLayout>
-
