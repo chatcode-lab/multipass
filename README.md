@@ -27,6 +27,14 @@ The repository contains a generated fallback snapshot so local development and C
 npm run data:fallback
 ```
 
+To seed an empty production KV namespace from the validated bundled snapshot, generate the bulk payload, upload it, and publish the pointer last:
+
+```bash
+npm run data:kv-bulk
+wrangler kv bulk put .wrangler/passport-bootstrap.json --binding PASSPORT_DATA --remote --config wrangler.worker.jsonc
+wrangler kv key put snapshot:pointer '{"current":"<fallback-version>"}' --binding PASSPORT_DATA --remote --config wrangler.worker.jsonc
+```
+
 Run the complete local verification suite:
 
 ```bash
@@ -72,7 +80,7 @@ Deploy the web application Worker:
 npm run app:deploy
 ```
 
-The app configuration provisions `multipassrank.com` and `www.multipassrank.com` as custom domains; the application redirects `www` to the apex. Verify the `workers.dev` deployment and the sync Worker health endpoint before enabling the production GitHub workflow.
+The app configuration attaches catch-all Worker routes to the existing proxied DNS records for `multipassrank.com` and `www.multipassrank.com`; the application redirects `www` to the apex. Verify the `workers.dev` deployment and the sync Worker health endpoint before enabling the production GitHub workflow.
 
 For automated deployment, configure the GitHub environment `production` with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, then set the repository variable `CLOUDFLARE_DEPLOY_ENABLED=true`. The token needs edit access to Workers, Workers Routes, and KV.
 
