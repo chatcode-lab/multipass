@@ -455,7 +455,7 @@ test("combination research publishes exact results, reproducible links, and Mark
   await page.goto("/best-passport-combination");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Best passport combination in 2026.");
   await expect(page.locator(".research-result-card").first()).toContainText("Japan + United Arab Emirates");
-  await expect(page.locator(".research-result-card").first()).toContainText("210");
+  await expect(page.locator(".research-result-card").first()).toContainText("209");
   await expect(page.locator(".research-result-card").nth(1)).toContainText("Japan + United Arab Emirates + Rwanda");
   await expect(page.getByRole("link", { name: "View combined rank" }).first()).toHaveAttribute(
     "href",
@@ -474,13 +474,13 @@ test("combination research publishes exact results, reproducible links, and Mark
   expect(await markdown.text()).toContain("**Japan + United Arab Emirates**");
 
   await page.goto("/how-many-passports-to-cover-the-world");
-  await expect(page.locator(".research-hero__answer strong")).toHaveText("10");
-  await expect(page.locator(".coverage-sequence > li")).toHaveCount(10);
+  await expect(page.locator(".research-hero__answer strong")).toHaveText("11");
+  await expect(page.locator(".coverage-sequence > li")).toHaveCount(11);
   const fullSetHref = await page.getByRole("link", { name: "Place the full set in the ranking" }).getAttribute("href");
   expect(fullSetHref).not.toBeNull();
   const fullSetCodes = new URL(fullSetHref!, "https://multipassrank.com").searchParams.get("set")?.split(",") ?? [];
-  expect(fullSetCodes).toHaveLength(10);
-  expect(new Set(fullSetCodes).size).toBe(10);
+  expect(fullSetCodes).toHaveLength(11);
+  expect(new Set(fullSetCodes).size).toBe(11);
   const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
   expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
 
@@ -490,13 +490,13 @@ test("combination research publishes exact results, reproducible links, and Mark
 
   const worldMarkdown = await request.get("/how-many-passports-to-cover-the-world.md");
   expect(worldMarkdown.ok()).toBe(true);
-  expect(await worldMarkdown.text()).toContain("**Ten passports** are necessary and sufficient");
+  expect(await worldMarkdown.text()).toContain("**11 passports** are necessary and sufficient");
 
   const insightsResponse = await request.get("/api/v1/combination-insights");
   expect(insightsResponse.ok()).toBe(true);
   const insights = await insightsResponse.json();
   expect(insights.bestPairs[0].codes).toEqual(["JP", "AE"]);
-  expect(insights.minimumCover.size).toBe(10);
+  expect(insights.minimumCover.size).toBe(11);
   expect(fullSetCodes).toEqual(insights.minimumCover.codes);
 
   const sitemap = await request.get("/sitemap.xml");
