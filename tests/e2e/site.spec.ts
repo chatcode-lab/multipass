@@ -207,6 +207,12 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   });
   expect(combinationHighlight.backgroundColor).toBe("rgb(234, 215, 203)");
   expect(combinationHighlight.boxShadow).not.toContain("inset");
+  const rankingBounds = await page.locator(".ranking-table").boundingBox();
+  const highlightBounds = await combination.locator(".ranking-row").boundingBox();
+  expect(rankingBounds).not.toBeNull();
+  expect(highlightBounds).not.toBeNull();
+  expect(highlightBounds!.x).toBeLessThan(rankingBounds!.x);
+  expect(highlightBounds!.x + highlightBounds!.width).toBeGreaterThan(rankingBounds!.x + rankingBounds!.width);
   const viewport = page.viewportSize();
   if (viewport && viewport.width > 620) await combination.hover();
   await combination.locator("[data-ranking-select]").click();
