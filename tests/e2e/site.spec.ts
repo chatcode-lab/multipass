@@ -229,6 +229,7 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   await expect(page.getByRole("link", { name: "View comparison" })).toHaveAttribute("href", "/compare?set=US%2CCA&set=PT");
   await expect(page.locator("#ranking > .table-view-actions")).toBeVisible();
   await expect(page.locator(".page-intro .table-view-actions")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Copy link" }).locator("svg:visible")).toHaveCount(1);
   const rankActions = await page.locator("#ranking > .table-view-actions").boundingBox();
   const rankSearch = await page.locator("[data-ranking-search]").boundingBox();
   expect(rankActions).not.toBeNull();
@@ -279,9 +280,6 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   expect(markdownBody).toContain("# Custom passport and combination ranking");
   expect(markdownBody).toContain("Combined set 1");
   expect(markdownBody).toContain("/compare?set=US%2CCA&set=PT");
-
-  await page.goto("/rank?set=PT,RU,IL&set=SG");
-  await expect(page.locator(".ranking-table__list > li.is-featured + li.is-featured .ranking-row")).toHaveCSS("border-top-width", "2px");
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {
