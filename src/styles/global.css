@@ -952,7 +952,7 @@ main { min-height: 68vh; }
   .access-list__filters select { width: 100%; }
   .access-list .table-toolbar .result-count { justify-self: end; margin-left: 0; }
   .ranking-row { min-height: 84px; grid-template-columns: 40px minmax(0, 1fr) 50px 44px; gap: 5px; }
-  .ranking-row__rank { font-size: 23px; }
+  .ranking-row__rank { font-size: 23px; transform: translateY(2px); }
   .ranking-row__passport { gap: 6px; }
   .ranking-row__passport strong {
     display: -webkit-box;
@@ -967,7 +967,7 @@ main { min-height: 68vh; }
   .is-combination .ranking-row__passport strong { font-size: 13px; line-height: 1; -webkit-line-clamp: 3; }
   .is-combination .ranking-row__passport small { display: none; }
   .is-combination .passport-stack--small { margin-right: -8px; transform: scale(.84); transform-origin: left center; }
-  .ranking-row__score { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; line-height: 1; }
+  .ranking-row__score { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; line-height: 1; transform: translateY(2px); }
   .ranking-row__score strong { font-size: 23px; line-height: 1; }
   .ranking-row__score small { display: none; }
   .ranking-row__arrow { display: none; }
@@ -999,6 +999,7 @@ main { min-height: 68vh; }
   .table-view-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .table-view-actions .button { width: 100%; justify-self: stretch; }
   .rank-set-summary > span { min-width: 0; flex-basis: 100%; }
+  .rank-set-summary strong { transform: translateY(2px); }
   .agent-guide pre { margin-inline: -4px; padding: 18px; }
   .scenario-card { min-height: 190px; padding: 22px; }
   .comparison-toolbar {
