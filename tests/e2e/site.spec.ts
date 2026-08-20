@@ -147,7 +147,7 @@ test("country access can be narrowed to one destination region", async ({ page }
   await expect(page.locator(".region-group")).toHaveCount(1);
   await expect(page.locator(".region-group").getByRole("heading")).toHaveText("Europe");
   const firstAccessRow = page.locator(".access-row:visible").first();
-  await expect(firstAccessRow).toHaveAttribute("href", /\/(visa-free|eta|visa-on-arrival|evisa|visa)$/);
+  await expect(firstAccessRow).toHaveAttribute("href", /-(visa-free|eta|visa-on-arrival|evisa|visa)$/);
   expect(await firstAccessRow.evaluate((element) => element.tagName)).toBe("A");
   const viewport = page.viewportSize();
   if (viewport && viewport.width <= 620) {
@@ -509,7 +509,7 @@ test("passport and comparison status cells link to relationship evidence", async
   const statusLink = statusCell.getByRole("link", { name: "Belgium passport to Angola: Visa-free" });
   await expect(statusLink)
     .toHaveAttribute("href", "/belgium-angola-visa-free");
-  await expect(angolaRow.getByRole("link", { name: "Angola" })).toHaveAttribute("href", "/destination/angola");
+  await expect(angolaRow.getByRole("link", { name: "Angola", exact: true })).toHaveAttribute("href", "/destination/angola");
   const cellTarget = await statusCell.evaluate((cell) => {
     const link = cell.querySelector("a");
     const pseudo = link ? getComputedStyle(link, "::after") : null;
