@@ -79,6 +79,8 @@ Each tracked destination also has a dedicated `/destination/{slug}` page. A pass
 
 Official evidence is stored as policy-level records in `src/data/visa-evidence.ts`, so a single law or agreement can support many relationships without copying claims. Evidence pages with verified current status are indexable; incomplete placeholders are explicitly marked `noindex` and stay out of the sitemap.
 
+Narrow destination-authority corrections live in `src/data/access-overrides.ts` and are reapplied to every complete staged snapshot before scores and combination insights are published. For assisted evidence collection, generate a bounded packet with `npm run --silent evidence:packet -- <batch-id>`, then validate the model's candidate JSON with `npm run evidence:validate -- <candidate.json>`. The full small-model handoff and strong-review gate are documented in `docs/visa-evidence-model-handoff.md`.
+
 Dataset JSON-LD identifies MultiPass Rank as creator and publisher and links to `/data-license`. The license covers the site’s original evidence metadata and presentation, not upstream access snapshots or official source documents.
 
 ## Cloudflare provisioning

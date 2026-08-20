@@ -52,6 +52,24 @@ const EU_PASSPORT_CODES = [
   "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE",
 ] as const;
 
+export const HONG_KONG_VISA_FREE_CODES = [
+  "SG", "JP", "KR", "AE", "SE", "BE", "DK", "FI", "FR", "DE", "IE", "IT", "LU", "NL", "NO", "ES",
+  "AT", "GR", "MT", "PT", "CH", "HU", "PL", "GB", "AU", "CA", "CZ", "LV", "MY", "NZ", "SK", "SI",
+  "HR", "EE", "LI", "LT", "IS", "US", "BG", "RO", "MC", "CY", "CL", "AD", "AR", "BR", "SM", "IL",
+  "BB", "BN", "BS", "KN", "VC", "MX", "UY", "SC", "AG", "VA", "CR", "GD", "MU", "PA", "PY", "DM",
+  "TT", "LC", "UA", "PE", "RS", "GT", "SV", "CO", "HN", "MH", "WS", "ME", "MK", "TO", "TV", "AL",
+  "BA", "GE", "KI", "FM", "PW", "VE", "RU", "QA", "TR", "ZA", "BZ", "KW", "MV", "EC", "SA", "BH",
+  "GY", "FJ", "VU", "OM", "JM", "NR", "PG", "BW", "BY", "BO", "KZ", "TH", "SR", "NA", "LS", "MA",
+  "DO", "ID", "KE", "MW", "TZ", "TN", "BJ", "PH", "UG", "AM", "CV", "MN", "ZM", "ZW", "MZ", "ST",
+  "BF", "GA", "MG", "DZ", "MR", "GQ", "NE", "GN", "ML", "TD", "KM", "EG", "JO", "HT", "BT", "DJ",
+] as const;
+
+export const HONG_KONG_VISA_REQUIRED_CODES = [
+  "SB", "NI", "MD", "SZ", "RW", "GM", "AZ", "GH", "SL", "KG", "UZ", "CU", "TG", "CI", "SN", "TJ",
+  "GW", "AO", "LR", "BI", "CM", "CF", "VN", "KH", "CG", "LA", "CD", "NG", "TM", "MM", "ET", "LB",
+  "SS", "SD", "LY", "LK", "ER", "IR", "PS", "BD", "KP", "NP", "SO", "YE", "PK", "IQ", "SY", "AF",
+] as const;
+
 export const OFFICIAL_VISA_SOURCES: readonly OfficialVisaSource[] = [
   {
     id: "angola-decree-189-23",
@@ -110,6 +128,36 @@ export const OFFICIAL_VISA_SOURCES: readonly OfficialVisaSource[] = [
     publisher: "Publications Office of the European Union",
     jurisdiction: "European Union and Brazil",
     kind: "law",
+    language: "English",
+    reviewedAt: "2026-08-20",
+  },
+  {
+    id: "hong-kong-visitor-requirements-2026-08",
+    title: "Visit visa and entry permit requirements for Hong Kong",
+    url: "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+    publisher: "Hong Kong Immigration Department",
+    jurisdiction: "Hong Kong SAR",
+    kind: "government-guidance",
+    language: "English",
+    reviewedAt: "2026-08-20",
+  },
+  {
+    id: "hong-kong-india-par-current",
+    title: "Pre-arrival registration for Indian nationals",
+    url: "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_indian_nationals.html",
+    publisher: "Hong Kong Immigration Department",
+    jurisdiction: "Hong Kong SAR",
+    kind: "official-portal",
+    language: "English",
+    reviewedAt: "2026-08-20",
+  },
+  {
+    id: "hong-kong-india-par-introduction",
+    title: "Online pre-arrival registration for Indian nationals to visit Hong Kong",
+    url: "https://www.immd.gov.hk/eng/press/press-releases/20161212.html",
+    publisher: "Hong Kong Immigration Department",
+    jurisdiction: "Hong Kong SAR",
+    kind: "government-guidance",
     language: "English",
     reviewedAt: "2026-08-20",
   },
@@ -190,5 +238,62 @@ export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
     effectiveFrom: "2012-10-01",
     conditions: ["Short stays only; work and residence remain outside the waiver."],
     sourceIds: ["eu-brazil-waiver"],
+  },
+  {
+    id: "hong-kong-current-visitor-waivers",
+    title: "Hong Kong publishes visa-free periods for ordinary visitors",
+    summary: "The Immigration Department's August 2026 schedule lists visa-free visitor periods for the named nationalities and travel documents.",
+    status: "visa_free",
+    destinationCodes: ["HK"],
+    passportCodes: HONG_KONG_VISA_FREE_CODES,
+    conditions: [
+      "The permitted visitor period varies by passport and is shown in the official schedule.",
+      "Normal immigration requirements still apply, and permission to land is not automatic.",
+      "The Albania and Serbia entries apply to biometric passports; the schedule also contains document-specific exceptions for several nationalities.",
+      "Visitor status does not permit employment, study, residence, or joining a business.",
+    ],
+    sourceIds: ["hong-kong-visitor-requirements-2026-08"],
+  },
+  {
+    id: "hong-kong-current-prior-visa-list",
+    title: "Hong Kong lists nationalities that require a visit visa",
+    summary: "The Immigration Department's August 2026 schedule requires the listed ordinary-passport visitors to obtain a visa or entry permit before travel.",
+    status: "visa_required",
+    destinationCodes: ["HK"],
+    passportCodes: HONG_KONG_VISA_REQUIRED_CODES,
+    conditions: [
+      "Some diplomatic and official passport holders have different exemptions; this policy represents ordinary-passport access.",
+      "Direct airside transit exceptions vary by nationality and do not establish permission to enter Hong Kong.",
+      "Applications remain subject to individual assessment and normal immigration requirements.",
+    ],
+    sourceIds: ["hong-kong-visitor-requirements-2026-08"],
+  },
+  {
+    id: "hong-kong-india-pre-arrival-registration-2017",
+    title: "Pre-arrival registration became mandatory for Indian visitors",
+    summary: "Indian passport holders must successfully complete free online pre-arrival registration before a visa-free visit or non-airside transit of up to 14 days.",
+    status: "eta",
+    destinationCodes: ["HK"],
+    passportCodes: ["IN"],
+    announcedOn: "2016-12-12",
+    effectiveFrom: "2017-01-23",
+    conditions: [
+      "The Indian passport must normally be valid for at least six months.",
+      "A successful registration is valid for six months or until the linked passport expires, whichever is earlier.",
+      "The signed notification slip must be used with the passport linked to the registration.",
+      "Each qualifying visit may last up to 14 days; unsuccessful registration requires a visit-visa application.",
+    ],
+    sourceIds: ["hong-kong-india-par-introduction", "hong-kong-india-par-current"],
+    application: {
+      url: "https://www.gov.hk/en/apps/immdes2parreg.htm",
+      label: "Register on the official Hong Kong government portal",
+      processingTime: "The Immigration Department says the online system displays the result immediately.",
+      steps: [
+        "Open the official pre-arrival registration service and enter the details exactly as shown in the Indian passport.",
+        "Submit the free registration and check the result.",
+        "Print and sign the notification slip generated after successful registration.",
+        "Travel with the signed slip and the same valid passport used for the registration.",
+      ],
+    },
   },
 ] as const;

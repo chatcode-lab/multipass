@@ -1,6 +1,8 @@
 import fallbackSnapshot from "@/data/fallback.json";
 import fallbackCombinationInsights from "@/data/combination-insights.json";
+import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
 import { env } from "cloudflare:workers";
+import { applyVerifiedAccessOverrides, reconcileManifestPassportDetails } from "./passport";
 import type { CombinationInsights, DataSnapshot, PassportAccess, SnapshotManifest } from "./types";
 
 interface SnapshotPointer {
@@ -20,6 +22,22 @@ function passportDataKv(): KVNamespace | undefined {
   return env.PASSPORT_DATA;
 }
 
+async function reconcileLiveManifest(
+  kv: KVNamespace,
+  version: string,
+  manifest: SnapshotManifest,
+): Promise<SnapshotManifest> {
+  const affectedCodes = [...new Set(VERIFIED_ACCESS_OVERRIDES.map(({ passportCode }) => passportCode))];
+  if (!affectedCodes.length) return manifest;
+  const keys = affectedCodes.map((code) => `snapshot:${version}:passport:${code}`);
+  const values = await kv.get<PassportAccess>(keys, "json");
+  const corrected = Object.fromEntries(affectedCodes.flatMap((code) => {
+    const detail = values.get(`snapshot:${version}:passport:${code}`);
+    return detail ? [[code, applyVerifiedAccessOverrides(detail)] as const] : [];
+  }));
+  return reconcileManifestPassportDetails(manifest, corrected);
+}
+
 export async function getDataContext(locals: App.Locals): Promise<DataContext> {
   void locals;
   const kv = passportDataKv();
@@ -27,7 +45,7 @@ export async function getDataContext(locals: App.Locals): Promise<DataContext> {
     const pointer = await kv.get<SnapshotPointer>("snapshot:pointer", "json");
     if (pointer?.current) {
       const manifest = await kv.get<SnapshotManifest>(`snapshot:${pointer.current}:manifest`, "json");
-      if (manifest) return { manifest, source: "live" };
+      if (manifest) return { manifest: await reconcileLiveManifest(kv, pointer.current, manifest), source: "live" };
     }
   }
 
@@ -53,7 +71,7 @@ export async function getPassportAccess(
         `snapshot:${snapshotVersion}:passport:${normalizedCode}`,
         "json",
       );
-      if (detail) return detail;
+      if (detail) return applyVerifiedAccessOverrides(detail);
     }
   }
 
@@ -83,7 +101,8 @@ export async function getPassportAccessBatch(
       ));
       const liveEntries = uniqueCodes.map((code) => {
         const key = `snapshot:${snapshotVersion}:passport:${code}`;
-        const detail = maps.find((map) => map.has(key))?.get(key) ?? fallback.passports[code];
+        const rawDetail = maps.find((map) => map.has(key))?.get(key) ?? fallback.passports[code];
+        const detail = rawDetail ? applyVerifiedAccessOverrides(rawDetail) : undefined;
         return [code, detail] as const;
       });
       return Object.fromEntries(liveEntries.filter((entry): entry is [string, PassportAccess] => Boolean(entry[1])));

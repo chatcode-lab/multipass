@@ -23,6 +23,8 @@
     "data:bootstrap": "tsx scripts/bootstrap-worker.ts",
     "assets:map": "tsx scripts/build-map.ts",
     "assets:passports": "tsx scripts/build-passport-colors.ts",
+    "evidence:packet": "tsx scripts/build-evidence-packet.ts",
+    "evidence:validate": "tsx scripts/validate-evidence-candidate.ts",
     "cf:set-kv": "tsx scripts/set-kv-id.ts",
     "cf:typegen": "wrangler types --config wrangler.worker.jsonc && wrangler types --config wrangler.jsonc",
     "worker:dev": "wrangler dev --config wrangler.worker.jsonc",

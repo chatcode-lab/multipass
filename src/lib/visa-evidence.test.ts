@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
-import { ANGOLA_TOURIST_VISA_EXEMPT_CODES, OFFICIAL_VISA_SOURCES } from "@/data/visa-evidence";
+import {
+  ANGOLA_TOURIST_VISA_EXEMPT_CODES,
+  HONG_KONG_VISA_FREE_CODES,
+  HONG_KONG_VISA_REQUIRED_CODES,
+  OFFICIAL_VISA_SOURCES,
+} from "@/data/visa-evidence";
 import type { DataSnapshot } from "./types";
 import {
   destinationSlug,
@@ -54,8 +59,21 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BE", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BE", "KE", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BE", "CD", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "HK", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BE", "TD", "visa_required").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BI", "CD", "visa_free").policies).toHaveLength(0);
+  });
+
+  it("expands Hong Kong's reviewed ordinary-passport schedule without flattening special arrangements", () => {
+    expect(HONG_KONG_VISA_FREE_CODES).toHaveLength(144);
+    expect(HONG_KONG_VISA_REQUIRED_CODES).toHaveLength(48);
+    expect(new Set([...HONG_KONG_VISA_FREE_CODES, ...HONG_KONG_VISA_REQUIRED_CODES, "IN"]).size).toBe(193);
+    expect(HONG_KONG_VISA_FREE_CODES).not.toContain("MO");
+    expect(HONG_KONG_VISA_REQUIRED_CODES).not.toContain("TW");
+
+    const hongKongPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "HK");
+    expect(hongKongPairs).toHaveLength(193);
   });
 
   it("keeps all 98 nationalities and expands the 96 represented passport issuers", () => {
@@ -73,6 +91,7 @@ describe("official visa evidence", () => {
       "immigration.go.ke",
       "evisa.gouv.cd",
       "eur-lex.europa.eu",
+      "www.immd.gov.hk",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

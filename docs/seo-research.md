@@ -56,6 +56,21 @@ The first research pages therefore answer two reproducible questions rather than
 
 Both pages define easy access, disclose the snapshot date, distinguish mobility from citizenship quality, link to reproducible rank/comparison URLs, and provide Markdown alternatives.
 
+## Multiple-passport curiosity research
+
+A US/English DataForSEO Labs check on 20 August 2026 found a larger question-led cluster:
+
+| Query | Approximate monthly volume | Reported difficulty |
+| --- | ---: | ---: |
+| triple citizenship | 40,500 | 33 |
+| how many citizenships can you have | 3,600 | 7 |
+| how many passports can you have | 1,300 | 7 |
+| can you have 3 citizenships | 480 | 6 |
+| can you have multiple passports | 170 | 20 |
+| most citizenships held by one person | 70 | 0 |
+
+`/how-many-passports-can-you-have` answers the broad question without inventing a record. It distinguishes citizenship from physical passport booklets, labels Reddit examples as community documentation, uses official nationality guidance for the legal framework, and provides a Markdown alternative.
+
 ### Follow-up research backlog
 
 Prioritize experiments that produce new information from the dataset:

@@ -1,0 +1,198 @@
+---
+import PassportCover from "@/components/PassportCover";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const description = "There is no universal passport limit. See what national laws allow, why passport books and citizenships differ, and the best-documented public cases.";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How many passports can one person have? Records and reality",
+    description,
+    datePublished: "2026-08-20",
+    dateModified: "2026-08-20",
+    author: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    publisher: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    mainEntityOfPage: "https://multipassrank.com/how-many-passports-can-you-have",
+    citation: [
+      "https://rm.coe.int/168045c943",
+      "https://travel.state.gov/en/international-travel/planning/personal-needs/dual-nationality.html",
+      "https://www.gov.uk/government/publications/additional-passports/additional-passports-accessible",
+      "https://apnews.com/article/7f1fdf61104de4bb7ed846b05e5561a2",
+      "https://www.reddit.com/r/PassportPorn/comments/1kw1ob2/our_daughter_is_eligible_for_7/",
+      "https://www.reddit.com/r/PassportPorn/comments/1swt55n/does_anyone_here_have_6_citizenships_with_picture/",
+      "https://www.reddit.com/r/PassportPorn/comments/1vrgqvl/quintuple_citizen_five_passport_club/",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "MultiPass Rank", item: "https://multipassrank.com" },
+      { "@type": "ListItem", position: 2, name: "How many passports can one person have?", item: "https://multipassrank.com/how-many-passports-can-you-have" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How many passports can one person legally have?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "There is no universal numerical limit. The practical legal limit depends on whether every country involved permits the person to acquire and retain its nationality at the same time.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who holds the world record for the most citizenships?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No authoritative global registry or independently verified world record was found. Larger online totals are usually anonymous claims, eligibility estimates, or counts of passport booklets rather than verified simultaneous citizenships.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can a person have three or four citizenships?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, when the nationality laws of every country involved are compatible. The United States explicitly recognizes that a person may hold more than two nationalities, but other countries can impose different retention or loss rules.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are passports and citizenships the same thing?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Citizenship or nationality is a legal status; a passport is a travel document. A citizen may have no current passport, and some countries can issue more than one valid passport booklet to one citizen.",
+        },
+      },
+    ],
+  },
+];
+
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800");
+---
+
+<BaseLayout
+  title="How Many Passports Can You Have? Records & Reality | MultiPass Rank"
+  description={description}
+  canonical="/how-many-passports-can-you-have"
+  markdownHref="/how-many-passports-can-you-have.md"
+  ogType="article"
+  structuredData={structuredData}
+>
+  <article class="research-article">
+    <header class="research-hero research-hero--numbered">
+      <span class="eyebrow">Citizenship curiosity · reviewed 20 August 2026</span>
+      <div class="research-hero__answer research-hero__answer--words" aria-label="No global cap">
+        <strong>No</strong>
+        <span>global cap</span>
+      </div>
+      <h1>How many passports can one person have?</h1>
+      <p>
+        There is no worldwide numerical limit. The real ceiling is the intersection of several national laws—and the
+        supposed record becomes surprisingly hard to prove once anecdotes, eligibility, and physical passport books are separated.
+      </p>
+    </header>
+
+    <section class="research-results" aria-label="Documented multiple-citizenship examples">
+      <article class="research-result-card">
+        <div class="research-result-card__visual">
+          <PassportCover codes={["RU", "KN", "AE", "FR"]} names={["Russia", "Saint Kitts and Nevis", "United Arab Emirates", "France"]} size="medium" />
+          <span>Publicly reported</span>
+        </div>
+        <div class="research-result-card__body">
+          <span class="eyebrow">Recognizable public example · four citizenships</span>
+          <h2>Pavel Durov</h2>
+          <p>
+            <a href="https://apnews.com/article/7f1fdf61104de4bb7ed846b05e5561a2" rel="noreferrer">Associated Press reports</a>
+            that the Russia-born Telegram founder also holds citizenship in France, the United Arab Emirates, and Saint Kitts and Nevis.
+            It is an attributable four-country case, not a world record.
+          </p>
+        </div>
+      </article>
+
+      <article class="research-result-card">
+        <div class="research-result-card__visual">
+          <PassportCover codes={["US", "TW", "DE", "CH", "FR", "MX", "AR"]} names={["United States", "Taiwan", "Germany", "Switzerland", "France", "Mexico", "Argentina"]} size="medium" />
+          <span>Family pathways</span>
+        </div>
+        <div class="research-result-card__body">
+          <span class="eyebrow">Photographed community account · four held, seven described</span>
+          <h2>A child eligible through two parents</h2>
+          <p>
+            In a <a href="https://www.reddit.com/r/PassportPorn/comments/1kw1ob2/our_daughter_is_eligible_for_7/" rel="noreferrer">photographed PassportPorn post</a>,
+            a parent says the child then held US, German, French, and Swiss nationalities and could pursue three more family routes.
+            That is useful community documentation, but it is not proof of seven current passports or independent government verification.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <div class="research-copy">
+      <section>
+        <span class="eyebrow">The legal answer</span>
+        <h2>Every country decides for itself.</h2>
+        <p>
+          The <a href="https://rm.coe.int/168045c943" rel="noreferrer">European Convention on Nationality</a> defines
+          multiple nationality and states the basic rule: each state determines under its own law who its nationals are.
+          There is no international office that approves a third, fourth, or sixth citizenship.
+        </p>
+        <p>
+          The <a href="https://travel.state.gov/en/international-travel/planning/personal-needs/dual-nationality.html" rel="noreferrer">US Department of State</a>
+          explicitly says a person may hold more than two nationalities. That establishes possibility, not a universal rule:
+          every other country in a combination can have different acquisition, retention, renunciation, or loss provisions.
+        </p>
+      </section>
+
+      <aside class="research-callout">
+        <span class="eyebrow">The counting trap</span>
+        <h2>A passport book is not a citizenship.</h2>
+        <p>
+          A person may be a citizen without a current passport. Conversely, the
+          <a href="https://www.gov.uk/government/publications/additional-passports/additional-passports-accessible" rel="noreferrer">UK Passport Office</a>
+          can issue more than two concurrent passport booklets case by case. A stack of documents therefore does not, by itself,
+          tell us how many countries recognize the holder as a citizen.
+        </p>
+      </aside>
+
+      <section>
+        <span class="eyebrow">What about six, seven, or eight?</span>
+        <h2>No defensible public record emerged.</h2>
+        <p>
+          The <a href="https://www.reddit.com/r/PassportPorn/comments/1swt55n/does_anyone_here_have_6_citizenships_with_picture/" rel="noreferrer">thread that prompted this review</a>
+          asks for photographic proof of six or more. Its replies offer interesting family scenarios and personal claims, but no
+          authoritative register or independently verified record. Estimates in the discussion are guesses, not statistics.
+        </p>
+        <p>
+          Search results also repeat anonymous seven- and eight-citizenship stories. Without a named holder, compatible-law review,
+          or primary documentation, calling any of them a “world record” would turn a fun question into a false certainty. The honest
+          answer is that <a href="https://www.reddit.com/r/PassportPorn/comments/1vrgqvl/quintuple_citizen_five_passport_club/" rel="noreferrer">five current passports are publicly demonstrated in community posts</a>,
+          six-plus is plausible, and the maximum is unknown.
+        </p>
+      </section>
+
+      <section>
+        <span class="eyebrow">Why the practical ceiling arrives first</span>
+        <h2>Compatibility is harder than collecting covers.</h2>
+        <p>
+          Birthplace, parents, ancestry, residence, marriage, restoration, and exceptional grants can create several routes,
+          but each must survive the other countries' retention rules. The holder may also face passport-use requirements,
+          tax compliance, military obligations, limited consular protection, and recurring civil-record or renewal work.
+        </p>
+        <p>
+          More is not automatically more useful. Our <a href="/best-passport-combination">exhaustive pair-and-triple experiment</a>
+          reaches most tracked destinations with far fewer documents. The <a href="/how-many-passports-to-cover-the-world">ten-passport world-coverage result</a>
+          is a mathematical set-cover answer, not a set that one person can necessarily acquire or retain.
+        </p>
+      </section>
+
+      <nav class="research-next" aria-label="Continue passport research">
+        <div><span class="eyebrow">From legal possibility to mobility</span><h2>What does passport number two actually add?</h2></div>
+        <a class="button button--primary" href="/best-passport-combination">See the best pairs and triples</a>
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

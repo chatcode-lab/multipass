@@ -41,7 +41,13 @@ Store rules at policy level. A regional agreement or nationality list should be 
 8. Run unit, route, sitemap, and structured-data tests. Manually open at least one generated pair per policy.
 9. Record the review date. Recheck mutable guidance on a schedule and laws after a reported policy change.
 
-Good first bulk sources include government nationality lists, official open-data CSV files, and multilateral agreements. Initial examples in this repository cover Angola’s 98-nationality tourist exemption, Kenya’s ETA, DR Congo’s official eVisa route, and the EU–Brazil short-stay agreement.
+Good first bulk sources include government nationality lists, official open-data CSV files, and multilateral agreements. Reviewed examples in this repository cover Angola’s 98-nationality tourist exemption, Hong Kong's ordinary-passport visitor schedule and Indian pre-arrival registration, Kenya’s ETA, DR Congo’s official eVisa route, and the EU–Brazil short-stay agreement.
+
+## Pass 2 result: Hong Kong inbound access
+
+The second pass reviewed the Hong Kong Immigration Department's August 2026 visitor schedule at policy level. It added evidence for 144 visa-free ordinary-passport relationships, 48 prior-visa relationships, and India's pre-arrival registration route. The official language describes Indian visitors as remaining visa-free after advance registration, so the upstream `evisa` category is corrected to `eta`/PAR before scoring.
+
+Macao, Mainland China, Taiwan, Timor-Leste, and Kosovo were deliberately not inferred from the ordinary foreign-nationality table. Their special or catch-all treatment is the first queued follow-up batch.
 
 ## Official bulk sources identified for later passes
 
@@ -56,6 +62,8 @@ These are candidates, not silently imported truth. Their country naming, passpor
 Use this prompt with a research-capable model. A human or stronger review model must still open every cited URL before merge.
 
 > Research official visa-access evidence for the assigned destination or agreement. Treat the supplied MultiPass Rank statuses as unverified hypotheses. Cite only primary government, official gazette, treaty repository, government open-data, immigration, border, foreign-ministry, embassy, or consulate sources. Do not cite commercial indexes, Timatic summaries, Wikipedia, airlines, agents, blogs, or search snippets. For every supported rule return: destination ISO code; affected passport ISO codes or explicit exclusions; normalized status (`visa_free`, `eta`, `visa_on_arrival`, `evisa`, `visa_required`, or `citizenship`); effective and end dates only when stated; summary; material conditions; source title, direct URL, publisher, jurisdiction, language, type, and review date; official application URL and steps if relevant; confidence; and conflicts with the supplied status. Quote no more than 25 words from a source for internal review and do not publish the quotation. Say `not established` instead of guessing.
+
+For a lower-capability model, use the stricter packet, schema, validation, and review workflow in [visa-evidence-model-handoff.md](visa-evidence-model-handoff.md). Candidate output must never be merged into canonical evidence without a stronger reviewer opening every cited source.
 
 ## Review checklist
 

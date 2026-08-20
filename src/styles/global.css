@@ -970,11 +970,14 @@ main { min-height: 68vh; }
 }
 .research-hero__answer strong { display: block; font-family: var(--serif); font-size: clamp(78px, 11vw, 150px); font-weight: 500; line-height: .72; }
 .research-hero__answer span { margin-top: 20px; font-size: 11px; font-weight: 760; letter-spacing: .12em; text-transform: uppercase; }
+.research-hero__answer--words strong { font-size: clamp(58px, 8vw, 104px); }
 .research-results { display: grid; gap: 14px; padding: 48px 0 88px; border-top: 1px solid var(--line); }
 .research-result-card { min-width: 0; display: grid; grid-template-columns: 210px minmax(0, 1fr); border: 1px solid var(--line); background: rgb(255 253 248 / 72%); }
 .research-result-card__visual { min-height: 285px; display: grid; place-items: center; align-content: center; gap: 24px; border-right: 1px solid var(--line); background: var(--paper-2); }
 .research-result-card__visual > span { color: var(--burgundy); font-size: 10px; font-weight: 760; letter-spacing: .12em; text-transform: uppercase; }
 .research-result-card__body { min-width: 0; padding: 34px clamp(28px, 4vw, 52px); }
+.research-result-card__body > p { max-width: 760px; color: var(--ink-soft); font-size: 16px; }
+.research-result-card__body > p a { color: var(--green); text-underline-offset: 4px; }
 .research-result-card h2,
 .research-copy h2,
 .research-section-heading h2 {

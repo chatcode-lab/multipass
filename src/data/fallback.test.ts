@@ -51,4 +51,8 @@ describe("bundled passport snapshot", () => {
     expect(insights.checkedAt).toBe(snapshot.manifest.checkedAt);
     expect(insights.destinationCount).toBe(snapshot.manifest.destinations.length);
   });
+
+  it("applies verified destination-authority corrections to the bundled snapshot", () => {
+    expect(snapshot.passports.IN.statuses.HK).toBe("eta");
+  });
 });

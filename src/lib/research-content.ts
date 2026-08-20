@@ -116,3 +116,58 @@ This is a mathematical set-cover experiment, not a citizenship plan. It ignores 
 
 [See the best practical-size pair and triple](${absoluteUrl("/best-passport-combination")}) · [Read the scoring methodology](${absoluteUrl("/methodology")})`;
 }
+
+export function howManyPassportsCanYouHaveMarkdown(): string {
+  return `# How many passports can one person have?
+
+There is **no universal numerical limit**. Nationality is determined by each country under its own law, so the real limit is whether every country involved allows the person to acquire and retain its nationality at the same time.
+
+We could not find an authoritative global registry or independently verified world record for the most simultaneous citizenships. Online claims of six, seven, or eight should therefore be described as claims—not records.
+
+## Passport books are not citizenships
+
+A citizenship is a legal bond with a country. A passport is a travel document issued as evidence of nationality. Someone can be a citizen without holding a current passport, while one country can issue more than one valid passport booklet to the same citizen in special circumstances. The United Kingdom's official passport guidance says it may issue more than two additional passports case by case.
+
+That makes “How many passports?” ambiguous. This article counts **simultaneous nationalities**, then separately notes whether current passport documents were shown.
+
+## A well-known public example: four
+
+Associated Press reports that Telegram founder Pavel Durov, who was born in Russia, also holds citizenship in France, the United Arab Emirates, and Saint Kitts and Nevis. That makes four publicly reported citizenships. It is a recognizable, attributable example—not evidence of a world record.
+
+## A photographed community case: five in a parent, seven possible for a child
+
+In a photographed PassportPorn post, a parent described the mother as holding United States and Taiwanese passports and the father as holding German, Swiss, French, Mexican, and Argentine nationalities. The post says their daughter then held United States, German, French, and Swiss nationalities and was eligible for additional family routes.
+
+The careful headline is **four then held, seven described as potentially eligible**. The image and family account are useful community documentation, but they do not prove seven simultaneous current passports or provide independent government verification.
+
+A later community thread explicitly asked for photographic proof of six or more citizenships. Its replies contain anecdotes and estimates, not a defensible global statistic. A separate photographed post demonstrates five current passports, but public proof becomes thin before a credible six-plus “record” emerges.
+
+## Can you have three, four, or more citizenships?
+
+Potentially, yes. The United States Department of State explicitly says a person may hold more than two nationalities. But every other country in the combination must be checked separately. A country may allow multiple nationality generally, allow it only when acquired automatically at birth, require permission to retain it, or cause nationality loss after a voluntary naturalisation elsewhere.
+
+The Council of Europe's nationality convention captures the underlying rule: each state determines who its nationals are. There is no single international office that approves a third or fourth citizenship.
+
+## Why very large combinations stay rare
+
+- Several independent routes—birthplace, parents, ancestry, adoption, marriage, residence, restoration, or exceptional grants—must align.
+- Each nationality has its own retention, renunciation, registration, and transmission rules.
+- Obligations can include using that country's passport at its border, tax compliance, military service, or reduced consular help while inside another country of nationality.
+- Passport renewals, names, civil-status records, and document expiry create administrative work even when the citizenship itself continues.
+
+More is not automatically better. MultiPass Rank's exhaustive travel experiment finds that the best pair and triple already cover most tracked destinations, while its purely mathematical all-destination solution requires ten passports and ignores whether that set could legally or practically be held.
+
+[See the best two- and three-passport combinations](${absoluteUrl("/best-passport-combination")}) · [See the mathematical minimum for all tracked destinations](${absoluteUrl("/how-many-passports-to-cover-the-world")})
+
+## References
+
+- [European Convention on Nationality](https://rm.coe.int/168045c943)
+- [U.S. Department of State: Dual Nationality](https://travel.state.gov/en/international-travel/planning/personal-needs/dual-nationality.html)
+- [UK Passport Office: Additional passports](https://www.gov.uk/government/publications/additional-passports/additional-passports-accessible)
+- [Associated Press profile of Pavel Durov](https://apnews.com/article/7f1fdf61104de4bb7ed846b05e5561a2)
+- [PassportPorn: daughter eligible for seven nationalities/passports](https://www.reddit.com/r/PassportPorn/comments/1kw1ob2/our_daughter_is_eligible_for_7/)
+- [PassportPorn: request for photographic proof of six or more](https://www.reddit.com/r/PassportPorn/comments/1swt55n/does_anyone_here_have_6_citizenships_with_picture/)
+- [PassportPorn: photographed five-passport case](https://www.reddit.com/r/PassportPorn/comments/1vrgqvl/quintuple_citizen_five_passport_club/)
+
+This is a general research review, not citizenship or legal advice. Verify the current law of every country involved before relying on a multiple-nationality claim.`;
+}

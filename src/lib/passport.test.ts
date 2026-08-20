@@ -3,11 +3,13 @@ import {
   calculateMobilityScore,
   comparePassportSets,
   denseRankByScore,
+  normalizePassportDetail,
   parsePassportSets,
   rankEquivalent,
+  reconcileManifestPassportDetails,
   slugifyCountry,
 } from "./passport";
-import type { PassportAccess, PassportSummary, SnapshotManifest } from "./types";
+import type { Destination, PassportAccess, PassportSummary, SnapshotManifest, SourcePassportDetail } from "./types";
 
 describe("passport calculations", () => {
   it("normalizes readable country slugs", () => {
@@ -26,6 +28,27 @@ describe("passport calculations", () => {
     ).toBe(3);
   });
 
+  it("applies narrowly sourced status corrections before scoring", () => {
+    const destinations = [
+      { code: "IN", name: "India", region: "ASIA" },
+      { code: "HK", name: "Hong Kong", region: "ASIA" },
+    ] satisfies Destination[];
+    const detail = {
+      code: "IN",
+      country: "India",
+      visa_required: [],
+      visa_online: [{ code: "HK", name: "Hong Kong" }],
+      visa_on_arrival: [],
+      electronic_travel_authorisation: [],
+      visa_free_access: [],
+    } satisfies SourcePassportDetail;
+
+    expect(normalizePassportDetail(detail, destinations)).toMatchObject({
+      statuses: { IN: "citizenship", HK: "eta" },
+      mobilityScore: 1,
+    });
+  });
+
   it("uses dense rank equivalents", () => {
     const passports = [190, 188, 188, 187, 180].map(
       (mobilityScore, index) => ({ mobilityScore, code: `${index}`, name: `${index}` }) as PassportSummary,
@@ -33,6 +56,28 @@ describe("passport calculations", () => {
     expect(rankEquivalent(191, passports)).toBe(1);
     expect(rankEquivalent(188, passports)).toBe(2);
     expect(rankEquivalent(186, passports)).toBe(4);
+  });
+
+  it("reconciles manifest scores and dense ranks with corrected details", () => {
+    const manifest = {
+      schemaVersion: 1,
+      version: "test",
+      checkedAt: "2026-01-01T00:00:00.000Z",
+      publishedAt: "2026-01-01T00:00:00.000Z",
+      destinations: [],
+      passports: [
+        { code: "AA", name: "Alpha", slug: "alpha", region: "EUROPE", mobilityScore: 3, rank: 1 },
+        { code: "BB", name: "Beta", slug: "beta", region: "ASIA", mobilityScore: 1, rank: 2 },
+      ],
+    } satisfies SnapshotManifest;
+    const corrected = reconcileManifestPassportDetails(manifest, {
+      BB: { code: "BB", name: "Beta", statuses: {}, mobilityScore: 4 },
+    });
+
+    expect(corrected.passports.map(({ code, mobilityScore, rank }) => ({ code, mobilityScore, rank }))).toEqual([
+      { code: "BB", mobilityScore: 4, rank: 1 },
+      { code: "AA", mobilityScore: 3, rank: 2 },
+    ]);
   });
 
   it("recalculates dense ranks when custom scores are inserted", () => {

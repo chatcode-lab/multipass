@@ -24,6 +24,7 @@ export const GET: APIRoute = async ({ locals }) => {
     "dual-passport",
     "best-passport-combination",
     "how-many-passports-to-cover-the-world",
+    "how-many-passports-can-you-have",
     "evisa-vs-eta",
     "methodology",
     "data-license",

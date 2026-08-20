@@ -38,6 +38,7 @@ Add \`.md\` before the query string for a text-first result: \`${absoluteUrl("/c
 - Passport–destination evidence: \`${absoluteUrl("/belgium-kenya-eta.md")}\`
 - Best pair and triple research: [best-passport-combination.md](${absoluteUrl("/best-passport-combination.md")})
 - Exact minimum world coverage: [how-many-passports-to-cover-the-world.md](${absoluteUrl("/how-many-passports-to-cover-the-world.md")})
+- Multiple-citizenship records review: [how-many-passports-can-you-have.md](${absoluteUrl("/how-many-passports-can-you-have.md")})
 - This guide: [ai.md](${absoluteUrl("/ai.md")})
 
 HTML pages also advertise their Markdown alternative with a \`<link rel="alternate" type="text/markdown">\` element.

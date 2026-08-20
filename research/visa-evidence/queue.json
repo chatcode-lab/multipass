@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "batches": [
+    {
+      "id": "hk-special-arrangements",
+      "priority": 1,
+      "objective": "Resolve Hong Kong access for passport issuers deliberately excluded from the ordinary foreign-nationality schedule. Do not infer a rule from the schedule's catch-all row.",
+      "destinationCodes": ["HK"],
+      "passportCodes": ["MO", "CN", "TW", "TL", "XK"],
+      "sourceHints": [
+        "https://www.immd.gov.hk/eng/services/visas/overseas-chinese-entry-arrangement.html",
+        "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html"
+      ],
+      "notes": [
+        "Distinguish passport nationality from residence status and special permits.",
+        "Return unresolved when the authority does not map a standard passport cleanly to the site's taxonomy."
+      ]
+    },
+    {
+      "id": "kenya-eta-nationality-scope",
+      "priority": 2,
+      "objective": "Replace the seeded Belgium-only Kenya ETA evidence with the complete current ordinary-passport scope and explicit exemptions.",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://immigration.go.ke/eta/",
+        "https://etakenya.go.ke/"
+      ],
+      "notes": [
+        "Use an official nationality or exemption list; do not turn a general announcement into universal coverage.",
+        "Separate ETA exemptions from visa-free access and East African movement rights."
+      ]
+    },
+    {
+      "id": "hksar-passport-outbound-access",
+      "priority": 3,
+      "objective": "Validate destinations officially reported as visa-free or visa-on-arrival for Hong Kong SAR passport holders, retaining the destination's exact category when the source distinguishes it.",
+      "destinationCodes": ["*"],
+      "passportCodes": ["HK"],
+      "sourceHints": [
+        "https://www.immd.gov.hk/pdf/Visa-free%20Access%20or%20Visa-on-arrival%20for%20HKSAR%20passport%20list_Eng.pdf"
+      ],
+      "notes": [
+        "Do not classify an undifferentiated visa-free-or-arrival list more precisely than the official source allows.",
+        "Return ambiguous destinations as unresolved."
+      ]
+    },
+    {
+      "id": "eu-colombia-short-stay-waiver",
+      "priority": 4,
+      "objective": "Model the reciprocal EU-Colombia ordinary-passport short-stay waiver from the signed agreement and entry-into-force record.",
+      "destinationCodes": ["CO", "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "passportCodes": ["CO", "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "sourceHints": ["https://eur-lex.europa.eu/"],
+      "notes": [
+        "Confirm territorial scope, excluded passport types, permitted purpose, stay calculation, and effective date from EUR-Lex documents.",
+        "Return separate directional policies: Colombian passports to covered EU destinations, and covered EU passports to Colombia. Never create the Cartesian product of all listed passports and destinations."
+      ]
+    },
+    {
+      "id": "eu-peru-short-stay-waiver",
+      "priority": 5,
+      "objective": "Model the reciprocal EU-Peru ordinary-passport short-stay waiver from the signed agreement and entry-into-force record.",
+      "destinationCodes": ["PE", "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "passportCodes": ["PE", "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "sourceHints": ["https://eur-lex.europa.eu/"],
+      "notes": [
+        "Confirm territorial scope, excluded passport types, permitted purpose, stay calculation, and effective date from EUR-Lex documents.",
+        "Return separate directional policies: Peruvian passports to covered EU destinations, and covered EU passports to Peru. Never create the Cartesian product of all listed passports and destinations."
+      ]
+    }
+  ]
+}

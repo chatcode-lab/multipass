@@ -475,6 +475,29 @@ test("combination research publishes exact results, reproducible links, and Mark
   expect(xml).toContain("<loc>https://multipassrank.com/how-many-passports-to-cover-the-world</loc>");
 });
 
+test("multiple-passport records review separates law, documents, and anecdotes", async ({ page, request }) => {
+  await page.goto("/how-many-passports-can-you-have");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("How many passports can one person have?");
+  await expect(page.locator(".research-hero__answer")).toContainText("No");
+  await expect(page.getByRole("heading", { name: "Pavel Durov" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "No defensible public record emerged." })).toBeVisible();
+  const schemas = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) =>
+    scripts.flatMap((script) => {
+      const value = JSON.parse(script.textContent ?? "[]");
+      return Array.isArray(value) ? value : [value];
+    }),
+  );
+  expect(schemas.find((record) => record?.["@type"] === "Article")?.author?.name).toBe("MultiPass Rank");
+  expect(schemas.find((record) => record?.["@type"] === "FAQPage")?.mainEntity).toHaveLength(4);
+
+  const markdown = await request.get("/how-many-passports-can-you-have.md");
+  expect(markdown.ok()).toBe(true);
+  expect(await markdown.text()).toContain("There is **no universal numerical limit**");
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/how-many-passports-can-you-have</loc>");
+});
+
 test("dataset pages declare creator and license metadata", async ({ page }) => {
   for (const path of ["/destinations", "/passport/belgium", "/destination/angola"]) {
     await page.goto(path);
@@ -513,6 +536,15 @@ test("destination and relationship pages expose official evidence and Markdown",
   const relationshipMarkdown = await request.get("/belgium-angola-visa-free.md");
   expect(relationshipMarkdown.ok()).toBe(true);
   expect(await relationshipMarkdown.text()).toContain("# Belgium passport to Angola: Visa-free");
+
+  await page.goto("/destination/hong-kong-sar-china");
+  await expect(page.getByRole("heading", { name: "Official evidence timeline" })).toBeVisible();
+  await expect(page.getByText("Hong Kong publishes visa-free periods for ordinary visitors")).toBeVisible();
+  await expect(page.getByText("Pre-arrival registration became mandatory for Indian visitors")).toBeVisible();
+
+  await page.goto("/india-hong-kong-sar-china-eta");
+  await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Register on the official Hong Kong government portal/ })).toHaveAttribute("href", /gov\.hk/);
 });
 
 test("relationship URLs redirect stale statuses and keep incomplete evidence out of search", async ({ page, request }) => {

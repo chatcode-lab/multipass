@@ -1,4 +1,5 @@
 import {
+  applyVerifiedAccessOverrides,
   buildDestinationCatalog,
   buildPassportSummariesFromScores,
   normalizeCode,
@@ -164,6 +165,23 @@ export async function runSyncBatch(env: Env): Promise<{ published: boolean; proc
     return { published: false, processed: codes.length, remaining, version: state.version };
   }
 
+  const completedBatch = Object.fromEntries(normalizedDetails.map((detail) => [detail.code, detail]));
+  const stagedPassports = {
+    ...await readSnapshotPassports(
+      env,
+      state.version,
+      state.issuerCodes.filter((code) => !completedBatch[code]),
+    ),
+    ...completedBatch,
+  };
+  const snapshotPassports = Object.fromEntries(
+    Object.entries(stagedPassports).map(([code, detail]) => [code, applyVerifiedAccessOverrides(detail)]),
+  );
+  await Promise.all(Object.entries(snapshotPassports).flatMap(([code, detail]) =>
+    detail === stagedPassports[code]
+      ? []
+      : [env.PASSPORT_DATA.put(`snapshot:${state.version}:passport:${code}`, JSON.stringify(detail))],
+  ));
   const now = new Date().toISOString();
   const manifest: SnapshotManifest = {
     schemaVersion: 1,
@@ -171,16 +189,10 @@ export async function runSyncBatch(env: Env): Promise<{ published: boolean; proc
     checkedAt: now,
     publishedAt: now,
     destinations: state.destinations,
-    passports: buildPassportSummariesFromScores(state.countries, state.scores),
-  };
-  const completedBatch = Object.fromEntries(normalizedDetails.map((detail) => [detail.code, detail]));
-  const snapshotPassports = {
-    ...await readSnapshotPassports(
-      env,
-      state.version,
-      state.issuerCodes.filter((code) => !completedBatch[code]),
+    passports: buildPassportSummariesFromScores(
+      state.countries,
+      Object.fromEntries(Object.entries(snapshotPassports).map(([code, detail]) => [code, detail.mobilityScore])),
     ),
-    ...completedBatch,
   };
   const combinationInsights = analyzePassportCombinations(manifest, snapshotPassports);
   const previousPointer = await env.PASSPORT_DATA.get<SnapshotPointer>("snapshot:pointer", "json");

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://multipassrank.com/schemas/visa-evidence-candidate.json",
+  "title": "MultiPass Rank visa evidence candidate batch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["batchId", "researchedAt", "sources", "policies", "conflicts", "unresolved"],
+  "properties": {
+    "batchId": { "type": "string", "minLength": 1 },
+    "researchedAt": { "type": "string", "format": "date" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "url", "publisher", "jurisdiction", "kind", "language", "reviewedAt", "officialityEvidence", "supportingExcerpt"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+          "publisher": { "type": "string", "minLength": 1 },
+          "jurisdiction": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["law", "government-guidance", "official-portal", "official-dataset"] },
+          "language": { "type": "string", "minLength": 1 },
+          "reviewedAt": { "type": "string", "format": "date" },
+          "officialityEvidence": { "type": "string", "minLength": 1 },
+          "supportingExcerpt": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "summary", "status", "destinationCodes", "passportCodes", "conditions", "sourceIds", "confidence"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["visa_free", "eta", "visa_on_arrival", "evisa", "visa_required", "citizenship"] },
+          "destinationCodes": { "$ref": "#/$defs/codes" },
+          "passportCodes": { "$ref": "#/$defs/codes" },
+          "excludedPassportCodes": { "$ref": "#/$defs/codes" },
+          "announcedOn": { "type": "string", "format": "date" },
+          "effectiveFrom": { "type": "string", "format": "date" },
+          "effectiveTo": { "type": "string", "format": "date" },
+          "conditions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
+          "confidence": { "enum": ["high", "medium", "low"] },
+          "application": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "label", "steps"],
+            "properties": {
+              "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+              "label": { "type": "string", "minLength": 1 },
+              "processingTime": { "type": "string", "minLength": 1 },
+              "steps": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+            }
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["passportCode", "destinationCode", "snapshotStatus", "officialStatus", "explanation", "sourceIds"],
+        "properties": {
+          "passportCode": { "$ref": "#/$defs/code" },
+          "destinationCode": { "$ref": "#/$defs/code" },
+          "snapshotStatus": { "type": "string" },
+          "officialStatus": { "type": "string" },
+          "explanation": { "type": "string", "minLength": 1 },
+          "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } }
+        }
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["passportCode", "destinationCode", "reason", "searchedOfficialDomains"],
+        "properties": {
+          "passportCode": { "$ref": "#/$defs/code" },
+          "destinationCode": { "$ref": "#/$defs/code" },
+          "reason": { "type": "string", "minLength": 1 },
+          "searchedOfficialDomains": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "codes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/code" } }
+  }
+}

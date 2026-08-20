@@ -13,6 +13,7 @@ import {
   type SourceCountry,
   type SourcePassportDetail,
 } from "./types";
+import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
 
 export const STATUS_META: Record<
   AccessStatus,
@@ -160,13 +161,51 @@ export function normalizePassportDetail(
   }
 
   statuses[code] = "citizenship";
-  const mobilityScore = calculateMobilityScore(statuses);
-
-  return {
+  return applyVerifiedAccessOverrides({
     code,
     name: detail.country.trim(),
     statuses,
-    mobilityScore,
+    mobilityScore: calculateMobilityScore(statuses),
+  });
+}
+
+export function applyVerifiedAccessOverrides(detail: PassportAccess): PassportAccess {
+  const applicable = VERIFIED_ACCESS_OVERRIDES.filter(({ passportCode }) => passportCode === detail.code);
+  if (!applicable.length) return detail;
+
+  const statuses = { ...detail.statuses };
+  let changed = false;
+  for (const override of applicable) {
+    if (!statuses[override.destinationCode]) {
+      throw new Error(`Cannot apply verified access override ${detail.code}:${override.destinationCode}`);
+    }
+    if (statuses[override.destinationCode] === override.status) continue;
+    statuses[override.destinationCode] = override.status;
+    changed = true;
+  }
+
+  return changed ? { ...detail, statuses, mobilityScore: calculateMobilityScore(statuses) } : detail;
+}
+
+export function reconcileManifestPassportDetails(
+  manifest: SnapshotManifest,
+  details: Record<string, PassportAccess>,
+): SnapshotManifest {
+  const correctedScores = new Map(
+    manifest.passports.map((passport) => [passport.code, details[passport.code]?.mobilityScore ?? passport.mobilityScore]),
+  );
+  const changed = manifest.passports.some((passport) => correctedScores.get(passport.code) !== passport.mobilityScore);
+  if (!changed) return manifest;
+
+  const ranks = denseRankByScore(correctedScores.values());
+  return {
+    ...manifest,
+    passports: manifest.passports
+      .map((passport) => {
+        const mobilityScore = correctedScores.get(passport.code) ?? passport.mobilityScore;
+        return { ...passport, mobilityScore, rank: ranks.get(mobilityScore) ?? passport.rank };
+      })
+      .sort((first, second) => first.rank - second.rank || second.mobilityScore - first.mobilityScore || first.name.localeCompare(second.name)),
   };
 }
 
