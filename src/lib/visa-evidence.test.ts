@@ -589,6 +589,29 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("ST", "MZ", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
+  it("covers the reviewed Uganda, Benin, Antigua and Barbuda, and Colombia pass", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("UG")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("AO", "UG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.AO.statuses.UG).toBe("evisa");
+
+    expect(pairsFor("BJ")).toHaveLength(40);
+    expect(getVisaRelationshipEvidence("SG", "BJ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DZ", "BJ", snapshot.passports.DZ.statuses.BJ).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("AG")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("TO", "AG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HR", "AG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.HR.statuses.AG).toBe("evisa");
+
+    expect(pairsFor("CO")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("HK", "CO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "CO", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.IL.statuses.CO).toBe("evisa");
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -705,6 +728,19 @@ describe("official visa evidence", () => {
       "boe.incv.cv",
       "evisa.gov.mz",
       "minec.gov.mz",
+      "www.immigration.go.ug",
+      "immigration.go.ug",
+      "kigali.mofa.go.ug",
+      "abuja.mofa.go.ug",
+      "dei.gouv.bj",
+      "www.gouv.bj",
+      "api-mae.diplomatie.bj",
+      "evisa.bj",
+      "sgg.gouv.bj",
+      "immigration.gov.ag",
+      "cancilleria.gov.co",
+      "www.cancilleria.gov.co",
+      "portal.migracioncolombia.gov.co",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
