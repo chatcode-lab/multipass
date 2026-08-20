@@ -276,6 +276,297 @@
         "Keep the ordinary, emergency, temporary, diplomatic, official/service, certificate-of-identity, British-status, residence, birthplace, purpose, and admissibility conditions explicit.",
         "Only classify eVisa where BOCA names the nationality-wide route; retain invitation, group-tour, business-recommendation, residence, and other special routes as limitations rather than general passport access."
       ]
+    },
+    {
+      "id": "schengen-associated-states-completion",
+      "priority": 19,
+      "objective": "Close the current-status evidence gaps for Switzerland, Norway, Iceland and Liechtenstein and establish Nauru's treatment across the EU/Schengen cohort from directly applicable or officially implemented nationality lists.",
+      "destinationCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IS", "IT", "LV", "LI", "LT", "LU", "MT", "NL", "NO", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "CH"],
+      "passportCodes": ["AE", "VC", "GD", "DM", "LC", "PE", "MH", "TO", "TV", "KI", "FM", "PW", "TL", "NR"],
+      "sourceHints": [
+        "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/who-must-apply-schengen-visa_en",
+        "https://www.sem.admin.ch/sem/en/home/publiservice/weisungen-kreisschreiben/visa/liste1_staatsangehoerigkeit.html",
+        "https://www.udi.no/en/word-definitions/persons-who-do-not-need-a-visa-to-visit-norway-/",
+        "https://island.is/en/do-you-need-a-visa",
+        "https://www.llv.li/en/national-administration/migration-and-passport-office/entry-and-residence/entry"
+      ],
+      "notes": [
+        "Do not assume Regulation (EU) 2018/1806 is directly applicable to a non-EU associated state; cite each state's official implementation or an official common list that expressly covers it.",
+        "Preserve passport-document and territorial conditions, and report any disagreement with the current snapshot rather than forcing completion."
+      ]
+    },
+    {
+      "id": "south-korea-visitor-visa-complement",
+      "priority": 20,
+      "objective": "Resolve the ordinary-passport visitor treatment of South Korea passport nationalities not supported by the current K-ETA candidate, using an official visa-required list, statute, or complete Visa Navigator nationality rules without inferring a complement from silence.",
+      "destinationCodes": ["KR"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.visa.go.kr/",
+        "https://www.immigration.go.kr/immigration_eng/index.do",
+        "https://overseas.mofa.go.kr/"
+      ],
+      "notes": [
+        "Start with the 88 unresolved pairs from the existing South Korea candidate and reuse established K-ETA policies only as exclusions, not proof of the complement.",
+        "Keep diplomatic, official, residence, transit, crew and special-document rules outside ordinary-passport classifications."
+      ]
+    },
+    {
+      "id": "brazil-ordinary-passport-entry-scope",
+      "priority": 21,
+      "objective": "Model Brazil's complete current ordinary-passport short-visit entry scope from the Ministry of Foreign Affairs visa-regime table and official migration rules, including visitor-visa, eVisa and exemption cohorts.",
+      "destinationCodes": ["BR"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.gov.br/mre/pt-br/assuntos/portal-consular/vistos/quadro-geral-de-regime-de-vistos-para-entrada-de-estrangeiros-no-brasil",
+        "https://www.gov.br/mre/pt-br/consulado-washington/consulate-general-of-brazil-in-washington-dc/visitor-visa-vivis"
+      ],
+      "notes": [
+        "Use the current QGRV legend and footnotes; distinguish nationality-wide entry status from diplomatic, official, laissez-passer and residence-dependent exceptions.",
+        "Treat an online application as eVisa only where the Brazilian authority defines that nationality-wide travel authorization, and report snapshot disagreements explicitly."
+      ]
+    },
+    {
+      "id": "mexico-ordinary-passport-entry-scope",
+      "priority": 22,
+      "objective": "Model Mexico's current ordinary-passport non-remunerated visitor scope from the National Migration Institute lists and the current Electronic Authorization System cohorts.",
+      "destinationCodes": ["MX"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.inm.gob.mx/gobmx/word/index.php/paises-no-requieren-visa-para-mexico/",
+        "https://www.inm.gob.mx/gobmx/word/index.php/paises-requieren-visa-para-mexico/",
+        "https://ventanillaunica.economia.gob.mx/procedure/336/step/479?l=en",
+        "https://embamex.sre.gob.mx/suiza/index.php/seccion-consular/visas/english"
+      ],
+      "notes": [
+        "Normalize Mexico's SAE consistently with the existing ETA treatment for Russian, Turkish and Ukrainian passports; the air-only route is not ordinary visa-free entry.",
+        "Preserve residence/third-country-visa, ABTC, crew, mode-of-entry, purpose, duration and admissibility conditions.",
+        "Do not label a Kosovar passport visa-required when the Mexican authority says the document is not recognized and travel is not currently possible; leave the pair unresolved because the taxonomy lacks an admission-prohibited status."
+      ]
+    },
+    {
+      "id": "south-africa-ordinary-passport-entry-scope",
+      "priority": 23,
+      "objective": "Model South Africa's complete current ordinary-passport short-visit scope from Department of Home Affairs visa-exemption and advance-visa rules.",
+      "destinationCodes": ["ZA"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.dha.gov.za/index.php/immigration-services/exempt-countries",
+        "https://www.dha.gov.za/index.php/types-of-visas"
+      ],
+      "notes": [
+        "Use destination-side South African law or government guidance and distinguish 30-day and 90-day exemptions where published.",
+        "Do not infer a visa-required complement from silence unless the official framework expressly creates the default and the exemption list is complete.",
+        "Preserve diplomatic, official, crew, transit, residence, special-document, purpose and individual-admissibility exceptions."
+      ]
+    },
+    {
+      "id": "fiji-ordinary-passport-entry-scope",
+      "priority": 24,
+      "objective": "Model Fiji's complete current ordinary-passport visitor entry scope from Fiji Immigration's visa-exempt list, visitor-permit rules and advance-visa requirements.",
+      "destinationCodes": ["FJ"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.immigration.gov.fj/entering-fiji/visa-exempted-countries/",
+        "https://www.immigration.gov.fj/entering-fiji/visa/"
+      ],
+      "notes": [
+        "Determine whether visa-exempt visitors receive a visitor permit on arrival without misclassifying that permit as visa on arrival.",
+        "Do not infer a visa-required complement unless an official default plus complete exemption list supports it.",
+        "Preserve transit, crew, residence, diplomatic, official, special-document, purpose and admissibility conditions."
+      ]
+    },
+    {
+      "id": "bahamas-ordinary-passport-entry-scope",
+      "priority": 25,
+      "objective": "Model The Bahamas' complete current ordinary-passport visitor entry scope from Bahamian immigration visa requirements and official nationality tables.",
+      "destinationCodes": ["BS"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.immigration.gov.bs/visa-requirements/",
+        "https://mofa.gov.bs/evisa-online-services/"
+      ],
+      "notes": [
+        "Use Bahamian destination-authority sources and distinguish exemption, electronic visa and traditional advance visa only where the official rule does.",
+        "Do not infer a complement from an incomplete or document-specific list.",
+        "Preserve residence, third-country-visa, cruise, transit, diplomatic, official, special-document and admissibility exceptions."
+      ]
+    },
+    {
+      "id": "mauritius-ordinary-passport-entry-scope",
+      "priority": 26,
+      "objective": "Model Mauritius' complete current ordinary-passport visitor scope from the Passport and Immigration Office visa-requirement table and official entry guidance.",
+      "destinationCodes": ["MU"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://passport.govmu.org/passport/?page_id=605",
+        "https://passport.govmu.org/passport/?page_id=622"
+      ],
+      "notes": [
+        "Distinguish no-visa, visa-on-arrival, pre-arrival visa and any official online visa route exactly as the Mauritian authority defines them.",
+        "Use the current complete nationality table only after confirming its legend, dates and ordinary-passport scope.",
+        "Preserve duration, funds/accommodation/return-ticket, residence, transit, work, diplomatic, official, special-document and admissibility conditions."
+      ]
+    },
+    {
+      "id": "malaysia-ordinary-passport-entry-scope",
+      "priority": 27,
+      "objective": "Model Malaysia's complete current ordinary-passport social-visit entry scope from Immigration Department nationality rules and official electronic-visa guidance.",
+      "destinationCodes": ["MY"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.imi.gov.my/index.php/en/main-services/visa/visa-requirement-by-country/",
+        "https://malaysiavisa.imi.gov.my/"
+      ],
+      "notes": [
+        "Separate visa-free social visits, nationality-wide eVisa eligibility and advance consular visa requirements; online application alone is not an ETA.",
+        "Do not infer a complement unless the official nationality tables and default rule are complete.",
+        "Preserve ASEAN, duration, MDAC, transit, residence, work, diplomatic, official, special-document and individual-admissibility conditions."
+      ]
+    },
+    {
+      "id": "barbados-ordinary-passport-entry-scope",
+      "priority": 28,
+      "objective": "Model Barbados' complete current ordinary-passport visitor entry scope from Barbados Immigration visa requirements and its official online visa service.",
+      "destinationCodes": ["BB"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://immigration.gov.bb/pages/Visa_Requirements.aspx",
+        "https://evisa.immigration.gov.bb/"
+      ],
+      "notes": [
+        "Use destination-side Barbadian sources and classify a digital application as eVisa only if the resulting permission is an electronically issued visa.",
+        "Do not infer missing countries from silence unless the list and default rule are demonstrably complete.",
+        "Preserve duration, cruise/transit, residence, work, diplomatic, official, special-document and individual-admissibility exceptions."
+      ]
+    },
+    {
+      "id": "rwanda-ordinary-passport-entry-scope",
+      "priority": 29,
+      "objective": "Model Rwanda's complete current ordinary-passport visitor entry scope from Directorate General of Immigration and Emigration visa-on-arrival and exemption rules.",
+      "destinationCodes": ["RW"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.migration.gov.rw/visa-on-arrival",
+        "https://www.migration.gov.rw/visa"
+      ],
+      "notes": [
+        "Verify whether the visa-on-arrival rule truly covers citizens of all countries and separately model any visa-free regional or bilateral cohorts.",
+        "Do not classify an optional online application as eVisa when arrival issuance remains universally available.",
+        "Preserve fee, duration, extension, purpose, residence, work, transit, diplomatic, official, special-document and admissibility conditions."
+      ]
+    },
+    {
+      "id": "indonesia-ordinary-passport-entry-scope",
+      "priority": 30,
+      "objective": "Model Indonesia's complete current ordinary-passport visitor entry scope from Directorate General of Immigration exemption, visa-on-arrival/e-VOA and advance-visa rules.",
+      "destinationCodes": ["ID"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://evisa.imigrasi.go.id/front/faq",
+        "https://www.imigrasi.go.id/"
+      ],
+      "notes": [
+        "Separate genuine visa exemption, visa on arrival (including optional e-VOA), and advance eVisa/visa requirements without double-counting optional channels.",
+        "Use only current official nationality lists and do not infer a required complement from silence.",
+        "Preserve ASEAN and special bilateral scope, duration, entry-point, purpose, work/residence, transit, diplomatic, official, special-document and admissibility conditions."
+      ]
+    },
+    {
+      "id": "jamaica-ordinary-passport-entry-scope",
+      "priority": 31,
+      "objective": "Model Jamaica's complete current ordinary-passport visitor entry scope from Jamaican immigration and foreign-ministry nationality rules.",
+      "destinationCodes": ["JM"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.pica.gov.jm/immigration/entry-visa-requirements",
+        "https://mfaft.gov.jm/"
+      ],
+      "notes": [
+        "Distinguish visa-free stays, visas obtainable at a port, and visas required before travel exactly as the Jamaican authority defines them.",
+        "Infer a complement only from a current exhaustive nationality table or explicit official default.",
+        "Preserve duration, Commonwealth and residence conditions, purpose, work, transit, diplomatic, official, special-document and admissibility exceptions."
+      ]
+    },
+    {
+      "id": "oman-ordinary-passport-entry-scope",
+      "priority": 32,
+      "objective": "Model Oman's complete current ordinary-passport visitor entry scope from Royal Oman Police and other Omani government nationality rules.",
+      "destinationCodes": ["OM"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://evisa.rop.gov.om/",
+        "https://www.fm.gov.om/visitors/entry-visas/"
+      ],
+      "notes": [
+        "Separate unconditional and conditional visa exemptions from eVisa, visa-on-arrival and advance-visa routes conservatively.",
+        "Infer a complement only from a current exhaustive nationality table or explicit official default.",
+        "Preserve GCC/residence conditions, sponsor and hotel conditions, duration, purpose, work, transit, diplomatic, official, special-document and admissibility exceptions."
+      ]
+    },
+    {
+      "id": "zambia-ordinary-passport-entry-scope",
+      "priority": 33,
+      "objective": "Model Zambia's complete current ordinary-passport visitor entry scope from Zambia Immigration nationality and visa rules.",
+      "destinationCodes": ["ZM"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.zambiaimmigration.gov.zm/visa-information/",
+        "https://eservices.zambiaimmigration.gov.zm/"
+      ],
+      "notes": [
+        "Distinguish visa exemption, visa on arrival, eVisa and advance visa; an online alternative to an arrival visa remains visa on arrival.",
+        "Infer a complement only from a current exhaustive nationality table or explicit official default.",
+        "Preserve KAZA and regional scope, duration, purpose, work, transit, diplomatic, official, special-document and admissibility exceptions."
+      ]
+    },
+    {
+      "id": "ecuador-ordinary-passport-entry-scope",
+      "priority": 34,
+      "objective": "Model Ecuador's complete current ordinary-passport visitor entry scope from Ecuadorian foreign-ministry, immigration and legislative sources.",
+      "destinationCodes": ["EC"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.cancilleria.gob.ec/",
+        "https://www.gob.ec/mremh"
+      ],
+      "notes": [
+        "Separate visa exemptions from electronic or consular visa requirements and preserve any current special tourist-visa cohort.",
+        "Infer a complement only from a current exhaustive nationality table, statute or explicit official default.",
+        "Preserve duration, migration-registration, purpose, work, transit, diplomatic, official, special-document and admissibility exceptions."
+      ]
+    },
+    {
+      "id": "argentina-ordinary-passport-entry-scope",
+      "priority": 35,
+      "objective": "Model Argentina's complete current ordinary-passport visitor entry scope from Argentine migration, foreign-ministry and legislative sources.",
+      "destinationCodes": ["AR"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.argentina.gob.ar/interior/migraciones",
+        "https://cancilleria.gob.ar/"
+      ],
+      "notes": [
+        "Separate visa exemptions, any electronic travel authorization, and advance consular visas conservatively.",
+        "Infer a complement only from a current exhaustive nationality table, statute or explicit official default.",
+        "Preserve Mercosur and residence/document conditions, duration, purpose, work, transit, diplomatic, official, special-document and admissibility exceptions."
+      ]
+    },
+    {
+      "id": "nepal-ordinary-passport-entry-scope",
+      "priority": 36,
+      "objective": "Model Nepal's complete current ordinary-passport visitor entry scope from Nepal Immigration and government nationality rules.",
+      "destinationCodes": ["NP"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.immigration.gov.np/en/page/visa-on-arrival",
+        "https://nepaliport.immigration.gov.np/"
+      ],
+      "notes": [
+        "Verify the broad visa-on-arrival rule and its explicit prior-visa exceptions, and separately model any India or SAARC exemption.",
+        "Do not call an optional online pre-arrival form an eVisa when the actual visa is issued on arrival.",
+        "Preserve restricted-area, duration, fee, purpose, work, transit, diplomatic, official, special-document and admissibility exceptions."
+      ]
     }
   ]
 }

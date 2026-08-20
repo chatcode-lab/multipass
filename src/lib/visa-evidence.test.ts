@@ -11,6 +11,7 @@ import {
   CANADA_VISITOR_VISA_REQUIRED_CODES,
   EU_EEA_SWISS_FREE_MOVEMENT_DESTINATION_CODES,
   EU_EEA_SWISS_FREE_MOVEMENT_PASSPORT_CODES,
+  ECUADOR_EVISA_ORDINARY_PASSPORT_CODES,
   EU_SCHENGEN_ANNEX_I_ORDINARY_PASSPORT_CODES,
   EU_SCHENGEN_ANNEX_II_BIOMETRIC_CODES,
   EU_SCHENGEN_ANNEX_II_UNCONDITIONAL_CODES,
@@ -36,6 +37,7 @@ import {
   NEW_ZEALAND_STANDARD_NZETA_CODES,
   NEW_ZEALAND_VISITOR_VISA_REQUIRED_CODES,
   OFFICIAL_VISA_SOURCES,
+  RWANDA_VOA_ORDINARY_PASSPORT_CODES,
   SINGAPORE_EVISA_CODES,
   SINGAPORE_VISA_FREE_COMPLEMENT_CODES,
   SOUTH_KOREA_KETA_30_DAY_CODES,
@@ -174,7 +176,183 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("VC", "FR", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FR", "VC", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NR", "DE", "visa_free").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("AE", "CH", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AE", "CH", "visa_free").supportsCurrentStatus).toBe(true);
+  });
+
+  it("covers Brazil and Mexico from destination-authority ordinary-passport lists", () => {
+    const brazilPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "BR");
+    const mexicoPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MX");
+
+    expect(brazilPairs).toHaveLength(199);
+    expect(mexicoPairs).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("CN", "BR", "visa_free", "2026-08-20").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "BR", "visa_free", "2027-01-01").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("US", "BR", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "MX", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VA", "MX", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "MX", "visa_required").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Fiji's complete visa-exempt and pre-entry-visa cohorts", () => {
+    const fijiPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "FJ");
+
+    expect(fijiPairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("AU", "FJ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "FJ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AU", "FJ", "visa_on_arrival").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers South Africa's complete foreign ordinary-passport scope", () => {
+    const southAfricaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "ZA");
+
+    expect(southAfricaPairs).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("AU", "ZA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "ZA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "ZA", "visa_required").supportsCurrentStatus).toBe(true);
+  });
+
+  it("keeps The Bahamas' explicit current classifications and ambiguous rows separate", () => {
+    expect(getVisaRelationshipEvidence("XK", "BS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "BS", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "BS", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SS", "BS", "evisa").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Mauritius while leaving obsolete or absent country rows unresolved", () => {
+    const mauritiusPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MU");
+
+    expect(mauritiusPairs).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("US", "MU", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ID", "MU", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GY", "MU", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ME", "MU", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "MU", "visa_required").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Malaysia's current social-visit framework and expires India's temporary exemption", () => {
+    const malaysiaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MY");
+
+    expect(malaysiaPairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("US", "MY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CM", "MY", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NE", "MY", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "MY", "visa_free", "2026-12-31").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "MY", "visa_free", "2027-01-01").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Barbados' explicit current rows without calling its online letter an eVisa", () => {
+    const barbadosPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "BB");
+
+    expect(barbadosPairs).toHaveLength(197);
+    expect(getVisaRelationshipEvidence("CG", "BB", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HT", "BB", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "BB", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "BB", "evisa").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MV", "BB", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PS", "BB", "visa_required").supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps Indonesia's e-VOA within the Visa on Arrival classification", () => {
+    const indonesiaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "ID");
+
+    expect(indonesiaPairs).toHaveLength(99);
+    expect(getVisaRelationshipEvidence("CL", "ID", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "ID", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "ID", "evisa").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "ID", "visa_required").supportsCurrentStatus).toBe(false);
+  });
+
+  it("classifies Rwanda's universal arrival visa without treating fee waivers as visa-free", () => {
+    const rwandaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "RW");
+
+    expect(RWANDA_VOA_ORDINARY_PASSPORT_CODES).toHaveLength(198);
+    expect(rwandaPairs).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("DE", "RW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "RW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "RW", "visa_free").supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps Oman's conditional exemptions explicit and its source divergence unresolved", () => {
+    const omanPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "OM");
+
+    expect(omanPairs).toHaveLength(108);
+    expect(getVisaRelationshipEvidence("DE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "OM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "OM", "evisa").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "OM", "visa_free").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Jamaica's explicit ordinary-passport table without inferring omitted rows", () => {
+    const jamaicaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "JM");
+
+    expect(jamaicaPairs).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("US", "JM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "JM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "JM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MO", "JM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CG", "JM", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PS", "JM", "visa_required").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Zambia's three explicit visitor categories without resolving legacy names", () => {
+    const zambiaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "ZM");
+
+    expect(zambiaPairs).toHaveLength(194);
+    expect(getVisaRelationshipEvidence("US", "ZM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "ZM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SS", "ZM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ME", "ZM", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "ZM", "evisa").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Ecuador's explicit eVisa list and visa-free complement", () => {
+    const ecuadorPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "EC");
+
+    expect(ECUADOR_EVISA_ORDINARY_PASSPORT_CODES).toHaveLength(45);
+    expect(ecuadorPairs).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("AL", "EC", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PK", "EC", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "EC", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "EC", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "EC", "visa_required").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Argentina's complete ordinary-tourist matrix and conditional AVE routes", () => {
+    const argentinaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "AR");
+
+    expect(new Set(argentinaPairs.map(({ passport }) => passport.code)).size).toBe(199);
+    expect(getVisaRelationshipEvidence("US", "AR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AL", "AR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AL", "AR", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "AR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "AR", "visa_required").supportsCurrentStatus).toBe(true);
+  });
+
+  it("covers Nepal's visitor scope without calling its online arrival form an eVisa", () => {
+    const nepalPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "NP");
+
+    expect(new Set(nepalPairs.map(({ passport }) => passport.code)).size).toBe(198);
+    expect(getVisaRelationshipEvidence("IN", "NP", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IR", "NP", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PK", "NP", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "NP", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DE", "NP", "evisa").supportsCurrentStatus).toBe(false);
   });
 
   it("covers Canada's current nationality and document-qualified visitor rules", () => {
@@ -407,6 +585,47 @@ describe("official visa evidence", () => {
       "www.boca.gov.tw",
       "visawebapp.boca.gov.tw",
       "www.immigration.gov.tw",
+      "www.gov.br",
+      "www.inm.gob.mx",
+      "www.gob.mx",
+      "consulmex.sre.gob.mx",
+      "embamex.sre.gob.mx",
+      "lovdata.no",
+      "www.llv.li",
+      "www.immigration.gov.fj",
+      "www.dha.gov.za",
+      "ehome.dha.gov.za",
+      "www.gov.za",
+      "mofa.gov.bs",
+      "evisa.mofa.gov.bs",
+      "www.immigration.gov.bs",
+      "passport.govmu.org",
+      "www.imi.gov.my",
+      "malaysiavisa.imi.gov.my",
+      "imigresen-online.imi.gov.my",
+      "www.kln.gov.my",
+      "www.foreign.gov.bb",
+      "immigration.gov.bb",
+      "apps.immigration.gov.bb",
+      "kanwilsultra.imigrasi.go.id",
+      "jakartapusat.imigrasi.go.id",
+      "www.imigrasi.go.id",
+      "manado.imigrasi.go.id",
+      "www.migration.gov.rw",
+      "www.fm.gov.om",
+      "www.rop.gov.om",
+      "www.pica.gov.jm",
+      "mfaft.gov.jm",
+      "www.zambiaimmigration.gov.zm",
+      "eservices.zambiaimmigration.gov.zm",
+      "www.cancilleria.gob.ec",
+      "serviciosdigitales.cancilleria.gob.ec",
+      "www.migraciones.gob.ar",
+      "www.boletinoficial.gob.ar",
+      "www.argentina.gob.ar",
+      "immigration.gov.np",
+      "tia.immigration.gov.np",
+      "mofa.gov.np",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

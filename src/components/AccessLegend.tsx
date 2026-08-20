@@ -1,4 +1,4 @@
-import { STATUS_META } from "@/lib/passport";
+import { STATUS_META } from "@/lib/passport-shared";
 import { ACCESS_STATUSES } from "@/lib/types";
 import StatusPill from "./StatusPill";
 

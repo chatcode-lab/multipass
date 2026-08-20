@@ -1,0 +1,191 @@
+{
+  "batchId": "ecuador-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "ecuador-mfa-transitory-visitor-visa-2025",
+      "title": "Ecuador will require a transitory visitor visa from 1 September 2025",
+      "url": "https://www.cancilleria.gob.ec/2025/08/30/ecuador-exigira-visa-de-transeunte-a-partir-del-1-de-septiembre-de-2025/",
+      "publisher": "Ministry of Foreign Affairs and Human Mobility",
+      "jurisdiction": "Ecuador",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The live announcement is published by Ecuador's foreign ministry on the official cancilleria.gob.ec domain and identifies the governing 2025 legal reform.",
+      "supportingExcerpt": "los países a los que actualmente se les solicita visa para ingresar al país, que son"
+    },
+    {
+      "id": "ecuador-mfa-mobility-regulation-tourist-stays",
+      "title": "Regulation to the Organic Law on Human Mobility",
+      "url": "https://www.cancilleria.gob.ec/wp-content/uploads/2025/04/reglamento_a_la_ley_organica_de_movilidad_humana_23_marzo_de_2023.pdf",
+      "publisher": "Ministry of Foreign Affairs and Human Mobility",
+      "jurisdiction": "Ecuador",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The foreign ministry hosts the current official text of the regulation implementing Ecuador's Organic Law on Human Mobility.",
+      "supportingExcerpt": "podrá permanecer en el país por un máximo de noventa días"
+    },
+    {
+      "id": "ecuador-mfa-evisas-portal-guide",
+      "title": "eVISAS Portal user guide",
+      "url": "https://www.cancilleria.gob.ec/wp-content/uploads/2026/03/Portal-EVisas-ESPANOL_compressed.pdf",
+      "publisher": "Ministry of Foreign Affairs and Human Mobility",
+      "jurisdiction": "Ecuador",
+      "kind": "official-portal",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The foreign ministry publishes this eVISAS portal guide on the official cancilleria.gob.ec domain for its visa-application service.",
+      "supportingExcerpt": "Recibirás un correo electrónico con tu visa electrónica"
+    },
+    {
+      "id": "ecuador-mfa-electronic-visas-2024",
+      "title": "eVISAS portal: electronic visas for Ecuador",
+      "url": "https://www.cancilleria.gob.ec/2024/07/16/portal-evisas-visas-electronicas-para-ecuador/",
+      "publisher": "Ministry of Foreign Affairs and Human Mobility",
+      "jurisdiction": "Ecuador",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The Ministry of Foreign Affairs and Human Mobility publishes this description of its electronic-visa service on the official cancilleria.gob.ec domain.",
+      "supportingExcerpt": "visas electrónicas 100% en línea"
+    }
+  ],
+  "policies": [
+    {
+      "id": "ecuador-citizens-outside-foreign-visitor-visa-scope",
+      "title": "Ecuadorian nationals: outside foreign visitor-visa scope",
+      "summary": "The Human Mobility Regulation's tourist-entry rules govern foreign persons, not Ecuadorian nationals presenting an Ecuadorian passport.",
+      "status": "citizenship",
+      "destinationCodes": ["EC"],
+      "passportCodes": ["EC"],
+      "conditions": [
+        "This classification does not establish entry treatment for dual nationals presenting another passport, residence, migration-registration, departure, document-validity, or individual-admissibility requirements."
+      ],
+      "sourceIds": ["ecuador-mfa-mobility-regulation-tourist-stays"],
+      "confidence": "high"
+    },
+    {
+      "id": "ecuador-named-transitory-visitor-evisa-nationalities",
+      "title": "Named ordinary passports: transitory visitor eVisa required before travel",
+      "summary": "Effective 1 September 2025, Ecuador's foreign ministry expressly requires the named nationalities to obtain the electronically issued Visa de Visitante Temporal de Transeúnte before entering Ecuador.",
+      "status": "evisa",
+      "destinationCodes": ["EC"],
+      "passportCodes": ["AF","AO","BD","CM","CU","EG","ER","ET","PH","GM","GH","GN","KE","IN","IQ","IR","LY","NG","PK","NP","CD","KP","SN","SY","LK","SO","VE","VN","YE","HT","CG","ML","CI","MM","UZ","TJ","AL","TD","GW","KG","MR","SL","SD","SS","CN"],
+      "effectiveFrom": "2025-09-01",
+      "conditions": [
+        "The announcement calls this authorization a Visa de Visitante Temporal de Transeúnte under the 2025 reform to Article 66 of the Organic Law on Human Mobility. It must be requested while the applicant is outside Ecuador through the ministry's official digital service.",
+        "The Foreign Ministry describes the eVISAS service as electronic visas processed 100% online. Its current guide says the approved electronic visa is sent by email for the traveller to download and present, so this is normalized as eVisa rather than a non-electronic advance visa, ETA, or visa on arrival.",
+        "The foreign ministry's visitor regulation separately provides that a tourist may not perform work or economic activity. Passport validity, visa validity, purpose, route, residence, transit, diplomatic or official document, security, prior immigration history, and border-admission requirements remain separate and are not established by this nationality rule."
+      ],
+      "sourceIds": ["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024","ecuador-mfa-mobility-regulation-tourist-stays"],
+      "confidence": "high",
+      "application": {
+        "url": "https://serviciosdigitales.cancilleria.gob.ec/",
+        "label": "Ecuador Foreign Ministry digital visa service",
+        "steps": [
+          "Apply for the transitory temporary visitor visa from outside Ecuador through the ministry's digital service.",
+          "Provide the documents and pay the amounts required for the individual application.",
+          "Download the eVisa delivered by email and present it with all required documents to migration control; issuance does not itself establish admission."
+        ]
+      }
+    },
+    {
+      "id": "ecuador-named-south-american-ordinary-passports-180-day-visitor-exemption",
+      "title": "Named South American ordinary passports: visitor entry up to 180 days",
+      "summary": "The current exhaustive required-visa list does not include these named South American nationalities, and the Human Mobility Regulation allows South American tourists up to 180 days in a year.",
+      "status": "visa_free",
+      "destinationCodes": ["EC"],
+      "passportCodes": ["AR","BO","BR","CL","CO","GY","PY","PE","SR","UY"],
+      "conditions": [
+        "The 180-day figure is the maximum that migration control may grant to a South American tourist in one year; it is not a guaranteed stay or an authorization for employment or economic activity.",
+        "The classification rests on the Foreign Ministry's explicit current list of all nationalities for which Ecuador requires a visa, read with the visitor-stay rule. It does not establish national-identity-card use, residence, work, transit, diplomatic, official, emergency, refugee, or other special-document treatment.",
+        "Entry remains subject to presenting an identity-verifying travel document, migration-control verification of the invoked status, security and admissibility requirements, and any current health or carrier requirements."
+      ],
+      "sourceIds": ["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-mobility-regulation-tourist-stays"],
+      "confidence": "high"
+    },
+    {
+      "id": "ecuador-explicit-required-visa-list-complement-ordinary-passport-visitor-exemption",
+      "title": "Other expressly unlisted ordinary foreign passports: visitor exemption up to 90 days",
+      "summary": "Ecuador's foreign ministry expressly identifies the complete current nationality list for which a visa is required; the other named foreign ordinary-passport codes are therefore visitor-exempt for the regulation's normal maximum of 90 days in one year.",
+      "status": "visa_free",
+      "destinationCodes": ["EC"],
+      "passportCodes": ["AD","AE","AG","AM","AT","AU","AZ","BA","BB","BE","BF","BG","BH","BI","BJ","BN","BS","BT","BW","BY","BZ","CA","CF","CH","CR","CV","CY","CZ","DE","DJ","DK","DM","DO","DZ","EE","ES","FI","FJ","FM","FR","GA","GB","GD","GE","GQ","GR","GT","HN","HR","HU","ID","IE","IL","IS","IT","JM","JO","JP","KH","KI","KM","KN","KR","KW","KZ","LA","LB","LC","LI","LR","LS","LT","LU","LV","MA","MC","MD","ME","MG","MH","MK","MN","MT","MU","MV","MW","MX","MY","MZ","NA","NE","NI","NL","NO","NR","NZ","OM","PA","PG","PL","PS","PT","PW","QA","RO","RS","RU","RW","SA","SB","SC","SE","SG","SI","SK","SM","ST","SV","SZ","TG","TH","TL","TM","TN","TO","TR","TT","TV","TZ","UA","UG","US","VA","VC","VU","WS","XK","ZA","ZM","ZW"],
+      "conditions": [
+        "This complement is inferred only from the ministry's explicit current statement that the listed countries are those whose nationals are required to hold a visa. The current source does not state a nationality-wide eVisa, ETA, arrival-visa, or electronic travel-authorization route for this complement.",
+        "A foreign tourist may remain for a maximum of 90 days from the first entry in a year and may apply once for an extension of up to 90 further days under the regulation. This normal 90-day rule does not replace the distinct South American maximum.",
+        "The traveller must present a travel document verifying identity and satisfy the migration-control officer that the claimed immigration status applies. No work or economic activity is authorized by tourist entry.",
+        "This is limited to ordinary foreign passports. It does not establish diplomatic, official, service, emergency, refugee, stateless, laissez-passer, residence, employment, transit, special-purpose, or individual security/admissibility treatment."
+      ],
+      "sourceIds": ["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-mobility-regulation-tourist-stays","ecuador-mfa-evisas-portal-guide"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {"passportCode":"AF","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"AO","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"BD","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"CM","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"CU","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"EG","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"ER","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"ET","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"PH","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"GM","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"GH","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"GN","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"KE","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"IN","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"IQ","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"IR","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"LY","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"NG","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"NP","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"CD","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"KP","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"SN","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"SY","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"LK","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"SO","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"VE","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"VN","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"YE","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"HT","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"CG","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"ML","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"CI","destinationCode":"EC","snapshotStatus":"visa_free","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality, superseding the snapshot's visa exemption.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"MM","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"UZ","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"TJ","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"AL","destinationCode":"EC","snapshotStatus":"visa_free","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality, superseding the snapshot's visa exemption.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"TD","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"GW","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"KG","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"MR","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"SL","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"SD","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"SS","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]},
+    {"passportCode":"CN","destinationCode":"EC","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Ecuador's current Foreign Ministry electronic transitory visitor-visa cohort includes this nationality.","sourceIds":["ecuador-mfa-transitory-visitor-visa-2025","ecuador-mfa-evisas-portal-guide","ecuador-mfa-electronic-visas-2024"]}
+  ],
+  "unresolved": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "EC",
+      "reason": "The current Foreign Ministry statement is an exhaustive country-nationality list, but it does not state treatment of a Hong Kong SAR passport as a distinct travel document. The PRC entry is not extended to HK without direct evidence.",
+      "searchedOfficialDomains": ["cancilleria.gob.ec","gob.ec"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "EC",
+      "reason": "The current Foreign Ministry statement is an exhaustive country-nationality list, but it does not state treatment of a Macao SAR passport as a distinct travel document. The PRC entry is not extended to MO without direct evidence.",
+      "searchedOfficialDomains": ["cancilleria.gob.ec","gob.ec"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "EC",
+      "reason": "The current Foreign Ministry country-nationality list does not state the treatment of a Taiwan passport or a related special travel document. No PRC or generic-country treatment is inferred for this distinct code.",
+      "searchedOfficialDomains": ["cancilleria.gob.ec","gob.ec"]
+    }
+  ]
+}

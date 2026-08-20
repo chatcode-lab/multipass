@@ -1,4 +1,5 @@
 import type { AccessStatus } from "@/lib/types";
+import reviewedVisaEvidence from "./reviewed-visa-evidence.json";
 
 export type OfficialSourceKind = "law" | "government-guidance" | "official-portal" | "official-dataset";
 
@@ -35,6 +36,20 @@ export interface VisaPolicyEvidence {
   sourceIds: readonly string[];
   application?: VisaApplicationGuide;
 }
+
+const REVIEWED_VISA_EVIDENCE = reviewedVisaEvidence as unknown as {
+  batchIds: readonly string[];
+  sources: readonly OfficialVisaSource[];
+  policies: readonly VisaPolicyEvidence[];
+};
+
+export const RWANDA_VOA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "rwanda-universal-ordinary-passport-visa-on-arrival")
+  ?.passportCodes ?? [];
+
+export const ECUADOR_EVISA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "ecuador-named-transitory-visitor-evisa-nationalities")
+  ?.passportCodes ?? [];
 
 export const ANGOLA_TOURIST_VISA_EXEMPT_CODES = [
   "SZ", "MA", "LS", "GQ", "MU", "SC", "CV", "BW", "MG", "MW", "RW", "ZW", "DZ", "TZ",
@@ -435,6 +450,7 @@ export const HONG_KONG_VISA_REQUIRED_CODES = [
 ] as const;
 
 export const OFFICIAL_VISA_SOURCES: readonly OfficialVisaSource[] = [
+  ...REVIEWED_VISA_EVIDENCE.sources,
   {
     id: "angola-decree-189-23",
     title: "Presidential Decree 189/23: tourist visa exemption",
@@ -1881,6 +1897,7 @@ const EU_ADDITIONAL_WAIVER_POLICIES: readonly VisaPolicyEvidence[] = EU_ADDITION
 });
 
 export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
+  ...REVIEWED_VISA_EVIDENCE.policies,
   ...EU_EEA_SWISS_FREE_MOVEMENT_POLICIES,
   ...EU_ADDITIONAL_WAIVER_POLICIES,
   {

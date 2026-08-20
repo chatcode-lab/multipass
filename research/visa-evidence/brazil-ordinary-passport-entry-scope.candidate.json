@@ -1,0 +1,186 @@
+{
+  "batchId": "brazil-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "mre-qgrv-2025-ordinary-passport-table",
+      "title": "Quadro Geral de Regime de Vistos para a Entrada de Estrangeiros no Brasil",
+      "url": "https://www.gov.br/mre/pt-br/assuntos/portal-consular/qgrv-simples-port-18jul25.pdf",
+      "publisher": "Ministério das Relações Exteriores",
+      "jurisdiction": "Brazil",
+      "kind": "official-dataset",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The QGRV is published by Brazil's Ministry of Foreign Affairs on the federal gov.br domain as the regime table for entry of foreigners.",
+      "supportingExcerpt": "VIVIS – Visto de Visita, para portadores de passaporte comum."
+    },
+    {
+      "id": "mre-chicago-vivis-evisa-australia-canada-us",
+      "title": "VIVIS — Visitor Visa",
+      "url": "https://www.gov.br/mre/pt-br/consulado-chicago/Visas/types-of-visa-1/vivis-visitor-visa",
+      "publisher": "Consulate-General of Brazil in Chicago / Ministry of Foreign Affairs",
+      "jurisdiction": "Brazil",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The guidance is published by a Brazilian Ministry of Foreign Affairs consular post on the official federal gov.br domain.",
+      "supportingExcerpt": "Nationals of Australia, Canada and United States can request an electronic visitor visa."
+    },
+    {
+      "id": "mre-zurich-vivis-china-exemption",
+      "title": "VIVIS — Visitor Visa",
+      "url": "https://www.gov.br/mre/pt-br/consulado-zurique/deutsch/visa-english-1/vivis_en",
+      "publisher": "Consulate-General of Brazil in Zurich / Ministry of Foreign Affairs",
+      "jurisdiction": "Brazil",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The guidance is published by a Brazilian Ministry of Foreign Affairs consular post on the official federal gov.br domain.",
+      "supportingExcerpt": "Chinese passport holders are exempt from VIVIS since May 11, 2026."
+    },
+    {
+      "id": "mre-guangzhou-china-temporary-exemption",
+      "title": "Applying for a visa in Guangzhou",
+      "url": "https://www.gov.br/mre/pt-br/consulado-cantao/EN/visas/info",
+      "publisher": "Consulate-General of Brazil in Guangzhou / Ministry of Foreign Affairs",
+      "jurisdiction": "Brazil",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The guidance is published by a Brazilian Ministry of Foreign Affairs consular post on the official federal gov.br domain.",
+      "supportingExcerpt": "This measure will be valid until December 31, 2026."
+    },
+    {
+      "id": "mre-mumbai-online-visa-not-evisa",
+      "title": "Business e-visa for Indian citizens — step by step",
+      "url": "https://www.gov.br/mre/pt-br/consulado-mumbai/visas/business-e-visa-for-indian-citizens/business-e-visa-step-by-step",
+      "publisher": "Consulate-General of Brazil in Mumbai / Ministry of Foreign Affairs",
+      "jurisdiction": "Brazil",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The guidance is published by a Brazilian Ministry of Foreign Affairs consular post on the official federal gov.br domain.",
+      "supportingExcerpt": "Please select the standard \"VISA\" option, not \"e-VISA\"."
+    },
+    {
+      "id": "mre-santo-domingo-haiti-prior-consultation",
+      "title": "Visa de Reunión Familiar (VITEM XI)",
+      "url": "https://www.gov.br/mre/pt-br/embaixada-sao-domingos/servicos-consulares/visto-visa/visa-de-reunion-familiar-vitem-xi",
+      "publisher": "Embassy of Brazil in Santo Domingo / Ministry of Foreign Affairs",
+      "jurisdiction": "Brazil",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The notice is published by a Brazilian Ministry of Foreign Affairs embassy on the official federal gov.br domain.",
+      "supportingExcerpt": "El QGRV se ha actualizado para reflejar la obligación de consulta previa al MRE."
+    },
+    {
+      "id": "brazil-federal-migration-visitor-extension",
+      "title": "Prorrogar estada no Brasil",
+      "url": "https://www.gov.br/pt-br/servicos/prorrogar-estada-no-brasil",
+      "publisher": "Federal Government of Brazil / Polícia Federal",
+      "jurisdiction": "Brazil",
+      "kind": "government-guidance",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The federal service is published on Brazil's official gov.br portal and identifies the Polícia Federal service for a foreign visitor's stay extension.",
+      "supportingExcerpt": "O visitante poderá requerer a prorrogação de estada no Brasil."
+    }
+  ],
+  "policies": [
+    {
+      "id": "brazil-citizens-outside-foreign-visitor-visa-scope",
+      "title": "Brazilian nationals: outside the foreign VIVIS regime",
+      "summary": "The QGRV governs entry of foreigners; a Brazilian national is therefore outside its foreign visitor-visa classification.",
+      "status": "citizenship",
+      "destinationCodes": ["BR"],
+      "passportCodes": ["BR"],
+      "conditions": [
+        "This citizenship classification does not establish the document requirements for a particular Brazilian national, dual national, carrier, or border route.",
+        "It does not determine treatment when a dual national presents a different country's ordinary passport."
+      ],
+      "sourceIds": ["mre-qgrv-2025-ordinary-passport-table"],
+      "confidence": "high"
+    },
+    {
+      "id": "brazil-qgrv-ordinary-passports-visa-exempt",
+      "title": "QGRV-listed ordinary passports: VIVIS visa exemption",
+      "summary": "For these ordinary national passports, the QGRV VIVIS column records a visa dispensation for a short visitor stay. China is handled by the later country-specific MRE update.",
+      "status": "visa_free",
+      "destinationCodes": ["BR"],
+      "passportCodes": ["AD","AE","AG","AL","AM","AR","AT","BA","BB","BE","BG","BO","BS","BW","BY","BZ","CH","CL","CO","CR","CY","CZ","DE","DK","DM","DO","EC","EE","ES","FI","FJ","FR","GB","GD","GE","GR","GT","GY","HK","HN","HR","HU","ID","IE","IL","IS","IT","JM","JP","KN","KR","KZ","LC","LI","LT","LU","LV","MA","MC","MD","ME","MK","MN","MO","MT","MX","MY","NA","NI","NL","NO","NZ","PA","PE","PH","PL","PT","PY","QA","RO","RS","RU","SC","SE","SG","SI","SK","SM","SR","SV","TH","TN","TR","TT","UA","UY","VA","VC","VE","ZA"],
+      "conditions": [
+        "The QGRV legend limits this policy to the VIVIS column for holders of ordinary passports. PADIP (diplomatic) and PASOF (official or service) columns are separate and are not normalized here.",
+        "The precise dispensation period is the numbered VIVIS entry and applicable footnote in the QGRV, rather than a single uniform duration; the table uses 30-, 60-, 90-, 180-, and other specified periods.",
+        "A QGRV # marker permits entry with a civil identity card for the marked nationality. This passport classification neither requires nor generalizes that separate identity-card facility.",
+        "This policy does not cover a laissez-passer, refugee or alien travel document, diplomatic, official, service, public-affairs, temporary, or other special passport/document.",
+        "Visa dispensation is not a residence authorization and does not authorize paid work. VIVIS is limited to visitor purposes; a different purpose, a longer stay, or residence requires the applicable immigration route.",
+        "Admission and the authorized stay remain subject to Brazilian border control and all current entry requirements. Any extension is a separate Polícia Federal process and depends on the applicable QGRV reciprocity rule."
+      ],
+      "sourceIds": ["mre-qgrv-2025-ordinary-passport-table","brazil-federal-migration-visitor-extension"],
+      "confidence": "medium"
+    },
+    {
+      "id": "brazil-china-ordinary-passports-vivis-exemption",
+      "title": "China ordinary passports: VIVIS visa exemption",
+      "summary": "MRE's current Zurich consular guidance says Chinese ordinary passport holders have been exempt from VIVIS since 11 May 2026 for the specified short-visit purposes.",
+      "status": "visa_free",
+      "destinationCodes": ["BR"],
+      "passportCodes": ["CN"],
+      "effectiveFrom": "2026-05-11",
+      "effectiveTo": "2026-12-31",
+      "conditions": [
+        "The MRE guidance limits the exemption to multiple-entry tourism, business, transit, artistic, or sports visits, for at most 30 days in one year.",
+        "Longer stays and other purposes require the appropriate physical visa under the MRE guidance.",
+        "This applies to an ordinary Chinese passport; it does not establish treatment of a PRC Travel Document, Hong Kong SAR passport, Macao SAR passport, Taiwan passport, diplomatic passport, official passport, or another special document.",
+        "The consular page's country-specific online filing note does not establish a nationality-wide eVisa category for this normalized visitor classification."
+      ],
+      "sourceIds": ["mre-zurich-vivis-china-exemption","mre-guangzhou-china-temporary-exemption","mre-mumbai-online-visa-not-evisa"],
+      "confidence": "high"
+    },
+    {
+      "id": "brazil-australia-canada-us-electronic-vivis",
+      "title": "Australia, Canada, and United States ordinary passports: electronic VIVIS",
+      "summary": "Australia, Canada, and United States nationals require a Brazilian visitor visa from 10 April 2025 but may obtain the nationally described electronic visitor visa.",
+      "status": "evisa",
+      "destinationCodes": ["BR"],
+      "passportCodes": ["AU","CA","US"],
+      "effectiveFrom": "2025-04-10",
+      "conditions": [
+        "The MRE source describes this as a visitor visa (VIVIS), not visa-free entry; it is valid only for the visitor purposes and periods the visa grants.",
+        "The electronic route is expressly described by MRE for these three nationalities. Generic online consular processing for other nationalities is not normalized as eVisa.",
+        "This policy is limited to ordinary national passports and does not establish a rule for diplomatic, official, service, emergency, refugee, alien, or other special travel documents.",
+        "A visitor visa does not establish residence or permission for paid employment; entry and admission remain subject to Brazilian immigration control."
+      ],
+      "sourceIds": ["mre-qgrv-2025-ordinary-passport-table","mre-chicago-vivis-evisa-australia-canada-us","mre-mumbai-online-visa-not-evisa"],
+      "confidence": "high",
+      "application": {
+        "url": "https://brazil.vfsevisa.com/",
+        "label": "Brazil electronic visitor visa application",
+        "steps": [
+          "Use the MRE-linked electronic visitor-visa application site.",
+          "Complete the visitor-visa application and provide the requested supporting documents.",
+          "Receive the electronic visa before travel and present it with the ordinary passport used for the application."
+        ]
+      }
+    },
+    {
+      "id": "brazil-qgrv-ordinary-passports-vivis-required",
+      "title": "QGRV-listed ordinary passports: VIVIS required",
+      "summary": "For these ordinary national passports, the QGRV VIVIS column records that a Brazilian visitor visa is required before the short visit.",
+      "status": "visa_required",
+      "destinationCodes": ["BR"],
+      "passportCodes": ["AF","AO","AZ","BD","BF","BH","BI","BJ","BN","BT","CD","CF","CG","CI","CM","CU","CV","DJ","DZ","EG","ER","ET","FM","GA","GH","GM","GN","GQ","GW","HT","IN","IQ","IR","JO","KE","KG","KH","KI","KM","KP","KW","LA","LB","LK","LR","LS","LY","MG","MH","ML","MM","MR","MU","MV","MW","MZ","NE","NG","NP","NR","OM","PG","PK","PS","PW","RW","SA","SB","SD","SL","SN","SO","SS","ST","SY","SZ","TD","TG","TJ","TL","TM","TO","TV","TW","TZ","UG","UZ","VN","VU","WS","XK","YE","ZM","ZW"],
+      "conditions": [
+        "This is limited to the QGRV VIVIS column for an ordinary passport. It does not infer a rule from PADIP, PASOF, residence status, special passport, laissez-passer, refugee document, or alien travel document.",
+        "The required visa is a visitor visa; purpose, length, and entry conditions are assessed under the visa and ordinary migration rules, and the visa does not itself authorize residence or paid work.",
+        "For Haitian nationals, the later MRE notice says QGRV was updated to require prior consultation with MRE Brasília for VIVIS. That additional case-management condition remains applicable.",
+        "For Taiwan, the QGRV's distinct treatment is document-specific; this ISO-code policy does not establish admission on a Taiwan diplomatic, official, or special passport."
+      ],
+      "sourceIds": ["mre-qgrv-2025-ordinary-passport-table","mre-santo-domingo-haiti-prior-consultation"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { flagEmojiFor, formatRegion } from "@/lib/geography";
-import { destinationSlug } from "@/lib/visa-evidence";
+import { destinationSlug } from "@/lib/visa-urls";
 import { REGIONS, type Destination, type Region } from "@/lib/types";
 
 interface DestinationExplorerProps {

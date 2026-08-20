@@ -10,10 +10,17 @@ const PRIORITY_DESTINATION_RESEARCH_CODES = [
 ] as const;
 
 const snapshot = fallbackSnapshot as DataSnapshot;
+const includeAllDestinations = process.argv.includes("--all");
+const onlyIncomplete = process.argv.includes("--incomplete");
+const summaryOnly = process.argv.includes("--summary");
 const passportCodes = snapshot.manifest.passports.map(({ code }) => code);
-const destinationNames = new Map(snapshot.manifest.destinations.map(({ code, name }) => [code, name]));
+const destinationByCode = new Map(snapshot.manifest.destinations.map((destination) => [destination.code, destination]));
+const destinationCodes = includeAllDestinations
+  ? snapshot.manifest.destinations.map(({ code }) => code)
+  : [...PRIORITY_DESTINATION_RESEARCH_CODES];
 
-const rows = PRIORITY_DESTINATION_RESEARCH_CODES.map((destinationCode) => {
+const rows = destinationCodes.map((destinationCode) => {
+  const destination = destinationByCode.get(destinationCode);
   const scopedPassports = passportCodes.filter((passportCode) => passportCode !== destinationCode);
   const supported = scopedPassports.filter((passportCode) => {
     const status = snapshot.passports[passportCode]?.statuses[destinationCode];
@@ -21,20 +28,38 @@ const rows = PRIORITY_DESTINATION_RESEARCH_CODES.map((destinationCode) => {
   }).length;
   return {
     code: destinationCode,
-    destination: destinationNames.get(destinationCode) ?? destinationCode,
+    destination: destination?.name ?? destinationCode,
+    region: destination?.region ?? "UNKNOWN",
     supported,
     total: scopedPassports.length,
     percent: Number(((supported / scopedPassports.length) * 100).toFixed(1)),
   };
 });
 
-console.table(rows);
+const displayedRows = onlyIncomplete ? rows.filter(({ supported, total }) => supported < total) : rows;
+if (!summaryOnly) console.table(displayedRows);
 const supported = rows.reduce((sum, row) => sum + row.supported, 0);
 const total = rows.reduce((sum, row) => sum + row.total, 0);
 const destinationsWithMajorityCoverage = rows.filter(({ percent }) => percent >= 50).length;
 const destinationsWithBroadCoverage = rows.filter(({ percent }) => percent >= 80).length;
 
 process.stdout.write(
-  `Current-status evidence: ${supported}/${total} relationships (${((supported / total) * 100).toFixed(1)}%).\n`
+  `${includeAllDestinations ? "All-destination" : "Priority-destination"} current-status evidence: ${supported}/${total} relationships (${((supported / total) * 100).toFixed(1)}%).\n`
   + `Destinations at 50%+: ${destinationsWithMajorityCoverage}/${rows.length}; at 80%+: ${destinationsWithBroadCoverage}/${rows.length}.\n`,
 );
+
+if (includeAllDestinations) {
+  const regionRows = [...new Set(rows.map(({ region }) => region))].map((region) => {
+    const regionDestinations = rows.filter((row) => row.region === region);
+    const regionSupported = regionDestinations.reduce((sum, row) => sum + row.supported, 0);
+    const regionTotal = regionDestinations.reduce((sum, row) => sum + row.total, 0);
+    return {
+      region,
+      destinations: regionDestinations.length,
+      supported: regionSupported,
+      total: regionTotal,
+      percent: Number(((regionSupported / regionTotal) * 100).toFixed(1)),
+    };
+  });
+  console.table(regionRows);
+}

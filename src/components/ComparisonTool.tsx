@@ -1,8 +1,8 @@
 import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ACCESS_EASE_WEIGHT, STATUS_META } from "@/lib/passport";
+import { ACCESS_EASE_WEIGHT, STATUS_META } from "@/lib/passport-shared";
 import { comparisonHref, flagEmojiFor, formatRegion, rankHref } from "@/lib/geography";
-import { destinationSlug, visaRelationshipHref } from "@/lib/visa-evidence";
+import { destinationSlug, visaRelationshipHref } from "@/lib/visa-urls";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary, type Region } from "@/lib/types";
 import AccessLegend from "./AccessLegend";
 import PassportCover from "./PassportCover";

@@ -82,6 +82,159 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { AF: "citizenship", GB: "visa_required" }, mobilityScore: 0 });
   });
 
+  it("applies Mexico's reviewed electronic-visa and visa-list corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "BR",
+      name: "Brazil",
+      statuses: { BR: "citizenship", MX: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { BR: "citizenship", MX: "evisa" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "VA",
+      name: "Vatican City",
+      statuses: { VA: "citizenship", MX: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { VA: "citizenship", MX: "visa_required" }, mobilityScore: 0 });
+  });
+
+  it("applies The Bahamas' reviewed Kosovo visa exemption", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "XK",
+      name: "Kosovo",
+      statuses: { XK: "citizenship", BS: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { XK: "citizenship", BS: "visa_free" }, mobilityScore: 1 });
+  });
+
+  it("applies reviewed Mauritius and Malaysia corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "GY",
+      name: "Guyana",
+      statuses: { GY: "citizenship", MU: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { GY: "citizenship", MU: "visa_required" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "CM",
+      name: "Cameroon",
+      statuses: { CM: "citizenship", MY: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { CM: "citizenship", MY: "evisa" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "NE",
+      name: "Niger",
+      statuses: { NE: "citizenship", MY: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { NE: "citizenship", MY: "evisa" }, mobilityScore: 0 });
+  });
+
+  it("applies reviewed Barbados ordinary-passport corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "CG",
+      name: "Republic of the Congo",
+      statuses: { CG: "citizenship", BB: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { CG: "citizenship", BB: "visa_free" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "HT",
+      name: "Haiti",
+      statuses: { HT: "citizenship", BB: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { HT: "citizenship", BB: "visa_required" }, mobilityScore: 0 });
+  });
+
+  it("applies Indonesia's reviewed BVK and VOA classifications", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "BR",
+      name: "Brazil",
+      statuses: { BR: "citizenship", ID: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { BR: "citizenship", ID: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "CL",
+      name: "Chile",
+      statuses: { CL: "citizenship", ID: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { CL: "citizenship", ID: "visa_free" }, mobilityScore: 1 });
+  });
+
+  it("normalizes Rwanda's fee-waived arrival visas as visa on arrival", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "GH",
+      name: "Ghana",
+      statuses: { GH: "citizenship", RW: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { GH: "citizenship", RW: "visa_on_arrival" }, mobilityScore: 1 });
+  });
+
+  it("applies Jamaica's reviewed prior-visa, exemption, and port-of-entry rows", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "AE",
+      name: "United Arab Emirates",
+      statuses: { AE: "citizenship", JM: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { AE: "citizenship", JM: "visa_required" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "MO",
+      name: "Macao",
+      statuses: { MO: "citizenship", JM: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { MO: "citizenship", JM: "visa_free" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "TW",
+      name: "Taiwan",
+      statuses: { TW: "citizenship", JM: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { TW: "citizenship", JM: "visa_on_arrival" }, mobilityScore: 1 });
+  });
+
+  it("applies Zambia's reviewed arrival and prior-clearance classifications", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "GH",
+      name: "Ghana",
+      statuses: { GH: "citizenship", ZM: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { GH: "citizenship", ZM: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "SS",
+      name: "South Sudan",
+      statuses: { SS: "citizenship", ZM: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { SS: "citizenship", ZM: "evisa" }, mobilityScore: 0 });
+  });
+
+  it("normalizes Ecuador's digitally issued visitor visas as eVisas", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "AL",
+      name: "Albania",
+      statuses: { AL: "citizenship", EC: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { AL: "citizenship", EC: "evisa" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "AF",
+      name: "Afghanistan",
+      statuses: { AF: "citizenship", EC: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { AF: "citizenship", EC: "evisa" }, mobilityScore: 0 });
+  });
+
+  it("applies Nepal's current arrival-visa exclusion list", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "IR",
+      name: "Iran",
+      statuses: { IR: "citizenship", NP: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { IR: "citizenship", NP: "visa_on_arrival" }, mobilityScore: 1 });
+  });
+
   it("uses dense rank equivalents", () => {
     const passports = [190, 188, 188, 187, 180].map(
       (mobilityScore, index) => ({ mobilityScore, code: `${index}`, name: `${index}` }) as PassportSummary,

@@ -1,0 +1,119 @@
+{
+  "batchId": "fiji-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "fiji-immigration-visa-exempt-countries",
+      "title": "Visa exempted countries",
+      "url": "https://www.immigration.gov.fj/visa-exempted-countries/",
+      "publisher": "Ministry of Immigration",
+      "jurisdiction": "Fiji",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The country list is published by Fiji's Ministry of Immigration on its official immigration.gov.fj domain.",
+      "supportingExcerpt": "Citizens of the following countries are not required to obtain a Fiji visa when travelling to Fiji."
+    },
+    {
+      "id": "fiji-immigration-visa-application-default",
+      "title": "Visa Application",
+      "url": "https://www.immigration.gov.fj/visa-application/",
+      "publisher": "Ministry of Immigration",
+      "jurisdiction": "Fiji",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The entry-visa guidance is published by Fiji's Ministry of Immigration on its official immigration.gov.fj domain.",
+      "supportingExcerpt": "All countries not listed here are required to apply for visa."
+    },
+    {
+      "id": "fiji-immigration-visitors-permit",
+      "title": "Visitors Permit",
+      "url": "https://www.immigration.gov.fj/visitors-permit/",
+      "publisher": "Ministry of Immigration",
+      "jurisdiction": "Fiji",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The visitor-permit guidance is published by Fiji's Ministry of Immigration on its official immigration.gov.fj domain.",
+      "supportingExcerpt": "Visitors Permit is issued on arrival to visa exempted countries."
+    },
+    {
+      "id": "fiji-immigration-visit-transit",
+      "title": "Visit/Transit in Fiji",
+      "url": "https://www.immigration.gov.fj/visit-transit-in-fiji/",
+      "publisher": "Ministry of Immigration",
+      "jurisdiction": "Fiji",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The entry and transit guidance is published by Fiji's Ministry of Immigration on its official immigration.gov.fj domain.",
+      "supportingExcerpt": "Others will be given visitor permits on Immigration Clearance."
+    },
+    {
+      "id": "fiji-immigration-visas-pre-entry",
+      "title": "Fiji Visas",
+      "url": "https://www.immigration.gov.fj/fiji-visas/",
+      "publisher": "Ministry of Immigration",
+      "jurisdiction": "Fiji",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The visa definition and conditions are published by Fiji's Ministry of Immigration on its official immigration.gov.fj domain.",
+      "supportingExcerpt": "Visa is a pre entry authority issued to a non citizen passport holder from non visa exempted countries."
+    }
+  ],
+  "policies": [
+    {
+      "id": "fiji-citizens-outside-foreign-visa-scope",
+      "title": "Fijian nationals: outside foreign visitor visa scope",
+      "summary": "Fiji Immigration says Fijian passport holders do not need a visa to enter Fiji; they are outside the foreign ordinary-passport visitor classification.",
+      "status": "citizenship",
+      "destinationCodes": ["FJ"],
+      "passportCodes": ["FJ"],
+      "conditions": [
+        "This citizenship classification does not establish the document requirements for a particular Fijian national, dual national, carrier, or border route.",
+        "It does not determine treatment when a dual Fijian national presents another country's ordinary passport."
+      ],
+      "sourceIds": ["fiji-immigration-visit-transit","fiji-immigration-visa-exempt-countries"],
+      "confidence": "high"
+    },
+    {
+      "id": "fiji-listed-ordinary-passports-visa-exempt-visitors",
+      "title": "Listed ordinary passports: Fiji visa exemption with Visitor Permit on arrival",
+      "summary": "Holders of the listed ordinary national passports are exempt from obtaining a Fiji visa before travel and may be issued a Visitor Permit on immigration clearance if entry requirements are met.",
+      "status": "visa_free",
+      "destinationCodes": ["FJ"],
+      "passportCodes": ["AE","AG","AR","AT","AU","BB","BD","BE","BG","BN","BR","BS","BW","BZ","CA","CH","CL","CN","CO","CU","CY","CZ","DE","DK","DM","EE","ES","FI","FM","FR","GB","GD","GE","GH","GM","GR","GY","HK","HR","HU","ID","IE","IL","IN","IS","IT","JM","JP","KE","KI","KN","KR","LC","LI","LS","LT","LU","LV","MC","MD","MH","MO","MT","MU","MV","MW","MX","MY","NG","NL","NO","NR","NZ","PE","PG","PH","PL","PT","PW","PY","RO","RS","RU","SB","SC","SE","SG","SI","SK","SL","SN","SZ","TH","TN","TO","TR","TT","TV","TW","TZ","UA","UG","US","UY","VA","VC","VE","VU","WS","ZA","ZM","ZW"],
+      "conditions": [
+        "Visa exemption is not a visa on arrival. Fiji Immigration calls the document issued at immigration clearance a Visitor Permit; it is issued on arrival only if entry requirements are met.",
+        "For the ordinary visitor route, Fiji Immigration describes holiday, recreational activity, visiting relatives or friends, conferences or meetings, and onward transit among the stated visitor purposes. A Visitor Permit cannot be used to seek employment or work.",
+        "The Visitor Permit period may range from several days up to four months. A holiday visitor may seek one extension of up to two months before expiry; the stated exceptions to extension include business visitor permits and students or relatives on 30-day visitor permits.",
+        "At clearance, travellers must meet current requirements including a valid foreign passport, return ticket, completed Arrival Card, confirmed Fiji address, sufficient funds, and any required fees. Fiji immigration officers retain admission and permit-period discretion.",
+        "Medical-treatment visitors and yacht owners or carrier crew must apply for their permits before arrival. This policy does not establish residence, employment, diplomatic, official, special-document, refugee, or alien-travel-document treatment.",
+        "Transit is separate: Fiji Immigration says a traveller transiting Fiji to another destination within 72 hours after entry needs a transit visa before arrival, with onward ticket and final-destination approval evidence."
+      ],
+      "sourceIds": ["fiji-immigration-visa-exempt-countries","fiji-immigration-visitors-permit","fiji-immigration-visit-transit"],
+      "confidence": "high"
+    },
+    {
+      "id": "fiji-unlisted-ordinary-passports-pre-entry-visa-required",
+      "title": "Unlisted ordinary passports: Fiji pre-entry visa required",
+      "summary": "Fiji Immigration's complete-list default requires these unlisted ordinary national passport holders to obtain a Fiji visa before travelling; a Visitor Permit may then be issued at arrival if entry requirements are met.",
+      "status": "visa_required",
+      "destinationCodes": ["FJ"],
+      "passportCodes": ["AD","AF","AL","AM","AO","AZ","BA","BF","BH","BI","BJ","BO","BT","BY","CD","CF","CG","CI","CM","CR","CV","DJ","DO","DZ","EC","EG","ER","ET","GA","GN","GQ","GT","GW","HN","HT","IQ","IR","JO","KG","KH","KM","KP","KW","KZ","LA","LB","LK","LR","LY","MA","ME","MG","MK","ML","MM","MN","MR","MZ","NA","NE","NI","NP","OM","PA","PK","PS","QA","RW","SA","SD","SM","SO","SR","SS","ST","SV","SY","TD","TG","TJ","TL","TM","UZ","VN","XK","YE"],
+      "conditions": [
+        "The official default is supported by Fiji Immigration's complete visa-exempt list and its express statement that all countries not on that list must apply for a visa. The visa must be approved before travel; it is a pre-entry authority, not a guarantee of admission.",
+        "Non-exempt applicants need the relevant visa before purchasing a ticket and boarding. Fiji Immigration lists sufficient funds, confirmed return ticket and accommodation among current requirements, and may require further verification documents.",
+        "A visitor permit on arrival remains distinct from the required visa and is issued only if entry requirements are satisfied. Visitor employment is prohibited.",
+        "Transit, medical treatment, yacht ownership, carrier crew, joining a vessel, residence, work, diplomatic, official, refugee, alien, emergency, and other special-document situations require their applicable separate process. For transit applications, Fiji Immigration requires proof of visa or permit for the final destination.",
+        "This policy does not establish an electronic visa, visa on arrival, or a nationality-wide exemption based on a third-country visa or residence document."
+      ],
+      "sourceIds": ["fiji-immigration-visa-exempt-countries","fiji-immigration-visa-application-default","fiji-immigration-visitors-permit","fiji-immigration-visas-pre-entry"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

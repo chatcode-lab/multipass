@@ -81,11 +81,22 @@ Official evidence is stored as policy-level records in `src/data/visa-evidence.t
 
 Narrow destination-authority corrections live in `src/data/access-overrides.ts` and are reapplied to every complete staged snapshot before scores and combination insights are published. For assisted evidence collection, generate a bounded packet with `npm run --silent evidence:packet -- <batch-id>`, then validate the model's candidate JSON with `npm run evidence:validate -- <candidate.json>`. The full small-model handoff and strong-review gate are documented in `docs/visa-evidence-model-handoff.md`.
 
+After a human or stronger-model review opens every official source and resolves conflicts, regenerate the production evidence artifact with every approved candidate (the command replaces, rather than appends to, the artifact):
+
+```bash
+npm run evidence:promote -- research/visa-evidence/<approved-batch-1>.candidate.json research/visa-evidence/<approved-batch-2>.candidate.json
+```
+
+The generated `src/data/reviewed-visa-evidence.json` contains only publishable source and policy fields. Candidate-only excerpts, confidence notes, conflicts, and unresolved-pair research remain outside the production bundle.
+
 The priority-destination evidence program tracks 42 EU/Schengen and other widely used destinations, including the United Kingdom, United States, Canada, Australia, New Zealand, Japan, South Korea, Singapore, Hong Kong, Israel, and Taiwan. Report current-status evidence coverage without changing data:
 
 ```bash
 npm run evidence:coverage
+npm run evidence:coverage -- --all --summary
 ```
+
+The first command reports the 42 initial priority destinations. The second reports active canonical evidence across the complete passport–destination matrix, with regional totals. Add `--incomplete` without `--summary` to list only destination columns that still have unsupported current-status cells.
 
 Dataset JSON-LD identifies MultiPass Rank as creator and publisher and links to `/data-license`. The license covers the site’s original evidence metadata and presentation, not upstream access snapshots or official source documents.
 

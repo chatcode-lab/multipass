@@ -1,4 +1,4 @@
-import { STATUS_META } from "@/lib/passport";
+import { STATUS_META } from "@/lib/passport-shared";
 import type { AccessStatus } from "@/lib/types";
 
 interface StatusPillProps {

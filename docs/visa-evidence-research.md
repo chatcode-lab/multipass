@@ -40,6 +40,7 @@ Store rules at policy level. A regional agreement or nationality list should be 
 7. Compare the supported status with the current snapshot. Record conflicts for review rather than silently changing either dataset.
 8. Run unit, route, sitemap, and structured-data tests. Manually open at least one generated pair per policy.
 9. Record the review date. Recheck mutable guidance on a schedule and laws after a reported policy change.
+10. Promote only reviewed candidates with `npm run evidence:promote -- <all-approved-candidate-paths>`. This command regenerates the complete reviewed artifact, so always pass every candidate that should remain canonical.
 
 Good first bulk sources include government nationality lists, official open-data CSV files, and multilateral agreements. Reviewed examples in this repository cover Angola’s 98-nationality tourist exemption, Hong Kong's ordinary-passport visitor schedule and Indian pre-arrival registration, Kenya’s ETA, DR Congo’s official eVisa route, and the EU–Brazil short-stay agreement.
 
@@ -55,7 +56,7 @@ The strong-review pass accepted Kenya's May 2025 legal and operational ETA sched
 
 The HKSAR outbound dataset was useful discovery evidence but was not published for its 29 non-European visa-free or visa-on-arrival claims. Its own caveat directs travellers to destination authorities, so those records remain candidate-only until destination-side confirmation is reviewed. Seven proposed access corrections from that dataset were rejected for the same reason.
 
-The next program targets 42 priority destinations: the EU and Schengen cohort, Ireland, the United Kingdom, the United States, Canada, Australia, New Zealand, Japan, South Korea, Singapore, Hong Kong, Israel, and Taiwan. Run `npm run evidence:coverage` to measure how many current passport–destination statuses in that cohort have active canonical evidence. The 50% and 80% thresholds are progress indicators, not claims that unsupported relationships are false or that travel advice is complete.
+The first program targets 42 priority destinations: the EU and Schengen cohort, Ireland, the United Kingdom, the United States, Canada, Australia, New Zealand, Japan, South Korea, Singapore, Hong Kong, Israel, and Taiwan. Run `npm run evidence:coverage` to measure that cohort, or `npm run evidence:coverage -- --all --summary` for the complete matrix and regional totals. The 50% and 80% thresholds are progress indicators, not claims that unsupported relationships are false or that travel advice is complete.
 
 ## Pass 4 result: priority-destination baseline
 
@@ -64,6 +65,14 @@ The parallel research and strong-review pass reached 8,139 of 8,316 active curre
 Australia, Canada, Ireland, Japan, New Zealand, Singapore, the United Kingdom, and the United States now have complete catalog baselines. Taiwan has 196 of 198 non-citizenship relationships supported; Mainland China and Palestinian-territory passport treatment remain unresolved. Israel retains one unresolved Palestinian-document relationship. EU and Schengen destinations retain narrow agreement or associated-state gaps rather than borrowing unsupported scope from a neighboring regime.
 
 Temporary programmes are represented with inclusive end dates. Current access overrides for South Korea's temporary K-ETA exemption and Taiwan's trial exemption and eVisa routes stop applying after their official expiry. Emergency or temporary-passport landing-visa routes are documented in research candidates but are not promoted into ordinary-passport canonical rankings or sitemap URLs.
+
+## Pass 5 result: destination-authority regional expansion
+
+The next strong-review tranche promoted destination-side ordinary-passport policies for Brazil, Mexico, Fiji, South Africa, The Bahamas, Mauritius, Malaysia, Barbados, Indonesia, Rwanda, Oman, Jamaica, Zambia, Ecuador, Argentina, and Nepal, plus the reviewed Schengen-associated-state completion. Complete-matrix current-status evidence increased from 9,013 of 44,974 relationships (20.0%) to 11,987 (26.7%). Fifty-eight of 227 destination columns now have at least 50% coverage and 57 have at least 80%. The original 42-destination priority program remains 8,207 of 8,316 (98.7%).
+
+The review changed 195 current pair classifications where destination authorities contradicted or refined the upstream snapshot. Material corrections include Mexico's paid electronic visa for Brazilian passports, Rwanda's universal visa-on-arrival rule, Ecuador's emailed electronic visas, Jamaica's current prior-visa and port-of-entry rows, Indonesia's BVK/VOA split, and narrower corrections for The Bahamas, Mauritius, Malaysia, Barbados, Zambia, and Nepal. Rwanda's fee-waived arrival visas remain `visa_on_arrival`; Indonesia and Nepal online pre-arrival forms remain part of their arrival-visa process; Barbados' online application produces an entry-visa letter rather than an eVisa. Conditional Argentina AVE and Oman exemption routes are documented without replacing the nationality-only default when their third-country-document conditions are absent.
+
+The tranche deliberately retained unresolved cells. Indonesia has 100 passports for which its reviewed official lists do not prove the advance route. Oman has 91 unresolved current-status cells, including a Taiwan divergence between Royal Oman Police and the Foreign Ministry. Mexico retains an unrepresentable Kosovo travel-document restriction; Mauritius retains Montenegro and Kosovo ambiguity; The Bahamas, Barbados, Jamaica, Zambia, and Ecuador retain small omitted or legacy-name groups. The South Korea complement candidate remains unpromoted because absence from the live K-ETA list does not prove a prior-visa rule.
 
 ## Official bulk sources identified for later passes
 

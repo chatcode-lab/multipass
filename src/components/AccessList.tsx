@@ -1,9 +1,9 @@
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
-import { STATUS_META, slugifyCountry } from "@/lib/passport";
+import { STATUS_META, slugifyCountry } from "@/lib/passport-shared";
 import { flagEmojiFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Destination, type PassportAccess, type Region } from "@/lib/types";
-import { visaRelationshipHref } from "@/lib/visa-evidence";
+import { visaRelationshipHref } from "@/lib/visa-urls";
 import StatusPill from "./StatusPill";
 
 interface AccessListProps {

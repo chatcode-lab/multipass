@@ -1,0 +1,191 @@
+{
+  "batchId": "schengen-associated-states-completion",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "eu-2018-1806-current",
+      "title": "Consolidated Regulation (EU) 2018/1806 visa-list Regulation",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A02018R1806-20251230",
+      "publisher": "Publications Office of the European Union",
+      "jurisdiction": "European Union",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current consolidated EU regulation hosted by EUR-Lex, the Publications Office legal repository.",
+      "supportingExcerpt": "The exemption from the visa requirement shall apply from the date of entry into force of an agreement."
+    },
+    {
+      "id": "sem-ch1-nationality-list",
+      "title": "SEM Annex CH-1, List 1: Overview of ID and visa provisions according to nationality",
+      "url": "https://www.sem.admin.ch/dam/sem/en/data/rechtsgrundlagen/weisungen/visa/bfm/bfm-anh01-liste1-e.pdf.download.pdf/sem-anh01-liste1-e.pdf",
+      "publisher": "State Secretariat for Migration (SEM)",
+      "jurisdiction": "Switzerland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current nationality-by-nationality entry and visa table published by Switzerland's State Secretariat for Migration.",
+      "supportingExcerpt": "Nauru see A) Yes V Yes V"
+    },
+    {
+      "id": "norway-immigration-act-section-nine",
+      "title": "Norwegian Immigration Act, section 9: Visa requirement and visa-free entry",
+      "url": "https://lovdata.no/dokument/NL/lov/2008-05-15-35/%C2%A79",
+      "publisher": "Lovdata",
+      "jurisdiction": "Norway",
+      "kind": "law",
+      "language": "Norwegian",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current Norwegian statutory text in Lovdata's legal publication, section 9.",
+      "supportingExcerpt": "Utlendinger må ha visum til Norge for å kunne reise inn i riket."
+    },
+    {
+      "id": "norway-visa-free-states-annex-five",
+      "title": "Norwegian Immigration Regulations, Annex 5: List of visa-free states",
+      "url": "https://lovdata.no/dokument/SF/forskrift/2009-10-15-1286/vedlegg5",
+      "publisher": "Lovdata",
+      "jurisdiction": "Norway",
+      "kind": "law",
+      "language": "Norwegian",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current annex to the Norwegian Immigration Regulations in Lovdata's legal publication.",
+      "supportingExcerpt": "Utlendinger fra følgende stater ... er visumfrie ved innreise i Norge pr. 14. august 2025."
+    },
+    {
+      "id": "liechtenstein-visa-regulations",
+      "title": "Liechtenstein Migration and Passport Office: Visa",
+      "url": "https://www.llv.li/en/national-administration/migration-and-passport-office/visa",
+      "publisher": "Liechtenstein National Administration, Migration and Passport Office",
+      "jurisdiction": "Liechtenstein",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current entry and visa guidance of Liechtenstein's competent migration authority.",
+      "supportingExcerpt": "Switzerland and Liechtenstein generally have the same entry regulations."
+    }
+  ],
+  "policies": [
+    {
+      "id": "switzerland-listed-ordinary-passports-visa-free",
+      "title": "Swiss SEM short-stay visa exemption for listed national passports",
+      "summary": "SEM List 1 marks each listed nationality as not requiring a visa for a stay of up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["CH"],
+      "passportCodes": ["AE", "VC", "GD", "DM", "LC", "PE", "MH", "TO", "TV", "KI", "FM", "PW", "TL"],
+      "conditions": [
+        "Ordinary/national passport scope only; the SEM table's document and V1 annotations remain controlling.",
+        "Short stays only: the table column is for stays of up to 90 days; longer stays are separately marked visa-required.",
+        "Does not classify diplomatic, service, official, special, refugee, crew, transit, residence, work, or case-specific exceptions."
+      ],
+      "sourceIds": ["sem-ch1-nationality-list"],
+      "confidence": "high"
+    },
+    {
+      "id": "switzerland-nauru-ordinary-passports-visa-required",
+      "title": "Swiss SEM Nauru short-stay visa requirement",
+      "summary": "SEM List 1 marks Nauru as visa-required for stays of up to 90 days.",
+      "status": "visa_required",
+      "destinationCodes": ["CH"],
+      "passportCodes": ["NR"],
+      "conditions": [
+        "Ordinary/national passport scope only, subject to the SEM table's travel-document annotations.",
+        "Short stays only: this is the up-to-90-day column, not transit or a long-stay residence decision.",
+        "Does not override diplomatic, service, official, special, crew, residence, family, humanitarian, or case-specific exceptions."
+      ],
+      "sourceIds": ["sem-ch1-nationality-list"],
+      "confidence": "high"
+    },
+    {
+      "id": "norway-listed-ordinary-passports-visa-free",
+      "title": "Norwegian statutory Annex 5 visa-free-state list",
+      "summary": "Annex 5 expressly lists the named states as visa-free for entry to Norway.",
+      "status": "visa_free",
+      "destinationCodes": ["NO"],
+      "passportCodes": ["AE", "VC", "GD", "DM", "LC", "PE", "MH", "TO", "TV", "KI", "FM", "PW", "TL"],
+      "conditions": [
+        "Applies only to nationals on the current statutory visa-free-state list, whose stated reference date is 14 August 2025.",
+        "The Immigration Act limits the total Schengen stay for visa-exempt entrants to three months in six months.",
+        "Does not classify diplomatic, service, official, special, crew, transit, residence, asylum, work, document, or case-specific exceptions."
+      ],
+      "sourceIds": ["norway-visa-free-states-annex-five", "norway-immigration-act-section-nine"],
+      "confidence": "high"
+    },
+    {
+      "id": "norway-nauru-ordinary-passports-visa-required",
+      "title": "Norwegian statutory Nauru visa requirement",
+      "summary": "Nauru is absent from the complete statutory visa-free-state list, while the Immigration Act imposes a visa requirement unless regulations except it.",
+      "status": "visa_required",
+      "destinationCodes": ["NO"],
+      "passportCodes": ["NR"],
+      "conditions": [
+        "Ordinary-passport nationality result derived from the current complete Annex 5 list and the Act's default visa rule.",
+        "The Act separately exempts holders of qualifying Schengen residence permits and recognizes valid Schengen visas.",
+        "Does not override diplomatic, service, official, special, crew, transit, asylum, work, document, family, or case-specific exceptions."
+      ],
+      "sourceIds": ["norway-immigration-act-section-nine", "norway-visa-free-states-annex-five"],
+      "confidence": "high"
+    },
+    {
+      "id": "liechtenstein-swiss-listed-ordinary-passports-visa-free",
+      "title": "Liechtenstein's SEM-referred short-stay visa treatment for listed national passports",
+      "summary": "Liechtenstein's competent authority directs visa-requirement checks to Swiss SEM and states that the two countries generally share entry regulations.",
+      "status": "visa_free",
+      "destinationCodes": ["LI"],
+      "passportCodes": ["AE", "VC", "GD", "DM", "LC", "PE", "MH", "TO", "TV", "KI", "FM", "PW", "TL"],
+      "conditions": [
+        "The Liechtenstein authority expressly directs visa-requirement enquiries to SEM; SEM List 1 marks these national passports visa-free up to 90 days.",
+        "Liechtenstein states its rules are generally/largely the same and reserves bilateral or multilateral deviations; this policy is therefore not unconditional.",
+        "Does not classify diplomatic, service, official, special, crew, transit, residence, work, family, document, territorial, or case-specific exceptions."
+      ],
+      "sourceIds": ["liechtenstein-visa-regulations", "sem-ch1-nationality-list"],
+      "confidence": "medium"
+    },
+    {
+      "id": "liechtenstein-swiss-nauru-ordinary-passports-visa-required",
+      "title": "Liechtenstein's SEM-referred Nauru short-stay visa treatment",
+      "summary": "Liechtenstein's competent authority directs visa-requirement checks to Swiss SEM, whose List 1 marks Nauru visa-required up to 90 days.",
+      "status": "visa_required",
+      "destinationCodes": ["LI"],
+      "passportCodes": ["NR"],
+      "conditions": [
+        "The Liechtenstein authority expressly directs visa-requirement enquiries to SEM; SEM List 1 marks Nauru visa-required up to 90 days.",
+        "Liechtenstein states its rules are generally/largely the same and reserves bilateral or multilateral deviations; this policy is therefore not unconditional.",
+        "Does not override diplomatic, service, official, special, crew, transit, residence, work, family, document, territorial, or case-specific exceptions."
+      ],
+      "sourceIds": ["liechtenstein-visa-regulations", "sem-ch1-nationality-list"],
+      "confidence": "medium"
+    },
+    {
+      "id": "eu-member-states-nauru-ordinary-passports-visa-required",
+      "title": "EU visa-list Regulation: Nauru exemption remains conditional on a future agreement",
+      "summary": "The current Regulation lists Nauru in Annex II with a footnote that makes an exemption conditional on entry into force of an agreement still to be concluded with the EU.",
+      "status": "visa_required",
+      "destinationCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "passportCodes": ["NR"],
+      "conditions": [
+        "Ordinary-passport short-stay result only, for stays of no more than 90 days in any 180-day period.",
+        "The result follows the current Nauru Annex II footnote; it is not a conclusion about a future agreement or its possible effective date.",
+        "Article 6 permits Member State exceptions for specified categories, including diplomatic, service, special, crew, school, refugee, and paid-activity cases; those are out of scope.",
+        "Does not determine transit, residence, family-free-movement, territorial, document, asylum, humanitarian, or case-specific entry treatment."
+      ],
+      "sourceIds": ["eu-2018-1806-current"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"AE","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"VC","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"GD","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"DM","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"LC","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"PE","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"MH","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"TO","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"TV","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"KI","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"FM","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"PW","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"TL","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]},
+    {"passportCode":"NR","destinationCode":"IS","reason":"Iceland's current national visa regulation expressly uses domestic Annexes 8 and 9 for required and exempt nationalities, but a directly reviewable official copy exposing the applicable country row was not available. Association with Schengen was not treated as adoption.","searchedOfficialDomains":["island.is","adverts.stjornartidindi.is","stjornartidindi.is","government.is","althingi.is"]}
+  ]
+}
