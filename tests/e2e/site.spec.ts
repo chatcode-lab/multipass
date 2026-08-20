@@ -55,6 +55,7 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await expect(page.getByText("Brazil", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("United States", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("Differences only")).toBeVisible();
+  await expect(page.getByRole("checkbox", { name: "Differences only" })).toBeChecked();
   await expect(page.locator("table.comparison-table")).toBeVisible();
   await page.getByLabel("Filter comparison destinations by region").selectOption("EUROPE");
   await expect(page.locator(".comparison-table__region")).toHaveCount(1);
@@ -62,6 +63,7 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await expect(page.locator("td.comparison-cell--best").first()).toBeVisible();
   await expect(page.locator("td.comparison-cell--worst").first()).toBeVisible();
   await expect(page.getByRole("link", { name: "View ranking" })).toHaveAttribute("href", "/rank?set=BR&set=US");
+  await expect(page.locator(".comparison-table .status-pill small")).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "What the labels mean" })).toBeVisible();
   await expect(page.getByRole("link", { name: "eVisa vs ETA explained" })).toBeVisible();
   const tableViewport = await page.locator(".comparison-table-wrap").evaluate((element) => ({
@@ -76,11 +78,19 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
     expect(tableViewport.scrollWidth - tableViewport.clientWidth).toBeLessThanOrEqual(1);
     const firstResult = await page.locator(".comparison-table tbody tr:not(.comparison-table__region) td").first().boundingBox();
     const copyLink = await page.getByRole("button", { name: "Copy link" }).boundingBox();
+    const differences = await page.getByText("Differences only", { exact: true }).boundingBox();
+    const regionFilter = await page.getByLabel("Filter comparison destinations by region").boundingBox();
+    const rankingLink = await page.getByRole("link", { name: "View ranking" }).boundingBox();
     expect(firstResult).not.toBeNull();
     expect(copyLink).not.toBeNull();
+    expect(differences).not.toBeNull();
+    expect(regionFilter).not.toBeNull();
+    expect(rankingLink).not.toBeNull();
     expect(firstResult!.x).toBeGreaterThanOrEqual(0);
     expect(firstResult!.x + firstResult!.width).toBeLessThanOrEqual(viewport.width);
     expect(copyLink!.x + copyLink!.width).toBeLessThanOrEqual(viewport.width);
+    expect(Math.abs(differences!.y - regionFilter!.y)).toBeLessThanOrEqual(2);
+    expect(Math.abs(rankingLink!.y - copyLink!.y)).toBeLessThanOrEqual(2);
   }
 });
 
@@ -88,6 +98,10 @@ test("home and visa-free access are equivalent in comparisons", async ({ page })
   await page.goto("/compare?set=US&set=CA");
   const canada = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "Canada" });
   const unitedStates = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "United States" });
+  await expect(page.getByRole("checkbox", { name: "Differences only" })).toBeChecked();
+  await expect(canada).toBeHidden();
+  await expect(unitedStates).toBeHidden();
+  await page.getByText("Differences only", { exact: true }).click();
   await expect(canada.locator("td.comparison-cell--best")).toHaveCount(2);
   await expect(unitedStates.locator("td.comparison-cell--best")).toHaveCount(2);
   await page.getByText("Differences only", { exact: true }).click();
@@ -214,6 +228,17 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   expect(highlightBounds!.x).toBeLessThan(rankingBounds!.x);
   expect(highlightBounds!.x + highlightBounds!.width).toBeGreaterThan(rankingBounds!.x + rankingBounds!.width);
   const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 620) {
+    expect(highlightBounds!.height).toBeLessThanOrEqual(85);
+    const equivalentLabel = await combination.locator(".ranking-row__rank small").evaluate((element) => ({
+      clientWidth: element.clientWidth,
+      scrollWidth: element.scrollWidth,
+    }));
+    expect(equivalentLabel.scrollWidth).toBeLessThanOrEqual(equivalentLabel.clientWidth);
+    await expect(combination.locator(".ranking-row__passport strong")).toHaveCSS("-webkit-line-clamp", "3");
+    const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
+    expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
+  }
   if (viewport && viewport.width > 620) await combination.hover();
   await combination.locator("[data-ranking-select]").click();
   await expect(page.locator("[data-ranking-selected-count]")).toHaveText("2");

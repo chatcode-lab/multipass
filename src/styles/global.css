@@ -911,7 +911,7 @@ main { min-height: 68vh; }
 @media (max-width: 620px) {
   :root { --page: calc(100% - 28px); }
   .ranking-table__list > li.is-featured .ranking-row,
-  .ranking-table__list > li.is-selected .ranking-row { margin-inline: -12px; padding-inline: 12px; }
+  .ranking-table__list > li.is-selected .ranking-row { margin-inline: -14px; padding-inline: 14px; }
   .site-header { min-height: 72px; gap: 12px; }
   .site-header nav { justify-content: flex-end; gap: clamp(10px, 3vw, 14px); }
   .site-header nav a { padding-block: 9px; font-size: 11px; }
@@ -949,9 +949,11 @@ main { min-height: 68vh; }
   .access-list__filters .select-field,
   .access-list__filters select { width: 100%; }
   .access-list .table-toolbar .result-count { justify-self: end; margin-left: 0; }
-  .ranking-row { min-height: 84px; grid-template-columns: 42px minmax(0, 1fr) 54px 48px; gap: 7px; }
+  .ranking-row { min-height: 84px; grid-template-columns: 40px minmax(0, 1fr) 50px 44px; gap: 5px; }
   .ranking-row__rank { font-size: 23px; }
-  .ranking-row__passport { gap: 8px; }
+  .ranking-row--combination .ranking-row__rank small { font-size: 0; }
+  .ranking-row--combination .ranking-row__rank small::after { content: "equiv."; font-size: 7px; letter-spacing: 0; }
+  .ranking-row__passport { gap: 6px; }
   .ranking-row__passport strong {
     display: -webkit-box;
     overflow: hidden;
@@ -962,12 +964,15 @@ main { min-height: 68vh; }
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
+  .is-combination .ranking-row__passport strong { font-size: 13px; line-height: 1; -webkit-line-clamp: 3; }
+  .is-combination .ranking-row__passport small { display: none; }
+  .is-combination .passport-stack--small { margin-right: -8px; transform: scale(.84); transform-origin: left center; }
   .ranking-row__score strong { font-size: 23px; }
   .ranking-row__score small { display: none; }
   .ranking-row__arrow { display: none; }
   .ranking-row__select {
-    width: 48px;
-    min-height: 48px;
+    width: 44px;
+    min-height: 44px;
     padding: 0;
     opacity: 1;
     pointer-events: auto;
@@ -999,9 +1004,11 @@ main { min-height: 68vh; }
   .comparison-toolbar .check-control span,
   .comparison-toolbar .comparison-region-filter,
   .comparison-toolbar .comparison-region-filter select { width: 100%; }
-  .comparison-toolbar .check-control span { justify-content: center; }
-  .comparison-toolbar__count { align-self: center; font-size: 12px; }
-  .comparison-toolbar .button { min-height: 38px; justify-self: end; }
+  .comparison-toolbar .check-control span { justify-content: center; padding-inline: 9px; font-size: 11px; white-space: nowrap; }
+  .comparison-toolbar__count { grid-column: 1 / -1; align-self: center; font-size: 12px; }
+  .comparison-toolbar__ranking { grid-column: 1; }
+  .comparison-toolbar__copy { grid-column: 2; }
+  .comparison-toolbar .button { width: 100%; min-height: 38px; justify-self: stretch; }
   .access-legend__heading { display: grid; gap: 10px; }
   .access-legend dl { grid-template-columns: 1fr; }
   .comparison-table-wrap { overflow: visible; border: 0; background: transparent; }

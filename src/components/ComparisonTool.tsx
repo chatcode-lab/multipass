@@ -17,7 +17,7 @@ interface ComparisonToolProps {
 export default function ComparisonTool({ passports, initialSets, initialResult }: ComparisonToolProps) {
   const [sets, setSets] = useState<string[][]>(initialSets.length ? initialSets : [[]]);
   const [result, setResult] = useState<ComparisonResult | null>(initialResult);
-  const [differencesOnly, setDifferencesOnly] = useState(false);
+  const [differencesOnly, setDifferencesOnly] = useState(true);
   const [region, setRegion] = useState<Region | "ALL">("ALL");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -75,7 +75,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
   };
 
   const visibleRows = result?.rows.filter((row) =>
-    (!differencesOnly || !row.isEqual) && (region === "ALL" || row.destination.region === region)
+    (!differencesOnly || result.scenarios.length < 2 || !row.isEqual) && (region === "ALL" || row.destination.region === region)
   ) ?? [];
 
   const copyLink = async () => {
@@ -138,7 +138,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
           <div className="comparison-toolbar">
             <label className="check-control">
               <input type="checkbox" checked={differencesOnly} disabled={result.scenarios.length < 2} onChange={(event) => setDifferencesOnly(event.target.checked)} />
-              <span><Check size={15} aria-hidden="true" /> Differences only</span>
+              <span>Differences only</span>
             </label>
             <label className="select-field comparison-region-filter">
               <span className="sr-only">Filter comparison destinations by region</span>
@@ -148,8 +148,8 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
               </select>
             </label>
             <span className="comparison-toolbar__count" aria-live="polite">{visibleRows.length} destinations shown</span>
-            <a className="button button--quiet" href={rankHref(validSets)}>View ranking</a>
-            <button type="button" className="button button--quiet" onClick={copyLink}>
+            <a className="button button--quiet comparison-toolbar__ranking" href={rankHref(validSets)}>View ranking</a>
+            <button type="button" className="button button--quiet comparison-toolbar__copy" onClick={copyLink}>
               {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? "Copied" : "Copy link"}
             </button>
           </div>
@@ -193,7 +193,11 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                                   : undefined;
                             return (
                               <td className={relativeClass} data-label={result.scenarios[index]?.name} key={`${row.destination.code}-${index}`}>
-                                <StatusPill status={cell.status} via={cell.via} compact />
+                                <StatusPill
+                                  status={cell.status}
+                                  via={result.scenarios[index]?.codes.length === 1 ? [] : cell.via}
+                                  compact
+                                />
                               </td>
                             );
                           })}
