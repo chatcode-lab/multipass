@@ -326,7 +326,13 @@ test("combined passport artwork stays clear of its result text", async ({ page }
   const content = await card.locator(".scenario-card__content").boundingBox();
   expect(cover).not.toBeNull();
   expect(content).not.toBeNull();
-  expect(cover!.x + cover!.width).toBeLessThan(content!.x);
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 620) {
+    expect(cover!.y + cover!.height).toBeLessThan(content!.y);
+    expect(content!.width).toBeGreaterThan(cover!.width);
+  } else {
+    expect(cover!.x + cover!.width).toBeLessThan(content!.x);
+  }
 });
 
 test("long passport names wrap inside their covers", async ({ page }) => {
@@ -703,4 +709,7 @@ test("unknown passports return a real 404", async ({ page }) => {
   const response = await page.goto("/passport/not-a-country");
   expect(response?.status()).toBe(404);
   await expect(page.getByText("That route went somewhere else.")).toBeVisible();
+  const returnLink = page.getByRole("link", { name: "Return to the ranking" });
+  await expect(returnLink).toBeVisible();
+  await expect(returnLink).toHaveCSS("color", "rgb(255, 253, 248)");
 });

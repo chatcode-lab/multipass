@@ -1042,7 +1042,7 @@ main { min-height: 68vh; }
 .prose p,
 .prose li { color: var(--ink-soft); font-size: 17px; }
 .prose strong { color: var(--ink); }
-.prose a { color: var(--green); text-underline-offset: 4px; }
+.prose a:not(.button) { color: var(--green); text-underline-offset: 4px; }
 .prose .method-callout { margin: 34px 0; padding: 24px 28px; border-left: 3px solid var(--burgundy); background: var(--paper-2); }
 .term-guide { max-width: 940px; }
 .term-guide__lead { max-width: 780px; font-size: 20px !important; }
@@ -1110,6 +1110,7 @@ main { min-height: 68vh; }
   .destination-access-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .evidence-layout { grid-template-columns: minmax(0, 1fr) 280px; gap: 48px; }
   .set-builder-grid { grid-template-columns: 1fr; }
+  .scenario-grid { grid-template-columns: 1fr; }
   .access-legend dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dual-guide { grid-template-columns: 1fr; }
   .dual-guide__details { grid-template-columns: 1fr; }
@@ -1258,7 +1259,16 @@ main { min-height: 68vh; }
   .rank-set-summary > span { min-width: 0; flex-basis: 100%; }
   .rank-set-summary strong { transform: translateY(2px); }
   .agent-guide pre { margin-inline: -4px; padding: 18px; }
-  .scenario-card { min-height: 190px; padding: 22px; }
+  .scenario-card {
+    min-height: 0;
+    flex-direction: column;
+    gap: 22px;
+    align-items: stretch;
+    padding: 24px 22px 26px;
+  }
+  .scenario-card > .passport-stack { align-self: center; }
+  .scenario-card__content { width: 100%; }
+  .scenario-card h2 { overflow-wrap: normal; word-break: normal; }
   .comparison-toolbar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
