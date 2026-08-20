@@ -30,6 +30,12 @@ const relationshipStatus = relationshipDetail
   : null;
 if (!collection && !comparison && (!relationship || !relationshipDetail || !relationshipStatus)) return Astro.rewrite("/404");
 if (relationship && relationshipStatus) {
+  if (relationshipStatus === "citizenship") {
+    return new Response(null, {
+      status: 308,
+      headers: { Location: `/passport/${relationship.passport.slug}`, "Cache-Control": "public, max-age=3600" },
+    });
+  }
   const canonicalSlug = visaRelationshipSlug(relationship.passport, relationship.destination, relationshipStatus);
   if (Astro.params.collection !== canonicalSlug) {
     return new Response(null, {

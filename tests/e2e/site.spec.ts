@@ -477,6 +477,24 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
   expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-chad-visa</loc>");
 });
 
+test("citizenship cells use passport pages instead of duplicate relationship URLs", async ({ page, request }) => {
+  await page.goto("/destination/estonia");
+  await expect(page.getByRole("link", { name: /Estonia.*Citizenship/ }))
+    .toHaveAttribute("href", "/passport/estonia");
+
+  await page.goto("/passport/estonia");
+  await expect(page.getByRole("link", { name: "Estonia passport to Estonia: Citizenship" }))
+    .toHaveAttribute("href", "/passport/estonia");
+
+  const legacyHtml = await request.get("/estonia-estonia-citizenship", { maxRedirects: 0 });
+  expect(legacyHtml.status()).toBe(308);
+  expect(legacyHtml.headers().location).toBe("/passport/estonia");
+
+  const legacyMarkdown = await request.get("/estonia-estonia-citizenship.md", { maxRedirects: 0 });
+  expect(legacyMarkdown.status()).toBe(308);
+  expect(legacyMarkdown.headers().location).toBe("/passport/estonia.md");
+});
+
 test("passport and comparison status cells link to relationship evidence", async ({ page }) => {
   await page.goto("/passport/belgium");
   await expect(page.getByRole("link", { name: "Belgium passport to Angola: Visa-free" }))

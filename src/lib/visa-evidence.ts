@@ -49,6 +49,7 @@ export function visaRelationshipHref(
   destination: Destination,
   status: AccessStatus,
 ): string {
+  if (status === "citizenship") return `/passport/${passport.slug}`;
   return `/${visaRelationshipSlug(passport, destination, status)}`;
 }
 

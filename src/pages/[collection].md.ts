@@ -27,6 +27,12 @@ export const GET: APIRoute = async ({ locals, params }) => {
     const detail = await getPassportAccess(locals, relationship.passport.code, manifest.version);
     if (!detail) return new Response("# Not found\n", { status: 404, headers: { "Content-Type": "text/markdown; charset=utf-8" } });
     const status = detail.statuses[relationship.destination.code] ?? "unknown" as AccessStatus;
+    if (status === "citizenship") {
+      return new Response(null, {
+        status: 308,
+        headers: { Location: `/passport/${relationship.passport.slug}.md`, "Cache-Control": "public, max-age=3600" },
+      });
+    }
     const canonicalSlug = visaRelationshipSlug(relationship.passport, relationship.destination, status);
     if (params.collection !== canonicalSlug) {
       return new Response(null, { status: 308, headers: { Location: `/${canonicalSlug}.md`, "Cache-Control": "public, max-age=3600" } });

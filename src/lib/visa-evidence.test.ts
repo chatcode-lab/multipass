@@ -32,6 +32,12 @@ describe("visa relationship URLs", () => {
     });
   });
 
+  it("uses the passport page as the canonical citizenship record", () => {
+    const estonia = snapshot.manifest.passports.find(({ code }) => code === "EE")!;
+    const destination = snapshot.manifest.destinations.find(({ code }) => code === "EE")!;
+    expect(visaRelationshipHref(estonia, destination, "citizenship")).toBe("/passport/estonia");
+  });
+
   it("keeps destination and passport–destination slugs unique across the catalog", () => {
     const destinationSlugs = snapshot.manifest.destinations.map(destinationSlug);
     expect(new Set(destinationSlugs).size).toBe(snapshot.manifest.destinations.length);
