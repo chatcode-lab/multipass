@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { z } from "zod";
+import { VERIFIED_ACCESS_OVERRIDES } from "../src/data/access-overrides";
 import fallbackSnapshot from "../src/data/fallback.json" with { type: "json" };
 import queue from "../research/visa-evidence/queue.json" with { type: "json" };
 import type { DataSnapshot } from "../src/lib/types";
@@ -51,7 +52,7 @@ const candidateSchema = z.strictObject({
   conflicts: z.array(z.strictObject({
     passportCode: code,
     destinationCode: code,
-    snapshotStatus: z.string().min(1),
+    snapshotStatus: status,
     officialStatus: z.string().min(1),
     explanation: z.string().min(1),
     sourceIds: z.array(z.string()).min(1),
@@ -71,11 +72,23 @@ const snapshot = fallbackSnapshot as DataSnapshot;
 const passportCodes = new Set(snapshot.manifest.passports.map(({ code: value }) => value));
 const destinationCodes = new Set(snapshot.manifest.destinations.map(({ code: value }) => value));
 const sourceIds = new Set(candidate.sources.map(({ id }) => id));
+const queueBatch = queue.batches.find(({ id }) => id === candidate.batchId);
+const reviewedOverrideByPair = new Map(
+  VERIFIED_ACCESS_OVERRIDES.map((item) => [`${item.passportCode}:${item.destinationCode}`, item.status]),
+);
 const forbiddenDiscoveryHosts = new Set(["wikipedia.org", "www.wikipedia.org", "reddit.com", "www.reddit.com"]);
 
-if (!queue.batches.some(({ id }) => id === candidate.batchId)) throw new Error(`Batch ${candidate.batchId} is not in the research queue`);
+if (!queueBatch) throw new Error(`Batch ${candidate.batchId} is not in the research queue`);
 if (sourceIds.size !== candidate.sources.length) throw new Error("Source IDs must be unique");
 if (new Set(candidate.policies.map(({ id }) => id)).size !== candidate.policies.length) throw new Error("Policy IDs must be unique");
+
+const allowedPassportCodes = queueBatch.passportCodes.includes("*")
+  ? passportCodes
+  : new Set(queueBatch.passportCodes);
+const allowedDestinationCodes = queueBatch.destinationCodes.includes("*")
+  ? destinationCodes
+  : new Set(queueBatch.destinationCodes);
+const policyStatusesByPair = new Map<string, Set<z.infer<typeof status>>>();
 
 for (const item of candidate.sources) {
   const words = item.supportingExcerpt.trim().split(/\s+/).length;
@@ -85,19 +98,86 @@ for (const item of candidate.sources) {
 }
 
 for (const item of candidate.policies) {
+  if (new Set(item.passportCodes).size !== item.passportCodes.length) throw new Error(`${item.id} repeats a passport code`);
+  if (new Set(item.destinationCodes).size !== item.destinationCodes.length) throw new Error(`${item.id} repeats a destination code`);
+  if (new Set(item.excludedPassportCodes ?? []).size !== (item.excludedPassportCodes ?? []).length) throw new Error(`${item.id} repeats an excluded passport code`);
+  if (new Set(item.sourceIds).size !== item.sourceIds.length) throw new Error(`${item.id} repeats a source ID`);
+  if (item.effectiveFrom && item.effectiveTo && item.effectiveFrom > item.effectiveTo) throw new Error(`${item.id} has an effectiveFrom date after effectiveTo`);
   for (const value of item.passportCodes) if (!passportCodes.has(value)) throw new Error(`${item.id} has unknown passport code ${value}`);
   for (const value of item.destinationCodes) if (!destinationCodes.has(value)) throw new Error(`${item.id} has unknown destination code ${value}`);
   for (const value of item.excludedPassportCodes ?? []) if (!passportCodes.has(value)) throw new Error(`${item.id} excludes unknown passport code ${value}`);
   for (const value of item.sourceIds) if (!sourceIds.has(value)) throw new Error(`${item.id} references unknown source ${value}`);
+  for (const passportCode of item.passportCodes) {
+    if (!allowedPassportCodes.has(passportCode)) throw new Error(`${item.id} has out-of-scope passport code ${passportCode}`);
+    if (item.excludedPassportCodes?.includes(passportCode)) continue;
+    for (const destinationCode of item.destinationCodes) {
+      if (!allowedDestinationCodes.has(destinationCode)) throw new Error(`${item.id} has out-of-scope destination code ${destinationCode}`);
+      const pairKey = `${passportCode}:${destinationCode}`;
+      const pairStatuses = policyStatusesByPair.get(pairKey) ?? new Set<z.infer<typeof status>>();
+      pairStatuses.add(item.status);
+      policyStatusesByPair.set(pairKey, pairStatuses);
+    }
+  }
 }
 
+const conflictKeys = new Set<string>();
 for (const item of candidate.conflicts) {
   if (!passportCodes.has(item.passportCode) || !destinationCodes.has(item.destinationCode)) throw new Error(`Conflict has an unknown pair ${item.passportCode}:${item.destinationCode}`);
   for (const value of item.sourceIds) if (!sourceIds.has(value)) throw new Error(`Conflict references unknown source ${value}`);
+  const pairKey = `${item.passportCode}:${item.destinationCode}`;
+  if (conflictKeys.has(pairKey)) throw new Error(`Conflict pair ${pairKey} is repeated`);
+  conflictKeys.add(pairKey);
+  if (!allowedPassportCodes.has(item.passportCode) || !allowedDestinationCodes.has(item.destinationCode)) throw new Error(`Conflict ${pairKey} is outside the queued scope`);
+  const normalizedOfficialStatus = status.safeParse(item.officialStatus);
+  if (normalizedOfficialStatus.success && !policyStatusesByPair.get(pairKey)?.has(normalizedOfficialStatus.data)) {
+    throw new Error(`Conflict ${pairKey} officialStatus ${item.officialStatus} is not assigned by a policy`);
+  }
+  if (item.snapshotStatus === item.officialStatus) throw new Error(`Conflict ${pairKey} does not change the snapshot status`);
+  const currentStatus = snapshot.passports[item.passportCode]?.statuses[item.destinationCode];
+  const reviewedOverride = reviewedOverrideByPair.get(pairKey);
+  const alreadyApplied = reviewedOverride === currentStatus && item.officialStatus === currentStatus;
+  if (item.snapshotStatus !== currentStatus && !alreadyApplied) {
+    throw new Error(
+      `Conflict ${pairKey} has stale snapshotStatus ${item.snapshotStatus}; current fallback is ${currentStatus}`,
+    );
+  }
 }
 
+const unresolvedKeys = new Set<string>();
 for (const item of candidate.unresolved) {
   if (!passportCodes.has(item.passportCode) || !destinationCodes.has(item.destinationCode)) throw new Error(`Unresolved item has an unknown pair ${item.passportCode}:${item.destinationCode}`);
+  const pairKey = `${item.passportCode}:${item.destinationCode}`;
+  if (unresolvedKeys.has(pairKey)) throw new Error(`Unresolved pair ${pairKey} is repeated`);
+  unresolvedKeys.add(pairKey);
+  if (!allowedPassportCodes.has(item.passportCode) || !allowedDestinationCodes.has(item.destinationCode)) throw new Error(`Unresolved pair ${pairKey} is outside the queued scope`);
+  if (policyStatusesByPair.has(pairKey)) throw new Error(`Unresolved pair ${pairKey} is also assigned by a policy`);
+}
+
+const requiresCompletePartition = queueBatch.passportCodes.includes("*")
+  && queueBatch.destinationCodes.length === 1
+  && candidate.batchId.endsWith("-ordinary-passport-entry-scope");
+if (requiresCompletePartition) {
+  for (const passportCode of allowedPassportCodes) {
+    for (const destinationCode of allowedDestinationCodes) {
+      const pairKey = `${passportCode}:${destinationCode}`;
+      if (!policyStatusesByPair.has(pairKey) && !unresolvedKeys.has(pairKey)) throw new Error(`Queued pair ${pairKey} is neither supported nor unresolved`);
+    }
+  }
+}
+
+for (const [pairKey, pairStatuses] of policyStatusesByPair) {
+  const [passportCode, destinationCode] = pairKey.split(":");
+  const currentStatus = snapshot.passports[passportCode]?.statuses[destinationCode];
+  const normalizedCurrentStatus = status.safeParse(currentStatus);
+  if (normalizedCurrentStatus.success && pairStatuses.has(normalizedCurrentStatus.data)) continue;
+  const reviewedOverride = reviewedOverrideByPair.get(pairKey);
+  const unappliedStatuses = [...pairStatuses].filter((officialStatus) => officialStatus !== currentStatus && reviewedOverride !== officialStatus);
+  if (unappliedStatuses.length !== 1) continue;
+  const conflict = candidate.conflicts.find((item) => `${item.passportCode}:${item.destinationCode}` === pairKey);
+  const normalizedConflictStatus = conflict ? status.safeParse(conflict.officialStatus) : undefined;
+  if (!conflict || !normalizedConflictStatus?.success || !unappliedStatuses.includes(normalizedConflictStatus.data)) {
+    throw new Error(`Supported pair ${pairKey} changes ${currentStatus} to ${unappliedStatuses.join("/")} without a matching conflict`);
+  }
 }
 
 process.stdout.write(`Validated ${candidate.batchId}: ${candidate.sources.length} sources, ${candidate.policies.length} policies, ${candidate.conflicts.length} conflicts, ${candidate.unresolved.length} unresolved.\n`);

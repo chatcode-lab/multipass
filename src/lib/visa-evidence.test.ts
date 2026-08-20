@@ -725,6 +725,27 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TH", "TH", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
+  it("covers the reviewed Philippines, Cambodia, and Laos pass", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("PH")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("TV", "PH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "PH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "PH", "visa_required").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("KH")).toHaveLength(12);
+    expect(getVisaRelationshipEvidence("SG", "KH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "KH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "KH", snapshot.passports.US.statuses.KH).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("LA")).toHaveLength(162);
+    expect(getVisaRelationshipEvidence("BY", "LA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "LA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "LA", snapshot.passports.AF.statuses.LA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("LA", "LA", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -903,6 +924,18 @@ describe("official visa evidence", () => {
       "tdac.immigration.go.th",
       "www.mfa.go.th",
       "mfa.go.th",
+      "evisa.gov.ph",
+      "ws.evisa.gov.ph",
+      "immigration.gov.ph",
+      "melbournepcg.org",
+      "www.evisa.gov.kh",
+      "arrival.gov.kh",
+      "immigration.gov.kh",
+      "www.mofa.gov.la",
+      "laoevisa.gov.la",
+      "mxf.laoevisa.gov.la",
+      "www.immigration.gov.la",
+      "api.immigration.gov.la",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

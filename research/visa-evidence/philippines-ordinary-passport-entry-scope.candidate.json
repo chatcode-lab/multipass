@@ -1,0 +1,504 @@
+{
+  "batchId": "philippines-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "philippines-evisa-current-policy",
+      "title": "Philippine eVisa policy",
+      "url": "https://evisa.gov.ph/page/policy",
+      "publisher": "Department of Foreign Affairs Office of Consular Affairs",
+      "jurisdiction": "Philippines",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Live DFA Office of Consular Affairs eVisa policy page publishing the EO 408 list, India, China, Hong Kong/Macao and visa-required rules.",
+      "supportingExcerpt": "Nationals not included in EO 408 are considered visa-required nationals."
+    },
+    {
+      "id": "philippines-evisa-live-country-policy-api",
+      "title": "Philippine eVisa live country-policy service",
+      "url": "https://ws.evisa.gov.ph/api/v1/common/countries?paginate=0&is_active=1&exclude_ph=1",
+      "publisher": "Department of Foreign Affairs Office of Consular Affairs",
+      "jurisdiction": "Philippines",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Live country-policy endpoint consumed by the official eVisa portal’s citizenship checker; its result exposes country-specific policy text.",
+      "supportingExcerpt": "Brunei and Cambodia policy records say no visa is required for stays not exceeding 21 days."
+    },
+    {
+      "id": "philippines-china-visa-free-2026-order",
+      "title": "Operations Order No. 2026-001: 14-day visa-free entry for Chinese nationals",
+      "url": "https://immigration.gov.ph/wp-content/uploads/2026/01/OPERATIONS-ORDER-No.-2026-%E2%80%93-001.pdf",
+      "publisher": "Bureau of Immigration, Department of Justice",
+      "jurisdiction": "Philippines",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current Bureau of Immigration operations order implementing FSC No. 2026-005 for Chinese nationals.",
+      "supportingExcerpt": "Chinese nationals may be granted visa-free entry for a stay not exceeding fourteen days."
+    },
+    {
+      "id": "philippines-philippine-citizenship-arrival-order",
+      "title": "Operations Order SBM-2014-015: arriving and departing retained or reacquired Philippine citizens",
+      "url": "https://immigration.gov.ph/wp-content/uploads/2023/12/SBM-2014-015.pdf",
+      "publisher": "Bureau of Immigration, Department of Justice",
+      "jurisdiction": "Philippines",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Bureau of Immigration order, still hosted on the official BI domain, treating a valid Philippine passport as citizenship proof for arrival processing.",
+      "supportingExcerpt": "A valid Philippine passport is substantial proof of Philippine citizenship."
+    },
+    {
+      "id": "philippines-etravel-arrival-declaration",
+      "title": "Bureau of Immigration: eTravel registration reminder",
+      "url": "https://immigration.gov.ph/bi-reminds-travelers-to-register-with-etravel-for-seamless-processing/",
+      "publisher": "Bureau of Immigration, Department of Justice",
+      "jurisdiction": "Philippines",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current Bureau of Immigration guidance describing the eTravel arrival/departure-card replacement.",
+      "supportingExcerpt": "eTravel replaced the arrival and departure cards used before immigration clearance."
+    },
+    {
+      "id": "philippines-fsc-2026-035-taiwan-visa-free",
+      "title": "FSC 2026-035: Chinese Taipei passport holders 14-day visa-free entry",
+      "url": "https://melbournepcg.org/?page_id=1311",
+      "publisher": "Philippine Consulate General, Melbourne, Department of Foreign Affairs",
+      "jurisdiction": "Philippines",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The live Philippine Consulate General visa page publishes Foreign Service Circular 2026-035 and its effective dates and conditions.",
+      "supportingExcerpt": "Extension of 14-Day Visa-Free Entry for Chinese Taipei Passport Holders, effective 01 July 2026 to 30 June 2027."
+    }
+  ],
+  "policies": [
+    {
+      "id": "philippines-citizenship",
+      "title": "Philippines: Philippine ordinary-passport holders",
+      "summary": "A valid Philippine passport is citizenship proof for Philippine arrival processing, rather than a foreign visitor-visa route.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "PH"
+      ],
+      "conditions": [
+        "This is a same-country citizenship normalization only; it does not determine dual nationality, passport issuance, exit controls, residence, work, transit, security, or any foreign passport held by the person.",
+        "The cited BI order also covers retained or reacquired Philippine citizens travelling with a foreign passport and specified proof; that conditional route is not inferred from a foreign passport code."
+      ],
+      "sourceIds": [
+        "philippines-philippine-citizenship-arrival-order"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "philippines-eo408-30-day-ordinary-passport-visa-free",
+      "title": "Philippines: EO 408 30-day ordinary-passport visa-free entry",
+      "summary": "The current DFA eVisa policy gives these ordinary-passport nationalities visa-free temporary entry for business or tourism for up to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "AD",
+        "AO",
+        "AG",
+        "AR",
+        "AU",
+        "AT",
+        "BS",
+        "BH",
+        "BB",
+        "BE",
+        "BZ",
+        "BJ",
+        "BT",
+        "BO",
+        "BW",
+        "BG",
+        "BF",
+        "BI",
+        "CM",
+        "CA",
+        "CV",
+        "CF",
+        "TD",
+        "CL",
+        "CO",
+        "KM",
+        "CG",
+        "CD",
+        "CR",
+        "CI",
+        "HR",
+        "CY",
+        "CZ",
+        "DK",
+        "DJ",
+        "DM",
+        "DO",
+        "EC",
+        "SV",
+        "GQ",
+        "ER",
+        "EE",
+        "ET",
+        "FJ",
+        "FI",
+        "FR",
+        "GA",
+        "GM",
+        "DE",
+        "GH",
+        "GR",
+        "GD",
+        "GT",
+        "GN",
+        "GW",
+        "GY",
+        "HT",
+        "HN",
+        "HU",
+        "IS",
+        "ID",
+        "IE",
+        "IT",
+        "JM",
+        "JP",
+        "KZ",
+        "KE",
+        "KI",
+        "KR",
+        "KW",
+        "KG",
+        "LA",
+        "LV",
+        "LS",
+        "LR",
+        "LI",
+        "LT",
+        "LU",
+        "MG",
+        "MW",
+        "MY",
+        "MV",
+        "ML",
+        "MT",
+        "MH",
+        "MR",
+        "MU",
+        "MX",
+        "FM",
+        "MC",
+        "MN",
+        "MA",
+        "MZ",
+        "MM",
+        "NA",
+        "NP",
+        "NL",
+        "NZ",
+        "NI",
+        "NE",
+        "NO",
+        "OM",
+        "PW",
+        "PA",
+        "PG",
+        "PY",
+        "PE",
+        "PL",
+        "PT",
+        "QA",
+        "RO",
+        "RU",
+        "RW",
+        "KN",
+        "LC",
+        "VC",
+        "WS",
+        "SM",
+        "ST",
+        "SA",
+        "SN",
+        "SC",
+        "SG",
+        "SK",
+        "SI",
+        "SB",
+        "ZA",
+        "ES",
+        "SR",
+        "SZ",
+        "SE",
+        "CH",
+        "TJ",
+        "TZ",
+        "TH",
+        "TG",
+        "TT",
+        "TN",
+        "TR",
+        "TM",
+        "TV",
+        "UG",
+        "AE",
+        "GB",
+        "US",
+        "UY",
+        "UZ",
+        "VU",
+        "VA",
+        "VE",
+        "VN",
+        "ZM",
+        "ZW"
+      ],
+      "conditions": [
+        "For business or tourism temporary visits only, initially not exceeding 30 days.",
+        "Traveller must hold a passport valid at least six months beyond the contemplated stay and a return or onward ticket.",
+        "Brazil and Israel have the separately stated 59-day arrangement; Brunei and Cambodia are separated due to a live official-service duration conflict.",
+        "eTravel is an arrival/departure declaration that replaced cards; it is not normalized as an ETA or visa.",
+        "Does not establish admission for work, residence, study, media, transit, crew, diplomatic/official/special documents, Balikbayan/former-Filipino privilege, security clearance, deportation/blacklist, or discretionary border decisions."
+      ],
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "philippines-brazil-israel-59-day-ordinary-passport-visa-free",
+      "title": "Philippines: Brazil and Israel 59-day visa-free ordinary-passport entry",
+      "summary": "The DFA eVisa policy states that Brazil and Israel use existing bilateral arrangements for visa-free admission of up to 59 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "BR",
+        "IL"
+      ],
+      "conditions": [
+        "Temporary visitor entry only; the policy attributes the 59-day period to existing agreements.",
+        "Passport validity, return/onward ticket, eTravel, admissibility, purpose, extension, work, residence, transit, crew, diplomatic/official/special-document, security, and blacklist rules remain applicable.",
+        "This policy does not model other document classes or special admission arrangements."
+      ],
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "philippines-brunei-cambodia-ordinary-passport-visa-free-duration-conflict",
+      "title": "Philippines: Brunei and Cambodia visa-free ordinary passports (duration conflict)",
+      "summary": "The official DFA policy page and the eVisa country-policy service both establish visa-free admission for Brunei and Cambodia ordinary passports, but publish conflicting maximum stays of 30 and 21 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "BN",
+        "KH"
+      ],
+      "conditions": [
+        "Visa-free status is supported; do not rely on either 21- or 30-day duration without confirming the current rule with the competent Philippine border authority or a Philippine mission.",
+        "The primary eVisa policy page lists these nationalities under the 30-day EO 408 scheme. The live country-policy service, used by the same portal’s citizenship checker, says 21 days.",
+        "eTravel is a declaration, not an ETA or visa. Work, residence, transit, crew, diplomatic/official/special documents, Balikbayan, admissibility, and security remain outside the policy."
+      ],
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-evisa-live-country-policy-api",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "low"
+    },
+    {
+      "id": "philippines-india-14-day-ordinary-passport-visa-free",
+      "title": "Philippines: Indian ordinary passports visa-free for 14 days",
+      "summary": "Since 8 June 2025, Indian nationals have a nationality-wide 14-day visa-free temporary-visitor route; a separate 30-day route is conditional on a specified third-country visa or residence permit.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "IN"
+      ],
+      "effectiveFrom": "2025-06-08",
+      "conditions": [
+        "For tourism or business only, non-extendible and non-convertible, for up to 14 days.",
+        "Requires a passport valid at least six months beyond the stay, confirmed accommodation, financial-capacity proof, and return/onward ticket; the applicant must have no BI derogatory record.",
+        "The longer 30-day route is conditional on a valid American, Japanese, Australian, Canadian, Schengen, Singaporean, or United Kingdom visa or residence permit, so it is not the code-only baseline.",
+        "Available at Philippine ports of entry; transit, long-term visits, non-tourism activities, work, residence, crew, diplomatic/official/special documents, and admission discretion remain separate.",
+        "eTravel is an arrival/departure declaration, not an ETA or visa."
+      ],
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "philippines-china-14-day-ordinary-passport-visa-free",
+      "title": "Philippines: Chinese ordinary passports 14-day visa-free entry",
+      "summary": "The current DFA policy establishes a 14-day, non-extendible and non-convertible visa-free route for Chinese nationals for tourism and business.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "CN"
+      ],
+      "effectiveFrom": "2026-01-16",
+      "effectiveTo": "2027-01-15",
+      "conditions": [
+        "For tourism or business only, up to 14 days; it is non-extendible and non-convertible.",
+        "Available only through Ninoy Aquino International Airport or Mactan-Cebu International Airport. Transit passengers need an advance Philippine transit visa before entry.",
+        "Requires a passport valid at least six months beyond the intended stay, confirmed hotel accommodation/booking, return/onward ticket, and no BI derogatory record.",
+        "The Bureau of Immigration implementation order takes effect on 16 January 2026 and remains valid for one year, through 15 January 2027 unless otherwise stated.",
+        "Complete eTravel registration is an entry requirement in the Bureau of Immigration order. It is a declaration, not an ETA or visa; work, residence, crew, diplomatic/official/special documents, admission, and security rules remain separate."
+      ],
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-china-visa-free-2026-order",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "philippines-chinese-taipei-14-day-ordinary-passport-visa-free",
+      "title": "Philippines: Chinese Taipei ordinary passports visa-free for 14 days",
+      "summary": "FSC 2026-035 grants Chinese Taipei ordinary-passport holders a temporary 14-day visa-free visitor route through 30 June 2027.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "TW"
+      ],
+      "effectiveFrom": "2026-07-01",
+      "effectiveTo": "2027-06-30",
+      "conditions": [
+        "The maximum stay is 14 days; it is non-extendible and non-convertible. A stay longer than 14 days requires an advance visa.",
+        "Available at Philippine ports of entry. The traveller must have a passport valid at least six months beyond the stay, proof of accommodation and financial capacity, a return or onward ticket, and no BI derogatory record.",
+        "The FSC expressly excludes diplomatic and official/service Chinese Taipei passports. This ordinary-passport policy does not determine MECO ETA, sticker visa, residence, work, transit, crew, diplomatic/official/special documents, or discretionary admission treatment.",
+        "eTravel is an arrival/departure declaration, not an ETA or visa."
+      ],
+      "sourceIds": [
+        "philippines-fsc-2026-035-taiwan-visa-free",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "philippines-hong-kong-macao-sar-14-day-ordinary-passport-visa-free",
+      "title": "Philippines: Hong Kong SAR and Macao SAR ordinary passports visa-free for 14 days",
+      "summary": "The current DFA eVisa policy gives Hong Kong SAR and Macao SAR passport holders a 14-day visa-free temporary-visitor route.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "HK",
+        "MO"
+      ],
+      "conditions": [
+        "Maximum initial stay is 14 days; the Macao-SAR route expressly requires a return or onward ticket.",
+        "This mapping is confined to Hong Kong SAR and Macao SAR passports. It does not cover British National (Overseas), Hong Kong British, Macao-Portuguese, other Chinese documents, or holders of residence documents.",
+        "eTravel is a declaration, not an ETA or visa. Work, residence, transit, crew, diplomatic/official/special documents, Balikbayan, security, and admission discretion remain separate."
+      ],
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "philippines-other-ordinary-passports-advance-9a-visa",
+      "title": "Philippines: other ordinary passports require an advance 9(a) visa",
+      "summary": "These foreign ordinary passports are outside the nationality-wide visa-free cohorts. The current DFA policy expressly classes other countries as visa-required nationals, requiring the appropriate advance visitor visa.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "PH"
+      ],
+      "passportCodes": [
+        "AF",
+        "AL",
+        "AM",
+        "AZ",
+        "BA",
+        "BD",
+        "BY",
+        "CU",
+        "DZ",
+        "EG",
+        "GE",
+        "IQ",
+        "IR",
+        "JO",
+        "KP",
+        "LB",
+        "LK",
+        "LY",
+        "MD",
+        "ME",
+        "MK",
+        "NG",
+        "NR",
+        "PK",
+        "PS",
+        "RS",
+        "SD",
+        "SL",
+        "SO",
+        "SS",
+        "SY",
+        "TL",
+        "TO",
+        "UA",
+        "XK",
+        "YE"
+      ],
+      "conditions": [
+        "The ordinary visitor route is an advance Temporary Visitor 9(a) visa. The eVisa policy lists visitor categories and requirements, but does not publicly establish a nationality-wide electronic-issuance entitlement for every residual passport; this policy therefore remains visa_required, not evisa.",
+        "The official eVisa portal’s ability to issue an eVisa after its process is not treated as proof that every residual nationality has that electronic route. An online form or country checker alone is not an eVisa classification.",
+        "Passport validity, purpose, return/onward travel, accommodation, finances, clearance, fees, entries, duration, port, security, and admission are case-specific; eVisa issuance also does not guarantee admission.",
+        "Pre-arranged VUAP, cruise waiver, conditional third-country documents, Balikbayan/former-Filipino family arrangements, transit, crew, diplomatic/official/special documents, work, study, residence, and eTravel are not nationality-wide alternatives to this baseline."
+      ],
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-etravel-arrival-declaration"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.gov.ph/",
+        "label": "Philippine eVisa portal",
+        "steps": [
+          "Confirm no visa-free or document-specific exemption applies, then choose the appropriate visitor category and follow the responsible Philippine Foreign Service Post’s process.",
+          "Provide the passport and the purpose-, itinerary-, financial-, accommodation-, and other documents the authority requests; the official policy says original documents can be required.",
+          "Obtain the required advance visa before travel and complete eTravel as the separate arrival/departure declaration; issuance does not guarantee admission."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TV",
+      "destinationCode": "PH",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_free",
+      "explanation": "Current Philippine DFA/BI material establishes a nationality-wide visa-free temporary-visitor route; the snapshot gives a different status.",
+      "sourceIds": [
+        "philippines-evisa-current-policy",
+        "philippines-etravel-arrival-declaration"
+      ]
+    }
+  ],
+  "unresolved": []
+}

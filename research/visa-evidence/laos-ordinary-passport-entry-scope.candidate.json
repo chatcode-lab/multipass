@@ -1,0 +1,2380 @@
+{
+  "batchId": "laos-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "laos-mofa-current-waiver-table",
+      "title": "List of countries having reached unilateral and bilateral visa exemption agreement with Laos",
+      "url": "https://www.mofa.gov.la/gweb/gweb/backend/web/index.php?r=site/downloadfile&file=_J372876QbPE3GhiLGXCOH/46f49ea89aaddb9e6ad50303373070a4.pdf",
+      "publisher": "Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The PDF is published from the Lao Ministry of Foreign Affairs official mofa.gov.la site.",
+      "supportingExcerpt": "The table records ordinary passport categories, stay permits, and agreements in force; it is dated 22 December 2025."
+    },
+    {
+      "id": "laos-mofa-live-evisa-selector-api",
+      "title": "Lao eVisa live country-price selector API",
+      "url": "https://mxf.laoevisa.gov.la/api/v1/component/getCountryPriceCalculator",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The official Lao eVisa portal's live JavaScript calls this mxf.laoevisa.gov.la endpoint and blocks is_except selections; the portal terms identify the service as MOFA-owned.",
+      "supportingExcerpt": "The live selector returns 162 country records with is_except, stay_day, and watchlist fields."
+    },
+    {
+      "id": "laos-mofa-evisa-information",
+      "title": "Lao Official Online Visa information",
+      "url": "https://laoevisa.gov.la/info",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The linked Lao eVisa service is owned and operated by the Lao Ministry of Foreign Affairs.",
+      "supportingExcerpt": "The eVisa facility is nationality-list based and provides designated-port, approval-letter, document, and processing information."
+    },
+    {
+      "id": "laos-mofa-evisa-terms",
+      "title": "Lao Official Online Visa terms and conditions",
+      "url": "https://laoevisa.gov.la/term/",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The terms state laoevisa.gov.la is owned, operated, and made by the Lao Ministry of Foreign Affairs.",
+      "supportingExcerpt": "Only ordinary passports apply; Tourist Visa T-B3 permits 30 days after arrival and is valid 60 days after approval."
+    },
+    {
+      "id": "laos-immigration-checkpoint-directory",
+      "title": "Laos international border checkpoints",
+      "url": "https://www.immigration.gov.la/en/checkpoints/category/category/?limit=8&offset=0",
+      "publisher": "Department of Immigration, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page identifies the Department of Immigration of Lao PDR and publishes its official contact details.",
+      "supportingExcerpt": "Checkpoint descriptions label available services as Visa on Arrival and eVisa."
+    },
+    {
+      "id": "laos-immigration-arrival-register",
+      "title": "Immigration Arrival Register",
+      "url": "https://www.immigration.gov.la/en/registration/arrival/arrival-info",
+      "publisher": "Department of Immigration, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The form is hosted on the official immigration.gov.la Department of Immigration domain.",
+      "supportingExcerpt": "The arrival register collects personal, passport, visa, purpose, transport, and entry-checkpoint information."
+    },
+    {
+      "id": "laos-immigration-entry-decree",
+      "title": "Decree on penalties and other measures for entry, exit and foreigner management",
+      "url": "https://api.immigration.gov.la/client/law/file/test-%282%29-ky7odr3licr.pdf",
+      "publisher": "Government of the Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The decree bears the Lao PDR government emblem and is hosted on the official immigration.gov.la API domain.",
+      "supportingExcerpt": "Visa on arrival applies to citizens of countries under a Foreign Affairs notice; watch-listed nationals cannot apply."
+    }
+  ],
+  "policies": [
+    {
+      "id": "laos-belarus-ordinary-passport-waiver",
+      "title": "Belarus ordinary passports: visa exemption",
+      "summary": "The current MOFA agreement table records Belarus ordinary-passport visa exemption, effective 15 January 2026.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "LA"
+      ],
+      "passportCodes": [
+        "BY"
+      ],
+      "effectiveFrom": "2026-01-15",
+      "conditions": [
+        "The MOFA table identifies Belarus ordinary passports as covered; its row does not state a separate ordinary-passport stay period, so none is inferred here.",
+        "This is not a work, residence, diplomatic/official-document, border-pass, transit, or admission guarantee; ordinary immigration controls still apply."
+      ],
+      "sourceIds": [
+        "laos-mofa-current-waiver-table"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "laos-ordinary-passport-30-day-waivers",
+      "title": "Listed ordinary passports: 30-day visa exemption",
+      "summary": "The current MOFA agreement table grants these ordinary passports a 30-day visa-exempt stay.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "LA"
+      ],
+      "passportCodes": [
+        "BN",
+        "KH",
+        "KP",
+        "ID",
+        "JP",
+        "MY",
+        "MN",
+        "PH",
+        "KR",
+        "RU",
+        "SG",
+        "TH",
+        "TL",
+        "VN"
+      ],
+      "conditions": [
+        "The current MOFA table identifies a 30-day stay for the listed ordinary passports. It does not establish a work or residence entitlement.",
+        "Entry remains subject to travel-document, port, security, immigration inspection, and other Lao legal requirements. Diplomatic, service, public-affairs, temporary, emergency, and special passports are outside this policy."
+      ],
+      "sourceIds": [
+        "laos-mofa-current-waiver-table"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "laos-myanmar-ordinary-passport-14-day-waiver",
+      "title": "Myanmar ordinary passports: 14-day visa exemption",
+      "summary": "The current MOFA agreement table grants Myanmar ordinary passports a 14-day visa-exempt stay.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "LA"
+      ],
+      "passportCodes": [
+        "MM"
+      ],
+      "conditions": [
+        "The table specifies 14 days for ordinary passports. It does not create a work, residence, special-document, or admission entitlement.",
+        "Normal immigration inspection and lawful-entry conditions remain applicable."
+      ],
+      "sourceIds": [
+        "laos-mofa-current-waiver-table"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "laos-luxembourg-switzerland-ordinary-passport-15-day-waivers",
+      "title": "Luxembourg and Swiss ordinary passports: 15-day visa exemption",
+      "summary": "The current MOFA table lists a 15-day unilateral ordinary-passport exemption for Luxembourg and Switzerland.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "LA"
+      ],
+      "passportCodes": [
+        "LU",
+        "CH"
+      ],
+      "conditions": [
+        "The table labels these unilateral ordinary-passport exemptions at 15 days. It does not establish employment, residence, special-document, or transit rights.",
+        "Admission, security, passport, route, and immigration-inspection requirements still apply."
+      ],
+      "sourceIds": [
+        "laos-mofa-current-waiver-table"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "laos-current-selector-ordinary-passport-tourist-evisa",
+      "title": "Live official selector: listed ordinary passports' tourist eVisa",
+      "summary": "The current Lao eVisa selector includes these non-exempt ordinary-passport nationalities for the online tourist eVisa route.",
+      "status": "evisa",
+      "destinationCodes": [
+        "LA"
+      ],
+      "passportCodes": [
+        "AL",
+        "AD",
+        "AO",
+        "AG",
+        "AR",
+        "AM",
+        "AU",
+        "AT",
+        "AZ",
+        "BS",
+        "BH",
+        "BB",
+        "BE",
+        "BZ",
+        "BJ",
+        "BT",
+        "BO",
+        "BA",
+        "BW",
+        "BR",
+        "BG",
+        "BF",
+        "CA",
+        "CV",
+        "CF",
+        "TD",
+        "CL",
+        "CN",
+        "CO",
+        "KM",
+        "CR",
+        "HR",
+        "CU",
+        "CY",
+        "CZ",
+        "CD",
+        "DK",
+        "DJ",
+        "DM",
+        "DO",
+        "EC",
+        "EG",
+        "SV",
+        "GQ",
+        "ER",
+        "EE",
+        "ET",
+        "FJ",
+        "FI",
+        "FR",
+        "GA",
+        "GM",
+        "GE",
+        "DE",
+        "GR",
+        "GD",
+        "GT",
+        "GY",
+        "HT",
+        "HN",
+        "HK",
+        "HU",
+        "IS",
+        "IN",
+        "IE",
+        "IL",
+        "IT",
+        "JM",
+        "KZ",
+        "KE",
+        "KI",
+        "KW",
+        "KG",
+        "LV",
+        "LI",
+        "LT",
+        "MO",
+        "MK",
+        "MG",
+        "MW",
+        "MV",
+        "ML",
+        "MT",
+        "MH",
+        "MR",
+        "MU",
+        "MX",
+        "FM",
+        "MD",
+        "MC",
+        "ME",
+        "MA",
+        "NA",
+        "NP",
+        "NL",
+        "NZ",
+        "NI",
+        "NO",
+        "OM",
+        "PW",
+        "PS",
+        "PA",
+        "PG",
+        "PY",
+        "PE",
+        "PL",
+        "PT",
+        "QA",
+        "XK",
+        "RO",
+        "RW",
+        "KN",
+        "LC",
+        "VC",
+        "WS",
+        "SM",
+        "ST",
+        "SA",
+        "RS",
+        "SC",
+        "SK",
+        "SI",
+        "SB",
+        "ZA",
+        "ES",
+        "LK",
+        "SE",
+        "TW",
+        "TJ",
+        "TG",
+        "TT",
+        "TN",
+        "TR",
+        "TM",
+        "TV",
+        "UA",
+        "AE",
+        "GB",
+        "TZ",
+        "US",
+        "UY",
+        "UZ",
+        "VU",
+        "VE"
+      ],
+      "conditions": [
+        "The portal blocks selection of its 15 is_except records; they are the older subset of the current MOFA table's ordinary-passport waiver cohort. The three later MOFA waiver codes Belarus, DPR Korea, and Timor-Leste remain visa-free rather than eVisa.",
+        "The selector's stay_day field is not used to set waiver terms: for example, its blocked Japan record says 15 while the current MOFA waiver table says 30. The MOFA table controls the exemption policy and duration.",
+        "India and Nepal are selector records with watchlist YES. The application code displays a watchlist acknowledgement; neither the endpoint nor the terms publishes a distinct nationality-wide visa outcome, so this policy does not infer one.",
+        "Only ordinary passports qualify: temporary, emergency, special, and other passport types do not. The Tourist Visa T-B3 grants 30 days after arrival and the eVisa is valid 60 days after approval; the cited tourist-eVisa material does not establish work, residence, official/diplomatic, border-pass, or transit routes.",
+        "Apply online, pay the non-refundable fee, and carry the approval letter. Use only the nine designated eVisa ports; approval does not ensure admission and immigration may refuse for insufficient funds, criminality, prior deportation, prostitution, drug, or terrorist grounds."
+      ],
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-information",
+        "laos-mofa-evisa-terms"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://laoevisa.gov.la/apply",
+        "label": "Lao Official Online Visa",
+        "processingTime": "Usually three working days after completed application and fee; may take longer.",
+        "steps": [
+          "Select an eligible ordinary passport and complete the online tourist eVisa application.",
+          "Upload the required photo and passport bio page, then pay the non-refundable fee.",
+          "Download and print the approval letter; present it with the same passport at an eVisa-designated port."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BY",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_free",
+      "explanation": "The current Lao MOFA exemption-agreement table identifies this ordinary passport as visa-exempt; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-current-waiver-table"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_free",
+      "explanation": "The current Lao MOFA exemption-agreement table identifies this ordinary passport as visa-exempt; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-current-waiver-table"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "FR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live Lao official eVisa selector includes this non-exempt ordinary passport; the fallback differs.",
+      "sourceIds": [
+        "laos-mofa-live-evisa-selector-api",
+        "laos-mofa-evisa-terms"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "LA",
+      "destinationCode": "LA",
+      "reason": "The reviewed entry decree concerns foreigner management and the cited official sources do not directly establish the ordinary-passport entry/document rule for Lao citizens. This taxonomy does not infer citizenship from the foreigner-visa framework.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "LA",
+      "reason": "This code is absent from the live official eVisa selector and the current MOFA ordinary-passport waiver table. Immigration's generic visa-on-arrival checkpoint labels and decree cite a Foreign Affairs nationality notice but do not identify a nationality-specific route, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "mofa.gov.la",
+        "laoevisa.gov.la",
+        "mxf.laoevisa.gov.la",
+        "immigration.gov.la"
+      ]
+    }
+  ]
+}
