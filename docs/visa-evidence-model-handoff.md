@@ -4,7 +4,7 @@ This lane lets a less capable web-enabled model collect bounded evidence without
 
 ## What to give the model
 
-Choose one batch from [`research/visa-evidence/queue.json`](../research/visa-evidence/queue.json). The queue is deliberately ordered: finish `hk-special-arrangements` before expanding to Kenya, HKSAR outbound access, or one EU agreement at a time.
+Choose one priority batch from [`research/visa-evidence/queue.json`](../research/visa-evidence/queue.json). Parallel agents may research separate batches only when each writes a distinct candidate file and none edits canonical data.
 
 Generate a current hypothesis packet:
 

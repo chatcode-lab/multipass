@@ -68,6 +68,214 @@
         "Confirm territorial scope, excluded passport types, permitted purpose, stay calculation, and effective date from EUR-Lex documents.",
         "Return separate directional policies: Peruvian passports to covered EU destinations, and covered EU passports to Peru. Never create the Cartesian product of all listed passports and destinations."
       ]
+    },
+    {
+      "id": "eu-schengen-ordinary-passport-scope",
+      "priority": 6,
+      "objective": "Model the current ordinary-passport visa-required and visa-exempt cohorts for the EU and Schengen area from Regulation (EU) 2018/1806, including current suspensions and document conditions.",
+      "destinationCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IT", "LV", "LT", "LU", "MT", "NL", "NO", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "CH", "IS", "LI"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A32018R1806",
+        "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
+        "https://home-affairs.ec.europa.eu/policies/schengen/schengen-area_en"
+      ],
+      "notes": [
+        "Use the current consolidated regulation and account for amendments or suspensions effective on the review date.",
+        "Keep biometric, identity-number, and named passport-document conditions explicit instead of flattening them.",
+        "Do not include Ireland; EU/EEA/Swiss free-movement passports require a separate legal-policy batch.",
+        "Model Annex I and Annex II as policy cohorts rather than duplicating every passport-destination pair."
+      ]
+    },
+    {
+      "id": "canada-visitor-entry-document-scope",
+      "priority": 7,
+      "objective": "Model Canada's current ordinary-passport visitor entry scope across eTA-required, visa-required, conditional-eTA, and explicit no-eTA cohorts.",
+      "destinationCodes": ["CA"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/entry-requirements-country.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/eligibility.html"
+      ],
+      "notes": [
+        "Preserve air versus land or sea conditions and the conditional eTA history requirements.",
+        "Distinguish citizenship passports from refugee, alien, residence, and special travel documents.",
+        "Do not label a conditionally eligible visa-required nationality as universally ETA-eligible."
+      ]
+    },
+    {
+      "id": "united-states-vwp-esta-eligibility",
+      "priority": 8,
+      "objective": "Model the current United States Visa Waiver Program and ESTA nationality scope for ordinary passports, including statutory passport and travel-history restrictions.",
+      "destinationCodes": ["US"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+        "https://www.cbp.gov/travel/international-visitors/esta"
+      ],
+      "notes": [
+        "Require the official VWP list and ePassport condition.",
+        "Keep travel-history, dual-nationality, purpose, carrier, and 90-day restrictions explicit.",
+        "Use a separate official source before treating every non-VWP nationality as visa-required."
+      ]
+    },
+    {
+      "id": "japan-short-stay-exemptions",
+      "priority": 9,
+      "objective": "Model Japan's current ordinary-passport short-stay visa exemptions and the passport-specific exceptions in the Ministry of Foreign Affairs table.",
+      "destinationCodes": ["JP"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html",
+        "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html"
+      ],
+      "notes": [
+        "Preserve ePassport, machine-readable passport, residence, identity-number, and HKSAR or BN(O) distinctions.",
+        "Treat Japan eVISA eligibility separately because it can depend on place of residence rather than nationality alone."
+      ]
+    },
+    {
+      "id": "australia-electronic-visitor-eligibility",
+      "priority": 10,
+      "objective": "Model Australia's ETA subclass 601 and eVisitor subclass 651 ordinary-passport cohorts without conflating their eligibility or document rules.",
+      "destinationCodes": ["AU"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/electronic-travel-authority-601",
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/evisitor-651"
+      ],
+      "notes": [
+        "Keep ETA and eVisitor as separate normalized policies and review snapshot overlaps explicitly.",
+        "Exclude non-citizen passports, certificates of identity, titres de voyage, and document categories the official pages exclude.",
+        "Do not infer the complete visitor-visa-required complement without a direct official rule."
+      ]
+    },
+    {
+      "id": "new-zealand-visa-waiver-nzeta",
+      "priority": 11,
+      "objective": "Model New Zealand's current visa-waiver nationalities and their NZeTA requirement, with the Australian and document-specific exceptions kept separate.",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/"
+      ],
+      "notes": [
+        "Normalize the required pre-travel NZeTA as ETA while explaining that qualifying travellers receive visitor permission at the border.",
+        "Preserve residence, right-of-residence, passport-issue-date, and document-specific conditions.",
+        "Model Australian citizens separately from Australian permanent residents."
+      ]
+    },
+    {
+      "id": "singapore-visa-required-travel-document-scope",
+      "priority": 12,
+      "objective": "Model Singapore's current visa-required ordinary-passport and named travel-document cohorts from Immigration and Checkpoints Authority guidance.",
+      "destinationCodes": ["SG"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements"
+      ],
+      "notes": [
+        "Do not treat the SG Arrival Card as a visa or ETA.",
+        "Keep refugee, alien, temporary, identity, and travel-permit documents separate from ordinary nationality passports.",
+        "Do not infer an electronic-visa category merely because an application can be submitted online."
+      ]
+    },
+    {
+      "id": "united-kingdom-eta-visa-national-scope",
+      "priority": 13,
+      "objective": "Model the United Kingdom's current ETA national list and visa-national list for ordinary short visitor travel from the Immigration Rules appendices.",
+      "destinationCodes": ["GB"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-eta-national-list",
+        "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-visitor-visa-national-list"
+      ],
+      "notes": [
+        "Use the current effective version and distinguish nationality from British status or right of abode.",
+        "Keep ETA exemptions for existing immigration permission, residence, transit, and specified documents explicit."
+      ]
+    },
+    {
+      "id": "ireland-visa-required-nationalities",
+      "priority": 14,
+      "objective": "Model Ireland's current ordinary-passport short-visit visa-required and visa-exempt nationality scope under its independent national policy.",
+      "destinationCodes": ["IE"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.irishimmigration.ie/at-the-border/visa-required-nationalities/"
+      ],
+      "notes": [
+        "Ireland is outside the Schengen visa regime; do not copy EU or Schengen lists into this batch.",
+        "Keep UK visa-waiver programme, residence-card, refugee-document, and transit exceptions separate."
+      ]
+    },
+    {
+      "id": "south-korea-keta-visa-free-scope",
+      "priority": 15,
+      "objective": "Model South Korea's current ordinary-passport visa-free and K-ETA scope, including temporary K-ETA exemptions effective on the review date.",
+      "destinationCodes": ["KR"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.k-eta.go.kr/portal/guide/viewetaalification.do",
+        "https://overseas.mofa.go.kr/"
+      ],
+      "notes": [
+        "Confirm the official K-ETA authority and exact current temporary-exemption end date.",
+        "Do not infer visa-free access from K-ETA portal eligibility alone without the underlying nationality rule.",
+        "Keep diplomatic, official, residence, transit, and special-document rules separate."
+      ]
+    },
+    {
+      "id": "israel-ordinary-passport-entry-scope",
+      "priority": 16,
+      "objective": "Model Israel's current ordinary national-passport visitor entry scope: Israeli citizenship, the visa-exempt cohort now requiring ETA-IL, and the directly supported visa-required complement.",
+      "destinationCodes": ["IL"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.gov.il/en/departments/dynamiccollectors/ashrotzarim?skip=0",
+        "https://israel-entry.piba.gov.il/",
+        "https://embassies.gov.il/berlin/en/node/6825"
+      ],
+      "notes": [
+        "Keep official, diplomatic, service, laissez-passer, residence/Israeli-ID, Israeli-dual-national, crew, and security/admissibility rules explicit rather than converting them into passport-nationality access.",
+        "Do not infer an ordinary Palestinian travel-document rule from a specially labelled authority row; leave it unresolved unless the document scope is made explicit.",
+        "Treat the India/Sri Lanka eVisa-B2 pilot as residence-conditioned application guidance, not a universal ordinary-passport eVisa classification."
+      ]
+    },
+    {
+      "id": "australia-visitor-visa-complement",
+      "priority": 17,
+      "objective": "Use Australia's direct all-other-passport-holder rule to classify the ordinary-passport visitor complement left after the citizenship, SCV, ETA and eVisitor cohorts, without calling online Visitor visa processing a nationality-wide eVisa.",
+      "destinationCodes": ["AU"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://immi.homeaffairs.gov.au/entering-and-leaving-australia/entering-australia/can-i-go-to-australia",
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/tourist-stream-overseas",
+        "https://www.legislation.gov.au/C1958A00062/latest/text"
+      ],
+      "notes": [
+        "The output is only an ordinary-passport visitor-purpose cohort; preserve transit/TWOV, crew, diplomatic and official-document, residence, existing-visa, NZ-family, purpose, and individual eligibility exceptions.",
+        "Do not assert that every nationality uses subclass 600 or that an online application alone creates an eVisa access category.",
+        "Review upstream eVisa labels as possible conflicts only when the official source does not establish a nationality-wide electronic visitor route."
+      ]
+    },
+    {
+      "id": "taiwan-ordinary-passport-entry-scope",
+      "priority": 18,
+      "objective": "Model Taiwan's current foreign ordinary-passport visitor entry scope: ROC nationality and nationals without household registration, the BOCA visa-exempt and landing-visa cohorts, nationality-wide eVisa routes, and the directly supported foreign-passport visa complement.",
+      "destinationCodes": ["TW"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.boca.gov.tw/cp-149-4486-7785a-2.html",
+        "https://www.boca.gov.tw/cp-149-271-2fdc9-2.html",
+        "https://visawebapp.boca.gov.tw/BOCA_EVISA/MRV04FORM.do",
+        "https://www.immigration.gov.tw/5475/5478/141465/141808/141985/"
+      ],
+      "notes": [
+        "Do not collapse Mainland China, Hong Kong, Macao, nationals without household registration, or special travel documents into ordinary foreign-passport rules.",
+        "Keep the ordinary, emergency, temporary, diplomatic, official/service, certificate-of-identity, British-status, residence, birthplace, purpose, and admissibility conditions explicit.",
+        "Only classify eVisa where BOCA names the nationality-wide route; retain invitation, group-tour, business-recommendation, residence, and other special routes as limitations rather than general passport access."
+      ]
     }
   ]
 }

@@ -49,6 +49,22 @@ The second pass reviewed the Hong Kong Immigration Department's August 2026 visi
 
 Macao, Mainland China, Taiwan, Timor-Leste, and Kosovo were deliberately not inferred from the ordinary foreign-nationality table. Their special or catch-all treatment is the first queued follow-up batch.
 
+## Pass 3 result: reviewed expansion and developed-destination program
+
+The strong-review pass accepted Kenya's May 2025 legal and operational ETA schedules, the PRC-passport visitor rule for Hong Kong, the HKSAR-passport EU/Schengen exemption, and the reciprocal EU agreements with Colombia and Peru. Kenya's source conflict for Guyana and Indonesia produced two narrow access overrides. Saint Kitts and Nevis remains unsupported until Kenya corrects or clarifies the repeated official spelling `St. Kitts and Navis`.
+
+The HKSAR outbound dataset was useful discovery evidence but was not published for its 29 non-European visa-free or visa-on-arrival claims. Its own caveat directs travellers to destination authorities, so those records remain candidate-only until destination-side confirmation is reviewed. Seven proposed access corrections from that dataset were rejected for the same reason.
+
+The next program targets 42 priority destinations: the EU and Schengen cohort, Ireland, the United Kingdom, the United States, Canada, Australia, New Zealand, Japan, South Korea, Singapore, Hong Kong, Israel, and Taiwan. Run `npm run evidence:coverage` to measure how many current passport–destination statuses in that cohort have active canonical evidence. The 50% and 80% thresholds are progress indicators, not claims that unsupported relationships are false or that travel advice is complete.
+
+## Pass 4 result: priority-destination baseline
+
+The parallel research and strong-review pass reached 8,139 of 8,316 active current-status relationships (97.9%) across all 42 priority destinations. All 42 have at least 50% coverage and 41 have at least 80%. South Korea remains at 55.6% because the reviewed official sources directly establish its visa-free and K-ETA cohorts but do not safely establish a nationality-wide visa-required complement.
+
+Australia, Canada, Ireland, Japan, New Zealand, Singapore, the United Kingdom, and the United States now have complete catalog baselines. Taiwan has 196 of 198 non-citizenship relationships supported; Mainland China and Palestinian-territory passport treatment remain unresolved. Israel retains one unresolved Palestinian-document relationship. EU and Schengen destinations retain narrow agreement or associated-state gaps rather than borrowing unsupported scope from a neighboring regime.
+
+Temporary programmes are represented with inclusive end dates. Current access overrides for South Korea's temporary K-ETA exemption and Taiwan's trial exemption and eVisa routes stop applying after their official expiry. Emergency or temporary-passport landing-visa routes are documented in research candidates but are not promoted into ordinary-passport canonical rankings or sitemap URLs.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

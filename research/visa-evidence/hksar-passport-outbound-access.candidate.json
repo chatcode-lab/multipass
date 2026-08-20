@@ -1,0 +1,1774 @@
+{
+  "batchId": "hksar-passport-outbound-access",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "eu-visa-regulation-2018-1806",
+      "title": "Regulation (EU) 2018/1806",
+      "url": "https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A32018R1806",
+      "publisher": "European Parliament and Council of the European Union",
+      "jurisdiction": "European Union",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "EUR-Lex publishes the Official Journal and current consolidated version of this EU regulation.",
+      "supportingExcerpt": "The exemption from the visa requirement shall only apply to holders of a ‘Hong Kong Special Administrative Region’ passport."
+    },
+    {
+      "id": "hksar-vfa-dataset",
+      "title": "Visa-free access or visa-on-arrival for HKSAR passport (English)",
+      "url": "https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/VFA_list.csv",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The CSV is published from the Immigration Department immd.gov.hk open-data path; DATA.GOV.HK identifies the Department as provider.",
+      "supportingExcerpt": "This dataset provides the information of visa-free access or visa-on-arrival for HKSAR passport holders."
+    }
+  ],
+  "policies": [
+    {
+      "id": "eu-hksar-passport-short-stay-exemption",
+      "title": "EU and Schengen short-stay visa exemption for HKSAR passports",
+      "summary": "Regulation (EU) 2018/1806 exempts HKSAR passport holders from short-stay visa requirements at the listed EU and Schengen destinations.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "AT",
+        "BE",
+        "BG",
+        "HR",
+        "CY",
+        "CZ",
+        "DK",
+        "EE",
+        "FI",
+        "FR",
+        "DE",
+        "GR",
+        "HU",
+        "IT",
+        "LV",
+        "LT",
+        "LU",
+        "MT",
+        "NL",
+        "NO",
+        "PL",
+        "PT",
+        "RO",
+        "SK",
+        "SI",
+        "ES",
+        "SE",
+        "CH",
+        "IS",
+        "LI"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Only holders of a ‘Hong Kong Special Administrative Region’ passport are covered.",
+        "Stays may not exceed 90 days in any 180-day period.",
+        "The cited regulation does not apply to Ireland."
+      ],
+      "sourceIds": [
+        "eu-visa-regulation-2018-1806"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "hksar-dataset-explicit-voa",
+      "title": "HKSAR dataset: expressly stated visa-on-arrival routes",
+      "summary": "The HKSAR Immigration Department dataset expressly describes a visa-on-arrival route for each listed destination for HKSAR passport holders.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "BH",
+        "KM",
+        "ET",
+        "KW",
+        "LB",
+        "MG",
+        "MZ",
+        "MM",
+        "NP",
+        "NU",
+        "SA",
+        "TL",
+        "TO",
+        "TV"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Per-destination stay limits, purpose limits, and port restrictions in the dataset apply.",
+        "This is an HKSAR summary; destination-authority confirmation is still required before canonical use."
+      ],
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "hksar-dataset-explicit-voa-conflicts",
+      "title": "HKSAR dataset: expressly stated visa-on-arrival routes conflicting with snapshot",
+      "summary": "The HKSAR Immigration Department dataset expressly describes a visa-on-arrival route for each listed destination, differing from the current snapshot category.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "BO",
+        "CK",
+        "GY",
+        "LA",
+        "TG"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Per-destination stay limits, purpose limits, and port restrictions in the dataset apply.",
+        "This is an HKSAR summary; destination-authority confirmation is still required before canonical use."
+      ],
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "hksar-dataset-explicit-visa-free",
+      "title": "HKSAR dataset: expressly stated visa-free routes",
+      "summary": "The HKSAR Immigration Department dataset expressly describes visa-free access for each listed destination for HKSAR passport holders.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "AL",
+        "JP",
+        "KG",
+        "OM",
+        "QA",
+        "UZ",
+        "VE",
+        "ZW"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Per-destination stay limits and entry conditions in the dataset apply.",
+        "This is an HKSAR summary; destination-authority confirmation is still required before canonical use."
+      ],
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "hksar-dataset-explicit-visa-free-conflicts",
+      "title": "HKSAR dataset: expressly stated visa-free routes conflicting with snapshot",
+      "summary": "The HKSAR Immigration Department dataset expressly describes visa-free access for each listed destination, differing from the current snapshot category.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "AO",
+        "RU"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Per-destination stay limits and entry conditions in the dataset apply.",
+        "This is an HKSAR summary; destination-authority confirmation is still required before canonical use."
+      ],
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "AO",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_free",
+      "explanation": "The HKSAR dataset expressly says HKSAR passport holders may visit Angola visa-free; the snapshot is visa_on_arrival.",
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The HKSAR dataset expressly describes a tourist visa upon arrival in Bolivia for HKSAR passport holders; the snapshot is evisa.",
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CK",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The HKSAR dataset expressly says HKSAR passport holders can apply for a visa upon arrival in the Cook Islands; the snapshot is visa_free.",
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GY",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The HKSAR dataset expressly says HKSAR passport holders can apply for a visa upon arrival in Guyana; the snapshot is visa_free.",
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LA",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The HKSAR dataset expressly describes a tourist visa upon arrival in Laos; the snapshot is visa_free.",
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "RU",
+      "snapshotStatus": "eta",
+      "officialStatus": "visa_free",
+      "explanation": "The HKSAR dataset expressly says Russia grants HKSAR passport holders visa-free access up to 14 days; the snapshot is eta.",
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TG",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The HKSAR dataset expressly says HKSAR passport holders can apply for a visa upon arrival in Togo; the snapshot is evisa.",
+      "sourceIds": [
+        "hksar-vfa-dataset"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "AF",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "DZ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AD",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AI",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AU",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AZ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BD",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BB",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BY",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BZ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BJ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BT",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BQ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BF",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BI",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KH",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CV",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KY",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CF",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TD",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CL",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CO",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CD",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CI",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CU",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "DJ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "DM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "DO",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "EC",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "EG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SV",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GQ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ER",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SZ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "FK",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "FO",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "FJ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GF",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PF",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "FW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GH",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GI",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GL",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GD",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GU",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GT",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "HT",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "HN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "HK",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ID",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IQ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IL",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "JM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "JO",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KZ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KI",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "XK",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LY",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MO",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MY",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MV",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ML",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MH",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MU",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "YT",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MX",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "FM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MD",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MC",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ME",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NC",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NZ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NI",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KP",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MK",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MP",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PK",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PY",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PH",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "RE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "RW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "WS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ST",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "RS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SC",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SL",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SB",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SO",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ZA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LK",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SH",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LC",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MF",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VC",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SD",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SY",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TW",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TJ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TZ",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TH",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BS",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TT",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TR",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TC",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "UG",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "UA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "AE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GB",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "US",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "UY",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VI",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VU",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VA",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VN",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "YE",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ZM",
+      "reason": "A primary destination-authority source establishing the complete normalized rule for an ordinary HKSAR passport was not established in this pass. The HKSAR dataset is a combined visa-free-or-on-arrival list for many entries and cannot resolve the snapshot category.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "eur-lex.europa.eu"
+      ]
+    }
+  ]
+}
+

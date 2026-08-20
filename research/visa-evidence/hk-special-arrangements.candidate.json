@@ -1,0 +1,61 @@
+{
+  "batchId": "hk-special-arrangements",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "hk-immigration-special-arrangements",
+      "title": "Entry Arrangements for Mainland, Macao, Taiwan & Overseas Chinese Residents",
+      "url": "https://www.immd.gov.hk/eng/services/visas/overseas-chinese-entry-arrangement.html",
+      "publisher": "Hong Kong Immigration Department",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Published on the Hong Kong Immigration Department's immd.gov.hk domain.",
+      "supportingExcerpt": "PRC passport holders should apply for an entry permit for social and business visits to Hong Kong."
+    }
+  ],
+  "policies": [
+    {
+      "id": "hk-prc-passport-visitor-entry-permit",
+      "title": "PRC passport holders: entry permit for social and business visits",
+      "summary": "Holders of People's Republic of China passports must obtain an entry permit for social and business visits to Hong Kong.",
+      "status": "visa_required",
+      "destinationCodes": ["HK"],
+      "passportCodes": ["CN"],
+      "conditions": [
+        "Applies to social and business visits by holders of People's Republic of China passports.",
+        "The source separately allows up to seven days entry-permit-free only for qualifying transit with onward travel."
+      ],
+      "sourceIds": ["hk-immigration-special-arrangements"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "HK",
+      "reason": "Not established: the Immigration Department gives visit concessions by Macao residence card or Visit Permit, while Macao SAR passports are expressly described only for qualifying seven-day transit.",
+      "searchedOfficialDomains": ["immd.gov.hk", "data.gov.hk"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "HK",
+      "reason": "Not established: the published arrangements apply to Chinese residents of Taiwan and distinguish pre-arrival registration, Mainland Travel Permits, place of birth, and other travel documents; they do not provide one ordinary Taiwan-passport rule.",
+      "searchedOfficialDomains": ["immd.gov.hk", "gov.hk", "data.gov.hk"]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "HK",
+      "reason": "Not established: the current Immigration Department nationality dataset does not name Timor-Leste; its residual other-foreign-countries row cannot be used to infer this passport pair.",
+      "searchedOfficialDomains": ["immd.gov.hk", "data.gov.hk", "gov.hk"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "HK",
+      "reason": "Not established: no direct current Hong Kong official source located maps Kosovo ordinary passports to a visitor entry category; the residual nationality row cannot establish it.",
+      "searchedOfficialDomains": ["immd.gov.hk", "data.gov.hk", "gov.hk"]
+    }
+  ]
+}

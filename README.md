@@ -81,6 +81,12 @@ Official evidence is stored as policy-level records in `src/data/visa-evidence.t
 
 Narrow destination-authority corrections live in `src/data/access-overrides.ts` and are reapplied to every complete staged snapshot before scores and combination insights are published. For assisted evidence collection, generate a bounded packet with `npm run --silent evidence:packet -- <batch-id>`, then validate the model's candidate JSON with `npm run evidence:validate -- <candidate.json>`. The full small-model handoff and strong-review gate are documented in `docs/visa-evidence-model-handoff.md`.
 
+The priority-destination evidence program tracks 42 EU/Schengen and other widely used destinations, including the United Kingdom, United States, Canada, Australia, New Zealand, Japan, South Korea, Singapore, Hong Kong, Israel, and Taiwan. Report current-status evidence coverage without changing data:
+
+```bash
+npm run evidence:coverage
+```
+
 Dataset JSON-LD identifies MultiPass Rank as creator and publisher and links to `/data-license`. The license covers the site’s original evidence metadata and presentation, not upstream access snapshots or official source documents.
 
 ## Cloudflare provisioning

@@ -1,0 +1,176 @@
+{
+  "batchId": "israel-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "israel-pia-entry-country-data",
+      "title": "Israel Entry country and passport-type data",
+      "url": "https://israel-entry.piba.gov.il/api/getalldata",
+      "publisher": "Israel Population and Immigration Authority",
+      "jurisdiction": "Israel",
+      "kind": "official-dataset",
+      "language": "English, French, Spanish and Russian",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The endpoint is on the Population and Immigration Authority's piba.gov.il entry portal, whose homepage identifies it as the Authority's official website.",
+      "supportingExcerpt": "Regular passport (national)"
+    },
+    {
+      "id": "israel-mfa-eta-il-approval-berlin",
+      "title": "Application for ETA-IL approval",
+      "url": "https://embassies.gov.il/berlin/en/node/6825",
+      "publisher": "Embassy of Israel in Berlin, Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "This consular service is published on the Ministry of Foreign Affairs embassies.gov.il domain and identifies the Israel Population and Immigration Authority application route.",
+      "supportingExcerpt": "All visitors from visa-exempt countries."
+    },
+    {
+      "id": "israel-mfa-tourist-visa-country-table",
+      "title": "Tourist Visa Requirements for Foreign Nationals",
+      "url": "https://www.gov.il/en/departments/dynamiccollectors/ashrotzarim?skip=0",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The country and document-type visitor-visa table is published on Israel's official gov.il portal under the Ministry of Foreign Affairs.",
+      "supportingExcerpt": "Visa exemptions apply to national and official passports only."
+    },
+    {
+      "id": "israel-pia-tourist-b2-service",
+      "title": "Apply for tourist and visitor entry visas",
+      "url": "https://www.gov.il/en/service/request_for_tourist_visa_b2",
+      "publisher": "Population and Immigration Authority",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "This B/2 visitor-visa service is published on Israel's official gov.il portal and names the Population and Immigration Authority as its provider.",
+      "supportingExcerpt": "Applications for entry visas and tourist licences type B/2 for foreigners can be submitted at Israeli missions."
+    },
+    {
+      "id": "israel-mfa-eta-security-admission",
+      "title": "Israel entry information and ETA-IL notice",
+      "url": "https://embassies.gov.il/guatemala/en/announcements",
+      "publisher": "Embassy of Israel in Guatemala City, Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The travel notice is published by an Israeli Ministry of Foreign Affairs mission on the embassies.gov.il domain.",
+      "supportingExcerpt": "ETA - IL VISA DOES NOT GUARANTEE THAT YOU WILL BE ABLE TO ENTER ISRAEL."
+    },
+    {
+      "id": "israel-mfa-evisa-pilot-india",
+      "title": "eVisa Pilot in India",
+      "url": "https://embassies.gov.il/mumbai/en/announcements/evisa-israel",
+      "publisher": "Consulate General of Israel in Mumbai, Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The pilot announcement is published on the Ministry of Foreign Affairs embassies.gov.il domain and links to the official Population and Immigration Authority entry site.",
+      "supportingExcerpt": "Indian and Sri Lankan passport holders residing in India and Sri Lanka can now apply for an eVisa-B2."
+    }
+  ],
+  "policies": [
+    {
+      "id": "israel-citizen-ordinary-passport-entry",
+      "title": "Israeli citizens: citizenship entry status",
+      "summary": "An Israeli ordinary passport represents citizenship rather than a visitor-visa or ETA route; the current ETA-IL guidance expressly excludes Israeli citizens from ETA-IL applications.",
+      "status": "citizenship",
+      "destinationCodes": ["IL"],
+      "passportCodes": ["IL"],
+      "conditions": [
+        "This records citizenship, not a visitor-visa waiver or a decision on admission for a non-citizen travel document.",
+        "The current ETA-IL guidance says Israeli citizens do not need ETA-IL; it separately addresses an Israeli individual travelling on a foreign passport, so that dual-document situation is not normalized here.",
+        "Permanent residents with an Israeli identity number are a separate status-specific ETA exception, not a citizenship rule in this ordinary-passport policy."
+      ],
+      "sourceIds": ["israel-mfa-eta-il-approval-berlin"],
+      "confidence": "medium"
+    },
+    {
+      "id": "israel-eta-il-visa-exempt-ordinary-passports",
+      "title": "Visa-exempt ordinary national passports: ETA-IL required",
+      "summary": "The listed current visa-exempt ordinary national-passport rows require a pre-travel ETA-IL for visitor travel to Israel; this is normalized as ETA, not visa-free, from 1 January 2025.",
+      "status": "eta",
+      "destinationCodes": ["IL"],
+      "passportCodes": ["SG", "JP", "KR", "AE", "SE", "BE", "DK", "FI", "FR", "DE", "IE", "IT", "LU", "NL", "NO", "ES", "AT", "GR", "MT", "PT", "CH", "HU", "PL", "GB", "AU", "CA", "CZ", "LV", "NZ", "SK", "SI", "HR", "EE", "LI", "LT", "IS", "US", "BG", "RO", "MC", "CY", "CL", "HK", "AD", "AR", "BR", "SM", "BB", "BS", "KN", "VC", "MX", "UY", "MU", "CR", "GD", "PA", "PY", "DM", "TT", "MO", "LC", "UA", "PE", "RS", "TW", "SB", "GT", "SV", "HN", "MH", "WS", "ME", "MK", "TO", "TV", "AL", "GE", "FM", "PW", "RU", "ZA", "BZ", "EC", "FJ", "VU", "JM", "NR", "PG", "XK", "BW", "BY", "SR", "DO", "LS", "SZ", "MW", "PH", "MN", "HT"],
+      "effectiveFrom": "2025-01-01",
+      "conditions": [
+        "The cohort is limited to the corresponding current Population and Immigration Authority rows for a regular national passport. It does not establish access for laissez-passer, refugee, stateless, identity, or another non-national travel document.",
+        "The Ministry of Foreign Affairs says all visitors from visa-exempt countries need ETA-IL. The official visitor-visa table separately distinguishes national, diplomatic, official, service and biometric document fields; these grouped ISO codes must not be read as covering those other fields.",
+        "ETA-IL applies to a visitor stay of up to 90 days or less. Approval is valid for up to two years or until the current passport expires, whichever occurs first; a name, gender or citizenship change requires a new authorization.",
+        "Israeli citizens, permanent residents with an Israeli identity number, official or diplomatic passport holders, specified official-mission diplomats, qualifying seamen, reported aircrew, and some Israeli dual-document cases are separately described ETA exceptions. They are not flattened into this ordinary-passport nationality rule.",
+        "ETA-IL is not a guarantee of entry. The official notice says immigration officials conduct a security check and determine entry on arrival.",
+        "This is a short visitor-entry classification only. It does not establish rights for employment, residence, transit, Palestinian travel documents, or a special territorial or document status beyond the exact regular-passport row."
+      ],
+      "sourceIds": ["israel-pia-entry-country-data", "israel-mfa-tourist-visa-country-table", "israel-mfa-eta-il-approval-berlin", "israel-mfa-eta-security-admission"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://israel-entry.piba.gov.il/form/#/",
+        "label": "Population and Immigration Authority ETA-IL application",
+        "processingTime": "The Ministry of Foreign Affairs ETA-IL service says an answer is sent within 72 hours after submission.",
+        "steps": [
+          "Confirm that the exact regular national-passport country or territory row is visa-exempt and that no separate status or document exception applies.",
+          "Open the official Population and Immigration Authority ETA-IL form and complete the application with the passport to be used for travel.",
+          "Submit the application before travel and travel only after approval, using the same current passport."
+        ]
+      }
+    },
+    {
+      "id": "israel-visitor-visa-required-ordinary-passports",
+      "title": "Ordinary national passports requiring an Israeli visitor visa",
+      "summary": "The listed current regular national-passport rows require a visitor visa for ordinary short visitor travel to Israel, subject only to a directly stated document-, status-, purpose-, residence- or security-specific exception.",
+      "status": "visa_required",
+      "destinationCodes": ["IL"],
+      "passportCodes": ["MY", "BN", "SC", "AG", "VA", "CO", "NI", "BA", "KI", "MD", "VE", "QA", "TR", "KW", "MV", "TL", "SA", "BH", "GY", "OM", "CN", "BO", "KZ", "TH", "NA", "MA", "ID", "KE", "RW", "TZ", "GM", "AZ", "GH", "TN", "BJ", "UG", "AM", "CV", "ZM", "SL", "ZW", "MZ", "KG", "ST", "UZ", "BF", "CU", "TG", "CI", "GA", "IN", "MG", "SN", "DZ", "MR", "GQ", "NE", "GN", "ML", "TJ", "TD", "KM", "GW", "AO", "EG", "JO", "LR", "BI", "CM", "CF", "VN", "BT", "KH", "CG", "DJ", "LA", "CD", "NG", "TM", "MM", "ET", "LB", "SS", "SD", "LY", "LK", "ER", "IR", "BD", "KP", "NP", "SO", "YE", "PK", "IQ", "SY", "AF"],
+      "conditions": [
+        "This is only the current regular national-passport complement directly identified by the Population and Immigration Authority data and Ministry of Foreign Affairs country/document table. It does not classify diplomatic, official, service, biometric, laissez-passer, refugee, stateless or other special travel documents.",
+        "For a visiting or touring B/2 application, the official service describes applications through the relevant Israeli mission abroad or the Population and Immigration Authority. The application and eventual entry decision remain case-specific.",
+        "The visitor-visa service says a foreigner from a country defined by security services as high-risk needs an additional resume form for security clearance. This candidate does not infer, publish or normalize a nationality list from that status-dependent rule.",
+        "The eVisa-B2 pilot is not a universal reclassification of this cohort: the Ministry of Foreign Affairs limits it to Indian and Sri Lankan passport holders residing in India and Sri Lanka. All other residence, purpose and consular requirements remain material.",
+        "This policy does not establish work, residence, transit, group-tour, Palestinian-document, prior-history, or border-admission access, and must not be read as an assurance that a B/2 visa will be issued or that entry will be permitted."
+      ],
+      "sourceIds": ["israel-pia-entry-country-data", "israel-mfa-tourist-visa-country-table", "israel-pia-tourist-b2-service", "israel-mfa-evisa-pilot-india"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.gov.il/en/service/request_for_tourist_visa_b2",
+        "label": "Population and Immigration Authority B/2 tourist and visitor visa service",
+        "steps": [
+          "Confirm the passport's current regular-national document row and whether a narrow residence-, document- or purpose-specific route changes how the application is made.",
+          "Complete the B/2 entry-visa request and submit it with the passport and required supporting documents at the relevant Israeli mission abroad or Population and Immigration Authority office.",
+          "Provide any additional security-clearance or case-specific documents requested by the relevant authority before travel."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TV",
+      "destinationCode": "IL",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "eta",
+      "explanation": "The current Population and Immigration Authority regular-national-passport row is visa-exempt, and the current ETA-IL rule requires ETA-IL for visa-exempt visitors; the fallback still labels Tuvalu visa_required.",
+      "sourceIds": ["israel-pia-entry-country-data", "israel-mfa-eta-il-approval-berlin"]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "IL",
+      "snapshotStatus": "eta",
+      "officialStatus": "visa_required",
+      "explanation": "The current Population and Immigration Authority regular-national-passport row requires a permit, and the Ministry of Foreign Affairs country table is the current document-specific visa reference; the fallback labels Moldova eta.",
+      "sourceIds": ["israel-pia-entry-country-data", "israel-mfa-tourist-visa-country-table"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "PS",
+      "destinationCode": "IL",
+      "reason": "The current entry dataset has a specially labelled Palestine Authority row rather than an unequivocal ordinary Palestinian passport rule. Do not infer that the row resolves Palestinian Authority, travel-document, residence, permit, or border-control treatment.",
+      "searchedOfficialDomains": ["israel-entry.piba.gov.il", "www.gov.il", "embassies.gov.il"]
+    }
+  ]
+}

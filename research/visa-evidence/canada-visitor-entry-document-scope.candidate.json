@@ -1,0 +1,182 @@
+{
+  "batchId": "canada-visitor-entry-document-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "ircc-entry-requirements-country",
+      "title": "What you need to enter Canada",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/entry-requirements-country.html",
+      "publisher": "Immigration, Refugees and Citizenship Canada",
+      "jurisdiction": "Canada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page is published on the Government of Canada Canada.ca domain under Immigration, Refugees and Citizenship Canada services.",
+      "supportingExcerpt": "If you’re a citizen of any of the countries or territories listed below, you need a valid visitor visa."
+    },
+    {
+      "id": "ircc-eta-eligibility",
+      "title": "Electronic travel authorization (eTA): Who can apply",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/eligibility.html",
+      "publisher": "Immigration, Refugees and Citizenship Canada",
+      "jurisdiction": "Canada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page is published on the Government of Canada Canada.ca domain under Immigration, Refugees and Citizenship Canada services.",
+      "supportingExcerpt": "You need an electronic travel authorization (eTA) and a valid passport to board your flight to Canada."
+    },
+    {
+      "id": "ircc-eta-x-eligibility",
+      "title": "Electronic travel authorization (eTA): Citizens from some visa-required countries",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/eligibility/eta-x.html",
+      "publisher": "Immigration, Refugees and Citizenship Canada",
+      "jurisdiction": "Canada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page is published on the Government of Canada Canada.ca domain under Immigration, Refugees and Citizenship Canada services.",
+      "supportingExcerpt": "If you do not meet all of the requirements, you need a visitor visa."
+    },
+    {
+      "id": "ircc-eta-apply",
+      "title": "Electronic travel authorization (eTA): How to apply",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html",
+      "publisher": "Immigration, Refugees and Citizenship Canada",
+      "jurisdiction": "Canada",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page states that it is the Government of Canada’s official website to apply for an eTA.",
+      "supportingExcerpt": "This is the Government of Canada’s official website to apply for an eTA."
+    }
+  ],
+  "policies": [
+    {
+      "id": "canada-citizens-entry-documents",
+      "title": "Canadian citizens: no visitor visa or eTA",
+      "summary": "Canadian citizens do not need a visitor visa or eTA to enter Canada.",
+      "status": "citizenship",
+      "destinationCodes": ["CA"],
+      "passportCodes": ["CA"],
+      "conditions": [
+        "Canadian citizens need a valid Canadian passport for air travel; land or sea travel can use another accepted identification document.",
+        "Most dual Canadian citizens need a Canadian passport; American-Canadian citizens may use a valid Canadian or United States passport with proof of Canadian citizenship when using the latter."
+      ],
+      "sourceIds": ["ircc-entry-requirements-country", "ircc-eta-eligibility"],
+      "confidence": "high"
+    },
+    {
+      "id": "canada-us-citizens-no-eta-or-visa",
+      "title": "United States citizens: no visitor visa or eTA",
+      "summary": "United States citizens do not need a visitor visa or eTA to enter Canada.",
+      "status": "visa_free",
+      "destinationCodes": ["CA"],
+      "passportCodes": ["US"],
+      "conditions": [
+        "Carry proper identification; a valid United States passport is the recommended universally accepted travel and identification document.",
+        "United States lawful permanent residence is a separate status-based no-eTA exception and is not normalized to a passport nationality code."
+      ],
+      "sourceIds": ["ircc-entry-requirements-country", "ircc-eta-eligibility"],
+      "confidence": "high"
+    },
+    {
+      "id": "canada-eta-required-ordinary-passports-air",
+      "title": "Ordinary passports from unqualified eTA-required nationalities",
+      "summary": "Citizens of these eTA-required nationalities need an eTA, not a visitor visa, to board a flight to Canada with a valid ordinary passport.",
+      "status": "eta",
+      "destinationCodes": ["CA"],
+      "passportCodes": ["SG", "JP", "KR", "AE", "SE", "BE", "DK", "FI", "FR", "DE", "IE", "IT", "LU", "NL", "NO", "ES", "AT", "GR", "MT", "PT", "CH", "HU", "PL", "AU", "CZ", "LV", "NZ", "SK", "SI", "HR", "EE", "LI", "LT", "IS", "BG", "MC", "CY", "CL", "AD", "SM", "BB", "BN", "BS", "SB", "WS", "QA", "PG"],
+      "conditions": [
+        "Applies to air travel or airport transit with a valid passport; an eTA does not guarantee entry.",
+        "For land or sea arrival by car, bus, train, or boat including a cruise ship, an eTA is generally not needed but a valid passport is still required.",
+        "A traveller by sea from Saint-Pierre-et-Miquelon, other than on a cruise ship, needs an eTA to board the boat.",
+        "This policy does not absorb nationality-specific passport qualifiers, citizenship, permanent-residence, refugee, stateless, alien-document, transit, crew, military, diplomatic, or refuelling exceptions."
+      ],
+      "sourceIds": ["ircc-entry-requirements-country", "ircc-eta-eligibility", "ircc-eta-apply"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html",
+        "label": "Government of Canada eTA application",
+        "steps": [
+          "Travel by air or transit through a Canadian airport with a valid passport from an eTA-required nationality.",
+          "Complete the official online eTA form and pay the required fee.",
+          "Travel using the same passport linked to the approved eTA."
+        ]
+      }
+    },
+    {
+      "id": "canada-eta-document-constrained-nationalities",
+      "title": "eTA-required nationalities with passport or British-status conditions",
+      "summary": "eTA eligibility for these nationality codes depends on the stated issuing authority, passport feature, or British citizenship status.",
+      "status": "eta",
+      "destinationCodes": ["CA"],
+      "passportCodes": ["GB", "HK", "IL", "RO", "TW", "VA"],
+      "conditions": [
+        "GB: applies to British citizen passports. British national overseas, British overseas citizen, British overseas territory citizen, and British subject documents require the source's stated status, right-of-abode, re-admissibility, or territorial-connection conditions and are not separate ISO nationality codes.",
+        "HK: passport must be issued by the Hong Kong SAR; this does not cover Macao SAR passports, which are visa-required.",
+        "IL: passport must be a national Israeli passport; an Israeli Travel Document in Lieu of National Passport is visa-required.",
+        "RO: passport must be electronic; non-electronic passports, including temporary passports, are visa-required.",
+        "TW: passport must be an ordinary Ministry of Foreign Affairs passport containing the holder's personal identification number; other Taiwan documents are visa-required.",
+        "VA: passport or travel document must be issued by the Vatican City State.",
+        "Air, land/sea, Saint-Pierre-et-Miquelon, and eTA application conditions follow the unqualified eTA policy."
+      ],
+      "sourceIds": ["ircc-entry-requirements-country", "ircc-eta-eligibility", "ircc-eta-apply"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html",
+        "label": "Government of Canada eTA application",
+        "steps": [
+          "Confirm that the passport or British-status condition in the official country table is met.",
+          "Complete the official online eTA form using that passport or travel document.",
+          "Travel by air with the same document linked to the approved eTA."
+        ]
+      }
+    },
+    {
+      "id": "canada-visitor-visa-required-nationalities",
+      "title": "Ordinary passports from visa-required nationalities",
+      "summary": "These ordinary-passport nationalities require a valid visitor visa and passport to visit or transit Canada by air, land, or sea.",
+      "status": "visa_required",
+      "destinationCodes": ["CA"],
+      "passportCodes": ["MU", "GD", "PY", "DM", "MO", "UA", "PE", "RS", "GT", "SV", "CO", "HN", "MH", "ME", "MK", "TO", "NI", "TV", "AL", "BA", "GE", "KI", "FM", "MD", "PW", "VE", "RU", "TR", "ZA", "BZ", "KW", "MV", "TL", "EC", "SA", "BH", "GY", "FJ", "VU", "OM", "JM", "NR", "CN", "XK", "BW", "BY", "BO", "KZ", "SR", "NA", "DO", "LS", "SZ", "KE", "MW", "RW", "TZ", "GM", "AZ", "GH", "TN", "BJ", "UG", "AM", "CV", "MN", "ZM", "SL", "ZW", "MZ", "KG", "ST", "UZ", "BF", "CU", "TG", "CI", "GA", "IN", "MG", "SN", "DZ", "MR", "GQ", "NE", "GN", "ML", "TJ", "TD", "KM", "GW", "AO", "EG", "JO", "LR", "BI", "CM", "CF", "HT", "VN", "BT", "KH", "CG", "DJ", "LA", "CD", "NG", "TM", "MM", "ET", "LB", "SS", "SD", "LY", "LK", "ER", "IR", "PS", "BD", "KP", "NP", "SO", "YE", "PK", "IQ", "SY", "AF"],
+      "conditions": [
+        "Applies by air, car, train, bus, or boat including a cruise ship.",
+        "The 17 specifically listed eTA-X nationalities are excluded because their visa requirement has a conditional air-travel eTA route.",
+        "Stateless individuals and holders of refugee travel documents need a visa, but those document categories are not normalized to nationality codes.",
+        "This ordinary-passport cohort does not replace the stated Israeli, Romanian, or Taiwan document-specific rules."
+      ],
+      "sourceIds": ["ircc-entry-requirements-country", "ircc-eta-eligibility"],
+      "confidence": "high"
+    },
+    {
+      "id": "canada-eta-x-conditionally-eligible-visa-required-nationalities",
+      "title": "Visa-required nationalities with conditional eTA-X air-travel route",
+      "summary": "These nationalities remain visitor-visa-required unless all eTA-X conditions are met; this is not universal eTA eligibility.",
+      "status": "visa_required",
+      "destinationCodes": ["CA"],
+      "passportCodes": ["AG", "AR", "BR", "CR", "ID", "MY", "MX", "MA", "PA", "PH", "KN", "LC", "VC", "SC", "TH", "TT", "UY"],
+      "conditions": [
+        "An eTA may be used only for a temporary stay normally up to six months when flying to or transiting through a Canadian airport with a valid passport.",
+        "The traveller must have held a Canadian visitor visa within the previous 10 years or hold a valid United States nonimmigrant visa on the eTA application date.",
+        "A valid United States nonimmigrant visa need not remain valid on the Canada travel date.",
+        "If any condition is not met, a visitor visa is required.",
+        "A visitor visa is required for arrival by car, bus, train, or boat, including a cruise ship, even where an eTA-X route would otherwise be available.",
+        "A valid existing Canadian visitor visa can be used until expiry and removes any need for an eTA."
+      ],
+      "sourceIds": ["ircc-entry-requirements-country", "ircc-eta-x-eligibility", "ircc-eta-apply"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html",
+        "label": "Government of Canada eTA application",
+        "steps": [
+          "Confirm the nationality, air-travel, temporary-stay, and prior Canadian visitor-visa or valid United States nonimmigrant-visa conditions.",
+          "Apply online for an eTA using the passport to be used for travel, or apply for a visitor visa instead.",
+          "Use a visitor visa for land or sea arrival."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

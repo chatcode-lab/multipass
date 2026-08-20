@@ -1,0 +1,98 @@
+{
+  "batchId": "eu-colombia-short-stay-waiver",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "eu-colombia-waiver-agreement",
+      "title": "Agreement between the European Union and the Republic of Colombia on the short-stay visa waiver",
+      "url": "https://eur-lex.europa.eu/eli/agree_internation/2015/2399/oj/eng/pdf",
+      "publisher": "Official Journal of the European Union",
+      "jurisdiction": "European Union",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Official Journal agreement hosted by EUR-Lex, the Publications Office of the European Union.",
+      "supportingExcerpt": "This Agreement provides for visa-free travel for the citizens of the Union and for the citizens of Colombia."
+    },
+    {
+      "id": "eu-colombia-provisional-application",
+      "title": "Council Decision (EU) 2015/2399 on the signing and provisional application of the Agreement",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX%3A32015D2399",
+      "publisher": "Council of the European Union",
+      "jurisdiction": "European Union",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Official Journal Council decision hosted by EUR-Lex, the Publications Office of the European Union.",
+      "supportingExcerpt": "The Agreement shall be applied on a provisional basis as from the day following the date of signature thereof."
+    },
+    {
+      "id": "eu-colombia-entry-into-force-corrigendum",
+      "title": "Corrigendum to Information relating to the entry into force of the Agreement",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A22017X0111%2801%29R%2801%29",
+      "publisher": "Council of the European Union",
+      "jurisdiction": "European Union",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Official Journal corrigendum hosted by EUR-Lex, the Publications Office of the European Union.",
+      "supportingExcerpt": "The Agreement between the European Union and Colombia will enter into force on 1 January 2017."
+    }
+  ],
+  "policies": [
+    {
+      "id": "eu-colombia-colombian-passports-to-eu",
+      "title": "Colombian ordinary passports: EU short-stay visa waiver",
+      "summary": "Colombian citizens holding valid ordinary passports may enter covered EU Member States without a visa for short stays.",
+      "status": "visa_free",
+      "destinationCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "passportCodes": ["CO"],
+      "effectiveFrom": "2015-12-03",
+      "conditions": [
+        "Applies to valid ordinary Colombian passports; Article 3 also expressly includes diplomatic, service, official and special passports.",
+        "Does not apply to travel to carry out a paid activity; those visa rules remain subject to EU, Member State and Colombian law.",
+        "Maximum stay is 90 days in any 180-day period; the moving 180-day period counts a continuous visit or several visits.",
+        "The 90-day period in Member States fully applying the Schengen acquis is independent of each non-fully-applying Member State's 90-day period.",
+        "Ireland is expressly excluded; the agreement does not establish access there.",
+        "For France and the Netherlands, the agreement applies only to their European territories.",
+        "The agreement was provisionally applied from 3 December 2015 and entered into force on 1 January 2017."
+      ],
+      "sourceIds": ["eu-colombia-waiver-agreement", "eu-colombia-provisional-application", "eu-colombia-entry-into-force-corrigendum"],
+      "confidence": "high"
+    },
+    {
+      "id": "eu-colombia-eu-passports-to-colombia",
+      "title": "Covered EU ordinary passports: Colombia short-stay visa waiver",
+      "summary": "Citizens of covered EU Member States holding valid ordinary passports may enter Colombia without a visa for short stays.",
+      "status": "visa_free",
+      "destinationCodes": ["CO"],
+      "passportCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "excludedPassportCodes": ["IE"],
+      "effectiveFrom": "2015-12-03",
+      "conditions": [
+        "Applies to valid ordinary passports issued by covered EU Member States; Article 3 also expressly includes diplomatic, service, official and special passports.",
+        "Ireland is excluded from the agreement's definition of Member State; the United Kingdom was also excluded and is not in this batch's EU codes.",
+        "Does not apply to travel to carry out a paid activity; those visa rules remain subject to EU, Member State and Colombian law.",
+        "Maximum stay in Colombia is 90 days in any 180-day period; the moving 180-day period counts a continuous visit or several visits.",
+        "The agreement was provisionally applied from 3 December 2015 and entered into force on 1 January 2017."
+      ],
+      "sourceIds": ["eu-colombia-waiver-agreement", "eu-colombia-provisional-application", "eu-colombia-entry-into-force-corrigendum"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "CO",
+      "destinationCode": "IE",
+      "reason": "Not established: Ireland is excluded from the agreement's definition of Member State, so this treaty does not determine Colombian ordinary-passport visitor access to Ireland.",
+      "searchedOfficialDomains": ["eur-lex.europa.eu"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "CO",
+      "reason": "Not established: Ireland is excluded from the agreement's definition of Member State, so this treaty does not determine Irish ordinary-passport visitor access to Colombia.",
+      "searchedOfficialDomains": ["eur-lex.europa.eu"]
+    }
+  ]
+}

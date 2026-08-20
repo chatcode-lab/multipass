@@ -1,0 +1,181 @@
+{
+  "batchId": "kenya-eta-nationality-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "kenya-eta-2025-guidance",
+      "title": "How to Apply",
+      "url": "https://etakenya.go.ke/how-to-apply",
+      "publisher": "Directorate of Immigration Services, State Department for Immigration and Citizen Services",
+      "jurisdiction": "Kenya",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page identifies the Ministry of Interior and National Administration and its Directorate of Immigration Services as operator.",
+      "supportingExcerpt": "All visitors including infants and children ... must have an approved Electronic Travel Authorisation (eTA) before the start of their journey."
+    },
+    {
+      "id": "kenya-gazette-ln-93-2025",
+      "title": "Kenya Citizenship and Immigration (Amendment) Rules, 2025 (Legal Notice 93)",
+      "url": "https://documents.kenyahighcom.org.uk/L.%20%20N.-%2093%20kenyan%20citizenship%20and%20immigration%20act%20.pdf",
+      "publisher": "Government Printer, Nairobi",
+      "jurisdiction": "Kenya",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The Kenya Gazette Supplement identifies Legal Notice 93 and states it was printed and published by the Government Printer, Nairobi.",
+      "supportingExcerpt": "The category of persons set out in the Seventeenth Schedule are exempted from the requirement of obtaining eTA."
+    },
+    {
+      "id": "kenya-eta-exempt-page",
+      "title": "Exempt from eTA",
+      "url": "https://etakenya.go.ke/apply/exempt",
+      "publisher": "Directorate of Immigration Services, State Department for Immigration and Citizen Services",
+      "jurisdiction": "Kenya",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page identifies the Ministry of Interior and National Administration and its Directorate of Immigration Services as operator.",
+      "supportingExcerpt": "Citizens of Kenya and East African Partner States are exempt from completing the eTA."
+    }
+  ],
+  "policies": [
+    {
+      "id": "kenya-citizens-no-eta",
+      "title": "Kenyan citizens are exempt from eTA",
+      "summary": "Kenyan citizens are outside the eTA requirement.",
+      "status": "citizenship",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["KE"],
+      "conditions": [
+        "This policy concerns Kenyan citizenship and does not determine treatment of a non-Kenyan passport held by a dual citizen."
+      ],
+      "sourceIds": ["kenya-eta-exempt-page"],
+      "confidence": "high"
+    },
+    {
+      "id": "kenya-eac-eta-exemption",
+      "title": "East African Partner State citizens: eTA exemption",
+      "summary": "Citizens of the named East African Partner States are eTA-exempt for stays not exceeding 180 days.",
+      "status": "visa_free",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["BI", "CD", "RW", "SS", "TZ", "UG"],
+      "conditions": [
+        "The source states an eTA exemption for no more than 180 days.",
+        "The normalized visa_free status denotes no eTA requirement; it does not establish separate residence, work, or special-document rights."
+      ],
+      "sourceIds": ["kenya-gazette-ln-93-2025", "kenya-eta-2025-guidance"],
+      "confidence": "high"
+    },
+    {
+      "id": "kenya-90-day-national-eta-exemption",
+      "title": "Listed nationals: 90-day eTA exemption",
+      "summary": "The listed nationals are eTA-exempt for stays not exceeding 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["BB", "BZ", "BW", "BN", "DM", "ER", "SZ", "ET", "FJ", "GM", "GH", "GD", "GY", "JM", "KI", "LS", "MY", "MV", "MW", "MU", "MZ", "NA", "NR", "PG", "KM", "WS", "SM", "SL", "SG", "SB", "ZA", "LC", "VC", "BS", "TO", "TT", "CG", "TV", "VU", "ZM", "ZW"],
+      "conditions": [
+        "The source states an eTA exemption for no more than 90 days.",
+        "The normalized visa_free status denotes no eTA requirement; it does not establish a separate visa, residence, work, transit, or special-document entitlement.",
+        "Saint Kitts and Nevis is deliberately not included because the official sources say 'St. Kitts and Navis'; see unresolved item."
+      ],
+      "sourceIds": ["kenya-gazette-ln-93-2025", "kenya-eta-2025-guidance"],
+      "confidence": "high"
+    },
+    {
+      "id": "kenya-cyprus-90-day-eta-exemption",
+      "title": "Cyprus: 90-day eTA exemption",
+      "summary": "The current official eTA guidance lists Cyprus as eTA-exempt for stays not exceeding 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["CY"],
+      "conditions": [
+        "The current portal states an eTA exemption for no more than 90 days.",
+        "The Gazette PDF spells the country 'Cyrus'; this legal-text discrepancy is recorded as a conflict."
+      ],
+      "sourceIds": ["kenya-eta-2025-guidance", "kenya-gazette-ln-93-2025"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kenya-60-day-african-national-eta-exemption",
+      "title": "Listed African nationals: 60-day eTA exemption",
+      "summary": "The current official eTA guidance lists these African nationals as eTA-exempt for stays not exceeding 60 days.",
+      "status": "visa_free",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["DZ", "AO", "BJ", "BF", "CV", "CM", "CF", "TD", "CI", "DJ", "EG", "GQ", "GA", "GN", "GW", "LR", "MG", "ML", "MR", "MA", "NE", "NG", "ST", "SN", "SC", "SD", "TG", "TN"],
+      "conditions": [
+        "The current portal states an eTA exemption for no more than 60 days.",
+        "Seychelles is included on the portal's 60-day list, but the Gazette also includes it in a 90-day list; the duration conflict is recorded."
+      ],
+      "sourceIds": ["kenya-eta-2025-guidance", "kenya-gazette-ln-93-2025"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kenya-other-visitors-eta",
+      "title": "Other scoped ordinary-passport visitors: eTA required",
+      "summary": "For the listed ordinary-passport codes not placed in a named nationality exemption, an approved eTA is required before the journey.",
+      "status": "eta",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["JP", "KR", "AE", "SE", "BE", "DK", "FI", "FR", "DE", "IE", "IT", "LU", "NL", "NO", "ES", "AT", "GR", "MT", "PT", "CH", "HU", "PL", "GB", "AU", "CA", "CZ", "LV", "NZ", "SK", "SI", "HR", "EE", "LI", "LT", "IS", "US", "BG", "RO", "MC", "CL", "HK", "AD", "AR", "BR", "IL", "MX", "UY", "AG", "VA", "CR", "PA", "PY", "MO", "UA", "PE", "RS", "TW", "GT", "SV", "CO", "HN", "MH", "ME", "MK", "NI", "AL", "BA", "GE", "FM", "MD", "PW", "VE", "RU", "QA", "TR", "KW", "TL", "EC", "SA", "BH", "OM", "CN", "XK", "BY", "BO", "KZ", "TH", "SR", "DO", "ID", "AZ", "PH", "AM", "MN", "KG", "UZ", "CU", "IN", "TJ", "JO", "HT", "VN", "BT", "KH", "LA", "TM", "MM", "LB", "LY", "LK", "IR", "PS", "BD", "KP", "NP", "SO", "YE", "PK", "IQ", "SY", "AF"],
+      "conditions": [
+        "Applies only to the listed ordinary-passport scope after excluding the named national, citizenship, and non-national exemption categories.",
+        "An eTA is not final authority to enter Kenya.",
+        "This policy does not apply to listed permit, pass, re-entry-authority, transit, crew, private-refuelling, laissez-passer, diplomatic, official, service, special-passport, or British-military exemptions."
+      ],
+      "sourceIds": ["kenya-eta-2025-guidance", "kenya-gazette-ln-93-2025"],
+      "confidence": "high",
+      "application": {
+        "url": "https://etakenya.go.ke/how-to-apply",
+        "label": "Kenya Electronic Travel Authorisation application guidance",
+        "processingTime": "Typically three working days; it may take longer in some cases.",
+        "steps": [
+          "Use the official eTA portal before travel.",
+          "Provide a valid passport, contact details, itinerary, accommodation confirmation, and payment method.",
+          "Obtain approval before the start of the journey."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "GY",
+      "destinationCode": "KE",
+      "snapshotStatus": "eta",
+      "officialStatus": "visa_free",
+      "explanation": "The official 90-day eTA-exemption list includes Guyana; the snapshot says eta.",
+      "sourceIds": ["kenya-gazette-ln-93-2025", "kenya-eta-2025-guidance"]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "KE",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "eta",
+      "explanation": "Indonesia is not in either official nationality-exemption list; the official guidance requires eTA for all other visitors.",
+      "sourceIds": ["kenya-eta-2025-guidance", "kenya-gazette-ln-93-2025"]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "KE",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_free",
+      "explanation": "The current official portal lists Cyprus for 90 days, while the Gazette PDF spells the entry 'Cyrus'; confirm the legal correction or erratum.",
+      "sourceIds": ["kenya-eta-2025-guidance", "kenya-gazette-ln-93-2025"]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "KE",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_free",
+      "explanation": "The Gazette PDF lists Seychelles in both 90- and 60-day groups; the current portal places it in the 60-day group only.",
+      "sourceIds": ["kenya-eta-2025-guidance", "kenya-gazette-ln-93-2025"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "KN",
+      "destinationCode": "KE",
+      "reason": "Not established: both official sources say 'St. Kitts and Navis', which does not exactly identify the ordinary-passport issuer Saint Kitts and Nevis.",
+      "searchedOfficialDomains": ["etakenya.go.ke", "documents.kenyahighcom.org.uk", "new.kenyalaw.org"]
+    }
+  ]
+}

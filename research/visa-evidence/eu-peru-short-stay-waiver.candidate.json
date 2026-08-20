@@ -1,0 +1,85 @@
+{
+  "batchId": "eu-peru-short-stay-waiver",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "eu-peru-waiver-agreement",
+      "title": "Agreement between the European Union and the Republic of Peru on the short-stay visa waiver",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A22016A0324%2801%29",
+      "publisher": "Publications Office of the European Union",
+      "jurisdiction": "European Union and Peru",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "EUR-Lex publishes the Agreement in the Official Journal of the European Union and identifies the Publications Office as site manager.",
+      "supportingExcerpt": "This Agreement provides for visa-free travel for the citizens of the Union and for the citizens of Peru."
+    },
+    {
+      "id": "eu-peru-provisional-application-decision",
+      "title": "Council Decision (EU) 2016/437 on signing and provisional application",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016D0437",
+      "publisher": "Council of the European Union",
+      "jurisdiction": "European Union",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "EUR-Lex publishes this Council Decision in the Official Journal of the European Union.",
+      "supportingExcerpt": "The Agreement shall be applied on a provisional basis as from the day following the date of signature."
+    }
+  ],
+  "policies": [
+    {
+      "id": "eu-peru-peruvian-passports-to-covered-eu",
+      "title": "Peruvian ordinary passports to covered EU Member States",
+      "summary": "Peruvian citizens holding valid ordinary passports may enter and stay without a visa in the covered Member States for short stays.",
+      "status": "visa_free",
+      "destinationCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "passportCodes": ["PE"],
+      "effectiveFrom": "2016-03-15",
+      "conditions": [
+        "The agreement's final entry into force was 2016-11-01; it was provisionally applied from 2016-03-15.",
+        "The source covers valid ordinary, diplomatic, service, official, and special passports; this policy is deliberately limited to ordinary passports.",
+        "Paid activity is excluded; applicable Union, Member-State, and Peruvian rules continue to govern it.",
+        "Peruvian citizens may stay up to 90 days in any 180-day period in Member States fully applying the Schengen acquis; the limit is independent in each Member State not fully applying it.",
+        "France and the Netherlands are covered only in their European territories; the agreement is without prejudice to entry and short-stay conditions and refusal of entry.",
+        "Ireland and the United Kingdom are excluded from the agreement; the latter is outside this packet's codes."
+      ],
+      "sourceIds": ["eu-peru-waiver-agreement", "eu-peru-provisional-application-decision"],
+      "confidence": "high"
+    },
+    {
+      "id": "eu-peru-covered-eu-passports-to-peru",
+      "title": "Covered EU ordinary passports to Peru",
+      "summary": "Citizens of the covered EU Member States holding valid ordinary passports may enter and stay without a visa in Peru for short stays.",
+      "status": "visa_free",
+      "destinationCodes": ["PE"],
+      "passportCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+      "effectiveFrom": "2016-03-15",
+      "conditions": [
+        "The agreement's final entry into force was 2016-11-01; it was provisionally applied from 2016-03-15.",
+        "The source covers valid ordinary, diplomatic, service, official, and special passports; this policy is deliberately limited to ordinary passports.",
+        "Paid activity is excluded; applicable Union, Member-State, and Peruvian rules continue to govern it.",
+        "Citizens of the Union may stay in Peru for a maximum of 90 days in any 180-day period.",
+        "The agreement is without prejudice to entry and short-stay conditions and Peru may refuse entry or short stay where those conditions are unmet.",
+        "Ireland and the United Kingdom are excluded from the agreement; the latter is outside this packet's codes."
+      ],
+      "sourceIds": ["eu-peru-waiver-agreement", "eu-peru-provisional-application-decision"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "PE",
+      "destinationCode": "IE",
+      "reason": "Not established: the agreement expressly does not apply to Ireland, and no separate Irish rule was researched in this agreement-only batch.",
+      "searchedOfficialDomains": ["eur-lex.europa.eu", "treaties.un.org"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "PE",
+      "reason": "Not established: the agreement expressly does not apply to Ireland, and no separate Peruvian rule for Irish ordinary passports was researched in this agreement-only batch.",
+      "searchedOfficialDomains": ["eur-lex.europa.eu", "treaties.un.org"]
+    }
+  ]
+}

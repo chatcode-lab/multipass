@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  applyVerifiedAccessOverrides,
   calculateMobilityScore,
   comparePassportSets,
   denseRankByScore,
@@ -47,6 +48,38 @@ describe("passport calculations", () => {
       statuses: { IN: "citizenship", HK: "eta" },
       mobilityScore: 1,
     });
+  });
+
+  it("applies reviewed Kenya ETA corrections to live passport records", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "GY",
+      name: "Guyana",
+      statuses: { GY: "citizenship", KE: "eta" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { GY: "citizenship", KE: "visa_free" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "ID",
+      name: "Indonesia",
+      statuses: { ID: "citizenship", KE: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { ID: "citizenship", KE: "eta" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "GY",
+      name: "Synthetic Guyana",
+      statuses: { GY: "citizenship", XX: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { GY: "citizenship", XX: "visa_free" }, mobilityScore: 1 });
+  });
+
+  it("normalizes the UK visa-national cohort to an advance visitor visa", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "AF",
+      name: "Afghanistan",
+      statuses: { AF: "citizenship", GB: "evisa" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { AF: "citizenship", GB: "visa_required" }, mobilityScore: 0 });
   });
 
   it("uses dense rank equivalents", () => {

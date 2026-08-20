@@ -1,0 +1,262 @@
+{
+  "batchId": "new-zealand-visa-waiver-nzeta",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "nz-immigration-visa-waiver-countries",
+      "title": "Visa waiver countries and territories",
+      "url": "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
+      "publisher": "Immigration New Zealand",
+      "jurisdiction": "New Zealand",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page is published by Immigration New Zealand on the New Zealand Government's immigration.govt.nz domain.",
+      "supportingExcerpt": "You can travel to New Zealand without a visa — but you need to get a New Zealand Electronic Travel Authority first."
+    },
+    {
+      "id": "nz-immigration-nzeta-guidance",
+      "title": "New Zealand Electronic Travel Authority (NZeTA)",
+      "url": "https://www.immigration.govt.nz/visas/new-zealand-electronic-travel-authority-nzeta/",
+      "publisher": "Immigration New Zealand",
+      "jurisdiction": "New Zealand",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page is published by Immigration New Zealand and links directly to the official NZeTA request service.",
+      "supportingExcerpt": "Some people can use an NZeTA to travel to New Zealand without applying for a visa first."
+    },
+    {
+      "id": "nz-nzeta-request-portal",
+      "title": "NZeTA application — request an NZeTA",
+      "url": "https://nzeta.immigration.govt.nz/",
+      "publisher": "Immigration New Zealand",
+      "jurisdiction": "New Zealand",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Immigration New Zealand's NZeTA guidance links to this exact immigration.govt.nz subdomain as its 'Request an NZeTA' service.",
+      "supportingExcerpt": "NZeTA application - request an NZeTA | Immigration New Zealand"
+    },
+    {
+      "id": "nz-immigration-visa-waiver-visitor-visa",
+      "title": "Visa Waiver Visitor Visa",
+      "url": "https://www.immigration.govt.nz/visas/visa-waiver-visitor-visa/",
+      "publisher": "Immigration New Zealand",
+      "jurisdiction": "New Zealand",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page is published by Immigration New Zealand on the New Zealand Government's immigration.govt.nz domain.",
+      "supportingExcerpt": "If given entry permission, we give you a Visa Waiver Visitor Visa when you arrive."
+    },
+    {
+      "id": "nz-immigration-act-2009",
+      "title": "Immigration Act 2009",
+      "url": "https://legislation.govt.nz/act/public/2009/51/en/2026-02-27.pdf",
+      "publisher": "Parliamentary Counsel Office",
+      "jurisdiction": "New Zealand",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The New Zealand Legislation website is operated by the Parliamentary Counsel Office and publishes the current consolidated Act.",
+      "supportingExcerpt": "Persons other than New Zealand citizens must hold visa to travel to and be in New Zealand."
+    },
+    {
+      "id": "nz-immigration-visa-regulations-2010",
+      "title": "Immigration (Visa, Entry Permission, and Related Matters) Regulations 2010",
+      "url": "https://legislation.govt.nz/regulation/public/2010/0241/latest/096be8ed81fc720c.pdf",
+      "publisher": "Parliamentary Counsel Office",
+      "jurisdiction": "New Zealand",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The New Zealand Legislation website is operated by the Parliamentary Counsel Office; the cited consolidated regulations state their version date.",
+      "supportingExcerpt": "The requirement to hold a visa permitting travel to New Zealand is waived for a person described in Schedule 2."
+    }
+  ],
+  "policies": [
+    {
+      "id": "new-zealand-citizens-entry-right",
+      "title": "New Zealand citizens: entry right",
+      "summary": "New Zealand citizens may enter and remain in New Zealand without a visitor visa or NZeTA.",
+      "status": "citizenship",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["NZ"],
+      "conditions": [
+        "This represents the statutory citizenship entry right, not a visitor permission.",
+        "It does not determine treatment of a non-New Zealand passport used by a dual citizen."
+      ],
+      "sourceIds": ["nz-immigration-act-2009"],
+      "confidence": "high"
+    },
+    {
+      "id": "new-zealand-australian-citizens-no-nzeta",
+      "title": "Australian citizens: visa-waiver travel without NZeTA",
+      "summary": "Australian citizens travelling on an Australian passport are visa-waiver travellers and are exempt from the NZeTA requirement.",
+      "status": "visa_free",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["AU"],
+      "conditions": [
+        "Applies to Australian citizens travelling on an Australian passport.",
+        "Immigration New Zealand says it will normally grant an Australian Resident Visa on arrival; entry and character requirements still apply.",
+        "Australian permanent residents are a separate status-based class and require an NZeTA before travel."
+      ],
+      "sourceIds": ["nz-immigration-nzeta-guidance", "nz-immigration-visa-waiver-visitor-visa", "nz-immigration-visa-regulations-2010"],
+      "confidence": "high"
+    },
+    {
+      "id": "new-zealand-australian-permanent-residents-nzeta",
+      "title": "Australian permanent residents: NZeTA required",
+      "summary": "A holder of an Australian permanent residence or resident-return visa must hold an NZeTA before travelling, then may receive an Australian Resident Visa at the border.",
+      "status": "eta",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["AU"],
+      "conditions": [
+        "This is a residence-status policy, not universal eligibility for Australian passport holders; Australian citizens are separately NZeTA-exempt.",
+        "The traveller must hold a current Australian permanent residence visa, including a resident return visa, issued by the Australian Government.",
+        "The resulting border visa and entry permission remain subject to character requirements."
+      ],
+      "sourceIds": ["nz-immigration-nzeta-guidance", "nz-immigration-visa-waiver-visitor-visa", "nz-immigration-visa-regulations-2010"],
+      "confidence": "high",
+      "application": {
+        "url": "https://nzeta.immigration.govt.nz/",
+        "label": "Official NZeTA request service",
+        "processingTime": "Allow 72 hours.",
+        "steps": [
+          "Confirm that you hold a current Australian permanent residence or resident-return visa and are not relying on Australian citizenship.",
+          "Request an NZeTA through the official service before travel using the passport to be used for travel.",
+          "Meet character requirements on arrival for the Australian Resident Visa and entry permission decision."
+        ]
+      }
+    },
+    {
+      "id": "new-zealand-standard-visa-waiver-traveller-nzeta",
+      "title": "Named visa-waiver ordinary-passport citizens: traveller NZeTA",
+      "summary": "Citizens of the listed visa-waiver countries may travel for a short visit without first applying for a visa, but must obtain an NZeTA and are considered for a Visa Waiver Visitor Visa at the border.",
+      "status": "eta",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["AD", "AR", "AT", "BH", "BE", "BR", "BN", "BG", "CA", "CL", "HR", "CY", "CZ", "DK", "FI", "FR", "DE", "HU", "IS", "IE", "IL", "IT", "JP", "KR", "KW", "LI", "LU", "MY", "MT", "MU", "MX", "MC", "NL", "NO", "OM", "PL", "QA", "RO", "SM", "SA", "SC", "SG", "SK", "SI", "ES", "SE", "CH", "AE", "US", "UY", "VA"],
+      "conditions": [
+        "For a visitor purpose, the statutory waiver is limited to a temporary visa current for no more than 3 months and excludes medical consultation or treatment.",
+        "Before travel, hold a traveller NZeTA linked to the passport used for travel; an NZeTA may be used for multiple trips while valid for 2 years.",
+        "On arrival the traveller must still apply for a visa and entry permission; the border visa is not guaranteed.",
+        "Meet health, character, genuine-visitor, onward-travel and funds requirements. A passport should be valid for at least 3 months after planned departure.",
+        "This policy excludes the separately conditioned Estonia, Greece, Latvia, Lithuania, Portugal, Hong Kong, Macao, Taiwan and United Kingdom classes."
+      ],
+      "sourceIds": ["nz-immigration-visa-waiver-countries", "nz-immigration-nzeta-guidance", "nz-immigration-visa-waiver-visitor-visa", "nz-immigration-visa-regulations-2010"],
+      "confidence": "high",
+      "application": {
+        "url": "https://nzeta.immigration.govt.nz/",
+        "label": "Official NZeTA request service",
+        "processingTime": "Allow 72 hours.",
+        "steps": [
+          "Confirm that the passport is from a listed visa-waiver country and the visit is within the permitted visitor purpose and duration.",
+          "Request an NZeTA using the passport that will be used for travel.",
+          "Carry the passport, NZeTA confirmation, onward-travel evidence and any funds evidence requested, then complete the New Zealand Traveller Declaration for entry permission."
+        ]
+      }
+    },
+    {
+      "id": "new-zealand-conditioned-visa-waiver-traveller-nzeta",
+      "title": "Visa-waiver passport classes with citizenship, residence, or document conditions",
+      "summary": "These passport codes have a visa-waiver and NZeTA route only when their additional legal or Immigration New Zealand document and residence conditions are met.",
+      "status": "eta",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["EE", "GR", "HK", "LV", "LT", "MO", "PT", "TW", "GB"],
+      "conditions": [
+        "EE, LV and LT: the Immigration New Zealand list states 'citizens only'; this candidate concerns an ordinary passport held as a citizen, not another travel-document class.",
+        "GR: only Greek passports issued on or after 1 January 2006.",
+        "HK: resident of Hong Kong travelling on a Hong Kong SAR passport or a British National (Overseas) passport.",
+        "MO: resident of Macao travelling on a Macao SAR passport.",
+        "PT: passport holder with the right to live permanently in Portugal.",
+        "TW: permanent resident of Taiwan travelling on a Taiwan passport.",
+        "GB: British citizen or another British passport holder who can produce evidence of the right to reside permanently in the United Kingdom; the visa may be current for no more than 6 months.",
+        "All classes require a traveller NZeTA before travel, except a separate statutory ETA exemption not represented by these passport codes; medical consultation or treatment is excluded from the waiver."
+      ],
+      "sourceIds": ["nz-immigration-visa-waiver-countries", "nz-immigration-nzeta-guidance", "nz-immigration-visa-waiver-visitor-visa", "nz-immigration-visa-regulations-2010"],
+      "confidence": "high",
+      "application": {
+        "url": "https://nzeta.immigration.govt.nz/",
+        "label": "Official NZeTA request service",
+        "processingTime": "Allow 72 hours.",
+        "steps": [
+          "Confirm the nationality-specific residence, British-status, or passport-issue condition before relying on visa waiver travel.",
+          "Request an NZeTA using the qualifying passport before travel.",
+          "Present the qualifying passport and any required evidence of status or permanent residence when requested."
+        ]
+      }
+    },
+    {
+      "id": "new-zealand-general-ordinary-visitor-visa-required",
+      "title": "Ordinary-passport visitors outside the standing waiver classes: visitor visa required",
+      "summary": "For ordinary visitor travel, the listed passport codes require a visitor visa before travel unless they independently meet the separate Australia-departure, cruise/cargo-passenger, or individual-special-direction conditions described in other policies or law.",
+      "status": "visa_required",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["AF", "AG", "AL", "AM", "AO", "AZ", "BA", "BB", "BD", "BF", "BI", "BJ", "BO", "BS", "BT", "BW", "BY", "BZ", "CD", "CF", "CG", "CI", "CM", "CN", "CO", "CR", "CU", "CV", "DJ", "DM", "DO", "DZ", "EC", "EG", "ER", "ET", "FJ", "FM", "GA", "GD", "GE", "GH", "GM", "GN", "GQ", "GT", "GW", "GY", "HN", "HT", "ID", "IN", "IQ", "IR", "JM", "JO", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KZ", "LA", "LB", "LC", "LK", "LR", "LS", "LY", "MA", "MD", "ME", "MG", "MH", "MK", "ML", "MM", "MN", "MR", "MV", "MW", "MZ", "NA", "NE", "NG", "NI", "NP", "NR", "PA", "PE", "PG", "PH", "PK", "PS", "PW", "PY", "RS", "RU", "RW", "SB", "SD", "SL", "SN", "SO", "SR", "SS", "ST", "SV", "SY", "SZ", "TD", "TG", "TH", "TJ", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TZ", "UA", "UG", "UZ", "VC", "VE", "VN", "VU", "WS", "XK", "YE", "ZA", "ZM", "ZW"],
+      "conditions": [
+        "This is the standard ordinary visitor route for persons outside New Zealand citizenship and the standing Schedule 2 visa-waiver classes; it does not infer treatment of diplomatic, official, refugee, stateless, alien, UN laissez-passer, crew, or other special travel documents.",
+        "The listed China and Pacific passport codes have a separate, tightly conditioned NZeTA route only when travelling from Australia with a currently valid eligible Australian visa; otherwise this visitor-visa rule remains applicable.",
+        "Cruise and cargo ship passengers are separately addressed by the travel-mode policy and are not a basis for treating this as a universal visitor-visa exemption.",
+        "A current individual waiver or a time-limited ministerial special direction may change treatment and is not inferable from nationality alone."
+      ],
+      "sourceIds": ["nz-immigration-act-2009", "nz-immigration-visa-regulations-2010", "nz-immigration-nzeta-guidance"],
+      "confidence": "high"
+    },
+    {
+      "id": "new-zealand-china-pacific-australia-conditional-nzeta",
+      "title": "China and named Pacific passports travelling from Australia: conditional NZeTA route",
+      "summary": "The listed ordinary-passport travellers remain visitor-visa-required in the ordinary case, but can use the NZeTA visa-waiver route when travelling from Australia with a current eligible Australian visa and meeting every stated condition.",
+      "status": "visa_required",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["CN", "FM", "FJ", "KI", "NR", "PW", "PG", "MH", "WS", "SB", "TO", "TV", "VU"],
+      "conditions": [
+        "Travel must be from Australia to New Zealand on the listed passport, and the traveller must hold an Australian visa from a class specified in Schedule 2 Part 2 that is valid at check-in for departure to New Zealand.",
+        "The New Zealand temporary visa sought must be current for no more than 3 months and the visit cannot include medical consultation or treatment.",
+        "A traveller NZeTA is required before travel. This is a conditional route, so it is not normalized as universal ETA eligibility for the nationality code.",
+        "The current regulations list Federated States of Micronesia, Fiji, Kiribati, Nauru, Niue, Palau, Papua New Guinea, Marshall Islands, Samoa, Solomon Islands, Tonga, Tuvalu and Vanuatu; Niue has no ordinary-passport ISO code in the supplied catalog."
+      ],
+      "sourceIds": ["nz-immigration-nzeta-guidance", "nz-immigration-visa-waiver-visitor-visa", "nz-immigration-visa-regulations-2010"],
+      "confidence": "high",
+      "application": {
+        "url": "https://nzeta.immigration.govt.nz/",
+        "label": "Official NZeTA request service",
+        "processingTime": "Allow 72 hours.",
+        "steps": [
+          "Confirm travel from Australia, the listed passport, and a currently valid qualifying Australian visa at check-in.",
+          "Request an NZeTA before travel using the same passport.",
+          "If any listed condition is not met, apply for a Visitor Visa before travel instead."
+        ]
+      }
+    },
+    {
+      "id": "new-zealand-cruise-cargo-passengers-nzeta",
+      "title": "Cruise and cargo ship passengers: travel-mode NZeTA route",
+      "summary": "Ordinary-passport cruise or cargo ship passengers in the catalog can use the ship-passenger visa-waiver route with an NZeTA; this is a travel-mode-specific rule rather than general visa-free access by nationality.",
+      "status": "eta",
+      "destinationCodes": ["NZ"],
+      "passportCodes": ["SG", "JP", "KR", "AE", "SE", "BE", "DK", "FI", "FR", "DE", "IE", "IT", "LU", "NL", "NO", "ES", "AT", "GR", "MT", "PT", "CH", "HU", "PL", "GB", "CA", "CZ", "LV", "MY", "SK", "SI", "HR", "EE", "LI", "LT", "IS", "US", "BG", "RO", "MC", "CY", "CL", "HK", "AD", "AR", "BR", "SM", "IL", "BB", "BN", "BS", "KN", "VC", "MX", "UY", "SC", "AG", "VA", "MU", "CR", "GD", "PA", "PY", "DM", "TT", "MO", "LC", "UA", "PE", "RS", "TW", "SB", "GT", "SV", "CO", "HN", "MH", "WS", "ME", "MK", "TO", "NI", "TV", "AL", "BA", "GE", "KI", "FM", "MD", "PW", "VE", "RU", "QA", "TR", "ZA", "BZ", "KW", "MV", "TL", "EC", "SA", "BH", "GY", "FJ", "VU", "OM", "JM", "NR", "PG", "CN", "XK", "BW", "BY", "BO", "KZ", "TH", "SR", "NA", "DO", "LS", "SZ", "MA", "ID", "KE", "MW", "RW", "TZ", "GM", "AZ", "GH", "PH", "TN", "BJ", "UG", "AM", "CV", "MN", "ZM", "SL", "ZW", "MZ", "KG", "ST", "UZ", "BF", "CU", "TG", "CI", "GA", "IN", "MG", "SN", "DZ", "MR", "GQ", "NE", "GN", "ML", "TJ", "TD", "KM", "GW", "AO", "EG", "JO", "LR", "BI", "CM", "CF", "HT", "VN", "BT", "KH", "CG", "DJ", "LA", "CD", "NG", "TM", "MM", "ET", "LB", "SS", "SD", "LY", "LK", "ER", "IR", "PS", "BD", "KP", "NP", "SO", "YE", "PK", "IQ", "SY", "AF"],
+      "conditions": [
+        "Only for a passenger arriving by cruise ship or cargo ship; crew are governed by separate crew-ETA rules and are outside this ordinary visitor policy.",
+        "Request an NZeTA before the ship departs for New Zealand, choosing 'visiting' rather than 'transiting'.",
+        "The deemed temporary visitor visa ends when the ship receives clearance to leave its last New Zealand port for that voyage, or 28 days after arrival at the first port, whichever is earlier.",
+        "Australian citizens are exempt from the ETA requirement and New Zealand citizens have a separate citizenship entry right; neither passport code is included here.",
+        "This special route does not alter the standard snapshot classification for travel by other modes."
+      ],
+      "sourceIds": ["nz-immigration-nzeta-guidance", "nz-immigration-visa-waiver-visitor-visa", "nz-immigration-visa-regulations-2010"],
+      "confidence": "high",
+      "application": {
+        "url": "https://nzeta.immigration.govt.nz/",
+        "label": "Official NZeTA request service",
+        "processingTime": "Allow 72 hours.",
+        "steps": [
+          "Confirm that travel is as a cruise or cargo ship passenger and that the traveller is not relying on an Australian-citizen exception.",
+          "Request an NZeTA before the ship departs and select 'visiting'.",
+          "Travel with the passport used for the NZeTA and satisfy arrival requirements."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}
