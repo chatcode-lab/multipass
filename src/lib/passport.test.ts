@@ -318,6 +318,29 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { AE: "citizenship", YE: "visa_required" }, mobilityScore: 0 });
   });
 
+  it("applies reviewed India and Sri Lanka classifications", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "CN",
+      name: "China",
+      statuses: { CN: "citizenship", IN: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { CN: "citizenship", IN: "visa_required" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "SG",
+      name: "Singapore",
+      statuses: { SG: "citizenship", LK: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { SG: "citizenship", LK: "eta" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "GH",
+      name: "Ghana",
+      statuses: { GH: "citizenship", LK: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { GH: "citizenship", LK: "eta" }, mobilityScore: 1 });
+  });
+
   it("applies Armenia's live ordinary-passport checker corrections", () => {
     expect(applyVerifiedAccessOverrides({
       code: "AZ",

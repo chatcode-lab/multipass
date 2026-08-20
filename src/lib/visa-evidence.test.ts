@@ -694,6 +694,26 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("YE", "YE", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed India, Sri Lanka, and Vietnam pass", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("IN")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("NP", "IN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("JP", "IN", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "IN", "visa_required").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("LK")).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("SG", "LK", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "LK", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "LK", snapshot.passports.TW.statuses.LK).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("VN")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("DE", "VN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "VN", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VN", "VN", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -852,6 +872,20 @@ describe("official visa evidence", () => {
       "eaip.gaca.gov.sy",
       "www.mofa-ye.org",
       "yemenevisa.org",
+      "www.mha.gov.in",
+      "indianvisaonline.gov.in",
+      "www.indianvisaonline.gov.in",
+      "www.mea.gov.in",
+      "www.immigration.gov.lk",
+      "eta.gov.lk",
+      "www.eta.gov.lk",
+      "evisa.gov.vn",
+      "en.baochinhphu.vn",
+      "baochinhphu.vn",
+      "mofa.gov.vn",
+      "vanban.chinhphu.vn",
+      "congbao.cdnchinhphu.vn",
+      "vbpl.moj.gov.vn",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
