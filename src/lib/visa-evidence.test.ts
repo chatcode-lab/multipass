@@ -612,6 +612,30 @@ describe("official visa evidence", () => {
     expect(snapshot.passports.IL.statuses.CO).toBe("evisa");
   });
 
+  it("covers the reviewed Bahrain, Qatar, Saudi Arabia, and Jordan pass", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("BH")).toHaveLength(6);
+    expect(getVisaRelationshipEvidence("AE", "BH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("UA", "BH", snapshot.passports.UA.statuses.BH).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("QA")).toHaveLength(192);
+    expect(getVisaRelationshipEvidence("HK", "QA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RS", "QA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.HK.statuses.QA).toBe("visa_on_arrival");
+
+    expect(pairsFor("SA")).toHaveLength(79);
+    expect(getVisaRelationshipEvidence("GB", "SA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RU", "SA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "SA", snapshot.passports.BR.statuses.SA).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("JO")).toHaveLength(54);
+    expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "JO", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "JO", snapshot.passports.US.statuses.JO).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -741,6 +765,17 @@ describe("official visa evidence", () => {
       "cancilleria.gov.co",
       "www.cancilleria.gov.co",
       "portal.migracioncolombia.gov.co",
+      "www.evisa.gov.bh",
+      "www.npra.gov.bh",
+      "bahrain.bh",
+      "aim.mtt.gov.bh",
+      "visitqatar.com",
+      "portal.moi.gov.qa",
+      "hayya.qa",
+      "visa.visitsaudi.com",
+      "www.visitsaudi.com",
+      "www.mofa.gov.sa",
+      "moi.gov.jo",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -776,6 +776,90 @@
         "Classify the fully virtual, electronically issued visitor visa separately from unconditional short-stay exemption.",
         "Preserve short-stay purpose, duration, paid-activity restrictions, transit, national-identity-document, diplomatic, official, special-document and admissibility conditions."
       ]
+    },
+    {
+      "id": "bahrain-ordinary-passport-entry-scope",
+      "priority": 50,
+      "objective": "Model Bahrain's complete current ordinary-passport visitor entry scope from Ministry of Interior, legislation and official eVisa sources.",
+      "destinationCodes": ["BH"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.evisa.gov.bh/",
+        "https://www.npra.gov.bh/"
+      ],
+      "notes": [
+        "Separate nationality-wide visa-free, visa-on-arrival and advance eVisa routes from GCC residence, third-country visa and profession-based exceptions.",
+        "Use the official eligibility checker or an explicit complete nationality schedule before inferring a complement.",
+        "Preserve duration, entries, fees, sponsor, accommodation, funds, onward travel, passport validity, purpose, work, transit, diplomatic, official, special-document and admissibility conditions."
+      ]
+    },
+    {
+      "id": "qatar-ordinary-passport-entry-scope",
+      "priority": 51,
+      "objective": "Model Qatar's complete current ordinary-passport visitor entry scope from Ministry of Interior, Hayya, legislation and official tourism sources.",
+      "destinationCodes": ["QA"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://portal.moi.gov.qa/",
+        "https://hayya.qa/",
+        "https://visitqatar.com/intl-en/plan-your-trip/visas"
+      ],
+      "notes": [
+        "Distinguish true visa-free entry from visa waiver on arrival, Hayya electronic authorization, online tourist visa and prior consular visa.",
+        "Do not generalize GCC residence, US/UK/Schengen residence or visa conditions into nationality-wide access.",
+        "Preserve duration, extension, fee, Discover Qatar booking, insurance, funds, onward travel, passport validity, purpose, work, transit, diplomatic, official, special-document and admissibility conditions."
+      ]
+    },
+    {
+      "id": "saudi-arabia-ordinary-passport-entry-scope",
+      "priority": 52,
+      "objective": "Model Saudi Arabia's complete current ordinary-passport visitor entry scope from Ministry of Foreign Affairs, Ministry of Tourism, legislation and official visa-platform sources.",
+      "destinationCodes": ["SA"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://ksavisa.sa/",
+        "https://visa.visitsaudi.com/",
+        "https://www.mofa.gov.sa/"
+      ],
+      "notes": [
+        "Separate nationality-wide tourist eVisa eligibility from visa on arrival based on third-country visas or residence and from GCC status exceptions.",
+        "Infer the prior-visa complement only if a current official rule expressly establishes it.",
+        "Preserve duration, multiple entry, fees, insurance, accommodation, funds, onward travel, passport validity, purpose, Hajj or Umrah limits, work, transit, diplomatic, official, special-document and admissibility conditions."
+      ]
+    },
+    {
+      "id": "jordan-ordinary-passport-entry-scope",
+      "priority": 53,
+      "objective": "Model Jordan's complete current ordinary-passport visitor entry scope from Ministry of Interior, Ministry of Foreign Affairs, legislation and official electronic-service sources.",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://eservices.moi.gov.jo/",
+        "https://moi.gov.jo/",
+        "https://mfa.gov.jo/"
+      ],
+      "notes": [
+        "Separate visa-free, visa on arrival, prior approval and electronic visa routes, including explicit nationality and residence conditions.",
+        "Do not treat the Jordan Pass fee waiver or an online application form as a separate access status without official entry-rule support.",
+        "Preserve entry-point exclusions, duration, extension, fees, onward travel, passport validity, purpose, work, transit, diplomatic, official, special-document and admissibility conditions."
+      ]
+    },
+    {
+      "id": "united-arab-emirates-ordinary-passport-entry-scope",
+      "priority": 54,
+      "objective": "Model the United Arab Emirates' complete current ordinary-passport visitor entry scope from ICP, legislation, official government and foreign-ministry sources.",
+      "destinationCodes": ["AE"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://u.ae/en/information-and-services/visa-and-emirates-id/visit-visas",
+        "https://icp.gov.ae/",
+        "https://www.mofa.gov.ae/"
+      ],
+      "notes": [
+        "Separate GCC freedom of movement and nationality-wide visa-free or arrival routes from airline sponsorship, residence, third-country-document and transit conditions.",
+        "Use a current official nationality schedule or checker before inferring a complement, and preserve different 30-day, 90-day and 180-day arrival permissions.",
+        "Preserve passport validity, extension, fees, sponsor, purpose, work, transit, diplomatic, official, special-document, security and admissibility conditions."
+      ]
     }
   ]
 }
