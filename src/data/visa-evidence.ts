@@ -51,6 +51,22 @@ export const ECUADOR_EVISA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.poli
   .find(({ id }) => id === "ecuador-named-transitory-visitor-evisa-nationalities")
   ?.passportCodes ?? [];
 
+export const MALDIVES_VOA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "maldives-universal-foreign-ordinary-passport-tourist-visa-on-arrival")
+  ?.passportCodes ?? [];
+
+export const SEYCHELLES_ETA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "seychelles-all-foreign-ordinary-visitors-mandatory-eta")
+  ?.passportCodes ?? [];
+
+export const SAMOA_VOA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "samoa-universal-foreign-visitor-permit-on-arrival")
+  ?.passportCodes ?? [];
+
+export const TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "tt-explicit-ordinary-passport-evisa-cohort")
+  ?.passportCodes ?? [];
+
 export const ANGOLA_TOURIST_VISA_EXEMPT_CODES = [
   "SZ", "MA", "LS", "GQ", "MU", "SC", "CV", "BW", "MG", "MW", "RW", "ZW", "DZ", "TZ",
   "AE", "IL", "QA", "JP", "SA", "KR", "IN", "ID", "SG", "TL", "CN",

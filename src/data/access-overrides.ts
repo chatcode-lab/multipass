@@ -1,7 +1,11 @@
 import type { AccessStatus } from "@/lib/types";
 import {
   ECUADOR_EVISA_ORDINARY_PASSPORT_CODES,
+  MALDIVES_VOA_ORDINARY_PASSPORT_CODES,
   RWANDA_VOA_ORDINARY_PASSPORT_CODES,
+  SAMOA_VOA_ORDINARY_PASSPORT_CODES,
+  SEYCHELLES_ETA_ORDINARY_PASSPORT_CODES,
+  TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES,
   UNITED_KINGDOM_VISITOR_VISA_CODES,
 } from "./visa-evidence";
 
@@ -93,6 +97,38 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.cancilleria.gob.ec/2024/07/16/portal-evisas-visas-electronicas-para-ecuador/",
     reviewedAt: "2026-08-20",
     effectiveFrom: "2025-09-01",
+  })),
+  ...MALDIVES_VOA_ORDINARY_PASSPORT_CODES.map((passportCode) => ({
+    passportCode,
+    destinationCode: "MV",
+    status: "visa_on_arrival" as const,
+    reason: "Maldives Immigration grants foreign tourists a visa on arrival without prior visa approval; the mandatory IMUGA declaration is not an ETA or eVisa.",
+    sourceUrl: "https://www.immigration.gov.mv/visa/tourist-visa",
+    reviewedAt: "2026-08-20",
+  })),
+  ...SEYCHELLES_ETA_ORDINARY_PASSPORT_CODES.map((passportCode) => ({
+    passportCode,
+    destinationCode: "SC",
+    status: "eta" as const,
+    reason: "Seychelles issues a visitor's permit on arrival but requires every foreign visitor to obtain electronic travel authorisation before departure.",
+    sourceUrl: "https://www.ics.gov.sc/permits/visitors-permit",
+    reviewedAt: "2026-08-20",
+  })),
+  ...SAMOA_VOA_ORDINARY_PASSPORT_CODES.map((passportCode) => ({
+    passportCode,
+    destinationCode: "WS",
+    status: "visa_on_arrival" as const,
+    reason: "Samoa Immigration issues foreign short-stay visitors a free Visitor's Permit upon arrival, so the operative instrument is visa on arrival.",
+    sourceUrl: "https://mpmc.gov.ws/divisions/immigration/attheborder/",
+    reviewedAt: "2026-08-20",
+  })),
+  ...TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES.map((passportCode) => ({
+    passportCode,
+    destinationCode: "TT",
+    status: "evisa" as const,
+    reason: "Trinidad and Tobago identifies this nationality as visa-required and now issues entry visas electronically before travel.",
+    sourceUrl: "https://foreign.gov.tt/documents/146/Document_2_-_September_2025_Visa_application_instructions.pdf",
+    reviewedAt: "2026-08-20",
   })),
   {
     passportCode: "IR",

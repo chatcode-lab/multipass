@@ -235,6 +235,36 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { IR: "citizenship", NP: "visa_on_arrival" }, mobilityScore: 1 });
   });
 
+  it("applies reviewed Maldives, Seychelles, Samoa, and Trinidad and Tobago classifications", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "AZ",
+      name: "Azerbaijan",
+      statuses: { AZ: "citizenship", MV: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { AZ: "citizenship", MV: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "XK",
+      name: "Kosovo",
+      statuses: { XK: "citizenship", SC: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { XK: "citizenship", SC: "eta" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "AT",
+      name: "Austria",
+      statuses: { AT: "citizenship", WS: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { AT: "citizenship", WS: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "CN",
+      name: "China",
+      statuses: { CN: "citizenship", TT: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { CN: "citizenship", TT: "evisa" }, mobilityScore: 0 });
+  });
+
   it("uses dense rank equivalents", () => {
     const passports = [190, 188, 188, 187, 180].map(
       (mobilityScore, index) => ({ mobilityScore, code: `${index}`, name: `${index}` }) as PassportSummary,

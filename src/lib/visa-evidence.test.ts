@@ -32,12 +32,15 @@ import {
   IRELAND_ORDINARY_VISA_REQUIRED_CODES,
   ISRAEL_ETA_IL_ORDINARY_PASSPORT_CODES,
   ISRAEL_VISITOR_VISA_REQUIRED_ORDINARY_PASSPORT_CODES,
+  MALDIVES_VOA_ORDINARY_PASSPORT_CODES,
   NEW_ZEALAND_AUSTRALIA_CONDITIONAL_NZETA_CODES,
   NEW_ZEALAND_CONDITIONED_NZETA_CODES,
   NEW_ZEALAND_STANDARD_NZETA_CODES,
   NEW_ZEALAND_VISITOR_VISA_REQUIRED_CODES,
   OFFICIAL_VISA_SOURCES,
   RWANDA_VOA_ORDINARY_PASSPORT_CODES,
+  SAMOA_VOA_ORDINARY_PASSPORT_CODES,
+  SEYCHELLES_ETA_ORDINARY_PASSPORT_CODES,
   SINGAPORE_EVISA_CODES,
   SINGAPORE_VISA_FREE_COMPLEMENT_CODES,
   SOUTH_KOREA_KETA_30_DAY_CODES,
@@ -50,6 +53,7 @@ import {
   TAIWAN_EVISA_CODES,
   TAIWAN_TRIAL_14_DAY_VISA_EXEMPT_CODES,
   TAIWAN_VISITOR_VISA_REQUIRED_CODES,
+  TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES,
   UNITED_STATES_VWP_CODES,
   UNITED_STATES_VISITOR_VISA_REQUIRED_GENERAL_CODES,
   UNITED_KINGDOM_APRIL_2025_ETA_CODES,
@@ -535,6 +539,20 @@ describe("official visa evidence", () => {
     expect(snapshot.manifest.passports.some(({ code }) => code === "CK" || code === "NU")).toBe(false);
   });
 
+  it("covers island destination-wide entry rules and Trinidad and Tobago's explicit eVisa cohort", () => {
+    expect(MALDIVES_VOA_ORDINARY_PASSPORT_CODES).toHaveLength(197);
+    expect(SEYCHELLES_ETA_ORDINARY_PASSPORT_CODES).toHaveLength(198);
+    expect(SAMOA_VOA_ORDINARY_PASSPORT_CODES).toHaveLength(198);
+    expect(TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES).toHaveLength(6);
+
+    expect(getVisaRelationshipEvidence("AZ", "MV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "MV", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "SC", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AT", "WS", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "TT", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AD", "TT", snapshot.passports.AD.statuses.TT).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -626,6 +644,20 @@ describe("official visa evidence", () => {
       "immigration.gov.np",
       "tia.immigration.gov.np",
       "mofa.gov.np",
+      "www.immigration.gov.mv",
+      "imuga.immigration.gov.mv",
+      "www.ics.gov.sc",
+      "mfa.gov.sc",
+      "www.gov.sc",
+      "seychelles.govtas.com",
+      "tourism.gov.sc",
+      "nationalsecurity.gov.tt",
+      "foreign.gov.tt",
+      "homelandsecurity.gov.tt",
+      "ttconnect.gov.tt",
+      "mpmc.gov.ws",
+      "www.ag.gov.ws",
+      "www.samoa.travel",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
