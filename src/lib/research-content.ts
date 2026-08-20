@@ -87,12 +87,13 @@ export function worldCoverageMarkdown(
   ).join("\n");
   const required = cover.requiredCodes.map((code) => `${names.get(code) ?? code} (${code})`).join(", ");
   const fullNames = cover.codes.map((code) => names.get(code) ?? code);
+  const additionalCount = cover.size - cover.requiredCodes.length;
 
   return `# How many passports cover every tracked destination?
 
-**Ten passports** are necessary and sufficient to give easy access to all ${insights.destinationCount} destinations in MultiPass Rank's ${checked} snapshot. One exact minimum set is **${fullNames.join(" + ")}**.
+**${cover.size} passports** are necessary and sufficient to give easy access to all ${insights.destinationCount} destinations in MultiPass Rank's ${checked} snapshot. One exact minimum set is **${fullNames.join(" + ")}**.
 
-[Place the complete ten-passport set in the global ranking](${absoluteUrl(rankHref([cover.codes]))}) · [Open its destination access table](${absoluteUrl(comparisonHref([cover.codes]))})
+[Place the complete ${cover.size}-passport set in the global ranking](${absoluteUrl(rankHref([cover.codes]))}) · [Open its destination access table](${absoluteUrl(comparisonHref([cover.codes]))})
 
 ## One minimum set, ordered by marginal coverage
 
@@ -102,11 +103,11 @@ ${rows}
 
 The order above is only an explanatory ordering: at each step, the passport that adds the most still-uncovered destinations within this minimum set appears next.
 
-## Why fewer than ten cannot work
+## Why fewer than ${cover.size} cannot work
 
-Three passports are forced: ${required}. In this snapshot, each of those destinations has no easy-access route from any other tracked passport, although travellers may still have an eVisa or traditional-visa route.
+${cover.requiredCodes.length} passports are forced: ${required}. In this snapshot, each of those destinations has no easy-access route from any other tracked passport, although travellers may still have an eVisa or traditional-visa route.
 
-After adding those forced passports, the solver removes passport coverage sets that are strict subsets of another candidate and runs an exact branch-and-bound search. It proves that no six additional passports cover the remainder; seven do. Three forced passports plus seven additional passports gives the exact minimum of ten.
+After adding those forced passports, the solver removes passport coverage sets that are strict subsets of another candidate and runs an exact branch-and-bound search. It proves that no ${additionalCount - 1} additional passports cover the remainder; ${additionalCount} do. The forced passports plus those ${additionalCount} additional passports give the exact minimum of ${cover.size}.
 
 ## What “cover every destination” means
 
@@ -155,7 +156,7 @@ The Council of Europe's nationality convention captures the underlying rule: eac
 - Obligations can include using that country's passport at its border, tax compliance, military service, or reduced consular help while inside another country of nationality.
 - Passport renewals, names, civil-status records, and document expiry create administrative work even when the citizenship itself continues.
 
-More is not automatically better. MultiPass Rank's exhaustive travel experiment finds that the best pair and triple already cover most tracked destinations, while its purely mathematical all-destination solution requires ten passports and ignores whether that set could legally or practically be held.
+More is not automatically better. MultiPass Rank's exhaustive travel experiment finds that the best pair and triple already cover most tracked destinations, while its purely mathematical all-destination solution requires a large passport set and ignores whether that set could legally or practically be held.
 
 [See the best two- and three-passport combinations](${absoluteUrl("/best-passport-combination")}) · [See the mathematical minimum for all tracked destinations](${absoluteUrl("/how-many-passports-to-cover-the-world")})
 

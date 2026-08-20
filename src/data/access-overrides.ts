@@ -566,4 +566,13 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
       sourceUrl: "https://evisa.mfa.am/check-eligibility",
       reviewedAt: "2026-08-20",
     })),
+  ...(["AE", "BH", "DZ", "EG", "HK", "JO", "KW", "MY", "OM", "QA", "SA", "SY"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "YE",
+      status: "visa_required" as const,
+      reason: "Yemen's current IPNA nationality grid provides the Visit Visa route for this ordinary passport; the published process requires prior Authority approval and an embassy or consulate visa sticker before travel.",
+      sourceUrl: "https://yemenevisa.org/Types-of-Visas",
+      reviewedAt: "2026-08-20",
+    })),
 ] as const;

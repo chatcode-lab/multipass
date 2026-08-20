@@ -674,6 +674,26 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "IQ", snapshot.passports.US.statuses.IQ).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps Palestine and Syria unresolved while applying Yemen's advance-visa grid", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("PS")).toHaveLength(0);
+    expect(getVisaRelationshipEvidence("US", "PS", snapshot.passports.US.statuses.PS).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PS", "PS", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("SY")).toHaveLength(0);
+    expect(getVisaRelationshipEvidence("US", "SY", snapshot.passports.US.statuses.SY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SY", "SY", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("YE")).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("HK", "YE", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "YE", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "YE", snapshot.passports.IL.statuses.YE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "YE", snapshot.passports.XK.statuses.YE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("YE", "YE", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -828,6 +848,10 @@ describe("official visa evidence", () => {
       "evisa.iq",
       "mofa.gov.iq",
       "ur.gov.iq",
+      "www.iaa.gov.il",
+      "eaip.gaca.gov.sy",
+      "www.mofa-ye.org",
+      "yemenevisa.org",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

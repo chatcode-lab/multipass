@@ -14,6 +14,10 @@ const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long
 const description = `An exact set-cover experiment finds the smallest passport set with easy access to all ${insights.destinationCount} destinations—and proves why fewer passports cannot work.`;
 const fullSetName = cover.codes.map(nameFor).join(" + ");
 const requiredNames = cover.requiredCodes.map(nameFor);
+const additionalCount = cover.size - cover.requiredCodes.length;
+const firstCoverage = cover.marginalGains[0]?.cumulativeDestinations ?? 0;
+const secondCoverage = cover.marginalGains[1]?.cumulativeDestinations ?? firstCoverage;
+const seventhCoverage = cover.marginalGains[6]?.cumulativeDestinations ?? secondCoverage;
 const articleModified = insights.checkedAt.slice(0, 10) > "2026-08-20" ? insights.checkedAt : "2026-08-20";
 const structuredData = [
   {
@@ -50,10 +54,10 @@ const structuredData = [
       },
       {
         "@type": "Question",
-        name: "Why are ten passports necessary?",
+        name: `Why are ${cover.size} passports necessary?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${requiredNames.join(", ")} are forced into every full-coverage set in this snapshot. An exact search proves that six additional passports cannot cover the remainder, while seven can.`,
+          text: `${requiredNames.join(", ")} are forced into every full-coverage set in this snapshot. An exact search proves that ${additionalCount - 1} additional passports cannot cover the remainder, while ${additionalCount} can.`,
         },
       },
       {
@@ -88,8 +92,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
       </div>
       <h1>How many passports cover every tracked destination?</h1>
       <p>
-        Ten are necessary and sufficient under MultiPass Rank's easy-access rule. The result comes from an exact search,
-        not a greedy estimate; below is one minimum set and the reason nine cannot work.
+        {cover.size} are necessary and sufficient under MultiPass Rank's easy-access rule. The result comes from an exact search,
+        not a greedy estimate; below is one minimum set and the reason {cover.size - 1} cannot work.
       </p>
       <div class="research-actions research-actions--hero">
         <a class="button button--primary" href={rankHref([cover.codes])}>Place the full set in the ranking</a>
@@ -124,16 +128,16 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
     <div class="research-copy">
       <section>
         <span class="eyebrow">The lower-bound proof</span>
-        <h2>Three passports are unavoidable.</h2>
+        <h2>{requiredNames.length} passports are unavoidable.</h2>
         <p>
-          Afghanistan, North Korea, and Turkmenistan each has only one passport in this snapshot that reaches it under the
-          easy-access threshold: its own. Therefore every full-coverage solution must include {requiredNames.join(", ")}.
+          {requiredNames.join(", ")} each has only one passport in this snapshot that reaches it under the easy-access threshold:
+          its own. Therefore every full-coverage solution must include all {requiredNames.length} of those passports.
           This does not mean other travellers cannot enter; their route is classified as an eVisa or traditional visa instead.
         </p>
         <p>
-          With those three fixed, the solver removes candidates whose easy-access destination set is a strict subset of
+          With those {requiredNames.length} fixed, the solver removes candidates whose easy-access destination set is a strict subset of
           another passport's set. It then uses exact branch-and-bound search on the remaining destinations. No combination
-          of six additional passports succeeds. Seven do, proving a lower and upper bound of ten in total.
+          of {additionalCount - 1} additional passports succeeds. {additionalCount} do, proving a lower and upper bound of {cover.size} in total.
         </p>
       </section>
 
@@ -141,8 +145,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
         <span class="eyebrow">Diminishing returns</span>
         <h2>The last passport adds one destination.</h2>
         <p>
-          The first passport in this presentation reaches 189 destinations. The second raises the union to 209; by the
-          seventh passport the set reaches 223. The remaining passports solve isolated gaps rather than materially changing
+          The first passport in this presentation reaches {firstCoverage} destinations. The second raises the union to {secondCoverage}; by the
+          seventh passport the set reaches {seventhCoverage}. The remaining passports solve isolated gaps rather than materially changing
           everyday mobility. Minimum cardinality and practical usefulness are very different objectives.
         </p>
       </aside>
@@ -156,7 +160,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
           together, nor tax, residence, work, military, consular, ethical, or administrative consequences.
         </p>
         <p>
-          The result reports one exact minimum solution; other ten-passport solutions may tie. Travel rules can change, so
+          The result reports one exact minimum solution; other {cover.size}-passport solutions may tie. Travel rules can change, so
           the snapshot date is part of the finding. See the <a href="/methodology">scoring methodology</a> before reusing the number.
         </p>
       </section>

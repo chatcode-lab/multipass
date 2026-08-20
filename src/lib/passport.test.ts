@@ -302,6 +302,22 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { SY: "citizenship", LB: "visa_required" }, mobilityScore: 0 });
   });
 
+  it("applies Yemen's reviewed advance-visa corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "HK",
+      name: "Hong Kong",
+      statuses: { HK: "citizenship", YE: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { HK: "citizenship", YE: "visa_required" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "AE",
+      name: "United Arab Emirates",
+      statuses: { AE: "citizenship", YE: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { AE: "citizenship", YE: "visa_required" }, mobilityScore: 0 });
+  });
+
   it("applies Armenia's live ordinary-passport checker corrections", () => {
     expect(applyVerifiedAccessOverrides({
       code: "AZ",
