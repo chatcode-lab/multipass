@@ -88,7 +88,7 @@ test("home and visa-free access are equivalent in comparisons", async ({ page })
   const unitedStates = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "United States" });
   await expect(canada.locator("td.comparison-cell--best")).toHaveCount(2);
   await expect(unitedStates.locator("td.comparison-cell--best")).toHaveCount(2);
-  await page.getByText("Differences only").click();
+  await page.getByRole("checkbox", { name: "Differences only" }).check();
   await expect(canada).toBeHidden();
   await expect(unitedStates).toBeHidden();
 });
@@ -137,7 +137,8 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
   };
 
   const rwandaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Rwanda" }).first();
-  await rwandaRow.scrollIntoViewIfNeeded();
+  await page.evaluate(() => document.fonts.ready.then(() => undefined));
+  await rwandaRow.evaluate((element) => element.scrollIntoView({ block: "center" }));
   const beforeSelection = await rwandaRow.boundingBox();
   const { button: rwandaButton } = await selectPassport("Rwanda");
   const afterSelection = await rwandaRow.boundingBox();
