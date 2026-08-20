@@ -56,7 +56,10 @@ test("inline article links keep readable spacing and the footer groups its navig
     "scores. See how the ranking works, or explore the exact best pairs and triples",
   );
   const footer = page.locator(".site-footer");
-  await expect(footer.getByText("Partner", { exact: true })).toBeVisible();
+  await expect(footer.locator(".site-footer__credits")).toHaveAttribute(
+    "aria-label",
+    "Built using chatcode.dev in partnership with Settlers Club",
+  );
   await expect(footer.getByRole("link", { name: "Settlers Club" })).toBeVisible();
   const articleColumn = footer.locator(".site-footer__column").filter({ hasText: "Articles" });
   await expect(articleColumn.getByRole("link")).toHaveCount(5);
