@@ -192,7 +192,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                             const evidencePassport = cell.via.length === 1 ? byCode.get(cell.via[0] ?? "") : undefined;
                             const cellHref = evidencePassport
                               ? visaRelationshipHref(evidencePassport, row.destination, cell.status)
-                              : `/destination/${destinationSlug(row.destination)}`;
+                              : `/destination/${destinationSlug(row.destination)}#passports=${cell.via.join(",")}`;
                             const cellLinkLabel = evidencePassport
                               ? `${evidencePassport.name} passport to ${row.destination.name}: ${STATUS_META[cell.status].label}`
                               : `${row.destination.name}: ${STATUS_META[cell.status].label} for ${scenario?.name ?? "combined set"}; ${cell.via.length} passports tie, open destination overview`;

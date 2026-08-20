@@ -1,7 +1,8 @@
 ---
 import StatusPill from "./StatusPill";
+import { formatRegion } from "@/lib/geography";
 import { STATUS_META } from "@/lib/passport";
-import { ACCESS_STATUSES, type AccessStatus, type Destination, type PassportSummary } from "@/lib/types";
+import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Destination, type PassportSummary } from "@/lib/types";
 import { visaRelationshipHref } from "@/lib/visa-evidence";
 
 interface Row {
@@ -15,29 +16,183 @@ interface Props {
 }
 
 const { destination, rows } = Astro.props;
+const availableStatuses = ACCESS_STATUSES.filter((status) => rows.some((row) => row.status === status));
 ---
 
-<div class="destination-access-groups">
-  {ACCESS_STATUSES.map((status) => {
-    const statusRows = rows.filter((row) => row.status === status);
-    if (!statusRows.length) return null;
-    return (
-      <section class="destination-access-group">
-        <div class="region-group__heading">
-          <h3>{STATUS_META[status].label}</h3>
-          <span>{statusRows.length}</span>
-        </div>
-        <ul class="destination-access-grid">
-          {statusRows.map(({ passport }) => (
-            <li>
-              <a href={visaRelationshipHref(passport, destination, status)}>
-                <span><strong>{passport.name}</strong><small>{passport.code}</small></span>
-                <StatusPill status={status} compact />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    );
-  })}
+<div class="destination-passport-access" id="passport-access" data-destination-passport-access>
+  <div class="table-toolbar destination-access-toolbar">
+    <label class="search-field">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+      <span class="sr-only">Search passport countries</span>
+      <input type="search" placeholder="Search passport countries" autocomplete="off" data-destination-passport-search />
+    </label>
+    <div class="destination-access-filters">
+      <label class="select-field">
+        <span class="sr-only">Filter passport countries by region</span>
+        <select data-destination-passport-region>
+          <option value="ALL">All regions</option>
+          {REGIONS.map((region) => <option value={region}>{formatRegion(region)}</option>)}
+        </select>
+      </label>
+      <label class="select-field">
+        <span class="sr-only">Filter passport countries by access type</span>
+        <select data-destination-passport-status>
+          <option value="ALL">All access</option>
+          {availableStatuses.map((status) => <option value={status}>{STATUS_META[status].label}</option>)}
+        </select>
+      </label>
+    </div>
+    <span class="result-count" aria-live="polite" data-destination-passport-count>{rows.length} passports</span>
+  </div>
+
+  <div class="destination-filter-selection" data-destination-filter-selection hidden>
+    <div>
+      <span class="eyebrow">Shared comparison filter</span>
+      <strong data-destination-filter-label></strong>
+    </div>
+    <div class="destination-filter-chips" data-destination-filter-chips></div>
+    <button type="button" class="button button--quiet" data-destination-filter-clear>Show all passports</button>
+  </div>
+
+  <div class="destination-access-groups">
+    {availableStatuses.map((status) => {
+      const statusRows = rows.filter((row) => row.status === status);
+      return (
+        <section class="destination-access-group" data-destination-access-group={status}>
+          <div class="region-group__heading">
+            <h3>{STATUS_META[status].label}</h3>
+            <span data-destination-group-count>{statusRows.length}</span>
+          </div>
+          <ul class="destination-access-grid">
+            {statusRows.map(({ passport }) => (
+              <li
+                data-destination-passport-row
+                data-code={passport.code}
+                data-name={passport.name.toLowerCase()}
+                data-region={passport.region}
+                data-status={status}
+              >
+                <a href={visaRelationshipHref(passport, destination, status)}>
+                  <span><strong>{passport.name}</strong><small>{passport.code}</small></span>
+                  <StatusPill status={status} compact />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    })}
+    <p class="empty-state" data-destination-passport-empty hidden>No passport countries match those filters.</p>
+  </div>
 </div>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll("[data-destination-passport-access]").forEach((root) => {
+      const search = root.querySelector("[data-destination-passport-search]");
+      const region = root.querySelector("[data-destination-passport-region]");
+      const status = root.querySelector("[data-destination-passport-status]");
+      const count = root.querySelector("[data-destination-passport-count]");
+      const selection = root.querySelector("[data-destination-filter-selection]");
+      const selectionLabel = root.querySelector("[data-destination-filter-label]");
+      const chips = root.querySelector("[data-destination-filter-chips]");
+      const clear = root.querySelector("[data-destination-filter-clear]");
+      const empty = root.querySelector("[data-destination-passport-empty]");
+      const rows = [...root.querySelectorAll("[data-destination-passport-row]")];
+      const groups = [...root.querySelectorAll("[data-destination-access-group]")];
+      if (!search || !region || !status || !count || !selection || !selectionLabel || !chips || !clear || !empty) return;
+
+      const byCode = new Map(rows.map((row) => [row.dataset.code, row]));
+      let selectedCodes = [];
+
+      const parseCodes = (value) => [...new Set((value || "").split(",").map((code) => code.trim().toUpperCase()))]
+        .filter((code) => byCode.has(code))
+        .slice(0, 5);
+
+      const codesFromUrl = () => {
+        const url = new URL(window.location.href);
+        const hashParams = new URLSearchParams(url.hash.startsWith("#") ? url.hash.slice(1) : "");
+        return parseCodes(url.searchParams.get("passports") || hashParams.get("passports"));
+      };
+
+      const updateUrl = () => {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("passports");
+        url.hash = selectedCodes.length ? `passports=${selectedCodes.join(",")}` : "passport-access";
+        window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+      };
+
+      const renderSelection = () => {
+        selection.hidden = selectedCodes.length === 0;
+        selectionLabel.textContent = `${selectedCodes.length} ${selectedCodes.length === 1 ? "passport" : "passports"} selected`;
+        chips.replaceChildren();
+        selectedCodes.forEach((code) => {
+          const row = byCode.get(code);
+          const name = row?.querySelector("strong")?.textContent || code;
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "destination-filter-chip";
+          button.ariaLabel = `Remove ${name} from filter`;
+          button.textContent = `${name} ×`;
+          button.addEventListener("click", () => {
+            selectedCodes = selectedCodes.filter((selectedCode) => selectedCode !== code);
+            updateUrl();
+            render();
+          });
+          chips.append(button);
+        });
+      };
+
+      const render = () => {
+        const needle = search.value.trim().toLowerCase();
+        let visibleCount = 0;
+        rows.forEach((row) => {
+          const matchesSelection = selectedCodes.length === 0 || selectedCodes.includes(row.dataset.code);
+          const matchesSearch = !needle || row.dataset.name.includes(needle) || row.dataset.code.toLowerCase().includes(needle);
+          const matchesRegion = region.value === "ALL" || row.dataset.region === region.value;
+          const matchesStatus = status.value === "ALL" || row.dataset.status === status.value;
+          const visible = matchesSelection && matchesSearch && matchesRegion && matchesStatus;
+          row.hidden = !visible;
+          row.classList.toggle("is-url-selected", visible && selectedCodes.length > 0);
+          if (visible) visibleCount += 1;
+        });
+
+        groups.forEach((group) => {
+          const groupRows = [...group.querySelectorAll("[data-destination-passport-row]")];
+          const groupCount = groupRows.filter((row) => !row.hidden).length;
+          group.hidden = groupCount === 0;
+          const groupCountElement = group.querySelector("[data-destination-group-count]");
+          if (groupCountElement) groupCountElement.textContent = String(groupCount);
+        });
+
+        count.textContent = selectedCodes.length
+          ? `${visibleCount} selected ${visibleCount === 1 ? "passport" : "passports"}`
+          : `${visibleCount} ${visibleCount === 1 ? "passport" : "passports"}`;
+        empty.hidden = visibleCount > 0;
+        renderSelection();
+      };
+
+      search.addEventListener("input", render);
+      region.addEventListener("change", render);
+      status.addEventListener("change", render);
+      clear.addEventListener("click", () => {
+        selectedCodes = [];
+        updateUrl();
+        render();
+        search.focus();
+      });
+
+      const activateUrlFilter = (scroll) => {
+        selectedCodes = codesFromUrl();
+        render();
+        if (scroll && selectedCodes.length) window.requestAnimationFrame(() => root.scrollIntoView({ block: "start" }));
+      };
+      window.addEventListener("hashchange", () => activateUrlFilter(true));
+      window.addEventListener("popstate", () => activateUrlFilter(false));
+      activateUrlFilter(true);
+    });
+  })();
+</script>

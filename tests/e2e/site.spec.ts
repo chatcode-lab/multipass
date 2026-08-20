@@ -525,7 +525,37 @@ test("passport and comparison status cells link to relationship evidence", async
     .locator("td")
     .first();
   await expect(tiedAngolaCell.getByRole("link", { name: /3 passports tie, open destination overview/ }))
-    .toHaveAttribute("href", "/destination/angola");
+    .toHaveAttribute("href", "/destination/angola#passports=PT,RU,IL");
+});
+
+test("destination passport filters support controls, query parameters, and tie-link hashes", async ({ page }) => {
+  await page.goto("/destination/angola");
+  const directory = page.locator("[data-destination-passport-access]");
+  const rows = directory.locator("[data-destination-passport-row]:visible");
+  await expect(rows).toHaveCount(199);
+
+  await page.getByPlaceholder("Search passport countries").fill("Belgium");
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first()).toContainText("Belgium");
+  await page.getByPlaceholder("Search passport countries").fill("");
+  await page.getByLabel("Filter passport countries by region").selectOption("EUROPE");
+  await expect(rows).not.toHaveCount(0);
+  await expect.poll(() => rows.evaluateAll((entries) => entries.every((entry) => entry.dataset.region === "EUROPE"))).toBe(true);
+  await page.getByLabel("Filter passport countries by access type").selectOption("visa_free");
+  await expect(rows).not.toHaveCount(0);
+  await expect.poll(() => rows.evaluateAll((entries) => entries.every((entry) => entry.dataset.status === "visa_free"))).toBe(true);
+
+  await page.goto("/destination/angola?passports=BE,US#passport-access");
+  await expect(rows).toHaveCount(2);
+  await expect(page.getByText("2 passports selected", { exact: true })).toBeVisible();
+
+  await page.goto("/destination/angola#passports=PT,RU,IL");
+  await expect(rows).toHaveCount(3);
+  await expect(page.getByText("3 passports selected", { exact: true })).toBeVisible();
+  await expect(page).toHaveURL(/#passports=PT,RU,IL$/);
+  await page.getByRole("button", { name: "Show all passports" }).click();
+  await expect(rows).toHaveCount(199);
+  await expect(page).toHaveURL(/#passport-access$/);
 });
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {

@@ -47,6 +47,7 @@ HTML pages also advertise their Markdown alternative with a \`<link rel="alterna
 - Relationship Markdown: \`${absoluteUrl("/belgium-kenya-eta.md")}\`
 - Relationship URLs use \`/{passport}-{destination}-{status}\`, where status is \`visa-free\`, \`eta\`, \`visa-on-arrival\`, \`evisa\`, \`visa\`, or \`citizenship\`.
 - A recognized outdated status suffix redirects to the current canonical URL.
+- Focus a destination page on selected passport countries with \`#passports=PT,RU,IL\` or the equivalent \`?passports=PT,RU,IL\` query parameter.
 - Evidence coverage is incremental. Unsupported relationships are labeled, excluded from indexing, and should not be presented as officially verified.
 
 ## JSON API
