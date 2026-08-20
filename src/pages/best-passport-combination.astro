@@ -1,0 +1,200 @@
+---
+import PassportCover from "@/components/PassportCover";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCombinationInsights, getDataContext } from "@/lib/data";
+import { comparisonHref, rankHref } from "@/lib/geography";
+
+const { manifest } = await getDataContext(Astro.locals);
+const insights = await getCombinationInsights(Astro.locals, manifest.version);
+const pair = insights.bestPairs[0];
+const triple = insights.bestTriples[0];
+const passportByCode = new Map(manifest.passports.map((passport) => [passport.code, passport]));
+const destinationByCode = new Map(manifest.destinations.map((destination) => [destination.code, destination]));
+const namesFor = (codes: string[]) => codes.map((code) => passportByCode.get(code)?.name ?? code);
+const pairNames = namesFor(pair.codes);
+const tripleNames = namesFor(triple.codes);
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric" }).format(
+  new Date(insights.checkedAt),
+);
+const pairCount = manifest.passports.length * (manifest.passports.length - 1) / 2;
+const tripleCount = manifest.passports.length * (manifest.passports.length - 1) * (manifest.passports.length - 2) / 6;
+const articleModified = insights.checkedAt.slice(0, 10) > "2026-08-20" ? insights.checkedAt : "2026-08-20";
+const description = `The exact best two- and three-passport combinations for easy travel access across ${insights.destinationCount} destinations, calculated from every possible set.`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Best passport combination in 2026: top two- and three-passport sets",
+    description,
+    datePublished: "2026-08-20",
+    dateModified: articleModified,
+    author: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    publisher: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    mainEntityOfPage: "https://multipassrank.com/best-passport-combination",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "MultiPass Rank", item: "https://multipassrank.com" },
+      { "@type": "ListItem", position: 2, name: "Best passport combination", item: "https://multipassrank.com/best-passport-combination" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is the best two-passport combination for visa-free travel?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${pairNames.join(" and ")} form ${insights.bestPairTieCount === 1 ? "the unique highest-coverage pair" : `one of ${insights.bestPairTieCount} tied highest-coverage pairs`} in the ${checkedDate} MultiPass Rank snapshot, reaching ${pair.accessibleDestinations} of ${insights.destinationCount} destinations with citizenship, visa-free, ETA, or visa-on-arrival access.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is the best three-passport combination?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${tripleNames.join(", ")} form ${insights.bestTripleTieCount === 1 ? "the unique highest-coverage triple" : `one of ${insights.bestTripleTieCount} tied highest-coverage triples`} in this snapshot, reaching ${triple.accessibleDestinations} of ${insights.destinationCount} tracked destinations under the same easy-access rule.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does the result include citizenship, tax, and residence benefits?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. The calculation measures short-visit entry access only. It does not score residence or work rights, taxation, acquisition paths, citizenship law, or consular protection.",
+        },
+      },
+    ],
+  },
+];
+
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800");
+---
+
+<BaseLayout
+  title="Best Passport Combination in 2026: Top 2 & 3 Sets | MultiPass Rank"
+  description={description}
+  canonical="/best-passport-combination"
+  markdownHref="/best-passport-combination.md"
+  ogType="article"
+  structuredData={structuredData}
+>
+  <article class="research-article">
+    <header class="research-hero">
+      <span class="eyebrow">Exhaustive data experiment · checked {checkedDate}</span>
+      <h1>Best passport combination in 2026.</h1>
+      <p>
+        We tested every possible pair and triple across {insights.destinationCount} destinations. The winners are
+        exact for this data snapshot—and intentionally answer only the travel-access part of a much bigger citizenship question.
+      </p>
+    </header>
+
+    <section class="research-results" aria-label="Best passport combination results">
+      <article class="research-result-card">
+        <div class="research-result-card__visual">
+          <PassportCover codes={pair.codes} names={pairNames} size="medium" />
+          <span>Best pair</span>
+        </div>
+        <div class="research-result-card__body">
+          <span class="eyebrow">{insights.bestPairTieCount === 1 ? "Unique winner" : `One of ${insights.bestPairTieCount} tied leaders`} among {pairCount.toLocaleString("en")} pairs</span>
+          <h2>{pairNames.join(" + ")}</h2>
+          <dl class="research-metrics">
+            <div><dt>Easy access</dt><dd>{pair.accessibleDestinations}<small> / {insights.destinationCount}</small></dd></div>
+            <div><dt>Rank score</dt><dd>{pair.mobilityScore}</dd></div>
+            <div><dt>Outside threshold</dt><dd>{pair.uncoveredDestinationCodes.length}</dd></div>
+          </dl>
+          <div class="research-actions">
+            <a class="button button--primary" href={rankHref([pair.codes])}>View combined rank</a>
+            <a class="button button--quiet" href={comparisonHref(pair.codes.map((code) => [code]))}>Compare passports</a>
+            <a class="text-link" href={comparisonHref([pair.codes])}>Full combined access list</a>
+          </div>
+          <details class="research-missing">
+            <summary>{pair.uncoveredDestinationCodes.length} destinations still require prior visa approval</summary>
+            <p>{pair.uncoveredDestinationCodes.map((code) => destinationByCode.get(code)?.name ?? code).join(" · ")}</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="research-result-card">
+        <div class="research-result-card__visual">
+          <PassportCover codes={triple.codes} names={tripleNames} size="medium" />
+          <span>Best triple</span>
+        </div>
+        <div class="research-result-card__body">
+          <span class="eyebrow">{insights.bestTripleTieCount === 1 ? "Unique winner" : `One of ${insights.bestTripleTieCount} tied leaders`} among {tripleCount.toLocaleString("en")} triples</span>
+          <h2>{tripleNames.join(" + ")}</h2>
+          <dl class="research-metrics">
+            <div><dt>Easy access</dt><dd>{triple.accessibleDestinations}<small> / {insights.destinationCount}</small></dd></div>
+            <div><dt>Rank score</dt><dd>{triple.mobilityScore}</dd></div>
+            <div><dt>Outside threshold</dt><dd>{triple.uncoveredDestinationCodes.length}</dd></div>
+          </dl>
+          <div class="research-actions">
+            <a class="button button--primary" href={rankHref([triple.codes])}>View combined rank</a>
+            <a class="button button--quiet" href={comparisonHref(triple.codes.map((code) => [code]))}>Compare passports</a>
+            <a class="text-link" href={comparisonHref([triple.codes])}>Full combined access list</a>
+          </div>
+          <details class="research-missing">
+            <summary>{triple.uncoveredDestinationCodes.length} destinations still require prior visa approval</summary>
+            <p>{triple.uncoveredDestinationCodes.map((code) => destinationByCode.get(code)?.name ?? code).join(" · ")}</p>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <div class="research-copy">
+      <section>
+        <span class="eyebrow">What the result means</span>
+        <h2>Complementarity beats two high scores.</h2>
+        <p>
+          Japan and the United Arab Emirates each has broad access on its own, but the pair wins because their exceptions
+          overlap less than other pairings. Rwanda adds seven destinations that remain outside the pair's easy-access set,
+          which is enough to make the triple the sole leader.
+        </p>
+        <p>
+          Here, “easy access” includes citizenship, visa-free entry, ETA, and visa on arrival. eVisas and traditional visas
+          remain visible in the destination tables but do not count. The displayed score is one below the raw coverage total
+          because <a href="/methodology">the scoring method normalizes one home destination</a>.
+        </p>
+      </section>
+
+      <aside class="research-callout">
+        <span class="eyebrow">A different question gives a different winner</span>
+        <h2>Mobility is not citizenship quality.</h2>
+        <p>
+          An <a href="https://www.imidaily.com/analysis/what-is-the-worlds-best-citizenship-combo/" rel="noreferrer">IMI Daily analysis</a>
+          chooses Ireland + Chile using settlement rights, taxation, governance, acquisition, and resilience as well as travel.
+          The <a href="https://www.reddit.com/r/PassportPorn/comments/1qw2oty/whats_the_best_combo/" rel="noreferrer">community discussion that inspired the query</a>
+          mixes these practical considerations too. MultiPass Rank deliberately isolates visitor access so the calculation stays auditable.
+        </p>
+        <div class="research-actions">
+          <a class="button button--quiet" href={comparisonHref([pair.codes, ["IE", "CL"]])}>Compare both answers</a>
+          <a class="text-link" href={rankHref([pair.codes, ["IE", "CL"]])}>Rank both combinations</a>
+        </div>
+      </aside>
+
+      <section>
+        <span class="eyebrow">Reproducible method</span>
+        <h2>No editorial tie-breaker.</h2>
+        <p>
+          The analysis evaluated all {pairCount.toLocaleString("en")} unique pairs and {tripleCount.toLocaleString("en")} unique triples.
+          For each destination it retained the easiest category available from the passports in that set, then counted the
+          destinations meeting the easy-access threshold. All tied maxima are counted; the current pair has {insights.bestPairTieCount}
+          {insights.bestPairTieCount === 1 ? " winner" : " tied winners"}, and the triple has {insights.bestTripleTieCount}.
+        </p>
+        <p>
+          Source categories follow the <a href="https://www.henleyglobal.com/passport-index/about" rel="noreferrer">Henley Passport Index access method</a>.
+          Rules change, and this is a hypothetical calculation—not advice to seek, retain, or travel on any citizenship.
+        </p>
+      </section>
+
+      <nav class="research-next" aria-label="Continue passport combination research">
+        <div><span class="eyebrow">Next experiment</span><h2>Can any set cover all 227 destinations?</h2></div>
+        <a class="button button--primary" href="/how-many-passports-to-cover-the-world">See the exact minimum</a>
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

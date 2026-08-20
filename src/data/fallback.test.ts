@@ -1,11 +1,13 @@
 import { describe, expect, it } from "vitest";
 import fallbackSnapshot from "./fallback.json";
+import combinationInsights from "./combination-insights.json";
 import { PASSPORT_COLORS } from "./passport-colors";
 import { COUNTRY_MAPS, REGION_MAPS } from "./world-map";
 import { calculateMobilityScore } from "../lib/passport";
-import type { DataSnapshot } from "../lib/types";
+import type { CombinationInsights, DataSnapshot } from "../lib/types";
 
 const snapshot = fallbackSnapshot as DataSnapshot;
+const insights = combinationInsights as CombinationInsights;
 
 describe("bundled passport snapshot", () => {
   it("contains one complete, internally consistent dataset", () => {
@@ -42,5 +44,11 @@ describe("bundled passport snapshot", () => {
 
     expect(COUNTRY_MAPS.DE.path.length).toBeGreaterThan(100);
     expect(COUNTRY_MAPS.SG.marker).toEqual([757.1, 242]);
+  });
+
+  it("keeps the generated combination research on the bundled snapshot", () => {
+    expect(insights.snapshotVersion).toBe(snapshot.manifest.version);
+    expect(insights.checkedAt).toBe(snapshot.manifest.checkedAt);
+    expect(insights.destinationCount).toBe(snapshot.manifest.destinations.length);
   });
 });

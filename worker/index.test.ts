@@ -4,7 +4,13 @@ import type { SourceCountry } from "../src/lib/types";
 
 class MemoryKV {
   values = new Map<string, string>();
-  async get<T>(key: string, type?: string): Promise<T | string | null> {
+  async get<T>(key: string | string[], type?: string): Promise<T | string | Map<string, T | null> | null> {
+    if (Array.isArray(key)) {
+      return new Map(key.map((entry) => {
+        const value = this.values.get(entry);
+        return [entry, value === undefined ? null : type === "json" ? JSON.parse(value) as T : value as T];
+      }));
+    }
     const value = this.values.get(key);
     if (value === undefined) return null;
     return type === "json" ? (JSON.parse(value) as T) : value;
@@ -44,6 +50,17 @@ describe("sync worker", () => {
       scores: Object.fromEntries(countries.slice(0, 198).map((country) => [country.code, 0])),
       cleanupIndex: 0,
     }));
+    for (const country of countries.slice(0, 198)) {
+      await kv.put(`snapshot:${version}:passport:${country.code}`, JSON.stringify({
+        code: country.code,
+        name: country.country,
+        mobilityScore: 226,
+        statuses: Object.fromEntries(countries.map((destination) => [
+          destination.code,
+          destination.code === country.code ? "citizenship" : "visa_free",
+        ])),
+      }));
+    }
     vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify({
       code: finalCode,
       country: `Country ${finalCode}`,
@@ -64,7 +81,7 @@ describe("sync worker", () => {
     expect(result.published).toBe(true);
     expect(JSON.parse(kv.values.get("snapshot:pointer") ?? "{}").current).toBe(version);
     expect(kv.values.has(`snapshot:${version}:manifest`)).toBe(true);
+    expect(kv.values.has(`snapshot:${version}:combination-insights`)).toBe(true);
     expect(kv.values.has("sync:state")).toBe(false);
   });
 });
-

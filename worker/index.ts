@@ -4,8 +4,10 @@ import {
   normalizeCode,
   normalizePassportDetail,
 } from "../src/lib/passport";
+import { analyzePassportCombinations } from "../src/lib/combination-insights";
 import type {
   Destination,
+  PassportAccess,
   SnapshotManifest,
   SourceCountry,
   SourcePassportDetail,
@@ -74,6 +76,29 @@ async function mapWithConcurrency<T, R>(
   return results;
 }
 
+async function readSnapshotPassports(
+  env: Env,
+  version: string,
+  codes: string[],
+): Promise<Record<string, PassportAccess>> {
+  const chunks = Array.from({ length: Math.ceil(codes.length / 100) }, (_, index) =>
+    codes.slice(index * 100, (index + 1) * 100),
+  );
+  const maps = await Promise.all(chunks.map((chunk) =>
+    env.PASSPORT_DATA.get<PassportAccess>(
+      chunk.map((code) => `snapshot:${version}:passport:${code}`),
+      "json",
+    ),
+  ));
+  const entries = codes.map((code) => {
+    const key = `snapshot:${version}:passport:${code}`;
+    const detail = maps.find((map) => map.has(key))?.get(key);
+    if (!detail) throw new Error(`Missing staged passport ${code}`);
+    return [code, detail] as const;
+  });
+  return Object.fromEntries(entries);
+}
+
 async function startCycle(env: Env): Promise<SyncState> {
   const payload = await fetchJson<{ countries: SourceCountry[] }>(`${env.SOURCE_API_ROOT}/countries`);
   const destinations = buildDestinationCatalog(payload.countries);
@@ -128,6 +153,7 @@ export async function runSyncBatch(env: Env): Promise<{ published: boolean; proc
     state.cleanupIndex += cleanupCodes.length;
     if (state.cleanupIndex >= state.issuerCodes.length) {
       await env.PASSPORT_DATA.delete(`snapshot:${state.cleanupVersion}:manifest`);
+      await env.PASSPORT_DATA.delete(`snapshot:${state.cleanupVersion}:combination-insights`);
       state.cleanupVersion = undefined;
     }
   }
@@ -147,7 +173,21 @@ export async function runSyncBatch(env: Env): Promise<{ published: boolean; proc
     destinations: state.destinations,
     passports: buildPassportSummariesFromScores(state.countries, state.scores),
   };
+  const completedBatch = Object.fromEntries(normalizedDetails.map((detail) => [detail.code, detail]));
+  const snapshotPassports = {
+    ...await readSnapshotPassports(
+      env,
+      state.version,
+      state.issuerCodes.filter((code) => !completedBatch[code]),
+    ),
+    ...completedBatch,
+  };
+  const combinationInsights = analyzePassportCombinations(manifest, snapshotPassports);
   const previousPointer = await env.PASSPORT_DATA.get<SnapshotPointer>("snapshot:pointer", "json");
+  await env.PASSPORT_DATA.put(
+    `snapshot:${state.version}:combination-insights`,
+    JSON.stringify(combinationInsights),
+  );
   await env.PASSPORT_DATA.put(`snapshot:${state.version}:manifest`, JSON.stringify(manifest));
   await env.PASSPORT_DATA.put(
     "snapshot:pointer",

@@ -49,6 +49,9 @@ describe("passport calculations", () => {
       { codes: ["BR", "PT"] },
       { codes: ["US"] },
     ]);
+
+    const elevenCodes = Array.from({ length: 11 }, (_, index) => `A${index}`);
+    expect(parsePassportSets([elevenCodes.join(",")], new Set(elevenCodes))[0].codes).toHaveLength(10);
   });
 
   it("chooses the easiest status and marks equal rows", () => {

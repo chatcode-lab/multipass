@@ -16,7 +16,19 @@ function escapeXml(value: string): string {
 export const GET: APIRoute = async ({ locals }) => {
   const { manifest } = await getDataContext(locals);
   const details = await getPassportAccessBatch(locals, manifest.passports.map((passport) => passport.code), manifest.version);
-  const staticPaths = ["", "rank", "destinations", "compare", "dual-passport", "evisa-vs-eta", "methodology", "data-license", "ai"];
+  const staticPaths = [
+    "",
+    "rank",
+    "destinations",
+    "compare",
+    "dual-passport",
+    "best-passport-combination",
+    "how-many-passports-to-cover-the-world",
+    "evisa-vs-eta",
+    "methodology",
+    "data-license",
+    "ai",
+  ];
   const urls = [
     ...staticPaths.map((path) => ({ loc: `https://multipassrank.com/${path}`, priority: path ? "0.7" : "1.0" })),
     ...PASSPORT_COLLECTIONS.map((collection) => ({
@@ -41,7 +53,9 @@ export const GET: APIRoute = async ({ locals }) => {
         : [],
     ),
   ];
-  const lastModified = manifest.checkedAt.slice(0, 10);
+  const lastModified = manifest.checkedAt.slice(0, 10) > "2026-08-20"
+    ? manifest.checkedAt.slice(0, 10)
+    : "2026-08-20";
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
     .map(
       ({ loc, priority }) =>

@@ -6,6 +6,7 @@ import {
   normalizeCode,
   normalizePassportDetail,
 } from "../src/lib/passport";
+import { analyzePassportCombinations } from "../src/lib/combination-insights";
 import type {
   DataSnapshot,
   PassportAccess,
@@ -15,6 +16,7 @@ import type {
 
 const API_ROOT = "https://api.henleypassportindex.com/api/v3";
 const outputPath = resolve("src/data/fallback.json");
+const insightsOutputPath = resolve("src/data/combination-insights.json");
 
 async function fetchJson<T>(url: string, attempts = 3): Promise<T> {
   let latestError: unknown;
@@ -68,7 +70,9 @@ async function main(): Promise<void> {
 
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, `${JSON.stringify(snapshot)}\n`, "utf8");
-  process.stdout.write(`\nWrote ${outputPath}\n`);
+  const insights = analyzePassportCombinations(snapshot.manifest, snapshot.passports);
+  await writeFile(insightsOutputPath, `${JSON.stringify(insights, null, 2)}\n`, "utf8");
+  process.stdout.write(`\nWrote ${outputPath} and ${insightsOutputPath}\n`);
 }
 
 await main();

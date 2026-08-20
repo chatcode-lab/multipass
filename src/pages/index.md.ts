@@ -19,6 +19,6 @@ export const GET: APIRoute = async ({ locals }) => {
     "Passport combination calculator and global passport ranking",
     `Calculate combined passport power and compare the strength of ${manifest.passports.length} passports across ${manifest.destinations.length} destinations.`,
     manifest.passports,
-  )}\n\n## Destinations without a separate passport rank\n\n${unranked}\n\n## Regional and language rankings\n\n${collections}`;
+  )}\n\n## Passport combination research\n\n- [Best two- and three-passport combinations](${absoluteUrl("/best-passport-combination")})\n- [Exact minimum set for all tracked destinations](${absoluteUrl("/how-many-passports-to-cover-the-world")})\n\n## Destinations without a separate passport rank\n\n${unranked}\n\n## Regional and language rankings\n\n${collections}`;
   return markdownResponse(body, "/");
 };

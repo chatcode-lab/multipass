@@ -20,4 +20,6 @@ The calculator does not evaluate residence rights, work rights, tax treatment, m
 
 [Calculate combined passport access](${absoluteUrl("/compare")})
 
+[Explore the exact best two- and three-passport combinations](${absoluteUrl("/best-passport-combination")})
+
 [Read the scoring methodology](${absoluteUrl("/methodology")})`, "/dual-passport");

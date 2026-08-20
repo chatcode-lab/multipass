@@ -15,7 +15,7 @@ MultiPass Rank provides current, structured passport-access information for assi
 - One passport: \`${absoluteUrl("/compare?set=US")}\`
 - Two individual passports: \`${absoluteUrl("/compare?set=US&set=PT")}\`
 - A combined passport set versus another option: \`${absoluteUrl("/compare?set=US,CA&set=PT")}\`
-- Up to five \`set\` parameters are accepted, with up to five comma-separated passports in each set.
+- Up to five \`set\` parameters are accepted, with up to ten comma-separated passports in each set. The visual editor and ranking selection controls intentionally cap manual combinations at five; longer research URLs remain readable.
 - Curated one-to-one query URLs redirect to their descriptive canonical URL. All valid \`/compare?set=...\` combinations continue to work.
 
 Add \`.md\` before the query string for a text-first result: \`${absoluteUrl("/compare.md?set=US,CA&set=PT")}\`.
@@ -36,6 +36,8 @@ Add \`.md\` before the query string for a text-first result: \`${absoluteUrl("/c
 - Destination directory: [destinations.md](${absoluteUrl("/destinations.md")})
 - Destination detail: \`${absoluteUrl("/destination/kenya.md")}\`
 - Passport–destination evidence: \`${absoluteUrl("/belgium-kenya-eta.md")}\`
+- Best pair and triple research: [best-passport-combination.md](${absoluteUrl("/best-passport-combination.md")})
+- Exact minimum world coverage: [how-many-passports-to-cover-the-world.md](${absoluteUrl("/how-many-passports-to-cover-the-world.md")})
 - This guide: [ai.md](${absoluteUrl("/ai.md")})
 
 HTML pages also advertise their Markdown alternative with a \`<link rel="alternate" type="text/markdown">\` element.
@@ -54,6 +56,7 @@ HTML pages also advertise their Markdown alternative with a \`<link rel="alterna
 
 - \`GET ${absoluteUrl("/api/v1/manifest")}\` — passport codes, slugs, ranks, scores, destinations, version, and checked date.
 - \`GET ${absoluteUrl("/api/v1/passports/US")}\` — destination status map for one passport code.
+- \`GET ${absoluteUrl("/api/v1/combination-insights")}\` — exact best pair, best triple, minimum-cover set, marginal gains, snapshot version, and checked date.
 - \`POST ${absoluteUrl("/api/v1/compare")}\` with \`{"sets":[["US","CA"],["PT"]]}\` — complete scenario summaries and destination comparison rows.
 
 The POST endpoint accepts JSON, returns JSON, and is intentionally not cached. Public manifests, passport pages, and Markdown resources are cached at Cloudflare's edge.

@@ -1,0 +1,170 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCombinationInsights, getDataContext } from "@/lib/data";
+import { comparisonHref, flagEmojiFor, rankHref } from "@/lib/geography";
+
+const { manifest } = await getDataContext(Astro.locals);
+const insights = await getCombinationInsights(Astro.locals, manifest.version);
+const cover = insights.minimumCover;
+const passportByCode = new Map(manifest.passports.map((passport) => [passport.code, passport]));
+const nameFor = (code: string) => passportByCode.get(code)?.name ?? code;
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric" }).format(
+  new Date(insights.checkedAt),
+);
+const description = `An exact set-cover experiment finds the smallest passport set with easy access to all ${insights.destinationCount} destinations—and proves why fewer passports cannot work.`;
+const fullSetName = cover.codes.map(nameFor).join(" + ");
+const requiredNames = cover.requiredCodes.map(nameFor);
+const articleModified = insights.checkedAt.slice(0, 10) > "2026-08-20" ? insights.checkedAt : "2026-08-20";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How many passports cover every tracked destination?",
+    description,
+    datePublished: "2026-08-20",
+    dateModified: articleModified,
+    author: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    publisher: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    mainEntityOfPage: "https://multipassrank.com/how-many-passports-to-cover-the-world",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "MultiPass Rank", item: "https://multipassrank.com" },
+      { "@type": "ListItem", position: 2, name: "Best passport combination", item: "https://multipassrank.com/best-passport-combination" },
+      { "@type": "ListItem", position: 3, name: "Minimum world coverage", item: "https://multipassrank.com/how-many-passports-to-cover-the-world" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How many passports are needed for easy access to every country?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `In the ${checkedDate} MultiPass Rank dataset, at least ${cover.size} passports are needed for citizenship, visa-free, ETA, or visa-on-arrival access to all ${insights.destinationCount} tracked destinations.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why are ten passports necessary?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${requiredNames.join(", ")} are forced into every full-coverage set in this snapshot. An exact search proves that six additional passports cannot cover the remainder, while seven can.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does full coverage mean every destination is visa-free?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Full coverage here includes citizenship, visa-free entry, ETA, and visa on arrival. It excludes eVisas and traditional visas from the easy-access total.",
+        },
+      },
+    ],
+  },
+];
+
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800");
+---
+
+<BaseLayout
+  title="How Many Passports Cover Every Country? Exact Minimum | MultiPass Rank"
+  description={description}
+  canonical="/how-many-passports-to-cover-the-world"
+  markdownHref="/how-many-passports-to-cover-the-world.md"
+  ogType="article"
+  structuredData={structuredData}
+>
+  <article class="research-article">
+    <header class="research-hero research-hero--numbered">
+      <span class="eyebrow">Set-cover experiment · checked {checkedDate}</span>
+      <div class="research-hero__answer" aria-label={`${cover.size} passports`}>
+        <strong>{cover.size}</strong>
+        <span>passports</span>
+      </div>
+      <h1>How many passports cover every tracked destination?</h1>
+      <p>
+        Ten are necessary and sufficient under MultiPass Rank's easy-access rule. The result comes from an exact search,
+        not a greedy estimate; below is one minimum set and the reason nine cannot work.
+      </p>
+      <div class="research-actions research-actions--hero">
+        <a class="button button--primary" href={rankHref([cover.codes])}>Place the full set in the ranking</a>
+        <a class="button button--quiet" href={comparisonHref([cover.codes])}>Open all destination results</a>
+      </div>
+    </header>
+
+    <section class="research-cover-section">
+      <div class="research-section-heading">
+        <div><span class="eyebrow">One exact minimum set</span><h2>From 189 destinations to all {insights.destinationCount}.</h2></div>
+        <p>Passports are ordered by their marginal contribution within this solution, not by acquisition value or chronology.</p>
+      </div>
+      <ol class="coverage-sequence" aria-label="Minimum passport set by marginal destination coverage">
+        {cover.marginalGains.map((entry, index) => (
+          <li>
+            <span class="coverage-sequence__step">{String(index + 1).padStart(2, "0")}</span>
+            <span class="country-flag" aria-hidden="true">{flagEmojiFor(entry.code)}</span>
+            <span class="coverage-sequence__passport">
+              <a href={`/passport/${passportByCode.get(entry.code)?.slug}`}>{nameFor(entry.code)}</a>
+              <small>{entry.code}{cover.requiredCodes.includes(entry.code) ? " · forced" : ""}</small>
+            </span>
+            <span class="coverage-sequence__numbers">
+              <span class="coverage-sequence__gain"><small>Adds</small><strong>+{entry.addedDestinations}</strong></span>
+              <span class="coverage-sequence__total"><small>Cumulative</small><strong>{entry.cumulativeDestinations}</strong></span>
+            </span>
+          </li>
+        ))}
+      </ol>
+      <p class="research-set-line"><strong>Complete set:</strong> {fullSetName}</p>
+    </section>
+
+    <div class="research-copy">
+      <section>
+        <span class="eyebrow">The lower-bound proof</span>
+        <h2>Three passports are unavoidable.</h2>
+        <p>
+          Afghanistan, North Korea, and Turkmenistan each has only one passport in this snapshot that reaches it under the
+          easy-access threshold: its own. Therefore every full-coverage solution must include {requiredNames.join(", ")}.
+          This does not mean other travellers cannot enter; their route is classified as an eVisa or traditional visa instead.
+        </p>
+        <p>
+          With those three fixed, the solver removes candidates whose easy-access destination set is a strict subset of
+          another passport's set. It then uses exact branch-and-bound search on the remaining destinations. No combination
+          of six additional passports succeeds. Seven do, proving a lower and upper bound of ten in total.
+        </p>
+      </section>
+
+      <aside class="research-callout">
+        <span class="eyebrow">Diminishing returns</span>
+        <h2>The last passport adds one destination.</h2>
+        <p>
+          The first passport in this presentation reaches 189 destinations. The second raises the union to 209; by the
+          seventh passport the set reaches 223. The remaining passports solve isolated gaps rather than materially changing
+          everyday mobility. Minimum cardinality and practical usefulness are very different objectives.
+        </p>
+      </aside>
+
+      <section>
+        <span class="eyebrow">Read the boundary carefully</span>
+        <h2>A mathematical portfolio, not a citizenship plan.</h2>
+        <p>
+          “Covered” means citizenship, visa-free, ETA, or visa-on-arrival access. It does not mean every destination is
+          literally visa-free. The experiment does not consider whether these citizenships can be acquired or retained
+          together, nor tax, residence, work, military, consular, ethical, or administrative consequences.
+        </p>
+        <p>
+          The result reports one exact minimum solution; other ten-passport solutions may tie. Travel rules can change, so
+          the snapshot date is part of the finding. See the <a href="/methodology">scoring methodology</a> before reusing the number.
+        </p>
+      </section>
+
+      <nav class="research-next" aria-label="Continue passport combination research">
+        <div><span class="eyebrow">A more useful scale</span><h2>Which pair or triple covers the most?</h2></div>
+        <a class="button button--primary" href="/best-passport-combination">See the pair and triple winners</a>
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

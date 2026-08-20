@@ -1,10 +1,17 @@
 import type { APIRoute } from "astro";
 import { z } from "zod";
 import { getDataContext, getPassportAccessBatch } from "@/lib/data";
-import { comparePassportSets, normalizeCode } from "@/lib/passport";
+import {
+  comparePassportSets,
+  MAX_PASSPORTS_PER_SET,
+  MAX_PASSPORT_SETS,
+  normalizeCode,
+} from "@/lib/passport";
 
 const requestSchema = z.object({
-  sets: z.array(z.array(z.string().trim().min(2).max(3)).min(1).max(5)).min(1).max(5),
+  sets: z.array(
+    z.array(z.string().trim().min(2).max(3)).min(1).max(MAX_PASSPORTS_PER_SET),
+  ).min(1).max(MAX_PASSPORT_SETS),
 });
 
 export const POST: APIRoute = async ({ locals, request }) => {
@@ -20,7 +27,9 @@ export const POST: APIRoute = async ({ locals, request }) => {
   }
 
   const parsed = requestSchema.safeParse(body);
-  if (!parsed.success) return Response.json({ error: "Choose up to five sets of five passports" }, { status: 400 });
+  if (!parsed.success) {
+    return Response.json({ error: "Choose up to five sets of ten passports" }, { status: 400 });
+  }
 
   const { manifest } = await getDataContext(locals);
   const validCodes = new Set(manifest.passports.map((passport) => passport.code));

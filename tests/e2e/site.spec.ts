@@ -423,6 +423,58 @@ test("eVisa and ETA guide is indexable and available as Markdown", async ({ page
   expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/evisa-vs-eta</loc>");
 });
 
+test("combination research publishes exact results, reproducible links, and Markdown", async ({ page, request }) => {
+  await page.goto("/best-passport-combination");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Best passport combination in 2026.");
+  await expect(page.locator(".research-result-card").first()).toContainText("Japan + United Arab Emirates");
+  await expect(page.locator(".research-result-card").first()).toContainText("210");
+  await expect(page.locator(".research-result-card").nth(1)).toContainText("Japan + United Arab Emirates + Rwanda");
+  await expect(page.getByRole("link", { name: "View combined rank" }).first()).toHaveAttribute(
+    "href",
+    "/rank?set=JP%2CAE",
+  );
+  const articleSchema = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) =>
+    scripts.flatMap((script) => {
+      const records = JSON.parse(script.textContent ?? "[]");
+      return (Array.isArray(records) ? records : [records]).filter((record) => record?.["@type"] === "Article");
+    }),
+  );
+  expect(articleSchema[0].author.name).toBe("MultiPass Rank");
+
+  const markdown = await request.get("/best-passport-combination.md");
+  expect(markdown.ok()).toBe(true);
+  expect(await markdown.text()).toContain("**Japan + United Arab Emirates**");
+
+  await page.goto("/how-many-passports-to-cover-the-world");
+  await expect(page.locator(".research-hero__answer strong")).toHaveText("10");
+  await expect(page.locator(".coverage-sequence > li")).toHaveCount(10);
+  await expect(page.getByRole("link", { name: "Place the full set in the ranking" })).toHaveAttribute(
+    "href",
+    /set=AE%2CSE%2CRW%2CMY%2CMV%2CTD%2CAF%2CKP%2CTM%2CKE/,
+  );
+  const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
+  expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
+
+  const fullSetRanking = await request.get("/rank?set=AE,SE,RW,MY,MV,TD,AF,KP,TM,KE");
+  expect(fullSetRanking.ok()).toBe(true);
+  expect(await fullSetRanking.text()).toContain("United Arab Emirates + Sweden + Rwanda");
+
+  const worldMarkdown = await request.get("/how-many-passports-to-cover-the-world.md");
+  expect(worldMarkdown.ok()).toBe(true);
+  expect(await worldMarkdown.text()).toContain("**Ten passports** are necessary and sufficient");
+
+  const insightsResponse = await request.get("/api/v1/combination-insights");
+  expect(insightsResponse.ok()).toBe(true);
+  const insights = await insightsResponse.json();
+  expect(insights.bestPairs[0].codes).toEqual(["JP", "AE"]);
+  expect(insights.minimumCover.size).toBe(10);
+
+  const sitemap = await request.get("/sitemap.xml");
+  const xml = await sitemap.text();
+  expect(xml).toContain("<loc>https://multipassrank.com/best-passport-combination</loc>");
+  expect(xml).toContain("<loc>https://multipassrank.com/how-many-passports-to-cover-the-world</loc>");
+});
+
 test("dataset pages declare creator and license metadata", async ({ page }) => {
   for (const path of ["/destinations", "/passport/belgium", "/destination/angola"]) {
     await page.goto(path);

@@ -93,6 +93,31 @@ export interface ComparisonResult {
   checkedAt: string;
 }
 
+export interface CombinationCoverage {
+  codes: string[];
+  accessibleDestinations: number;
+  mobilityScore: number;
+  uncoveredDestinationCodes: string[];
+}
+
+export interface CombinationInsights {
+  schemaVersion: 1;
+  snapshotVersion: string;
+  checkedAt: string;
+  destinationCount: number;
+  bestPairs: CombinationCoverage[];
+  bestPairTieCount: number;
+  bestTriples: CombinationCoverage[];
+  bestTripleTieCount: number;
+  minimumCover: {
+    size: number;
+    codes: string[];
+    requiredCodes: string[];
+    accessibleDestinations: number;
+    marginalGains: Array<{ code: string; addedDestinations: number; cumulativeDestinations: number }>;
+  };
+}
+
 export interface SourceCountry {
   code: string;
   country: string;
@@ -114,4 +139,3 @@ export interface SourcePassportDetail {
   visa_online: SourceDestination[];
   visa_required: SourceDestination[];
 }
-

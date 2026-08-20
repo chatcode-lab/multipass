@@ -1,6 +1,6 @@
 # MultiPass Rank
 
-MultiPass Rank is a fast passport-ranking and multi-passport comparison tool for [multipassrank.com](https://multipassrank.com). It ranks 199 passports, shows destination-level access across 227 countries and territories, and calculates the practical reach of combinations containing up to five passports.
+MultiPass Rank is a fast passport-ranking and multi-passport comparison tool for [multipassrank.com](https://multipassrank.com). It ranks 199 passports, shows destination-level access across 227 countries and territories, and calculates the practical reach of passport combinations.
 
 The application is intentionally direct: no accounts, lead forms, analytics, or commercial ranking adjustments.
 
@@ -61,9 +61,13 @@ npm run test:e2e
 
 The `multipass-data-sync` Worker stages ten passport records per invocation. Four staggered daily Cron triggers complete a coherent snapshot in about five days. Only a fully validated set of 199 passport issuers and 227 destinations can replace the current KV pointer; the previous snapshot remains available for rollback.
 
+Before publication, the Worker also evaluates every two- and three-passport combination and solves the exact minimum set cover for the destination catalog. That versioned analysis is published atomically with the access snapshot and exposed at `/api/v1/combination-insights`.
+
 The public application reads KV in its Worker runtime. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
 
 Shareable tools use the same URL convention: each `set` query parameter is one option, and comma-separated codes form a combined option. `/compare?set=US,CA&set=PT` compares destination access; `/rank?set=US,CA&set=PT` places both options into the global ranking. Add `.md` before the query string for a text-first version.
+
+The interactive builders intentionally cap manual combinations at five passports. Direct research links and the JSON comparison API accept up to ten passports per set so the exact world-coverage experiment remains reproducible.
 
 ## Catalog coverage
 

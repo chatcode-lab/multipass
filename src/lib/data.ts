@@ -1,6 +1,7 @@
 import fallbackSnapshot from "@/data/fallback.json";
+import fallbackCombinationInsights from "@/data/combination-insights.json";
 import { env } from "cloudflare:workers";
-import type { DataSnapshot, PassportAccess, SnapshotManifest } from "./types";
+import type { CombinationInsights, DataSnapshot, PassportAccess, SnapshotManifest } from "./types";
 
 interface SnapshotPointer {
   current: string;
@@ -13,6 +14,7 @@ export interface DataContext {
 }
 
 const fallback = fallbackSnapshot as DataSnapshot;
+const fallbackInsights = fallbackCombinationInsights as CombinationInsights;
 
 function passportDataKv(): KVNamespace | undefined {
   return env.PASSPORT_DATA;
@@ -91,4 +93,27 @@ export async function getPassportAccessBatch(
     uniqueCodes.map(async (code) => [code, await getPassportAccess(locals, code, version)] as const),
   );
   return Object.fromEntries(entries.filter((entry): entry is [string, PassportAccess] => Boolean(entry[1])));
+}
+
+export async function getCombinationInsights(
+  locals: App.Locals,
+  version?: string,
+): Promise<CombinationInsights> {
+  void locals;
+  const kv = passportDataKv();
+  if (kv) {
+    let snapshotVersion = version;
+    if (!snapshotVersion) {
+      const pointer = await kv.get<SnapshotPointer>("snapshot:pointer", "json");
+      snapshotVersion = pointer?.current;
+    }
+    if (snapshotVersion) {
+      const insights = await kv.get<CombinationInsights>(
+        `snapshot:${snapshotVersion}:combination-insights`,
+        "json",
+      );
+      if (insights) return insights;
+    }
+  }
+  return fallbackInsights;
 }

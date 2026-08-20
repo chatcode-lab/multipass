@@ -11,6 +11,7 @@ interface Props {
   canonical?: string;
   markdownHref?: string;
   noindex?: boolean;
+  ogType?: "website" | "article";
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -20,6 +21,7 @@ const {
   canonical = Astro.url.pathname,
   markdownHref,
   noindex = false,
+  ogType = "website",
   structuredData,
 } = Astro.props;
 const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url.origin).toString();
@@ -42,7 +44,7 @@ const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toStri
     <link rel="preload" href={newsreaderUrl} as="font" type="font/woff2" crossorigin="anonymous" />
     {markdownHref && <link rel="alternate" type="text/markdown" href={new URL(markdownHref, Astro.site ?? Astro.url.origin)} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="MultiPass Rank" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

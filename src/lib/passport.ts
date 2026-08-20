@@ -72,6 +72,9 @@ const SCORED_STATUSES = new Set<AccessStatus>([
   "visa_on_arrival",
 ]);
 
+export const MAX_PASSPORT_SETS = 5;
+export const MAX_PASSPORTS_PER_SET = 10;
+
 export function normalizeCode(value: string): string {
   return value.trim().toUpperCase();
 }
@@ -226,10 +229,10 @@ export function denseRankByScore(scores: Iterable<number>): Map<number, number> 
 }
 
 export function parsePassportSets(values: string[], validCodes: Set<string>): PassportSet[] {
-  return values.slice(0, 5).flatMap((value) => {
+  return values.slice(0, MAX_PASSPORT_SETS).flatMap((value) => {
     const codes = [...new Set(value.split(",").map(normalizeCode))]
       .filter((code) => validCodes.has(code))
-      .slice(0, 5);
+      .slice(0, MAX_PASSPORTS_PER_SET);
     return codes.length > 0 ? [{ codes }] : [];
   });
 }
@@ -260,12 +263,14 @@ export function comparePassportSets(
   manifest: SnapshotManifest,
   details: Record<string, PassportAccess>,
 ): ComparisonResult {
-  if (sets.length === 0 || sets.length > 5) throw new Error("Choose between one and five passport sets");
+  if (sets.length === 0 || sets.length > MAX_PASSPORT_SETS) {
+    throw new Error("Choose between one and five passport sets");
+  }
 
   const summaries = new Map(manifest.passports.map((passport) => [passport.code, passport]));
   for (const set of sets) {
-    if (set.codes.length === 0 || set.codes.length > 5) {
-      throw new Error("Each set must contain between one and five passports");
+    if (set.codes.length === 0 || set.codes.length > MAX_PASSPORTS_PER_SET) {
+      throw new Error("Each set must contain between one and ten passports");
     }
     for (const code of set.codes) {
       if (!summaries.has(code) || !details[code]) throw new Error(`Unknown passport code: ${code}`);

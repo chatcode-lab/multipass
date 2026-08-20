@@ -273,7 +273,7 @@ const serializedInitialSets = JSON.stringify(initialSets).replaceAll("<", "\\u00
       const unrankedSection = explorer.querySelector("[data-unranked-section]");
       if (!search || !count || !empty || !compareBar || !selectedCount || !compare || !combine || !cancel) return;
 
-      const normalizeSet = (codes) => [...new Set(codes.map((code) => String(code).trim().toUpperCase()).filter(Boolean))].slice(0, 5);
+      const normalizeSet = (codes) => [...new Set(codes.map((code) => String(code).trim().toUpperCase()).filter(Boolean))].slice(0, 10);
       const setKey = (codes) => normalizeSet(codes).join(",");
       const parsedInitialSets = initialData ? JSON.parse(initialData.textContent || "[]") : [];
       const initialSets = [...new Map(parsedInitialSets
