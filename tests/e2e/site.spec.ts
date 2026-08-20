@@ -317,7 +317,9 @@ test("AI instructions expose URL, Markdown, and API conventions", async ({ page,
   await page.goto("/ai");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("AI companion");
   await expect(page.getByText("POST /api/v1/compare", { exact: true })).toBeVisible();
-  await expect(page.getByText("https://multipassrank.com/rank?set=US,CA", { exact: true })).toBeVisible();
+  await expect(page.locator("pre").filter({ hasText: "One combined rank" })).toContainText(
+    "https://multipassrank.com/rank?set=US,CA",
+  );
 
   const llms = await request.get("/llms.txt");
   expect(llms.ok()).toBe(true);
