@@ -88,7 +88,7 @@ test("home and visa-free access are equivalent in comparisons", async ({ page })
   const unitedStates = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "United States" });
   await expect(canada.locator("td.comparison-cell--best")).toHaveCount(2);
   await expect(unitedStates.locator("td.comparison-cell--best")).toHaveCount(2);
-  await page.getByRole("checkbox", { name: "Differences only" }).check();
+  await page.getByText("Differences only", { exact: true }).click();
   await expect(canada).toBeHidden();
   await expect(unitedStates).toBeHidden();
 });
