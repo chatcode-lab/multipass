@@ -137,16 +137,12 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
   };
 
   const rwandaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Rwanda" }).first();
-  await rwandaRow.evaluate((element) => {
-    document.documentElement.style.scrollBehavior = "auto";
-    element.scrollIntoView({ block: "center" });
-  });
-  const beforeSelection = await rwandaRow.boundingBox();
+  await rwandaRow.scrollIntoViewIfNeeded();
+  const beforeSelection = await rwandaRow.evaluate((element) => element.offsetTop);
   const { button: rwandaButton } = await selectPassport("Rwanda");
-  const afterSelection = await rwandaRow.boundingBox();
-  expect(beforeSelection).not.toBeNull();
-  expect(afterSelection).not.toBeNull();
-  expect(Math.abs(afterSelection!.y - beforeSelection!.y)).toBeLessThanOrEqual(1);
+  const afterSelection = await rwandaRow.evaluate((element) => element.offsetTop);
+  expect(afterSelection).toBe(beforeSelection);
+  await expect(explorer.locator("[data-ranking-compare-bar]")).toHaveCSS("position", "fixed");
   const viewport = page.viewportSize();
   if (viewport && viewport.width <= 620) {
     const touchTarget = await rwandaButton.boundingBox();
