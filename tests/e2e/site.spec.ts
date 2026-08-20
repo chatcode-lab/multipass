@@ -50,6 +50,24 @@ test("homepage calculator works without a framework-hydrated island", async ({ p
   await expect(builder.getByRole("button", { name: "See combined rank" })).toBeEnabled();
 });
 
+test("inline article links keep readable spacing and the footer groups its navigation", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator(".calculator-explainer p")).toContainText(
+    "scores. See how the ranking works, or explore the exact best pairs and triples",
+  );
+  const footer = page.locator(".site-footer");
+  await expect(footer.getByText("Partner", { exact: true })).toBeVisible();
+  await expect(footer.getByRole("link", { name: "Settlers Club" })).toBeVisible();
+  const articleColumn = footer.locator(".site-footer__column").filter({ hasText: "Articles" });
+  await expect(articleColumn.getByRole("link")).toHaveCount(5);
+  await expect(articleColumn.getByRole("link", { name: "Best passport combinations" })).toBeVisible();
+
+  await page.goto("/data-license");
+  await expect(page.locator(".prose p").filter({ hasText: "original evidence metadata" })).toContainText(
+    "under the Creative Commons Attribution 4.0 International license",
+  );
+});
+
 test("a shared comparison renders scenarios and difference controls", async ({ page }) => {
   await page.goto("/compare?set=BR&set=US");
   await expect(page.getByText("Brazil", { exact: true }).first()).toBeVisible();

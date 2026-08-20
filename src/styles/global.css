@@ -1066,9 +1066,10 @@ main { min-height: 68vh; }
 .freshness--fallback::before { background: #ad792c; }
 
 .site-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(500px, 1.2fr);
+  align-items: start;
+  gap: clamp(48px, 8vw, 110px);
   margin-top: 82px;
   padding: 46px 0 54px;
   border-top: 1px solid var(--line);
@@ -1077,11 +1078,14 @@ main { min-height: 68vh; }
 .site-footer__about { min-width: 0; }
 .brand--footer { font-size: 14px; }
 .brand--footer .brand__mark { width: 20px; height: 24px; transform: scale(.8); transform-origin: left center; }
-.site-footer__links { max-width: 600px; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: start; gap: 12px 24px; }
-.site-footer__links a { color: var(--ink-soft); font-size: 12px; font-weight: 650; text-decoration: none; }
-.site-footer__links a:hover { color: var(--green); text-decoration: underline; }
+.site-footer__nav { display: grid; grid-template-columns: .9fr 1.35fr .8fr; gap: clamp(24px, 4vw, 58px); }
+.site-footer__column { min-width: 0; display: grid; align-content: start; gap: 9px; }
+.site-footer__heading { margin-bottom: 4px; color: var(--ink); font-size: 9px; font-weight: 760; letter-spacing: .1em; text-transform: uppercase; }
+.site-footer__column a { color: var(--ink-soft); font-size: 12px; font-weight: 620; line-height: 1.35; text-decoration: none; }
+.site-footer__column a:hover { color: var(--green); text-decoration: underline; }
 .site-footer__credits { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 24px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .site-footer__credits a { text-decoration: none; }
+.site-footer__credit { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
 .settlers-logo { width: 106px; display: inline-flex; }
 .settlers-logo img { width: 100%; height: auto; display: block; }
 .chatcode-link { color: var(--green); font-size: 13px; font-weight: 760; letter-spacing: -.02em; text-transform: none; }
@@ -1113,6 +1117,8 @@ main { min-height: 68vh; }
   .research-result-card__visual { min-height: 260px; }
   .research-section-heading { grid-template-columns: 1fr; gap: 14px; }
   .calculator-explainer { grid-template-columns: 1fr; align-items: start; }
+  .site-footer { grid-template-columns: 1fr; gap: 40px; }
+  .site-footer__nav { width: min(100%, 640px); }
 }
 
 @media (max-width: 620px) {
@@ -1367,8 +1373,7 @@ main { min-height: 68vh; }
   .source-register li { grid-template-columns: 1fr; gap: 6px; align-content: center; padding-block: 15px; }
   .region-map__canvas { height: 220px; }
   .content-formats a { top: 12px; }
-  .site-footer { display: grid; }
-  .site-footer__links { display: grid; justify-content: start; gap: 8px; }
+  .site-footer__nav { grid-template-columns: minmax(0, .85fr) minmax(0, 1.35fr); gap: 28px 30px; }
   .site-footer__credits { gap: 9px; }
   .settlers-logo { width: 96px; }
   .term-comparison { grid-template-columns: 1fr; }
