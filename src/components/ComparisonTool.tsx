@@ -2,7 +2,7 @@ import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ACCESS_EASE_WEIGHT, STATUS_META } from "@/lib/passport";
 import { comparisonHref, flagEmojiFor, formatRegion, rankHref } from "@/lib/geography";
-import { visaRelationshipHref } from "@/lib/visa-evidence";
+import { destinationSlug, visaRelationshipHref } from "@/lib/visa-evidence";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary, type Region } from "@/lib/types";
 import AccessLegend from "./AccessLegend";
 import PassportCover from "./PassportCover";
@@ -181,13 +181,21 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                       const hasRelativeDifference = bestWeight !== worstWeight;
                       return (
                         <tr key={row.destination.code}>
-                          <th>
-                            <span className="country-flag" aria-hidden="true">{flagEmojiFor(row.destination.code)}</span>
-                            {row.destination.name}
+                          <th className="comparison-destination-cell">
+                            <a className="comparison-destination-link" href={`/destination/${destinationSlug(row.destination)}`}>
+                              <span className="country-flag" aria-hidden="true">{flagEmojiFor(row.destination.code)}</span>
+                              {row.destination.name}
+                            </a>
                           </th>
                           {row.cells.map((cell, index) => {
                             const scenario = result.scenarios[index];
-                            const evidencePassport = byCode.get(cell.via[0] ?? scenario?.codes[0] ?? "");
+                            const evidencePassport = cell.via.length === 1 ? byCode.get(cell.via[0] ?? "") : undefined;
+                            const cellHref = evidencePassport
+                              ? visaRelationshipHref(evidencePassport, row.destination, cell.status)
+                              : `/destination/${destinationSlug(row.destination)}`;
+                            const cellLinkLabel = evidencePassport
+                              ? `${evidencePassport.name} passport to ${row.destination.name}: ${STATUS_META[cell.status].label}`
+                              : `${row.destination.name}: ${STATUS_META[cell.status].label} for ${scenario?.name ?? "combined set"}; ${cell.via.length} passports tie, open destination overview`;
                             const visibleVia = scenario && scenario.codes.length > 1 && cell.via.length < scenario.codes.length
                               ? cell.via
                               : [];
@@ -201,16 +209,19 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                                   ? "comparison-cell--worst"
                                   : undefined;
                             return (
-                              <td className={relativeClass} data-label={result.scenarios[index]?.name} key={`${row.destination.code}-${index}`}>
-                                {evidencePassport ? (
-                                  <a
-                                    className="comparison-status-link"
-                                    href={visaRelationshipHref(evidencePassport, row.destination, cell.status)}
-                                    aria-label={`${evidencePassport.name} passport to ${row.destination.name}: ${STATUS_META[cell.status].label}`}
-                                  >
-                                    <StatusPill status={cell.status} via={visibleVia} compact />
-                                  </a>
-                                ) : <StatusPill status={cell.status} via={visibleVia} compact />}
+                              <td
+                                className={[relativeClass, "comparison-cell--linked"].filter(Boolean).join(" ")}
+                                data-label={result.scenarios[index]?.name}
+                                key={`${row.destination.code}-${index}`}
+                              >
+                                <a
+                                  className="comparison-status-link"
+                                  href={cellHref}
+                                  aria-label={cellLinkLabel}
+                                  title={!evidencePassport ? `${cell.via.length} passports tie; open ${row.destination.name} overview` : undefined}
+                                >
+                                  <StatusPill status={cell.status} via={visibleVia} compact />
+                                </a>
                               </td>
                             );
                           })}

@@ -78,17 +78,16 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
                 {rows.map((destination) => {
                   const destinationStatus = passport.statuses[destination.code] ?? "unknown";
                   return (
-                  <div className="access-row" key={destination.code}>
+                  <a
+                    className="access-row"
+                    href={visaRelationshipHref({ slug: slugifyCountry(passport.name) }, destination, destinationStatus)}
+                    aria-label={`${passport.name} passport to ${destination.name}: ${STATUS_META[destinationStatus].label}`}
+                    key={destination.code}
+                  >
                     <span className="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
                     <strong>{destination.name}</strong>
-                    <a
-                      className="access-row__evidence-link"
-                      href={visaRelationshipHref({ slug: slugifyCountry(passport.name) }, destination, destinationStatus)}
-                      aria-label={`${passport.name} passport to ${destination.name}: ${STATUS_META[destinationStatus].label}`}
-                    >
-                      <StatusPill status={destinationStatus} />
-                    </a>
-                  </div>
+                    <StatusPill status={destinationStatus} />
+                  </a>
                   );
                 })}
               </div>

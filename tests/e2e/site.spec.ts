@@ -146,6 +146,9 @@ test("country access can be narrowed to one destination region", async ({ page }
   await regionFilter.selectOption("EUROPE");
   await expect(page.locator(".region-group")).toHaveCount(1);
   await expect(page.locator(".region-group").getByRole("heading")).toHaveText("Europe");
+  const firstAccessRow = page.locator(".access-row:visible").first();
+  await expect(firstAccessRow).toHaveAttribute("href", /\/(visa-free|eta|visa-on-arrival|evisa|visa)$/);
+  expect(await firstAccessRow.evaluate((element) => element.tagName)).toBe("A");
   const viewport = page.viewportSize();
   if (viewport && viewport.width <= 620) {
     const controls = await page.locator(".access-list__filters").boundingBox();
@@ -502,8 +505,27 @@ test("passport and comparison status cells link to relationship evidence", async
 
   await page.goto("/compare?set=BE&set=AF");
   const angolaRow = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "Angola" });
-  await expect(angolaRow.getByRole("link", { name: "Belgium passport to Angola: Visa-free" }))
+  const statusCell = angolaRow.locator("td").first();
+  const statusLink = statusCell.getByRole("link", { name: "Belgium passport to Angola: Visa-free" });
+  await expect(statusLink)
     .toHaveAttribute("href", "/belgium-angola-visa-free");
+  await expect(angolaRow.getByRole("link", { name: "Angola" })).toHaveAttribute("href", "/destination/angola");
+  const cellTarget = await statusCell.evaluate((cell) => {
+    const link = cell.querySelector("a");
+    const pseudo = link ? getComputedStyle(link, "::after") : null;
+    return { position: getComputedStyle(cell).position, inset: pseudo?.inset, content: pseudo?.content };
+  });
+  expect(cellTarget.position).toBe("relative");
+  expect(cellTarget.inset).toBe("0px");
+  expect(cellTarget.content).not.toBe("none");
+
+  await page.goto("/compare?set=PT,RU,IL&set=AF");
+  const tiedAngolaCell = page.locator(".comparison-table tbody tr:not(.comparison-table__region)")
+    .filter({ hasText: "Angola" })
+    .locator("td")
+    .first();
+  await expect(tiedAngolaCell.getByRole("link", { name: /3 passports tie, open destination overview/ }))
+    .toHaveAttribute("href", "/destination/angola");
 });
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {
