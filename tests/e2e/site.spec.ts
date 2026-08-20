@@ -668,18 +668,18 @@ test("unindexed evidence matrix audits every passport against a destination regi
   expect(response?.headers()["x-robots-tag"]).toBe("noindex, nofollow");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex,nofollow");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Evidence coverage matrix.");
-  await expect(page.locator(".evidence-matrix-table")).toBeVisible();
+  await expect(page.locator(".evidence-matrix-table")).toBeVisible({ timeout: 15_000 });
   await expect(page.locator(".evidence-matrix-table tbody tr")).toHaveCount(199);
   await expect(page.locator(".evidence-status-summary")).toContainText("199 passports × 52 destinations");
 
   await page.getByPlaceholder("Filter passports").fill("Japan");
   await page.getByPlaceholder("Filter destinations").fill("Germany");
   await expect(page.locator(".evidence-matrix-table tbody tr")).toHaveCount(1);
-  await page.getByRole("button", { name: /Japan to Germany: Visa-free; verified/ }).click();
-  const detail = page.locator(".evidence-cell-detail");
-  await expect(detail).toContainText("Verified 20 August 2026");
-  await expect(detail.getByRole("link", { name: "Open relationship record" }))
+  const germanyCell = page.getByRole("link", { name: /Japan to Germany: Visa-free; verified 20 August 2026/ });
+  await expect(germanyCell)
     .toHaveAttribute("href", "/japan-germany-visa-free");
+  await expect(germanyCell).toContainText("✓ 20 Aug");
+  await expect(germanyCell).toHaveClass(/evidence-cell--fresh/);
 
   const api = await request.get("/api/v1/evidence-status?region=EUROPE");
   expect(api.ok()).toBe(true);

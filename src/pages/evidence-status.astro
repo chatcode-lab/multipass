@@ -18,7 +18,7 @@ const regionCounts = Object.fromEntries(REGIONS.map((region) => [
   region,
   manifest.destinations.filter((destination) => destination.region === region).length,
 ])) as Record<Region, number>;
-const checkedDate = new Intl.DateTimeFormat("en", {
+const checkedDate = new Intl.DateTimeFormat("en-GB", {
   day: "numeric",
   month: "long",
   year: "numeric",

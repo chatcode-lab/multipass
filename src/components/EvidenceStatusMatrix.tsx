@@ -1,4 +1,4 @@
-import { ExternalLink, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import type { EvidenceStatusCell, EvidenceStatusRegion } from "@/lib/evidence-status";
 import { formatRegion } from "@/lib/geography";
@@ -6,17 +6,12 @@ import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Region } from "@/lib/
 import "@/styles/evidence-status.css";
 
 type VerificationFilter = "all" | "verified" | "pending";
+type EvidenceFreshness = "pending" | "stale" | "aging" | "recent" | "fresh";
 
 interface EvidenceStatusMatrixProps {
   initialRegion: Region;
   initialFilter: VerificationFilter;
   regionCounts: Record<Region, number>;
-}
-
-interface SelectedCell {
-  passport: EvidenceStatusRegion["passports"][number];
-  destination: EvidenceStatusRegion["destinations"][number];
-  cell: EvidenceStatusCell;
 }
 
 const STATUS_LABELS: Record<AccessStatus, string> = {
@@ -50,7 +45,7 @@ const STATUS_SLUGS: Record<AccessStatus, string> = {
 };
 
 function formatDate(value: string, compact = false): string {
-  return new Intl.DateTimeFormat("en", {
+  return new Intl.DateTimeFormat("en-GB", {
     day: "numeric",
     month: compact ? "short" : "long",
     year: compact ? undefined : "numeric",
@@ -58,16 +53,40 @@ function formatDate(value: string, compact = false): string {
   }).format(new Date(`${value}T00:00:00Z`));
 }
 
-function relationshipHref(selected: SelectedCell): string {
-  const [status] = selected.cell;
-  if (status === "citizenship") return `/passport/${selected.passport.slug}`;
-  return `/${selected.passport.slug}-${selected.destination.slug}-${STATUS_SLUGS[status]}`;
+function relationshipHref(
+  passport: EvidenceStatusRegion["passports"][number],
+  destination: EvidenceStatusRegion["destinations"][number],
+  cell: EvidenceStatusCell,
+): string {
+  const [status] = cell;
+  if (status === "citizenship") return `/passport/${passport.slug}`;
+  return `/${passport.slug}-${destination.slug}-${STATUS_SLUGS[status]}`;
 }
 
 function cellMatchesFilter(cell: EvidenceStatusCell, filter: VerificationFilter): boolean {
   if (filter === "all") return true;
   return filter === "verified" ? cell[1] === 1 : cell[1] === 0;
 }
+
+function evidenceFreshness(reviewedAt: string | undefined, asOf: string): EvidenceFreshness {
+  if (!reviewedAt) return "pending";
+  const millisecondsPerDay = 86_400_000;
+  const ageInDays = Math.max(0, Math.floor(
+    (Date.parse(`${asOf}T00:00:00Z`) - Date.parse(`${reviewedAt}T00:00:00Z`)) / millisecondsPerDay,
+  ));
+  if (ageInDays <= 30) return "fresh";
+  if (ageInDays <= 90) return "recent";
+  if (ageInDays <= 180) return "aging";
+  return "stale";
+}
+
+const FRESHNESS_LABELS: Record<EvidenceFreshness, string> = {
+  pending: "not verified",
+  stale: "verified more than 180 days ago",
+  aging: "verified 91–180 days ago",
+  recent: "verified 31–90 days ago",
+  fresh: "verified within 30 days",
+};
 
 export default function EvidenceStatusMatrix({
   initialRegion,
@@ -79,7 +98,6 @@ export default function EvidenceStatusMatrix({
   const [passportQuery, setPassportQuery] = useState("");
   const [destinationQuery, setDestinationQuery] = useState("");
   const [matrix, setMatrix] = useState<EvidenceStatusRegion | null>(null);
-  const [selected, setSelected] = useState<SelectedCell | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [requestKey, setRequestKey] = useState(0);
 
@@ -153,7 +171,6 @@ export default function EvidenceStatusMatrix({
             onClick={() => {
               if (region === value) return;
               setMatrix(null);
-              setSelected(null);
               setError(null);
               setRegion(value);
             }}
@@ -193,25 +210,6 @@ export default function EvidenceStatusMatrix({
           <span>{visibleRows.length} passports × {visibleDestinationIndexes.length} destinations</span>
           <span>Access checked {formatDate(matrix.checkedAt.slice(0, 10))}</span>
         </div>
-      )}
-
-      {selected && matrix && (
-        <aside className="evidence-cell-detail" aria-live="polite">
-          <div>
-            <span className="eyebrow">Selected relationship</span>
-            <h2>{selected.passport.name} → {selected.destination.name}</h2>
-          </div>
-          <dl>
-            <div><dt>Access</dt><dd>{STATUS_LABELS[selected.cell[0]]}</dd></div>
-            <div>
-              <dt>Evidence</dt>
-              <dd>{selected.cell[1] ? `Verified ${formatDate(matrix.dates[selected.cell[2]])}` : "Official-source review pending"}</dd>
-            </div>
-            <div><dt>Policies</dt><dd>{selected.cell[3]}</dd></div>
-            <div><dt>Sources</dt><dd>{selected.cell[4]}</dd></div>
-          </dl>
-          <a href={relationshipHref(selected)}>Open relationship record <ExternalLink size={14} aria-hidden="true" /></a>
-        </aside>
       )}
 
       {error && (
@@ -258,21 +256,20 @@ export default function EvidenceStatusMatrix({
                     const destination = matrix.destinations[index];
                     const cell = row.cells[index];
                     const reviewedAt = cell[1] ? matrix.dates[cell[2]] : undefined;
+                    const freshness = evidenceFreshness(reviewedAt, matrix.asOf);
                     const matches = cellMatchesFilter(cell, verificationFilter);
-                    const isSelected = selected?.passport.code === passport.code && selected.destination.code === destination.code;
-                    const label = `${passport.name} to ${destination.name}: ${STATUS_LABELS[cell[0]]}; ${reviewedAt ? `verified ${formatDate(reviewedAt)}` : "official-source review pending"}`;
+                    const label = `${passport.name} to ${destination.name}: ${STATUS_LABELS[cell[0]]}; ${reviewedAt ? `verified ${formatDate(reviewedAt)} from ${cell[4]} official ${cell[4] === 1 ? "source" : "sources"}; ${FRESHNESS_LABELS[freshness]}` : "official-source review pending"}. Open evidence record`;
                     return (
                       <td className={!matches ? "is-muted" : undefined} key={destination.code}>
-                        <button
-                          type="button"
-                          className={`evidence-cell evidence-cell--${cell[1] ? "verified" : "pending"} evidence-cell--${cell[0]}${isSelected ? " is-selected" : ""}`}
+                        <a
+                          href={relationshipHref(passport, destination, cell)}
+                          className={`evidence-cell evidence-cell--${freshness} evidence-cell--${cell[0]}`}
                           aria-label={label}
                           title={label}
-                          onClick={() => setSelected({ passport, destination, cell })}
                         >
                           <strong>{STATUS_SHORT_LABELS[cell[0]]}</strong>
                           <small>{reviewedAt ? `✓ ${formatDate(reviewedAt, true)}` : "Pending"}</small>
-                        </button>
+                        </a>
                       </td>
                     );
                   })}
@@ -284,8 +281,11 @@ export default function EvidenceStatusMatrix({
       )}
 
       <div className="evidence-status-legend" aria-label="Matrix legend">
-        <span><i className="verification-key verification-key--verified" /><strong>Verified</strong> — an active policy and official source support the current access status.</span>
-        <span><i className="verification-key verification-key--pending" /><strong>Pending</strong> — the current status has not yet been supported by active canonical evidence.</span>
+        <span><i className="verification-key verification-key--fresh" /><strong>0–30 days</strong> — freshly verified</span>
+        <span><i className="verification-key verification-key--recent" /><strong>31–90 days</strong> — recently verified</span>
+        <span><i className="verification-key verification-key--aging" /><strong>91–180 days</strong> — review becoming due</span>
+        <span><i className="verification-key verification-key--stale" /><strong>181+ days</strong> — stale verification</span>
+        <span><i className="verification-key verification-key--pending" /><strong>Red</strong> — no active canonical evidence yet</span>
         <span>Cell abbreviations: {ACCESS_STATUSES.map((status) => `${STATUS_SHORT_LABELS[status]} = ${STATUS_LABELS[status]}`).join(" · ")}</span>
       </div>
     </div>
