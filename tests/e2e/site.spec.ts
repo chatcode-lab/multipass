@@ -137,7 +137,10 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
   };
 
   const rwandaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Rwanda" }).first();
-  await rwandaRow.evaluate((element) => element.scrollIntoView({ block: "center" }));
+  await rwandaRow.evaluate((element) => {
+    document.documentElement.style.scrollBehavior = "auto";
+    element.scrollIntoView({ block: "center" });
+  });
   const beforeSelection = await rwandaRow.boundingBox();
   const { button: rwandaButton } = await selectPassport("Rwanda");
   const afterSelection = await rwandaRow.boundingBox();
