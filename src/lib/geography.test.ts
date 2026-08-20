@@ -5,6 +5,7 @@ import {
   getFriendlyComparison,
   getPassportCollection,
   getPopularComparison,
+  rankHref,
   UNTRACKED_DESTINATIONS,
 } from "./geography";
 
@@ -39,6 +40,11 @@ describe("comparison URLs", () => {
   it("keeps arbitrary and combined comparisons on the query route", () => {
     expect(comparisonHref([["DE"], ["JP"]])).toBe("/compare?set=DE&set=JP");
     expect(comparisonHref([["US", "CA"], ["PT"]])).toBe("/compare?set=US%2CCA&set=PT");
+  });
+
+  it("builds custom ranking URLs with the same set convention", () => {
+    expect(rankHref([["US", "CA"], ["PT"]])).toBe("/rank?set=US%2CCA&set=PT");
+    expect(rankHref([])).toBe("/rank");
   });
 
   it("resolves legacy slugs to the current canonical comparison", () => {

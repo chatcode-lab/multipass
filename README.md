@@ -63,6 +63,8 @@ The `multipass-data-sync` Worker stages ten passport records per invocation. Fou
 
 The public application reads KV in its Worker runtime. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
 
+Shareable tools use the same URL convention: each `set` query parameter is one option, and comma-separated codes form a combined option. `/compare?set=US,CA&set=PT` compares destination access; `/rank?set=US,CA&set=PT` places both options into the global ranking. Add `.md` before the query string for a text-first version.
+
 ## Catalog coverage
 
 The global ranking contains 199 passport issuers, while access calculations use 227 destinations. The ranking footer lists tracked destinations for which the upstream source provides no separate passport record; MultiPass Rank does not invent ranks for them.

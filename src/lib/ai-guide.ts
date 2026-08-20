@@ -20,9 +20,17 @@ MultiPass Rank provides current, structured passport-access information for assi
 
 Add \`.md\` before the query string for a text-first result: \`${absoluteUrl("/compare.md?set=US,CA&set=PT")}\`.
 
+## Build custom ranking URLs
+
+- Place one combined set in the global ranking: \`${absoluteUrl("/rank?set=US,CA")}\`
+- Place multiple options in one ranking: \`${absoluteUrl("/rank?set=US,CA&set=PT")}\`
+- The same limits and \`set\` convention apply to ranking and comparison URLs.
+- Markdown: \`${absoluteUrl("/rank.md?set=US,CA&set=PT")}\`
+
 ## Read pages as Markdown
 
 - Global ranking: [index.md](${absoluteUrl("/index.md")})
+- Custom combined ranking: \`${absoluteUrl("/rank.md?set=US,CA")}\`
 - Country detail: \`${absoluteUrl("/passport/portugal.md")}\`
 - Regional ranking: \`${absoluteUrl("/europe.md")}\`
 - Destination directory: [destinations.md](${absoluteUrl("/destinations.md")})

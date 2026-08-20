@@ -46,7 +46,8 @@ test("homepage calculator works without a framework-hydrated island", async ({ p
   await input.fill("Brazil");
   await builder.getByRole("option", { name: /Brazil/ }).click();
   await expect(builder.locator("input[name='set']")).toHaveValue("PT,BR");
-  await expect(builder.getByRole("button", { name: "See access" })).toBeEnabled();
+  await expect(builder).toHaveAttribute("action", "/rank");
+  await expect(builder.getByRole("button", { name: "See combined rank" })).toBeEnabled();
 });
 
 test("a shared comparison renders scenarios and difference controls", async ({ page }) => {
@@ -60,6 +61,7 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await expect(page.locator(".comparison-table__region")).toContainText("Europe");
   await expect(page.locator("td.comparison-cell--best").first()).toBeVisible();
   await expect(page.locator("td.comparison-cell--worst").first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "View ranking" })).toHaveAttribute("href", "/rank?set=BR&set=US");
   await expect(page.getByRole("heading", { name: "What the labels mean" })).toBeVisible();
   await expect(page.getByRole("link", { name: "eVisa vs ETA explained" })).toBeVisible();
   const tableViewport = await page.locator(".comparison-table-wrap").evaluate((element) => ({
@@ -128,7 +130,7 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
   const selectPassport = async (name: string) => {
     const row = explorer.locator("[data-passport-row]").filter({ hasText: name }).first();
     const button = row.locator("[data-ranking-select]");
-    await expect(button).toHaveAttribute("aria-label", `Add ${name} to comparison`);
+    await expect(button).toHaveAttribute("aria-label", `Select ${name} for passport tools`);
     const viewport = page.viewportSize();
     if (viewport && viewport.width > 620) await row.hover();
     await button.click();
@@ -151,7 +153,8 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
     expect(touchTarget!.height).toBeGreaterThanOrEqual(44);
   }
   await expect(explorer.locator("[data-ranking-compare-bar]")).toBeVisible();
-  await expect(explorer.getByRole("button", { name: "Select one more" })).toBeDisabled();
+  await expect(explorer.getByRole("button", { name: "Compare 1" })).toBeEnabled();
+  await expect(explorer.getByRole("button", { name: "Combine 1" })).toBeEnabled();
   const tanzaniaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Tanzania" }).first();
   await tanzaniaRow.locator(".ranking-row__link").click();
   await expect(page).toHaveURL(/\/$/);
@@ -163,10 +166,53 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
     await selectPassport(name);
   }
   await expect(explorer.locator("[data-ranking-selected-count]")).toHaveText("5");
-  await expect(explorer.getByRole("button", { name: "Add Brazil to comparison" })).toBeDisabled();
+  await expect(explorer.getByRole("button", { name: "Select Brazil for passport tools" })).toBeDisabled();
   await explorer.getByRole("button", { name: "Compare 5" }).click();
   await expect(page).toHaveURL(/\/compare\?set=SG&set=JP&set=KR&set=AE&set=DK$/);
   await expect(page.locator(".scenario-card")).toHaveCount(5);
+});
+
+test("ranking selections can create a combined rank", async ({ page }) => {
+  await page.goto("/");
+  const explorer = page.locator("[data-ranking-explorer]");
+  for (const name of ["Brazil", "Portugal"]) {
+    const row = explorer.locator("[data-passport-row]").filter({ hasText: name }).first();
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width > 620) await row.hover();
+    await row.locator("[data-ranking-select]").click();
+  }
+  await explorer.getByRole("button", { name: "Combine 2" }).click();
+  await expect(page).toHaveURL(/\/rank\?set=BR%2CPT$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Brazil + Portugal");
+  await expect(page.locator("[data-combination-row]")).toHaveCount(1);
+  await expect(page.locator("[data-combination-row]")).toContainText("equivalent");
+});
+
+test("custom ranking preserves and reuses passport sets", async ({ page, request }) => {
+  await page.goto("/rank?set=US,CA&set=PT");
+  await expect(page.locator(".rank-set-summary")).toContainText("United States + Canada");
+  await expect(page.locator("[data-combination-row]")).toHaveCount(1);
+  await expect(page.locator("[data-passport-row][data-set='PT']")).toHaveClass(/is-featured/);
+  await expect(page.getByRole("link", { name: "Compare destination access" })).toHaveAttribute("href", "/compare?set=US%2CCA&set=PT");
+
+  const ranks = await page.locator(".ranking-table__list > li .ranking-row__rank").allTextContents();
+  const numericRanks = ranks.map((rank) => Number(rank.match(/#(\d+)/)?.[1]));
+  expect(numericRanks).toEqual([...numericRanks].sort((first, second) => first - second));
+
+  const combination = page.locator("[data-combination-row]");
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width > 620) await combination.hover();
+  await combination.locator("[data-ranking-select]").click();
+  await expect(page.locator("[data-ranking-selected-count]")).toHaveText("2");
+  await page.getByRole("button", { name: "Combine 3" }).click();
+  await expect(page).toHaveURL(/\/rank\?set=US%2CCA%2CPT$/);
+
+  const markdown = await request.get("/rank.md?set=US,CA&set=PT");
+  expect(markdown.ok()).toBe(true);
+  const markdownBody = await markdown.text();
+  expect(markdownBody).toContain("# Custom passport and combination ranking");
+  expect(markdownBody).toContain("Combined set 1");
+  expect(markdownBody).toContain("/compare?set=US%2CCA&set=PT");
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {
@@ -249,6 +295,7 @@ test("regional, language, and indexed comparison pages render useful content", a
   expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/arabic</loc>");
   expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/french</loc>");
   expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/portuguese</loc>");
+  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/rank</loc>");
 
   await page.goto("/compare/us-vs-uk");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("US vs UK");
@@ -270,6 +317,7 @@ test("AI instructions expose URL, Markdown, and API conventions", async ({ page,
   await page.goto("/ai");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("AI companion");
   await expect(page.getByText("POST /api/v1/compare", { exact: true })).toBeVisible();
+  await expect(page.getByText("https://multipassrank.com/rank?set=US,CA", { exact: true })).toBeVisible();
 
   const llms = await request.get("/llms.txt");
   expect(llms.ok()).toBe(true);

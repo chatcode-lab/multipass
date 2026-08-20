@@ -454,7 +454,8 @@ main { min-height: 68vh; }
 .ranking-row__passport { display: flex; gap: 16px; align-items: center; min-width: 0; }
 .ranking-row__passport > span:last-child { display: grid; min-width: 0; }
 .ranking-row__passport strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 17px; }
-.ranking-row__passport small { color: var(--ink-soft); font-size: 11px; letter-spacing: .1em; }
+.ranking-row__passport small { overflow: hidden; color: var(--ink-soft); font-size: 11px; letter-spacing: .1em; text-overflow: ellipsis; white-space: nowrap; }
+.ranking-row__passport small b { color: var(--burgundy); font-weight: 760; }
 .ranking-row__region { color: var(--ink-soft); font-size: 13px; text-transform: capitalize; }
 .ranking-row__score { display: grid; line-height: 1.1; }
 .ranking-row__score strong { color: var(--green); font-family: var(--serif); font-size: 27px; }
@@ -492,6 +493,10 @@ main { min-height: 68vh; }
 .ranking-row:focus-within .ranking-row__arrow,
 .ranking-explorer.is-selecting .ranking-row__arrow { opacity: 0; }
 .ranking-row__select-check { display: none; }
+.ranking-table__list > li.is-featured .ranking-row { background: #f7efe8; box-shadow: inset 3px 0 var(--burgundy); }
+.ranking-table__list > li.is-featured .ranking-row__rank,
+.ranking-table__list > li.is-featured .ranking-row__score strong { color: var(--burgundy); }
+.ranking-row--combination { border-top-color: #cfb8a5; }
 .ranking-table__list > li.is-selected .ranking-row { background: var(--green-tint); box-shadow: inset 3px 0 var(--green); }
 .ranking-table__list > li.is-selected .ranking-row__select { background: var(--green); color: var(--white); }
 .ranking-table__list > li.is-selected .ranking-row__select-add { display: none; }
@@ -503,7 +508,7 @@ main { min-height: 68vh; }
   z-index: 12;
   top: max(8px, env(safe-area-inset-top));
   left: 50%;
-  width: min(620px, calc(100vw - 28px));
+  width: min(720px, calc(100vw - 28px));
   min-height: 56px;
   display: flex;
   align-items: center;
@@ -524,8 +529,11 @@ main { min-height: 68vh; }
 .ranking-compare-bar__actions { display: flex; align-items: center; gap: 6px; }
 .ranking-compare-bar button { min-height: 36px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 0; font-size: 11px; font-weight: 720; cursor: pointer; }
 .ranking-compare-bar__cancel { padding: 0 10px; background: transparent; color: var(--white); }
-.ranking-compare-bar__submit { min-width: 100px; padding: 0 14px; background: var(--white); color: var(--green); }
-.ranking-compare-bar__submit:disabled { opacity: .52; cursor: not-allowed; }
+.ranking-compare-bar__compare,
+.ranking-compare-bar__combine { min-width: 100px; padding: 0 14px; }
+.ranking-compare-bar__compare { border: 1px solid rgb(255 255 255 / 42%) !important; background: transparent; color: var(--white); }
+.ranking-compare-bar__combine { background: var(--white); color: var(--green); }
+.ranking-compare-bar button:disabled { opacity: .52; cursor: not-allowed; }
 .coverage-disclosure {
   margin-top: 46px;
   padding: 28px;
@@ -613,8 +621,15 @@ main { min-height: 68vh; }
 .page-intro { padding: 82px 0 48px; }
 .page-intro h1 { max-width: 920px; font-size: clamp(52px, 7vw, 92px); }
 .page-intro p { max-width: 690px; margin: 0; color: var(--ink-soft); font-size: 20px; }
-.page-intro--compare h1 { max-width: 780px; font-size: clamp(48px, 5.8vw, 76px); }
+.page-intro--compare h1,
+.page-intro--rank h1 { max-width: 780px; font-size: clamp(48px, 5.8vw, 76px); }
 .page-intro--directory h1 { max-width: 900px; font-size: clamp(52px, 6vw, 82px); }
+.rank-page-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.rank-set-summary { display: flex; flex-wrap: wrap; gap: 8px; margin: -6px 0 24px; }
+.rank-set-summary > span { min-width: 210px; flex: 1 1 230px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; min-height: 48px; padding: 9px 13px; border: 1px solid var(--line); background: rgb(255 253 248 / 70%); font-size: 12px; }
+.rank-set-summary b { color: var(--burgundy); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.rank-set-summary span span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rank-set-summary strong { color: var(--green); font-family: var(--serif); font-size: 22px; }
 .popular-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 25px; }
 .popular-links > span { margin-right: 2px; color: var(--ink-soft); font-size: 11px; font-weight: 650; text-transform: uppercase; letter-spacing: .08em; }
 
@@ -650,7 +665,7 @@ main { min-height: 68vh; }
 
 .comparison-toolbar {
   display: grid;
-  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 12px 18px;
   margin: 22px 0 12px;
@@ -943,10 +958,12 @@ main { min-height: 68vh; }
     transform: none;
   }
   .ranking-row__select > span { display: none; }
-  .ranking-compare-bar { top: max(6px, env(safe-area-inset-top)); padding-left: 13px; }
+  .ranking-compare-bar { top: max(6px, env(safe-area-inset-top)); gap: 7px; padding-left: 11px; }
+  .ranking-compare-bar > span { white-space: nowrap; }
   .ranking-compare-bar__cancel { width: 36px; padding: 0; }
   .ranking-compare-bar__cancel span { display: none; }
-  .ranking-compare-bar__submit { min-width: 96px; }
+  .ranking-compare-bar__compare,
+  .ranking-compare-bar__combine { min-width: 74px; padding-inline: 9px; }
   .coverage-disclosure { margin-top: 34px; padding: 20px 16px; }
   .coverage-disclosure__grid { grid-template-columns: 1fr; }
   .coverage-disclosure__grid strong { white-space: normal; }
@@ -954,6 +971,8 @@ main { min-height: 68vh; }
   .page-intro { padding-top: 58px; }
   .page-intro h1 { font-size: 53px; }
   .page-intro p { font-size: 17px; }
+  .rank-page-actions .button { flex: 1 1 auto; }
+  .rank-set-summary > span { min-width: 0; flex-basis: 100%; }
   .agent-guide pre { margin-inline: -4px; padding: 18px; }
   .scenario-card { min-height: 190px; padding: 22px; }
   .comparison-toolbar {

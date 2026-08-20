@@ -1,7 +1,7 @@
 import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ACCESS_EASE_WEIGHT, STATUS_META } from "@/lib/passport";
-import { comparisonHref, flagEmojiFor, formatRegion } from "@/lib/geography";
+import { comparisonHref, flagEmojiFor, formatRegion, rankHref } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary, type Region } from "@/lib/types";
 import AccessLegend from "./AccessLegend";
 import PassportCover from "./PassportCover";
@@ -148,6 +148,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
               </select>
             </label>
             <span className="comparison-toolbar__count" aria-live="polite">{visibleRows.length} destinations shown</span>
+            <a className="button button--quiet" href={rankHref(validSets)}>View ranking</a>
             <button type="button" className="button button--quiet" onClick={copyLink}>
               {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? "Copied" : "Copy link"}
             </button>

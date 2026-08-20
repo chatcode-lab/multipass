@@ -304,6 +304,14 @@ export function comparisonHref(sets: readonly (readonly string[])[]): string {
   return params.size ? `/compare?${params.toString()}` : "/compare";
 }
 
+export function rankHref(sets: readonly (readonly string[])[]): string {
+  const params = new URLSearchParams();
+  for (const set of sets) {
+    if (set.length) params.append("set", set.map((code) => code.toUpperCase()).join(","));
+  }
+  return params.size ? `/rank?${params.toString()}` : "/rank";
+}
+
 export function collectionForRegion(region: Region): PassportCollection | undefined {
   return PASSPORT_COLLECTIONS.find((collection) => collection.region === region);
 }

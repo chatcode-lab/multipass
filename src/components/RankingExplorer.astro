@@ -1,7 +1,7 @@
 ---
 import PassportCover from "./PassportCover";
-import { flagEmojiFor, formatRegion } from "@/lib/geography";
-import { REGIONS, type Destination, type PassportSummary } from "@/lib/types";
+import { comparisonHref, flagEmojiFor, formatRegion } from "@/lib/geography";
+import { REGIONS, type Destination, type PassportSummary, type ScenarioSummary } from "@/lib/types";
 
 interface Props {
   passports: PassportSummary[];
@@ -9,6 +9,8 @@ interface Props {
   showRegionFilter?: boolean;
   listLabel?: string;
   unranked?: Destination[];
+  scenarios?: ScenarioSummary[];
+  initialSets?: string[][];
 }
 
 const {
@@ -17,7 +19,43 @@ const {
   showRegionFilter = true,
   listLabel = "Global passport ranking",
   unranked = [],
+  scenarios = [],
+  initialSets = [],
 } = Astro.props;
+
+const passportByCode = new Map(passports.map((passport) => [passport.code, passport]));
+const featuredSingletons = new Map<string, number[]>();
+scenarios.forEach((scenario, index) => {
+  if (scenario.codes.length !== 1) return;
+  const code = scenario.codes[0];
+  featuredSingletons.set(code, [...(featuredSingletons.get(code) ?? []), index + 1]);
+});
+
+type RankingEntry =
+  | { kind: "passport"; rank: number; mobilityScore: number; passport: PassportSummary }
+  | { kind: "scenario"; rank: number; mobilityScore: number; scenario: ScenarioSummary; scenarioIndex: number; regions: string[] };
+
+const combinedEntries: RankingEntry[] = scenarios.flatMap((scenario, index) => scenario.codes.length > 1 ? [{
+  kind: "scenario" as const,
+  rank: scenario.rankEquivalent,
+  mobilityScore: scenario.mobilityScore,
+  scenario,
+  scenarioIndex: index,
+  regions: [...new Set(scenario.codes.map((code) => passportByCode.get(code)?.region).filter(Boolean) as string[])],
+}] : []);
+const rankingEntries: RankingEntry[] = [
+  ...passports.map((passport) => ({ kind: "passport" as const, rank: passport.rank, mobilityScore: passport.mobilityScore, passport })),
+  ...combinedEntries,
+].sort((first, second) =>
+  first.rank - second.rank ||
+  second.mobilityScore - first.mobilityScore ||
+  (first.kind === second.kind ? 0 : first.kind === "scenario" ? -1 : 1) ||
+  (first.kind === "passport" ? first.passport.name : first.scenario.name).localeCompare(
+    second.kind === "passport" ? second.passport.name : second.scenario.name,
+  ),
+);
+const customCount = combinedEntries.length;
+const serializedInitialSets = JSON.stringify(initialSets).replaceAll("<", "\\u003c");
 ---
 
 <div class="ranking-explorer" data-ranking-explorer>
@@ -39,10 +77,12 @@ const {
         </select>
       </label>
     )}
-    <span class="result-count" aria-live="polite" data-ranking-count>{passports.length} passports</span>
+    <span class="result-count" aria-live="polite" data-ranking-count>
+      {passports.length} passports{customCount > 0 ? ` + ${customCount} ${customCount === 1 ? "set" : "sets"}` : ""}
+    </span>
   </div>
   <div class="ranking-compare-bar" data-ranking-compare-bar hidden>
-    <span aria-live="polite"><strong data-ranking-selected-count>0</strong> of 5 selected</span>
+    <span aria-live="polite"><strong data-ranking-selected-count>0</strong><span> selected</span></span>
     <div class="ranking-compare-bar__actions">
       <button class="ranking-compare-bar__cancel" type="button" data-ranking-cancel aria-label="Cancel">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -51,7 +91,8 @@ const {
         </svg>
         <span>Cancel</span>
       </button>
-      <button class="ranking-compare-bar__submit" type="button" data-ranking-compare disabled>Select one more</button>
+      <button class="ranking-compare-bar__compare" type="button" data-ranking-compare disabled>Compare</button>
+      <button class="ranking-compare-bar__combine" type="button" data-ranking-combine disabled>Combine</button>
     </div>
   </div>
   <div class="ranking-table">
@@ -63,53 +104,119 @@ const {
       <span class="sr-only">Actions</span>
     </div>
     <ol class="ranking-table__list" aria-label={listLabel}>
-      {passports.map((passport, index) => (
-        <li
-          data-passport-row
-          data-name={passport.name.toLowerCase()}
-          data-passport-name={passport.name}
-          data-code={passport.code.toLowerCase()}
-          data-region={passport.region}
-        >
-          <div class="ranking-row">
-            <a class="ranking-row__link" href={`/passport/${passport.slug}`} aria-label={`View ${passport.name} passport details`}></a>
-            <strong class="ranking-row__rank">
-              #{scoped ? index + 1 : passport.rank}
-              {scoped && <small>global #{passport.rank}</small>}
-            </strong>
-            <span class="ranking-row__passport">
-              <PassportCover codes={[passport.code]} names={[passport.name]} size="small" />
-              <span><strong>{passport.name}</strong><small>{passport.code}</small></span>
-            </span>
-            <span class="ranking-row__region">{formatRegion(passport.region)}</span>
-            <span class="ranking-row__score"><strong>{passport.mobilityScore}</strong><small>destinations</small></span>
-            <span class="ranking-row__actions">
-              <svg class="ranking-row__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 17 17 7"></path>
-                <path d="M7 7h10v10"></path>
-              </svg>
-              <button
-                class="ranking-row__select"
-                type="button"
-                data-ranking-select
-                aria-label={`Add ${passport.name} to comparison`}
-                aria-pressed="false"
-              >
-                <svg class="ranking-row__select-add" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                  <path d="M12 5v14"></path>
-                  <path d="M5 12h14"></path>
+      {rankingEntries.map((entry) => entry.kind === "passport" ? (() => {
+        const { passport } = entry;
+        const featuredSets = featuredSingletons.get(passport.code) ?? [];
+        const featuredLabel = featuredSets.length
+          ? `${featuredSets.length === 1 ? "Set" : "Sets"} ${featuredSets.join(", ")}`
+          : "";
+        return (
+          <li
+            class:list={[featuredSets.length > 0 && "is-featured"]}
+            data-ranking-selectable
+            data-passport-row
+            data-name={passport.name.toLowerCase()}
+            data-passport-name={passport.name}
+            data-display-name={passport.name}
+            data-set={passport.code}
+            data-code={passport.code.toLowerCase()}
+            data-region={passport.region}
+            data-regions={passport.region}
+          >
+            <div class="ranking-row">
+              <a class="ranking-row__link" href={`/passport/${passport.slug}`} aria-label={`View ${passport.name} passport details`}></a>
+              <strong class="ranking-row__rank">
+                #{scoped ? passports.findIndex((candidate) => candidate.code === passport.code) + 1 : passport.rank}
+                {scoped && <small>global #{passport.rank}</small>}
+              </strong>
+              <span class="ranking-row__passport">
+                <PassportCover codes={[passport.code]} names={[passport.name]} size="small" />
+                <span>
+                  <strong>{passport.name}</strong>
+                  <small>{passport.code}{featuredLabel && <b> · {featuredLabel}</b>}</small>
+                </span>
+              </span>
+              <span class="ranking-row__region">{formatRegion(passport.region)}</span>
+              <span class="ranking-row__score"><strong>{passport.mobilityScore}</strong><small>destinations</small></span>
+              <span class="ranking-row__actions">
+                <svg class="ranking-row__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M7 7h10v10"></path>
                 </svg>
-                <svg class="ranking-row__select-check" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="m5 12 4 4L19 6"></path>
+                <button
+                  class="ranking-row__select"
+                  type="button"
+                  data-ranking-select
+                  aria-label={`Select ${passport.name} for passport tools`}
+                  aria-pressed="false"
+                >
+                  <svg class="ranking-row__select-add" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14"></path>
+                    <path d="M5 12h14"></path>
+                  </svg>
+                  <svg class="ranking-row__select-check" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>
+                  <span>Select</span>
+                </button>
+              </span>
+            </div>
+          </li>
+        );
+      })() : (() => {
+        const { scenario, scenarioIndex, regions } = entry;
+        const names = scenario.codes.map((code) => passportByCode.get(code)?.name ?? code);
+        return (
+          <li
+            class="is-featured is-combination"
+            data-ranking-selectable
+            data-combination-row
+            data-name={`${scenario.name} ${scenario.codes.join(" ")}`.toLowerCase()}
+            data-display-name={`Set ${scenarioIndex + 1}: ${scenario.name}`}
+            data-set={scenario.codes.join(",")}
+            data-code={scenario.codes.join(" ").toLowerCase()}
+            data-regions={regions.join(",")}
+          >
+            <div class="ranking-row ranking-row--combination">
+              <a class="ranking-row__link" href={comparisonHref([scenario.codes])} aria-label={`View access for ${scenario.name}`}></a>
+              <strong class="ranking-row__rank">#{scenario.rankEquivalent}<small>equivalent</small></strong>
+              <span class="ranking-row__passport">
+                <PassportCover codes={scenario.codes} names={names} size="small" />
+                <span>
+                  <strong>{scenario.name}</strong>
+                  <small>{scenario.codes.join(" + ")}<b> · Set {scenarioIndex + 1}</b></small>
+                </span>
+              </span>
+              <span class="ranking-row__region">Combined</span>
+              <span class="ranking-row__score"><strong>{scenario.mobilityScore}</strong><small>destinations</small></span>
+              <span class="ranking-row__actions">
+                <svg class="ranking-row__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M7 7h10v10"></path>
                 </svg>
-                <span>Compare</span>
-              </button>
-            </span>
-          </div>
-        </li>
-      ))}
+                <button
+                  class="ranking-row__select"
+                  type="button"
+                  data-ranking-select
+                  aria-label={`Select set ${scenarioIndex + 1} for passport tools`}
+                  aria-pressed="false"
+                >
+                  <svg class="ranking-row__select-add" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14"></path>
+                    <path d="M5 12h14"></path>
+                  </svg>
+                  <svg class="ranking-row__select-check" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>
+                  <span>Select</span>
+                </button>
+              </span>
+            </div>
+          </li>
+        );
+      })())}
     </ol>
-    <p class="empty-state" data-ranking-empty hidden>No passports match those filters.</p>
+    <p class="empty-state" data-ranking-empty hidden>No passports or sets match those filters.</p>
     {unranked.length > 0 && (
       <section class="coverage-disclosure" data-unranked-section>
         <div class="coverage-disclosure__heading">
@@ -133,6 +240,7 @@ const {
       </section>
     )}
   </div>
+  <script is:inline class="ranking-explorer__initial-sets" type="application/json" set:html={serializedInitialSets}></script>
 </div>
 
 <script is:inline>
@@ -145,45 +253,73 @@ const {
       const compareBar = explorer.querySelector("[data-ranking-compare-bar]");
       const selectedCount = explorer.querySelector("[data-ranking-selected-count]");
       const compare = explorer.querySelector("[data-ranking-compare]");
+      const combine = explorer.querySelector("[data-ranking-combine]");
       const cancel = explorer.querySelector("[data-ranking-cancel]");
-      const rows = [...explorer.querySelectorAll("[data-passport-row]")];
+      const initialData = explorer.querySelector(".ranking-explorer__initial-sets");
+      const rows = [...explorer.querySelectorAll("[data-ranking-selectable]")];
+      const passportRows = [...explorer.querySelectorAll("[data-passport-row]")];
+      const combinationRows = [...explorer.querySelectorAll("[data-combination-row]")];
       const unrankedRows = [...explorer.querySelectorAll("[data-unranked-row]")];
       const unrankedSection = explorer.querySelector("[data-unranked-section]");
-      if (!search || !count || !empty || !compareBar || !selectedCount || !compare || !cancel) return;
+      if (!search || !count || !empty || !compareBar || !selectedCount || !compare || !combine || !cancel) return;
+
+      const normalizeSet = (codes) => [...new Set(codes.map((code) => String(code).trim().toUpperCase()).filter(Boolean))].slice(0, 5);
+      const setKey = (codes) => normalizeSet(codes).join(",");
+      const parsedInitialSets = initialData ? JSON.parse(initialData.textContent || "[]") : [];
+      const initialSets = [...new Map(parsedInitialSets
+        .map(normalizeSet)
+        .filter((set) => set.length)
+        .map((set) => [setKey(set), set])).values()].slice(0, 5);
       let selected = [];
+      let selectionStarted = false;
+
+      const selectedHas = (codes) => selected.some((set) => setKey(set) === setKey(codes));
+      const combinedCodes = () => [...new Set(selected.flat())];
 
       const renderSelection = () => {
-        const selecting = selected.length > 0;
+        if (selected.length === 0) selectionStarted = false;
+        const selecting = selectionStarted && selected.length > 0;
+        const merged = combinedCodes();
         explorer.classList.toggle("is-selecting", selecting);
         compareBar.hidden = !selecting;
         selectedCount.textContent = String(selected.length);
-        compare.disabled = selected.length < 2;
-        compare.textContent = selected.length < 2 ? "Select one more" : `Compare ${selected.length}`;
+        compare.disabled = !selecting;
+        combine.disabled = !selecting || merged.length > 5;
+        combine.title = merged.length > 5 ? "A combined set can contain up to five passports" : "";
+        compare.textContent = selecting ? `Compare ${selected.length}` : "Compare";
+        combine.textContent = selecting ? `Combine ${merged.length}` : "Combine";
 
         rows.forEach((row) => {
-          const code = row.dataset.code.toUpperCase();
-          const name = row.dataset.passportName;
+          const codes = normalizeSet((row.dataset.set || "").split(","));
+          const name = row.dataset.displayName || codes.join(" + ");
           const button = row.querySelector("[data-ranking-select]");
-          const isSelected = selected.includes(code);
+          const isSelected = selecting && selectedHas(codes);
           row.classList.toggle("is-selected", isSelected);
           button.setAttribute("aria-pressed", String(isSelected));
-          button.setAttribute("aria-label", `${isSelected ? "Remove" : "Add"} ${name} ${isSelected ? "from" : "to"} comparison`);
-          button.disabled = selected.length >= 5 && !isSelected;
+          button.setAttribute("aria-label", `${isSelected ? "Remove" : "Select"} ${name}${isSelected ? " from" : " for"} passport tools`);
+          button.disabled = selecting && selected.length >= 5 && !isSelected;
         });
       };
 
       const toggleSelection = (row) => {
-        const code = row.dataset.code.toUpperCase();
-        selected = selected.includes(code)
-          ? selected.filter((selectedCode) => selectedCode !== code)
-          : selected.length < 5 ? [...selected, code] : selected;
+        const codes = normalizeSet((row.dataset.set || "").split(","));
+        const key = setKey(codes);
+        if (!selectionStarted) {
+          selectionStarted = true;
+          selected = initialSets.map((set) => [...set]);
+          if (!selected.some((set) => setKey(set) === key) && selected.length < 5) selected = [...selected, codes];
+        } else if (selectedHas(codes)) {
+          selected = selected.filter((set) => setKey(set) !== key);
+        } else if (selected.length < 5) {
+          selected = [...selected, codes];
+        }
         renderSelection();
       };
 
       rows.forEach((row) => {
         row.querySelector("[data-ranking-select]")?.addEventListener("click", () => toggleSelection(row));
         row.querySelector(".ranking-row__link")?.addEventListener("click", (event) => {
-          if (selected.length === 0) return;
+          if (!selectionStarted) return;
           event.preventDefault();
           toggleSelection(row);
         });
@@ -191,38 +327,56 @@ const {
 
       cancel.addEventListener("click", () => {
         selected = [];
+        selectionStarted = false;
         renderSelection();
       });
 
       compare.addEventListener("click", () => {
-        if (selected.length < 2) return;
+        if (!selected.length) return;
         const params = new URLSearchParams();
-        selected.forEach((code) => params.append("set", code));
+        selected.forEach((set) => params.append("set", set.join(",")));
         window.location.assign(`/compare?${params.toString()}`);
       });
+
+      combine.addEventListener("click", () => {
+        const merged = combinedCodes();
+        if (!merged.length || merged.length > 5) return;
+        const params = new URLSearchParams();
+        params.append("set", merged.join(","));
+        window.location.assign(`/rank?${params.toString()}`);
+      });
+
+      const matchesRegion = (row, selectedRegion) => selectedRegion === "ALL" ||
+        (row.dataset.regions || row.dataset.region || "").split(",").includes(selectedRegion);
+      const matchesSearch = (row, needle) => !needle ||
+        row.dataset.name.includes(needle) || row.dataset.code.includes(needle);
+      const formatCount = (passportCount, setCount) =>
+        `${passportCount} passports${setCount ? ` + ${setCount} ${setCount === 1 ? "set" : "sets"}` : ""}`;
 
       const filter = () => {
         const needle = search.value.trim().toLowerCase();
         const selectedRegion = region?.value || "ALL";
-        let visible = 0;
-        rows.forEach((row) => {
-          const matches = (selectedRegion === "ALL" || row.dataset.region === selectedRegion) && (
-            !needle || row.dataset.name.includes(needle) || row.dataset.code.includes(needle)
-          );
+        let visiblePassports = 0;
+        let visibleCombinations = 0;
+        passportRows.forEach((row) => {
+          const matches = matchesRegion(row, selectedRegion) && matchesSearch(row, needle);
           row.hidden = !matches;
-          if (matches) visible += 1;
+          if (matches) visiblePassports += 1;
+        });
+        combinationRows.forEach((row) => {
+          const matches = matchesRegion(row, selectedRegion) && matchesSearch(row, needle);
+          row.hidden = !matches;
+          if (matches) visibleCombinations += 1;
         });
         let visibleUnranked = 0;
         unrankedRows.forEach((row) => {
-          const matches = (selectedRegion === "ALL" || row.dataset.region === selectedRegion) && (
-            !needle || row.dataset.name.includes(needle) || row.dataset.code.includes(needle)
-          );
+          const matches = matchesRegion(row, selectedRegion) && matchesSearch(row, needle);
           row.hidden = !matches;
           if (matches) visibleUnranked += 1;
         });
         if (unrankedSection) unrankedSection.hidden = visibleUnranked === 0;
-        count.textContent = `${visible} passports`;
-        empty.hidden = visible !== 0 || visibleUnranked !== 0;
+        count.textContent = formatCount(visiblePassports, visibleCombinations);
+        empty.hidden = visiblePassports !== 0 || visibleCombinations !== 0 || visibleUnranked !== 0;
       };
 
       search.addEventListener("input", filter);

@@ -4,7 +4,7 @@ import { PASSPORT_COLLECTIONS, POPULAR_COMPARISONS } from "@/lib/geography";
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 const collectionPaths = new Set(PASSPORT_COLLECTIONS.map((collection) => `/${collection.slug}`));
 const comparisonPaths = new Set(POPULAR_COMPARISONS.map((comparison) => `/${comparison.slug}`));
-const rankingActive = pathname === "/" || pathname.startsWith("/passport/") || collectionPaths.has(pathname);
+const rankingActive = pathname === "/" || pathname === "/rank" || pathname.startsWith("/passport/") || collectionPaths.has(pathname);
 const compareActive = pathname.startsWith("/compare") || comparisonPaths.has(pathname);
 ---
 

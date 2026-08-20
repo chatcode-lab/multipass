@@ -14,7 +14,7 @@ function escapeXml(value: string): string {
 
 export const GET: APIRoute = async ({ locals }) => {
   const { manifest } = await getDataContext(locals);
-  const staticPaths = ["", "destinations", "compare", "dual-passport", "evisa-vs-eta", "methodology", "ai"];
+  const staticPaths = ["", "rank", "destinations", "compare", "dual-passport", "evisa-vs-eta", "methodology", "ai"];
   const urls = [
     ...staticPaths.map((path) => ({ loc: `https://multipassrank.com/${path}`, priority: path ? "0.7" : "1.0" })),
     ...PASSPORT_COLLECTIONS.map((collection) => ({

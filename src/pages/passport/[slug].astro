@@ -68,6 +68,7 @@ const structuredData = [
       </div>
       <div class="passport-hero__actions">
         <a class="button button--primary" href={`/compare?set=${passport.code}`}>Compare this passport</a>
+        <a class="button button--quiet" href={`/rank?set=${passport.code}`}>Place in ranking</a>
         <span class:list={["freshness", source === "fallback" && "freshness--fallback"]}>{source === "live" ? "Checked" : "Bundled snapshot"} {checkedDate}</span>
       </div>
     </div>

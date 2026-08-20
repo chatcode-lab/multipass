@@ -1,4 +1,4 @@
-import { collectionForRegion, comparisonHref, formatRegion, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
+import { collectionForRegion, comparisonHref, formatRegion, rankHref, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import { STATUS_META } from "./passport";
 import { REGIONS, type ComparisonResult, type PassportAccess, type PassportSummary, type SnapshotManifest } from "./types";
@@ -35,6 +35,55 @@ ${rows.join("\n")}
 
 - [Compare passports](${absoluteUrl("/compare")})
 - [All destinations](${absoluteUrl("/destinations")})
+- [Methodology](${absoluteUrl("/methodology")})`;
+}
+
+export function customRankingMarkdown(manifest: SnapshotManifest, result: ComparisonResult | null): string {
+  const scenarios = result?.scenarios ?? [];
+  const featuredSingletons = new Map<string, number[]>();
+  scenarios.forEach((scenario, index) => {
+    if (scenario.codes.length !== 1) return;
+    const code = scenario.codes[0];
+    featuredSingletons.set(code, [...(featuredSingletons.get(code) ?? []), index + 1]);
+  });
+  const rows = [
+    ...manifest.passports.map((passport) => ({
+      rank: passport.rank,
+      score: passport.mobilityScore,
+      name: passport.name,
+      entry: `[${escapeMarkdown(passport.name)}](${absoluteUrl(`/passport/${passport.slug}`)})`,
+      type: featuredSingletons.has(passport.code)
+        ? `Selected ${featuredSingletons.get(passport.code)!.map((index) => `set ${index}`).join(", ")}`
+        : "Passport",
+    })),
+    ...scenarios.flatMap((scenario, index) => scenario.codes.length > 1 ? [{
+      rank: scenario.rankEquivalent,
+      score: scenario.mobilityScore,
+      name: scenario.name,
+      entry: `**${escapeMarkdown(scenario.name)}** (${scenario.codes.join(" + ")})`,
+      type: `Combined set ${index + 1}`,
+    }] : []),
+  ].sort((first, second) => first.rank - second.rank || second.score - first.score || first.name.localeCompare(second.name));
+  const scenarioSummary = scenarios.map((scenario, index) =>
+    `- **Set ${index + 1}: ${escapeMarkdown(scenario.name)}** — rank equivalent #${scenario.rankEquivalent}, mobility score ${scenario.mobilityScore}`,
+  ).join("\n");
+  const sets = scenarios.map((scenario) => scenario.codes);
+  return `# ${scenarios.length ? "Custom passport and combination ranking" : "Combined passport ranking"}
+
+${scenarios.length
+    ? "Selected passports and combined passport sets are placed alongside the global single-passport ranking by mobility score. Combined positions are rank equivalents, not official passport ranks."
+    : "Create a custom ranking that places one or more individual or combined passport sets alongside the global passport ranking."}
+
+Data checked ${checkedDate(manifest)}.
+
+${scenarioSummary ? `## Selected sets\n\n${scenarioSummary}\n\n` : ""}| Rank | Passport or set | Mobility score | Type |
+| ---: | --- | ---: | --- |
+${rows.map((row) => `| ${row.rank} | ${row.entry} | ${row.score} | ${row.type} |`).join("\n")}
+
+## Useful links
+
+${sets.length ? `- [Compare these sets destination by destination](${absoluteUrl(comparisonHref(sets))})\n` : ""}- [Build a custom ranking](${absoluteUrl("/rank")})
+- [Global passport ranking](${absoluteUrl("/")})
 - [Methodology](${absoluteUrl("/methodology")})`;
 }
 
@@ -100,6 +149,7 @@ Current profile: ${statusCounts.visa_free ?? 0} visa-free, ${statusCounts.visa_o
 Data checked ${checkedDate(manifest)}. Entry rules can change; verify official requirements before travel.
 
 [Compare the ${passport.name} passport](${absoluteUrl(`/compare?set=${passport.code}`)})
+[Place the ${passport.name} passport in the global ranking](${absoluteUrl(`/rank?set=${passport.code}`)})
 
 ## Related rankings and comparisons
 
@@ -142,5 +192,6 @@ Data checked ${new Intl.DateTimeFormat("en", { dateStyle: "long", timeZone: "UTC
 
 ${sections.join("\n\n")}
 
+[Place these options in the global ranking](${absoluteUrl(rankHref(result.scenarios.map((scenario) => scenario.codes)))})
 [Build another passport comparison](${absoluteUrl("/compare")})`;
 }

@@ -10,10 +10,10 @@ const pickerData = passports.map(({ code, name, rank, mobilityScore }) => ({ cod
 const serializedPickerData = JSON.stringify(pickerData).replaceAll("<", "\\u003c");
 ---
 
-<form class="builder-card" action="/compare" method="get" data-passport-builder>
+<form class="builder-card" action="/rank" method="get" data-passport-builder>
   <div class="builder-card__heading">
     <span class="step-label">Passport combination calculator</span>
-    <p>Choose one passport to inspect its access, or combine up to five.</p>
+    <p>Choose one passport to place it in the index, or combine up to five.</p>
   </div>
   <div class="builder-card__controls">
     <div class="passport-picker">
@@ -39,7 +39,7 @@ const serializedPickerData = JSON.stringify(pickerData).replaceAll("<", "\\u003c
     </div>
     <input type="hidden" name="set" disabled />
     <button class="button button--primary" type="submit" disabled>
-      See access
+      See combined rank
       <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M5 12h14"></path>
         <path d="m13 6 6 6-6 6"></path>

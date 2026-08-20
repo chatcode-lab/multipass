@@ -1,0 +1,112 @@
+---
+import RankingExplorer from "@/components/RankingExplorer.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext, getPassportAccessBatch } from "@/lib/data";
+import { comparisonHref } from "@/lib/geography";
+import { comparePassportSets, parsePassportSets } from "@/lib/passport";
+import type { ComparisonResult } from "@/lib/types";
+
+const { manifest, source } = await getDataContext(Astro.locals);
+const requestedSets = Astro.url.searchParams.getAll("set");
+const sets = parsePassportSets(requestedSets, new Set(manifest.passports.map((passport) => passport.code)));
+let result: ComparisonResult | null = null;
+if (sets.length > 0) {
+  const details = await getPassportAccessBatch(Astro.locals, sets.flatMap((set) => set.codes), manifest.version);
+  try {
+    result = comparePassportSets(sets, manifest, details);
+  } catch {
+    result = null;
+  }
+}
+const rankedCodes = new Set(manifest.passports.map((passport) => passport.code));
+const unrankedDestinations = manifest.destinations.filter((destination) => !rankedCodes.has(destination.code));
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric" }).format(
+  new Date(manifest.checkedAt),
+);
+const markdownHref = `/rank.md${Astro.url.search}`;
+const comparisonUrl = result ? comparisonHref(result.scenarios.map((scenario) => scenario.codes)) : "/compare";
+const customTitle = result?.scenarios.length === 1
+  ? `${result.scenarios[0].name} passport rank equivalent`
+  : "Custom combined passport ranking";
+Astro.response.headers.set(
+  "Cache-Control",
+  requestedSets.length
+    ? "public, max-age=300, s-maxage=600, stale-while-revalidate=3600"
+    : "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400",
+);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Combined passport ranking calculator",
+  url: "https://multipassrank.com/rank",
+  applicationCategory: "TravelApplication",
+  description: "Place individual and combined passport sets into the global passport ranking.",
+  isAccessibleForFree: true,
+};
+---
+
+<BaseLayout
+  title={`${result ? customTitle : "Combined Passport Ranking Calculator"} | MultiPass Rank`}
+  description="Calculate a combined passport score and place individual or multi-passport sets alongside the global passport ranking."
+  canonical="/rank"
+  markdownHref={markdownHref}
+  noindex={requestedSets.length > 0}
+  structuredData={structuredData}
+>
+  <header class="page-intro page-intro--rank">
+    <span class="eyebrow">Combined ranking workspace</span>
+    <h1>{result ? customTitle : "Place any passport set in the global ranking."}</h1>
+    <p>
+      {result
+        ? "Each highlighted option is positioned by its mobility score. Combined positions are rank equivalents against the single-passport index."
+        : "Select passports below, then combine them into one practical mobility score or compare them as separate options."}
+    </p>
+    {result && (
+      <div class="rank-page-actions">
+        <a class="button button--primary" href={comparisonUrl}>Compare destination access</a>
+        <button class="button button--quiet" type="button" data-copy-rank-link>Copy ranking link</button>
+      </div>
+    )}
+  </header>
+
+  <section class="section section--tight" id="ranking">
+    <div class="section-heading section-heading--rank">
+      <div>
+        <span class="eyebrow">{result ? `${result.scenarios.length} selected ${result.scenarios.length === 1 ? "set" : "sets"}` : "Current index"}</span>
+        <h2>Global ranking with combinations</h2>
+      </div>
+      <div>
+        <p>Ranks use destinations available visa-free, with visa on arrival, or with an ETA. Select any row for Compare and Combine actions.</p>
+        <span class:list={["freshness", source === "fallback" && "freshness--fallback"]}>
+          {source === "live" ? "Data checked" : "Bundled snapshot"} {checkedDate}
+        </span>
+      </div>
+    </div>
+    {result && (
+      <div class="rank-set-summary" aria-label="Selected passport sets">
+        {result.scenarios.map((scenario, index) => (
+          <span><b>Set {index + 1}</b><span>{scenario.name}</span><strong>#{scenario.rankEquivalent}</strong></span>
+        ))}
+      </div>
+    )}
+    <RankingExplorer
+      passports={manifest.passports}
+      scenarios={result?.scenarios ?? []}
+      initialSets={result?.scenarios.map((scenario) => scenario.codes) ?? []}
+      unranked={unrankedDestinations}
+      listLabel="Global passport ranking with selected combinations"
+    />
+  </section>
+
+  {result && (
+    <script is:inline>
+      document.querySelector("[data-copy-rank-link]")?.addEventListener("click", async (event) => {
+        const button = event.currentTarget;
+        await navigator.clipboard.writeText(window.location.href);
+        button.textContent = "Copied";
+        window.setTimeout(() => { button.textContent = "Copy ranking link"; }, 1800);
+      });
+    </script>
+  )}
+</BaseLayout>
