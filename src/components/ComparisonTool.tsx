@@ -135,6 +135,13 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
             ))}
           </div>
 
+          <nav className="table-view-actions" aria-label="Comparison view actions">
+            <a className="button button--quiet" href={rankHref(validSets)}>View ranking</a>
+            <button type="button" className="button button--quiet" onClick={copyLink}>
+              {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? "Copied" : "Copy link"}
+            </button>
+          </nav>
+
           <div className="comparison-toolbar">
             <label className="check-control">
               <input type="checkbox" checked={differencesOnly} disabled={result.scenarios.length < 2} onChange={(event) => setDifferencesOnly(event.target.checked)} />
@@ -148,10 +155,6 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
               </select>
             </label>
             <span className="comparison-toolbar__count" aria-live="polite">{visibleRows.length} destinations shown</span>
-            <a className="button button--quiet comparison-toolbar__ranking" href={rankHref(validSets)}>View ranking</a>
-            <button type="button" className="button button--quiet comparison-toolbar__copy" onClick={copyLink}>
-              {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? "Copied" : "Copy link"}
-            </button>
           </div>
 
           <div className="comparison-table-wrap">

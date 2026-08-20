@@ -62,12 +62,6 @@ const structuredData = {
         ? "Each highlighted option is positioned by its mobility score. Combined positions are rank equivalents against the single-passport index."
         : "Select passports below, then combine them into one practical mobility score or compare them as separate options."}
     </p>
-    {result && (
-      <div class="rank-page-actions">
-        <a class="button button--primary" href={comparisonUrl}>Compare destination access</a>
-        <button class="button button--quiet" type="button" data-copy-rank-link>Copy ranking link</button>
-      </div>
-    )}
   </header>
 
   <section class="section section--tight" id="ranking">
@@ -90,6 +84,12 @@ const structuredData = {
         ))}
       </div>
     )}
+    {result && (
+      <nav class="table-view-actions" aria-label="Ranking view actions">
+        <a class="button button--quiet" href={comparisonUrl}>View comparison</a>
+        <button class="button button--quiet" type="button" data-copy-rank-link>Copy link</button>
+      </nav>
+    )}
     <RankingExplorer
       passports={manifest.passports}
       scenarios={result?.scenarios ?? []}
@@ -105,7 +105,7 @@ const structuredData = {
         const button = event.currentTarget;
         await navigator.clipboard.writeText(window.location.href);
         button.textContent = "Copied";
-        window.setTimeout(() => { button.textContent = "Copy ranking link"; }, 1800);
+        window.setTimeout(() => { button.textContent = "Copy link"; }, 1800);
       });
     </script>
   )}

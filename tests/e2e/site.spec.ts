@@ -91,6 +91,7 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
     expect(copyLink!.x + copyLink!.width).toBeLessThanOrEqual(viewport.width);
     expect(Math.abs(differences!.y - regionFilter!.y)).toBeLessThanOrEqual(2);
     expect(Math.abs(rankingLink!.y - copyLink!.y)).toBeLessThanOrEqual(2);
+    expect(rankingLink!.y).toBeLessThan(differences!.y);
   }
 });
 
@@ -225,7 +226,14 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   await expect(page.locator(".rank-set-summary")).toContainText("United States + Canada");
   await expect(page.locator("[data-combination-row]")).toHaveCount(1);
   await expect(page.locator("[data-passport-row][data-set='PT']")).toHaveClass(/is-featured/);
-  await expect(page.getByRole("link", { name: "Compare destination access" })).toHaveAttribute("href", "/compare?set=US%2CCA&set=PT");
+  await expect(page.getByRole("link", { name: "View comparison" })).toHaveAttribute("href", "/compare?set=US%2CCA&set=PT");
+  await expect(page.locator("#ranking > .table-view-actions")).toBeVisible();
+  await expect(page.locator(".page-intro .table-view-actions")).toHaveCount(0);
+  const rankActions = await page.locator("#ranking > .table-view-actions").boundingBox();
+  const rankSearch = await page.locator("[data-ranking-search]").boundingBox();
+  expect(rankActions).not.toBeNull();
+  expect(rankSearch).not.toBeNull();
+  expect(rankActions!.y).toBeLessThan(rankSearch!.y);
 
   const ranks = await page.locator(".ranking-table__list > li .ranking-row__rank").allTextContents();
   const numericRanks = ranks.map((rank) => Number(rank.match(/#(\d+)/)?.[1]));

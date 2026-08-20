@@ -637,7 +637,8 @@ main { min-height: 68vh; }
 .page-intro--compare h1,
 .page-intro--rank h1 { max-width: 780px; font-size: clamp(48px, 5.8vw, 76px); }
 .page-intro--directory h1 { max-width: 900px; font-size: clamp(52px, 6vw, 82px); }
-.rank-page-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.table-view-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin: 22px 0 12px; }
+.table-view-actions .button { min-height: 38px; }
 .rank-set-summary { display: flex; flex-wrap: wrap; gap: 8px; margin: -6px 0 24px; }
 .rank-set-summary > span { min-width: 210px; flex: 1 1 230px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; min-height: 48px; padding: 9px 13px; border: 1px solid var(--line); background: rgb(255 253 248 / 70%); font-size: 12px; }
 .rank-set-summary b { color: var(--burgundy); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
@@ -678,7 +679,7 @@ main { min-height: 68vh; }
 
 .comparison-toolbar {
   display: grid;
-  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+  grid-template-columns: auto auto minmax(0, 1fr);
   align-items: center;
   gap: 12px 18px;
   margin: 22px 0 12px;
@@ -993,7 +994,8 @@ main { min-height: 68vh; }
   .page-intro { padding-top: 58px; }
   .page-intro h1 { font-size: 53px; }
   .page-intro p { font-size: 17px; }
-  .rank-page-actions .button { flex: 1 1 auto; }
+  .table-view-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .table-view-actions .button { width: 100%; justify-self: stretch; }
   .rank-set-summary > span { min-width: 0; flex-basis: 100%; }
   .agent-guide pre { margin-inline: -4px; padding: 18px; }
   .scenario-card { min-height: 190px; padding: 22px; }
@@ -1007,9 +1009,6 @@ main { min-height: 68vh; }
   .comparison-toolbar .comparison-region-filter select { width: 100%; }
   .comparison-toolbar .check-control span { justify-content: center; padding-inline: 9px; font-size: 11px; white-space: nowrap; }
   .comparison-toolbar__count { grid-column: 1 / -1; align-self: center; font-size: 12px; }
-  .comparison-toolbar__ranking { grid-column: 1; }
-  .comparison-toolbar__copy { grid-column: 2; }
-  .comparison-toolbar .button { width: 100%; min-height: 38px; justify-self: stretch; }
   .access-legend__heading { display: grid; gap: 10px; }
   .access-legend dl { grid-template-columns: 1fr; }
   .comparison-table-wrap { overflow: visible; border: 0; background: transparent; }
