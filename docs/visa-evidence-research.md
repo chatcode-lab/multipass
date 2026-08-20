@@ -1,0 +1,68 @@
+# Official visa evidence research
+
+This playbook expands MultiPass Rank’s passport–destination evidence without turning secondary rankings into citations. The current access snapshot is a discovery and consistency-check input; an evidence record is publishable only when an official source supports it.
+
+## Source hierarchy
+
+Prefer sources in this order:
+
+1. Laws, official gazettes, treaties, parliamentary records, and court decisions.
+2. The destination’s immigration, border, interior, or foreign ministry and its official application portal.
+3. Official embassy or consulate guidance when the central authority does not publish the rule clearly.
+4. Intergovernmental treaty repositories, such as EUR-Lex or an official regional-bloc secretariat.
+5. Government open-data catalogs and their versioned downloads.
+
+Commercial passport indexes, Timatic summaries, Wikipedia, travel agents, airlines, blogs, and search snippets may help discover a source. They are never evidence citations.
+
+## Evidence record requirements
+
+Every record must identify:
+
+- the destination and affected passport codes;
+- the normalized access status;
+- an effective date when the source states one, otherwise no invented date;
+- expiry or supersession when known;
+- material conditions and exceptions;
+- at least one direct official URL, its publisher, jurisdiction, language, source type, and review date;
+- the official application URL and steps when an ETA or eVisa route exists;
+- any conflict with the current MultiPass Rank snapshot.
+
+Store rules at policy level. A regional agreement or nationality list should be one policy with multiple passport codes, not hundreds of duplicated pair records.
+
+## Research pass algorithm
+
+1. Choose one destination, regional agreement, or government dataset. Work in bounded batches.
+2. Export the current statuses for affected pairs and use them only as hypotheses.
+3. Search the destination’s official domains for visa, exemption, arrival, electronic visa, and travel-authorisation rules in the local language and English.
+4. Open the primary document. Confirm scope, status, dates, duration, passport type, and exceptions from the source itself.
+5. Follow official links to the current application portal. Do not infer a government relationship from branding alone; verify the domain from an authority page.
+6. Add a source record and a policy record. Leave `effectiveFrom` absent if the official source does not state it.
+7. Compare the supported status with the current snapshot. Record conflicts for review rather than silently changing either dataset.
+8. Run unit, route, sitemap, and structured-data tests. Manually open at least one generated pair per policy.
+9. Record the review date. Recheck mutable guidance on a schedule and laws after a reported policy change.
+
+Good first bulk sources include government nationality lists, official open-data CSV files, and multilateral agreements. Initial examples in this repository cover Angola’s 98-nationality tourist exemption, Kenya’s ETA, DR Congo’s official eVisa route, and the EU–Brazil short-stay agreement.
+
+## Official bulk sources identified for later passes
+
+- [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
+- [Hong Kong Immigration Department outbound visa-free dataset specification](https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/data_specification_for_VFA_list.pdf). This can validate access reported for HKSAR passports, subject to the published document-type fields.
+- [Council of the European Union visa-agreement overview](https://www.consilium.europa.eu/en/infographics/eu-visa-agreements-with-non-eu-countries/) and individual EUR-Lex agreements. Treat the overview as discovery and cite the underlying agreement for scope and effective dates.
+
+These are candidates, not silently imported truth. Their country naming, passport types, exceptions, and update semantics need a reviewed mapping before they can change the access snapshot.
+
+## Prompt for later research passes
+
+Use this prompt with a research-capable model. A human or stronger review model must still open every cited URL before merge.
+
+> Research official visa-access evidence for the assigned destination or agreement. Treat the supplied MultiPass Rank statuses as unverified hypotheses. Cite only primary government, official gazette, treaty repository, government open-data, immigration, border, foreign-ministry, embassy, or consulate sources. Do not cite commercial indexes, Timatic summaries, Wikipedia, airlines, agents, blogs, or search snippets. For every supported rule return: destination ISO code; affected passport ISO codes or explicit exclusions; normalized status (`visa_free`, `eta`, `visa_on_arrival`, `evisa`, `visa_required`, or `citizenship`); effective and end dates only when stated; summary; material conditions; source title, direct URL, publisher, jurisdiction, language, type, and review date; official application URL and steps if relevant; confidence; and conflicts with the supplied status. Quote no more than 25 words from a source for internal review and do not publish the quotation. Say `not established` instead of guessing.
+
+## Review checklist
+
+- Every citation opens on an official domain and directly supports the claim.
+- Dates distinguish announcement, publication, and legal effect.
+- Tourist access is not confused with work, residence, transit, diplomatic-passport, or airport-visa rules.
+- The policy’s passport list matches the official document exactly.
+- Application instructions do not promise admission or processing outcomes.
+- Unsupported pairs remain honest placeholders and are not added to the sitemap.
+- The source’s terms are respected; store factual metadata and links rather than republishing documents.

@@ -2,6 +2,7 @@ import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ACCESS_EASE_WEIGHT, STATUS_META } from "@/lib/passport";
 import { comparisonHref, flagEmojiFor, formatRegion, rankHref } from "@/lib/geography";
+import { visaRelationshipHref } from "@/lib/visa-evidence";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary, type Region } from "@/lib/types";
 import AccessLegend from "./AccessLegend";
 import PassportCover from "./PassportCover";
@@ -186,6 +187,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                           </th>
                           {row.cells.map((cell, index) => {
                             const scenario = result.scenarios[index];
+                            const evidencePassport = byCode.get(cell.via[0] ?? scenario?.codes[0] ?? "");
                             const visibleVia = scenario && scenario.codes.length > 1 && cell.via.length < scenario.codes.length
                               ? cell.via
                               : [];
@@ -200,11 +202,15 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                                   : undefined;
                             return (
                               <td className={relativeClass} data-label={result.scenarios[index]?.name} key={`${row.destination.code}-${index}`}>
-                                <StatusPill
-                                  status={cell.status}
-                                  via={visibleVia}
-                                  compact
-                                />
+                                {evidencePassport ? (
+                                  <a
+                                    className="comparison-status-link"
+                                    href={visaRelationshipHref(evidencePassport, row.destination, cell.status)}
+                                    aria-label={`${evidencePassport.name} passport to ${row.destination.name}: ${STATUS_META[cell.status].label}`}
+                                  >
+                                    <StatusPill status={cell.status} via={visibleVia} compact />
+                                  </a>
+                                ) : <StatusPill status={cell.status} via={visibleVia} compact />}
                               </td>
                             );
                           })}

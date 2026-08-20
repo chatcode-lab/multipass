@@ -1,15 +1,16 @@
 ---
 import RankingExplorer from "@/components/RankingExplorer.astro";
 import ComparisonLanding from "@/components/ComparisonLanding.astro";
+import VisaRelationshipPage from "@/components/VisaRelationshipPage.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getDataContext, getPassportAccessBatch } from "@/lib/data";
+import { getDataContext, getPassportAccess, getPassportAccessBatch } from "@/lib/data";
 import { getPassportCollection, getPopularComparison, PASSPORT_COLLECTIONS, passportsInCollection } from "@/lib/geography";
 import { comparePassportSets } from "@/lib/passport";
-import type { PassportAccess } from "@/lib/types";
+import type { AccessStatus, PassportAccess } from "@/lib/types";
+import { getVisaRelationshipEvidence, resolveVisaRelationshipSlug, visaRelationshipSlug } from "@/lib/visa-evidence";
 
 const collection = getPassportCollection(Astro.params.collection);
 const comparison = getPopularComparison(Astro.params.collection);
-if (!collection && !comparison) return Astro.rewrite("/404");
 if (comparison && Astro.params.collection !== comparison.slug) {
   return new Response(null, {
     status: 308,
@@ -20,6 +21,26 @@ if (comparison && Astro.params.collection !== comparison.slug) {
   });
 }
 const { manifest, source } = await getDataContext(Astro.locals);
+const relationship = !collection && !comparison ? resolveVisaRelationshipSlug(Astro.params.collection, manifest) : null;
+const relationshipDetail = relationship
+  ? await getPassportAccess(Astro.locals, relationship.passport.code, manifest.version)
+  : null;
+const relationshipStatus = relationshipDetail
+  ? relationshipDetail.statuses[relationship!.destination.code] ?? "unknown" as AccessStatus
+  : null;
+if (!collection && !comparison && (!relationship || !relationshipDetail || !relationshipStatus)) return Astro.rewrite("/404");
+if (relationship && relationshipStatus) {
+  const canonicalSlug = visaRelationshipSlug(relationship.passport, relationship.destination, relationshipStatus);
+  if (Astro.params.collection !== canonicalSlug) {
+    return new Response(null, {
+      status: 308,
+      headers: { Location: `/${canonicalSlug}`, "Cache-Control": "public, max-age=3600" },
+    });
+  }
+}
+const relationshipEvidence = relationship && relationshipStatus
+  ? getVisaRelationshipEvidence(relationship.passport.code, relationship.destination.code, relationshipStatus)
+  : null;
 const passports = collection ? passportsInCollection(manifest.passports, collection) : [];
 const comparisonSets = comparison?.sets.map((codes) => ({ codes: [...codes] })) ?? [];
 const comparisonDetails: Record<string, PassportAccess> = comparison
@@ -76,4 +97,13 @@ const structuredData = collection ? {
   </BaseLayout>
 ) : comparison && comparisonResult ? (
   <ComparisonLanding comparison={comparison} manifest={manifest} result={comparisonResult} />
+) : relationship && relationshipStatus && relationshipEvidence ? (
+  <VisaRelationshipPage
+    manifest={manifest}
+    passport={relationship.passport}
+    destination={relationship.destination}
+    status={relationshipStatus}
+    evidence={relationshipEvidence}
+    source={source}
+  />
 ) : null}

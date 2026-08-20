@@ -1,0 +1,134 @@
+---
+import VisaEvidenceTimeline from "./VisaEvidenceTimeline.astro";
+import PassportCover from "./PassportCover";
+import StatusPill from "./StatusPill";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { DATASET_CREATOR } from "@/lib/dataset";
+import { flagEmojiFor } from "@/lib/geography";
+import { STATUS_META } from "@/lib/passport";
+import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "@/lib/types";
+import { destinationSlug, type VisaRelationshipEvidence, visaRelationshipHref } from "@/lib/visa-evidence";
+
+interface Props {
+  manifest: SnapshotManifest;
+  passport: PassportSummary;
+  destination: Destination;
+  status: AccessStatus;
+  evidence: VisaRelationshipEvidence;
+  source: "live" | "fallback";
+}
+
+const { manifest, passport, destination, status, evidence, source } = Astro.props;
+const statusMeta = STATUS_META[status];
+const canonical = visaRelationshipHref(passport, destination, status);
+const markdownHref = `${canonical}.md`;
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(manifest.checkedAt));
+const reviewedDate = evidence.reviewedAt
+  ? new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${evidence.reviewedAt}T00:00:00Z`))
+  : null;
+const matchingApplication = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
+const title = `${passport.name} Passport to ${destination.name}: ${statusMeta.label} | MultiPass Rank`;
+const description = `${passport.name} passport holders currently have ${statusMeta.label.toLowerCase()} access to ${destination.name}. See official sources, evidence history, conditions, and application guidance.`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Destinations", item: "https://multipassrank.com/destinations" },
+      { "@type": "ListItem", position: 2, name: destination.name, item: `https://multipassrank.com/destination/${destinationSlug(destination)}` },
+      { "@type": "ListItem", position: 3, name: `${passport.name} passport`, item: `https://multipassrank.com${canonical}` },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: `https://multipassrank.com${canonical}`,
+    dateModified: manifest.checkedAt,
+    creator: DATASET_CREATOR,
+    citation: evidence.sources.map((officialSource) => officialSource.url),
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  markdownHref={markdownHref}
+  noindex={!evidence.supportsCurrentStatus}
+  structuredData={structuredData}
+>
+  <header class="visa-relation-hero">
+    <div class="visa-relation-hero__passport">
+      <PassportCover codes={[passport.code]} names={[passport.name]} size="medium" />
+    </div>
+    <div>
+      <span class="eyebrow">Passport–destination evidence</span>
+      <h1>{passport.name} to {destination.name}</h1>
+      <div class="visa-relation-status">
+        <span class="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
+        <StatusPill status={status} />
+        <span>{statusMeta.description}</span>
+      </div>
+      <p>
+        This page separates the current comparison status from the official evidence collected for it.
+        Rules shown here concern ordinary short visits unless a source states otherwise.
+      </p>
+      <div class="visa-relation-meta">
+        <span class:list={["evidence-state", evidence.supportsCurrentStatus && "evidence-state--verified"]}>
+          {evidence.supportsCurrentStatus ? "Official evidence collected" : "Official-source review pending"}
+        </span>
+        <span>{source === "live" ? "Access data checked" : "Bundled access snapshot"} {checkedDate}</span>
+        {reviewedDate && <span>Sources reviewed {reviewedDate}</span>}
+      </div>
+    </div>
+  </header>
+
+  <section class="evidence-layout">
+    <div>
+      <span class="eyebrow">Evidence timeline</span>
+      <h2>How this access rule is documented</h2>
+      <VisaEvidenceTimeline policies={evidence.policies} sources={evidence.sources} passports={manifest.passports} />
+    </div>
+    <aside class="evidence-scope">
+      <span class="eyebrow">What this status means</span>
+      <h2>{statusMeta.label}</h2>
+      <p>{statusMeta.description}. Border officers retain the final admission decision, and purpose, duration, passport type, or personal circumstances can change the applicable rule.</p>
+      <a href={`/passport/${passport.slug}`}>Back to {passport.name} access list</a>
+      <a href={`/destination/${destinationSlug(destination)}`}>All passports for {destination.name}</a>
+    </aside>
+  </section>
+
+  {matchingApplication && (
+    <section class="application-guide">
+      <div>
+        <span class="eyebrow">Official application route</span>
+        <h2>How to apply</h2>
+        {matchingApplication.processingTime && <p>{matchingApplication.processingTime}</p>}
+      </div>
+      <ol>
+        {matchingApplication.steps.map((step) => <li>{step}</li>)}
+      </ol>
+      <a class="button button--primary" href={matchingApplication.url} rel="external">{matchingApplication.label}</a>
+    </section>
+  )}
+
+  <section class="source-register">
+    <div class="section-heading">
+      <div><span class="eyebrow">Provenance</span><h2>Official source register</h2></div>
+      <p>Only destination governments, official immigration services, official diplomatic missions, and primary legal instruments qualify as published evidence.</p>
+    </div>
+    {evidence.sources.length ? (
+      <ul>
+        {evidence.sources.map((officialSource) => (
+          <li>
+            <div><strong>{officialSource.publisher}</strong><span>{officialSource.kind.replaceAll("-", " ")} · {officialSource.language}</span></div>
+            <a href={officialSource.url} rel="external">{officialSource.title}</a>
+          </li>
+        ))}
+      </ul>
+    ) : <p class="notice">No source is attached yet. This relationship remains excluded from indexing until review is complete.</p>}
+  </section>
+</BaseLayout>

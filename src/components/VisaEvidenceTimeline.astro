@@ -1,0 +1,76 @@
+---
+import type { OfficialVisaSource, VisaPolicyEvidence } from "@/data/visa-evidence";
+import { STATUS_META } from "@/lib/passport";
+import type { PassportSummary } from "@/lib/types";
+
+interface Props {
+  policies: readonly VisaPolicyEvidence[];
+  sources: readonly OfficialVisaSource[];
+  passports: readonly PassportSummary[];
+  showAffectedPassports?: boolean;
+}
+
+const { policies, sources, passports, showAffectedPassports = false } = Astro.props;
+const sourceById = new Map(sources.map((source) => [source.id, source]));
+const passportByCode = new Map(passports.map((passport) => [passport.code, passport]));
+const formatDate = (value: string) => new Intl.DateTimeFormat("en", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(new Date(`${value}T00:00:00Z`));
+---
+
+{policies.length > 0 ? (
+  <ol class="evidence-timeline">
+    {policies.map((policy) => {
+      const date = policy.effectiveFrom ?? policy.announcedOn;
+      const affected = policy.passportCodes?.flatMap((code) => {
+        const passport = passportByCode.get(code);
+        return passport ? [passport] : [];
+      }) ?? [];
+      const affectedCount = policy.passportCodes?.length ?? 0;
+      return (
+        <li>
+          <div class="evidence-timeline__marker" aria-hidden="true"></div>
+          <article>
+            <div class="evidence-timeline__meta">
+              {date ? <time datetime={date}>{formatDate(date)}</time> : <span>Current official route</span>}
+              <span>{STATUS_META[policy.status].label}</span>
+            </div>
+            <h3>{policy.title}</h3>
+            <p>{policy.summary}</p>
+            {policy.conditions && (
+              <ul class="evidence-conditions">
+                {policy.conditions.map((condition) => <li>{condition}</li>)}
+              </ul>
+            )}
+            {showAffectedPassports && (
+              <details class="evidence-affected">
+                <summary>
+                  {affectedCount
+                    ? `${affectedCount} passport nationalities covered${affected.length !== affectedCount ? ` · ${affected.length} represented in this ranking` : ""}`
+                    : "Broad nationality coverage"}
+                </summary>
+                <p>{affected.length ? affected.map((passport) => passport.name).join(", ") : "The official rule is not limited to a named passport list; individual exemptions and easier access can still apply."}</p>
+              </details>
+            )}
+            <div class="evidence-sources">
+              <strong>{policy.sourceIds.length === 1 ? "Official source" : "Official sources"}</strong>
+              {policy.sourceIds.flatMap((sourceId) => {
+                const source = sourceById.get(sourceId);
+                return source ? [<a href={source.url} rel="external">{source.publisher}: {source.title}</a>] : [];
+              })}
+            </div>
+          </article>
+        </li>
+      );
+    })}
+  </ol>
+) : (
+  <div class="evidence-empty">
+    <span class="eyebrow">Evidence collection pending</span>
+    <h3>No official-source timeline has been completed for this relationship yet.</h3>
+    <p>The current access category remains visible for comparison, but this page will stay out of search indexing until an official destination authority or legal instrument has been reviewed.</p>
+  </div>
+)}

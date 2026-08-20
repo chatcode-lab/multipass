@@ -2,6 +2,7 @@
 import DestinationExplorer from "@/components/DestinationExplorer";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext } from "@/lib/data";
+import { datasetMetadata } from "@/lib/dataset";
 import { UNTRACKED_DESTINATIONS } from "@/lib/geography";
 
 const { manifest } = await getDataContext(Astro.locals);
@@ -13,6 +14,13 @@ const structuredData = {
   description: "The complete set of countries and territories tracked by MultiPass Rank.",
   dateModified: manifest.checkedAt,
   spatialCoverage: "Worldwide",
+  keywords: ["passport", "visa requirements", "travel destinations", "visa-free access"],
+  distribution: {
+    "@type": "DataDownload",
+    contentUrl: "https://multipassrank.com/api/v1/manifest",
+    encodingFormat: "application/json",
+  },
+  ...datasetMetadata("https://multipassrank.com/destinations"),
 };
 ---
 

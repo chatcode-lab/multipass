@@ -64,6 +64,29 @@ export async function getPassportAccessBatch(
   version?: string,
 ): Promise<Record<string, PassportAccess>> {
   const uniqueCodes = [...new Set(codes.map((code) => code.toUpperCase()))];
+  void locals;
+  const kv = passportDataKv();
+  if (kv) {
+    let snapshotVersion = version;
+    if (!snapshotVersion) {
+      const pointer = await kv.get<SnapshotPointer>("snapshot:pointer", "json");
+      snapshotVersion = pointer?.current;
+    }
+    if (snapshotVersion) {
+      const chunks = Array.from({ length: Math.ceil(uniqueCodes.length / 100) }, (_, index) =>
+        uniqueCodes.slice(index * 100, (index + 1) * 100),
+      );
+      const maps = await Promise.all(chunks.map((chunk) =>
+        kv.get<PassportAccess>(chunk.map((code) => `snapshot:${snapshotVersion}:passport:${code}`), "json"),
+      ));
+      const liveEntries = uniqueCodes.map((code) => {
+        const key = `snapshot:${snapshotVersion}:passport:${code}`;
+        const detail = maps.find((map) => map.has(key))?.get(key) ?? fallback.passports[code];
+        return [code, detail] as const;
+      });
+      return Object.fromEntries(liveEntries.filter((entry): entry is [string, PassportAccess] => Boolean(entry[1])));
+    }
+  }
   const entries = await Promise.all(
     uniqueCodes.map(async (code) => [code, await getPassportAccess(locals, code, version)] as const),
   );

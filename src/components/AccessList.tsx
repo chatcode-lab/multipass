@@ -1,8 +1,9 @@
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
-import { STATUS_META } from "@/lib/passport";
+import { STATUS_META, slugifyCountry } from "@/lib/passport";
 import { flagEmojiFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Destination, type PassportAccess, type Region } from "@/lib/types";
+import { visaRelationshipHref } from "@/lib/visa-evidence";
 import StatusPill from "./StatusPill";
 
 interface AccessListProps {
@@ -74,13 +75,22 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
                 <span>{rows.length}</span>
               </div>
               <div className="access-rows">
-                {rows.map((destination) => (
+                {rows.map((destination) => {
+                  const destinationStatus = passport.statuses[destination.code] ?? "unknown";
+                  return (
                   <div className="access-row" key={destination.code}>
                     <span className="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
                     <strong>{destination.name}</strong>
-                    <StatusPill status={passport.statuses[destination.code] ?? "unknown"} />
+                    <a
+                      className="access-row__evidence-link"
+                      href={visaRelationshipHref({ slug: slugifyCountry(passport.name) }, destination, destinationStatus)}
+                      aria-label={`${passport.name} passport to ${destination.name}: ${STATUS_META[destinationStatus].label}`}
+                    >
+                      <StatusPill status={destinationStatus} />
+                    </a>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           );

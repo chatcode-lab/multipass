@@ -1,0 +1,43 @@
+---
+import StatusPill from "./StatusPill";
+import { STATUS_META } from "@/lib/passport";
+import { ACCESS_STATUSES, type AccessStatus, type Destination, type PassportSummary } from "@/lib/types";
+import { visaRelationshipHref } from "@/lib/visa-evidence";
+
+interface Row {
+  passport: PassportSummary;
+  status: AccessStatus;
+}
+
+interface Props {
+  destination: Destination;
+  rows: readonly Row[];
+}
+
+const { destination, rows } = Astro.props;
+---
+
+<div class="destination-access-groups">
+  {ACCESS_STATUSES.map((status) => {
+    const statusRows = rows.filter((row) => row.status === status);
+    if (!statusRows.length) return null;
+    return (
+      <section class="destination-access-group">
+        <div class="region-group__heading">
+          <h3>{STATUS_META[status].label}</h3>
+          <span>{statusRows.length}</span>
+        </div>
+        <ul class="destination-access-grid">
+          {statusRows.map(({ passport }) => (
+            <li>
+              <a href={visaRelationshipHref(passport, destination, status)}>
+                <span><strong>{passport.name}</strong><small>{passport.code}</small></span>
+                <StatusPill status={status} compact />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  })}
+</div>

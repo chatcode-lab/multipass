@@ -34,9 +34,20 @@ Add \`.md\` before the query string for a text-first result: \`${absoluteUrl("/c
 - Country detail: \`${absoluteUrl("/passport/portugal.md")}\`
 - Regional ranking: \`${absoluteUrl("/europe.md")}\`
 - Destination directory: [destinations.md](${absoluteUrl("/destinations.md")})
+- Destination detail: \`${absoluteUrl("/destination/kenya.md")}\`
+- Passport–destination evidence: \`${absoluteUrl("/belgium-kenya-eta.md")}\`
 - This guide: [ai.md](${absoluteUrl("/ai.md")})
 
 HTML pages also advertise their Markdown alternative with a \`<link rel="alternate" type="text/markdown">\` element.
+
+## Open official-source evidence
+
+- Destination overview: \`${absoluteUrl("/destination/kenya")}\`
+- One current relationship: \`${absoluteUrl("/belgium-kenya-eta")}\`
+- Relationship Markdown: \`${absoluteUrl("/belgium-kenya-eta.md")}\`
+- Relationship URLs use \`/{passport}-{destination}-{status}\`, where status is \`visa-free\`, \`eta\`, \`visa-on-arrival\`, \`evisa\`, \`visa\`, or \`citizenship\`.
+- A recognized outdated status suffix redirects to the current canonical URL.
+- Evidence coverage is incremental. Unsupported relationships are labeled, excluded from indexing, and should not be presented as officially verified.
 
 ## JSON API
 

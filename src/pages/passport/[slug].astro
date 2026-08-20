@@ -5,6 +5,7 @@ import RegionMap from "@/components/RegionMap.astro";
 import StatusPill from "@/components/StatusPill";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccess } from "@/lib/data";
+import { datasetMetadata } from "@/lib/dataset";
 import { collectionForRegion, comparisonHref, formatRegion, relatedPassports } from "@/lib/geography";
 import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
 
@@ -44,6 +45,13 @@ const structuredData = [
     description,
     dateModified: manifest.checkedAt,
     spatialCoverage: "Worldwide",
+    keywords: [passport.name, "passport", "visa requirements", "visa-free destinations", "mobility score"],
+    distribution: {
+      "@type": "DataDownload",
+      contentUrl: `https://multipassrank.com/api/v1/passports/${passport.code}`,
+      encodingFormat: "application/json",
+    },
+    ...datasetMetadata(`https://multipassrank.com/passport/${passport.slug}`),
   },
 ];
 ---

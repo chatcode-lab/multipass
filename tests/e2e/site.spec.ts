@@ -420,6 +420,74 @@ test("eVisa and ETA guide is indexable and available as Markdown", async ({ page
   expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/evisa-vs-eta</loc>");
 });
 
+test("dataset pages declare creator and license metadata", async ({ page }) => {
+  for (const path of ["/destinations", "/passport/belgium", "/destination/angola"]) {
+    await page.goto(path);
+    const datasets = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) =>
+      scripts.flatMap((script) => {
+        const value = JSON.parse(script.textContent ?? "null");
+        const records = Array.isArray(value) ? value : [value];
+        return records.filter((record) => record?.["@type"] === "Dataset");
+      }),
+    );
+    expect(datasets, path).not.toHaveLength(0);
+    for (const dataset of datasets) {
+      expect(dataset.creator?.name, path).toBe("MultiPass Rank");
+      expect(dataset.license?.url, path).toBe("https://multipassrank.com/data-license");
+    }
+  }
+});
+
+test("destination and relationship pages expose official evidence and Markdown", async ({ page, request }) => {
+  await page.goto("/destination/angola");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Angola visa requirements");
+  await expect(page.getByRole("heading", { name: "Official evidence timeline" })).toBeVisible();
+  await expect(page.getByText("98 passport nationalities covered")).toBeVisible();
+  await expect(page.getByRole("link", { name: /Belgium.*Visa-free/ })).toHaveAttribute("href", "/belgium-angola-visa-free");
+
+  const destinationMarkdown = await request.get("/destination/angola.md");
+  expect(destinationMarkdown.ok()).toBe(true);
+  expect(await destinationMarkdown.text()).toContain("# Angola visa requirements by passport");
+
+  await page.goto("/belgium-angola-visa-free");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Belgium to Angola");
+  await expect(page.getByText("Official evidence collected")).toBeVisible();
+  await expect(page.getByRole("link", { name: /Government of Angola/ })).toHaveAttribute("href", /governo\.gov\.ao/);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /^index,/);
+
+  const relationshipMarkdown = await request.get("/belgium-angola-visa-free.md");
+  expect(relationshipMarkdown.ok()).toBe(true);
+  expect(await relationshipMarkdown.text()).toContain("# Belgium passport to Angola: Visa-free");
+});
+
+test("relationship URLs redirect stale statuses and keep incomplete evidence out of search", async ({ page, request }) => {
+  await page.goto("/belgium-chad-evisa");
+  await expect(page).toHaveURL(/\/belgium-chad-visa$/);
+  await expect(page.getByText("Official-source review pending")).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+
+  const markdown = await request.get("/belgium-chad-visa.md", { maxRedirects: 0 });
+  expect(markdown.ok()).toBe(true);
+  expect(markdown.headers()["x-robots-tag"]).toContain("noindex");
+
+  const sitemap = await request.get("/sitemap.xml");
+  const xml = await sitemap.text();
+  expect(xml).toContain("<loc>https://multipassrank.com/destination/angola</loc>");
+  expect(xml).toContain("<loc>https://multipassrank.com/belgium-angola-visa-free</loc>");
+  expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-chad-visa</loc>");
+});
+
+test("passport and comparison status cells link to relationship evidence", async ({ page }) => {
+  await page.goto("/passport/belgium");
+  await expect(page.getByRole("link", { name: "Belgium passport to Angola: Visa-free" }))
+    .toHaveAttribute("href", "/belgium-angola-visa-free");
+
+  await page.goto("/compare?set=BE&set=AF");
+  const angolaRow = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "Angola" });
+  await expect(angolaRow.getByRole("link", { name: "Belgium passport to Angola: Visa-free" }))
+    .toHaveAttribute("href", "/belgium-angola-visa-free");
+});
+
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {
   await page.goto("/");
   const results = await new AxeBuilder({ page }).analyze();

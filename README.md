@@ -71,6 +71,12 @@ The global ranking contains 199 passport issuers, while access calculations use 
 
 The destination directory also carries a concise UN M49/ISO-based disclosure of relevant inhabited or commonly referenced areas that the upstream destination model does not represent separately. Those areas do not affect scores or comparisons, and the disclosure intentionally omits most remote uninhabited areas.
 
+Each tracked destination also has a dedicated `/destination/{slug}` page. A passport–destination result uses the canonical root URL `/{passport}-{destination}-{status}`, for example `/belgium-kenya-eta`. Recognized URLs with an outdated status suffix redirect to the current result.
+
+Official evidence is stored as policy-level records in `src/data/visa-evidence.ts`, so a single law or agreement can support many relationships without copying claims. Evidence pages with verified current status are indexable; incomplete placeholders are explicitly marked `noindex` and stay out of the sitemap.
+
+Dataset JSON-LD identifies MultiPass Rank as creator and publisher and links to `/data-license`. The license covers the site’s original evidence metadata and presentation, not upstream access snapshots or official source documents.
+
 ## Cloudflare provisioning
 
 Authenticate Wrangler without storing credentials in the repository:

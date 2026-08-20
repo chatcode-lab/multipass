@@ -1,0 +1,58 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: "MultiPass Rank Evidence Metadata License 1.0",
+  url: "https://multipassrank.com/data-license",
+  version: "1.0",
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  creator: {
+    "@type": "Organization",
+    "@id": "https://multipassrank.com/#organization",
+    name: "MultiPass Rank",
+    url: "https://multipassrank.com/",
+  },
+};
+---
+
+<BaseLayout
+  title="Dataset License & Attribution | MultiPass Rank"
+  description="License and attribution terms for MultiPass Rank evidence metadata, with clear boundaries for upstream access data and official source documents."
+  canonical="/data-license"
+  markdownHref="/data-license.md"
+  structuredData={structuredData}
+>
+  <article class="prose">
+    <span class="eyebrow">Dataset terms</span>
+    <h1>Evidence metadata license.</h1>
+    <p><strong>Version 1.0 · effective 20 August 2026</strong></p>
+
+    <h2>What is licensed</h2>
+    <p>
+      MultiPass Rank’s original evidence metadata—including normalized country codes, source identifiers,
+      source-review dates, timeline summaries, and original annotations—is available under the
+      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.
+    </p>
+    <p>Suggested attribution: “MultiPass Rank passport-access evidence metadata, multipassrank.com, version and access date.”</p>
+
+    <h2>What is not relicensed</h2>
+    <p>
+      Government publications, legal instruments, third-party source documents, passport imagery, and the upstream
+      access snapshot remain subject to their respective owners’ terms. Linking or citing a source does not transfer
+      copyright or grant additional reuse rights. MultiPass Rank makes no claim of ownership over facts that are not
+      protectable in the relevant jurisdiction.
+    </p>
+
+    <h2>Accuracy and travel decisions</h2>
+    <p>
+      The dataset is an informational comparison and research aid, not legal advice or permission to travel.
+      Entry decisions remain with destination authorities. Verify current requirements on the linked official source
+      before booking or travelling.
+    </p>
+
+    <h2>Machine-readable identification</h2>
+    <p>Dataset pages identify MultiPass Rank as creator and publisher and reference this versioned license URL in JSON-LD.</p>
+  </article>
+</BaseLayout>
