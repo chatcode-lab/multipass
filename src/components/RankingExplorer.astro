@@ -1,13 +1,14 @@
 ---
 import PassportCover from "./PassportCover";
-import { formatRegion } from "@/lib/geography";
-import { REGIONS, type PassportSummary } from "@/lib/types";
+import { flagEmojiFor, formatRegion } from "@/lib/geography";
+import { REGIONS, type Destination, type PassportSummary } from "@/lib/types";
 
 interface Props {
   passports: PassportSummary[];
   scoped?: boolean;
   showRegionFilter?: boolean;
   listLabel?: string;
+  unranked?: Destination[];
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   scoped = false,
   showRegionFilter = true,
   listLabel = "Global passport ranking",
+  unranked = [],
 } = Astro.props;
 ---
 
@@ -108,6 +110,28 @@ const {
       ))}
     </ol>
     <p class="empty-state" data-ranking-empty hidden>No passports match those filters.</p>
+    {unranked.length > 0 && (
+      <section class="coverage-disclosure" data-unranked-section>
+        <div class="coverage-disclosure__heading">
+          <div><span class="eyebrow">Destination only</span><h3>Not separately ranked</h3></div>
+          <span>{unranked.length}</span>
+        </div>
+        <p>These places are tracked in access calculations, but the source has no separate passport record for them. No synthetic rank is assigned.</p>
+        <ul class="coverage-disclosure__grid">
+          {unranked.map((destination) => (
+            <li
+              data-unranked-row
+              data-name={destination.name.toLowerCase()}
+              data-code={destination.code.toLowerCase()}
+              data-region={destination.region}
+            >
+              <span class="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
+              <span><strong>{destination.name}</strong><small>{destination.code} · {formatRegion(destination.region)}</small></span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
   </div>
 </div>
 
@@ -123,6 +147,8 @@ const {
       const compare = explorer.querySelector("[data-ranking-compare]");
       const cancel = explorer.querySelector("[data-ranking-cancel]");
       const rows = [...explorer.querySelectorAll("[data-passport-row]")];
+      const unrankedRows = [...explorer.querySelectorAll("[data-unranked-row]")];
+      const unrankedSection = explorer.querySelector("[data-unranked-section]");
       if (!search || !count || !empty || !compareBar || !selectedCount || !compare || !cancel) return;
       let selected = [];
 
@@ -156,6 +182,11 @@ const {
 
       rows.forEach((row) => {
         row.querySelector("[data-ranking-select]")?.addEventListener("click", () => toggleSelection(row));
+        row.querySelector(".ranking-row__link")?.addEventListener("click", (event) => {
+          if (selected.length === 0) return;
+          event.preventDefault();
+          toggleSelection(row);
+        });
       });
 
       cancel.addEventListener("click", () => {
@@ -181,8 +212,17 @@ const {
           row.hidden = !matches;
           if (matches) visible += 1;
         });
+        let visibleUnranked = 0;
+        unrankedRows.forEach((row) => {
+          const matches = (selectedRegion === "ALL" || row.dataset.region === selectedRegion) && (
+            !needle || row.dataset.name.includes(needle) || row.dataset.code.includes(needle)
+          );
+          row.hidden = !matches;
+          if (matches) visibleUnranked += 1;
+        });
+        if (unrankedSection) unrankedSection.hidden = visibleUnranked === 0;
         count.textContent = `${visible} passports`;
-        empty.hidden = visible !== 0;
+        empty.hidden = visible !== 0 || visibleUnranked !== 0;
       };
 
       search.addEventListener("input", filter);

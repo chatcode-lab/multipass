@@ -1,6 +1,6 @@
 import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { STATUS_META } from "@/lib/passport";
+import { ACCESS_EASE_WEIGHT, STATUS_META } from "@/lib/passport";
 import { comparisonHref, flagEmojiFor, formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary, type Region } from "@/lib/types";
 import AccessLegend from "./AccessLegend";
@@ -153,6 +153,12 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
             </button>
           </div>
 
+          <div className="comparison-color-key" aria-label="Comparison color guide">
+            <span><i className="comparison-color-key__best" />Easiest access in the row</span>
+            <span><i className="comparison-color-key__worst" />Most restrictive in the row</span>
+            <small>Equal results stay neutral.</small>
+          </div>
+
           <div className="comparison-table-wrap">
             <table className="comparison-table">
               <thead>
@@ -169,19 +175,34 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                     <tr className="comparison-table__region" key={`${region}-heading`}>
                       <th colSpan={result.scenarios.length + 1}>{formatRegion(region)} <span>{regionRows.length}</span></th>
                     </tr>,
-                    ...regionRows.map((row) => (
-                      <tr key={row.destination.code}>
-                        <th>
-                          <span className="country-flag" aria-hidden="true">{flagEmojiFor(row.destination.code)}</span>
-                          {row.destination.name}
-                        </th>
-                        {row.cells.map((cell, index) => (
-                          <td data-label={result.scenarios[index]?.name} key={`${row.destination.code}-${index}`}>
-                            <StatusPill status={cell.status} via={cell.via} compact />
-                          </td>
-                        ))}
-                      </tr>
-                    )),
+                    ...regionRows.map((row) => {
+                      const weights = row.cells.map((cell) => ACCESS_EASE_WEIGHT[cell.status]);
+                      const bestWeight = Math.max(...weights);
+                      const worstWeight = Math.min(...weights);
+                      const hasRelativeDifference = bestWeight !== worstWeight;
+                      return (
+                        <tr key={row.destination.code}>
+                          <th>
+                            <span className="country-flag" aria-hidden="true">{flagEmojiFor(row.destination.code)}</span>
+                            {row.destination.name}
+                          </th>
+                          {row.cells.map((cell, index) => {
+                            const relativeClass = !hasRelativeDifference
+                              ? undefined
+                              : weights[index] === bestWeight
+                                ? "comparison-cell--best"
+                                : weights[index] === worstWeight
+                                  ? "comparison-cell--worst"
+                                  : undefined;
+                            return (
+                              <td className={relativeClass} data-label={result.scenarios[index]?.name} key={`${row.destination.code}-${index}`}>
+                                <StatusPill status={cell.status} via={cell.via} compact />
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      );
+                    }),
                   ];
                 })}
               </tbody>

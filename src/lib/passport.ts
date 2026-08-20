@@ -55,7 +55,7 @@ export const STATUS_META: Record<
   },
 };
 
-const STATUS_WEIGHT: Record<AccessStatus, number> = {
+export const ACCESS_EASE_WEIGHT: Record<AccessStatus, number> = {
   citizenship: 6,
   visa_free: 5,
   eta: 4,
@@ -232,7 +232,7 @@ function bestCell(codes: string[], destinationCode: string, details: Record<stri
 
   for (const code of codes) {
     const status = details[code]?.statuses[destinationCode] ?? "unknown";
-    if (STATUS_WEIGHT[status] > STATUS_WEIGHT[bestStatus]) {
+    if (ACCESS_EASE_WEIGHT[status] > ACCESS_EASE_WEIGHT[bestStatus]) {
       bestStatus = status;
       via = [code];
     } else if (status === bestStatus) {

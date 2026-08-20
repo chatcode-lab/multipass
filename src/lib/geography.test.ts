@@ -5,6 +5,7 @@ import {
   getFriendlyComparison,
   getPassportCollection,
   getPopularComparison,
+  UNTRACKED_DESTINATIONS,
 } from "./geography";
 
 describe("country flags", () => {
@@ -42,5 +43,13 @@ describe("comparison URLs", () => {
 
   it("resolves legacy slugs to the current canonical comparison", () => {
     expect(getPopularComparison("us-vs-uk")?.slug).toBe("united-states-vs-united-kingdom-passport");
+  });
+});
+
+describe("destination coverage disclosure", () => {
+  it("keeps a concise, unique registry of relevant areas outside the upstream model", () => {
+    expect(UNTRACKED_DESTINATIONS).toHaveLength(15);
+    expect(new Set(UNTRACKED_DESTINATIONS.map(({ code }) => code)).size).toBe(UNTRACKED_DESTINATIONS.length);
+    expect(UNTRACKED_DESTINATIONS.map(({ code }) => code)).toEqual(expect.arrayContaining(["AX", "GG", "IM", "JE", "SX", "WF"]));
   });
 });

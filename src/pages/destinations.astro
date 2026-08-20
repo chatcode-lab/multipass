@@ -2,6 +2,7 @@
 import DestinationExplorer from "@/components/DestinationExplorer";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext } from "@/lib/data";
+import { UNTRACKED_DESTINATIONS } from "@/lib/geography";
 
 const { manifest } = await getDataContext(Astro.locals);
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
@@ -28,6 +29,6 @@ const structuredData = {
     <p>This is the complete geographic reference used across passport access lists and comparison tables—not a list of passport issuers.</p>
   </header>
   <section class="section section--tight">
-    <DestinationExplorer destinations={manifest.destinations} client:visible />
+    <DestinationExplorer destinations={manifest.destinations} untracked={UNTRACKED_DESTINATIONS} client:visible />
   </section>
 </BaseLayout>

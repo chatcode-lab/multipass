@@ -19,8 +19,21 @@ test("homepage renders a searchable passport ranking", async ({ page }) => {
     const countCenter = resultCount!.y + resultCount!.height / 2;
     expect(Math.abs(regionCenter - countCenter)).toBeLessThanOrEqual(1);
   }
+  await expect(page.locator("[data-unranked-section]")).toContainText("American Samoa");
   await page.getByPlaceholder("Search passports").fill("Brazil");
   await expect(page.getByRole("listitem").filter({ hasText: "Brazil" })).toBeVisible();
+  if (viewport && viewport.width <= 620) {
+    await page.getByPlaceholder("Search passports").fill("The Gambia");
+    const name = page.locator("[data-passport-row]:not([hidden]) .ranking-row__passport > span:last-child > strong");
+    await expect(name).toHaveText("The Gambia");
+    const nameLayout = await name.evaluate((element) => ({
+      clientWidth: element.clientWidth,
+      scrollWidth: element.scrollWidth,
+      whiteSpace: getComputedStyle(element).whiteSpace,
+    }));
+    expect(nameLayout.whiteSpace).toBe("normal");
+    expect(nameLayout.scrollWidth).toBeLessThanOrEqual(nameLayout.clientWidth);
+  }
 });
 
 test("homepage calculator works without a framework-hydrated island", async ({ page }) => {
@@ -45,6 +58,9 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await page.getByLabel("Filter comparison destinations by region").selectOption("EUROPE");
   await expect(page.locator(".comparison-table__region")).toHaveCount(1);
   await expect(page.locator(".comparison-table__region")).toContainText("Europe");
+  await expect(page.locator(".comparison-color-key")).toContainText("Easiest access in the row");
+  await expect(page.locator("td.comparison-cell--best").first()).toBeVisible();
+  await expect(page.locator("td.comparison-cell--worst").first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "What the labels mean" })).toBeVisible();
   await expect(page.getByRole("link", { name: "eVisa vs ETA explained" })).toBeVisible();
   const tableViewport = await page.locator(".comparison-table-wrap").evaluate((element) => ({
@@ -107,11 +123,30 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
     if (viewport && viewport.width > 620) await row.hover();
     await button.click();
     await expect(button).toHaveAttribute("aria-pressed", "true");
+    return { row, button };
   };
 
-  await selectPassport("Singapore");
+  const rwandaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Rwanda" }).first();
+  await rwandaRow.scrollIntoViewIfNeeded();
+  const beforeSelection = await rwandaRow.boundingBox();
+  const { button: rwandaButton } = await selectPassport("Rwanda");
+  const afterSelection = await rwandaRow.boundingBox();
+  expect(beforeSelection).not.toBeNull();
+  expect(afterSelection).not.toBeNull();
+  expect(Math.abs(afterSelection!.y - beforeSelection!.y)).toBeLessThanOrEqual(1);
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 620) {
+    const touchTarget = await rwandaButton.boundingBox();
+    expect(touchTarget).not.toBeNull();
+    expect(touchTarget!.width).toBeGreaterThanOrEqual(44);
+    expect(touchTarget!.height).toBeGreaterThanOrEqual(44);
+  }
   await expect(explorer.locator("[data-ranking-compare-bar]")).toBeVisible();
   await expect(explorer.getByRole("button", { name: "Select one more" })).toBeDisabled();
+  const tanzaniaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Tanzania" }).first();
+  await tanzaniaRow.locator(".ranking-row__link").click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(tanzaniaRow.locator("[data-ranking-select]")).toHaveAttribute("aria-pressed", "true");
   await explorer.getByRole("button", { name: "Cancel" }).click();
   await expect(explorer.locator("[data-ranking-compare-bar]")).toBeHidden();
 
@@ -166,11 +201,21 @@ test("destination and Markdown directories are directly accessible", async ({ pa
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Every destination");
   const frenchWestIndies = page.locator("li").filter({ hasText: "French West Indies" });
   await expect(frenchWestIndies.locator(".country-flag")).toHaveText("🇫🇷");
+  await expect(page.getByRole("heading", { name: "Not tracked separately" })).toBeVisible();
+  await expect(page.locator(".coverage-disclosure--destinations")).toContainText("Guernsey");
+  await expect(page.getByRole("link", { name: "Names and codes follow the UN M49 reference." })).toBeVisible();
 
   const markdown = await request.get("/passport/singapore.md");
   expect(markdown.ok()).toBe(true);
   expect(markdown.headers()["content-type"]).toContain("text/markdown");
   expect(await markdown.text()).toContain("# Singapore passport rank and visa access");
+
+  const destinationMarkdown = await request.get("/destinations.md");
+  expect(await destinationMarkdown.text()).toContain("## Not tracked separately");
+  expect(await destinationMarkdown.text()).toContain("Guernsey (GG)");
+  const indexMarkdown = await request.get("/index.md");
+  expect(await indexMarkdown.text()).toContain("## Destinations without a separate passport rank");
+  expect(await indexMarkdown.text()).toContain("American Samoa (AS)");
 });
 
 test("regional, language, and indexed comparison pages render useful content", async ({ page, request }) => {

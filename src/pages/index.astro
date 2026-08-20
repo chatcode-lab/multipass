@@ -6,6 +6,8 @@ import { getDataContext } from "@/lib/data";
 import { PASSPORT_COLLECTIONS } from "@/lib/geography";
 
 const { manifest, source } = await getDataContext(Astro.locals);
+const rankedCodes = new Set(manifest.passports.map((passport) => passport.code));
+const unrankedDestinations = manifest.destinations.filter((destination) => !rankedCodes.has(destination.code));
 const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric" }).format(
   new Date(manifest.checkedAt),
 );
@@ -71,6 +73,6 @@ const structuredData = {
     <nav class="collection-links" aria-label="Focused passport rankings">
       {PASSPORT_COLLECTIONS.map((collection) => <a href={`/${collection.slug}`}>{collection.name}</a>)}
     </nav>
-    <RankingExplorer passports={manifest.passports} />
+    <RankingExplorer passports={manifest.passports} unranked={unrankedDestinations} />
   </section>
 </BaseLayout>

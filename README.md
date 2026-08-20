@@ -63,6 +63,12 @@ The `multipass-data-sync` Worker stages ten passport records per invocation. Fou
 
 The public application reads KV in its Worker runtime. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
 
+## Catalog coverage
+
+The global ranking contains 199 passport issuers, while access calculations use 227 destinations. The ranking footer lists tracked destinations for which the upstream source provides no separate passport record; MultiPass Rank does not invent ranks for them.
+
+The destination directory also carries a concise UN M49/ISO-based disclosure of relevant inhabited or commonly referenced areas that the upstream destination model does not represent separately. Those areas do not affect scores or comparisons, and the disclosure intentionally omits most remote uninhabited areas.
+
 ## Cloudflare provisioning
 
 Authenticate Wrangler without storing credentials in the repository:

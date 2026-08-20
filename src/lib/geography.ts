@@ -1,4 +1,4 @@
-import type { PassportSummary, Region } from "./types";
+import type { Destination, PassportSummary, Region } from "./types";
 
 export function formatRegion(region: Region): string {
   return region
@@ -18,6 +18,27 @@ export function flagEmojiFor(code: string): string {
     .map((letter) => String.fromCodePoint(0x1f1e6 + letter.charCodeAt(0) - 65))
     .join("");
 }
+
+// A concise disclosure list of UN M49 / ISO-coded areas that are not modeled
+// as separate destinations by the upstream access dataset. Remote uninhabited
+// areas are intentionally omitted from this user-facing list.
+export const UNTRACKED_DESTINATIONS: readonly Destination[] = [
+  { code: "AX", name: "Åland Islands", region: "EUROPE" },
+  { code: "BL", name: "Saint Barthélemy", region: "CARIBBEAN" },
+  { code: "CC", name: "Cocos (Keeling) Islands", region: "OCEANIA" },
+  { code: "CX", name: "Christmas Island", region: "OCEANIA" },
+  { code: "EH", name: "Western Sahara", region: "AFRICA" },
+  { code: "GG", name: "Guernsey", region: "EUROPE" },
+  { code: "IM", name: "Isle of Man", region: "EUROPE" },
+  { code: "JE", name: "Jersey", region: "EUROPE" },
+  { code: "NF", name: "Norfolk Island", region: "OCEANIA" },
+  { code: "PM", name: "Saint Pierre and Miquelon", region: "AMERICAS" },
+  { code: "PN", name: "Pitcairn Islands", region: "OCEANIA" },
+  { code: "SJ", name: "Svalbard and Jan Mayen", region: "EUROPE" },
+  { code: "SX", name: "Sint Maarten (Dutch part)", region: "CARIBBEAN" },
+  { code: "TK", name: "Tokelau", region: "OCEANIA" },
+  { code: "WF", name: "Wallis and Futuna", region: "OCEANIA" },
+] as const;
 
 export interface PassportCollection {
   slug: string;

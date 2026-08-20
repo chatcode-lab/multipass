@@ -3,7 +3,12 @@ import { useMemo, useState } from "react";
 import { flagEmojiFor, formatRegion } from "@/lib/geography";
 import { REGIONS, type Destination, type Region } from "@/lib/types";
 
-export default function DestinationExplorer({ destinations }: { destinations: Destination[] }) {
+interface DestinationExplorerProps {
+  destinations: Destination[];
+  untracked?: readonly Destination[];
+}
+
+export default function DestinationExplorer({ destinations, untracked = [] }: DestinationExplorerProps) {
   const [query, setQuery] = useState("");
   const [region, setRegion] = useState<Region | "ALL">("ALL");
   const filtered = useMemo(() => {
@@ -13,6 +18,13 @@ export default function DestinationExplorer({ destinations }: { destinations: De
       (!needle || destination.name.toLowerCase().includes(needle) || destination.code.toLowerCase().includes(needle)),
     );
   }, [destinations, query, region]);
+  const filteredUntracked = useMemo(() => {
+    const needle = query.trim().toLowerCase();
+    return untracked.filter((destination) =>
+      (region === "ALL" || destination.region === region) &&
+      (!needle || destination.name.toLowerCase().includes(needle) || destination.code.toLowerCase().includes(needle)),
+    );
+  }, [query, region, untracked]);
 
   return (
     <div className="destination-explorer">
@@ -29,7 +41,7 @@ export default function DestinationExplorer({ destinations }: { destinations: De
             {REGIONS.map((value) => <option value={value} key={value}>{formatRegion(value)}</option>)}
           </select>
         </label>
-        <span className="result-count" aria-live="polite">{filtered.length} destinations</span>
+        <span className="result-count" aria-live="polite">{filtered.length} tracked destinations</span>
       </div>
       <div className="destination-groups">
         {REGIONS.map((regionName) => {
@@ -52,7 +64,27 @@ export default function DestinationExplorer({ destinations }: { destinations: De
             </section>
           );
         })}
-        {!filtered.length && <p className="empty-state">No destinations match those filters.</p>}
+        {filteredUntracked.length > 0 && (
+          <section className="coverage-disclosure coverage-disclosure--destinations">
+            <div className="coverage-disclosure__heading">
+              <div><span className="eyebrow">Coverage note</span><h2>Not tracked separately</h2></div>
+              <span>{filteredUntracked.length}</span>
+            </div>
+            <p>
+              This concise list covers recognized areas absent from the upstream destination model. They do not affect scores or comparisons, and the list intentionally omits most remote uninhabited areas.
+              {" "}<a href="https://unstats.un.org/unsd/methodology/m49/">Names and codes follow the UN M49 reference.</a>
+            </p>
+            <ul className="coverage-disclosure__grid">
+              {filteredUntracked.map((destination) => (
+                <li key={destination.code}>
+                  <span className="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
+                  <span><strong>{destination.name}</strong><small>{destination.code} · Not modeled</small></span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        {!filtered.length && !filteredUntracked.length && <p className="empty-state">No destinations match those filters.</p>}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { collectionForRegion, comparisonHref, formatRegion, relatedPassports } from "./geography";
+import { collectionForRegion, comparisonHref, formatRegion, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import { STATUS_META } from "./passport";
 import { REGIONS, type ComparisonResult, type PassportAccess, type PassportSummary, type SnapshotManifest } from "./types";
@@ -45,6 +45,9 @@ export function destinationsMarkdown(manifest: SnapshotManifest): string {
       .map((destination) => `- ${escapeMarkdown(destination.name)} (${destination.code})`);
     return `## ${formatRegion(region)}\n\n${rows.join("\n")}`;
   });
+  const untracked = UNTRACKED_DESTINATIONS.map((destination) =>
+    `- ${escapeMarkdown(destination.name)} (${destination.code})`,
+  ).join("\n");
   return `# Passport access destination directory
 
 All ${manifest.destinations.length} countries and territories tracked by MultiPass Rank, grouped by region. This is the destination catalog used by passport access pages and comparison tables; it is different from the passport issuer list.
@@ -52,6 +55,14 @@ All ${manifest.destinations.length} countries and territories tracked by MultiPa
 Data checked ${checkedDate(manifest)}.
 
 ${groups.join("\n\n")}
+
+## Not tracked separately
+
+The following concise list covers recognized areas absent from the upstream destination model. They do not affect scores or comparisons; remote uninhabited areas are intentionally omitted.
+
+${untracked}
+
+Reference registry: [United Nations M49 country or area codes](https://unstats.un.org/unsd/methodology/m49/).
 
 [View the passport ranking](${absoluteUrl("/")})`;
 }
