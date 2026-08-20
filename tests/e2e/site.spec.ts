@@ -197,6 +197,7 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
 
   const rwandaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Rwanda" }).first();
   await rwandaRow.scrollIntoViewIfNeeded();
+  await page.evaluate(() => document.fonts.ready);
   await expect(rwandaRow.locator("[data-ranking-select]")).toHaveCSS("transform", "none");
   const beforeSelection = await rwandaRow.evaluate((element) => (element as HTMLElement).offsetTop);
   const { button: rwandaButton } = await selectPassport("Rwanda");
@@ -485,7 +486,7 @@ test("combination research publishes exact results, reproducible links, and Mark
 
   const fullSetRanking = await request.get(fullSetHref!);
   expect(fullSetRanking.ok()).toBe(true);
-  expect(await fullSetRanking.text()).toContain("Custom combined passport ranking");
+  expect(await fullSetRanking.text()).toContain("passport rank equivalent | MultiPass Rank");
 
   const worldMarkdown = await request.get("/how-many-passports-to-cover-the-world.md");
   expect(worldMarkdown.ok()).toBe(true);
