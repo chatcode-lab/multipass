@@ -138,9 +138,9 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
 
   const rwandaRow = explorer.locator("[data-passport-row]").filter({ hasText: "Rwanda" }).first();
   await rwandaRow.scrollIntoViewIfNeeded();
-  const beforeSelection = await rwandaRow.evaluate((element) => element.offsetTop);
+  const beforeSelection = await rwandaRow.evaluate((element) => (element as HTMLElement).offsetTop);
   const { button: rwandaButton } = await selectPassport("Rwanda");
-  const afterSelection = await rwandaRow.evaluate((element) => element.offsetTop);
+  const afterSelection = await rwandaRow.evaluate((element) => (element as HTMLElement).offsetTop);
   expect(afterSelection).toBe(beforeSelection);
   await expect(explorer.locator("[data-ranking-compare-bar]")).toHaveCSS("position", "fixed");
   const viewport = page.viewportSize();
