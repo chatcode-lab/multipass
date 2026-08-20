@@ -616,4 +616,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.eta.gov.lk/slvisa/visainfo/center.jsp?locale=en_US",
     reviewedAt: "2026-08-20",
   },
+  ...(["ET", "VU"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "TH",
+    status: "visa_on_arrival" as const,
+    reason: "Thailand's current Consular Affairs schedule places this ordinary passport in the 15-day visa-on-arrival cohort, not the visa-exemption cohort.",
+    sourceUrl: "https://image.mfa.go.th/mfa/0/zE6021nSnu/0303/VOA.pdf",
+    reviewedAt: "2026-08-20",
+  })),
 ] as const;

@@ -714,6 +714,17 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("VN", "VN", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
+  it("covers Thailand's current ordinary-passport schedules", () => {
+    const thailandPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "TH");
+
+    expect(thailandPairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("NL", "TH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ET", "TH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "TH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TH", "TH", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -886,6 +897,12 @@ describe("official visa evidence", () => {
       "vanban.chinhphu.vn",
       "congbao.cdnchinhphu.vn",
       "vbpl.moj.gov.vn",
+      "consular.mfa.go.th",
+      "image.mfa.go.th",
+      "thaievisa.go.th",
+      "tdac.immigration.go.th",
+      "www.mfa.go.th",
+      "mfa.go.th",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

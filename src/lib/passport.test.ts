@@ -341,6 +341,15 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { GH: "citizenship", LK: "eta" }, mobilityScore: 1 });
   });
 
+  it("applies Thailand's reviewed visa-on-arrival corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "ET",
+      name: "Ethiopia",
+      statuses: { ET: "citizenship", TH: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { ET: "citizenship", TH: "visa_on_arrival" }, mobilityScore: 1 });
+  });
+
   it("applies Armenia's live ordinary-passport checker corrections", () => {
     expect(applyVerifiedAccessOverrides({
       code: "AZ",
