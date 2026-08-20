@@ -663,6 +663,36 @@ test("destination passport filters support controls, query parameters, and tie-l
   await expect(page).toHaveURL(/#passport-access$/);
 });
 
+test("unindexed evidence matrix audits every passport against a destination region", async ({ page, request }) => {
+  const response = await page.goto("/evidence-status?region=EUROPE");
+  expect(response?.headers()["x-robots-tag"]).toBe("noindex, nofollow");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex,nofollow");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Evidence coverage matrix.");
+  await expect(page.locator(".evidence-matrix-table")).toBeVisible();
+  await expect(page.locator(".evidence-matrix-table tbody tr")).toHaveCount(199);
+  await expect(page.locator(".evidence-status-summary")).toContainText("199 passports × 52 destinations");
+
+  await page.getByPlaceholder("Filter passports").fill("Japan");
+  await page.getByPlaceholder("Filter destinations").fill("Germany");
+  await expect(page.locator(".evidence-matrix-table tbody tr")).toHaveCount(1);
+  await page.getByRole("button", { name: /Japan to Germany: Visa-free; verified/ }).click();
+  const detail = page.locator(".evidence-cell-detail");
+  await expect(detail).toContainText("Verified 20 August 2026");
+  await expect(detail.getByRole("link", { name: "Open relationship record" }))
+    .toHaveAttribute("href", "/japan-germany-visa-free");
+
+  const api = await request.get("/api/v1/evidence-status?region=EUROPE");
+  expect(api.ok()).toBe(true);
+  expect(api.headers()["x-robots-tag"]).toBe("noindex, nofollow");
+  const matrix = await api.json();
+  expect(matrix.summary.total).toBe(199 * 52);
+  expect(matrix.summary.verified).toBeGreaterThan(0);
+  expect(matrix.summary.pending).toBeGreaterThan(0);
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(await sitemap.text()).not.toContain("evidence-status");
+});
+
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {
   await page.goto("/");
   const results = await new AxeBuilder({ page }).analyze();
