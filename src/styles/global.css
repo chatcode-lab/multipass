@@ -481,14 +481,13 @@ main { min-height: 68vh; }
   opacity: 0;
   pointer-events: none;
   cursor: pointer;
-  transform: translateX(4px);
-  transition: opacity .16s ease, transform .16s ease, background .16s ease, color .16s ease;
+  transition: opacity .16s ease, background .16s ease, color .16s ease;
 }
 .ranking-row__select::before { content: ""; position: absolute; inset: -8px; }
 .ranking-row:hover .ranking-row__select,
 .ranking-row:focus-within .ranking-row__select,
 .ranking-row__select:focus-visible,
-.ranking-explorer.is-selecting .ranking-row__select { opacity: 1; pointer-events: auto; transform: none; }
+.ranking-explorer.is-selecting .ranking-row__select { opacity: 1; pointer-events: auto; }
 .ranking-row:hover .ranking-row__arrow,
 .ranking-row:focus-within .ranking-row__arrow,
 .ranking-explorer.is-selecting .ranking-row__arrow { opacity: 0; }
