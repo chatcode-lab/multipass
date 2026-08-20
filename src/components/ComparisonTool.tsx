@@ -153,12 +153,6 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
             </button>
           </div>
 
-          <div className="comparison-color-key" aria-label="Comparison color guide">
-            <span><i className="comparison-color-key__best" />Easiest access in the row</span>
-            <span><i className="comparison-color-key__worst" />Most restrictive in the row</span>
-            <small>Equal results stay neutral.</small>
-          </div>
-
           <div className="comparison-table-wrap">
             <table className="comparison-table">
               <thead>
@@ -188,7 +182,9 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                           </th>
                           {row.cells.map((cell, index) => {
                             const relativeClass = !hasRelativeDifference
-                              ? undefined
+                              ? weights[index] === ACCESS_EASE_WEIGHT.visa_free
+                                ? "comparison-cell--best"
+                                : undefined
                               : weights[index] === bestWeight
                                 ? "comparison-cell--best"
                                 : weights[index] === worstWeight

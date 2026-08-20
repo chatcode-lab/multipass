@@ -56,7 +56,7 @@ export const STATUS_META: Record<
 };
 
 export const ACCESS_EASE_WEIGHT: Record<AccessStatus, number> = {
-  citizenship: 6,
+  citizenship: 5,
   visa_free: 5,
   eta: 4,
   visa_on_arrival: 3,
@@ -232,7 +232,11 @@ function bestCell(codes: string[], destinationCode: string, details: Record<stri
 
   for (const code of codes) {
     const status = details[code]?.statuses[destinationCode] ?? "unknown";
-    if (ACCESS_EASE_WEIGHT[status] > ACCESS_EASE_WEIGHT[bestStatus]) {
+    const isPreferredHomeLabel =
+      ACCESS_EASE_WEIGHT[status] === ACCESS_EASE_WEIGHT[bestStatus] &&
+      status === "citizenship" &&
+      bestStatus !== "citizenship";
+    if (ACCESS_EASE_WEIGHT[status] > ACCESS_EASE_WEIGHT[bestStatus] || isPreferredHomeLabel) {
       bestStatus = status;
       via = [code];
     } else if (status === bestStatus) {
@@ -265,7 +269,9 @@ export function comparePassportSets(
     return {
       destination,
       cells,
-      isEqual: cells.every((cell) => cell.status === cells[0]?.status),
+      isEqual: cells.every(
+        (cell) => ACCESS_EASE_WEIGHT[cell.status] === ACCESS_EASE_WEIGHT[cells[0]?.status ?? "unknown"],
+      ),
     };
   });
 

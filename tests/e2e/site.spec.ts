@@ -58,7 +58,6 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await page.getByLabel("Filter comparison destinations by region").selectOption("EUROPE");
   await expect(page.locator(".comparison-table__region")).toHaveCount(1);
   await expect(page.locator(".comparison-table__region")).toContainText("Europe");
-  await expect(page.locator(".comparison-color-key")).toContainText("Easiest access in the row");
   await expect(page.locator("td.comparison-cell--best").first()).toBeVisible();
   await expect(page.locator("td.comparison-cell--worst").first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "What the labels mean" })).toBeVisible();
@@ -81,6 +80,17 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
     expect(firstResult!.x + firstResult!.width).toBeLessThanOrEqual(viewport.width);
     expect(copyLink!.x + copyLink!.width).toBeLessThanOrEqual(viewport.width);
   }
+});
+
+test("home and visa-free access are equivalent in comparisons", async ({ page }) => {
+  await page.goto("/compare?set=US&set=CA");
+  const canada = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "Canada" });
+  const unitedStates = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "United States" });
+  await expect(canada.locator("td.comparison-cell--best")).toHaveCount(2);
+  await expect(unitedStates.locator("td.comparison-cell--best")).toHaveCount(2);
+  await page.getByText("Differences only").click();
+  await expect(canada).toBeHidden();
+  await expect(unitedStates).toBeHidden();
 });
 
 test("country access can be narrowed to one destination region", async ({ page }) => {

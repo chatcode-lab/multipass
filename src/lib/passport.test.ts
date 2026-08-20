@@ -65,7 +65,7 @@ describe("passport calculations", () => {
     expect(result.rows[0].cells[1]).toEqual({ status: "citizenship", via: ["AA"] });
     expect(result.rows[1].cells[1]).toEqual({ status: "citizenship", via: ["BB"] });
     expect(result.rows[0].isEqual).toBe(true);
-    expect(result.rows[1].isEqual).toBe(false);
+    expect(result.rows[1].isEqual).toBe(true);
     expect(result.scenarios[0].mobilityScore).toBe(1);
     expect(result.scenarios[1].mobilityScore).toBe(1);
   });
