@@ -493,7 +493,7 @@ main { min-height: 68vh; }
 .ranking-explorer.is-selecting .ranking-row__arrow { opacity: 0; }
 .ranking-row__select-check { display: none; }
 .ranking-table__list > li.is-featured,
-.ranking-table__list > li.is-selected { z-index: 2; }
+.ranking-table__list > li.is-selected { z-index: 2; contain: none; content-visibility: visible; }
 .ranking-table__list > li.is-featured .ranking-row {
   margin-inline: -18px;
   padding-inline: 18px;
@@ -503,6 +503,7 @@ main { min-height: 68vh; }
 }
 .ranking-table__list > li.is-featured .ranking-row__rank,
 .ranking-table__list > li.is-featured .ranking-row__score strong { color: var(--burgundy); }
+.ranking-table__list > li.is-featured + li.is-featured .ranking-row { border-top: 2px solid rgb(124 48 47 / 52%); }
 .ranking-table__list > li.is-selected .ranking-row {
   margin-inline: -18px;
   padding-inline: 18px;
@@ -722,9 +723,9 @@ main { min-height: 68vh; }
 .comparison-empty h2 { margin: 0; color: var(--green); font-family: var(--serif); font-size: 34px; }
 .comparison-empty p { max-width: 420px; margin: 5px 0 0; color: var(--ink-soft); }
 
-.status-pill { display: inline-flex; align-items: center; gap: 7px; width: fit-content; min-height: 27px; padding: 4px 9px; border-radius: 99px; font-size: 11px; font-weight: 720; line-height: 1.1; white-space: nowrap; }
-.status-pill small { margin-left: 2px; opacity: .68; font-size: 9px; font-weight: 650; }
-.status-pill__dot { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: currentColor; }
+.status-pill { display: inline-flex; align-items: baseline; gap: 7px; width: fit-content; min-height: 27px; padding: 4px 9px; border-radius: 99px; font-size: 11px; font-weight: 720; line-height: 1.1; white-space: nowrap; }
+.status-pill small { margin-left: 2px; opacity: .68; font-size: 9px; font-weight: 650; line-height: 1; }
+.status-pill__dot { width: 6px; height: 6px; flex: 0 0 auto; align-self: center; border-radius: 50%; background: currentColor; }
 .status-pill--citizenship { background: #eee8fa; color: #6546a5; }
 .status-pill--visa_free { background: #e1efe7; color: #216847; }
 .status-pill--eta { background: #e1eff2; color: #276b7d; }

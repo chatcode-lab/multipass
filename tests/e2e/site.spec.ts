@@ -94,6 +94,23 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   }
 });
 
+test("comparison attribution is compact and only shown for a useful subset", async ({ page, request }) => {
+  await page.goto("/compare?set=PT,RU,IL&set=SG");
+  const israel = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "Israel" });
+  const unitedArabEmirates = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "United Arab Emirates" });
+  const israelAttribution = israel.locator("td").first().locator(".status-pill small");
+  await expect(israelAttribution).toHaveText("IL");
+  await expect(israelAttribution).not.toContainText("via");
+  await expect(israel.locator("td").first().locator(".status-pill")).toHaveCSS("align-items", "baseline");
+  await expect(unitedArabEmirates.locator("td").first().locator(".status-pill small")).toHaveCount(0);
+
+  const markdown = await request.get("/compare.md?set=PT,RU,IL&set=SG");
+  expect(markdown.ok()).toBe(true);
+  const markdownBody = await markdown.text();
+  expect(markdownBody).not.toContain(" via ");
+  expect(markdownBody).toContain("Citizenship IL");
+});
+
 test("home and visa-free access are equivalent in comparisons", async ({ page }) => {
   await page.goto("/compare?set=US&set=CA");
   const canada = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "Canada" });
@@ -229,6 +246,9 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   expect(highlightBounds!.x + highlightBounds!.width).toBeGreaterThan(rankingBounds!.x + rankingBounds!.width);
   const viewport = page.viewportSize();
   if (viewport && viewport.width <= 620) {
+    await expect(combination).toHaveCSS("content-visibility", "visible");
+    expect(highlightBounds!.x).toBeLessThanOrEqual(.5);
+    expect(highlightBounds!.x + highlightBounds!.width).toBeGreaterThanOrEqual(viewport.width - .5);
     expect(highlightBounds!.height).toBeLessThanOrEqual(85);
     const equivalentLabel = await combination.locator(".ranking-row__rank small").evaluate((element) => ({
       clientWidth: element.clientWidth,
@@ -251,6 +271,9 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   expect(markdownBody).toContain("# Custom passport and combination ranking");
   expect(markdownBody).toContain("Combined set 1");
   expect(markdownBody).toContain("/compare?set=US%2CCA&set=PT");
+
+  await page.goto("/rank?set=PT,RU,IL&set=SG");
+  await expect(page.locator(".ranking-table__list > li.is-featured + li.is-featured .ranking-row")).toHaveCSS("border-top-width", "2px");
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {

@@ -9,10 +9,8 @@ interface StatusPillProps {
 
 export default function StatusPill({ status, compact = false, via = [] }: StatusPillProps) {
   const meta = STATUS_META[status];
-  const viaLabel = via.length ? ` via ${via.join(", ")}` : "";
-  const visibleVia = compact && via.length > 2
-    ? `${via.slice(0, 2).join(" / ")} +${via.length - 2}`
-    : via.join(" / ");
+  const viaLabel = via.length ? ` through ${via.join(", ")}` : "";
+  const visibleVia = via.join("/");
   return (
     <span
       className={`status-pill status-pill--${status}`}
@@ -21,7 +19,7 @@ export default function StatusPill({ status, compact = false, via = [] }: Status
     >
       <span className="status-pill__dot" aria-hidden="true" />
       {compact ? meta.shortLabel : meta.label}
-      {via.length > 0 && <small>via {visibleVia}</small>}
+      {via.length > 0 && <small>{visibleVia}</small>}
     </span>
   );
 }

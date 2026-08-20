@@ -182,6 +182,10 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                             {row.destination.name}
                           </th>
                           {row.cells.map((cell, index) => {
+                            const scenario = result.scenarios[index];
+                            const visibleVia = scenario && scenario.codes.length > 1 && cell.via.length < scenario.codes.length
+                              ? cell.via
+                              : [];
                             const relativeClass = !hasRelativeDifference
                               ? weights[index] === ACCESS_EASE_WEIGHT.visa_free
                                 ? "comparison-cell--best"
@@ -195,7 +199,7 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
                               <td className={relativeClass} data-label={result.scenarios[index]?.name} key={`${row.destination.code}-${index}`}>
                                 <StatusPill
                                   status={cell.status}
-                                  via={result.scenarios[index]?.codes.length === 1 ? [] : cell.via}
+                                  via={visibleVia}
                                   compact
                                 />
                               </td>

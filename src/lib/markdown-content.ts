@@ -164,9 +164,12 @@ export function comparisonMarkdown(result: ComparisonResult, title = "Passport c
   );
   const sections = REGIONS.map((region) => {
     const rows = result.rows.filter((row) => row.destination.region === region).map((row) => {
-      const cells = row.cells.map((cell) => {
-        const via = cell.via.length ? ` via ${cell.via.join(" / ")}` : "";
-        return escapeMarkdown(`${STATUS_META[cell.status].label}${via}`);
+      const cells = row.cells.map((cell, index) => {
+        const scenario = result.scenarios[index];
+        const attribution = scenario && scenario.codes.length > 1 && cell.via.length < scenario.codes.length
+          ? ` ${cell.via.join("/")}`
+          : "";
+        return escapeMarkdown(`${STATUS_META[cell.status].label}${attribution}`);
       });
       return `| ${escapeMarkdown(row.destination.name)} | ${cells.join(" | ")} |`;
     });
