@@ -29,10 +29,15 @@ async function reconcileLiveManifest(
 ): Promise<SnapshotManifest> {
   const affectedCodes = [...new Set(VERIFIED_ACCESS_OVERRIDES.map(({ passportCode }) => passportCode))];
   if (!affectedCodes.length) return manifest;
-  const keys = affectedCodes.map((code) => `snapshot:${version}:passport:${code}`);
-  const values = await kv.get<PassportAccess>(keys, "json");
+  const chunks = Array.from({ length: Math.ceil(affectedCodes.length / 100) }, (_, index) =>
+    affectedCodes.slice(index * 100, (index + 1) * 100),
+  );
+  const valueMaps = await Promise.all(chunks.map((chunk) =>
+    kv.get<PassportAccess>(chunk.map((code) => `snapshot:${version}:passport:${code}`), "json"),
+  ));
   const corrected = Object.fromEntries(affectedCodes.flatMap((code) => {
-    const detail = values.get(`snapshot:${version}:passport:${code}`);
+    const key = `snapshot:${version}:passport:${code}`;
+    const detail = valueMaps.find((values) => values.has(key))?.get(key);
     return detail ? [[code, applyVerifiedAccessOverrides(detail)] as const] : [];
   }));
   return reconcileManifestPassportDetails(manifest, corrected);
