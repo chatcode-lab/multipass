@@ -451,7 +451,7 @@ test("destination and relationship pages expose official evidence and Markdown",
 
   await page.goto("/belgium-angola-visa-free");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Belgium to Angola");
-  await expect(page.getByText("Official evidence collected")).toBeVisible();
+  await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /Government of Angola/ })).toHaveAttribute("href", /governo\.gov\.ao/);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /^index,/);
 
@@ -463,7 +463,7 @@ test("destination and relationship pages expose official evidence and Markdown",
 test("relationship URLs redirect stale statuses and keep incomplete evidence out of search", async ({ page, request }) => {
   await page.goto("/belgium-chad-evisa");
   await expect(page).toHaveURL(/\/belgium-chad-visa$/);
-  await expect(page.getByText("Official-source review pending")).toBeVisible();
+  await expect(page.getByText("Official-source review pending", { exact: true })).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
 
   const markdown = await request.get("/belgium-chad-visa.md", { maxRedirects: 0 });
