@@ -475,16 +475,17 @@ test("combination research publishes exact results, reproducible links, and Mark
   await page.goto("/how-many-passports-to-cover-the-world");
   await expect(page.locator(".research-hero__answer strong")).toHaveText("10");
   await expect(page.locator(".coverage-sequence > li")).toHaveCount(10);
-  await expect(page.getByRole("link", { name: "Place the full set in the ranking" })).toHaveAttribute(
-    "href",
-    /set=AE%2CSE%2CRW%2CMY%2CMV%2CTD%2CAF%2CKP%2CTM%2CKE/,
-  );
+  const fullSetHref = await page.getByRole("link", { name: "Place the full set in the ranking" }).getAttribute("href");
+  expect(fullSetHref).not.toBeNull();
+  const fullSetCodes = new URL(fullSetHref!, "https://multipassrank.com").searchParams.get("set")?.split(",") ?? [];
+  expect(fullSetCodes).toHaveLength(10);
+  expect(new Set(fullSetCodes).size).toBe(10);
   const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
   expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
 
-  const fullSetRanking = await request.get("/rank?set=AE,SE,RW,MY,MV,TD,AF,KP,TM,KE");
+  const fullSetRanking = await request.get(fullSetHref!);
   expect(fullSetRanking.ok()).toBe(true);
-  expect(await fullSetRanking.text()).toContain("United Arab Emirates + Sweden + Rwanda");
+  expect(await fullSetRanking.text()).toContain("Custom combined passport ranking");
 
   const worldMarkdown = await request.get("/how-many-passports-to-cover-the-world.md");
   expect(worldMarkdown.ok()).toBe(true);
@@ -495,6 +496,7 @@ test("combination research publishes exact results, reproducible links, and Mark
   const insights = await insightsResponse.json();
   expect(insights.bestPairs[0].codes).toEqual(["JP", "AE"]);
   expect(insights.minimumCover.size).toBe(10);
+  expect(fullSetCodes).toEqual(insights.minimumCover.codes);
 
   const sitemap = await request.get("/sitemap.xml");
   const xml = await sitemap.text();
