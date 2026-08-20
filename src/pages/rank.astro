@@ -3,7 +3,7 @@ import RankingExplorer from "@/components/RankingExplorer.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccessBatch } from "@/lib/data";
 import { comparisonHref } from "@/lib/geography";
-import { comparePassportSets, parsePassportSets } from "@/lib/passport";
+import { comparePassportSets, denseRankByScore, parsePassportSets } from "@/lib/passport";
 import type { ComparisonResult } from "@/lib/types";
 
 const { manifest, source } = await getDataContext(Astro.locals);
@@ -28,6 +28,10 @@ const comparisonUrl = result ? comparisonHref(result.scenarios.map((scenario) =>
 const customTitle = result?.scenarios.length === 1
   ? `${result.scenarios[0].name} passport rank equivalent`
   : "Custom combined passport ranking";
+const customRanks = result ? denseRankByScore([
+  ...manifest.passports.map((passport) => passport.mobilityScore),
+  ...result.scenarios.filter((scenario) => scenario.codes.length > 1).map((scenario) => scenario.mobilityScore),
+]) : null;
 Astro.response.headers.set(
   "Cache-Control",
   requestedSets.length
@@ -59,7 +63,7 @@ const structuredData = {
     <h1>{result ? customTitle : "Place any passport set in the global ranking."}</h1>
     <p>
       {result
-        ? "Each highlighted option is positioned by its mobility score. Combined positions are rank equivalents against the single-passport index."
+        ? "Each highlighted option is positioned by its mobility score. Ranks are recalculated across this custom list, with tied scores sharing a position."
         : "Select passports below, then combine them into one practical mobility score or compare them as separate options."}
     </p>
   </header>
@@ -80,7 +84,7 @@ const structuredData = {
     {result && (
       <div class="rank-set-summary" aria-label="Selected passport sets">
         {result.scenarios.map((scenario, index) => (
-          <span><b>Set {index + 1}</b><span>{scenario.name}</span><strong>#{scenario.rankEquivalent}</strong></span>
+          <span><b>Set {index + 1}</b><span>{scenario.name}</span><strong>#{customRanks?.get(scenario.mobilityScore) ?? scenario.rankEquivalent}</strong></span>
         ))}
       </div>
     )}

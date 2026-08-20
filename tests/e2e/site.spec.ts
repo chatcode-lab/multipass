@@ -102,7 +102,8 @@ test("comparison attribution is compact and only shown for a useful subset", asy
   const israelAttribution = israel.locator("td").first().locator(".status-pill small");
   await expect(israelAttribution).toHaveText("IL");
   await expect(israelAttribution).not.toContainText("via");
-  await expect(israel.locator("td").first().locator(".status-pill")).toHaveCSS("align-items", "baseline");
+  await expect(israel.locator("td").first().locator(".status-pill")).toHaveCSS("align-items", "center");
+  await expect(israel.locator("td").first().locator(".status-pill__text")).toHaveCSS("align-items", "baseline");
   await expect(unitedArabEmirates.locator("td").first().locator(".status-pill small")).toHaveCount(0);
 
   const markdown = await request.get("/compare.md?set=PT,RU,IL&set=SG");
@@ -218,7 +219,7 @@ test("ranking selections can create a combined rank", async ({ page }) => {
   await expect(page).toHaveURL(/\/rank\?set=BR%2CPT$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Brazil + Portugal");
   await expect(page.locator("[data-combination-row]")).toHaveCount(1);
-  await expect(page.locator("[data-combination-row]")).toContainText("equivalent");
+  await expect(page.locator("[data-combination-row] .ranking-row__rank small")).toHaveCount(0);
 });
 
 test("custom ranking preserves and reuses passport sets", async ({ page, request }) => {
@@ -259,11 +260,11 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
     expect(highlightBounds!.x).toBeLessThanOrEqual(.5);
     expect(highlightBounds!.x + highlightBounds!.width).toBeGreaterThanOrEqual(viewport.width - .5);
     expect(highlightBounds!.height).toBeLessThanOrEqual(85);
-    const equivalentLabel = await combination.locator(".ranking-row__rank small").evaluate((element) => ({
-      clientWidth: element.clientWidth,
-      scrollWidth: element.scrollWidth,
-    }));
-    expect(equivalentLabel.scrollWidth).toBeLessThanOrEqual(equivalentLabel.clientWidth);
+    const scoreBounds = await combination.locator(".ranking-row__score strong").boundingBox();
+    const selectBounds = await combination.locator("[data-ranking-select]").boundingBox();
+    expect(scoreBounds).not.toBeNull();
+    expect(selectBounds).not.toBeNull();
+    expect(Math.abs(scoreBounds!.y + scoreBounds!.height / 2 - (selectBounds!.y + selectBounds!.height / 2))).toBeLessThanOrEqual(1);
     await expect(combination.locator(".ranking-row__passport strong")).toHaveCSS("-webkit-line-clamp", "3");
     const pageWidth = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth }));
     expect(pageWidth.document - pageWidth.viewport).toBeLessThanOrEqual(1);
@@ -280,6 +281,10 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   expect(markdownBody).toContain("# Custom passport and combination ranking");
   expect(markdownBody).toContain("Combined set 1");
   expect(markdownBody).toContain("/compare?set=US%2CCA&set=PT");
+
+  await page.goto("/rank?set=PT,RU,IL&set=SG");
+  await expect(page.locator("[data-combination-row] .ranking-row__rank")).toHaveText("#1");
+  await expect(page.locator("[data-passport-row][data-set='SG'] .ranking-row__rank")).toHaveText("#2");
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {

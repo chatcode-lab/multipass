@@ -18,8 +18,10 @@ export default function StatusPill({ status, compact = false, via = [] }: Status
       aria-label={`${meta.label}${viaLabel}`}
     >
       <span className="status-pill__dot" aria-hidden="true" />
-      {compact ? meta.shortLabel : meta.label}
-      {via.length > 0 && <small>{visibleVia}</small>}
+      <span className="status-pill__text">
+        <span className="status-pill__label">{compact ? meta.shortLabel : meta.label}</span>
+        {via.length > 0 && <small>{visibleVia}</small>}
+      </span>
     </span>
   );
 }

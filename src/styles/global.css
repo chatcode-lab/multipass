@@ -723,9 +723,10 @@ main { min-height: 68vh; }
 .comparison-empty h2 { margin: 0; color: var(--green); font-family: var(--serif); font-size: 34px; }
 .comparison-empty p { max-width: 420px; margin: 5px 0 0; color: var(--ink-soft); }
 
-.status-pill { display: inline-flex; align-items: baseline; gap: 7px; width: fit-content; min-height: 27px; padding: 4px 9px; border-radius: 99px; font-size: 11px; font-weight: 720; line-height: 1.1; white-space: nowrap; }
-.status-pill small { margin-left: 2px; opacity: .68; font-size: 9px; font-weight: 650; line-height: 1; }
-.status-pill__dot { width: 6px; height: 6px; flex: 0 0 auto; align-self: center; border-radius: 50%; background: currentColor; }
+.status-pill { display: inline-flex; align-items: center; gap: 7px; width: fit-content; min-height: 27px; padding: 4px 9px; border-radius: 99px; font-size: 11px; font-weight: 720; line-height: 1.1; white-space: nowrap; }
+.status-pill__text { display: inline-flex; align-items: baseline; gap: 9px; }
+.status-pill small { opacity: .68; font-size: 9px; font-weight: 650; line-height: 1; }
+.status-pill__dot { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: currentColor; }
 .status-pill--citizenship { background: #eee8fa; color: #6546a5; }
 .status-pill--visa_free { background: #e1efe7; color: #216847; }
 .status-pill--eta { background: #e1eff2; color: #276b7d; }
@@ -952,8 +953,6 @@ main { min-height: 68vh; }
   .access-list .table-toolbar .result-count { justify-self: end; margin-left: 0; }
   .ranking-row { min-height: 84px; grid-template-columns: 40px minmax(0, 1fr) 50px 44px; gap: 5px; }
   .ranking-row__rank { font-size: 23px; }
-  .ranking-row--combination .ranking-row__rank small { font-size: 0; }
-  .ranking-row--combination .ranking-row__rank small::after { content: "equiv."; font-size: 7px; letter-spacing: 0; }
   .ranking-row__passport { gap: 6px; }
   .ranking-row__passport strong {
     display: -webkit-box;
@@ -968,10 +967,14 @@ main { min-height: 68vh; }
   .is-combination .ranking-row__passport strong { font-size: 13px; line-height: 1; -webkit-line-clamp: 3; }
   .is-combination .ranking-row__passport small { display: none; }
   .is-combination .passport-stack--small { margin-right: -8px; transform: scale(.84); transform-origin: left center; }
-  .ranking-row__score strong { font-size: 23px; }
+  .ranking-row__score { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; line-height: 1; }
+  .ranking-row__score strong { font-size: 23px; line-height: 1; }
   .ranking-row__score small { display: none; }
   .ranking-row__arrow { display: none; }
+  .ranking-row__actions { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; }
   .ranking-row__select {
+    position: relative;
+    right: auto;
     width: 44px;
     min-height: 44px;
     padding: 0;

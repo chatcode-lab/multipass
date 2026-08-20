@@ -1,6 +1,7 @@
 ---
 import PassportCover from "./PassportCover";
 import { comparisonHref, flagEmojiFor, formatRegion } from "@/lib/geography";
+import { denseRankByScore } from "@/lib/passport";
 import { REGIONS, type Destination, type PassportSummary, type ScenarioSummary } from "@/lib/types";
 
 interface Props {
@@ -43,9 +44,18 @@ const combinedEntries: RankingEntry[] = scenarios.flatMap((scenario, index) => s
   scenarioIndex: index,
   regions: [...new Set(scenario.codes.map((code) => passportByCode.get(code)?.region).filter(Boolean) as string[])],
 }] : []);
+const customRanks = denseRankByScore([
+  ...passports.map((passport) => passport.mobilityScore),
+  ...combinedEntries.map((entry) => entry.mobilityScore),
+]);
 const rankingEntries: RankingEntry[] = [
-  ...passports.map((passport) => ({ kind: "passport" as const, rank: passport.rank, mobilityScore: passport.mobilityScore, passport })),
-  ...combinedEntries,
+  ...passports.map((passport) => ({
+    kind: "passport" as const,
+    rank: customRanks.get(passport.mobilityScore) ?? passport.rank,
+    mobilityScore: passport.mobilityScore,
+    passport,
+  })),
+  ...combinedEntries.map((entry) => ({ ...entry, rank: customRanks.get(entry.mobilityScore) ?? entry.rank })),
 ].sort((first, second) =>
   first.rank - second.rank ||
   second.mobilityScore - first.mobilityScore ||
@@ -126,7 +136,7 @@ const serializedInitialSets = JSON.stringify(initialSets).replaceAll("<", "\\u00
             <div class="ranking-row">
               <a class="ranking-row__link" href={`/passport/${passport.slug}`} aria-label={`View ${passport.name} passport details`}></a>
               <strong class="ranking-row__rank">
-                #{scoped ? passports.findIndex((candidate) => candidate.code === passport.code) + 1 : passport.rank}
+                #{scoped ? passports.findIndex((candidate) => candidate.code === passport.code) + 1 : entry.rank}
                 {scoped && <small>global #{passport.rank}</small>}
               </strong>
               <span class="ranking-row__passport">
@@ -179,7 +189,7 @@ const serializedInitialSets = JSON.stringify(initialSets).replaceAll("<", "\\u00
           >
             <div class="ranking-row ranking-row--combination">
               <a class="ranking-row__link" href={comparisonHref([scenario.codes])} aria-label={`View access for ${scenario.name}`}></a>
-              <strong class="ranking-row__rank">#{scenario.rankEquivalent}<small>equivalent</small></strong>
+              <strong class="ranking-row__rank">#{entry.rank}</strong>
               <span class="ranking-row__passport">
                 <PassportCover codes={scenario.codes} names={names} size="small" />
                 <span>

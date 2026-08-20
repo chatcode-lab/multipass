@@ -217,6 +217,14 @@ export function rankEquivalent(score: number, passports: PassportSummary[]): num
   return higherScores.size + 1;
 }
 
+export function denseRankByScore(scores: Iterable<number>): Map<number, number> {
+  return new Map(
+    [...new Set(scores)]
+      .sort((first, second) => second - first)
+      .map((score, index) => [score, index + 1]),
+  );
+}
+
 export function parsePassportSets(values: string[], validCodes: Set<string>): PassportSet[] {
   return values.slice(0, 5).flatMap((value) => {
     const codes = [...new Set(value.split(",").map(normalizeCode))]

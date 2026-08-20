@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   calculateMobilityScore,
   comparePassportSets,
+  denseRankByScore,
   parsePassportSets,
   rankEquivalent,
   slugifyCountry,
@@ -32,6 +33,14 @@ describe("passport calculations", () => {
     expect(rankEquivalent(191, passports)).toBe(1);
     expect(rankEquivalent(188, passports)).toBe(2);
     expect(rankEquivalent(186, passports)).toBe(4);
+  });
+
+  it("recalculates dense ranks when custom scores are inserted", () => {
+    const ranks = denseRankByScore([200, 192, 188, 188, 187]);
+    expect(ranks.get(200)).toBe(1);
+    expect(ranks.get(192)).toBe(2);
+    expect(ranks.get(188)).toBe(3);
+    expect(ranks.get(187)).toBe(4);
   });
 
   it("parses, deduplicates, validates, and caps URL sets", () => {

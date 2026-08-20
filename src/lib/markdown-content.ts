@@ -1,6 +1,6 @@
 import { collectionForRegion, comparisonHref, formatRegion, rankHref, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
-import { STATUS_META } from "./passport";
+import { denseRankByScore, STATUS_META } from "./passport";
 import { REGIONS, type ComparisonResult, type PassportAccess, type PassportSummary, type SnapshotManifest } from "./types";
 
 function checkedDate(manifest: SnapshotManifest): string {
@@ -40,6 +40,11 @@ ${rows.join("\n")}
 
 export function customRankingMarkdown(manifest: SnapshotManifest, result: ComparisonResult | null): string {
   const scenarios = result?.scenarios ?? [];
+  const combinedScenarios = scenarios.filter((scenario) => scenario.codes.length > 1);
+  const customRanks = denseRankByScore([
+    ...manifest.passports.map((passport) => passport.mobilityScore),
+    ...combinedScenarios.map((scenario) => scenario.mobilityScore),
+  ]);
   const featuredSingletons = new Map<string, number[]>();
   scenarios.forEach((scenario, index) => {
     if (scenario.codes.length !== 1) return;
@@ -48,7 +53,7 @@ export function customRankingMarkdown(manifest: SnapshotManifest, result: Compar
   });
   const rows = [
     ...manifest.passports.map((passport) => ({
-      rank: passport.rank,
+      rank: customRanks.get(passport.mobilityScore) ?? passport.rank,
       score: passport.mobilityScore,
       name: passport.name,
       entry: `[${escapeMarkdown(passport.name)}](${absoluteUrl(`/passport/${passport.slug}`)})`,
@@ -57,7 +62,7 @@ export function customRankingMarkdown(manifest: SnapshotManifest, result: Compar
         : "Passport",
     })),
     ...scenarios.flatMap((scenario, index) => scenario.codes.length > 1 ? [{
-      rank: scenario.rankEquivalent,
+      rank: customRanks.get(scenario.mobilityScore) ?? scenario.rankEquivalent,
       score: scenario.mobilityScore,
       name: scenario.name,
       entry: `**${escapeMarkdown(scenario.name)}** (${scenario.codes.join(" + ")})`,
@@ -65,13 +70,13 @@ export function customRankingMarkdown(manifest: SnapshotManifest, result: Compar
     }] : []),
   ].sort((first, second) => first.rank - second.rank || second.score - first.score || first.name.localeCompare(second.name));
   const scenarioSummary = scenarios.map((scenario, index) =>
-    `- **Set ${index + 1}: ${escapeMarkdown(scenario.name)}** — rank equivalent #${scenario.rankEquivalent}, mobility score ${scenario.mobilityScore}`,
+    `- **Set ${index + 1}: ${escapeMarkdown(scenario.name)}** — custom rank #${customRanks.get(scenario.mobilityScore) ?? scenario.rankEquivalent}, mobility score ${scenario.mobilityScore}`,
   ).join("\n");
   const sets = scenarios.map((scenario) => scenario.codes);
   return `# ${scenarios.length ? "Custom passport and combination ranking" : "Combined passport ranking"}
 
 ${scenarios.length
-    ? "Selected passports and combined passport sets are placed alongside the global single-passport ranking by mobility score. Combined positions are rank equivalents, not official passport ranks."
+    ? "Selected passports and combined passport sets are placed alongside the global single-passport ranking by mobility score. Ranks are recalculated within this custom list, ties share a position, and combined positions are not official passport ranks."
     : "Create a custom ranking that places one or more individual or combined passport sets alongside the global passport ranking."}
 
 Data checked ${checkedDate(manifest)}.
