@@ -67,6 +67,18 @@ export const TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_E
   .find(({ id }) => id === "tt-explicit-ordinary-passport-evisa-cohort")
   ?.passportCodes ?? [];
 
+export const PALAU_PRECLEARANCE_ETA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "palau-flagged-country-preclearance-before-visa-on-arrival")
+  ?.passportCodes ?? [];
+
+export const VANUATU_VOA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "vanuatu-listed-exempt-ordinary-passports-tourist-visa-on-arrival")
+  ?.passportCodes ?? [];
+
+export const MOZAMBIQUE_EVISA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "mozambique-current-evisa-ordinary-passports")
+  ?.passportCodes ?? [];
+
 export const ANGOLA_TOURIST_VISA_EXEMPT_CODES = [
   "SZ", "MA", "LS", "GQ", "MU", "SC", "CV", "BW", "MG", "MW", "RW", "ZW", "DZ", "TZ",
   "AE", "IL", "QA", "JP", "SA", "KR", "IN", "ID", "SG", "TL", "CN",

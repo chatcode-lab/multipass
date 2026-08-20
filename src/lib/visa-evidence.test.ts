@@ -33,11 +33,13 @@ import {
   ISRAEL_ETA_IL_ORDINARY_PASSPORT_CODES,
   ISRAEL_VISITOR_VISA_REQUIRED_ORDINARY_PASSPORT_CODES,
   MALDIVES_VOA_ORDINARY_PASSPORT_CODES,
+  MOZAMBIQUE_EVISA_ORDINARY_PASSPORT_CODES,
   NEW_ZEALAND_AUSTRALIA_CONDITIONAL_NZETA_CODES,
   NEW_ZEALAND_CONDITIONED_NZETA_CODES,
   NEW_ZEALAND_STANDARD_NZETA_CODES,
   NEW_ZEALAND_VISITOR_VISA_REQUIRED_CODES,
   OFFICIAL_VISA_SOURCES,
+  PALAU_PRECLEARANCE_ETA_ORDINARY_PASSPORT_CODES,
   RWANDA_VOA_ORDINARY_PASSPORT_CODES,
   SAMOA_VOA_ORDINARY_PASSPORT_CODES,
   SEYCHELLES_ETA_ORDINARY_PASSPORT_CODES,
@@ -60,6 +62,7 @@ import {
   UNITED_KINGDOM_EARLY_ETA_CODES,
   UNITED_KINGDOM_JANUARY_2025_ETA_CODES,
   UNITED_KINGDOM_VISITOR_VISA_CODES,
+  VANUATU_VOA_ORDINARY_PASSPORT_CODES,
   VISA_POLICY_EVIDENCE,
 } from "@/data/visa-evidence";
 import type { DataSnapshot } from "./types";
@@ -553,6 +556,39 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AD", "TT", snapshot.passports.AD.statuses.TT).supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Madagascar, Palau, Vanuatu, Cabo Verde, and Mozambique pass", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("MG")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("PS", "MG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.PS.statuses.MG).toBe("visa_on_arrival");
+
+    expect(PALAU_PRECLEARANCE_ETA_ORDINARY_PASSPORT_CODES).toHaveLength(10);
+    expect(pairsFor("PW")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("KH", "PW", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CY", "PW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "PW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+
+    expect(VANUATU_VOA_ORDINARY_PASSPORT_CODES).toHaveLength(113);
+    expect(pairsFor("VU")).toHaveLength(189);
+    expect(getVisaRelationshipEvidence("US", "VU", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CM", "VU", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BH", "VU", snapshot.passports.BH.statuses.VU).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("CV")).toHaveLength(156);
+    expect(getVisaRelationshipEvidence("US", "CV", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "CV", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AU", "CV", snapshot.passports.AU.statuses.CV).supportsCurrentStatus).toBe(false);
+
+    expect(MOZAMBIQUE_EVISA_ORDINARY_PASSPORT_CODES).toHaveLength(146);
+    expect(pairsFor("MZ")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("US", "MZ", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AD", "MZ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NG", "MZ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ST", "MZ", "visa_free").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -658,6 +694,17 @@ describe("official visa evidence", () => {
       "mpmc.gov.ws",
       "www.ag.gov.ws",
       "www.samoa.travel",
+      "www.mta.gov.mg",
+      "ambamad-moscou.diplomatie.gov.mg",
+      "cnlegis.gov.mg",
+      "ambamad-paris.diplomatie.gov.mg",
+      "bcbp.pw",
+      "immigration.gov.vu",
+      "www.gov.cv",
+      "portalconsular.mnec.gov.cv",
+      "boe.incv.cv",
+      "evisa.gov.mz",
+      "minec.gov.mz",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
