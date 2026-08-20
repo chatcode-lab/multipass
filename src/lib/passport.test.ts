@@ -265,6 +265,59 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { CN: "citizenship", TT: "evisa" }, mobilityScore: 0 });
   });
 
+  it("applies reviewed UAE, Kuwait, and Lebanon classifications", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "US",
+      name: "United States",
+      statuses: { US: "citizenship", AE: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { US: "citizenship", AE: "visa_free" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "BD",
+      name: "Bangladesh",
+      statuses: { BD: "citizenship", AE: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { BD: "citizenship", AE: "evisa" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "MO",
+      name: "Macao",
+      statuses: { MO: "citizenship", KW: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { MO: "citizenship", KW: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "PY",
+      name: "Paraguay",
+      statuses: { PY: "citizenship", LB: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { PY: "citizenship", LB: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "SY",
+      name: "Syria",
+      statuses: { SY: "citizenship", LB: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { SY: "citizenship", LB: "visa_required" }, mobilityScore: 0 });
+  });
+
+  it("applies Armenia's live ordinary-passport checker corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "AZ",
+      name: "Azerbaijan",
+      statuses: { AZ: "citizenship", AM: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { AZ: "citizenship", AM: "visa_free" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "CA",
+      name: "Canada",
+      statuses: { CA: "citizenship", AM: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { CA: "citizenship", AM: "evisa" }, mobilityScore: 0 });
+  });
+
   it("uses dense rank equivalents", () => {
     const passports = [190, 188, 188, 187, 180].map(
       (mobilityScore, index) => ({ mobilityScore, code: `${index}`, name: `${index}` }) as PassportSummary,

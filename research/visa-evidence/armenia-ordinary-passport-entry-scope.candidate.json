@@ -1,0 +1,1000 @@
+{
+  "batchId": "armenia-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "armenia-mfa-visa-framework",
+      "title": "Visa",
+      "url": "https://www.mfa.am/en/visa/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Armenia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current Armenian MFA consular guidance links to the official eVisa system and publishes the temporary residence-permit exemption.",
+      "supportingExcerpt": "Temporary exemption starts July 1, 2026 to July 1, 2027."
+    },
+    {
+      "id": "armenia-mfa-invitation-only",
+      "title": "Countries whose citizens may apply only with an invitation",
+      "url": "https://www.mfa.am/en/invitation_only",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Armenia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "Current Armenian MFA consular list of visitor-visa applicants limited to a mission or consular post and an invitation.",
+      "supportingExcerpt": "Only at diplomatic representations or consular posts and with invitation only."
+    },
+    {
+      "id": "armenia-evisa-document-types-api",
+      "title": "E-Visa Issuance System: document types",
+      "url": "https://evisa.mfa.am/e-api/get/documentTypes/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Armenia",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The MFA Visa page links to evisa.mfa.am; this live endpoint lists the E-Visa system's accepted document types, including ordinary PASSPORT.",
+      "supportingExcerpt": "PASSPORT"
+    },
+    {
+      "id": "armenia-evisa-live-eligibility-api",
+      "title": "E-Visa Issuance System: live eligibility checker",
+      "url": "https://evisa.mfa.am/check-eligibility",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Armenia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The MFA-linked live E-Visa system returns the eligibility result for selected citizenship, ordinary PASSPORT, and tourism/relatives purpose.",
+      "supportingExcerpt": "ALLOWED_FOR_EVISA, ALLOW_WITHOUT_VISA, ONLY_CONSULATE"
+    }
+  ],
+  "policies": [
+    {
+      "id": "armenia-citizenship",
+      "title": "Armenian citizenship",
+      "summary": "An Armenian ordinary passport belongs to an Armenian citizen and is outside the foreign visitor-visa schedule.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "AM"
+      ],
+      "passportCodes": [
+        "AM"
+      ],
+      "conditions": [
+        "Does not decide dual-national document choice, residence, work, exit, transit, security, or individual border treatment."
+      ],
+      "sourceIds": [
+        "armenia-mfa-visa-framework"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "armenia-live-checker-ordinary-passport-visa-free",
+      "title": "Ordinary passports returned as visa-free by the live MFA checker",
+      "summary": "For an ordinary PASSPORT and tourism/relatives purpose, the current MFA E-Visa eligibility endpoint returns ALLOW_WITHOUT_VISA for these passports.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "AM"
+      ],
+      "passportCodes": [
+        "AL",
+        "AR",
+        "AU",
+        "AT",
+        "AZ",
+        "BH",
+        "BY",
+        "BE",
+        "BR",
+        "BG",
+        "CN",
+        "HR",
+        "CY",
+        "CZ",
+        "DK",
+        "EC",
+        "EE",
+        "FI",
+        "FR",
+        "GE",
+        "DE",
+        "GR",
+        "HK",
+        "HU",
+        "IS",
+        "IR",
+        "IE",
+        "IT",
+        "JP",
+        "KZ",
+        "KW",
+        "KG",
+        "LV",
+        "LT",
+        "LU",
+        "MO",
+        "MT",
+        "MD",
+        "ME",
+        "NL",
+        "NZ",
+        "NO",
+        "OM",
+        "PA",
+        "PL",
+        "PT",
+        "QA",
+        "RO",
+        "RU",
+        "SA",
+        "RS",
+        "SG",
+        "SK",
+        "SI",
+        "KR",
+        "ES",
+        "SE",
+        "CH",
+        "TJ",
+        "UA",
+        "AE",
+        "GB",
+        "US",
+        "UY",
+        "UZ",
+        "LI",
+        "MC",
+        "SM",
+        "VA",
+        "AD"
+      ],
+      "conditions": [
+        "The checked route is ordinary PASSPORT (document type 167) and visitor purpose TOURISM_RELATIVES; it does not decide non-ordinary documents, work, residence, transit, or admission discretion.",
+        "The separate residence-permit programme is not this nationality-only result: it requires the stated six-month-valid qualifying permit and is active from 1 July 2026 to 1 July 2027."
+      ],
+      "sourceIds": [
+        "armenia-evisa-document-types-api",
+        "armenia-evisa-live-eligibility-api",
+        "armenia-mfa-visa-framework"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "armenia-live-checker-ordinary-passport-evisa",
+      "title": "Ordinary passports returned as eVisa-eligible by the live MFA checker",
+      "summary": "For an ordinary PASSPORT and tourism/relatives purpose, the current MFA E-Visa eligibility endpoint returns ALLOWED_FOR_EVISA for these non-exempt, non-invitation-listed passports.",
+      "status": "evisa",
+      "destinationCodes": [
+        "AM"
+      ],
+      "passportCodes": [
+        "DZ",
+        "AG",
+        "BS",
+        "BB",
+        "BZ",
+        "BT",
+        "BO",
+        "BA",
+        "BN",
+        "KH",
+        "CA",
+        "CL",
+        "CO",
+        "CR",
+        "CU",
+        "DM",
+        "DO",
+        "EG",
+        "SV",
+        "FJ",
+        "GD",
+        "GT",
+        "GY",
+        "HT",
+        "HN",
+        "IN",
+        "ID",
+        "IQ",
+        "IL",
+        "JM",
+        "JO",
+        "KI",
+        "LA",
+        "LB",
+        "MK",
+        "MY",
+        "MV",
+        "MH",
+        "MX",
+        "FM",
+        "MN",
+        "MA",
+        "MM",
+        "NR",
+        "NI",
+        "KP",
+        "PW",
+        "PG",
+        "PY",
+        "PE",
+        "PH",
+        "WS",
+        "SB",
+        "ZA",
+        "KN",
+        "LC",
+        "VC",
+        "SR",
+        "TW",
+        "TH",
+        "TL",
+        "TO",
+        "TT",
+        "TN",
+        "TR",
+        "TM",
+        "TV",
+        "VU",
+        "VE",
+        "VN"
+      ],
+      "conditions": [
+        "The live response is an advance electronic-visa route for ordinary PASSPORT and TOURISM_RELATIVES; it is not an arrival-visa classification even where a separate API field mentions border processing.",
+        "The temporary residence-permit exemption is conditional on a qualifying physical/sticker permit with at least six months' validity and ends 1 July 2027; it does not replace the passport-only baseline."
+      ],
+      "sourceIds": [
+        "armenia-evisa-document-types-api",
+        "armenia-evisa-live-eligibility-api",
+        "armenia-mfa-visa-framework"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "armenia-live-checker-consulate-only-ordinary-passports",
+      "title": "Ordinary passports returned as consulate-only",
+      "summary": "The current MFA E-Visa eligibility endpoint returns ONLY_CONSULATE for these ordinary-passport tourism/relatives queries.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "AM"
+      ],
+      "passportCodes": [
+        "XK",
+        "SD",
+        "TG"
+      ],
+      "conditions": [
+        "Sudan and Togo also appear on the MFA's published invitation-only list. Kosovo is consulate-only in the live checker but is not named on that list.",
+        "This is not a classification for diplomatic, official, service, refugee, alien, transit, residence, work, or case-specific documents and purposes."
+      ],
+      "sourceIds": [
+        "armenia-evisa-document-types-api",
+        "armenia-evisa-live-eligibility-api",
+        "armenia-mfa-invitation-only"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "AZ",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOW_WITHOUT_VISA.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "AM",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA ordinary-PASSPORT tourism checker returns ALLOWED_FOR_EVISA, not an arrival route.",
+      "sourceIds": [
+        "armenia-evisa-live-eligibility-api"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "AF",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "AM",
+      "reason": "Live eVisa result conflicts with MFA invitation-only list; no reconciliation.",
+      "searchedOfficialDomains": [
+        "mfa.am",
+        "evisa.mfa.am"
+      ]
+    }
+  ]
+}

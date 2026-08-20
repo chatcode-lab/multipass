@@ -1,0 +1,1882 @@
+{
+  "batchId": "kuwait-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "kuwait-moi-live-visa-on-arrival-api",
+      "title": "Kuwait Visa: live visa-on-arrival nationality endpoint",
+      "url": "https://kuwaitvisa.moi.gov.kw/kuwaitVisa/portal/getVisaOnArrivalCountries",
+      "publisher": "Ministry of Interior",
+      "jurisdiction": "Kuwait",
+      "kind": "official-dataset",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The live kuwaitvisa.moi.gov.kw endpoint is served by the Ministry of Interior's current Kuwait Visa platform and returns the application's country objects.",
+      "supportingExcerpt": "visaOnArrival: true"
+    },
+    {
+      "id": "kuwait-moi-visa-portal-terms",
+      "title": "Kuwait Visa: Terms and Conditions",
+      "url": "https://kuwaitvisa.moi.gov.kw/terms",
+      "publisher": "Ministry of Interior",
+      "jurisdiction": "Kuwait",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The current Ministry of Interior Kuwait Visa portal hosts the terms for its online visa applications.",
+      "supportingExcerpt": "The maximum allowed stay for the visa holder is 90 days"
+    },
+    {
+      "id": "kuna-2024-residency-law-gcc-identity-entry",
+      "title": "KUNA: Amiri decree issued new law concerning foreigners' residency",
+      "url": "https://www.kuna.net.kw/ArticleDetails.aspx?Language=en&id=3206555",
+      "publisher": "Kuwait News Agency",
+      "jurisdiction": "Kuwait",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "KUNA is Kuwait's official news agency reporting the 2024 Amiri residency decree and its Ministry of Interior implementation rules.",
+      "supportingExcerpt": "GCC citizens were exempted from needing a valid passport to enter and leave Kuwait"
+    },
+    {
+      "id": "kuna-2025-moi-evisa-categories",
+      "title": "KUNA: MoI new e-visa system and tourist-visa categories",
+      "url": "https://www.kuna.net.kw/ArticleDetails.aspx?Language=en&id=3244384",
+      "publisher": "Kuwait News Agency",
+      "jurisdiction": "Kuwait",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "KUNA reports the Ministry of Interior's August 2025 presentation of the current Kuwait Visa system and tourist-visa eligibility categories.",
+      "supportingExcerpt": "GCC, skilled professionals, the US, UK, or Schengen residency holders"
+    },
+    {
+      "id": "kuwait-dgca-visa-services-link",
+      "title": "Kuwait International Airport: Visa Services",
+      "url": "https://www.kuwaitairport.gov.kw/en/traveller-info/arrivals-procedures/visa-services/",
+      "publisher": "Directorate General of Civil Aviation",
+      "jurisdiction": "Kuwait",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The current official DGCA airport page directs arriving travellers to the Ministry of Interior Kuwait Visa platform for visa services.",
+      "supportingExcerpt": "Visa-Services"
+    }
+  ],
+  "policies": [
+    {
+      "id": "kuwait-citizens-outside-foreign-visitor-scope",
+      "title": "Kuwaiti nationals: outside foreign visitor scope",
+      "summary": "A Kuwaiti ordinary passport belongs to a Kuwaiti citizen and is not a foreign visitor-visa case.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "KW"
+      ],
+      "passportCodes": [
+        "KW"
+      ],
+      "conditions": [
+        "This does not decide dual-national document choice, foreign residence, exit, security, or individual admission treatment."
+      ],
+      "sourceIds": [
+        "kuna-2024-residency-law-gcc-identity-entry"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "kuwait-gcc-citizens-identity-entry-right",
+      "title": "GCC citizens: visa-free entry using national identification",
+      "summary": "Kuwait's 2024 residency-law report says GCC citizens may enter and leave Kuwait using their national identity cards under Ministry of Interior regulations and inter-state agreements; this is normalized as visa_free rather than a resident or sponsor visa.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "KW"
+      ],
+      "passportCodes": [
+        "AE",
+        "BH",
+        "OM",
+        "QA",
+        "SA"
+      ],
+      "conditions": [
+        "This is a GCC-citizenship right for Bahraini, Omani, Qatari, Saudi and UAE nationals. It is not an eVisa or visa-on-arrival route and does not extend to a non-GCC passport holder merely resident in a GCC state.",
+        "The cited report makes the national-ID entry right subject to Ministry of Interior regulations and agreements with the relevant GCC states; identity, border, security and individual-admission requirements remain applicable.",
+        "This ordinary-passport classification does not establish work, study, residence, family, companion, transit, crew, diplomatic, official, emergency-document or other special-case treatment."
+      ],
+      "sourceIds": [
+        "kuna-2024-residency-law-gcc-identity-entry"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "kuwait-named-ordinary-passports-visa-on-arrival",
+      "title": "Named ordinary passports: visa on arrival",
+      "summary": "The current Ministry of Interior Kuwait Visa endpoint explicitly marks these 53 nationality records as visaOnArrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "KW"
+      ],
+      "passportCodes": [
+        "ES",
+        "AU",
+        "DE",
+        "AD",
+        "UA",
+        "IE",
+        "IS",
+        "EE",
+        "PT",
+        "CZ",
+        "DK",
+        "SE",
+        "VA",
+        "GB",
+        "NO",
+        "AT",
+        "US",
+        "JP",
+        "GR",
+        "IT",
+        "BE",
+        "BG",
+        "BT",
+        "BN",
+        "PL",
+        "TR",
+        "KR",
+        "HU",
+        "GE",
+        "RO",
+        "SM",
+        "SK",
+        "SI",
+        "SG",
+        "CH",
+        "FR",
+        "FI",
+        "CY",
+        "HR",
+        "KH",
+        "CA",
+        "LV",
+        "LA",
+        "LT",
+        "LU",
+        "LI",
+        "MT",
+        "MY",
+        "MO",
+        "MC",
+        "NZ",
+        "NL",
+        "HK"
+      ],
+      "conditions": [
+        "The current endpoint establishes visa-on-arrival eligibility for these nationalities but does not itself state a complete purpose, document, duration, passport-type or port-condition schedule. This record does not manufacture conditions absent from that source.",
+        "The Ministry of Interior online-visa terms separately require online applicants to use the official site, normally have a passport valid for six months, provide specified travel documents, and observe a maximum 90-day stay unless the issued visa says otherwise. Those online-application conditions are not treated as a replacement for the available arrival route.",
+        "Any eVisa alternative, and any entry route based on residence, profession, sponsor, family, employment, study, transit, diplomatic or special-document facts, is separate from this nationality-wide ordinary-passport arrival classification.",
+        "Issuance or entry remains subject to Ministry of Interior security review and border discretion."
+      ],
+      "sourceIds": [
+        "kuwait-moi-live-visa-on-arrival-api",
+        "kuwait-moi-visa-portal-terms",
+        "kuwait-dgca-visa-services-link"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "KW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current MOI Kuwait Visa endpoint includes Macau (OCR CAM) with visaOnArrival set true, contrary to the fallback prior-visa label.",
+      "sourceIds": [
+        "kuwait-moi-live-visa-on-arrival-api"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "CL",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "KW",
+      "reason": "The current MOI endpoint supplies an enumerated visa-on-arrival cohort but no exhaustive ordinary-passport complement. Kuwait's current eVisa material describes additional routes conditioned on GCC residence, profession, sponsorship, or US/UK/Schengen residence; those facts cannot establish a nationality-wide status for this passport code.",
+      "searchedOfficialDomains": [
+        "kuwaitvisa.moi.gov.kw",
+        "moi.gov.kw",
+        "e.gov.kw",
+        "kuna.net.kw",
+        "kuwaitairport.gov.kw"
+      ]
+    }
+  ]
+}

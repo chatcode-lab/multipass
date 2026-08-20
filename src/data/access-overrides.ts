@@ -507,4 +507,63 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
     reviewedAt: "2026-08-20",
   },
+  ...(["AL", "AU", "BS", "BN", "CA", "EC", "HN", "IE", "MY", "MV", "MU", "NZ", "PE", "SG", "SB", "KR", "GB", "US", "MC", "SM", "VA", "AD"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "AE",
+      status: "visa_free" as const,
+      reason: "The UAE Ministry of Foreign Affairs' current ordinary-passport schedule marks this nationality as visa-free.",
+      sourceUrl: "https://www.mofa.gov.ae/en/Visa-Exemptions-For-Non-Citizen",
+      reviewedAt: "2026-08-20",
+    })),
+  ...(["BD", "CI", "CU", "GH", "GT", "IN", "LR", "MO", "FM", "MD", "PG", "SL", "SS", "LK", "TZ"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "AE",
+      status: "evisa" as const,
+      reason: "The UAE requires this ordinary passport to obtain a visa and offers an all-nationalities tourist route that is applied for and issued electronically before travel.",
+      sourceUrl: "https://u.ae/en/information-and-services/visa-and-emirates-id/tourist-visa",
+      reviewedAt: "2026-08-20",
+    })),
+  {
+    passportCode: "MO",
+    destinationCode: "KW",
+    status: "visa_on_arrival",
+    reason: "Kuwait's live Ministry of Interior endpoint expressly includes Macao SAR in its current visa-on-arrival cohort.",
+    sourceUrl: "https://kuwaitvisa.moi.gov.kw/kuwaitVisa/portal/getVisaOnArrivalCountries",
+    reviewedAt: "2026-08-20",
+  },
+  ...(["BH", "JO", "KW", "OM", "PY", "QA", "SA", "AE"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "LB",
+    status: "visa_on_arrival" as const,
+    reason: "Lebanese General Security grants this ordinary-passport holder a tourist visa automatically at an airport or border post.",
+    sourceUrl: "https://www.general-security.gov.lb/en/posts/38.",
+    reviewedAt: "2026-08-20",
+  })),
+  ...(["DO", "KZ", "SY"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "LB",
+    status: "visa_required" as const,
+    reason: "Lebanese General Security requires this ordinary-passport holder to obtain an embassy visa or prior General Security approval before travel.",
+    sourceUrl: "https://www.general-security.gov.lb/en/posts/38.",
+    reviewedAt: "2026-08-20",
+  })),
+  {
+    passportCode: "AZ",
+    destinationCode: "AM",
+    status: "visa_free",
+    reason: "Armenia's live MFA ordinary-passport tourism checker currently returns this nationality as allowed without a visa.",
+    sourceUrl: "https://evisa.mfa.am/check-eligibility",
+    reviewedAt: "2026-08-20",
+  },
+  ...(["AG", "BS", "BB", "BA", "CA", "CL", "DM", "DO", "ID", "IL", "JO", "LA", "LB", "MK", "MX", "KP", "PE", "ZA", "VC", "TH", "TR"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "AM",
+      status: "evisa" as const,
+      reason: "Armenia's live MFA ordinary-passport tourism checker currently directs this nationality to the advance electronic-visa route.",
+      sourceUrl: "https://evisa.mfa.am/check-eligibility",
+      reviewedAt: "2026-08-20",
+    })),
 ] as const;

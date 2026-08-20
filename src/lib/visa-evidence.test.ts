@@ -636,6 +636,44 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "JO", snapshot.passports.US.statuses.JO).supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed UAE, Kuwait, Lebanon, and Armenia pass", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("AE")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("US", "AE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BD", "AE", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "AE", snapshot.passports.TW.statuses.AE).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("KW")).toHaveLength(59);
+    expect(getVisaRelationshipEvidence("MO", "KW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CL", "KW", snapshot.passports.CL.statuses.KW).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("LB")).toHaveLength(195);
+    expect(getVisaRelationshipEvidence("PY", "LB", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SY", "LB", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("EG", "LB", snapshot.passports.EG.statuses.LB).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("AM")).toHaveLength(144);
+    expect(getVisaRelationshipEvidence("AZ", "AM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CA", "AM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "AM", snapshot.passports.AF.statuses.AM).supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps Iran and Iraq evidence conservative when official nationality scope is incomplete", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("IR")).toHaveLength(40);
+    expect(getVisaRelationshipEvidence("BR", "IR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LB", "IR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "IR", snapshot.passports.IN.statuses.IR).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("IQ")).toHaveLength(1);
+    expect(getVisaRelationshipEvidence("IQ", "IQ", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "IQ", snapshot.passports.US.statuses.IQ).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -776,6 +814,20 @@ describe("official visa evidence", () => {
       "www.visitsaudi.com",
       "www.mofa.gov.sa",
       "moi.gov.jo",
+      "www.mofa.gov.ae",
+      "u.ae",
+      "icp.gov.ae",
+      "kuwaitvisa.moi.gov.kw",
+      "www.kuna.net.kw",
+      "www.kuwaitairport.gov.kw",
+      "www.general-security.gov.lb",
+      "www.mfa.am",
+      "evisa.mfa.am",
+      "evisa.mfa.ir",
+      "www.moj.gov.iq",
+      "evisa.iq",
+      "mofa.gov.iq",
+      "ur.gov.iq",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
