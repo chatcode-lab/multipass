@@ -3247,6 +3247,64 @@
         "Do not infer an all-passport advance-visa complement from the GACA rule unless a current official source identifies every exemption and special route.",
         "Preserve treaty, security approval, invitation, document, citizenship, work, transit and unrepresentable entry-prohibition conditions separately."
       ]
+    },
+    {
+      "id": "israel-palestine-authority-visitor-entry-refresh",
+      "priority": 184,
+      "objective": "Resolve the remaining Palestinian ordinary-passport visitor relationship for Israel from a current passport-specific controlling source.",
+      "destinationCodes": ["IL"],
+      "passportCodes": ["PS"],
+      "sourceHints": [
+        "https://israel-entry.piba.gov.il/api/getalldata"
+      ],
+      "notes": [
+        "Do not infer an ordinary Palestinian-passport rule from the current PIA dataset's undocumented passport_country field or its Palestine Authority (BG) label.",
+        "Keep residence, permits, Palestinian IDs, travel documents, border crossings, security restrictions and final admission separate from ordinary-passport visitor access."
+      ]
+    },
+    {
+      "id": "lebanon-residual-visitor-entry-refresh",
+      "priority": 185,
+      "objective": "Reconcile Lebanon's four residual ordinary-passport visitor rows without flattening gender, profession or possible entry-prohibition rules.",
+      "destinationCodes": ["LB"],
+      "passportCodes": ["IL", "GH", "EG", "IQ"],
+      "sourceHints": [
+        "https://www.general-security.gov.lb/en/posts/38"
+      ],
+      "notes": [
+        "Reconcile Egypt and Ghana's general arrival wording with the female-traveller prior-authorisation rule before assigning a nationality-wide status.",
+        "Reconcile Iraq's general tourist arrival rule with the later occupation-specific provision, and do not map any Israel-specific refusal to visa_required while entry_prohibited is absent from the taxonomy."
+      ]
+    },
+    {
+      "id": "united-arab-emirates-taiwan-visitor-gap-refresh",
+      "priority": 186,
+      "objective": "Resolve Taiwan ordinary-passport visitor access to the United Arab Emirates from a current passport-recognition and route-specific source.",
+      "destinationCodes": ["AE"],
+      "passportCodes": ["TW"],
+      "sourceHints": [
+        "https://www.mofa.gov.ae/en/visa-exemptions-for-non-citizen"
+      ],
+      "notes": [
+        "Do not infer Taiwan treatment from the UAE schedule's PRC, Hong Kong SAR or Macao SAR rows, from a generic tourist-visa process, or from omission.",
+        "Preserve document recognition, residence, sponsor, purpose, transit, special-passport and final-admission conditions separately."
+      ]
+    },
+    {
+      "id": "yemen-il-xk-citizenship-visitor-gap-refresh",
+      "priority": 187,
+      "objective": "Resolve Yemen's Israel, Kosovo and Yemeni-passport destination gaps without inferring rules from an online selector's omissions or anomalies.",
+      "destinationCodes": ["YE"],
+      "passportCodes": ["IL", "XK", "YE"],
+      "sourceHints": [
+        "https://yemenevisa.org/Eligibility",
+        "https://yemenevisa.org/Types-of-Visas",
+        "https://www.mofa-ye.org/Pages/32929/"
+      ],
+      "notes": [
+        "Do not convert missing Israel or Kosovo selector records into any access category, and do not infer electronic issuance merely from an online application workflow.",
+        "Do not infer Yemen citizenship treatment from matching codes while the foreigner workflow anomalously lists Yemen; preserve prohibitions, document recognition, embassy sticker issuance and final admission separately."
+      ]
     }
   ]
 }

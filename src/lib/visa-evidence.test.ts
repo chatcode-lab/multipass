@@ -628,9 +628,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IR", "BH", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("UA", "BH", snapshot.passports.UA.statuses.BH).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("QA")).toHaveLength(192);
+    expect(pairsFor("QA")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("HK", "QA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "QA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "QA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "QA", "evisa").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.HK.statuses.QA).toBe("visa_on_arrival");
 
     expect(pairsFor("SA")).toHaveLength(86);
@@ -1904,6 +1906,7 @@ describe("official visa evidence", () => {
       "visitqatar.com",
       "portal.moi.gov.qa",
       "hayya.qa",
+      "beta-api.hayya.qa",
       "visa.visitsaudi.com",
       "www.visitsaudi.com",
       "www.mofa.gov.sa",

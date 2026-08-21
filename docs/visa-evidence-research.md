@@ -728,6 +728,22 @@ The live Visit Saudi nationality-group and route-decision APIs jointly assign Ba
 
 All seven rows change from upstream `visa_required` to `evisa`, exactly matching the reviewed conflicts. The other 113 previously unsupported Saudi relationships remain unresolved because the APIs' `noneligible` group and generic embassy guidance do not establish an exhaustive advance-visa complement. Both undated mutable API responses must be refreshed together on later passes.
 
+## Pass 85 result: Qatar Hayya A1 completion
+
+Qatar adds its final seven previously unsupported foreign-passport relationships, raising complete-matrix evidence from 30,044 to 30,051 of 44,974 relationships (66.8%) and Middle East coverage from 1,568 to 1,575 of 2,970 relationships (53.0%). Qatar now has current-status evidence for all 198 foreign-passport relationships. Destination threshold counts remain 150 above 50% and 141 above 80%.
+
+The live public Hayya frontend currently configures `beta-api.hayya.qa` as its country-eligibility backend. Its individual records name Israel, Marshall Islands, Kiribati, Micronesia, Nauru and Cabo Verde, expose Tourist Visa (A1), and describe delivery of an electronic visa through Hayya or email. The current all-countries response names Kosovo under Hayya's internal `UN` code, and that record exposes the same A1 route; Hayya's separate `XK` record is explicitly labelled Eswatini, so the reviewed mapping preserves that service-specific anomaly rather than assuming ISO semantics.
+
+All seven rows—Israel, Marshall Islands, Kiribati, Micronesia, Nauru, Kosovo and Cabo Verde—remain `evisa`, matching the existing fallback and requiring no status correction. The current route is pre-travel, tourism-only, single-entry, normally QAR 100 after final approval, and subject to passport, accommodation, payment and admission conditions. The undated mutable country list and country records must be refreshed together on later passes.
+
+## Held from promotion: Israel, Lebanon, United Arab Emirates and Yemen residual gaps
+
+Nine narrow residual relationships remain unverified after a fresh official-source review: Palestine to Israel; Israel, Ghana, Egypt and Iraq to Lebanon; Taiwan to the United Arab Emirates; and Israel, Kosovo and Yemen to Yemen. Each held candidate now has an explicit queue scope and passes the candidate partition validator.
+
+Israel's current population-authority dataset labels a Palestine Authority row but does not establish that its undocumented passport-country field represents an ordinary Palestinian passport rule. Lebanon's current General Security page does not reconcile Egypt and Ghana's arrival wording with a female-traveller prior-authorisation rule, or Iraq's general tourist route with its later occupation-specific provision; it also supplies no safely normalizable Israeli ordinary-passport route. Possible refusal or prohibition cannot be mislabeled as an ordinary advance visa while the taxonomy has no `entry_prohibited` state.
+
+The United Arab Emirates' current nationality schedule names the PRC, Hong Kong SAR and Macao SAR but omits Taiwan; neither omission nor generic tourist-visa guidance proves Taiwan's passport recognition or route. Yemen's current online selector omits Israel and Kosovo yet anomalously includes Yemen in a foreigner workflow. Its visit terms describe a final embassy or consular sticker after online approval, so neither omission nor portal availability establishes an eVisa, advance visa, citizenship or prohibition status for those three cells.
+
 ## Held from promotion: Solomon Islands visitor complement
 
 The Solomon Islands residual refresh adds no canonical policy. All 125 previously unresolved rows remain unresolved after reviewing nine official sources. The June 2025 Gazette still specifies named concessional-entry countries, while a July 2026 short-term delivery policy claims the concession was repealed without showing an approval date or a reconciling Gazette instrument.
