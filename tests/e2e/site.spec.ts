@@ -675,17 +675,28 @@ test("destination passport filters support controls, query parameters, and tie-l
 });
 
 test("unindexed evidence matrix audits every passport against a destination region", async ({ page, request }) => {
-  const response = await page.goto("/evidence-status?region=EUROPE");
+  const legacy = await request.get("/evidence-status?region=EUROPE&state=pending", { maxRedirects: 0 });
+  expect(legacy.status()).toBe(301);
+  expect(legacy.headers().location).toMatch(/\/status\?region=EUROPE&state=pending$/);
+
+  const response = await page.goto("/status?region=EUROPE");
   expect(response?.headers()["x-robots-tag"]).toBe("noindex, nofollow");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex,nofollow");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Evidence coverage matrix.");
   await expect(page.locator(".evidence-matrix-table")).toBeVisible({ timeout: 15_000 });
+  await expect(page.locator(".evidence-completion")).toContainText("Overall completion");
+  await expect(page.locator(".evidence-completion")).toContainText("Not covered");
+  await expect(page.locator(".evidence-completion")).toContainText("Stale");
+  await expect(page.locator(".evidence-completion")).toContainText("Old");
+  await expect(page.locator(".evidence-completion")).toContainText("Fresh");
   await expect(page.locator(".evidence-matrix-table tbody tr")).toHaveCount(199);
   await expect(page.locator(".evidence-status-summary")).toContainText("199 passports × 52 destinations");
 
   await page.getByPlaceholder("Filter passports").fill("Japan");
   await page.getByPlaceholder("Filter destinations").fill("Germany");
   await expect(page.locator(".evidence-matrix-table tbody tr")).toHaveCount(1);
+  await expect(page.getByRole("link", { name: /Japan JP · Asia/ })).toHaveAttribute("href", "/passport/japan");
+  await expect(page.getByRole("link", { name: /Germany DE/ })).toHaveAttribute("href", "/destination/germany");
   const germanyCell = page.getByRole("link", { name: /Japan to Germany: Visa-free; verified 20 August 2026/ });
   await expect(germanyCell)
     .toHaveAttribute("href", "/japan-germany-visa-free");
@@ -699,9 +710,18 @@ test("unindexed evidence matrix audits every passport against a destination regi
   expect(matrix.summary.total).toBe(199 * 52);
   expect(matrix.summary.verified).toBeGreaterThan(0);
   expect(matrix.summary.pending).toBeGreaterThan(0);
+  expect(matrix.overall.total).toBe(44_974);
+  expect(matrix.overall.covered).toBe(
+    matrix.overall.fresh.count + matrix.overall.old.count + matrix.overall.stale.count,
+  );
+  expect(matrix.overall.total).toBe(
+    matrix.overall.covered + matrix.overall.notCovered.count,
+  );
 
   const sitemap = await request.get("/sitemap.xml");
-  expect(await sitemap.text()).not.toContain("evidence-status");
+  const sitemapText = await sitemap.text();
+  expect(sitemapText).not.toContain("evidence-status");
+  expect(sitemapText).not.toContain("https://multipassrank.com/status");
 });
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {

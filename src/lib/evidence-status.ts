@@ -11,7 +11,7 @@ export type EvidenceStatusCell = readonly [
 ];
 
 export interface EvidenceStatusRegion {
-  schemaVersion: 1;
+  schemaVersion: 2;
   snapshotVersion: string;
   checkedAt: string;
   asOf: string;
@@ -38,6 +38,25 @@ export interface EvidenceStatusRegion {
     total: number;
     percent: number;
   };
+  overall: EvidenceCompletionSummary;
+}
+
+export type EvidenceCompletionState = "notCovered" | "stale" | "old" | "fresh";
+
+export interface EvidenceCompletionBucket {
+  count: number;
+  percent: number;
+}
+
+export interface EvidenceCompletionSummary {
+  asOf: string;
+  total: number;
+  covered: number;
+  percent: number;
+  notCovered: EvidenceCompletionBucket;
+  stale: EvidenceCompletionBucket;
+  old: EvidenceCompletionBucket;
+  fresh: EvidenceCompletionBucket;
 }
 
 interface EvidenceAccumulator {
@@ -54,14 +73,11 @@ function isPolicyActive(
     && (!policy.effectiveTo || policy.effectiveTo >= asOf);
 }
 
-export function buildEvidenceStatusRegion(
+function buildEvidenceByRelationship(
   manifest: SnapshotManifest,
-  details: Record<string, PassportAccess>,
-  region: Region,
-  asOf = new Date().toISOString().slice(0, 10),
-): EvidenceStatusRegion {
-  const destinations = manifest.destinations.filter((destination) => destination.region === region);
-  const destinationCodes = new Set(destinations.map(({ code }) => code));
+  destinationCodes: Set<string>,
+  asOf: string,
+): Map<string, EvidenceAccumulator> {
   const sourceById = new Map(OFFICIAL_VISA_SOURCES.map((source) => [source.id, source]));
   const evidenceByRelationship = new Map<string, EvidenceAccumulator>();
 
@@ -88,6 +104,78 @@ export function buildEvidenceStatusRegion(
       }
     }
   }
+
+  return evidenceByRelationship;
+}
+
+function completionState(reviewedAt: string | undefined, asOf: string): EvidenceCompletionState {
+  if (!reviewedAt) return "notCovered";
+  const ageInDays = Math.max(0, Math.floor(
+    (Date.parse(`${asOf}T00:00:00Z`) - Date.parse(`${reviewedAt}T00:00:00Z`)) / 86_400_000,
+  ));
+  if (ageInDays <= 30) return "fresh";
+  if (ageInDays <= 180) return "old";
+  return "stale";
+}
+
+function bucket(count: number, total: number): EvidenceCompletionBucket {
+  return {
+    count,
+    percent: total ? Number(((count / total) * 100).toFixed(1)) : 0,
+  };
+}
+
+export function buildEvidenceCompletionSummary(
+  manifest: SnapshotManifest,
+  details: Record<string, PassportAccess>,
+  asOf = new Date().toISOString().slice(0, 10),
+): EvidenceCompletionSummary {
+  const evidenceByRelationship = buildEvidenceByRelationship(
+    manifest,
+    new Set(manifest.destinations.map(({ code }) => code)),
+    asOf,
+  );
+  const counts: Record<EvidenceCompletionState, number> = {
+    notCovered: 0,
+    stale: 0,
+    old: 0,
+    fresh: 0,
+  };
+
+  for (const passport of manifest.passports) {
+    for (const destination of manifest.destinations) {
+      // The diagonal citizenship/home cells remain visible in the matrix, but
+      // completion measures the foreign-access relationships being researched.
+      if (passport.code === destination.code) continue;
+      const status = details[passport.code]?.statuses[destination.code] ?? "unknown";
+      const evidence = evidenceByRelationship.get(`${passport.code}:${destination.code}:${status}`);
+      counts[completionState(evidence?.reviewedAt, asOf)] += 1;
+    }
+  }
+
+  const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
+  const covered = total - counts.notCovered;
+  return {
+    asOf,
+    total,
+    covered,
+    percent: total ? Number(((covered / total) * 100).toFixed(1)) : 0,
+    notCovered: bucket(counts.notCovered, total),
+    stale: bucket(counts.stale, total),
+    old: bucket(counts.old, total),
+    fresh: bucket(counts.fresh, total),
+  };
+}
+
+export function buildEvidenceStatusRegion(
+  manifest: SnapshotManifest,
+  details: Record<string, PassportAccess>,
+  region: Region,
+  asOf = new Date().toISOString().slice(0, 10),
+): EvidenceStatusRegion {
+  const destinations = manifest.destinations.filter((destination) => destination.region === region);
+  const destinationCodes = new Set(destinations.map(({ code }) => code));
+  const evidenceByRelationship = buildEvidenceByRelationship(manifest, destinationCodes, asOf);
 
   const dates = [...new Set([...evidenceByRelationship.values()].flatMap(({ reviewedAt }) => reviewedAt ? [reviewedAt] : []))]
     .sort();
@@ -117,7 +205,7 @@ export function buildEvidenceStatusRegion(
   const total = verified + pending;
 
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     snapshotVersion: manifest.version,
     checkedAt: manifest.checkedAt,
     asOf,
@@ -141,5 +229,6 @@ export function buildEvidenceStatusRegion(
       total,
       percent: total ? Number(((verified / total) * 100).toFixed(1)) : 0,
     },
+    overall: buildEvidenceCompletionSummary(manifest, details, asOf),
   };
 }

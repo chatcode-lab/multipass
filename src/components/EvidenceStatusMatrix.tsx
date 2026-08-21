@@ -88,6 +88,13 @@ const FRESHNESS_LABELS: Record<EvidenceFreshness, string> = {
   fresh: "verified within 30 days",
 };
 
+const COMPLETION_BUCKETS = [
+  { key: "notCovered", label: "Not covered", detail: "No active matching evidence" },
+  { key: "stale", label: "Stale", detail: "Reviewed 181+ days ago" },
+  { key: "old", label: "Old", detail: "Reviewed 31–180 days ago" },
+  { key: "fresh", label: "Fresh", detail: "Reviewed within 30 days" },
+] as const;
+
 export default function EvidenceStatusMatrix({
   initialRegion,
   initialFilter,
@@ -103,7 +110,7 @@ export default function EvidenceStatusMatrix({
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch(`/api/v1/evidence-status?region=${encodeURIComponent(region)}`, { signal: controller.signal })
+    fetch(`/api/v1/evidence-status?region=${encodeURIComponent(region)}&schema=2`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error(`Evidence API returned ${response.status}`);
         return response.json() as Promise<EvidenceStatusRegion>;
@@ -162,6 +169,35 @@ export default function EvidenceStatusMatrix({
 
   return (
     <div className="evidence-status-tool">
+      {matrix?.overall && (
+        <section className="evidence-completion" aria-label="Overall evidence completion">
+          <div className="evidence-completion__primary">
+            <span>Overall completion</span>
+            <strong>{matrix.overall.percent}%</strong>
+            <small>{matrix.overall.covered.toLocaleString()} of {matrix.overall.total.toLocaleString()} foreign-access relationships covered</small>
+          </div>
+          <div className="evidence-completion__buckets">
+            {COMPLETION_BUCKETS.map(({ key, label, detail }) => (
+              <div className={`evidence-completion__bucket evidence-completion__bucket--${key}`} key={key}>
+                <span><i />{label}</span>
+                <strong>{matrix.overall[key].percent}%</strong>
+                <small>{matrix.overall[key].count.toLocaleString()} · {detail}</small>
+              </div>
+            ))}
+          </div>
+          <div
+            className="evidence-completion__bar"
+            role="img"
+            aria-label={`${matrix.overall.fresh.percent}% fresh, ${matrix.overall.old.percent}% old, ${matrix.overall.stale.percent}% stale, ${matrix.overall.notCovered.percent}% not covered`}
+          >
+            {(["fresh", "old", "stale", "notCovered"] as const).map((key) => (
+              <i className={`evidence-completion__bar-segment evidence-completion__bar-segment--${key}`} style={{ width: `${matrix.overall[key].percent}%` }} key={key} />
+            ))}
+          </div>
+          <p>Home/citizenship diagonal cells remain visible in the matrix but are excluded from the completion denominator.</p>
+        </section>
+      )}
+
       <nav className="evidence-region-tabs" aria-label="Destination region">
         {REGIONS.map((value) => (
           <button
@@ -240,7 +276,9 @@ export default function EvidenceStatusMatrix({
                   const destination = matrix.destinations[index];
                   return (
                     <th scope="col" title={destination.name} key={destination.code}>
-                      <span>{destination.name}</span><strong>{destination.code}</strong>
+                      <a className="evidence-destination-link" href={`/destination/${destination.slug}`}>
+                        <span>{destination.name}</span><strong>{destination.code}</strong>
+                      </a>
                     </th>
                   );
                 })}
@@ -250,7 +288,9 @@ export default function EvidenceStatusMatrix({
               {visibleRows.map(({ passport, row }) => (
                 <tr key={passport.code}>
                   <th scope="row">
-                    <strong>{passport.name}</strong><small>{passport.code} · {formatRegion(passport.region)}</small>
+                    <a className="evidence-passport-link" href={`/passport/${passport.slug}`}>
+                      <strong>{passport.name}</strong><small>{passport.code} · {formatRegion(passport.region)}</small>
+                    </a>
                   </th>
                   {visibleDestinationIndexes.map((index) => {
                     const destination = matrix.destinations[index];

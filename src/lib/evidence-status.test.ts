@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
-import { buildEvidenceStatusRegion } from "./evidence-status";
+import { buildEvidenceCompletionSummary, buildEvidenceStatusRegion } from "./evidence-status";
 import type { DataSnapshot } from "./types";
 
 const snapshot = fallbackSnapshot as DataSnapshot;
@@ -39,5 +39,17 @@ describe("evidence status matrix", () => {
 
     expect(currentSwissRow.cells[koreaIndex].slice(0, 2)).toEqual(["visa_free", 1]);
     expect(expiredSwissRow.cells[koreaIndex]).toEqual(["visa_free", 0, -1, 0, 0]);
+  });
+
+  it("reports a complete four-state summary for every foreign-access relationship", () => {
+    const summary = buildEvidenceCompletionSummary(snapshot.manifest, snapshot.passports, "2026-08-21");
+    const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
+
+    expect(summary.total).toBe(44_974);
+    expect(bucketTotal).toBe(summary.total);
+    expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
+    expect(summary.covered).toBe(30_051);
+    expect(summary.percent).toBe(66.8);
+    expect(summary.fresh.count).toBeGreaterThan(0);
   });
 });

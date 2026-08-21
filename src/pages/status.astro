@@ -1,0 +1,69 @@
+---
+import EvidenceStatusMatrix from "@/components/EvidenceStatusMatrix";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext } from "@/lib/data";
+import { formatRegion } from "@/lib/geography";
+import { REGIONS, type Region } from "@/lib/types";
+
+type VerificationFilter = "all" | "verified" | "pending";
+
+const { manifest } = await getDataContext(Astro.locals);
+const requestedRegion = (Astro.url.searchParams.get("region") ?? "EUROPE").toUpperCase();
+const initialRegion = REGIONS.includes(requestedRegion as Region) ? requestedRegion as Region : "EUROPE";
+const requestedFilter = Astro.url.searchParams.get("state");
+const initialFilter: VerificationFilter = requestedFilter === "verified" || requestedFilter === "pending"
+  ? requestedFilter
+  : "all";
+const regionCounts = Object.fromEntries(REGIONS.map((region) => [
+  region,
+  manifest.destinations.filter((destination) => destination.region === region).length,
+])) as Record<Region, number>;
+const foreignRelationshipCount = manifest.passports.reduce(
+  (total, passport) => total + manifest.destinations.filter((destination) => destination.code !== passport.code).length,
+  0,
+);
+const checkedDate = new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(new Date(manifest.checkedAt));
+
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=1800, stale-while-revalidate=86400");
+Astro.response.headers.set("X-Robots-Tag", "noindex, nofollow");
+---
+
+<BaseLayout
+  title="Official Evidence Coverage Matrix | MultiPass Rank"
+  description="Internal audit matrix showing official evidence coverage for every passport and destination relationship in MultiPass Rank."
+  canonical="/status"
+  noindex
+  robots="noindex,nofollow"
+>
+  <header class="page-intro evidence-status-intro">
+    <span class="eyebrow">Internal data audit</span>
+    <h1>Evidence coverage matrix.</h1>
+    <p>
+      Review the current access classification, official-evidence state, and latest source-review date for every passport–destination relationship. Destinations load one region at a time to keep the audit usable.
+    </p>
+    <div class="evidence-status-intro__meta">
+      <span><strong>{manifest.passports.length}</strong> passport issuers</span>
+      <span><strong>{manifest.destinations.length}</strong> destinations</span>
+      <span><strong>{foreignRelationshipCount.toLocaleString()}</strong> foreign-access relationships</span>
+      <span>Access snapshot checked {checkedDate}</span>
+    </div>
+    <p class="evidence-status-intro__note">
+      This operational page is intentionally absent from navigation and the sitemap and is marked <code>noindex, nofollow</code>.
+      The initial view is {formatRegion(initialRegion)}.
+    </p>
+  </header>
+
+  <EvidenceStatusMatrix
+    initialRegion={initialRegion}
+    initialFilter={initialFilter}
+    regionCounts={regionCounts}
+    client:only="react"
+  >
+    <div slot="fallback" class="evidence-status-loading" role="status">Loading evidence matrix…</div>
+  </EvidenceStatusMatrix>
+</BaseLayout>
