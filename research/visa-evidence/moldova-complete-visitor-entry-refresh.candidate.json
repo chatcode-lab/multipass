@@ -1,0 +1,214 @@
+{
+  "batchId": "moldova-complete-visitor-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "moldova-mfa-current-foreign-visa-regime",
+      "title": "Visa regime for foreigners",
+      "url": "https://mfa.gov.md/en/content/visa-regime-foreigners",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Moldova's Foreign Ministry publishes the live inbound visa, exemption, airport-transit and invitation lists on its mfa.gov.md government domain; the page identifies the Government and Ministry and carries a 2026 copyright.",
+      "supportingExcerpt": "List of foreigners who are required to hold a visa at the entrance, exit and transit of the territory of the Republic of Moldova."
+    },
+    {
+      "id": "moldova-official-evisa-electronic-issuance",
+      "title": "10 things you should know about the eVisa",
+      "url": "https://www.evisa.gov.md/info/thingsyoushouldknow?c=en-US",
+      "publisher": "Government of the Republic of Moldova eVisa portal",
+      "jurisdiction": "Moldova",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Moldova MFA's visa-regime page links this eVisa.gov.md site as the Government's e-visa portal. The page describes issuance and permissible electronic visa types, not just online form submission. On 21 August 2026, the portal's server omitted a trusted TLS issuer chain even though its leaf certificate covered both hostnames and remained valid; users must not bypass certificate warnings.",
+      "supportingExcerpt": "An eVisa is an authorization to enter Moldova issued in PDF format."
+    },
+    {
+      "id": "moldova-border-police-foreign-entry-conditions",
+      "title": "Crossing the border by foreign citizens",
+      "url": "https://www.border.gov.md/traversarea-frontierei-de-catre-cetatenii-straini",
+      "publisher": "Border Police of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Border Police page identifies the Ministry of Internal Affairs / Government of Moldova and gives foreign-national entry, document, refusal and purpose-evidence conditions.",
+      "supportingExcerpt": "Intrarea pe teritoriul Republicii Moldova este permisă străinilor care întrunesc următoarele condiţii."
+    },
+    {
+      "id": "moldova-border-police-citizen-entry-conditions",
+      "title": "Travel conditions for citizens of the Republic of Moldova",
+      "url": "https://www.border.gov.md/index.php/conditii-de-calatorie",
+      "publisher": "Border Police of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Border Police page identifies the Ministry of Internal Affairs / Government of Moldova and expressly addresses entry and exit by Moldovan citizens.",
+      "supportingExcerpt": "Cetățenii Republicii Moldova au dreptul de a ieși și intra în Republica Moldova în baza pașaportului."
+    }
+  ],
+  "policies": [
+    {
+      "id": "moldova-citizen-entry",
+      "title": "Moldovan ordinary passport: citizen entry",
+      "summary": "A person travelling on a Moldovan ordinary passport is classified as a Moldovan citizen, not under the foreign-visitor visa regime.",
+      "status": "citizenship",
+      "destinationCodes": ["MD"],
+      "passportCodes": ["MD"],
+      "conditions": [
+        "The Border Police states that Moldovan citizens have the right to leave and enter Moldova on a passport issued by the competent authorities.",
+        "This citizenship classification does not establish foreign-passport, dual-national document choice, residence, work, transit, or final border-control treatment."
+      ],
+      "sourceIds": ["moldova-border-police-citizen-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "moldova-named-foreign-ordinary-passports-visa-free",
+      "title": "Named foreign ordinary passports: visa-free visitor baseline",
+      "summary": "Moldova's current MFA schedule expressly exempts these foreign nationalities from the visa requirement; Hong Kong and Macao are included only on the stated SAR-passport basis and Qatar is listed under bilateral accords.",
+      "status": "visa_free",
+      "destinationCodes": ["MD"],
+      "passportCodes": ["AD", "AE", "AG", "AL", "AM", "AR", "AT", "AU", "AZ", "BA", "BB", "BE", "BG", "BN", "BR", "BS", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FM", "FR", "GB", "GD", "GE", "GR", "GT", "HK", "HN", "HR", "HU", "IE", "IL", "IS", "IT", "JP", "KG", "KI", "KN", "KR", "KZ", "LC", "LI", "LT", "LU", "LV", "MC", "ME", "MH", "MK", "MO", "MT", "MU", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PL", "PT", "PW", "PY", "QA", "RO", "RS", "RU", "SC", "SE", "SG", "SI", "SK", "SM", "SB", "SV", "TJ", "TL", "TO", "TR", "TT", "TV", "UA", "US", "UY", "UZ", "VA", "VC", "VE", "VU", "WS"],
+      "conditions": [
+        "This is the ordinary foreign-passport visitor baseline inferred from the MFA's nationality exemption list. Hong Kong and Macao are expressly limited to holders of their respective SAR passports; Qatar is a separate bilateral-accord exemption.",
+        "The cited live schedule does not provide a single duration for this full group, so this candidate does not normalize a length of stay from older embassy pages or country-specific agreements.",
+        "It does not establish work, residence, airport transit, refugee, emergency, diplomatic, service, special, identity-card, or other travel-document treatment.",
+        "Foreign entrants must hold an accepted valid travel document, meet purpose/means and onward-travel requirements where applicable, and remain subject to refusal, security, public-health, document-validity and final-admission checks."
+      ],
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime", "moldova-border-police-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "moldova-named-foreign-ordinary-passports-electronic-visitor-visa",
+      "title": "Named foreign ordinary passports: electronic visitor visa available before travel",
+      "summary": "The MFA's current schedule requires these nationalities to hold a visa, and Moldova's official eVisa portal says all foreigners may request a PDF eVisa for eligible transit or short-stay purposes. This is a genuine electronic-issuance route, not merely online filing.",
+      "status": "evisa",
+      "destinationCodes": ["MD"],
+      "passportCodes": ["AF", "AO", "BD", "BF", "BH", "BI", "BJ", "BO", "BT", "BW", "BZ", "CD", "CF", "CG", "CI", "CM", "CN", "CU", "CV", "DJ", "DZ", "EC", "EG", "ER", "ET", "FJ", "GA", "GH", "GM", "GN", "GQ", "GW", "GY", "HT", "IN", "ID", "IQ", "IR", "JM", "JO", "KE", "KH", "KM", "KP", "KW", "LA", "LB", "LK", "LR", "LS", "LY", "MA", "MG", "ML", "MM", "MN", "MR", "MV", "MW", "MZ", "NA", "NE", "NG", "NP", "NR", "OM", "PK", "PG", "PH", "PS", "RW", "SA", "SD", "SL", "SN", "SO", "SR", "SS", "ST", "SY", "SZ", "TD", "TG", "TH", "TM", "TN", "TZ", "UG", "VN", "YE", "ZA", "ZM", "ZW"],
+      "conditions": [
+        "The official portal says the eVisa is issued in PDF form and has the same entry right as a sticker visa. Only transit B and short-stay C visas can be obtained online; airport-transit A and long-stay D require a diplomatic mission or consular office.",
+        "The portal says all foreigners may request eVisa for listed purposes including business, tourism, visits, mission, sports, transport, culture, humanitarian and scientific activities. It does not establish work, study/residence, airport-transit, diplomatic, service, emergency, refugee or other special-document access.",
+        "On 21 August 2026, normal TLS verification of the official portal failed because its server omitted a trusted issuer chain. This transport defect is an operational warning, not evidence that electronic issuance ended; users must not bypass browser certificate warnings.",
+        "MFA's required-visa list makes a separate invitation procedure applicable to named nationalities and retains exceptions from that procedure. Its [2] nationalities can instead travel while holding a valid non-transit EU/Schengen, UK, US or Canadian visa or residence permit; that document-conditioned alternative does not change this nationality baseline.",
+        "For Egypt, Indonesia, Iran, Turkmenistan and Vietnam, MFA footnote [1] preserves treaty-based diplomatic, service and special-passport exceptions; those documents are outside this ordinary-passport policy.",
+        "Foreign entrants remain subject to accepted-document, purpose, means, onward-travel, refusal, security, public-health, passport-validity and final border-admission requirements."
+      ],
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime", "moldova-official-evisa-electronic-issuance", "moldova-border-police-foreign-entry-conditions"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.gov.md/",
+        "label": "Moldova Government eVisa portal",
+        "processingTime": "The official eVisa guidance says a request is processed in up to 10 days.",
+        "steps": [
+          "Use the Government eVisa portal to select an eligible transit B or short-stay C purpose and complete the application.",
+          "Supply the portal's required passport, purpose and any invitation-related materials, then pay the applicable fee.",
+          "Receive the PDF eVisa before travel and carry the relevant documents for Border Police admission checks."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "DM",
+      "destinationCode": "MD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback says visa-free, but the current MFA required-visa and exemption schedules do not name Dominica; an official result is not established from silence.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime"]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "MD",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback says eVisa, but the current MFA page places the Dominican Republic in both the visa-required [2] and visa-exempt lists; no baseline can be selected without resolving that official conflict.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime"]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "MD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA schedule places Cuba in the visa-required list (subject to its [2] third-country-document exception), while the official eVisa portal provides a pre-travel PDF visa route.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime", "moldova-official-evisa-electronic-issuance"]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "MD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA schedule places Ecuador in the visa-required list (subject to its [2] third-country-document exception), while the official eVisa portal provides a pre-travel PDF visa route.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime", "moldova-official-evisa-electronic-issuance"]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "MD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Sudan is in the current MFA visa-required list, but the official eVisa portal establishes a PDF eVisa issued before travel for eligible short-stay or transit purposes.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime", "moldova-official-evisa-electronic-issuance"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "MD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "South Sudan is in the current MFA visa-required list, but the official eVisa portal establishes a PDF eVisa issued before travel for eligible short-stay or transit purposes.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime", "moldova-official-evisa-electronic-issuance"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "MD",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback says eVisa, but Taiwan is absent from both current MFA nationality schedules; an ordinary-passport result is not established from silence.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "MD",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback says eVisa, but Kosovo is absent from both current MFA nationality schedules; an ordinary-passport result is not established from silence.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime"]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "MD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "South Africa is in the current MFA visa-required list (subject to its [2] third-country-document exception), while the official eVisa portal provides a pre-travel PDF visa route.",
+      "sourceIds": ["moldova-mfa-current-foreign-visa-regime", "moldova-official-evisa-electronic-issuance"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "DM",
+      "destinationCode": "MD",
+      "reason": "The current MFA visa-required and visa-exempt schedules do not name Dominica. Although the official portal permits an eVisa request by all foreigners, the ordinary-passport nationality baseline is not established from official silence.",
+      "searchedOfficialDomains": ["mfa.gov.md", "evisa.gov.md", "border.gov.md"]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "MD",
+      "reason": "The current MFA page simultaneously lists the Dominican Republic as visa-required [2] and visa-exempt. The ordinary-passport baseline is not established until Moldova resolves this direct official conflict.",
+      "searchedOfficialDomains": ["mfa.gov.md", "evisa.gov.md", "border.gov.md"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "MD",
+      "reason": "Taiwan is not named in either current MFA nationality schedule. Although the official portal permits an eVisa request by all foreigners, the ordinary-passport nationality baseline is not established from official silence.",
+      "searchedOfficialDomains": ["mfa.gov.md", "evisa.gov.md", "border.gov.md"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "MD",
+      "reason": "Kosovo is not named in either current MFA nationality schedule. Although the official portal permits an eVisa request by all foreigners, the ordinary-passport nationality baseline is not established from official silence.",
+      "searchedOfficialDomains": ["mfa.gov.md", "evisa.gov.md", "border.gov.md"]
+    }
+  ]
+}

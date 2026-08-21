@@ -1,0 +1,75 @@
+{
+  "batchId": "north-macedonia-eu-schengen-and-citizen-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "north-macedonia-mfa-entry-requirements-2026",
+      "title": "Visa requirements for entering the Republic of North Macedonia",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The North Macedonian MFA publishes current entry and visa conditions on its official mfa.gov.mk consular-services domain, including the directly stated EU/Schengen exemption and 2026 document-conditioned routes.",
+      "supportingExcerpt": "Nationals of EU Member States and signatories of the Schengen Agreement DO NOT need a visa."
+    },
+    {
+      "id": "north-macedonia-official-gazette-constitution-return",
+      "title": "Constitution of the Republic of North Macedonia",
+      "url": "https://www.slvesnik.com.mk/content/Ustav%20na%20RM%20-%20makedonski%20-%20FINALEN%202011.pdf",
+      "publisher": "Official Gazette of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "law",
+      "language": "Macedonian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Official Gazette publishes the constitutional text. Article 27 protects every citizen's right to return, while the Ministry of Justice's current legislative register indexes the Constitution.",
+      "supportingExcerpt": "A citizen cannot be expelled from the Republic; every citizen has the right to return."
+    },
+    {
+      "id": "north-macedonia-justice-constitution-register",
+      "title": "Constitution: current legislative register",
+      "url": "https://ldbis.pravda.gov.mk/PregledNaZakon.aspx?id=42",
+      "publisher": "Ministry of Justice of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "official-dataset",
+      "language": "Macedonian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry of Justice's official legislative database provides the current register record for the Constitution and its Gazette publication history.",
+      "supportingExcerpt": "Constitution of the Republic of Macedonia"
+    }
+  ],
+  "policies": [
+    {
+      "id": "north-macedonia-citizen-constitutional-return",
+      "title": "North Macedonian ordinary passport: citizenship and constitutional return",
+      "summary": "A North Macedonian citizen has a constitutional right to return and is classified as citizenship rather than under the foreign-visitor visa regime.",
+      "status": "citizenship",
+      "destinationCodes": ["MK"],
+      "passportCodes": ["MK"],
+      "conditions": [
+        "This is a citizenship classification supported by the constitutional right to return; it does not determine document formalities for a dual national presenting another passport.",
+        "Residence, work, transit, diplomatic, official, service, refugee, emergency-document and final border-control treatment remain outside this classification."
+      ],
+      "sourceIds": ["north-macedonia-official-gazette-constitution-return", "north-macedonia-justice-constitution-register"],
+      "confidence": "high"
+    },
+    {
+      "id": "north-macedonia-eu-schengen-ordinary-passport-visa-free",
+      "title": "EU and Schengen ordinary passports: visa-free entry",
+      "summary": "The current MFA entry page directly exempts nationals of EU Member States and Schengen signatories from an entry visa.",
+      "status": "visa_free",
+      "destinationCodes": ["MK"],
+      "passportCodes": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "ES", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "NO", "PL", "PT", "RO", "SK", "SI", "SE", "CH", "LI", "IS"],
+      "conditions": [
+        "The MFA additionally permits these nationals to enter with a valid national identity card; this policy records the ordinary-passport relationship only.",
+        "A qualifying EU/Schengen residence permit or multiple-entry Schengen C visa can create a separate 15-day route for other travellers. A temporary 2026 decision creates a similar document-conditioned route for qualifying multiple-entry US, UK or Canadian visas. Neither route expands this nationality cohort.",
+        "Document validity, purpose, funds, registration, public-order and final-admission requirements remain applicable; work, residence and special travel documents are outside this policy."
+      ],
+      "sourceIds": ["north-macedonia-mfa-entry-requirements-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

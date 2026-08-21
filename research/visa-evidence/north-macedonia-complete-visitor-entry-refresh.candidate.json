@@ -1,0 +1,146 @@
+{
+  "batchId": "north-macedonia-complete-visitor-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "north-macedonia-mfa-inbound-visa-checker",
+      "title": "Do you need a visa?",
+      "url": "https://mfa.gov.mk/sq-AL/konzularni-uslugi/dali-ti-e-potrebna-viza",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "official-dataset",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry publishes the live inbound country-by-country visa checker on its official mfa.gov.mk domain. It divides foreign nationalities by region and displays the North Macedonia entry-visa result for each selected nationality.",
+      "supportingExcerpt": "Visa for entering North Macedonia: REQUIRED"
+    },
+    {
+      "id": "north-macedonia-mfa-entry-requirements-2026",
+      "title": "Visa requirements for entering the Republic of North Macedonia",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/informacii-za-vlez-vo-rsm",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The North Macedonian MFA publishes current entry and visa conditions on its official mfa.gov.mk consular-services domain, including the 2026 temporary third-country-document decision.",
+      "supportingExcerpt": "Nationals of EU Member States and signatories of the Schengen Agreement DO NOT need a visa."
+    },
+    {
+      "id": "north-macedonia-mfa-advance-visa-procedure",
+      "title": "Visa Application Procedure",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The North Macedonian MFA's official consular page describes how a foreigner obtains an entry visa through a diplomatic-consular representation.",
+      "supportingExcerpt": "The foreigner submits a visa application to the competent diplomatic-consular representation."
+    },
+    {
+      "id": "north-macedonia-interior-law-on-foreigners",
+      "title": "Consolidated Law on Foreigners",
+      "url": "https://arhiva.mvr.gov.mk/Upload/Documents/Zakon%20za%20stranci%20precisten%20tekst%20%281%29.pdf",
+      "publisher": "Ministry of Interior of the Republic of North Macedonia / Official Gazette",
+      "jurisdiction": "North Macedonia",
+      "kind": "law",
+      "language": "Macedonian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Interior Ministry hosts the consolidated Official Gazette text of the Law on Foreigners on its official archival domain. Its visa provisions define a visa as an entry, short-stay or transit permit and require it before entry unless the law provides otherwise.",
+      "supportingExcerpt": "Странецот е должен да ја обезбеди визата пред неговото влегување."
+    },
+    {
+      "id": "north-macedonia-mfa-citizenship-faq",
+      "title": "Frequently Asked Questions: Citizenship",
+      "url": "https://mfa.gov.mk/mk-MK/kontakt/cpp-cesto-postavuvani-prasanja",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "Macedonian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The North Macedonian MFA's official FAQ states the constitutional character of North Macedonian citizenship and explains that citizenship is a legal bond with the state.",
+      "supportingExcerpt": "ДРЖАВЈАНСТВО е правна врска меѓу Вас и државата."
+    }
+  ],
+  "policies": [
+    {
+      "id": "north-macedonia-citizen-entry",
+      "title": "North Macedonian ordinary passport: citizenship",
+      "summary": "A North Macedonian national travelling on a North Macedonian ordinary passport is classified as citizenship rather than as a foreign visitor-visa relationship.",
+      "status": "citizenship",
+      "destinationCodes": ["MK"],
+      "passportCodes": ["MK"],
+      "conditions": [
+        "This is a citizenship classification only and does not define the foreign-visitor entry treatment of a dual national who presents another country's passport.",
+        "It does not establish residence, work, transit, diplomatic, official, service, refugee, emergency-document or final border-admission treatment."
+      ],
+      "sourceIds": ["north-macedonia-mfa-citizenship-faq"],
+      "confidence": "high"
+    },
+    {
+      "id": "north-macedonia-eu-schengen-ordinary-passport-visa-free",
+      "title": "EU and Schengen ordinary passports: visa-free entry",
+      "summary": "The MFA expressly exempts nationals of EU Member States and Schengen Agreement signatories from the North Macedonian entry-visa requirement.",
+      "status": "visa_free",
+      "destinationCodes": ["MK"],
+      "passportCodes": [
+        "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "ES", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "NO", "PL", "PT", "RO", "SK", "SI", "SE", "CH", "LI", "IS"
+      ],
+      "conditions": [
+        "The MFA additionally says these nationals may enter with a valid national identity card; this policy records the ordinary-passport relationship only.",
+        "The published short-stay framework is no more than 90 days in any 180-day period unless a law or ratified international agreement states otherwise. Work, residence, transit, diplomatic, official, service and special-document routes are outside this policy.",
+        "A visa exemption does not remove document, purpose, funds, registration, public-order or final-admission checks."
+      ],
+      "sourceIds": ["north-macedonia-mfa-entry-requirements-2026", "north-macedonia-interior-law-on-foreigners"],
+      "confidence": "high"
+    },
+    {
+      "id": "north-macedonia-other-listed-ordinary-passport-visa-free",
+      "title": "Other listed ordinary passports: visa-free entry",
+      "summary": "The MFA's live inbound country checker identifies these ordinary-passport issuers as not requiring a North Macedonian entry visa.",
+      "status": "visa_free",
+      "destinationCodes": ["MK"],
+      "passportCodes": [
+        "SG", "JP", "KR", "NZ", "GB", "AU", "CA", "MY", "AE", "US", "MC", "CL", "AD", "HK", "AR", "BR", "SM", "BB", "BN", "IL", "BS", "MX", "KN", "UY", "AG", "SC", "VA", "MU", "CR", "PA", "PY", "UA", "MO", "PE", "RS", "TW", "GT", "CO", "SV", "HN", "ME", "NI", "AL", "BA", "GE", "MD", "VE", "TR", "XK"
+      ],
+      "conditions": [
+        "This is a visitor ordinary-passport baseline from the MFA checker. It does not turn a web enquiry, application form, or third-country visa into an eVisa, ETA or visa on arrival.",
+        "The published short-stay framework is no more than 90 days in any 180-day period unless a law or ratified international agreement states otherwise. The checker does not support flattening bilateral identity-card, biometric, SAR, diplomatic, official, service, crew, work, residence or special-document conditions.",
+        "For HK and MO, this records the listed SAR passport-code result only; it does not extend the waiver to Chinese, British, Portuguese or other travel documents. For XK, it records the MFA checker's Kosovo result without inferring recognition beyond that visitor entry treatment."
+      ],
+      "sourceIds": ["north-macedonia-mfa-inbound-visa-checker", "north-macedonia-interior-law-on-foreigners"],
+      "confidence": "medium"
+    },
+    {
+      "id": "north-macedonia-other-ordinary-passports-advance-visa",
+      "title": "Other foreign ordinary passports: advance visa required",
+      "summary": "The MFA's live country checker requires an entry visa for these ordinary passports, and the MFA procedure requires application through the competent diplomatic-consular representation before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["MK"],
+      "passportCodes": [
+        "VC", "LC", "GD", "TT", "DM", "SB", "MH", "WS", "TO", "TV", "KI", "FM", "PW", "RU", "QA", "BZ", "ZA", "TL", "EC", "MV", "KW", "SA", "FJ", "NR", "VU", "BH", "GY", "JM", "OM", "BW", "CN", "PG", "BY", "TH", "BO", "SR", "ID", "LS", "KZ", "NA", "DO", "SZ", "MW", "MA", "AZ", "KE", "TZ", "GH", "GM", "RW", "AM", "PH", "ZM", "MN", "TN", "UG", "CV", "BJ", "MZ", "SL", "ZW", "ST", "KG", "UZ", "CU", "BF", "IN", "MG", "SN", "CI", "GA", "TG", "TJ", "GQ", "NE", "GN", "MR", "VN", "TD", "GW", "ML", "DZ", "CM", "KM", "CG", "AO", "LR", "KH", "CF", "JO", "BT", "BI", "HT", "LA", "EG", "DJ", "NG", "TM", "CD", "LB", "MM", "LK", "ET", "SS", "SD", "LY", "ER", "IR", "KP", "BD", "PS", "NP", "SO", "PK", "YE", "IQ", "SY", "AF"
+      ],
+      "conditions": [
+        "This is an advance-visa baseline, not eVisa availability: the MFA says applications are submitted in person to the competent resident or non-resident diplomatic-consular representation, from six months to at least 15 days before intended travel.",
+        "The published application requires a qualifying travel document, medical insurance, fee and evidence of purpose, accommodation, subsistence, onward or return travel and intention to leave. Visa issuance and admission remain discretionary.",
+        "A temporary decision from 1 January through 31 December 2026 waives a short-stay C visa for a third-country traveller holding a valid multiple-entry US, UK or Canadian visa inserted in the passport, valid at least five days beyond the intended stay; the allowed stay is up to 15 days. Valid EU/Schengen residence or a qualifying multiple-entry Schengen C visa can also create the separately stated 15-day route. These document-conditioned exceptions do not convert the named passport baseline into visa-free, eVisa, ETA or visa-on-arrival status.",
+        "Work, residence, airport transit, diplomatic, official, service, crew, UN travel documents and other special-document arrangements are not classified by this policy."
+      ],
+      "sourceIds": ["north-macedonia-mfa-inbound-visa-checker", "north-macedonia-mfa-advance-visa-procedure", "north-macedonia-mfa-entry-requirements-2026", "north-macedonia-interior-law-on-foreigners"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+        "label": "North Macedonia MFA advance-visa procedure",
+        "processingTime": "The MFA requires submission no more than six months and at least 15 days before the intended trip; it does not publish a decision-time promise on this page.",
+        "steps": [
+          "Apply in person to the competent resident or non-resident North Macedonian diplomatic-consular representation, except for the stated proxy exceptions.",
+          "Provide the travel document, photograph, medical insurance, fee evidence and documents proving the visit purpose, accommodation, means, transport and intention to leave.",
+          "Receive the visa decision before travel and present the visa and supporting travel documents for border control."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

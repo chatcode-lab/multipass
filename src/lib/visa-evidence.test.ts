@@ -1763,6 +1763,33 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "RU", snapshot.passports.XK.statuses.RU).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps Moldova, Montenegro, and the supported North Macedonia cohort aligned to reviewed official sources", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("MD")).toHaveLength(195);
+    expect(getVisaRelationshipEvidence("CU", "MD", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SD", "MD", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DM", "MD", snapshot.passports.DM.statuses.MD).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("DO", "MD", snapshot.passports.DO.statuses.MD).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "MD", snapshot.passports.TW.statuses.MD).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "MD", snapshot.passports.XK.statuses.MD).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("ME")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("AZ", "ME", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VU", "ME", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ME", "ME", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("RU", "ME", "visa_free", "2026-10-31").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RU", "ME", "visa_required", "2026-11-01").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KZ", "ME", "visa_required", "2026-10-02").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("MK")).toHaveLength(32);
+    expect(getVisaRelationshipEvidence("US", "MK", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("DE", "MK", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MK", "MK", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "MK", snapshot.passports.CN.statuses.MK).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -2189,6 +2216,13 @@ describe("official visa evidence", () => {
       "www.kdmid.ru",
       "evisa.kdmid.ru",
       "kremlin.ru",
+      "mfa.gov.md",
+      "www.evisa.gov.md",
+      "www.border.gov.md",
+      "www.gov.me",
+      "mfa.gov.mk",
+      "www.slvesnik.com.mk",
+      "ldbis.pravda.gov.mk",
       "aip.scaa.gov.so",
       "immigration.gov.so",
       "web.mfa.gov.so",
