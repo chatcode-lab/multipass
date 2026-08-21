@@ -825,6 +825,31 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CN", "CN", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Bhutan, Bangladesh, and Pakistan routes", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("BT")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("IN", "BT", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BD", "BT", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BT", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BT", "BT", "citizenship").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("BD")).toHaveLength(20);
+    expect(getVisaRelationshipEvidence("EG", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BN", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DE", "BD", snapshot.passports.DE.statuses.BD).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BD", "BD", "citizenship").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("PK")).toHaveLength(190);
+    expect(getVisaRelationshipEvidence("MV", "PK", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DE", "PK", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("QA", "PK", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "PK", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DZ", "PK", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PK", "PK", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1035,6 +1060,18 @@ describe("official visa evidence", () => {
       "www.gov.kg",
       "en.nia.gov.cn",
       "cs.mfa.gov.cn",
+      "www.doi.gov.bt",
+      "immi.gov.bt",
+      "bhutan.travel",
+      "www.moha.gov.bt",
+      "dip.gov.bd",
+      "visa.gov.bd",
+      "copenhagen.mofa.gov.bd",
+      "manama.mofa.gov.bd",
+      "birmingham.mofa.gov.bd",
+      "bdlaws.minlaw.gov.bd",
+      "dgip.gov.pk",
+      "mofa.gov.pk",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
