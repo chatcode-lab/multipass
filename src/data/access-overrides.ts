@@ -807,4 +807,34 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
       sourceUrl: "https://dgip.gov.pk/visa/categories.php",
       reviewedAt: "2026-08-21",
     })),
+  ...(["BB", "LA", "CN", "AL", "FJ", "MG", "NI", "MK", "PA", "VU", "LB", "DZ", "TN", "VN", "MA"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "TJ",
+      status: "visa_free" as const,
+      reason: "Tajikistan's current Foreign Affairs schedule expressly places this ordinary passport in a visa-free visitor cohort.",
+      sourceUrl: "https://sip.mfa.tj/assets/documents/Visa%20Information.pdf",
+      reviewedAt: "2026-08-21",
+    })),
+  ...(["BN", "EG", "IL", "ZA", "TM"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "TJ",
+    status: "evisa" as const,
+    reason: "Tajikistan's live official nationality selector includes this ordinary passport for the advance electronic-visa route, with no easier current exemption.",
+    sourceUrl: "https://www.visa.gov.tj/catalogs?lang=en-GB",
+    reviewedAt: "2026-08-21",
+  })),
+  ...([
+    "WS", "TO", "KI", "FM", "PW", "TL", "NR", "XK", "BW", "LS", "NA", "SZ", "MW", "RW", "GM", "UG",
+    "ZM", "SL", "ZW", "MZ", "ST", "CI", "TG", "GA", "MR", "NE", "GQ", "GN", "ML", "KM", "GW", "AO",
+    "TD", "LR", "BI", "CF", "HT", "NG", "CD", "DJ", "MM", "ET", "SD", "LY", "ER", "PS", "KP", "NP",
+    "SO", "IQ", "SY", "AF", "YE",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "TJ",
+    status: "visa_required" as const,
+    reason: "Tajikistan's current Foreign Affairs schedule applies its explicit advance consular-visa default to this ordinary passport, which has no listed exemption or live eVisa route.",
+    sourceUrl: "https://sip.mfa.tj/assets/documents/Visa%20Information.pdf",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;

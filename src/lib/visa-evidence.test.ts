@@ -850,6 +850,25 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("PK", "PK", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers Tajikistan while preserving Afghanistan and Turkmenistan source gaps", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("TJ")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("BB", "TJ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BN", "TJ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("WS", "TJ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TJ", "TJ", "citizenship").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("TM")).toHaveLength(1);
+    expect(getVisaRelationshipEvidence("TM", "TM", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "TM", snapshot.passports.US.statuses.TM).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("AF")).toHaveLength(0);
+    expect(getVisaRelationshipEvidence("US", "AF", snapshot.passports.US.statuses.AF).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "AF", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1072,6 +1091,16 @@ describe("official visa evidence", () => {
       "bdlaws.minlaw.gov.bd",
       "dgip.gov.pk",
       "mofa.gov.pk",
+      "sip.mfa.tj",
+      "www.visa.gov.tj",
+      "mmk.tj",
+      "mfa.tj",
+      "www.mfa.gov.tm",
+      "migration.gov.tm",
+      "turkmenistan.gov.tm",
+      "www.turkmenistan.gov.tm",
+      "moi.gov.af",
+      "mfa.gov.af",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
