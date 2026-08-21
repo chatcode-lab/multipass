@@ -1858,6 +1858,19 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("NR", "VA", snapshot.passports.NR.statuses.VA).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps Ukraine and Djibouti foreign rows unresolved while supporting their citizenship cells", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("UA")).toHaveLength(1);
+    expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "UA", snapshot.passports.US.statuses.UA).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("DJ")).toHaveLength(1);
+    expect(getVisaRelationshipEvidence("DJ", "DJ", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "DJ", snapshot.passports.US.statuses.DJ).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1884,6 +1897,13 @@ describe("official visa evidence", () => {
       "www.vaticanstate.va",
       "epass.vatican.va",
       "consvancouver.esteri.it",
+      "zakon.rada.gov.ua",
+      "dmsu.gov.ua",
+      "mvs.gov.ua",
+      "mfa.gov.ua",
+      "www.egouv.dj",
+      "guide.visitdjibouti.dj",
+      "www.journalofficiel.dj",
       "granpol.gov.ba",
       "sluzbenilist.ba",
       "gzk.rks-gov.net",
