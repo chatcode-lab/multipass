@@ -506,9 +506,39 @@ The Ministry of Interior's current common-passport admission schedule, dated 19 
 
 Independent review reopened all three official sources and reconciled the complete foreign-passport crosswalk. Kosovo remains unresolved because the schedule does not directly map that catalog travel document, and Uruguay citizenship remains unresolved because a foreigner admission schedule does not itself establish the citizen right-of-entry taxonomy. Conditional third-country-document exceptions, work, residence, study, transit, crew, special documents, fees, processing outcomes, and final admission remain outside the nationality baseline.
 
+## Pass 57 result: Chile
+
+Chile adds 197 directly supported foreign-passport relationships, raising complete-matrix evidence from 26,311 to 26,508 of 44,974 relationships (58.9%) and Americas coverage from 2,721 to 2,918 of 4,953 (58.9%). One hundred and thirty destination columns now have at least 50% coverage and 124 have at least 80%. Mongolia changes from the upstream visa-on-arrival status to visa-free, and Suriname changes from advance visa to visa-free; both fallback corrections exactly match the independently reviewed conflict record.
+
+The current Consular Services page directly links a transient-stay nationality schedule that marks 94 ordinary passports visa-free and 103 as requiring prior authorization or visa. The corresponding current process requires an online consular application and approval before travel, so a web form is not presented as eVisa, ETA, or visa on arrival. The Tourist Card described by the Migration Service is a post-entry record rather than travel authorization, and nationality-specific duration and purpose notes remain attached to their rows.
+
+Independent review corrected Indonesia before promotion: its current row expressly says no visa is required for the stated 60-day visitor stay, so the initial advance-visa classification and proposed fallback change were removed. The live page currently links the schedule despite its legacy directory path; the filename and document carry a March 2026 correction marker, but the mutable download remains a freshness watchpoint. Kosovo stays unresolved because the row also states Chile does not recognize it as a subject of international law, and Chilean citizenship stays unresolved because the foreign-nationality schedule does not establish a citizen right of entry. Conditional United States, Canadian, Pacific Alliance, residence, or special-document routes are not generalized to nationality-wide baselines.
+
+## Pass 58 result: Bolivia
+
+Bolivia adds a narrow 11-passport visa-free cohort, raising complete-matrix evidence from 26,508 to 26,519 of 44,974 relationships (59.0%) and Americas coverage from 2,918 to 2,929 of 4,953 (59.1%). No fallback status changed because every directly supported row already matched the seeded classification.
+
+Current Foreign Ministry announcements directly support South Korea, South Africa, Bulgaria, Malta, Romania, the United Arab Emirates, Israel, and the United States in Group I from 1 December 2025. A follow-up implementation notice resolves the initial announcement's gradual-rollout wording for those named countries. Separate bilateral notices support Honduras and the Dominican Republic for tourism or visits, while Brazil's presidential promulgation of the reciprocal agreement records its entry into international force. Those dated instruments are evidence for their named relationships, not a complete current nationality schedule.
+
+Independent review removed Bolivia citizenship because foreign-visa material does not establish the citizen-entry taxonomy and replaced two broken Migration Directorate document URLs with a directly operative Brazilian Government source for the reciprocal Brazil relationship. The current Foreign Ministry service page describes Groups I, II, and III but publishes no complete nationality table, so the other 188 passport relationships remain unresolved. No complement, eVisa, ETA, visa-on-arrival, third-country-document, or special-document route is inferred.
+
+## Pass 59 result: Paraguay
+
+Paraguay adds 176 supported foreign-passport relationships, raising complete-matrix evidence from 26,519 to 26,695 of 44,974 relationships (59.4%) and Americas coverage from 2,929 to 3,105 of 4,953 (62.7%). One hundred and thirty-one destination columns now have at least 50% coverage and 125 have at least 80%. Paraguay citizenship is also directly supported outside the visitor denominator.
+
+The current National Migration Directorate table and Foreign Ministry guidance support 64 visa-free passports, five visas on arrival, and 107 advance-visa passports. Qatar, Oman, Thailand, Indonesia, and Vietnam are the expressly named arrival cohort; the ordinary online visa form still leads to consular review and interview rather than electronic visa issuance. Six fallback corrections exactly match the reviewed candidate: The Bahamas becomes visa-free; Qatar, Thailand, Indonesia, and Vietnam become visa on arrival; and Venezuela requires an advance visa from 10 January 2026.
+
+Independent review preserved 22 unresolved relationships rather than choosing silently between inconsistent official pages. Australia, Canada, the United States, New Zealand, and Taiwan differ between the migration table and Foreign Ministry arrival guidance; the Philippines differs across Foreign Ministry pages; and Mongolia is visa-free in the migration table but omitted from the Foreign Ministry's explicit no-visa list and caught by its advance-visa residual. Fifteen additional catalog documents are not directly mapped. The live sources remain mutable and partially stale-looking, so the supported batch is medium confidence and the conflicts require periodic reconciliation.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.
+
+## Held from promotion: Panama
+
+Panama's candidate retains 43 directly mapped relationships from named decrees and current consular process guidance, with the other 156 cells unresolved. Independent review removed Cuba and the Dominican Republic from the old Tourist Card cohort because Executive Decree 88 of 2021 eliminated that route; the reviewed official material does not directly classify their replacement baseline. The candidate's three proposed corrections for Angola, Cabo Verde, and Georgia are not applied.
+
+The broad 38-passport visa-free cohort still depends on Executive Decree 326 of 2012. The National Migration Service continues to host and index that decree, but the current tourist guidance does not publish a consolidated nationality schedule or expressly confirm that every named row remains unamended. Russia, China, India, Venezuela, Haiti, and Kosovo have narrower later measures, yet those do not establish the missing complement. The candidate therefore remains a research artifact pending a current consolidated schedule, Gazette amendment crosswalk, or direct non-repeal confirmation.
 
 ## Official bulk sources identified for later passes
 

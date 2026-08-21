@@ -1433,6 +1433,49 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("UY", "UY", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("maps Chile's current transient-stay schedule without treating online filing as eVisa", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "CL");
+
+    expect(pairs).toHaveLength(197);
+    expect(getVisaRelationshipEvidence("ID", "CL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MN", "CL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SR", "CL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "CL", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "CL", snapshot.passports.XK.statuses.CL).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CL", "CL", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps Bolivia coverage to the narrow directly corroborated visa-free cohort", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "BO");
+
+    expect(pairs).toHaveLength(11);
+    expect(getVisaRelationshipEvidence("KR", "BO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HN", "BO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DO", "BO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "BO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AR", "BO", snapshot.passports.AR.statuses.BO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BO", "BO", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Paraguay's reconciled current tourist and arrival-visa cohorts", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "PY");
+
+    expect(pairs).toHaveLength(177);
+    expect(getVisaRelationshipEvidence("BS", "PY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("QA", "PY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("OM", "PY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VE", "PY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "PY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PY", "PY", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "PY", snapshot.passports.US.statuses.PY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PH", "PY", snapshot.passports.PH.statuses.PY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MN", "PY", snapshot.passports.MN.statuses.PY).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1831,6 +1874,13 @@ describe("official visa evidence", () => {
       "igm.gob.gt",
       "www.congreso.gob.gt",
       "www.gub.uy",
+      "www.consulado.gob.cl",
+      "serviciomigraciones.cl",
+      "consulados.cancilleria.gob.bo",
+      "cancilleria.gob.bo",
+      "www.planalto.gov.br",
+      "migraciones.gov.py",
+      "www.mre.gov.py",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
