@@ -156,13 +156,16 @@ for (const item of candidate.unresolved) {
   if (policyStatusesByPair.has(pairKey)) throw new Error(`Unresolved pair ${pairKey} is also assigned by a policy`);
 }
 
-const requiresCompletePartition = queueBatch.passportCodes.includes("*")
+const requiresCompleteForeignPartition = queueBatch.passportCodes.includes("*")
   && queueBatch.destinationCodes.length === 1
   && candidate.batchId.endsWith("-ordinary-passport-entry-scope");
-if (requiresCompletePartition) {
+const requiresCompleteCatalogPartition = queueBatch.passportCodes.includes("*")
+  && queueBatch.destinationCodes.length === 1
+  && candidate.batchId.endsWith("-complete-visitor-entry-refresh");
+if (requiresCompleteForeignPartition || requiresCompleteCatalogPartition) {
   for (const passportCode of allowedPassportCodes) {
     for (const destinationCode of allowedDestinationCodes) {
-      if (passportCode === destinationCode) continue;
+      if (requiresCompleteForeignPartition && passportCode === destinationCode) continue;
       const pairKey = `${passportCode}:${destinationCode}`;
       if (!policyStatusesByPair.has(pairKey) && !unresolvedKeys.has(pairKey)) throw new Error(`Queued pair ${pairKey} is neither supported nor unresolved`);
     }

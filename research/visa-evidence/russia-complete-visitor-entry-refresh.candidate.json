@@ -1,0 +1,853 @@
+{
+  "batchId": "russia-complete-visitor-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "russia-mfa-current-foreign-entry-conditions",
+      "title": "Russian MFA Consular Department: entry and stay conditions by foreign passport type",
+      "url": "https://www.kdmid.ru/cons/visas/conditions-of-entry-foreign-citizens-in-russian-federation/",
+      "publisher": "Consular Department, Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russian Federation",
+      "kind": "official-dataset",
+      "language": "Russian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Consular Department publishes this country-by-country entry table on its official kdmid.ru domain and identifies it as current as of July 2026.",
+      "supportingExcerpt": "Entry and stay conditions for citizens of foreign states by passport type."
+    },
+    {
+      "id": "russia-mfa-unified-evisa-instructions",
+      "title": "Russian MFA Consular Department: unified e-visa instructions",
+      "url": "https://evisa.kdmid.ru/Home/Instruction?tt_force_outside=1",
+      "publisher": "Consular Department, Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russian Federation",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The official MFA Consular Department e-visa portal carries the Ministry emblem and identifies itself as the Russian MFA's specialized e-visa website.",
+      "supportingExcerpt": "The unified e-visa is a single entry visa."
+    },
+    {
+      "id": "russia-mfa-general-visa-rule",
+      "title": "Russian MFA Consular Department: visa issuance and general rule",
+      "url": "https://www.kdmid.ru/cons/visas/",
+      "publisher": "Consular Department, Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russian Federation",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The MFA Consular Department publishes the foreign-entry visa rule and links directly to its current country conditions table.",
+      "supportingExcerpt": "A visa is required for a foreign citizen to enter Russia; an agreement can permit visa-free entry."
+    },
+    {
+      "id": "russia-constitution-citizen-return",
+      "title": "Constitution of the Russian Federation",
+      "url": "https://kremlin.ru/acts/constitution",
+      "publisher": "President of Russia",
+      "jurisdiction": "Russian Federation",
+      "kind": "law",
+      "language": "Russian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The official Kremlin website publishes the Constitution; Article 27(2) establishes a Russian citizen's right to return freely to the Russian Federation.",
+      "supportingExcerpt": "A citizen of the Russian Federation shall have the right to return freely to the Russian Federation."
+    }
+  ],
+  "policies": [
+    {
+      "id": "russia-citizen-entry",
+      "title": "Russian ordinary passport: citizen entry",
+      "summary": "A Russian national using an ordinary Russian passport is classified as citizenship rather than as a foreign visitor-visa relationship.",
+      "status": "citizenship",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["RU"],
+      "conditions": ["Article 27(2) establishes a Russian citizen's right to return freely. This classification is limited to Russian citizenship and does not establish a rule for dual nationals travelling as foreign citizens or for non-national travel documents."],
+      "sourceIds": ["russia-constitution-citizen-return"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-ordinary-passports-visa-free-90-days",
+      "title": "Russia: ordinary passports visa-free up to 90 days",
+      "summary": "The current MFA country table gives these ordinary-passport nationalities a visa-free short-visitor baseline of up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["AD", "AG", "AR", "BZ", "BO", "BR", "VU", "VE", "GY", "GT", "HN", "GD", "DM", "IL", "CO", "CR", "CU", "MV", "NA", "NI", "AE", "PA", "PY", "PE", "QA", "VC", "KN", "SV", "SR", "UY", "FJ", "CL", "EC", "ZA", "JM"],
+      "conditions": ["The country table's stated 90-day ordinary-passport or all-passport waiver controls; passport validity, migration registration, purpose, admission and any shorter treaty condition remain applicable.", "This is not a work, residence, diplomatic, service, crew, APEC-card, local-border or special-document classification."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-ordinary-passports-visa-free-duration-not-stated",
+      "title": "Russia: ordinary passports visa-free where the current MFA table states no duration",
+      "summary": "The current MFA country table expressly says these nationalities are visa-free for all passport types but does not state a nationality-specific duration in the displayed entry.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["AM", "AZ", "BY", "GE", "KZ", "KG", "MD", "TJ", "UA", "UZ"],
+      "conditions": ["Do not infer an unlimited visitor stay from the table's silence on duration; immigration, registration, document and final-admission rules remain applicable.", "The stated all-passport waivers may also permit specified internal identity documents, but this policy covers the ordinary passport relationship only."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-ordinary-passports-visa-free-30-days",
+      "title": "Russia: ordinary passports visa-free up to 30 days",
+      "summary": "The current MFA table gives these ordinary passports a short visa-free baseline of up to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["BA", "BW", "JO", "LA", "MN", "TH", "ME", "PW", "SC"],
+      "conditions": ["Bosnia and Herzegovina is limited to 30 days in 60; the other displayed ordinary-passport waivers state up to 30 days.", "This excludes diplomatic, service, crew, APEC-card, invitation, organized-tour and other special routes."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-ordinary-passports-visa-free-60-days",
+      "title": "Russia: ordinary passports visa-free up to 60 days",
+      "summary": "The current MFA table gives Dominican Republic, Republic of Korea, Mauritius, Samoa and Cabo Verde ordinary passports a visa-free stay of up to 60 days.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["DO", "KR", "MU", "WS", "CV"],
+      "conditions": ["This is the ordinary-passport visitor baseline only; it excludes the separately listed diplomatic, service, accredited-staff and other document routes."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-brunei-nauru-ordinary-passports-visa-free-14-days",
+      "title": "Russia: Brunei and Nauru ordinary passports visa-free up to 14 days",
+      "summary": "The current MFA table records a 14-day visa-free short-stay rule for Brunei and Nauru.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["BN", "NR"],
+      "conditions": ["This is a short visitor baseline; purpose, passport, registration and final border-admission rules remain separate."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-china-temporary-ordinary-passport-visa-free",
+      "title": "Russia: Chinese ordinary passports temporarily visa-free",
+      "summary": "The MFA table grants Chinese ordinary passports visa-free entry for up to 30 days only through 14 September 2026.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["CN"],
+      "effectiveTo": "2026-09-14",
+      "conditions": ["This is a temporary ordinary-passport waiver. The table separately lists diplomatic/service treatment, organized-tour groups, crews and APEC-card routes.", "Recheck after 14 September 2026; the unified e-visa route is separately available."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions", "russia-mfa-unified-evisa-instructions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-hong-kong-macao-permanent-resident-passport-visa-free",
+      "title": "Russia: Hong Kong and Macao permanent residents with the stated SAR passports visa-free",
+      "summary": "The MFA table limits the Hong Kong and Macao passport waivers to permanent residents holding the respective valid SAR passport.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["HK", "MO"],
+      "conditions": ["Hong Kong is up to 14 days and Macao up to 30 days, each only for a permanent resident holding the matching valid SAR passport.", "This does not infer eligibility for another Chinese, British, Portuguese, residence or travel-document category."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-serbia-biometric-ordinary-passport-visa-free",
+      "title": "Russia: Serbian biometric ordinary passports visa-free up to 30 days",
+      "summary": "The MFA table makes the Serbian ordinary-passport waiver conditional on a biometric passport and limits it to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["RS"],
+      "conditions": ["Only an ordinary biometric Serbian passport is covered, for up to 30 days; diplomatic and service rules are separate."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-oman-ordinary-passport-visa-free",
+      "title": "Russia: Omani ordinary passports visa-free with annual cap",
+      "summary": "The MFA table gives Omani ordinary passports visa-free entry up to 30 days per visit, capped at 90 days in a calendar year.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["OM"],
+      "conditions": ["The 30-day-per-visit and 90-day-per-calendar-year limits apply. The e-visa is an alternative route, not an extension of the visa-free allowance."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions", "russia-mfa-unified-evisa-instructions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-saudi-ordinary-passport-visa-free",
+      "title": "Russia: Saudi ordinary passports visa-free with annual cap",
+      "summary": "The MFA table grants Saudi Arabian ordinary passports visa-free entry for up to 90 days in a calendar year.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["SA"],
+      "conditions": ["The 90-days-per-calendar-year cap applies. The unified e-visa remains an alternative, more restrictive route."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions", "russia-mfa-unified-evisa-instructions"],
+      "confidence": "high"
+    },
+    {
+      "id": "russia-myanmar-ordinary-passport-visa-free",
+      "title": "Russia: Myanmar ordinary passports visa-free with annual cap",
+      "summary": "The current MFA country table grants Myanmar ordinary passports visa-free entry up to 30 days per visit, with a 90-day calendar-year cap.",
+      "status": "visa_free",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["MM"],
+      "conditions": ["The 30-day-per-visit and 90-day-per-calendar-year limits apply. The live unified-eVisa portal still lists Myanmar, so this current table-controlled visa-free baseline needs monitoring."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions"],
+      "confidence": "medium"
+    },
+    {
+      "id": "russia-unified-evisa-ordinary-passport-cohort",
+      "title": "Russia: named ordinary passports eligible for the unified electronic visa",
+      "summary": "The current MFA country table identifies this cohort as eligible for a unified e-visa. The portal confirms an issued unified e-visa is an actual single-entry electronic visa, not merely an online application or authorization.",
+      "status": "evisa",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["AT", "BH", "BE", "BG", "BT", "VA", "VN", "DE", "GR", "HU", "DK", "ZW", "IN", "ID", "IR", "IE", "IS", "ES", "IT", "KH", "KE", "CY", "TW", "KP", "KW", "LV", "LT", "LI", "LU", "MK", "MY", "MT", "MX", "MC", "NL", "NO", "PG", "PH", "PL", "PT", "RO", "SM", "LC", "SG", "SK", "SI", "TO", "TT", "TR", "TM", "FI", "FR", "HR", "CZ", "CH", "SE", "SZ", "EE", "JP"],
+      "conditions": ["Apply no earlier than 86 and no later than 4 days before entry using a machine-readable national passport issued by the nationality state and valid at least six months from application; each child needs a separate e-visa.", "It is single entry, valid 120 days from issue, with a stay of no more than 30 calendar days, through only approved border crossing points. Arrival and departure days both count.", "Visitor purposes are private/business visits, tourism, and the stated scientific, cultural, socio-political, economic or sporting events. Other purposes require a regular visa.", "Movement is barred to territories, organisations and facilities requiring a special permit. Insurance is required unless reciprocity exempts the nationality; approval and admission remain discretionary."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions", "russia-mfa-unified-evisa-instructions"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.kdmid.ru/",
+        "label": "Russian MFA unified e-visa application",
+        "processingTime": "No more than 4 calendar days from submission.",
+        "steps": ["Create a personal account on the official MFA e-visa website or use its mobile application.", "Submit the application between 86 and 4 days before entry, pay the required fee and respond to any correction request.", "Download or save the positive e-visa notification and show it to the carrier and border officer at an approved crossing point."]
+      }
+    },
+    {
+      "id": "russia-ordinary-foreign-passport-visitor-visa-required",
+      "title": "Russia: other modelled ordinary foreign passports require a regular visa",
+      "summary": "For these nationalities, the current MFA country table states either visas for all passports or only a non-ordinary waiver and does not provide the unified e-visa. The MFA's general rule therefore requires a regular visa.",
+      "status": "visa_required",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["NZ", "GB", "AU", "CA", "US", "BS", "SB", "MH", "TV", "KI", "FM", "AL", "TL", "LS", "MW", "MA", "TZ", "GH", "GM", "RW", "ZM", "TN", "UG", "BJ", "MZ", "SL", "ST", "BF", "MG", "SN", "CI", "GA", "TG", "GQ", "NE", "GN", "MR", "TD", "GW", "ML", "DZ", "CM", "KM", "CG", "AO", "LR", "CF", "BI", "HT", "EG", "DJ", "NG", "CD", "LB", "LK", "ET", "SS", "SD", "LY", "ER", "BD", "PS", "NP", "SO", "PK", "YE", "IQ", "SY", "AF"],
+      "conditions": ["This is the ordinary foreign-passport short-visitor baseline. Diplomatic, official, service, special, crew, accredited-staff, APEC-card, group-tour, invitation, local-border and other stated exceptions are not passport-wide access.", "A regular visa is obtained through a Russian diplomatic mission or consular post at the person's place of permanent residence. Visa type, invitation, validity, document recognition, purpose, registration and admission requirements remain case-specific."],
+      "sourceIds": ["russia-mfa-current-foreign-entry-conditions", "russia-mfa-general-visa-rule"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+  {
+    "passportCode": "KR",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "AE",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "CL",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "AD",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "HK",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "AR",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "BR",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "BN",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "IL",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "KN",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "VC",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "UY",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "AG",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "SC",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "MU",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "CR",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "PA",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "GD",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "PY",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "UA",
+    "destinationCode": "RU",
+    "snapshotStatus": "visa_required",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "DM",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "MO",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "PE",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "RS",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "GT",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "WS",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "CO",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "SV",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "HN",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "ME",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "NI",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "PW",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "BA",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "GE",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "MD",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "VE",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "QA",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "BZ",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "ZA",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "EC",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "MV",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "FJ",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "NR",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "VU",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "GY",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "JM",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "BW",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "TH",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "BO",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "SR",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "KZ",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "NA",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "DO",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "AZ",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "AM",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "MN",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "CV",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "KG",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "UZ",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "CU",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "TJ",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  },
+  {
+    "passportCode": "LA",
+    "destinationCode": "RU",
+    "snapshotStatus": "eta",
+    "officialStatus": "visa_free",
+    "explanation": "The current MFA country table expressly records this ordinary-passport visa-free rule.",
+    "sourceIds": [
+      "russia-mfa-current-foreign-entry-conditions"
+    ]
+  }
+],
+  "unresolved": [
+    {
+      "passportCode": "BB",
+      "destinationCode": "RU",
+      "reason": "The July 2026 MFA country table lists Barbados for the unified eVisa, but the live official issuance form omits Barbados from its nationality selector. The operational conflict prevents a supported access classification.",
+      "searchedOfficialDomains": ["kdmid.ru", "evisa.kdmid.ru"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "RU",
+      "reason": "The current MFA country table does not name Kosovo, and no current Russian official source establishing recognition of the passport or an ordinary-visitor visa rule was found.",
+      "searchedOfficialDomains": ["kdmid.ru", "evisa.kdmid.ru", "mid.ru", "publication.pravo.gov.ru", "ips.pravo.gov.ru"]
+    }
+  ]
+}

@@ -1740,6 +1740,29 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BY", "AZ", snapshot.passports.BY.statuses.AZ).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps Serbia, Türkiye, and Russia aligned to independently reviewed current schedules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("RS")).toHaveLength(197);
+    expect(getVisaRelationshipEvidence("HK", "RS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MO", "RS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "RS", snapshot.passports.TW.statuses.RS).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "RS", snapshot.passports.XK.statuses.RS).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("TR")).toHaveLength(160);
+    expect(getVisaRelationshipEvidence("AG", "TR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AO", "TR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AM", "TR", snapshot.passports.AM.statuses.TR).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BT", "TR", snapshot.passports.BT.statuses.TR).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("RU")).toHaveLength(197);
+    expect(getVisaRelationshipEvidence("UA", "RU", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AT", "RU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BB", "RU", snapshot.passports.BB.statuses.RU).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "RU", snapshot.passports.XK.statuses.RU).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -2158,6 +2181,14 @@ describe("official visa evidence", () => {
       "discoverliberia.lnta.gov.lr",
       "visaonarrival.lis.gov.lr",
       "evisa.td",
+      "mfa.gov.rs",
+      "slgl.pravno-informacioni-sistem.rs",
+      "www.mfa.gov.tr",
+      "en.goc.gov.tr",
+      "www.nvi.gov.tr",
+      "www.kdmid.ru",
+      "evisa.kdmid.ru",
+      "kremlin.ru",
       "aip.scaa.gov.so",
       "immigration.gov.so",
       "web.mfa.gov.so",
