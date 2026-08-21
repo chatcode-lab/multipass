@@ -340,6 +340,22 @@ Djibouti was also independently reviewed but adds no supported cells. Its curren
 
 Comoros likewise remains entirely unresolved. Its current Justice Ministry publication of the 1988 entry law reserves duly published conventions and special laws, while the only airport/port issuance it expressly describes is a five-day transit visa rather than ordinary tourist entry. No current official convention register, visitor-arrival schedule, eVisa service, or same-country return rule was recovered, so the reviewed source-gap candidate is retained without promotion.
 
+## Pass 35 result: Lesotho and Eswatini
+
+The southern Africa tranche increased complete-matrix evidence from 21,809 to 22,199 of 44,974 relationships (49.4%). One hundred and ten of 227 destination columns now have at least 50% coverage and 105 have at least 80%. Africa coverage increased from 5,411 to 5,801 of 11,289 relationships (51.4%).
+
+Lesotho supports 198 foreign ordinary passports: 47 are visa-free for the standard visit period, 18 are visa-free for 14 days, and 133 require advance visas. Twenty-four seeded rows change: 20 formerly visa-free passports now require advance visas, while Fiji, Dominican Republic, Ghana, and North Korea become visa-free. The official schedule defines `YES`, `NO`, and the 14-day marker explicitly. Although older Home Affairs wording is eVisa-first, the live page says the eVisa system is suspended; current manual/email processing and the 72-hour preapproved arrival letter are therefore advance visa, not eVisa or unconditional visa on arrival. Lesotho citizenship remains unresolved.
+
+Eswatini supports 192 foreign passports: 89 visa-free and 103 advance visa-required. United Arab Emirates, Azerbaijan, Bulgaria, Liechtenstein, and Romania change from visa-free to advance visa. Strong review recovered 14 unambiguous schedule rows that the initial crosswalk had left unresolved, but found a second direct official contradiction: `CHINA` is marked no visa while `PEOPLES REPUBLIC OF CHINA` is marked visa required. China and South Korea therefore remain unresolved, along with Eswatini citizenship and four legacy/unmapped country entries. The official eVisa portal proves electronic issuance exists but publishes no eligible-country list and does not justify an eVisa cohort.
+
+## Pass 36 result: São Tomé and Príncipe
+
+São Tomé and Príncipe added 56 directly supported visa-free relationships, increasing complete-matrix evidence from 22,199 to 22,255 of 44,974 relationships (49.5%). Africa coverage increased from 5,801 to 5,857 of 11,289 relationships (51.9%). China changes from visa on arrival to visa-free and Serbia from eVisa to visa-free.
+
+Strong review removed a material overstatement before promotion. The initial candidate treated 138 passports as visa-free under Article 25(1)(f), but that exception is cumulative: the traveler must hold a valid passport, also hold a valid Schengen or United States visa, and stay no more than 15 days. It is a third-country-document-conditioned route, not a nationality baseline, so all 138 rows were moved back to unresolved and 134 proposed fallback changes were discarded.
+
+The retained cohort combines 36 statutory CPLP, EU, United States, and Canadian exemptions with 20 currently named Foreign Ministry waiver partners. The current Ministry brief does not provide agreement-by-agreement duration, passport-type, purpose, or effective-date details, so the additional cohort remains medium confidence. The live Migration Service portal proves an individual online entry-authorization workflow but exposes no nationality eligibility/default; it was not used to infer an eVisa residual. São Tomé citizenship and all unsupported passports remain unresolved.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

@@ -1119,6 +1119,34 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GQ", "GQ", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Lesotho and Eswatini schedules conservatively", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("LS")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("FJ", "LS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IE", "LS", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LS", "LS", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("SZ")).toHaveLength(192);
+    expect(getVisaRelationshipEvidence("TW", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "SZ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "SZ", snapshot.passports.CN.statuses.SZ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SZ", "SZ", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps São Tomé's third-country-document waiver conditional", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "ST");
+
+    expect(pairs).toHaveLength(56);
+    expect(getVisaRelationshipEvidence("CN", "ST", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RS", "ST", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "ST", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "ST", snapshot.passports.AF.statuses.ST).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("ST", "ST", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1449,6 +1477,15 @@ describe("official visa evidence", () => {
       "www.affaires-etrangeres.gouv.ga",
       "paris.diplomatie.gouv.cf",
       "www.guineaecuatorialpress.com",
+      "www.lesothoemb-usa.gov.ls",
+      "www.homeaffairs.gov.ls",
+      "www.gov.ls",
+      "www.gov.sz",
+      "evisa.gov.sz",
+      "www.smf.st",
+      "mne.gov.st",
+      "www.cplp.org",
+      "european-union.europa.eu",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -1098,4 +1098,37 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://cemac.int/2025/09/08/interview-vers-une-cemac-plus-integree-le-president-de-la-commission-baltazar-engonga-edjoo-eclaire-les-enjeux-de-la-16%E1%B5%89-conference-des-chefs-detat/",
     reviewedAt: "2026-08-21",
   })),
+  ...(["IE", "AT", "GR", "MT", "HU", "PL", "LV", "SK", "SI", "EE", "LT", "HR", "BG", "RO", "CY", "SM", "BS", "SB", "MV", "NR"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "LS",
+      status: "visa_required" as const,
+      reason: "Lesotho's current official country table marks this ordinary passport as always requiring advance visa approval; the eVisa system is currently suspended and manual/email processing is not visa-free entry.",
+      sourceUrl: "https://www.lesothoemb-usa.gov.ls/visa/",
+      reviewedAt: "2026-08-21",
+    })),
+  ...(["FJ", "DO", "GH", "KP"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "LS",
+    status: "visa_free" as const,
+    reason: "Lesotho's current official country table expressly marks this ordinary passport as not requiring a visitor visa.",
+    sourceUrl: "https://www.lesothoemb-usa.gov.ls/visa/",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["AE", "AZ", "BG", "LI", "RO"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "SZ",
+    status: "visa_required" as const,
+    reason: "Eswatini's current Government Y/N schedule directly marks this unambiguous ordinary-passport country as requiring a visa; the electronic portal does not publish an eligible-country list.",
+    sourceUrl: "https://www.gov.sz/index.php?id=314",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["CN", "RS"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "ST",
+    status: "visa_free" as const,
+    reason: "São Tomé and Príncipe's current Foreign Ministry mobility brief expressly names this ordinary-passport country in its visa-waiver agreements.",
+    sourceUrl: "https://mne.gov.st/sites/default/files/inline-files/quadro-legal.pdf",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;
