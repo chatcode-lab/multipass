@@ -1836,6 +1836,28 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "BY", snapshot.passports.XK.statuses.BY).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps the reviewed Faroe Islands, Greenland, Gibraltar, and Vatican access legs aligned", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("FO")).toHaveLength(199);
+    expect(pairsFor("GL")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("XK", "FO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "GL", "visa_required").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("GI")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("AE", "GI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NR", "GI", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PG", "GI", "visa_required").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("VA")).toHaveLength(197);
+    expect(getVisaRelationshipEvidence("VA", "VA", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CH", "VA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "VA", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RS", "VA", snapshot.passports.RS.statuses.VA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("NR", "VA", snapshot.passports.NR.statuses.VA).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1856,6 +1878,12 @@ describe("official visa evidence", () => {
       "mfa.gov.by",
       "gpk.gov.by",
       "e-pasluga.by",
+      "nyidanmark.dk",
+      "www.nyidanmark.dk",
+      "www.gibraltar.gov.gi",
+      "www.vaticanstate.va",
+      "epass.vatican.va",
+      "consvancouver.esteri.it",
       "granpol.gov.ba",
       "sluzbenilist.ba",
       "gzk.rks-gov.net",
