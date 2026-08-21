@@ -1104,6 +1104,21 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GA", "GA", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("supports only the narrow CEMAC cohorts for the Central African Republic and Equatorial Guinea", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("CF")).toHaveLength(5);
+    expect(getVisaRelationshipEvidence("CM", "CF", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "CF", snapshot.passports.US.statuses.CF).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CF", "CF", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("GQ")).toHaveLength(5);
+    expect(getVisaRelationshipEvidence("CM", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "GQ", snapshot.passports.US.statuses.GQ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GQ", "GQ", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1432,6 +1447,8 @@ describe("official visa evidence", () => {
       "gouvernement.ga",
       "evisa.dgdi.ga",
       "www.affaires-etrangeres.gouv.ga",
+      "paris.diplomatie.gouv.cf",
+      "www.guineaecuatorialpress.com",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

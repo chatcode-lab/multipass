@@ -328,6 +328,18 @@ Congo's foreigner law preserves unspecified particular immigration agreements, s
 
 A separately reviewed Chad candidate was not promoted in this pass. Its 2025 decree is discoverable in current Official Journal indexing and appears to preserve CEMAC access plus unnamed bilateral exemptions, but the primary Journal URL could not be reopened during independent review. Chad remains unchanged until that primary source can be fetched and verified.
 
+## Pass 34 result: Central African Republic and Equatorial Guinea
+
+This second narrow CEMAC pass increased complete-matrix evidence from 21,799 to 21,809 of 44,974 relationships (48.5%); Africa coverage increased from 5,401 to 5,411 of 11,289 relationships (47.9%).
+
+The Central African Republic and Equatorial Guinea each support only the five other CEMAC ordinary passports as visa-free. The Central African Republic's current Paris mission “online” short-stay form must still be printed and sent with the passport and documents, so it is a consular workflow rather than evidence of eVisa issuance. No current central nationality schedule or residual route was found, and its same-country cell remains unresolved.
+
+Equatorial Guinea changes five seeded CEMAC rows from eVisa to visa-free. Independent review caught a material failure in the initial candidate: every cited path on the former Equatorial Guinea eVisa host now serves a July 2026 Amazon/VFS application with United Arab Emirates metadata and content. The entire proposed 193-passport eVisa residual was removed. The Government's 2023 launch announcement remains historical evidence only, and a 2024 Barbados waiver announcement says further procedures were still required. All non-CEMAC passports and Equatorial Guinea's same-country cell remain unresolved.
+
+Djibouti was also independently reviewed but adds no supported cells. Its current official sources prove that a genuine advance eVisa service exists, yet publish neither passport-nationality eligibility nor a complete exemption/default schedule; the entry law preserves unnamed treaty and special regimes. The all-unresolved candidate is retained for source-gap tracking rather than promoted as an invented complement.
+
+Comoros likewise remains entirely unresolved. Its current Justice Ministry publication of the 1988 entry law reserves duly published conventions and special laws, while the only airport/port issuance it expressly describes is a five-day transit visa rather than ordinary tourist entry. No current official convention register, visitor-arrival schedule, eVisa service, or same-country return rule was recovered, so the reviewed source-gap candidate is retained without promotion.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

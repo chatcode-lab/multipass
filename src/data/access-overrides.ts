@@ -1090,4 +1090,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://migration.gov.bi/Apply/step1/8",
     reviewedAt: "2026-08-21",
   },
+  ...(["CM", "CG", "GA", "TD", "CF"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "GQ",
+    status: "visa_free" as const,
+    reason: "Current CEMAC evidence establishes visa-free movement for this member-state ordinary passport; the former Equatorial Guinea eVisa site now serves unrelated UAE/VFS content and is not used as evidence.",
+    sourceUrl: "https://cemac.int/2025/09/08/interview-vers-une-cemac-plus-integree-le-president-de-la-commission-baltazar-engonga-edjoo-eclaire-les-enjeux-de-la-16%E1%B5%89-conference-des-chefs-detat/",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;
