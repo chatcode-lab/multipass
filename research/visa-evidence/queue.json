@@ -1525,6 +1525,92 @@
         "Use the current C1 visitor rule and official calling-visa schedule; distinguish a self-service electronic visitor visa from sponsor, security-clearance, mission, business, transit, residence, crew, diplomatic, official, service and special-document routes.",
         "Do not infer a complement from omission in an eligibility list. Preserve passport validity, funds, purpose, stay, extension, work and admissibility conditions, and record any unavailable selector or API as a freshness risk."
       ]
+    },
+    {
+      "id": "cambodia-visitor-visa-complement-refresh",
+      "priority": 87,
+      "objective": "Refresh Cambodia's current ordinary-passport visitor scope only for pairs unresolved by the promoted Cambodia batch.",
+      "destinationCodes": [
+        "KH"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://www.evisa.gov.kh/",
+        "https://immigration.gov.kh/passport",
+        "https://www.ambcambodgeparis.info/visas-cambodia-english-version"
+      ],
+      "notes": [
+        "Start from the promoted batch's unresolved pairs and do not duplicate its named ASEAN or temporary PRC/Hong Kong/Macao Tourist Visa T exemptions.",
+        "Require an express current Tourist Visa T nationality/default rule before inferring a complement. Separate Visa E/business, e-Arrival, group and border routes, diplomatic, official, service and special documents.",
+        "Do not use cached eVisa results or a redirecting portal as nationality proof. Preserve ports, passport validity, onward-travel, duration, work, security and immigration-discretion conditions."
+      ]
+    },
+    {
+      "id": "kyrgyzstan-visitor-visa-complement-refresh",
+      "priority": 88,
+      "objective": "Refresh Kyrgyzstan's ordinary-passport visitor scope only for pairs unresolved by the promoted Kyrgyzstan batch.",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+        "https://www.evisa.e-gov.kg/api.php?method=getVisaTypeInfo",
+        "https://mfa.gov.kg/",
+        "https://www.gov.kg/"
+      ],
+      "notes": [
+        "Start from the promoted batch's 124 unresolved pairs and do not duplicate its current visa-free policies.",
+        "Use the live eVisa country/document/type selector and reproducible backend response only where it directly establishes ordinary-passport tourist eligibility; do not turn omitted or failed selector results into a visa-required complement.",
+        "Keep Hong Kong/Macao permanent-resident status and all residence, invitation, work, business, transit, diplomatic, official, service and special-document routes conditional."
+      ]
+    },
+    {
+      "id": "myanmar-visitor-visa-complement-refresh",
+      "priority": 89,
+      "objective": "Refresh Myanmar's ordinary-passport visitor scope only for pairs unresolved by the promoted Myanmar batch.",
+      "destinationCodes": [
+        "MM"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://evisa.moip.gov.mm/notice/tourist",
+        "https://www.mofa.gov.mm/consular-information/on-arrival-visa-information/",
+        "https://www.mofa.gov.mm/wp-content/uploads/2026/01/Visa-Extension-Update.pdf"
+      ],
+      "notes": [
+        "Start from the promoted batch's 96 unresolved pairs and do not duplicate its bilateral visa-free or tourist eVisa policies.",
+        "Use a direct current nationality rule for tourist eVisa, visa on arrival or advance visa; do not infer a complement from omission or generic application availability.",
+        "Keep cruise/agency, restricted-area, business, transit, residence, diplomatic, official, service and special-document routes conditional."
+      ]
+    },
+    {
+      "id": "laos-visitor-visa-complement-refresh",
+      "priority": 90,
+      "objective": "Refresh Laos' ordinary-passport visitor scope only for pairs unresolved by the promoted Laos batch.",
+      "destinationCodes": [
+        "LA"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://www.mofa.gov.la/",
+        "https://laoevisa.gov.la/",
+        "https://mxf.laoevisa.gov.la/api/v1/component/getCountryPriceCalculator",
+        "https://www.immigration.gov.la/"
+      ],
+      "notes": [
+        "Start from the promoted batch's 37 unresolved pairs and do not duplicate its 18 ordinary-passport exemptions or 144 tourist eVisa policies.",
+        "Use a direct current nationality rule for any tourist eVisa, visa on arrival or advance visa; do not infer a complement from eVisa-selector omission, port-level visa-on-arrival labels, or generic guidance.",
+        "Include Lao citizenship only with direct entry/right evidence, and preserve ordinary-passport, tourism, port, purpose, work, residence, transit, watch-list and special-document limitations."
+      ]
     }
   ]
 }

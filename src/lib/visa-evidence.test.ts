@@ -270,11 +270,13 @@ describe("official visa evidence", () => {
     const indonesiaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "ID");
 
-    expect(indonesiaPairs).toHaveLength(99);
+    expect(indonesiaPairs).toHaveLength(189);
     expect(getVisaRelationshipEvidence("CL", "ID", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BR", "ID", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BR", "ID", "evisa").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AG", "ID", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "ID", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "ID", snapshot.passports.XK.statuses.ID).supportsCurrentStatus).toBe(false);
   });
 
   it("classifies Rwanda's universal arrival visa without treating fee waivers as visa-free", () => {
@@ -869,6 +871,24 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "AF", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers Timor-Leste while preserving North Korea's unpublished nationality scope", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(new Set(pairsFor("TL").map(({ passport }) => passport.code)).size).toBe(199);
+    expect(getVisaRelationshipEvidence("PT", "TL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "TL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FI", "TL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FI", "TL", "visa_on_arrival").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SG", "TL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ID", "TL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TL", "TL", "citizenship").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("KP")).toHaveLength(0);
+    expect(getVisaRelationshipEvidence("US", "KP", snapshot.passports.US.statuses.KP).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KP", "KP", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1101,6 +1121,12 @@ describe("official visa evidence", () => {
       "www.turkmenistan.gov.tm",
       "moi.gov.af",
       "mfa.gov.af",
+      "customs.gov.tl",
+      "timor-leste.gov.tl",
+      "www.consilium.europa.eu",
+      "krld.pl",
+      "bontang.imigrasi.go.id",
+      "evisa.imigrasi.go.id",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

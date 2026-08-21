@@ -837,4 +837,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://sip.mfa.tj/assets/documents/Visa%20Information.pdf",
     reviewedAt: "2026-08-21",
   })),
+  ...(["SG", "CH", "NO", "MY", "LI", "IS", "TH", "LA"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "TL",
+    status: "visa_on_arrival" as const,
+    reason: "Timor-Leste's current Customs guidance gives this ordinary passport a tourist visa on arrival at Dili International Airport or Dili Sea Port; it is not a visa-free route.",
+    sourceUrl: "https://customs.gov.tl/travelers/obtaining-a-visa/",
+    reviewedAt: "2026-08-21",
+  })),
+  {
+    passportCode: "US",
+    destinationCode: "TL",
+    status: "visa_free",
+    reason: "Timor-Leste's current Customs guidance expressly exempts United States ordinary-passport tourists from the visa requirement.",
+    sourceUrl: "https://customs.gov.tl/travelers/obtaining-a-visa/",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;
