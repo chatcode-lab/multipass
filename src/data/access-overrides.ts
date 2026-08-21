@@ -869,4 +869,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://gov.bw/visa-applications/visa-application-tourism-visa",
     reviewedAt: "2026-08-21",
   })),
+  {
+    passportCode: "MT",
+    destinationCode: "NA",
+    status: "evisa",
+    reason: "Namibia's current V4 fact sheet omits Malta from both exemption and visa-on-arrival schedules and applies the mandatory pre-travel eVisa residual; the separately listed Sovereign Order of Malta is not a Maltese ordinary passport.",
+    sourceUrl: "https://mhaiss.gov.na/documents/292728/6201234/Namibia%2BVisa%2BFact%2BSheet%2B-%2BVersion%2B4%2B-%2B28%2BMay%2B2025.pdf/e47c4aff-5418-8fe6-a98b-15ebaf2386b7?download=true&t=1748602076823",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;

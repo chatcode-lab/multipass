@@ -1635,6 +1635,27 @@
       ]
     },
     {
+      "id": "namibia-ordinary-passport-entry-scope",
+      "priority": 92,
+      "objective": "Model Namibia's current ordinary-passport short-visitor entry scope from Home Affairs, Immigration, government, legislation and official visa services.",
+      "destinationCodes": [
+        "NA"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://mhaiss.gov.na/",
+        "https://mha.gov.na/",
+        "https://eservices.mhaiss.gov.na/visaonarrival"
+      ],
+      "notes": [
+        "Reconcile the 1 April 2025 reciprocity framework with the approved 23 September 2025 visa-on-arrival additions and current Home Affairs e-services list.",
+        "Distinguish actual arrival issuance from a voluntary online visa-on-arrival application, and from the fact sheet's mandatory pre-travel eVisa default for unlisted passports.",
+        "Preserve ordinary-passport visitor purpose, stay, ports, passport, funds, accommodation, onward travel, fees, extensions, work, residence, transit, diplomatic, official, service and special-document limits."
+      ]
+    },
+    {
       "id": "zimbabwe-ordinary-passport-entry-scope",
       "priority": 93,
       "objective": "Model Zimbabwe's current ordinary-passport short-visitor entry scope from Immigration, government, foreign-affairs, constitutional and eVisa sources.",
@@ -1653,6 +1674,68 @@
         "Use current named Category A, B and C schedules: A is visa-free; B is a paid port-of-entry visa with an optional online application; C requires online pre-travel approval.",
         "Do not treat the Entry Declaration as an ETA or change Category B to eVisa merely because applicants may apply online. Record any conflicting official country classification as unresolved.",
         "Preserve ordinary-passport visitor purpose, validity, entry count, port, document, security and admission conditions; exclude work, residence, business-only, transit, diplomatic, official, service and special-document routes."
+      ]
+    },
+    {
+      "id": "ghana-ordinary-passport-entry-scope",
+      "priority": 94,
+      "objective": "Model Ghana's current ordinary-passport short-visitor entry scope from official immigration, foreign-affairs, government, legislation and official visa services.",
+      "destinationCodes": [
+        "GH"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://gis.gov.gh/visa/",
+        "https://mfa.gov.gh/",
+        "https://www.ghanaembassydc.org/visa-information/",
+        "https://www.ghanaimmigration.org/"
+      ],
+      "notes": [
+        "Use direct current ECOWAS/free-movement and nationality schedules where available; distinguish ordinary-passport visitor access from diplomatic, official, service, transit, residence, work and business-specific rules.",
+        "Do not treat a mission/online application form or emergency airport authorization as nationality-wide eVisa or visa-on-arrival access unless an official source directly establishes it.",
+        "Infer a residual advance-visa complement only from a complete official default and reconciled exemption scope; otherwise retain unresolved pairs and mechanically declare supported fallback mismatches."
+      ]
+    },
+    {
+      "id": "ethiopia-ordinary-passport-entry-scope",
+      "priority": 95,
+      "objective": "Model Ethiopia's current ordinary-passport short-visitor entry scope from Immigration and Citizenship Service, government, legislation and official eVisa sources.",
+      "destinationCodes": [
+        "ET"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://www.evisa.gov.et/information/tourist",
+        "https://www.evisa.gov.et/information/touristOnArrivalVisa",
+        "https://www.evisa.gov.et/information",
+        "https://justice.gov.et/en/law/immigration-amended-proclamation/"
+      ],
+      "notes": [
+        "Use the live official tourist eVisa all-country eligibility statement and the separately named visa-on-arrival schedule; do not convert a payment or application restriction into a nationality exception without direct authority.",
+        "Give Kenya and Djibouti's express ordinary-passport exemption precedence over their simultaneous appearance in the mutable visa-on-arrival table. Preserve the absence of a current direct official Addis Ababa/other-port statement rather than generalising the arrival route.",
+        "Keep business, employment, residence, transit, African Union/diplomatic arrangements and special-document routes outside the ordinary tourist baseline unless a source directly establishes a nationality-wide ordinary-passport rule."
+      ]
+    },
+    {
+      "id": "tanzania-ordinary-passport-entry-scope",
+      "priority": 96,
+      "objective": "Model Tanzania's current ordinary-passport short-visitor entry scope from Immigration, government, legislation and official eVisa sources.",
+      "destinationCodes": ["TZ"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://visa.immigration.go.tz/guidelines",
+        "https://visa.immigration.go.tz/visafreecountry",
+        "https://www.immigration.go.tz/index.php/entry-requirements",
+        "https://www.immigration.go.tz/documents/Visa-guideline.pdf"
+      ],
+      "notes": [
+        "Give the live named country schedules precedence over the portal's broad EAC, SADC and Commonwealth summary wherever they differ; document the discrepancy and leave a code unresolved where no named current category safely resolves it.",
+        "The named ordinary-visa list expressly allows both online and arrival processing. Do not normalize that online option as eVisa where actual issuance at an official entry point remains available.",
+        "Keep referral-visa, Zanzibar operational, residence, work, business, transit, diplomatic, official, service, refugee and special-document treatment distinct from the ordinary short-visitor baseline."
       ]
     }
   ]

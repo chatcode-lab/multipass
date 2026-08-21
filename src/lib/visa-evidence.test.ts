@@ -904,6 +904,29 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BW", "BW", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Namibia, Zimbabwe, and Ethiopia schedules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("NA")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("SG", "NA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "NA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MT", "NA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NA", "NA", "citizenship").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("ZW")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("US", "ZW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "ZW", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ZW", "ZW", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BO", "ZW", snapshot.passports.BO.statuses.ZW).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("ET")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("KE", "ET", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "ET", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CL", "ET", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ET", "ET", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1147,6 +1170,15 @@ describe("official visa evidence", () => {
       "gov.bw",
       "www.botswanatourism.co.bw",
       "www.evisa.gov.bw",
+      "mhaiss.gov.na",
+      "mha.gov.na",
+      "eservices.mhaiss.gov.na",
+      "www.zimimmigration.gov.zw",
+      "www.evisa.gov.zw",
+      "www.npa.gov.zw",
+      "www.evisa.gov.et",
+      "justice.gov.et",
+      "www.ofag.gov.et",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
