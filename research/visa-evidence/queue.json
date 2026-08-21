@@ -2662,6 +2662,91 @@
         "Do not infer a residual advance visa, eVisa, VOA or visa-free classification from omission, a generic visa portal, reciprocal/diplomatic context or third-country documents.",
         "Keep unresolved all passports lacking a direct current mapping, including any nationality covered only by a non-inbound or non-effective announcement."
       ]
+    },
+    {
+      "id": "guyana-ordinary-passport-entry-scope",
+      "priority": 152,
+      "objective": "Conservatively model Guyana's ordinary-passport short-visitor entry scope from current direct Foreign Ministry and Immigration Support Services nationality schedules.",
+      "destinationCodes": ["GY"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://minfor.gov.gy/index.php/visa-information",
+        "https://eservices.iss.gov.gy/eligible-countries-landing-permit",
+        "https://guyanahctrinidad.mission.gov.gy/visa-application-advisory/"
+      ],
+      "notes": [
+        "Use only directly named unqualified ordinary-passport entries, and keep a nationality unresolved where current official schedules conflict on passport-type scope. Do not infer a residual visa requirement from omission.",
+        "Do not normalize CARICOM/CSME movement rights, landing-permit forms, generic online applications, diplomatic, official, service, special passports or third-country-document conditions as ordinary visitor visa status.",
+        "A direct ordinary-passport tourist visa-on-arrival statement may be normalized as visa_on_arrival, but visa-on-arrival applications requiring unproved nationality eligibility or prior approval do not establish a passport-wide route."
+      ]
+    },
+    {
+      "id": "suriname-ordinary-passport-entry-scope",
+      "priority": 153,
+      "objective": "Conservatively model Suriname's ordinary-passport short-visitor entry scope from the Government's current named visa-reinstatement material.",
+      "destinationCodes": ["SR"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://gov.sr/ministeries/ministerie-van-buitenlandse-zaken-internationale-handel-samenwerking/reizen-naar-suriname/",
+        "https://gov.sr/toelichting-op-de-visum-en-toeristenkaartprocedure/",
+        "https://gov.sr/ministerie-van-bibis-benadrukt-procedure-entry-fee/"
+      ],
+      "notes": [
+        "Use only named nationality rules directly stated by the Government. Do not turn the 21-country exception list or a statement about unspecified countries into a complete visa-free residual.",
+        "Entry Fee is a payment/voucher, not an ETA, eVisa or visa on arrival. Do not normalize a digital application as an eVisa solely because it is online.",
+        "For Cuba, Dominican Republic and Venezuela, retain the Government's stated tourist card as an additional requirement alongside the visa; do not normalize the card itself as an ETA, eVisa or visa on arrival. Exclude residence, special-document, business, work, transit and third-country-document conditions."
+      ]
+    },
+    {
+      "id": "venezuela-ordinary-passport-entry-scope",
+      "priority": 154,
+      "objective": "Model Venezuela's ordinary-passport short-visitor entry scope only from current direct Foreign Ministry nationality guidance, retaining mode, document, passport-type and bilateral limitations.",
+      "destinationCodes": ["VE"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://mppre.gob.ve/index.php/detalle_turismo/2-quienes-deben-solicitar-la-visa-de-turista",
+        "https://mppre.gob.ve/detalles_servicio/1",
+        "https://mppre.gob.ve/archivos/cancilleria_digital/1780672073_MANUAL-VISA-DE-TURISTA.pdf"
+      ],
+      "notes": [
+        "Use the current named air-entry tourism-exemption list only for the explicit catalog nationality mappings; it does not establish a land- or sea-entry or residual rule.",
+        "Do not infer an eVisa or advance-visa complement from the online tourist-visa manual, a general form, diplomatic or official-passport agreements, Mercosur membership, bilateral identity-document facilities or third-country documents.",
+        "Keep national, special-document, citizenship, purpose, admission, airport, transit, land-border and maritime arrangements separate unless a current direct ordinary-passport source maps them."
+      ]
+    },
+    {
+      "id": "bermuda-ordinary-passport-entry-scope",
+      "priority": 155,
+      "objective": "Conservatively model Bermuda's ordinary-passport short-visitor entry scope without flattening third-country visa, residence, re-entry-authorisation or Bermudian-status conditions into nationality-wide access.",
+      "destinationCodes": ["BM"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.gov.bm/articles/update-bermuda-immigration-and-protection-prohibition-entry-order-2025",
+        "https://www2.gov.bm/articles/bermuda-entry-visas",
+        "https://www.gov.uk/foreign-travel-advice/bermuda/entry-requirements"
+      ],
+      "notes": [
+        "Treat qualifying UK, United States or Canadian visas, residence documents and re-entry authorisations as document-conditioned routes, not passport-wide visa-free, ETA, eVisa or visa-on-arrival status.",
+        "Use only directly supported ordinary-passport visitor rules. Do not infer an unlisted nationality's baseline from omission in the prohibition order or the UK visitor-visa list.",
+        "Keep British passport types, Bermudian status, residence, work, transit, crew and final admission conditions separate unless the official source directly maps the catalog ordinary passport."
+      ]
+    },
+    {
+      "id": "peru-ordinary-passport-entry-scope",
+      "priority": 156,
+      "objective": "Model Peru's current ordinary-passport short-tourist visa exemptions and advance-visa requirements from the Foreign Ministry's current nationality schedule.",
+      "destinationCodes": ["PE"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://cdn.www.gob.pe/uploads/document/file/3284513/2315744-exoneracion-de-visas-pas-ordinario-16-07-2026-v2.pdf?v=1784239755",
+        "https://www.gob.pe/36240-solicitar-visa-de-turista-para-ingresar-al-peru",
+        "https://www.gob.pe/institucion/migraciones/noticias/1283797-migraciones-recomendaciones-de-ingreso-y-salida-del-pais-para-peruanos-con-multiples-nacionalidades"
+      ],
+      "notes": [
+        "Use the ordinary-passport tourist column and preserve nationality-specific stay notes; do not import diplomatic, official, special-document, work, residence or third-country-document rules.",
+        "An online consular application is not itself an eVisa. Classify a named prior-tourist-visa row as visa_required unless an official source directly proves electronic issuance or arrival issuance.",
+        "Keep any catalog code absent from, ambiguously named by or internally conflicting in the current schedule unresolved rather than inferring a residual."
+      ]
     }
   ]
 }

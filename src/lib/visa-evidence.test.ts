@@ -529,13 +529,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("FM", "US", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps the Colombia and Peru agreements directional and excludes Ireland", () => {
+  it("keeps the Colombia and Peru EU agreements directional while allowing independent inbound rules", () => {
     expect(getVisaRelationshipEvidence("CO", "DE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PE", "PT", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PT", "PE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CO", "IE", "visa_free").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("IE", "PE", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IE", "PE", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("keeps all 98 nationalities and expands the 96 represented passport issuers", () => {
@@ -1359,7 +1359,7 @@ describe("official visa evidence", () => {
       ["TC", 199],
       ["FK", 109],
       ["KY", 198],
-      ["BM", 0],
+      ["BM", 1],
       ["VG", 0],
       ["MS", 0],
     ]);
@@ -1377,6 +1377,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "FK", snapshot.passports.US.statuses.FK).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PE", "KY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "KY", snapshot.passports.SS.statuses.KY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GB", "BM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BM", snapshot.passports.US.statuses.BM).supportsCurrentStatus).toBe(false);
   });
 
   it("keeps Honduras coverage limited to directly recovered current rules", () => {
@@ -1474,6 +1476,59 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "PY", snapshot.passports.US.statuses.PY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PH", "PY", snapshot.passports.PH.statuses.PY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("MN", "PY", snapshot.passports.MN.statuses.PY).supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps Venezuela coverage to its named air-entry tourist waiver cohort", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "VE");
+
+    expect(pairs).toHaveLength(71);
+    expect(getVisaRelationshipEvidence("EC", "VE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ID", "VE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LK", "VE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MV", "VE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("OM", "VE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "VE", snapshot.passports.AF.statuses.VE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("VE", "VE", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps only Guyana's reconciled ordinary-passport visitor rows", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "GY");
+
+    expect(pairs).toHaveLength(57);
+    expect(getVisaRelationshipEvidence("QA", "GY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AL", "GY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BO", "GY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CO", "GY", snapshot.passports.CO.statuses.GY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("ES", "GY", snapshot.passports.ES.statuses.GY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GY", "GY", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps Suriname's online application separate from electronic visa issuance", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "SR");
+
+    expect(pairs).toHaveLength(21);
+    expect(getVisaRelationshipEvidence("AF", "SR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DO", "SR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VE", "SR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "SR", snapshot.passports.US.statuses.SR).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SR", "SR", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Peru's current ordinary-passport tourist schedule without flattening conditional rows", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "PE");
+
+    expect(pairs).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("GE", "PE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "PE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "PE", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PE", "PE", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "PE", snapshot.passports.CN.statuses.PE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IN", "PE", snapshot.passports.IN.statuses.PE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("VE", "PE", snapshot.passports.VE.statuses.PE).supportsCurrentStatus).toBe(false);
   });
 
   it("contains only direct HTTPS official-source URLs", () => {
@@ -1881,6 +1936,14 @@ describe("official visa evidence", () => {
       "www.planalto.gov.br",
       "migraciones.gov.py",
       "www.mre.gov.py",
+      "mppre.gob.ve",
+      "minfor.gov.gy",
+      "eservices.iss.gov.gy",
+      "guyanahctrinidad.mission.gov.gy",
+      "gov.sr",
+      "www.gov.bm",
+      "cdn.www.gob.pe",
+      "www.gob.pe",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -530,6 +530,46 @@ The current National Migration Directorate table and Foreign Ministry guidance s
 
 Independent review preserved 22 unresolved relationships rather than choosing silently between inconsistent official pages. Australia, Canada, the United States, New Zealand, and Taiwan differ between the migration table and Foreign Ministry arrival guidance; the Philippines differs across Foreign Ministry pages; and Mongolia is visa-free in the migration table but omitted from the Foreign Ministry's explicit no-visa list and caught by its advance-visa residual. Fifteen additional catalog documents are not directly mapped. The live sources remain mutable and partially stale-looking, so the supported batch is medium confidence and the conflicts require periodic reconciliation.
 
+## Pass 60 result: Venezuela
+
+Venezuela adds 71 directly supported visa-free relationships, raising complete-matrix evidence from 26,695 to 26,766 of 44,974 relationships (59.5%) and Americas coverage from 3,105 to 3,176 of 4,953 (64.1%). The number of destination columns above the 50% and 80% thresholds remains 131 and 125 respectively. Ecuador, Indonesia, Sri Lanka, Maldives, and Oman change from the upstream advance-visa status to visa-free; all five corrections exactly match the reviewed conflict record.
+
+The current Foreign Ministry page directly names the tourist-visa exemption cohort and expressly limits it to arrival by air. Independent review matched all 71 catalog codes to that list without expanding parenthetical territorial references. The separate June 2026 Digital Chancellery manual establishes an electronically signed advance tourist-visa document, but it publishes no nationality eligibility and therefore does not support an eVisa or advance-visa complement for unlisted passports.
+
+The named list is mutable and does not display a stable publication or effective date. Land and sea entry, unlisted passports, Venezuelan citizenship, special documents, bilateral identity-document travel and final admission remain unresolved rather than being inferred from the air-entry waiver or online application workflow.
+
+## Pass 61 result: Guyana
+
+Guyana adds 57 directly supported relationships—56 visa-free and one visa on arrival—raising complete-matrix evidence from 26,766 to 26,823 of 44,974 relationships (59.6%) and Americas coverage from 3,176 to 3,233 of 4,953 (65.3%). The destination threshold counts remain unchanged. Qatar changes from the upstream advance-visa status to visa-free for stays of up to 30 days; that single fallback correction exactly matches the reviewed candidate.
+
+The reviewed Foreign Ministry and Immigration Support Services schedules support the named ordinary-passport exemption rows. Bolivia is the one directly supported visa-on-arrival case: the current sources distinguish its regular tourist passport from diplomatic, service and official documents. CARICOM movement statements, application forms and landing-permit processes are not treated as separate passport-wide visa categories.
+
+Independent review removed the initially inferred Guyanese citizenship cell, added Albania from the direct schedule, and retained Colombia, Cuba, Indonesia, Spain and Uruguay as unresolved because current official schedules disagree on ordinary-versus-special-passport scope. The Foreign Ministry schedule is dated 17 July 2025, while the live ISS page is undated and the consular page is older; those conflicts and the other 137 unmapped passports need periodic rechecking.
+
+## Pass 62 result: Suriname
+
+Suriname adds 21 directly supported advance-visa relationships, raising complete-matrix evidence from 26,823 to 26,844 of 44,974 relationships (59.7%) and Americas coverage from 3,233 to 3,254 of 4,953 (65.7%). The destination threshold counts remain 131 above 50% and 125 above 80%. All 21 supported rows change from the upstream eVisa classification to `visa_required`, exactly matching the independently reviewed conflict record.
+
+Current Government guidance names the Dominican Republic, India, Venezuela, Afghanistan, Bangladesh, Nepal, Pakistan, Sri Lanka, Angola, Ghana, Cameroon, Kenya, Nigeria, Zambia, South Africa, Eritrea, Somalia, Egypt, Tunisia, Cuba and Syria as requiring a valid visa before travel. The official material describes a digital application system but does not establish nationality-wide electronic issuance, so online filing is not normalized as eVisa. Cuba, the Dominican Republic and Venezuela retain the Government's stated tourist-card condition alongside the visa.
+
+The Entry Fee—USD or EUR 50 plus the stated USD or EUR 8 VFS service fee per entry—is a separate payment rather than a visa category. The other 178 passport rows, including Surinamese citizenship, remain unresolved because the reviewed Government pages do not publish a current exhaustive positive exemption or Entry-Fee eligibility schedule.
+
+## Pass 63 result: Bermuda
+
+Bermuda adds one narrowly supported visa-free relationship, raising complete-matrix evidence from 26,844 to 26,845 of 44,974 relationships (59.7%) and Americas coverage from 3,254 to 3,255 of 4,953 (65.7%). No fallback status or destination threshold changed.
+
+Current United Kingdom travel guidance directly supports visa-free Bermuda visits for travelers using a full British-citizen passport from the United Kingdom, subject to an onward or return ticket and a maximum stay of 180 days in any 12 months. Independent review retained that exact passport-type and origin wording rather than applying the rule to every British status or travel document.
+
+Bermuda's July 2025 replacement prohibition order and April 2026 entry-visa guidance make the named-nationality regime conditional on qualifying United Kingdom, United States or Canadian multiple re-entry authorization, minimum remaining validity, or Bermudian status. Those conditions do not establish nationality-wide visa-free, ETA, eVisa, visa-on-arrival or advance-visa baselines for the 198 other catalog passports, which remain unresolved. The guidance is mutable and attributes the entry rule as the United Kingdom authority's current understanding, so the single promoted row remains a recheck target.
+
+## Pass 64 result: Peru
+
+Peru adds 169 previously uncovered current-status relationships, raising complete-matrix evidence from 26,845 to 27,014 of 44,974 relationships (60.1%) and Americas coverage from 3,255 to 3,424 of 4,953 (69.1%). One hundred and thirty-two destination columns now have at least 50% coverage and 126 have at least 80%. Georgia changes from the upstream advance-visa status to visa-free for up to 90 days in each 180-day period; that single fallback correction exactly matches the independently reviewed candidate.
+
+The Foreign Ministry's ordinary-passport table dated 16 July 2026 directly reconciles 195 foreign visitor relationships: 104 visa-free and 91 requiring an advance tourist visa. The current consular service requires applicants to process the tourist visa through a Peruvian consular office before travel, so an online information or application page is not classified as eVisa, ETA or visa on arrival. Migraciones separately supports the Peruvian citizen-entry cell when a Peruvian passport is used.
+
+China and India remain unresolved because their table rows depend on a qualifying third-country visa or permanent residence. Venezuela is likewise conditional on permanent residence in Colombia, Chile or Mexico. Those document-conditioned routes are not flattened into passport-wide results. The live PDF and service pages are mutable, so all mapped rows remain routine currency-check targets despite their high-confidence current scope.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.
