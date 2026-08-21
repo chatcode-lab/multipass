@@ -610,6 +610,70 @@ Current official material directly supports visa-free tourism or visitor access 
 
 Independent review rejected the initial 84-passport advance-visa cohort from the Tourist Board's December 2019 schedule. Later official material contradicts that schedule for China, Guyana and Taiwan, so neither its named rows nor an omitted-passport complement can safely be treated as current. Cyprus and the other 194 unsupported relationships remain unresolved. Conditional access based on valid United Kingdom, United States or Canadian visas, territory-born children, British statuses, embarkation forms, residence, work, transit and final admission remains outside the nationality baseline.
 
+## Pass 70 result: Cook Islands
+
+Cook Islands adds evidence for all 199 catalog passports, raising complete-matrix evidence from 27,507 to 27,706 of 44,974 relationships (61.6%) and Oceania coverage from 1,601 to 1,800 of 4,165 relationships (43.2%). One hundred and thirty-five destination columns now have at least 50% coverage and 129 have at least 80%. All 199 rows change from the upstream visa-free classification to `visa_on_arrival`, exactly matching the independently reviewed conflict record.
+
+The current Immigration Regulations do not require an advance visa for an ordinary short visitor, but they expressly require the traveler to apply for and receive a visitor permit at the border. The site therefore normalizes the route as visa on arrival rather than visa-free access. New Zealand passport holders receive a longer initial visitor period than other international visitors, without changing that access category.
+
+Independent review checked the 2024, 2025 and 2026 amendments and found no change to the visitor-permit rule. Continuing Cook Islander entry rights are status- and descent-based, not an ordinary nationality baseline represented in the passport catalog. Work, residence, transit, crew, onward travel, funds, accommodation and final admission remain separate conditions.
+
+## Pass 71 result: Niue
+
+Niue adds 196 supported relationships, raising complete-matrix evidence from 27,706 to 27,902 of 44,974 relationships (62.0%) and Oceania coverage from 1,800 to 1,996 of 4,165 relationships (47.9%). One hundred and thirty-six destination columns now have at least 50% coverage and 130 have at least 80%. The 159 unlisted passports change from the upstream visa-on-arrival classification to `visa_required`, exactly matching the independently reviewed conflict record.
+
+Current Government guidance gives a named 37-passport cohort its visitor permit on arrival and instructs every other ordinary visitor to apply for and obtain a visitor visa before travel. The online passenger arrival form is a declaration rather than ETA, eVisa or a substitute for advance permission.
+
+The United Kingdom and Portugal rows depend on residence, while the New Zealand wording conflicts internally and overlaps Niuean-status conditions. Those three cells remain unresolved rather than being flattened into passport-wide access. Exemption stickers, fees, work, residence, transit, special documents and discretionary admission also remain outside the baseline.
+
+## Pass 72 result: Nauru
+
+Nauru adds 198 foreign-passport relationships, raising complete-matrix evidence from 27,902 to 28,100 of 44,974 relationships (62.5%) and Oceania coverage from 1,996 to 2,194 of 4,165 relationships (52.7%). One hundred and thirty-seven destination columns now have at least 50% coverage and 131 have at least 80%.
+
+The current Immigration Act, consolidated Regulations and later Gazette amendments support two ordinary-passport visa waivers, 14 named visitor visas requested on entry, and an advance visitor visa for the other 182 foreign passports. The statutory online application option does not by itself establish electronic visa issuance. The Nauruan-citizen entry cell is retained in the evidence artifact but excluded from the foreign-relationship coverage denominator.
+
+Seven fallback corrections exactly match the independently reviewed candidate: Russia and Spain become visa-free; Kiribati, China and Thailand become visa on arrival; and the United Arab Emirates and Taiwan require an advance visa. Media, business, sponsorship, residence, transit, fees, special passports and final admission remain separate. Independent review used the service-5 consolidations and checked the 2024 and 2025 Gazette amendments, including Taiwan's replacement by the People's Republic of China in the relevant arrival schedule.
+
+## Pass 73 result: Tonga
+
+Tonga adds 33 previously uncovered foreign-passport relationships, raising complete-matrix evidence from 28,100 to 28,133 of 44,974 relationships (62.6%) and Oceania coverage from 2,194 to 2,227 of 4,165 relationships (53.5%). Destination threshold counts remain 137 above 50% and 131 above 80%, and no fallback status changes.
+
+The in-force EU agreement supports visa-free ordinary-passport access for 26 EU member states excluding Ireland. The current Revenue and Embassy pages agree on a further 33-passport cohort that receives a visitor visa on arrival. Tonga's Immigration Act separately establishes the Tongan-citizen entry cell, which is excluded from the foreign-relationship coverage denominator.
+
+The Revenue and Embassy guidance disagree for China, Hong Kong, Israel, South Korea, Macao, Switzerland, Norway, Iceland, Liechtenstein and the residual process. Those 139 rows remain unresolved rather than choosing between an advance visa and advance authority followed by an arrival application. The Revenue page also has a certificate-chain failure under normal TLS validation, so it remains a freshness and transport-risk recheck target despite independent content review.
+
+## Pass 74 result: Federated States of Micronesia
+
+Micronesia adds 172 previously uncovered foreign-passport relationships, raising complete-matrix evidence from 28,133 to 28,305 of 44,974 relationships (62.9%) and Oceania coverage from 2,227 to 2,399 of 4,165 relationships (57.6%). One hundred and thirty-eight destination columns now have at least 50% coverage and 132 have at least 80%. No fallback status changes.
+
+The official Embassy entry guidance and current Congress-hosted law establish that every foreign visitor staying 30 days or less needs no entry permit. Arrival records and inspection do not turn that rule into an arrival-issued permit, so all 198 foreign ordinary passports are normalized as visa-free. The in-force EU treaty supplies additional agreement-level support for the 26 EU member states, while the Micronesian-citizen entry cell is excluded from the foreign-relationship coverage denominator.
+
+The Embassy-hosted permit document's path dates to 2021, but the live Embassy visitor page repeats the rule and the current statutory text independently corroborates it. A conflicting unofficial-looking immigration domain is absent from the Government directory and was excluded. Longer stays, employment, residence, special documents and final admission remain separately conditioned, and the mutable Embassy page remains a routine freshness target.
+
+## Pass 75 result: Tuvalu
+
+Tuvalu adds 172 previously uncovered foreign-passport relationships, raising complete-matrix evidence from 28,305 to 28,477 of 44,974 relationships (63.3%) and Oceania coverage from 2,399 to 2,571 of 4,165 relationships (61.7%). One hundred and thirty-nine destination columns now have at least 50% coverage and 133 have at least 80%.
+
+The current Immigration Act and Regulations establish a visitor permit issued at entry for the broad foreign ordinary-passport cohort, normalized as `visa_on_arrival`. Direct treaties displace that route for 26 EU member states and New Zealand: the EU agreement is in force, covers ordinary passports and excludes Ireland and the United Kingdom, while the New Zealand treaty remains expressly listed as in force. The Tuvaluan-citizen cell is excluded from the foreign-relationship coverage denominator.
+
+Six fallback corrections exactly match the independent review. Switzerland, Iceland, Liechtenstein, Norway and Taiwan change from upstream visa-free access to visa on arrival; New Zealand changes from visa on arrival to visa-free. The EU agreement's joint declaration encourages separate associated-state agreements but does not itself waive visas for the four EFTA states. Onward travel, prior stay, duration, fees, paid activity, special documents and final admission remain conditions rather than separate nationality baselines.
+
+## Pass 76 result: Marshall Islands
+
+The Marshall Islands pass adds 84 previously uncovered foreign-passport relationships, raising complete-matrix evidence from 28,477 to 28,561 of 44,974 relationships (63.5%) and Oceania coverage from 2,571 to 2,655 of 4,165 relationships (63.7%). One hundred and forty destination columns now have at least 50% coverage, while 133 remain above 80%.
+
+The Immigration Division's current linked March 2024 summary and the Immigration Act directly support 32 visa-free foreign passports and 78 visa-on-arrival passports. Compact of Free Association rights are retained in their statutory scope. The Marshallese-citizen cell is recorded separately and excluded from the foreign-relationship denominator.
+
+Tonga changes from upstream visa-free access to visa on arrival, and St. Lucia changes from advance visa to visa on arrival; both corrections exactly match independent review. Guatemala remains unresolved because the same official summary lists it in both access tables. The other 87 residual passports also remain unresolved: the general prior-entry rule does not supply a current exhaustive nationality schedule, and the live-linked operational table is dated March 2024. No eVisa status is inferred from an online application route.
+
+## Pass 77 result: Kiribati
+
+Kiribati adds 97 previously uncovered foreign-passport relationships, raising complete-matrix evidence from 28,561 to 28,658 of 44,974 relationships (63.7%) and Oceania coverage from 2,655 to 2,752 of 4,165 relationships (66.1%). One hundred and forty-one destination columns now have at least 50% coverage, while 133 remain above 80%.
+
+The current Immigration Division page says the 2023 visa-exemption order took effect on 1 September 2023 and directly names 120 foreign passport countries. Earlier treaty evidence independently supplies three additional visa-free rows—Latvia, Lithuania and Malta—that the live named display omits. Together with Kiribati citizenship, the global artifact therefore supports 124 cells even though the standalone candidate deliberately partitions 121.
+
+Tanzania changes from upstream advance-visa status to visa-free, exactly matching the independently reviewed conflict record. The live page's “Featured Exempt Countries” wording does not establish an exhaustive complement, so 78 catalog cells remain unresolved rather than being inferred as advance visa, eVisa or visa on arrival. Greenland, Puerto Rico, Cook Islands and Niue appear as places on the official display but do not represent catalog ordinary-passport issuers. Duration, work, residence, transit, special documents and final admission remain separately conditioned.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.

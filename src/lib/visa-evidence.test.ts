@@ -1590,6 +1590,105 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "MS", snapshot.passports.XK.statuses.MS).supportsCurrentStatus).toBe(false);
   });
 
+  it("maps Cook Islands' universal border-issued visitor permit", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "CK");
+
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("NZ", "CK", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SG", "CK", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "CK", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+  });
+
+  it("keeps Niue's named arrival-permit cohort separate from advance visas", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "NU");
+
+    expect(pairs).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("FJ", "NU", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "NU", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GB", "NU", snapshot.passports.GB.statuses.NU).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("NZ", "NU", snapshot.passports.NZ.statuses.NU).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PT", "NU", snapshot.passports.PT.statuses.NU).supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Nauru's current waiver, on-arrival and advance-visa schedules", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "NR");
+
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("NR", "NR", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RU", "NR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ES", "NR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "NR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TH", "NR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "NR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "NR", "visa_required").supportsCurrentStatus).toBe(true);
+  });
+
+  it("limits Tonga evidence to the treaty and mutually consistent visitor cohorts", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "TO");
+
+    expect(pairs).toHaveLength(60);
+    expect(getVisaRelationshipEvidence("TO", "TO", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FR", "TO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IE", "TO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NZ", "TO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CH", "TO", snapshot.passports.CH.statuses.TO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CN", "TO", snapshot.passports.CN.statuses.TO).supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Micronesia's universal permit-free short-visitor rule", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "FM");
+
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("FM", "FM", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FR", "FM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IE", "FM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "FM", "visa_free").supportsCurrentStatus).toBe(true);
+  });
+
+  it("maps Tuvalu's treaty waivers and statutory arrival permits", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "TV");
+
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("TV", "TV", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FR", "TV", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NZ", "TV", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CH", "TV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "TV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "TV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+  });
+
+  it("keeps Marshall Islands evidence to the current named cohorts", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MH");
+
+    expect(pairs).toHaveLength(111);
+    expect(getVisaRelationshipEvidence("MH", "MH", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "MH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "MH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TO", "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LC", "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GT", "MH", snapshot.passports.GT.statuses.MH).supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Kiribati's named schedule and treaty evidence without inferring a residual", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "KI");
+
+    expect(pairs).toHaveLength(124);
+    expect(getVisaRelationshipEvidence("KI", "KI", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TZ", "KI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "KI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GB", "KI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MT", "KI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "KI", snapshot.passports.AF.statuses.KI).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1631,6 +1730,24 @@ describe("official visa evidence", () => {
       "immigration.gov.sb",
       "ica.gov.pg",
       "www.immigration.ms",
+      "mfai.gov.ck",
+      "www.niueisland.com",
+      "mof.gov.nu",
+      "www.gov.nu",
+      "ronlaw.gov.nr",
+      "justice.gov.nr",
+      "www.nauru.gov.nr",
+      "www.revenue.gov.to",
+      "tongaembassycn.gov.to",
+      "ago.gov.to",
+      "fsmembassy.fm",
+      "tuvalu-legislation.tv",
+      "treaties.un.org",
+      "www.treaties.mfat.govt.nz",
+      "rmiimmigration.org",
+      "rmiparliament.org",
+      "immigration.mfai.gov.ki",
+      "www.mfa.gov.ki",
       "www.canada.ca",
       "www.immd.gov.hk",
       "travel.state.gov",

@@ -1,0 +1,1585 @@
+{
+  "batchId": "tonga-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "to-revenue-current-immigration-services",
+      "title": "Immigration and General Services",
+      "url": "https://www.revenue.gov.to/immigration-and-general-services",
+      "publisher": "Ministry of Revenue and Customs, Government of Tonga",
+      "jurisdiction": "Tonga",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live revenue.gov.to Immigration and General Services page is published by Tonga’s Ministry of Revenue and Customs; it was reopened using certificate-validation bypass because its presented certificate chain failed normal validation.",
+      "supportingExcerpt": "Citizens of all other countries need visas to enter Tonga prior to arrival."
+    },
+    {
+      "id": "to-embassy-china-current-visas",
+      "title": "Visas",
+      "url": "https://tongaembassycn.gov.to/en/going-to-tonga-en/visas-en",
+      "publisher": "Embassy of the Kingdom of Tonga in the People’s Republic of China",
+      "jurisdiction": "Tonga",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live tongaembassycn.gov.to consular page is an official Embassy of Tonga page and publishes the visitor-nationality lists and pre-travel authority instruction.",
+      "supportingExcerpt": "They will be issued upon arrival with a visitor’s visa for 31 days, free of charge."
+    },
+    {
+      "id": "to-eu-short-stay-visa-waiver-agreement",
+      "title": "Agreement between the European Union and Tonga on the short-stay visa waiver",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:22015A1203(01)",
+      "publisher": "European Union, Official Journal / EUR-Lex",
+      "jurisdiction": "European Union and Tonga",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "EUR-Lex publishes the agreement as an in-force Official Journal treaty. Its defined Member State scope excludes Ireland and the United Kingdom.",
+      "supportingExcerpt": "visa-free travel for a maximum period of 90 days in any 180-day period"
+    },
+    {
+      "id": "to-immigration-act-2020-revised",
+      "title": "Immigration Act, Chapter 10.01 (2020 Revised Edition)",
+      "url": "https://ago.gov.to/cms/images/LEGISLATION/PRINCIPAL/1969/1969-0016/ImmigrationAct_3.pdf",
+      "publisher": "Attorney General’s Office, Kingdom of Tonga",
+      "jurisdiction": "Tonga",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Attorney General’s Office legislation service publishes this revised Immigration Act and its current index identifies the later 2025 amending Act.",
+      "supportingExcerpt": "a person who is a Tongan subject shall be entitled to enter the Kingdom"
+    },
+    {
+      "id": "to-immigration-amendment-act-2025",
+      "title": "Immigration (Amendment) Act 2025",
+      "url": "https://ago.gov.to/cms/images/LEGISLATION/AMENDING/2025/2025-0057/ImmigrationAmendmentAct2025.pdf",
+      "publisher": "Attorney General’s Office, Kingdom of Tonga",
+      "jurisdiction": "Tonga",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Attorney General’s Office publishes Act 28 of 2025; it amends section 2 and does not amend the citizen-entry provision used here.",
+      "supportingExcerpt": "Section 2 of the Principal Act is amended by inserting the following new definitions."
+    }
+  ],
+  "policies": [
+    {
+      "id": "to-tongan-subject-entry-without-permit",
+      "title": "Tongan subject: entry without a foreign visitor permit",
+      "summary": "The Immigration Act expressly entitles a Tongan subject to enter without first obtaining a permit. The same-country ordinary-passport catalog row is normalized as citizenship, not as a foreign visitor visa route.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "TO"
+      ],
+      "passportCodes": [
+        "TO"
+      ],
+      "conditions": [
+        "The statutory entitlement is for a person who establishes Tongan-subject status; it does not determine treatment of a dual national travelling on a different passport, special travel document, work, residence, diplomatic or admission case."
+      ],
+      "sourceIds": [
+        "to-immigration-act-2020-revised",
+        "to-immigration-amendment-act-2025"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "to-eu-citizens-short-stay-visa-free",
+      "title": "EU citizens: treaty short-stay visa-free travel",
+      "summary": "The in-force EU–Tonga agreement gives the named EU-nationality cohort visa-free short stays of up to 90 days in any 180-day period. The treaty’s Member State definition excludes Ireland and the United Kingdom; Croatia is included.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "TO"
+      ],
+      "passportCodes": [
+        "AT",
+        "BE",
+        "BG",
+        "HR",
+        "CY",
+        "CZ",
+        "DK",
+        "EE",
+        "FI",
+        "FR",
+        "DE",
+        "GR",
+        "HU",
+        "IT",
+        "LV",
+        "LT",
+        "LU",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SK",
+        "SI",
+        "ES",
+        "SE"
+      ],
+      "conditions": [
+        "The agreement applies to citizens travelling for a maximum 90 days in any 180-day period and excludes remunerated activity.",
+        "The treaty rule takes precedence over the Revenue and Embassy’s more general arrival-visitor wording for these mapped EU citizens.",
+        "This does not establish work, residence, transit, diplomatic, official, special-document, security-screening or individual admission treatment."
+      ],
+      "sourceIds": [
+        "to-eu-short-stay-visa-waiver-agreement"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "to-consensus-named-visitor-visa-on-arrival",
+      "title": "Consensus named foreign passports: visitor visa issued on arrival",
+      "summary": "Both live Tongan Government schedules name this ordinary-passport cohort for a visitor visa issued on arrival. This is normalized as visa_on_arrival; the sources’ 30-day and 31-day descriptions are not reconciled into a duration claim.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "TO"
+      ],
+      "passportCodes": [
+        "AU",
+        "BB",
+        "BR",
+        "BN",
+        "CA",
+        "DM",
+        "FM",
+        "FJ",
+        "IE",
+        "JP",
+        "KI",
+        "MY",
+        "MH",
+        "MC",
+        "NR",
+        "NZ",
+        "PW",
+        "PG",
+        "RU",
+        "WS",
+        "SC",
+        "SG",
+        "SB",
+        "KN",
+        "LC",
+        "VC",
+        "BS",
+        "TR",
+        "TV",
+        "UA",
+        "GB",
+        "US",
+        "VU"
+      ],
+      "conditions": [
+        "Revenue states issuance is conditional on a valid return ticket and sufficient funds; entry remains subject to immigration decision.",
+        "The Embassy says the visa is issued on arrival; its separate prior-authority pathway for unlisted travellers is not included in this consensus cohort.",
+        "This policy does not establish employment, business, study, residence, transit, diplomatic, official or special-document treatment."
+      ],
+      "sourceIds": [
+        "to-revenue-current-immigration-services",
+        "to-embassy-china-current-visas"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "KR",
+      "destinationCode": "TO",
+      "reason": "Revenue’s residual says a visa is needed before arrival, while the Embassy’s broader named list says a 31-day visitor visa is issued on arrival. The sources do not reconcile the route.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "TO",
+      "reason": "Revenue’s schedule conflicts with the Embassy’s 90-day Schengen visa-free wording. No underlying waiver instrument was located for this non-EU code.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "TO",
+      "reason": "Revenue’s schedule conflicts with the Embassy’s 90-day Schengen visa-free wording. No underlying waiver instrument was located for this non-EU code.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "TO",
+      "reason": "Revenue’s schedule conflicts with the Embassy’s 90-day Schengen visa-free wording. No underlying waiver instrument was located for this non-EU code.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "TO",
+      "reason": "Revenue’s schedule conflicts with the Embassy’s 90-day Schengen visa-free wording. No underlying waiver instrument was located for this non-EU code.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to",
+        "eur-lex.europa.eu"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TO",
+      "reason": "Revenue’s residual says a visa is needed before arrival, while the Embassy’s broader named list says a 31-day visitor visa is issued on arrival. The sources do not reconcile the route.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "TO",
+      "reason": "Revenue’s residual says a visa is needed before arrival, while the Embassy’s broader named list says a 31-day visitor visa is issued on arrival. The sources do not reconcile the route.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "TO",
+      "reason": "Revenue’s residual says a visa is needed before arrival, while the Embassy’s broader named list says a 31-day visitor visa is issued on arrival. The sources do not reconcile the route.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "TO",
+      "reason": "Revenue’s residual says a visa is needed before arrival, while the Embassy’s broader named list says a 31-day visitor visa is issued on arrival. The sources do not reconcile the route.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "TO",
+      "reason": "Revenue requires a prior visa for its residual, whereas the Embassy says an unlisted traveller needs advance authority and then applies for an arrival visa. The exact normalized route is unresolved.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaembassycn.gov.to",
+        "ago.gov.to"
+      ]
+    }
+  ]
+}

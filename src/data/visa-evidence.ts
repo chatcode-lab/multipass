@@ -79,6 +79,14 @@ export const MOZAMBIQUE_EVISA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.p
   .find(({ id }) => id === "mozambique-current-evisa-ordinary-passports")
   ?.passportCodes ?? [];
 
+export const NIUE_ADVANCE_VISITOR_VISA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "niue-current-other-foreign-visitors-advance-visa")
+  ?.passportCodes ?? [];
+
+export const COOK_ISLANDS_VISITOR_PERMIT_ON_ARRIVAL_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
+  .find(({ id }) => id === "ck-universal-foreign-short-visitor-permit-on-arrival")
+  ?.passportCodes ?? [];
+
 export const ANGOLA_TOURIST_VISA_EXEMPT_CODES = [
   "SZ", "MA", "LS", "GQ", "MU", "SC", "CV", "BW", "MG", "MW", "RW", "ZW", "DZ", "TZ",
   "AE", "IL", "QA", "JP", "SA", "KR", "IN", "ID", "SG", "TL", "CN",
