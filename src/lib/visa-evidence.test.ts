@@ -1089,6 +1089,21 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BI", "BI", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("supports only the narrow CEMAC cohorts for Congo and Gabon", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("CG")).toHaveLength(5);
+    expect(getVisaRelationshipEvidence("CM", "CG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "CG", snapshot.passports.US.statuses.CG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CG", "CG", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("GA")).toHaveLength(5);
+    expect(getVisaRelationshipEvidence("CG", "GA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "GA", snapshot.passports.US.statuses.GA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GA", "GA", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1412,6 +1427,11 @@ describe("official visa evidence", () => {
       "migration.gov.bi",
       "tourisme.gov.bi",
       "www.eac.int",
+      "www.sgg.cg",
+      "developpement-durable.gouv.cg",
+      "gouvernement.ga",
+      "evisa.dgdi.ga",
+      "www.affaires-etrangeres.gouv.ga",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -318,6 +318,16 @@ Sierra Leone supports 13 current ECOWAS/AES-transition visa-free passports and 8
 
 Burundi supports 198 foreign passports: seven EAC Partner States are visa-free and the other 191 may obtain the simple entry visa at Melchior Ndadaye International Airport. Somalia and South Sudan change from visa on arrival to visa-free, while Maldives changes from visa-free to visa on arrival. The airport-limited route controls over the optional online application, so it is normalized as visa on arrival rather than eVisa and is not generalized to land borders. Burundi Tourism omits Somalia from its parenthetical list while saying EAC citizens are exempt, and official sources disagree on fees; those caveats keep the column at medium confidence. Burundi's same-country cell remains unresolved.
 
+## Pass 33 result: Republic of the Congo and Gabon
+
+This narrow CEMAC pass increased complete-matrix evidence from 21,789 to 21,799 of 44,974 relationships (48.5%); Africa coverage increased from 5,391 to 5,401 of 11,289 relationships (47.8%).
+
+Republic of the Congo and Gabon each support only the five other CEMAC ordinary passports as visa-free. Current CEMAC material confirms that member-state citizen free movement is effective, while the archived common convention supplies valid-document and three-month visitor conditions that current regional guidance does not independently restate. Both same-country cells remain unresolved.
+
+Congo's foreigner law preserves unspecified particular immigration agreements, so its general valid-visa rule cannot safely establish an all-other-passports advance-visa residual. Its only official eVisa material is a 2019 project presentation, not an operational service. Gabon's current Government eVisa notice confirms an air-only service through Libreville but publishes no nationality eligibility/default; its Foreign Affairs exemption register is dated 2011. Neither source set was stretched into a residual eVisa, visa-on-arrival, or advance-visa claim.
+
+A separately reviewed Chad candidate was not promoted in this pass. Its 2025 decree is discoverable in current Official Journal indexing and appears to preserve CEMAC access plus unnamed bilateral exemptions, but the primary Journal URL could not be reopened during independent review. Chad remains unchanged until that primary source can be fetched and verified.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
