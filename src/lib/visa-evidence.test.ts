@@ -1411,13 +1411,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "PR", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
-  it("maps bounded UK territory schedules without filling unsupported territory complements", () => {
+  it("maps reviewed UK territory schedules at their supported scope", () => {
     const expectedCounts = new Map([
       ["AI", 199],
       ["TC", 199],
       ["FK", 109],
       ["KY", 198],
-      ["BM", 1],
+      ["BM", 199],
       ["VG", 4],
       ["MS", 198],
     ]);
@@ -1436,7 +1436,9 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("PE", "KY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "KY", snapshot.passports.SS.statuses.KY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GB", "BM", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("US", "BM", snapshot.passports.US.statuses.BM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("US", "BM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "BM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MO", "BM", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("keeps British Virgin Islands evidence to current narrow exemptions", () => {
@@ -1527,18 +1529,21 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CL", "CL", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps Bolivia coverage to the narrow directly corroborated visa-free cohort", () => {
+  it("maps Bolivia's current groups and later bilateral waivers without filling unresolved API rows", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "BO");
 
-    expect(pairs).toHaveLength(11);
+    expect(pairs).toHaveLength(177);
     expect(getVisaRelationshipEvidence("KR", "BO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "BO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HN", "BO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "BO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BR", "BO", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AR", "BO", snapshot.passports.AR.statuses.BO).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("BO", "BO", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AR", "BO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SV", "BO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AD", "BO", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LY", "BO", snapshot.passports.LY.statuses.BO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BO", "BO", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("maps Paraguay's reconciled current tourist and arrival-visa cohorts", () => {
@@ -1584,16 +1589,17 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GY", "GY", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
-  it("keeps Suriname's online application separate from electronic visa issuance", () => {
+  it("maps Suriname's complete visa-abolition partition without treating its entry fee as eVisa", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "SR");
 
-    expect(pairs).toHaveLength(21);
+    expect(pairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("AF", "SR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "SR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("VE", "SR", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("US", "SR", snapshot.passports.US.statuses.SR).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("SR", "SR", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("HT", "SR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "SR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SR", "SR", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("maps Peru's current ordinary-passport tourist schedule without flattening conditional rows", () => {
@@ -2459,6 +2465,11 @@ describe("official visa evidence", () => {
       "serviciomigraciones.cl",
       "consulados.cancilleria.gob.bo",
       "cancilleria.gob.bo",
+      "diputados.gob.bo",
+      "migracion.gob.bo",
+      "servicios.cancilleria.gob.bo",
+      "visas.cancilleria.gob.bo",
+      "www.gacetaoficialdebolivia.gob.bo",
       "www.planalto.gov.br",
       "migraciones.gov.py",
       "www.mre.gov.py",
@@ -2466,8 +2477,11 @@ describe("official visa evidence", () => {
       "minfor.gov.gy",
       "eservices.iss.gov.gy",
       "guyanahctrinidad.mission.gov.gy",
+      "burgerzaken.gov.sr",
       "gov.sr",
+      "www.bermudalaws.bm",
       "www.gov.bm",
+      "www2.gov.bm",
       "cdn.www.gob.pe",
       "www.gob.pe",
     ]);

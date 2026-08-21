@@ -1,0 +1,2269 @@
+{
+  "batchId": "bolivia-complete-visitor-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "bolivia-mre-live-visa-portal-country-api",
+      "title": "Ministry of Foreign Affairs visa portal: country/group API",
+      "url": "https://servicios.cancilleria.gob.bo/visas/api/paises",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "official-portal",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Ministry visa frontend at visas.cancilleria.gob.bo configures this official servicios.cancilleria.gob.bo API. Its live country records expose Spanish country names and a grupo value. Name, not its erroneous ISO field, was used for mapping.",
+      "supportingExcerpt": "\"nombre\":\"AFGANISTAN\",\"iso\":\"AF\",\"grupo\":\"3\""
+    },
+    {
+      "id": "bolivia-mre-visa-application-portal",
+      "title": "Ministry of Foreign Affairs: Visa Application System",
+      "url": "https://visas.cancilleria.gob.bo/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "official-portal",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live visa-application frontend identifies the Ministry of Foreign Affairs in its current 2026 interface and publicly configures the Ministry’s visa API.",
+      "supportingExcerpt": "Sistema de Solicitud Visas"
+    },
+    {
+      "id": "bolivia-mre-current-visa-framework",
+      "title": "Foreign Ministry: current tourist visa Group I/II/III framework",
+      "url": "https://cancilleria.gob.bo/mre/servicios/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry’s live services page carries a 2026 Ministry footer and states the current Group I/II/III tourist visa framework, requirements, and consular issuance description.",
+      "supportingExcerpt": "Las personas de nacionalidad de los países comprendidos en el Grupo II, REQUIEREN de Visa."
+    },
+    {
+      "id": "bolivia-digemig-ds1923-visa-groups",
+      "title": "Supreme Decree 1923: tourism/visit visa groups",
+      "url": "https://migracion.gob.bo/sites/default/files/2021-06/N%C2%B0%201923%20-%20REGLAMENTACI%C3%93N%20DE%20LA%20LEY%20N%C2%B0%20370%2C%20DE%208%20DE%20MAYO%20DE%202013%2C%20DE%20MIGRACI%C3%93N%20-%2012-03-2014.pdf",
+      "publisher": "Dirección General de Migración / Official Gazette",
+      "jurisdiction": "Bolivia",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "DIGEMIG hosts the official-gazette text of Supreme Decree 1923 on its government domain. Article 8 distinguishes Group I waiver, Group II visa, and Group III prior verification.",
+      "supportingExcerpt": "Países Grupo III: Las personas extranjeras pertenecientes al Grupo III de países, requieren visa de ingreso por turismo o visita previa verificación."
+    },
+    {
+      "id": "bolivia-official-gazette-ds4828-current-visa-authorizations",
+      "title": "Supreme Decree 4828: current tourist/visit visas and entry authorizations",
+      "url": "https://www.gacetaoficialdebolivia.gob.bo/normas/descargar/168945",
+      "publisher": "Official Gazette of the Plurinational State of Bolivia",
+      "jurisdiction": "Bolivia",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Official Gazette record publishes Supreme Decree 4828 of 23 November 2022, which replaces Articles 8 and 10 of Supreme Decree 1923 and controls the current entry-authorization alternatives.",
+      "supportingExcerpt": "Países Grupo II: Las personas extranjeras pertenecientes al Grupo II de países requieren visa de turismo o visita, o autorización de ingreso."
+    },
+    {
+      "id": "bolivia-mre-2025-eight-group-i-nationalities",
+      "title": "Foreign Ministry: eight nationalities enter Group I",
+      "url": "https://consulados.cancilleria.gob.bo/blog/embajadass_noticias/bolivia-elimina-desde-hoy-restricciones-politicas-de-visado-a-ocho-paises-y-abre-una-nueva-etapa-de-puertas-abiertas-al-mundo/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry’s official consular site publishes this 2 December 2025 announcement, dated 1 December 2025, which expressly says eight named countries enter visa-free Group I.",
+      "supportingExcerpt": "Los países que ingresan al Grupo I (sin requerimiento de visa) son:"
+    },
+    {
+      "id": "bolivia-mre-2024-honduras-visa-suppression",
+      "title": "Foreign Ministry: Bolivia–Honduras tourism/visit visa suppression",
+      "url": "https://cancilleria.gob.bo/mre/2024/03/16/14347/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry’s official news page records the agreement’s application from 17 March 2024 for diplomatic, official, and ordinary passports.",
+      "supportingExcerpt": "ciudadanos bolivianos y hondureños podrán transitar entre ambos países sin la necesidad de tramitar visas de turismo o visita"
+    },
+    {
+      "id": "bolivia-mre-2024-dominican-visa-suppression",
+      "title": "Foreign Ministry: Dominican ordinary-passport tourism visa suppression",
+      "url": "https://cancilleria.gob.bo/mre/2024/08/30/17267/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry’s official news page records the ordinary-passport agreement and Dominican tourist entry without a visa from 2 September 2024.",
+      "supportingExcerpt": "los ciudadanos dominicanos podrán ingresar a Bolivia sin la necesidad de tramitar visa para turismo."
+    },
+    {
+      "id": "bolivia-mre-2024-el-salvador-visa-suppression",
+      "title": "Foreign Ministry: Bolivia–El Salvador ordinary-passport visa suppression",
+      "url": "https://cancilleria.gob.bo/mre/2024/06/18/15822/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry's official communiqué says the bilateral ordinary/current-passport tourism-or-visit visa-exemption agreement was made effective from 21 June 2024.",
+      "supportingExcerpt": "finalizó las gestiones que hacen efectiva la supresión de visas para ciudadanas y ciudadanos de Bolivia y El Salvador."
+    },
+    {
+      "id": "bolivia-mre-2021-saint-vincent-visa-suppression",
+      "title": "Foreign Ministry: Bolivia–Saint Vincent and the Grenadines visa suppression",
+      "url": "https://cancilleria.gob.bo/mre/2021/11/11/6299/",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Bolivia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry's official notice says the bilateral visa-exemption agreement became effective on 11 November 2021 for tourism or visits.",
+      "supportingExcerpt": "bolivianos y sanvicentinos podrán transitar entre ambos países sin la necesidad de tramitar visas de turismo o visita"
+    },
+    {
+      "id": "bolivia-chamber-deputies-current-constitution",
+      "title": "Constitution of the Plurinational State of Bolivia",
+      "url": "https://diputados.gob.bo/wp-content/uploads/2025/11/constitucion_politica.pdf",
+      "publisher": "Chamber of Deputies",
+      "jurisdiction": "Bolivia",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Chamber of Deputies hosts the current constitutional text on its official domain. Article 21 directly gives Bolivians freedom of movement that includes entry to the country.",
+      "supportingExcerpt": "A la libertad de residencia, permanencia y circulación en todo el territorio boliviano, que incluye la salida e ingreso del país."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bolivia-citizen-ordinary-passport-home-entry",
+      "title": "Bolivian ordinary passport: citizenship/home entry",
+      "summary": "Article 21 of the current Constitution gives Bolivians freedom of residence, permanence and movement in Bolivian territory, expressly including entry into the country. This supports the home/citizenship normalization.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "BO"
+      ],
+      "passportCodes": [
+        "BO"
+      ],
+      "conditions": [
+        "This is a Bolivian ordinary-passport citizenship/home-entry normalization, not a visitor-visa, residence, dual-nationality, emergency-document, diplomatic, official, service, refugee, stateless or other special-document rule.",
+        "Migration registration/control and lawful identity or travel-document requirements remain applicable."
+      ],
+      "sourceIds": [
+        "bolivia-chamber-deputies-current-constitution"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "bolivia-current-group-i-ordinary-passports",
+      "title": "Group I ordinary passports: visa-free tourism or visit",
+      "summary": "The live Ministry country API assigns 54 mapped catalog nationalities to Group I. Later official measures override stale API rows for Honduras, Israel, El Salvador, and Saint Vincent and the Grenadines; the resulting 58 named ordinary passports are visa-free for tourism or visits.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BO"
+      ],
+      "passportCodes": [
+        "DE",
+        "AR",
+        "AU",
+        "AT",
+        "BE",
+        "BR",
+        "BG",
+        "CA",
+        "CL",
+        "CO",
+        "CR",
+        "HR",
+        "DK",
+        "EC",
+        "SK",
+        "SI",
+        "ES",
+        "US",
+        "PH",
+        "FI",
+        "FR",
+        "GR",
+        "HU",
+        "IE",
+        "IS",
+        "IT",
+        "JP",
+        "KR",
+        "LV",
+        "LU",
+        "MT",
+        "MX",
+        "NO",
+        "NZ",
+        "NL",
+        "PA",
+        "PY",
+        "PE",
+        "PL",
+        "PT",
+        "GB",
+        "CZ",
+        "DO",
+        "RO",
+        "SL",
+        "ZA",
+        "SE",
+        "CH",
+        "TM",
+        "TR",
+        "UY",
+        "VA",
+        "VE",
+        "AE",
+        "IL",
+        "HN",
+        "SV",
+        "VC"
+      ],
+      "conditions": [
+        "The scope is tourism or visit only, without a residence purpose. The source does not establish a nationality-wide ETA, eVisa, or visa-on-arrival requirement for this group.",
+        "Honduras follows the bilateral tourist/visit visa suppression effective 17 March 2024; El Salvador the ordinary-passport agreement effective 21 June 2024; the Dominican Republic its waiver effective 2 September 2024; and Saint Vincent and the Grenadines its agreement effective 11 November 2021.",
+        "The 1 December 2025 announcement controls South Korea, South Africa, Bulgaria, Malta, Romania, United Arab Emirates, Israel and United States. The API has not updated Israel and is not followed for that older Group III value.",
+        "Passport/document validity, identity, admission screening, health evidence where applicable, stay, purpose, extension and other migration conditions remain outside this nationality baseline. Diplomatic, official, service, emergency, refugee, stateless and other special documents are excluded."
+      ],
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-mre-2025-eight-group-i-nationalities",
+        "bolivia-mre-2024-honduras-visa-suppression",
+        "bolivia-mre-2024-dominican-visa-suppression",
+        "bolivia-mre-2024-el-salvador-visa-suppression",
+        "bolivia-mre-2021-saint-vincent-visa-suppression"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "bolivia-current-group-ii-ordinary-passports",
+      "title": "Group II ordinary passports: tourist/visit visa or qualifying entry authorization",
+      "summary": "The current Ministry country API assigns these 100 unambiguously mapped catalog nationalities to Group II. Current law requires a tourism/visit visa or a DIGEMIG tourist/visit entry authorization. Neither route is an electronically issued visa or an unconditional passport-wide visa on arrival.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "BO"
+      ],
+      "passportCodes": [
+        "AL",
+        "AD",
+        "AG",
+        "SA",
+        "DZ",
+        "AM",
+        "AZ",
+        "BS",
+        "BH",
+        "BD",
+        "BB",
+        "BY",
+        "BA",
+        "BN",
+        "BF",
+        "BI",
+        "CV",
+        "CM",
+        "CN",
+        "TW",
+        "CY",
+        "KM",
+        "CI",
+        "CU",
+        "DJ",
+        "DM",
+        "EG",
+        "ER",
+        "EE",
+        "ET",
+        "FJ",
+        "GA",
+        "GM",
+        "GE",
+        "GH",
+        "GD",
+        "GT",
+        "GN",
+        "GY",
+        "HT",
+        "IN",
+        "IR",
+        "JM",
+        "JO",
+        "KZ",
+        "KE",
+        "KG",
+        "KW",
+        "LB",
+        "MG",
+        "MY",
+        "MW",
+        "MV",
+        "ML",
+        "MA",
+        "MU",
+        "MR",
+        "FM",
+        "MD",
+        "MC",
+        "MN",
+        "ME",
+        "MZ",
+        "MM",
+        "NA",
+        "NR",
+        "NP",
+        "NI",
+        "NE",
+        "KP",
+        "OM",
+        "QA",
+        "RU",
+        "KN",
+        "WS",
+        "ST",
+        "SN",
+        "RS",
+        "SC",
+        "SG",
+        "LK",
+        "SZ",
+        "SR",
+        "TH",
+        "TZ",
+        "TJ",
+        "TG",
+        "TT",
+        "TN",
+        "UA",
+        "UG",
+        "UZ",
+        "VU",
+        "VN",
+        "ZM",
+        "ZW",
+        "BZ",
+        "LC",
+        "MK",
+        "SM"
+      ],
+      "conditions": [
+        "Current law requires a Group II tourism/visit visa or a DIGEMIG tourist/visit entry authorization. The official portal is an application system, while the Ministry describes the visa itself as issued by consulates and embassies; neither source establishes electronic visa issuance.",
+        "DIGEMIG may issue the alternate authorization at a land or airport border, or exceptionally at an office, when the traveller could not access a Bolivian mission. It requires the same evidence and procedures as a visa and is not an unconditional nationality-wide visa-on-arrival route.",
+        "Applicants must meet the Ministry’s stated requirements, including ordinarily a valid passport, application declaration, itinerary/return travel, invitation or accommodation, means, photograph and yellow-fever evidence where applicable. Admission remains subject to control.",
+        "No residence, work, study, transit, diplomatic, official, service, emergency, refugee, stateless, special-document or third-country-document route is normalized."
+      ],
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-visa-application-portal",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "bolivia-current-group-iii-ordinary-passports",
+      "title": "Group III ordinary passports: tourist/visit visa with prior DIGEMIG verification",
+      "summary": "The current Ministry country API assigns these 18 unambiguously mapped catalog nationalities to Group III. The current framework requires a tourism/visit visa after verification and authorization by DIGEMIG; the duplicate contradictory Libya records are left unresolved.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "BO"
+      ],
+      "passportCodes": [
+        "AF",
+        "AO",
+        "BT",
+        "KH",
+        "TD",
+        "ID",
+        "IQ",
+        "LA",
+        "PK",
+        "CD",
+        "RW",
+        "SY",
+        "SO",
+        "SD",
+        "TL",
+        "YE",
+        "CG",
+        "NG"
+      ],
+      "conditions": [
+        "This is a visa requirement with prior Group III verification and authorization by DIGEMIG. A border-issued authorization is possible only exceptionally after reasoned DIGEMIG authorization, so it is not a nationality-wide visa-on-arrival route and is not normalized as eVisa or ETA.",
+        "The Ministry’s electronic service accepts visa applications, but reviewed sources establish consular issuance and do not establish electronic issuance of the visa or electronic permission to board.",
+        "The general tourism/visit application requirements and final border-admission control apply. Residence, work, study, transit, diplomatic, official, service, emergency, refugee, stateless, special-document and third-country-document rules are excluded."
+      ],
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-visa-application-portal",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "SL",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_free",
+      "explanation": "The current Ministry country API places this nationality in Group I; Group I has no tourism/visit visa requirement.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_free",
+      "explanation": "The current Ministry country API places this nationality in Group I; Group I has no tourism/visit visa requirement.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "BO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "BO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_free",
+      "explanation": "The later Foreign Ministry communiqué says the bilateral ordinary-passport tourism/visit visa-suppression agreement became effective from 21 June 2024, overriding the stale API group.",
+      "sourceIds": [
+        "bolivia-mre-2024-el-salvador-visa-suppression"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "BO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "BO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "BO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "BO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The live Ministry API places this nationality in its stated visa group. Current law requires a visa or qualifying DIGEMIG entry authorization for Group II and a visa after prior DIGEMIG authorization for Group III; neither establishes eVisa eligibility.",
+      "sourceIds": [
+        "bolivia-mre-live-visa-portal-country-api",
+        "bolivia-mre-current-visa-framework",
+        "bolivia-digemig-ds1923-visa-groups",
+        "bolivia-official-gazette-ds4828-current-visa-authorizations"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "LY",
+      "destinationCode": "BO",
+      "reason": "The live Ministry API contains two contradictory Libya records: the legacy label 'JAMAHIRIYA ARABE LIBIA' is Group III, while the current 'LIBIA' record has a null group. No current official source resolves which record controls the catalog ordinary passport.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "gacetaoficialdebolivia.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "BO",
+      "reason": "The live official Ministry country API has no usable Group I/II/III value for this catalog passport: it is absent or its country record has grupo null. Its malformed ISO metadata cannot safely supply a residual classification, and no newer named official measure was found.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.bo",
+        "consulados.cancilleria.gob.bo",
+        "visas.cancilleria.gob.bo",
+        "servicios.cancilleria.gob.bo",
+        "migracion.gob.bo",
+        "diputados.gob.bo"
+      ]
+    }
+  ]
+}
