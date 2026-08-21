@@ -1875,6 +1875,26 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "KM", snapshot.passports.US.statuses.KM).supportsCurrentStatus).toBe(false);
   });
 
+  it("supports the reviewed Cuba, Haiti and Saint Kitts and Nevis scopes", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("CU")).toHaveLength(3);
+    expect(getVisaRelationshipEvidence("CN", "CU", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RS", "CU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "CU", snapshot.passports.US.statuses.CU).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("HT")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("HT", "HT", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("YE", "HT", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "HT", "visa_free").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("KN")).toHaveLength(6);
+    expect(getVisaRelationshipEvidence("KN", "KN", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AG", "KN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "KN", snapshot.passports.US.statuses.KN).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1909,6 +1929,17 @@ describe("official visa evidence", () => {
       "guide.visitdjibouti.dj",
       "www.journalofficiel.dj",
       "justice.gouv.km",
+      "www.cuba.travel",
+      "www.kdmid.ru",
+      "www.mfa.gov.rs",
+      "www.haiti.org",
+      "immigration.mict.gouv.ht",
+      "ofnac.gouv.ht",
+      "lawcommission.gov.kn",
+      "pressroom.oecs.int",
+      "www.knatravelform.kn",
+      "www.skn-igs.gov.kn",
+      "nia.gov.kn",
       "granpol.gov.ba",
       "sluzbenilist.ba",
       "gzk.rks-gov.net",

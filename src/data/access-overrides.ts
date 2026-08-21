@@ -31,6 +31,14 @@ export interface VerifiedAccessOverride {
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "RS",
+    destinationCode: "CU",
+    status: "evisa",
+    reason: "Serbia's current Foreign Ministry guidance requires ordinary-passport visitors to obtain Cuba's electronic tourist visa; the waiver applies only to diplomatic and official passports.",
+    sourceUrl: "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/cuba",
+    reviewedAt: "2026-08-21",
+  },
+  {
     passportCode: "GY",
     destinationCode: "KE",
     status: "visa_free",

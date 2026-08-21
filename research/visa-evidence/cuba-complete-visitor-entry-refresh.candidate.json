@@ -1,0 +1,2481 @@
+{
+  "batchId": "cuba-complete-visitor-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "cuba-travel-entry-regulations",
+      "title": "Visa and Passport: Entry requirements to Cuba",
+      "url": "https://www.cuba.travel/en/useful-information/regulations-and-formalities",
+      "publisher": "Cuba Travel official tourism portal",
+      "jurisdiction": "Republic of Cuba",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Cuban tourism portal publishes entry documentation, the named Chinese ordinary-passport exemption, tourist-visa duration and the electronic visa issuance route.",
+      "supportingExcerpt": "Chinese nationals will not need a visa to enter Cuba with their regular passport."
+    },
+    {
+      "id": "russia-mfa-cuba-consular-information",
+      "title": "General information about Cuba",
+      "url": "https://www.kdmid.ru/docs/cuba/information-about-the-country/",
+      "publisher": "Consular Department, Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russian Federation",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Russian Foreign Ministry Consular Department country-information page directly states the Cuban entry rule for Russian citizens and distinguishes employment or stays over 90 days.",
+      "supportingExcerpt": "Въезд на Кубу для граждан России ... до 90 дней, осуществляется без визы."
+    },
+    {
+      "id": "serbia-mfa-cuba-travel-advisory",
+      "title": "Cuba",
+      "url": "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/cuba",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Serbia",
+      "jurisdiction": "Republic of Serbia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Serbian Foreign Ministry Cuba advisory expressly separates national passports from diplomatic and official passports and directs national-passport travellers to Cuba’s web visa route.",
+      "supportingExcerpt": "For holders of national passports and other travel documents: Visas required."
+    }
+  ],
+  "policies": [
+    {
+      "id": "cuba-china-ordinary-passport-visa-exemption",
+      "title": "Chinese ordinary passports: visa-free tourist entry",
+      "summary": "Cuba Travel expressly exempts Chinese nationals using regular passports from the tourist-visa requirement.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "CN"
+      ],
+      "conditions": [
+        "This is limited to Chinese nationals using regular passports for the ordinary short-tourist baseline. Cuba Travel states a tourist may stay up to 90 days, extendable once for 90 more days.",
+        "A valid passport, D’VIAJEROS QR code, medical insurance, transport and final admission requirements remain applicable. Work, residence, transit, special passports and individual restrictions are outside this policy."
+      ],
+      "sourceIds": [
+        "cuba-travel-entry-regulations"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cuba-russia-ordinary-passport-visa-exemption",
+      "title": "Russian ordinary passports: visa-free stays up to 90 days",
+      "summary": "Russia’s current Foreign Ministry consular guidance says Russian citizens may enter Cuba without a visa for a stay not exceeding 90 days using a foreign passport.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "RU"
+      ],
+      "conditions": [
+        "The cited bilateral-consular guidance limits visa-free travel to stays not exceeding 90 days. Longer stays, residence, employment and commercial activity require a Cuban Embassy visa.",
+        "This treats the Russian foreign passport as the ordinary-passport baseline; it does not establish special documents, dual-citizenship treatment, entry conditions, public-order controls or final admission."
+      ],
+      "sourceIds": [
+        "russia-mfa-cuba-consular-information"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "cuba-serbia-ordinary-passport-tourist-evisa",
+      "title": "Serbian ordinary passports: electronic tourist visa required",
+      "summary": "Serbia’s current Foreign Ministry advisory says national passports require a Cuban visa through eVisaCuba; Cuba’s official tourism portal confirms the electronic tourist visa is issued by internet and sent as a visa code.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "RS"
+      ],
+      "conditions": [
+        "The Serbian MFA expressly distinguishes national passports, which require a visa, from diplomatic and official passports, which have a separate waiver.",
+        "Cuba Travel describes the issued eVisa code and states the tourist visa is single-entry for up to 90 days, extendable once for 90 more days. A valid passport, return ticket, D’VIAJEROS QR code, insurance and final admission remain required.",
+        "This is a tourist route only and does not cover work, residence, transit, emergency, diplomatic, official, service or special-document treatment."
+      ],
+      "sourceIds": [
+        "serbia-mfa-cuba-travel-advisory",
+        "cuba-travel-entry-regulations"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisacuba.cu/en/inicio",
+        "label": "eVisa-Cuba tourist visa portal",
+        "processingTime": "Cuba Travel describes issuance of a visa code by email; the Serbian MFA directs national-passport applicants to the web route.",
+        "steps": [
+          "Confirm that the journey is an ordinary tourist visit and that all passport and travel conditions are met.",
+          "Apply through the eVisa-Cuba route identified by Cuban and Serbian official guidance.",
+          "Use the issued visa code with the required D’VIAJEROS entry form and travel documents when seeking entry."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "RS",
+      "destinationCode": "CU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The Serbian MFA’s current Cuba advisory states that holders of Serbian national passports require a visa through eVisaCuba; the separate waiver is limited to diplomatic and official passports.",
+      "sourceIds": [
+        "serbia-mfa-cuba-travel-advisory",
+        "cuba-travel-entry-regulations"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "AF",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "FR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "CU",
+      "reason": "A current Malaysian Foreign Ministry Havana page describes a reciprocal 90-day waiver, but its official URL returned 502 in this review and its TLS chain could not be validated. No directly retrievable Cuban primary text independently confirms the ordinary-passport scope, so this row remains unresolved.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "www.kln.gov.my"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "CU",
+      "reason": "Cuba Travel confirms that tourist visas are electronically issued, but it names only China as exempt and acknowledges additional visa-free agreements without publishing an exhaustive current ordinary-passport schedule. No direct current Cuban source maps this passport to an exemption or electronic-visa route; portal existence or omission is not treated as eligibility.",
+      "searchedOfficialDomains": [
+        "www.cuba.travel",
+        "evisacuba.cu",
+        "gacetaoficial.gob.cu",
+        "www.minint.gob.cu",
+        "misiones.cubaminrex.cu"
+      ]
+    }
+  ]
+}
