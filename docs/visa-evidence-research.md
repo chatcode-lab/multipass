@@ -570,6 +570,30 @@ The Foreign Ministry's ordinary-passport table dated 16 July 2026 directly recon
 
 China and India remain unresolved because their table rows depend on a qualifying third-country visa or permanent residence. Venezuela is likewise conditional on permanent residence in Colombia, Chile or Mexico. Those document-conditioned routes are not flattened into passport-wide results. The live PDF and service pages are mutable, so all mapped rows remain routine currency-check targets despite their high-confidence current scope.
 
+## Pass 65 result: St Helena
+
+St Helena adds current-status evidence for all 199 catalog passports, raising complete-matrix evidence from 27,014 to 27,213 of 44,974 relationships (60.5%). Africa coverage rises from 6,572 to 6,771 of 11,289 relationships (60.0%). One hundred and thirty-three destination columns now have at least 50% coverage and 127 have at least 80%.
+
+The current Immigration Service schedule requires 113 ordinary passports to obtain an eVisa before travel. It directly names 111 current nationalities and uses the historical category “former Yugoslavia” for Croatia and Slovenia; independent review confirmed that every other current successor code is already named separately. The other 86 passports arrive without advance permission and apply for a Short Term Entry Permit at the border. Because that permission is issued on arrival, it is normalized as `visa_on_arrival` even though St Helena calls the instrument a permit rather than a visa.
+
+The 89 fallback changes exactly match the reviewed candidate: Myanmar, Croatia and Slovenia change from visa-free to eVisa, while 86 non-visa passports change from visa-free to visa on arrival. British passport classification is limited to the catalog's ordinary United Kingdom baseline; other British statuses, St Helenian status, temporary travel documents, criminal history, insurance and final admission remain individual conditions. Ascension and Tristan da Cunha are outside this destination policy.
+
+## Pass 66 result: Solomon Islands
+
+Solomon Islands adds 74 relationships—28 visa-free and 46 visa on arrival—raising complete-matrix evidence from 27,213 to 27,287 of 44,974 relationships (60.7%) and Oceania coverage from 1,509 to 1,583 of 4,165 relationships (38.0%). The destination threshold counts remain 133 above 50% and 127 above 80%. Iceland, Liechtenstein, Norway and Switzerland change from upstream visa-free to visa on arrival; all four corrections exactly match the independently reviewed conflict record.
+
+The 2025 Gazette schedule and current Government guidance jointly support the 46-passport concessional cohort, whose visitor visa is granted on arrival. More-specific Immigration Division agreements support visa-free ordinary-passport access for 26 EU states excluding Ireland, plus China and the United Arab Emirates. Generic online-application and grant-letter text on the agreement pages does not override those explicit waiver statements.
+
+The Government pages contain inconsistent general duration wording, so the evidence records status without imposing one uniform stay limit. The other 125 relationships—including Solomon Islands citizenship—remain unresolved rather than inferring an advance-visa or eVisa complement from omission, a template, or the existence of an application workflow.
+
+## Pass 67 result: Papua New Guinea
+
+Papua New Guinea adds a conservative 18-passport visa-on-arrival cohort, raising complete-matrix evidence from 27,287 to 27,305 of 44,974 relationships (60.7%) and Oceania coverage from 1,583 to 1,601 of 4,165 relationships (38.4%). Japan, the United Arab Emirates and Indonesia change to visa on arrival; those three corrections exactly match the reviewed candidate. The destination threshold counts remain unchanged.
+
+The Immigration and Citizenship Authority directly names Canada, the United Arab Emirates, Micronesia, Fiji, Indonesia, Japan, Kiribati, the Marshall Islands, Nauru, Palau, Samoa, Singapore, Solomon Islands, Israel, Tonga, Tuvalu, the United Kingdom and Vanuatu for tourist visa on arrival. China's ordinary-passport organized-tour route and non-ordinary passport exceptions remain conditional rather than nationality-wide. The PNG Digital Arrival Card is an arrival declaration, not ETA or a visa.
+
+Independent review rejected the initial complete residual. The live Visitor Visa page directs non-VOA applicants to a paper form, while the official 2025 handbook describes online or eVisa submission. Both indicate permission before travel, but the conflict prevents a defensible choice between `visa_required` and `evisa` for the other 181 relationships, including Papua New Guinea citizenship. They remain unresolved pending a reconciled current ICA route.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.

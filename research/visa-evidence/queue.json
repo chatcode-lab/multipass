@@ -2747,6 +2747,62 @@
         "An online consular application is not itself an eVisa. Classify a named prior-tourist-visa row as visa_required unless an official source directly proves electronic issuance or arrival issuance.",
         "Keep any catalog code absent from, ambiguously named by or internally conflicting in the current schedule unresolved rather than inferring a residual."
       ]
+    },
+    {
+      "id": "st-helena-ordinary-passport-entry-scope",
+      "priority": 157,
+      "objective": "Model St. Helena's ordinary-passport short-visitor scope from its current eVisa nationality schedule and border-issued short-term entry permit rules, without importing Ascension or Tristan da Cunha requirements.",
+      "destinationCodes": ["SH"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://evisa.sainthelena.gov.sh/faq",
+        "https://evisa.sainthelena.gov.sh/apply/",
+        "https://www.sainthelena.gov.sh/st-helena/government/portfolios/safety-security-and-home-affairs/immigration/short-term-entry-permit/",
+        "https://www.gov.uk/foreign-travel-advice/st-helena-ascension-and-tristan-da-cunha/entry-requirements"
+      ],
+      "notes": [
+        "Map only ordinary-passport visitor rules and retain the official nationality wording, including any former-state or passport-type ambiguity, for independent review.",
+        "Confirm whether the border-issued short-term entry permit meets this project's visa_on_arrival normalization; do not assume that the authority's use of permit instead of visa is irrelevant.",
+        "Keep Ascension, Tristan da Cunha, residence, work, transit, crew, British status, dependent, medical-insurance and final-admission conditions separate."
+      ]
+    },
+    {
+      "id": "papua-new-guinea-ordinary-passport-entry-scope",
+      "priority": 158,
+      "objective": "Model Papua New Guinea's ordinary-passport short-tourist entry scope from the Immigration and Citizenship Authority's current visa-on-arrival schedule and visitor-visa process.",
+      "destinationCodes": ["PG"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://ica.gov.pg/visa-information/visa-on-arrival",
+        "https://ica.gov.pg/visa/visit/visitor",
+        "https://ica.gov.pg/faq",
+        "https://ica.gov.pg/dac/png-digital-arrival-card"
+      ],
+      "notes": [
+        "Use the current named ordinary-passport visa-on-arrival cohort and retain non-ordinary, organized-tour, APEC, business, transit and special-document exceptions as conditions rather than nationality baselines.",
+        "Online lodgement or an eVisa-branded portal does not by itself prove electronic issuance. Confirm issuance and pre-travel timing before choosing evisa rather than visa_required.",
+        "Treat the PNG Digital Arrival Card as an arrival declaration, not ETA or visa, and record any WAF/reproducibility limitation affecting the live official pages."
+      ]
+    },
+    {
+      "id": "solomon-islands-ordinary-passport-entry-scope",
+      "priority": 159,
+      "objective": "Model Solomon Islands' ordinary-passport short-visitor scope from the current concessional-entry schedule and explicit mutual visa-waiver agreements.",
+      "destinationCodes": ["SB"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://solomons.gov.sb/wp-content/uploads/2025/07/Gaz-No.-73-Sup-No.-37-Tuesday-24th-June-2025.pdf",
+        "https://www.investsolomons.gov.sb/articles/visas",
+        "https://immigration.gov.sb/visitor-visa-tourist/",
+        "https://immigration.gov.sb/mutual-visa-eu/",
+        "https://immigration.gov.sb/mutual-visa-peoples-republic-of-china/",
+        "https://immigration.gov.sb/mutual-visa-uae/"
+      ],
+      "notes": [
+        "Use the current Gazette schedule and government guidance together for the named concessional cohort; do not infer a visa-required or electronic-visa residual.",
+        "Keep explicit ordinary-passport mutual exemptions separate from visa on arrival, and preserve conflicts in application, grant-letter and duration wording as conditions rather than normalizing unsupported operational detail.",
+        "Exclude paid work, residence, non-ordinary documents and discretionary final-admission conditions from the nationality baseline."
+      ]
     }
   ]
 }

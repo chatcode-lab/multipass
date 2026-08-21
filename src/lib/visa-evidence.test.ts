@@ -1531,6 +1531,42 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("VE", "PE", snapshot.passports.VE.statuses.PE).supportsCurrentStatus).toBe(false);
   });
 
+  it("maps St Helena's eVisa schedule and border-issued short-term entry permit", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "SH");
+
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("MM", "SH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HR", "SH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SI", "SH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SG", "SH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GB", "SH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+  });
+
+  it("keeps Solomon Islands' explicit waivers separate from concessional visa on arrival", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "SB");
+
+    expect(pairs).toHaveLength(74);
+    expect(getVisaRelationshipEvidence("FR", "SB", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "SB", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "SB", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IS", "SB", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "SB", snapshot.passports.AF.statuses.SB).supportsCurrentStatus).toBe(false);
+  });
+
+  it("limits Papua New Guinea evidence to the directly named visa-on-arrival cohort", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "PG");
+
+    expect(pairs).toHaveLength(18);
+    expect(getVisaRelationshipEvidence("JP", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ID", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "PG", snapshot.passports.CN.statuses.PG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PG", "PG", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1565,6 +1601,12 @@ describe("official visa evidence", () => {
       "www.visas.inis.gov.ie",
       "www.gov.uk",
       "www.legislation.gov.uk",
+      "evisa.sainthelena.gov.sh",
+      "www.sainthelena.gov.sh",
+      "solomons.gov.sb",
+      "www.investsolomons.gov.sb",
+      "immigration.gov.sb",
+      "ica.gov.pg",
       "www.canada.ca",
       "www.immd.gov.hk",
       "travel.state.gov",
