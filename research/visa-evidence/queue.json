@@ -4445,6 +4445,54 @@
         "A bare \"visa\" cell in Kazakhstan MFA's table is not sufficient to normalize an advance-visa, eVisa, ETA or arrival route; retain it unresolved unless a current official source establishes the route and timing.",
         "KZ-to-TM is already canonical. Leave it explicitly unresolved in this batch and do not create a duplicate policy. Preserve ordinary-passport, visitor-purpose, work, transit, residence, special-document and final-admission limits."
       ]
+    },
+    {
+      "id": "united-kingdom-outbound-low-coverage-destinations-2026",
+      "priority": 261,
+      "objective": "Classify full British citizen ordinary-passport short-visitor access to the assigned low-coverage destinations from current FCDO entry requirements and direct destination sources where route semantics need confirmation.",
+      "destinationCodes": ["AF", "KP", "LY", "PS", "SY", "TN", "DJ", "IQ", "KM", "SD", "UA", "VG", "CU", "PA", "BA", "SS", "TM", "CF", "CG", "GA", "GQ"],
+      "passportCodes": ["GB"],
+      "sourceHints": [
+        "https://www.gov.uk/foreign-travel-advice/tunisia/entry-requirements",
+        "https://www.gov.uk/foreign-travel-advice/ukraine/entry-requirements",
+        "https://www.gov.uk/foreign-travel-advice/british-virgin-islands/entry-requirements"
+      ],
+      "notes": [
+        "This scope is only a full British citizen passport from the United Kingdom; do not generalize to other British nationality, Crown Dependency or British overseas territory passport types.",
+        "A generic visa statement is not enough to normalize a route. Preserve invitation, e-approval, arrival issuance, territory, entry point, sponsor, purpose, document and final-admission qualifications."
+      ]
+    },
+    {
+      "id": "canada-outbound-low-coverage-destinations-2026",
+      "priority": 262,
+      "objective": "Classify current ordinary Canadian-passport short-visitor access to the specified low-coverage destinations from Government of Canada entry and exit guidance and direct official destination sources where needed.",
+      "destinationCodes": ["AF", "KP", "LY", "PS", "SY", "TN", "DJ", "IQ", "KM", "SD", "UA", "VG", "CU", "PA", "BA", "SS", "TM", "CF", "CG", "GA", "GQ"],
+      "passportCodes": ["CA"],
+      "sourceHints": [
+        "https://travel.gc.ca/destinations",
+        "https://evisa.iq/en",
+        "https://www.evisa.gov.ss/",
+        "https://www.gov.il/en/departments/topics/eta-il/govil-landing-page"
+      ],
+      "notes": [
+        "Use the Regular Canadian passport section. A generic statement that a visa is required does not establish advance, electronic or arrival issuance and must remain unresolved.",
+        "Preserve territory, route, passport-validity, invitation, registration, border, dual-national, work, study, transit, special-document and final-admission conditions. Operational restrictions or travel advisories are not a substitute for a nationality-specific entry route."
+      ]
+    },
+    {
+      "id": "united-states-outbound-low-coverage-destinations-2026",
+      "priority": 260,
+      "objective": "Classify ordinary United States-passport short-visitor access to the assigned low-coverage destinations from current State Department entry requirements and direct destination sources where route semantics require confirmation.",
+      "destinationCodes": ["AF", "KP", "LY", "PS", "SY", "TN", "DJ", "IQ", "KM", "SD", "UA", "VG", "CU", "PA", "BA", "SS", "TM", "CF", "CG", "GA", "GQ"],
+      "passportCodes": ["US"],
+      "sourceHints": [
+        "https://travel.state.gov/en/international-travel/",
+        "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages.html"
+      ],
+      "notes": [
+        "Use the current United States passport entry-requirements wording for each destination. A generic visa statement does not establish an advance, electronic, ETA or arrival route without explicit process or timing.",
+        "Keep passport-invalid, visa-issuance-suspended, route-dependent and United States-law-restricted situations unresolved because the project taxonomy has no equivalent status. Preserve ordinary-passport, entry point, invitation, purpose, document and final-admission conditions."
+      ]
     }
   ]
 }
