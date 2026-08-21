@@ -296,6 +296,17 @@ describe("passport calculations", () => {
     }
   });
 
+  it("applies Benin's current non-exempt eVisa corrections", () => {
+    for (const code of ["DZ", "CN", "AE", "ZW"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", BJ: "visa_free" },
+        mobilityScore: 1,
+      })).toMatchObject({ statuses: { [code]: "citizenship", BJ: "evisa" }, mobilityScore: 0 });
+    }
+  });
+
   it("applies reviewed United States territory entry corrections", () => {
     expect(applyVerifiedAccessOverrides({
       code: "WS",

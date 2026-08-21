@@ -1,6 +1,6 @@
 {
   "batchId": "benin-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-20",
+  "researchedAt": "2026-08-21",
   "sources": [
     {
       "id": "benin-dei-services",
@@ -10,7 +10,7 @@
       "jurisdiction": "Benin",
       "kind": "government-guidance",
       "language": "French",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-21",
       "officialityEvidence": "Current official Directorate of Emigration and Immigration service page, displaying the government eVisa visitor service and updated DEI copyright.",
       "supportingExcerpt": "Il est délivré aux ressortissants de pays étrangers hors CEDEAO ou n'ayant pas un accord d'exemption de visa."
     },
@@ -22,7 +22,7 @@
       "jurisdiction": "Benin",
       "kind": "official-dataset",
       "language": "French",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-21",
       "officialityEvidence": "Official Government of Benin document, published with a Ministry of Foreign Affairs source line, naming each exempt African country.",
       "supportingExcerpt": "Tous les ressortissants des 53 Pays Africains peuvent entrer au Bénin et circuler librement pendant 90 jours."
     },
@@ -34,8 +34,8 @@
       "jurisdiction": "Benin",
       "kind": "official-dataset",
       "language": "English",
-      "reviewedAt": "2026-08-20",
-      "officialityEvidence": "Current Ministry of Foreign Affairs API on the diplomatie.bj government network; it lists country-level agreements and exact passport types.",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live Ministry of Foreign Affairs API returned current country-level agreement records and exact passport types on 2026-08-21. The endpoint is intermittently slow, so the response should be rechecked on review.",
       "supportingExcerpt": "Ordinary passport"
     },
     {
@@ -46,8 +46,8 @@
       "jurisdiction": "Benin",
       "kind": "official-dataset",
       "language": "English",
-      "reviewedAt": "2026-08-20",
-      "officialityEvidence": "Current Ministry of Foreign Affairs API on the diplomatie.bj government network; it identifies current UEMOA/ECOWAS country entries and governing free-movement instruments.",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live Ministry of Foreign Affairs API returned current country-level agreement records and exact passport types on 2026-08-21. The endpoint is intermittently slow, so the response should be rechecked on review.",
       "supportingExcerpt": "Protocol A/SP.1/5/79 ... on the free movement of persons"
     },
     {
@@ -58,8 +58,8 @@
       "jurisdiction": "Benin",
       "kind": "official-dataset",
       "language": "English",
-      "reviewedAt": "2026-08-20",
-      "officialityEvidence": "Current Ministry of Foreign Affairs API on the diplomatie.bj government network; it lists country-level African agreements and their passport types.",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live Ministry of Foreign Affairs API returned current country-level agreement records and exact passport types on 2026-08-21. The endpoint is intermittently slow, so the response should be rechecked on review.",
       "supportingExcerpt": "Diplomatic passport; Service passport; National passport"
     },
     {
@@ -70,7 +70,7 @@
       "jurisdiction": "Benin",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-21",
       "officialityEvidence": "Current official eVisa platform footer identifies the Government of the Republic of Benin and displays the exemption notice.",
       "supportingExcerpt": "Countries with which Benin has concluded reciprocal visa waiver agreements."
     },
@@ -82,7 +82,7 @@
       "jurisdiction": "Benin",
       "kind": "law",
       "language": "French",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-21",
       "officialityEvidence": "Official Secretariat General of the Government PDF for the 2 July 2025 foreigners-entry law, linked by the current DEI service catalogue.",
       "supportingExcerpt": "Nul étranger ne peut entrer ou séjourner sans visa sauf s'il en est dispensé."
     },
@@ -94,9 +94,21 @@
       "jurisdiction": "Benin",
       "kind": "government-guidance",
       "language": "French",
-      "reviewedAt": "2026-08-20",
+      "reviewedAt": "2026-08-21",
       "officialityEvidence": "Official Government of Benin tourism communiqué published 30 July 2025.",
       "supportingExcerpt": "Les croisiéristes pourront bénéficier d’une exemption de visa de 72 heures, sous réserve d’un encadrement."
+    },
+    {
+      "id": "benin-evisa-current-application-workflow",
+      "title": "e-Visa: How it works",
+      "url": "https://evisa.bj/howitworks",
+      "publisher": "Government of the Republic of Benin",
+      "jurisdiction": "Benin",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live official eVisa portal identifies the Government of Benin in its footer and describes the electronic application, payment and request-status workflow.",
+      "supportingExcerpt": "The first step in the process of obtaining an e-Visa for Benin begins with the initiation of your application."
     }
   ],
   "policies": [
@@ -188,2235 +200,595 @@
         "benin-dei-services"
       ],
       "confidence": "high"
+    },
+    {
+      "id": "benin-current-residual-ordinary-visitor-evisa",
+      "title": "Benin: ordinary foreign visitor eVisa residual",
+      "summary": "Foreign ordinary-passport visitors outside ECOWAS and without an MFA-listed ordinary/national-passport waiver must obtain Benin’s tourist/visit eVisa online before arrival. This exact residual excludes the 39 current waiver rows and Beninese citizenship.",
+      "status": "evisa",
+      "destinationCodes": [
+        "BJ"
+      ],
+      "passportCodes": [
+        "AF",
+        "AL",
+        "DZ",
+        "AO",
+        "AR",
+        "AM",
+        "AU",
+        "AT",
+        "AZ",
+        "BH",
+        "BD",
+        "BY",
+        "BE",
+        "BT",
+        "BO",
+        "BA",
+        "BW",
+        "BR",
+        "BN",
+        "BG",
+        "KH",
+        "CM",
+        "CA",
+        "CL",
+        "CN",
+        "CO",
+        "KM",
+        "CD",
+        "CR",
+        "HR",
+        "CU",
+        "CY",
+        "CZ",
+        "DK",
+        "DJ",
+        "DO",
+        "EC",
+        "EG",
+        "SV",
+        "GQ",
+        "ER",
+        "EE",
+        "ET",
+        "FJ",
+        "FI",
+        "FR",
+        "GA",
+        "GE",
+        "DE",
+        "GR",
+        "GT",
+        "GY",
+        "HN",
+        "HU",
+        "IS",
+        "IN",
+        "ID",
+        "IR",
+        "IQ",
+        "IE",
+        "IL",
+        "IT",
+        "JM",
+        "JP",
+        "JO",
+        "KZ",
+        "KI",
+        "XK",
+        "KW",
+        "KG",
+        "LA",
+        "LV",
+        "LB",
+        "LS",
+        "LY",
+        "LT",
+        "LU",
+        "MO",
+        "MK",
+        "MG",
+        "MW",
+        "MV",
+        "MT",
+        "MR",
+        "MX",
+        "MD",
+        "MN",
+        "ME",
+        "MA",
+        "MZ",
+        "MM",
+        "NA",
+        "NR",
+        "NP",
+        "NL",
+        "NZ",
+        "NI",
+        "KP",
+        "NO",
+        "OM",
+        "PK",
+        "PW",
+        "PA",
+        "PG",
+        "PY",
+        "PE",
+        "PL",
+        "PT",
+        "QA",
+        "RO",
+        "RU",
+        "WS",
+        "SA",
+        "RS",
+        "SK",
+        "SI",
+        "SB",
+        "SO",
+        "KR",
+        "SS",
+        "ES",
+        "LK",
+        "KN",
+        "LC",
+        "SD",
+        "SR",
+        "SZ",
+        "SE",
+        "CH",
+        "SY",
+        "TW",
+        "TJ",
+        "TZ",
+        "TH",
+        "TL",
+        "TO",
+        "TT",
+        "TR",
+        "TM",
+        "TV",
+        "UG",
+        "UA",
+        "AE",
+        "GB",
+        "US",
+        "UY",
+        "UZ",
+        "VU",
+        "VE",
+        "VN",
+        "YE",
+        "ZM",
+        "ZW",
+        "LI",
+        "MC",
+        "SM",
+        "VA",
+        "AD",
+        "PS"
+      ],
+      "conditions": [
+        "DEI states that the tourist/visit eVisa is for family, professional, health or tourist stays not exceeding 90 days; it is renewable for the same duration.",
+        "DEI states that it is issued to foreign nationals outside ECOWAS or without a Benin visa-exemption agreement, obtained online via evisa.bj, and held before arrival.",
+        "The three current MFA agreement-register endpoints supply the exact ordinary/national-passport exemption roster excluded from this residual. The API is intermittently slow; its successful 2026-08-21 responses should be independently rechecked before promotion.",
+        "This does not establish work, study, business, transit, residence, cruise, crew, diplomatic, official, service, refugee, special-document, health, passport-validity, public-order, security, prior-history or final-admission treatment."
+      ],
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-evisa-current-application-workflow",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register",
+        "benin-evisa-exemptions-notice",
+        "benin-foreigners-law-2025"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.bj/howitworks",
+        "label": "Benin official eVisa application workflow",
+        "processingTime": "The official sources reviewed do not publish a universal decision-time commitment.",
+        "steps": [
+          "Initiate the eVisa request online with email address and passport-document details.",
+          "Confirm the emailed link, complete personal, eVisa, travel and passport forms, then pay online.",
+          "Check the request status using the issued application number and hold the eVisa before travel."
+        ]
+      }
     }
   ],
-  "conflicts": [],
-  "unresolved": [
-    {
-      "passportCode": "JP",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "DK",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "FI",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "FR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "DE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "IE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "IT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "NL",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "NO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "ES",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LU",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "PT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CH",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "GR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "GB",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "HU",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "PL",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AU",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LV",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "NZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SK",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SI",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "EE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "HR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LI",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "US",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "IS",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BG",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MC",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "RO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CY",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CL",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AD",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "IL",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SM",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BN",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KN",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MX",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "UY",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "VA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "PA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "PY",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LC",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "UA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "PE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TW",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "RS",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SB",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "GT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SV",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "HN",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "WS",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "ME",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MK",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TV",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "NI",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AL",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "GE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KI",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "PW",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MD",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "VE",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "RU",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "QA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KW",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TL",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "EC",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MV",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BH",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "FJ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "GY",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "VU",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "OM",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CN",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "JM",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "XK",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "NR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "PG",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BW",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BY",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TH",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "NA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LS",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "DO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "ID",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MW",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "UG",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "ZM",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "AM",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MN",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "ZW",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KG",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "UZ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "CU",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "GA",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "IN",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MG",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
+  "conflicts": [
     {
       "passportCode": "DZ",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "MR",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "GQ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KM",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "TJ",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
       "passportCode": "AO",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "EG",
+      "passportCode": "BW",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "JO",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "VN",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "BT",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "KH",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
       "passportCode": "CM",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "DJ",
+      "passportCode": "CN",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "LA",
+      "passportCode": "KM",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
       "passportCode": "CD",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "TM",
+      "passportCode": "DJ",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "MM",
+      "passportCode": "EG",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "ET",
+      "passportCode": "GQ",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LB",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SD",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "SS",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LY",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
-      ]
-    },
-    {
-      "passportCode": "LK",
-      "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
       "passportCode": "ER",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "IR",
+      "passportCode": "ET",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "PS",
+      "passportCode": "GA",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "BD",
+      "passportCode": "LS",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "KP",
+      "passportCode": "LY",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "NP",
+      "passportCode": "MG",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
       "passportCode": "SO",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "PK",
+      "passportCode": "SS",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "YE",
+      "passportCode": "SD",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "IQ",
+      "passportCode": "SZ",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "SY",
+      "passportCode": "TZ",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     },
     {
-      "passportCode": "AF",
+      "passportCode": "UG",
       "destinationCode": "BJ",
-      "reason": "The current Foreign Ministry agreement register does not establish an ordinary-passport waiver for this code. The 2020 53-African-country flyer cannot safely fill that gap because current country entries are document-specific and do not restate the blanket unilateral rule; no exhaustive current exemption/default list was established.",
-      "searchedOfficialDomains": [
-        "api-mae.diplomatie.bj",
-        "diplomatie.gouv.bj",
-        "dei.gouv.bj",
-        "evisa.bj",
-        "catis.xroad.bj",
-        "gouv.bj",
-        "sgg.gouv.bj"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "BJ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA register does not list an ordinary/national-passport waiver for this code. DEI assigns a foreign national without such an agreement to an online eVisa held before arrival.",
+      "sourceIds": [
+        "benin-dei-services",
+        "benin-mfa-current-reciprocal-waiver-register",
+        "benin-mfa-current-uemoa-ecowas-register",
+        "benin-mfa-current-african-waiver-register"
       ]
     }
-  ]
+  ],
+  "unresolved": []
 }

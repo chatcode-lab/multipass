@@ -30,6 +30,17 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...([
+    "DZ", "AO", "BW", "CM", "CN", "KM", "CD", "DJ", "EG", "GQ", "ER", "ET", "GA", "LS", "LY",
+    "MG", "MW", "MR", "MA", "MZ", "NA", "SO", "SS", "SD", "SZ", "TZ", "UG", "AE", "ZM", "ZW",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "BJ" as const,
+    status: "evisa" as const,
+    reason: "Benin's current Foreign Ministry register gives this ordinary passport no visa waiver, while DEI requires non-exempt foreign visitors to obtain the electronically issued visa before arrival.",
+    sourceUrl: "https://dei.gouv.bj/services/",
+    reviewedAt: "2026-08-21",
+  })),
   ...(["BD", "NP"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "VC" as const,

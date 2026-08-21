@@ -632,9 +632,11 @@ describe("official visa evidence", () => {
     expect(snapshot.passports.AO.statuses.UG).toBe("evisa");
     expect(getVisaRelationshipEvidence("UG", "UG", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("BJ")).toHaveLength(40);
+    expect(pairsFor("BJ")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("SG", "BJ", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("DZ", "BJ", snapshot.passports.DZ.statuses.BJ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("DZ", "BJ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BJ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BJ", "BJ", "citizenship").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("AG")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("TO", "AG", "visa_free").supportsCurrentStatus).toBe(true);
