@@ -26,9 +26,17 @@ interface CandidateBatch {
   policies: CandidatePolicy[];
 }
 
-const candidatePaths = process.argv.slice(2);
+interface ReviewedArtifact {
+  batchIds: string[];
+  sources: Array<Omit<CandidateSource, "officialityEvidence" | "supportingExcerpt">>;
+  policies: Array<Record<string, unknown> & { id: string }>;
+}
+
+const args = process.argv.slice(2);
+const append = args.includes("--append");
+const candidatePaths = args.filter((arg) => arg !== "--append");
 if (!candidatePaths.length) {
-  throw new Error("Usage: npm run evidence:promote -- <reviewed-candidate.json> [...]");
+  throw new Error("Usage: npm run evidence:promote -- [--append] <reviewed-candidate.json> [...]");
 }
 
 const canonicalSource = await readFile(resolve("src/data/visa-evidence.ts"), "utf8");
@@ -41,14 +49,22 @@ const existingSourceIds = new Set(
 
 const batches = await Promise.all(candidatePaths.map(async (candidatePath) =>
   JSON.parse(await readFile(resolve(candidatePath), "utf8")) as CandidateBatch));
-const sources = new Map<string, Omit<CandidateSource, "officialityEvidence" | "supportingExcerpt">>();
-const policies = new Map<string, Record<string, unknown>>();
+const artifactPath = resolve("src/data/reviewed-visa-evidence.json");
+const existingArtifact = append
+  ? JSON.parse(await readFile(artifactPath, "utf8")) as ReviewedArtifact
+  : { batchIds: [], sources: [], policies: [] };
+const batchIds = new Set(existingArtifact.batchIds);
+const reviewedSourceIds = new Set(existingArtifact.sources.map((source) => source.id));
+const sources = new Map(existingArtifact.sources.map((source) => [source.id, source]));
+const policies = new Map(existingArtifact.policies.map((policy) => [policy.id, policy]));
 
 for (const batch of batches) {
+  if (batchIds.has(batch.batchId)) throw new Error(`Duplicate promoted batch ${batch.batchId}`);
+  batchIds.add(batch.batchId);
   for (const candidateSource of batch.sources) {
     const source = Object.fromEntries(Object.entries(candidateSource).filter(([key]) =>
       key !== "officialityEvidence" && key !== "supportingExcerpt")) as Omit<CandidateSource, "officialityEvidence" | "supportingExcerpt">;
-    if (existingSourceIds.has(source.id)) continue;
+    if (existingSourceIds.has(source.id) || reviewedSourceIds.has(source.id)) continue;
     const previous = sources.get(source.id);
     if (previous && JSON.stringify(previous) !== JSON.stringify(source)) {
       throw new Error(`Source ${source.id} differs between selected candidates`);
@@ -57,22 +73,22 @@ for (const batch of batches) {
   }
   for (const candidatePolicy of batch.policies) {
     const policy = Object.fromEntries(Object.entries(candidatePolicy).filter(([key]) =>
-      key !== "confidence"));
+      key !== "confidence")) as Record<string, unknown> & { id: string };
     if (policies.has(candidatePolicy.id)) throw new Error(`Duplicate promoted policy ${candidatePolicy.id}`);
     policies.set(candidatePolicy.id, policy);
   }
 }
 
 const artifact = {
-  batchIds: batches.map(({ batchId }) => batchId),
+  batchIds: [...batchIds],
   sources: [...sources.values()],
   policies: [...policies.values()],
 };
 
 await writeFile(
-  resolve("src/data/reviewed-visa-evidence.json"),
+  artifactPath,
   `${JSON.stringify(artifact, null, 2)}\n`,
   "utf8",
 );
 
-process.stdout.write(`Promoted ${artifact.batchIds.length} batches: ${artifact.sources.length} sources, ${artifact.policies.length} policies.\n`);
+process.stdout.write(`${append ? "Appended" : "Promoted"} ${batches.length} batches; canonical totals: ${artifact.batchIds.length} batches, ${artifact.sources.length} sources, ${artifact.policies.length} policies.\n`);

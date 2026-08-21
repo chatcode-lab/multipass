@@ -1687,6 +1687,22 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-21",
     effectiveFrom: "2026-11-01",
   })),
+  ...(["EG", "GM", "HT", "IN", "IR", "JO", "LB", "NA", "PK", "WS", "ZA"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "BY" as const,
+    status: "visa_free" as const,
+    reason: "Belarus's current airport programme expressly gives this ordinary passport a route-limited visa-free visit of up to 30 days, subject to the published airport and document conditions.",
+    sourceUrl: "https://mfa.gov.by/en/visa/freemove/airport/",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["KN", "TJ"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "BY" as const,
+    status: "visa_required" as const,
+    reason: "Belarus's current MFA rule requires an advance visa for this ordinary passport, which is absent from the closed current nationality exception schedules.",
+    sourceUrl: "https://mfa.gov.by/en/visa/oformlenie/",
+    reviewedAt: "2026-08-21",
+  })),
   ...(["BW", "NA"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "XK" as const,

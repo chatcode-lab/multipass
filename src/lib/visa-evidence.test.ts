@@ -1813,6 +1813,29 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("NR", "AD", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
+  it("keeps the reviewed Monaco, San Marino, and Belarus relationships aligned to current official rules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("MC")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("US", "MC", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NR", "MC", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MC", "MC", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("SM")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("SM", "SM", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GE", "SM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NR", "SM", "visa_required").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("BY")).toHaveLength(197);
+    expect(getVisaRelationshipEvidence("BY", "BY", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("EG", "BY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BY", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KN", "BY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "BY", snapshot.passports.TW.statuses.BY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "BY", snapshot.passports.XK.statuses.BY).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1825,6 +1848,14 @@ describe("official visa evidence", () => {
       "www.consilium.europa.eu",
       "www.govern.ad",
       "www.boe.es",
+      "legimonaco.mc",
+      "www.esteri.sm",
+      "www.gov.sm",
+      "www.esteri.it",
+      "law.by",
+      "mfa.gov.by",
+      "gpk.gov.by",
+      "e-pasluga.by",
       "granpol.gov.ba",
       "sluzbenilist.ba",
       "gzk.rks-gov.net",
