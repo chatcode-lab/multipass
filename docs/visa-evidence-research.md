@@ -594,6 +594,22 @@ The Immigration and Citizenship Authority directly names Canada, the United Arab
 
 Independent review rejected the initial complete residual. The live Visitor Visa page directs non-VOA applicants to a paper form, while the official 2025 handbook describes online or eVisa submission. Both indicate permission before travel, but the conflict prevents a defensible choice between `visa_required` and `evisa` for the other 181 relationships, including Papua New Guinea citizenship. They remain unresolved pending a reconciled current ICA route.
 
+## Pass 68 result: Montserrat
+
+Montserrat adds 198 relationships—112 visa-free and 86 eVisa—raising complete-matrix evidence from 27,305 to 27,503 of 44,974 relationships (61.2%) and Caribbean coverage from 2,783 to 2,981 of 4,962 relationships (60.1%). One hundred and thirty-four destination columns now have at least 50% coverage and 128 have at least 80%. Haiti changes from the upstream advance-visa status to visa-free; that sole fallback correction exactly matches the independently reviewed candidate.
+
+The current official Immigration portal directly publishes its visa-required and visa-not-required country lists. Its FAQ also confirms that the Government processes and issues the eVisa online and that Immigration verifies the issued visa electronically, so this is electronic visa issuance rather than merely an online application form. Current United Kingdom travel guidance separately supports the full British-citizen passport visitor row.
+
+Kosovo remains unresolved because it is absent from the portal lists, and the evidence does not derive it from a residual. The live portal does not display an individual update date; independent review therefore cross-checked the current Government-hosted consolidated Act's in-force-order notation and an official historic consolidation of the same schedule. British statuses, residence, work, transit, special documents and final admission remain outside the nationality baseline, and the mutable lists remain a routine freshness target.
+
+## Pass 69 result: British Virgin Islands
+
+The British Virgin Islands pass adds four narrowly supported visa-free relationships, raising complete-matrix evidence from 27,503 to 27,507 of 44,974 relationships (61.2%) and Caribbean coverage from 2,981 to 2,985 of 4,962 relationships (60.2%). No fallback status or destination threshold changes.
+
+Current official material directly supports visa-free tourism or visitor access for China, Taiwan, Guyana and a full British-citizen passport. Guyana is supported by the 2024 Visa Exemption Amendment Order; China and Taiwan are expressly addressed in the Office of the Deputy Governor's visa-requirements document, with Taiwan limited to tourism; and current United Kingdom guidance supports the narrow British visitor scope.
+
+Independent review rejected the initial 84-passport advance-visa cohort from the Tourist Board's December 2019 schedule. Later official material contradicts that schedule for China, Guyana and Taiwan, so neither its named rows nor an omitted-passport complement can safely be treated as current. Cyprus and the other 194 unsupported relationships remain unresolved. Conditional access based on valid United Kingdom, United States or Canadian visas, territory-born children, British statuses, embarkation forms, residence, work, transit and final admission remains outside the nationality baseline.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.

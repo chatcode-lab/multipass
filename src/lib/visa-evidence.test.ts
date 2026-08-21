@@ -1360,8 +1360,8 @@ describe("official visa evidence", () => {
       ["FK", 109],
       ["KY", 198],
       ["BM", 1],
-      ["VG", 0],
-      ["MS", 0],
+      ["VG", 4],
+      ["MS", 198],
     ]);
 
     for (const [destinationCode, expected] of expectedCounts) {
@@ -1379,6 +1379,18 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SS", "KY", snapshot.passports.SS.statuses.KY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GB", "BM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "BM", snapshot.passports.US.statuses.BM).supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps British Virgin Islands evidence to current narrow exemptions", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "VG");
+
+    expect(pairs).toHaveLength(4);
+    expect(getVisaRelationshipEvidence("CN", "VG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "VG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GY", "VG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GB", "VG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CY", "VG", snapshot.passports.CY.statuses.VG).supportsCurrentStatus).toBe(false);
   });
 
   it("keeps Honduras coverage limited to directly recovered current rules", () => {
@@ -1567,6 +1579,17 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("PG", "PG", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("maps Montserrat's current visitor lists and electronically issued visas", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MS");
+
+    expect(pairs).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("HT", "MS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GB", "MS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "MS", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "MS", snapshot.passports.XK.statuses.MS).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1607,6 +1630,7 @@ describe("official visa evidence", () => {
       "www.investsolomons.gov.sb",
       "immigration.gov.sb",
       "ica.gov.pg",
+      "www.immigration.ms",
       "www.canada.ca",
       "www.immd.gov.hk",
       "travel.state.gov",
@@ -1625,6 +1649,9 @@ describe("official visa evidence", () => {
       "www.gov.fk",
       "www2.gov.bm",
       "bvi.gov.vg",
+      "gov.vg",
+      "laws.gov.vg",
+      "www.bvitourism.com",
       "otp.gov.ky",
       "www.gov.ms",
       "inm.gob.hn",

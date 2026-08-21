@@ -1433,4 +1433,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://ica.gov.pg/visa-information/visa-on-arrival",
     reviewedAt: "2026-08-21",
   })),
+  {
+    passportCode: "HT",
+    destinationCode: "MS",
+    status: "visa_free",
+    reason: "Montserrat's current official Immigration portal expressly lists Haiti among countries whose ordinary-passport visitors do not require a visa.",
+    sourceUrl: "https://www.immigration.ms/countries/visa_not_required",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;
