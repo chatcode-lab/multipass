@@ -808,9 +808,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "BN", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BN", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("KG")).toHaveLength(75);
+    expect(pairsFor("KG")).toHaveLength(77);
     expect(getVisaRelationshipEvidence("RS", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MV", "KG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AL", "KG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TH", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "KG", snapshot.passports.AF.statuses.KG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("KG", "KG", "citizenship").supportsCurrentStatus).toBe(false);
   });
@@ -888,6 +890,18 @@ describe("official visa evidence", () => {
     expect(pairsFor("KP")).toHaveLength(0);
     expect(getVisaRelationshipEvidence("US", "KP", snapshot.passports.US.statuses.KP).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("KP", "KP", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Botswana's bounded official schedules without flattening source conflicts", () => {
+    const botswanaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "BW");
+
+    expect(botswanaPairs).toHaveLength(170);
+    expect(getVisaRelationshipEvidence("US", "BW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RW", "BW", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "BW", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AO", "BW", snapshot.passports.AO.statuses.BW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BW", "BW", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
   it("contains only direct HTTPS official-source URLs", () => {
@@ -1129,6 +1143,10 @@ describe("official visa evidence", () => {
       "bontang.imigrasi.go.id",
       "evisa.imigrasi.go.id",
       "www.ambcambodgeparis.info",
+      "botswanaembassy.org",
+      "gov.bw",
+      "www.botswanatourism.co.bw",
+      "www.evisa.gov.bw",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

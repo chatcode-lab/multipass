@@ -1,0 +1,304 @@
+{
+  "batchId": "laos-visitor-visa-complement-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "laos-complement-refresh-mofa-waiver-table",
+      "title": "List of countries having reached unilateral and bilateral visa exemption agreement with Laos",
+      "url": "https://www.mofa.gov.la/gweb/gweb/backend/web/index.php?r=site/downloadfile&file=_J372876QbPE3GhiLGXCOH/46f49ea89aaddb9e6ad50303373070a4.pdf",
+      "publisher": "Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current table is published directly from the Lao Ministry of Foreign Affairs mofa.gov.la domain.",
+      "supportingExcerpt": "The table identifies countries with unilateral and bilateral visa-exemption agreements and distinguishes ordinary-passport entries."
+    },
+    {
+      "id": "laos-complement-refresh-live-evisa-selector-api",
+      "title": "Lao eVisa live country-price selector API",
+      "url": "https://mxf.laoevisa.gov.la/api/v1/component/getCountryPriceCalculator",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current official Lao eVisa site identifies its service as Ministry of Foreign Affairs-owned; its live client requests this mxf.laoevisa.gov.la selector endpoint.",
+      "supportingExcerpt": "The live endpoint returns 162 country records with stay_day, is_except, citizens, and watchlist fields."
+    },
+    {
+      "id": "laos-complement-refresh-evisa-information",
+      "title": "Lao Official Online Visa information",
+      "url": "https://laoevisa.gov.la/info",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The service is hosted on the official laoevisa.gov.la site, which its terms identify as Ministry of Foreign Affairs-owned and operated. On re-review its advertised public country-list link returned 404, so this page is not used to infer eligibility from omission; the live selector API remains the positive eligibility evidence.",
+      "supportingExcerpt": "The Lao eVisa facility is available for listed countries and is usable only at designated ports."
+    },
+    {
+      "id": "laos-complement-refresh-evisa-terms",
+      "title": "Lao Official Online Visa terms and conditions",
+      "url": "https://laoevisa.gov.la/term/",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The terms expressly state that laoevisa.gov.la is owned, operated, and made by the Lao Ministry of Foreign Affairs.",
+      "supportingExcerpt": "Only ordinary passports are applicable; Tourist Visa T-B3 permits 30 days after arrival."
+    },
+    {
+      "id": "laos-complement-refresh-immigration-entry-decree",
+      "title": "Decree on penalties and other measures for entry, exit and foreigner management",
+      "url": "https://api.immigration.gov.la/client/law/file/test-%282%29-ky7odr3licr.pdf",
+      "publisher": "Government of the Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The decree bears the Lao PDR government emblem and is served from the official immigration.gov.la API domain.",
+      "supportingExcerpt": "Visa on arrival refers to countries in a Ministry of Foreign Affairs notice; watch-listed nationals cannot apply."
+    },
+    {
+      "id": "laos-complement-refresh-immigration-checkpoints",
+      "title": "Laos international border checkpoints",
+      "url": "https://www.immigration.gov.la/en/checkpoints/category/category/?limit=8&offset=0",
+      "publisher": "Department of Immigration, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The official immigration.gov.la service identifies the Department of Immigration of Lao PDR and its official contact details. Its checkpoint route is client-rendered and supplies port-service labels, but no nationality entitlement or exhaustive VOA schedule was available from it on re-review.",
+      "supportingExcerpt": "Checkpoint descriptions label available services as Visa on Arrival and eVisa."
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "LA",
+      "destinationCode": "LA",
+      "reason": "The reviewed immigration decree regulates passports and penalties for Lao citizens as well as foreigners, but does not directly establish a Lao citizen's ordinary-passport entry/right-of-return status or visa treatment. No citizenship normalization is inferred.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "LA",
+      "reason": "Absent from the live eVisa selector and current MOFA ordinary-passport waiver table. Port-level VOA labels and the decree's reference to an unavailable MOFA nationality notice do not establish a route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    }
+  ]
+}

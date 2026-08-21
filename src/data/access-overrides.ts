@@ -861,4 +861,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.ambcambodgeparis.info/visas-cambodia-english-version",
     reviewedAt: "2026-08-21",
   })),
+  ...(["RW", "TW"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "BW",
+    status: "evisa" as const,
+    reason: "Botswana's official nationality schedule requires this ordinary passport to obtain a visa, and the central Government route requires online approval before travel; port printing after approval is not a visa on arrival.",
+    sourceUrl: "https://gov.bw/visa-applications/visa-application-tourism-visa",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;
