@@ -1051,4 +1051,43 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://mofaic.gov.ss/visa-eligibility/",
     reviewedAt: "2026-08-21",
   })),
+  ...(["BJ", "CV", "CF", "CI", "GM", "GH", "GN", "GW", "LR", "ML", "MR", "NE", "NG", "SN", "SL", "TG"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "BF",
+      status: "evisa" as const,
+      reason: "Burkina Faso's September 2025 Government policy expressly makes entry-visa fees free for African nationals without creating a visa exemption, and the current official process issues an eVisa before travel.",
+      sourceUrl: "https://gouvernement.gov.bf/actualites/synthese-du-conseils-des-ministres-du-11-septembre-2025-gratuite-de-visa-pour-les-ressortissants-africains/",
+      reviewedAt: "2026-08-21",
+    })),
+  ...([
+    "AF", "AL", "DZ", "AO", "AR", "BT", "BA", "BI", "CF", "TD", "CL", "CO", "KM", "CG", "CD", "CR",
+    "CU", "DJ", "DO", "EC", "EG", "SV", "GQ", "ER", "ET", "GA", "GT", "HT", "HN", "HK", "IS", "IQ",
+    "JO", "XK", "LA", "LY", "MK", "MG", "MV", "MH", "MR", "MX", "FM", "MN", "ME", "MA", "MM", "NP",
+    "NI", "NE", "KP", "PW", "PA", "PY", "PE", "PH", "ST", "RS", "SO", "SS", "SD", "SR", "CH", "SY",
+    "TW", "TN", "UY", "VE", "YE", "ZW", "LI", "MC", "SM", "VA", "AD", "PS",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "SL",
+    status: "evisa" as const,
+    reason: "Sierra Leone's current official Immigration-linked portal expressly makes this non-ECOWAS ordinary passport eligible for an electronically approved visa before travel; the older 2019 arrival-visa list is not used as current ranking evidence.",
+    sourceUrl: "https://www.evisa.sl/#/tos",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["SO", "SS"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "BI",
+    status: "visa_free" as const,
+    reason: "Burundi's current EAC visitor rule exempts this Partner-State ordinary passport from the visa requirement; Somalia's omission from the local parenthetical list is retained as a review caveat.",
+    sourceUrl: "https://www.eac.int/immigration/migration-management/visa-free-entry",
+    reviewedAt: "2026-08-21",
+  })),
+  {
+    passportCode: "MV",
+    destinationCode: "BI",
+    status: "visa_on_arrival",
+    reason: "Burundi's current foreign-visitor default requires non-EAC travelers to hold a visa, and the simple entry visa is available at Melchior Ndadaye International Airport.",
+    sourceUrl: "https://migration.gov.bi/Apply/step1/8",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;

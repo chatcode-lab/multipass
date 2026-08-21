@@ -1063,6 +1063,32 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SS", "SS", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Burkina Faso, Guinea-Bissau, Sierra Leone, and Burundi scopes", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("BF")).toHaveLength(53);
+    expect(getVisaRelationshipEvidence("GH", "BF", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BF", snapshot.passports.US.statuses.BF).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("GW")).toHaveLength(14);
+    expect(getVisaRelationshipEvidence("GH", "GW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ML", "GW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "GW", snapshot.passports.US.statuses.GW).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("SL")).toHaveLength(100);
+    expect(getVisaRelationshipEvidence("GH", "SL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "SL", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "SL", snapshot.passports.US.statuses.SL).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("BI")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("SO", "BI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SS", "BI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MV", "BI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BI", "BI", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1374,6 +1400,18 @@ describe("official visa evidence", () => {
       "mofaic.gov.ss",
       "www.evisa.gov.ss",
       "tradeinfohub.gov.ss",
+      "gouvernement.gov.bf",
+      "turkiye.diplomatie.gov.bf",
+      "www.visaburkina.bf",
+      "police.gov.bf",
+      "slid.gov.sl",
+      "www.evisa.sl",
+      "evisa.sl",
+      "ntb.gov.sl",
+      "thecommonwealth.org",
+      "migration.gov.bi",
+      "tourisme.gov.bi",
+      "www.eac.int",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
