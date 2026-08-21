@@ -1,6 +1,6 @@
 {
   "batchId": "zambia-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-20",
+  "researchedAt": "2026-08-21",
   "sources": [
     {
       "id": "zambia-dgi-no-visa-nationalities",
@@ -61,6 +61,18 @@
       "reviewedAt": "2026-08-20",
       "officialityEvidence": "Official DGI visitor-purpose and transit-document requirements.",
       "supportingExcerpt": "Travelers transiting through Zambia by Air directly do not require a transit visa."
+    },
+    {
+      "id": "zambia-dgi-arrival-and-departure-citizens",
+      "title": "Zambia Department of Immigration: Arriving & Departing Zambia",
+      "url": "https://www.zambiaimmigration.gov.zm/arriving-departing-zambia/",
+      "publisher": "Zambia Department of Immigration",
+      "jurisdiction": "Zambia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Current official Department of Immigration arrival guidance that separately addresses Zambian citizens and visa-requiring non-citizens.",
+      "supportingExcerpt": "All travelers who are not Zambian citizens or residents and require visas to come to Zambia must hold a valid visa."
     }
   ],
   "policies": [
@@ -203,6 +215,27 @@
       "confidence": "high"
     },
     {
+      "id": "zambia-citizenship-ordinary-passport-entry",
+      "title": "Zambia: Zambian citizenship entry",
+      "summary": "Current Department of Immigration arrival guidance confines the visa requirement to qualifying non-citizens or non-residents; the same-country ordinary-passport relationship is normalized as citizenship, not a foreign visitor visa-free route.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "ZM"
+      ],
+      "passportCodes": [
+        "ZM"
+      ],
+      "conditions": [
+        "DGI's arrival guidance distinguishes Zambian citizens from visa-requiring non-citizens; the no-visa schedule also expressly includes Zambia. This does not decide passport/document, dual-nationality, border, security or individual-admissibility formalities.",
+        "Direct-air-transit, resident, work, study, diplomatic, official, service and special-document rules are outside this nationality baseline."
+      ],
+      "sourceIds": [
+        "zambia-dgi-no-visa-nationalities",
+        "zambia-dgi-arrival-and-departure-citizens"
+      ],
+      "confidence": "high"
+    },
+    {
       "id": "zambia-listed-ordinary-passports-visa-on-arrival",
       "title": "Zambia: listed ordinary passports eligible for visa on arrival",
       "summary": "DGI expressly allows these nationalities to get a visa at any Zambian port of entry.",
@@ -338,29 +371,7 @@
       }
     }
   ],
-  "conflicts": [
-    {
-      "passportCode": "GH",
-      "destinationCode": "ZM",
-      "snapshotStatus": "visa_free",
-      "officialStatus": "visa_on_arrival",
-      "explanation": "Ghana is expressly listed by DGI among nationalities that may obtain a visa on arrival at any port of entry.",
-      "sourceIds": [
-        "zambia-dgi-arrival-or-mission-nationalities"
-      ]
-    },
-    {
-      "passportCode": "SS",
-      "destinationCode": "ZM",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "South Sudan is listed in DGI's advance-clearance category, whose applications must be made online and approved before travel.",
-      "sourceIds": [
-        "zambia-dgi-prior-travel-nationalities",
-        "zambia-dgi-visitors-visa-categories"
-      ]
-    }
-  ],
+  "conflicts": [],
   "unresolved": [
     {
       "passportCode": "XK",

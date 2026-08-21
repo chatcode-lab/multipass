@@ -288,6 +288,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "RW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "RW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "RW", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("RW", "RW", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
   it("keeps Oman's conditional exemptions explicit and its source divergence unresolved", () => {
@@ -319,10 +320,11 @@ describe("official visa evidence", () => {
     const zambiaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "ZM");
 
-    expect(zambiaPairs).toHaveLength(194);
+    expect(zambiaPairs).toHaveLength(195);
     expect(getVisaRelationshipEvidence("US", "ZM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "ZM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "ZM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ZM", "ZM", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "ZM", "visa_free").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("TW", "ZM", "evisa").supportsCurrentStatus).toBe(false);
   });
@@ -584,20 +586,22 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AU", "CV", snapshot.passports.AU.statuses.CV).supportsCurrentStatus).toBe(false);
 
     expect(MOZAMBIQUE_EVISA_ORDINARY_PASSPORT_CODES).toHaveLength(146);
-    expect(pairsFor("MZ")).toHaveLength(199);
+    expect(pairsFor("MZ")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("US", "MZ", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AD", "MZ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NG", "MZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ST", "MZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MZ", "MZ", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
   it("covers the reviewed Uganda, Benin, Antigua and Barbuda, and Colombia pass", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UG")).toHaveLength(199);
+    expect(pairsFor("UG")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("AO", "UG", "evisa").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.AO.statuses.UG).toBe("evisa");
+    expect(getVisaRelationshipEvidence("UG", "UG", "citizenship").supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("BJ")).toHaveLength(40);
     expect(getVisaRelationshipEvidence("SG", "BJ", "visa_free").supportsCurrentStatus).toBe(true);
@@ -944,6 +948,19 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TZ", "TZ", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
+  it("covers Malawi's reviewed schedules without resolving current source conflicts", () => {
+    const malawiPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MW");
+
+    expect(malawiPairs).toHaveLength(192);
+    expect(getVisaRelationshipEvidence("DO", "MW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CH", "MW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CD", "MW", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MW", "MW", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("WS", "MW", snapshot.passports.WS.statuses.MW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IL", "MW", snapshot.passports.IL.statuses.MW).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1204,6 +1221,10 @@ describe("official visa evidence", () => {
       "visa.immigration.go.tz",
       "www.immigration.go.tz",
       "www.parliament.go.tz",
+      "evisa.gov.mw",
+      "visitmalawi.mw",
+      "www.malawi.gov.mw",
+      "malawihighcommission.co.uk",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

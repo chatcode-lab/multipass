@@ -910,4 +910,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://visa.immigration.go.tz/guidelines",
     reviewedAt: "2026-08-21",
   },
+  {
+    passportCode: "DO",
+    destinationCode: "MW",
+    status: "visa_free",
+    reason: "Malawi's current Government tourism schedule expressly marks Dominican Republic ordinary passports as visa-free.",
+    sourceUrl: "https://visitmalawi.mw/visas-immigration-and-customs/",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "CH",
+    destinationCode: "MW",
+    status: "visa_on_arrival",
+    reason: "Malawi's current Category Two schedule expressly permits Swiss ordinary-passport visitors to receive a visa on arrival at a designated port.",
+    sourceUrl: "https://evisa.gov.mw/PDFs/CategoryTwoCountries.pdf",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "CD",
+    destinationCode: "MW",
+    status: "evisa",
+    reason: "Malawi's current Category One schedule and live eligibility selector require Democratic Republic of the Congo ordinary-passport visitors to obtain electronic approval before departure.",
+    sourceUrl: "https://evisa.gov.mw/VisaAssistance",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;
