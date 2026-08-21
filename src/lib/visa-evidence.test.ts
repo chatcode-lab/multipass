@@ -788,6 +788,43 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MM", "MM", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Macao, Brunei, and Kyrgyzstan routes", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("MO")).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("AR", "MO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DO", "MO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BD", "MO", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "MO", snapshot.passports.CN.statuses.MO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MO", "MO", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("BN")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("US", "BN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AU", "BN", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "BN", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BN", "BN", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("KG")).toHaveLength(75);
+    expect(getVisaRelationshipEvidence("RS", "KG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MV", "KG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "KG", snapshot.passports.AF.statuses.KG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KG", "KG", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers mainland China's reviewed ordinary-passport baseline", () => {
+    const chinaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "CN");
+
+    expect(chinaPairs).toHaveLength(195);
+    expect(getVisaRelationshipEvidence("WS", "CN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SG", "CN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DM", "CN", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "CN", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "CN", snapshot.passports.HK.statuses.CN).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CN", "CN", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -989,6 +1026,15 @@ describe("official visa evidence", () => {
       "www.gov.kz",
       "evisa.moip.gov.mm",
       "www.mofa.gov.mm",
+      "www.gov.mo",
+      "www.mfa.gov.bn",
+      "www.immigration.gov.bn",
+      "www.agc.gov.bn",
+      "export.gov.kg",
+      "www.evisa.e-gov.kg",
+      "www.gov.kg",
+      "en.nia.gov.cn",
+      "cs.mfa.gov.cn",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

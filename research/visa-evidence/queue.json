@@ -1252,6 +1252,90 @@
         "Use the live official eVisa nationality selector and current exemption notices; distinguish arrival forms and public-health registration from ETA or visa status.",
         "Preserve duration, entries, designated ports, fees, passport validity, accommodation, extensions, work, transit, security, restricted areas and admissibility; leave unsupported nationalities unresolved rather than inferring from third-party lists."
       ]
+    },
+    {
+      "id": "macao-ordinary-passport-entry-scope",
+      "priority": 74,
+      "objective": "Model Macao SAR's complete current ordinary-passport visitor entry scope from the Public Security Police Force, legislation and official government services.",
+      "destinationCodes": [
+        "MO"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://www.gov.mo/",
+        "https://www.fsm.gov.mo/psp/",
+        "https://bo.io.gov.mo/"
+      ],
+      "notes": [
+        "Separate named visa or entry-permit exemptions, border-issued authorisations and mandatory advance visas from Mainland/Hong Kong resident documents, diplomatic, official, service and special-document conditions.",
+        "Use the current Public Security Police nationality and document schedule; map Hong Kong and Macao document variants conservatively and do not import Mainland China or Hong Kong destination rules.",
+        "Preserve duration, entries, purpose, fees, passport validity, means, onward travel, extensions, work, transit, security and admissibility; do not infer an unlisted complement without an exhaustive official rule."
+      ]
+    },
+    {
+      "id": "brunei-ordinary-passport-entry-scope",
+      "priority": 75,
+      "objective": "Model Brunei Darussalam's complete current ordinary-passport visitor entry scope from Immigration, Foreign Affairs, legislation and official electronic services.",
+      "destinationCodes": [
+        "BN"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://www.immigration.gov.bn/",
+        "https://www.mfa.gov.bn/",
+        "https://www.gov.bn/"
+      ],
+      "notes": [
+        "Separate ordinary-passport visa exemptions, visa on arrival and advance visa routes from E-Arrival Card, residence, business, diplomatic, official, service and special-document conditions.",
+        "Use current Immigration or Foreign Affairs nationality schedules and treat the E-Arrival Card as an arrival declaration rather than ETA or visa authorization.",
+        "Preserve duration, entries, purpose, fees, passport validity, funds, onward travel, extensions, work, transit, security and admissibility; do not infer an unlisted complement without an exhaustive official rule."
+      ]
+    },
+    {
+      "id": "kyrgyzstan-ordinary-passport-entry-scope",
+      "priority": 76,
+      "objective": "Model Kyrgyzstan's complete current ordinary-passport visitor entry scope from Foreign Affairs, legislation, border authorities and the official electronic-visa service.",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://evisa.e-gov.kg/",
+        "https://mfa.gov.kg/",
+        "https://cbd.minjust.gov.kg/"
+      ],
+      "notes": [
+        "Separate unilateral and bilateral ordinary-passport exemptions, advance eVisa and prior consular-visa routes from invitation, residence, border passes, diplomatic, official, service and special-document conditions.",
+        "Use current effective legislation and the live official eVisa nationality selector; distinguish temporary programmes, announcements and registration rules from entry authorization.",
+        "Preserve duration, entries, purpose, designated checkpoints, fees, passport validity, registration, extensions, work, transit, security and admissibility; do not infer an unlisted complement without an exhaustive official rule."
+      ]
+    },
+    {
+      "id": "china-ordinary-passport-entry-scope",
+      "priority": 77,
+      "objective": "Model mainland China's complete current ordinary-passport visitor entry scope from Foreign Affairs, the National Immigration Administration, legislation and official consular services.",
+      "destinationCodes": [
+        "CN"
+      ],
+      "passportCodes": [
+        "*"
+      ],
+      "sourceHints": [
+        "https://www.nia.gov.cn/",
+        "https://www.mfa.gov.cn/",
+        "https://consular.mfa.gov.cn/"
+      ],
+      "notes": [
+        "Separate permanent, bilateral and temporary ordinary-passport visa exemptions from transit-only, regional, tour-group, port-visa, residence, diplomatic, official, service and special-document conditions.",
+        "Verify every temporary unilateral programme's effective dates from current NIA or Foreign Affairs material and use the general advance-visa rule only where an official framework establishes the complement.",
+        "Preserve duration, entries, purpose, ports, fees, passport validity, registration, extensions, work, transit, security and admissibility; do not normalize 24/72/144/240-hour transit or Hainan/group routes as nationality-wide visitor access."
+      ]
     }
   ]
 }
