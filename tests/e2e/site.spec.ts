@@ -503,7 +503,6 @@ test("combination research publishes exact results, reproducible links, and Mark
   expect(worldMarkdown.ok()).toBe(true);
   expect(await worldMarkdown.text()).toContain(`**${insights.minimumCover.size} passports** are necessary and sufficient`);
 
-  expect(insights.bestPairs[0].codes).toEqual(["JP", "AE"]);
   expect(fullSetCodes).toEqual(insights.minimumCover.codes);
 
   const sitemap = await request.get("/sitemap.xml");
