@@ -952,6 +952,16 @@ North Macedonia's current Law on Foreigners delegates its required/exempt nation
 
 Grenada's live Foreign Ministry mission page still links the February 2021 nationality table, and current separate guidance confirms China's 30-day waiver. No 2026 legislation, Gazette, Immigration schedule or replacement instrument confirms that the whole five-year-old table remains operative. Its proposed Zimbabwe `visa_required` correction is therefore held with all 199 refresh rows rather than promoted from dated evidence.
 
+## Pass 108 result: Kazakhstan, Russia and Türkiye outbound evidence
+
+The independently cross-reviewed outbound pass adds 14 current relationships, raising complete-matrix evidence from 34,535 to 34,549 of 44,974 relationships (76.8%). The public status matrix now shows 34,549 fresh and 10,425 not-covered rows, with zero old or stale rows. Europe rises from 9,360 to 9,364 of 10,299, Africa from 7,250 to 7,256 of 11,289, the Americas from 4,337 to 4,339 of 4,953, and the Middle East from 1,575 to 1,577 of 2,970. Canonical evidence contains 195 reviewed batches, 930 official sources and 672 policies.
+
+Kazakhstan's live Foreign Ministry ordinary-passport table adds 90-day visa-free access to Tunisia and Ukraine. Tunisia corrects the seeded `visa_required` label to `visa_free`; Ukraine matches the fallback and is independently consistent with the current bilateral treaty register.
+
+Türkiye's current Foreign Ministry tourist table adds six visa-free rows for Palestine, Syria, Tunisia, Ukraine, Panama, and Bosnia and Herzegovina; a directly named Djibouti eVisa route; and border-issued visas for Comoros and Sudan. Palestine changes from `visa_required` to `visa_free`, Syria from `evisa` to `visa_free`, and Djibouti from `visa_on_arrival` to `evisa`. Palestinian access retains the stated Israeli-checkpoint condition, and Syria's border fee is not treated as a visa. Age-conditioned Iraq, unsupported British Virgin Islands, generic Cuba/Gabon visa wording and the already canonical Turkmenistan row remain unresolved in this artifact.
+
+Russia's MFA table, dated 3 July 2026, adds visa-free access to Bosnia and Herzegovina, Panama and Tunisia. Its Cuba row is also directly supported but was already canonical, so it adds no duplicate relationship. A second independent review rejected the table's generic `visa required` label as proof of advance issuance for 15 other destinations: it does not distinguish embassy visas from eVisa, ETA or border issuance. Nine proposed fallback corrections were therefore withdrawn rather than allowing a generic category to overwrite more specific unverified routes.
+
 ## Held from promotion: Americas, Africa and Asia near-complete gaps
 
 Twenty-five of the 28 examined residual cells remain unresolved. Kosovo document non-recognition or omission prevents nationality-only classifications for Mexico, Chile and Uruguay. Ecuador's current official source could not be stably retrieved for Hong Kong, Macao or Taiwan. Kenya's Gazette says “St. Kitts and Navis,” which is not silently corrected to the current issuer. Zimbabwe currently places Bolivia in an arrival-visa category while its eVisa FAQ says a pre-travel visa is required.

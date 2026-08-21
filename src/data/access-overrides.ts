@@ -31,6 +31,38 @@ export interface VerifiedAccessOverride {
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "KZ",
+    destinationCode: "TN",
+    status: "visa_free",
+    reason: "Kazakhstan's current Foreign Ministry ordinary-passport table records visa-free tourist access to Tunisia for up to 90 days.",
+    sourceUrl: "https://www.gov.kz/memleket/entities/mfa/activities/34741?lang=en&parentId=3064",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "TR",
+    destinationCode: "PS",
+    status: "visa_free",
+    reason: "Türkiye's current Foreign Ministry tourist table says Palestinian authorities do not require Turkish citizens to obtain a visa, while retaining the separate Israeli-access condition.",
+    sourceUrl: "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "TR",
+    destinationCode: "SY",
+    status: "visa_free",
+    reason: "Türkiye's current Foreign Ministry tourist table records Turkish citizens as visa-free for Syria; the stated ordinary-passport border fee is not an electronic visa.",
+    sourceUrl: "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "TR",
+    destinationCode: "DJ",
+    status: "evisa",
+    reason: "Türkiye's current Foreign Ministry tourist table expressly directs ordinary Turkish passport holders to Djibouti's official pre-travel eVisa service.",
+    sourceUrl: "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+    reviewedAt: "2026-08-21",
+  },
+  {
     passportCode: "DO",
     destinationCode: "PA",
     status: "visa_required",

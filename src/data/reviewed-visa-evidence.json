@@ -191,7 +191,10 @@
     "falkland-islands-visitor-complement-refresh",
     "turkmenistan-complete-visitor-entry-refresh",
     "turkmenistan-turkiye-ordinary-passport-visa-refresh",
-    "panama-cuba-dominican-venezuela-direct-visa-repair"
+    "panama-cuba-dominican-venezuela-direct-visa-repair",
+    "kazakhstan-outbound-low-coverage-destinations-2026",
+    "turkiye-outbound-low-coverage-destinations-2026",
+    "russia-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -9462,6 +9465,36 @@
       "jurisdiction": "Panama",
       "kind": "law",
       "language": "Spanish",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "kazakhstan-mfa-current-outbound-visa-regime",
+      "title": "Visa regime for citizens of the Republic of Kazakhstan",
+      "url": "https://www.gov.kz/memleket/entities/mfa/activities/34741?lang=en&parentId=3064",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Kazakhstan",
+      "jurisdiction": "Kazakhstan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "turkiye-mfa-current-traveller-visa-table",
+      "title": "Visa practices applicable to Turkish citizens",
+      "url": "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "turkiye-mfa-turkmenistan-specific-notice",
+      "title": "Turkish citizens travelling to Turkmenistan",
+      "url": "https://www.mfa.gov.tr/turkmenistan-seyahat-edecek-turk-vatandaslarinin-dikkatine.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
       "reviewedAt": "2026-08-21"
     }
   ],
@@ -50387,6 +50420,194 @@
       ],
       "sourceIds": [
         "panama-decree-77-venezuela-stamped-visa-2022"
+      ]
+    },
+    {
+      "id": "kazakhstan-tunisia-ordinary-passport-visa-free-90-days-2026",
+      "title": "Kazakhstan ordinary passport: Tunisia visa-free up to 90 days",
+      "summary": "Kazakhstan MFA's current N (ordinary-passport) column expressly records Tunisia as visa-free up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "TN"
+      ],
+      "passportCodes": [
+        "KZ"
+      ],
+      "conditions": [
+        "The cited ordinary-passport table gives a maximum visa-free stay of 90 days; it does not establish residence, employment, study, transit, crew or special-document rights.",
+        "The table does not displace destination documentary, health, security, carrier or final-admission requirements."
+      ],
+      "sourceIds": [
+        "kazakhstan-mfa-current-outbound-visa-regime"
+      ]
+    },
+    {
+      "id": "kazakhstan-ukraine-ordinary-passport-visa-free-90-days-2026",
+      "title": "Kazakhstan ordinary passport: Ukraine visa-free up to 90 days",
+      "summary": "Kazakhstan MFA's current N (ordinary-passport) column expressly records Ukraine as visa-free up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "UA"
+      ],
+      "passportCodes": [
+        "KZ"
+      ],
+      "conditions": [
+        "The cited ordinary-passport table gives a maximum visa-free stay of 90 days; it does not state a rolling-period calculation.",
+        "This candidate maps only the ordinary-passport short-visitor baseline. It does not establish treatment for study, work, residence, transit, diplomatic/service or special documents.",
+        "Border accessibility, martial-law measures, documentary, security and individual final-admission rules remain outside this nationality visa classification."
+      ],
+      "sourceIds": [
+        "kazakhstan-mfa-current-outbound-visa-regime"
+      ]
+    },
+    {
+      "id": "tr-low-coverage-ordinary-passports-visa-free",
+      "title": "Turkish ordinary passports: visa-free short visit",
+      "summary": "Türkiye's current MFA table explicitly records the listed ordinary Turkish passports as visa-free for the stated short visitor scope.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PS",
+        "SY",
+        "TN",
+        "UA",
+        "PA",
+        "BA"
+      ],
+      "passportCodes": [
+        "TR"
+      ],
+      "conditions": [
+        "Palestinian access is stated visa-free by the destination, but the MFA says Turkish citizens normally need an Israeli visa to reach it; the Egypt-to-Gaza exception is separate.",
+        "Syria is visa-free according to the MFA table, but ordinary-passport holders pay a border fee on arrival; the fee is not a visa-on-arrival classification.",
+        "Tunisia and Ukraine are visa-free up to 90 days; Bosnia and Herzegovina is visa-free for no more than 90 days in 180; Panama is visa-free for three months.",
+        "This does not establish residence, work, special-document, route, security or final-admission treatment."
+      ],
+      "sourceIds": [
+        "turkiye-mfa-current-traveller-visa-table"
+      ]
+    },
+    {
+      "id": "tr-djibouti-ordinary-passport-evisa",
+      "title": "Türkiye ordinary passports: Djibouti eVisa",
+      "summary": "Türkiye's MFA says ordinary Turkish passport holders are visa-subject and may travel to Djibouti with an eVisa obtained through the named official service.",
+      "status": "evisa",
+      "destinationCodes": [
+        "DJ"
+      ],
+      "passportCodes": [
+        "TR"
+      ],
+      "conditions": [
+        "The policy is limited to the MFA-described ordinary-passport tourist route; it does not establish visa on arrival, work, residence, transit, or special-document access.",
+        "The MFA separately lists service, special and diplomatic passport holders as visa-free for up to 90 days."
+      ],
+      "sourceIds": [
+        "turkiye-mfa-current-traveller-visa-table"
+      ],
+      "application": {
+        "url": "https://www.evisa.gouv.dj/",
+        "label": "Djibouti official eVisa service",
+        "steps": [
+          "Apply for the eVisa before travel through the official service named by Türkiye's MFA."
+        ]
+      }
+    },
+    {
+      "id": "tr-comoros-sudan-ordinary-passport-visa-on-arrival",
+      "title": "Türkiye ordinary passports: Comoros and Sudan visa on arrival",
+      "summary": "Türkiye's current MFA table expressly says that ordinary Turkish passport holders may obtain visas at the border in Comoros and Sudan.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "KM",
+        "SD"
+      ],
+      "passportCodes": [
+        "TR"
+      ],
+      "conditions": [
+        "Comoros: the MFA says ordinary passports are visa-subject and visas can be obtained at border posts.",
+        "Sudan: the MFA says ordinary, service and special passport holders are visa-subject and visitors may obtain visas at all Sudanese border posts.",
+        "This establishes only the stated short-visitor border-visa route, not eVisa, residence, work, transit, special-document or final-admission treatment."
+      ],
+      "sourceIds": [
+        "turkiye-mfa-current-traveller-visa-table"
+      ]
+    },
+    {
+      "id": "russia-bosnia-ordinary-passport-visa-free",
+      "title": "Russian ordinary passports: Bosnia and Herzegovina visa-free short visit",
+      "summary": "The current Russian MFA passport-type table records visa-free travel for an ordinary Russian passport to Bosnia and Herzegovina for up to 30 days in 60 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BA"
+      ],
+      "passportCodes": [
+        "RU"
+      ],
+      "conditions": [
+        "The ordinary-passport table states 'без визы до 30 дней в течение 60 дней' (visa-free up to 30 days in 60 days).",
+        "This does not normalize residence, work, transit, special passports, document requirements, individual admission decisions or any separate Bosnia and Herzegovina entry conditions."
+      ],
+      "sourceIds": [
+        "russia-mfa-current-passport-regime"
+      ]
+    },
+    {
+      "id": "russia-cuba-ordinary-passport-visa-free",
+      "title": "Russian ordinary passports: Cuba visa-free short visit",
+      "summary": "The current Russian MFA passport-type table records visa-free travel for an ordinary Russian passport to Cuba for up to 90 days in 180 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "RU"
+      ],
+      "conditions": [
+        "The ordinary-passport table states 'без визы до 90 суток в течение 180 дней' (visa-free up to 90 days in 180 days).",
+        "This does not alter the existing canonical Cuba-to-Russia policy; it records the outbound Russian-passport relation only and excludes longer stays, work, residence, documents and final admission."
+      ],
+      "sourceIds": [
+        "russia-mfa-current-passport-regime"
+      ]
+    },
+    {
+      "id": "russia-panama-ordinary-passport-visa-free",
+      "title": "Russian ordinary passports: Panama visa-free short visit",
+      "summary": "The current Russian MFA passport-type table records visa-free travel for an ordinary Russian passport to Panama for up to 90 days in 180 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PA"
+      ],
+      "passportCodes": [
+        "RU"
+      ],
+      "conditions": [
+        "The ordinary-passport table states 'без визы до 90 дней в течение 180 дней' (visa-free up to 90 days in 180 days).",
+        "This does not normalize residence, work, transit, special passports, document requirements, individual admission decisions or Panama's separate entry conditions."
+      ],
+      "sourceIds": [
+        "russia-mfa-current-passport-regime"
+      ]
+    },
+    {
+      "id": "russia-tunisia-ordinary-passport-visa-free",
+      "title": "Russian ordinary passports: Tunisia visa-free short visit",
+      "summary": "The current Russian MFA passport-type table records unilateral visa-free travel for an ordinary Russian passport to Tunisia for up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "TN"
+      ],
+      "passportCodes": [
+        "RU"
+      ],
+      "conditions": [
+        "The ordinary-passport table states 'без визы до 90 дней' (visa-free up to 90 days) and notes that this is unilateral.",
+        "This does not establish treatment for tour-package, residence, work, transit, special-document, document, carrier or final-admission conditions."
+      ],
+      "sourceIds": [
+        "russia-mfa-current-passport-regime"
       ]
     }
   ]

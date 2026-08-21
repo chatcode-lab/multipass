@@ -1,0 +1,182 @@
+{
+  "batchId": "turkiye-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "turkiye-mfa-current-traveller-visa-table",
+      "title": "Visa practices applicable to Turkish citizens",
+      "url": "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live MFA consular table gives destination-specific ordinary-passport rules and says its entries apply to tourist single-entry travel.",
+      "supportingExcerpt": "Yukarıda yer alan bilgiler sadece turistik amaçlı tek giriş vizeleri için geçerlidir."
+    },
+    {
+      "id": "turkiye-mfa-turkmenistan-specific-notice",
+      "title": "Turkish citizens travelling to Turkmenistan",
+      "url": "https://www.mfa.gov.tr/turkmenistan-seyahat-edecek-turk-vatandaslarinin-dikkatine.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live country-specific MFA notice separates ordinary passports from service, special and diplomatic documents.",
+      "supportingExcerpt": "Umuma mahsus pasaport hamilleri vizeye tabidir."
+    }
+  ],
+  "policies": [
+    {
+      "id": "tr-low-coverage-ordinary-passports-visa-free",
+      "title": "Turkish ordinary passports: visa-free short visit",
+      "summary": "Türkiye's current MFA table explicitly records the listed ordinary Turkish passports as visa-free for the stated short visitor scope.",
+      "status": "visa_free",
+      "destinationCodes": ["PS", "SY", "TN", "UA", "PA", "BA"],
+      "passportCodes": ["TR"],
+      "conditions": [
+        "Palestinian access is stated visa-free by the destination, but the MFA says Turkish citizens normally need an Israeli visa to reach it; the Egypt-to-Gaza exception is separate.",
+        "Syria is visa-free according to the MFA table, but ordinary-passport holders pay a border fee on arrival; the fee is not a visa-on-arrival classification.",
+        "Tunisia and Ukraine are visa-free up to 90 days; Bosnia and Herzegovina is visa-free for no more than 90 days in 180; Panama is visa-free for three months.",
+        "This does not establish residence, work, special-document, route, security or final-admission treatment."
+      ],
+      "sourceIds": ["turkiye-mfa-current-traveller-visa-table"],
+      "confidence": "high"
+    },
+    {
+      "id": "tr-djibouti-ordinary-passport-evisa",
+      "title": "Türkiye ordinary passports: Djibouti eVisa",
+      "summary": "Türkiye's MFA says ordinary Turkish passport holders are visa-subject and may travel to Djibouti with an eVisa obtained through the named official service.",
+      "status": "evisa",
+      "destinationCodes": ["DJ"],
+      "passportCodes": ["TR"],
+      "conditions": [
+        "The policy is limited to the MFA-described ordinary-passport tourist route; it does not establish visa on arrival, work, residence, transit, or special-document access.",
+        "The MFA separately lists service, special and diplomatic passport holders as visa-free for up to 90 days."
+      ],
+      "sourceIds": ["turkiye-mfa-current-traveller-visa-table"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.evisa.gouv.dj/",
+        "label": "Djibouti official eVisa service",
+        "steps": ["Apply for the eVisa before travel through the official service named by Türkiye's MFA."]
+      }
+    },
+    {
+      "id": "tr-comoros-sudan-ordinary-passport-visa-on-arrival",
+      "title": "Türkiye ordinary passports: Comoros and Sudan visa on arrival",
+      "summary": "Türkiye's current MFA table expressly says that ordinary Turkish passport holders may obtain visas at the border in Comoros and Sudan.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["KM", "SD"],
+      "passportCodes": ["TR"],
+      "conditions": [
+        "Comoros: the MFA says ordinary passports are visa-subject and visas can be obtained at border posts.",
+        "Sudan: the MFA says ordinary, service and special passport holders are visa-subject and visitors may obtain visas at all Sudanese border posts.",
+        "This establishes only the stated short-visitor border-visa route, not eVisa, residence, work, transit, special-document or final-admission treatment."
+      ],
+      "sourceIds": ["turkiye-mfa-current-traveller-visa-table"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TR",
+      "destinationCode": "PS",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "The current Türkiye MFA table says Palestinians do not apply a visa to Turkish citizens, while preserving the Israeli-access condition.",
+      "sourceIds": ["turkiye-mfa-current-traveller-visa-table"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "SY",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_free",
+      "explanation": "The current Türkiye MFA table says Turkish citizens are visa-free for Syria; its ordinary-passport border fee is not an eVisa.",
+      "sourceIds": ["turkiye-mfa-current-traveller-visa-table"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "DJ",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current Türkiye MFA table identifies the official Djibouti eVisa service for ordinary Turkish passport holders rather than a border-issued visa.",
+      "sourceIds": ["turkiye-mfa-current-traveller-visa-table"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "TR",
+      "destinationCode": "AF",
+      "reason": "The current Türkiye MFA table says an ordinary passport holder is visa-subject but does not prove advance rather than electronic or border issuance, so no route-specific status is assigned.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "KP",
+      "reason": "The current Türkiye MFA table says an ordinary passport holder is visa-subject but does not prove advance rather than electronic or border issuance, so no route-specific status is assigned.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "LY",
+      "reason": "The current Türkiye MFA table says an ordinary passport holder is visa-subject but does not prove advance rather than electronic or border issuance, so the fallback visa-free label is not corrected from generic wording alone.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "SS",
+      "reason": "The current Türkiye MFA table says an ordinary passport holder is visa-subject but does not prove advance rather than electronic or border issuance, so the fallback eVisa label is not corrected from generic wording alone.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "CF",
+      "reason": "The current Türkiye MFA table says an ordinary passport holder is visa-subject but does not prove advance rather than electronic or border issuance, so no route-specific status is assigned.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "CG",
+      "reason": "The current Türkiye MFA table says an ordinary passport holder is visa-subject but does not prove advance rather than electronic or border issuance, so no route-specific status is assigned.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "GQ",
+      "reason": "The current Türkiye MFA table says an ordinary passport holder is visa-subject but does not prove advance rather than electronic or border issuance, so the fallback visa-free label is not corrected from generic wording alone.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "IQ",
+      "reason": "The current Türkiye MFA rule is age-conditioned: ordinary passport holders under 15 or over 50 are visa-free for 30 days, while ages 15–50 are visa-subject. The catalog code cannot encode age, so no passport-wide status is assigned.",
+      "searchedOfficialDomains": ["mfa.gov.tr"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "VG",
+      "reason": "No directly reviewed Turkish official source establishes the ordinary Turkish-passport visitor rule for the British Virgin Islands. The United Kingdom-facing BVI material cannot be substituted for a Türkiye-controlled current notice in this bounded audit.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "gov.tr", "bvi.gov.vg", "gov.uk"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "CU",
+      "reason": "The current Türkiye MFA table says ordinary Turkish passport holders are visa-subject and identifies only the D'Viajeros declaration. It does not establish whether a current electronic visa is issued before travel, so neither the fallback eVisa nor a non-electronic advance-visa route is normalized.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "evisa.cu", "mitrans.gob.cu"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "TM",
+      "reason": "This pair is deliberately not duplicated: the separate canonical Turkmenistan–Türkiye ordinary-passport evidence already directly establishes visa_required. This limited outbound candidate records no second policy for the same pair.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "mejlis.gov.tm"]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "GA",
+      "reason": "The current Türkiye MFA table says ordinary Turkish passport holders are visa-subject for Gabon but does not establish whether a current electronic visa is issued before travel. The fallback eVisa is therefore not overridden by a generic visa statement.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "dgdi.ga", "evisa.dgdi.ga"]
+    }
+  ]
+}
