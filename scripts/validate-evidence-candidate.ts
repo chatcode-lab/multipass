@@ -112,6 +112,9 @@ for (const item of candidate.policies) {
     if (item.excludedPassportCodes?.includes(passportCode)) continue;
     for (const destinationCode of item.destinationCodes) {
       if (!allowedDestinationCodes.has(destinationCode)) throw new Error(`${item.id} has out-of-scope destination code ${destinationCode}`);
+      if (item.status === "citizenship" && passportCode !== destinationCode) {
+        throw new Error(`${item.id} assigns citizenship to mismatched pair ${passportCode}:${destinationCode}`);
+      }
       const pairKey = `${passportCode}:${destinationCode}`;
       const pairStatuses = policyStatusesByPair.get(pairKey) ?? new Set<z.infer<typeof status>>();
       pairStatuses.add(item.status);
@@ -159,6 +162,7 @@ const requiresCompletePartition = queueBatch.passportCodes.includes("*")
 if (requiresCompletePartition) {
   for (const passportCode of allowedPassportCodes) {
     for (const destinationCode of allowedDestinationCodes) {
+      if (passportCode === destinationCode) continue;
       const pairKey = `${passportCode}:${destinationCode}`;
       if (!policyStatusesByPair.has(pairKey) && !unresolvedKeys.has(pairKey)) throw new Error(`Queued pair ${pairKey} is neither supported nor unresolved`);
     }

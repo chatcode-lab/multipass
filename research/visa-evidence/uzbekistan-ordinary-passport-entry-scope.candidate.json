@@ -1,0 +1,459 @@
+{
+  "batchId": "uzbekistan-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-20",
+  "sources": [
+    {
+      "id": "uzbekistan-mfa-current-visa-procedure",
+      "title": "Visa to the Republic of Uzbekistan",
+      "url": "https://gov.uz/en/mfa/pages/o-zbekiston-respublikasi-vizasi",
+      "publisher": "Ministry of Foreign Affairs, Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The page is on the official Government of Uzbekistan MFA portal and identifies the Ministry of Foreign Affairs.",
+      "supportingExcerpt": "The page lists visa-free countries, eVisa/simplified-visa Appendix 1, transit Appendix 2, and ordinary consular procedures."
+    },
+    {
+      "id": "uzbekistan-official-evisa-portal",
+      "title": "Official electronic visa portal: what you need to know",
+      "url": "https://e-visa.gov.uz/what-you-need-to-know",
+      "publisher": "Ministry of Foreign Affairs, Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The eVisa portal identifies itself as the official electronic visa portal of the Republic of Uzbekistan and gives MFA Consular Department details.",
+      "supportingExcerpt": "The portal directs non-simplified nationalities to the appropriate Ministry of Foreign Affairs foreign institution."
+    },
+    {
+      "id": "uzbekistan-official-evisa-live-country-api",
+      "title": "Official eVisa live country selector API",
+      "url": "https://e-visa.gov.uz:8443/api/v1/dic/countries/en",
+      "publisher": "Ministry of Foreign Affairs, Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The official e-visa.gov.uz application loads its runtime API address from /config/config.json; this is that configured live API.",
+      "supportingExcerpt": "The live country selector assigns status 1 to the listed electronic-visa nationalities."
+    },
+    {
+      "id": "uzbekistan-official-evisa-live-status-api",
+      "title": "Official eVisa live status definition API",
+      "url": "https://e-visa.gov.uz:8443/api/v1/dic/visa/status/en/1",
+      "publisher": "Ministry of Foreign Affairs, Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The endpoint is part of the runtime API configured by the official e-visa.gov.uz application.",
+      "supportingExcerpt": "Visa for 30 days; processing time three working days; form in English only."
+    },
+    {
+      "id": "uzbekistan-constitution-right-of-return",
+      "title": "Constitution of the Republic of Uzbekistan, Article 32",
+      "url": "https://constitution.gov.uz/uploads/constitution_en.pdf",
+      "publisher": "Constitutional government portal, Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-20",
+      "officialityEvidence": "The constitutional text is published by Uzbekistan’s official constitution.gov.uz government portal; its English rendering is labelled an unofficial translation.",
+      "supportingExcerpt": "A citizen of the Republic of Uzbekistan has the right to return without hindrance."
+    }
+  ],
+  "policies": [
+    {
+      "id": "uzbekistan-citizenship",
+      "title": "Uzbek passport: citizenship",
+      "summary": "An Uzbek citizen has a constitutional right to return to Uzbekistan without hindrance.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "UZ"
+      ],
+      "conditions": [
+        "This scope does not model internal-document, residence, exit, border-pass, or special-document rules for Uzbek citizens."
+      ],
+      "sourceIds": [
+        "uzbekistan-constitution-right-of-return"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "uzbekistan-unlimited-bilateral-ordinary-waiver",
+      "title": "Listed ordinary passports: unlimited visa-free entry",
+      "summary": "Uzbekistan's current MFA procedure lists these bilateral ordinary-passport visa-free regimes without a stated time limit.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "AZ",
+        "GE",
+        "AM",
+        "BY",
+        "KZ",
+        "MD",
+        "RU",
+        "UA"
+      ],
+      "conditions": [
+        "The government MFA page lists these bilateral regimes as unlimited. All-passport and purpose language is specific to the bilateral group; ordinary passports are modeled here.",
+        "A valid travel document and border admission remain required; stateless residents, work/residence, and special-document treatment are not inferred."
+      ],
+      "sourceIds": [
+        "uzbekistan-mfa-current-visa-procedure"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "uzbekistan-kyrgyz-60-day-ordinary-waiver",
+      "title": "Kyrgyz ordinary passports: 60-day visa-free entry",
+      "summary": "The MFA procedure lists Kyrgyz citizens for visa-free stays of up to 60 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "KG"
+      ],
+      "conditions": [
+        "The current MFA list specifies up to 60 days. Longer stay requires the applicable entry visa; normal border admission remains required."
+      ],
+      "sourceIds": [
+        "uzbekistan-mfa-current-visa-procedure"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "uzbekistan-tajik-30-day-bilateral-ordinary-waiver",
+      "title": "Tajik ordinary passports: 30-day visa-free entry",
+      "summary": "The MFA procedure lists Tajik citizens for visa-free stays of up to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "TJ"
+      ],
+      "conditions": [
+        "The current MFA list specifies up to 30 days. Longer stay requires the applicable entry visa; normal border admission remains required."
+      ],
+      "sourceIds": [
+        "uzbekistan-mfa-current-visa-procedure"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "uzbekistan-listed-30-day-ordinary-waiver",
+      "title": "Listed ordinary passports: 30-day visa-free entry",
+      "summary": "The current MFA procedure lists these ordinary-passport nationalities for visa-free entry up to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "AU",
+        "AT",
+        "AR",
+        "BA",
+        "VA",
+        "LU",
+        "HU",
+        "BN",
+        "IL",
+        "GR",
+        "IE",
+        "IS",
+        "IT",
+        "CA",
+        "AD",
+        "LI",
+        "MC",
+        "BE",
+        "DK",
+        "ES",
+        "NL",
+        "NO",
+        "SE",
+        "LV",
+        "LT",
+        "MY",
+        "MN",
+        "NZ",
+        "AE",
+        "PT",
+        "BG",
+        "ID",
+        "CY",
+        "KR",
+        "MT",
+        "PL",
+        "SM",
+        "RS",
+        "SI",
+        "HR",
+        "CL",
+        "RO",
+        "SG",
+        "SK",
+        "GB",
+        "TR",
+        "BR",
+        "DE",
+        "FI",
+        "FR",
+        "ME",
+        "CZ",
+        "CH",
+        "EE",
+        "JP",
+        "AG",
+        "BB",
+        "BZ",
+        "GD",
+        "DO",
+        "MX",
+        "GT",
+        "HN",
+        "CR",
+        "CU",
+        "NI",
+        "PA",
+        "TT",
+        "SV",
+        "VC",
+        "LC",
+        "BS",
+        "DM",
+        "KN",
+        "JM",
+        "QA",
+        "US",
+        "CN",
+        "HK",
+        "MO"
+      ],
+      "conditions": [
+        "The general 30-day regime begins upon border crossing; expiry requires departure or a suitable entry visa. The page describes travel-document and admission requirements.",
+        "China and Qatar also appear in the page's conditional 10-day air-ticket note. The MFA page is internally inconsistent for those two ordinary-passport routes, so this policy normalizes only visa-free status.",
+        "Hong Kong and Macao are expressly included in the 30-day PRC-and-SAR list. The separate 10-day note names China but does not name either SAR."
+      ],
+      "sourceIds": [
+        "uzbekistan-mfa-current-visa-procedure"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "uzbekistan-bahrain-kuwait-oman-conditional-10-day-waiver",
+      "title": "Bahraini, Kuwaiti and Omani ordinary passports: conditional 10-day visa-free entry",
+      "summary": "The MFA page specifically grants up to 10 visa-free days to these citizens with an onward air ticket.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "BH",
+        "KW",
+        "OM"
+      ],
+      "conditions": [
+        "Requires an air ticket to the home country or a third country. The MFA page does not establish work, residence, transit, diplomatic/official, or special-document treatment.",
+        "Passport validity, security screening, and border admission remain applicable."
+      ],
+      "sourceIds": [
+        "uzbekistan-mfa-current-visa-procedure"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "uzbekistan-live-selector-ordinary-passport-evisa",
+      "title": "Live official selector: listed ordinary passports' eVisa",
+      "summary": "The live official eVisa selector assigns the online 30-day eVisa route to these ordinary-passport nationalities.",
+      "status": "evisa",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "AL", "DZ", "AO", "BT", "BO", "KH", "CO", "EC", "EG", "FJ", "GW", "GY", "IN", "IR", "JO", "KI", "KP", "LA", "LB", "MV", "MH", "MU", "FM", "MA", "NR", "NP", "MK", "PW", "PY", "PE", "PH", "WS", "SC", "SB", "LK", "SR", "TH", "TO", "TN", "UY", "VU", "VE", "VN"
+      ],
+      "conditions": [
+        "The official selector assigns these nationalities status 1, and its official status endpoint defines status 1 as a 30-day visa with three-working-day processing. This resolves the MFA Appendix 1 ‘eVisa or simplified consular tourist visa’ ambiguity for these specific selector records.",
+        "The selector also labels Hong Kong status 1, but the current MFA schedule expressly puts Hong Kong in the 30-day PRC-and-SAR visa-free group; this policy therefore does not include Hong Kong.",
+        "Apply through the official eVisa portal using the travel document used for entry. The portal requires a passport and electronic visa at the border; a refusal remains possible under Uzbek law.",
+        "This policy is only for ordinary passports and does not establish work, residence, diplomatic/official, special-document, airport-issuance, or transit rights."
+      ],
+      "sourceIds": [
+        "uzbekistan-official-evisa-portal",
+        "uzbekistan-official-evisa-live-country-api",
+        "uzbekistan-official-evisa-live-status-api"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://e-visa.gov.uz/application",
+        "label": "Official electronic visa portal of the Republic of Uzbekistan",
+        "processingTime": "Three working days according to the live selector status definition.",
+        "steps": [
+          "Select the nationality, ordinary travel document, purpose, and intended dates in the official portal.",
+          "Enter biographical data, upload the photo and passport data page, activate the request, and pay the consular fee.",
+          "Receive the outcome by email and carry the electronic visa with the same travel document used for the application."
+        ]
+      }
+    },
+    {
+      "id": "uzbekistan-portal-absent-ordinary-passport-advance-visa",
+      "title": "Portal-absent ordinary passports: advance consular visa",
+      "summary": "These ordinary passports are neither in the current visa-free schedules nor in the live eVisa selector, so the MFA’s advance consular-visa rule applies.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "AF", "BD", "BJ", "BW", "BF", "BI", "CM", "CV", "CF", "TD", "KM", "CG", "CD", "CI", "DJ", "GQ", "ER", "ET", "GA", "GM", "GH", "GN", "HT", "IQ", "KE", "LS", "LR", "LY", "MG", "MW", "ML", "MR", "MZ", "MM", "NA", "NE", "NG", "PK", "PG", "RW", "ST", "SN", "SL", "SO", "ZA", "SS", "SD", "SZ", "SY", "TZ", "TL", "TG", "TM", "TV", "UG", "YE", "ZM", "ZW", "PS"
+      ],
+      "conditions": [
+        "The MFA states that foreign citizens need an entry visa unless listed in its visa-free regimes. The official eVisa portal directs a nationality outside its simplified list to the appropriate MFA foreign institution.",
+        "The ordinary consular process requires advance MFA visa confirmation based on an invitation-application. Tashkent-airport issuance is not a general visa-on-arrival route: it also requires an inviting party’s advance confirmation.",
+        "This policy does not convert the separate five-day Uzbekistan Airways transit programme into a nationality-wide visitor status and does not cover work, residence, diplomatic/official, or special-document routes."
+      ],
+      "sourceIds": [
+        "uzbekistan-mfa-current-visa-procedure",
+        "uzbekistan-official-evisa-portal",
+        "uzbekistan-official-evisa-live-country-api"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "JO",
+      "destinationCode": "UZ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "The live official eVisa selector directly assigns this ordinary passport its online 30-day eVisa route; the fallback differs.",
+      "sourceIds": [
+        "uzbekistan-official-evisa-live-country-api",
+        "uzbekistan-official-evisa-live-status-api"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "UZ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "This ordinary passport is absent from the current visa-free schedules and live eVisa selector; the MFA's advance consular-visa rule applies, unlike the fallback.",
+      "sourceIds": ["uzbekistan-mfa-current-visa-procedure", "uzbekistan-official-evisa-portal"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "XK",
+      "destinationCode": "UZ",
+      "reason": "Kosovo is absent from the MFA visa-free schedules and the live eVisa selector. The general foreigner-visa framework does not directly establish Uzbekistan's treatment of a Kosovo ordinary passport, so no route is inferred.",
+      "searchedOfficialDomains": [
+        "gov.uz",
+        "e-visa.gov.uz",
+        "mfa.uz",
+        "lex.uz"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "UZ",
+      "reason": "Taiwan is neither separately named in the MFA visa-free schedules nor represented in the live eVisa selector. The PRC/Hong Kong/Macao wording does not directly establish treatment of a Taiwan ordinary passport, so no route is inferred.",
+      "searchedOfficialDomains": [
+        "gov.uz",
+        "e-visa.gov.uz",
+        "mfa.uz",
+        "lex.uz"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "UZ",
+      "reason": "The current MFA schedule excludes Saudi Arabia from its visa-free list and puts it in the eVisa-or-simplified-consular appendix, while the live official eVisa selector labels it visa-free for 30 days. The direct official sources conflict, so no status is inferred.",
+      "searchedOfficialDomains": [
+        "gov.uz",
+        "e-visa.gov.uz",
+        "mfa.uz",
+        "lex.uz"
+      ]
+    }
+  ]
+}

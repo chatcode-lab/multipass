@@ -10,11 +10,13 @@ describe("passport combination research", () => {
     const insights = analyzePassportCombinations(snapshot.manifest, snapshot.passports);
 
     expect(insights.bestPairs).toMatchObject([
-      { codes: ["JP", "AE"], accessibleDestinations: 209 },
+      { codes: ["SG", "AE"], accessibleDestinations: 208 },
+      { codes: ["JP", "AE"], accessibleDestinations: 208 },
+      { codes: ["AE", "MY"], accessibleDestinations: 208 },
     ]);
-    expect(insights.bestPairTieCount).toBe(1);
+    expect(insights.bestPairTieCount).toBe(3);
     expect(insights.bestTriples).toMatchObject([
-      { codes: ["JP", "AE", "RW"], accessibleDestinations: 216 },
+      { codes: ["JP", "AE", "RW"], accessibleDestinations: 215 },
     ]);
     expect(insights.bestTripleTieCount).toBe(1);
     expect(insights.minimumCover.size).toBe(11);

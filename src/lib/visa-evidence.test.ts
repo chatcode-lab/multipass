@@ -746,6 +746,48 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("LA", "LA", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Mongolia and Uzbekistan routes", () => {
+    const mongoliaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MN");
+
+    expect(mongoliaPairs).toHaveLength(160);
+    expect(getVisaRelationshipEvidence("US", "MN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "MN", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KW", "MN", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "MN", snapshot.passports.XK.statuses.MN).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MN", "MN", "citizenship").supportsCurrentStatus).toBe(false);
+
+    const uzbekistanPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "UZ");
+    expect(uzbekistanPairs).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("HK", "UZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("JO", "UZ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BD", "UZ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SA", "UZ", snapshot.passports.SA.statuses.UZ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("UZ", "UZ", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
+  it("covers the reviewed Kazakhstan and Myanmar routes", () => {
+    const kazakhstanPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "KZ");
+    expect(kazakhstanPairs).toHaveLength(195);
+    expect(getVisaRelationshipEvidence("BB", "KZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MU", "KZ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "KZ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BD", "KZ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PS", "KZ", snapshot.passports.PS.statuses.KZ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KZ", "KZ", "citizenship").supportsCurrentStatus).toBe(true);
+
+    const myanmarPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MM");
+    expect(myanmarPairs).toHaveLength(103);
+    expect(getVisaRelationshipEvidence("SG", "MM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "MM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MN", "MM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "MM", snapshot.passports.AF.statuses.MM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MM", "MM", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -936,6 +978,17 @@ describe("official visa evidence", () => {
       "mxf.laoevisa.gov.la",
       "www.immigration.gov.la",
       "api.immigration.gov.la",
+      "en.consul.mn",
+      "immigration.gov.mn",
+      "www.immigration.gov.mn",
+      "evisa.mn",
+      "www.evisa.mn",
+      "gov.uz",
+      "e-visa.gov.uz",
+      "constitution.gov.uz",
+      "www.gov.kz",
+      "evisa.moip.gov.mm",
+      "www.mofa.gov.mm",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
