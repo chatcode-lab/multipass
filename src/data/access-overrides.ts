@@ -853,4 +853,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://customs.gov.tl/travelers/obtaining-a-visa/",
     reviewedAt: "2026-08-21",
   },
+  ...(["AF", "BD", "DZ", "IR", "IQ", "NG", "PK", "SA", "SD", "LK"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "KH",
+    status: "visa_required" as const,
+    reason: "Cambodia's current official Paris mission guidance expressly requires this ordinary-passport holder to obtain a visa before departure rather than using an arrival visa.",
+    sourceUrl: "https://www.ambcambodgeparis.info/visas-cambodia-english-version",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;

@@ -220,6 +220,12 @@ North Korea remains entirely unresolved. Its current Warsaw embassy page and ent
 
 The South Korea candidate was also revalidated against the current K-ETA table and temporary exemption extension. Its 24 temporary visa-free, 86 K-ETA, and citizenship policies already match the canonical evidence and current fallback, so no duplicate reviewed policy batch was promoted. Eighty-eight cells remain unresolved because the visa portal's status-limited electronic services do not prove a nationality-wide advance-visa complement. The temporary K-ETA exemptions require recheck after 31 December 2026.
 
+## Pass 23 result: Cambodia named prior-visa correction
+
+The next focused review added ten directly named Cambodian prior-visa relationships, increasing complete-matrix current-status evidence from 18,641 of 44,974 relationships (41.4%) to 18,651 (41.5%) and Asia coverage from 4,957 of 6,336 (78.2%) to 4,967 (78.4%). Afghanistan, Bangladesh, Algeria, Iran, Iraq, Nigeria, Pakistan, Saudi Arabia, Sudan, and Sri Lanka change from the seeded `visa_on_arrival` status to `visa_required` because Cambodia's current official Paris mission guidance says these passports must obtain a visa before departure.
+
+Strong review rejected a much broader initial interpretation of the same mission page. Its generic arrival-visa procedure does not expressly create an all-other-nationalities Tourist Visa T entitlement, and the central Tourist Visa and eVisa pages were trapped in redirect loops during both research and review. The 176 unlisted foreign passports therefore remain unresolved, as does Cambodian citizenship; e-Arrival remains an immigration, health, and customs declaration rather than a visa route. The named ten are the only defensible addition until a current central exhaustive schedule or working selector can be reopened.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
