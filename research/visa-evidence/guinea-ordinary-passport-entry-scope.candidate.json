@@ -1,0 +1,2338 @@
+{
+  "batchId": "guinea-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "guinea-paf-live-visa-eta-selector",
+      "title": "Guinea Visa / ETA public nationality selector and visitor procedure",
+      "url": "https://www.paf.gov.gn/visa/",
+      "publisher": "Central Directorate of Border Police (DCPAF), Ministry of Security and Civil Protection",
+      "jurisdiction": "Republic of Guinea",
+      "kind": "official-portal",
+      "language": "English and French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live paf.gov.gn public service identifies DCPAF and dynamically reads its same-origin CountryHome.xml selector; its linked approval service identifies the Ministry of Security and Civil Protection.",
+      "supportingExcerpt": "Every foreign national who wishes to enter Guinea would need a Visa, except for visa waiver countries."
+    },
+    {
+      "id": "guinea-paf-online-approval-service",
+      "title": "Guinea Border Police online visa-approval service",
+      "url": "https://www.paf.gov.gn/visaapproval/",
+      "publisher": "Central Directorate of Border Police (DCPAF), Ministry of Security and Civil Protection",
+      "jurisdiction": "Republic of Guinea",
+      "kind": "official-portal",
+      "language": "English and French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The active PAF approval-login service names its official paf.gov.gn contact and copyright-identifies the Ministry of Security and Civil Protection, Government of Guinea.",
+      "supportingExcerpt": "Online Approval Login"
+    },
+    {
+      "id": "ecowas-free-movement-protocol",
+      "title": "Protocol A/P.1/5/79 on free movement of persons, residence and establishment",
+      "url": "https://ecowas.int/wp-content/uploads/2024/08/PROTOCOL-RELATING-TO-FREE-MOVEMENT-OF-PERSONS.pdf",
+      "publisher": "Economic Community of West African States Commission",
+      "jurisdiction": "ECOWAS / Côte d’Ivoire",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "ECOWAS publishes the Protocol in its current official legal-text repository.",
+      "supportingExcerpt": "A citizen ... visiting any Member State ... not exceeding ninety (90) days shall enter ... free of visa requirements."
+    },
+    {
+      "id": "ecowas-current-members",
+      "title": "ECOWAS member states",
+      "url": "https://www.ecowas.int/member-states/",
+      "publisher": "Economic Community of West African States",
+      "jurisdiction": "ECOWAS",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current ECOWAS Commission member-state page identifies its active twelve-member roster, including Guinea and the eleven mapped foreign states.",
+      "supportingExcerpt": "ECOWAS Member States"
+    },
+    {
+      "id": "ecowas-aes-transition-statement",
+      "title": "ECOWAS statement on Burkina Faso, Mali and Niger withdrawal transition",
+      "url": "https://www.ecowas.int/press-statement-2/",
+      "publisher": "Economic Community of West African States",
+      "jurisdiction": "ECOWAS",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The ECOWAS Commission's current official press statement directs relevant authorities on the post-withdrawal treatment of the three named countries.",
+      "supportingExcerpt": "continue to enjoy the right of visa free movement ... until further notice."
+    }
+  ],
+  "policies": [
+    {
+      "id": "guinea-ecowas-current-members-ordinary-passport-visa-free",
+      "title": "Current ECOWAS member ordinary passports: visa-free short visits",
+      "summary": "The PAF selector explicitly returns no visa for these current ECOWAS issuing authorities, and the ECOWAS free-movement protocol separately provides visa-free entry for a Community citizen visiting up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "GN"
+      ],
+      "passportCodes": [
+        "BJ",
+        "CV",
+        "CI",
+        "GM",
+        "GH",
+        "GW",
+        "LR",
+        "NG",
+        "SN",
+        "SL",
+        "TG"
+      ],
+      "conditions": [
+        "The protocol requires a valid travel document and international health certificate, entry through an official point, and a stay not exceeding 90 days; an extension needs permission.",
+        "Guinea may refuse admission to an inadmissible immigrant. Work, residence, establishment, transit, crew, diplomatic, official, service and special-document treatment are not normalized by this short-visitor policy."
+      ],
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "ecowas-current-members",
+        "ecowas-free-movement-protocol"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "guinea-aes-transition-ordinary-passport-visa-free",
+      "title": "Burkina Faso, Mali and Niger ordinary passports: transitional visa-free movement",
+      "summary": "The PAF selector returns no visa for Burkina Faso, Mali and Niger. ECOWAS's current transition statement directs authorities to continue their visa-free movement until further notice after their 2025 withdrawal.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "GN"
+      ],
+      "passportCodes": [
+        "BF",
+        "ML",
+        "NE"
+      ],
+      "conditions": [
+        "The ECOWAS transition statement says authorities should recognize the countries' national passports and identity cards bearing the ECOWAS logo and continue visa-free movement until further notice.",
+        "The policy records only the ordinary-passport visitor result. Duration, detailed entry documents, residence, work, establishment, diplomatic, official, service, border-pass, security and admission requirements remain governed by competent Guinean rules."
+      ],
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "ecowas-aes-transition-statement"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "guinea-paf-named-non-ecowas-ordinary-passport-visa-waivers",
+      "title": "PAF selector named non-ECOWAS ordinary passports: no visa",
+      "summary": "The live PAF nationality selector routes these seven foreign issuing authorities to its explicit no-visa result. No duration or underlying bilateral instrument is published in the selector, so the finding remains bounded to the named ordinary-passport outcome.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "GN"
+      ],
+      "passportCodes": [
+        "DZ",
+        "EG",
+        "MA",
+        "NA",
+        "RW",
+        "SG",
+        "TN"
+      ],
+      "conditions": [
+        "The selector says a foreign national needs a visa except visa-waiver countries and gives this cohort the no-visa result. It does not state a stay duration, purpose, or bilateral-instrument text.",
+        "It does not establish document-conditioned, residence, third-country visa, transit, work, crew, diplomatic, official, service, refugee, emergency, stateless, security or admission treatment."
+      ],
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "guinea-paf-normal-tourist-entry-letter-arrival-issuance",
+      "title": "PAF normal visitor cohort: online approval followed by arrival issuance",
+      "summary": "For this explicit current selector cohort, the PAF service requires online approval and an Entry Visa Letter before travel, then directs the traveller to the visa-on-arrival counter for issuance and biometrics. It is normalized as eta because the prerequisite is an electronic pre-travel authorization and the final visa is issued at arrival.",
+      "status": "eta",
+      "destinationCodes": [
+        "GN"
+      ],
+      "passportCodes": [
+        "AF",
+        "AL",
+        "AD",
+        "AO",
+        "AG",
+        "AR",
+        "AM",
+        "AU",
+        "AT",
+        "AZ",
+        "BS",
+        "BH",
+        "BD",
+        "BB",
+        "BY",
+        "BE",
+        "BZ",
+        "BT",
+        "BO",
+        "BA",
+        "BW",
+        "BR",
+        "BN",
+        "BG",
+        "BI",
+        "KH",
+        "CM",
+        "CF",
+        "TD",
+        "CL",
+        "CN",
+        "CO",
+        "KM",
+        "CD",
+        "CG",
+        "CR",
+        "HR",
+        "CU",
+        "CY",
+        "CZ",
+        "DK",
+        "DJ",
+        "DM",
+        "DO",
+        "TL",
+        "EC",
+        "SV",
+        "GQ",
+        "ER",
+        "EE",
+        "ET",
+        "FJ",
+        "FI",
+        "FR",
+        "GA",
+        "GE",
+        "DE",
+        "GR",
+        "GD",
+        "GT",
+        "GY",
+        "HT",
+        "VA",
+        "HN",
+        "HU",
+        "IS",
+        "IN",
+        "ID",
+        "IR",
+        "IQ",
+        "IE",
+        "IL",
+        "IT",
+        "JM",
+        "JP",
+        "JO",
+        "KZ",
+        "KE",
+        "KI",
+        "KP",
+        "KR",
+        "KW",
+        "KG",
+        "LA",
+        "LV",
+        "LB",
+        "LS",
+        "LY",
+        "LI",
+        "LT",
+        "LU",
+        "MK",
+        "MG",
+        "MW",
+        "MY",
+        "MV",
+        "MT",
+        "MH",
+        "MR",
+        "MU",
+        "MX",
+        "FM",
+        "MD",
+        "MC",
+        "MN",
+        "ME",
+        "MZ",
+        "MM",
+        "NR",
+        "NP",
+        "NL",
+        "NZ",
+        "NI",
+        "NO",
+        "OM",
+        "PK",
+        "PW",
+        "PA",
+        "PG",
+        "PY",
+        "PE",
+        "PH",
+        "PL",
+        "PT",
+        "QA",
+        "RO",
+        "RU",
+        "KN",
+        "LC",
+        "WS",
+        "SM",
+        "ST",
+        "SA",
+        "RS",
+        "SC",
+        "SK",
+        "SI",
+        "SB",
+        "SO",
+        "ZA",
+        "ES",
+        "LK",
+        "SD",
+        "SR",
+        "SZ",
+        "SE",
+        "CH",
+        "SY",
+        "TW",
+        "TJ",
+        "TZ",
+        "TH",
+        "TO",
+        "TT",
+        "TR",
+        "TM",
+        "TV",
+        "UG",
+        "UA",
+        "AE",
+        "GB",
+        "UY",
+        "UZ",
+        "VU",
+        "VE",
+        "VN",
+        "YE",
+        "ZW",
+        "SS",
+        "XK"
+      ],
+      "conditions": [
+        "The selector's normal visitor panel labels the tourist route as not exceeding 90 days. The PAF procedure requires the approved Entry Visa Letter before travel and says the final visa is obtained at the visa-on-arrival counter after photo and fingerprints.",
+        "The same published procedure lists a passport valid more than six months, Entry Visa Letter, sufficient funds, return ticket and accommodation; the service separately references a Yellow Fever certificate. Individual security, admissibility and border examination remain applicable.",
+        "This is not treated as a walk-up visa_on_arrival because prior online approval is expressly required, and not as evisa because the PAF procedure says the visa is issued at the arrival counter. It excludes work, residence, business-only, transit, crew, diplomatic, official, service and special-document routes."
+      ],
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.paf.gov.gn/visa/",
+        "label": "Guinea Border Police online entry-visa approval",
+        "steps": [
+          "Select the travel-document issuing authority and the visitor category in the official PAF service.",
+          "Complete the online application and wait for the approved Entry Visa Letter before travel.",
+          "Present that letter at the visa-on-arrival counter, where the PAF procedure says the visa is issued after photograph and fingerprints."
+        ]
+      }
+    },
+    {
+      "id": "guinea-paf-canada-united-states-entry-letter-arrival-issuance",
+      "title": "Canada and United States ordinary passports: online approval followed by arrival issuance",
+      "summary": "The live PAF selector places Canada and the United States in a separate visitor panel but uses the same online approval and arrival-issuance procedure. It is normalized as eta for the same reason as the normal PAF cohort.",
+      "status": "eta",
+      "destinationCodes": [
+        "GN"
+      ],
+      "passportCodes": [
+        "CA",
+        "US"
+      ],
+      "conditions": [
+        "The selector's separate panel labels this route as not exceeding five years, but does not state whether that is visa validity or permitted visitor stay; no short-stay ceiling is asserted here.",
+        "The PAF procedure still requires the approved Entry Visa Letter before travel and directs the traveller to the visa-on-arrival counter for issuance and biometrics. Passport validity, funds, onward ticket, accommodation, health, security and admission requirements remain applicable.",
+        "This policy does not establish work, residence, business-only, transit, crew, diplomatic, official, service or special-document treatment."
+      ],
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.paf.gov.gn/visa/",
+        "label": "Guinea Border Police online entry-visa approval",
+        "steps": [
+          "Select the travel-document issuing authority and the visitor category in the official PAF service.",
+          "Complete the online application and wait for the approved Entry Visa Letter before travel.",
+          "Present that letter at the visa-on-arrival counter, where the PAF procedure says the visa is issued after photograph and fingerprints."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "AF",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "GN",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "FR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "GN",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "GN",
+      "snapshotStatus": "evisa",
+      "officialStatus": "eta",
+      "explanation": "The live PAF procedure requires online approval and an Entry Visa Letter before travel, then issues the visa at the arrival counter; this is normalized as eta rather than the snapshot status.",
+      "sourceIds": [
+        "guinea-paf-live-visa-eta-selector",
+        "guinea-paf-online-approval-service"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "GN",
+      "destinationCode": "GN",
+      "reason": "The reviewed PAF service is expressly a foreign-national visa workflow. Although its country XML includes Guinea in a no-visa branch, that does not directly establish a Guinean ordinary-passport holder's citizenship/right-to-return classification; no current competent Guinean citizenship or entry-right source was recovered.",
+      "searchedOfficialDomains": [
+        "paf.gov.gn",
+        "service-public.gov.gn",
+        "mspc.gov.gn",
+        "sgg.gov.gn"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GN",
+      "reason": "The live PAF nationality selector has no active record for this catalog passport code. Its generic statement that foreign nationals need a visa except waiver countries and its application flow do not establish a nationality-specific eta, eVisa, arrival visa, advance visa or visa-free route; no complement is inferred from that omission.",
+      "searchedOfficialDomains": [
+        "paf.gov.gn",
+        "gouv.gn",
+        "mae.gov.gn"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "GN",
+      "reason": "The live PAF nationality selector has no active record for this catalog passport code. Its generic statement that foreign nationals need a visa except waiver countries and its application flow do not establish a nationality-specific eta, eVisa, arrival visa, advance visa or visa-free route; no complement is inferred from that omission.",
+      "searchedOfficialDomains": [
+        "paf.gov.gn",
+        "gouv.gn",
+        "mae.gov.gn"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "GN",
+      "reason": "The live PAF nationality selector has no active record for this catalog passport code. Its generic statement that foreign nationals need a visa except waiver countries and its application flow do not establish a nationality-specific eta, eVisa, arrival visa, advance visa or visa-free route; no complement is inferred from that omission.",
+      "searchedOfficialDomains": [
+        "paf.gov.gn",
+        "gouv.gn",
+        "mae.gov.gn"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "GN",
+      "reason": "The live PAF nationality selector has no active record for this catalog passport code. Its generic statement that foreign nationals need a visa except waiver countries and its application flow do not establish a nationality-specific eta, eVisa, arrival visa, advance visa or visa-free route; no complement is inferred from that omission.",
+      "searchedOfficialDomains": [
+        "paf.gov.gn",
+        "gouv.gn",
+        "mae.gov.gn"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "GN",
+      "reason": "The live PAF nationality selector has no active record for this catalog passport code. Its generic statement that foreign nationals need a visa except waiver countries and its application flow do not establish a nationality-specific eta, eVisa, arrival visa, advance visa or visa-free route; no complement is inferred from that omission.",
+      "searchedOfficialDomains": [
+        "paf.gov.gn",
+        "gouv.gn",
+        "mae.gov.gn"
+      ]
+    }
+  ]
+}

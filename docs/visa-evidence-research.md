@@ -356,6 +356,54 @@ Strong review removed a material overstatement before promotion. The initial can
 
 The retained cohort combines 36 statutory CPLP, EU, United States, and Canadian exemptions with 20 currently named Foreign Ministry waiver partners. The current Ministry brief does not provide agreement-by-agreement duration, passport-type, purpose, or effective-date details, so the additional cohort remains medium confidence. The live Migration Service portal proves an individual online entry-authorization workflow but exposes no nationality eligibility/default; it was not used to infer an eVisa residual. São Tomé citizenship and all unsupported passports remain unresolved.
 
+## Pass 37 result: Guinea
+
+Guinea added 193 directly supported foreign-passport relationships, increasing complete-matrix evidence from 22,255 to 22,448 of 44,974 relationships (49.9%). One hundred and eleven destination columns now have at least 50% coverage and 106 have at least 80%. Africa coverage increased from 5,857 to 6,050 of 11,289 relationships (53.6%).
+
+The live Police/Border authority selector exposes 22 active no-visa records—Guinea plus 21 foreign waivers—and 172 active foreign records that require the online approval process. Guinea's same-country row was removed during independent review because a foreigner-visa selector does not establish a citizen right of return. Hong Kong, Macao, Palestine, Saint Vincent and the Grenadines, Zambia, and the Guinea same-country cell remain unresolved because they are absent, inactive, or unsupported.
+
+The authority labels its process eVisa, but its operative sequence is different from an electronically issued visa: the traveler must obtain an online Entry Visa Letter before travel, then receives the visa and provides biometrics at arrival. The 172 affected rows are therefore normalized as ETA—prior travel authorization followed by arrival issuance—rather than eVisa or walk-up visa on arrival. All 172 resulting fallback changes were mechanically matched to the reviewed candidate. The selector is mutable and should be rechecked before travel or future data refreshes.
+
+## Pass 38 result: Togo
+
+Togo added evidence for all 199 passport relationships, increasing complete-matrix evidence from 22,448 to 22,646 of 44,974 relationships (50.4%). One hundred and twelve destination columns now have at least 50% coverage and 107 have at least 80%. Africa coverage increased from 6,050 to 6,248 of 11,289 relationships (55.3%).
+
+The May 2026 Government decision exempts all African ordinary-passport holders, and the current Voyage Togo checker independently returns no visa requirement for the 53 foreign African passports. The same live checker also returns visa-free results for Singapore and Malaysia, while the other 143 foreign passports require Togo's advance electronic visa. Togo's own ordinary-passport result is represented as citizenship. Singapore and Malaysia are the only seeded rows changed, both from eVisa to visa-free, and the rebuilt snapshot produced exactly those two changes.
+
+The portal's older information page still carries a narrower ECOWAS-era exemption table that conflicts with the May decision and live checker. The current Government decision, homepage notice, and individualized checker control, but the dynamic checker remains mutable and should be rechecked during future refreshes.
+
+## Pass 39 result: Mali, Niger, and Liberia
+
+The West African regional pass added 42 supported relationships, increasing complete-matrix evidence from 22,646 to 22,688 of 44,974 relationships (50.4%). Africa coverage increased from 6,248 to 6,290 of 11,289 relationships (55.7%). No fallback status changed because all 42 directly supported relationships already matched the seeded classifications.
+
+Each destination now has evidence for the same narrow 14-passport cohort: the other AES states, the current foreign ECOWAS members, and the temporary cross-bloc continuation of free movement. Every other relationship remains unresolved, including each same-country citizenship cell, because the reviewed sources do not directly establish an ordinary-passport right of return or an exhaustive nationality route.
+
+The conservative boundary matters. Mali's live visa assistant conflicts with some regional free-movement results, Niger's current Foreign Ministry rule preserves unnamed bilateral and community exceptions without publishing a complete register, and Liberia's preapproved airport arrival process is residence- and embassy-availability-dependent. None of those sources justifies converting the unresolved residual into a nationality-wide eVisa, visa-on-arrival, or advance-visa cohort. The AES/ECOWAS continuation is explicitly temporary and must be rechecked if the regional arrangement changes.
+
+## Pass 40 result: Chad
+
+Chad added 21 supported visa-free relationships, increasing complete-matrix evidence from 22,688 to 22,709 of 44,974 relationships (50.5%). Africa coverage increased from 6,290 to 6,311 of 11,289 relationships (55.9%). Nine seeded advance-visa rows changed to visa-free: Barbados, Dominica, The Gambia, Mauritius, Malaysia, Micronesia, Saint Vincent and the Grenadines, Singapore, and Suriname.
+
+Five relationships are independently supported by current CEMAC free-movement material. The other 16 are expressly named on Chad's current official eVisa service exemption page, but the page does not identify passport type, duration, purpose, effective date, port, or the underlying bilateral instruments. Those rows are therefore published as medium-confidence status evidence with the limitation visible in their policy conditions.
+
+Independent review could not reopen the 2025 Official Journal decree, and the generic online application workflow does not establish what happens to unlisted passports. The other 178 relationships—including Chad citizenship—remain unresolved rather than being inferred as eVisa or advance visa. The portal list and primary implementing schedule should be rechecked before travel and during future refreshes.
+
+## Pass 41 result: Somalia
+
+Somalia added evidence for all 199 passport relationships, increasing complete-matrix evidence from 22,709 to 22,907 of 44,974 relationships (50.9%). One hundred and thirteen destination columns now have at least 50% coverage and 108 have at least 80%. Africa coverage increased from 6,311 to 6,509 of 11,289 relationships (57.7%). Somalia citizenship is directly supported, and every foreign ordinary passport is classified as ETA under the later current aviation rule.
+
+Independent review materially changed the initial candidate. A September 2025 aviation circular named Rwanda and Malaysia as visa-free and 11 passports as eligible for visa on arrival, but the later Aeronautical Information Publication—effective 27 November 2025—says all visas are issued online and every arriving passenger must obtain eTA. The later all-arrivals rule controls, producing exactly 198 fallback changes: 185 eVisa, 11 visa-on-arrival, and two visa-free rows become ETA.
+
+Both official publications remain live, and the later page does not expressly repeal the older exception schedule. That same-authority temporal conflict is retained in the policy conditions and warrants a direct operational recheck before travel. The reviewed portal endpoints were also inaccessible during research, so the public application path should be monitored even though the current legal classification is supported by the aviation publication.
+
+## Pass 42 result: Angola
+
+Angola now has a reviewed 96-passport visa-free cohort under Presidential Decree 189/23. Ninety-five relationships were already supported by the earlier bulk policy, so this pass adds one newly evidenced and corrected relationship: Samoa changes from advance visa to visa-free. Complete-matrix evidence rises from 22,907 to 22,908 of 44,974 relationships (50.9%), and Africa coverage rises from 6,509 to 6,510 of 11,289 relationships (57.7%).
+
+The official decree announcement names 98 exempt entities; Cook Islands and Niue are outside this project's passport catalog, leaving an exact 96-code crosswalk. Current Government and Foreign Ministry material continues to describe the 98-country tourist-exemption regime. The remaining 103 relationships, including Angola citizenship, stay unresolved because no current exhaustive residual or bilateral schedule supports a generic eVisa, visa-on-arrival, or advance-visa classification.
+
+Independent review found an official notice approving a later instrument intended to add the Philippines, but it did not publish Gazette promulgation or an effective date. The Philippines remains unresolved pending the operative instrument rather than being promoted from an approval announcement. Several stale official pages still describe the original 98-country schedule, reinforcing the need for a Gazette-level recheck before adding the amendment.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

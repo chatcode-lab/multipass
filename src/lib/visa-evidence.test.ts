@@ -1147,6 +1147,87 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("ST", "ST", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("models Guinea's approval-letter route as ETA rather than eVisa or VOA", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "GN");
+
+    expect(pairs).toHaveLength(193);
+    expect(getVisaRelationshipEvidence("GH", "GN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "GN", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "GN", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "GN", snapshot.passports.HK.statuses.GN).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GN", "GN", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers Togo's current ordinary-passport checker and all-African exemption", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "TG");
+
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("GH", "TG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SG", "TG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MY", "TG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "TG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TG", "TG", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
+  it("keeps Mali, Niger, and Liberia to their directly supported ECOWAS and AES cohorts", () => {
+    const maliPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "ML");
+    const nigerPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "NE");
+    const liberiaPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "LR");
+
+    expect(maliPairs).toHaveLength(14);
+    expect(nigerPairs).toHaveLength(14);
+    expect(liberiaPairs).toHaveLength(14);
+    expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BF", "NE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ML", "LR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "ML", snapshot.passports.US.statuses.ML).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("US", "NE", snapshot.passports.US.statuses.NE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("US", "LR", snapshot.passports.US.statuses.LR).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("ML", "ML", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("NE", "NE", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("LR", "LR", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("uses Chad's current named exemption list without inferring an eVisa residual", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "TD");
+
+    expect(pairs).toHaveLength(21);
+    expect(getVisaRelationshipEvidence("CM", "TD", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BB", "TD", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SG", "TD", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "TD", snapshot.passports.US.statuses.TD).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TD", "TD", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("applies Somalia's later all-arrivals ETA rule", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "SO");
+
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("US", "SO", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RW", "SO", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ET", "SO", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SO", "SO", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
+  it("maps Angola's Decree 189/23 tourist exemption schedule", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "AO");
+
+    expect(pairs).toHaveLength(96);
+    expect(getVisaRelationshipEvidence("WS", "AO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "AO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PH", "AO", snapshot.passports.PH.statuses.AO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("ZA", "AO", snapshot.passports.ZA.statuses.AO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AO", "AO", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1486,6 +1567,22 @@ describe("official visa evidence", () => {
       "mne.gov.st",
       "www.cplp.org",
       "european-union.europa.eu",
+      "www.paf.gov.gn",
+      "www.republiquetogolaise.tg",
+      "voyage.gouv.tg",
+      "service-public.gouv.tg",
+      "amap.ml",
+      "www.diplomatiemdc.gouv.ml",
+      "diplomatie.gouv.ne",
+      "anp.ne",
+      "discoverliberia.lnta.gov.lr",
+      "visaonarrival.lis.gov.lr",
+      "evisa.td",
+      "aip.scaa.gov.so",
+      "immigration.gov.so",
+      "web.mfa.gov.so",
+      "arabiasaudita.mirex.gov.ao",
+      "joanesburgo.mirex.gov.ao",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
