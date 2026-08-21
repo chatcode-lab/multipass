@@ -1,0 +1,130 @@
+{
+  "batchId": "kosovo-direct-decisions-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "kosovo-gazette-constitution-article-35",
+      "title": "Constitution of the Republic of Kosovo, Article 35",
+      "url": "https://gzk.rks-gov.net/ActDocumentDetail.aspx?ActID=3702&lang=en",
+      "publisher": "Official Gazette of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Official Gazette hosts the Constitution, including Article 35's citizen-entry guarantee.",
+      "supportingExcerpt": "Citizens of the Republic of Kosovo shall not be denied entry into the Republic of Kosovo."
+    },
+    {
+      "id": "kosovo-government-decision-216-visa-regime-amendment",
+      "title": "Decision No. 21/216 amending Government Decision No. 15/158",
+      "url": "https://kryeministri.rks-gov.net/wp-content/uploads/2024/08/Decision-216.pdf",
+      "publisher": "Government of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Prime Minister's official domain publishes the signed Government decision amending the controlling visa-regime decision.",
+      "supportingExcerpt": "Botswana, Namibia and South Africa ... are subject to the regime of visas."
+    },
+    {
+      "id": "kosovo-gazette-russia-visa-exception-suspension",
+      "title": "Government decisions, 99th meeting: suspension of Russia exceptions",
+      "url": "https://gzk.rks-gov.net/ActDocumentDetail.aspx?ActID=64301",
+      "publisher": "Official Gazette of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Official Gazette publishes the Government decision suspending Decision No. 15/158 exceptions for Russian citizens.",
+      "supportingExcerpt": "All Russian citizens ... are obliged to obtain a visa of the Republic of Kosovo."
+    },
+    {
+      "id": "kosovo-gazette-ukraine-visa-suspension",
+      "title": "Government decisions, 67th meeting: temporary suspension for Ukrainian citizens",
+      "url": "https://gzk.rks-gov.net/ActDocumentDetail.aspx?ActID=55415",
+      "publisher": "Official Gazette of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Official Gazette publishes Government Decision No. 14/67 suspending Ukraine's entry-visa regime until a subsequent decision.",
+      "supportingExcerpt": "The entry visa regime for citizens of Ukraine is temporarily suspended."
+    },
+    {
+      "id": "kosovo-interior-foreign-entry-guidance-2026",
+      "title": "Information for foreign citizens entering the Republic of Kosovo",
+      "url": "https://mpb.rks-gov.net/f/57/11006/INFORMATION-FOR-FOREIGN-CITIZENS-ENTERING-THE-REPUBLIC-OF-KOSOVO",
+      "publisher": "Ministry of Internal Affairs of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "government-guidance",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Interior Ministry's 16 January 2026 guidance gives the current short-stay and admission conditions for foreign citizens.",
+      "supportingExcerpt": "A foreigner may stay up to 90 days within a 180-day period, visa-free or with a visa when required."
+    }
+  ],
+  "policies": [
+    {
+      "id": "kosovo-direct-citizenship-entry",
+      "title": "Kosovo ordinary passport: citizenship",
+      "summary": "A Kosovo national travelling on a Kosovo ordinary passport is classified as citizenship rather than as a foreign visitor-visa relationship.",
+      "status": "citizenship",
+      "destinationCodes": ["XK"],
+      "passportCodes": ["XK"],
+      "conditions": [
+        "Article 35 says a Kosovo citizen may not be denied entry. This does not classify a dual national presenting another country's travel document.",
+        "Residence, work, transit, diplomatic, official, service, refugee, emergency-document and final border-admission treatment are outside this classification."
+      ],
+      "sourceIds": ["kosovo-gazette-constitution-article-35"],
+      "confidence": "high"
+    },
+    {
+      "id": "kosovo-direct-signed-visa-regime-ordinary-passports",
+      "title": "Botswana, Namibia, South Africa and Russia ordinary passports: visa required",
+      "summary": "A signed Government decision and the Official Gazette directly place Botswana, Namibia, South Africa and Russia under Kosovo's visa regime.",
+      "status": "visa_required",
+      "destinationCodes": ["XK"],
+      "passportCodes": ["BW", "NA", "ZA", "RU"],
+      "conditions": [
+        "Decision No. 21/216 directly subjects Botswana, Namibia and South Africa to the visa regime.",
+        "For Russia, the Gazette decision requires a Kosovo visa even for ordinary, official and diplomatic passport holders and holders of listed Schengen documents.",
+        "This does not establish eVisa, ETA or nationality-wide visa-on-arrival access. The current Interior guidance retains travel-document, purpose, means, registration and final-admission conditions."
+      ],
+      "sourceIds": ["kosovo-government-decision-216-visa-regime-amendment", "kosovo-gazette-russia-visa-exception-suspension", "kosovo-interior-foreign-entry-guidance-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "kosovo-direct-ukraine-temporary-visa-waiver",
+      "title": "Ukraine ordinary passport: temporary visa waiver",
+      "summary": "Government Decision No. 14/67 temporarily suspends Kosovo's entry-visa regime for Ukrainian citizens until a later Government decision.",
+      "status": "visa_free",
+      "destinationCodes": ["XK"],
+      "passportCodes": ["UA"],
+      "conditions": [
+        "The Gazette says the suspension remains effective until a subsequent Government decision; recheck it before any publication because it has no stated end date.",
+        "This establishes no eVisa, ETA, arrival-visa, work, residence or special-document entitlement. Ordinary admission requirements remain applicable."
+      ],
+      "sourceIds": ["kosovo-gazette-ukraine-visa-suspension", "kosovo-interior-foreign-entry-guidance-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BW",
+      "destinationCode": "XK",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "Signed Decision No. 21/216 subjects Botswana to Kosovo's visa regime.",
+      "sourceIds": ["kosovo-government-decision-216-visa-regime-amendment"]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "XK",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "Signed Decision No. 21/216 subjects Namibia to Kosovo's visa regime.",
+      "sourceIds": ["kosovo-government-decision-216-visa-regime-amendment"]
+    }
+  ],
+  "unresolved": []
+}

@@ -1790,6 +1790,29 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CN", "MK", snapshot.passports.CN.statuses.MK).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps the reviewed Bosnia, Kosovo, and Andorra relationships aligned to current official rules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("BA")).toHaveLength(4);
+    expect(getVisaRelationshipEvidence("BA", "BA", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BH", "BA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BH", "BA", "visa_free", "2026-09-30").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BA", snapshot.passports.US.statuses.BA).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("XK")).toHaveLength(6);
+    expect(getVisaRelationshipEvidence("XK", "XK", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BW", "XK", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("UA", "XK", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FJ", "XK", snapshot.passports.FJ.statuses.XK).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("AD")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("AD", "AD", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KR", "AD", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "AD", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NR", "AD", "visa_required").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1799,6 +1822,14 @@ describe("official visa evidence", () => {
       "eur-lex.europa.eu",
       "home-affairs.ec.europa.eu",
       "www.efta.int",
+      "www.consilium.europa.eu",
+      "www.govern.ad",
+      "www.boe.es",
+      "granpol.gov.ba",
+      "sluzbenilist.ba",
+      "gzk.rks-gov.net",
+      "kryeministri.rks-gov.net",
+      "mpb.rks-gov.net",
       "www.sem.admin.ch",
       "immi.homeaffairs.gov.au",
       "www.legislation.gov.au",

@@ -1,0 +1,65 @@
+{
+  "batchId": "bosnia-and-herzegovina-direct-gazette-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "bosnia-border-police-current-faq-citizenship",
+      "title": "FAQ",
+      "url": "https://granpol.gov.ba/en/faq",
+      "publisher": "Border Police of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current official Border Police FAQ is published on granpol.gov.ba. Its public BiH-citizen subpage states that a BiH citizen holding another citizenship is not considered a foreigner in BiH.",
+      "supportingExcerpt": "A BiH citizen who has the citizenship of another state is not considered a foreigner in the territory of BiH."
+    },
+    {
+      "id": "bosnia-official-gazette-2026-gulf-visa-amendment",
+      "title": "Decision amending the Decision on Visas, Official Gazette of BiH 37/26",
+      "url": "https://sluzbenilist.ba/page/akt/Wi2t0dd7Lq4%3D",
+      "publisher": "Official Gazette of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "law",
+      "language": "Bosnian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Official Gazette publishes the Council of Ministers' Decision 87/26 of 15 April 2026 amending Article 19a of the Decision on Visas and states the ordinary-passport waiver's dates and aggregate stay limit.",
+      "supportingExcerpt": "u periodu od 1. juna 2026. godine do 30. septembra 2026. godine"
+    }
+  ],
+  "policies": [
+    {
+      "id": "bosnia-direct-citizenship-entry",
+      "title": "Bosnia and Herzegovina ordinary passport: citizenship",
+      "summary": "A traveller using an ordinary Bosnia and Herzegovina passport is classified as a BiH citizen, not as a foreign visitor under the visa regime.",
+      "status": "citizenship",
+      "destinationCodes": ["BA"],
+      "passportCodes": ["BA"],
+      "conditions": [
+        "The Border Police says that a BiH citizen who holds another citizenship is not considered a foreigner in the territory of BiH.",
+        "This classification does not establish entry treatment for a dual national presenting another state's passport, nor work, residence, transit or final border-control treatment."
+      ],
+      "sourceIds": ["bosnia-border-police-current-faq-citizenship"],
+      "confidence": "high"
+    },
+    {
+      "id": "bosnia-direct-gulf-ordinary-passports-temporary-visa-free-2026",
+      "title": "Bahrain, Oman and Saudi Arabia ordinary passports: temporary visa-free entry through 30 September 2026",
+      "summary": "Official Gazette 37/26 exempts ordinary passport holders of Bahrain, Oman and Saudi Arabia from a visa for entry, exit, transit and stay from 1 June through 30 September 2026.",
+      "status": "visa_free",
+      "destinationCodes": ["BA"],
+      "passportCodes": ["BH","OM","SA"],
+      "effectiveFrom": "2026-06-01",
+      "effectiveTo": "2026-09-30",
+      "conditions": [
+        "The waiver is limited to holders of ordinary passports of Bahrain, Oman and Saudi Arabia.",
+        "Within the stated temporary period, the aggregate stay permitted is no more than 60 days.",
+        "This policy does not establish a rule after 30 September 2026, work, residence, special-passport, document, security or final border-admission treatment."
+      ],
+      "sourceIds": ["bosnia-official-gazette-2026-gulf-visa-amendment"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}
