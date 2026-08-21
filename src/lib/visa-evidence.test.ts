@@ -1418,7 +1418,7 @@ describe("official visa evidence", () => {
       ["FK", 109],
       ["KY", 198],
       ["BM", 199],
-      ["VG", 4],
+      ["VG", 1],
       ["MS", 198],
     ]);
 
@@ -1441,14 +1441,14 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MO", "BM", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps British Virgin Islands evidence to current narrow exemptions", () => {
+  it("keeps British Virgin Islands evidence to the independently current British-passport exemption", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "VG");
 
-    expect(pairs).toHaveLength(4);
-    expect(getVisaRelationshipEvidence("CN", "VG", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("TW", "VG", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("GY", "VG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(pairs).toHaveLength(1);
+    expect(getVisaRelationshipEvidence("CN", "VG", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "VG", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GY", "VG", "visa_free").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GB", "VG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CY", "VG", snapshot.passports.CY.statuses.VG).supportsCurrentStatus).toBe(false);
   });
@@ -1937,9 +1937,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("YE", "HT", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "HT", "visa_free").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KN")).toHaveLength(6);
+    expect(pairsFor("KN")).toHaveLength(34);
     expect(getVisaRelationshipEvidence("KN", "KN", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AG", "KN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HR", "KN", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RU", "KN", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("UA", "KN", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BY", "KN", snapshot.passports.BY.statuses.KN).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("US", "KN", snapshot.passports.US.statuses.KN).supportsCurrentStatus).toBe(false);
   });
 
@@ -1997,6 +2001,7 @@ describe("official visa evidence", () => {
       "www.knatravelform.kn",
       "www.skn-igs.gov.kn",
       "nia.gov.kn",
+      "ciu.gov.kn",
       "granpol.gov.ba",
       "sluzbenilist.ba",
       "gzk.rks-gov.net",
