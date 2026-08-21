@@ -934,6 +934,16 @@ Türkiye's live Foreign Ministry notice expressly states that ordinary Turkish p
 
 The British Virgin Islands recovery pass adds no row. An official Cabinet Office notice confirms that S.I. No. 26 of 2026 is the controlling Visa Exemption Order, but its text remained inaccessible during announced legislation-site maintenance through 24 August 2026. China, Taiwan and Guyana remain explicitly unresolved until that Order's schedule, repeal and saving clauses can be read.
 
+## Pass 106 result: Cuba, Comoros and Tunisia currentness review
+
+This pass adds no canonical relationship and does not change the 34,535-of-44,974 coverage total. It records three current official-source gaps rather than converting operational portals or generic visa rules into nationality-wide evidence.
+
+Cuba's Foreign Ministry eVisa service is a genuine pre-travel electronic-visa channel: it links the visa to a passport and returns a visa code electronically. The current tourist guidance nevertheless preserves unnamed visa-waiver agreements, and neither official surface publishes an exhaustive exemption or eVisa-eligibility roster. China-to-Cuba visa-free access is already canonical; the other 198 catalog rows remain unresolved in this refresh, including the home cell because no direct citizenship-entry instrument was recovered.
+
+Comoros' current law establishes a treaty-qualified visa baseline and expressly provides airport or port issuance only for transit. It does not prove that the 197 fallback visa-on-arrival labels apply to ordinary short visitors. The fallback China `visa_free` label is also unverified: China's current agreement register limits the bilateral exemption to diplomatic, service and public-affairs passports, while China-specific travel guidance about a Moroni airport biometric visa is not a Comoros-controlled nationality schedule. The existing citizenship cell remains canonical; all 198 foreign rows are held.
+
+Tunisia's live E-Consulat page proves only a consular application process for unspecified visa-subject nationalities. The government eVisa item describes a platform that would operate once implemented, so it is not evidence of current electronic issuance. No accessible current nationality schedule, operative bilateral-waiver register or direct citizenship-entry source was recovered; all 199 rows remain unresolved in the refresh artifact.
+
 ## Held from promotion: Americas, Africa and Asia near-complete gaps
 
 Twenty-five of the 28 examined residual cells remain unresolved. Kosovo document non-recognition or omission prevents nationality-only classifications for Mexico, Chile and Uruguay. Ecuador's current official source could not be stably retrieved for Hong Kong, Macao or Taiwan. Kenya's Gazette says “St. Kitts and Navis,” which is not silently corrected to the current issuer. Zimbabwe currently places Bolivia in an arrival-visa category while its eVisa FAQ says a pre-travel visa is required.
