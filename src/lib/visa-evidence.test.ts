@@ -1419,6 +1419,20 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MD", "NI", snapshot.passports.MD.statuses.NI).supportsCurrentStatus).toBe(false);
   });
 
+  it("maps Uruguay's current common-passport admission schedule without filling unsupported rows", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "UY");
+
+    expect(pairs).toHaveLength(197);
+    expect(getVisaRelationshipEvidence("US", "UY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "UY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MO", "UY", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "UY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PS", "UY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "UY", snapshot.passports.XK.statuses.UY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("UY", "UY", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1816,6 +1830,7 @@ describe("official visa evidence", () => {
       "www.minex.gob.gt",
       "igm.gob.gt",
       "www.congreso.gob.gt",
+      "www.gub.uy",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -498,6 +498,14 @@ The current INAC-linked COCESNA eAIP, AIRAC Amendment 06/25 effective 30 October
 
 All 133 fallback corrections exactly match the reviewed conflict record: 31 upstream eVisa rows become visa-free, 101 rows become advance visa-required (95 from eVisa and six from visa-free), and India becomes visa on arrival. Moldova, Dominican Republic, and Venezuela remain unresolved because the current schedule assigns each to conflicting categories; Sweden, Switzerland, and South Africa have blank rows; Hong Kong is conditional; and Macao, Kosovo, and South Sudan are not safely mapped. No complement was inferred for those ten cells.
 
+## Pass 56 result: Uruguay
+
+Uruguay adds 197 directly supported foreign-passport relationships, raising complete-matrix evidence from 26,114 to 26,311 of 44,974 relationships (58.5%) and Americas coverage from 2,524 to 2,721 of 4,953 (54.9%). One hundred and twenty-nine destination columns now have at least 50% coverage and 123 have at least 80%. No fallback status changed because all 197 supported relationships already matched the seeded classifications.
+
+The Ministry of Interior's current common-passport admission schedule, dated 19 August 2025, directly supports 85 visa-free and 112 advance-visa relationships. The advance cohort includes both named visa-required rows and the schedule's explicit residual rule for other countries; current Foreign Ministry guidance confirms that applicants request a consular interview in advance and receive a passport-stamped visa after authorization, so the process is not presented as eVisa or visa on arrival. Hong Kong and Macao are mapped only where the schedule expressly identifies the relevant SAR/common passport, and Malaysia's exemption retains its stated 30-day limit.
+
+Independent review reopened all three official sources and reconciled the complete foreign-passport crosswalk. Kosovo remains unresolved because the schedule does not directly map that catalog travel document, and Uruguay citizenship remains unresolved because a foreigner admission schedule does not itself establish the citizen right-of-entry taxonomy. Conditional third-country-document exceptions, work, residence, study, transit, crew, special documents, fees, processing outcomes, and final admission remain outside the nationality baseline.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.
