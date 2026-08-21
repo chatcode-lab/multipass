@@ -1,0 +1,289 @@
+{
+  "batchId": "ghana-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "ghana-official-evisa-live-eligibility-service",
+      "title": "Ghana eVisa — Official Electronic Visa Application Portal",
+      "url": "https://evisa.immigration.gov.gh/",
+      "publisher": "Ghana Immigration Service and Ministry of Foreign Affairs",
+      "jurisdiction": "Ghana",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live immigration.gov.gh portal identifies itself as the Official Government Portal, says it is operated by the Ghana Immigration Service with the Ministry of Foreign Affairs, and is corroborated by the Ministry's May 2026 launch announcement. Its public nationality checker was exercised through this official frontend for every listed policy cohort; the frontend's configured backend is a contractor cloud host, so the official portal—not that host—is cited.",
+      "supportingExcerpt": "Select your nationality to determine your entry requirements for Ghana."
+    },
+    {
+      "id": "ghana-official-evisa-requirements",
+      "title": "Ghana eVisa: Visa Requirements",
+      "url": "https://evisa.immigration.gov.gh/visa-requirements",
+      "publisher": "Ghana Immigration Service and Ministry of Foreign Affairs",
+      "jurisdiction": "Ghana",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current immigration.gov.gh portal identifies the Ghana Immigration Service and Ministry of Foreign Affairs as its operators and publishes visitor eVisa requirements.",
+      "supportingExcerpt": "Check eligibility by nationality and review the documents required for a Ghana e-Visa application."
+    },
+    {
+      "id": "ghana-mfa-evisa-launch-may-2026",
+      "title": "Ghana Launches e-Visa Portal",
+      "url": "https://mfa.gov.gh/index.php/ghana-launches-e-visa-portal/",
+      "publisher": "Ministry of Foreign Affairs, Republic of Ghana",
+      "jurisdiction": "Ghana",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry's current mfa.gov.gh announcement records the President's 25 May 2026 launch of the Ghana electronic-visa portal and the African-passport fee decision.",
+      "supportingExcerpt": "from 25th May, 2026 ... holders of African passports would not be required to pay visa fees"
+    },
+    {
+      "id": "ghana-mfa-april-2026-waiver-schedule",
+      "title": "Visa-Free Countries",
+      "url": "https://passport.mfa.gov.gh/visa-free-countries",
+      "publisher": "Ministry of Foreign Affairs, Republic of Ghana",
+      "jurisdiction": "Ghana",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Ministry's live passport-service page presents an ordinary/service/diplomatic schedule, states it was last updated 7 April 2026, and expressly disclaims that it is exhaustive. It predates the 25 May electronic-visa launch and is retained as a dated conflicting snapshot.",
+      "supportingExcerpt": "does not constitute a legal or exhaustive statement of Ghana's immigration policy."
+    },
+    {
+      "id": "ghana-mfa-addis-current-visa-guidance",
+      "title": "Visa Application Information",
+      "url": "https://www.addisababa.mfa.gov.gh/VisaApplicationInfo.aspx",
+      "publisher": "Embassy of Ghana, Addis Ababa, Ministry of Foreign Affairs",
+      "jurisdiction": "Ghana",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current official Ghana mission page names the historical waiver categories, traveller documents, emergency-visa process and visitor constraints. Its manual-visa text is not treated as a post-launch electronic eligibility matrix.",
+      "supportingExcerpt": "Emergency visas may be issued at entry points ... authorised by the Director of the Immigration Service."
+    },
+    {
+      "id": "ghana-immigration-regulations-2001",
+      "title": "Immigration Regulations, 2001 (L.I. 1691)",
+      "url": "https://gis.gov.gh/wp-content/uploads/2024/02/LI-1691.pdf",
+      "publisher": "Ghana Immigration Service",
+      "jurisdiction": "Ghana",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Ghana Immigration Service document repository hosts the Regulations' official text on gis.gov.gh.",
+      "supportingExcerpt": "A foreign national, except one from an ECOWAS country, shall have ... a visa."
+    }
+  ],
+  "policies": [
+    {
+      "id": "ghana-ecowas-ordinary-passports-visa-free",
+      "title": "Ghana: ECOWAS ordinary passports — visa-free short visit",
+      "summary": "The live official eVisa checker returns no authorization for this complete named ECOWAS cohort. This is normalized as visa-free admission, not ETA, because its response expressly says neither visa nor ETA is required.",
+      "status": "visa_free",
+      "destinationCodes": ["GH"],
+      "passportCodes": ["BJ", "BF", "CV", "CI", "GM", "GN", "GW", "LR", "ML", "NE", "NG", "SN", "SL", "TG"],
+      "conditions": [
+        "The live checker returns ECOWAS/AES, no authorization, 90 days, multiple entry, no application and no fee. The eVisa result is the current operational source; it agrees with the statutory ECOWAS exception and the Embassy's named ECOWAS list.",
+        "This policy is limited to ordinary-passport short visits and does not decide work, residence, study, crew, transit, diplomatic, official, service, special-document, border-pass, health, security, or individual-admissibility treatment.",
+        "Carry a valid travel document and satisfy any current yellow-fever, onward-travel, funds, accommodation, border examination and other admission conditions."
+      ],
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service", "ghana-mfa-addis-current-visa-guidance", "ghana-immigration-regulations-2001"],
+      "confidence": "high"
+    },
+    {
+      "id": "ghana-african-union-ordinary-passports-eta",
+      "title": "Ghana: non-ECOWAS African ordinary passports — advance ETA",
+      "summary": "For this complete African Union ordinary-passport cohort outside ECOWAS and Ghanaian citizenship, the live official checker returns an advance Electronic Travel Authorization rather than visa-free admission or a visa on arrival.",
+      "status": "eta",
+      "destinationCodes": ["GH"],
+      "passportCodes": ["DZ", "AO", "BW", "BI", "CM", "CF", "TD", "KM", "CG", "CD", "DJ", "EG", "GQ", "ER", "SZ", "ET", "GA", "KE", "LS", "LY", "MG", "MW", "MR", "MU", "MA", "MZ", "NA", "RW", "ST", "SC", "SO", "ZA", "SS", "SD", "TZ", "TN", "UG", "ZM", "ZW"],
+      "conditions": [
+        "The live checker labels this cohort African Union, requires ETA before travel, and returns 30 days, single entry and no fee. It is not normalized as visa-free merely because the May 2026 announcement abolishes visa fees for African passports.",
+        "The April MFA waiver table pre-dates the May eVisa launch and lists several of these passports as visa-free; the current operational checker is followed for the required authorization. This dated inter-source discrepancy is a material recheck risk.",
+        "The portal's tourist eVisa requirements require a passport valid six months beyond intended stay; yellow-fever evidence, itinerary/accommodation, purpose, security and admission requirements remain applicable. No work, residence, transit, diplomatic, official, service or special-document route is decided."
+      ],
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service", "ghana-official-evisa-requirements", "ghana-mfa-evisa-launch-may-2026", "ghana-mfa-april-2026-waiver-schedule"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.immigration.gov.gh/",
+        "label": "Ghana Immigration Service eVisa eligibility and ETA service",
+        "processingTime": "Not established for ETA by the reviewed official source.",
+        "steps": ["Use the official nationality checker before travel.", "Complete the required free ETA process and obtain approval before boarding/travel.", "Present the authorization and supporting travel documents for Immigration examination at the port of entry."]
+      }
+    },
+    {
+      "id": "ghana-caribbean-ordinary-passports-eta",
+      "title": "Ghana: named Caribbean ordinary passports — advance ETA",
+      "summary": "The live official checker expressly labels these ten passports Caribbean visa-waiver countries but requires an ETA before travel; the authorization is not a visa-free classification.",
+      "status": "eta",
+      "destinationCodes": ["GH"],
+      "passportCodes": ["AG", "BS", "BB", "DM", "GD", "JM", "KN", "LC", "VC", "TT"],
+      "conditions": [
+        "The live checker returns Caribbean, ETA required, 90 days and single entry. The stated message calls these Caribbean visa-waiver countries, but its required ETA controls the normalized route.",
+        "The April MFA table lists all except Antigua and Barbuda and Saint Lucia as visa-free. It predates the current electronic service and does not call itself exhaustive, so it is retained as a material dated-source discrepancy rather than used to erase the current ETA requirement.",
+        "No work, residence, business-only, transit, crew, diplomatic, official, service, special-document or individual-admissibility route is inferred. Passport, health, onward-travel, funds, accommodation and border examination requirements continue to apply."
+      ],
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service", "ghana-mfa-april-2026-waiver-schedule", "ghana-official-evisa-requirements"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.immigration.gov.gh/",
+        "label": "Ghana Immigration Service eVisa eligibility and ETA service",
+        "processingTime": "Not established for ETA by the reviewed official source.",
+        "steps": ["Use the official nationality checker before travel.", "Complete the ETA process before travel.", "Present the ETA and supporting documents for Immigration examination."]
+      }
+    },
+    {
+      "id": "ghana-singapore-ordinary-passport-eta",
+      "title": "Ghana: Singapore ordinary passport — advance ETA",
+      "summary": "The live official checker now returns Singapore as an Asian visa-waiver country requiring a free Electronic Travel Authorization before travel. The required authorization is normalized as eta, not visa-free or evisa.",
+      "status": "eta",
+      "destinationCodes": ["GH"],
+      "passportCodes": ["SG"],
+      "conditions": [
+        "The official checker returns Asian visa-waiver country, ETA required, 90 days and single entry. The authorization must be obtained before travel even though no visa fee is stated.",
+        "The April MFA schedule listed Singapore as visa-free; its manual table predates the May 2026 eVisa launch and expressly disclaims being exhaustive. The current operational checker therefore controls the required authorization.",
+        "This ordinary-passport visitor route does not decide work, residence, business-only, transit, crew, diplomatic, official, service, special-document or individual-admissibility treatment. Passport, health, onward-travel, funds, accommodation and border-examination requirements continue to apply."
+      ],
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service", "ghana-official-evisa-requirements", "ghana-mfa-april-2026-waiver-schedule"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.immigration.gov.gh/",
+        "label": "Ghana Immigration Service eVisa eligibility and ETA service",
+        "processingTime": "Not established for ETA by the reviewed official source.",
+        "steps": ["Use the official nationality checker before travel.", "Complete the free Asian ETA process and obtain approval before boarding/travel.", "Present the ETA and supporting documents for Immigration examination."]
+      }
+    },
+    {
+      "id": "ghana-other-ordinary-passports-advance-evisa",
+      "title": "Ghana: other ordinary passports — advance electronic visitor visa",
+      "summary": "For every remaining foreign catalog passport, the live official checker returns 'Visa Required' with eVisa authorization and an electronic application path. This is a true advance eVisa route, not a conclusion from online-form availability alone.",
+      "status": "evisa",
+      "destinationCodes": ["GH"],
+      "passportCodes": [
+        "AD", "AE", "AF", "AL", "AM", "AR", "AT", "AU", "AZ", "BA", "BD", "BE", "BG", "BH", "BN",
+        "BO", "BR", "BT", "BY", "BZ", "CA", "CH", "CL", "CN", "CO", "CR", "CU", "CY", "CZ", "DE",
+        "DK", "DO", "EC", "EE", "ES", "FI", "FJ", "FM", "FR", "GB", "GE", "GR", "GT", "GY", "HK",
+        "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IQ", "IR", "IS", "IT", "JO", "JP", "KG",
+        "KH", "KI", "KP", "KR", "KW", "KZ", "LA", "LB", "LI", "LK", "LT", "LU", "LV", "MC", "MD",
+        "ME", "MH", "MK", "MM", "MN", "MO", "MT", "MV", "MX", "MY", "NI", "NL", "NO", "NP", "NR",
+        "NZ", "OM", "PA", "PE", "PG", "PH", "PK", "PL", "PS", "PT", "PW", "PY", "QA", "RO", "RS",
+        "RU", "SA", "SB", "SE", "SI", "SK", "SM", "SR", "SV", "SY", "TH", "TJ", "TL", "TM",
+        "TO", "TR", "TV", "TW", "UA", "US", "UY", "UZ", "VA", "VE", "VN", "VU", "WS", "XK", "YE"
+      ],
+      "conditions": [
+        "The official checker explicitly returns eVisa authorization and an application route for this cohort; embassy processing is presented as an alternative, so the easier electronic route is normalized as eVisa.",
+        "The official portal states tourist visits include holidays, visiting friends or family and short-term recreation up to three months. Single-entry visas are valid for 90 days from issuance; this is validity to travel, not a promise of a three-month admission period.",
+        "The portal requires a passport valid at least six months beyond intended stay, photograph, travel details and purpose-dependent supporting documents such as invitation/business letters. Yellow-fever, fees, onward travel, accommodation, security, admissibility, port examination and any extension rules remain applicable.",
+        "Emergency visas at entry require absence of a Ghanaian mission and advance Director authorization through a sponsor; that case-specific contingency is not a nationality-wide visa-on-arrival policy. This policy excludes work, residence, business-only, transit, crew, diplomatic, official, service and special-document routes."
+      ],
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service", "ghana-official-evisa-requirements", "ghana-mfa-addis-current-visa-guidance", "ghana-immigration-regulations-2001"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.immigration.gov.gh/",
+        "label": "Ghana Official eVisa Application Portal",
+        "processingTime": "The public portal advertises standard processing of 96 hours; individual approval and admission are not guaranteed.",
+        "steps": ["Check the nationality result in the official portal.", "Create an account and submit the tourist eVisa application with passport, photograph, travel and supporting documents.", "Receive and carry the approved electronic visa before travel, then satisfy Immigration examination at entry."]
+      }
+    },
+    {
+      "id": "ghana-citizenship-ordinary-passport-entry",
+      "title": "Ghana: Ghanaian citizenship entry",
+      "summary": "The live official eligibility checker returns Ghanaian citizens as requiring no authorization, supporting the same-country citizenship classification.",
+      "status": "citizenship",
+      "destinationCodes": ["GH"],
+      "passportCodes": ["GH"],
+      "conditions": ["The source supports only that a Ghanaian citizen does not require visitor authorization. It does not decide documentary, dual-nationality, residence, border, security or individual-admissibility questions."],
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BJ", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "BF", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "CV", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "CI", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "GM", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "GN", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "GW", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "LR", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "ML", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "NE", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "NG", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "SN", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "SL", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "TG", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "visa_free",
+      "explanation": "The live official checker returns ECOWAS, no authorization, 90 days and multiple entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "LC", "destinationCode": "GH", "snapshotStatus": "evisa", "officialStatus": "eta",
+      "explanation": "The live official checker returns Caribbean visa-waiver country, ETA required, 90 days and single entry.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service"]
+    },
+    {
+      "passportCode": "AE", "destinationCode": "GH", "snapshotStatus": "visa_on_arrival", "officialStatus": "evisa",
+      "explanation": "The live official checker returns Visa Required with eVisa authorization; no nationality-wide arrival-visa route is published by the reviewed current sources.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service", "ghana-mfa-addis-current-visa-guidance"]
+    },
+    {
+      "passportCode": "GY", "destinationCode": "GH", "snapshotStatus": "eta", "officialStatus": "evisa",
+      "explanation": "The live official checker returns Visa Required with eVisa authorization. The April manual schedule is pre-launch and does not establish the operational electronic route.",
+      "sourceIds": ["ghana-official-evisa-live-eligibility-service", "ghana-mfa-april-2026-waiver-schedule"]
+    }
+  ],
+  "unresolved": []
+}

@@ -877,4 +877,37 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://mhaiss.gov.na/documents/292728/6201234/Namibia%2BVisa%2BFact%2BSheet%2B-%2BVersion%2B4%2B-%2B28%2BMay%2B2025.pdf/e47c4aff-5418-8fe6-a98b-15ebaf2386b7?download=true&t=1748602076823",
     reviewedAt: "2026-08-21",
   },
+  ...(["BJ", "BF", "CV", "CI", "GM", "GN", "GW", "LR", "ML", "NE", "NG", "SN", "SL", "TG"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "GH",
+      status: "visa_free" as const,
+      reason: "Ghana's live post-launch official eligibility checker identifies this ECOWAS ordinary passport as visa-free, with no electronic authorization required.",
+      sourceUrl: "https://evisa.immigration.gov.gh/",
+      reviewedAt: "2026-08-21",
+    })),
+  {
+    passportCode: "LC",
+    destinationCode: "GH",
+    status: "eta",
+    reason: "Ghana's live post-launch official eligibility checker identifies Saint Lucia as a Caribbean visa-waiver country that requires ETA authorization before travel.",
+    sourceUrl: "https://evisa.immigration.gov.gh/",
+    reviewedAt: "2026-08-21",
+  },
+  ...(["AE", "GY"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "GH",
+    status: "evisa" as const,
+    reason: "Ghana's live post-launch official eligibility checker requires this ordinary passport to obtain an electronically issued visa before travel; no general arrival-visa route applies.",
+    sourceUrl: "https://evisa.immigration.gov.gh/",
+    reviewedAt: "2026-08-21",
+  })),
+  {
+    passportCode: "LK",
+    destinationCode: "TZ",
+    status: "visa_on_arrival",
+    reason: "Tanzania's current official named ordinary-visa cohort permits Sri Lankan ordinary-passport visitors to obtain the visa at an official entry point, even though online application is also available.",
+    sourceUrl: "https://visa.immigration.go.tz/guidelines",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;

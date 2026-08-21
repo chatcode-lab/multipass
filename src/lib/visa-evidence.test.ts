@@ -927,6 +927,23 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("ET", "ET", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
+  it("covers the reviewed Ghana and Tanzania schedules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("GH")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("BJ", "GH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SG", "GH", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "GH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "GH", "citizenship").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("TZ")).toHaveLength(194);
+    expect(getVisaRelationshipEvidence("CD", "TZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LK", "TZ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "TZ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TZ", "TZ", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1179,6 +1196,14 @@ describe("official visa evidence", () => {
       "www.evisa.gov.et",
       "justice.gov.et",
       "www.ofag.gov.et",
+      "evisa.immigration.gov.gh",
+      "mfa.gov.gh",
+      "passport.mfa.gov.gh",
+      "www.addisababa.mfa.gov.gh",
+      "gis.gov.gh",
+      "visa.immigration.go.tz",
+      "www.immigration.go.tz",
+      "www.parliament.go.tz",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
