@@ -20,6 +20,7 @@ describe("evidence status matrix", () => {
   it("distinguishes supported current evidence from pending relationships", () => {
     const matrix = buildEvidenceStatusRegion(snapshot.manifest, snapshot.passports, "EUROPE", "2026-08-20");
     const japanRow = matrix.rows.find(({ passportCode }) => passportCode === "JP")!;
+    const guyanaRow = matrix.rows.find(({ passportCode }) => passportCode === "GY")!;
     const germanyIndex = matrix.destinations.findIndex(({ code }) => code === "DE");
     const albaniaIndex = matrix.destinations.findIndex(({ code }) => code === "AL");
 
@@ -27,7 +28,7 @@ describe("evidence status matrix", () => {
     expect(matrix.dates[japanRow.cells[germanyIndex][2]]).toBe("2026-08-20");
     expect(japanRow.cells[germanyIndex][3]).toBeGreaterThan(0);
     expect(japanRow.cells[germanyIndex][4]).toBeGreaterThan(0);
-    expect(japanRow.cells[albaniaIndex]).toEqual([snapshot.passports.JP.statuses.AL, 0, -1, 0, 0]);
+    expect(guyanaRow.cells[albaniaIndex]).toEqual([snapshot.passports.GY.statuses.AL, 0, -1, 0, 0]);
   });
 
   it("does not count an expired temporary policy as current verification", () => {
@@ -48,8 +49,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(30_052);
-    expect(summary.percent).toBe(66.8);
+    expect(summary.covered).toBe(30_525);
+    expect(summary.percent).toBe(67.9);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });
 });

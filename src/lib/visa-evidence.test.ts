@@ -1718,6 +1718,28 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "KI", snapshot.passports.AF.statuses.KI).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps Albania, Georgia, and Azerbaijan aligned to independently reviewed current schedules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("AL")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("BH", "AL", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("QA", "AL", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GY", "AL", snapshot.passports.GY.statuses.AL).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("GE")).toHaveLength(190);
+    expect(getVisaRelationshipEvidence("CN", "GE", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SS", "GE", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IR", "GE", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "GE", snapshot.passports.HK.statuses.GE).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("AZ")).toHaveLength(88);
+    expect(getVisaRelationshipEvidence("BH", "AZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("JP", "AZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MY", "AZ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BY", "AZ", snapshot.passports.BY.statuses.AZ).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1738,6 +1760,21 @@ describe("official visa evidence", () => {
       "sso.agc.gov.sg",
       "www.ica.gov.sg",
       "www.mfa.gov.sg",
+      "punetejashtme.gov.al",
+      "arkiva.punetejashtme.gov.al",
+      "e-visa.al",
+      "qbz.gov.al",
+      "france.mfa.gov.ge",
+      "ge.china-embassy.gov.cn",
+      "www.matsne.gov.ge",
+      "matsne.gov.ge",
+      "www.evisa.gov.ge",
+      "australia.mfa.gov.ge",
+      "www.evisa.gov.az",
+      "evisa.gov.az",
+      "www.migration.gov.az",
+      "migration.gov.az",
+      "asan.gov.az",
       "beijing.mfa.gov.sg",
       "hongkong.mfa.gov.sg",
       "taipei.mfa.gov.sg",

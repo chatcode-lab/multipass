@@ -1597,4 +1597,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://rree.gob.sv/servicios/visas-para-extranjeros/",
     reviewedAt: "2026-08-21",
   },
+  {
+    passportCode: "BH",
+    destinationCode: "AL",
+    status: "evisa",
+    reason: "Albania's current ordinary-passport selector requires a visa for Bahrain and links the official route that issues and emails an electronic visa before travel.",
+    sourceUrl: "https://punetejashtme.gov.al/en/informacione-mbi-regjimin-e-vizave-te-shtetasve-te-huaj/",
+    reviewedAt: "2026-08-21",
+  },
+  ...(["SS", "IR", "JO", "FJ", "CL", "UY", "KN", "DM", "PY", "MK", "GD"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "GE" as const,
+    status: "evisa" as const,
+    reason: "Georgia's current official eVisa schedule assigns this passport to an electronically issued pre-travel visa cohort, subject to the listed document conditions.",
+    sourceUrl: "https://www.evisa.gov.ge/geovisa/countries/index.html",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["MY", "IL", "ID"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "AZ" as const,
+    status: "evisa" as const,
+    reason: "Azerbaijan's current ASAN Visa eligibility schedule names this passport for an electronically issued visa obtained before travel.",
+    sourceUrl: "https://www.evisa.gov.az/en/countries",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;
