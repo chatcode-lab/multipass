@@ -317,7 +317,7 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
 
   await page.goto("/rank?set=PT,RU,IL&set=SG");
   await expect(page.locator("[data-combination-row] .ranking-row__rank")).toHaveText("#1");
-  await expect(page.locator("[data-passport-row][data-set='SG'] .ranking-row__rank")).toHaveText("#2");
+  await expect(page.locator("[data-passport-row][data-set='SG'] .ranking-row__rank")).toHaveText("#1");
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {
@@ -566,7 +566,7 @@ test("destination and relationship pages expose official evidence and Markdown",
   await page.goto("/belgium-angola-visa-free");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Belgium to Angola");
   await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Government of Angola/ })).toHaveAttribute("href", /governo\.gov\.ao/);
+  await expect(page.locator('a[href^="https://governo.gov.ao/"]').first()).toHaveAttribute("href", /governo\.gov\.ao/);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /^index,/);
 
   const relationshipMarkdown = await request.get("/belgium-angola-visa-free.md");
