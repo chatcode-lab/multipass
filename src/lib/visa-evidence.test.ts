@@ -1869,6 +1869,10 @@ describe("official visa evidence", () => {
     expect(pairsFor("DJ")).toHaveLength(1);
     expect(getVisaRelationshipEvidence("DJ", "DJ", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "DJ", snapshot.passports.US.statuses.DJ).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("KM")).toHaveLength(1);
+    expect(getVisaRelationshipEvidence("KM", "KM", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "KM", snapshot.passports.US.statuses.KM).supportsCurrentStatus).toBe(false);
   });
 
   it("contains only direct HTTPS official-source URLs", () => {
@@ -1904,6 +1908,7 @@ describe("official visa evidence", () => {
       "www.egouv.dj",
       "guide.visitdjibouti.dj",
       "www.journalofficiel.dj",
+      "justice.gouv.km",
       "granpol.gov.ba",
       "sluzbenilist.ba",
       "gzk.rks-gov.net",
