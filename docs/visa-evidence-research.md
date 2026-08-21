@@ -404,6 +404,44 @@ The official decree announcement names 98 exempt entities; Cook Islands and Niue
 
 Independent review found an official notice approving a later instrument intended to add the Philippines, but it did not publish Gazette promulgation or an effective date. The Philippines remains unresolved pending the operative instrument rather than being promoted from an approval announcement. Several stale official pages still describe the original 98-country schedule, reinforcing the need for a Gazette-level recheck before adding the amendment.
 
+## Pass 43 result: Dominica
+
+Dominica now has status evidence for all 198 foreign passports, adding 172 relationships beyond the earlier regional evidence. Complete-matrix coverage increased from 22,908 to 23,080 of 44,974 relationships (51.3%); 114 destination columns now have at least 50% coverage and 109 have at least 80%. Caribbean coverage increased from 956 to 1,128 of 4,962 relationships (22.7%). Dominica citizenship remains the sole unresolved cell.
+
+The 2019 statutory schedule directly grants the named 42-passport cohort stays of up to six months. Current Government guidance separately states that any tourist or transit traveler may enter without a visa for up to 21 days when holding a return ticket and satisfying the Immigration Officer. That ordinary admission condition supports the other 156 foreign passports as visa-free rather than visa on arrival or ETA. The electronic declaration card remains an immigration/customs form, not travel authorization.
+
+The official guidance has overlapping three- and six-month duration statements, while the published 2025 and 2026 amendments truncate before all inserted text. Those issues prevent a uniform duration claim but do not contradict the current status classification. The candidate therefore records status coverage at medium confidence and leaves detailed stay limits conditional on the traveler and operative schedule.
+
+## Pass 44 result: French overseas destinations
+
+The narrow French overseas pass added 185 relationships across French Guiana, French Polynesia, French West Indies, Mayotte, New Caledonia, and Réunion. Complete-matrix evidence increased from 23,080 to 23,265 of 44,974 relationships (51.7%). Africa rose to 6,572 of 11,289 (58.2%), Oceania to 1,370 of 4,165 (32.9%), the Caribbean to 1,158 of 4,962 (23.3%), and the Americas to 1,439 of 4,953 (29.1%). No fallback status changed.
+
+Current French official guidance directly supports 30 foreign EU/EEA/Swiss ordinary passports as visa-free for all six destinations. A separate country-specific page supports Colombia for French Guiana, French Polynesia, Mayotte, New Caledonia, and Réunion. It expressly excludes Saint-Martin and Saint-Barthélemy, so Colombia is not generalized to the catalog's aggregate French West Indies destination.
+
+All six destinations are outside the Schengen Area, and a Schengen visa alone does not establish entry. French citizenship, residence-based exemptions, special documents, long stays, and other conditional routes remain unresolved. This pass intentionally records only the exact jurisdiction/destination mappings present in the official sources rather than importing metropolitan France or Schengen rules.
+
+## Pass 45 result: Saint Lucia
+
+Saint Lucia now has evidence for 186 relationships—61 visa-free, 72 visa-on-arrival, and 53 advance-visa—adding 160 relationships beyond earlier regional evidence. Complete-matrix coverage increased from 23,265 to 23,425 of 44,974 relationships (52.1%); 115 destination columns now have at least 50% coverage and 110 have at least 80%. Caribbean coverage increased from 1,158 to 1,318 of 4,962 relationships (26.6%). Thirteen cells remain unresolved.
+
+The current revised Immigration schedules directly separate the named exemption, arrival-issued visa, and prior-visa cohorts. The EU reciprocal ordinary-passport waiver is independently supported by its treaty and 1 November 2023 entry into force. Brazil's Foreign Ministry treaty registry confirms its ordinary-passport waiver has been in force since 14 January 2024, so Brazil is visa-free despite remaining in the older arrival schedule.
+
+Independent review left conflicting or incomplete rows unresolved. The Democratic Republic of the Congo appears as advance-visa in the current name schedule but also under the legacy name “Zaire” in the arrival schedule. Georgia's announced waiver lacks published entry-into-force proof. Seven Schedule-1-only nationalities do not establish whether the required visa is advance or available through the case-specific airport process. Saint Lucia citizenship and other unmapped cells likewise remain unsupported rather than inferred.
+
+The 46 fallback changes were mechanically matched to the candidate: five rows become visa-free, 34 become visa on arrival, and seven require an advance visa. Special documents, work, residence, transit, discretionary airport filing, and admission checks remain separate conditions.
+
+## Pass 46 result: Dutch Caribbean
+
+The Dutch Caribbean pass adds complete 199-passport coverage for Aruba, Curaçao, and Bonaire/Sint Eustatius/Saba: 597 relationships with no fallback status changes. Complete-matrix evidence increased from 23,425 to 24,022 of 44,974 relationships (53.4%); 118 destination columns now have at least 50% coverage and 113 have at least 80%. Caribbean coverage increased from 1,318 to 1,915 of 4,962 relationships (38.6%).
+
+Current NetherlandsWorldwide guidance expressly lists the nationality-wide ordinary-passport waivers and states that travelers outside the listed waiver situations must obtain a Caribbean visa in advance. Aruba and the Caribbean Netherlands each have 86 visa-free and 113 advance-visa passports. Curaçao has 87 visa-free and 112 advance-visa passports because Jamaica is exempt only for Curaçao.
+
+The Caribbean visa is not a Schengen visa, and island-specific stay limits remain distinct. Hong Kong's waiver covers British National (Overseas) or HKSAR passports; Macao is SAR-passport-specific, Taiwan requires an identity-card number, and Ukraine requires a biometric passport. Residence, third-country multiple-entry visas, transit, crew, cruise, special documents, and admission discretion remain conditional routes rather than nationality baselines.
+
+## Held from promotion: Grenada
+
+Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

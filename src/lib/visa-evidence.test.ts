@@ -1228,6 +1228,60 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AO", "AO", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers Dominica's named and conditional short-stay exemptions", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "DM");
+
+    expect(pairs).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("US", "DM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "DM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "DM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DM", "DM", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("keeps French overseas destinations outside Schengen and narrowly mapped", () => {
+    for (const destinationCode of ["GF", "PF", "YT", "NC", "RE"] as const) {
+      const pairs = evidenceRelationshipPairs(snapshot.manifest)
+        .filter(({ destination }) => destination.code === destinationCode);
+      expect(pairs, destinationCode).toHaveLength(31);
+      expect(getVisaRelationshipEvidence("NO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("CO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("US", destinationCode, snapshot.passports.US.statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+    }
+
+    const frenchWestIndiesPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "FW");
+    expect(frenchWestIndiesPairs).toHaveLength(30);
+    expect(getVisaRelationshipEvidence("NO", "FW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CO", "FW", snapshot.passports.CO.statuses.FW).supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Saint Lucia's current visa schedules and treaty waivers", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "LC");
+
+    expect(pairs).toHaveLength(186);
+    expect(getVisaRelationshipEvidence("BR", "LC", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AU", "LC", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "LC", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CD", "LC", snapshot.passports.CD.statuses.LC).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("LC", "LC", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers the Dutch Caribbean's explicit waiver and residual visa rules", () => {
+    for (const destinationCode of ["AW", "CW", "BQ"] as const) {
+      const pairs = evidenceRelationshipPairs(snapshot.manifest)
+        .filter(({ destination }) => destination.code === destinationCode);
+      expect(pairs, destinationCode).toHaveLength(199);
+      expect(getVisaRelationshipEvidence("US", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("AF", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
+    }
+
+    expect(getVisaRelationshipEvidence("JM", "CW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("JM", "AW", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("JM", "BQ", "visa_required").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1583,6 +1637,20 @@ describe("official visa evidence", () => {
       "web.mfa.gov.so",
       "arabiasaudita.mirex.gov.ao",
       "joanesburgo.mirex.gov.ao",
+      "www.dominica.gov.dm",
+      "printery.dominica.gov.dm",
+      "www.nationalsecurity.gov.dm",
+      "www.france-visas.gouv.fr",
+      "france-visas.gouv.fr",
+      "www.immigration.interieur.gouv.fr",
+      "attorneygeneralchambers.com",
+      "externalaffairs.govt.lc",
+      "npc.govt.lc",
+      "www.govt.lc",
+      "www.consilium.europa.eu",
+      "concordia.itamaraty.gov.br",
+      "www.netherlandsworldwide.nl",
+      "gobiernu.cw",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

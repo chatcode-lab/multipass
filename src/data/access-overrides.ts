@@ -1197,4 +1197,31 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://governo.gov.ao/noticias/1046/governo/decreto-presidencial/angola-isenta-cidadaos-de-98-paises-de-vistos-de-turismo",
     reviewedAt: "2026-08-21",
   },
+  ...(["EC", "HN", "MY", "PE", "VE"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "LC",
+    status: "visa_free" as const,
+    reason: "Saint Lucia's current Schedule 4 directly places this ordinary passport in the visa-exempt short-stay cohort.",
+    sourceUrl: "https://attorneygeneralchambers.com/laws-of-saint-lucia/immigration-act/schedule-4",
+    reviewedAt: "2026-08-21",
+  })),
+  ...([
+    "AD", "AU", "BN", "BW", "BY", "FJ", "IS", "KI", "LI", "LS", "MC", "MD", "MH", "MK", "MU", "MV", "MW",
+    "MX", "NA", "NE", "NR", "NZ", "PA", "SB", "SC", "SZ", "TO", "TV", "UA", "UY", "VU", "WS", "ZA", "ZM",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "LC",
+    status: "visa_on_arrival" as const,
+    reason: "Saint Lucia's current Schedule 2 directly places this ordinary passport in the arrival-issued visa cohort.",
+    sourceUrl: "https://attorneygeneralchambers.com/laws-of-saint-lucia/immigration-act/schedule-2-01",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["AE", "BA", "CN", "KW", "ME", "RU", "TR"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "LC",
+    status: "visa_required" as const,
+    reason: "Saint Lucia's current Schedule 3 expressly requires this ordinary passport to obtain a visa before arrival.",
+    sourceUrl: "https://attorneygeneralchambers.com/laws-of-saint-lucia/immigration-act/schedule-3",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;
