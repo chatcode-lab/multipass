@@ -1,0 +1,2042 @@
+{
+  "batchId": "bosnia-live-visa-selector-recovery-2026",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "bosnia-border-police-faq-citizenship-recovery",
+      "title": "Border Police FAQ",
+      "url": "https://granpol.gov.ba/en/faq",
+      "publisher": "Border Police of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The official Border Police FAQ is published on granpol.gov.ba and states the domestic classification for BiH citizens holding another citizenship.",
+      "supportingExcerpt": "A BiH citizen who has the citizenship of another state is not considered a foreigner in the territory of BiH."
+    },
+    {
+      "id": "bosnia-official-gazette-37-26-gulf-waiver-recovery",
+      "title": "Decision amending the Decision on Visas, Official Gazette of BiH 37/26",
+      "url": "https://sluzbenilist.ba/page/akt/Wi2t0dd7Lq4%3D",
+      "publisher": "Official Gazette of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "law",
+      "language": "Bosnian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Official Gazette publishes Council of Ministers Decision 87/26, including the dates, ordinary-passport scope and aggregate stay limit of the Gulf waiver.",
+      "supportingExcerpt": "u periodu od 1. juna 2026. godine do 30. septembra 2026. godine"
+    },
+    {
+      "id": "bosnia-mfa-live-visa-selector-recovery",
+      "title": "MFA Bosnia and Herzegovina: Visas",
+      "url": "https://www.mvp.gov.ba/en/vize",
+      "publisher": "Ministry of Foreign Affairs of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The MFA page server-renders a country-title/slug list and country pages under mvp.gov.ba, but its public TLS chain fails normal verification and standard retrieval did not yield a securely reproducible selector response.",
+      "supportingExcerpt": "This page contains basic visa information for foreign citizens traveling to Bosnia and Herzegovina."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bosnia-selector-recovery-citizenship-home-entry",
+      "title": "Bosnia and Herzegovina ordinary passport: citizenship/home entry",
+      "summary": "A traveller using an ordinary Bosnia and Herzegovina passport is a BiH citizen rather than a foreign visitor under the visa regime.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "BA"
+      ],
+      "passportCodes": [
+        "BA"
+      ],
+      "conditions": [
+        "The Border Police says that a BiH citizen who holds another citizenship is not considered a foreigner in BiH.",
+        "This does not decide treatment for a dual national presenting another passport, work, residence, transit, document validity, security controls or final admission."
+      ],
+      "sourceIds": [
+        "bosnia-border-police-faq-citizenship-recovery"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "bosnia-selector-recovery-gulf-temporary-waiver-2026",
+      "title": "Bahrain, Oman and Saudi Arabia ordinary passports: temporary visa-free entry through 30 September 2026",
+      "summary": "Official Gazette 37/26 exempts ordinary passport holders of Bahrain, Oman and Saudi Arabia from a visa for entry, exit, transit and stay from 1 June through 30 September 2026.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BA"
+      ],
+      "passportCodes": [
+        "BH",
+        "OM",
+        "SA"
+      ],
+      "effectiveFrom": "2026-06-01",
+      "effectiveTo": "2026-09-30",
+      "conditions": [
+        "The waiver is limited to ordinary passport holders of Bahrain, Oman and Saudi Arabia.",
+        "The aggregate stay during the stated temporary period is no more than 60 days.",
+        "It does not establish entry after 30 September 2026, work, residence, special-passport, document, security or final-admission treatment."
+      ],
+      "sourceIds": [
+        "bosnia-official-gazette-37-26-gulf-waiver-recovery"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "AF",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "FR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "BA",
+      "reason": "The recovered MFA country-page list contains no Kosovo result, and no directly verified official source in this batch establishes Kosovo passport recognition or an ordinary-passport visitor category. The row remains unresolved.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "BA",
+      "reason": "The live MFA selector is technically recoverable as static country-page routes, but its public TLS chain fails normal verification and standard browser retrieval times out. No securely reproducible official result or current consolidated regulation was verified for this ordinary passport; no selector-derived status is normalized.",
+      "searchedOfficialDomains": [
+        "www.mvp.gov.ba",
+        "granpol.gov.ba",
+        "sluzbenilist.ba"
+      ]
+    }
+  ]
+}

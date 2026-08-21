@@ -944,6 +944,14 @@ Comoros' current law establishes a treaty-qualified visa baseline and expressly 
 
 Tunisia's live E-Consulat page proves only a consular application process for unspecified visa-subject nationalities. The government eVisa item describes a platform that would operate once implemented, so it is not evidence of current electronic issuance. No accessible current nationality schedule, operative bilateral-waiver register or direct citizenship-entry source was recovered; all 199 rows remain unresolved in the refresh artifact.
 
+## Pass 107 result: Bosnia and Herzegovina, North Macedonia and Grenada currentness review
+
+This pass adds no canonical relationship. Bosnia and Herzegovina's rebuilt MFA site exposes 194 static country slugs and server-rendered country pages, not a query API. Recovered samples contain useful inbound rules, but the official domain's broken TLS chain and repeated browser timeouts make those results insecurely reproducible. The four already canonical rows—citizenship and the temporary 2026 Bahrain, Oman and Saudi Arabia waivers—remain supported; the other 195 are held, including Kosovo because no result entry was recovered.
+
+North Macedonia's current Law on Foreigners delegates its required/exempt nationality lists to a Government regulation, but no current operative regulation or reproducible full MFA selector output was recovered. The 31 EU/Schengen foreign rows and citizenship are already canonical. A 2026 Gazette decision for holders of qualifying United States, United Kingdom or Canadian multiple-entry visas, and routes for qualifying EU/Schengen visa or residence holders, are document-conditioned rather than passport-wide; the remaining 167 rows stay unresolved.
+
+Grenada's live Foreign Ministry mission page still links the February 2021 nationality table, and current separate guidance confirms China's 30-day waiver. No 2026 legislation, Gazette, Immigration schedule or replacement instrument confirms that the whole five-year-old table remains operative. Its proposed Zimbabwe `visa_required` correction is therefore held with all 199 refresh rows rather than promoted from dated evidence.
+
 ## Held from promotion: Americas, Africa and Asia near-complete gaps
 
 Twenty-five of the 28 examined residual cells remain unresolved. Kosovo document non-recognition or omission prevents nationality-only classifications for Mexico, Chile and Uruguay. Ecuador's current official source could not be stably retrieved for Hong Kong, Macao or Taiwan. Kenya's Gazette says “St. Kitts and Navis,” which is not silently corrected to the current issuer. Zimbabwe currently places Bolivia in an arrival-visa category while its eVisa FAQ says a pre-travel visa is required.
