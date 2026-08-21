@@ -298,6 +298,14 @@ Libya adds no supported status cells. The current legal baseline retains unmappe
 
 The Gambia supports Gambian citizenship and 32 visa-free ordinary passports, changing Russia from advance visa to visa-free. Strong review rejected the initial 87-passport interpretation: the Immigration Department's newer country table explicitly places 59 of those broadly described EU or Commonwealth passports in visa or clearance groups, contradicting the older central Government category summary. Those 59 and the remaining uncertain routes stay unresolved; clearance was not guessed to mean visa on arrival, eVisa, or advance visa. The live table is itself incomplete and internally inconsistent for Indonesia, so only its unconflicted agreement and ECOWAS entries plus four uncontradicted EU passports were retained.
 
+## Pass 31 result: Sudan and South Sudan
+
+This deliberately narrow pass increased complete-matrix evidence from 21,420 to 21,424 of 44,974 relationships (47.6%); Africa coverage increased from 5,022 to 5,026 of 11,289 relationships (44.5%).
+
+Sudan supports only the Sudanese citizenship cell from the current constitutional right of return. Official Passport Directorate material confirms that counter visas remain possible after Headquarters approval, while current Foreigners Department and airport-operation sources describe visa and arrival processes. None publishes a current passport-nationality schedule, exemption register, eVisa scope, or residual default. All 198 foreign-passport cells remain unresolved, especially given operational variability and the distinction between a possible counter-visa process and a nationality-wide visa-on-arrival entitlement.
+
+South Sudan supports four expressly named visa exemptions: Egypt, Kenya, Tanzania, and Uganda. Kenya and Uganda are corrected from visa on arrival to visa-free. The other 195 cells remain unresolved. Foreign Affairs distinguishes visa, arrival and mission routes but does not map them by nationality; the live Interior eVisa portal proves electronic issuance without publishing eligibility, and the Government Trade Hub's general arrival wording is non-exhaustive. The Foreign Affairs table has an expired TLS certificate, a 2024 modification date, and a malformed Antigua row, so the narrow four-code cohort is retained at medium confidence and requires periodic recheck.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

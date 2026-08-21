@@ -1048,6 +1048,21 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GM", "GM", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
+  it("keeps Sudan conservative and supports only South Sudan's named exemptions", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("SD")).toHaveLength(1);
+    expect(getVisaRelationshipEvidence("SD", "SD", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "SD", snapshot.passports.US.statuses.SD).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("SS")).toHaveLength(4);
+    expect(getVisaRelationshipEvidence("KE", "SS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("UG", "SS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "SS", snapshot.passports.US.statuses.SS).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SS", "SS", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1353,6 +1368,12 @@ describe("official visa evidence", () => {
       "ldil.gia.gov.ly",
       "gambia.gov.gm",
       "gid.gov.gm",
+      "passports.gov.sd",
+      "sudan.gov.sd",
+      "moj.gov.sd",
+      "mofaic.gov.ss",
+      "www.evisa.gov.ss",
+      "tradeinfohub.gov.ss",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

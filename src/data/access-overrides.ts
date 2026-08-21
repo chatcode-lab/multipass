@@ -1043,4 +1043,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://gid.gov.gm/visa/",
     reviewedAt: "2026-08-21",
   },
+  ...(["KE", "UG"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "SS",
+    status: "visa_free" as const,
+    reason: "South Sudan's current Foreign Affairs country table expressly marks this ordinary passport as exempt; the route is not a visa on arrival.",
+    sourceUrl: "https://mofaic.gov.ss/visa-eligibility/",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;
