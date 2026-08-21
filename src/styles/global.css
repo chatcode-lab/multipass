@@ -356,9 +356,12 @@ main { min-height: 68vh; }
 .button:hover { transform: translateY(-1px); }
 .button:disabled { opacity: .42; cursor: not-allowed; transform: none; }
 .button--primary { background: var(--green); color: var(--white); }
+.button--primary:link,
+.button--primary:visited { color: var(--white); -webkit-text-fill-color: var(--white); }
 .button--primary:hover { background: var(--green-mid); }
 .button--quiet { min-height: 38px; padding: 0 13px; border-color: var(--line); background: transparent; color: var(--ink); font-size: 13px; }
 .button--quiet:hover { background: var(--paper-2); }
+.not-found__return > span:first-child { font-size: 18px; line-height: 1; transform: translateY(-1px); }
 
 .section { padding: clamp(76px, 9vw, 128px) 0; border-top: 1px solid var(--line); }
 .section--tight { padding-top: 58px; }
@@ -1122,6 +1125,19 @@ main { min-height: 68vh; }
   .site-footer__nav { width: min(100%, 640px); }
 }
 
+@media (max-width: 760px) {
+  .scenario-card {
+    min-height: 0;
+    flex-direction: column;
+    gap: 22px;
+    align-items: stretch;
+    padding: 24px 22px 26px;
+  }
+  .scenario-card > .passport-stack { align-self: center; }
+  .scenario-card__content { width: 100%; }
+  .scenario-card h2 { overflow-wrap: normal; word-break: normal; }
+}
+
 @media (max-width: 620px) {
   :root { --page: calc(100% - 28px); }
   .ranking-table__list > li.is-featured .ranking-row,
@@ -1259,16 +1275,6 @@ main { min-height: 68vh; }
   .rank-set-summary > span { min-width: 0; flex-basis: 100%; }
   .rank-set-summary strong { transform: translateY(2px); }
   .agent-guide pre { margin-inline: -4px; padding: 18px; }
-  .scenario-card {
-    min-height: 0;
-    flex-direction: column;
-    gap: 22px;
-    align-items: stretch;
-    padding: 24px 22px 26px;
-  }
-  .scenario-card > .passport-stack { align-self: center; }
-  .scenario-card__content { width: 100%; }
-  .scenario-card h2 { overflow-wrap: normal; word-break: normal; }
   .comparison-toolbar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;

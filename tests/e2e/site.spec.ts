@@ -321,19 +321,15 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
 });
 
 test("combined passport artwork stays clear of its result text", async ({ page }) => {
+  await page.setViewportSize({ width: 700, height: 900 });
   await page.goto("/compare?set=SE,JP,AE,KR&set=DK,SE");
   const card = page.locator(".scenario-card").first();
   const cover = await card.locator(".passport-stack").boundingBox();
   const content = await card.locator(".scenario-card__content").boundingBox();
   expect(cover).not.toBeNull();
   expect(content).not.toBeNull();
-  const viewport = page.viewportSize();
-  if (viewport && viewport.width <= 620) {
-    expect(cover!.y + cover!.height).toBeLessThan(content!.y);
-    expect(content!.width).toBeGreaterThan(cover!.width);
-  } else {
-    expect(cover!.x + cover!.width).toBeLessThan(content!.x);
-  }
+  expect(cover!.y + cover!.height).toBeLessThan(content!.y);
+  expect(content!.width).toBeGreaterThan(cover!.width);
 });
 
 test("long passport names wrap inside their covers", async ({ page }) => {
@@ -721,4 +717,5 @@ test("unknown passports return a real 404", async ({ page }) => {
   const returnLink = page.getByRole("link", { name: "Return to the ranking" });
   await expect(returnLink).toBeVisible();
   await expect(returnLink).toHaveCSS("color", "rgb(255, 253, 248)");
+  await expect(returnLink).toHaveCSS("-webkit-text-fill-color", "rgb(255, 253, 248)");
 });
