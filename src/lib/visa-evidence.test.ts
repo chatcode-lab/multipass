@@ -1029,6 +1029,25 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MR", "MR", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers Eritrea and Gambia while documenting Libya's source gap", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("ER")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("US", "ER", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KE", "ER", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ER", "ER", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("LY")).toHaveLength(0);
+    expect(getVisaRelationshipEvidence("US", "LY", snapshot.passports.US.statuses.LY).supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("GM")).toHaveLength(33);
+    expect(getVisaRelationshipEvidence("RU", "GM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "GM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "GM", snapshot.passports.US.statuses.GM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GM", "GM", "citizenship").supportsCurrentStatus).toBe(true);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1327,6 +1346,13 @@ describe("official visa evidence", () => {
       "www.diplomatie.gov.mr",
       "www.procedures.gov.mr",
       "apim.gov.mr",
+      "us.embassyeritrea.org",
+      "aladel.gov.ly",
+      "lana.gov.ly",
+      "embassies.foreign.gov.ly",
+      "ldil.gia.gov.ly",
+      "gambia.gov.gm",
+      "gid.gov.gm",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

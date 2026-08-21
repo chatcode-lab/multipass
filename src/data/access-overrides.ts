@@ -1027,4 +1027,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://anrpts.gov.mr/fr/service-de-lagance/visitors",
     reviewedAt: "2026-08-21",
   },
+  ...(["ET", "KE", "SD", "UG"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "ER",
+    status: "visa_required" as const,
+    reason: "Eritrea's current official consular rule categorically requires non-Eritrean ordinary-passport visitors to obtain a visa before travel; the online form still requires mailing the original passport and is not an eVisa.",
+    sourceUrl: "https://us.embassyeritrea.org/visa/",
+    reviewedAt: "2026-08-21",
+  })),
+  {
+    passportCode: "RU",
+    destinationCode: "GM",
+    status: "visa_free",
+    reason: "Gambia's current Immigration country table expressly places Russian ordinary passports in its visa-exemption-agreement group and gives no conflicting Russia entry.",
+    sourceUrl: "https://gid.gov.gm/visa/",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;
