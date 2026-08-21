@@ -56,6 +56,7 @@ import {
   TAIWAN_TRIAL_14_DAY_VISA_EXEMPT_CODES,
   TAIWAN_VISITOR_VISA_REQUIRED_CODES,
   TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES,
+  UNITED_STATES_PP10998_VISITOR_RESTRICTION_CODES,
   UNITED_STATES_VWP_CODES,
   UNITED_STATES_VISITOR_VISA_REQUIRED_GENERAL_CODES,
   UNITED_KINGDOM_APRIL_2025_ETA_CODES,
@@ -531,14 +532,16 @@ describe("official visa evidence", () => {
   it("covers the United States visitor baseline and preserves narrow exceptions", () => {
     expect(UNITED_STATES_VWP_CODES).toHaveLength(42);
     expect(UNITED_STATES_VISITOR_VISA_REQUIRED_GENERAL_CODES).toHaveLength(149);
+    expect(UNITED_STATES_PP10998_VISITOR_RESTRICTION_CODES).toHaveLength(39);
     const unitedStatesPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "US");
-    expect(unitedStatesPairs).toHaveLength(199);
+    expect(unitedStatesPairs).toHaveLength(160);
     expect(getVisaRelationshipEvidence("JP", "US", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "US", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BR", "US", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BS", "US", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FM", "US", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "US", snapshot.passports.AF.statuses.US).supportsCurrentStatus).toBe(false);
   });
 
   it("keeps the Colombia and Peru EU agreements directional while allowing independent inbound rules", () => {
@@ -569,7 +572,21 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "SC", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AT", "WS", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "TT", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VU", "TT", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ZM", "TT", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ZW", "TT", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AD", "TT", snapshot.passports.AD.statuses.TT).supportsCurrentStatus).toBe(false);
+  });
+
+  it("supports Saint Vincent and the Grenadines' named pre-entry visa cohort without inferring a residual", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "VC");
+
+    expect(pairs).toHaveLength(38);
+    expect(getVisaRelationshipEvidence("BD", "VC", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NP", "VC", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "VC", snapshot.passports.US.statuses.VC).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("VC", "VC", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
   it("covers the reviewed Madagascar, Palau, Vanuatu, Cabo Verde, and Mozambique pass", () => {
@@ -1363,11 +1380,11 @@ describe("official visa evidence", () => {
 
   it("maps reviewed visitor cohorts for United States territories conservatively", () => {
     const expectedCounts = new Map([
-      ["AS", 198],
+      ["AS", 48],
       ["GU", 160],
       ["MP", 160],
-      ["PR", 42],
-      ["VI", 42],
+      ["PR", 160],
+      ["VI", 160],
     ]);
 
     for (const [destinationCode, expected] of expectedCounts) {
@@ -1378,7 +1395,7 @@ describe("official visa evidence", () => {
 
     expect(getVisaRelationshipEvidence("QA", "AS", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "AS", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("WS", "AS", snapshot.passports.WS.statuses.AS).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("WS", "AS", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AU", "GU", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "MP", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BS", "GU", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1387,7 +1404,9 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "MP", snapshot.passports.AF.statuses.MP).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PT", "PR", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PT", "VI", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("US", "PR", snapshot.passports.US.statuses.PR).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BS", "PR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BS", "VI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "PR", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("maps bounded UK territory schedules without filling unsupported territory complements", () => {
@@ -2406,6 +2425,9 @@ describe("official visa evidence", () => {
       "externalaffairs.govt.lc",
       "npc.govt.lc",
       "www.govt.lc",
+      "security.gov.vc",
+      "evisa.gov.vc",
+      "foreign.gov.vc",
       "www.consilium.europa.eu",
       "concordia.itamaraty.gov.br",
       "www.netherlandsworldwide.nl",

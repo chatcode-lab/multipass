@@ -30,6 +30,15 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...(["BD", "NP"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "VC" as const,
+    status: "visa_required" as const,
+    reason: "Saint Vincent and the Grenadines' Ministry of National Security expressly includes this ordinary passport in the current pre-entry visa cohort.",
+    sourceUrl: "https://security.gov.vc/security/index.php?Itemid=144&catid=19&id=1078%3Apublic-service-announcement-2&option=com_content&view=article",
+    reviewedAt: "2026-08-21",
+    effectiveFrom: "2024-04-29",
+  })),
   {
     passportCode: "RS",
     destinationCode: "CU",
@@ -1581,7 +1590,15 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://legalaffairs.as.gov/copy-of-ok-board-us-cit-nat-1",
     reviewedAt: "2026-08-21",
   },
-  ...(["GU", "MP"] as const).map((destinationCode) => ({
+  {
+    passportCode: "WS",
+    destinationCode: "AS",
+    status: "eta",
+    reason: "American Samoa's current law places Samoa passport holders in its 10-day Entry Permit Waiver Program, which requires an electronic application before travel.",
+    sourceUrl: "https://legalaffairs.as.gov/visitor-visa-home",
+    reviewedAt: "2026-08-21",
+  },
+  ...(["GU", "MP", "PR", "VI"] as const).map((destinationCode) => ({
     passportCode: "BS" as const,
     destinationCode,
     status: "visa_free" as const,

@@ -395,6 +395,21 @@ export const UNITED_STATES_VISITOR_VISA_REQUIRED_GENERAL_CODES = [
   "WS", "XK", "YE", "ZA", "ZM", "ZW",
 ] as const;
 
+export const UNITED_STATES_PP10998_VISITOR_RESTRICTION_CODES = [
+  "AF", "MM", "BF", "TD", "CG", "GQ", "ER", "HT", "IR", "LA", "LY", "ML", "NE",
+  "SL", "SO", "SS", "SD", "SY", "YE", "PS", "AO", "AG", "BJ", "BI", "CI", "CU",
+  "DM", "GA", "GM", "MW", "MR", "NG", "SN", "TZ", "TG", "TO", "VE", "ZM", "ZW",
+] as const;
+
+const UNITED_STATES_PP10998_VISITOR_RESTRICTION_CODE_SET = new Set<string>(
+  UNITED_STATES_PP10998_VISITOR_RESTRICTION_CODES,
+);
+
+const UNITED_STATES_CURRENT_VISITOR_VISA_REQUIRED_GENERAL_CODES =
+  UNITED_STATES_VISITOR_VISA_REQUIRED_GENERAL_CODES.filter(
+    (code) => !UNITED_STATES_PP10998_VISITOR_RESTRICTION_CODE_SET.has(code),
+  );
+
 const UNITED_STATES_VISITOR_VISA_APPLICATION: VisaApplicationGuide = {
   url: "https://ceac.state.gov/genniv/",
   label: "Start the official DS-160 visitor-visa application",
@@ -3655,9 +3670,10 @@ export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
     summary: "The listed ordinary-passport nationalities require a B-1, B-2, or B-1/B-2 visitor visa for temporary business or tourism travel.",
     status: "visa_required",
     destinationCodes: ["US"],
-    passportCodes: UNITED_STATES_VISITOR_VISA_REQUIRED_GENERAL_CODES,
+    passportCodes: UNITED_STATES_CURRENT_VISITOR_VISA_REQUIRED_GENERAL_CODES,
     conditions: [
       "This classification does not cover work, study, residence, crew, transit, diplomatic, official, refugee, or non-visitor routes.",
+      "Nationalities currently affected by Presidential Proclamation 10998 are excluded because its entry and visa-issuance suspensions, exceptions, and existing-visa rules cannot be represented accurately as a single visa-required status.",
       "Returning lawful permanent residents use permanent-resident documents rather than a B visitor visa.",
       "The Guam-CNMI waiver, emergency waivers, and other case-specific exceptions do not create a nationality-wide continental U.S. visitor rule.",
       "A visa is individually adjudicated and permits travel to request entry rather than guaranteeing admission.",

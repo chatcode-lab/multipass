@@ -265,6 +265,35 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { CN: "citizenship", TT: "evisa" }, mobilityScore: 0 });
   });
 
+  it("applies Saint Vincent and the Grenadines' current pre-entry visa corrections", () => {
+    for (const code of ["BD", "NP"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", VC: "visa_free" },
+        mobilityScore: 1,
+      })).toMatchObject({ statuses: { [code]: "citizenship", VC: "visa_required" }, mobilityScore: 0 });
+    }
+  });
+
+  it("applies reviewed United States territory entry corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "WS",
+      name: "Samoa",
+      statuses: { WS: "citizenship", AS: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { WS: "citizenship", AS: "eta" }, mobilityScore: 1 });
+
+    for (const destinationCode of ["GU", "MP", "PR", "VI"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code: "BS",
+        name: "Bahamas",
+        statuses: { BS: "citizenship", [destinationCode]: "visa_required" },
+        mobilityScore: 0,
+      })).toMatchObject({ statuses: { BS: "citizenship", [destinationCode]: "visa_free" }, mobilityScore: 1 });
+    }
+  });
+
   it("applies reviewed UAE, Kuwait, and Lebanon classifications", () => {
     expect(applyVerifiedAccessOverrides({
       code: "US",
