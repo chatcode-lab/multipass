@@ -983,4 +983,48 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://api.acces-maroc.ma/evisa-api/api/conditionEvise/recherche/fr",
     reviewedAt: "2026-08-21",
   },
+  ...(["AE", "ML"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "CM",
+    status: "evisa" as const,
+    reason: "Cameroon's current Foreign Affairs process requires this non-exempt ordinary passport to obtain a QR-coded electronic visa authorization before travel; border affixing occurs only after that approval.",
+    sourceUrl: "https://www.diplocam.cm/e-visa/",
+    reviewedAt: "2026-08-21",
+  })),
+  {
+    passportCode: "GN",
+    destinationCode: "CI",
+    status: "visa_free",
+    reason: "Côte d'Ivoire applies the current ECOWAS ordinary-passport free-movement exemption to Guinean visitors; electronic pre-enrolment is not required for this member-state passport.",
+    sourceUrl: "https://ecowas.int/wp-content/uploads/2024/08/PROTOCOL-RELATING-TO-FREE-MOVEMENT-OF-PERSONS.pdf",
+    reviewedAt: "2026-08-21",
+  },
+  ...([
+    "AM", "AZ", "BH", "BY", "BA", "CN", "IN", "IQ", "KW", "MY", "MD", "MC", "OM", "QA", "XK",
+    "SA", "AE", "VA", "VN", "HN", "GT", "MO", "MN",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "EG",
+    status: "visa_on_arrival" as const,
+    reason: "Egypt's current official port-entry schedule expressly permits this ordinary passport to receive a visa at an Egyptian port; an optional eVisa does not displace the easier arrival route.",
+    sourceUrl: "https://moi.gov.eg/passports/foreigners/othercountryvisa",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["KZ", "BB", "BT", "TT", "SS", "GY", "KH", "NP", "LA", "KN", "SC", "BZ", "TR", "GN"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "EG",
+      status: "visa_required" as const,
+      reason: "Egypt's current Ministry of Interior schedule expressly requires this ordinary passport to obtain a visa before arrival, subject only to separately documented conditional exceptions.",
+      sourceUrl: "https://moi.gov.eg/passports/foreigners/Countrieswhosecitizenss",
+      reviewedAt: "2026-08-21",
+    })),
+  {
+    passportCode: "SY",
+    destinationCode: "MR",
+    status: "evisa",
+    reason: "Mauritania's current Interior/ANRPTS visitor procedure applies its mandatory pre-travel electronic-visa route to this non-exempt ordinary passport; border biometrics complete rather than issue the visa.",
+    sourceUrl: "https://anrpts.gov.mr/fr/service-de-lagance/visitors",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;

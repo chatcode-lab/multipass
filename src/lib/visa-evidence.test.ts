@@ -991,6 +991,44 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MA", "MA", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
+  it("covers Cameroon and Côte d'Ivoire while documenting Tunisia's source gap", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("CM")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("CF", "CM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NG", "CM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "CM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CM", "CM", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("CI")).toHaveLength(14);
+    expect(getVisaRelationshipEvidence("GN", "CI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BF", "CI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "CI", snapshot.passports.US.statuses.CI).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CI", "CI", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("TN")).toHaveLength(0);
+    expect(getVisaRelationshipEvidence("US", "TN", snapshot.passports.US.statuses.TN).supportsCurrentStatus).toBe(false);
+  });
+
+  it("covers the reviewed Egypt and Mauritania visitor schedules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("EG")).toHaveLength(192);
+    expect(getVisaRelationshipEvidence("US", "EG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "EG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KZ", "EG", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "EG", snapshot.passports.HK.statuses.EG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("EG", "EG", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("MR")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("ML", "MR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SY", "MR", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "MR", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MR", "MR", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1272,6 +1310,23 @@ describe("official visa evidence", () => {
       "api.acces-maroc.ma",
       "www.acces-maroc.ma",
       "adala.justice.gov.ma",
+      "www.diplocam.cm",
+      "spm.gov.cm",
+      "cemac.int",
+      "www.prc.cm",
+      "www.econsulat.tn",
+      "www.social.gov.tn",
+      "pm.gov.tn",
+      "ecois.ecowas.int",
+      "snedai.com",
+      "royaumeuni.diplomatie.gouv.ci",
+      "visa2egypt.gov.eg",
+      "moi.gov.eg",
+      "www.mfa.gov.eg",
+      "anrpts.gov.mr",
+      "www.diplomatie.gov.mr",
+      "www.procedures.gov.mr",
+      "apim.gov.mr",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
