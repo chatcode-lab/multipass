@@ -1449,17 +1449,26 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CY", "VG", snapshot.passports.CY.statuses.VG).supportsCurrentStatus).toBe(false);
   });
 
-  it("keeps Honduras coverage limited to directly recovered current rules", () => {
+  it("maps Honduras' current CA-4 schedule without filling absent issuers or the home cell", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "HN");
 
-    expect(pairs).toHaveLength(9);
+    expect(pairs).toHaveLength(166);
     expect(getVisaRelationshipEvidence("BO", "HN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GT", "HN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SA", "HN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "HN", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("HN", "HN", "citizenship").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("US", "HN", snapshot.passports.US.statuses.HN).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CR", "HN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FJ", "HN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DO", "HN", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LV", "HN", "visa_required").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["AL", "HK", "MO", "XK", "HN"] as const) {
+      expect(getVisaRelationshipEvidence(
+        passportCode,
+        "HN",
+        snapshot.passports[passportCode].statuses.HN,
+      ).supportsCurrentStatus).toBe(false);
+    }
   });
 
   it("maps El Salvador's full current A, B and C nationality schedule", () => {

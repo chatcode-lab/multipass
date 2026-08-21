@@ -1292,6 +1292,24 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://otp.gov.ky/web/cbc/travel/visas-extensions/visitors-visas/list-of-countries-visa-required",
     reviewedAt: "2026-08-21",
   })),
+  ...(["CR", "FJ"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "HN" as const,
+    status: "visa_free" as const,
+    reason: "The current official CA-4 schedule directly places this ordinary passport in Category A, exempt from a visa for Honduras.",
+    sourceUrl: "https://www.cocesna.org/aipca/AIP_2656/Eurocontrol/COCESNA/2026-04-16-NON%20AIRAC/html/eAIP/ES-MS-GEN-1.3-es-ES.html",
+    reviewedAt: "2026-08-21",
+  })),
+  ...(["DO", "LV"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "HN" as const,
+    status: "visa_required" as const,
+    reason: passportCode === "LV"
+      ? "The current official CA-4 schedule expressly assigns every Latvian passport type to Honduras Category B, requiring an advance consular visa."
+      : "The current official CA-4 schedule places Dominican ordinary passports in Category B, requiring an advance consular visa for Honduras.",
+    sourceUrl: "https://www.cocesna.org/aipca/AIP_2656/Eurocontrol/COCESNA/2026-04-16-NON%20AIRAC/html/eAIP/ES-MS-GEN-1.3-es-ES.html",
+    reviewedAt: "2026-08-21",
+  })),
   {
     passportCode: "BO",
     destinationCode: "HN",

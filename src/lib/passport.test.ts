@@ -276,6 +276,26 @@ describe("passport calculations", () => {
     }
   });
 
+  it("applies Honduras' current CA-4 category corrections", () => {
+    for (const code of ["CR", "FJ"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", HN: "visa_required" },
+        mobilityScore: 0,
+      })).toMatchObject({ statuses: { [code]: "citizenship", HN: "visa_free" }, mobilityScore: 1 });
+    }
+
+    for (const code of ["DO", "LV"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", HN: "visa_free" },
+        mobilityScore: 1,
+      })).toMatchObject({ statuses: { [code]: "citizenship", HN: "visa_required" }, mobilityScore: 0 });
+    }
+  });
+
   it("applies reviewed United States territory entry corrections", () => {
     expect(applyVerifiedAccessOverrides({
       code: "WS",
