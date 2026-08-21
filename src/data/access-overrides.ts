@@ -31,6 +31,38 @@ export interface VerifiedAccessOverride {
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "IE",
+    destinationCode: "CU",
+    status: "visa_free",
+    reason: "Current Irish Department of Foreign Affairs guidance says Irish citizens do not require a visa; the required tourist card and arrival form are retained as conditions rather than treated as an eVisa.",
+    sourceUrl: "https://www.ireland.ie/en/dfa/overseas-travel/advice/cuba/",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "IE",
+    destinationCode: "GW",
+    status: "visa_required",
+    reason: "Current Irish Department of Foreign Affairs guidance directs Irish applicants to apply in person at a Guinea-Bissau diplomatic mission before travel.",
+    sourceUrl: "https://www.ireland.ie/en/dfa/overseas-travel/advice/guinea-bissau/",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "IE",
+    destinationCode: "LR",
+    status: "visa_required",
+    reason: "Current Irish Department of Foreign Affairs guidance directs applications from Ireland to the Liberian Embassy in London and does not establish electronic issuance.",
+    sourceUrl: "https://www.ireland.ie/en/dfa/overseas-travel/advice/liberia/",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "IE",
+    destinationCode: "SS",
+    status: "visa_required",
+    reason: "Current Irish Department of Foreign Affairs guidance says visitors cannot fly to Juba without a valid visa, establishing a pre-departure requirement rather than an eVisa.",
+    sourceUrl: "https://www.ireland.ie/en/dfa/overseas-travel/advice/south-sudan/",
+    reviewedAt: "2026-08-21",
+  },
+  {
     passportCode: "CA",
     destinationCode: "LY",
     status: "visa_required",
