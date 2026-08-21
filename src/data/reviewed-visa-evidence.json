@@ -206,7 +206,9 @@
     "japan-outbound-low-coverage-destinations-2026",
     "france-outbound-low-coverage-destinations-2026",
     "switzerland-outbound-low-coverage-destinations-2026",
-    "netherlands-outbound-low-coverage-destinations-2026"
+    "netherlands-outbound-low-coverage-destinations-2026",
+    "south-sudan-outbound-low-coverage-destinations-2026",
+    "taiwan-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -11577,6 +11579,86 @@
       "jurisdiction": "Netherlands",
       "kind": "government-guidance",
       "language": "Dutch",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "cuba-foreign-ministry-evisa-application",
+      "title": "Cuban Foreign Ministry: electronic tourist-visa application",
+      "url": "https://evisacuba.cu/en/solicitar/visa",
+      "publisher": "Ministry of Foreign Affairs of Cuba",
+      "jurisdiction": "Cuba",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "taiwan-boca-outbound-visa-convenience-list-2026",
+      "title": "Taiwan MOFA BOCA: destinations available visa-free, visa on arrival, or by eVisa",
+      "url": "https://www.boca.gov.tw/fp-37-220-9f130-1.html",
+      "publisher": "Bureau of Consular Affairs, Ministry of Foreign Affairs, Republic of China (Taiwan)",
+      "jurisdiction": "Taiwan (Chinese Taipei)",
+      "kind": "government-guidance",
+      "language": "Chinese",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "taiwan-boca-ecuador-entry-warning-2026",
+      "title": "Taiwan MOFA BOCA: Ecuador travel warning and entry requirement",
+      "url": "https://www.boca.gov.tw/sp-trwa-content-3054-ac15a-1.html",
+      "publisher": "Bureau of Consular Affairs, Ministry of Foreign Affairs, Republic of China (Taiwan)",
+      "jurisdiction": "Taiwan (Chinese Taipei)",
+      "kind": "government-guidance",
+      "language": "Chinese",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "cabo-verde-current-visa-required-country-list",
+      "title": "Government of Cabo Verde: countries requiring a visa",
+      "url": "https://www.gov.cv/en/paises-com-visto-obrigatorio-para-cabo-verde",
+      "publisher": "Government of Cabo Verde",
+      "jurisdiction": "Cabo Verde",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "cabo-verde-current-visa-free-country-list",
+      "title": "Government of Cabo Verde: visa-free countries",
+      "url": "https://www.gov.cv/en/paises-isentos-de-visto-para-cabo-verde",
+      "publisher": "Government of Cabo Verde",
+      "jurisdiction": "Cabo Verde",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "liberia-immigration-visa-on-arrival",
+      "title": "Liberia Immigration Service: Visa on Arrival",
+      "url": "https://visaonarrival.lis.gov.lr/",
+      "publisher": "Liberia Immigration Service",
+      "jurisdiction": "Liberia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "prc-immigration-taiwan-resident-mainland-permit-2026",
+      "title": "PRC border authority: Taiwan residents travelling to and from the mainland",
+      "url": "https://en.thnet.gov.cn/2026-03/30/c_1171887.htm",
+      "publisher": "PRC immigration and border authority information service",
+      "jurisdiction": "People's Republic of China",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "taiwan-mac-macao-passport-visa-exemption-notice",
+      "title": "Taiwan Mainland Affairs Council: Macau entry treatment for ROC passport holders",
+      "url": "https://www.mac.gov.tw/News_Content.aspx?n=B2A19E946103A4B9&s=46AFAC6F46BD24E5&sms=7C8440BC86E48FD9",
+      "publisher": "Mainland Affairs Council, Executive Yuan, Republic of China (Taiwan)",
+      "jurisdiction": "Taiwan (Chinese Taipei)",
+      "kind": "government-guidance",
+      "language": "Chinese",
       "reviewedAt": "2026-08-21"
     }
   ],
@@ -54092,6 +54174,128 @@
         "nl-bd",
         "bd-online-visa",
         "nl-td"
+      ]
+    },
+    {
+      "id": "south-sudan-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "South Sudan ordinary passports: Cuban electronic tourist visa",
+      "summary": "Cuba's current Foreign Ministry electronic tourist-visa service directly accepts South Sudan nationality and issues the electronic visa before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "SS"
+      ],
+      "conditions": [
+        "Use the Cuban Foreign Ministry electronic tourist-visa application with the South Sudan ordinary passport to be used for travel. The issued electronic visa is linked to that passport and the portal sends its code by email.",
+        "The portal directs sea travellers to a consular office. Work, residence, study, transit, special documents, carrier rules and final admission are outside this short-visitor policy."
+      ],
+      "sourceIds": [
+        "cuba-foreign-ministry-evisa-application"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/solicitar/visa",
+        "label": "Cuban Foreign Ministry electronic tourist-visa application",
+        "processingTime": "The portal states that a response is sent within 72 business hours.",
+        "steps": [
+          "Select South Sudan nationality and enter the valid ordinary passport details in the official electronic application.",
+          "Complete the specified procedure and receive the electronic-visa code by email before travel.",
+          "Travel with the passport to which the electronic visa is linked and comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "taiwan-ordinary-passport-named-visa-free-short-visits",
+      "title": "Taiwan ordinary passports: named visa-free short visits",
+      "summary": "Taiwan MOFA BOCA's current outbound schedule places these destinations in its visa-free category for Taiwanese travellers.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BA",
+        "VG",
+        "GF",
+        "PF",
+        "FW",
+        "XK",
+        "MK",
+        "YT",
+        "NC",
+        "PA",
+        "PY",
+        "RE",
+        "LC",
+        "VC",
+        "ZM"
+      ],
+      "passportCodes": [
+        "TW"
+      ],
+      "conditions": [
+        "This is the ordinary Taiwanese-passport short-visitor baseline recorded in BOCA's current visa-free schedule; destination rules, stay limits and entry conditions can change.",
+        "It excludes work, residence, transit-only facilities, emergency or other non-ordinary travel documents, carrier controls and individual final-admission decisions."
+      ],
+      "sourceIds": [
+        "taiwan-boca-outbound-visa-convenience-list-2026"
+      ]
+    },
+    {
+      "id": "taiwan-ordinary-passport-named-visa-on-arrival-short-visits",
+      "title": "Taiwan ordinary passports: named visa-on-arrival short visits",
+      "summary": "Taiwan MOFA BOCA's current outbound schedule identifies these destinations as issuing visas at arrival to Taiwanese travellers, including stated pre-clearance routes.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "BD",
+        "BY",
+        "KH",
+        "KM",
+        "CI",
+        "IR",
+        "JO",
+        "LR",
+        "TZ",
+        "UZ"
+      ],
+      "passportCodes": [
+        "TW"
+      ],
+      "conditions": [
+        "BY, IR and UZ require the schedule's stated pre-clearance before a visa is issued on arrival; online pre-clearance followed by border issuance is normalized as visa_on_arrival.",
+        "CI requires online registration, fee payment and an emailed approval code before the visa is issued at Abidjan airport; it is therefore arrival issuance, not an eVisa under this taxonomy.",
+        "LR: apply online, then present the approval QR code at Roberts International Airport for biometric collection and the visa sticker. The Liberia Immigration Service directs applicants in a country with a Liberian embassy to that mission instead.",
+        "This does not establish work, residence, non-visitor, transit-only, special-document, carrier, health, funds or final-admission treatment."
+      ],
+      "sourceIds": [
+        "taiwan-boca-outbound-visa-convenience-list-2026",
+        "liberia-immigration-visa-on-arrival"
+      ]
+    },
+    {
+      "id": "taiwan-ordinary-passport-named-electronic-visas",
+      "title": "Taiwan ordinary passports: named electronic visitor visas",
+      "summary": "Taiwan MOFA BOCA's current outbound schedule identifies these destinations' electronic-visa routes for Taiwanese passport holders; Ecuador separately confirms pre-departure electronic issuance.",
+      "status": "evisa",
+      "destinationCodes": [
+        "AZ",
+        "BF",
+        "CU",
+        "DJ",
+        "EC",
+        "NG",
+        "SA",
+        "SY",
+        "TR"
+      ],
+      "passportCodes": [
+        "TW"
+      ],
+      "conditions": [
+        "EC requires Taiwanese travellers to complete the online electronic-visa application before travel after Ecuador ended the previous visa-free treatment.",
+        "SY and TR are listed by BOCA for ordinary ROC passports with the stated visitor-purpose electronic-visa routes; each destination's current duration, purpose, documentation and border rules remain controlling.",
+        "This records electronic issuance, not merely online filing. It excludes work, residence, transit-only facilities, special documents, carrier checks and final-admission decisions."
+      ],
+      "sourceIds": [
+        "taiwan-boca-outbound-visa-convenience-list-2026",
+        "taiwan-boca-ecuador-entry-warning-2026"
       ]
     }
   ]
