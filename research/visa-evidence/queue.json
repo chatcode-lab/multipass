@@ -4670,6 +4670,20 @@
       ]
     },
     {
+      "id": "spain-outbound-low-coverage-destinations-2026",
+      "priority": 275,
+      "objective": "Classify ordinary Spanish-passport short-visitor access to the assigned low-coverage destinations from current MAEC and direct destination-government sources.",
+      "destinationCodes": ["AF", "KP", "LY", "VG", "PS", "DJ", "SD", "IQ", "SY", "KM", "CU", "TM", "XK", "UA", "CG", "GA", "SS", "TN", "CF", "GQ", "PA", "BA", "CI", "GW", "LR", "ML", "NE", "NG", "BD", "TD", "KH"],
+      "passportCodes": ["ES"],
+      "sourceHints": [
+        "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx"
+      ],
+      "notes": [
+        "Use current Spanish MAEC or direct destination-government evidence for ordinary Spanish passports. Preserve route, invitation, pre-authorisation, issuance timing, purpose and final-admission conditions.",
+        "Do not infer a visa category from generic visa wording, online filing alone, operational closure or Palestinian crossing rules. Online preapproval followed by border issuance is visa_on_arrival."
+      ]
+    },
+    {
       "id": "italy-outbound-low-coverage-destinations-2026",
       "priority": 276,
       "objective": "Classify ordinary Italian-passport short-visitor access to the assigned low-coverage destinations from current Viaggiare Sicuri and direct destination sources where necessary.",
@@ -4677,6 +4691,21 @@
       "passportCodes": ["IT"],
       "sourceHints": ["https://www.viaggiaresicuri.it/"],
       "notes": ["Preserve ordinary-passport, purpose, invitation, pre-clearance, issuance and final-admission conditions.", "Do not infer a visa category from generic wording, portal availability, operational closure or Palestinian crossing rules."]
+    },
+    {
+      "id": "south-korea-outbound-low-coverage-destinations-2026",
+      "priority": 277,
+      "objective": "Classify ordinary Republic of Korea-passport short-visitor access to the assigned low-coverage destinations from current Korean MOFA Overseas Safety destination guidance.",
+      "destinationCodes": ["AF", "KP", "LY", "VG", "PS", "DJ", "SD", "IQ", "SY", "KM", "CU", "TM", "XK", "UA", "CG", "GA", "SS", "TN", "CF", "GQ", "PA", "BA", "CI", "GW", "LR", "ML", "NE", "NG", "BD", "TD", "KH"],
+      "passportCodes": ["KR"],
+      "sourceHints": [
+        "https://www.0404.go.kr/"
+      ],
+      "notes": [
+        "Use current Korean MOFA Overseas Safety destination guidance for ordinary Republic of Korea passports. Preserve purpose, route, invitation, preapproval, issuance timing and final-admission conditions.",
+        "Do not infer an eVisa from online filing or an advance visa from generic visa wording. Online preapproval followed by border issuance is visa_on_arrival. Closure, travel prohibition and Palestinian operational access remain unresolved where the taxonomy has no faithful state."
+      ]
     }
+    ,{"id":"sweden-outbound-low-coverage-destinations-2026","priority":279,"objective":"Classify ordinary Swedish-passport short-visitor access to the assigned low-coverage destinations from current Sweden Abroad and destination-government guidance.","destinationCodes":["AF","KP","LY","VG","PS","DJ","SD","IQ","SY","KM","CU","TM","XK","UA","CG","GA","SS","TN","CF","GQ","PA","BA","CI","GW","LR","ML","NE","NG","BD","TD","KH"],"passportCodes":["SE"],"sourceHints":["https://www.swedenabroad.se/"],"notes":["Preserve ordinary-passport, visitor-purpose, preapproval, issuance and final-admission conditions; do not normalize closure or prohibition as a visa state."]}
   ]
 }

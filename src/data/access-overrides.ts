@@ -31,6 +31,38 @@ export interface VerifiedAccessOverride {
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "IT",
+    destinationCode: "CI",
+    status: "visa_on_arrival",
+    reason: "Current Italian MFA guidance says D.S.T. email preapproval is followed by visa printing and issuance at Abidjan airport.",
+    sourceUrl: "https://www.viaggiaresicuri.it/find-country/country/CIV",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "IT",
+    destinationCode: "TM",
+    status: "visa_on_arrival",
+    reason: "Current Italian MFA guidance permits airport or border visa issuance after invitation and Migration Service entry authorisation.",
+    sourceUrl: "https://www.viaggiaresicuri.it/find-country/country/TKM",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "ES",
+    destinationCode: "IQ",
+    status: "visa_on_arrival",
+    reason: "Current Spanish MAEC guidance says an online request is followed by visa issuance on arrival at Baghdad International Airport.",
+    sourceUrl: "https://www.exteriores.gob.es/Embajadas/bagdad/es/ViajarA/Paginas/Recomendaciones-de-viaje.aspx",
+    reviewedAt: "2026-08-21",
+  },
+  {
+    passportCode: "ES",
+    destinationCode: "TM",
+    status: "visa_on_arrival",
+    reason: "Current Spanish MAEC guidance permits a ten-day visa issued at Ashgabat airport after prior Turkmen invitation approval.",
+    sourceUrl: "https://exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Turkmenistan",
+    reviewedAt: "2026-08-21",
+  },
+  {
     passportCode: "TW",
     destinationCode: "BY",
     status: "visa_on_arrival",
