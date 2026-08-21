@@ -895,7 +895,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("PK", "PK", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
-  it("covers Tajikistan while preserving Afghanistan and Turkmenistan source gaps", () => {
+  it("covers Tajikistan and named Turkmenistan rows while preserving source gaps", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
@@ -905,8 +905,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("WS", "TJ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TJ", "TJ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("TM")).toHaveLength(1);
+    expect(pairsFor("TM")).toHaveLength(4);
     expect(getVisaRelationshipEvidence("TM", "TM", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KZ", "TM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RU", "TM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TR", "TM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "TM", snapshot.passports.US.statuses.TM).supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("AF")).toHaveLength(0);
@@ -1415,7 +1418,7 @@ describe("official visa evidence", () => {
     const expectedCounts = new Map([
       ["AI", 199],
       ["TC", 199],
-      ["FK", 109],
+      ["FK", 199],
       ["KY", 198],
       ["BM", 199],
       ["VG", 1],
@@ -1432,7 +1435,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "AI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MC", "TC", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "FK", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("US", "FK", snapshot.passports.US.statuses.FK).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("US", "FK", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PE", "KY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "KY", snapshot.passports.SS.statuses.KY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GB", "BM", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1574,6 +1577,17 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("OM", "VE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "VE", snapshot.passports.AF.statuses.VE).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("VE", "VE", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("supports Panama's directly reviewed stamped-visa rows", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "PA");
+
+    expect(pairs).toHaveLength(3);
+    expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DO", "PA", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("VE", "PA", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("maps only Guyana's reconciled ordinary-passport visitor rows", () => {
@@ -2487,6 +2501,11 @@ describe("official visa evidence", () => {
       "www.bermudalaws.bm",
       "www.gov.bm",
       "www2.gov.bm",
+      "mejlis.gov.tm",
+      "legislation.gov.fk",
+      "www.legislation.gov.fk",
+      "www.migracion.gob.pa",
+      "www.gacetaoficial.gob.pa",
       "cdn.www.gob.pe",
       "www.gob.pe",
     ]);

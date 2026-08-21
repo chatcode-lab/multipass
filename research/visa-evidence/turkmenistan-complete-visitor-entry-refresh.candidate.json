@@ -1,0 +1,2254 @@
+{
+  "batchId": "turkmenistan-complete-visitor-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "turkmenistan-mejlis-migration-law",
+      "title": "Law of Turkmenistan on Migration",
+      "url": "https://mejlis.gov.tm/single-law/226?lang=tm",
+      "publisher": "Mejlis of Turkmenistan",
+      "jurisdiction": "Turkmenistan",
+      "kind": "law",
+      "language": "Turkmen",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Mejlis publishes the current consolidated Migration Law on its official mejlis.gov.tm legislation portal.",
+      "supportingExcerpt": "Türkmenistanyň her bir raýatynyň Türkmenistana gelmäge hukugy bardyr."
+    },
+    {
+      "id": "kazakhstan-mfa-current-visa-regime",
+      "title": "Visa regime for citizens of the Republic of Kazakhstan",
+      "url": "https://www.gov.kz/memleket/entities/mfa/activities/34741?lang=en&parentId=3064",
+      "publisher": "Ministry of Foreign Affairs of Kazakhstan",
+      "jurisdiction": "Kazakhstan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Kazakhstan MFA publishes the live passport-type table on its official gov.kz domain.",
+      "supportingExcerpt": "Turkmenistan | visa-free up to 30 days | visa-free up to 30 days | visa"
+    },
+    {
+      "id": "russia-mfa-current-passport-regime",
+      "title": "Current entry rules by passport type",
+      "url": "https://www.kdmid.ru/info-for-traveling-abroad/reference-information-for-traveling-abroad/list-of-countries-with-simplified-entry/",
+      "publisher": "Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russian Federation",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Russia MFA publishes the dated, live passport-type table on its official kdmid.ru consular domain.",
+      "supportingExcerpt": "Туркменистан | без визы до 30 дней | требуется виза"
+    }
+  ],
+  "policies": [
+    {
+      "id": "turkmenistan-complete-refresh-kazakhstan-ordinary-visa",
+      "title": "Kazakhstan ordinary passport: Turkmenistan visa required",
+      "summary": "Kazakhstan MFA’s current passport-type table marks Turkmenistan as “visa” for an ordinary Kazakhstan passport, consistent with Turkmenistan’s statutory foreign-visitor visa baseline.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "TM"
+      ],
+      "passportCodes": [
+        "KZ"
+      ],
+      "conditions": [
+        "This normalization does not cover work, transit, diplomatic/service passports, residence-based entry or any local border arrangement.",
+        "Visa issuance and final admission remain subject to the competent Turkmen authorities and required documents."
+      ],
+      "sourceIds": [
+        "kazakhstan-mfa-current-visa-regime",
+        "turkmenistan-mejlis-migration-law"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "turkmenistan-complete-refresh-russia-ordinary-visa",
+      "title": "Russian ordinary passport: Turkmenistan visa required",
+      "summary": "Russia MFA’s current passport-type table records that a Russian ordinary passport requires a visa for Turkmenistan; the cited bilateral agreement is limited to the listed visa-free passport class.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "TM"
+      ],
+      "passportCodes": [
+        "RU"
+      ],
+      "conditions": [
+        "This maps only ordinary passports for a short visitor purpose. It excludes diplomatic/service passports, residence/document exemptions, work, transit and individual admission decisions.",
+        "Turkmenistan’s current law provides that visa/eVisa is unnecessary where its international treaties provide a waiver; the Russian MFA table identifies the ordinary Russian passport as requiring a visa.",
+        "Visa issuance and final admission remain subject to the competent Turkmen authorities and required documents."
+      ],
+      "sourceIds": [
+        "russia-mfa-current-passport-regime",
+        "turkmenistan-mejlis-migration-law"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "TM",
+      "destinationCode": "TM",
+      "reason": "The citizenship relationship is already covered by the canonical turkmenistan-citizenship-right-of-entry policy and is intentionally excluded from this refresh promotion.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "FR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "TM",
+      "reason": "No current official source publishes an exhaustive ordinary-passport treaty-waiver or eVisa-eligibility roster for this nationality. The statutory visa rule therefore cannot be normalized safely to a code-specific status.",
+      "searchedOfficialDomains": [
+        "mejlis.gov.tm",
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    }
+  ]
+}

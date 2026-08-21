@@ -30,6 +30,15 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  {
+    passportCode: "DO",
+    destinationCode: "PA",
+    status: "visa_required",
+    reason: "Panama's 2015 stamped-visa classification is again the ordinary-passport baseline after Executive Decree 88 of 2021 removed the intervening Dominican Tourist Card route.",
+    sourceUrl: "https://www.gacetaoficial.gob.pa/storage/gacetas/2021/03/29244/GacetaNo_29244_20210318.pdf",
+    reviewedAt: "2026-08-21",
+    effectiveFrom: "2021-03-18",
+  },
   ...([
     "PE", "ME", "BA", "EC", "FJ", "GY", "TH", "BO", "SR", "KZ", "DO", "MA", "AZ",
     "AM", "PH", "TN", "ZM", "CV", "BJ", "MZ", "ST", "KG", "UZ", "BF", "MG", "TG", "GA",
