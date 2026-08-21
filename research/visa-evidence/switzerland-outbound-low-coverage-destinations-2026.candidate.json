@@ -1,0 +1,112 @@
+{
+  "batchId": "switzerland-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "bih-security-switzerland-visa-free",
+      "title": "Bosnia and Herzegovina Ministry of Security: information for foreigners",
+      "url": "https://www.msb.gov.ba/inf_za_strance/default.aspx?id=14558&langTag=en-US",
+      "publisher": "Ministry of Security of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Bosnia and Herzegovina's Ministry of Security publishes the current visa-free nationality information for foreign visitors.",
+      "supportingExcerpt": "The Swiss Confederation is included among nationalities that may enter Bosnia and Herzegovina without a visa."
+    },
+    {
+      "id": "ukraine-mfa-entry-regime-switzerland",
+      "title": "Ministry of Foreign Affairs of Ukraine: entry regime for foreign citizens",
+      "url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/entry-regime-ukraine-foreign-citizens",
+      "publisher": "Ministry of Foreign Affairs of Ukraine",
+      "jurisdiction": "Ukraine",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Ukraine's Foreign Ministry publishes a nationality-and-travel-document entry table expressly including Switzerland.",
+      "supportingExcerpt": "Switzerland | visa-free for up to 90 days for 180 days."
+    },
+    {
+      "id": "cuba-tourism-entry-evisa",
+      "title": "Cuba Travel: regulations and formalities",
+      "url": "https://www.cuba.travel/en/useful-information/regulations-and-formalities",
+      "publisher": "Cuban Ministry of Tourism",
+      "jurisdiction": "Cuba",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Cuba's official Ministry of Tourism portal gives the tourist-visa route and identifies the electronic service as available worldwide except for the stated United States purchasing exception.",
+      "supportingExcerpt": "Tourist visas via internet replace the Tourist Card and are available worldwide, except for the United States-specific purchase arrangement."
+    }
+  ],
+  "policies": [
+    {
+      "id": "switzerland-ordinary-passport-named-visa-free-routes",
+      "title": "Swiss ordinary passports: named visa-free visitor routes",
+      "summary": "Current destination-government material expressly establishes visa-free ordinary Swiss-passport visitor access for the listed destinations.",
+      "status": "visa_free",
+      "destinationCodes": ["BA", "UA"],
+      "passportCodes": ["CH"],
+      "conditions": [
+        "BA: the current Ministry of Security visitor information includes the Swiss Confederation in the visa-free nationality set. UA: up to 90 days in 180 days for private or tourist purposes; wartime border access remains separate.",
+        "This is a narrow ordinary-passport visitor baseline and does not classify work, residence, study, special documents, document validity, security restrictions, carrier conditions or final admission."
+      ],
+      "sourceIds": ["bih-security-switzerland-visa-free", "ukraine-mfa-entry-regime-switzerland"],
+      "confidence": "high"
+    },
+    {
+      "id": "switzerland-cuba-ordinary-passport-electronic-tourist-visa",
+      "title": "Swiss ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's official Tourism Ministry portal identifies an internet tourist-visa process that replaces the Tourist Card and is available worldwide, including Switzerland.",
+      "status": "evisa",
+      "destinationCodes": ["CU"],
+      "passportCodes": ["CH"],
+      "conditions": [
+        "The portal describes an internet tourist visa replacing the Tourist Card and states worldwide availability except for a United States-specific purchase arrangement.",
+        "Tourist visas are single-entry and normally allow up to 90 days, extendable for a further 90 days. Cuban citizens/residents, work, residence, transit, health declarations, route-specific carrier requirements and final admission are outside this classification."
+      ],
+      "sourceIds": ["cuba-tourism-entry-evisa"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisacuba.cu/",
+        "label": "Cuba electronic tourist-visa service",
+        "steps": [
+          "Apply for the tourist visa online before departure using the Swiss ordinary passport to be used for travel.",
+          "Follow the official service's instructions for the visa code and any required travel declaration.",
+          "Meet all passport, insurance, return-ticket and final-admission conditions."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"CH","destinationCode":"AF","reason":"No current Swiss FDFA or opened Afghan-government source establishes a Swiss ordinary-passport visitor issuance route. Generic visa treatment is not normalized.","searchedOfficialDomains":["eda.admin.ch","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"CH","destinationCode":"KP","reason":"Current travel material reports severe operational restrictions and border-access uncertainty. The taxonomy has no closed-border or entry-prohibited status, so the fallback advance-visa label is not promoted.","searchedOfficialDomains":["eda.admin.ch","mfa.gov.kp"]},
+    {"passportCode":"CH","destinationCode":"LY","reason":"No current Swiss FDFA or direct Libyan-government source opened in this review establishes advance, electronic or border issuance for an ordinary Swiss short visitor.","searchedOfficialDomains":["eda.admin.ch","mfa.gov.ly","evisa.gov.ly"]},
+    {"passportCode":"CH","destinationCode":"VG","reason":"The BVI Government identifies that some nationalities need a visa but its opened material does not expose a reliable current Swiss-nationality schedule. The fallback visa-free label is not promoted.","searchedOfficialDomains":["eda.admin.ch","bvi.gov.vg"]},
+    {"passportCode":"CH","destinationCode":"XK","reason":"The recovered Kosovo source is a 2018 archive about Schengen-zone biometric identity cards, not a current ordinary Swiss-passport rule. No current direct Kosovo-government source was recovered, so fallback visa-free remains a hypothesis.","searchedOfficialDomains":["eda.admin.ch","mfa-ks.net","rks-gov.net"]},
+    {"passportCode":"CH","destinationCode":"PA","reason":"The cited Panama Foreign Ministry treaty register now returns 404 and could not be freshly reviewed. No live current Panama source was recovered that directly establishes ordinary Swiss-passport visa-free access.","searchedOfficialDomains":["eda.admin.ch","mire.gob.pa","migracion.gob.pa"]},
+    {"passportCode":"CH","destinationCode":"PS","reason":"Swiss FDFA material describes serious access and security restrictions in the occupied Palestinian territory, but no opened competent source maps an Israeli ETA-IL or another visitor status specifically to this Swiss-passport destination pair. Border access is not a taxonomy status.","searchedOfficialDomains":["eda.admin.ch","gov.il","moi.pna.ps"]},
+    {"passportCode":"CH","destinationCode":"DJ","reason":"Opened official electronic-visa material does not establish the exact ordinary Swiss-passport eligibility and issuance result. An online application alone is not normalized as eVisa.","searchedOfficialDomains":["eda.admin.ch","evisa.gouv.dj","gouv.dj"]},
+    {"passportCode":"CH","destinationCode":"SD","reason":"No current Swiss FDFA or direct Sudanese-government source opened in this review establishes advance, electronic or arrival issuance for an ordinary Swiss short visitor.","searchedOfficialDomains":["eda.admin.ch","mofa.gov.sd","interior.gov.sd"]},
+    {"passportCode":"CH","destinationCode":"IQ","reason":"No current Swiss FDFA or opened Iraqi official source maps this ordinary passport to a specific visitor issuance route. A generic eVisa portal is insufficient without the Swiss eligibility/issuance crosswalk.","searchedOfficialDomains":["eda.admin.ch","evisa.iq","moi.gov.iq"]},
+    {"passportCode":"CH","destinationCode":"SY","reason":"No current Swiss FDFA or direct Syrian-government source opened in this review establishes advance, electronic or arrival issuance for an ordinary Swiss short visitor.","searchedOfficialDomains":["eda.admin.ch","mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"CH","destinationCode":"KM","reason":"Current Comorian official material establishes foreigner-visa rules subject to international exceptions but no current ordinary-passport nationality schedule for Switzerland or issuance timing. The fallback VOA label is not promoted.","searchedOfficialDomains":["eda.admin.ch","justice.gouv.km","egouv.km"]},
+    {"passportCode":"CH","destinationCode":"TM","reason":"No current Swiss FDFA or direct Turkmen-government source opened in this review establishes whether a Swiss ordinary visitor's visa is advance-issued, electronically issued or issued at the border.","searchedOfficialDomains":["eda.admin.ch","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"CH","destinationCode":"CG","reason":"No current Swiss FDFA or direct Republic of the Congo government source opened in this review establishes a Swiss ordinary-passport visitor issuance route.","searchedOfficialDomains":["eda.admin.ch","diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"CH","destinationCode":"GA","reason":"No current Swiss FDFA or direct Gabonese-government source opened in this review establishes Swiss ordinary-passport electronic eligibility and issuance. An online application is not enough to classify eVisa.","searchedOfficialDomains":["eda.admin.ch","evisa.ga","diplomatie.gouv.ga"]},
+    {"passportCode":"CH","destinationCode":"SS","reason":"No current Swiss FDFA or direct South Sudanese-government source opened in this review establishes a Swiss ordinary-passport visitor issuance route. The fallback eVisa label is not promoted.","searchedOfficialDomains":["eda.admin.ch","evisa.gov.ss","moi.gov.ss"]},
+    {"passportCode":"CH","destinationCode":"TN","reason":"No current Swiss FDFA or direct Tunisian-government source opened in this review expressly maps an ordinary Swiss visitor passport to visa-free treatment. The fallback is not treated as evidence.","searchedOfficialDomains":["eda.admin.ch","diplomatie.gov.tn","interieur.gov.tn"]},
+    {"passportCode":"CH","destinationCode":"CF","reason":"No current Swiss FDFA or direct Central African-government source opened in this review establishes advance, electronic or arrival issuance for an ordinary Swiss short visitor.","searchedOfficialDomains":["eda.admin.ch","diplomatie.gouv.cf","justice.gouv.cf"]},
+    {"passportCode":"CH","destinationCode":"GQ","reason":"No current Swiss FDFA or direct Equatorial Guinean-government source opened in this review establishes Swiss eligibility and electronic issuance. Online application language alone is not normalized as eVisa.","searchedOfficialDomains":["eda.admin.ch","minexteriores.gob.gq","gob.gq"]},
+    {"passportCode":"CH","destinationCode":"CI","reason":"Côte d’Ivoire's official pre-enrolment process describes airport printing after online authorization but publishes no current Swiss-nationality eligibility schedule. It cannot be normalized as VOA for this pair.","searchedOfficialDomains":["eda.admin.ch","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"CH","destinationCode":"GW","reason":"No current Swiss FDFA or direct Guinea-Bissau government source opened in this review establishes advance, electronic or arrival issuance for an ordinary Swiss short visitor.","searchedOfficialDomains":["eda.admin.ch","mne.gw","gov.gw"]},
+    {"passportCode":"CH","destinationCode":"LR","reason":"No current Swiss FDFA or direct Liberian-government source opened in this review establishes Swiss ordinary-passport electronic eligibility and issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["eda.admin.ch","immigration.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"CH","destinationCode":"ML","reason":"No current Swiss FDFA or direct Malian-government source opened in this review establishes advance, electronic or arrival issuance for an ordinary Swiss short visitor.","searchedOfficialDomains":["eda.admin.ch","diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"CH","destinationCode":"NE","reason":"No current Swiss FDFA or direct Nigerien-government source opened in this review establishes advance, electronic or arrival issuance for an ordinary Swiss short visitor; operational constraints are not a taxonomy status.","searchedOfficialDomains":["eda.admin.ch","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"CH","destinationCode":"NG","reason":"No current Swiss FDFA or direct Nigerian-government source opened in this review establishes Swiss ordinary-passport electronic eligibility and issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["eda.admin.ch","immigration.gov.ng","evisa.immigration.gov.ng"]},
+    {"passportCode":"CH","destinationCode":"BD","reason":"Current Bangladeshi MFA wording uses a generic European-country category without an exact ordinary Swiss-passport schedule or conditions. The fallback VOA label is not promoted.","searchedOfficialDomains":["eda.admin.ch","dip.gov.bd","visa.gov.bd","mofa.gov.bd"]},
+    {"passportCode":"CH","destinationCode":"TD","reason":"No current Swiss FDFA or direct Chadian-government source opened in this review establishes Swiss ordinary-passport advance or electronic issuance. An online form by itself would not establish eVisa issuance.","searchedOfficialDomains":["eda.admin.ch","evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"CH","destinationCode":"KH","reason":"Cambodia's opened official material does not establish a nationality-wide ordinary Swiss passport VOA entitlement: current central visitor pages did not provide the necessary Swiss eligibility crosswalk. The fallback VOA label is not promoted.","searchedOfficialDomains":["eda.admin.ch","evisa.gov.kh","immigration.gov.kh","mfaic.gov.kh"]}
+  ]
+}
