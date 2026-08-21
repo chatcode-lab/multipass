@@ -27,18 +27,6 @@
       "supportingExcerpt": "Electronic visas are processed in the information system of the State Migration Service."
     },
     {
-      "id": "turkmenistan-migration-service-current-foreign-registration",
-      "title": "Registration of foreign nationals at addresses",
-      "url": "https://migration.gov.tm/services/salgylar-boyunca-hasaba-durmak-tm-16830101021174743",
-      "publisher": "State Migration Service of Turkmenistan",
-      "jurisdiction": "Turkmenistan",
-      "kind": "government-guidance",
-      "language": "Turkmen",
-      "reviewedAt": "2026-08-21",
-      "officialityEvidence": "The live migration.gov.tm State Migration Service page is dated 7 August 2026.",
-      "supportingExcerpt": "Foreign citizens ... may come and stay ... on the basis of a visa."
-    },
-    {
       "id": "turkmenistan-mfa-consular-fee-schedule",
       "title": "Tariffs of consular fees of Turkmenistan",
       "url": "https://www.mfa.gov.tm/en/articles/684",
@@ -51,18 +39,6 @@
       "supportingExcerpt": "For the issuance of visas at the international airport of Ashgabat, an additional charge is 50 US dollars."
     },
     {
-      "id": "turkmenistan-migration-service-citizen-border-crossing",
-      "title": "Border-crossing rules for Turkmenistan citizens",
-      "url": "https://migration.gov.tm/pages/tkm-serhetden-gecmegin-duzgunleri",
-      "publisher": "State Migration Service of Turkmenistan",
-      "jurisdiction": "Turkmenistan",
-      "kind": "government-guidance",
-      "language": "Turkmen",
-      "reviewedAt": "2026-08-21",
-      "officialityEvidence": "The official State Migration Service page identifies a Turkmen citizen’s biometric passport as a document authorising entry to Turkmenistan.",
-      "supportingExcerpt": "Passport ... for leaving Turkmenistan and entering Turkmenistan."
-    },
-    {
       "id": "turkmenistan-migration-law-citizen-right-of-entry",
       "title": "Law of Turkmenistan on Migration: citizen entry right",
       "url": "https://www.turkmenistan.gov.tm/ru/post/16873/zakon-turkmenistana-o-migratsii",
@@ -73,13 +49,37 @@
       "reviewedAt": "2026-08-21",
       "officialityEvidence": "The official state portal publishes the Migration Law provision on a Turkmen citizen’s entry right.",
       "supportingExcerpt": "Every citizen of Turkmenistan has a right ... [of] entry to Turkmenistan."
+    },
+    {
+      "id": "turkmenistan-paris-embassy-tourist-loi-and-border-visa",
+      "title": "Embassy of Turkmenistan in France: visa obtention procedure",
+      "url": "https://france.tmembassy.gov.tm/en/consular-services/visa",
+      "publisher": "Embassy of Turkmenistan in the French Republic",
+      "jurisdiction": "Turkmenistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live mission page links to the Ministry of Foreign Affairs and identifies itself as MFA-managed, with a 2026 copyright notice.",
+      "supportingExcerpt": "Any visa type can be obtained at the border upon arrival, provided ... Invitation letter"
+    },
+    {
+      "id": "turkmenistan-uzbekistan-border-trade-zone-limited-access",
+      "title": "Uzbek Government: Uzbek–Turkmen Border Trade Zone",
+      "url": "https://gov.uz/en/news/view/102645",
+      "publisher": "Ministry of Investment, Industry and Trade of the Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan and Turkmenistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live Uzbek Government page reports the jointly agreed legal framework and expressly limits the stated visa-free access to the bilateral border trade zone.",
+      "supportingExcerpt": "Citizens of both countries are allowed to enter and exit the border trade zone without obtaining a visa."
     }
   ],
   "policies": [
     {
       "id": "turkmenistan-citizenship-right-of-entry",
       "title": "Turkmenistan: citizen right of entry",
-      "summary": "Turkmenistan’s Migration Law and current Migration Service guidance directly establish a Turkmen citizen’s right to enter with the prescribed citizen travel document.",
+      "summary": "Turkmenistan’s Migration Law directly establishes a Turkmen citizen’s right to enter and identifies the foreign-travel passport as a document authorising entry.",
       "status": "citizenship",
       "destinationCodes": [
         "TM"
@@ -88,11 +88,10 @@
         "TM"
       ],
       "conditions": [
-        "The current Migration Service identifies the biometric Turkmen passport as an entry document; the Migration Law establishes the citizen entry right. This is not a foreign visitor visa exemption.",
+        "The Migration Law establishes the citizen entry right and identifies the Turkmen passport for travel abroad and entry as the relevant document. This is not a foreign visitor visa exemption.",
         "This does not decide dual-nationality/document choice, exit restrictions, residence, work, military, registration, security or individual border treatment."
       ],
       "sourceIds": [
-        "turkmenistan-migration-service-citizen-border-crossing",
         "turkmenistan-migration-law-citizen-right-of-entry"
       ],
       "confidence": "high"
@@ -1563,11 +1562,13 @@
     {
       "passportCode": "UZ",
       "destinationCode": "TM",
-      "reason": "The current Migration Law states a foreign citizen enters and stays on an entry visa unless an international treaty provides otherwise. Current official material does not publish an exhaustive, current ordinary-passport treaty-exemption list, a nationality schedule for any eVisa category, or nationality conditions for airport issuance; the legal default therefore cannot be turned into a code-specific complement.",
+      "reason": "A current bilateral official notice allows citizens of both countries to enter only the Uzbek–Turkmen border trade zone without a visa. It does not establish tourist entry to Turkmenistan generally. Current official material does not publish an exhaustive ordinary-passport treaty-exemption list, a nationality schedule for any eVisa category, or nationality conditions for airport issuance; no country-wide visitor classification is established.",
       "searchedOfficialDomains": [
         "migration.gov.tm",
         "mfa.gov.tm",
-        "turkmenistan.gov.tm"
+        "turkmenistan.gov.tm",
+        "france.tmembassy.gov.tm",
+        "gov.uz"
       ]
     },
     {
