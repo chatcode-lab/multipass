@@ -712,11 +712,63 @@ Norway adds one independently corroborated visa-on-arrival relationship, raising
 
 Tonga Revenue directly names Norwegian citizens for a visitor visa issued on arrival, and Norway's current Foreign Ministry advice independently confirms the arrival-issued category. This corrects the upstream `visa_free` row to `visa_on_arrival`. The sources disagree on duration—30 versus 90 days—but not on category, so no uniform stay length is asserted. The other 138 residual Tonga relationships remain unresolved because current Revenue, embassy and advance-authority guidance conflict or lack a controlling nationality schedule.
 
+## Pass 83 result: Bahrain named eVisa and advance-visa cohorts
+
+Bahrain adds 126 directly supported foreign-passport relationships, raising complete-matrix evidence from 29,911 to 30,037 of 44,974 relationships (66.8%) and Middle East coverage from 1,435 to 1,561 of 2,970 relationships (52.6%). One hundred and fifty destination columns now have at least 50% coverage, while 141 remain at or above 80%. No fallback status changes because all promoted rows already match the seeded classifications.
+
+The live NPRA schedules directly name 123 ordinary-passport codes eligible to obtain a visa online, and the current process page confirms a genuine pre-travel electronic visa workflow with documents, payment, review and approval by email. Iran, North Korea and Kosovo are absent from both the online and arrival schedules; the National Portal's advance-issuance rule independently supports their existing `visa_required` status.
+
+Independent review kept medium confidence because the static list pages can intermittently return Cloudflare 403 responses and country-specific terms still apply. The 67-passport online-and-arrival cohort remains unresolved because NPRA and the National Portal publish incompatible 68/69 arrival counts. Ukraine's upstream `visa_free` status is contradicted—it is not a GCC exemption and appears in both visa schedules—but no single replacement route is yet safe, so that incorrect fallback remains visibly unverified rather than silently changed.
+
+## Pass 84 result: Saudi Arabia package tourist eVisa
+
+Saudi Arabia adds seven directly supported package-conditioned tourist eVisa relationships, raising complete-matrix evidence from 30,037 to 30,044 of 44,974 relationships (66.8%) and Middle East coverage from 1,561 to 1,568 of 2,970 relationships (52.8%). Destination threshold counts remain 150 above 50% and 141 above 80%.
+
+The live Visit Saudi nationality-group and route-decision APIs jointly assign Bangladesh, Egypt, India, Indonesia, Jordan, Mexico and Pakistan to “Visa by Package,” whose ordinary route is an instant tourist eVisa obtained through a qualified-agency flight, accommodation and tourism package. Independent review replayed both current APIs and confirmed that this route is separate from document-conditioned United States, United Kingdom, Schengen and GCC-residence branches.
+
+All seven rows change from upstream `visa_required` to `evisa`, exactly matching the reviewed conflicts. The other 113 previously unsupported Saudi relationships remain unresolved because the APIs' `noneligible` group and generic embassy guidance do not establish an exhaustive advance-visa complement. Both undated mutable API responses must be refreshed together on later passes.
+
 ## Held from promotion: Solomon Islands visitor complement
 
 The Solomon Islands residual refresh adds no canonical policy. All 125 previously unresolved rows remain unresolved after reviewing nine official sources. The June 2025 Gazette still specifies named concessional-entry countries, while a July 2026 short-term delivery policy claims the concession was repealed without showing an approval date or a reconciling Gazette instrument.
 
 The live visa index, modified 21 August 2026, says eVisa application and payment are operational. The tourist page instead mixes a discretionary visa-on-arrival statement with an online grant-letter workflow; the May 2026 notice says payment is not operational and applications remain manual; and the official-linked portal currently serves a generic server landing page. Those contradictions prevent a defensible nationality-wide choice among eVisa, advance visa and visa on arrival. The refresh candidate preserves page timestamps and exact unresolved scope for a later operational recheck without changing the reviewed treaty or concessional cohorts.
+
+## Held from promotion: Iraq federal visitor scope
+
+The federal Iraq refresh establishes only the Iraqi-citizenship cell and leaves all 198 foreign ordinary-passport visitor relationships unresolved. The live federal eVisa nationality endpoint currently returns an empty list, while current Ministry of Foreign Affairs guidance confirms the federal portal without publishing an eligible-nationality schedule. The applicable residence law also preserves treaty and special-document exceptions that cannot be reconstructed from a blank selector.
+
+The formerly indexed 37-passport arrival page now returns 404 and is not treated as current evidence. Kurdistan Region entry rules were deliberately excluded because they do not establish federal Iraq access. Until the federal authority restores an operative nationality list, publishes a controlling schedule, or returns a stable eligibility response, no foreign row is promoted as eVisa, visa on arrival, advance visa or prohibited entry.
+
+## Held from promotion: Jordan visitor complement
+
+Jordan's complement refresh leaves all 145 previously unsupported ordinary-passport relationships unresolved. The current Ministry of Interior pages establish restricted and non-restricted nationality concepts, electronic application availability and conditional arrival routes, but they do not publish an exhaustive passport-level schedule distinguishing visa-free, visa on arrival, eVisa and prior approval.
+
+The held rows contain 128 upstream visa-on-arrival, 13 visa-free and four advance-visa classifications, none of which is treated as confirmed merely because it appears in the fallback. Residence permits, third-country visas, nationality restrictions and e-service eligibility can change the route for an individual traveller; without a current controlling nationality schedule those conditions cannot be converted into universal passport-wide status.
+
+## Held from promotion: Iran visitor complement
+
+Iran's complement refresh leaves all 159 previously unsupported relationships unresolved. Both current Ministry of Foreign Affairs eVisa endpoints returned self-redirecting HTTP 307 responses during review, preventing a stable nationality eligibility or issuance check. No omitted-passport complement was inferred from the inaccessible services.
+
+The held scope deliberately preserves special authorization and guide conditions reported for United States, United Kingdom and Canadian travellers. Israel-related entry restrictions are also not mislabeled as an ordinary advance visa because the current taxonomy has no `entry_prohibited` state. The existing 39 reviewed Iran relationships remain unchanged pending a stable MFA eligibility surface or current controlling schedule.
+
+## Held from promotion: Oman visitor complement
+
+Oman's refresh leaves all 114 previously unsupported rows unresolved. Twenty-four nationalities appear in the Foreign Ministry's conditional 14-day exemption group, but qualification depends on specified third-country visas, residence or GCC professions and therefore cannot be assigned passport-wide. Royal Oman Police currently lists Taiwan in its first exemption group while the Foreign Ministry omits it, so that row retains an explicit official-source divergence.
+
+For the other 89 residual passports, the current Royal Oman Police FAQ and eligibility wizard do not publish an exhaustive nationality-to-eVisa or prior-visa map. Portal availability and omissions are not treated as proof of issuance, eligibility or advance-visa timing. Oman's 84 already supported relationships remain unchanged.
+
+## Held from promotion: Kuwait visitor complement
+
+Kuwait's complement refresh leaves all 140 previously unsupported rows unresolved. The live Ministry of Interior checker exposes a conditional eVisa route for 128 of them only when the traveller also holds a valid United States, United Kingdom or Schengen tourist visa. That is an individual document condition, not a nationality-wide baseline. The other 12 passports are ineligible for this checker category, but the result does not establish an exhaustive advance-visa complement.
+
+The eligibility service is mutable and encrypted, and its portal and backend behavior diverged for Afghanistan during review. A June 2025 Kuwait News Agency announcement said the proposed financial-solvency category for other nationalities had not launched, while the current sponsor process publishes no nationality schedule. None of those surfaces can safely turn the fallback's residual labels into verified evidence.
+
+## Held from promotion: Syria visitor refresh
+
+Syria's refresh leaves all 199 catalog passport rows unresolved. The current Syrian Civil Aviation Authority aeronautical publication states a generic advance-visa-unless-exempt rule, but it names no exemption, arrival, eVisa, treaty, prior-security-approval or document-restriction cohort. That rule cannot support an exhaustive `visa_required` complement.
+
+The official eVisa service was not operational during review: browser retrieval returned 502, normal TLS validation failed, and an insecure diagnostic response showed only “Coming Soon.” No online application or electronic issuance status is inferred from that unstable endpoint. Citizenship, treaty access, security approval and any entry prohibition remain unassigned until a current controlling nationality source is available.
 
 ## Held from promotion: Grenada
 

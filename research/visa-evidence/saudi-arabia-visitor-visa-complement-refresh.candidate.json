@@ -1,0 +1,1394 @@
+{
+  "batchId": "saudi-arabia-visitor-visa-complement-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "saudi-refresh-visa-regulations-country-groups-api",
+      "title": "Visit Saudi visa regulations: live country groups",
+      "url": "https://www.visitsaudi.com/bin/api/v1/geo/countries?locale=en",
+      "publisher": "Saudi Tourism Authority",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live Visa Regulations page calls this Visit Saudi service Saudi Arabia's official tourist-visa guidance; its client receives this current Saudi Tourism Authority country-group dataset.",
+      "supportingExcerpt": "Bangladesh\", \"flag\": \"/content/dam/static-images/resources/flags/png/147-bangladesh.png\", \"visaGroup\": \"Visa by Package"
+    },
+    {
+      "id": "saudi-refresh-visa-regulations-routes-api",
+      "title": "Visit Saudi visa regulations: live route configuration",
+      "url": "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
+      "publisher": "Saudi Tourism Authority",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live country-group endpoint feeds this current Visit Saudi route configuration, which labels its nationality-specific visitor routes and redirects applications to Saudi official services or approved providers.",
+      "supportingExcerpt": "obtain an instant tourist eVisa through integrated travel packages offered by qualified travel agencies."
+    }
+  ],
+  "policies": [
+    {
+      "id": "saudi-refresh-visa-by-package-ordinary-passports-evisa",
+      "title": "Saudi Arabia: Visa by Package ordinary passports with tourist eVisa",
+      "summary": "The current Saudi Tourism Authority country dataset assigns Bangladesh, Egypt, India, Indonesia, Jordan, Mexico, and Pakistan to “Visa by Package”; the corresponding live route expressly issues an instant tourist eVisa through approved integrated travel packages.",
+      "status": "evisa",
+      "destinationCodes": [
+        "SA"
+      ],
+      "passportCodes": [
+        "BD",
+        "EG",
+        "IN",
+        "ID",
+        "JO",
+        "MX",
+        "PK"
+      ],
+      "conditions": [
+        "This narrow nationality group is a package-conditioned tourist eVisa route, not an unconditional eVisa or visa-free result. The live route calls it an instant tourist eVisa through travel packages offered by qualified agencies.",
+        "The required package includes a confirmed Ministry of Tourism-licensed four-star-or-higher hotel booking, confirmed round-trip flight, completed online visa application and medical insurance. The route limits a package to nine tourists aged over 18.",
+        "The route specifies a minimum package price of SAR 4,000 per adult for the first two days plus SAR 1,000 per extra day, a two-to-88-day package duration, travel beginning at least 48 hours after purchase, and destinations excluding Makkah and Madinah. It describes a single-entry visa valid three months from travel start.",
+        "The separate U.S./UK/Schengen visa or permanent-residence routes, GCC-resident eVisa route, generic embassy route, visa on arrival, transit/stopover route, GCC citizenship, work, study, residence, Hajj, special passports and final immigration admission are not normalized by this policy."
+      ],
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.visitsaudi.com/en/campaigns/package-visa",
+        "label": "Visit Saudi Package Visa service",
+        "steps": [
+          "Book a compliant visa-inclusive package with an approved provider through the official Visit Saudi Package Visa service.",
+          "Provide the required hotel and round-trip-flight booking details and complete the online visa application with medical insurance.",
+          "Wait for the issued tourist eVisa before travel and present it with the required package and travel documents for border examination."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BD",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "sourceIds": [
+        "saudi-refresh-visa-regulations-country-groups-api",
+        "saudi-refresh-visa-regulations-routes-api"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "CL",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "SA",
+      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "SA",
+      "reason": "The current Saudi Tourism Authority country dataset does not supply an Israel row, and no current official Saudi source recovered in this review establishes an ordinary Israeli-passport visitor route or an explicit advance-visa residual. Conditional U.S./UK/Schengen and GCC-residence material cannot be generalized.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "SA",
+      "reason": "The current Saudi Tourism Authority country dataset labels a “Congo” row with Democratic Republic of the Congo flag material, but does not provide a reproducible Republic of the Congo crosswalk. No separate official source establishes this ordinary passport's visitor baseline; conditional U.S./UK/Schengen and GCC-residence routes are not nationality-wide.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    }
+  ]
+}

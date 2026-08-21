@@ -1581,4 +1581,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-212/section-212.1",
     reviewedAt: "2026-08-21",
   })),
+  ...(["BD", "EG", "IN", "ID", "JO", "MX", "PK"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "SA" as const,
+    status: "evisa" as const,
+    reason: "Visit Saudi's live nationality and route datasets assign this ordinary passport to a package-conditioned instant tourist eVisa available through qualified-agency packages.",
+    sourceUrl: "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
+    reviewedAt: "2026-08-21",
+  })),
 ] as const;
