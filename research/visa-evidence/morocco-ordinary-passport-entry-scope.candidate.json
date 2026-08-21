@@ -1,0 +1,183 @@
+{
+  "batchId": "morocco-ordinary-passport-entry-scope",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "morocco-acces-maroc-live-eligibility",
+      "title": "Accès Maroc: live ordinary-passport visitor eligibility service",
+      "url": "https://api.acces-maroc.ma/evisa-api/api/conditionEvise/recherche/fr",
+      "publisher": "Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates",
+      "jurisdiction": "Morocco",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Accès Maroc portal identifies MAECAMRE Morocco in its footer and links the Ministry and Consular portals; its configured public API is api.acces-maroc.ma.",
+      "supportingExcerpt": "Selon les informations saisies vous n'avez pas besoin de visa pour entrer au Maroc."
+    },
+    {
+      "id": "morocco-acces-maroc-nationality-reference",
+      "title": "Accès Maroc: current nationality reference data",
+      "url": "https://api.acces-maroc.ma/api/api/referentiel/nationalite/fr",
+      "publisher": "Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates",
+      "jurisdiction": "Morocco",
+      "kind": "official-dataset",
+      "language": "French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "This is the public nationality reference endpoint configured by the live Accès Maroc Ministry portal and used by its eligibility form.",
+      "supportingExcerpt": "\"autorisation\":true"
+    },
+    {
+      "id": "morocco-acces-maroc-aevm-guide",
+      "title": "Accès Maroc: guide to the electronic travel authorization (AEVM)",
+      "url": "https://www.acces-maroc.ma/assets/docs/Guide%20AEVM.pdf",
+      "publisher": "Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates",
+      "jurisdiction": "Morocco",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The guide is served directly from the official Accès Maroc portal linked by the Ministry site.",
+      "supportingExcerpt": "Le demandeur est soumis à la formalité de l’AEVM."
+    },
+    {
+      "id": "morocco-acces-maroc-evisa-terms",
+      "title": "Accès Maroc: eVisa general conditions",
+      "url": "https://www.acces-maroc.ma/assets/docs/Conditions%20utilisation%20eVisa%20-%20Fr.pdf",
+      "publisher": "Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates",
+      "jurisdiction": "Morocco",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The terms are served directly from the official Accès Maroc portal linked by the Ministry site.",
+      "supportingExcerpt": "Le visa électronique est une autorisation unipersonnelle permettant l’accès et le séjour."
+    },
+    {
+      "id": "morocco-law-02-03-entry-and-stay-of-foreigners",
+      "title": "Law No. 02-03 on entry and stay of foreigners in Morocco",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/04/30/Entr%C3%A9e%20et%20au%20s%C3%A9jour%20des%20%C3%A9trangers%20au%20Maroc-1714463632505.pdf",
+      "publisher": "Ministry of Justice legal portal",
+      "jurisdiction": "Morocco",
+      "kind": "law",
+      "language": "French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The legislation PDF is published on adala.justice.gov.ma, Morocco's Ministry of Justice legal portal.",
+      "supportingExcerpt": "Tout étranger ... est tenu de se présenter aux autorités compétentes."
+    }
+  ],
+  "policies": [
+    {
+      "id": "morocco-live-selector-ordinary-visitor-visa-exemption",
+      "title": "Morocco: live-selector ordinary-passport visitor visa exemption",
+      "summary": "For these ordinary-passport tourist inputs with no additional visa and ordinary residence in the nationality country, the current Accès Maroc service returns its visa-exempt outcome, not an AEVM or visa process.",
+      "status": "visa_free",
+      "destinationCodes": ["MA"],
+      "passportCodes": ["AD", "AE", "AR", "AT", "AU", "AZ", "BE", "BF", "BG", "BH", "BR", "CA", "CH", "CL", "CN", "CO", "CV", "CY", "CZ", "DE", "DK", "DO", "DZ", "EE", "ES", "FI", "FR", "GA", "GB", "GR", "HK", "HR", "HU", "ID", "IE", "IS", "IT", "JP", "KR", "KW", "KZ", "LI", "LT", "LU", "LV", "ML", "MO", "MT", "MV", "MX", "MY", "NE", "NL", "NO", "NZ", "OM", "PE", "PH", "PL", "PT", "QA", "RU", "SA", "SE", "SG", "SI", "SK", "SM", "SN", "TG", "TN", "TR", "US"],
+      "conditions": [
+        "This is a current ordinary-passport tourist selector result with country of usual residence set to the nationality country and no additional visa. It does not replace different rules for residence elsewhere, a third-country visa, another purpose, event participation, diplomatic/official/special documents, refugees, stateless persons or other travel documents.",
+        "Foreign visitors remain subject to a recognized valid travel document, border examination, proof of means and purpose, and any visa where required under Law 02-03. The exemption does not guarantee admission.",
+        "The live selector was rechecked on 21 August 2026 and returns exemption for Azerbaijan, whereas the eVisa terms PDF still names Azerbaijan in Category A. The live individualized result is used, but this unresolved official-source disagreement requires maintainer confirmation."
+      ],
+      "sourceIds": ["morocco-acces-maroc-live-eligibility", "morocco-law-02-03-entry-and-stay-of-foreigners", "morocco-acces-maroc-evisa-terms"],
+      "confidence": "medium"
+    },
+    {
+      "id": "morocco-live-selector-ordinary-visitor-aevm",
+      "title": "Morocco: ordinary-passport visitor AEVM",
+      "summary": "The current Accès Maroc nationality reference flags this cohort for authorization, and the portal directs it to the electronic travel-authorization process rather than visa exemption or eVisa.",
+      "status": "eta",
+      "destinationCodes": ["MA"],
+      "passportCodes": ["CG", "EC", "GH", "GN"],
+      "conditions": [
+        "AEVM is a pre-travel electronic authorization, normalized as eta. The guide separately distinguishes visa exemption, consular visa, AEVM and eVisa outcomes.",
+        "The public selector depends on nationality, ordinary passport, country of usual residence, additional visa, purpose and date of birth; this policy records only the observed nationality baseline without a qualifying third-country status.",
+        "The AEVM guide requires an account, personal/passport/travel and accommodation/financing information, supporting documents, validation and an approved downloadable authorization. It is not a visa-free route and does not guarantee admission.",
+        "Work, residence, family, transit, event, diplomatic, official, service, refugee, stateless and special-document routes are outside this policy."
+      ],
+      "sourceIds": ["morocco-acces-maroc-live-eligibility", "morocco-acces-maroc-nationality-reference", "morocco-acces-maroc-aevm-guide"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.acces-maroc.ma/?language=en-US",
+        "label": "Accès Maroc electronic travel authorization service",
+        "steps": [
+          "Use the official eligibility form with nationality, ordinary passport, residence, any additional visa, purpose and date of birth.",
+          "If routed to AEVM, register or authenticate, complete the personal, passport and travel information, attach the required documents and validate the request.",
+          "Follow the file in the portal and download the authorization if approved before travel."
+        ]
+      }
+    },
+    {
+      "id": "morocco-live-selector-nationality-evisa",
+      "title": "Morocco: nationality-wide ordinary-passport eVisa",
+      "summary": "The current Accès Maroc service routes this named ordinary-passport tourist cohort to an eVisa without a residence permit or third-country visa condition.",
+      "status": "evisa",
+      "destinationCodes": ["MA"],
+      "passportCodes": ["BJ", "BN", "GT", "IL", "IN", "JO", "KH", "LA", "TH", "VN"],
+      "conditions": [
+        "The eVisa terms describe an online, single-entry visa for tourism or business, valid up to 180 days from issue for a stay not exceeding 30 days. Only ordinary passports may use it.",
+        "The application needs a passport valid at least 90 days at application, and the portal says it may be issued in 24 working hours (express) or 72 working hours (standard) for complete applications.",
+        "At the border, the eVisa holder must present the eVisa and passport and may be asked for a return ticket, means of at least EUR 70 per day and repatriation/medical insurance. Admission remains discretionary.",
+        "The eVisa terms also offer conditional routes based on an eligible residence permit or a valid multiple-entry third-country visa. Those conditions do not expand this nationality-only policy. The terms PDF names Azerbaijan as Category A but the live selector currently exempts it; Azerbaijan is therefore not included here."
+      ],
+      "sourceIds": ["morocco-acces-maroc-live-eligibility", "morocco-acces-maroc-evisa-terms"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.acces-maroc.ma/?language=en-US",
+        "label": "Accès Maroc eVisa service",
+        "processingTime": "The official eVisa terms state 24 working hours for express and 72 working hours for standard processing of complete applications.",
+        "steps": [
+          "Check eligibility in the official Accès Maroc form and select the eVisa process.",
+          "Enter the application and attach the passport copy, photograph and purpose-specific supporting documents; validate and pay the request.",
+          "Track the file in Accès Maroc, download the approved eVisa, and present it at boarding and the Moroccan border."
+        ]
+      }
+    },
+    {
+      "id": "morocco-live-selector-ordinary-visitor-consular-visa",
+      "title": "Morocco: ordinary-passport visitor consular visa baseline",
+      "summary": "For these ordinary-passport tourist inputs with usual residence in the nationality country and no additional visa, the live Accès Maroc service returns its visa-required outcome rather than exemption, AEVM or eVisa.",
+      "status": "visa_required",
+      "destinationCodes": ["MA"],
+      "passportCodes": ["AF", "AL", "AM", "AO", "BA", "BD", "BI", "BO", "BT", "BW", "BY", "BZ", "CD", "CF", "CI", "CM", "CR", "CU", "DJ", "DM", "EG", "ER", "ET", "FM", "GE", "GM", "GQ", "GW", "GY", "HN", "HT", "IQ", "IR", "JM", "KE", "KG", "KI", "KM", "KN", "KP", "LB", "LC", "LR", "LS", "LY", "MD", "ME", "MG", "MH", "MK", "MM", "MN", "MR", "MU", "MW", "MZ", "NA", "NG", "NI", "NP", "PA", "PG", "PK", "PS", "PW", "PY", "RS", "RW", "SC", "SD", "SL", "SO", "SR", "SS", "ST", "SV", "SY", "SZ", "TD", "TJ", "TM", "TV", "TZ", "UA", "UG", "UY", "UZ", "VA", "VE", "YE", "ZA", "ZM", "ZW"],
+      "conditions": [
+        "The portal's visa outcome means a Moroccan visa application is required. The official AEVM guide distinguishes this from the electronic travel authorization and eVisa outcomes, and says the visa application is lodged at the consular post.",
+        "This does not rule out the separately documented conditional eVisa paths for a traveler who holds a qualifying residence permit or an eligible valid multiple-entry third-country visa; those are not nationality-only routes.",
+        "Law 02-03 requires foreign arrivals to present a valid recognized travel document and, where applicable, an administrative visa. Visa possession does not remove border examination, evidence-of-stay or refusal risk.",
+        "This baseline excludes work, residence, family, transit, event, diplomatic, official, service, refugee, stateless and special-document treatment."
+      ],
+      "sourceIds": ["morocco-acces-maroc-live-eligibility", "morocco-acces-maroc-aevm-guide", "morocco-law-02-03-entry-and-stay-of-foreigners", "morocco-acces-maroc-evisa-terms"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {"passportCode":"BF","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"CI","destinationCode":"MA","snapshotStatus":"visa_free","officialStatus":"visa_required","explanation":"The current ordinary-passport tourist selector returns its consular-visa outcome with no qualifying third-country status.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"CV","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"DZ","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"GA","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"ML","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"NE","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"SN","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"TG","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]},
+    {"passportCode":"TN","destinationCode":"MA","snapshotStatus":"eta","officialStatus":"visa_free","explanation":"The current ordinary-passport tourist selector returns its visa-exempt outcome, not AEVM.","sourceIds":["morocco-acces-maroc-live-eligibility"]}
+  ],
+  "unresolved": [
+    {"passportCode":"MA","destinationCode":"MA","reason":"The reviewed foreigner-entry law and visitor selector do not directly establish a Moroccan citizen ordinary-passport entry rule.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","adala.justice.gov.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"AG","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose an Antigua and Barbuda ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review. Treatment is not inferred from fallback.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"BB","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Barbados ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"BS","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Bahamas ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"FJ","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Fiji ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"GD","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Grenada ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"LK","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Sri Lanka ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"MC","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Monaco ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review. The fallback visa-free value is not used as evidence.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"NR","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Nauru ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"RO","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Romania ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review. The fallback visa-free value is not used as evidence.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"SB","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Solomon Islands ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"TL","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Timor-Leste ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"TO","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Tonga ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"TT","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Trinidad and Tobago ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"TW","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Taiwan ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"VC","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Saint Vincent and the Grenadines ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"VU","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Vanuatu ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"WS","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Samoa ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]},
+    {"passportCode":"XK","destinationCode":"MA","reason":"The live Accès Maroc nationality reference does not expose a Kosovo ordinary-passport selection, and the Ministry-linked consular exemption list was WAF-blocked during review.","searchedOfficialDomains":["acces-maroc.ma","api.acces-maroc.ma","diplomatie.ma","consulat.ma"]}
+  ]
+}

@@ -961,6 +961,36 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IL", "MW", snapshot.passports.IL.statuses.MW).supportsCurrentStatus).toBe(false);
   });
 
+  it("covers the reviewed Algeria, Nigeria, and Senegal schedules", () => {
+    const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === destinationCode);
+
+    expect(pairsFor("DZ")).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("MA", "DZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MV", "DZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "DZ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DZ", "DZ", "citizenship").supportsCurrentStatus).toBe(true);
+
+    expect(pairsFor("NG")).toHaveLength(14);
+    expect(getVisaRelationshipEvidence("GH", "NG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ML", "NG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "NG", snapshot.passports.US.statuses.NG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("NG", "NG", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("SN")).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("MR", "SN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GH", "SN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "SN", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SN", "SN", "citizenship").supportsCurrentStatus).toBe(false);
+
+    expect(pairsFor("MA")).toHaveLength(180);
+    expect(getVisaRelationshipEvidence("DZ", "MA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CG", "MA", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "MA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CI", "MA", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MA", "MA", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1225,6 +1255,23 @@ describe("official visa evidence", () => {
       "visitmalawi.mw",
       "www.malawi.gov.mw",
       "malawihighcommission.co.uk",
+      "mfa.gov.dz",
+      "emboslo.mfa.gov.dz",
+      "www.joradp.dz",
+      "interieur.gov.dz",
+      "embdublin.mfa.gov.dz",
+      "cglondon.mfa.gov.dz",
+      "embbrussels.mfa.gov.dz",
+      "immigration.gov.ng",
+      "lecard.immigration.gov.ng",
+      "ecowas.int",
+      "www.ecowas.int",
+      "consulsen-paris.gouv.sn",
+      "www.diplomatie.gouv.sn",
+      "diplomatie.gouv.sn",
+      "api.acces-maroc.ma",
+      "www.acces-maroc.ma",
+      "adala.justice.gov.ma",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -1737,6 +1737,162 @@
         "The named ordinary-visa list expressly allows both online and arrival processing. Do not normalize that online option as eVisa where actual issuance at an official entry point remains available.",
         "Keep referral-visa, Zanzibar operational, residence, work, business, transit, diplomatic, official, service, refugee and special-document treatment distinct from the ordinary short-visitor baseline."
       ]
+    },
+    {
+      "id": "malawi-ordinary-passport-entry-scope",
+      "priority": 97,
+      "objective": "Model Malawi's current ordinary-passport short-visitor entry scope from Immigration, Tourism, government, constitutional and official eVisa sources.",
+      "destinationCodes": ["MW"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://evisa.gov.mw/",
+        "https://immigration.gov.mw/visa/",
+        "https://visitmalawi.mw/visas-immigration-and-customs/"
+      ],
+      "notes": [
+        "Reconcile the 2024 reciprocal waiver changes with the effective 24 February 2026 Category One and Category Two portal notice and the current Tourism schedule; retain directly conflicting codes unresolved.",
+        "Treat Category Two border issuance as visa on arrival despite the encouraged optional online eVisa process; do not model an entry declaration as an ETA.",
+        "Keep visitor-purpose, permit, passport, funds, health, extension, admission, work, residence, transit, diplomatic, official, service and special-document limits explicit."
+      ]
+    },
+    {
+      "id": "nigeria-ordinary-passport-entry-scope",
+      "priority": 98,
+      "objective": "Model Nigeria's current ordinary-passport short-visitor entry scope from Immigration, Foreign Affairs, ECOWAS and statutory sources.",
+      "destinationCodes": ["NG"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+        "https://lecard.immigration.gov.ng/",
+        "https://ecowas.int/wp-content/uploads/2024/08/PROTOCOL-RELATING-TO-FREE-MOVEMENT-OF-PERSONS.pdf"
+      ],
+      "notes": [
+        "Use the ECOWAS free-movement protocol and the current Nigeria Immigration landing-card classification for ordinary passport visa exemptions; retain Burkina Faso, Mali and Niger's post-withdrawal continuation conditions.",
+        "Distinguish a border-issued VOA from electronic pre-approval and from the Landing and Exit Card, which is a declaration rather than an ETA.",
+        "Do not infer residual eVisa, VOA, consular visa or citizenship scope where current NIS material leaves non-ECOWAS waiver agreements or nationality eligibility unenumerated."
+      ]
+    },
+    {
+      "id": "algeria-ordinary-passport-entry-scope",
+      "priority": 99,
+      "objective": "Model Algeria's current ordinary-passport short-visitor entry scope from official Foreign Affairs, Interior and legislative sources.",
+      "destinationCodes": ["DZ"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria",
+        "https://emboslo.mfa.gov.dz/services-for-foreigners/entry-visa-to-algeria-1",
+        "https://www.joradp.dz/FTP/jo-francais/2008/F2008036.pdf"
+      ],
+      "notes": [
+        "Use an explicit current nationality schedule or default; do not infer a foreign nationality result merely from missing eVisa or application information.",
+        "Keep diplomatic, official, service, crew, Algerian-origin/foreign-passport, residence, work, family, transit, regularisation and other document- or case-specific routes outside the ordinary short-visitor baseline.",
+        "Record exact fallback mismatches and preserve any source-access or schedule-currentness risk."
+      ]
+    },
+    {
+      "id": "senegal-ordinary-passport-entry-scope",
+      "priority": 100,
+      "objective": "Model Senegal's current ordinary-passport short-visitor entry scope from Foreign Affairs, consular, Interior, ECOWAS and legislative sources.",
+      "destinationCodes": ["SN"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://consulsen-paris.gouv.sn/demande-de-visa/",
+        "https://www.diplomatie.gouv.sn/demande-de-visa",
+        "https://ecowas.int/wp-content/uploads/2024/08/PROTOCOL-RELATING-TO-FREE-MOVEMENT-OF-PERSONS.pdf"
+      ],
+      "notes": [
+        "Give the current detailed consular Categories A/B/C/default schedule precedence over the Foreign Ministry's retained 2015 summary only with an explicit source-conflict note.",
+        "Separate visa-exempt ordinary passports from consular visas with optional or mandatory Interior consultation; do not infer eVisa, VOA or ETA from forms, appointment or airport procedures.",
+        "Preserve AES continuation, ECOWAS, reciprocity, medical, passport, onward-ticket, accommodation, official-document, mission, refugee and individual-admissibility limits."
+      ]
+    },
+    {
+      "id": "morocco-ordinary-passport-entry-scope",
+      "priority": 101,
+      "objective": "Model Morocco's current ordinary-passport short-visitor entry scope from Foreign Affairs, consular, legal and official Accès Maroc sources.",
+      "destinationCodes": ["MA"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.acces-maroc.ma/?language=en-US",
+        "https://www.acces-maroc.ma/assets/docs/Conditions%20utilisation%20eVisa%20-%20Fr.pdf",
+        "https://diplomatie.ma/en/visiting-morocco",
+        "https://consulat.ma/fr/liste-des-pays-dont-les-ressortissants-sont-dispenses-du-visa-dentree-au-maroc"
+      ],
+      "notes": [
+        "Use the live ordinary-passport selector and its public reference endpoints only for the exact input conditions tested; do not convert residence-permit or third-country-visa eVisa eligibility into a nationality-wide route.",
+        "Keep AEVM distinct from eVisa, and preserve the eVisa terms PDF's Azerbaijan inconsistency as a source conflict if the live selector continues to exempt it.",
+        "Do not infer portal-omitted nationality treatment from fallback or the unavailable consular list; retain unresolved until a current named official schedule is accessible."
+      ]
+    },
+    {
+      "id": "cameroon-ordinary-passport-entry-scope",
+      "priority": 102,
+      "objective": "Model Cameroon's current ordinary-passport short-visitor entry scope from Foreign Affairs, immigration, CEMAC and legislative sources.",
+      "destinationCodes": ["CM"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.diplocam.cm/e-visa/",
+        "https://www.evisacam.cm/ords/r/dl_portal/public_portal/home",
+        "https://cemac.int/about/",
+        "https://cemac.int/2025/09/08/interview-vers-une-cemac-plus-integree-le-president-de-la-commission-baltazar-engonga-edjoo-eclaire-les-enjeux-de-la-16%E1%B5%89-conference-des-chefs-detat/"
+      ],
+      "notes": [
+        "Treat the pre-travel electronic authorization with QR code and later visa affixing at the border as electronic advance authorization, not a visa-on-arrival route.",
+        "Map CEMAC and Nigeria ordinary passport exemptions only where the current community or bilateral support is direct; keep official, service, diplomatic, residence, work, transit, refugee and individual-admissibility routes separate.",
+        "Do not infer Cameroonian-citizen entry from passport-issuance material alone; leave it unresolved absent direct right-of-entry evidence."
+      ]
+    },
+    {
+      "id": "tunisia-ordinary-passport-entry-scope",
+      "priority": 103,
+      "objective": "Model Tunisia's current ordinary-passport short-visitor entry scope from official Foreign Affairs, Interior, government and legislative sources.",
+      "destinationCodes": ["TN"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.econsulat.tn/fr/services-de-chancellerie/demande-visa",
+        "https://www.social.gov.tn/sites/default/files/2022-06/guide%20TRE.pdf",
+        "https://pm.gov.tn/fr/article/les-visas-electroniques-pour-les-etrangers-au-centre-dun-conseil-ministeriel-restreint"
+      ],
+      "notes": [
+        "The statutory three-month waiver depends on bilateral or multilateral waiver agreements; do not infer a current passport-nationality complement without an effective official agreement register or nationality schedule.",
+        "Do not label an electronic-visa project, application form, organized-tour arrangement, transit exception, residence, work, diplomatic/official or special-document route as nationality-wide ordinary-passport visitor access.",
+        "Preserve passport, border-port, purpose, prior-expulsion/refusal, security and admissibility conditions, and record source-currentness or authority gaps explicitly."
+      ]
+    },
+    {
+      "id": "cote-divoire-ordinary-passport-entry-scope",
+      "priority": 104,
+      "objective": "Model Côte d’Ivoire's current ordinary-passport short-visitor entry scope from immigration, Foreign Affairs, government, ECOWAS and legislative sources.",
+      "destinationCodes": ["CI"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://ecois.ecowas.int/",
+        "https://ecowas.int/wp-content/uploads/2024/08/PROTOCOL-RELATING-TO-FREE-MOVEMENT-OF-PERSONS.pdf",
+        "https://snedai.com/e-visa/",
+        "https://royaumeuni.diplomatie.gouv.ci/visa.php?lang=&num=1"
+      ],
+      "notes": [
+        "Use the current ECOWAS Member-State roster rather than historic 15-state schedules; do not extend the current cohort to former members without a direct current Côte d’Ivoire rule.",
+        "The SNEDAI airport workflow requires pre-enrolment approval before travel and later biometric visa printing. Do not call it a true visa on arrival, or model an eVisa complement, until an official eligibility or default rule covers the exact nationality.",
+        "Keep bilateral waivers, organised tours, residence, work, transit, diplomatic, official, service, UN laissez-passer and other special-document routes distinct from the ordinary visitor baseline."
+      ]
+    },
+    {
+      "id": "egypt-ordinary-passport-entry-scope",
+      "priority": 105,
+      "objective": "Model Egypt's current ordinary-passport short-visitor entry scope from Ministry of Interior, Foreign Affairs and official eVisa sources.",
+      "destinationCodes": ["EG"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://visa2egypt.gov.eg/eVisa/FAQ",
+        "https://moi.gov.eg/passports/foreigners/othercountryvisa",
+        "https://moi.gov.eg/passports/foreigners/Countrieswhosecitizenss"
+      ],
+      "notes": [
+        "Treat the Ministry of Interior's port-issued emergency-entry visa as visa_on_arrival, including where the same nationality has an eVisa alternative; do not mistake an eVisa application for the easiest available route.",
+        "Keep age, ancestry, occupation, Egyptian-family, organized-tour, residence, transit, Sinai-only, diplomatic, official and special-document arrangements conditional.",
+        "Record discrepancies between the Ministry's port-arrival schedules and retain omitted or conflicted passport codes unresolved rather than infer a residual default."
+      ]
     }
   ]
 }
