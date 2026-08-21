@@ -3959,6 +3959,21 @@
       "notes": [
         "Determine whether the statutory exemption schedule is currently exhaustive and incorporate later effective waiver agreements only when directly supported. Treat eTA as a pre-travel authorization for otherwise visa-exempt travellers, not as a replacement for the separate visa-required online process."
       ]
+    },
+    {
+      "id": "saint-martin-complete-visitor-entry-refresh",
+      "priority": 229,
+      "objective": "Resolve destination code MF's authoritative identity and partition current ordinary-passport short-visitor access under the applicable Saint Martin (French part) territorial rules.",
+      "destinationCodes": ["MF"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://france-visas.gouv.fr/en/web/france-visas/visa-wizard",
+        "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000024580675",
+        "https://www.iso.org/obp/ui/#iso:code:3166:MF"
+      ],
+      "notes": [
+        "First resolve the upstream label: MF is the ISO code for Saint Martin (French part), while Sint Maarten (Dutch part) is SX. Preserve backward-compatible redirects if the public destination name or slug changes. Apply the territory-specific French visa regime rather than Schengen or Dutch Caribbean rules, and keep document-specific exceptions explicit."
+      ]
     }
   ]
 }

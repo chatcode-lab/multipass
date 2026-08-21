@@ -16,6 +16,9 @@ const DESTINATION_SLUG_OVERRIDES: Partial<Record<string, string>> = {
   CD: "congo",
   CG: "republic-of-the-congo",
 };
+const DESTINATION_LEGACY_SLUGS: Partial<Record<string, readonly string[]>> = {
+  MF: ["st-maarten"],
+};
 
 export interface ResolvedVisaRelationship {
   passport: PassportSummary;
@@ -25,6 +28,17 @@ export interface ResolvedVisaRelationship {
 
 export function destinationSlug(destination: Destination): string {
   return DESTINATION_SLUG_OVERRIDES[destination.code] ?? slugifyCountry(destination.name);
+}
+
+export function resolveDestinationBySlug(
+  slug: string | undefined,
+  manifest: SnapshotManifest,
+): Destination | undefined {
+  if (!slug) return undefined;
+  return manifest.destinations.find((destination) =>
+    destinationSlug(destination) === slug
+    || DESTINATION_LEGACY_SLUGS[destination.code]?.includes(slug)
+  );
 }
 
 export function visaRelationshipSlug(
@@ -56,7 +70,13 @@ export function resolveVisaRelationshipSlug(
   const requestedStatus = STATUS_BY_SLUG.get(suffix);
   if (!requestedStatus) return null;
   const pairSlug = slug.slice(0, -(suffix.length + 1));
-  const destinations = new Map(manifest.destinations.map((destination) => [destinationSlug(destination), destination]));
+  const destinations = new Map<string, Destination>();
+  for (const destination of manifest.destinations) {
+    destinations.set(destinationSlug(destination), destination);
+    for (const legacySlug of DESTINATION_LEGACY_SLUGS[destination.code] ?? []) {
+      destinations.set(legacySlug, destination);
+    }
+  }
   const passport = [...manifest.passports]
     .sort((first, second) => second.slug.length - first.slug.length)
     .find((candidate) =>

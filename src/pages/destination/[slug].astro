@@ -7,11 +7,13 @@ import { datasetMetadata } from "@/lib/dataset";
 import { flagEmojiFor, formatRegion } from "@/lib/geography";
 import { STATUS_META } from "@/lib/passport";
 import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
-import { destinationSlug, officialSourcesForPolicies, policiesForDestination } from "@/lib/visa-evidence";
+import { destinationSlug, officialSourcesForPolicies, policiesForDestination, resolveDestinationBySlug } from "@/lib/visa-evidence";
 
 const { manifest, source } = await getDataContext(Astro.locals);
-const destination = manifest.destinations.find((entry) => destinationSlug(entry) === Astro.params.slug);
+const destination = resolveDestinationBySlug(Astro.params.slug, manifest);
 if (!destination) return Astro.rewrite("/404");
+const canonical = `/destination/${destinationSlug(destination)}`;
+if (Astro.params.slug !== destinationSlug(destination)) return Astro.redirect(canonical, 308);
 const details = await getPassportAccessBatch(Astro.locals, manifest.passports.map((passport) => passport.code), manifest.version);
 const rows = manifest.passports.map((passport) => ({
   passport,
@@ -21,7 +23,6 @@ const counts = Object.fromEntries(ACCESS_STATUSES.map((status) => [status, rows.
 const policies = policiesForDestination(destination.code);
 const officialSources = officialSourcesForPolicies(policies);
 const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(manifest.checkedAt));
-const canonical = `/destination/${destinationSlug(destination)}`;
 const title = `${destination.name} Visa Requirements by Passport | MultiPass Rank`;
 const description = `Compare current ${destination.name} visa requirements for ${manifest.passports.length} passports, with official-source evidence, policy history, and direct relationship pages.`;
 const structuredData = [

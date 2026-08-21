@@ -2,6 +2,7 @@ import { OFFICIAL_VISA_SOURCES, VISA_POLICY_EVIDENCE, type OfficialVisaSource, t
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "./types";
 export {
   destinationSlug,
+  resolveDestinationBySlug,
   resolveVisaRelationshipSlug,
   VISA_STATUS_SLUGS,
   visaRelationshipHref,

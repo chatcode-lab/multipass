@@ -25,6 +25,12 @@ const SCORED_STATUSES = new Set<AccessStatus>([
   "visa_on_arrival",
 ]);
 
+const DESTINATION_NAME_OVERRIDES: Partial<Record<string, string>> = {
+  // The upstream label confuses ISO MF (French Saint Martin) with ISO SX
+  // (Dutch Sint Maarten). Keep the catalog identity authoritative here.
+  MF: "Saint Martin (French part)",
+};
+
 export const MAX_PASSPORT_SETS = 5;
 export const MAX_PASSPORTS_PER_SET = 10;
 
@@ -41,11 +47,14 @@ export function normalizeRegion(value: string): Region {
 }
 
 export function buildDestinationCatalog(countries: SourceCountry[]): Destination[] {
-  const destinations = countries.map((country) => ({
-    code: normalizeCode(country.code),
-    name: country.country.trim(),
-    region: normalizeRegion(country.region),
-  }));
+  const destinations = countries.map((country) => {
+    const code = normalizeCode(country.code);
+    return {
+      code,
+      name: DESTINATION_NAME_OVERRIDES[code] ?? country.country.trim(),
+      region: normalizeRegion(country.region),
+    };
+  });
 
   const uniqueCodes = new Set(destinations.map(({ code }) => code));
   if (destinations.length !== 227 || uniqueCodes.size !== destinations.length) {

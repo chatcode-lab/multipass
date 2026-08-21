@@ -70,6 +70,7 @@ import {
   destinationSlug,
   evidenceRelationshipPairs,
   getVisaRelationshipEvidence,
+  resolveDestinationBySlug,
   resolveVisaRelationshipSlug,
   visaRelationshipHref,
 } from "./visa-evidence";
@@ -93,6 +94,17 @@ describe("visa relationship URLs", () => {
       passport: { code: "BE" },
       destination: { code: "TD" },
       requestedStatus: "evisa",
+    });
+  });
+
+  it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
+    const destination = resolveDestinationBySlug("st-maarten", snapshot.manifest);
+    expect(destination).toMatchObject({ code: "MF", name: "Saint Martin (French part)" });
+    expect(destinationSlug(destination!)).toBe("saint-martin-french-part");
+    expect(resolveVisaRelationshipSlug("belgium-st-maarten-visa-free", snapshot.manifest)).toMatchObject({
+      passport: { code: "BE" },
+      destination: { code: "MF" },
+      requestedStatus: "visa_free",
     });
   });
 
@@ -1893,6 +1905,15 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("KN", "KN", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AG", "KN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "KN", snapshot.passports.US.statuses.KN).supportsCurrentStatus).toBe(false);
+  });
+
+  it("supports the complete Saint Martin French territorial schedule", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "MF");
+    expect(pairs).toHaveLength(199);
+    expect(getVisaRelationshipEvidence("BE", "MF", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LC", "MF", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "MF", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("contains only direct HTTPS official-source URLs", () => {

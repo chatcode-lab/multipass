@@ -596,6 +596,20 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
   expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-chad-visa</loc>");
 });
 
+test("corrected Saint Martin URLs retain St. Maarten compatibility redirects", async ({ page, request }) => {
+  await page.goto("/destination/st-maarten");
+  await expect(page).toHaveURL(/\/destination\/saint-martin-french-part$/);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Saint Martin (French part) visa requirements");
+
+  const destinationMarkdown = await request.get("/destination/st-maarten.md", { maxRedirects: 0 });
+  expect(destinationMarkdown.status()).toBe(308);
+  expect(destinationMarkdown.headers().location).toBe("/destination/saint-martin-french-part.md");
+
+  const relationship = await request.get("/belgium-st-maarten-visa-free", { maxRedirects: 0 });
+  expect(relationship.status()).toBe(308);
+  expect(relationship.headers().location).toBe("/belgium-saint-martin-french-part-visa-free");
+});
+
 test("citizenship cells use passport pages instead of duplicate relationship URLs", async ({ page, request }) => {
   await page.goto("/destination/estonia");
   await expect(page.getByRole("link", { name: /Estonia.*Citizenship/ }))
