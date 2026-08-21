@@ -1282,6 +1282,103 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("JM", "BQ", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
+  it("keeps Dominican Republic conflicts unresolved while covering direct cohorts", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "DO");
+
+    expect(pairs).toHaveLength(188);
+    expect(getVisaRelationshipEvidence("MA", "DO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "DO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "DO", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AL", "DO", snapshot.passports.AL.statuses.DO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("DO", "DO", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Belize's current ordinary-passport visa table without filling ambiguous rows", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "BZ");
+
+    expect(pairs).toHaveLength(193);
+    expect(getVisaRelationshipEvidence("US", "BZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "BZ", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SS", "BZ", snapshot.passports.SS.statuses.BZ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("NR", "BZ", snapshot.passports.NR.statuses.BZ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BZ", "BZ", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Costa Rica's 2025 ordinary-passport directive and restricted residual", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "CR");
+
+    expect(pairs).toHaveLength(198);
+    expect(getVisaRelationshipEvidence("US", "CR", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "CR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "CR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CR", "CR", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Guatemala's current A, B and C categories plus its citizen-entry right", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "GT");
+
+    expect(pairs).toHaveLength(194);
+    expect(getVisaRelationshipEvidence("US", "GT", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("EC", "GT", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "GT", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GT", "GT", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AD", "GT", snapshot.passports.AD.statuses.GT).supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps only the named pre-authorized cohorts for United States territories", () => {
+    const expectedCounts = new Map([
+      ["AS", 46],
+      ["GU", 46],
+      ["MP", 47],
+      ["PR", 42],
+      ["VI", 42],
+    ]);
+
+    for (const [destinationCode, expected] of expectedCounts) {
+      const pairs = evidenceRelationshipPairs(snapshot.manifest)
+        .filter(({ destination }) => destination.code === destinationCode);
+      expect(pairs, destinationCode).toHaveLength(expected);
+    }
+
+    expect(getVisaRelationshipEvidence("QA", "AS", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("WS", "AS", snapshot.passports.WS.statuses.AS).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AU", "GU", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "MP", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PT", "PR", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PT", "VI", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "PR", snapshot.passports.US.statuses.PR).supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps bounded UK territory schedules without filling unsupported territory complements", () => {
+    const expectedCounts = new Map([
+      ["AI", 199],
+      ["TC", 199],
+      ["FK", 109],
+      ["KY", 198],
+      ["BM", 0],
+      ["VG", 0],
+      ["MS", 0],
+    ]);
+
+    for (const [destinationCode, expected] of expectedCounts) {
+      const pairs = evidenceRelationshipPairs(snapshot.manifest)
+        .filter(({ destination }) => destination.code === destinationCode);
+      expect(pairs, destinationCode).toHaveLength(expected);
+    }
+
+    expect(getVisaRelationshipEvidence("MO", "AI", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "AI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MC", "TC", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "FK", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "FK", snapshot.passports.US.statuses.FK).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PE", "KY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SS", "KY", snapshot.passports.SS.statuses.KY).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1326,6 +1423,16 @@ describe("official visa evidence", () => {
       "www.govinfo.gov",
       "www.uscis.gov",
       "www.help.cbp.gov",
+      "www.osas.as",
+      "legalaffairs.as.gov",
+      "g-cnmi-eta.cbp.dhs.gov",
+      "evisa.gov.ai",
+      "borderforce.gov.tc",
+      "www.gov.fk",
+      "www2.gov.bm",
+      "bvi.gov.vg",
+      "otp.gov.ky",
+      "www.gov.ms",
       "israel-entry.piba.gov.il",
       "www.gov.il",
       "embassies.gov.il",
@@ -1651,6 +1758,16 @@ describe("official visa evidence", () => {
       "concordia.itamaraty.gov.br",
       "www.netherlandsworldwide.nl",
       "gobiernu.cw",
+      "dgii.gov.do",
+      "servicios360.mirex.gob.do",
+      "consultas.mirex.gob.do",
+      "migracion.gob.do",
+      "mirex.gob.do",
+      "immigration.gov.bz",
+      "pgrweb.go.cr",
+      "www.minex.gob.gt",
+      "igm.gob.gt",
+      "www.congreso.gob.gt",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

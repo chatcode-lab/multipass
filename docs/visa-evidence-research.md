@@ -438,6 +438,46 @@ Current NetherlandsWorldwide guidance expressly lists the nationality-wide ordin
 
 The Caribbean visa is not a Schengen visa, and island-specific stay limits remain distinct. Hong Kong's waiver covers British National (Overseas) or HKSAR passports; Macao is SAR-passport-specific, Taiwan requires an identity-card number, and Ukraine requires a biometric passport. Residence, third-country multiple-entry visas, transit, crew, cruise, special documents, and admission discretion remain conditional routes rather than nationality baselines.
 
+## Pass 47 result: Dominican Republic
+
+The Dominican Republic adds 188 directly reconciled relationships—102 visa-free/Tourist Card and 86 advance-visa—raising complete-matrix evidence from 24,022 to 24,210 of 44,974 relationships (53.8%). One hundred and nineteen destination columns now have at least 50% coverage and 114 have at least 80%. Caribbean coverage increased from 1,915 to 2,103 of 4,962 relationships (42.4%). No fallback status changed after independent review.
+
+The current tax-authority schedule supplies the named prior-visa list and its Tourist Card residual, while the migration service confirms the e-Ticket is an entry/exit declaration rather than ETA. Morocco is separately visa-free under a Foreign Ministry tourism/business waiver in force since 14 July 2021. Third-country visas or residence permits under Decree 691-07 remain document-conditioned exceptions, not passport-wide visa-free classifications.
+
+Independent review rejected the initial 195-cell split because live Foreign Ministry ordinary-passport results conflict with the tax-authority list for more countries than first identified. Albania, Bosnia and Herzegovina, Georgia, Latvia, Montenegro, Mongolia, Papua New Guinea, Romania, Samoa, and South Sudan remain unresolved alongside Dominican Republic citizenship. The candidate records those direct source disagreements rather than forcing one authority's table over another.
+
+## Pass 48 result: Belize
+
+Belize adds 193 relationships directly supported by the current Immigration Department table—104 visa-free and 89 advance-visa—raising complete-matrix evidence from 24,210 to 24,403 of 44,974 relationships (54.3%). One hundred and twenty destination columns now have at least 50% coverage and 115 have at least 80%. Americas coverage increased from 1,439 to 1,632 of 4,953 relationships (32.9%). No fallback status changed after independent review.
+
+The review deliberately leaves six cells unresolved. Belize citizenship lacks a direct ordinary-passport entry or right-of-return source; Nauru's row literally reports both `YES` and `NO`; and Slovakia, Slovenia, South Sudan, and Timor-Leste do not appear in the current table. Conditional 30-day access based on a valid multiple-entry United States, Schengen, or Canadian visa or permanent residence remains a document-based exception rather than a passport-wide classification. The published application workflow requires advance submission and therefore is not presented as eVisa or visa on arrival.
+
+## Pass 49 result: Costa Rica
+
+Costa Rica adds 198 relationships—95 visa-free and 103 advance-visa-required—raising complete-matrix evidence from 24,403 to 24,601 of 44,974 relationships (54.7%). One hundred and twenty-one destination columns now have at least 50% coverage and 116 have at least 80%. Americas coverage increased from 1,632 to 1,830 of 4,953 relationships (36.9%). No fallback status changed after independent review.
+
+The current DGME Resolution AJ-484-11-2025, effective 17 November 2025, directly names the first and second visa-free groups, the consular and restricted groups, and assigns every otherwise unlisted foreign country to the restricted group. Costa Rican citizenship remains unresolved because the reviewed sources do not directly establish the ordinary-passport entry or right-of-return relationship. Conditional access based on third-country visas or residence permits, special Chinese document categories, age, purpose, or admissibility remains outside the nationality baseline. The PGR legal-system endpoints use automated-access challenges, but independent review recovered the official Gazette text and reconciled the complete foreign-passport partition.
+
+## Pass 50 result: Guatemala
+
+Guatemala adds 193 foreign-passport relationships—84 visa-free and 109 advance-visa-required—raising complete-matrix evidence from 24,601 to 24,794 of 44,974 relationships (55.1%). One hundred and twenty-two destination columns now have at least 50% coverage and 117 have at least 80%. Americas coverage increased from 1,830 to 2,023 of 4,953 relationships (40.8%). The current MINEX table changes Ecuador from the upstream visa-free status to an advance consular visa; that single fallback correction was mechanically reconciled with the candidate conflict record.
+
+The current MINEX classification directly enumerates ordinary passports in Category A (visa-exempt), Category B (advance consular visa), and Category C (advance consulted visa). Independent review also added Guatemala's constitutional citizen-entry right, which is shown in the evidence matrix but excluded from visitor-coverage totals. It corrected the research conditions to reflect IGM's current rule: a valid United States, Mexican, Canadian, or Schengen visa excuses Category B applicants only; Category C nationals still require a Guatemalan visa. Andorra remains unresolved because the same live MINEX schedule places its ordinary passport in both Categories A and B. Hong Kong, Macao, Kosovo, and South Sudan remain unresolved because the reviewed current schedules do not directly map those catalog passports.
+
+## Pass 51 result: United States territories
+
+American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, and the U.S. Virgin Islands add 223 directly supported ETA/ESTA relationships, raising complete-matrix evidence from 24,794 to 25,017 of 44,974 relationships (55.6%). OCEANIA coverage increased from 1,370 to 1,509 of 4,165 relationships (36.2%), while Caribbean coverage increased from 2,103 to 2,187 of 4,962 (44.1%). The number of destination columns above the 50% and 80% thresholds remains 122 and 117 respectively.
+
+The reviewed policies cover American Samoa's 45-country Entry Permit Waiver Program plus Qatar's current pre-travel visitor permit, the 42-country Visa Waiver Program/ESTA cohorts for Puerto Rico and the U.S. Virgin Islands, and the named G-CNMI ETA/ESTA routes for Guam and the Northern Mariana Islands. Twenty-five upstream visa-free cells were corrected to ETA: twelve named G-CNMI passports for each of Guam and the Northern Mariana Islands, plus the PRC CNMI EVS-TAP route. Independent review rejected Samoa as a nationality-wide American Samoa ETA because the current permit is limited to Samoan-born citizens with Samoa-issued passports. U.S. citizenship, visitor visas, residence, transit, special documents, and every unnamed residual remain unresolved; 772 territory relationships are intentionally not inferred.
+
+## Pass 52 result: United Kingdom overseas territories
+
+Anguilla, Turks and Caicos, the Falkland Islands, and the Cayman Islands add 705 directly supported relationships, raising complete-matrix evidence from 25,017 to 25,722 of 44,974 relationships (57.2%). Caribbean coverage increased from 2,187 to 2,783 of 4,962 relationships (56.1%), and Americas coverage increased from 2,023 to 2,132 of 4,953 (43.0%). One hundred and twenty-six destination columns now have at least 50% coverage and 120 have at least 80%.
+
+Independent review materially corrected the initial draft. Anguilla's official selector and issuance service support a complete 87 visa-free/112 eVisa partition, not a paper-visa residual. Turks and Caicos has a complete 76 visa-free/123 advance-visa partition. Cayman adds 89 visa-free and 109 advance-visa relationships, leaving only South Sudan unresolved because it is absent from the current table. The Falklands candidate retains only its 109 explicitly named advance-visa passports; omission is not used to infer the remaining 90 statuses, and an arrival visitor permit is not mislabeled as visa on arrival. The four fallback changes—Macao to Anguilla, Monaco to Turks and Caicos, and Peru and Venezuela to Cayman—exactly match the reviewed conflict record.
+
+Bermuda, the British Virgin Islands, and Montserrat remain entirely unresolved. Bermuda's rule depends on third-country authorizations, BVI publishes an application route without a current complete nationality table, and Montserrat's statutory schedule still needs a dedicated amendment crosswalk. These gaps account for most of the batch's 688 deliberately unverified relationships.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.
