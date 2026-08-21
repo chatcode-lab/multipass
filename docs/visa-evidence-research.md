@@ -478,6 +478,26 @@ Independent review materially corrected the initial draft. Anguilla's official s
 
 Bermuda, the British Virgin Islands, and Montserrat remain entirely unresolved. Bermuda's rule depends on third-country authorizations, BVI publishes an application route without a current complete nationality table, and Montserrat's statutory schedule still needs a dedicated amendment crosswalk. These gaps account for most of the batch's 688 deliberately unverified relationships.
 
+## Pass 53 result: Honduras
+
+Honduras adds eight directly supported foreign-passport relationships, raising complete-matrix evidence from 25,722 to 25,730 of 44,974 relationships (57.2%) and Americas coverage from 2,132 to 2,140 of 4,953 (43.2%). The current evidence also establishes the Honduran citizen-entry cell, which is displayed in the public matrix but excluded from visitor-coverage totals. Bolivia changes from the upstream advance-visa status to visa-free for ordinary-passport tourism or visits effective 17 March 2024; that single fallback correction exactly matches the reviewed conflict record.
+
+The bounded result covers Guatemala, Nicaragua, and El Salvador under the current CA-4 rule; Bolivia and Saudi Arabia as visa-free; and United Kingdom, Jordan, and Palestinian ordinary passports as advance consular-visa cases. The United Kingdom rule retains Cayman-domicile and narrow British-nationality cruise exceptions only as conditions. Honduras's Foreign Ministry transparency index confirms a nationality schedule updated 12 September 2024, but the attachment's full country rows cannot currently be reopened. Consequently, 190 cells remain unresolved rather than deriving a complement from an inaccessible schedule, an application form, or a special-document exception.
+
+## Pass 54 result: El Salvador
+
+El Salvador adds 196 directly supported foreign-passport relationships, raising complete-matrix evidence from 25,730 to 25,926 of 44,974 relationships (57.6%) and Americas coverage from 2,140 to 2,336 of 4,953 (47.2%). One hundred and twenty-seven destination columns now have at least 50% coverage and 121 have at least 80%. Bolivia changes from the upstream visa-free status to advance consular visa, while Pakistan changes from eVisa to advance consulted visa; both fallback corrections exactly match the reviewed conflict record.
+
+The full DGME list linked from the current migration service and dated 19 November 2024 supports the complete Category A/B/C foreign-passport split, including El-Salvador-specific treatment for Ecuador (Category A) and Taiwan (Category C). The online Special Entry Permit is still `visa_required`: it supplies prior approval later stamped at entry and does not establish electronic issuance or a walk-up arrival visa. Hong Kong and Macao remain unresolved because the table does not safely map their SAR ordinary passports, and the Salvadoran citizen-entry cell remains unresolved for lack of a directly reviewed right-of-entry source. The live Foreign Ministry table independently corroborates the category model and opening rows but currently exposes only a partial table in the browser, so the DGME attachment remains a freshness watchpoint.
+
+## Pass 55 result: Nicaragua
+
+Nicaragua adds 188 directly supported foreign-passport relationships, raising complete-matrix evidence from 25,926 to 26,114 of 44,974 relationships (58.1%) and Americas coverage from 2,336 to 2,524 of 4,953 (51.0%). One hundred and twenty-eight destination columns now have at least 50% coverage and 122 have at least 80%. The batch also establishes Nicaragua's citizen-entry cell outside the visitor-coverage denominator.
+
+The current INAC-linked COCESNA eAIP, AIRAC Amendment 06/25 effective 30 October 2025, supplies the named ordinary-passport Category A/B/C schedule. Independent review checked the seven embedded country-table images and corrected India from advance-only to `visa_on_arrival`: its row expressly says Category B “consular or border,” and the migration law confirms Category B may be issued at the border. The Tourist Card remains a separate personal document and fee, not ETA, eVisa, or visa on arrival.
+
+All 133 fallback corrections exactly match the reviewed conflict record: 31 upstream eVisa rows become visa-free, 101 rows become advance visa-required (95 from eVisa and six from visa-free), and India becomes visa on arrival. Moldova, Dominican Republic, and Venezuela remain unresolved because the current schedule assigns each to conflicting categories; Sweden, Switzerland, and South Africa have blank rows; Hong Kong is conditional; and Macao, Kosovo, and South Sudan are not safely mapped. No complement was inferred for those ten cells.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.

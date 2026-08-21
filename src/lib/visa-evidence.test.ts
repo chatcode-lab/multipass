@@ -1379,6 +1379,46 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SS", "KY", snapshot.passports.SS.statuses.KY).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps Honduras coverage limited to directly recovered current rules", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "HN");
+
+    expect(pairs).toHaveLength(9);
+    expect(getVisaRelationshipEvidence("BO", "HN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GT", "HN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SA", "HN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GB", "HN", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HN", "HN", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "HN", snapshot.passports.US.statuses.HN).supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps El Salvador's full current A, B and C nationality schedule", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "SV");
+
+    expect(pairs).toHaveLength(196);
+    expect(getVisaRelationshipEvidence("US", "SV", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("EC", "SV", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BO", "SV", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PK", "SV", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TW", "SV", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "SV", snapshot.passports.HK.statuses.SV).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SV", "SV", "citizenship").supportsCurrentStatus).toBe(false);
+  });
+
+  it("maps Nicaragua's current A, B and C schedule including India's border visa", () => {
+    const pairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "NI");
+
+    expect(pairs).toHaveLength(189);
+    expect(getVisaRelationshipEvidence("AD", "NI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AO", "NI", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "NI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GT", "NI", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NI", "NI", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MD", "NI", snapshot.passports.MD.statuses.NI).supportsCurrentStatus).toBe(false);
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "governo.gov.ao",
@@ -1433,6 +1473,14 @@ describe("official visa evidence", () => {
       "bvi.gov.vg",
       "otp.gov.ky",
       "www.gov.ms",
+      "inm.gob.hn",
+      "portalunico.iaip.gob.hn",
+      "tsc.gob.hn",
+      "www.tsc.gob.hn",
+      "rree.gob.sv",
+      "www.migracion.gob.sv",
+      "www.cocesna.org",
+      "legislacion.asamblea.gob.ni",
       "israel-entry.piba.gov.il",
       "www.gov.il",
       "embassies.gov.il",
