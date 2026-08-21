@@ -455,15 +455,22 @@ test("combination research publishes exact results, reproducible links, and Mark
   const insightsResponse = await request.get("/api/v1/combination-insights");
   expect(insightsResponse.ok()).toBe(true);
   const insights = await insightsResponse.json();
+  const manifestResponse = await request.get("/api/v1/manifest");
+  expect(manifestResponse.ok()).toBe(true);
+  const { manifest } = await manifestResponse.json();
+  const nameByCode = new Map(manifest.passports.map((passport: { code: string; name: string }) => [passport.code, passport.name]));
+  const scenarioName = (codes: string[]) => codes.map((code) => nameByCode.get(code) ?? code).join(" + ");
+  const bestPairName = scenarioName(insights.bestPairs[0].codes);
+  const bestTripleName = scenarioName(insights.bestTriples[0].codes);
 
   await page.goto("/best-passport-combination");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Best passport combination in 2026.");
-  await expect(page.locator(".research-result-card").first()).toContainText("Japan + United Arab Emirates");
+  await expect(page.locator(".research-result-card").first()).toContainText(bestPairName);
   await expect(page.locator(".research-result-card").first()).toContainText(String(insights.bestPairs[0].accessibleDestinations));
-  await expect(page.locator(".research-result-card").nth(1)).toContainText("Japan + United Arab Emirates + Rwanda");
+  await expect(page.locator(".research-result-card").nth(1)).toContainText(bestTripleName);
   await expect(page.getByRole("link", { name: "View combined rank" }).first()).toHaveAttribute(
     "href",
-    "/rank?set=JP%2CAE",
+    `/rank?${new URLSearchParams({ set: insights.bestPairs[0].codes.join(",") })}`,
   );
   const articleSchema = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) =>
     scripts.flatMap((script) => {
@@ -475,7 +482,7 @@ test("combination research publishes exact results, reproducible links, and Mark
 
   const markdown = await request.get("/best-passport-combination.md");
   expect(markdown.ok()).toBe(true);
-  expect(await markdown.text()).toContain("**Japan + United Arab Emirates**");
+  expect(await markdown.text()).toContain(`**${bestPairName}**`);
 
   await page.goto("/how-many-passports-to-cover-the-world");
   await expect(page.locator(".research-hero__answer strong")).toHaveText(String(insights.minimumCover.size));
