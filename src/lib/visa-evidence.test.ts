@@ -1435,13 +1435,13 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "SV");
 
-    expect(pairs).toHaveLength(196);
+    expect(pairs).toHaveLength(197);
     expect(getVisaRelationshipEvidence("US", "SV", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("EC", "SV", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BO", "SV", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PK", "SV", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "SV", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("HK", "SV", snapshot.passports.HK.statuses.SV).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("HK", "SV", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SV", "SV", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
@@ -1462,27 +1462,27 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "UY");
 
-    expect(pairs).toHaveLength(197);
+    expect(pairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("US", "UY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HK", "UY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MO", "UY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "UY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PS", "UY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "UY", snapshot.passports.XK.statuses.UY).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("UY", "UY", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("UY", "UY", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("maps Chile's current transient-stay schedule without treating online filing as eVisa", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "CL");
 
-    expect(pairs).toHaveLength(197);
+    expect(pairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("ID", "CL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MN", "CL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SR", "CL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "CL", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "CL", snapshot.passports.XK.statuses.CL).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("CL", "CL", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CL", "CL", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("keeps Bolivia coverage to the narrow directly corroborated visa-free cohort", () => {
@@ -2152,6 +2152,7 @@ describe("official visa evidence", () => {
       "igm.gob.gt",
       "www.congreso.gob.gt",
       "www.gub.uy",
+      "www.chile.gob.cl",
       "www.consulado.gob.cl",
       "serviciomigraciones.cl",
       "consulados.cancilleria.gob.bo",

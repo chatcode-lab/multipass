@@ -1589,4 +1589,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
     reviewedAt: "2026-08-21",
   })),
+  {
+    passportCode: "HK",
+    destinationCode: "SV",
+    status: "visa_free",
+    reason: "El Salvador's current Foreign Ministry ordinary-passport table assigns Hong Kong Category A, exempt from visa.",
+    sourceUrl: "https://rree.gob.sv/servicios/visas-para-extranjeros/",
+    reviewedAt: "2026-08-21",
+  },
 ] as const;

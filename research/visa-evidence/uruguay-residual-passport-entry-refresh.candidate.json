@@ -1,0 +1,58 @@
+{
+  "batchId": "uruguay-residual-passport-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "uruguay-refresh-consular-return-safe-conduct",
+      "title": "Válido por un solo viaje de regreso a la República (salvoconducto)",
+      "url": "https://www.gub.uy/ministerio-relaciones-exteriores/consulado-general-sidney/tramites-servicios/valido-solo-viaje-regreso-republica-salvoconducto",
+      "publisher": "Ministry of Foreign Affairs of Uruguay",
+      "jurisdiction": "Uruguay",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current consular service is published by Uruguay's Ministry of Foreign Affairs on the official gub.uy portal.",
+      "supportingExcerpt": "Nacionales uruguayos o ciudadanos legales que requieran viajar a Uruguay."
+    },
+    {
+      "id": "uruguay-refresh-interior-admission-visa-regime",
+      "title": "Régimen de visas de admisión",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/regimen-visas-admision",
+      "publisher": "Ministry of Interior of Uruguay",
+      "jurisdiction": "Uruguay",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current admission visa and passport schedule is published by Uruguay's Ministry of Interior on the official gub.uy portal.",
+      "supportingExcerpt": "El resto de los países que no figuran en la lista necesitan visa."
+    }
+  ],
+  "policies": [
+    {
+      "id": "uruguay-citizen-return-entry",
+      "title": "Uruguayan citizens: citizenship entry status",
+      "summary": "Uruguay's Foreign Ministry supplies a one-way return travel document to Uruguayan nationals or legal citizens whose travel document is unavailable. An ordinary Uruguayan passport therefore represents citizenship, not a foreign visitor-visa route.",
+      "status": "citizenship",
+      "destinationCodes": ["UY"],
+      "passportCodes": ["UY"],
+      "conditions": [
+        "This is supported by the Foreign Ministry's direct return-document route, rather than inferred solely from matching catalog codes.",
+        "It does not determine treatment of a dual national presenting a different passport, individual document-validity issues, departure controls, residence, or any foreign visitor status."
+      ],
+      "sourceIds": ["uruguay-refresh-consular-return-safe-conduct"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "XK",
+      "destinationCode": "UY",
+      "reason": "The current Interior schedule's residual sentence covers countries not listed, but it does not identify Kosovo or map this catalog's Kosovo ordinary-passport issuer. Do not extend the residual rule to this territorial/document case without direct official mapping.",
+      "searchedOfficialDomains": [
+        "gub.uy",
+        "mrree.gub.uy"
+      ]
+    }
+  ]
+}

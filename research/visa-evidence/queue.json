@@ -3305,6 +3305,180 @@
         "Do not convert missing Israel or Kosovo selector records into any access category, and do not infer electronic issuance merely from an online application workflow.",
         "Do not infer Yemen citizenship treatment from matching codes while the foreigner workflow anomalously lists Yemen; preserve prohibitions, document recognition, embassy sticker issuance and final admission separately."
       ]
+    },
+    {
+      "id": "mexico-kosovo-visitor-entry-refresh",
+      "priority": 188,
+      "objective": "Resolve Kosovo ordinary-passport access to Mexico without converting passport non-recognition into an ordinary visa category.",
+      "destinationCodes": ["MX"],
+      "passportCodes": ["XK"],
+      "sourceHints": ["https://embamex.sre.gob.mx/serbia/index.php/visa-english"],
+      "notes": [
+        "Keep the row unresolved while Mexico states that it does not recognize Kosovo passports and the taxonomy has no document-not-recognized state."
+      ]
+    },
+    {
+      "id": "chile-residual-passport-entry-refresh",
+      "priority": 189,
+      "objective": "Complete Chile's citizenship cell and preserve Kosovo passport-recognition ambiguity.",
+      "destinationCodes": ["CL"],
+      "passportCodes": ["CL", "XK"],
+      "sourceHints": [
+        "https://www.chile.gob.cl/chile/site/artic/20230803/pags/20230803180952.html",
+        "https://www.consulado.gob.cl/consulados/site/docs/20190220/20190220161313/cuadro_de_visas_corregido060326.pdf"
+      ],
+      "notes": [
+        "Use Chile's citizen return document only for CL to CL; do not turn Chile's Kosovo non-recognition notice into visa_required."
+      ]
+    },
+    {
+      "id": "uruguay-residual-passport-entry-refresh",
+      "priority": 190,
+      "objective": "Complete Uruguay's citizenship cell and preserve the unmapped Kosovo passport row.",
+      "destinationCodes": ["UY"],
+      "passportCodes": ["UY", "XK"],
+      "sourceHints": [
+        "https://www.gub.uy/ministerio-relaciones-exteriores/consulado-general-sidney/tramites-servicios/valido-solo-viaje-regreso-republica-salvoconducto",
+        "https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/regimen-visas-admision"
+      ],
+      "notes": [
+        "Use Uruguay's citizen return document only for UY to UY; keep Kosovo unresolved because the current admission schedule does not identify that issuer."
+      ]
+    },
+    {
+      "id": "ecuador-hk-mo-tw-passport-entry-refresh",
+      "priority": 191,
+      "objective": "Resolve Hong Kong, Macao and Taiwan ordinary-passport access to Ecuador from a stable current destination-side source.",
+      "destinationCodes": ["EC"],
+      "passportCodes": ["HK", "MO", "TW"],
+      "sourceHints": ["https://www.cancilleria.gob.ec/"],
+      "notes": [
+        "Do not infer exact document treatment from omission, commercial indexes or a source that cannot currently be retrieved and authenticated."
+      ]
+    },
+    {
+      "id": "el-salvador-hk-mo-passport-entry-refresh",
+      "priority": 192,
+      "objective": "Reconcile El Salvador's Hong Kong and Macao ordinary-passport rows from its current Foreign Ministry table.",
+      "destinationCodes": ["SV"],
+      "passportCodes": ["HK", "MO"],
+      "sourceHints": ["https://rree.gob.sv/servicios/visas-para-extranjeros/"],
+      "notes": [
+        "Promote the directly named Hong Kong Category A exemption; keep Macao unresolved because it is not directly named or mapped."
+      ]
+    },
+    {
+      "id": "kenya-saint-kitts-visitor-gap-refresh",
+      "priority": 193,
+      "objective": "Resolve Saint Kitts and Nevis access to Kenya without silently correcting controlling-source wording.",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["KN"],
+      "sourceHints": [
+        "https://documents.kenyahighcom.org.uk/L.%20%20N.-%2093%20kenyan%20citizenship%20and%20immigration%20act%20.pdf",
+        "https://etakenya.go.ke/apply/exempt"
+      ],
+      "notes": [
+        "Hold until Kenya corrects or officially maps the Gazette's St. Kitts and Navis wording to the current passport issuer."
+      ]
+    },
+    {
+      "id": "zimbabwe-bolivia-visitor-gap-refresh",
+      "priority": 194,
+      "objective": "Reconcile Bolivia access to Zimbabwe across current arrival and electronic-visa guidance.",
+      "destinationCodes": ["ZW"],
+      "passportCodes": ["BO"],
+      "sourceHints": [
+        "https://www.zimimmigration.gov.zw/?p=7186",
+        "https://www.evisa.gov.zw/faq.html"
+      ],
+      "notes": [
+        "Do not choose between visa on arrival and pre-travel visa while two current official surfaces directly conflict."
+      ]
+    },
+    {
+      "id": "mauritius-mu-me-xk-visitor-gap-refresh",
+      "priority": 195,
+      "objective": "Resolve Mauritius citizenship, Montenegro and Kosovo rows from current issuer-specific sources.",
+      "destinationCodes": ["MU"],
+      "passportCodes": ["MU", "ME", "XK"],
+      "sourceHints": [
+        "https://passport.govmu.org/passport/wp-content/uploads/2021/03/Visa-Requirement-Country-2025.pdf",
+        "https://passport.govmu.org/passport/?page_id=587"
+      ],
+      "notes": [
+        "Do not infer citizenship from matching codes, split a legacy Serbia and Montenegro label, or infer Kosovo treatment from omission."
+      ]
+    },
+    {
+      "id": "zambia-rs-tw-me-xk-visitor-gap-refresh",
+      "priority": 196,
+      "objective": "Resolve Zambia's Serbia, Taiwan, Montenegro and Kosovo residual rows from current nationality schedules.",
+      "destinationCodes": ["ZM"],
+      "passportCodes": ["RS", "TW", "ME", "XK"],
+      "sourceHints": [
+        "https://www.zambiaimmigration.gov.zm/nationals-who-dont-require-visa/",
+        "https://www.zambiaimmigration.gov.zm/nationals-who-require-visa/",
+        "https://www.zambiaimmigration.gov.zm/nationals-requiring-visa-prior-to-travel/"
+      ],
+      "notes": [
+        "Do not split the legacy Serbia and Montenegro label or infer Taiwan and Kosovo treatment from omission across the three lists."
+      ]
+    },
+    {
+      "id": "maldives-israel-visitor-gap-refresh",
+      "priority": 197,
+      "objective": "Represent or preserve the current Israeli-passport entry prohibition for the Maldives.",
+      "destinationCodes": ["MV"],
+      "passportCodes": ["IL"],
+      "sourceHints": ["https://www.immigration.gov.mv/press-announcements/7693"],
+      "notes": [
+        "Do not relabel the explicit entry prohibition as visa_required while entry_prohibited is absent from the taxonomy."
+      ]
+    },
+    {
+      "id": "uzbekistan-taiwan-saudi-kosovo-visitor-gap-refresh",
+      "priority": 198,
+      "objective": "Reconcile Uzbekistan's Taiwan, Saudi Arabia and Kosovo rows across current MFA and eVisa datasets.",
+      "destinationCodes": ["UZ"],
+      "passportCodes": ["TW", "SA", "XK"],
+      "sourceHints": [
+        "https://gov.uz/en/mfa/pages/o-zbekiston-respublikasi-vizasi",
+        "https://e-visa.gov.uz:8443/api/v1/dic/countries/en",
+        "https://e-visa.gov.uz:8443/api/v1/dic/visa/status/en/2",
+        "https://president.uz/en/lists/view/5433"
+      ],
+      "notes": [
+        "Reconcile the Saudi visa-free API and presidential announcement with the MFA appendix before promotion; keep Taiwan and Kosovo unresolved absent exact document mappings."
+      ]
+    },
+    {
+      "id": "sri-lanka-taiwan-kosovo-syria-visitor-gap-refresh",
+      "priority": 199,
+      "objective": "Reconcile Sri Lanka's Taiwan, Kosovo and Syria routes without flattening sponsor-led head-office conditions.",
+      "destinationCodes": ["LK"],
+      "passportCodes": ["TW", "XK", "SY"],
+      "sourceHints": [
+        "https://www.eta.gov.lk/slvisa/?tick=8cd2c80a",
+        "https://www.immigration.gov.lk/pages_e.php?id=60"
+      ],
+      "notes": [
+        "Hold while the special sponsor-led visa path and the general ETA notice do not establish one unconditional passport-wide category."
+      ]
+    },
+    {
+      "id": "taiwan-china-palestine-visitor-gap-refresh",
+      "priority": 200,
+      "objective": "Resolve Mainland China and Palestinian document access to Taiwan without reducing entry permits or recognition questions to visa labels.",
+      "destinationCodes": ["TW"],
+      "passportCodes": ["CN", "PS"],
+      "sourceHints": [
+        "https://www.immigration.gov.tw/5382/5385/7244/7250/7257/7266/",
+        "https://www.immigration.gov.tw/5385/7244/7250/7257/7266/36084/",
+        "https://www.boca.gov.tw/cp-160-268-b9f2c-2.html"
+      ],
+      "notes": [
+        "Keep Mainland Area entry-permit routes and Palestinian passport recognition outside a nationality-only visa label until an exact current rule is available."
+      ]
     }
   ]
 }

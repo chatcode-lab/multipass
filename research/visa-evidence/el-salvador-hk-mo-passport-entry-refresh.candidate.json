@@ -1,0 +1,56 @@
+{
+  "batchId": "el-salvador-hk-mo-passport-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "el-salvador-refresh-current-ordinary-passport-visa-table",
+      "title": "Visas para extranjeros",
+      "url": "https://rree.gob.sv/servicios/visas-para-extranjeros/",
+      "publisher": "Ministry of Foreign Affairs of El Salvador",
+      "jurisdiction": "El Salvador",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live ordinary, diplomatic, official and service passport table is published on El Salvador's Ministry of Foreign Affairs rree.gob.sv portal.",
+      "supportingExcerpt": "Hong Kong (Ver*) | (A) EXENTO DE VISA"
+    }
+  ],
+  "policies": [
+    {
+      "id": "el-salvador-hong-kong-sar-ordinary-passport-category-a",
+      "title": "Hong Kong SAR ordinary passport: Category A visa exemption",
+      "summary": "El Salvador's current Foreign Ministry ordinary-passport table expressly includes Hong Kong among the Special Administrative Regions of the PRC and assigns Category A, exempt from visa.",
+      "status": "visa_free",
+      "destinationCodes": ["SV"],
+      "passportCodes": ["HK"],
+      "conditions": [
+        "The table distinguishes ordinary from diplomatic, official and service passports; this policy is only for the ordinary Hong Kong SAR passport row.",
+        "The table separately describes treatment of British passports held by Hong Kong-origin travellers. It does not change this direct Hong Kong SAR ordinary-passport classification.",
+        "Purpose, CA-4 stay limits, passport validity, carrier, security and final admission conditions remain outside this visa-category classification."
+      ],
+      "sourceIds": ["el-salvador-refresh-current-ordinary-passport-visa-table"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "SV",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "The current Foreign Ministry table expressly assigns Hong Kong's ordinary-passport row Category A, exempt from visa; the fallback still says visa_required.",
+      "sourceIds": ["el-salvador-refresh-current-ordinary-passport-visa-table"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "SV",
+      "reason": "The current Foreign Ministry table expressly names Hong Kong but does not directly name or map a Macao SAR ordinary passport. Omission is not used to establish the fallback visa_required label.",
+      "searchedOfficialDomains": [
+        "rree.gob.sv",
+        "migracion.gob.sv"
+      ]
+    }
+  ]
+}

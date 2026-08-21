@@ -1,0 +1,105 @@
+{
+  "batchId": "uzbekistan-taiwan-saudi-kosovo-visitor-gap-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "uzbekistan-mfa-current-visa-procedure-refresh",
+      "title": "Visa to the Republic of Uzbekistan",
+      "url": "https://gov.uz/en/mfa/pages/o-zbekiston-respublikasi-vizasi",
+      "publisher": "Ministry of Foreign Affairs, Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current Ministry of Foreign Affairs visa procedure is published on the official gov.uz government domain.",
+      "supportingExcerpt": "Foreign citizens and stateless persons may enter Uzbekistan ... only if they have entry visas."
+    },
+    {
+      "id": "uzbekistan-evisa-current-countries-api-refresh",
+      "title": "Uzbekistan eVisa current country-status dataset",
+      "url": "https://e-visa.gov.uz:8443/api/v1/dic/countries/en",
+      "publisher": "Government of Uzbekistan eVisa service",
+      "jurisdiction": "Uzbekistan",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live JSON endpoint is served by e-visa.gov.uz, Uzbekistan's official electronic-visa portal, and returns the current Saudi Arabia country record with status 2.",
+      "supportingExcerpt": "SAUDI ARABIA"
+    },
+    {
+      "id": "uzbekistan-evisa-current-status-two-api-refresh",
+      "title": "Uzbekistan eVisa current status 2 definition",
+      "url": "https://e-visa.gov.uz:8443/api/v1/dic/visa/status/en/2",
+      "publisher": "Government of Uzbekistan eVisa service",
+      "jurisdiction": "Uzbekistan",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live JSON endpoint is served by e-visa.gov.uz, Uzbekistan's official electronic-visa portal, and defines the current status used by its country dataset.",
+      "supportingExcerpt": "Visa-free entry for up to 30 days."
+    },
+    {
+      "id": "uzbekistan-president-saudi-visa-free-regime",
+      "title": "A New Era in the Uzbek-Saudi Relations",
+      "url": "https://president.uz/en/lists/view/5433",
+      "publisher": "President of the Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The official President of Uzbekistan website publishes the statement announcing the Saudi citizen entry regime.",
+      "supportingExcerpt": "introduction of a visa-free regime for entry into Uzbekistan for citizens of Saudi Arabia."
+    }
+  ],
+  "policies": [
+    {
+      "id": "uzbekistan-saudi-ordinary-passport-current-selector-visa-free",
+      "title": "Saudi ordinary passports: current Uzbekistan selector visa-free entry",
+      "summary": "Uzbekistan's live official eVisa country dataset assigns Saudi Arabia status 2, which the same service defines as visa-free entry for up to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "UZ"
+      ],
+      "passportCodes": [
+        "SA"
+      ],
+      "conditions": [
+        "The live eVisa dataset identifies Saudi Arabia with status 2, and its current status endpoint defines that status as visa-free entry for up to 30 days.",
+        "The President's official site confirms that Uzbekistan introduced visa-free entry for Saudi citizens.",
+        "The current MFA visa-procedure page also retains Saudi Arabia in its eVisa-or-simplified-consular appendix. This unresolved official-source conflict means the live selector result should be rechecked before promotion; no work, residence, diplomatic, official, transit or special-document rule is established."
+      ],
+      "sourceIds": [
+        "uzbekistan-evisa-current-countries-api-refresh",
+        "uzbekistan-evisa-current-status-two-api-refresh",
+        "uzbekistan-president-saudi-visa-free-regime",
+        "uzbekistan-mfa-current-visa-procedure-refresh"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "TW",
+      "destinationCode": "UZ",
+      "reason": "Taiwan is absent from the current MFA nationality schedules and the live eVisa country dataset. The foreign-citizen visa default does not directly establish treatment of a Taiwan ordinary passport or travel document, so no complement is inferred.",
+      "searchedOfficialDomains": [
+        "gov.uz",
+        "e-visa.gov.uz",
+        "mfa.uz",
+        "lex.uz"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "UZ",
+      "reason": "Kosovo is absent from the current MFA nationality schedules and the live eVisa country dataset. No current primary source directly establishes Uzbekistan's treatment of a Kosovo ordinary passport, so no complement is inferred.",
+      "searchedOfficialDomains": [
+        "gov.uz",
+        "e-visa.gov.uz",
+        "mfa.uz",
+        "lex.uz"
+      ]
+    }
+  ]
+}

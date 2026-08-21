@@ -1,0 +1,59 @@
+{
+  "batchId": "chile-residual-passport-entry-refresh",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "chile-refresh-consular-return-safe-conduct",
+      "title": "Registro Civil Consular",
+      "url": "https://www.chile.gob.cl/chile/site/artic/20230803/pags/20230803180952.html",
+      "publisher": "Ministry of Foreign Affairs of Chile",
+      "jurisdiction": "Chile",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The current consular service is published on Chile's official chile.gob.cl foreign-ministry portal.",
+      "supportingExcerpt": "permitirá viajar hacia Chile"
+    },
+    {
+      "id": "chile-refresh-current-transient-stay-visa-schedule",
+      "title": "Cuadro de visas y aranceles de Chile",
+      "url": "https://www.consulado.gob.cl/consulados/site/docs/20190220/20190220161313/cuadro_de_visas_corregido060326.pdf",
+      "publisher": "Ministry of Foreign Affairs of Chile",
+      "jurisdiction": "Chile",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The live visa schedule is a Ministry of Foreign Affairs PDF on Chile's official consulado.gob.cl domain.",
+      "supportingExcerpt": "La República de Chile no reconoce a la República de Kosovo como sujeto de derecho internacional."
+    }
+  ],
+  "policies": [
+    {
+      "id": "chile-citizen-return-entry",
+      "title": "Chilean citizens: citizenship entry status",
+      "summary": "Chile's Foreign Ministry provides Chileans abroad without valid identity documents a safe-conduct document to travel to Chile. An ordinary Chilean passport therefore represents citizenship, not a foreign visitor-visa route.",
+      "status": "citizenship",
+      "destinationCodes": ["CL"],
+      "passportCodes": ["CL"],
+      "conditions": [
+        "This is supported by the Foreign Ministry's direct Chilean return-document route, rather than inferred solely from matching catalog codes.",
+        "It does not determine treatment of a dual national presenting a different passport, an individual document-validity issue, departure controls, or any foreign visitor status."
+      ],
+      "sourceIds": ["chile-refresh-consular-return-safe-conduct"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "XK",
+      "destinationCode": "CL",
+      "reason": "The current Chilean schedule says Chile does not recognize Kosovo as a subject of international law. That statement does not establish treatment of this catalog's ordinary Kosovo-passport document, and must not be converted to visa_required or another available status.",
+      "searchedOfficialDomains": [
+        "consulado.gob.cl",
+        "chile.gob.cl",
+        "serviciomigraciones.cl"
+      ]
+    }
+  ]
+}

@@ -152,7 +152,10 @@
     "french-overseas-visitor-visa-complement-refresh",
     "tonga-visitor-visa-complement-refresh",
     "bahrain-visitor-visa-complement-refresh",
-    "saudi-arabia-visitor-visa-complement-refresh"
+    "saudi-arabia-visitor-visa-complement-refresh",
+    "chile-residual-passport-entry-refresh",
+    "uruguay-residual-passport-entry-refresh",
+    "el-salvador-hk-mo-passport-entry-refresh"
   ],
   "sources": [
     {
@@ -7623,6 +7626,56 @@
       "jurisdiction": "Saudi Arabia",
       "kind": "official-portal",
       "language": "English",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "chile-refresh-consular-return-safe-conduct",
+      "title": "Registro Civil Consular",
+      "url": "https://www.chile.gob.cl/chile/site/artic/20230803/pags/20230803180952.html",
+      "publisher": "Ministry of Foreign Affairs of Chile",
+      "jurisdiction": "Chile",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "chile-refresh-current-transient-stay-visa-schedule",
+      "title": "Cuadro de visas y aranceles de Chile",
+      "url": "https://www.consulado.gob.cl/consulados/site/docs/20190220/20190220161313/cuadro_de_visas_corregido060326.pdf",
+      "publisher": "Ministry of Foreign Affairs of Chile",
+      "jurisdiction": "Chile",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "uruguay-refresh-consular-return-safe-conduct",
+      "title": "Válido por un solo viaje de regreso a la República (salvoconducto)",
+      "url": "https://www.gub.uy/ministerio-relaciones-exteriores/consulado-general-sidney/tramites-servicios/valido-solo-viaje-regreso-republica-salvoconducto",
+      "publisher": "Ministry of Foreign Affairs of Uruguay",
+      "jurisdiction": "Uruguay",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "uruguay-refresh-interior-admission-visa-regime",
+      "title": "Régimen de visas de admisión",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/regimen-visas-admision",
+      "publisher": "Ministry of Interior of Uruguay",
+      "jurisdiction": "Uruguay",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-21"
+    },
+    {
+      "id": "el-salvador-refresh-current-ordinary-passport-visa-table",
+      "title": "Visas para extranjeros",
+      "url": "https://rree.gob.sv/servicios/visas-para-extranjeros/",
+      "publisher": "Ministry of Foreign Affairs of El Salvador",
+      "jurisdiction": "El Salvador",
+      "kind": "official-dataset",
+      "language": "Spanish",
       "reviewedAt": "2026-08-21"
     }
   ],
@@ -40637,6 +40690,64 @@
           "Wait for the issued tourist eVisa before travel and present it with the required package and travel documents for border examination."
         ]
       }
+    },
+    {
+      "id": "chile-citizen-return-entry",
+      "title": "Chilean citizens: citizenship entry status",
+      "summary": "Chile's Foreign Ministry provides Chileans abroad without valid identity documents a safe-conduct document to travel to Chile. An ordinary Chilean passport therefore represents citizenship, not a foreign visitor-visa route.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "CL"
+      ],
+      "passportCodes": [
+        "CL"
+      ],
+      "conditions": [
+        "This is supported by the Foreign Ministry's direct Chilean return-document route, rather than inferred solely from matching catalog codes.",
+        "It does not determine treatment of a dual national presenting a different passport, an individual document-validity issue, departure controls, or any foreign visitor status."
+      ],
+      "sourceIds": [
+        "chile-refresh-consular-return-safe-conduct"
+      ]
+    },
+    {
+      "id": "uruguay-citizen-return-entry",
+      "title": "Uruguayan citizens: citizenship entry status",
+      "summary": "Uruguay's Foreign Ministry supplies a one-way return travel document to Uruguayan nationals or legal citizens whose travel document is unavailable. An ordinary Uruguayan passport therefore represents citizenship, not a foreign visitor-visa route.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "UY"
+      ],
+      "passportCodes": [
+        "UY"
+      ],
+      "conditions": [
+        "This is supported by the Foreign Ministry's direct return-document route, rather than inferred solely from matching catalog codes.",
+        "It does not determine treatment of a dual national presenting a different passport, individual document-validity issues, departure controls, residence, or any foreign visitor status."
+      ],
+      "sourceIds": [
+        "uruguay-refresh-consular-return-safe-conduct"
+      ]
+    },
+    {
+      "id": "el-salvador-hong-kong-sar-ordinary-passport-category-a",
+      "title": "Hong Kong SAR ordinary passport: Category A visa exemption",
+      "summary": "El Salvador's current Foreign Ministry ordinary-passport table expressly includes Hong Kong among the Special Administrative Regions of the PRC and assigns Category A, exempt from visa.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "SV"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "The table distinguishes ordinary from diplomatic, official and service passports; this policy is only for the ordinary Hong Kong SAR passport row.",
+        "The table separately describes treatment of British passports held by Hong Kong-origin travellers. It does not change this direct Hong Kong SAR ordinary-passport classification.",
+        "Purpose, CA-4 stay limits, passport validity, carrier, security and final admission conditions remain outside this visa-category classification."
+      ],
+      "sourceIds": [
+        "el-salvador-refresh-current-ordinary-passport-visa-table"
+      ]
     }
   ]
 }

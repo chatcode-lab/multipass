@@ -736,6 +736,20 @@ The live public Hayya frontend currently configures `beta-api.hayya.qa` as its c
 
 All seven rows—Israel, Marshall Islands, Kiribati, Micronesia, Nauru, Kosovo and Cabo Verde—remain `evisa`, matching the existing fallback and requiring no status correction. The current route is pre-travel, tourism-only, single-entry, normally QAR 100 after final approval, and subject to passport, accommodation, payment and admission conditions. The undated mutable country list and country records must be refreshed together on later passes.
 
+## Pass 86 result: Chile, Uruguay and El Salvador residuals
+
+Three canonical relationships are added from the near-complete Americas review. Chilean and Uruguayan consular return-document guidance directly supports each country's citizenship/home cell; those diagonal cells are displayed in the audit matrix but are excluded from the foreign-access denominator. Hong Kong to El Salvador is the one newly supported foreign-access relationship, raising complete-matrix evidence from 30,051 to 30,052 of 44,974 relationships (66.8%) and Americas coverage from 3,584 to 3,585 of 4,953 (72.4%). Destination threshold counts remain 150 above 50% and 141 above 80%.
+
+El Salvador's current Foreign Ministry ordinary-passport table places Hong Kong in Category A, exempt from visa. This corrects the fallback from `visa_required` to `visa_free`. The page currently blocks automated direct retrieval with HTTP 403, but its rendered official table was independently reviewed and the same page remains the canonical source; the source should be re-opened on later freshness passes. Macao remains unresolved because the table does not directly name or map a Macao SAR ordinary passport.
+
+## Held from promotion: Americas, Africa and Asia near-complete gaps
+
+Twenty-five of the 28 examined residual cells remain unresolved. Kosovo document non-recognition or omission prevents nationality-only classifications for Mexico, Chile and Uruguay. Ecuador's current official source could not be stably retrieved for Hong Kong, Macao or Taiwan. Kenya's Gazette says “St. Kitts and Navis,” which is not silently corrected to the current issuer. Zimbabwe currently places Bolivia in an arrival-visa category while its eVisa FAQ says a pre-travel visa is required.
+
+Mauritius does not directly establish its home cell and retains legacy or missing Montenegro/Kosovo labels. Zambia likewise publishes the legacy combined “Serbia and Montenegro” label while omitting Taiwan and Kosovo. Maldives Immigration expressly prohibits entry on Israeli passports; the current taxonomy has no `entry_prohibited` state, so the fallback `visa_required` label is not promoted as correct evidence. Uzbekistan's current APIs and presidential announcement support Saudi visa-free access but conflict with the current MFA appendix; Taiwan and Kosovo are unmapped.
+
+Sri Lanka gives Taiwan, Kosovo and Syria a sponsor-led head-office route while simultaneously retaining broad ETA wording, so no unconditional category is assigned. Taiwan's Mainland China routes depend on Mainland travel documents and entry permits rather than an ordinary passport alone, and no current primary source establishes Palestinian document recognition. All held candidates pass exact-scope validation and remain visible as unverified work rather than being filled from inference.
+
 ## Held from promotion: Israel, Lebanon, United Arab Emirates and Yemen residual gaps
 
 Nine narrow residual relationships remain unverified after a fresh official-source review: Palestine to Israel; Israel, Ghana, Egypt and Iraq to Lebanon; Taiwan to the United Arab Emirates; and Israel, Kosovo and Yemen to Yemen. Each held candidate now has an explicit queue scope and passes the candidate partition validator.
