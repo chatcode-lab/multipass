@@ -1239,20 +1239,35 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DM", "DM", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
-  it("keeps French overseas destinations outside Schengen and narrowly mapped", () => {
-    for (const destinationCode of ["GF", "PF", "YT", "NC", "RE"] as const) {
+  it("keeps French overseas destinations outside Schengen with territory-specific scope", () => {
+    for (const destinationCode of ["GF", "YT", "RE"] as const) {
       const pairs = evidenceRelationshipPairs(snapshot.manifest)
         .filter(({ destination }) => destination.code === destinationCode);
-      expect(pairs, destinationCode).toHaveLength(31);
+      expect(pairs, destinationCode).toHaveLength(191);
       expect(getVisaRelationshipEvidence("NO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("CO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
-      expect(getVisaRelationshipEvidence("US", destinationCode, snapshot.passports.US.statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence("US", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("AF", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("AL", destinationCode, snapshot.passports.AL.statuses[destinationCode]).supportsCurrentStatus).toBe(false);
     }
+
+    for (const destinationCode of ["PF", "NC"] as const) {
+      const pairs = evidenceRelationshipPairs(snapshot.manifest)
+        .filter(({ destination }) => destination.code === destinationCode);
+      expect(pairs, destinationCode).toHaveLength(191);
+      expect(getVisaRelationshipEvidence("NO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("CO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("US", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("AF", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence("AL", destinationCode, snapshot.passports.AL.statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+    }
+    expect(getVisaRelationshipEvidence("GE", "NC", "visa_required").supportsCurrentStatus).toBe(true);
 
     const frenchWestIndiesPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "FW");
-    expect(frenchWestIndiesPairs).toHaveLength(30);
+    expect(frenchWestIndiesPairs).toHaveLength(31);
     expect(getVisaRelationshipEvidence("NO", "FW", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FR", "FW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CO", "FW", snapshot.passports.CO.statuses.FW).supportsCurrentStatus).toBe(false);
   });
 
@@ -1329,11 +1344,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AD", "GT", snapshot.passports.AD.statuses.GT).supportsCurrentStatus).toBe(false);
   });
 
-  it("maps only the named pre-authorized cohorts for United States territories", () => {
+  it("maps reviewed visitor cohorts for United States territories conservatively", () => {
     const expectedCounts = new Map([
-      ["AS", 46],
-      ["GU", 46],
-      ["MP", 47],
+      ["AS", 198],
+      ["GU", 160],
+      ["MP", 160],
       ["PR", 42],
       ["VI", 42],
     ]);
@@ -1345,9 +1360,14 @@ describe("official visa evidence", () => {
     }
 
     expect(getVisaRelationshipEvidence("QA", "AS", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "AS", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("WS", "AS", snapshot.passports.WS.statuses.AS).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("AU", "GU", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "MP", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BS", "GU", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BS", "MP", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "GU", snapshot.passports.AF.statuses.GU).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "MP", snapshot.passports.AF.statuses.MP).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PT", "PR", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PT", "VI", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "PR", snapshot.passports.US.statuses.PR).supportsCurrentStatus).toBe(false);
@@ -1567,14 +1587,17 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "SB", snapshot.passports.AF.statuses.SB).supportsCurrentStatus).toBe(false);
   });
 
-  it("limits Papua New Guinea evidence to the directly named visa-on-arrival cohort", () => {
+  it("limits Papua New Guinea evidence to the directly named arrival and electronic cohorts", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PG");
 
-    expect(pairs).toHaveLength(18);
+    expect(pairs).toHaveLength(90);
     expect(getVisaRelationshipEvidence("JP", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ID", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AG", "PG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VN", "PG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KE", "PG", snapshot.passports.KE.statuses.PG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("CN", "PG", snapshot.passports.CN.statuses.PG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PG", "PG", "citizenship").supportsCurrentStatus).toBe(false);
   });
@@ -1630,11 +1653,12 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "TO");
 
-    expect(pairs).toHaveLength(60);
+    expect(pairs).toHaveLength(61);
     expect(getVisaRelationshipEvidence("TO", "TO", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FR", "TO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "TO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NZ", "TO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NO", "TO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CH", "TO", snapshot.passports.CH.statuses.TO).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("CN", "TO", snapshot.passports.CN.statuses.TO).supportsCurrentStatus).toBe(false);
   });
@@ -1729,6 +1753,7 @@ describe("official visa evidence", () => {
       "www.investsolomons.gov.sb",
       "immigration.gov.sb",
       "ica.gov.pg",
+      "evisa.ica.gov.pg",
       "www.immigration.ms",
       "mfai.gov.ck",
       "www.niueisland.com",
@@ -1738,8 +1763,10 @@ describe("official visa evidence", () => {
       "justice.gov.nr",
       "www.nauru.gov.nr",
       "www.revenue.gov.to",
+      "www.regjeringen.no",
       "tongaembassycn.gov.to",
       "ago.gov.to",
+      "www.ago.gov.to",
       "fsmembassy.fm",
       "tuvalu-legislation.tv",
       "treaties.un.org",
@@ -1756,11 +1783,14 @@ describe("official visa evidence", () => {
       "www.immigration.go.kr",
       "visa.go.kr",
       "www.govinfo.gov",
+      "www.ecfr.gov",
+      "www.whitehouse.gov",
       "www.uscis.gov",
       "www.help.cbp.gov",
       "www.osas.as",
       "legalaffairs.as.gov",
       "g-cnmi-eta.cbp.dhs.gov",
+      "esta.cbp.dhs.gov",
       "evisa.gov.ai",
       "borderforce.gov.tc",
       "www.gov.fk",
@@ -2096,6 +2126,7 @@ describe("official visa evidence", () => {
       "www.france-visas.gouv.fr",
       "france-visas.gouv.fr",
       "www.immigration.interieur.gouv.fr",
+      "www.legifrance.gouv.fr",
       "attorneygeneralchambers.com",
       "externalaffairs.govt.lc",
       "npc.govt.lc",

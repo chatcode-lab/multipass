@@ -674,6 +674,50 @@ The current Immigration Division page says the 2023 visa-exemption order took ef
 
 Tanzania changes from upstream advance-visa status to visa-free, exactly matching the independently reviewed conflict record. The live page's “Featured Exempt Countries” wording does not establish an exhaustive complement, so 78 catalog cells remain unresolved rather than being inferred as advance visa, eVisa or visa on arrival. Greenland, Puerto Rico, Cook Islands and Niue appear as places on the official display but do not represent catalog ordinary-passport issuers. Duration, work, residence, transit, special documents and final admission remain separately conditioned.
 
+## Pass 78 result: Papua New Guinea eVisa cohort
+
+Papua New Guinea adds 72 directly named electronic visitor-permit relationships, raising complete-matrix evidence from 28,658 to 28,730 of 44,974 relationships (63.9%) and Oceania coverage from 2,752 to 2,824 of 4,165 relationships (67.8%). Destination threshold counts remain 141 above 50% and 133 above 80%.
+
+The live ICA eVisa portal directly names the 72-passport Easy Visitor Permit cohort, accepts the application online, and the current ICA handbook describes electronic issuance of the authority to travel. Combined with the earlier 18-passport visa-on-arrival batch, Papua New Guinea now has 90 supported relationships. The Digital Arrival Card is explicitly not a visa.
+
+Seventeen fallback rows change from advance visa to eVisa: Antigua and Barbuda, the Bahamas, Barbados, Belize, Botswana, Lesotho, Dominica, Grenada, Guyana, India, Russia, Seychelles, St. Kitts and Nevis, St. Lucia, St. Vincent and the Grenadines, Trinidad and Tobago, and Vietnam. Independent review rejected the proposed 107-passport advance-visa complement because ICA's paper-filing visitor guidance conflicts with its generic eVisa handbook and portal. Those rows, plus conditional China and Papua New Guinea citizenship, remain unresolved rather than forcing a taxonomy choice.
+
+## Pass 79 result: French Polynesia and New Caledonia
+
+French Polynesia and New Caledonia add 320 previously uncovered relationships, raising complete-matrix evidence from 28,730 to 29,050 of 44,974 relationships (64.6%) and Oceania coverage from 2,824 to 3,144 of 4,165 relationships (75.5%). One hundred and forty-three destination columns now have at least 50% coverage and 135 have at least 80%.
+
+The current consolidated Légifrance orders give each destination 88 nationality-wide ordinary-passport exemptions and 103 advance-visa passports. These are territory-specific physical visa requirements; neither online application nor Schengen access is treated as eVisa or automatic overseas access. French passports are recorded as visa-free because `FR` is distinct from destination codes `PF` and `NC`, not as territorial citizenship.
+
+Georgia changes from upstream visa-free access to advance visa for New Caledonia, exactly matching the May 2025 removal order; its French Polynesia fallback was already correct. Albania, Bosnia and Herzegovina, Moldova, Montenegro, North Macedonia, Serbia, Taiwan and Ukraine remain unresolved for both destinations because their exemptions depend on biometric passports, Serbian issuing authority, or a Taiwan identity number. Residence, third-country visas, cruise, transit, work and special documents remain separately conditioned.
+
+## Pass 80 result: American Samoa, Guam and Northern Mariana Islands completion
+
+The reviewed territorial completion adds 379 previously uncovered relationships, raising complete-matrix evidence from 29,050 to 29,429 of 44,974 relationships (65.4%) and Oceania coverage from 3,144 to 3,523 of 4,165 relationships (84.6%). American Samoa now has 198 supported foreign-passport relationships, while Guam and the Northern Mariana Islands each have 160. One hundred and forty-six destination columns now have at least 50% coverage and 138 have at least 80%.
+
+American Samoa's current portal supports 46 named electronic pre-travel permits, a sponsor-led advance-permit route for 151 other passports, and the U.S.-citizen/national no-permit document route. Guam and CNMI retain separately reviewed Canadian, Compact, federal ESTA, G-CNMI ETA, PRC EVS-TAP and residual advance-visa policies. The live CBP portals and current 8 CFR control where older State guidance still mentions paper Form I-736.
+
+Three fallback corrections exactly match independent review: the U.S.-passport American Samoa route changes from ETA to visa-free, and the narrow Bahamian preclearance route changes from advance visa to conditional visa-free for Guam and CNMI. Samoa–American Samoa remains unresolved because the current code and live portal disagree on citizenship, birthplace, passport and permit scope. Another 78 Guam/CNMI cells remain unresolved because Presidential Proclamation 10998 imposes full or partial visitor-entry restrictions with historic-visa, dual-national and other exceptions that the current taxonomy cannot represent honestly.
+
+## Pass 81 result: French Guiana, Réunion, Mayotte and French West Indies scope
+
+French Guiana, Réunion and Mayotte each add 160 previously uncovered relationships, while the French West Indies aggregate adds the French-passport row. Complete-matrix evidence rises from 29,429 to 29,910 of 44,974 relationships (66.5%). Americas coverage reaches 3,584 of 4,953 (72.4%), Africa reaches 7,091 of 11,289 (62.8%), and Caribbean coverage reaches 2,986 of 4,962 (60.2%). One hundred and forty-nine destination columns now have at least 50% coverage and 141 have at least 80%.
+
+Current consolidated Légifrance annexes establish destination-specific ordinary-passport exemptions and advance-visa complements: French Guiana supports 86 visa-free and 105 advance-visa foreign rows, Réunion 88 and 103, and Mayotte 87 and 104. The French West Indies code aggregates territories governed by different annexes, so only the shared 31-passport European cohort is supported there and the other 168 rows remain unresolved.
+
+Twenty-seven upstream advance-visa rows become visa-free: nine each for French Guiana, Réunion and Mayotte. The exact schedules differ—Ecuador is exempt for French Guiana, Peru for Réunion and Mayotte—and the independent review preserved those differences. Albania, Bosnia and Herzegovina, Moldova, Montenegro, North Macedonia, Serbia, Taiwan and Ukraine remain unresolved for the three destinations because the current exemptions are document-qualified. Online filing is not treated as electronic visa issuance.
+
+## Pass 82 result: Norway to Tonga
+
+Norway adds one independently corroborated visa-on-arrival relationship, raising complete-matrix evidence from 29,910 to 29,911 of 44,974 relationships (66.5%) and Oceania coverage from 3,523 to 3,524 of 4,165 relationships (84.6%). Destination threshold counts remain 149 above 50% and 141 above 80%.
+
+Tonga Revenue directly names Norwegian citizens for a visitor visa issued on arrival, and Norway's current Foreign Ministry advice independently confirms the arrival-issued category. This corrects the upstream `visa_free` row to `visa_on_arrival`. The sources disagree on duration—30 versus 90 days—but not on category, so no uniform stay length is asserted. The other 138 residual Tonga relationships remain unresolved because current Revenue, embassy and advance-authority guidance conflict or lack a controlling nationality schedule.
+
+## Held from promotion: Solomon Islands visitor complement
+
+The Solomon Islands residual refresh adds no canonical policy. All 125 previously unresolved rows remain unresolved after reviewing nine official sources. The June 2025 Gazette still specifies named concessional-entry countries, while a July 2026 short-term delivery policy claims the concession was repealed without showing an approval date or a reconciling Gazette instrument.
+
+The live visa index, modified 21 August 2026, says eVisa application and payment are operational. The tourist page instead mixes a discretionary visa-on-arrival statement with an online grant-letter workflow; the May 2026 notice says payment is not operational and applications remain manual; and the official-linked portal currently serves a generic server landing page. Those contradictions prevent a defensible nationality-wide choice among eVisa, advance visa and visa on arrival. The refresh candidate preserves page timestamps and exact unresolved scope for a later operational recheck without changing the reviewed treaty or concessional cohorts.
+
 ## Held from promotion: Grenada
 
 Grenada's official Foreign Ministry page still links an exhaustive nationality schedule, but the document is dated February 2021. Strong review corrected Zimbabwe from visa-free to advance visa and validated an internally complete candidate of 112 visa-free, 11 visa-on-arrival, 74 advance-visa, and two unresolved relationships. The broad schedule remains unpromoted until a newer central Immigration or Foreign Ministry source confirms that the five-year-old table is still operative; the reviewed candidate is retained as a research artifact rather than silently discarded.
