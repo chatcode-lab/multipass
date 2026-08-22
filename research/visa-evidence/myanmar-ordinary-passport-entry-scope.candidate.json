@@ -1,30 +1,42 @@
 {
   "batchId": "myanmar-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-20",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "myanmar-moip-tourist-evisa-notice",
-      "title": "Myanmar eVisa: Tourist Visa notice",
+      "title": "Myanmar eVisa: current Tourist Visa notice",
       "url": "https://evisa.moip.gov.mm/notice/tourist",
       "publisher": "Ministry of Immigration and Population",
       "jurisdiction": "Myanmar",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-20",
-      "officialityEvidence": "The live service identifies itself as Myanmar eVisa, Official Government, under the Ministry of Immigration and Population’s moip.gov.mm domain.",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live service identifies itself as Official Myanmar eVisa under the Ministry of Immigration and Population’s moip.gov.mm domain; this is its current Tourist Visa notice route.",
       "supportingExcerpt": "Tourist eVisa applicants must hold an ordinary passport from a listed country or region."
     },
     {
       "id": "myanmar-moip-evisa-faq",
-      "title": "Myanmar eVisa: Frequently Asked Questions",
-      "url": "https://evisa.moip.gov.mm/common-items/faq",
+      "title": "Myanmar eVisa: live Frequently Asked Questions data",
+      "url": "https://evisa.moip.gov.mm/assets/jsondata/faq.json",
       "publisher": "Ministry of Immigration and Population",
       "jurisdiction": "Myanmar",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-20",
-      "officialityEvidence": "The live FAQ is published by Myanmar’s official eVisa service on the Ministry of Immigration and Population’s moip.gov.mm domain.",
-      "supportingExcerpt": "Nationals of 100 countries are eligible for Tourist eVisa; rejected applicants may apply via embassy or consulate."
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "This live public FAQ data asset is served by Myanmar’s official eVisa service on the Ministry of Immigration and Population moip.gov.mm domain.",
+      "supportingExcerpt": "Your visa will be issued and stamped inside your passport at the Myanmar Immigration Arrival counter."
+    },
+    {
+      "id": "myanmar-moip-evisa-terms",
+      "title": "Myanmar eVisa: Terms and Conditions",
+      "url": "https://evisa.moip.gov.mm/notice/term-condition",
+      "publisher": "Ministry of Immigration and Population",
+      "jurisdiction": "Myanmar",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Terms and Conditions route is part of the live Official Myanmar eVisa service on the Ministry of Immigration and Population moip.gov.mm domain.",
+      "supportingExcerpt": "An eVisa approval letter is not a confirmed visa."
     },
     {
       "id": "myanmar-mofa-bilateral-exemption-list",
@@ -34,9 +46,9 @@
       "jurisdiction": "Myanmar",
       "kind": "official-dataset",
       "language": "English",
-      "reviewedAt": "2026-08-20",
-      "officialityEvidence": "The current two-page schedule is published on the Myanmar Ministry of Foreign Affairs’ official mofa.gov.mm domain and dated 27 January 2026.",
-      "supportingExcerpt": "Current list shows ordinary-passport exemptions for Brunei, Cambodia, Indonesia, Laos, Malaysia, Philippines, Russia, Singapore, Thailand and Vietnam."
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current two-page schedule is published on Myanmar Ministry of Foreign Affairs’ official mofa.gov.mm domain, dated 27 January 2026.",
+      "supportingExcerpt": "List of Countries Having Bilateral Visa Exemption Agreements with Myanmar (As of 27 January 2026)."
     }
   ],
   "policies": [
@@ -154,10 +166,10 @@
       "confidence": "high"
     },
     {
-      "id": "myanmar-listed-ordinary-tourist-evisa",
-      "title": "Listed ordinary passports: Tourist eVisa",
-      "summary": "Myanmar’s live official tourist-eVisa notice expressly lists these ordinary-passport nationalities and territories as eligible; the easier visa-free policies above take precedence for the exempt cohort.",
-      "status": "evisa",
+      "id": "myanmar-listed-ordinary-tourist-preapproved-arrival-visa",
+      "title": "Listed ordinary passports: mandatory preapproved, arrival-issued Tourist visa",
+      "summary": "Myanmar’s live official Tourist Visa notice lists these ordinary-passport nationalities and territories. Applicants must obtain an online approval letter before travel, but the visa itself is issued and stamped at the Myanmar Immigration Arrival counter; the easier visa-free policies above take precedence.",
+      "status": "visa_on_arrival",
       "destinationCodes": [
         "MM"
       ],
@@ -257,115 +269,1054 @@
         "MO"
       ],
       "conditions": [
-        "Tourist eVisa only: single entry, validity 90 days from issue, and maximum stay 28 days after arrival; the notice says processing takes at least three working days.",
+        "Tourist route only: obtain an approved eVisa Approval Letter before travel. The current FAQ says the visa itself is issued and stamped in the passport at the Myanmar Immigration Arrival counter, so the normalized status is visa_on_arrival.",
+        "The Terms and Conditions say an eVisa Approval Letter is not a confirmed visa. Print it and present it to the Immigration Officer on arrival; the FAQ says it is not a walk-up Visa on Arrival desk process.",
         "Only an ordinary passport is accepted, with at least six months’ validity; a return ticket and booking at registered accommodation are required. Kawthaung land-border applicants may present a trip plan instead of a return ticket.",
         "Entry is limited to Yangon, Mandalay, or Nay Pyi Taw international airports and Kawthaung International Land Border Checkpoint. The eVisa cannot be used for sea entry; cruises use a tour-agent pre-arranged visa-on-arrival route.",
+        "The approval letter is valid for 90 days from issue; the visa permits one tourist entry and up to 28 days after arrival. Processing takes at least three working days.",
         "Travel to restricted areas requires separate confirmation. This policy does not establish business, work, residence, study, transit, crew, diplomatic/official/special-document, security, or individual-admissibility rights."
       ],
       "sourceIds": [
         "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ],
       "confidence": "high",
       "application": {
         "url": "https://evisa.moip.gov.mm/",
-        "label": "Myanmar eVisa official government service",
-        "processingTime": "At least three working days according to the Tourist Visa notice.",
+        "label": "Myanmar eVisa official service: required approval before arrival issuance",
+        "processingTime": "At least three working days according to the current Tourist Visa notice and FAQ.",
         "steps": [
-          "Use the Tourist eVisa application on the official service with the same ordinary passport intended for travel.",
+          "Use the Tourist eVisa application with the same eligible ordinary passport intended for travel.",
           "Upload the required passport and photograph documents, provide itinerary and registered-accommodation evidence, and pay by accepted card.",
-          "Receive approval before travel and present the approval with the eligible passport at one of the listed entry points."
+          "Receive and print the mandatory Approval Letter before travel; it is not the issued visa.",
+          "Present the letter and passport at an eligible Myanmar entry point, where Immigration issues and stamps the visa."
         ]
       }
     }
   ],
   "conflicts": [
     {
+      "passportCode": "AL",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
       "passportCode": "BY",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_free",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     },
     {
       "passportCode": "CN",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "FR",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     },
     {
       "passportCode": "IN",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     },
     {
       "passportCode": "JP",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     },
     {
       "passportCode": "KR",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     },
     {
       "passportCode": "MX",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "MM",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
+      "sourceIds": [
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     },
     {
       "passportCode": "HK",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     },
     {
       "passportCode": "MO",
       "destinationCode": "MM",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "evisa",
-      "explanation": "The current official Myanmar source establishes this ordinary-passport route; the fallback differs.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current official Myanmar eVisa service requires pretravel approval but states that the visa is issued and stamped at the Immigration Arrival counter; under the issuance-timing taxonomy, this is visa_on_arrival.",
       "sourceIds": [
-        "myanmar-moip-tourist-evisa-notice",
-        "myanmar-moip-evisa-faq"
+        "myanmar-moip-evisa-faq",
+        "myanmar-moip-evisa-terms"
       ]
     }
   ],

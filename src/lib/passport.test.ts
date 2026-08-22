@@ -457,6 +457,40 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { CA: "citizenship", AM: "evisa" }, mobilityScore: 0 });
   });
 
+  it("applies Azerbaijan and Myanmar issuance-timing corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "FJ",
+      name: "Fiji",
+      statuses: { FJ: "citizenship", AZ: "evisa", MM: "evisa" },
+      mobilityScore: 2,
+    })).toMatchObject({
+      statuses: { FJ: "citizenship", AZ: "visa_required", MM: "visa_on_arrival" },
+      mobilityScore: 1,
+    });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "SR",
+      name: "Serbia",
+      statuses: { SR: "citizenship", AZ: "evisa", MM: "evisa" },
+      mobilityScore: 2,
+    })).toMatchObject({
+      statuses: { SR: "citizenship", AZ: "visa_free", MM: "evisa" },
+      mobilityScore: 1,
+    });
+  });
+
+  it("corrects Ukraine's Bahrain route to visa on arrival", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "UA",
+      name: "Ukraine",
+      statuses: { UA: "citizenship", BH: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({
+      statuses: { UA: "citizenship", BH: "visa_on_arrival" },
+      mobilityScore: 1,
+    });
+  });
+
   it("uses dense rank equivalents", () => {
     const passports = [190, 188, 188, 187, 180].map(
       (mobilityScore, index) => ({ mobilityScore, code: `${index}`, name: `${index}` }) as PassportSummary,

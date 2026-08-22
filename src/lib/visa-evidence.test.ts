@@ -653,11 +653,12 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("BH")).toHaveLength(132);
+    expect(pairsFor("BH")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("AE", "BH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("UA", "BH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "BH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BB", "BH", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IR", "BH", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("UA", "BH", snapshot.passports.UA.statuses.BH).supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("QA")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("HK", "QA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -847,8 +848,8 @@ describe("official visa evidence", () => {
       .filter(({ destination }) => destination.code === "MM");
     expect(myanmarPairs).toHaveLength(103);
     expect(getVisaRelationshipEvidence("SG", "MM", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CN", "MM", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("MN", "MM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "MM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MN", "MM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "MM", snapshot.passports.AF.statuses.MM).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("MM", "MM", "citizenship").supportsCurrentStatus).toBe(false);
   });
@@ -1459,7 +1460,7 @@ describe("official visa evidence", () => {
 
   it("maps reviewed visitor cohorts for United States territories conservatively", () => {
     const expectedCounts = new Map([
-      ["AS", 48],
+      ["AS", 199],
       ["GU", 160],
       ["MP", 160],
       ["PR", 160],
@@ -1475,6 +1476,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("QA", "AS", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "AS", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("WS", "AS", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "AS", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AU", "GU", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "MP", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BS", "GU", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1884,11 +1886,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IR", "GE", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HK", "GE", snapshot.passports.HK.statuses.GE).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("AZ")).toHaveLength(89);
+    expect(pairsFor("AZ")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("BH", "AZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("JP", "AZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SR", "AZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "AZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MY", "AZ", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("BY", "AZ", snapshot.passports.BY.statuses.AZ).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "AZ", snapshot.passports.XK.statuses.AZ).supportsCurrentStatus).toBe(false);
   });
 
   it("keeps Serbia, Türkiye, and Russia aligned to independently reviewed current schedules", () => {
@@ -2676,6 +2680,8 @@ describe("official visa evidence", () => {
       "australia.mfa.gov.ge",
       "www.evisa.gov.az",
       "evisa.gov.az",
+      "www.mfa.gov.az",
+      "un.mfa.gov.az",
       "www.migration.gov.az",
       "migration.gov.az",
       "asan.gov.az",
