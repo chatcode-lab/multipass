@@ -2444,6 +2444,14 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HK", "BA", snapshot.passports.HK.statuses.BA).supportsCurrentStatus).toBe(false);
   });
 
+  it("keeps unsupported South Sudan, Djibouti, and Comoros residual cohorts unverified", () => {
+    for (const passportCode of ["AF", "AR", "BR", "BY", "IN"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "SS", snapshot.passports[passportCode].statuses.SS).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "DJ", snapshot.passports[passportCode].statuses.DJ).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "KM", snapshot.passports[passportCode].statuses.KM).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("supports reviewed Spanish, Italian, and South Korean outbound rows", () => {
     expect(getVisaRelationshipEvidence("ES", "VG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ES", "IQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
