@@ -1,6 +1,6 @@
 {
   "batchId": "angola-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-21",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "angola-government-decree-189-23-tourist-exemption",
@@ -37,13 +37,49 @@
       "reviewedAt": "2026-08-21",
       "officialityEvidence": "The live official MIREX consular portal states that the current list has 98 countries and distinguishes its tourism-visa services for people outside that list.",
       "supportingExcerpt": "Actualmente 98 países do mundo podem visitar Angola sem precisar de visto de turismo."
+    },
+    {
+      "id": "angola-government-decree-189-23-official-pdf",
+      "title": "Presidential Decree 189/23: official Government PDF",
+      "url": "https://plataformacipra.gov.ao/public/ficheiros/arquivos/Gov_AngolaDecreto%20Presidencial880210230334451696257285.pdf",
+      "publisher": "Government of Angola / CIPRA",
+      "jurisdiction": "Angola",
+      "kind": "law",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The central Government document index links this PDF as its official ‘ISENÇÃO DE VISTOS DE TURISMO’ Presidential Decree document.",
+      "supportingExcerpt": "Após o pedido ... o cidadão recebe ... uma pré-autorização de entrada ... é posto o visto no documento de viagem."
+    },
+    {
+      "id": "angola-cipra-2026-philippines-waiver-confirmation",
+      "title": "CIPRA Government retrospective 2025: Philippines added to tourist-waiver regime",
+      "url": "https://cipra.gov.ao/noticias/2618/governo/retrospectiva-2025/combate-a-pobreza-e-reformas-economicas-entre-as-principais-deliberacoes-do-conselho-de-ministros",
+      "publisher": "Portal CIPRA, Government of Angola",
+      "jurisdiction": "Angola",
+      "kind": "government-guidance",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live .gov.ao Government/CIPRA retrospective identifies the 2025 Presidential instrument that integrates the Philippines into Angola’s tourist-visa-exemption regime.",
+      "supportingExcerpt": "o diploma que integra a República das Filipinas no leque de países abrangidos pelo regime de isenção do visto de turismo"
+    },
+    {
+      "id": "angola-sme-current-electronic-tourist-visa-page",
+      "title": "SME: eVISA electronic tourist-visa landing page",
+      "url": "https://www.sme.gov.ao/ao/evisa/",
+      "publisher": "Serviço de Migração e Estrangeiros",
+      "jurisdiction": "Angola",
+      "kind": "official-portal",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live SME .gov.ao page identifies its electronic tourist-visa product and a generic country picker, but does not publish an eligibility matrix by nationality or document type.",
+      "supportingExcerpt": "Pedido e pagamento online, antes da viagem ... Aprovação imediata."
     }
   ],
   "policies": [
     {
       "id": "angola-decree-189-23-listed-ordinary-passports-tourist-visa-free",
       "title": "Listed ordinary passports: Angola tourist-visa exemption",
-      "summary": "Presidential Decree 189/23 expressly lists 98 beneficiary countries. Ninety-six map to this repository’s passport catalog; Cook Islands and Niue have no separate codes in that catalog. A later official MIREX notice reports approval of an amendment for the Philippines, but no official Gazette promulgation or effective date was recovered, so it is not promoted here.",
+      "summary": "Presidential Decree 189/23 expressly lists 98 beneficiary countries. Ninety-six map to this repository’s passport catalog; Cook Islands and Niue have no separate codes in that catalog. The Philippines is handled by the separate current Government confirmation of the later amendment.",
       "status": "visa_free",
       "destinationCodes": [
         "AO"
@@ -157,9 +193,32 @@
       "sourceIds": [
         "angola-government-decree-189-23-tourist-exemption",
         "angola-migration-service-2025-regime-confirmation",
-        "angola-mirex-current-98-country-confirmation"
+        "angola-mirex-current-98-country-confirmation",
+        "angola-government-decree-189-23-official-pdf"
       ],
       "confidence": "high"
+    },
+    {
+      "id": "angola-philippines-current-tourist-visa-free",
+      "title": "Philippine ordinary passports: Angola tourist-visa exemption",
+      "summary": "A current Government/CIPRA retrospective identifies the Presidential instrument integrating the Philippines into Angola’s tourist-visa-exemption regime. The original regime’s tourism-only purpose and ordinary border formalities continue to limit this classification.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "AO"
+      ],
+      "passportCodes": [
+        "PH"
+      ],
+      "conditions": [
+        "Tourist visits only; the Government source does not establish work, study, medical-treatment, residence, transit, crew, diplomatic, official/service or special-document treatment.",
+        "The reviewed current Government confirmation establishes the current inclusion but does not publish the amending decree’s operative-text PDF or a precise effective date; no date is normalized here.",
+        "Normal border admission and document requirements remain separate."
+      ],
+      "sourceIds": [
+        "angola-government-decree-189-23-tourist-exemption",
+        "angola-cipra-2026-philippines-waiver-confirmation"
+      ],
+      "confidence": "medium"
     }
   ],
   "conflicts": [
@@ -177,16 +236,6 @@
     }
   ],
   "unresolved": [
-    {
-      "passportCode": "PH",
-      "destinationCode": "AO",
-      "reason": "A live official MIREX mission notice reports Council of Ministers approval of an instrument adding the Philippines to the tourist-visa-exemption regime (https://arabiasaudita.mirex.gov.ao/web/noticias/conselho-de-ministros-aprova-ajuste-das-pensoes-do-ministerio-do-interior), but no official Gazette promulgation or entry-into-force date was recovered. Approval alone is insufficient to classify the current nationality-wide baseline; all other ordinary-passport routes remain unresolved.",
-      "searchedOfficialDomains": [
-        "governo.gov.ao",
-        "mirex.gov.ao",
-        "sme.gov.ao"
-      ]
-    },
     {
       "passportCode": "MY",
       "destinationCode": "AO",

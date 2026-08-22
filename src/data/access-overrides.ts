@@ -2660,4 +2660,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://evisagw.evisacuba.cu/user/Countries",
     reviewedAt: "2026-08-22",
   })),
+  {
+    passportCode: "RW",
+    destinationCode: "BW",
+    status: "visa_free",
+    reason: "Botswana's Government states that the bilateral visa-abolition agreement with Rwanda took immediate effect on 6 May 2026 and that Botswana was implementing it.",
+    sourceUrl: "https://www.gov.bw/botswana-and-rwanda-sign-six-bilateral-agreements",
+    reviewedAt: "2026-08-22",
+  },
+  ...(["AO", "BF", "BI", "BJ", "BW", "CD", "CF", "CG", "CI", "CM", "DJ", "ER", "ET", "GA", "GH", "GM", "GN", "GW", "GY", "KE", "KI", "KM", "LR", "LS", "MG", "ML", "MW", "MZ", "NE", "NG", "RW", "SD", "SL", "SO", "ST", "SZ", "TD", "TG", "TZ", "UG", "WS", "ZM", "ZW"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "TR" as const,
+    status: "visa_required" as const,
+    reason: "Türkiye's current Foreign Ministry ordinary-passport schedule expressly requires a visa for this nationality and does not provide it an electronic-visa or arrival-visa route.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-22",
+  })),
+  {
+    passportCode: "MN",
+    destinationCode: "DO",
+    status: "visa_free",
+    reason: "The Dominican Foreign Ministry's current ordinary-tourist selector says the Mongolia waiver took effect on 10 June 2026, and the Constitutional Court record confirms that the bilateral agreement covers ordinary passports.",
+    sourceUrl: "https://consultas.mirex.gob.do/servicios/visas/consulta-de-requisitos-para-extranjeros-ingresar-a-la-republica-dominicana/results?condicion=Extranjeros&country=156&tipoPasaporte=Ordinario&tipoVisa=visa_ts",
+    reviewedAt: "2026-08-22",
+  },
 ] as const;

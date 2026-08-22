@@ -1,6 +1,6 @@
 {
   "batchId": "botswana-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-21",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "botswana-washington-embassy-current-nationality-schedules",
@@ -29,7 +29,7 @@
     {
       "id": "botswana-government-current-immigration-summary",
       "title": "About Our Country: Immigration",
-      "url": "https://gov.bw/about-our-country",
+      "url": "https://www.gov.bw/about-our-country-0?page=0",
       "publisher": "Government of Botswana",
       "jurisdiction": "Botswana",
       "kind": "government-guidance",
@@ -61,6 +61,42 @@
       "reviewedAt": "2026-08-21",
       "officialityEvidence": "The central Government tourism-visa service page directly links this gov.bw electronic service for online visa applications. Its live bare-domain frontend loads, but its visible shell is dated 2021 and the selector did not yield nationality evidence in this review.",
       "supportingExcerpt": "Continue the online Visa Application process."
+    },
+    {
+      "id": "botswana-government-rwanda-visa-abolition-2026",
+      "title": "Botswana and Rwanda Sign Six Bilateral Agreements",
+      "url": "https://www.gov.bw/botswana-and-rwanda-sign-six-bilateral-agreements",
+      "publisher": "Government of Botswana",
+      "jurisdiction": "Botswana",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government of Botswana's current news page reports the bilateral visa-abolition agreement, its immediate effect, and Botswana's implementation.",
+      "supportingExcerpt": "The visa abolition agreement takes immediate effect, with Rwanda already implementing it and Botswana following suit."
+    },
+    {
+      "id": "australian-dfat-mozambique-commonwealth-membership",
+      "title": "Mozambique",
+      "url": "https://www.dfat.gov.au/geo/mozambique",
+      "publisher": "Australian Department of Foreign Affairs and Trade",
+      "jurisdiction": "Australia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Australian Government foreign-affairs country brief expressly identifies Mozambique as a Commonwealth member, supplying the membership fact needed to apply Botswana's own current Commonwealth rule.",
+      "supportingExcerpt": "Mozambique is a member of the Commonwealth, the Southern African Development Community and the Indian Ocean Rim Association."
+    },
+    {
+      "id": "russian-mfa-current-botswana-passport-scope",
+      "title": "Information on visa and visa-free regimes by passport type",
+      "url": "https://www.kdmid.ru/info-for-traveling-abroad/reference-information-for-traveling-abroad/list-of-countries-with-simplified-entry/",
+      "publisher": "Consular Department, Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russia",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Russian Foreign Ministry Consular Department's current official visa-regime table lists Botswana as visa-free for Russian citizens for up to 90 days and separately links the 2019 agreement covering citizens of both countries.",
+      "supportingExcerpt": "Ботсвана | без визы до 90 дней"
     }
   ],
   "policies": [
@@ -290,30 +326,83 @@
           "Wait for approval before travel, carry the approval letter and supporting documents, and complete Immigration examination and visa printing at the port of entry."
         ]
       }
+    },
+    {
+      "id": "botswana-rwanda-current-ordinary-passport-visa-abolition",
+      "title": "Rwandan ordinary passports: visa-free under the current bilateral abolition agreement",
+      "summary": "Botswana's Government states that the Rwanda visa-abolition agreement took immediate effect on 6 May 2026 and that Botswana was implementing it. This current destination-government rule supersedes the older eVisa classification.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BW"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "effectiveFrom": "2026-05-06",
+      "conditions": [
+        "The source establishes visa abolition for Rwandan citizens; it does not establish work, residence, diplomatic, official, service, special-document, or individual-admissibility treatment.",
+        "Botswana's current visitor guidance states a maximum stay of 90 days in each calendar year; ordinary passport validity and other border conditions remain applicable."
+      ],
+      "sourceIds": [
+        "botswana-government-rwanda-visa-abolition-2026",
+        "botswana-government-current-immigration-summary"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "botswana-mozambique-current-commonwealth-ordinary-passport-exemption",
+      "title": "Mozambican ordinary passports: current Commonwealth exemption",
+      "summary": "Botswana's current Government guidance exempts citizens of Commonwealth countries other than seven named exceptions. Mozambique is a current Commonwealth member and is not one of those exceptions.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BW"
+      ],
+      "passportCodes": [
+        "MZ"
+      ],
+      "conditions": [
+        "The exemption is derived from Botswana's express current Commonwealth rule, together with official confirmation that Mozambique is a Commonwealth member; the seven named visa-required Commonwealth countries do not include Mozambique.",
+        "The sources do not establish work, residence, diplomatic, official, service, special-document, or individual-admissibility treatment.",
+        "Botswana's current visitor guidance states a maximum stay of 90 days in each calendar year; ordinary passport validity and other border conditions remain applicable."
+      ],
+      "sourceIds": [
+        "botswana-government-current-immigration-summary",
+        "australian-dfat-mozambique-commonwealth-membership"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "botswana-russia-current-ordinary-passport-visa-abolition",
+      "title": "Russian ordinary passports: current visa-free entry under the bilateral agreement",
+      "summary": "The Russian Foreign Ministry's current consular table states that Russian citizens enter Botswana visa-free for up to 90 days and links the 2019 bilateral agreement on mutual abolition of visa requirements for citizens. Botswana's current Government guidance confirms that nationals covered by a visa-abolition agreement do not require a visa.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BW"
+      ],
+      "passportCodes": [
+        "RU"
+      ],
+      "conditions": [
+        "The Russian Foreign Ministry table states visa-free entry for Russian citizens for up to 90 days. It separately distinguishes the older diplomatic-and-service-passport agreement from the 2019 agreement covering citizens.",
+        "The sources do not establish work, residence, diplomatic, official, service, special-document, or individual-admissibility treatment.",
+        "Botswana's current visitor guidance states a maximum stay of 90 days in each calendar year; ordinary passport validity and other border conditions remain applicable."
+      ],
+      "sourceIds": [
+        "russian-mfa-current-botswana-passport-scope",
+        "botswana-government-current-immigration-summary"
+      ],
+      "confidence": "high"
     }
   ],
   "conflicts": [
     {
       "passportCode": "RW",
       "destinationCode": "BW",
-      "snapshotStatus": "visa_free",
-      "officialStatus": "evisa",
-      "explanation": "Both the official Washington Embassy required-country schedule and the statutory Tourism Organisation required-visa list name Rwanda; the Department of Immigration provides the advance online tourism-visa route.",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_free",
+      "explanation": "The Government of Botswana reports that its Rwanda visa-abolition agreement took immediate effect on 6 May 2026. This current bilateral rule supersedes the earlier eVisa classification now present in the fallback.",
       "sourceIds": [
-        "botswana-washington-embassy-current-nationality-schedules",
-        "botswana-tourism-current-required-visa-schedule",
-        "botswana-government-tourism-visa-application"
-      ]
-    },
-    {
-      "passportCode": "TW",
-      "destinationCode": "BW",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The official Washington Embassy required-country schedule names Taiwan, and the Department of Immigration provides the advance online tourism-visa route for visa-required tourists.",
-      "sourceIds": [
-        "botswana-washington-embassy-current-nationality-schedules",
-        "botswana-government-tourism-visa-application"
+        "botswana-government-rwanda-visa-abolition-2026"
       ]
     }
   ],
@@ -451,17 +540,6 @@
       ]
     },
     {
-      "passportCode": "MZ",
-      "destinationCode": "BW",
-      "reason": "Current official Botswana sources conflict: the Washington Embassy's named visa-free list includes this passport, while the statutory Botswana Tourism Organisation's current all-countries-required-visa list names it as requiring a visa. No hierarchy, effective date, or reconciled Immigration schedule was published in the reviewed material.",
-      "searchedOfficialDomains": [
-        "botswanaembassy.org",
-        "botswanatourism.co.bw",
-        "gov.bw",
-        "evisa.gov.bw"
-      ]
-    },
-    {
       "passportCode": "OM",
       "destinationCode": "BW",
       "reason": "Current official Botswana sources conflict: the Washington Embassy's named visa-free list includes this passport, while the statutory Botswana Tourism Organisation's current all-countries-required-visa list names it as requiring a visa. No hierarchy, effective date, or reconciled Immigration schedule was published in the reviewed material.",
@@ -496,17 +574,6 @@
     },
     {
       "passportCode": "RO",
-      "destinationCode": "BW",
-      "reason": "Current official Botswana sources conflict: the Washington Embassy's named visa-free list includes this passport, while the statutory Botswana Tourism Organisation's current all-countries-required-visa list names it as requiring a visa. No hierarchy, effective date, or reconciled Immigration schedule was published in the reviewed material.",
-      "searchedOfficialDomains": [
-        "botswanaembassy.org",
-        "botswanatourism.co.bw",
-        "gov.bw",
-        "evisa.gov.bw"
-      ]
-    },
-    {
-      "passportCode": "RU",
       "destinationCode": "BW",
       "reason": "Current official Botswana sources conflict: the Washington Embassy's named visa-free list includes this passport, while the statutory Botswana Tourism Organisation's current all-countries-required-visa list names it as requiring a visa. No hierarchy, effective date, or reconciled Immigration schedule was published in the reviewed material.",
       "searchedOfficialDomains": [
@@ -569,16 +636,6 @@
         "botswanatourism.co.bw",
         "gov.bw",
         "evisa.gov.bw"
-      ]
-    },
-    {
-      "passportCode": "BW",
-      "destinationCode": "BW",
-      "reason": "The reviewed current official sources concern non-citizen visitor visas or outbound passport issuance; they do not directly establish the citizenship/right-of-entry classification for a Botswana ordinary passport.",
-      "searchedOfficialDomains": [
-        "gov.bw",
-        "evisa.gov.bw",
-        "botswanaembassy.org"
       ]
     },
     {

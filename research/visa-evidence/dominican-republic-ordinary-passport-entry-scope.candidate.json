@@ -1,6 +1,6 @@
 {
   "batchId": "dominican-republic-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-21",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "dominican-republic-dgii-tourist-card-entry-list",
@@ -142,7 +142,7 @@
       "jurisdiction": "Dominican Republic",
       "kind": "official-portal",
       "language": "Spanish",
-      "reviewedAt": "2026-08-21",
+      "reviewedAt": "2026-08-22",
       "officialityEvidence": "The live MIREX selector returns a result specifically for Mongolia, an ordinary passport and a tourist visa query.",
       "supportingExcerpt": "En vigencia a partir del 10 de junio del 2026."
     },
@@ -157,6 +157,30 @@
       "reviewedAt": "2026-08-21",
       "officialityEvidence": "The live MIREX selector returns a result specifically for Papua New Guinea, an ordinary passport and a tourist visa query.",
       "supportingExcerpt": "¿Requiere visa? NO"
+    },
+    {
+      "id": "dominican-republic-constitutional-court-mongolia-agreement-record",
+      "title": "Constitutional Court: judgment TC/0112/25 record",
+      "url": "https://www.tribunalconstitucional.gob.do/consultas/secretar%C3%ADa/sentencias/tc011225",
+      "publisher": "Constitutional Court of the Dominican Republic",
+      "jurisdiction": "Dominican Republic and Mongolia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Constitutional Court's official judgment record identifies the Dominican Republic–Mongolia agreement as covering diplomatic, official and ordinary passports and directly links the court-hosted judgment PDF.",
+      "supportingExcerpt": "exención del requisito de visado para titulares de pasaportes diplomáticos, oficiales y ordinarios"
+    },
+    {
+      "id": "dominican-republic-constitutional-court-mongolia-ordinary-passport-waiver",
+      "title": "Constitutional Court: Dominican Republic–Mongolia ordinary-passport visa waiver agreement",
+      "url": "https://tribunalsitestorage.blob.core.windows.net/media/60758/tc-0112-25-tc-02-2024-0009.pdf",
+      "publisher": "Constitutional Court of the Dominican Republic",
+      "jurisdiction": "Dominican Republic and Mongolia",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Constitutional Court's official judgment record directly links this storage-hosted case PDF, which reproduces the bilateral agreement submitted for preventive constitutional review and identifies its ordinary-passport scope.",
+      "supportingExcerpt": "pasaportes diplomáticos, oficiales y ordinarios válidos ... estarán exentos de los requisitos de visado."
     },
     {
       "id": "dominican-republic-mirex-south-sudan-ordinary-selector",
@@ -183,7 +207,7 @@
         "This is the ordinary-passport tourist baseline only. DGII says the named nationalities must request a visa at a Dominican diplomatic mission; MIREX describes a consular tourism visa, not an eVisa or visa on arrival.",
         "MIREX states that Decree 691-07 lets a traveller with permanent residence or a valid multiple-entry visa for the United States, Schengen/EU area, Canada, or the United Kingdom enter for tourism with a Tourist Card. That third-country-document exception does not make any listed passport nationality unconditionally visa-free.",
         "The consular tourism visa is stated as 60 days and one entry, or 60 days and two entries for the multiple variant; applications, passport validity, financial evidence, purpose, security screening and final admission remain required.",
-        "Albania, Bosnia and Herzegovina, Georgia, Montenegro, Mongolia and Papua New Guinea are excluded because the live MIREX ordinary-passport selector contradicts this DGII list without a reconciled current instrument. Morocco is excluded because a separately listed, in-force bilateral ordinary tourism/business visa waiver controls.",
+        "Albania, Bosnia and Herzegovina, Georgia, Montenegro and Papua New Guinea are excluded because the live MIREX ordinary-passport selector contradicts this DGII list without a reconciled current instrument. Mongolia and Morocco are excluded because separately documented ordinary-passport visa waivers control.",
         "This policy does not establish work, business, study, residence, transit, crew, diplomatic, official, service, border-card, refugee, stateless, emergency, or other special-document treatment."
       ],
       "sourceIds": ["dominican-republic-dgii-tourist-card-entry-list","dominican-republic-mirex-visa-service-decree-691","dominican-republic-dgm-entry-exit-eticket"],
@@ -217,6 +241,23 @@
       "confidence": "medium"
     },
     {
+      "id": "dominican-republic-mongolia-ordinary-passport-visa-waiver",
+      "title": "Mongolian ordinary passports: bilateral visa waiver",
+      "summary": "The current MIREX ordinary-tourist selector says Mongolian ordinary passports do not require a visa and that the measure has been in force since 10 June 2026. The Dominican Constitutional Court reproduces the underlying bilateral agreement, which waives visas for valid ordinary passports for stays of up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["DO"],
+      "passportCodes": ["MN"],
+      "effectiveFrom": "2026-06-10",
+      "conditions": [
+        "Applies to a valid ordinary Mongolian passport for entry, stay, departure or transit for no more than 90 days from entry under the bilateral agreement.",
+        "A stay exceeding 90 days requires a visa in advance. Purpose-specific immigration, passport-validity, transport-carrier, security screening and final-admission requirements remain separate.",
+        "DGII’s Tourist Card list continues to name Mongolia as visa-required. The targeted current MIREX ordinary-passport tourist result and the agreement’s reproduced ordinary-passport scope are preferred for this direct conflict; recheck operational guidance if either authority changes it.",
+        "This policy does not establish residence, work, study, crew, diplomatic, official, service, special-document or individual-admissibility treatment."
+      ],
+      "sourceIds": ["dominican-republic-mirex-mongolia-ordinary-selector","dominican-republic-constitutional-court-mongolia-agreement-record","dominican-republic-constitutional-court-mongolia-ordinary-passport-waiver"],
+      "confidence": "high"
+    },
+    {
       "id": "dominican-republic-morocco-ordinary-tourism-business-waiver",
       "title": "Moroccan ordinary passports: bilateral tourism/business visa waiver",
       "summary": "MIREX records the Dominican Republic–Morocco tourism and business visa-exemption agreement as in force from 14 July 2021. This later treaty route prevails over Morocco’s continued appearance on the DGII tourist-card visa list.",
@@ -234,7 +275,16 @@
       "confidence": "high"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    {
+      "passportCode": "MN",
+      "destinationCode": "DO",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "The current MIREX ordinary-tourist selector says no visa and states that the measure has been in force since 10 June 2026. The Dominican Constitutional Court reproduces the bilateral agreement, which waives visas for valid ordinary passports for stays up to 90 days.",
+      "sourceIds": ["dominican-republic-mirex-mongolia-ordinary-selector","dominican-republic-constitutional-court-mongolia-agreement-record","dominican-republic-constitutional-court-mongolia-ordinary-passport-waiver"]
+    }
+  ],
   "unresolved": [
     {
       "passportCode": "DO",
@@ -270,12 +320,6 @@
       "passportCode": "ME",
       "destinationCode": "DO",
       "reason": "DGII includes Montenegro in its named consular-visa list, while the live MIREX ordinary-tourist selector answers no visa under Decree 691-07. MIREX’s current general service describes that decree as a qualifying third-country-residence/visa exception, so the conflict does not establish an unconditional nationality rule.",
-      "searchedOfficialDomains": ["dgii.gov.do","mirex.gob.do","consultas.mirex.gob.do","migracion.gob.do"]
-    },
-    {
-      "passportCode": "MN",
-      "destinationCode": "DO",
-      "reason": "DGII includes Mongolia in its named consular-visa list, while the live MIREX ordinary-tourist selector answers no visa and says a measure is in force from 10 June 2026. The selector does not identify that instrument, its passport scope, duration or conditions, and no current underlying instrument was recovered.",
       "searchedOfficialDomains": ["dgii.gov.do","mirex.gob.do","consultas.mirex.gob.do","migracion.gob.do"]
     },
     {

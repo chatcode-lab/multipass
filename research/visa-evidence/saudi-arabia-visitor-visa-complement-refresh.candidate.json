@@ -12,7 +12,7 @@
       "language": "English",
       "reviewedAt": "2026-08-22",
       "officialityEvidence": "The live Visit Saudi country-group dataset is served by the Saudi Tourism Authority official tourism domain and is the current nationality selector used by Visit Saudi visa regulations.",
-      "supportingExcerpt": "Israel is listed in the current country dataset with visaGroup eligible."
+      "supportingExcerpt": "The current country dataset contains no Israel record."
     },
     {
       "id": "saudi-refresh-visa-regulations-routes-api",
@@ -25,28 +25,53 @@
       "reviewedAt": "2026-08-22",
       "officialityEvidence": "The live Visit Saudi route configuration is served by the Saudi Tourism Authority official tourism domain and defines the available visitor routes for each current visa group.",
       "supportingExcerpt": "At the airport or entry point, use a kiosk or passport control office to apply for visa on arrival."
+    },
+    {
+      "id": "saudi-refresh-evisa-regular-passport-registration",
+      "title": "Saudi eVisa registration: regular-passport nationality selector",
+      "url": "https://visa.visitsaudi.com/Registration/Verify?lang=en",
+      "publisher": "Ministry of Tourism Saudi eVisa service",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live visa.visitsaudi.com eVisa registration page presents the Ministry of Tourism service's regular-passport nationality selector and application flow.",
+      "supportingExcerpt": "Regular Passport; Taiwan China"
+    },
+    {
+      "id": "saudi-refresh-evisa-taiwan-authorization",
+      "title": "Saudi eVisa registration: Taiwan regular-passport authorization",
+      "url": "https://visa.visitsaudi.com/Registration/CheckNationality?id=205",
+      "publisher": "Ministry of Tourism Saudi eVisa service",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "This live authorization endpoint is called by the official eVisa registration page after a nationality is selected; selector record 205 is Taiwan China.",
+      "supportingExcerpt": "isAuthorized: 1; VisaFee: 300"
     }
   ],
   "policies": [
     {
-      "id": "saudi-israel-ordinary-passport-visa-on-arrival",
-      "title": "Israeli ordinary passports: Saudi Arabia visa on arrival",
-      "summary": "The live Saudi Tourism Authority nationality dataset now classifies Israel as eligible. The current eligible-group route configuration expressly offers visa on arrival, issued at the Saudi airport or entry point; it is the least-burdensome unconditional ordinary-passport visitor route.",
-      "status": "visa_on_arrival",
+      "id": "saudi-taiwan-ordinary-passport-evisa-registration",
+      "title": "Taiwan ordinary passports: Saudi eVisa registration",
+      "summary": "The current official Saudi eVisa regular-passport selector includes Taiwan China, and its linked nationality authorization endpoint returns isAuthorized 1. This establishes a pre-travel electronic visa application route for ordinary Taiwan passports.",
+      "status": "evisa",
       "destinationCodes": [
         "SA"
       ],
       "passportCodes": [
-        "IL"
+        "TW"
       ],
       "conditions": [
-        "The traveler applies at a Saudi airport or other entry point using the kiosk or passport-control office; this is arrival issuance, not an ETA or a prior eVisa requirement.",
-        "The route requires a passport generally valid at least six months; individual entry, security, and immigration-admission decisions remain separate.",
-        "The same eligible group also has a pre-travel eVisa option, but its availability does not displace the easier current visa-on-arrival route. This policy does not model package, third-country visa/residence, GCC-resident, diplomatic, special-document, work, Hajj, residence, transit, or other conditional routes."
+        "The route is an online eVisa application before travel, not visa-free or visa-on-arrival entry. The portal's displayed visa fee is 300 SAR before any other applicable charges.",
+        "The registration flow identifies the passport type as Regular Passport and the selected nationality as Taiwan China; its authorization response is reproduced at the cited official endpoint.",
+        "This policy does not establish access through a third-country visa, foreign residence, GCC residence, package travel, pilgrimage, transit, work, study, diplomatic or official documents. Final issuance and admission remain subject to the Saudi authorities' application and border decisions.",
+        "The separate Visit Saudi nationality dataset currently labels Taiwan China noneligible. The live eVisa issuance portal is given precedence for the eVisa route because it directly accepts the regular-passport nationality and exposes an authorized application continuation."
       ],
       "sourceIds": [
-        "saudi-refresh-visa-regulations-country-groups-api",
-        "saudi-refresh-visa-regulations-routes-api"
+        "saudi-refresh-evisa-regular-passport-registration",
+        "saudi-refresh-evisa-taiwan-authorization"
       ],
       "confidence": "high"
     }
@@ -55,9 +80,9 @@
     {
       "passportCode": "IL",
       "destinationCode": "SA",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "visa_on_arrival",
-      "explanation": "The live Saudi Tourism Authority country dataset now identifies Israel as eligible. The eligible route configuration expressly provides visa issuance on arrival at a kiosk or passport-control office, so the fallback advance-visa label is incorrect.",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "not-established",
+      "explanation": "The current Saudi Tourism Authority country dataset has no Israel entry, so the previously promoted eligible-group classification cannot be reproduced. The generic eligible-group route content does not itself establish Israeli nationality eligibility. No new visa status is inferred from this absence; the pair is retained as unresolved pending an express current Saudi rule.",
       "sourceIds": [
         "saudi-refresh-visa-regulations-country-groups-api",
         "saudi-refresh-visa-regulations-routes-api"
@@ -65,6 +90,18 @@
     }
   ],
   "unresolved": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "SA",
+      "reason": "The current Saudi Tourism Authority country dataset contains no Israel record. Its generic eligible-group route configuration cannot establish nationality eligibility, and no current official Saudi rule found establishes a nationality-wide ordinary-passport visitor baseline. Conditional U.S./UK/Schengen-visa, residence, GCC-resident, package, pilgrimage and transit routes do not resolve this pair.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "visa.visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
     {
       "passportCode": "CL",
       "destinationCode": "SA",
