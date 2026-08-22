@@ -1,0 +1,136 @@
+{
+  "batchId": "bhutan-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "bhutan-mfa-current-ordinary-passport-services",
+      "title": "Ministry of Foreign Affairs and External Trade: passport services and related FAQs",
+      "url": "https://www.mfa.gov.bt/passport-application/",
+      "publisher": "Ministry of Foreign Affairs and External Trade, Royal Government of Bhutan",
+      "jurisdiction": "Kingdom of Bhutan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Bhutan's Ministry of Foreign Affairs and External Trade publishes the Passport Office's citizen eligibility, document-category and application requirements, distinguishing ordinary from diplomatic, official and emergency passports.",
+      "supportingExcerpt": "All Bhutanese citizens are eligible to apply for a passport ... Ordinary Passport."
+    },
+    {
+      "id": "nigeria-immigration-2026-tourism-evisa",
+      "title": "Nigeria Immigration Service: 2026 Tourism (F5A) visa service level",
+      "url": "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Federal Republic of Nigeria",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Nigeria Immigration Service's April 2026 service-level document makes F5A tourism available to citizens of all countries and provides electronic delivery of the visa certificate.",
+      "supportingExcerpt": "F5A- TOURISM VISA ... Eligibility: Citizens of all countries ... Receive Visa certificate via email."
+    },
+    {
+      "id": "equatorial-guinea-government-current-online-visa-announcement",
+      "title": "Equatorial Guinea Government: online visa is operational",
+      "url": "https://www.guineaecuatorialpress.com/index.php/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+      "publisher": "Government of the Republic of Equatorial Guinea Information and Press Office",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The institutional Government page identifies equatorialguinea-evisa.com as the operational visa site and says visitors can obtain visas online without an in-person visit.",
+      "supportingExcerpt": "todos los interesados en viajar al país podrán conseguir su visado sin tener que desplazarse físicamente."
+    },
+    {
+      "id": "equatorial-guinea-evisa-live-translation",
+      "title": "Equatorial Guinea eVisa: live eligibility, regular passport and delivery translation asset",
+      "url": "https://equatorialguinea-evisa.com/assets/i18n/en-US.json",
+      "publisher": "Equatorial Guinea eVisa service",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government-authenticated exact domain's live English translation asset says all nationalities can apply, limits the process to a regular passport, and sends eVisas by email with PDF download.",
+      "supportingExcerpt": "All Nationalities can apply ... only travel document ... regular passport ... All E-Visa are sent by email."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bhutanese-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Bhutanese ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": ["NG"],
+      "passportCodes": ["BT"],
+      "conditions": [
+        "Use a Bhutanese ordinary passport issued through the Royal Government's Passport Office. F5A is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay. The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current document does not identify a Bhutanese ordinary-passport waiver; the all-country eVisa route is retained with medium confidence."
+      ],
+      "sourceIds": ["bhutan-mfa-current-ordinary-passport-services", "nigeria-immigration-2026-tourism-evisa"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Bhutanese ordinary passport and stated tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present it for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "bhutanese-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Bhutanese ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email/PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": ["GQ"],
+      "passportCodes": ["BT"],
+      "conditions": [
+        "Use the Bhutanese ordinary passport used for travel; the live service excludes non-regular travel documents.",
+        "Register, upload visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not a visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": ["bhutan-mfa-current-ordinary-passport-services", "equatorial-guinea-government-current-online-visa-announcement", "equatorial-guinea-evisa-live-translation"],
+      "confidence": "high",
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register using the Bhutanese ordinary passport for travel.",
+          "Pay and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record for final immigration processing."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"BT","destinationCode":"AF","reason":"No current primary Afghan or Bhutanese authority source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing. Closure, permission and security controls are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"KP","reason":"No current DPRK or Bhutanese primary source establishes an ordinary Bhutanese-passport visitor route. Closure or permission controls cannot be normalized into the available taxonomy.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"LY","reason":"No current Libyan or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["moi.gov.ly","foreign.gov.ly","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"VG","reason":"No current British Virgin Islands or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing; undated nationality PDFs are insufficient.","searchedOfficialDomains":["bvi.gov.vg","gov.vg","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"PS","reason":"Crossing, Israeli permit and recognition controls do not establish a Palestine-only ordinary Bhutanese-passport taxonomy status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"DJ","reason":"No current Djiboutian or Bhutanese primary source establishes ordinary Bhutanese-passport eligibility and whether visitor issuance is electronic, advance or at the border.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SD","reason":"No current Sudanese or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.sd","passports.gov.sd","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"IQ","reason":"No current Iraqi or Bhutanese primary source establishes an ordinary Bhutanese-passport visitor route distinct from regional, pilgrimage or special-document arrangements.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","moi.gov.iq","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SY","reason":"No current Syrian or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing. Closure and mission-operation ambiguity are not taxonomy states.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"KM","reason":"No current Comorian or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["gouv.km","justice.gouv.km","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"CU","reason":"Cuba's current official tourism guidance confirms an electronic tourist-visa route but expressly preserves countries with visa-free agreements without naming Bhutan. No current primary source resolves that ordinary-passport exception.","searchedOfficialDomains":["cuba.travel","minrex.gob.cu","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TM","reason":"No current Turkmen or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing; generic invitation or visa wording is insufficient.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"XK","reason":"No current Kosovo or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing. Recognition and border context do not establish a visitor taxonomy status.","searchedOfficialDomains":["mpb.rks-gov.net","mfa-ks.net","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"UA","reason":"Ukraine MFA's nationality table is expressly as of June 2023; no current Ukraine or Bhutanese official source establishes the ordinary Bhutanese-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"CG","reason":"No current Republic of the Congo or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"GA","reason":"No current Gabonese or Bhutanese primary source establishes ordinary Bhutanese-passport eligibility and whether online processing is electronic issuance or preapproval followed by airport issuance.","searchedOfficialDomains":["evisa.dgdi.ga","interieur.ga","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SS","reason":"No current South Sudanese or Bhutanese primary source establishes ordinary Bhutanese-passport eligibility and electronic-issuance timing.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TN","reason":"No current Tunisian or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gov.tn","interieur.gov.tn","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"CF","reason":"No current Central African or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"PA","reason":"No current Panamanian or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["migracion.gob.pa","mire.gob.pa","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"BA","reason":"No current Bosnia and Herzegovina or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mvp.gov.ba","msb.gov.ba","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"CI","reason":"Côte d'Ivoire's general MFA and SNEDAI material describes an ordinary-passport visa process and airport issuance, but it does not establish whether a Bhutanese ordinary-passport holder is subject to it rather than a nationality exception. The fallback evisa status is not promoted.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"GW","reason":"No current Guinea-Bissau or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mne.gw","gov.gw","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"LR","reason":"No current Liberian or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"ML","reason":"No current Malian or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"NE","reason":"No current Nigerien or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"BD","reason":"Bangladesh's current official MRV portal lists Bhutan in its fee table and requires ordinary visa applicants to submit the printed online form to a mission, but it does not establish whether Bhutanese ordinary-passport visitors are exempt, required to use that route, or eligible for any arrival process. The fallback visa_free status is not promoted.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immi.gov.bd","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TD","reason":"No current Chadian or Bhutanese primary source establishes ordinary Bhutanese-passport eligibility and whether online processing is electronic issuance.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"KH","reason":"Cambodia's current official material does not establish ordinary Bhutanese-passport eligibility for a tourist eVisa, advance visa or border issuance; portal availability and omission from an exemption list are insufficient.","searchedOfficialDomains":["immigration.gov.kh","evisa.gov.kh","mfa.gov.bt"]}
+  ]
+}
