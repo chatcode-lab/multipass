@@ -3117,4 +3117,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://cs.mfa.gov.cn/zggmcg/ljmdd/fz_648564/kml_650055/",
     reviewedAt: "2026-08-22",
   },
+  {
+    passportCode: "MY",
+    destinationCode: "IQ",
+    status: "visa_on_arrival",
+    reason: "Iraq's Foreign Ministry Embassy in Kuala Lumpur says holders of Malaysian passports receive visit visas at Iraqi airport and land entry points, effective 11 September 2024; that is arrival issuance rather than visa-free entry.",
+    sourceUrl: "https://mofa.gov.iq/kualalumpur/2025/01/21/iraq-grants-entry-visa-to-malaysian-citizen-at-points-of-entry/",
+    reviewedAt: "2026-08-22",
+  },
 ] as const;
