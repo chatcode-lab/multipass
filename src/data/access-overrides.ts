@@ -3109,4 +3109,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://e.gov.kw/sites/kgoenglish/Pages/InfoPages/KuwaitiCitizenEntryVisaCountries.aspx",
     reviewedAt: "2026-08-22",
   },
+  {
+    passportCode: "CN",
+    destinationCode: "KM",
+    status: "visa_on_arrival",
+    reason: "China's current Foreign Ministry guidance says ordinary Chinese passport holders obtain a biometric visa at Moroni airport; the bilateral visa waiver is limited to diplomatic, official and public-affairs passports.",
+    sourceUrl: "https://cs.mfa.gov.cn/zggmcg/ljmdd/fz_648564/kml_650055/",
+    reviewedAt: "2026-08-22",
+  },
 ] as const;
