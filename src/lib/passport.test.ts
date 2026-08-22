@@ -296,6 +296,17 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { ZA: "citizenship", ST: "visa_free" }, mobilityScore: 1 });
   });
 
+  it("applies Papua New Guinea's non-VOA advance-visa corrections", () => {
+    for (const code of ["CN", "KE", "NA"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", PG: "evisa" },
+        mobilityScore: 0,
+      })).toMatchObject({ statuses: { [code]: "citizenship", PG: "visa_required" }, mobilityScore: 0 });
+    }
+  });
+
   it("applies Honduras' current CA-4 category corrections", () => {
     for (const code of ["CR", "FJ"] as const) {
       expect(applyVerifiedAccessOverrides({

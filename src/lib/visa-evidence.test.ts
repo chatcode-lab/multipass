@@ -1174,9 +1174,9 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("JP", "GW", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GW", snapshot.passports.US.statuses.GW).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SL")).toHaveLength(100);
+    expect(pairsFor("SL")).toHaveLength(13);
     expect(getVisaRelationshipEvidence("GH", "SL", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "SL", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "SL", snapshot.passports.AF.statuses.SL).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("US", "SL", snapshot.passports.US.statuses.SL).supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("BI")).toHaveLength(198);
@@ -1742,18 +1742,19 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "SB", snapshot.passports.AF.statuses.SB).supportsCurrentStatus).toBe(false);
   });
 
-  it("limits Papua New Guinea evidence to the directly named arrival and electronic cohorts", () => {
+  it("covers Papua New Guinea's named arrival, electronic, and advance-visa cohorts", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PG");
 
-    expect(pairs).toHaveLength(90);
+    expect(pairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("JP", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ID", "PG", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AG", "PG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("VN", "PG", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("KE", "PG", snapshot.passports.KE.statuses.PG).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("CN", "PG", snapshot.passports.CN.statuses.PG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KE", "PG", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "PG", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NA", "PG", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PG", "PG", "citizenship").supportsCurrentStatus).toBe(false);
   });
 

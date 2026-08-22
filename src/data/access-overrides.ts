@@ -1814,20 +1814,6 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
       sourceUrl: "https://gouvernement.gov.bf/actualites/synthese-du-conseils-des-ministres-du-11-septembre-2025-gratuite-de-visa-pour-les-ressortissants-africains/",
       reviewedAt: "2026-08-21",
     })),
-  ...([
-    "AF", "AL", "DZ", "AO", "AR", "BT", "BA", "BI", "CF", "TD", "CL", "CO", "KM", "CG", "CD", "CR",
-    "CU", "DJ", "DO", "EC", "EG", "SV", "GQ", "ER", "ET", "GA", "GT", "HT", "HN", "HK", "IS", "IQ",
-    "JO", "XK", "LA", "LY", "MK", "MG", "MV", "MH", "MR", "MX", "FM", "MN", "ME", "MA", "MM", "NP",
-    "NI", "NE", "KP", "PW", "PA", "PY", "PE", "PH", "ST", "RS", "SO", "SS", "SD", "SR", "CH", "SY",
-    "TW", "TN", "UY", "VE", "YE", "ZW", "LI", "MC", "SM", "VA", "AD", "PS",
-  ] as const).map((passportCode) => ({
-    passportCode,
-    destinationCode: "SL",
-    status: "evisa" as const,
-    reason: "Sierra Leone's current official Immigration-linked portal expressly makes this non-ECOWAS ordinary passport eligible for an electronically approved visa before travel; the older 2019 arrival-visa list is not used as current ranking evidence.",
-    sourceUrl: "https://www.evisa.sl/#/tos",
-    reviewedAt: "2026-08-21",
-  })),
   ...(["SO", "SS"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "BI",
@@ -2561,4 +2547,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.smf.st/noticiaSingle.php?idnews=20&loock=noticiasSingle",
     reviewedAt: "2026-08-22",
   },
+  ...(["CN", "KE", "NA"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "PG" as const,
+    status: "visa_required" as const,
+    reason: "Papua New Guinea's current ICA guidance requires this non-VOA ordinary visitor to obtain a visa before travel; no current Easy Visitor eVisa class covers this passport.",
+    sourceUrl: "https://ica.gov.pg/visa/visit/visitor",
+    reviewedAt: "2026-08-22",
+  })),
 ] as const;
