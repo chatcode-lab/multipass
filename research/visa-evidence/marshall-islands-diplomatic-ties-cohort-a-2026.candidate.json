@@ -1,0 +1,257 @@
+{
+  "batchId": "marshall-islands-diplomatic-ties-cohort-a-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "rmi-nitijela-current-immigration-regulations-2009",
+      "title": "Immigration Regulations, 2009 (current Parliament-hosted file)",
+      "url": "https://www.rmiparliament.org/cms/images/LEGISLATION/SUBORDINATE/2009/2009-0001R/2009-0001R_1.pdf",
+      "publisher": "Nitijela (Parliament), Republic of the Marshall Islands",
+      "jurisdiction": "Republic of the Marshall Islands",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Nitijela's live legislation index lists Immigration Regulations, 2009 and links this Parliament-hosted regulatory text as its sole listed file.",
+      "supportingExcerpt": "Visitor Visas, to citizens of Countries which the Republic has diplomatic ties with."
+    },
+    {
+      "id": "rmi-mofat-2025-antigua-barbuda-diplomatic-ties",
+      "title": "Republic of the Marshall Islands and Antigua and Barbuda formalize diplomatic relations at the 80th UNGA",
+      "url": "https://www.facebook.com/mofatrmi/posts/republic-of-the-marshall-islands-and-antigua-and-barbuda-formalize-diplomatic-re/1115784970702419/",
+      "publisher": "Ministry of Foreign Affairs and Trade, Republic of the Marshall Islands",
+      "jurisdiction": "Republic of the Marshall Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Ministry of Foreign Affairs and Trade's named official social-media account published the joint diplomatic-relations announcement on 24 September 2025.",
+      "supportingExcerpt": "Republic of the Marshall Islands and Antigua and Barbuda formalize diplomatic relations at the 80th UNGA."
+    },
+    {
+      "id": "rmi-mofat-annual-report-2024-diplomatic-ties",
+      "title": "Ministry of Foreign Affairs and Trade Annual Report 2024",
+      "url": "https://rminitijela.com/wp-content/uploads/2025/02/Communication-No.-47-Ministry-of-Foreign-Affairs-Trade-Annual-Report-2024.pdf",
+      "publisher": "Ministry of Foreign Affairs and Trade, Republic of the Marshall Islands",
+      "jurisdiction": "Republic of the Marshall Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The report is addressed by the Minister of Foreign Affairs and Trade to the Speaker and Members of the Nitijela and identifies its 2024 reporting period.",
+      "supportingExcerpt": "Establish Diplomatic relations: Pakistan; Suriname; Benin; Saudi Arabia; Panama; Gambia; Rwanda; Burkina Faso; Serbia; San Marino."
+    },
+    {
+      "id": "rmi-immigration-linked-march-2024-waiver-and-voa-summary",
+      "title": "Republic of the Marshall Islands Immigration: visa exemption/waiver and arrival summary",
+      "url": "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
+      "publisher": "Division of Immigration, Ministry of Justice, Immigration and Labor, Republic of the Marshall Islands",
+      "jurisdiction": "Republic of the Marshall Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Immigration site still links this Division-issued ordinary-passport schedule, but the document itself says it is as of March 2024.",
+      "supportingExcerpt": "SUMMARY OF COUNTRIES ENTITLED FOR VISA EXEMPTION/WAIVER OR VISA ON ARRIVAL. As of March 2024."
+    }
+  ],
+  "policies": [
+    {
+      "id": "mh-antigua-barbuda-diplomatic-ties-visa-on-arrival",
+      "title": "Antigua and Barbuda ordinary passport: visa on arrival",
+      "summary": "RMI's current Parliament-hosted regulations issue a visitor visa upon arrival to citizens of countries with RMI diplomatic ties. RMI's Foreign Affairs Ministry directly announced the formalization of ties with Antigua and Barbuda in September 2025.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["MH"],
+      "passportCodes": ["AG"],
+      "conditions": [
+        "A visitor visa is issued upon arrival under section 6 only after the Director is satisfied about the return ticket, local address, and any other necessary information.",
+        "The visitor visa is valid for 90 days under section 6; issuance and final admission remain subject to immigration clearance and the Director's statutory discretion.",
+        "This is an ordinary-visitor nationality baseline only; it does not infer eligibility for diplomatic, official, residence, employment, crew, sponsor, or other special routes."
+      ],
+      "sourceIds": [
+        "rmi-nitijela-current-immigration-regulations-2009",
+        "rmi-mofat-2025-antigua-barbuda-diplomatic-ties"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "AG",
+      "destinationCode": "MH",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "RMI's Foreign Affairs Ministry directly announced formalized Antigua and Barbuda relations in September 2025. Section 6 therefore supplies the ordinary visitor visa-on-arrival route.",
+      "sourceIds": [
+        "rmi-nitijela-current-immigration-regulations-2009",
+        "rmi-mofat-2025-antigua-barbuda-diplomatic-ties"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "MH",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "ambiguous",
+      "explanation": "The 2024 Ministry annual-report foreword includes The Bahamas among new ties, while its detailed dated establishment roster omits it. No independent official relation source resolving that contradiction was recovered.",
+      "sourceIds": ["rmi-mofat-annual-report-2024-diplomatic-ties"]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "MH",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "ambiguous",
+      "explanation": "The 2024 Ministry annual-report foreword includes Albania among new ties, while its detailed dated establishment roster omits it. No independent official relation source resolving that contradiction was recovered.",
+      "sourceIds": ["rmi-mofat-annual-report-2024-diplomatic-ties"]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "MH",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "ambiguous",
+      "explanation": "The current linked March 2024 Immigration schedule lists Guatemala in both its waiver and visa-on-arrival tables; no current official schedule reconciles the conflict.",
+      "sourceIds": ["rmi-immigration-linked-march-2024-waiver-and-voa-summary"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes Hong Kong as a country with RMI diplomatic ties. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "immd.gov.hk"]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "MH",
+      "reason": "The RMI Ministry's 2024 annual-report foreword and detailed establishment roster conflict on The Bahamas. No independent official source resolved that ambiguity, so regulation 7 is not applied.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mofa.gov.bs"]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Grenada. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mofa.gov.gd"]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Trinidad and Tobago. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "foreign.gov.tt"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes Macao as a country with RMI diplomatic ties. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "gov.mo"]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Dominica. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "dominica.gov.dm"]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "MH",
+      "reason": "Guatemala remains held: the current linked March 2024 schedule places it in both the waiver and visa-on-arrival tables, and no later official schedule reconciles that contradiction.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "minex.gob.gt"]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Montenegro. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "gov.me"]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "MH",
+      "reason": "The RMI Ministry's 2024 annual-report foreword and detailed establishment roster conflict on Albania. No independent official source resolved that ambiguity, so regulation 7 is not applied.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "punetejashtme.gov.al"]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Venezuela. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mppre.gob.ve"]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Moldova. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mfa.gov.md"]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Guyana. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "minfor.gov.gy"]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Bahrain. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mofa.gov.bh"]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Oman. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "fm.gov.om"]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes current RMI diplomatic ties with the People's Republic of China. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "fmprc.gov.cn"]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Botswana. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "gov.bw"]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Belarus. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mfa.gov.by"]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Bolivia. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "cancilleria.gob.bo"]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Lesotho. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "foreignaffairs.gov.ls"]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Namibia. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mirco.gov.na"]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Kenya. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mfa.go.ke"]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Ghana. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "mfa.gov.gh"]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Malawi. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "foreignaffairs.gov.mw"]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "MH",
+      "reason": "No current direct official source establishes RMI diplomatic ties with Tanzania. Regulation 7 is conditional on such ties, so no ordinary visitor arrival route is inferred.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com", "foreign.go.tz"]
+    }
+  ]
+}

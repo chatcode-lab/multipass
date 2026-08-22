@@ -2280,7 +2280,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
     reviewedAt: "2026-08-21",
   },
-  ...(["PK", "SR", "BJ", "SA", "PA", "GM", "RW", "BF", "RS", "SM", "JM", "NP", "QA"] as const).map((passportCode) => ({
+  ...(["PK", "SR", "BJ", "SA", "PA", "GM", "RW", "BF", "RS", "SM", "JM", "NP", "QA", "AG"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "MH",
     status: "visa_on_arrival" as const,
