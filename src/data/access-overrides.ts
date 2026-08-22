@@ -2537,4 +2537,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.consilium.europa.eu/en/infographics/eu-visa-agreements-with-non-eu-countries/",
     reviewedAt: "2026-08-21",
   },
+  ...(["DE", "NL", "GB", "SG", "ES", "IT", "JP", "BE", "FI", "KR", "SE", "DK", "LU", "NO", "CH", "IE", "PT", "AT", "NZ", "GR", "MT", "AU", "CA", "MY", "US", "CZ", "HU", "PL", "SK", "IS", "LT", "SI", "AE", "EE", "LV", "LI", "HR", "MC", "BG", "CY", "RO", "CL", "AD", "HK", "AR", "BR", "SM", "BB", "BN", "IL", "BS", "MX", "VC", "KN", "UY", "SC", "AG", "VA", "CR", "PA", "LC", "GD", "PY", "UA", "TT", "PE", "DM", "TW", "SB", "WS", "SV", "GT", "RS", "CO", "MH", "TO", "TV", "HN", "ME", "MK", "NI", "KI", "FM", "BA", "PW", "AL", "GE", "VE", "RU", "QA", "TR", "TL", "BZ", "EC", "KW", "MV", "FJ", "SA", "NR", "VU", "GY", "BH", "JM", "OM", "CN", "PG", "BW", "TH", "BY", "BO", "SR", "KZ", "ID", "LS", "NA", "DO", "SZ", "AZ", "KE", "MW", "TZ", "GH", "GM", "AM", "PH", "RW", "TN", "CV", "MN", "BJ", "MZ", "SL", "UG", "ST", "KG", "ZW", "UZ", "BF", "IN", "MG", "SN", "CI", "CU", "TG", "NE", "TJ", "GN", "MR", "ML", "VN", "GW", "KM", "DZ", "AO", "KH", "HT", "LR", "BT", "JO", "LA", "BI", "TM", "DJ", "EG", "LB", "CD", "MM", "NG", "LK", "ET", "IR", "LY", "ER", "KP", "PS", "SS", "SD", "BD", "SO", "NP", "PK", "YE", "IQ", "SY", "AF"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "GA" as const,
+    status: "visa_on_arrival" as const,
+    reason: "Gabon requires online travel authorisation before departure, but the DGDI service takes payment and delivers the physical visa sticker at Libreville airport; this is visa on arrival, not a pre-travel electronic visa.",
+    sourceUrl: "https://evisa.dgdi.ga/",
+    reviewedAt: "2026-08-22",
+  })),
 ] as const;

@@ -1,0 +1,2118 @@
+{
+  "batchId": "gabon-residual-evisa-visa-free-audit-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "gabon-government-current-evisa-air-notice",
+      "title": "Official Government Portal: Gabon eVisa service",
+      "url": "https://gouvernement.ga/2025/08/18/evisa/",
+      "publisher": "Official Government Portal of the Gabonese Republic",
+      "jurisdiction": "Gabon",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live official Government Portal notice, published 18 August 2025, identifies the Gabon eVisa service and directly links the DGDI application service. It limits this route to air travellers using Libreville Léon-Mba International Airport.",
+      "supportingExcerpt": "Ce dispositif s’adresse pour le moment aux voyageurs désirant se rendre au Gabon par voie aérienne."
+    },
+    {
+      "id": "gabon-dgdi-current-air-visa-service",
+      "title": "DGDI Gabon eVisa: application, exemption list and arrival delivery",
+      "url": "https://evisa.dgdi.ga/",
+      "publisher": "Direction Générale de la Documentation et de l’Immigration",
+      "jurisdiction": "Gabon",
+      "kind": "official-portal",
+      "language": "English / French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government Portal directly authenticates evisa.dgdi.ga as Gabon's DGDI service. Its live application bundle provides the named exemption table with passport types and says applicants need a Travel Authorization Receipt before travel but pay when the eVisa sticker is delivered on arrival. The current leaf certificate covers *.dgdi.ga but the server omits a trusted issuer chain, so this operational source is retained only with a medium-confidence recheck warning.",
+      "supportingExcerpt": "Payments are made on arrival at the delivery of the e-visa sticker."
+    },
+    {
+      "id": "gabon-dgdi-live-country-and-exemption-catalog",
+      "title": "DGDI Gabon eVisa: live country and passport-exemption catalog",
+      "url": "https://evisa.dgdi.ga/catalogs?lang=en",
+      "publisher": "Direction Générale de la Documentation et de l’Immigration",
+      "jurisdiction": "Gabon",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The official Government Portal directly links evisa.dgdi.ga. The live DGDI catalog provides 265 selectable country records and the passport-specific exemption dataset. It contains normal country records for all residual codes except Kosovo, for which it lists only a UNMIK resident travel document. The DGDI TLS leaf covers *.dgdi.ga but the server omits a trusted issuer chain, so this source remains medium-confidence and requires recheck.",
+      "supportingExcerpt": "Country | Passports eligible for visa exemption"
+    }
+  ],
+  "policies": [
+    {
+      "id": "gabon-dgdi-named-ordinary-passport-visa-exemptions",
+      "title": "Moroccan, Mauritian and South African ordinary passports: visa-free Gabon entry",
+      "summary": "The authenticated live DGDI exemption dataset explicitly lists Morocco, Mauritius and South Africa for ordinary, diplomatic and service passports. These are the three exact ordinary-passport exemption codes in this residual cohort.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "GA"
+      ],
+      "passportCodes": [
+        "MA",
+        "MU",
+        "ZA"
+      ],
+      "conditions": [
+        "The DGDI exemption table expressly gives each of Morocco, Mauritius and South Africa the passport types 'Ordinary Passport, Diplomatic Passport, Service Passport'. This policy is confined to ordinary passport holders and does not derive a waiver from reciprocal treatment or a diplomatic/service-only agreement.",
+        "The service describes bilateral-agreement exemptions. Applicable admissibility, passport-validity, health, border, purpose, residence, work, transit, crew, and special-document rules remain separate.",
+        "CEMAC ordinary-passport exemptions and Gabon citizenship are outside this exact residual queue and are not duplicated here."
+      ],
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service",
+        "gabon-dgdi-live-country-and-exemption-catalog"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "gabon-dgdi-nonexempt-ordinary-passport-air-sticker-arrival-visa",
+      "title": "Other verified residual ordinary passports: electronic preapproval followed by Gabon arrival visa sticker",
+      "summary": "For the other 182 verified residual ordinary-passport codes, the authenticated DGDI service requires online travel authorisation before flying but issues and takes payment for the visa sticker on arrival. The normalized route is visa on arrival, not a pre-travel electronically issued visa.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "GA"
+      ],
+      "passportCodes": [
+        "SG",
+        "ES",
+        "IT",
+        "JP",
+        "BE",
+        "FI",
+        "KR",
+        "SE",
+        "DK",
+        "LU",
+        "NO",
+        "CH",
+        "IE",
+        "PT",
+        "AT",
+        "NZ",
+        "GR",
+        "MT",
+        "AU",
+        "CA",
+        "MY",
+        "US",
+        "CZ",
+        "HU",
+        "PL",
+        "SK",
+        "IS",
+        "LT",
+        "SI",
+        "AE",
+        "EE",
+        "LV",
+        "LI",
+        "HR",
+        "MC",
+        "BG",
+        "CY",
+        "RO",
+        "CL",
+        "AD",
+        "HK",
+        "AR",
+        "BR",
+        "SM",
+        "BB",
+        "BN",
+        "IL",
+        "BS",
+        "MX",
+        "VC",
+        "KN",
+        "UY",
+        "SC",
+        "AG",
+        "VA",
+        "CR",
+        "PA",
+        "LC",
+        "GD",
+        "PY",
+        "UA",
+        "TT",
+        "PE",
+        "DM",
+        "TW",
+        "SB",
+        "WS",
+        "SV",
+        "GT",
+        "RS",
+        "CO",
+        "MH",
+        "TO",
+        "TV",
+        "HN",
+        "ME",
+        "MK",
+        "NI",
+        "KI",
+        "FM",
+        "BA",
+        "PW",
+        "AL",
+        "GE",
+        "VE",
+        "RU",
+        "QA",
+        "TR",
+        "TL",
+        "BZ",
+        "EC",
+        "KW",
+        "MV",
+        "FJ",
+        "SA",
+        "NR",
+        "VU",
+        "GY",
+        "BH",
+        "JM",
+        "OM",
+        "CN",
+        "PG",
+        "BW",
+        "TH",
+        "BY",
+        "BO",
+        "SR",
+        "KZ",
+        "ID",
+        "LS",
+        "NA",
+        "DO",
+        "SZ",
+        "AZ",
+        "KE",
+        "MW",
+        "TZ",
+        "GH",
+        "GM",
+        "AM",
+        "PH",
+        "RW",
+        "TN",
+        "CV",
+        "MN",
+        "BJ",
+        "MZ",
+        "SL",
+        "UG",
+        "ST",
+        "KG",
+        "ZW",
+        "UZ",
+        "BF",
+        "IN",
+        "MG",
+        "SN",
+        "CI",
+        "CU",
+        "TG",
+        "NE",
+        "TJ",
+        "GN",
+        "MR",
+        "ML",
+        "VN",
+        "GW",
+        "KM",
+        "DZ",
+        "AO",
+        "KH",
+        "HT",
+        "LR",
+        "BT",
+        "JO",
+        "LA",
+        "BI",
+        "TM",
+        "DJ",
+        "EG",
+        "LB",
+        "CD",
+        "MM",
+        "NG",
+        "LK",
+        "ET",
+        "IR",
+        "LY",
+        "ER",
+        "KP",
+        "PS",
+        "SS",
+        "SD",
+        "BD",
+        "SO",
+        "NP",
+        "PK",
+        "YE",
+        "IQ",
+        "SY",
+        "AF"
+      ],
+      "conditions": [
+        "The live DGDI catalog provides a normal selectable country record for each of these 182 passport nationalities and its exemption table lists none as an ordinary-passport exemption. The portal directs non-exempt applicants through its online visa process and requires a Travel Authorization Receipt before travel.",
+        "This is not a genuine pre-travel eVisa issuance: the service says payment occurs on arrival when the eVisa sticker is delivered. The online authorisation is a prerequisite to the border-issued visa, so the normalized status is visa_on_arrival.",
+        "The Government's current notice limits this route to air travel through Libreville Léon-Mba International Airport. It does not establish a land, sea, work, residence, transit, crew, diplomatic, official, service, refugee, or special-document route.",
+        "The DGDI host currently omits a trusted TLS issuer chain. The Government notice directly authenticates the host and the leaf certificate covers it, but the service must be rechecked when its normal secure chain is restored; do not rely on a browser certificate override as independent verification."
+      ],
+      "sourceIds": [
+        "gabon-government-current-evisa-air-notice",
+        "gabon-dgdi-current-air-visa-service",
+        "gabon-dgdi-live-country-and-exemption-catalog"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.dgdi.ga/",
+        "label": "Gabon DGDI electronic travel-authorisation service",
+        "processingTime": "The DGDI service states 72 hours after receipt of the ETA request.",
+        "steps": [
+          "Use the DGDI online service before flying to Libreville.",
+          "Complete the form and upload the passport data page and required documents.",
+          "Receive the Travel Authorization Receipt before departure.",
+          "At Libreville airport, complete payment and receive the physical visa sticker on arrival."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "SG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI requires online travel authorisation before travel, but payment and delivery of the visa sticker occur on arrival; it is not a pre-travel electronically issued visa.",
+      "sourceIds": [
+        "gabon-dgdi-current-air-visa-service"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "XK",
+      "destinationCode": "GA",
+      "reason": "The authenticated DGDI catalog has 265 country records and supports the other residual passport mappings, but does not identify an ordinary Kosovo passport. Its only Kosovo-related record is for a UNMIK-issued resident travel document. Do not transfer the portal's online-preapproval and arrival-sticker process to XK without an explicit ordinary-passport mapping.",
+      "searchedOfficialDomains": [
+        "gouvernement.ga",
+        "evisa.dgdi.ga",
+        "interieur.gouv.ga"
+      ]
+    }
+  ]
+}

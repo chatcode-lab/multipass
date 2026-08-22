@@ -1,0 +1,111 @@
+{
+  "batchId": "gabon-existing-status-correction-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "gabon-correction-government-current-air-notice",
+      "title": "Official Government Portal: Gabon eVisa service",
+      "url": "https://gouvernement.ga/2025/08/18/evisa/",
+      "publisher": "Official Government Portal of the Gabonese Republic",
+      "jurisdiction": "Gabon",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Government Portal notice directly authenticates the DGDI application service and limits its current route to air entry through Libreville Léon-Mba International Airport.",
+      "supportingExcerpt": "Ce dispositif s’adresse pour le moment aux voyageurs désirant se rendre au Gabon par voie aérienne."
+    },
+    {
+      "id": "gabon-correction-dgdi-current-arrival-sticker-service",
+      "title": "DGDI Gabon eVisa: pretravel receipt and arrival sticker",
+      "url": "https://evisa.dgdi.ga/",
+      "publisher": "Direction Générale de la Documentation et de l’Immigration",
+      "jurisdiction": "Gabon",
+      "kind": "official-portal",
+      "language": "English / French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The central Government links this exact DGDI service. Its live bundle requires a Travel Authorization Receipt before travel but takes payment when the physical sticker is delivered on arrival. The host omits a trusted TLS issuer chain, so this remains medium-confidence evidence requiring recheck.",
+      "supportingExcerpt": "Payments are made on arrival at the delivery of the e-visa sticker."
+    },
+    {
+      "id": "gabon-correction-dgdi-country-exemption-catalog",
+      "title": "DGDI live country and passport-exemption catalogue",
+      "url": "https://evisa.dgdi.ga/catalogs?lang=en",
+      "publisher": "Direction Générale de la Documentation et de l’Immigration",
+      "jurisdiction": "Gabon",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government-authenticated DGDI dataset provides country records for Germany, the Netherlands and ‘United Kingdom British Citizen’, plus a distinct Ordinary Passport document type. Its exemption data does not exempt ordinary passports for those records. Its incomplete TLS chain is recorded as a refresh risk.",
+      "supportingExcerpt": "Country | Passports eligible for visa exemption"
+    }
+  ],
+  "policies": [
+    {
+      "id": "gabon-corrected-german-dutch-british-air-sticker-arrival-visas",
+      "title": "German, Dutch and British ordinary passports: Gabon arrival sticker after electronic preapproval",
+      "summary": "DGDI requires these non-exempt ordinary-passport visitors to obtain online travel authorisation before flying, then takes payment and delivers the visa sticker at Libreville airport; the normalized route is visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["GA"],
+      "passportCodes": ["DE", "NL", "GB"],
+      "conditions": [
+        "The live DGDI catalogue contains country records for Germany, the Netherlands and ‘United Kingdom British Citizen’, plus a distinct Ordinary Passport document type; it does not list ordinary passports for those records among the named exemptions.",
+        "A Travel Authorization Receipt is required before departure, but payment and physical visa-sticker delivery occur on arrival; this is not a pre-travel electronically issued visa.",
+        "The current Government notice limits the route to air travel through Libreville Léon-Mba International Airport. Work, residence, transit, crew, special documents and final admission remain outside this baseline.",
+        "The DGDI server currently omits a trusted TLS issuer chain. The central Government directly authenticates the service, but the rule must be refreshed when the normal chain is restored."
+      ],
+      "sourceIds": [
+        "gabon-correction-government-current-air-notice",
+        "gabon-correction-dgdi-current-arrival-sticker-service",
+        "gabon-correction-dgdi-country-exemption-catalog"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.dgdi.ga/",
+        "label": "Gabon DGDI electronic travel-authorisation service",
+        "processingTime": "The DGDI service states 72 hours after receipt of the request.",
+        "steps": [
+          "Use the DGDI service before flying to Libreville.",
+          "Complete the form and upload the passport data page and required documents.",
+          "Receive the Travel Authorization Receipt before departure.",
+          "At Libreville airport, complete payment and receive the physical visa sticker on arrival."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "DE",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI issues the physical visa sticker and takes payment on arrival after online preapproval; this is not an electronically issued pretravel visa.",
+      "sourceIds": [
+        "gabon-correction-dgdi-current-arrival-sticker-service",
+        "gabon-correction-dgdi-country-exemption-catalog"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "GA",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "DGDI issues the physical visa sticker and takes payment on arrival after online preapproval; this is not an electronically issued pretravel visa.",
+      "sourceIds": [
+        "gabon-correction-dgdi-current-arrival-sticker-service",
+        "gabon-correction-dgdi-country-exemption-catalog"
+      ]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "GA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current DGDI route provides preapproval followed by payment and sticker issuance at Libreville airport rather than a mission-issued advance visa.",
+      "sourceIds": [
+        "gabon-correction-dgdi-current-arrival-sticker-service",
+        "gabon-correction-dgdi-country-exemption-catalog"
+      ]
+    }
+  ],
+  "unresolved": []
+}
