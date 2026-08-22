@@ -30,6 +30,22 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...(["BD", "CG", "GW", "ML", "NE"] as const).map((destinationCode) => ({
+    passportCode: "RW" as const,
+    destinationCode,
+    status: "visa_free" as const,
+    reason: "Rwanda DGIE's current ordinary-passport schedule expressly marks this destination Visa not required for Rwandan passport holders.",
+    sourceUrl: "https://www.migration.gov.rw/1-1/sops-1",
+    reviewedAt: "2026-08-22",
+  })),
+  {
+    passportCode: "RW",
+    destinationCode: "NG",
+    status: "evisa",
+    reason: "Nigeria Immigration Service's April 2026 tourism service provides online application and an emailed visa certificate to citizens of all countries, with no identified Rwandan ordinary-passport waiver.",
+    sourceUrl: "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+    reviewedAt: "2026-08-22",
+  },
   {
     passportCode: "MW",
     destinationCode: "KH",
@@ -158,7 +174,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/399?travelPermit=0",
     reviewedAt: "2026-08-22",
   },
-  ...(["LY", "YE", "AO", "SO", "SY", "MD", "ME", "ZM", "ZW", "ER", "TL", "CD", "MW", "TZ", "LA"] as const).map((passportCode) => ({
+  ...(["LY", "YE", "AO", "SO", "SY", "MD", "ME", "ZM", "ZW", "ER", "TL", "CD", "MW", "TZ", "LA", "MZ"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "CI" as const,
     status: "visa_on_arrival" as const,

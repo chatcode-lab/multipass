@@ -238,7 +238,9 @@
     "congo-democratic-republic-outbound-low-coverage-destinations-2026",
     "malawi-outbound-low-coverage-destinations-2026",
     "tanzania-outbound-low-coverage-destinations-2026",
-    "laos-outbound-low-coverage-destinations-2026"
+    "laos-outbound-low-coverage-destinations-2026",
+    "rwanda-outbound-low-coverage-destinations-2026",
+    "mozambique-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -12885,6 +12887,36 @@
       "id": "ukraine-mfa-current-evisa-resumption",
       "title": "Ukraine MFA: e-Visa issuance resumed for foreigners",
       "url": "https://mfa.gov.ua/en/events/mfa-resumes-issuing-electronic-visas-e-visa-foreigners",
+      "publisher": "Ministry of Foreign Affairs of Ukraine",
+      "jurisdiction": "Ukraine",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "rwanda-dgie-ordinary-epassport",
+      "title": "Rwanda DGIE: ordinary e-Passport",
+      "url": "https://www.migration.gov.rw/our-services/e-passport-1",
+      "publisher": "Directorate General of Immigration and Emigration, Rwanda",
+      "jurisdiction": "Republic of Rwanda",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "rwanda-dgie-current-ordinary-passport-visa-free-list",
+      "title": "Rwanda DGIE: visa-free countries for Rwandan passport holders",
+      "url": "https://www.migration.gov.rw/1-1/sops-1",
+      "publisher": "Directorate General of Immigration and Emigration, Rwanda",
+      "jurisdiction": "Republic of Rwanda",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "ukraine-mfa-rwanda-entry-regime",
+      "title": "Ukraine MFA: entry regime for Rwandan travel passports",
+      "url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/entry-regime-ukraine-foreign-citizens",
       "publisher": "Ministry of Foreign Affairs of Ukraine",
       "jurisdiction": "Ukraine",
       "kind": "government-guidance",
@@ -58051,6 +58083,308 @@
           "Apply for an eligible e-Visa category using the Lao ordinary passport before travel.",
           "Use the issued electronic visa with the supporting documents required for that category.",
           "Check current border, carrier and final-admission requirements before departure."
+        ]
+      }
+    },
+    {
+      "id": "rwandan-ordinary-passport-named-visa-free-visits",
+      "title": "Rwandan ordinary passports: named visa-free short visits",
+      "summary": "Rwanda DGIE's current ordinary-passport schedule expressly records visa-free access for Bangladesh, Central African Republic, Republic of the Congo, Côte d'Ivoire, Guinea-Bissau, Liberia, Mali and Niger.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BD",
+        "CF",
+        "CG",
+        "CI",
+        "GW",
+        "LR",
+        "ML",
+        "NE"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "This is limited to the named ordinary-passport rows in Rwanda DGIE's current outbound schedule; it is not inferred from EAC, AU, COMESA, bilateral or regional membership.",
+        "For CI, the destination MFA/SNEDAI pages describe a general applicant visa workflow but do not publish a Rwanda-specific override. Rwanda DGIE's passport-specific ordinary row says Visa not required, so the generic applicant route is not normalized as applying to this named visa-free passport.",
+        "Purpose, stay period, accepted document, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-current-ordinary-passport-visa-free-list",
+        "cote-divoire-snedai-arrival-visa",
+        "cote-divoire-mfa-current-visitor-visa-guidance"
+      ]
+    },
+    {
+      "id": "rwandan-ordinary-passport-djibouti-arrival-visa",
+      "title": "Rwandan ordinary passports: Djibouti arrival visa",
+      "summary": "Rwanda DGIE's current passport-specific schedule expressly records Visa upon arrival for the ordinary Rwandan passport in Djibouti.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "DJ"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "This records Rwanda DGIE's passport-specific ordinary column and is not a conclusion from Djibouti portal availability.",
+        "Purpose, duration, port, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-current-ordinary-passport-visa-free-list"
+      ]
+    },
+    {
+      "id": "rwandan-ordinary-passport-south-sudan-arrival-visa",
+      "title": "Rwandan ordinary passports: South Sudan arrival visa",
+      "summary": "Rwanda DGIE's current passport-specific schedule records a free visa on arrival for an ordinary Rwandan passport in South Sudan.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "SS"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "Rwanda DGIE uses the wording Visa free on arrival for South Sudan. This is normalized as a visa issued on arrival without a fee, not as visa-free entry.",
+        "Purpose, duration, port, documentation, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-current-ordinary-passport-visa-free-list"
+      ]
+    },
+    {
+      "id": "rwandan-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Rwandan ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's official tourism guidance requires a tourist visa for a non-resident Rwandan visitor and makes its electronic tourist-visa route available online worldwide except in the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "Use a Rwandan ordinary passport. Cuba names Chinese citizens as visa-exempt; a non-resident Rwandan visitor must obtain the tourist visa.",
+        "Obtain the electronic tourist visa before travel. Cuba's D'Viajeros declaration is separate; the tourist visa is single-entry for up to 90 days, with a possible 90-day extension.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-ordinary-epassport",
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the Rwandan ordinary passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "rwandan-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Rwandan ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service makes an online, emailed tourism visa available to citizens of all countries, subject to stated waiver exceptions and ordinary passport validity.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "Use a valid Rwandan ordinary passport with at least six months' validity, photo, return ticket and listed supporting evidence. F5A is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay the fee. Nigeria Immigration Service says the applicant receives the visa certificate by email; this is electronic issuance, not online preapproval followed by border issuance.",
+        "The source excepts ECOWAS member States and countries with a visa-waiver agreement. It does not identify a Rwandan ordinary-passport exception. Work, residence, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-ordinary-epassport",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa service",
+        "steps": [
+          "Apply online using the Rwandan ordinary passport and upload the required tourism documents.",
+          "Pay the fee and await the emailed visa certificate before travel.",
+          "Use the electronic certificate subject to carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "rwandan-ordinary-passport-ukraine-advance-visitor-visa",
+      "title": "Rwandan ordinary passports: Ukraine advance visitor visa",
+      "summary": "Ukraine MFA's travel-passport table requires a visa for Rwandan citizens, and its visa guidance routes required-visa applicants to Ukrainian embassies or consulates before travel.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "UA"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "Apply to the relevant Ukrainian embassy or consulate before travel; this is an advance consular route, not an eVisa or visa-on-arrival classification.",
+        "War-related border, air-access, occupied-territory permit, carrier and final-admission conditions remain separate from this visa classification."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-ordinary-epassport",
+        "ukraine-mfa-rwanda-entry-regime"
+      ]
+    },
+    {
+      "id": "rwandan-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Rwandan ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's live Government announcement confirms its named online-visa portal is available to all interested visitors; that portal accepts all nationalities using a regular passport and sends the resulting eVisa electronically before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "Apply using the Rwandan ordinary passport that will be used for travel; the current portal excludes other travel documents and requires a passport valid at least 30 days from arrival with a blank page.",
+        "Register, upload the stated visitor documents, pay online, and obtain the eVisa by email/PDF before travel. This is electronic issuance, not an ETA or visa on arrival.",
+        "Purpose, duration, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-ordinary-epassport",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea Government-announced eVisa service",
+        "steps": [
+          "Register and submit the visitor eVisa application using the Rwandan ordinary passport.",
+          "Upload supporting documents and pay online.",
+          "Receive and carry the eVisa PDF issued by email before travel."
+        ]
+      }
+    },
+    {
+      "id": "mozambican-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Mozambican ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Mozambican visitor and makes the electronic tourist-visa route available online.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "MZ"
+      ],
+      "conditions": [
+        "Use a Mozambican ordinary passport. Cuba names Chinese citizens as visa-exempt; a Mozambican ordinary-passport holder without Cuban residency must obtain the tourist visa.",
+        "Obtain the electronic tourist visa before travel; Cuba's D'Viajeros declaration is separate. The tourist visa is single-entry for up to 90 days, with a possible 90-day extension.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "mozambique-minec-consular-passport-services",
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the Mozambican ordinary passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "mozambican-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Mozambican ordinary passports: Côte d’Ivoire preapproved arrival visa",
+      "summary": "Côte d’Ivoire's current MFA guidance requires visitors to hold a visa, and its official ordinary-passport process gives online preapproval and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CI"
+      ],
+      "passportCodes": [
+        "MZ"
+      ],
+      "conditions": [
+        "Use a valid Mozambican ordinary passport. Complete SNEDAI pre-enrolment, payment and document upload; board only with the approved D.S.T. response, payment receipt, passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "mozambique-minec-consular-passport-services",
+        "cote-divoire-mfa-current-visitor-visa-guidance",
+        "cote-divoire-snedai-arrival-visa"
+      ],
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d’Ivoire official visa pre-enrolment",
+        "steps": [
+          "Submit the Mozambican ordinary-passport pre-enrolment and payment online, with the listed travel and hosting documents.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
+    },
+    {
+      "id": "mozambican-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Mozambican ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's April 2026 F5A service makes an online tourism eVisa available to citizens of all countries and sends the visa certificate by email.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "MZ"
+      ],
+      "conditions": [
+        "Use a valid Mozambican ordinary passport with at least six months' validity, photo, return ticket, hotel or host evidence and sufficient funds. The F5A route is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay the fee. The Nigeria Immigration Service document says the applicant receives the visa certificate by email; this is electronic issuance, not online preapproval followed by border issuance.",
+        "Work, residence, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "mozambique-minec-consular-passport-services",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://evisa.immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa application",
+        "steps": [
+          "Apply online using the Mozambican ordinary passport and upload the required tourism documents.",
+          "Pay the fee and await the emailed visa certificate before travel.",
+          "Present the certificate and supporting documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "mozambican-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Mozambican ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's live Government announcement confirms its named online-visa portal is available to all interested visitors; that portal accepts all nationalities using a regular passport and sends the resulting eVisa electronically before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "MZ"
+      ],
+      "conditions": [
+        "Apply using the Mozambican ordinary passport that will be used for travel; the current portal excludes other travel documents and requires a passport valid at least 30 days from arrival with a blank page.",
+        "Register, upload the stated visitor documents, pay online, and obtain the eVisa by email/PDF before travel. This is electronic issuance, not an ETA or visa on arrival.",
+        "Purpose, duration, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "mozambique-minec-consular-passport-services",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea Government-announced eVisa service",
+        "steps": [
+          "Register and submit the visitor eVisa application using the Mozambican ordinary passport.",
+          "Upload supporting documents and pay online.",
+          "Receive and carry the eVisa PDF issued by email before travel."
         ]
       }
     }
