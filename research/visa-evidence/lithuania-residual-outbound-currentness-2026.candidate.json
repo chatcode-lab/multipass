@@ -1,0 +1,137 @@
+{
+  "batchId": "lithuania-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "lithuania-mfa-panama-entry-2026",
+      "title": "Lithuania Ministry of Foreign Affairs: Panama travel recommendation",
+      "url": "https://keliauk.urm.lt/countries/view/panama",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Lithuania",
+      "jurisdiction": "Lithuania",
+      "kind": "government-guidance",
+      "language": "Lithuanian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Lithuanian Foreign Ministry traveller page identifies an ordinary Lithuanian passport, was updated 15 December 2025, and gives the Panama tourist-entry treatment.",
+      "supportingExcerpt": "Trumpalaikiam buvimui Lietuvos Respublikos piliečiams vizos nereikia."
+    },
+    {
+      "id": "lithuania-mfa-tunisia-entry-2026",
+      "title": "Lithuania Ministry of Foreign Affairs: Tunisia travel recommendation",
+      "url": "https://keliauk.urm.lt/location/tunisas",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Lithuania",
+      "jurisdiction": "Lithuania",
+      "kind": "government-guidance",
+      "language": "Lithuanian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Lithuanian Foreign Ministry traveller page was updated 15 July 2026 and expressly states ordinary Lithuanian citizens' Tunisia visitor exemption and duration.",
+      "supportingExcerpt": "Lietuvos Respublikos piliečiai į Tunisą be vizų gali vykti ne ilgesniam kaip 90 dienų laikotarpiui."
+    },
+    {
+      "id": "lithuania-mfa-ukraine-entry-2026",
+      "title": "Lithuania Ministry of Foreign Affairs: Ukraine travel recommendation",
+      "url": "https://keliauk.urm.lt/location/ukraina",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Lithuania",
+      "jurisdiction": "Lithuania",
+      "kind": "government-guidance",
+      "language": "Lithuanian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Lithuanian Foreign Ministry traveller page was updated 20 August 2026, identifies the Lithuanian passport and states the ordinary short-stay visa exemption.",
+      "supportingExcerpt": "Trumpalaikiam buvimui Lietuvos Respublikos piliečiams vizos nereikia."
+    },
+    {
+      "id": "iraq-mfa-eu-arrival-visa-2026",
+      "title": "Iraq Ministry of Foreign Affairs: obtaining an entry visa upon arrival",
+      "url": "https://mofa.gov.iq/losangeles/en/obtaining-a-visa-on-arrival/",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Iraq",
+      "jurisdiction": "Republic of Iraq",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Iraqi Foreign Ministry consular page expressly includes European Union passports in its arrival-visa cohort, describes issuance at land, air and sea crossings, and separately advises eVisa use.",
+      "supportingExcerpt": "European Union countries ... are granted a visa to Iraq upon arrival through the border crossings."
+    }
+  ],
+  "policies": [
+    {
+      "id": "lithuania-ordinary-passport-panama-visa-free-2026",
+      "title": "Lithuanian ordinary passports: Panama short-visit visa exemption",
+      "summary": "Current Lithuanian Foreign Ministry guidance permits Lithuanian citizens to visit Panama visa-free for tourism for up to three months.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["LT"],
+      "conditions": ["Ordinary Lithuanian passport holder, tourism for up to three months.", "Residence, work, special passports, carrier requirements and final admission remain separate."],
+      "sourceIds": ["lithuania-mfa-panama-entry-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "lithuania-ordinary-passport-tunisia-visa-free-2026",
+      "title": "Lithuanian ordinary passports: Tunisia short-visit visa exemption",
+      "summary": "Current Lithuanian Foreign Ministry guidance permits Lithuanian citizens to visit Tunisia visa-free for up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["TN"],
+      "passportCodes": ["LT"],
+      "conditions": ["Ordinary Lithuanian passport holder, short stay of up to 90 days.", "Work, residence, special passports, carrier requirements and final admission remain separate."],
+      "sourceIds": ["lithuania-mfa-tunisia-entry-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "lithuania-ordinary-passport-ukraine-visa-free-2026",
+      "title": "Lithuanian ordinary passports: Ukraine short-visit visa exemption",
+      "summary": "Current Lithuanian Foreign Ministry guidance records visa-free short stays in Ukraine for ordinary Lithuanian passport holders.",
+      "status": "visa_free",
+      "destinationCodes": ["UA"],
+      "passportCodes": ["LT"],
+      "conditions": ["Ordinary Lithuanian passport holder, short visitor stay.", "The current travel warning, dual-Ukrainian-national treatment, residence, work, special passports, carrier requirements and final admission remain separate."],
+      "sourceIds": ["lithuania-mfa-ukraine-entry-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "lithuania-ordinary-passport-iraq-arrival-visa-2026",
+      "title": "Lithuanian ordinary passports: Iraq visitor visa issued at arrival",
+      "summary": "Iraq's current Foreign Ministry guidance includes European Union passports in its visitor visa-on-arrival cohort, which therefore includes ordinary Lithuanian passports.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["IQ"],
+      "passportCodes": ["LT"],
+      "conditions": ["Ordinary Lithuanian passport holder; the visa is issued at Iraqi land, air or sea border crossings and is stated as valid for 60 days.", "Iraq separately advises, but does not require in place of this route, pre-travel eVisa use. Work, residence, special passports and final admission remain separate."],
+      "sourceIds": ["iraq-mfa-eu-arrival-visa-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "LT",
+      "destinationCode": "IQ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The fallback labels Iraq eVisa, but Iraq's current Foreign Ministry explicitly grants the named European Union passport cohort a visa at arrival; its separate eVisa advice does not eliminate border issuance.",
+      "sourceIds": ["iraq-mfa-eu-arrival-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"LT","destinationCode":"AF","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor route and issuance timing.","searchedOfficialDomains":["keliauk.urm.lt","mfa.gov.af"]},
+    {"passportCode":"LT","destinationCode":"CF","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor route and issuance timing.","searchedOfficialDomains":["keliauk.urm.lt","diplomatie.gouv.cf"]},
+    {"passportCode":"LT","destinationCode":"TD","reason":"The recorded Chad hold remains: evisa.td is unauthenticated absent an independent current government source proving the ordinary Lithuanian visitor route.","searchedOfficialDomains":["keliauk.urm.lt","diplomatie.gouv.td","evisa.td"]},
+    {"passportCode":"LT","destinationCode":"CG","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor route and issuance timing.","searchedOfficialDomains":["keliauk.urm.lt","diplomatie.gouv.cg"]},
+    {"passportCode":"LT","destinationCode":"ML","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor route and issuance timing.","searchedOfficialDomains":["keliauk.urm.lt","diplomatie.gouv.ml"]},
+    {"passportCode":"LT","destinationCode":"NE","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor route and issuance timing.","searchedOfficialDomains":["keliauk.urm.lt","diplomatie.gouv.ne"]},
+    {"passportCode":"LT","destinationCode":"KP","reason":"No current official source reviewed positively establishes an available ordinary Lithuanian short-visitor route.","searchedOfficialDomains":["keliauk.urm.lt","mfa.gov.kp"]},
+    {"passportCode":"LT","destinationCode":"SD","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor route and issuance timing.","searchedOfficialDomains":["keliauk.urm.lt","mofa.gov.sd"]},
+    {"passportCode":"LT","destinationCode":"TM","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor route and issuance timing.","searchedOfficialDomains":["keliauk.urm.lt","mfa.gov.tm"]},
+    {"passportCode":"LT","destinationCode":"SY","reason":"No current official source reviewed positively establishes electronic issuance for an ordinary Lithuanian visitor visa; an online application alone is insufficient.","searchedOfficialDomains":["keliauk.urm.lt","mofaex.gov.sy"]},
+    {"passportCode":"LT","destinationCode":"BF","reason":"No current official source reviewed positively establishes electronic issuance for an ordinary Lithuanian visitor visa; an online portal alone is insufficient.","searchedOfficialDomains":["keliauk.urm.lt","mae.gov.bf"]},
+    {"passportCode":"LT","destinationCode":"LR","reason":"No current official source reviewed positively establishes electronic issuance for an ordinary Lithuanian visitor visa; conditional or location-based routes are excluded.","searchedOfficialDomains":["keliauk.urm.lt","immigration.gov.lr"]},
+    {"passportCode":"LT","destinationCode":"CI","reason":"No current official source reviewed positively establishes electronic issuance rather than airport issuance for an ordinary Lithuanian visitor visa.","searchedOfficialDomains":["keliauk.urm.lt","snedai.com"]},
+    {"passportCode":"LT","destinationCode":"SS","reason":"No current official source reviewed positively establishes electronic issuance for an ordinary Lithuanian visitor visa; an online application alone is insufficient.","searchedOfficialDomains":["keliauk.urm.lt","immigration.gov.ss"]},
+    {"passportCode":"LT","destinationCode":"BD","reason":"No current official source reviewed positively establishes an ordinary Lithuanian visitor visa issued at arrival.","searchedOfficialDomains":["keliauk.urm.lt","visa.gov.bd"]},
+    {"passportCode":"LT","destinationCode":"KM","reason":"No current official source reviewed positively establishes an ordinary Lithuanian visitor visa issued at arrival.","searchedOfficialDomains":["keliauk.urm.lt","beit-salam.km"]},
+    {"passportCode":"LT","destinationCode":"GW","reason":"No current official source reviewed positively establishes an ordinary Lithuanian visitor visa issued at arrival.","searchedOfficialDomains":["keliauk.urm.lt","diplomatie.gouv.gw"]},
+    {"passportCode":"LT","destinationCode":"IR","reason":"No current official source reviewed positively establishes an ordinary Lithuanian visitor visa issued at arrival; online application alone does not classify an eVisa.","searchedOfficialDomains":["keliauk.urm.lt","evisa.mfa.ir"]},
+    {"passportCode":"LT","destinationCode":"JO","reason":"No current official source reviewed positively establishes an ordinary Lithuanian visitor visa issued at arrival without relying on a complement inference.","searchedOfficialDomains":["keliauk.urm.lt","moi.gov.jo"]},
+    {"passportCode":"LT","destinationCode":"SL","reason":"The recorded Sierra Leone hold remains absent independent current passport-government evidence, notwithstanding advisory descriptions of online and arrival options.","searchedOfficialDomains":["keliauk.urm.lt","immigration.gov.sl","evisa.sl"]},
+    {"passportCode":"LT","destinationCode":"DJ","reason":"No current official source reviewed positively establishes an ordinary Lithuanian visitor visa issued at arrival.","searchedOfficialDomains":["keliauk.urm.lt","gouv.dj"]},
+    {"passportCode":"LT","destinationCode":"PS","reason":"No current official source reviewed maps an ordinary Lithuanian passport to a distinct Palestinian-territory visitor status without treating Israel or a third-country document as the destination baseline.","searchedOfficialDomains":["keliauk.urm.lt","mofa.pna.ps"]},
+    {"passportCode":"LT","destinationCode":"BO","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor exemption without inferring a complement from a visa-required service.","searchedOfficialDomains":["keliauk.urm.lt","cancilleria.gob.bo"]},
+    {"passportCode":"LT","destinationCode":"BW","reason":"No current official source reviewed positively establishes the ordinary Lithuanian visitor exemption without inferring a complement from a visa-required service.","searchedOfficialDomains":["keliauk.urm.lt","gov.bw"]},
+    {"passportCode":"LT","destinationCode":"VG","reason":"No current official source reviewed positively establishes an ordinary Lithuanian visitor exemption for the British Virgin Islands; conditional third-country-document routes are excluded.","searchedOfficialDomains":["keliauk.urm.lt","bvi.gov.vg","gov.uk"]}
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "batchId": "latvia-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "lv-mfa-current-visa-free-destinations",
+      "title": "Countries and territories to which Latvia passport holders may enter without visa",
+      "url": "https://www.mfa.gov.lv/en/countries-and-territories-which-latvia-passport-holders-may-enter-without-visa",
+      "publisher": "Ministry of Foreign Affairs of Latvia",
+      "jurisdiction": "Latvia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Latvian MFA list expressly applies to Latvian citizens and identifies countries for which a visa is not required, with stay limits.",
+      "supportingExcerpt": "COUNTRIES TO WHICH VISA IS NOT REQUIRED FOR LATVIAN CITIZENS"
+    },
+    {
+      "id": "lv-mfa-syria-current-electronic-visa",
+      "title": "Sīrijas Arābu Republika",
+      "url": "https://www.mfa.gov.lv/lv/sirija-celojumu-bridinajumi",
+      "publisher": "Ministry of Foreign Affairs of Latvia",
+      "jurisdiction": "Latvia / Syria",
+      "kind": "government-guidance",
+      "language": "Latvian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Latvian MFA's Syria guidance, updated 12 August 2026, expressly covers Latvian citizens and says Syria entry visas may be arranged electronically from 1 May 2024.",
+      "supportingExcerpt": "vīzu ieceļošanai Sīrijā iespējams noformēt elektroniski"
+    },
+    {
+      "id": "lv-mfa-iraq-current-arrival-visa",
+      "title": "Irākas Republika",
+      "url": "https://www.mfa.gov.lv/lv/iraka-celojumu-bridinajumi",
+      "publisher": "Ministry of Foreign Affairs of Latvia",
+      "jurisdiction": "Latvia / Iraq",
+      "kind": "government-guidance",
+      "language": "Latvian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Current Latvian MFA traveller guidance expressly states that Latvian citizen passport holders can obtain Iraq entry visas at land, airport or port border points before entry.",
+      "supportingExcerpt": "sauszemes, lidostu vai ostu robežpunktos"
+    },
+    {
+      "id": "lv-mfa-jordan-current-arrival-visa",
+      "title": "Jordānijas Hāšimītu Karaliste",
+      "url": "https://www.mfa.gov.lv/lv/jordanija-celojumu-bridinajumi",
+      "publisher": "Ministry of Foreign Affairs of Latvia",
+      "jurisdiction": "Latvia / Jordan",
+      "kind": "government-guidance",
+      "language": "Latvian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Latvian MFA's Jordan guidance, updated 6 May 2026, expressly covers Latvian citizens and states that an entry visa can be arranged at the border on entry.",
+      "supportingExcerpt": "Vīzu var noformēt uz robežas pie ieceļošanas"
+    }
+  ],
+  "policies": [
+    {
+      "id": "latvian-ordinary-passport-named-visa-free-short-visits",
+      "title": "Latvian ordinary passports: named visa-free short visits",
+      "summary": "Latvia's current MFA list identifies visa-free short visits for Latvian citizens to the five named destinations.",
+      "status": "visa_free",
+      "destinationCodes": ["BW", "DO", "PA", "TN", "UA"],
+      "passportCodes": ["LV"],
+      "conditions": [
+        "BW: up to 90 days in a year; DO: up to 30 days for tourism; PA: up to six months for tourism; TN: up to 90 days; UA: up to 90 days in 180 days.",
+        "This is limited to the stated short-visit purpose and duration, and excludes work, study, residence, special documents and final admission."
+      ],
+      "sourceIds": ["lv-mfa-current-visa-free-destinations"],
+      "confidence": "high"
+    },
+    {
+      "id": "latvian-ordinary-passport-syria-electronic-visa",
+      "title": "Latvian ordinary passports: Syria electronic visitor visa",
+      "summary": "Current Latvian MFA guidance says Latvian citizens may arrange Syria's entry visa electronically.",
+      "status": "evisa",
+      "destinationCodes": ["SY"],
+      "passportCodes": ["LV"],
+      "effectiveFrom": "2024-05-01",
+      "conditions": [
+        "The current MFA guidance directs travellers to Syria's electronic visa service and separately warns that an Israeli border-crossing stamp can result in refusal.",
+        "This excludes work, residence, special documents, operational travel restrictions and final admission."
+      ],
+      "sourceIds": ["lv-mfa-syria-current-electronic-visa"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.sy/",
+        "label": "Syria electronic visa service",
+        "steps": ["Arrange the entry visa electronically before travel using an ordinary Latvian passport."]
+      }
+    },
+    {
+      "id": "latvian-ordinary-passport-iraq-arrival-visa",
+      "title": "Latvian ordinary passports: Iraq arrival visa",
+      "summary": "Latvian citizen passport holders can obtain Iraq's entry visa at land, airport or port border points.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["IQ"],
+      "passportCodes": ["LV"],
+      "conditions": [
+        "The stated border-issued visa is for up to 60 days, cannot be extended, and costs USD 75.",
+        "The guidance also applies to the Kurdistan region; work, residence, special documents and final admission remain separate."
+      ],
+      "sourceIds": ["lv-mfa-iraq-current-arrival-visa"],
+      "confidence": "high"
+    },
+    {
+      "id": "latvian-ordinary-passport-jordan-arrival-visa",
+      "title": "Latvian ordinary passports: Jordan arrival visa",
+      "summary": "Latvian ordinary-passport visitors can arrange Jordan's entry visa at the border on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["LV"],
+      "conditions": [
+        "Jordan also offers an eVisa option before travel; the border-issued route controls this normalization.",
+        "This excludes work, residence, special documents and final admission."
+      ],
+      "sourceIds": ["lv-mfa-jordan-current-arrival-visa"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "LV",
+      "destinationCode": "IQ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Current Latvian MFA guidance expressly states that Latvian citizen passport holders can obtain Iraq's entry visa at land, airport or port border points; actual issuance timing is visa_on_arrival.",
+      "sourceIds": ["lv-mfa-iraq-current-arrival-visa"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"LV","destinationCode":"AF","reason":"No current Latvian or Afghan authority source established an ordinary Latvian-passport visitor issuance route and timing.","searchedOfficialDomains":["mfa.gov.lv","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"LV","destinationCode":"CF","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","diplomatie.gouv.cf"]},
+    {"passportCode":"LV","destinationCode":"TD","reason":"The residual Chad evisa.td material lacks the independent passport-government evidence required for this audit, so no Latvian visitor route is promoted.","searchedOfficialDomains":["mfa.gov.lv","evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"LV","destinationCode":"CG","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","diplomatie.gouv.cg"]},
+    {"passportCode":"LV","destinationCode":"ML","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","diplomatie.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"LV","destinationCode":"NE","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","diplomatie.gouv.ne"]},
+    {"passportCode":"LV","destinationCode":"KP","reason":"No current official source established an ordinary Latvian-passport visitor route; access restrictions are not a taxonomy outcome.","searchedOfficialDomains":["mfa.gov.lv","mfa.gov.kp"]},
+    {"passportCode":"LV","destinationCode":"SD","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","mofa.gov.sd"]},
+    {"passportCode":"LV","destinationCode":"TM","reason":"Latvian MFA mentions Ashgabat airport issuance, but current official Turkmen embassy guidance makes that route conditional on a State Migration Service-certified invitation/LOI; it is not an unconditional Latvian-passport baseline.","searchedOfficialDomains":["mfa.gov.lv","tmembassy.gov.tm","migration.gov.tm"]},
+    {"passportCode":"LV","destinationCode":"BF","reason":"No current Latvian or Burkina Faso authority source established an ordinary Latvian-passport visitor issuance route and timing.","searchedOfficialDomains":["mfa.gov.lv","diplomatie.gov.bf","visaburkina.bf"]},
+    {"passportCode":"LV","destinationCode":"LR","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"LV","destinationCode":"CI","reason":"No current Latvian authority source establishes ordinary Latvian passport eligibility for a pre-enrolment route; a portal alone is not eligibility evidence.","searchedOfficialDomains":["mfa.gov.lv","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"LV","destinationCode":"SS","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","mofaic.gov.ss","evisa.gov.ss"]},
+    {"passportCode":"LV","destinationCode":"BD","reason":"Current Latvian guidance says a visa is needed but does not establish ordinary Latvian visitor eligibility and actual issuance timing for an arrival, mission or electronic route.","searchedOfficialDomains":["mfa.gov.lv","mofa.gov.bd","visa.gov.bd"]},
+    {"passportCode":"LV","destinationCode":"KM","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","gouv.km"]},
+    {"passportCode":"LV","destinationCode":"GW","reason":"No current official source established an ordinary Latvian-passport visitor channel and issuance timing.","searchedOfficialDomains":["mfa.gov.lv","mne.gw"]},
+    {"passportCode":"LV","destinationCode":"IR","reason":"Current Latvian guidance says a visa is needed but does not establish reliable ordinary Latvian visitor issuance timing among online, mission and arrival processes.","searchedOfficialDomains":["mfa.gov.lv","mfa.ir","evisa.mfa.ir"]},
+    {"passportCode":"LV","destinationCode":"SL","reason":"The residual Sierra Leone eVisa material lacks the independent passport-government evidence required for this audit, so no Latvian visitor route is promoted.","searchedOfficialDomains":["mfa.gov.lv","slid.gov.sl","evisa.sl"]},
+    {"passportCode":"LV","destinationCode":"DJ","reason":"No current official source established ordinary Latvian eVisa eligibility and actual issuance timing.","searchedOfficialDomains":["mfa.gov.lv","evisa.gouv.dj"]},
+    {"passportCode":"LV","destinationCode":"PS","reason":"Crossing-specific Israeli controls and permits do not establish a Palestine-only ordinary Latvian-passport visitor status.","searchedOfficialDomains":["mfa.gov.lv","gov.il","mofa.pna.ps"]},
+    {"passportCode":"LV","destinationCode":"VG","reason":"No current official source established ordinary Latvian visitor treatment for the British Virgin Islands.","searchedOfficialDomains":["mfa.gov.lv","bvi.gov.vg"]}
+  ]
+}

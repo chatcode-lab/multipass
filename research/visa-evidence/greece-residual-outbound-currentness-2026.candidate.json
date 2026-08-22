@@ -1,0 +1,100 @@
+{
+  "batchId": "greece-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "greek-mfa-outbound-visa-guidance-2026",
+      "title": "Greek MFA: visas for Greeks travelling abroad",
+      "url": "https://www.mfa.gr/services/theoriseis-gia-ellines-pou-taxidevoun-sto-exoteriko/",
+      "publisher": "Ministry of Foreign Affairs, Hellenic Republic",
+      "jurisdiction": "Greece",
+      "kind": "government-guidance",
+      "language": "Greek",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Greek MFA traveller page is addressed to Greek citizens travelling outside the EU/EEA and directs them to destination consular authorities for entry-visa requirements.",
+      "supportingExcerpt": "Έλληνες πολίτες που ταξιδεύουν σε χώρες εκτός Ευρωπαϊκής Ένωσης/ΕΟΧ ... να πληροφορηθούν αν απαιτείται ... θεώρηση εισόδου."
+    },
+    {
+      "id": "panama-mire-current-greece-ordinary-passport-waiver",
+      "title": "Panama MFA: current bilateral-treaty register for Greece",
+      "url": "https://mire.gob.pa/images/tratados/convenios-bilaterales-vigentes.pdf",
+      "publisher": "Ministry of Foreign Affairs, Republic of Panama",
+      "jurisdiction": "Panama",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Panama MFA's current bilateral-treaty register has a Greece entry that expressly includes ordinary passports in the visa-suppression agreement and records entry into force.",
+      "supportingExcerpt": "ACUERDO PARA LA SUPRESION DE VISAS EN LOS PASAPORTES ORDINARIOS, DIPLOMATICOS Y OFICIALES."
+    },
+    {
+      "id": "bangladesh-special-branch-european-arrival-visa",
+      "title": "Bangladesh Special Branch: visa on arrival instructions",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-instructions.html",
+      "publisher": "Bangladesh Police Special Branch",
+      "jurisdiction": "Bangladesh",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Bangladesh Police Special Branch visa-on-arrival service defines the ordinary visitor facility and expressly includes European-country citizens among eligible tourism travellers.",
+      "supportingExcerpt": "European countries to Bangladesh for tourism, trade, investment, or a government job may get a visa on arrival."
+    }
+  ],
+  "policies": [
+    {
+      "id": "greek-ordinary-passport-panama-visa-free",
+      "title": "Greek ordinary passports: Panama visa-free short visits",
+      "summary": "Panama's current Foreign Ministry treaty register records visa suppression for ordinary Greek passports.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["GR"],
+      "conditions": [
+        "This evidence establishes the ordinary-passport visa-waiver baseline only; it does not establish work, residence, length of stay, carrier, health or final-admission conditions.",
+        "The result follows Panama's named Greece ordinary-passport agreement, not an inferred regional or reciprocal complement."
+      ],
+      "sourceIds": ["panama-mire-current-greece-ordinary-passport-waiver"],
+      "confidence": "high"
+    },
+    {
+      "id": "greek-ordinary-passport-bangladesh-arrival-visitor-visa",
+      "title": "Greek ordinary passports: Bangladesh arrival visitor visa",
+      "summary": "Bangladesh's current Special Branch service includes European-country citizens travelling for tourism among the eligible visa-on-arrival cohort.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["GR"],
+      "conditions": [
+        "The stated route is a maximum 30-day visitor visa issued at the port of entry, and issuance remains at the immigration officer's discretion.",
+        "This is a European-country eligibility class that directly includes Greece, not a conclusion from a general online application portal. Work, residence, special passports, carrier conditions and final admission remain separate."
+      ],
+      "sourceIds": ["bangladesh-special-branch-european-arrival-visa"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"GR","destinationCode":"TD","reason":"The live evisa.td service claims universal online processing, but no independently retrievable central-government page authenticates or links the service. The existing Chad residual audit therefore still controls, and this pair remains unresolved.","searchedOfficialDomains":["evisa.td","securite.gouv.td","diplomatie.gouv.td","mfa.gr"]},
+    {"passportCode":"GR","destinationCode":"AF","reason":"Greek MFA directs Greek citizens to destination consulates; no current Afghanistan authority material reviewed establishes a Greek ordinary-passport tourist issuance point or reliably available route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","mfa.gov.af"]},
+    {"passportCode":"GR","destinationCode":"CF","reason":"No current Central African authority schedule maps an ordinary Greek passport to a visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","diplomatie.gouv.cf"]},
+    {"passportCode":"GR","destinationCode":"CG","reason":"No current Republic of the Congo authority source establishes the ordinary Greek-passport visitor issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","diplomatie.gouv.cg"]},
+    {"passportCode":"GR","destinationCode":"LR","reason":"No current Liberian authority source resolves whether an ordinary Greek tourist receives an electronic document, an arrival visa or advance issuance. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"GR","destinationCode":"ML","reason":"No current Malian authority source maps an ordinary Greek passport to an advance, electronic or arrival visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","diplomatie.gouv.ml"]},
+    {"passportCode":"GR","destinationCode":"NE","reason":"No current Nigerien authority source maps an ordinary Greek passport to a tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","diplomatie.gouv.ne"]},
+    {"passportCode":"GR","destinationCode":"KP","reason":"No current DPRK authority source establishes ordinary Greek-passport tourist eligibility and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","mfa.gov.kp"]},
+    {"passportCode":"GR","destinationCode":"SD","reason":"No current Sudanese authority source establishes the ordinary Greek-passport tourist issuance point. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","mofa.gov.sd"]},
+    {"passportCode":"GR","destinationCode":"TM","reason":"No current Turkmen authority source distinguishes an ordinary Greek tourist's unconditional advance visa from invitation-dependent border processing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"GR","destinationCode":"SY","reason":"No current Syrian authority source establishes ordinary Greek-passport tourist eligibility and actual issuance timing. The fallback eVisa label is not promoted.","searchedOfficialDomains":["mfa.gr","mofaex.gov.sy"]},
+    {"passportCode":"GR","destinationCode":"BF","reason":"Burkina Faso's official eVisa portal establishes a general electronic process but supplies no current Greek ordinary-passport eligibility schedule or exception crosswalk. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["mfa.gr","visaburkina.bf"]},
+    {"passportCode":"GR","destinationCode":"CI","reason":"Côte d'Ivoire's official material describes generic ordinary-passport online pre-enrolment followed by airport printing, but does not establish that a Greek ordinary passport is non-exempt. No complement is inferred from the absence of Greece in exemption material.","searchedOfficialDomains":["mfa.gr","diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"GR","destinationCode":"SS","reason":"South Sudan's official eVisa portal proves electronic issuance but its live eligibility prompt does not provide a current Greek ordinary-passport schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["mfa.gr","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"GR","destinationCode":"IQ","reason":"No current Iraqi authority material reviewed establishes Greek ordinary-passport eligibility and whether online filing produces an eVisa or precedes another issuance route. The fallback eVisa label is not promoted.","searchedOfficialDomains":["mfa.gr","evisa.iq","moi.gov.iq"]},
+    {"passportCode":"GR","destinationCode":"KM","reason":"The current Comorian foreigner-entry law requires a visa subject to published conventions and special laws, but no competent current Greek ordinary-passport schedule establishes advance, electronic or arrival issuance. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","justice.gouv.km","egouv.km"]},
+    {"passportCode":"GR","destinationCode":"GW","reason":"No current Guinea-Bissau authority source establishes whether an ordinary Greek tourist is issued a visa at a mission, electronically or at arrival. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["mfa.gr","mne.gw","gov.gw"]},
+    {"passportCode":"GR","destinationCode":"IR","reason":"No current Greek MFA or Iranian authority source establishes an ordinary Greek tourist arrival-visa route. Official Iranian eVisa/consular material reviewed does not map this nationality to an issuance point.","searchedOfficialDomains":["mfa.gr","mfa.gov.ir","evisa.mfa.ir"]},
+    {"passportCode":"GR","destinationCode":"JO","reason":"Jordan's current Tourism Board nationality table does not name Greece, and no current Greek MFA or Jordanian authority source reviewed maps an ordinary Greek passport to arrival issuance. No regional complement is inferred.","searchedOfficialDomains":["mfa.gr","visitjordan.com","moi.gov.jo"]},
+    {"passportCode":"GR","destinationCode":"SL","reason":"Current Sierra Leone official material conflicts on issuance timing: the live eVisa terms describe emailed eVisas while its FAQ and tourist guidance describe airport issuance. It therefore does not establish one normalized ordinary Greek-passport route.","searchedOfficialDomains":["mfa.gr","slid.gov.sl","evisa.sl","ntb.gov.sl"]},
+    {"passportCode":"GR","destinationCode":"DJ","reason":"Djibouti's eVisa service establishes a general electronic process but does not publish a current Greek ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["mfa.gr","evisa.gouv.dj","egouv.dj"]},
+    {"passportCode":"GR","destinationCode":"PS","reason":"No current Greek MFA or Palestinian authority source establishes an ETA for an ordinary Greek visitor to the Palestinian Territories. Israeli crossing, permit and operational-access controls are not normalized as a Palestinian ETA.","searchedOfficialDomains":["mfa.gr","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"GR","destinationCode":"TN","reason":"No current Greek MFA or Tunisian authority source establishes an ordinary Greek-passport visitor waiver. Any diplomatic or service-document treatment is not generalized to this baseline.","searchedOfficialDomains":["mfa.gr","diplomatie.gov.tn","econsulat.tn"]},
+    {"passportCode":"GR","destinationCode":"UA","reason":"Ukraine MFA's accessible nationality table is expressly dated 2023; no current Greek MFA or Ukrainian authority source reviewed establishes the 2026 ordinary Greek-passport route. The fallback visa-free label is not promoted.","searchedOfficialDomains":["mfa.gr","mfa.gov.ua","dmsu.gov.ua"]},
+    {"passportCode":"GR","destinationCode":"VG","reason":"The BVI Government publishes an advance-visa service and a conditional UK/US/Canada visa-exemption programme, but no current ordinary Greek-passport nationality schedule. Neither a portal nor a conditional third-country document route proves a visa-free baseline.","searchedOfficialDomains":["mfa.gr","bvi.gov.vg","gov.vg"]}
+  ]
+}

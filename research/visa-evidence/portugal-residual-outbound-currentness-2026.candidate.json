@@ -1,0 +1,114 @@
+{
+  "batchId": "portugal-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "panama-mire-current-portugal-common-passport-waiver",
+      "title": "Panama MFA: current bilateral-treaty register for Portugal",
+      "url": "https://mire.gob.pa/images/tratados/convenios-bilaterales-vigentes.pdf",
+      "publisher": "Ministry of Foreign Affairs, Republic of Panama",
+      "jurisdiction": "Panama",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Panama MFA's current bilateral-treaty register has a Portugal entry that separately records common-passport visa suppression and its entry into force.",
+      "supportingExcerpt": "ACUERDO PARA LA SUPRESION DE VISAS EN PASAPORTES COMUNES ... Entró en vigencia el 13 de marzo de 2001."
+    },
+    {
+      "id": "bangladesh-lisbon-embassy-portuguese-passport-arrival-visa",
+      "title": "Bangladesh Embassy in Lisbon: visa on arrival",
+      "url": "https://lisbon.mofa.gov.bd/pages/static-pages/6952669935ce18e1c05aa451",
+      "publisher": "Embassy of Bangladesh in Lisbon",
+      "jurisdiction": "Bangladesh",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Bangladesh's Lisbon Embassy expressly addresses Portuguese passport holders and its live official site shows a 2026 update timestamp.",
+      "supportingExcerpt": "Portuguese passport holders ... Tourism purposes."
+    },
+    {
+      "id": "jordan-tourism-board-portugal-arrival-visa",
+      "title": "Jordan Tourism Board: visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live page identifies itself as the official Jordan Tourism Board website and publishes a named nationality-by-nationality arrival-visa table.",
+      "supportingExcerpt": "Portugal | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    }
+  ],
+  "policies": [
+    {
+      "id": "portuguese-ordinary-passport-panama-visa-free",
+      "title": "Portuguese ordinary passports: Panama visa-free short visits",
+      "summary": "Panama's current Foreign Ministry treaty register records the bilateral suppression of visas for common passports with Portugal.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["PT"],
+      "conditions": [
+        "This evidence establishes the ordinary/common-passport visa-waiver baseline only; it does not establish work, residence, length of stay, carrier, health or final-admission conditions.",
+        "The result follows Panama's named Portugal common-passport agreement, not an inferred regional or reciprocal complement."
+      ],
+      "sourceIds": ["panama-mire-current-portugal-common-passport-waiver"],
+      "confidence": "high"
+    },
+    {
+      "id": "portuguese-ordinary-passport-bangladesh-arrival-visitor-visa",
+      "title": "Portuguese ordinary passports: Bangladesh arrival visitor visa",
+      "summary": "Bangladesh's Lisbon Embassy expressly makes Portuguese passport holders eligible for a single-entry tourism visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["PT"],
+      "conditions": [
+        "The stated route is single entry, up to 30 days, at the Bangladesh port of entry for tourism, subject to the immigration officer's satisfaction.",
+        "Carry the stated supporting documents, return ticket and required funds. Work, residence, special passports, carrier conditions and final admission remain separate."
+      ],
+      "sourceIds": ["bangladesh-lisbon-embassy-portuguese-passport-arrival-visa"],
+      "confidence": "high"
+    },
+    {
+      "id": "portuguese-ordinary-passport-jordan-arrival-visitor-visa",
+      "title": "Portuguese ordinary passports: Jordan arrival visitor visa",
+      "summary": "Jordan's official Tourism Board lists Portugal as eligible for a visa obtained on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["PT"],
+      "conditions": [
+        "The named Portugal entry gives an arrival visa at the stated 40 JOD fee. It does not establish an eVisa requirement merely because Jordan separately offers electronic services.",
+        "Entry-point, passport-validity, return/onward travel, work, residence, special-passport and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["jordan-tourism-board-portugal-arrival-visa"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"PT","destinationCode":"TD","reason":"The live evisa.td service claims universal online processing, but no independently retrievable central-government page authenticates or links the service. The existing Chad residual audit therefore still controls, and this pair remains unresolved.","searchedOfficialDomains":["evisa.td","securite.gouv.td","diplomatie.gouv.td","portaldascomunidades.mne.gov.pt"]},
+    {"passportCode":"PT","destinationCode":"AF","reason":"No current Portuguese MNE or Afghanistan authority material reviewed establishes a Portuguese ordinary-passport tourist issuance point or a reliably available route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mfa.gov.af"]},
+    {"passportCode":"PT","destinationCode":"CF","reason":"No current Portuguese MNE or Central African authority schedule maps an ordinary Portuguese passport to a visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","diplomatie.gouv.cf"]},
+    {"passportCode":"PT","destinationCode":"CG","reason":"No current Portuguese MNE or Republic of the Congo authority source establishes the ordinary Portuguese-passport visitor issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","diplomatie.gouv.cg"]},
+    {"passportCode":"PT","destinationCode":"ML","reason":"No current Portuguese MNE or Malian authority source maps an ordinary Portuguese passport to an advance, electronic or arrival visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","diplomatie.gouv.ml"]},
+    {"passportCode":"PT","destinationCode":"NE","reason":"No current Portuguese MNE or Nigerien authority source maps an ordinary Portuguese passport to a tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","diplomatie.gouv.ne"]},
+    {"passportCode":"PT","destinationCode":"KP","reason":"No current Portuguese MNE or DPRK authority source establishes ordinary Portuguese-passport tourist eligibility and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mfa.gov.kp"]},
+    {"passportCode":"PT","destinationCode":"SD","reason":"No current Portuguese MNE or Sudanese authority source establishes the ordinary Portuguese-passport tourist issuance point. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mofa.gov.sd"]},
+    {"passportCode":"PT","destinationCode":"TM","reason":"No current Portuguese MNE or Turkmen authority source distinguishes an ordinary Portuguese tourist's unconditional advance visa from invitation-dependent border processing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"PT","destinationCode":"SY","reason":"No current Portuguese MNE or Syrian authority source establishes ordinary Portuguese-passport tourist eligibility and actual issuance timing. The fallback eVisa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mofaex.gov.sy"]},
+    {"passportCode":"PT","destinationCode":"BF","reason":"Burkina Faso's official eVisa portal establishes a general electronic process but supplies no current Portuguese ordinary-passport eligibility schedule or exception crosswalk. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","visaburkina.bf"]},
+    {"passportCode":"PT","destinationCode":"LR","reason":"No current Portuguese MNE or Liberian authority source resolves whether an ordinary Portuguese tourist receives an electronic document, an arrival visa or advance issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"PT","destinationCode":"CI","reason":"Côte d'Ivoire's official material describes generic ordinary-passport online pre-enrolment followed by airport printing, but does not establish that a Portuguese ordinary passport is non-exempt. No complement is inferred from the absence of Portugal in exemption material.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"PT","destinationCode":"SS","reason":"South Sudan's official eVisa portal proves electronic issuance but its live eligibility prompt does not provide a current Portuguese ordinary-passport schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"PT","destinationCode":"IQ","reason":"No current Portuguese MNE or Iraqi authority material reviewed establishes Portuguese ordinary-passport eligibility and whether online filing produces an eVisa or precedes another issuance route. The fallback eVisa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","evisa.iq","moi.gov.iq"]},
+    {"passportCode":"PT","destinationCode":"KM","reason":"The current Comorian foreigner-entry law requires a visa subject to published conventions and special laws, but no competent current Portuguese ordinary-passport schedule establishes advance, electronic or arrival issuance. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","justice.gouv.km","egouv.km"]},
+    {"passportCode":"PT","destinationCode":"GW","reason":"No current Portuguese MNE or Guinea-Bissau authority source establishes whether an ordinary Portuguese tourist is issued a visa at a mission, electronically or at arrival. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mne.gw","gov.gw"]},
+    {"passportCode":"PT","destinationCode":"IR","reason":"The reviewed Portugal-Iran agreement is limited to diplomatic, special and service passports; no current Portuguese MNE or Iranian authority source establishes an ordinary Portuguese tourist arrival-visa route. No special-document regime is generalized.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mfa.gov.ir","evisa.mfa.ir","diariodarepublica.pt"]},
+    {"passportCode":"PT","destinationCode":"SL","reason":"Current Sierra Leone official material conflicts on issuance timing: the live eVisa terms describe emailed eVisas while its FAQ and tourist guidance describe airport issuance. It therefore does not establish one normalized ordinary Portuguese-passport route.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","slid.gov.sl","evisa.sl","ntb.gov.sl"]},
+    {"passportCode":"PT","destinationCode":"DJ","reason":"Djibouti's eVisa service establishes a general electronic process but does not publish a current Portuguese ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","evisa.gouv.dj","egouv.dj"]},
+    {"passportCode":"PT","destinationCode":"NU","reason":"Niue's current arrival form provides a visitor-permit request but does not establish whether it is a visa, the timing of issuance, or an ordinary Portuguese-passport visitor entitlement. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","gov.nu"]},
+    {"passportCode":"PT","destinationCode":"PS","reason":"No current Portuguese MNE or Palestinian authority source establishes an ETA for an ordinary Portuguese visitor to the Palestinian Territories. Israeli crossing, permit and operational-access controls are not normalized as a Palestinian ETA.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"PT","destinationCode":"TN","reason":"The current Portugal-Tunisia visa-suppression treaty is expressly limited to diplomatic and service passports. No current ordinary Portuguese-passport visitor waiver source was found, so no special-document waiver is generalized.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","diplomatie.gov.tn","econsulat.tn","diariodarepublica.pt"]},
+    {"passportCode":"PT","destinationCode":"UA","reason":"Ukraine MFA's accessible Portugal table is expressly dated 2023; no current Portuguese MNE or Ukrainian authority source reviewed establishes the 2026 ordinary Portuguese-passport route. The fallback visa-free label is not promoted.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","mfa.gov.ua","dmsu.gov.ua"]},
+    {"passportCode":"PT","destinationCode":"VG","reason":"The BVI Government publishes an advance-visa service and a conditional UK/US/Canada visa-exemption programme, but no current ordinary Portuguese-passport nationality schedule. Neither a portal nor a conditional third-country document route proves a visa-free baseline.","searchedOfficialDomains":["gov.pt","portaldascomunidades.mne.gov.pt","bvi.gov.vg","gov.vg"]}
+  ]
+}

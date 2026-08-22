@@ -1,0 +1,111 @@
+{
+  "batchId": "finland-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "bangladesh-special-branch-european-tourist-arrival-visa",
+      "title": "Bangladesh Special Branch: visa on arrival",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-info.html",
+      "publisher": "Special Branch, Bangladesh Police",
+      "jurisdiction": "Bangladesh",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live visa-on-arrival service is published from the Bangladesh Special Branch's official specialbranch.gov.bd domain and specifies its arrival-visa rules.",
+      "supportingExcerpt": "People from the following categories in European countries may obtain a Visa on Arrival ... Tourists."
+    },
+    {
+      "id": "jordan-tourism-board-finland-arrival-visa",
+      "title": "Jordan Tourism Board: visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live page identifies itself as the official Jordan Tourism Board website and publishes a named nationality-by-nationality arrival-visa table.",
+      "supportingExcerpt": "Finland | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    },
+    {
+      "id": "panama-embassy-current-finland-visa-free-list",
+      "title": "Embassy of Panama: visitor visa information",
+      "url": "https://www.embassyofpanama.org/visas",
+      "publisher": "Embassy of Panama",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "Spanish and English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Panama's official embassy consular page publishes its current visitor visa rules, including a named no-visa country schedule and the 2024 amendment to the separate third-country-document exemption.",
+      "supportingExcerpt": "Sin requisito de visa: No necesitará una visa si es de alguno de los siguientes países ... Finland."
+    }
+  ],
+  "policies": [
+    {
+      "id": "finnish-ordinary-passport-bangladesh-arrival-visitor-visa",
+      "title": "Finnish ordinary passports: Bangladesh arrival visitor visa",
+      "summary": "Bangladesh's Special Branch makes tourists from European countries eligible to obtain a visa on arrival at Dhaka; this includes Finnish ordinary-passport holders.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["FI"],
+      "conditions": [
+        "This is the named European-country tourist category for a single-entry arrival visa at Hazrat Shahjalal International Airport, for a maximum of 30 days.",
+        "Bangladesh says the immigration officer issues the visa after reviewing compliance; required travel documents, funds and final admission remain separate. Work, residence, special passports and third-country-document routes are excluded."
+      ],
+      "sourceIds": ["bangladesh-special-branch-european-tourist-arrival-visa"],
+      "confidence": "high"
+    },
+    {
+      "id": "finnish-ordinary-passport-jordan-arrival-visitor-visa",
+      "title": "Finnish ordinary passports: Jordan arrival visitor visa",
+      "summary": "Jordan's official Tourism Board lists Finland as eligible for a visa obtained on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["FI"],
+      "conditions": [
+        "The named Finland table entry says the visa is obtained on arrival and gives a 40 JOD fee; it is not reclassified as eVisa merely because Jordan also offers an electronic service.",
+        "Entry point, passport validity, onward travel, work, residence, special-passport, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["jordan-tourism-board-finland-arrival-visa"],
+      "confidence": "high"
+    },
+    {
+      "id": "finnish-ordinary-passport-panama-visa-free",
+      "title": "Finnish ordinary passports: Panama visa-free short visits",
+      "summary": "Panama's official consular schedule expressly lists Finland among nationalities that do not need a visa for a short visitor stay.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["FI"],
+      "conditions": [
+        "The official schedule gives a maximum stay of three months. It is a Finland-specific named waiver, not an inference from Panama's separate third-country visa or residence exemption.",
+        "Passport validity, funds, return travel, work, residence, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["panama-embassy-current-finland-visa-free-list"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"FI","destinationCode":"AF","reason":"No current Finnish MFA or Afghan authority source reviewed establishes a usable ordinary Finnish-passport tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["um.fi","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"FI","destinationCode":"CF","reason":"No current Finnish MFA or Central African authority source maps an ordinary Finnish passport to a visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["um.fi","diplomatie.gouv.cf","cemac.int"]},
+    {"passportCode":"FI","destinationCode":"TD","reason":"The live evisa.td service claims universal online processing, but no independently retrievable Chadian central-government page authenticates or links it. The recorded Chad residual audit therefore controls, and this pair remains unresolved.","searchedOfficialDomains":["um.fi","evisa.td","diplomatie.gouv.td","securite.gouv.td"]},
+    {"passportCode":"FI","destinationCode":"CG","reason":"No current Finnish MFA or Republic of the Congo authority source establishes ordinary Finnish-passport visitor treatment and actual issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["um.fi","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"FI","destinationCode":"ML","reason":"No current Finnish MFA or Malian authority source establishes ordinary Finnish-passport visitor treatment and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["um.fi","diplomatiemdc.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"FI","destinationCode":"NE","reason":"No current Finnish MFA or Nigerien authority source maps an ordinary Finnish passport to a tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["um.fi","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"FI","destinationCode":"KP","reason":"No current Finnish MFA or DPRK authority source establishes ordinary Finnish-passport tourist eligibility and issuance timing. Closure, permissions and operational cases are not normalized as a visitor route.","searchedOfficialDomains":["um.fi","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"FI","destinationCode":"SD","reason":"No current Finnish MFA or Sudanese authority source establishes ordinary Finnish-passport visitor eligibility and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["um.fi","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"FI","destinationCode":"TM","reason":"No current Finnish MFA or Turkmen authority source distinguishes a Finnish ordinary tourist's baseline issuance timing from invitation-dependent or special processing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["um.fi","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"FI","destinationCode":"SY","reason":"No current Finnish MFA or Syrian authority source establishes ordinary Finnish-passport visitor eligibility and actual issuance timing. The fallback eVisa label is not promoted.","searchedOfficialDomains":["um.fi","mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"FI","destinationCode":"BF","reason":"Burkina Faso's official electronic portal does not provide a current Finnish ordinary-passport eligibility schedule or exception crosswalk. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["um.fi","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"FI","destinationCode":"LR","reason":"No current Finnish MFA or Liberian authority source resolves whether an ordinary Finnish tourist receives electronic, arrival or advance issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["um.fi","visaonarrival.lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"FI","destinationCode":"SS","reason":"South Sudan's electronic service does not publish a current Finnish ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["um.fi","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"FI","destinationCode":"KM","reason":"The current Comorian foreigner-entry law requires a visa subject to conventions and special laws, but no current Finnish ordinary-passport schedule establishes advance, electronic or arrival issuance. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["um.fi","justice.gouv.km","egouv.km"]},
+    {"passportCode":"FI","destinationCode":"GW","reason":"No current Finnish MFA or Guinea-Bissau authority source establishes whether an ordinary Finnish tourist is issued a visa at a mission, electronically or at arrival. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["um.fi","mne.gw","gov.gw"]},
+    {"passportCode":"FI","destinationCode":"IR","reason":"Current Iranian MFA material does not map an ordinary Finnish passport to a nationality-specific tourist issuance point. The generic electronic application and airport information are not treated as proof of an arrival-visa baseline.","searchedOfficialDomains":["um.fi","mfa.gov.ir","evisa.mfa.ir"]},
+    {"passportCode":"FI","destinationCode":"SL","reason":"Current Sierra Leone official material conflicts on issuance timing: live eVisa terms describe emailed eVisas while its FAQ and tourism guidance describe airport issuance. It does not establish one normalized Finnish ordinary-passport route.","searchedOfficialDomains":["um.fi","slid.gov.sl","evisa.sl","ntb.gov.sl"]},
+    {"passportCode":"FI","destinationCode":"DJ","reason":"Djibouti's eVisa service establishes a general electronic process but does not publish a current Finnish ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["um.fi","evisa.gouv.dj","egouv.dj"]},
+    {"passportCode":"FI","destinationCode":"PS","reason":"No current Finnish MFA or Palestinian authority source establishes an ETA for an ordinary Finnish visitor to the Palestinian Territories. Israeli crossing, permit and operational-access controls are not normalized as a Palestinian ETA.","searchedOfficialDomains":["um.fi","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"FI","destinationCode":"TN","reason":"Finland's current Tunisia travel advice directs travellers to destination authorities for entry rules, but no current Tunisian authority source reviewed names the ordinary Finnish-passport short-visitor status. The fallback visa-free label is not promoted.","searchedOfficialDomains":["um.fi","diplomatie.gov.tn","econsulat.tn"]},
+    {"passportCode":"FI","destinationCode":"UA","reason":"Finland's current guidance records martial-law travel restrictions and changing border conditions. The direct Ukrainian nationality table reviewed is dated 2023, so it is not promoted as current Finnish visa-free evidence.","searchedOfficialDomains":["um.fi","mfa.gov.ua","dpsu.gov.ua"]},
+    {"passportCode":"FI","destinationCode":"VG","reason":"The BVI Government publishes an advance-visa service and a conditional UK, US or Canada visa-exemption programme, but no current ordinary Finnish-passport nationality schedule. Neither a portal nor a conditional third-country-document route proves a visa-free baseline.","searchedOfficialDomains":["um.fi","bvi.gov.vg","gov.vg"]}
+  ]
+}

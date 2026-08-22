@@ -1,0 +1,91 @@
+{
+  "batchId": "malta-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "panama-embassy-malta-visa-free-list-2026",
+      "title": "Embassy of Panama: immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Panamanian Government embassy immigration page publishes a named no-visa visitor-country list and includes Malta, separately from conditional third-country visa or residence routes.",
+      "supportingExcerpt": "No Visa RequireD: IF you are from any of the following countries ... Malta"
+    },
+    {
+      "id": "iraq-mfa-eu-arrival-visa-2026",
+      "title": "Iraq Ministry of Foreign Affairs: obtaining an entry visa upon arrival",
+      "url": "https://mofa.gov.iq/losangeles/en/obtaining-a-visa-on-arrival/",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Iraq",
+      "jurisdiction": "Republic of Iraq",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Iraq's Foreign Ministry consular guidance expressly includes European Union passports in its arrival-visa cohort, describes border issuance and separately advises pre-travel eVisa use from 1 March 2025.",
+      "supportingExcerpt": "European Union countries ... are granted a visa to Iraq upon arrival through the border crossings."
+    }
+  ],
+  "policies": [
+    {
+      "id": "malta-ordinary-passport-panama-visa-free-2026",
+      "title": "Maltese ordinary passports: Panama short-visit visa exemption",
+      "summary": "Panama's current embassy immigration guidance names Malta in its no-visa visitor-country list for stays of up to three months.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["MT"],
+      "conditions": ["Ordinary Maltese passport holder, visitor stay of up to three months; carry the stated passport validity, return/onward travel and funds where requested.", "Employment, residence, transit, conditional third-country visa or residence routes, special passports and final admission remain separate."],
+      "sourceIds": ["panama-embassy-malta-visa-free-list-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "malta-ordinary-passport-iraq-arrival-visa-2026",
+      "title": "Maltese ordinary passports: Iraq visitor visa issued at arrival",
+      "summary": "Iraq's current Foreign Ministry guidance includes European Union passports in its visitor visa-on-arrival cohort, which includes ordinary Maltese passports.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["IQ"],
+      "passportCodes": ["MT"],
+      "conditions": ["Ordinary Maltese passport holder; the visa is issued at Iraqi land, air or sea border crossings and is stated as valid for 60 days.", "Iraq separately advises, but does not require in place of this route, pre-travel eVisa use. Work, residence, special passports, Iraqi-origin treatment and final admission remain separate."],
+      "sourceIds": ["iraq-mfa-eu-arrival-visa-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MT",
+      "destinationCode": "IQ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The fallback labels Iraq eVisa, but Iraq's current Foreign Ministry explicitly grants the named European Union passport cohort a visa at arrival; its separate eVisa advice does not eliminate border issuance.",
+      "sourceIds": ["iraq-mfa-eu-arrival-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"MT","destinationCode":"AF","reason":"No retrievable current Maltese or Afghan government source reviewed positively establishes the ordinary Maltese visitor route and issuance timing.","searchedOfficialDomains":["foreign.gov.mt","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"MT","destinationCode":"BD","reason":"No retrievable current Maltese or Bangladeshi government source reviewed positively establishes ordinary Maltese-passport eligibility and actual visitor-visa issuance timing.","searchedOfficialDomains":["foreign.gov.mt","mofa.gov.bd","immi.gov.bd"]},
+    {"passportCode":"MT","destinationCode":"VG","reason":"The BVI Government's positive visa-required nationality schedule does not expressly define the status of omitted nationalities; no complement is inferred.","searchedOfficialDomains":["foreign.gov.mt","bvi.gov.vg","laws.gov.vg"]},
+    {"passportCode":"MT","destinationCode":"BF","reason":"No retrievable current Maltese or Burkina Faso authority source positively establishes ordinary Maltese-passport eVisa eligibility and issuance; a portal alone is insufficient.","searchedOfficialDomains":["foreign.gov.mt","visaburkina.bf","securite.gov.bf"]},
+    {"passportCode":"MT","destinationCode":"CF","reason":"No retrievable current Maltese or Central African government source reviewed establishes ordinary Maltese-passport visitor visa issuance timing.","searchedOfficialDomains":["foreign.gov.mt","diplomatie.gouv.cf"]},
+    {"passportCode":"MT","destinationCode":"TD","reason":"The recorded Chad hold remains: portal material alone is not authenticated independent government evidence of an ordinary Maltese visitor route.","searchedOfficialDomains":["foreign.gov.mt","evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"MT","destinationCode":"KM","reason":"No retrievable current Maltese or Comorian government source positively establishes an ordinary Maltese visitor arrival, electronic or advance visa route.","searchedOfficialDomains":["foreign.gov.mt","gouvernement.km","interieur.gouv.km"]},
+    {"passportCode":"MT","destinationCode":"CG","reason":"No retrievable current Maltese or Congolese government source reviewed establishes the ordinary Maltese visitor's visa issuance timing.","searchedOfficialDomains":["foreign.gov.mt","diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"MT","destinationCode":"CI","reason":"Côte d'Ivoire's official pre-enrolment material does not positively establish ordinary Maltese-passport eligibility and actual issuance timing; it is not inferred as eVisa.","searchedOfficialDomains":["foreign.gov.mt","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"MT","destinationCode":"DJ","reason":"Current electronic-visa material reviewed does not establish the exact ordinary Maltese-passport eligibility and issuance result; an online application alone is insufficient.","searchedOfficialDomains":["foreign.gov.mt","evisa.gouv.dj","gouv.dj"]},
+    {"passportCode":"MT","destinationCode":"GW","reason":"No retrievable current Maltese or Guinea-Bissau government source reviewed establishes ordinary Maltese-passport visitor issuance timing.","searchedOfficialDomains":["foreign.gov.mt","mne.gw","gov.gw"]},
+    {"passportCode":"MT","destinationCode":"IR","reason":"Current material reviewed does not positively establish the ordinary Maltese passport's available Iranian visitor issuance timing amid current operational restrictions.","searchedOfficialDomains":["foreign.gov.mt","evisa.mfa.ir","mfa.gov.ir"]},
+    {"passportCode":"MT","destinationCode":"JO","reason":"Jordan's current Interior Ministry material distinguishes restricted nationalities and electronic services but does not expressly define the ordinary Maltese-passport border-issuance baseline; no complement is inferred.","searchedOfficialDomains":["foreign.gov.mt","moi.gov.jo"]},
+    {"passportCode":"MT","destinationCode":"LR","reason":"No retrievable current Maltese or Liberian government source reviewed establishes ordinary Maltese-passport electronic eligibility and issuance timing.","searchedOfficialDomains":["foreign.gov.mt","immigration.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"MT","destinationCode":"ML","reason":"No retrievable current Maltese or Malian government source reviewed establishes ordinary Maltese-passport visitor visa issuance timing.","searchedOfficialDomains":["foreign.gov.mt","diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"MT","destinationCode":"NE","reason":"No retrievable current Maltese or Nigerien government source reviewed establishes ordinary Maltese-passport visitor visa issuance timing.","searchedOfficialDomains":["foreign.gov.mt","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"MT","destinationCode":"KP","reason":"No retrievable current official source reviewed establishes an available ordinary Maltese-passport short-visitor route and issuance timing; closure and permission restrictions cannot be normalized to a normal visa baseline.","searchedOfficialDomains":["foreign.gov.mt","mfa.gov.kp"]},
+    {"passportCode":"MT","destinationCode":"PS","reason":"No current official source reviewed maps a travel authorisation or other ordinary Maltese-passport entry status directly to the Palestinian Territory baseline; territory controls are not flattened into ETA.","searchedOfficialDomains":["foreign.gov.mt","gov.il","moi.pna.ps"]},
+    {"passportCode":"MT","destinationCode":"SL","reason":"The recorded Sierra Leone hold remains: internally conflicting portal material does not independently establish the ordinary Maltese-passport eligibility and issuance route.","searchedOfficialDomains":["foreign.gov.mt","slid.gov.sl","evisa.sl"]},
+    {"passportCode":"MT","destinationCode":"SS","reason":"Current material reviewed does not establish ordinary Maltese-passport electronic eligibility and issuance timing; online application availability alone is not eVisa evidence.","searchedOfficialDomains":["foreign.gov.mt","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"MT","destinationCode":"SD","reason":"No retrievable current Maltese or Sudanese government source reviewed establishes ordinary Maltese-passport visitor eligibility and actual visa issuance timing.","searchedOfficialDomains":["foreign.gov.mt","mofa.gov.sd","interior.gov.sd"]},
+    {"passportCode":"MT","destinationCode":"SY","reason":"No retrievable current Maltese or Syrian government source reviewed establishes ordinary Maltese-passport visitor visa issuance timing.","searchedOfficialDomains":["foreign.gov.mt","mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"MT","destinationCode":"TN","reason":"Malta's treaty register exposes both a 2002 visa-abolition instrument and a same-date denunciation record without a current operative ordinary-passport rule; no current exemption is inferred.","searchedOfficialDomains":["foreign.gov.mt","diplomatie.gov.tn","interieur.gov.tn"]},
+    {"passportCode":"MT","destinationCode":"TM","reason":"No retrievable current Maltese or Turkmen government source reviewed establishes whether the ordinary Maltese visitor visa is advance-issued, electronically issued or issued at the border.","searchedOfficialDomains":["foreign.gov.mt","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"MT","destinationCode":"UA","reason":"The retrievable Ukraine Foreign Ministry nationality table expressly covers Malta but identifies itself as current only to 8 June 2023; no retrievable current 2026 Maltese or Ukrainian source was found to establish the present ordinary-passport baseline.","searchedOfficialDomains":["foreign.gov.mt","mfa.gov.ua","dmsu.gov.ua"]}
+  ]
+}

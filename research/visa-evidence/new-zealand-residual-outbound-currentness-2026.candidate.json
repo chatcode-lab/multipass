@@ -1,0 +1,129 @@
+{
+  "batchId": "new-zealand-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "jordan-tourism-board-new-zealand-arrival-visa",
+      "title": "Jordan Tourism Board: visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Visit Jordan is the official Jordan Tourism Board service and its live nationality table states the New Zealand arrival-visa rule.",
+      "supportingExcerpt": "New Zealand | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    },
+    {
+      "id": "panama-embassy-new-zealand-visa-waiver-list",
+      "title": "Embassy of Panama: immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current official Embassy of Panama consular page publishes Panama's tourist visa rules and its nationality waiver list.",
+      "supportingExcerpt": "No Visa Required ... New Zealand ... The maximum amount of time that you can stay in Panama is three (3) months."
+    },
+    {
+      "id": "paraguay-foreign-ministry-new-zealand-tourism-waiver",
+      "title": "Paraguay Foreign Ministry: visas",
+      "url": "https://www2.mre.gov.py/ny/index.php/e/procedures-and-services/visas",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Paraguay",
+      "jurisdiction": "Paraguay",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live official Paraguay Foreign Ministry consular page identifies the enacted Law 7314/2024 and expressly states the New Zealand tourist-waiver scope and expiry.",
+      "supportingExcerpt": "elimina la exigencia de visas para ciudadanos de ... Nueva Zelanda ... hasta el 13 de agosto de 2027"
+    }
+  ],
+  "policies": [
+    {
+      "id": "new-zealand-ordinary-passport-jordan-arrival-visitor-visa",
+      "title": "New Zealand ordinary passports: Jordan arrival visitor visa",
+      "summary": "Jordan Tourism Board's live nationality table says a New Zealand passport holder can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["NZ"],
+      "conditions": [
+        "The table identifies New Zealand as applicable and states that the visa is obtained upon arrival for 40 JOD.",
+        "Entry point, passport validity, work, residence, special documents, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["jordan-tourism-board-new-zealand-arrival-visa"],
+      "confidence": "high"
+    },
+    {
+      "id": "new-zealand-ordinary-passport-panama-visa-free",
+      "title": "New Zealand ordinary passports: Panama visa-free visits",
+      "summary": "Panama's official Embassy lists New Zealand among nationalities requiring no tourist visa.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["NZ"],
+      "conditions": [
+        "The published ordinary nationality waiver permits a tourist stay of up to three months.",
+        "Work, residence, special documents, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["panama-embassy-new-zealand-visa-waiver-list"],
+      "confidence": "high"
+    },
+    {
+      "id": "new-zealand-ordinary-passport-paraguay-temporary-tourism-waiver",
+      "title": "New Zealand ordinary passports: Paraguay temporary visa-free tourism",
+      "summary": "Paraguay Foreign Ministry says Law 7314/2024 eliminates the tourist-visa requirement for New Zealand citizens for stays up to 90 days through 13 August 2027.",
+      "status": "visa_free",
+      "destinationCodes": ["PY"],
+      "passportCodes": ["NZ"],
+      "effectiveTo": "2027-08-13",
+      "conditions": [
+        "This statutory temporary waiver is limited to tourism stays of no more than 90 days and expires on 13 August 2027.",
+        "The same consular page retains an older arrival-visa notice, but the later enacted Law 7314/2024 expressly removes the tourist-visa requirement for the stated period. Work, residence, special documents, carrier and final admission remain separate."
+      ],
+      "sourceIds": ["paraguay-foreign-ministry-new-zealand-tourism-waiver"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "NZ",
+      "destinationCode": "PY",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_free",
+      "explanation": "Paraguay Foreign Ministry says enacted Law 7314/2024 eliminates the tourist-visa requirement for New Zealand citizens for stays up to 90 days through 13 August 2027; the older arrival-visa notice does not override the later waiver.",
+      "sourceIds": ["paraguay-foreign-ministry-new-zealand-tourism-waiver"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"NZ","destinationCode":"AF","reason":"SafeTravel defers visa requirements to destination authorities, and no retrievable current Afghan authority source establishes a usable ordinary New Zealand-passport tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"NZ","destinationCode":"VG","reason":"The BVI Government publishes an advance-visa service and a conditional UK, US or Canada visa-exemption programme, but no current ordinary New Zealand-passport nationality schedule. Neither a portal nor a conditional third-country-document route proves a visa-free baseline.","searchedOfficialDomains":["safetravel.govt.nz","bvi.gov.vg","gov.vg"]},
+    {"passportCode":"NZ","destinationCode":"BF","reason":"Burkina Faso's official electronic portal does not provide a current New Zealand ordinary-passport eligibility schedule or exception crosswalk. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["safetravel.govt.nz","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"NZ","destinationCode":"CV","reason":"Cabo Verde's current government visa-free and visa-required country lists both omit New Zealand and direct a traveller who cannot find a country to contact a consular post. No complement is inferred from either omission; EASE registration is not an ETA or visa issuance finding.","searchedOfficialDomains":["safetravel.govt.nz","gov.cv","ease.gov.cv","mnec.gov.cv"]},
+    {"passportCode":"NZ","destinationCode":"CF","reason":"No retrievable current New Zealand or Central African authority source maps an ordinary New Zealand passport to a visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","diplomatie.gouv.cf","cemac.int"]},
+    {"passportCode":"NZ","destinationCode":"TD","reason":"The live evisa.td service claims universal online processing, but no independently retrievable Chadian central-government page authenticates or links it. The recorded Chad residual audit therefore controls, and this pair remains unresolved.","searchedOfficialDomains":["safetravel.govt.nz","evisa.td","diplomatie.gouv.td","securite.gouv.td"]},
+    {"passportCode":"NZ","destinationCode":"KM","reason":"The current Comorian foreigner-entry law requires a visa subject to conventions and special laws, but no current New Zealand ordinary-passport schedule establishes advance, electronic or arrival issuance. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","justice.gouv.km","egouv.km"]},
+    {"passportCode":"NZ","destinationCode":"CG","reason":"No retrievable current New Zealand or Republic of the Congo authority source establishes ordinary New Zealand-passport visitor treatment and actual issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"NZ","destinationCode":"CI","reason":"Côte d'Ivoire's official material describes online pre-enrolment followed by airport printing, but no current ordinary New Zealand-passport source establishes whether the passport is subject to that process. No complement is inferred from an exemption omission.","searchedOfficialDomains":["safetravel.govt.nz","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"NZ","destinationCode":"DJ","reason":"Djibouti's eVisa service establishes a general electronic process but does not publish a current New Zealand ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["safetravel.govt.nz","evisa.gouv.dj","egouv.dj"]},
+    {"passportCode":"NZ","destinationCode":"GD","reason":"Grenada's retrievable named New Zealand waiver PDF is explicitly updated only in February 2021. No later current government source confirms the ordinary New Zealand-passport visitor rule, so it is not promoted as 2026 evidence.","searchedOfficialDomains":["safetravel.govt.nz","mofa.gov.gd","gov.gd"]},
+    {"passportCode":"NZ","destinationCode":"GW","reason":"No retrievable current New Zealand or Guinea-Bissau authority source establishes whether an ordinary New Zealand tourist is issued a visa at a mission, electronically or at arrival. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","mne.gw","gov.gw"]},
+    {"passportCode":"NZ","destinationCode":"IR","reason":"No retrievable current New Zealand or Iranian authority source establishes a New Zealand ordinary-passport visitor visa at arrival. A general online application or portal is not enough to prove this pair's issuance timing.","searchedOfficialDomains":["safetravel.govt.nz","evisa.mfa.ir","mfa.gov.ir"]},
+    {"passportCode":"NZ","destinationCode":"IQ","reason":"No retrievable current New Zealand or Iraqi authority source establishes whether an ordinary New Zealand tourist receives electronic, arrival or advance issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","evisa.iq","mofa.gov.iq","moi.gov.iq"]},
+    {"passportCode":"NZ","destinationCode":"LR","reason":"No retrievable current New Zealand or Liberian authority source resolves whether an ordinary New Zealand tourist receives electronic, arrival or advance issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","visaonarrival.lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"NZ","destinationCode":"ML","reason":"No retrievable current New Zealand or Malian authority source establishes ordinary New Zealand-passport visitor treatment and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","diplomatiemdc.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"NZ","destinationCode":"NE","reason":"No retrievable current New Zealand or Nigerien authority source maps an ordinary New Zealand passport to a tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"NZ","destinationCode":"NU","reason":"Niue's live arrival form asks visitors to apply for a visitor permit but does not establish an ordinary New Zealand-passport visitor permit's issuance point, eligibility or timing. A form is not normalized as arrival-visa issuance.","searchedOfficialDomains":["safetravel.govt.nz","gov.nu"]},
+    {"passportCode":"NZ","destinationCode":"KP","reason":"SafeTravel says independent tourism is not allowed. Current DPRK official material does not establish a New Zealand ordinary-passport visitor route, and practical border closure or restrictions are not represented by the taxonomy.","searchedOfficialDomains":["safetravel.govt.nz","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"NZ","destinationCode":"MK","reason":"North Macedonia's current MFA entry page directly supports only EU and Schengen nationals and conditional third-country-document routes. No operative nationality regulation or reproducible selected-country result establishes ordinary New Zealand-passport visitor treatment.","searchedOfficialDomains":["safetravel.govt.nz","mfa.gov.mk","mvr.gov.mk","slvesnik.com.mk"]},
+    {"passportCode":"NZ","destinationCode":"PS","reason":"No retrievable current New Zealand or Palestinian authority source establishes an ETA for an ordinary New Zealand visitor to the Palestinian Territories. Israeli crossing, permit and operational-access controls are not normalized as a Palestinian ETA.","searchedOfficialDomains":["safetravel.govt.nz","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"NZ","destinationCode":"ST","reason":"São Tomé and Príncipe's current official tourism guidance makes its under-15-day waiver for other countries conditional on a Schengen or United States visa and separately describes online and airport processes without a New Zealand nationality schedule. Conditional third-country-document and portal routes are excluded.","searchedOfficialDomains":["safetravel.govt.nz","turismo.gov.st","smf.gov.st","mne.gov.st"]},
+    {"passportCode":"NZ","destinationCode":"SL","reason":"Current Sierra Leone official material conflicts on issuance timing: live eVisa terms describe emailed eVisas while its FAQ and tourism guidance describe airport issuance. The recorded timing audit therefore still controls and this pair remains unresolved.","searchedOfficialDomains":["safetravel.govt.nz","slid.gov.sl","evisa.sl","ntb.gov.sl"]},
+    {"passportCode":"NZ","destinationCode":"SS","reason":"South Sudan's electronic service does not publish a current New Zealand ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["safetravel.govt.nz","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"NZ","destinationCode":"SD","reason":"No retrievable current New Zealand or Sudanese authority source establishes ordinary New Zealand-passport visitor eligibility and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"NZ","destinationCode":"SY","reason":"No retrievable current New Zealand or Syrian authority source establishes ordinary New Zealand-passport visitor eligibility and actual issuance timing. The fallback eVisa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"NZ","destinationCode":"TT","reason":"No current direct Trinidad and Tobago source establishes an arrival-issued visa for an ordinary New Zealand passport. The named 2024 waiver PDF does not include it, and the electronic service applies only after visa-required nationality eligibility is established.","searchedOfficialDomains":["safetravel.govt.nz","nationalsecurity.gov.tt","homelandsecurity.gov.tt","foreign.gov.tt","ttconnect.gov.tt","evisa.ttservices.online"]},
+    {"passportCode":"NZ","destinationCode":"TN","reason":"No retrievable current New Zealand or Tunisian authority source establishes an ordinary New Zealand-passport short-visitor waiver or issuance route. The fallback visa-free label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","diplomatie.gov.tn","interieur.gov.tn"]},
+    {"passportCode":"NZ","destinationCode":"TM","reason":"No retrievable current New Zealand or Turkmen authority source distinguishes an ordinary New Zealand tourist's baseline issuance timing from invitation-dependent or special processing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["safetravel.govt.nz","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"NZ","destinationCode":"UA","reason":"Ukraine MFA's live entry-regime page labels its country table as of 8 June 2023. It supplies no current-force indicator or later official instrument for New Zealand, so the static table is not promoted as 2026 evidence.","searchedOfficialDomains":["safetravel.govt.nz","mfa.gov.ua","dpsu.gov.ua"]}
+  ]
+}

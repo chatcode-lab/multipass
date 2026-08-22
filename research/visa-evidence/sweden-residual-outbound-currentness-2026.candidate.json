@@ -1,0 +1,119 @@
+{
+  "batchId": "sweden-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "sweden-abroad-kazakhstan-entry-2026",
+      "title": "Sweden Abroad: Embassy travel information for Kazakhstan",
+      "url": "https://www.swedenabroad.se/sv/om-utlandet-f%C3%B6r-svenska-medborgare/kazakstan/reseinformation/ambassadens-reseinformation/",
+      "publisher": "Ministry for Foreign Affairs, Sweden",
+      "jurisdiction": "Sweden / Kazakhstan",
+      "kind": "government-guidance",
+      "language": "Swedish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Sweden Abroad publishes current country-specific information for Swedish travellers; this Kazakhstan entry page was updated in August 2026.",
+      "supportingExcerpt": "Det råder viseringsfrihet för svenska medborgare som reser till Kazakstan för vistelse om högst 30 dagar."
+    },
+    {
+      "id": "sweden-abroad-nicaragua-entry-2026",
+      "title": "Sweden Abroad: Embassy travel information for Nicaragua",
+      "url": "https://www.swedenabroad.se/sv/om-utlandet-f%C3%B6r-svenska-medborgare/nicaragua/reseinformation/ambassadens-reseinformation/",
+      "publisher": "Ministry for Foreign Affairs, Sweden",
+      "jurisdiction": "Sweden / Nicaragua",
+      "kind": "government-guidance",
+      "language": "Swedish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Sweden Abroad identifies this as the Embassy's country travel information for Swedish travellers and records a May 2026 update.",
+      "supportingExcerpt": "Svenska medborgare behöver inte visum för vistelse kortare än 90 dagar."
+    },
+    {
+      "id": "sweden-abroad-ukraine-entry-2026",
+      "title": "Sweden Abroad: Embassy travel information for Ukraine",
+      "url": "https://www.swedenabroad.se/sv/om-utlandet-f%C3%B6r-svenska-medborgare/ukraina/reseinformation/ambassadens-reseinformation/",
+      "publisher": "Ministry for Foreign Affairs, Sweden",
+      "jurisdiction": "Sweden / Ukraine",
+      "kind": "government-guidance",
+      "language": "Swedish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Sweden Abroad's current Embassy travel guidance expressly addresses Swedish citizens' entry conditions and was reviewed in July 2026.",
+      "supportingExcerpt": "Svenska medborgare behöver för närvarande inget visum till Ukraina för vistelse upp till 90 dagar inom en 180-dagarsperiod."
+    },
+    {
+      "id": "sweden-abroad-jordan-arrival-visa-2026",
+      "title": "Sweden Abroad: Embassy travel information for Jordan",
+      "url": "https://www.swedenabroad.se/sv/om-utlandet-f%C3%B6r-svenska-medborgare/jordanien/reseinformation/ambassadens-reseinformation/",
+      "publisher": "Ministry for Foreign Affairs, Sweden",
+      "jurisdiction": "Sweden / Jordan",
+      "kind": "government-guidance",
+      "language": "Swedish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Sweden Abroad's current Jordan travel guidance is addressed to Swedish travellers, was updated in August 2026, and identifies the eligible arrival application points.",
+      "supportingExcerpt": "Svenska medborgare kan ansöka om visum på samtliga flygplatser samt vid följande gränsövergångar."
+    },
+    {
+      "id": "bangladesh-special-branch-european-arrival-visa",
+      "title": "Bangladesh Special Branch: visa on arrival instructions",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-instructions.html",
+      "publisher": "Bangladesh Police Special Branch",
+      "jurisdiction": "Bangladesh",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Bangladesh Police Special Branch visa-on-arrival service defines the ordinary visitor facility and expressly includes European-country citizens among eligible tourism travellers.",
+      "supportingExcerpt": "European countries to Bangladesh for tourism, trade, investment, or a government job may get a visa on arrival."
+    }
+  ],
+  "policies": [
+    {
+      "id": "swedish-ordinary-passport-visa-free-short-visits",
+      "title": "Swedish ordinary passports: named visa-free short visits",
+      "summary": "Current Sweden Abroad guidance establishes visa-free short visitor stays for Swedish citizens in Kazakhstan, Nicaragua and Ukraine.",
+      "status": "visa_free",
+      "destinationCodes": ["KZ", "NI", "UA"],
+      "passportCodes": ["SE"],
+      "conditions": [
+        "KZ: up to 30 days. NI: shorter than 90 days. UA: up to 90 days in a 180-day period.",
+        "NI's electronic entry form is an entry form, not an ETA or visa. KZ border-zone permits, Ukraine's security situation, and all work, residence, special-passport, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["sweden-abroad-kazakhstan-entry-2026", "sweden-abroad-nicaragua-entry-2026", "sweden-abroad-ukraine-entry-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "swedish-ordinary-passport-arrival-visitor-visas",
+      "title": "Swedish ordinary passports: named arrival visitor visas",
+      "summary": "Current official Swedish and Bangladesh guidance establishes arrival-issued visitor visa routes for Jordan and Bangladesh.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO", "BD"],
+      "passportCodes": ["SE"],
+      "conditions": [
+        "JO: apply at airports or the specified Jordan-Israel land crossings. BD: European-country citizens may receive a maximum 30-day tourism visa at the port of entry, subject to the immigration officer's discretion.",
+        "The Bangladesh route follows the explicitly named European-country eligibility class that includes Sweden, not a conclusion from an online form. Entry point, passport validity, fees, supporting documents, work, residence, special passports and final admission remain separate."
+      ],
+      "sourceIds": ["sweden-abroad-jordan-arrival-visa-2026", "bangladesh-special-branch-european-arrival-visa"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"SE","destinationCode":"TD","reason":"The live evisa.td service claims universal online processing, but no independently retrievable central-government page authenticates or links the service. The existing Chad residual audit therefore still controls, and this pair remains unresolved.","searchedOfficialDomains":["evisa.td","securite.gouv.td","diplomatie.gouv.td","swedenabroad.se"]},
+    {"passportCode":"SE","destinationCode":"AF","reason":"No current Sweden Abroad or Afghanistan authority material reviewed establishes a Swedish ordinary-passport tourist issuance point or reliably available route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","mfa.gov.af"]},
+    {"passportCode":"SE","destinationCode":"CF","reason":"No current Sweden Abroad or Central African authority schedule maps an ordinary Swedish passport to a visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","diplomatie.gouv.cf"]},
+    {"passportCode":"SE","destinationCode":"CG","reason":"No current Sweden Abroad or Republic of the Congo authority source establishes the ordinary Swedish-passport visitor issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","diplomatie.gouv.cg"]},
+    {"passportCode":"SE","destinationCode":"ML","reason":"No current Sweden Abroad or Malian authority source maps an ordinary Swedish passport to an advance, electronic or arrival visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","diplomatie.gouv.ml"]},
+    {"passportCode":"SE","destinationCode":"NE","reason":"No current Sweden Abroad or Nigerien authority source maps an ordinary Swedish passport to a tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","diplomatie.gouv.ne"]},
+    {"passportCode":"SE","destinationCode":"KP","reason":"No current Sweden Abroad or DPRK authority source establishes ordinary Swedish-passport tourist eligibility and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","mfa.gov.kp"]},
+    {"passportCode":"SE","destinationCode":"SD","reason":"No current Sweden Abroad or Sudanese authority source establishes the ordinary Swedish-passport tourist issuance point. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","mofa.gov.sd"]},
+    {"passportCode":"SE","destinationCode":"TM","reason":"No current Sweden Abroad or Turkmen authority source distinguishes an ordinary Swedish tourist's unconditional advance visa from invitation-dependent border processing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"SE","destinationCode":"SY","reason":"No current Sweden Abroad or Syrian authority source establishes ordinary Swedish-passport tourist eligibility and actual issuance timing. The fallback eVisa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","mofaex.gov.sy"]},
+    {"passportCode":"SE","destinationCode":"BF","reason":"Burkina Faso's official eVisa portal establishes a general electronic process but supplies no current Swedish ordinary-passport eligibility schedule or exception crosswalk. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["swedenabroad.se","visaburkina.bf"]},
+    {"passportCode":"SE","destinationCode":"LR","reason":"No current Sweden Abroad or Liberian authority source resolves whether an ordinary Swedish tourist receives an electronic document, an arrival visa or advance issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"SE","destinationCode":"SS","reason":"South Sudan's official eVisa portal proves electronic issuance but its live eligibility prompt does not provide a current Swedish ordinary-passport schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["swedenabroad.se","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"SE","destinationCode":"GW","reason":"No current Sweden Abroad or Guinea-Bissau authority source establishes whether an ordinary Swedish tourist is issued a visa at a mission, electronically or at arrival. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","mne.gw","gov.gw"]},
+    {"passportCode":"SE","destinationCode":"IR","reason":"Sweden Abroad's current Iran guidance records a travel advisory but no ordinary Swedish-passport tourist issuance route. No current Iranian authority source reviewed maps this nationality to an issuance point.","searchedOfficialDomains":["swedenabroad.se","mfa.gov.ir","evisa.mfa.ir"]},
+    {"passportCode":"SE","destinationCode":"SL","reason":"Current Sierra Leone official material conflicts on issuance timing: the live eVisa terms describe emailed eVisas while its FAQ and tourist guidance describe airport issuance. It therefore does not establish one normalized ordinary Swedish-passport route.","searchedOfficialDomains":["swedenabroad.se","slid.gov.sl","evisa.sl","ntb.gov.sl"]},
+    {"passportCode":"SE","destinationCode":"DJ","reason":"Djibouti's eVisa service establishes a general electronic process but does not publish a current Swedish ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["swedenabroad.se","evisa.gouv.dj","egouv.dj"]},
+    {"passportCode":"SE","destinationCode":"IQ","reason":"No current Sweden Abroad or Iraqi authority material reviewed establishes Swedish ordinary-passport eligibility and whether online filing produces an eVisa or precedes another issuance route. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["swedenabroad.se","evisa.iq","moi.gov.iq"]},
+    {"passportCode":"SE","destinationCode":"PS","reason":"No current Sweden Abroad or Palestinian authority source establishes an ETA for an ordinary Swedish visitor to the Palestinian Territories. Israeli crossing, permit and operational-access controls are not normalized as a Palestinian ETA.","searchedOfficialDomains":["swedenabroad.se","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"SE","destinationCode":"VG","reason":"The BVI Government publishes an advance-visa service and a conditional UK/US/Canada visa-exemption programme, but no current ordinary Swedish-passport nationality schedule. Neither a portal nor a conditional third-country document route proves a visa-free baseline.","searchedOfficialDomains":["swedenabroad.se","bvi.gov.vg","gov.vg"]}
+  ]
+}

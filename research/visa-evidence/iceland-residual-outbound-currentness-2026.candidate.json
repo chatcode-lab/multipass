@@ -1,0 +1,114 @@
+{
+  "batchId": "iceland-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "bangladesh-special-branch-european-tourist-arrival-visa",
+      "title": "Bangladesh Special Branch: visa on arrival",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-info.html",
+      "publisher": "Special Branch, Bangladesh Police",
+      "jurisdiction": "Bangladesh",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live arrival-visa service is published on the Bangladesh Police Special Branch's specialbranch.gov.bd domain and specifies eligibility, location and duration.",
+      "supportingExcerpt": "People from the following categories in European countries may obtain a Visa on Arrival (VOA) at Hazrat Shahjalal International Airport in Dhaka: ... Tourists."
+    },
+    {
+      "id": "jordan-tourism-board-iceland-arrival-visa",
+      "title": "Jordan Tourism Board: visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Visit Jordan is the official Jordan Tourism Board service and its live nationality table states the Icelandic arrival-visa rule.",
+      "supportingExcerpt": "Iceland | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    },
+    {
+      "id": "panama-embassy-iceland-visa-waiver-list",
+      "title": "Embassy of Panama: immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current official Embassy of Panama consular page publishes Panama's tourist visa rules and its nationality waiver list.",
+      "supportingExcerpt": "No Visa Required ... Iceland ... The maximum amount of time that you can stay in Panama is three (3) months."
+    }
+  ],
+  "policies": [
+    {
+      "id": "iceland-ordinary-passport-bangladesh-arrival-visitor-visa",
+      "title": "Iceland ordinary passports: Bangladesh arrival visitor visa",
+      "summary": "Bangladesh Special Branch states that European tourists may obtain a visa on arrival at Dhaka; Iceland is within that expressly geographic class.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["IS"],
+      "conditions": [
+        "The named European-tourist route is issued at Hazrat Shahjalal International Airport in Dhaka and is a maximum 30-day, single-entry visa.",
+        "The officer grants the visa after reviewing supporting documents; fee, funds, return-ticket, passport-validity, work, residence, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["bangladesh-special-branch-european-tourist-arrival-visa"],
+      "confidence": "medium"
+    },
+    {
+      "id": "iceland-ordinary-passport-jordan-arrival-visitor-visa",
+      "title": "Iceland ordinary passports: Jordan arrival visitor visa",
+      "summary": "Jordan Tourism Board's live nationality table says an Iceland passport holder can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["IS"],
+      "conditions": [
+        "The table identifies Iceland as applicable and states that the visa is obtained upon arrival for 40 JOD.",
+        "Entry point, passport validity, work, residence, special documents, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["jordan-tourism-board-iceland-arrival-visa"],
+      "confidence": "high"
+    },
+    {
+      "id": "iceland-ordinary-passport-panama-visa-free",
+      "title": "Iceland ordinary passports: Panama visa-free visits",
+      "summary": "Panama's official Embassy lists Iceland among nationalities requiring no tourist visa.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["IS"],
+      "conditions": [
+        "The published ordinary nationality waiver permits a tourist stay of up to three months.",
+        "Work, residence, special documents, carrier and final-admission conditions remain separate."
+      ],
+      "sourceIds": ["panama-embassy-iceland-visa-waiver-list"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"IS","destinationCode":"AF","reason":"No retrievable current Iceland MFA or Afghan authority source establishes a usable ordinary Icelandic-passport tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"IS","destinationCode":"VG","reason":"The BVI Government publishes an advance-visa service and a conditional UK, US or Canada visa-exemption programme, but no current ordinary Icelandic-passport nationality schedule. Neither a portal nor a conditional third-country-document route proves a visa-free baseline.","searchedOfficialDomains":["government.is","mfa.is","bvi.gov.vg","gov.vg"]},
+    {"passportCode":"IS","destinationCode":"BF","reason":"Burkina Faso's official electronic portal does not provide a current Icelandic ordinary-passport eligibility schedule or exception crosswalk. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["government.is","mfa.is","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"IS","destinationCode":"CF","reason":"No retrievable current Iceland MFA or Central African authority source maps an ordinary Icelandic passport to a visitor issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","diplomatie.gouv.cf","cemac.int"]},
+    {"passportCode":"IS","destinationCode":"TD","reason":"The live evisa.td service claims universal online processing, but no independently retrievable Chadian central-government page authenticates or links it. The recorded Chad residual audit therefore controls, and this pair remains unresolved.","searchedOfficialDomains":["government.is","mfa.is","evisa.td","diplomatie.gouv.td","securite.gouv.td"]},
+    {"passportCode":"IS","destinationCode":"KM","reason":"The current Comorian foreigner-entry law requires a visa subject to conventions and special laws, but no current Icelandic ordinary-passport schedule establishes advance, electronic or arrival issuance. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","justice.gouv.km","egouv.km"]},
+    {"passportCode":"IS","destinationCode":"CG","reason":"No retrievable current Iceland MFA or Republic of the Congo authority source establishes ordinary Icelandic-passport visitor treatment and actual issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"IS","destinationCode":"CI","reason":"Côte d'Ivoire's official material describes online pre-enrolment followed by airport printing, but no current ordinary Icelandic-passport source establishes whether the passport is subject to that process. No complement is inferred from an exemption omission.","searchedOfficialDomains":["government.is","mfa.is","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"IS","destinationCode":"DJ","reason":"Djibouti's eVisa service establishes a general electronic process but does not publish a current Icelandic ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["government.is","mfa.is","evisa.gouv.dj","egouv.dj"]},
+    {"passportCode":"IS","destinationCode":"GW","reason":"No retrievable current Iceland MFA or Guinea-Bissau authority source establishes whether an ordinary Icelandic tourist is issued a visa at a mission, electronically or at arrival. The fallback arrival-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","mne.gw","gov.gw"]},
+    {"passportCode":"IS","destinationCode":"IR","reason":"No retrievable current Iceland MFA or Iranian authority source establishes an Icelandic ordinary-passport visitor visa at arrival. A general online application or portal is not enough to prove this pair's issuance timing.","searchedOfficialDomains":["government.is","mfa.is","evisa.mfa.ir","mfa.gov.ir"]},
+    {"passportCode":"IS","destinationCode":"IQ","reason":"No retrievable current Iceland MFA or Iraqi authority source establishes whether an ordinary Icelandic tourist receives electronic, arrival or advance issuance. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","evisa.iq","mofa.gov.iq","moi.gov.iq"]},
+    {"passportCode":"IS","destinationCode":"LR","reason":"No retrievable current Iceland MFA or Liberian authority source resolves whether an ordinary Icelandic tourist receives electronic, arrival or advance issuance. The fallback eVisa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","visaonarrival.lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"IS","destinationCode":"ML","reason":"No retrievable current Iceland MFA or Malian authority source establishes ordinary Icelandic-passport visitor treatment and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","diplomatiemdc.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"IS","destinationCode":"NE","reason":"No retrievable current Iceland MFA or Nigerien authority source maps an ordinary Icelandic passport to a tourist issuance route. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"IS","destinationCode":"KP","reason":"No retrievable current Iceland MFA or DPRK authority source establishes ordinary Icelandic-passport tourist eligibility and issuance timing. Closure, permissions and operational cases are not normalized as a visitor route.","searchedOfficialDomains":["government.is","mfa.is","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"IS","destinationCode":"PS","reason":"No retrievable current Iceland MFA or Palestinian authority source establishes an ETA for an ordinary Icelandic visitor to the Palestinian Territories. Israeli crossing, permit and operational-access controls are not normalized as a Palestinian ETA.","searchedOfficialDomains":["government.is","mfa.is","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"IS","destinationCode":"SL","reason":"Current Sierra Leone official material conflicts on issuance timing: live eVisa terms describe emailed eVisas while its FAQ and tourism guidance describe airport issuance. The recorded timing audit therefore still controls and this pair remains unresolved.","searchedOfficialDomains":["government.is","mfa.is","slid.gov.sl","evisa.sl","ntb.gov.sl"]},
+    {"passportCode":"IS","destinationCode":"SS","reason":"South Sudan's electronic service does not publish a current Icelandic ordinary-passport eligibility schedule. Portal availability is not treated as proof for this pair.","searchedOfficialDomains":["government.is","mfa.is","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"IS","destinationCode":"SD","reason":"No retrievable current Iceland MFA or Sudanese authority source establishes ordinary Icelandic-passport visitor eligibility and issuance timing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"IS","destinationCode":"SY","reason":"No retrievable current Iceland MFA or Syrian authority source establishes ordinary Icelandic-passport visitor eligibility and actual issuance timing. The fallback eVisa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"IS","destinationCode":"TT","reason":"The retrievable Trinidad and Tobago government nationality schedule is historical and does not itself establish a current ordinary Icelandic-passport waiver. No complement is inferred from that schedule or from portal availability.","searchedOfficialDomains":["government.is","mfa.is","foreign.gov.tt","homelandsecurity.gov.tt","ttconnect.gov.tt"]},
+    {"passportCode":"IS","destinationCode":"TN","reason":"No retrievable current Iceland MFA or Tunisian authority source establishes an ordinary Icelandic-passport short-visitor waiver or issuance route. The fallback visa-free label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","diplomatie.gov.tn","interieur.gov.tn"]},
+    {"passportCode":"IS","destinationCode":"TM","reason":"No retrievable current Iceland MFA or Turkmen authority source distinguishes an ordinary Icelandic tourist's baseline issuance timing from invitation-dependent or special processing. The fallback advance-visa label is not promoted.","searchedOfficialDomains":["government.is","mfa.is","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"IS","destinationCode":"UA","reason":"Ukraine MFA's live entry-regime page labels its country table as of 8 June 2023. It identifies an Icelandic travel-passport waiver but supplies no current-force indicator or later official instrument, so that static table is not promoted as 2026 evidence.","searchedOfficialDomains":["government.is","mfa.is","mfa.gov.ua","dpsu.gov.ua"]}
+  ]
+}
