@@ -1,6 +1,6 @@
 {
   "batchId": "afghanistan-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-21",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "afghanistan-moi-current-visa-form-service",
@@ -49,15 +49,62 @@
       "reviewedAt": "2026-08-21",
       "officialityEvidence": "The live MFA consular page states a no-visa route for foreign nationals of Afghan origin but makes it conditional on Afghan birthplace or specified Afghan identity documents, rather than a passport-nationality schedule.",
       "supportingExcerpt": "Foreign nationals of Afghan origin traveling to Afghanistan with a foreign passport can enter the country without a visa."
+    },
+    {
+      "id": "turkiye-mfa-current-afghanistan-visitor-visa-notice",
+      "title": "Notice to Turkish citizens travelling to Afghanistan",
+      "url": "https://www.mfa.gov.tr/afganistan-seyahat-edecek-turk-vatandaslarinin-dikkatine.tr.mfa?v=1.0.26",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live mfa.gov.tr page is a current Republic of Türkiye Foreign Ministry notice addressed to Turkish citizens and directs them to Afghanistan’s Ankara Embassy or Istanbul Consulate for the appropriate visa.",
+      "supportingExcerpt": "Türk citizens travelling to Afghanistan must obtain an appropriate visa from Afghanistan’s Ankara Embassy or Istanbul Consulate."
+    },
+    {
+      "id": "afghanistan-ankara-mission-current-visa-service-timing",
+      "title": "Visa — Embassy of Afghanistan in Ankara",
+      "url": "https://afghanembassy.org/visa/",
+      "publisher": "Embassy of Afghanistan in Ankara",
+      "jurisdiction": "Afghanistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Ankara mission page identifies itself as the Embassy of Afghanistan, has a 2025 site copyright, and is the named visa-issuing mission in Türkiye MFA’s live Afghanistan notice.",
+      "supportingExcerpt": "Normal processing: 5 business days; express processing: 1 day."
     }
   ],
-  "policies": [],
+  "policies": [
+    {
+      "id": "afghanistan-turkish-ordinary-passport-advance-visitor-visa",
+      "title": "Turkish ordinary passports: Afghanistan advance visitor visa",
+      "summary": "Türkiye’s Foreign Ministry currently directs Turkish citizens travelling to Afghanistan to obtain the purpose-appropriate visa, including tourist visas, from Afghanistan’s Ankara Embassy or Istanbul Consulate before travel.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "AF"
+      ],
+      "passportCodes": [
+        "TR"
+      ],
+      "conditions": [
+        "This is a nationality-specific Turkish-citizen short-visitor rule: obtain the appropriate visa, including a tourist visa, from Afghanistan’s Embassy in Ankara or Consulate General in Istanbul before travel.",
+        "The current Ankara mission page lists normal processing as five business days and express processing as one day. This timing is service-specific and not a guarantee of issuance.",
+        "This does not establish visa-free, eVisa, visa-on-arrival, diplomatic/service-passport, Afghan-origin, residence, third-country-document, work, transit, or final-admission treatment."
+      ],
+      "sourceIds": [
+        "turkiye-mfa-current-afghanistan-visitor-visa-notice",
+        "afghanistan-ankara-mission-current-visa-service-timing"
+      ],
+      "confidence": "medium"
+    }
+  ],
   "conflicts": [],
   "unresolved": [
     {
       "passportCode": "SG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -69,7 +116,7 @@
     {
       "passportCode": "JP",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -81,7 +128,7 @@
     {
       "passportCode": "KR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -93,7 +140,7 @@
     {
       "passportCode": "FI",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -105,7 +152,7 @@
     {
       "passportCode": "DE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -117,7 +164,7 @@
     {
       "passportCode": "IT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -129,7 +176,7 @@
     {
       "passportCode": "LU",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -141,7 +188,7 @@
     {
       "passportCode": "ES",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -153,7 +200,7 @@
     {
       "passportCode": "SE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -165,7 +212,7 @@
     {
       "passportCode": "CH",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -177,7 +224,7 @@
     {
       "passportCode": "BE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -189,7 +236,7 @@
     {
       "passportCode": "DK",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -201,7 +248,7 @@
     {
       "passportCode": "FR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -213,7 +260,7 @@
     {
       "passportCode": "IE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -225,7 +272,7 @@
     {
       "passportCode": "NL",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -237,7 +284,7 @@
     {
       "passportCode": "NO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -249,7 +296,7 @@
     {
       "passportCode": "AE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -261,7 +308,7 @@
     {
       "passportCode": "AT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -273,7 +320,7 @@
     {
       "passportCode": "MT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -285,7 +332,7 @@
     {
       "passportCode": "PT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -297,7 +344,7 @@
     {
       "passportCode": "GR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -309,7 +356,7 @@
     {
       "passportCode": "GB",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -321,7 +368,7 @@
     {
       "passportCode": "HU",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -333,7 +380,7 @@
     {
       "passportCode": "MY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -345,7 +392,7 @@
     {
       "passportCode": "NZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -357,7 +404,7 @@
     {
       "passportCode": "PL",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -369,7 +416,7 @@
     {
       "passportCode": "AU",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -381,7 +428,7 @@
     {
       "passportCode": "CA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -393,7 +440,7 @@
     {
       "passportCode": "CZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -405,7 +452,7 @@
     {
       "passportCode": "LV",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -417,7 +464,7 @@
     {
       "passportCode": "SK",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -429,7 +476,7 @@
     {
       "passportCode": "SI",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -441,7 +488,7 @@
     {
       "passportCode": "EE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -453,7 +500,7 @@
     {
       "passportCode": "LT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -465,7 +512,7 @@
     {
       "passportCode": "LI",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -477,7 +524,7 @@
     {
       "passportCode": "US",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -489,7 +536,7 @@
     {
       "passportCode": "HR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -501,7 +548,7 @@
     {
       "passportCode": "IS",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -513,7 +560,7 @@
     {
       "passportCode": "MC",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -525,7 +572,7 @@
     {
       "passportCode": "BG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -537,7 +584,7 @@
     {
       "passportCode": "RO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -549,7 +596,7 @@
     {
       "passportCode": "CY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -561,7 +608,7 @@
     {
       "passportCode": "CL",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -573,7 +620,7 @@
     {
       "passportCode": "HK",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -585,7 +632,7 @@
     {
       "passportCode": "AD",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -597,7 +644,7 @@
     {
       "passportCode": "AR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -609,7 +656,7 @@
     {
       "passportCode": "BR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -621,7 +668,7 @@
     {
       "passportCode": "SM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -633,7 +680,7 @@
     {
       "passportCode": "BN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -645,7 +692,7 @@
     {
       "passportCode": "IL",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -657,7 +704,7 @@
     {
       "passportCode": "BB",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -669,7 +716,7 @@
     {
       "passportCode": "KN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -681,7 +728,7 @@
     {
       "passportCode": "BS",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -693,7 +740,7 @@
     {
       "passportCode": "SC",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -705,7 +752,7 @@
     {
       "passportCode": "VC",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -717,7 +764,7 @@
     {
       "passportCode": "UY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -729,7 +776,7 @@
     {
       "passportCode": "MX",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -741,7 +788,7 @@
     {
       "passportCode": "AG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -753,7 +800,7 @@
     {
       "passportCode": "VA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -765,7 +812,7 @@
     {
       "passportCode": "MU",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -777,7 +824,7 @@
     {
       "passportCode": "CR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -789,7 +836,7 @@
     {
       "passportCode": "GD",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -801,7 +848,7 @@
     {
       "passportCode": "PY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -813,7 +860,7 @@
     {
       "passportCode": "PA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -825,7 +872,7 @@
     {
       "passportCode": "TT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -837,7 +884,7 @@
     {
       "passportCode": "LC",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -849,7 +896,7 @@
     {
       "passportCode": "MO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -861,7 +908,7 @@
     {
       "passportCode": "UA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -873,7 +920,7 @@
     {
       "passportCode": "DM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -885,7 +932,7 @@
     {
       "passportCode": "PE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -897,7 +944,7 @@
     {
       "passportCode": "TW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -909,7 +956,7 @@
     {
       "passportCode": "RS",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -921,7 +968,7 @@
     {
       "passportCode": "SB",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -933,7 +980,7 @@
     {
       "passportCode": "GT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -945,7 +992,7 @@
     {
       "passportCode": "SV",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -957,7 +1004,7 @@
     {
       "passportCode": "CO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -969,7 +1016,7 @@
     {
       "passportCode": "WS",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -981,7 +1028,7 @@
     {
       "passportCode": "TO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -993,7 +1040,7 @@
     {
       "passportCode": "HN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1005,7 +1052,7 @@
     {
       "passportCode": "MH",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1017,7 +1064,7 @@
     {
       "passportCode": "ME",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1029,7 +1076,7 @@
     {
       "passportCode": "NI",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1041,7 +1088,7 @@
     {
       "passportCode": "MK",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1053,7 +1100,7 @@
     {
       "passportCode": "TV",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1065,7 +1112,7 @@
     {
       "passportCode": "AL",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1077,7 +1124,7 @@
     {
       "passportCode": "BA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1089,7 +1136,7 @@
     {
       "passportCode": "GE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1101,7 +1148,7 @@
     {
       "passportCode": "KI",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1113,7 +1160,7 @@
     {
       "passportCode": "FM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1125,7 +1172,7 @@
     {
       "passportCode": "PW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1137,7 +1184,7 @@
     {
       "passportCode": "MD",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1149,7 +1196,7 @@
     {
       "passportCode": "RU",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1161,7 +1208,7 @@
     {
       "passportCode": "VE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1173,19 +1220,7 @@
     {
       "passportCode": "QA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
-      "searchedOfficialDomains": [
-        "moi.gov.af",
-        "mfa.gov.af",
-        "econsulate.mfa.gov.af",
-        "moj.gov.af",
-        "laws.moj.gov.af"
-      ]
-    },
-    {
-      "passportCode": "TR",
-      "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1197,7 +1232,7 @@
     {
       "passportCode": "ZA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1209,7 +1244,7 @@
     {
       "passportCode": "BZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1221,7 +1256,7 @@
     {
       "passportCode": "KW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1233,7 +1268,7 @@
     {
       "passportCode": "TL",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1245,7 +1280,7 @@
     {
       "passportCode": "EC",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1257,7 +1292,7 @@
     {
       "passportCode": "MV",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1269,7 +1304,7 @@
     {
       "passportCode": "SA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1281,7 +1316,7 @@
     {
       "passportCode": "BH",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1293,7 +1328,7 @@
     {
       "passportCode": "FJ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1305,7 +1340,7 @@
     {
       "passportCode": "GY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1317,7 +1352,7 @@
     {
       "passportCode": "VU",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1329,7 +1364,7 @@
     {
       "passportCode": "NR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1341,7 +1376,7 @@
     {
       "passportCode": "JM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1353,7 +1388,7 @@
     {
       "passportCode": "XK",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1365,7 +1400,7 @@
     {
       "passportCode": "OM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1377,7 +1412,7 @@
     {
       "passportCode": "BW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1389,7 +1424,7 @@
     {
       "passportCode": "CN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1401,7 +1436,7 @@
     {
       "passportCode": "PG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1413,7 +1448,7 @@
     {
       "passportCode": "TH",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1425,7 +1460,7 @@
     {
       "passportCode": "BO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1437,7 +1472,7 @@
     {
       "passportCode": "BY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1449,7 +1484,7 @@
     {
       "passportCode": "SR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1461,7 +1496,7 @@
     {
       "passportCode": "KZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1473,7 +1508,7 @@
     {
       "passportCode": "LS",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1485,7 +1520,7 @@
     {
       "passportCode": "NA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1497,7 +1532,7 @@
     {
       "passportCode": "SZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1509,7 +1544,7 @@
     {
       "passportCode": "ID",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1521,7 +1556,7 @@
     {
       "passportCode": "DO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1533,7 +1568,7 @@
     {
       "passportCode": "KE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1545,7 +1580,7 @@
     {
       "passportCode": "MW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1557,7 +1592,7 @@
     {
       "passportCode": "MA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1569,7 +1604,7 @@
     {
       "passportCode": "RW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1581,7 +1616,7 @@
     {
       "passportCode": "TZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1593,7 +1628,7 @@
     {
       "passportCode": "AZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1605,7 +1640,7 @@
     {
       "passportCode": "GH",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1617,7 +1652,7 @@
     {
       "passportCode": "GM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1629,7 +1664,7 @@
     {
       "passportCode": "PH",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1641,7 +1676,7 @@
     {
       "passportCode": "TN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1653,7 +1688,7 @@
     {
       "passportCode": "UG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1665,7 +1700,7 @@
     {
       "passportCode": "ZM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1677,7 +1712,7 @@
     {
       "passportCode": "AM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1689,7 +1724,7 @@
     {
       "passportCode": "CV",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1701,7 +1736,7 @@
     {
       "passportCode": "BJ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1713,7 +1748,7 @@
     {
       "passportCode": "MN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1725,7 +1760,7 @@
     {
       "passportCode": "SL",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1737,7 +1772,7 @@
     {
       "passportCode": "ZW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1749,7 +1784,7 @@
     {
       "passportCode": "MZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1761,7 +1796,7 @@
     {
       "passportCode": "ST",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1773,7 +1808,7 @@
     {
       "passportCode": "KG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1785,7 +1820,7 @@
     {
       "passportCode": "CI",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1797,7 +1832,7 @@
     {
       "passportCode": "SN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1809,7 +1844,7 @@
     {
       "passportCode": "UZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1821,7 +1856,7 @@
     {
       "passportCode": "BF",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1833,7 +1868,7 @@
     {
       "passportCode": "TG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1845,7 +1880,7 @@
     {
       "passportCode": "CU",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1857,7 +1892,7 @@
     {
       "passportCode": "GA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1869,7 +1904,7 @@
     {
       "passportCode": "MG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1881,7 +1916,7 @@
     {
       "passportCode": "DZ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1893,7 +1928,7 @@
     {
       "passportCode": "IN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1905,7 +1940,7 @@
     {
       "passportCode": "MR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1917,7 +1952,7 @@
     {
       "passportCode": "NE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1929,7 +1964,7 @@
     {
       "passportCode": "GQ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1941,7 +1976,7 @@
     {
       "passportCode": "GN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1953,7 +1988,7 @@
     {
       "passportCode": "TJ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1965,7 +2000,7 @@
     {
       "passportCode": "ML",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1977,7 +2012,7 @@
     {
       "passportCode": "KM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -1989,7 +2024,7 @@
     {
       "passportCode": "GW",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2001,7 +2036,7 @@
     {
       "passportCode": "AO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2013,7 +2048,7 @@
     {
       "passportCode": "TD",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2025,7 +2060,7 @@
     {
       "passportCode": "LR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2037,7 +2072,7 @@
     {
       "passportCode": "BI",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2049,7 +2084,7 @@
     {
       "passportCode": "CM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2061,7 +2096,7 @@
     {
       "passportCode": "CG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2073,7 +2108,7 @@
     {
       "passportCode": "EG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2085,7 +2120,7 @@
     {
       "passportCode": "VN",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2097,7 +2132,7 @@
     {
       "passportCode": "KH",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2109,7 +2144,7 @@
     {
       "passportCode": "CF",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2121,7 +2156,7 @@
     {
       "passportCode": "JO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2133,7 +2168,7 @@
     {
       "passportCode": "BT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2145,7 +2180,7 @@
     {
       "passportCode": "HT",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2157,7 +2192,7 @@
     {
       "passportCode": "NG",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2169,7 +2204,7 @@
     {
       "passportCode": "CD",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2181,7 +2216,7 @@
     {
       "passportCode": "DJ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2193,7 +2228,7 @@
     {
       "passportCode": "LA",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2205,7 +2240,7 @@
     {
       "passportCode": "TM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2217,7 +2252,7 @@
     {
       "passportCode": "MM",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2229,7 +2264,7 @@
     {
       "passportCode": "ET",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2241,7 +2276,7 @@
     {
       "passportCode": "LB",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2253,7 +2288,7 @@
     {
       "passportCode": "SD",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2265,7 +2300,7 @@
     {
       "passportCode": "SS",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2277,7 +2312,7 @@
     {
       "passportCode": "LY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2289,7 +2324,7 @@
     {
       "passportCode": "LK",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2301,7 +2336,7 @@
     {
       "passportCode": "IR",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2313,7 +2348,7 @@
     {
       "passportCode": "ER",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2325,7 +2360,7 @@
     {
       "passportCode": "PS",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2337,7 +2372,7 @@
     {
       "passportCode": "BD",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2349,7 +2384,7 @@
     {
       "passportCode": "KP",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2361,7 +2396,7 @@
     {
       "passportCode": "NP",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2373,7 +2408,7 @@
     {
       "passportCode": "SO",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2385,7 +2420,7 @@
     {
       "passportCode": "PK",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2397,7 +2432,7 @@
     {
       "passportCode": "YE",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2409,7 +2444,7 @@
     {
       "passportCode": "IQ",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2421,7 +2456,7 @@
     {
       "passportCode": "SY",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",
@@ -2433,7 +2468,7 @@
     {
       "passportCode": "AF",
       "destinationCode": "AF",
-      "reason": "The live MFA provides generic tourist, visitor and conditional arrival-visa categories, but none publishes a nationality schedule, exemption list or exhaustive ordinary-passport default. The live Ministry of Interior page merely links to a visa form. No current competent authority directly establishes a nationality-specific ordinary-passport visitor or citizenship classification.",
+      "reason": "Current official and mission sources provide generic or conditional tourist, visitor and arrival-visa pathways, but no nationality schedule, exemption list or exhaustive ordinary-passport default. The Ministry of Interior page merely links to a visa form. No current competent authority directly establishes this nationality-specific ordinary-passport visitor or citizenship classification.",
       "searchedOfficialDomains": [
         "moi.gov.af",
         "mfa.gov.af",

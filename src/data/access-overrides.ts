@@ -39,7 +39,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-22",
     effectiveFrom: "2025-05-26",
   })),
-  ...(["BD", "CG", "GW", "ML", "NE"] as const).map((destinationCode) => ({
+  ...(["BD", "GW", "ML", "NE"] as const).map((destinationCode) => ({
     passportCode: "RW" as const,
     destinationCode,
     status: "visa_free" as const,
@@ -47,6 +47,15 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.migration.gov.rw/1-1/sops-1",
     reviewedAt: "2026-08-22",
   })),
+  {
+    passportCode: "RW",
+    destinationCode: "CG",
+    status: "visa_on_arrival",
+    reason: "The Republic of the Congo's ratified bilateral agreement expressly gives Rwandan ordinary-passport holders a free visa issued at entry for a stay of up to 90 days.",
+    sourceUrl: "https://www.sgg.cg/JO/2023/congo-jo-2023-39.pdf",
+    reviewedAt: "2026-08-22",
+    effectiveFrom: "2021-11-24",
+  },
   {
     passportCode: "RW",
     destinationCode: "NG",
@@ -2700,4 +2709,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://gid.gov.gm/visa/",
     reviewedAt: "2026-08-22",
   },
+  ...(["BE", "CA", "DE", "FR", "US"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "LY" as const,
+    status: "evisa" as const,
+    reason: "E-VISA LIBYA's current national-platform configuration positively marks this ordinary-passport country active, non-exempt, available online and delivered by email before travel.",
+    sourceUrl: "https://back.evisa.gov.ly/api/v1/countries",
+    reviewedAt: "2026-08-22",
+  })),
 ] as const;

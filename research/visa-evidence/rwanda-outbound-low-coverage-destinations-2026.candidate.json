@@ -121,18 +121,41 @@
       "reviewedAt": "2026-08-22",
       "officialityEvidence": "The portal's authenticity is anchored by the live Government announcement linking to this exact service. Its current process requires the travel passport to match the application and excludes non-regular travel documents.",
       "supportingExcerpt": "The only travel document that can be used ... is your regular passport."
+    },
+    {
+      "id": "congo-sgg-rwanda-ordinary-passport-free-arrival-visa-agreement",
+      "title": "Republic of the Congo Official Journal: Rwanda ordinary-passport free visa at entry agreement",
+      "url": "https://www.sgg.cg/JO/2023/congo-jo-2023-39.pdf",
+      "publisher": "Official Journal / Secretariat-General of the Government, Republic of the Congo",
+      "jurisdiction": "Republic of the Congo",
+      "kind": "law",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Republic of the Congo's Secretariat-General publishes the Official Journal containing the ratified bilateral agreement and its operative ordinary-passport entry text.",
+      "supportingExcerpt": "Les citoyens d’une Partie détenteurs d’un passeport ordinaire bénéficient de la gratuite du visa à l’entrée du territoire des deux Parties."
+    },
+    {
+      "id": "congo-sgg-current-rwanda-visa-agreement-register",
+      "title": "Republic of the Congo Secretariat-General: current Rwanda visa-agreement register",
+      "url": "https://www.sgg.cg/fr/conventions-internationales.html",
+      "publisher": "Secretariat-General of the Government, Republic of the Congo",
+      "jurisdiction": "Republic of the Congo",
+      "kind": "official-dataset",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Secretariat-General's live international-agreement register lists ratified agreements whose ratification decrees were published in the Official Journal.",
+      "supportingExcerpt": "obtention de visa sans frais à l’arrivée pour les détenteurs de passeport ordinaire, signé le 24 novembre 2021"
     }
   ],
   "policies": [
     {
       "id": "rwandan-ordinary-passport-named-visa-free-visits",
       "title": "Rwandan ordinary passports: named visa-free short visits",
-      "summary": "Rwanda DGIE's current ordinary-passport schedule expressly records visa-free access for Bangladesh, Central African Republic, Republic of the Congo, Côte d'Ivoire, Guinea-Bissau, Liberia, Mali and Niger.",
+      "summary": "Rwanda DGIE's current ordinary-passport schedule expressly records visa-free access for Bangladesh, Central African Republic, Côte d'Ivoire, Guinea-Bissau, Liberia, Mali and Niger. The Republic of the Congo row is classified separately from the controlling bilateral agreement.",
       "status": "visa_free",
       "destinationCodes": [
         "BD",
         "CF",
-        "CG",
         "CI",
         "GW",
         "LR",
@@ -151,6 +174,29 @@
         "rwanda-dgie-current-ordinary-passport-visa-free-list",
         "cote-divoire-snedai-arrival-visa",
         "cote-divoire-mfa-current-visitor-visa-guidance"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rwandan-ordinary-passport-congo-free-visa-on-arrival",
+      "title": "Rwandan ordinary passports: Republic of the Congo free visa on arrival",
+      "summary": "The Republic of the Congo’s ratified Rwanda agreement gives holders of an ordinary passport issued by either Party a free visa at entry to the other Party, valid for no more than 90 days.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CG"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "effectiveFrom": "2021-11-24",
+      "conditions": [
+        "Applies only to a Rwandan citizen holding an ordinary passport when entering the Republic of the Congo. The agreement expressly distinguishes ordinary passports from the diplomatic and service-passport exemption.",
+        "The visa is issued free at entry and is valid for a stay not exceeding 90 days. The agreement entered provisionally into force on signature on 24 November 2021, is for an indefinite period, and is currently listed in the Republic of the Congo's ratified-agreement register.",
+        "The agreement requires use of border crossings for international traffic and preserves each Party's power to refuse entry or shorten a stay for an undesirable person. Work, residence, transit, diplomatic, service, special-document, carrier and final-admission rules remain separate."
+      ],
+      "sourceIds": [
+        "congo-sgg-rwanda-ordinary-passport-free-arrival-visa-agreement",
+        "congo-sgg-current-rwanda-visa-agreement-register"
       ],
       "confidence": "high"
     },
@@ -325,11 +371,12 @@
     {
       "passportCode": "RW",
       "destinationCode": "CG",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "visa_free",
-      "explanation": "Rwanda DGIE's current country table expressly marks the Republic of Congo Visa not required for ordinary Rwandan passports.",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current Republic of the Congo Official Journal directly states that ordinary-passport holders receive a free visa at entry, rather than a visa exemption; this destination-side ratified agreement controls over Rwanda DGIE's conflicting outbound table.",
       "sourceIds": [
-        "rwanda-dgie-current-ordinary-passport-visa-free-list"
+        "congo-sgg-rwanda-ordinary-passport-free-arrival-visa-agreement",
+        "congo-sgg-current-rwanda-visa-agreement-register"
       ]
     },
     {

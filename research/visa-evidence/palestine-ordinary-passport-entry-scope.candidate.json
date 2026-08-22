@@ -1,6 +1,6 @@
 {
   "batchId": "palestine-ordinary-passport-entry-scope",
-  "researchedAt": "2026-08-20",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "israel-airports-authority-allenby-current-notices",
@@ -49,6 +49,30 @@
       "reviewedAt": "2026-08-21",
       "officialityEvidence": "COGAT's current government unit page assigns handling of Palestinian Authority requests for foreign visitors' permits to the Israeli-side population registry, subject to COGAT approval.",
       "supportingExcerpt": "Palestinian Authority requests for visitors' permits for foreigners."
+    },
+    {
+      "id": "turkiye-mfa-palestine-current-entry",
+      "title": "Visa practices applicable to Turkish citizens",
+      "url": "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Ministry of Foreign Affairs publishes its current passport-type travel and visa table on mfa.gov.tr.",
+      "supportingExcerpt": "For Palestine, Turkish citizens have no Palestinian visa, but need an Israeli visa, except those entering Gaza via Egypt."
+    },
+    {
+      "id": "israel-piba-entry-country-dataset",
+      "title": "Israel entry: current country and passport data",
+      "url": "https://israel-entry.piba.gov.il/api/getalldata",
+      "publisher": "Population and Immigration Authority",
+      "jurisdiction": "Israel",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live israel-entry.piba.gov.il API is operated by Israel's Population and Immigration Authority.",
+      "supportingExcerpt": "The live Turkey row marks NEED_PERMIT 1 for national and biometric national passports."
     }
   ],
   "policies": [],
@@ -2181,13 +2205,15 @@
     {
       "passportCode": "TR",
       "destinationCode": "PS",
-      "reason": "No current official ordinary-passport nationality matrix establishes a visa, eVisa, ETA, arrival-visa, or visa-free status for a foreign visitor to PS. West Bank access is route- and coordination-dependent; Gaza entry is permit/exception-specific. Nationality alone is insufficient.",
+      "reason": "Türkiye's current guidance says Palestine itself imposes no visa, while an Israeli visa is required only for the Israel-controlled route and Egypt-to-Gaza is separately excepted. That route condition does not establish a destination-wide ordinary Turkish-passport visitor status for PS.",
       "searchedOfficialDomains": [
         "moi.pna.ps",
         "gov.il",
         "cogat.mod.gov.il",
         "iaa.gov.il",
-        "mfae.gov.ps"
+        "mfae.gov.ps",
+        "mfa.gov.tr",
+        "israel-entry.piba.gov.il"
       ]
     },
     {
