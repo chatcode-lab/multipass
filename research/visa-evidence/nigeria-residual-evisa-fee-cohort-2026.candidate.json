@@ -1,0 +1,65 @@
+{
+  "batchId": "nigeria-residual-evisa-fee-cohort-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "nigeria-immigration-2026-f5a-and-appendix-i-fees",
+      "title": "Nigeria Immigration Service: 2026 service-level agreement, F5A and Appendix I visa-fee table",
+      "url": "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Federal Republic of Nigeria",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Nigeria Immigration Service's April 2026 service-level agreement defines F5A tourism eligibility, online application and emailed certificate issuance. Appendix I provides named country single-entry fee rows used to resolve the F5A waiver exception only for the listed paid, unambiguous cohort.",
+      "supportingExcerpt": "F5A TOURISM VISA ... Citizens of all countries ... Apply online ... Receive Visa certificate via email."
+    },
+    {
+      "id": "nigeria-nis-current-f5a-tourism-page",
+      "title": "Nigeria Immigration Service: Tourism Visa F5A",
+      "url": "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Federal Republic of Nigeria",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Nigeria Immigration Service F5A page classifies Tourism Visa F5A under Short Visit Visa (e-Visa), states the waiver exclusions, requirements and online application route.",
+      "supportingExcerpt": "Short Visit Visa (e-Visa) ... Eligibility: Citizens of all countries except ECOWAS member States."
+    }
+  ],
+  "policies": [
+    {
+      "id": "nigeria-f5a-paid-appendix-i-unambiguous-ordinary-passport-cohort",
+      "title": "Nigeria F5A: paid Appendix I ordinary-passport eVisa cohort",
+      "summary": "For these named ordinary-passport catalog codes, Nigeria Immigration Service's current F5A tourism eVisa workflow and a paid, unambiguous Appendix I single-entry fee row establish eligibility and electronic issuance before travel.",
+      "status": "evisa",
+      "destinationCodes": ["NG"],
+      "passportCodes": ["DZ","AO","AU","AT","BS","BH","BD","BE","BO","BW","BN","BG","BI","KH","CA","CF","CL","CN","CO","KM","CR","HR","CU","CY","CZ","DK","DJ","DO","EC","EG","SV","EE","ET","FJ","FI","GA","GR","GD","GT","GY","HN","HU","IS","IN","ID","IE","IT","JM","JP","JO","KZ","KI","XK","KW","KG","LV","LS","LY","LT","LU","MO","MG","MY","MV","MT","MH","MR","MU","MX","FM","MN","ME","MA","NA","NP","NZ","NI","KP","NO","OM","PK","PW","PA","PG","PY","PE","PH","PL","PT","QA","RO","RU","WS","ST","SA","SG","SK","SI","SB","SO","KR","SS","ES","LC","VC","SD","SR","SE","CH","SY","TJ","TH","TT","TN","TR","TM","TV","UG","UA","AE","GB","US","UY","UZ","VU","VN","YE","LI","MC","SM","VA","PS"],
+      "conditions": [
+        "Each listed code was reconciled to an Appendix I country row carrying a nonzero single-entry fee. The unambiguous catalog/table label crosswalks are BS/The Bahamas to Bahamas, CZ/Czechia to Czech Republic, KM/Comoro Islands to Comoros, MO/Macao (SAR China) to Macau S.A.R., PS/Palestinian Territory to Palestine, RU/Russian Federation to Russia, ST/São Tomé and Príncipe to Sao Tome and Principe, TR/Türkiye to Turkey, US/United States to United States of America, and VA/Vatican City to Vatican City (Holy See); the other listed code names match directly. No unlisted or zero/Gratis row is inferred.",
+        "F5A is a tourism-only, single-entry route. Apply online with the ordinary passport, required documents and fee before travel; the current SLA says the visa certificate is sent by email, which is electronic issuance rather than arrival issuance. It is valid for 90 days from issuance and permits up to 30 days' stay.",
+        "F5A excludes ECOWAS States and countries with visa-abolition/waiver agreements. The paid Appendix I single-entry rows resolve that exclusion only for this named cohort. Diplomatic, official, service, temporary, refugee, stateless, residence, work, carrier and final-admission treatment are outside this ordinary-passport visitor policy."
+      ],
+      "sourceIds": ["nigeria-immigration-2026-f5a-and-appendix-i-fees","nigeria-nis-current-f5a-tourism-page"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa application",
+        "steps": [
+          "Confirm the passport's named paid Appendix I fee row and the F5A tourism conditions.",
+          "Apply online, upload the required documents and pay the stated visa fee.",
+          "Receive the visa certificate by email before departure and present it for carrier and final-admission checks."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"AF","destinationCode":"NG","reason":"Appendix I labels Afghanistan's single-entry row 'Gratis'. The fee table does not say whether that means a waiver or a zero-fee F5A route, so ordinary-passport F5A eligibility is not established.","searchedOfficialDomains":["immigration.gov.ng","evisa.immigration.gov.ng"]},
+    {"passportCode":"BB","destinationCode":"NG","reason":"Appendix I labels Barbados's single-entry row 'Gratis'. The fee table does not resolve whether this is a waiver or a zero-fee F5A route, so the ordinary-passport eVisa status is not promoted.","searchedOfficialDomains":["immigration.gov.ng","evisa.immigration.gov.ng"]},
+    {"passportCode":"GE","destinationCode":"NG","reason":"Appendix I labels Georgia's single-entry row 'Gratis'. The table does not establish whether that is a waiver or a zero-fee F5A route, so ordinary-passport eVisa eligibility remains unresolved.","searchedOfficialDomains":["immigration.gov.ng","evisa.immigration.gov.ng"]},
+    {"passportCode":"KE","destinationCode":"NG","reason":"Kenya has no Appendix I country fee row. Its appearance only in the separate multiple-visa fee table does not establish eligibility for the F5A single-entry eVisa route.","searchedOfficialDomains":["immigration.gov.ng","evisa.immigration.gov.ng"]},
+    {"passportCode":"SZ","destinationCode":"NG","reason":"No Appendix I row names the catalog's eSwatini code; neither eSwatini nor Swaziland appears in the current table, so F5A nationality eligibility is not established.","searchedOfficialDomains":["immigration.gov.ng","evisa.immigration.gov.ng"]},
+    {"passportCode":"ZA","destinationCode":"NG","reason":"Appendix I labels South Africa's single-entry row 'Gratis'. The separate payable TWP/STR columns do not establish a paid F5A tourism route or resolve a possible waiver.","searchedOfficialDomains":["immigration.gov.ng","evisa.immigration.gov.ng"]}
+  ]
+}

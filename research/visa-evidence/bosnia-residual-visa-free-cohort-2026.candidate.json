@@ -1,0 +1,108 @@
+{
+  "batchId": "bosnia-residual-visa-free-cohort-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "bosnia-fipa-current-visa-free-schedule",
+      "title": "Bosnia and Herzegovina FIPA: visa information for visitors",
+      "url": "https://fipa.vijeceministara.gov.ba/en/visasinformation-for-visitors",
+      "publisher": "Foreign Investment Promotion Agency of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live state-agency guidance is published on the Council of Ministers' gov.ba domain. It separately lists general citizen nationality exemptions, ordinary-passport agreements, diplomatic/official arrangements and Hong Kong/Macao/Taiwan business-passport treatment.",
+      "supportingExcerpt": "Citizens of the following countries are exempt from the visa requirement."
+    },
+    {
+      "id": "bosnia-sfa-current-visa-free-stay-limit",
+      "title": "Bosnia and Herzegovina Service for Foreigners' Affairs: stay of aliens",
+      "url": "https://sps.gov.ba/en/information-for-foreigners/stay-of-aliens-in-bih/",
+      "publisher": "Service for Foreigners' Affairs of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The competent Service's live guidance states the current statutory general ceiling for a visa-free alien and identifies the Decision on Visas as controlling the named visa-free-country list.",
+      "supportingExcerpt": "Visa-free aliens may enter and stay up to 90 days over a six-month period."
+    },
+    {
+      "id": "brazil-presidency-bosnia-partial-visa-waiver-decree",
+      "title": "Brazilian Presidency: Decree No. 8,004, Brazil–Bosnia and Herzegovina partial visa waiver",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d8004.htm",
+      "publisher": "Presidency of the Federative Republic of Brazil, Civil House",
+      "jurisdiction": "Brazil",
+      "kind": "law",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live official Presidency legal record promulgates the bilateral Brazil–Bosnia and Herzegovina partial visa-waiver agreement, records that it entered into force for Brazil on 4 April 2013, and publishes its operative text. The agreement is valid for an indefinite period, subject to diplomatic suspension or denunciation provisions.",
+      "supportingExcerpt": "Portadores de passaportes nacionais válidos estarão isentos de visto ... por um período máximo de noventa (90) dias."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bosnia-current-general-citizen-exemptions-residual-cohort",
+      "title": "Named nationalities: Bosnia and Herzegovina general citizen visa exemption",
+      "summary": "Current state-agency guidance expressly lists these nationalities under its general citizen visa-exemption schedule, rather than its separate ordinary-passport-agreement, diplomatic/official, or business-passport sections.",
+      "status": "visa_free",
+      "destinationCodes": ["BA"],
+      "passportCodes": ["AT","BS","BB","BE","BN","BG","CL","CN","CO","CR","HR","CY","CZ","SV","EE","FI","GE","GR","GD","GT","HN","HU","IS","IL","KI","KW","LV","LT","LU","MT","MH","MU","MX","FM","NZ","NI","PW","PA","PY","PE","PL","QA","RO","WS","SC","SK","SI","SB","ES","KN","LC","VC","TL","TO","TT","TV","UA","AE","UY","VU","LI","MC","SM","VA"],
+      "conditions": [
+        "The cited schedule is a general citizenship exemption. This normalized ordinary-passport row is limited to a passport presented by a citizen of the named state; it does not transfer the exemption to a diplomatic, official, service, business, identity-card, seaman, emergency, refugee, alien or other special travel document.",
+        "The general statutory visa-free ceiling is up to 90 days in a six-month period from first entry, unless an applicable treaty or Council of Ministers decision provides otherwise. This grouped current schedule does not establish a different uniform duration for every nationality.",
+        "Work, residence, transit, admissibility, passport validity, carrier and final-border-control requirements remain separate."
+      ],
+      "sourceIds": ["bosnia-fipa-current-visa-free-schedule", "bosnia-sfa-current-visa-free-stay-limit"],
+      "confidence": "high"
+    },
+    {
+      "id": "bosnia-malaysia-current-ordinary-passport-agreement-exemption",
+      "title": "Malaysia ordinary passports: Bosnia and Herzegovina visa-free agreement route",
+      "summary": "Current state-agency guidance explicitly places valid Malaysian ordinary passports in its concluded-agreements visa-free section.",
+      "status": "visa_free",
+      "destinationCodes": ["BA"],
+      "passportCodes": ["MY"],
+      "conditions": [
+        "This route is expressly limited to a valid ordinary Malaysian passport under a concluded agreement; it does not establish treatment for diplomatic, official, service, business, identity-card, seaman, emergency, refugee, alien or other special travel documents.",
+        "The general statutory visa-free ceiling is up to 90 days in a six-month period from first entry unless the applicable agreement or a Council of Ministers decision provides otherwise.",
+        "Work, residence, transit, admissibility, passport validity, carrier and final-border-control requirements remain separate."
+      ],
+      "sourceIds": ["bosnia-fipa-current-visa-free-schedule", "bosnia-sfa-current-visa-free-stay-limit"],
+      "confidence": "high"
+    },
+    {
+      "id": "bosnia-brazil-current-ordinary-passport-annual-cap-exemption",
+      "title": "Brazil ordinary passports: Bosnia and Herzegovina visa-free entry with annual cap",
+      "summary": "The live Brazilian Presidency decree promulgates the bilateral agreement: nationals holding valid national passports are visa-exempt for tourism, holidays or business for up to 90 days, capped at 180 days annually from first entry.",
+      "status": "visa_free",
+      "destinationCodes": ["BA"],
+      "passportCodes": ["BR"],
+      "conditions": [
+        "The agreement covers nationals of either party who hold valid national passports. This normalized row is limited to a Brazilian ordinary/national passport and does not extend the route to a diplomatic, official, service, business, identity-card, seaman, emergency, refugee, alien or other special travel document.",
+        "A stay may not exceed 90 days and the total length of stay may not exceed 180 days per year from first entry.",
+        "The treaty is stated to be valid indefinitely but permits diplomatic suspension or denunciation. The cited live legal record does not itself establish that no later diplomatic notification has occurred; final admission remains with Bosnia and Herzegovina authorities.",
+        "Work, residence, transit, admissibility, passport validity, carrier and final-border-control requirements remain separate."
+      ],
+      "sourceIds": ["brazil-presidency-bosnia-partial-visa-waiver-decree"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "BA",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The current state-agency schedule expressly limits Hong Kong's exemption to a business passport. It does not establish the same route for an ordinary Hong Kong SAR passport, so the visa-free fallback is not promoted.",
+      "sourceIds": ["bosnia-fipa-current-visa-free-schedule"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "BA",
+      "reason": "Current state-agency guidance explicitly grants a visa exemption to holders of Hong Kong business passports, not an ordinary Hong Kong SAR passport. No current state-authority source reviewed maps an ordinary Hong Kong passport to the same route.",
+      "searchedOfficialDomains": ["fipa.vijeceministara.gov.ba", "mvp.gov.ba", "sps.gov.ba"]
+    }
+  ]
+}
