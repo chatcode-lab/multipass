@@ -1,0 +1,128 @@
+{
+  "batchId": "afghanistan-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "bosnia-mfa-current-afghanistan-entry-row",
+      "title": "Afghanistan — Bosnia and Herzegovina visa information",
+      "url": "https://mvp.gov.ba/en/org_cmd57sdlc000nn43u2rk8pgsd_639082935039597309",
+      "publisher": "Ministry of Foreign Affairs of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "Bosnian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current MFA country selector publishes the Afghanistan result, including the inbound Bosnia and Herzegovina visa rule for Afghan citizens.",
+      "supportingExcerpt": "Državljanima Islamske Republike Afganistan prilikom ulaska, izlaska ili prelaska preko teritorije Bosne i Hercegovine potrebna je viza."
+    },
+    {
+      "id": "bosnia-mfa-short-stay-visa-consular-rulebook",
+      "title": "Rulebook on the procedure of visa issuance in diplomatic and consular missions",
+      "url": "https://www.mvp.gov.ba/konzularne_informacije/vize/Rulebook%20on%20the%20procedure%20of%20visa%20issuance%20in%20diplomatic%20and%20consular%20missions.pdf",
+      "publisher": "Ministry of Foreign Affairs of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The MFA hosts the operative Rulebook governing short-stay visa issuance to foreign nationals through Bosnia and Herzegovina diplomatic and consular missions.",
+      "supportingExcerpt": "A foreign national shall submit visa application to the authorized DKP BiH, according to the place of applicant’s residence."
+    },
+    {
+      "id": "kosovo-mfa-current-inbound-visa-list",
+      "title": "Kosovo Visas",
+      "url": "https://ambasadat.net/visas/",
+      "publisher": "Ministry of Foreign Affairs and Diaspora of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The official Republic of Kosovo embassies platform publishes the current closed short-stay visa-exemption list and the required application procedure for other foreign nationals.",
+      "supportingExcerpt": "You must apply for a Kosovo visa if you wish to visit or transit through the territory of the Republic of Kosovo."
+    },
+    {
+      "id": "bvi-government-current-afghanistan-visa-requirement",
+      "title": "Visa requirements for the Virgin Islands",
+      "url": "https://bvi.gov.vg/sites/default/files/visa_requirements_for_the_virgin_islands_nationals_of_the_following_countries.pdf",
+      "publisher": "Government of the Virgin Islands",
+      "jurisdiction": "British Virgin Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Government of the Virgin Islands visa-requirements notice expressly names Afghanistan in its list of nationalities requiring a Virgin Islands visa.",
+      "supportingExcerpt": "Nationals of the following countries require a visa to enter the Virgin Islands: Afghanistan."
+    },
+    {
+      "id": "bvi-government-visa-application-current-process",
+      "title": "Application for Virgin Islands visa",
+      "url": "https://www.bvi.gov.vg/services/application-virgin-islands-visa",
+      "publisher": "Government of the Virgin Islands",
+      "jurisdiction": "British Virgin Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government's current Civil Registry and Passport Office service page defines the visa application and approval process for nationalities requiring a Virgin Islands visa.",
+      "supportingExcerpt": "Once a decision has been made, the visa is issued and returned by email, if approved."
+    }
+  ],
+  "policies": [
+    {
+      "id": "afghan-ordinary-passports-bosnia-advance-short-stay-visa",
+      "title": "Afghan ordinary passports: Bosnia and Herzegovina advance short-stay visa",
+      "summary": "Bosnia and Herzegovina's MFA expressly requires a visa for Afghan citizens and its governing short-stay procedure requires filing with the competent diplomatic or consular mission.",
+      "status": "visa_required",
+      "destinationCodes": ["BA"],
+      "passportCodes": ["AF"],
+      "conditions": [
+        "Submit the visitor-visa application to the competent Bosnia and Herzegovina diplomatic or consular mission according to the applicant's residence. The ordinary Afghan-nationality entry row requires a visa.",
+        "The narrow individual emergency border-visa provisions do not establish a nationality-wide visa-on-arrival route. Passport recognition, mission operation, residence, work, transit, special documents, carrier requirements and final admission remain separate."
+      ],
+      "sourceIds": ["bosnia-mfa-current-afghanistan-entry-row", "bosnia-mfa-short-stay-visa-consular-rulebook"],
+      "confidence": "high"
+    },
+    {
+      "id": "afghan-ordinary-passports-kosovo-advance-short-stay-visa",
+      "title": "Afghan ordinary passports: Kosovo advance short-stay visa",
+      "summary": "Kosovo's current closed visa-exemption list does not include Afghanistan, and its Foreign Ministry requires other foreign nationals to use the in-person diplomatic or consular visa process before a visit.",
+      "status": "visa_required",
+      "destinationCodes": ["XK"],
+      "passportCodes": ["AF"],
+      "conditions": [
+        "Submit the short-stay visa application in person to the relevant Kosovo diplomatic or consular mission no later than three months before the intended visit. Afghanistan is not in the current official exemption list, and no listed special-category exemption is inferred here.",
+        "This is an advance consular route, not an eVisa or nationality-wide visa-on-arrival route. Passport recognition, mission availability, transit, residence, work, special documents, carrier requirements and final admission remain separate."
+      ],
+      "sourceIds": ["kosovo-mfa-current-inbound-visa-list"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"AF","destinationCode":"VG","reason":"The BVI nationality notice naming Afghanistan was crawler-inaccessible and its current version could not be independently confirmed. The general BVI application page does not itself establish Afghan ordinary-passport eligibility.","searchedOfficialDomains":["bvi.gov.vg","gov.vg"]},
+    {"passportCode":"AF","destinationCode":"AF","reason":"An Afghan passport alone does not resolve citizenship, document validity or current Taliban authority recognition, and no ordinary short-visitor taxonomy status is appropriate for domestic access. The fallback citizenship label is not promoted.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"AF","destinationCode":"BD","reason":"No current Bangladeshi primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing. The fallback visa_required remains a hypothesis.","searchedOfficialDomains":["mofa.gov.bd","immi.gov.bd"]},
+    {"passportCode":"AF","destinationCode":"CF","reason":"No current Central African primary source reviewed establishes Afghan ordinary-passport eligibility and short-visitor issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"AF","destinationCode":"CG","reason":"No current Republic of the Congo primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"AF","destinationCode":"CI","reason":"Côte d'Ivoire's generic airport pre-enrolment portal does not establish Afghan ordinary-passport acceptance. The fallback evisa remains unpromoted.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"AF","destinationCode":"CU","reason":"No current Cuban primary source reviewed establishes Afghan ordinary-passport eligibility for the electronic tourist visa rather than another document or agreement route. The fallback evisa remains unpromoted.","searchedOfficialDomains":["cuba.travel","evisacuba.cu","minint.gob.cu"]},
+    {"passportCode":"AF","destinationCode":"DJ","reason":"No current Djiboutian primary source reviewed establishes Afghan ordinary-passport eligibility and whether the visitor route is electronic, advance or issued at arrival.","searchedOfficialDomains":["evisa.gouv.dj","mae.dj"]},
+    {"passportCode":"AF","destinationCode":"GA","reason":"No current Gabonese primary source reviewed establishes Afghan ordinary-passport eligibility and whether online processing results in an electronic visa or border-issued document.","searchedOfficialDomains":["evisa.dgdi.ga","interieur.gouv.ga"]},
+    {"passportCode":"AF","destinationCode":"GQ","reason":"No current Equatorial Guinean primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["minexteriores.gob.gq","guineaecuatorialpress.com"]},
+    {"passportCode":"AF","destinationCode":"GW","reason":"No current Guinea-Bissau primary source reviewed establishes Afghan ordinary-passport visitor eligibility and whether issuance is at a mission, online, or at arrival.","searchedOfficialDomains":["mne.gw","gov.gw"]},
+    {"passportCode":"AF","destinationCode":"IQ","reason":"No current Iraqi primary source reviewed establishes Afghan ordinary-passport eligibility for the ordinary eVisa or an alternative visitor route. The fallback visa_required remains a hypothesis.","searchedOfficialDomains":["eservice.evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"AF","destinationCode":"KH","reason":"This exact Afghan-passport Cambodia advance-visa relationship is already supported by canonical reviewed evidence, so it is not duplicated in this candidate.","searchedOfficialDomains":["evisa.gov.kh","immigration.gov.kh"]},
+    {"passportCode":"AF","destinationCode":"KM","reason":"No current Comorian primary source reviewed establishes Afghan ordinary-passport eligibility and border-issuance timing for a short visitor.","searchedOfficialDomains":["gouvernement.km","douane.gov.km"]},
+    {"passportCode":"AF","destinationCode":"KP","reason":"No current DPRK primary source reviewed establishes an ordinary Afghan-passport visitor route. Closure, permission and operational-access states cannot be represented by this taxonomy.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"AF","destinationCode":"LR","reason":"No current Liberian primary source reviewed establishes Afghan ordinary-passport eligibility and the issuance outcome of any electronic or arrival process.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"AF","destinationCode":"LY","reason":"No current Libyan primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing amid route and recognition uncertainty.","searchedOfficialDomains":["foreign.gov.ly","evisa.gov.ly"]},
+    {"passportCode":"AF","destinationCode":"ML","reason":"No current Malian primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"AF","destinationCode":"NE","reason":"No current Nigerien primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"AF","destinationCode":"NG","reason":"No current Nigerian primary source reviewed establishes Afghan ordinary-passport eligibility and whether online processing produces an eVisa rather than subsequent mission issuance.","searchedOfficialDomains":["immigration.gov.ng","visa.immigration.gov.ng"]},
+    {"passportCode":"AF","destinationCode":"PA","reason":"No current Panamanian primary source reviewed establishes Afghan ordinary-passport visitor eligibility and whether any visa must be issued in advance. The fallback visa_required remains a hypothesis.","searchedOfficialDomains":["migracion.gob.pa","mire.gob.pa"]},
+    {"passportCode":"AF","destinationCode":"PS","reason":"No current primary source establishes an Afghan ordinary-passport visitor status for the Palestinian Territories. Israeli-controlled crossings, permits and operational access cannot be normalized as a Palestine-only taxonomy status.","searchedOfficialDomains":["moi.pna.ps","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"AF","destinationCode":"SD","reason":"No current Sudanese primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"AF","destinationCode":"SS","reason":"No current South Sudanese primary source reviewed establishes Afghan ordinary-passport eligibility and the issuance outcome of any electronic visitor service.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss"]},
+    {"passportCode":"AF","destinationCode":"SY","reason":"No current Syrian primary source reviewed establishes the ordinary Afghan-passport electronic, advance or arrival visitor route.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"AF","destinationCode":"TD","reason":"No current Chadian primary source reviewed establishes Afghan ordinary-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"AF","destinationCode":"TM","reason":"No current Turkmen primary source reviewed establishes Afghan ordinary-passport visitor eligibility and whether invitation-backed processing is issued before travel or at arrival.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"AF","destinationCode":"TN","reason":"No current Tunisian primary source reviewed establishes an Afghan ordinary-passport short-visitor route and issuance timing.","searchedOfficialDomains":["interieur.gov.tn","diplomatie.gov.tn"]},
+    {"passportCode":"AF","destinationCode":"UA","reason":"Ukraine's live nationality table labels Afghanistan visa-required but states it is current only as of 8 June 2023; without a newer primary confirmation, that dated row and generic visa instructions do not establish a current advance-issuance classification.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua"]}
+  ]
+}

@@ -30,6 +30,46 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  {
+    passportCode: "BI",
+    destinationCode: "SS",
+    status: "visa_free",
+    reason: "Current EAC immigration guidance implements visa-free entry for citizens of other Partner States, and both Burundi and South Sudan are current EAC Partner States.",
+    sourceUrl: "https://www.eac.int/immigration/migration-management/visa-free-entry",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "MO",
+    destinationCode: "DJ",
+    status: "evisa",
+    reason: "Macao DSI's current MSAR-passport record expressly marks Djibouti as eVisa and not visa on arrival, linking the destination's official eVisa service.",
+    sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/453?travelPermit=0",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "MO",
+    destinationCode: "GA",
+    status: "visa_on_arrival",
+    reason: "Gabon DGDI requires travel authorization before departure but delivers the visa sticker and takes payment on arrival at Libreville airport.",
+    sourceUrl: "https://evisa.dgdi.ga/",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "MO",
+    destinationCode: "IQ",
+    status: "evisa",
+    reason: "Macao DSI's current MSAR-passport record expressly marks Iraq as eVisa and links Iraq's official electronic-visa service.",
+    sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/462?travelPermit=0",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "MO",
+    destinationCode: "TN",
+    status: "visa_free",
+    reason: "Macao DSI's current MSAR-passport record grants visa-free entry for qualifying tourist groups of at least five with prepaid accommodation and return tickets.",
+    sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/399?travelPermit=0",
+    reviewedAt: "2026-08-22",
+  },
   ...(["LY", "YE"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "CI" as const,
