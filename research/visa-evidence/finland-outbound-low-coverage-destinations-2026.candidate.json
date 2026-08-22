@@ -1,0 +1,118 @@
+{
+  "batchId": "finland-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-21",
+  "sources": [
+    {
+      "id": "finland-mfa-iraq-entry",
+      "title": "Finland Ministry for Foreign Affairs: Iraq travel advice",
+      "url": "https://um.fi/matkustustiedote/-/c/IQ",
+      "publisher": "Ministry for Foreign Affairs of Finland",
+      "jurisdiction": "Finland",
+      "kind": "government-guidance",
+      "language": "Finnish",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Finland's Ministry for Foreign Affairs publishes current destination entry guidance for Finnish travellers.",
+      "supportingExcerpt": "Turistimatkalle tavallisella passilla matkustavalla tulee olla etukäteen hankittu elektroninen viisumi."
+    },
+    {
+      "id": "cote-divoire-snedai-arrival-visa",
+      "title": "Côte d'Ivoire official SNEDAI: e-visa procedure",
+      "url": "https://snedai.com/e-visa/",
+      "publisher": "SNEDAI, official Côte d'Ivoire visa service",
+      "jurisdiction": "Côte d'Ivoire",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The portal identifies SNEDAI as the only visa-application website officially recognised and approved by the State of Côte d'Ivoire.",
+      "supportingExcerpt": "Après le pré-enrôlement approuvé, le visa est imprimé et délivré immédiatement à l'aéroport d'Abidjan."
+    }
+  ],
+  "policies": [
+    {
+      "id": "finland-ordinary-passport-federal-iraq-electronic-visa",
+      "title": "Finnish ordinary passports: federal Iraq electronic visitor visa",
+      "summary": "Current Finnish Foreign Ministry guidance requires an ordinary-passport tourist to hold an electronic visa before arrival in Iraq.",
+      "status": "evisa",
+      "destinationCodes": ["IQ"],
+      "passportCodes": ["FI"],
+      "conditions": [
+        "A tourist using an ordinary Finnish passport must obtain the electronic visa before arriving. The Finnish guidance directs applicants to Iraq's eVisa service and says the rule also covers travel solely to the Kurdistan Region.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": ["finland-mfa-iraq-entry"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.iq/en",
+        "label": "Iraqi electronic visa service",
+        "steps": [
+          "Apply for the electronic visitor visa before travel using the ordinary Finnish passport to be used for entry.",
+          "Carry the issued eVisa information and comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "finland-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Finnish ordinary passports: Côte d'Ivoire preapproved arrival visa",
+      "summary": "Côte d'Ivoire's official ordinary-passport process gives a preapproval online and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["CI"],
+      "passportCodes": ["FI"],
+      "conditions": [
+        "The online route is for a valid ordinary passport. Complete pre-enrolment, payment and document upload; board only with the approved D.S.T. response, payment receipt, passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa. Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": ["cote-divoire-snedai-arrival-visa"],
+      "confidence": "high",
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d'Ivoire official e-visa pre-enrolment",
+        "steps": [
+          "Submit the ordinary Finnish passport pre-enrolment and payment online, with the listed travel and hosting documents.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "FI",
+      "destinationCode": "CI",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The fallback labels Côte d'Ivoire evisa, but its official ordinary-passport procedure requires approved online pre-enrolment before travel and prints/issues the visa at Abidjan airport.",
+      "sourceIds": ["cote-divoire-snedai-arrival-visa"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"FI","destinationCode":"AF","reason":"No current Finnish Foreign Ministry or direct Afghan authority source reviewed establishes a usable ordinary Finnish-passport visitor route and issuance timing. Operational restrictions are not taxonomy states.","searchedOfficialDomains":["um.fi","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"FI","destinationCode":"KP","reason":"No current official source establishes an ordinary Finnish-passport visitor route. Closure, permission and operational cases cannot be represented by the taxonomy.","searchedOfficialDomains":["um.fi","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"FI","destinationCode":"LY","reason":"No current Finnish or direct Libyan source reviewed establishes ordinary Finnish-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["um.fi","foreign.gov.ly","evisa.gov.ly"]},
+    {"passportCode":"FI","destinationCode":"VG","reason":"No current Finnish or BVI authority source reviewed establishes an ordinary Finnish-passport visitor route.","searchedOfficialDomains":["um.fi","bvi.gov.vg","gov.uk"]},
+    {"passportCode":"FI","destinationCode":"PS","reason":"Palestinian access depends on crossings and permits; Israeli route or checkpoint rules do not establish a Palestine-only Finnish-passport taxonomy status.","searchedOfficialDomains":["um.fi","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"FI","destinationCode":"DJ","reason":"No current Finnish or Djiboutian authority source reviewed establishes whether the Finnish ordinary-passport visitor route is electronic, advance or issued at arrival.","searchedOfficialDomains":["um.fi","evisa.gouv.dj"]},
+    {"passportCode":"FI","destinationCode":"SD","reason":"No current Finnish or Sudanese authority source reviewed establishes ordinary Finnish-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["um.fi","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"FI","destinationCode":"SY","reason":"No current Finnish or Syrian authority source reviewed establishes the ordinary Finnish-passport electronic, advance or arrival visitor route.","searchedOfficialDomains":["um.fi","mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"FI","destinationCode":"KM","reason":"No current Finnish or Comorian authority source reviewed establishes ordinary Finnish-passport visitor eligibility and border-issuance timing.","searchedOfficialDomains":["um.fi","gouv.km","justice.gouv.km"]},
+    {"passportCode":"FI","destinationCode":"CU","reason":"Finnish guidance identifies the separate D'Viajeros arrival declaration, but no reviewed Finnish or Cuban official source establishes a single Finnish ordinary-passport tourist visa outcome and eligibility exception set.","searchedOfficialDomains":["um.fi","evisacuba.cu","minrex.gob.cu"]},
+    {"passportCode":"FI","destinationCode":"TM","reason":"No current Finnish or Turkmen authority source reviewed establishes ordinary Finnish-passport visitor issuance timing; generic invitation or visa wording is insufficient.","searchedOfficialDomains":["um.fi","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"FI","destinationCode":"XK","reason":"Finnish guidance records post-entry registration, but no reviewed current Finnish or Kosovo authority source establishes the Finnish ordinary-passport visa status.","searchedOfficialDomains":["um.fi","mpb.rks-gov.net","mfa-ks.net"]},
+    {"passportCode":"FI","destinationCode":"UA","reason":"Finland's current guidance records martial-law travel restrictions, changing border conditions and a travel warning. The direct Ukrainian nationality table reviewed is dated 2023, so it is not promoted as current visa-free evidence.","searchedOfficialDomains":["um.fi","mfa.gov.ua","dpsu.gov.ua"]},
+    {"passportCode":"FI","destinationCode":"CG","reason":"No current Finnish or Republic of the Congo authority source reviewed establishes ordinary Finnish-passport visitor treatment and issuance timing.","searchedOfficialDomains":["um.fi","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"FI","destinationCode":"GA","reason":"No current Finnish or Gabon authority source reviewed establishes Finnish eligibility and whether the process delivers an electronic visa or a border-issued sticker.","searchedOfficialDomains":["um.fi","evisa.dgdi.ga"]},
+    {"passportCode":"FI","destinationCode":"SS","reason":"No current Finnish or South Sudan authority source reviewed establishes Finnish eligibility and issuance outcome for an electronic service.","searchedOfficialDomains":["um.fi","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"FI","destinationCode":"TN","reason":"No current Finnish or Tunisian authority source reviewed establishes the ordinary Finnish-passport short-visitor status.","searchedOfficialDomains":["um.fi","diplomatie.gov.tn","douane.gov.tn"]},
+    {"passportCode":"FI","destinationCode":"CF","reason":"No current Finnish or Central African authority source reviewed establishes ordinary Finnish-passport visitor route and issuance timing.","searchedOfficialDomains":["um.fi","diplomatie.gouv.cf","cemac.int"]},
+    {"passportCode":"FI","destinationCode":"GQ","reason":"No current Finnish or Equatorial Guinean authority source reviewed establishes ordinary Finnish-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["um.fi","minexteriores.gob.gq","guineaecuatorialpress.com"]},
+    {"passportCode":"FI","destinationCode":"PA","reason":"No current Finnish or Panamanian authority source reviewed establishes the ordinary Finnish-passport short-visitor status and conditions.","searchedOfficialDomains":["um.fi","migracion.gob.pa","mire.gob.pa"]},
+    {"passportCode":"FI","destinationCode":"BA","reason":"The Bosnia and Herzegovina MFA Finland-specific page cited by this candidate returned 502 in an independent browser review and could not be retrieved directly. No accessible current official source establishes the 2026 Finnish ordinary-passport route, so the fallback visa_free remains unpromoted.","searchedOfficialDomains":["mvp.gov.ba","msb.gov.ba","um.fi"]},
+    {"passportCode":"FI","destinationCode":"GW","reason":"No current Finnish or Guinea-Bissau authority source reviewed establishes ordinary Finnish-passport visitor treatment.","searchedOfficialDomains":["um.fi","mne.gw","gov.gw"]},
+    {"passportCode":"FI","destinationCode":"LR","reason":"No current Finnish or Liberian authority source reviewed establishes Finnish eligibility for a visitor route.","searchedOfficialDomains":["um.fi","visaonarrival.lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"FI","destinationCode":"ML","reason":"No current Finnish or Malian authority source reviewed establishes ordinary Finnish-passport visitor treatment and issuance timing.","searchedOfficialDomains":["um.fi","diplomatiemdc.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"FI","destinationCode":"NE","reason":"No current Finnish or Nigerien authority source reviewed establishes ordinary Finnish-passport visitor treatment and issuance timing.","searchedOfficialDomains":["um.fi","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"FI","destinationCode":"NG","reason":"Finland's guidance identifies a separate online arrival/departure form, not an issued visa; no reviewed source establishes a Finnish ordinary-passport visa route.","searchedOfficialDomains":["um.fi","immigration.gov.ng","lecard.immigration.gov.ng"]},
+    {"passportCode":"FI","destinationCode":"BD","reason":"No current Finnish or Bangladeshi authority source reviewed establishes ordinary Finnish-passport visa-on-arrival eligibility and issuance timing.","searchedOfficialDomains":["um.fi","mofa.gov.bd","visa.gov.bd"]},
+    {"passportCode":"FI","destinationCode":"TD","reason":"No current Finnish or Chadian authority source reviewed establishes Finnish eligibility and issuance outcome for the electronic service.","searchedOfficialDomains":["um.fi","evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"FI","destinationCode":"KH","reason":"Finnish guidance links Cambodian authorities but does not establish a Finnish ordinary-passport eVisa or visa-on-arrival route; portal availability alone is insufficient.","searchedOfficialDomains":["um.fi","evisa.gov.kh","mfaic.gov.kh"]}
+  ]
+}
