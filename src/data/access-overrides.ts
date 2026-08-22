@@ -2636,4 +2636,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://gid.gov.gm/entry-requirements/",
     reviewedAt: "2026-08-22",
   })),
+  ...(["SG", "CA", "AE", "CL", "HK", "BN", "IL", "BS", "SC", "VA", "MU", "PA", "UA", "PE", "MO", "TW", "SB", "WS", "GT", "SV", "MH", "RS", "TO", "TV", "HN", "ME", "MK", "KI", "FM", "BA", "PW", "GE", "AL", "MD", "TL", "KW", "FJ", "SA", "NR", "XK", "VU", "GY", "BH", "CN", "PG", "BW", "TH", "SR", "KZ", "LS", "NA", "DO", "SZ", "MA", "AZ", "KE", "GH", "MW", "TZ", "GM", "AM", "PH", "TN", "MN", "RW", "ZM", "CV", "BJ", "MZ", "UG", "ST", "SL", "KG", "UZ", "ZW", "BF", "IN", "CI", "CU", "MG", "SN", "NE", "TG", "GA", "TJ", "GN", "MR", "GQ", "ML", "VN", "TD", "GW", "DZ", "KM", "AO", "BT", "KH", "CM", "CG", "HT", "JO", "LR", "CF", "LA", "BI", "TM", "EG", "LB", "CD", "DJ", "MM", "NG", "ER", "LY", "KP", "ET", "SS", "SD", "BD", "PK", "SO", "NP", "YE", "IQ", "SY", "AF"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "VE" as const,
+    status: "evisa" as const,
+    reason: "Venezuela's June 2026 Digital Chancellery manual gives foreign natural persons a tourist-visa workflow whose approved, electronically signed document is emailed and downloadable before travel.",
+    sourceUrl: "https://mppre.gob.ve/archivos/cancilleria_digital/1780672073_MANUAL-VISA-DE-TURISTA.pdf",
+    reviewedAt: "2026-08-22",
+  })),
+  ...(["IE", "MK", "BA", "NA", "MN", "BJ"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "CU" as const,
+    status: "evisa" as const,
+    reason: "Cuba's live Foreign Ministry nationality schedule marks this passport active, not visa-exempt and not consular-risk; Cuba Travel confirms that the tourist receives the electronic visa code and payment proof by email before travel.",
+    sourceUrl: "https://evisagw.evisacuba.cu/user/Countries",
+    reviewedAt: "2026-08-22",
+  })),
+  ...(["AF", "BD", "CM", "ER", "ET", "PH", "GH", "GN", "HT", "IQ", "NP", "NG", "PK", "SL", "SY", "SO", "LK", "UZ", "YE", "KE"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "CU" as const,
+    status: "visa_required" as const,
+    reason: "Cuba's live Foreign Ministry eVisa schedule flags this nationality for additional consular processing instead of ordinary electronic issuance; the application directs the traveller to a Cuban consulate to process the visa.",
+    sourceUrl: "https://evisagw.evisacuba.cu/user/Countries",
+    reviewedAt: "2026-08-22",
+  })),
 ] as const;
