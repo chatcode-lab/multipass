@@ -64,7 +64,18 @@
     }
   ],
   "policies": [],
-  "conflicts": [],
+  "conflicts": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "BA",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The current state-agency schedule explicitly limits Hong Kong's exemption to a business passport. It does not establish the same route for an ordinary Hong Kong SAR passport, so the visa-free fallback is not promoted.",
+      "sourceIds": [
+        "bosnia-fipa-current-visitor-visa-summary"
+      ]
+    }
+  ],
   "unresolved": [
     {
       "passportCode": "HK",
@@ -404,18 +415,6 @@
     },
     {
       "passportCode": "AM",
-      "destinationCode": "BA",
-      "reason": "The controlling MFA nationality selector and Ministry-hosted Decision on Visas/Law materials could not be independently reopened through trusted retrieval on 2026-08-22: selector and PDFs returned 502 or timed out, while direct replay reported an incomplete TLS issuer chain. The accessible FIPA summary is not a safe substitute because it retains an expired 2025 seasonal waiver and does not provide a reproducible current ordinary-passport mapping for this code. The Service for Foreigners Affairs confirms that the Decision controls the visa-free list, but does not map this nationality. No baseline is inferred from historic or outbound material, temporary waivers, exceptional border visas, or conditional Schengen/EU/US visa or residence substitutions.",
-      "searchedOfficialDomains": [
-        "mvp.gov.ba",
-        "sluzbenilist.ba",
-        "sps.gov.ba",
-        "fipa.vijeceministara.gov.ba",
-        "granpol.gov.ba"
-      ]
-    },
-    {
-      "passportCode": "PH",
       "destinationCode": "BA",
       "reason": "The controlling MFA nationality selector and Ministry-hosted Decision on Visas/Law materials could not be independently reopened through trusted retrieval on 2026-08-22: selector and PDFs returned 502 or timed out, while direct replay reported an incomplete TLS issuer chain. The accessible FIPA summary is not a safe substitute because it retains an expired 2025 seasonal waiver and does not provide a reproducible current ordinary-passport mapping for this code. The Service for Foreigners Affairs confirms that the Decision controls the visa-free list, but does not map this nationality. No baseline is inferred from historic or outbound material, temporary waivers, exceptional border visas, or conditional Schengen/EU/US visa or residence substitutions.",
       "searchedOfficialDomains": [

@@ -1131,10 +1131,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "LY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "LY", snapshot.passports.GB.statuses.LY).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GM")).toHaveLength(33);
+    expect(pairsFor("GM")).toHaveLength(119);
     expect(getVisaRelationshipEvidence("RU", "GM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "GM", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("US", "GM", snapshot.passports.US.statuses.GM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("US", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "GM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CH", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("FR", "GM", snapshot.passports.FR.statuses.GM).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GM", "GM", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -1682,14 +1685,16 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("JP", "PA", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
-  it("maps only Guyana's reconciled ordinary-passport visitor rows", () => {
+  it("maps Guyana's reconciled exemptions and residual visa-required baseline", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "GY");
 
-    expect(pairs).toHaveLength(57);
+    expect(pairs).toHaveLength(193);
     expect(getVisaRelationshipEvidence("QA", "GY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AL", "GY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BO", "GY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "GY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MX", "GY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CO", "GY", snapshot.passports.CO.statuses.GY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("ES", "GY", snapshot.passports.ES.statuses.GY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GY", "GY", "citizenship").supportsCurrentStatus).toBe(false);
@@ -2490,7 +2495,7 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("corrects Gabon sticker issuance, verifies Saint Vincent, and holds Bangladesh and Gambia", () => {
+  it("corrects Gabon sticker issuance, verifies Saint Vincent and Gambia, and holds Bangladesh", () => {
     for (const passportCode of ["MA", "MU", "ZA"] as const) {
       expect(snapshot.passports[passportCode].statuses.GA).toBe("visa_free");
       expect(getVisaRelationshipEvidence(passportCode, "GA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2505,9 +2510,10 @@ describe("official visa evidence", () => {
     for (const passportCode of ["BR", "PK", "SG", "US"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "VC", "visa_free").supportsCurrentStatus).toBe(true);
     }
-    for (const passportCode of ["AF", "BR", "SG", "US"] as const) {
-      expect(getVisaRelationshipEvidence(passportCode, "GM", snapshot.passports[passportCode].statuses.GM).supportsCurrentStatus).toBe(false);
-    }
+    expect(getVisaRelationshipEvidence("AF", "GM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SG", "GM", snapshot.passports.SG.statuses.GM).supportsCurrentStatus).toBe(false);
     for (const passportCode of ["AF", "BR", "CL", "ES"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "BD", snapshot.passports[passportCode].statuses.BD).supportsCurrentStatus).toBe(false);
     }
@@ -3057,6 +3063,10 @@ describe("official visa evidence", () => {
       "ldil.gia.gov.ly",
       "gambia.gov.gm",
       "gid.gov.gm",
+      "www.minfor.gov.gy",
+      "mola.gov.gy",
+      "londonhc.mission.gov.gy",
+      "newdelhihc.mission.gov.gy",
       "passports.gov.sd",
       "sudan.gov.sd",
       "moj.gov.sd",

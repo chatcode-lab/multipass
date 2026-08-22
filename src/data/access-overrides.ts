@@ -2620,4 +2620,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.revenue.gov.to/immigration-and-general-services",
     reviewedAt: "2026-08-22",
   },
+  ...(["AE", "RS", "MK", "BA", "AL", "SA", "ZW", "MG", "GA", "GQ", "TD", "KM", "CG", "DZ", "AO", "CF", "BI", "DJ", "EG", "CD", "ET", "LY", "ER", "SS", "SD", "SO", "NP"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "GM" as const,
+    status: "visa_required" as const,
+    reason: "The Gambia Immigration Department's current nationality schedule expressly requires entry clearance before arrival, with a visa also required for most of this cohort; its current entry guidance requires travellers to carry the approved clearance.",
+    sourceUrl: "https://gid.gov.gm/visa/",
+    reviewedAt: "2026-08-22",
+  })),
+  ...(["CH", "LI", "AD", "AR", "BR", "MX", "CR", "PA", "NI", "MA", "CU"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "GM" as const,
+    status: "visa_on_arrival" as const,
+    reason: "The Gambia Immigration Department's current nationality schedule places this passport in its visa-only cohort, and its entry guidance expressly permits issuance at gazetted ports of entry.",
+    sourceUrl: "https://gid.gov.gm/entry-requirements/",
+    reviewedAt: "2026-08-22",
+  })),
 ] as const;
