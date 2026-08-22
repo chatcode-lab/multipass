@@ -1502,6 +1502,14 @@ Saudi Arabia withdraws one previously supported relationship, reducing complete-
 
 Israel's prior `visa_on_arrival` evidence cannot be reproduced: the live Saudi Tourism Authority nationality dataset has no Israel record, and generic eligible-group route text does not establish Israeli eligibility. That row returns to not covered while retaining its fallback label as an unverified hypothesis. Taiwan remains supported as `evisa`; the current regular-passport selector expressly lists Taiwan China and its linked authorization endpoint accepts the nationality. This deliberately reports a coverage decrease rather than concealing stale evidence.
 
+## Pass 158 result: The Gambia current schedule reconciliation
+
+The Gambia adds a net 62 current relationships, raising complete-matrix evidence from 37,592 to 37,654 of 44,974 (83.7%). The public `/status` matrix contains 37,654 fresh and 7,320 not-covered rows, with zero old or stale rows. Africa coverage rises from 7,978 to 8,040 of 11,289 (71.2%), and destinations at 80% or better rise from 184 to 185. Canonical evidence contains 296 reviewed batches, 1,431 official sources and 969 policies.
+
+The central Government's current visitor page expressly exempts citizens of the United Kingdom, full EU members, the Commonwealth and ECOWAS for holiday or business visits of at most 90 days. Current membership registers resolve those named groups, including Gabon, which changes from fallback `visa_required` to `visa_free`. GID's live nationality schedule separately supports three named reciprocal exemptions, 61 visa-and-clearance passports, 12 clearance-only passports and 12 visa-only passports. Clearance requires approval before travel and is normalized as `visa_required`; the visa-only group is `visa_on_arrival` because GID expressly permits visa issuance at gazetted ports. São Tomé and Príncipe changes from fallback `visa_free` to `visa_required` under its named clearance-only row.
+
+The final canonical column supports 180 of 198 foreign passports because Iceland and El Salvador retain independently reviewed evidence in addition to this pass. Eighteen foreign rows remain held. Indonesia is explicitly unresolved because the same live GID schedule lists it as both visa-exempt and clearance-only; other omitted passports are not assigned by complement. The online material describes sticker or endorsement issuance, so no eVisa status is inferred.
+
 ## Held from promotion: Ukraine, Djibouti, Sierra Leone, Trinidad and Tobago, Iran and Iraq
 
 Ukraine's freshly crawlable MFA nationality table is expressly dated 8 June 2023 and contains a United Kingdom waiver that ended in January 2025. A February 2025 announcement confirms that eVisa issuance resumed for 45 countries, while the current eVisa page says 43 and neither provides a current exact named cohort. All 198 foreign-passport rows remain held.

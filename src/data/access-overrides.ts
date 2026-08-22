@@ -2684,4 +2684,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://consultas.mirex.gob.do/servicios/visas/consulta-de-requisitos-para-extranjeros-ingresar-a-la-republica-dominicana/results?condicion=Extranjeros&country=156&tipoPasaporte=Ordinario&tipoVisa=visa_ts",
     reviewedAt: "2026-08-22",
   },
+  {
+    passportCode: "GA",
+    destinationCode: "GM",
+    status: "visa_free",
+    reason: "The Gambia's current central Government guidance exempts Commonwealth citizens for short holiday or business visits, and Gabon is a current Commonwealth member.",
+    sourceUrl: "https://gambia.gov.gm/immigration-and-visas/",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "ST",
+    destinationCode: "GM",
+    status: "visa_required",
+    reason: "The Gambia Immigration Department's current nationality schedule places Sao Tome and Principe in its clearance-only cohort and requires approved clearance before arrival.",
+    sourceUrl: "https://gid.gov.gm/visa/",
+    reviewedAt: "2026-08-22",
+  },
 ] as const;

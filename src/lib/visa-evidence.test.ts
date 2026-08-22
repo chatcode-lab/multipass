@@ -1137,13 +1137,16 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "LY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "LY", snapshot.passports.GB.statuses.LY).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GM")).toHaveLength(119);
+    expect(pairsFor("GM")).toHaveLength(182);
     expect(getVisaRelationshipEvidence("RU", "GM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "GM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "GM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CH", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("FR", "GM", snapshot.passports.FR.statuses.GM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("FR", "GM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GA", "GM", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ST", "GM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ID", "GM", snapshot.passports.ID.statuses.GM).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GM", "GM", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -2529,7 +2532,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "GM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BR", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("SG", "GM", snapshot.passports.SG.statuses.GM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SG", "GM", "visa_free").supportsCurrentStatus).toBe(true);
     for (const passportCode of ["AF", "BR", "CL", "ES"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "BD", snapshot.passports[passportCode].statuses.BD).supportsCurrentStatus).toBe(false);
     }
