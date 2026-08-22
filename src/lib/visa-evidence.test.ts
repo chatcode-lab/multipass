@@ -1043,7 +1043,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HK", "DZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DZ", "DZ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("NG")).toHaveLength(36);
+    expect(pairsFor("NG")).toHaveLength(39);
     expect(getVisaRelationshipEvidence("GH", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "NG", "evisa").supportsCurrentStatus).toBe(true);
@@ -1216,7 +1216,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CF", "CF", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GQ")).toHaveLength(20);
+    expect(pairsFor("GQ")).toHaveLength(23);
     expect(getVisaRelationshipEvidence("CM", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "GQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2331,6 +2331,18 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HT", "CU", snapshot.passports.HT.statuses.CU).supportsCurrentStatus).toBe(false);
   });
 
+  it("supports reviewed Armenian, Bosnian, and HKSAR outbound rows", () => {
+    for (const passportCode of ["AM", "BA", "HK"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "NG", "evisa").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence(passportCode, "GQ", "evisa").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence(passportCode, "CI", snapshot.passports[passportCode].statuses.CI).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "CU", snapshot.passports[passportCode].statuses.CU).supportsCurrentStatus).toBe(false);
+    }
+    expect(getVisaRelationshipEvidence("AM", "UA", snapshot.passports.AM.statuses.UA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BA", "BA", "citizenship").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "KH", "visa_free").supportsCurrentStatus).toBe(true);
+  });
+
   it("supports reviewed Spanish, Italian, and South Korean outbound rows", () => {
     expect(getVisaRelationshipEvidence("ES", "VG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ES", "IQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2902,6 +2914,8 @@ describe("official visa evidence", () => {
       "www.gov.me",
       "mfa.gov.mk",
       "mvr.gov.mk",
+      "migration.mia.gov.am",
+      "www.iddeea.gov.ba",
       "www.slvesnik.com.mk",
       "ldbis.pravda.gov.mk",
       "aip.scaa.gov.so",
