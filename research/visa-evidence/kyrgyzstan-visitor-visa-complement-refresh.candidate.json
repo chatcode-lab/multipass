@@ -23,8 +23,20 @@
       "kind": "official-portal",
       "language": "English",
       "reviewedAt": "2026-08-22",
-      "officialityEvidence": "This is the same-origin endpoint used by the MFA selector for country-specific regime information. It returned HTTP 500 without the required selector context during this recheck, so it cannot support an omitted-country inference.",
+      "officialityEvidence": "This same-origin endpoint serves the separate Do I Need Visa regime display; it is not the application eligibility gate and cannot support an omitted-country inference.",
       "supportingExcerpt": "HTTP 500"
+    },
+    {
+      "id": "kyrgyz-evisa-application-gate-current-replay",
+      "title": "Kyrgyz Republic eVisa application eligibility gate",
+      "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The official application form calls same-origin getList7 after passport-country selection, then passes country and document type to getVisaList_2. Fresh-session replays for AF, DZ, AO, AG, BS, BD, BB, BZ, BJ and BT failed at host connection before any gate response; Kosovo and Taiwan are absent from the country selector.",
+      "supportingExcerpt": "url: \"api.php?method=getList7\""
     },
     {
       "id": "kyrgyz-evisa-current-portal",

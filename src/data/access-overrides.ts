@@ -2280,6 +2280,14 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
     reviewedAt: "2026-08-21",
   },
+  ...(["PK", "SR", "BJ", "SA", "PA", "GM", "RW", "BF", "RS", "SM", "JM", "NP", "QA"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "MH",
+    status: "visa_on_arrival" as const,
+    reason: "The current Marshall Islands Immigration Regulations issue a visitor visa upon arrival to citizens of countries with which the Republic has diplomatic ties; current official foreign-affairs records directly establish this relationship.",
+    sourceUrl: "https://www.rmiparliament.org/cms/images/LEGISLATION/SUBORDINATE/2009/2009-0001R/2009-0001R_1.pdf",
+    reviewedAt: "2026-08-22",
+  })),
   {
     passportCode: "TZ",
     destinationCode: "KI",

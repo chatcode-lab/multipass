@@ -1867,17 +1867,22 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "TV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps Marshall Islands evidence to the current named cohorts", () => {
+  it("keeps Marshall Islands evidence to current named and diplomatic-ties cohorts", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "MH");
 
-    expect(pairs).toHaveLength(111);
+    expect(pairs).toHaveLength(124);
     expect(getVisaRelationshipEvidence("MH", "MH", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "MH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "MH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TO", "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LC", "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["PK", "SR", "BJ", "SA", "PA", "GM", "RW", "BF", "RS", "SM", "JM", "NP", "QA"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    }
     expect(getVisaRelationshipEvidence("GT", "MH", snapshot.passports.GT.statuses.MH).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BS", "MH", snapshot.passports.BS.statuses.MH).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AL", "MH", snapshot.passports.AL.statuses.MH).supportsCurrentStatus).toBe(false);
   });
 
   it("maps Kiribati's current exemption schedule and advance-visa complement", () => {
@@ -2061,7 +2066,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UA")).toHaveLength(25);
+    expect(pairsFor("UA")).toHaveLength(65);
     expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2072,6 +2077,10 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IE", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SG", "UA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BT", "UA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BZ", "UA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PH", "UA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("JM", "UA", "evisa").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("DJ")).toHaveLength(15);
     expect(getVisaRelationshipEvidence("DJ", "DJ", "citizenship").supportsCurrentStatus).toBe(true);
@@ -2438,7 +2447,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BT", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BT", "BD", snapshot.passports.BT.statuses.BD).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BT", "KH", snapshot.passports.BT.statuses.KH).supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("BT", "UA", snapshot.passports.BT.statuses.UA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BT", "UA", "evisa").supportsCurrentStatus).toBe(true);
   });
 
   it("supports reviewed Andorran, Argentine, and Azerbaijani outbound rows", () => {
@@ -2481,7 +2490,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, "CU", snapshot.passports[passportCode].statuses.CU).supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence(passportCode, "CI", snapshot.passports[passportCode].statuses.CI).supportsCurrentStatus).toBe(false);
       expect(getVisaRelationshipEvidence(passportCode, "KH", snapshot.passports[passportCode].statuses.KH).supportsCurrentStatus).toBe(true);
-      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(passportCode === "BZ");
     }
   });
 
@@ -2791,6 +2800,10 @@ describe("official visa evidence", () => {
       "www.treaties.mfat.govt.nz",
       "rmiimmigration.org",
       "rmiparliament.org",
+      "www.rmiparliament.org",
+      "rminitijela.com",
+      "www.rmiembassyus.org",
+      "mofa.gov.qa",
       "immigration.mfai.gov.ki",
       "www.mfa.gov.ki",
       "www.canada.ca",
