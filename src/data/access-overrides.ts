@@ -30,6 +30,62 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...(["BE", "DK", "NO"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "CI" as const,
+    status: "visa_on_arrival" as const,
+    reason: "Côte d'Ivoire's official ordinary-passport procedure requires approved online pre-enrolment before printing and issuing the biometric visa at Abidjan airport.",
+    sourceUrl: "https://snedai.com/e-visa/",
+    reviewedAt: "2026-08-22",
+  })),
+  {
+    passportCode: "BE",
+    destinationCode: "LY",
+    status: "visa_required",
+    reason: "Current Belgian MFA guidance requires invitation-backed filing at the Libyan Embassy in Brussels rather than electronic issuance.",
+    sourceUrl: "https://diplomatie.belgium.be/fr/pays/libye/voyager-en-libye-conseils-aux-voyageurs/informations-pratiques-pour-la-libye",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "BE",
+    destinationCode: "DJ",
+    status: "evisa",
+    reason: "Current Belgian MFA guidance requires advance embassy or electronic-visa issuance and says airport arrival visas are no longer available.",
+    sourceUrl: "https://diplomatie.belgium.be/fr/pays/djibouti/voyager-djibouti-conseils-aux-voyageurs/informations-pratiques-pour-djibouti",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "BE",
+    destinationCode: "IQ",
+    status: "visa_on_arrival",
+    reason: "Current Belgian MFA guidance says eligible Belgian ordinary-passport travellers may receive the visa on entry, subject to stated journalist and NGO exclusions.",
+    sourceUrl: "https://diplomatie.belgium.be/fr/pays/irak/voyager-en-irak-conseils-aux-voyageurs/informations-pratiques-pour-lirak",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "BE",
+    destinationCode: "SY",
+    status: "visa_required",
+    reason: "Current Belgian MFA guidance directs travellers to obtain a visa from the Syrian Embassy in their country of residence before travel.",
+    sourceUrl: "https://diplomatie.belgium.be/fr/pays/syrie/voyager-en-syrie-conseils-aux-voyageurs/informations-pratiques-pour-la-syrie",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "BE",
+    destinationCode: "TM",
+    status: "visa_on_arrival",
+    reason: "Current Belgian MFA guidance documents arrival issuance after the required Turkmen Migration Service invitation approval.",
+    sourceUrl: "https://diplomatie.belgium.be/fr/pays/turkmenistan/voyager-au-turkmenistan-conseils-aux-voyageurs/informations-pratiques-pour-le-turkmenistan",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "NO",
+    destinationCode: "IQ",
+    status: "evisa",
+    reason: "Current Norwegian MFA guidance expressly requires Iraq's electronic visa before entry for Norwegian ordinary-passport travellers.",
+    sourceUrl: "https://www.regjeringen.no/no/tema/utenrikssaker/reiseinformasjon/velg-land/reiseinfo_irak/id2428572/",
+    reviewedAt: "2026-08-22",
+  },
   ...(["FI", "SE"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "CI" as const,

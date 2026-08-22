@@ -4732,6 +4732,73 @@
       ]
     },
     {"id":"belgium-outbound-low-coverage-destinations-2026","priority":281,"objective":"Classify ordinary Belgian-passport short-visitor access to the assigned low-coverage destinations from current Belgian Foreign Affairs and direct destination-government sources.","destinationCodes":["AF","KP","LY","VG","PS","DJ","SD","IQ","SY","KM","CU","TM","XK","UA","CG","GA","SS","TN","CF","GQ","PA","BA","CI","GW","LR","ML","NE","NG","BD","TD","KH"],"passportCodes":["BE"],"sourceHints":["https://diplomatie.belgium.be/fr/conseils-aux-voyageurs"],"notes":["Use current Belgian Foreign Affairs or direct destination-government evidence for ordinary Belgian passports. Preserve purpose, route, preapproval, issuance timing and final-admission conditions.","Do not infer electronic issuance from online filing, advance issuance from generic visa wording, or a visa category from closure, prohibition or Palestinian crossing controls. Online preapproval followed by border issuance is visa_on_arrival."]},
-    {"id":"denmark-outbound-low-coverage-destinations-2026","priority":282,"objective":"Classify ordinary Danish-passport short-visitor access to the assigned low-coverage destinations from current Danish Foreign Ministry and destination sources.","destinationCodes":["AF","KP","LY","VG","PS","DJ","SD","IQ","SY","KM","CU","TM","XK","UA","CG","GA","SS","TN","CF","GQ","PA","BA","CI","GW","LR","ML","NE","NG","BD","TD","KH"],"passportCodes":["DK"],"sourceHints":["https://um.dk/"],"notes":["Preserve purpose, preapproval, issuance timing and final-admission conditions; closure and prohibition remain unresolved."]}
-  ]
+    {"id":"denmark-outbound-low-coverage-destinations-2026","priority":282,"objective":"Classify ordinary Danish-passport short-visitor access to the assigned low-coverage destinations from current Danish Foreign Ministry and destination sources.","destinationCodes":["AF","KP","LY","VG","PS","DJ","SD","IQ","SY","KM","CU","TM","XK","UA","CG","GA","SS","TN","CF","GQ","PA","BA","CI","GW","LR","ML","NE","NG","BD","TD","KH"],"passportCodes":["DK"],"sourceHints":["https://um.dk/"],"notes":["Preserve purpose, preapproval, issuance timing and final-admission conditions; closure and prohibition remain unresolved."]},
+    {
+      "id": "norway-outbound-low-coverage-destinations-2026",
+      "priority": 283,
+      "objective": "Classify ordinary Norwegian-passport short-visitor access to the assigned low-coverage destinations from current Norwegian Foreign Ministry travel information and direct destination-government sources.",
+      "destinationCodes": ["AF", "KP", "LY", "VG", "PS", "DJ", "SD", "IQ", "SY", "KM", "CU", "TM", "XK", "UA", "CG", "GA", "SS", "TN", "CF", "GQ", "PA", "BA", "CI", "GW", "LR", "ML", "NE", "NG", "BD", "TD", "KH"],
+      "passportCodes": ["NO"],
+      "sourceHints": ["https://www.regjeringen.no/no/tema/utenrikssaker/reiseinformasjon/"],
+    "notes": [
+      "Use current Norwegian Foreign Ministry or direct destination-government evidence for ordinary Norwegian passports. Preserve visitor purpose, route, preapproval, issuance timing and final-admission conditions.",
+      "Do not infer eVisa from online filing, advance issuance from generic visa wording, or a visa category from closure, prohibition or Palestinian crossing controls. Online preapproval followed by border issuance is visa_on_arrival."
+    ]
+  },
+  {
+    "id": "palestinian-territory-outbound-low-coverage-destinations-2026",
+    "priority": 284,
+    "objective": "Classify ordinary Palestinian-passport short-visitor access to the assigned low-coverage destinations from current Palestinian and direct destination-government sources.",
+    "destinationCodes": [
+      "AF", "KP", "LY", "VG", "PS", "DJ", "SD", "IQ", "SY", "KM", "CU", "TM", "XK", "UA", "CG", "GA", "SS", "TN", "CF", "GQ", "PA", "BA", "CI", "GW", "LR", "ML", "NE", "NG", "BD", "TD", "KH"
+    ],
+    "passportCodes": [
+      "PS"
+    ],
+    "sourceHints": [
+      "https://www.mofa.pna.ps/",
+      "https://www.moi.pna.ps/"
+    ],
+    "notes": [
+      "Require explicit ordinary Palestinian-passport or travel-document eligibility; do not transfer rules for Israeli, Jordanian or other documents.",
+      "Preserve recognition, crossing-control, closure and prohibition ambiguity as unresolved when the current taxonomy cannot express it."
+    ]
+  },
+  {
+    "id": "libya-outbound-low-coverage-destinations-2026",
+    "priority": 285,
+    "objective": "Classify ordinary Libyan-passport short-visitor access to the assigned low-coverage destinations from current Libyan and direct destination-government sources.",
+    "destinationCodes": [
+      "AF", "KP", "LY", "VG", "PS", "DJ", "SD", "IQ", "SY", "KM", "CU", "TM", "XK", "UA", "CG", "GA", "SS", "TN", "CF", "GQ", "PA", "BA", "CI", "GW", "LR", "ML", "NE", "NG", "BD", "TD", "KH"
+    ],
+    "passportCodes": [
+      "LY"
+    ],
+    "sourceHints": [
+      "https://foreign.gov.ly/"
+    ],
+    "notes": [
+      "Use current official ordinary-passport evidence and preserve purpose, preapproval, issuance timing and final-admission conditions.",
+      "Do not infer a visa category from portal availability, generic visa wording, closure or prohibition."
+    ]
+  },
+  {
+    "id": "yemen-outbound-low-coverage-destinations-2026",
+    "priority": 286,
+    "objective": "Classify ordinary Yemeni-passport short-visitor access to the assigned low-coverage destinations from current Yemeni and direct destination-government sources.",
+    "destinationCodes": [
+      "AF", "KP", "LY", "VG", "PS", "DJ", "SD", "IQ", "SY", "KM", "CU", "TM", "XK", "UA", "CG", "GA", "SS", "TN", "CF", "GQ", "PA", "BA", "CI", "GW", "LR", "ML", "NE", "NG", "BD", "TD", "KH"
+    ],
+    "passportCodes": [
+      "YE"
+    ],
+    "sourceHints": [
+      "https://www.mofa-ye.org/"
+    ],
+    "notes": [
+      "Use current official ordinary-passport evidence and preserve purpose, preapproval, issuance timing and final-admission conditions.",
+      "Do not infer a visa category from portal availability, generic visa wording, closure or prohibition."
+    ]
+  }
+]
 }
