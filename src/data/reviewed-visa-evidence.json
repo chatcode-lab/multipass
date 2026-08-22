@@ -261,7 +261,10 @@
     "venezuela-outbound-low-coverage-destinations-2026",
     "antigua-and-barbuda-outbound-low-coverage-destinations-2026",
     "dominica-outbound-low-coverage-destinations-2026",
-    "bhutan-outbound-low-coverage-destinations-2026"
+    "bhutan-outbound-low-coverage-destinations-2026",
+    "andorra-outbound-low-coverage-destinations-2026",
+    "argentina-outbound-low-coverage-destinations-2026",
+    "azerbaijan-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -13380,6 +13383,86 @@
       "url": "https://www.mfa.gov.bt/passport-application/",
       "publisher": "Ministry of Foreign Affairs and External Trade, Royal Government of Bhutan",
       "jurisdiction": "Kingdom of Bhutan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "andorra-government-current-ordinary-passport-guidance",
+      "title": "Government of Andorra: passports",
+      "url": "https://www.govern.ad/ca/ministeris-i-secretaries-d-estat/ministeri-de-justicia-i-interior/passaports",
+      "publisher": "Government of Andorra, Ministry of Justice and Interior",
+      "jurisdiction": "Principality of Andorra",
+      "kind": "government-guidance",
+      "language": "Catalan",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "bosnia-fipa-current-visa-free-list-andorra",
+      "title": "Bosnia and Herzegovina FIPA: visa information for visitors",
+      "url": "https://fipa.vijeceministara.gov.ba/en/visasinformation-for-visitors",
+      "publisher": "Foreign Investment Promotion Agency of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "argentina-decree-261-current-ordinary-passport",
+      "title": "Argentina: Decree 261/2011 on passports (updated text)",
+      "url": "https://www.argentina.gob.ar/normativa/nacional/179846/actualizacion",
+      "publisher": "Argentine National Legal Information System",
+      "jurisdiction": "Argentine Republic",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "argentina-tunis-embassy-current-tourist-entry",
+      "title": "Embassy of Argentina in Tunisia: tourist entry information",
+      "url": "https://etune.cancilleria.gob.ar/es/%C2%BFpens%C3%A1s-viajar-t%C3%BAnez-%C2%A1necesit%C3%A1s-esta-informaci%C3%B3n%C2%A0",
+      "publisher": "Embassy of the Argentine Republic in Tunisia",
+      "jurisdiction": "Tunisian Republic",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "equatorial-guinea-evisa-current-en-us-asset",
+      "title": "Equatorial Guinea eVisa: live English service text",
+      "url": "https://equatorialguinea-evisa.com/assets/i18n/en-US.json",
+      "publisher": "Equatorial Guinea eVisa service",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "azerbaijan-mfa-ordinary-passport",
+      "title": "Azerbaijan MFA: ordinary passport of the Republic of Azerbaijan",
+      "url": "https://chisinau.mfa.gov.az/en/content/58/the-ordinary-passport-of-the-republic-of-azerbaijan",
+      "publisher": "Embassy of the Republic of Azerbaijan in Moldova, Ministry of Foreign Affairs",
+      "jurisdiction": "Republic of Azerbaijan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "azerbaijan-asan-national-passport-service",
+      "title": "ASAN: issuance and replacement of national passports",
+      "url": "https://asan.gov.az/en/service/asan-xidmetler/uemumvetendas-pasportlarinin-verilmesi-ve-deyisdirilmesi",
+      "publisher": "State Agency for Public Service and Social Innovations under the President of the Republic of Azerbaijan",
+      "jurisdiction": "Republic of Azerbaijan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "bosnia-fipa-current-visa-free-list-azerbaijan",
+      "title": "Bosnia and Herzegovina FIPA: visa information for visitors",
+      "url": "https://fipa.vijeceministara.gov.ba/en/visasinformation-for-visitors",
+      "publisher": "Foreign Investment Promotion Agency of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
       "kind": "government-guidance",
       "language": "English",
       "reviewedAt": "2026-08-22"
@@ -60458,6 +60541,275 @@
         "label": "Equatorial Guinea official eVisa service",
         "steps": [
           "Register using the Bhutanese ordinary passport for travel.",
+          "Pay and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record for final immigration processing."
+        ]
+      }
+    },
+    {
+      "id": "andorran-ordinary-passport-bosnia-short-visit-visa-exemption",
+      "title": "Andorran ordinary passports: Bosnia and Herzegovina short-visit visa exemption",
+      "summary": "Current Bosnia and Herzegovina government guidance names Andorra in its general visa-free citizenship rule and states the general visa-free stay limit.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BA"
+      ],
+      "passportCodes": [
+        "AD"
+      ],
+      "conditions": [
+        "Use an Andorran ordinary passport. The current BiH government guidance lists Andorra among citizens who do not require a visa; separate document-specific lists do not limit that general rule.",
+        "The general visa-free stay is up to 90 days in a six-month period. Purpose, passport validity, funds, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": [
+        "andorra-government-current-ordinary-passport-guidance",
+        "bosnia-fipa-current-visa-free-list-andorra",
+        "bosnia-sfa-current-visa-free-stay-limit"
+      ]
+    },
+    {
+      "id": "andorran-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Andorran ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "AD"
+      ],
+      "conditions": [
+        "Use an Andorran ordinary passport. F5A is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay. The emailed certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and visa-waiver partners; Appendix I assigns Andorra a payable visa fee, resolving that exception for this passport."
+      ],
+      "sourceIds": [
+        "andorra-government-current-ordinary-passport-guidance",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://evisa.immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Andorran ordinary passport and stated tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present it for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "andorran-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Andorran ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email/PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "AD"
+      ],
+      "conditions": [
+        "Use the Andorran ordinary passport used for travel; the live service excludes non-regular travel documents.",
+        "Register, upload visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not a visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": [
+        "andorra-government-current-ordinary-passport-guidance",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-live-translation"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register using the Andorran ordinary passport for travel.",
+          "Pay and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record for final immigration processing."
+        ]
+      }
+    },
+    {
+      "id": "argentine-ordinary-passport-bosnia-short-visit-visa-exemption",
+      "title": "Argentine ordinary passports: Bosnia and Herzegovina short-visit visa exemption",
+      "summary": "Current Bosnia and Herzegovina government guidance lists Argentina in the general visa-free rule and states an up-to-90-days-in-180-days stay limit.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BA"
+      ],
+      "passportCodes": [
+        "AR"
+      ],
+      "conditions": [
+        "Use an ordinary Argentine passport, not a diplomatic, official, special, refugee, stateless or exceptional-foreigner document. Current BiH government guidance lists Argentina as visa-exempt and sets the general visa-free stay at up to 90 days in 180 days.",
+        "This does not establish employment, residence, carrier rules or final admission."
+      ],
+      "sourceIds": [
+        "argentina-decree-261-current-ordinary-passport",
+        "bosnia-fipa-current-visa-free-country-list",
+        "bosnia-sfa-current-visa-free-stay-limit"
+      ]
+    },
+    {
+      "id": "argentine-ordinary-passport-tunisia-tourist-visa-exemption",
+      "title": "Argentine ordinary passports: Tunisia tourist visa exemption",
+      "summary": "Argentina's current Embassy in Tunisia guidance says Argentine passport holders do not need a visa for a tourist stay of up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "TN"
+      ],
+      "passportCodes": [
+        "AR"
+      ],
+      "conditions": [
+        "Use an ordinary Argentine passport for a tourist visit of up to 90 days. The Embassy's guidance does not establish work, residence, diplomatic, official, special, refugee, stateless, exceptional-foreigner, carrier or final-admission treatment.",
+        "Comply with current destination border, health and passport-validity requirements."
+      ],
+      "sourceIds": [
+        "argentina-decree-261-current-ordinary-passport",
+        "argentina-tunis-embassy-current-tourist-entry"
+      ]
+    },
+    {
+      "id": "argentine-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Argentine ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism route includes Argentina, requires online application, and sends the tourism visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "AR"
+      ],
+      "conditions": [
+        "Appendix I of Nigeria Immigration Service's current service-level agreement directly lists paid Argentine single-entry, multiple-entry, TWP and STR visa fees. Together with the F5A all-country rule, this establishes that Argentina is not among the visa-waiver exceptions.",
+        "Apply online with a valid ordinary Argentine passport and F5A tourism documents. The visa is single entry, valid for 90 days from issuance, and permits a stay of up to 30 days.",
+        "The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance. Diplomatic, official, special, refugee, stateless and exceptional-foreigner documents, work, residence, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "argentina-decree-261-current-ordinary-passport",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://evisa.immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa application",
+        "steps": [
+          "Apply online with the ordinary Argentine passport and stated tourism documents.",
+          "Pay and receive the visa certificate by email before departure.",
+          "Present the certificate and supporting documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "argentine-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Argentine ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email as a PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "AR"
+      ],
+      "conditions": [
+        "The current service asset says all nationalities can apply for an eVisa. Use the same ordinary Argentine passport for application and travel; it states that only a regular passport is accepted and other travel documents are not eligible.",
+        "Apply online through the Government-authenticated VFS eVisa service. The current service asset says the eVisa is sent by email and available as a PDF download before travel; this is electronic issuance, not an arrival-issued visa.",
+        "The ordinary visitor route does not establish work, residence, diplomatic, official, special, refugee, stateless, exceptional-foreigner, carrier or final-admission entitlement."
+      ],
+      "sourceIds": [
+        "argentina-decree-261-current-ordinary-passport",
+        "equatorial-guinea-government-online-visa-announcement",
+        "equatorial-guinea-evisa-current-en-us-asset"
+      ],
+      "application": {
+        "url": "https://egonline.vfsevisa.com/gnq/en/login",
+        "label": "Equatorial Guinea eVisa application (VFS)",
+        "steps": [
+          "Apply online using the ordinary Argentine passport for travel.",
+          "Receive and retain the emailed PDF eVisa before departure.",
+          "Present the same passport and eVisa at arrival for immigration processing and final admission."
+        ]
+      }
+    },
+    {
+      "id": "azerbaijani-ordinary-passport-bosnia-short-visit-visa-exemption",
+      "title": "Azerbaijani ordinary passports: Bosnia and Herzegovina short-visit visa exemption",
+      "summary": "Current Bosnia and Herzegovina government guidance lists Azerbaijan's valid ordinary passports in the visa-free agreement section and states the general visa-free stay limit.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BA"
+      ],
+      "passportCodes": [
+        "AZ"
+      ],
+      "conditions": [
+        "Use the ordinary Azerbaijani passport issued to a citizen for travel abroad. Current BiH government guidance names Azerbaijan in its valid-ordinary-passport visa-free agreement list.",
+        "The general visa-free stay is up to 90 days in a six-month period. This does not transfer service, diplomatic, return, identity-document, employment, residence, carrier or final-admission treatment."
+      ],
+      "sourceIds": [
+        "azerbaijan-mfa-ordinary-passport",
+        "azerbaijan-asan-national-passport-service",
+        "bosnia-fipa-current-visa-free-list-azerbaijan",
+        "bosnia-sfa-current-visa-free-stay-limit"
+      ]
+    },
+    {
+      "id": "azerbaijani-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Azerbaijani ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service routes eligible Azerbaijan-passport applicants through electronic issuance and lists Azerbaijan's payable single-entry fee.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "AZ"
+      ],
+      "conditions": [
+        "Use the ordinary Azerbaijani passport issued to a citizen for travel abroad. F5A is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay. The emailed certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Although F5A excepts ECOWAS States and countries with visa-waiver agreements, Appendix I expressly assigns Azerbaijan a payable $78 single-entry fee, establishing that this ordinary-passport route is not waived."
+      ],
+      "sourceIds": [
+        "azerbaijan-mfa-ordinary-passport",
+        "azerbaijan-asan-national-passport-service",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://evisa.immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa portal",
+        "steps": [
+          "Apply online with the Azerbaijani ordinary passport and stated tourism documents.",
+          "Pay the applicable fee and obtain the visa certificate by email before departure.",
+          "Present the issued record for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "azerbaijani-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Azerbaijani ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "AZ"
+      ],
+      "conditions": [
+        "Use the ordinary Azerbaijani passport used for travel; the live asset excludes non-regular travel documents.",
+        "Register, upload visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not a visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": [
+        "azerbaijan-mfa-ordinary-passport",
+        "azerbaijan-asan-national-passport-service",
+        "equatorial-guinea-government-online-visa-announcement",
+        "equatorial-guinea-evisa-live-translation"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register using the Azerbaijani ordinary passport for travel.",
           "Pay and receive the issued eVisa by email/PDF before travel.",
           "Carry the issued record for final immigration processing."
         ]
