@@ -3101,4 +3101,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mofa.gov.ae/en/travel-updates?code=syr",
     reviewedAt: "2026-08-22",
   },
+  {
+    passportCode: "KW",
+    destinationCode: "SY",
+    status: "visa_on_arrival",
+    reason: "Kuwait's current government ordinary-passport table expressly identifies Syria as visa on arrival rather than visa-free.",
+    sourceUrl: "https://e.gov.kw/sites/kgoenglish/Pages/InfoPages/KuwaitiCitizenEntryVisaCountries.aspx",
+    reviewedAt: "2026-08-22",
+  },
 ] as const;

@@ -1,0 +1,147 @@
+{
+  "batchId": "kuwait-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "kuwait-government-current-citizen-entry-visa-table",
+      "title": "List of countries that grant Kuwaiti citizens entry visas upon arrival or require a pre-issued visa from the embassy",
+      "url": "https://e.gov.kw/sites/kgoenglish/Pages/InfoPages/KuwaitiCitizenEntryVisaCountries.aspx",
+      "publisher": "Kuwait Government Online",
+      "jurisdiction": "Kuwait / worldwide",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Kuwait's official government portal publishes a country-by-country table with separate diplomatic, special and ordinary passport columns; the corresponding Arabic page is dated 2 June 2026.",
+      "supportingExcerpt": "The ordinary-passport column identifies each named country as visa-free, visa on arrival, or visa from embassy."
+    },
+    {
+      "id": "botswana-government-current-kuwait-visa-lifting",
+      "title": "Trio presents letters of credence",
+      "url": "https://dailynews.gov.bw/news-detail/86772",
+      "publisher": "Botswana Press Agency / Government of Botswana DailyNews",
+      "jurisdiction": "Botswana / Kuwait",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Botswana's government news service reports the President's statement on the operative treatment of Kuwaiti visitors.",
+      "supportingExcerpt": "Botswana lifted Visa requirements for Kuwaitis, and requested that the same be reciprocated for Batswana visiting Kuwait."
+    },
+    {
+      "id": "panama-embassy-current-no-visa-kuwait",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama / Kuwait",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Panama's official embassy publishes the live nationality schedule and expressly names Kuwait in its no-visa-required list.",
+      "supportingExcerpt": "No Visa Required: if you are from any of the following countries ... Kuwait."
+    }
+  ],
+  "policies": [
+    {
+      "id": "kuwaiti-ordinary-passport-advance-embassy-visa-current",
+      "title": "Kuwaiti ordinary passports: advance embassy visa destinations",
+      "summary": "Kuwait's current government table directs ordinary Kuwaiti passport holders to obtain an embassy-issued visa before visiting these destinations.",
+      "status": "visa_required",
+      "destinationCodes": ["AF", "AO", "CF", "TD", "CG", "GD", "LR", "ML", "NE", "KP", "MK", "TT", "TM"],
+      "passportCodes": ["KW"],
+      "conditions": ["Ordinary Kuwaiti passport and short visitor travel; apply through the relevant embassy before departure, with final issuance and admission remaining discretionary."],
+      "sourceIds": ["kuwait-government-current-citizen-entry-visa-table"],
+      "confidence": "high"
+    },
+    {
+      "id": "kuwaiti-ordinary-passport-botswana-visa-free-current",
+      "title": "Kuwaiti ordinary passports: Botswana visa-free visits",
+      "summary": "Botswana has lifted visa requirements for Kuwaiti visitors, matching Kuwait's current ordinary-passport table.",
+      "status": "visa_free",
+      "destinationCodes": ["BW"],
+      "passportCodes": ["KW"],
+      "conditions": ["Ordinary Kuwaiti passport and short visitor travel; length-of-stay, entry documentation and final admission remain separate."],
+      "sourceIds": ["kuwait-government-current-citizen-entry-visa-table", "botswana-government-current-kuwait-visa-lifting"],
+      "confidence": "high"
+    },
+    {
+      "id": "kuwaiti-ordinary-passport-panama-visa-free-current",
+      "title": "Kuwaiti ordinary passports: Panama visa-free visits",
+      "summary": "Kuwaiti visitors may enter Panama without a visa for a short stay.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["KW"],
+      "conditions": ["Ordinary Kuwaiti passport and short visitor travel, normally no more than three months; entry documentation and final admission remain separate."],
+      "sourceIds": ["kuwait-government-current-citizen-entry-visa-table", "panama-embassy-current-no-visa-kuwait"],
+      "confidence": "high"
+    },
+    {
+      "id": "kuwaiti-ordinary-passport-other-visa-free-current",
+      "title": "Kuwaiti ordinary passports: other current visa-free destinations",
+      "summary": "Kuwait's current government table identifies Jordan, Sudan, Tunisia and Ukraine as visa-free for ordinary Kuwaiti passports.",
+      "status": "visa_free",
+      "destinationCodes": ["JO", "SD", "TN", "UA"],
+      "passportCodes": ["KW"],
+      "conditions": ["Ordinary Kuwaiti passport and short visitor travel; destination-specific stay limits, entry documentation and final admission remain separate."],
+      "sourceIds": ["kuwait-government-current-citizen-entry-visa-table"],
+      "confidence": "high"
+    },
+    {
+      "id": "kuwaiti-ordinary-passport-visa-on-arrival-current",
+      "title": "Kuwaiti ordinary passports: current visa-on-arrival destinations",
+      "summary": "Kuwait's current government table identifies arrival-issued visitor visas for ordinary Kuwaiti passport holders at these destinations.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["CV", "KM", "DJ", "GW", "SY"],
+      "passportCodes": ["KW"],
+      "conditions": ["Ordinary Kuwaiti passport and short visitor travel through an eligible port; fees, supporting documents, stay limits and final admission remain destination-specific."],
+      "sourceIds": ["kuwait-government-current-citizen-entry-visa-table"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "KW",
+      "destinationCode": "SY",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Kuwait's current government ordinary-passport table says the Syrian visitor permission is issued on arrival rather than being visa-free.",
+      "sourceIds": ["kuwait-government-current-citizen-entry-visa-table"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "KW",
+      "destinationCode": "BF",
+      "reason": "Kuwait's current table says embassy issuance while also linking an eVisa platform; no retrievable Burkina Faso authority source resolves ordinary Kuwaiti-passport eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["e.gov.kw", "diplomatie.gov.bf", "visaburkina.bf"]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "CI",
+      "reason": "Kuwait's current table says embassy issuance, while the Ivorian electronic pre-enrolment service suggests another route; no current official pair-specific source resolves the ordinary visitor baseline.",
+      "searchedOfficialDomains": ["e.gov.kw", "diplomatie.gouv.ci", "snedai.com"]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "IQ",
+      "reason": "Kuwait's current ordinary-passport entry combines embassy and port issuance in one ambiguous entry, and the Iraqi portal does not independently resolve the unconditional route and actual timing.",
+      "searchedOfficialDomains": ["e.gov.kw", "mofa.gov.iq", "evisa.iq"]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "PS",
+      "reason": "No current official source establishes a Palestine-only ordinary Kuwaiti-passport visitor baseline; crossing-specific Israeli controls and permits cannot be normalized as a Palestinian visa outcome.",
+      "searchedOfficialDomains": ["e.gov.kw", "mofa.pna.ps", "gov.il", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "SL",
+      "reason": "Kuwait's current table says embassy issuance, while Sierra Leone's official services contain conflicting electronic and border-issuance descriptions; no pair-specific source resolves the ordinary visitor route.",
+      "searchedOfficialDomains": ["e.gov.kw", "slid.gov.sl", "evisa.sl"]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "SS",
+      "reason": "Kuwait's current table says embassy issuance while South Sudan operates an electronic portal; no retrievable current authority source positively resolves ordinary Kuwaiti-passport eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["e.gov.kw", "mofaic.gov.ss", "evisa.gov.ss"]
+    }
+  ]
+}

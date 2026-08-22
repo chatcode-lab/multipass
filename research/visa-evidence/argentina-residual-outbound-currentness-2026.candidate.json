@@ -1,0 +1,88 @@
+{
+  "batchId": "argentina-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "panama-embassy-argentina-visa-free-list-2026",
+      "title": "Embassy of Panama: immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Panamanian Government embassy immigration page publishes a named no-visa visitor-country list and includes Argentina, separately from conditional third-country visa or residence routes.",
+      "supportingExcerpt": "No Visa RequireD: IF you are from any of the following countries ... Argentina"
+    },
+    {
+      "id": "trinidad-tobago-argentina-visa-agreement-schedule",
+      "title": "Trinidad and Tobago visa requirements for all countries",
+      "url": "https://foreign.gov.tt/documents/232/Visa-Requirements-for-all-Countries.pdf",
+      "publisher": "Ministry of Foreign and CARICOM Affairs of Trinidad and Tobago",
+      "jurisdiction": "Trinidad and Tobago",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The official Ministry schedule records the 2000 Argentina agreement separately from diplomatic/official passport terms and expressly specifies the ordinary vacation or business visitor exemption.",
+      "supportingExcerpt": "Visa not required for entry on Vacation or Business for up to 90 days"
+    }
+  ],
+  "policies": [
+    {
+      "id": "argentine-ordinary-passport-panama-visa-free-2026",
+      "title": "Argentine ordinary passports: Panama short-visit visa exemption",
+      "summary": "Panama's current embassy immigration guidance names Argentina in its no-visa visitor-country list for stays of up to three months.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["AR"],
+      "conditions": ["Ordinary Argentine passport holder, visitor stay of up to three months; carry the stated passport validity, return/onward travel and funds where requested.", "Employment, residence, transit, conditional third-country visa or residence routes, special passports and final admission remain separate."],
+      "sourceIds": ["panama-embassy-argentina-visa-free-list-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "argentine-ordinary-passport-trinidad-tobago-visa-free-2026",
+      "title": "Argentine ordinary passports: Trinidad and Tobago vacation or business visa exemption",
+      "summary": "Trinidad and Tobago's official nationality schedule records the Argentina agreement as no visa required for vacation or business visits up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["TT"],
+      "passportCodes": ["AR"],
+      "conditions": ["Ordinary Argentine passport holder travelling for vacation or business, up to 90 days.", "Employment, residence, transit, diplomatic and official-passport arrangements, and final admission remain separate."],
+      "sourceIds": ["trinidad-tobago-argentina-visa-agreement-schedule"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"AR","destinationCode":"AF","reason":"No current Afghan or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing; closure and operational controls are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"BD","reason":"No current Bangladeshi or Argentine primary source establishes ordinary Argentine-passport visitor eligibility or a non-conditional arrival-issuance route.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"VG","reason":"The British Virgin Islands' positive visa schedule does not expressly define its omitted nationalities as visa-required or visa-free; no complement is inferred for an ordinary Argentine passport.","searchedOfficialDomains":["bvi.gov.vg","laws.gov.vg","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"BF","reason":"No current Burkina Faso or Argentine primary source positively establishes ordinary Argentine-passport eVisa eligibility and issuance; a portal alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"CV","reason":"No current Cabo Verde or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing; electronic pre-registration is not inferred as eVisa.","searchedOfficialDomains":["ease.gov.cv","mfa.gov.cv","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"CF","reason":"No current Central African or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"TD","reason":"The recorded Chad hold remains: portal material alone is not authenticated independent government evidence of an ordinary Argentine passport visitor route.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"KM","reason":"No current Comorian or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and whether issuance is advance, electronic or at the border.","searchedOfficialDomains":["gouvernement.km","interieur.gouv.km","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"CG","reason":"No current Republic of the Congo or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"CI","reason":"Côte d'Ivoire's official pre-enrolment material does not positively establish ordinary Argentine-passport eligibility and actual issuance timing; it is not inferred as eVisa.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"DJ","reason":"Current electronic-visa material reviewed does not establish the exact ordinary Argentine-passport eligibility and issuance result; an online application alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"GD","reason":"Grenada's live MFA mission page links a nationality schedule marked updated February 2021, but no later Grenadian Immigration schedule, Gazette instrument or current-force statement establishes the present ordinary Argentine-passport baseline.","searchedOfficialDomains":["mofa.gov.gd","gov.gd","laws.gov.gd","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"GW","reason":"No current Guinea-Bissau or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mne.gw","gov.gw","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"IR","reason":"No current Iranian or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"IQ","reason":"No current Iraqi or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"JO","reason":"Jordan's official material reviewed describes conditional eVisa and third-country residence routes, but does not establish an unconditional ordinary Argentine-passport visitor baseline.","searchedOfficialDomains":["moi.gov.jo","mfa.gov.jo","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"KW","reason":"No current Kuwaiti or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing; diplomatic or official-passport arrangements are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"LR","reason":"No current Liberian or Argentine primary source establishes ordinary Argentine-passport electronic eligibility and issuance timing.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"ML","reason":"No current Malian or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"NE","reason":"No current Nigerien or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"KP","reason":"No current DPRK or Argentine primary source establishes an available ordinary Argentine-passport visitor route; closure or permission controls are not taxonomy states.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"MK","reason":"Argentina's published agreement with North Macedonia is limited to diplomatic and official passports; no current primary source establishes an ordinary Argentine-passport visitor baseline.","searchedOfficialDomains":["tratados.cancilleria.gob.ar","mfa.gov.mk","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"PS","reason":"Crossing, Israeli permit and recognition controls do not establish a Palestine-only ordinary Argentine-passport ETA status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"ST","reason":"No current São Tomé and Príncipe or Argentine primary source establishes ordinary Argentine-passport electronic eligibility and issuance timing.","searchedOfficialDomains":["migracao.st","mirex.gov.st","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"SA","reason":"No current Saudi or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing; omission from an eVisa list is not a complement.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"SL","reason":"The recorded Sierra Leone hold remains absent independent current Argentine or destination-government pair-specific guidance; internally conflicting portal material does not establish the route.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"SS","reason":"Current material reviewed does not establish ordinary Argentine-passport electronic eligibility and issuance timing; online application availability alone is not eVisa evidence.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"SD","reason":"No current Sudanese or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"SY","reason":"No current Syrian or Argentine primary source establishes ordinary Argentine-passport visitor eligibility and issuance timing; special-document arrangements are not transferred.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"TM","reason":"No current Turkmen or Argentine primary source establishes whether the ordinary Argentine visitor visa is advance-issued, electronically issued or issued at the border; generic invitation wording is insufficient.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","cancilleria.gob.ar"]},
+    {"passportCode":"AR","destinationCode":"UA","reason":"Ukraine's retrievable Foreign Ministry nationality table is expressly current only to June 2023; it is insufficient to establish the present 2026 ordinary Argentine-passport baseline.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","cancilleria.gob.ar"]}
+  ]
+}
