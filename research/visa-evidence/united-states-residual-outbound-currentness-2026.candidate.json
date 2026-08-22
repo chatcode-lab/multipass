@@ -75,6 +75,18 @@
       "supportingExcerpt": "e-visas are available at the airport upon arrival, you must request them online prior to arrival"
     },
     {
+      "id": "cote-divoire-snedai-airport-visa-issuance-2026",
+      "title": "SNEDAI: Côte d’Ivoire e-visa procedure",
+      "url": "https://snedai.com/e-visa/",
+      "publisher": "SNEDAI, officially recognised Côte d’Ivoire visa service",
+      "jurisdiction": "Côte d’Ivoire",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live SNEDAI procedure says its site is the only visa-application site officially recognised and approved by the State of Côte d’Ivoire.",
+      "supportingExcerpt": "le visa est imprimé et délivré immédiatement"
+    },
+    {
       "id": "us-state-guinea-bissau-2026",
       "title": "Guinea-Bissau Travel Advisory",
       "url": "https://travel.state.gov/en/international-travel/travel-advisories/guinea-bissau.html",
@@ -199,17 +211,17 @@
       "confidence": "high"
     },
     {
-      "id": "us-outbound-residual-evisa",
-      "title": "United States ordinary passport: Côte d’Ivoire pre-arrival e-visa",
-      "summary": "Current State Department guidance establishes that an ordinary U.S.-passport visitor must request Côte d’Ivoire's e-visa online before arrival, even though the e-visa is available at the airport.",
-      "status": "evisa",
+      "id": "us-outbound-residual-cote-divoire-arrival-visa",
+      "title": "United States ordinary passport: Côte d’Ivoire preapproved arrival visa",
+      "summary": "A U.S.-passport visitor must request approval online before arrival, while Côte d’Ivoire's current official procedure prints and issues the visa after airport biometrics.",
+      "status": "visa_on_arrival",
       "destinationCodes": ["CI"],
       "passportCodes": ["US"],
       "conditions": [
-        "The online e-visa request and approval precede arrival; airport availability does not make this a walk-up visa on arrival.",
+        "Complete the online request and obtain approval before travel; the visa itself is printed and issued after biometric enrolment at Abidjan airport.",
         "The ordinary visitor must also satisfy passport, yellow-fever, carrier, entry-point, and final-admission conditions."
       ],
-      "sourceIds": ["us-state-cote-divoire-2026"],
+      "sourceIds": ["us-state-cote-divoire-2026", "cote-divoire-snedai-airport-visa-issuance-2026"],
       "confidence": "high"
     },
     {
@@ -270,6 +282,14 @@
     }
   ],
   "conflicts": [
+    {
+      "passportCode": "US",
+      "destinationCode": "CI",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Online approval is required before travel, but SNEDAI's current officially recognised procedure prints and issues the visa only after biometric enrolment at Abidjan airport.",
+      "sourceIds": ["us-state-cote-divoire-2026", "cote-divoire-snedai-airport-visa-issuance-2026"]
+    },
     {
       "passportCode": "US",
       "destinationCode": "BF",
