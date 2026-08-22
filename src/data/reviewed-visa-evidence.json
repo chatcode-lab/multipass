@@ -249,7 +249,10 @@
     "myanmar-outbound-low-coverage-destinations-2026",
     "armenia-outbound-low-coverage-destinations-2026",
     "bosnia-and-herzegovina-outbound-low-coverage-destinations-2026",
-    "hong-kong-outbound-low-coverage-destinations-2026"
+    "hong-kong-outbound-low-coverage-destinations-2026",
+    "burkina-faso-outbound-low-coverage-destinations-2026",
+    "israel-outbound-low-coverage-destinations-2026",
+    "sri-lanka-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -13178,6 +13181,36 @@
       "url": "https://www.immd.gov.hk/eng/service/travel_document/apply_for_hksar_passport.html?s=100131301",
       "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
       "jurisdiction": "Hong Kong SAR",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "burkina-faso-ankara-current-ordinary-passport-service",
+      "title": "Embassy of Burkina Faso in Türkiye: ordinary passport service",
+      "url": "https://turkiye.diplomatie.gov.bf/?services=passeport",
+      "publisher": "Embassy of Burkina Faso in Türkiye",
+      "jurisdiction": "Burkina Faso",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "israel-piba-current-biometric-passport-service",
+      "title": "Israel Population and Immigration Authority: apply for an Israeli passport",
+      "url": "https://www.gov.il/en/service/application_for_biometric_passport2",
+      "publisher": "Population and Immigration Authority, State of Israel",
+      "jurisdiction": "State of Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "sri-lanka-immigration-current-ordinary-passport-scope",
+      "title": "Sri Lanka Department of Immigration and Emigration: General information on passports",
+      "url": "https://www.immigration.gov.lk/pages_e.php?id=7",
+      "publisher": "Department of Immigration and Emigration, Sri Lanka",
+      "jurisdiction": "Democratic Socialist Republic of Sri Lanka",
       "kind": "government-guidance",
       "language": "English",
       "reviewedAt": "2026-08-22"
@@ -59509,6 +59542,162 @@
         "steps": [
           "Register and submit the visitor eVisa application with the HKSAR passport to be used for travel.",
           "Pay online and receive the issued eVisa by email before travel.",
+          "Carry the issued record and meet entry-point and final-admission conditions."
+        ]
+      }
+    },
+    {
+      "id": "burkina-faso-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Burkinabè ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email as a PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "BF"
+      ],
+      "conditions": [
+        "Use the same valid Burkinabè ordinary passport for application and travel; non-regular travel documents are not accepted.",
+        "Apply through the authenticated eVisa service and receive the eVisa by email in PDF form before travel. This is electronic issuance, not a visa on arrival.",
+        "The ordinary visitor route does not establish work, residence, special-document, carrier or final-admission entitlement."
+      ],
+      "sourceIds": [
+        "burkina-faso-ankara-current-ordinary-passport-service",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea eVisa service",
+        "steps": [
+          "Apply online using the Burkinabè ordinary passport for travel.",
+          "Receive and retain the emailed PDF eVisa before departure.",
+          "Present the same passport and eVisa for final immigration processing and admission."
+        ]
+      }
+    },
+    {
+      "id": "israeli-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Israeli ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "IL"
+      ],
+      "conditions": [
+        "Use a regular Israeli passport, not a laissez-passer or another special travel document. F5A is tourism only, single entry and up to 30 days, with the stated passport-validity and supporting-document requirements.",
+        "Apply online, upload documents and pay. The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current all-country document does not identify an Israeli ordinary-passport exception; this classification is medium confidence. Work, residence, special documents, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "israel-piba-current-biometric-passport-service",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the regular Israeli passport and required tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present the certificate and required documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "israeli-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Israeli ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's institutional Government page authenticates its online visa service; the current service accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "IL"
+      ],
+      "conditions": [
+        "Apply using the regular Israeli passport that will be used for travel; the official portal excludes non-regular travel documents.",
+        "Register, upload the required visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not an ETA or visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "israel-piba-current-biometric-passport-service",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register and submit the visitor eVisa application with the Israeli ordinary passport to be used for travel.",
+          "Pay online and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record and meet entry-point and final-admission conditions."
+        ]
+      }
+    },
+    {
+      "id": "sri-lankan-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Sri Lankan ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "LK"
+      ],
+      "conditions": [
+        "Use a Sri Lankan ordinary passport. F5A is tourism only, single entry and up to 30 days, with the stated passport-validity and supporting-document requirements.",
+        "Apply online, upload documents and pay. The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current all-country document does not identify a Sri Lankan ordinary-passport exception; this classification is medium confidence. Work, residence, diplomatic, official, special documents, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "sri-lanka-immigration-current-ordinary-passport-scope",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Sri Lankan ordinary passport and required tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present the certificate and required documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "sri-lankan-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Sri Lankan ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's institutional Government page authenticates its online visa service; the live translation asset on that exact domain accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "LK"
+      ],
+      "conditions": [
+        "Apply using the Sri Lankan ordinary passport that will be used for travel; the live official translation asset excludes non-regular travel documents.",
+        "Register, upload the required visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not an ETA or visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "sri-lanka-immigration-current-ordinary-passport-scope",
+        "equatorial-guinea-government-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register and submit the visitor eVisa application with the Sri Lankan ordinary passport to be used for travel.",
+          "Pay online and receive the issued eVisa by email/PDF before travel.",
           "Carry the issued record and meet entry-point and final-admission conditions."
         ]
       }
