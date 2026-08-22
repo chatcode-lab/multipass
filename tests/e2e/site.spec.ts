@@ -580,12 +580,12 @@ test("destination and relationship pages expose official evidence and Markdown",
 });
 
 test("relationship URLs redirect stale statuses and keep incomplete evidence out of search", async ({ page, request }) => {
-  await page.goto("/belgium-chad-evisa");
-  await expect(page).toHaveURL(/\/belgium-chad-visa$/);
+  await page.goto("/belgium-afghanistan-evisa");
+  await expect(page).toHaveURL(/\/belgium-afghanistan-visa$/);
   await expect(page.getByText("Official-source review pending", { exact: true })).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
 
-  const markdown = await request.get("/belgium-chad-visa.md", { maxRedirects: 0 });
+  const markdown = await request.get("/belgium-afghanistan-visa.md", { maxRedirects: 0 });
   expect(markdown.ok()).toBe(true);
   expect(markdown.headers()["x-robots-tag"]).toContain("noindex");
 
@@ -593,7 +593,7 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
   const xml = await sitemap.text();
   expect(xml).toContain("<loc>https://multipassrank.com/destination/angola</loc>");
   expect(xml).toContain("<loc>https://multipassrank.com/belgium-angola-visa-free</loc>");
-  expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-chad-visa</loc>");
+  expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-afghanistan-visa</loc>");
 });
 
 test("corrected Saint Martin URLs retain St. Maarten compatibility redirects", async ({ page, request }) => {
