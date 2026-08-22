@@ -1,0 +1,130 @@
+{
+  "batchId": "moldova-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "moldova-mfa-current-outbound-visa-regime",
+      "title": "Moldova MFA: visa regime for citizens of the Republic of Moldova",
+      "url": "https://mfa.gov.md/en/node/4478",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Moldova MFA consular table, updated 20 February 2026, has distinct diplomatic, service and ordinary-passport columns and a visa-obtaining-method column for each destination.",
+      "supportingExcerpt": "Țara | Pașaport diplomatic | Pașaport de serviciu | Pașaport ordinar | Modalitatea de obținere a vizei. Actualizat la 20.02.2026."
+    },
+    {
+      "id": "gabon-dgdi-eta-arrival-sticker",
+      "title": "Gabon DGDI e-Visa: electronic authorization and arrival sticker",
+      "url": "https://evisa.dgdi.ga/",
+      "publisher": "Direction Générale de la Documentation et de l'Immigration, Gabon",
+      "jurisdiction": "Gabon",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The DGDI-branded official immigration portal requires a Travel Authorization Receipt before travel and says payment is made on arrival when the e-visa sticker is delivered.",
+      "supportingExcerpt": "Applicants should not travel ... without having received the Travel Authorization Receipt. Payments are made on arrival at delivery of the e-visa sticker."
+    },
+    {
+      "id": "cote-divoire-snedai-arrival-visa",
+      "title": "Côte d'Ivoire official SNEDAI: e-visa procedure",
+      "url": "https://snedai.com/e-visa/",
+      "publisher": "SNEDAI, official Côte d'Ivoire visa service",
+      "jurisdiction": "Côte d'Ivoire",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "SNEDAI identifies itself as the only visa-application website approved by Côte d'Ivoire and says that, after approved pre-enrolment, the visa is printed and issued at the airport.",
+      "supportingExcerpt": "Le demandeur embarque avec le document « Pré-enrôlement approuvé » ... le visa est imprimé et délivré immédiatement."
+    },
+    {
+      "id": "nigeria-nis-tourism-evisa-all-countries",
+      "title": "Nigeria Immigration Service: tourism e-Visa",
+      "url": "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Nigeria",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Nigeria Immigration Service service-level agreement calls the tourism route an e-Visa, makes citizens of all countries eligible, and says a visa certificate is received by email.",
+      "supportingExcerpt": "F5A- TOURISM VISA ... Eligibility: Citizens of all countries ... Receive Visa certificate via email."
+    }
+  ],
+  "policies": [
+    {
+      "id": "moldovan-ordinary-passport-named-visa-free-short-visits",
+      "title": "Moldovan ordinary passports: named visa-free short visits",
+      "summary": "Moldova MFA's current ordinary-passport table records visa-free short visits for Bosnia and Herzegovina, Panama, Tunisia and Ukraine.",
+      "status": "visa_free",
+      "destinationCodes": ["BA", "PA", "TN", "UA"],
+      "passportCodes": ["MD"],
+      "conditions": [
+        "The MFA table states 90 days for Bosnia and Herzegovina, Tunisia and Ukraine; for Panama it records return tickets and a passport valid for three months.",
+        "This does not establish Transnistria routing, border-opening, work, residence, special-document or final-admission treatment."
+      ],
+      "sourceIds": ["moldova-mfa-current-outbound-visa-regime"],
+      "confidence": "high"
+    },
+    {
+      "id": "moldovan-ordinary-passport-named-advance-consular-visas",
+      "title": "Moldovan ordinary passports: named advance consular visitor visas",
+      "summary": "Moldova MFA's current ordinary-passport table requires a visa and identifies diplomatic missions as the obtaining method for these destinations.",
+      "status": "visa_required",
+      "destinationCodes": ["AF", "BD", "CF", "CG", "GW", "ML", "NE", "SD", "SY", "TM"],
+      "passportCodes": ["MD"],
+      "conditions": [
+        "Apply through the relevant diplomatic mission and obtain the visitor visa before departure; this is an advance consular route, not an inference from generic visa wording.",
+        "Mission operation, invitation requirements, Syrian and Afghan governmental-transition issues, closures, routes through Transnistria, special documents and final admission remain separate."
+      ],
+      "sourceIds": ["moldova-mfa-current-outbound-visa-regime"],
+      "confidence": "high"
+    },
+    {
+      "id": "moldovan-ordinary-passport-named-electronic-visitor-visas",
+      "title": "Moldovan ordinary passports: named electronic visitor visas",
+      "summary": "Moldova MFA's current ordinary-passport table records eVisa as the obtaining method for these destinations; Nigeria independently confirms its tourism eVisa is open to citizens of all countries and sent by email.",
+      "status": "evisa",
+      "destinationCodes": ["CU", "DJ", "GQ", "IQ", "KH", "LY", "NG", "SS", "TD"],
+      "passportCodes": ["MD"],
+      "conditions": [
+        "Obtain the electronic visitor visa before departure using the destination portal linked by Moldova MFA. Nigeria's tourism eVisa is specifically available to citizens of all countries and issues a certificate by email.",
+        "Cuba's listed eVisa route excludes maritime travel, for which Moldova MFA says a diplomatic mission is required. Purpose, duration, availability, closure, carrier checks and final admission remain separate."
+      ],
+      "sourceIds": ["moldova-mfa-current-outbound-visa-regime", "nigeria-nis-tourism-evisa-all-countries"],
+      "confidence": "high"
+    },
+    {
+      "id": "moldovan-ordinary-passport-named-arrival-visitor-visas",
+      "title": "Moldovan ordinary passports: named arrival visitor visas",
+      "summary": "Moldova MFA records visas on arrival for Comoros and Liberia; the Côte d'Ivoire and Gabon destination portals establish that their online preapproval routes end in issuance at the airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["CI", "GA", "KM", "LR"],
+      "passportCodes": ["MD"],
+      "conditions": [
+        "For Liberia, Moldova MFA states that the online form and printed confirmation are mandatory before the visa-on-arrival step. For Comoros, it records visa on arrival.",
+        "For Côte d'Ivoire, board with approved pre-enrolment and complete biometrics at Abidjan, where the visa is printed and issued. For Gabon, obtain a DGDI Travel Authorization Receipt before travel; the sticker is delivered and paid for on arrival at Libreville airport."
+      ],
+      "sourceIds": ["moldova-mfa-current-outbound-visa-regime", "cote-divoire-snedai-arrival-visa", "gabon-dgdi-eta-arrival-sticker"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {"passportCode":"MD","destinationCode":"BD","snapshotStatus":"visa_on_arrival","officialStatus":"visa_required","explanation":"Moldova MFA's ordinary-passport row requires a visa through diplomatic missions, establishing advance consular issuance rather than arrival issuance.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]},
+    {"passportCode":"MD","destinationCode":"CI","snapshotStatus":"evisa","officialStatus":"visa_on_arrival","explanation":"SNEDAI requires approved pre-enrolment before travel but prints and issues the visa at Abidjan airport; online preapproval followed by border issuance is visa_on_arrival.","sourceIds":["cote-divoire-snedai-arrival-visa"]},
+    {"passportCode":"MD","destinationCode":"DJ","snapshotStatus":"visa_on_arrival","officialStatus":"evisa","explanation":"Moldova MFA's current ordinary-passport row names eVisa, rather than visa on arrival, as the obtaining method.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]},
+    {"passportCode":"MD","destinationCode":"GA","snapshotStatus":"evisa","officialStatus":"visa_on_arrival","explanation":"Although Moldova MFA links Gabon's eVisa route, DGDI requires pre-travel authorization and delivers the visa sticker on arrival; this is visa_on_arrival under the taxonomy.","sourceIds":["moldova-mfa-current-outbound-visa-regime","gabon-dgdi-eta-arrival-sticker"]},
+    {"passportCode":"MD","destinationCode":"GW","snapshotStatus":"visa_on_arrival","officialStatus":"visa_required","explanation":"Moldova MFA's ordinary-passport row requires a visa through diplomatic missions, establishing advance consular issuance.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]},
+    {"passportCode":"MD","destinationCode":"IQ","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Moldova MFA's current ordinary-passport row names eVisa as the obtaining method.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]},
+    {"passportCode":"MD","destinationCode":"LR","snapshotStatus":"evisa","officialStatus":"visa_on_arrival","explanation":"Moldova MFA expressly calls Liberia a visa-on-arrival route and requires its online form and printed confirmation before arrival.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]},
+    {"passportCode":"MD","destinationCode":"SY","snapshotStatus":"visa_on_arrival","officialStatus":"visa_required","explanation":"Moldova MFA's ordinary-passport row requires a visa through diplomatic missions, establishing advance consular issuance.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]},
+    {"passportCode":"MD","destinationCode":"TD","snapshotStatus":"visa_required","officialStatus":"evisa","explanation":"Moldova MFA's current ordinary-passport row names eVisa as the obtaining method.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]},
+    {"passportCode":"MD","destinationCode":"KH","snapshotStatus":"visa_on_arrival","officialStatus":"evisa","explanation":"Moldova MFA's current ordinary-passport row names eVisa as the obtaining method.","sourceIds":["moldova-mfa-current-outbound-visa-regime"]}
+  ],
+  "unresolved": [
+    {"passportCode":"MD","destinationCode":"KP","reason":"Moldova MFA says an ordinary-passport visa is required but does not state an obtaining method; generic visa wording cannot establish advance issuance, while closure and permission controls are not taxonomy states.","searchedOfficialDomains":["mfa.gov.md","mfa.gov.kp"]},
+    {"passportCode":"MD","destinationCode":"VG","reason":"No current primary BVI or Moldova source reviewed establishes ordinary Moldovan-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["bvi.gov.vg","mfa.gov.md"]},
+    {"passportCode":"MD","destinationCode":"PS","reason":"Moldova MFA records a visa-free entry regime but directs travellers to Israel's ETA system; crossing, permit, recognition and operational controls do not establish a Palestine-only taxonomy route.","searchedOfficialDomains":["mfa.gov.md","mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"MD","destinationCode":"XK","reason":"No current primary source reviewed establishes a Moldova ordinary-passport visitor route without unresolved Kosovo recognition, document-acceptance or routing questions.","searchedOfficialDomains":["mfa.gov.md","mfa-ks.net","mpb.rks-gov.net"]}
+  ]
+}
