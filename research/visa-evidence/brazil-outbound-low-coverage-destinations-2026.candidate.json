@@ -1,0 +1,148 @@
+{
+  "batchId": "brazil-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "brazil-pf-common-passport-instruction",
+      "title": "Brazilian Federal Police: Normative Instruction 173/2020 on travel documents",
+      "url": "https://www.gov.br/pf/pt-br/assuntos/passaporte/legislacao/instrucao-normativa-173",
+      "publisher": "Polícia Federal",
+      "jurisdiction": "Brazil",
+      "kind": "law",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Federal Police's current official normative instruction distinguishes the common passport from other travel documents and limits its general eligibility to Brazilian-born or naturalized nationals.",
+      "supportingExcerpt": "São condições gerais para obtenção do passaporte comum: I - ser brasileiro nato ou naturalizado."
+    },
+    {
+      "id": "brazil-federal-common-passport-service",
+      "title": "Brazilian Federal Government: obtain a common passport",
+      "url": "https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro",
+      "publisher": "Federal Government of Brazil / Polícia Federal",
+      "jurisdiction": "Brazil",
+      "kind": "government-guidance",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current federal passport service describes a passport as a travel document accepted to identify a traveller in another country and separately identifies diplomatic, official/service, emergency, foreigner and laissez-passer documents.",
+      "supportingExcerpt": "Passaporte é um documento de viagem ... aceito como identificação do viajante em outro país."
+    },
+    {
+      "id": "nigeria-immigration-2026-tourism-evisa",
+      "title": "Nigeria Immigration Service: 2026 Tourism (F5A) visa service level",
+      "url": "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Federal Republic of Nigeria",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Nigeria Immigration Service's April 2026 service-level document establishes electronic F5A tourism issuance and its Appendix I assigns Brazil a payable single-entry fee, distinguishing it from the waiver cohort.",
+      "supportingExcerpt": "F5A Eligibility: Citizens of all countries ... Receive Visa certificate via email. Brazil $20 $20* $20 $20."
+    },
+    {
+      "id": "equatorial-guinea-government-online-visa-announcement",
+      "title": "Equatorial Guinea Government: online visa is operational",
+      "url": "https://www.guineaecuatorialpress.com/index.php/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+      "publisher": "Government of the Republic of Equatorial Guinea Information and Press Office",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The institutional Government page identifies equatorialguinea-evisa.com as the operational visa site and says interested visitors can obtain a visa online without attending in person.",
+      "supportingExcerpt": "todos los interesados en viajar al país podrán conseguir su visado sin tener que desplazarse físicamente."
+    },
+    {
+      "id": "equatorial-guinea-evisa-live-translation",
+      "title": "Equatorial Guinea eVisa: live eligibility, regular-passport and delivery translation asset",
+      "url": "https://equatorialguinea-evisa.com/assets/i18n/en-US.json",
+      "publisher": "Equatorial Guinea eVisa service",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government-authenticated exact domain's live English translation asset says all nationalities can apply, limits the process to a regular passport, and sends eVisas by email with PDF download.",
+      "supportingExcerpt": "All Nationalities can apply for an E- Visa ... All E-Visa are sent by email."
+    }
+  ],
+  "policies": [
+    {
+      "id": "brazilian-common-passport-nigeria-tourism-evisa",
+      "title": "Brazilian common passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service routes eligible Brazilian common-passport applicants through electronic issuance and lists Brazil's payable single-entry fee.",
+      "status": "evisa",
+      "destinationCodes": ["NG"],
+      "passportCodes": ["BR"],
+      "conditions": [
+        "Use the Brazilian common passport issued to a Brazilian-born or naturalized national, not a diplomatic, official/service, emergency, foreigner or laissez-passer document. F5A is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay. The emailed certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Although F5A excepts ECOWAS States and countries with visa-waiver agreements, Appendix I expressly assigns Brazil a payable $20 single-entry fee, establishing that this ordinary-passport route is not waived."
+      ],
+      "sourceIds": ["brazil-pf-common-passport-instruction", "brazil-federal-common-passport-service", "nigeria-immigration-2026-tourism-evisa"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa portal",
+        "steps": [
+          "Apply online with the Brazilian common passport and stated tourism documents.",
+          "Pay the applicable fee and obtain the visa certificate by email before departure.",
+          "Present the issued record for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "brazilian-common-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Brazilian common passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": ["GQ"],
+      "passportCodes": ["BR"],
+      "conditions": [
+        "Use the Brazilian common passport used for travel; the live service excludes non-regular travel documents.",
+        "Register, upload visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not a visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": ["brazil-pf-common-passport-instruction", "brazil-federal-common-passport-service", "equatorial-guinea-government-online-visa-announcement", "equatorial-guinea-evisa-live-translation"],
+      "confidence": "high",
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register using the Brazilian common passport for travel.",
+          "Pay and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record for final immigration processing."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"BR","destinationCode":"AF","reason":"No current Afghan or Brazilian primary source establishes Brazilian common-passport visitor eligibility and issuance timing; closure and operational controls are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"KP","reason":"No current DPRK or Brazilian primary source establishes a Brazilian common-passport visitor route; closure or permission controls are not taxonomy states.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"LY","reason":"No current Libyan or Brazilian primary source establishes Brazilian common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["moi.gov.ly","foreign.gov.ly","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"VG","reason":"No current British Virgin Islands or Brazilian primary source establishes Brazilian common-passport visitor eligibility and issuance timing; undated nationality schedules are insufficient.","searchedOfficialDomains":["bvi.gov.vg","gov.vg","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"PS","reason":"Crossing, Israeli permit and recognition controls do not establish a Palestine-only Brazilian common-passport status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"DJ","reason":"No current Djiboutian or Brazilian primary source establishes common-passport eligibility and whether visitor issuance is electronic, advance or border-issued.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"SD","reason":"No current Sudanese or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.sd","passports.gov.sd","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"IQ","reason":"No current Iraqi or Brazilian primary source establishes common-passport visitor eligibility and issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","moi.gov.iq","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"SY","reason":"No current Syrian or Brazilian primary source establishes common-passport visitor eligibility and issuance timing; special-document arrangements are not transferred.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"KM","reason":"No current Comorian or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["gouv.km","justice.gouv.km","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"CU","reason":"Cuba's current official tourist guidance preserves unnamed visa-free-agreement exceptions and does not name Brazil; no current primary source resolves the common-passport exception.","searchedOfficialDomains":["cuba.travel","minrex.gob.cu","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"TM","reason":"No current Turkmen or Brazilian primary source establishes common-passport visitor eligibility and issuance timing; generic invitation wording is insufficient.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"XK","reason":"No current Kosovo or Brazilian primary source establishes common-passport visitor eligibility and issuance timing; recognition context is not a visa category.","searchedOfficialDomains":["mpb.rks-gov.net","mfa-ks.net","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"UA","reason":"Ukraine MFA's nationality table is expressly as of June 2023; no current 2026 source establishes the Brazilian common-passport route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"CG","reason":"No current Republic of the Congo or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"GA","reason":"No current Gabonese or Brazilian primary source establishes common-passport eligibility and electronic versus airport issuance timing.","searchedOfficialDomains":["evisa.dgdi.ga","interieur.ga","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"SS","reason":"No current South Sudanese or Brazilian primary source establishes common-passport eligibility and electronic-issuance timing.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"TN","reason":"No current Tunisian or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gov.tn","interieur.gov.tn","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"CF","reason":"No current Central African or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"PA","reason":"No current Panamanian or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["migracion.gob.pa","mire.gob.pa","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"BA","reason":"No current Bosnia and Herzegovina or Brazilian primary source establishes Brazilian common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mvp.gov.ba","msb.gov.ba","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"CI","reason":"Côte d'Ivoire MFA and SNEDAI publish a generic common-passport preapproved airport-issuance process but do not establish that Brazilian common-passport holders are non-exempt.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","interieur.gouv.ci","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"GW","reason":"No current Guinea-Bissau or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mne.gw","gov.gw","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"LR","reason":"No current Liberian or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"ML","reason":"No current Malian or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"NE","reason":"No current Nigerien or Brazilian primary source establishes common-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"BD","reason":"No current Bangladesh or Brazilian primary source establishes common-passport visitor eligibility or a conditional arrival-issuance route.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"TD","reason":"No current Chadian or Brazilian primary source establishes common-passport eligibility and whether online processing is electronic issuance.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","gov.br/mre"]},
+    {"passportCode":"BR","destinationCode":"KH","reason":"Cambodia's official eVisa material does not explicitly establish Brazilian common-passport eligibility; portal availability and absence from an exemption list are insufficient.","searchedOfficialDomains":["evisa.gov.kh","immigration.gov.kh","gov.br/mre"]}
+  ]
+}

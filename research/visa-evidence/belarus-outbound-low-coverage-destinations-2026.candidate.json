@@ -1,0 +1,148 @@
+{
+  "batchId": "belarus-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "belarus-tax-ministry-current-citizen-biometric-passport",
+      "title": "Belarus Ministry of Taxes: current passport-document duties",
+      "url": "https://nalog.gov.by/individuals/other_taxes/government_duty/",
+      "publisher": "Ministry of Taxes and Duties of the Republic of Belarus",
+      "jurisdiction": "Republic of Belarus",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live nalog.gov.by page identifies itself as the official Ministry of Taxes and Duties site. It distinguishes the Belarusian citizen passport and biometric citizen passport from separately named diplomatic and service passports.",
+      "supportingExcerpt": "биометрического паспорта гражданина Республики Беларусь ... дипломатического паспорта ... служебного паспорта"
+    },
+    {
+      "id": "nigeria-immigration-2026-tourism-evisa-belarus-fee",
+      "title": "Nigeria Immigration Service: 2026 F5A tourism eVisa and Belarus fee row",
+      "url": "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Federal Republic of Nigeria",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Nigeria Immigration Service's April 2026 service-level document places F5A tourism in its online/email visa workflow, says it is for citizens of all countries subject to waiver exceptions, and Appendix I assigns Belarus a payable single-entry fee.",
+      "supportingExcerpt": "F5A TOURISM VISA ... Citizens of all countries ... Receive Visa certificate via email ... Belarus $68."
+    },
+    {
+      "id": "nigeria-nis-current-f5a-evisa-service",
+      "title": "Nigeria Immigration Service: Tourism Visa F5A",
+      "url": "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Federal Republic of Nigeria",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Nigeria Immigration Service F5A page places Tourism Visa F5A in its Short Visit Visa (e-Visa) category, repeats its nationality scope and links the official eVisa portal.",
+      "supportingExcerpt": "Short Visit Visa (e-Visa) ... Eligibility: Citizens of all countries except ECOWAS member States."
+    },
+    {
+      "id": "equatorial-guinea-government-online-visa-announcement",
+      "title": "Equatorial Guinea Government: online visa portal announcement",
+      "url": "https://www.guineaecuatorialpress.com/index.php/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+      "publisher": "Government of the Republic of Equatorial Guinea Information and Press Office",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government Information and Press Office's July 2023 institutional announcement identifies the exact equatorialguinea-evisa.com domain as its online-visa portal. Currentness is established separately by the live 2026 service asset.",
+      "supportingExcerpt": "todos los interesados en viajar al país podrán conseguir su visado sin tener que desplazarse físicamente."
+    },
+    {
+      "id": "equatorial-guinea-evisa-live-translation",
+      "title": "Equatorial Guinea eVisa: live eligibility, regular-passport and delivery translation asset",
+      "url": "https://equatorialguinea-evisa.com/assets/i18n/en-US.json",
+      "publisher": "Equatorial Guinea eVisa service",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government-authenticated exact domain's live English translation asset, last modified 30 July 2026, says all nationalities can apply, limits the process to a regular passport, and sends eVisas by email with PDF download.",
+      "supportingExcerpt": "All Nationalities can apply ... only travel document ... regular passport ... All E-Visa are sent by email."
+    }
+  ],
+  "policies": [
+    {
+      "id": "belarusian-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Belarusian ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service covers Belarus, issues the visa certificate by email before travel, and separately assigns Belarus a payable single-entry fee.",
+      "status": "evisa",
+      "destinationCodes": ["NG"],
+      "passportCodes": ["BY"],
+      "conditions": [
+        "Use a Belarusian ordinary/biometric citizen passport. The issuer's current Government page distinguishes that citizen passport from diplomatic and service passports.",
+        "F5A is tourism only, single entry and up to 30 days. Apply online, upload the stated documents and pay before travel; the visa certificate is sent by email, so this is electronic issuance rather than an arrival visa.",
+        "F5A generally excepts ECOWAS States and countries with visa-abolition/waiver agreements. Belarus is not an ECOWAS State, and Appendix I's payable Belarus single-entry fee directly supports use of the F5A route. Purpose, document, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": ["belarus-tax-ministry-current-citizen-biometric-passport", "nigeria-immigration-2026-tourism-evisa-belarus-fee", "nigeria-nis-current-f5a-evisa-service"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa portal",
+        "steps": [
+          "Apply online with the Belarusian ordinary passport and stated tourism documents.",
+          "Pay the visa fee and obtain the visa certificate by email before departure.",
+          "Present the issued visa for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "belarusian-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Belarusian ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email/PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": ["GQ"],
+      "passportCodes": ["BY"],
+      "conditions": [
+        "Use the Belarusian ordinary/biometric citizen passport used for travel; the live service excludes non-regular travel documents, while Belarus separately issues diplomatic and service passports.",
+        "Register, upload visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not a visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": ["belarus-tax-ministry-current-citizen-biometric-passport", "equatorial-guinea-government-online-visa-announcement", "equatorial-guinea-evisa-live-translation"],
+      "confidence": "high",
+      "application": {
+        "url": "https://egonline.vfsevisa.com/gnq/en/login",
+        "label": "Equatorial Guinea eVisa application (VFS)",
+        "steps": [
+          "Register using the Belarusian ordinary passport for travel.",
+          "Pay and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record for final immigration processing."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"BY","destinationCode":"AF","reason":"No current primary Afghan or Belarusian authority source establishes ordinary Belarusian-passport visitor eligibility and issuance timing. Closure, permission and security controls are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"KP","reason":"No current DPRK or Belarusian primary source establishes an ordinary Belarusian-passport visitor route. Closure or permission controls cannot be normalized into the available taxonomy.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"LY","reason":"No current Libyan or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["moi.gov.ly","foreign.gov.ly","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"VG","reason":"No current British Virgin Islands or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing; undated nationality schedules are insufficient.","searchedOfficialDomains":["bvi.gov.vg","gov.vg","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"PS","reason":"Crossing, Israeli permit and recognition controls do not establish a Palestine-only ordinary Belarusian-passport taxonomy status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"DJ","reason":"No current Djiboutian or Belarusian primary source establishes ordinary Belarusian-passport eligibility and whether visitor issuance is electronic, advance or at the border.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"SD","reason":"No current Sudanese or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.sd","passports.gov.sd","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"IQ","reason":"No current Iraqi or Belarusian primary source establishes an ordinary Belarusian-passport visitor route distinct from regional, pilgrimage or special-document arrangements.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","moi.gov.iq","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"SY","reason":"No current Syrian or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing. Closure and mission-operation ambiguity are not taxonomy states.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"KM","reason":"No current Comorian or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["gouv.km","justice.gouv.km","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"CU","reason":"Cuba's current official tourism guidance confirms an electronic tourist-visa route but expressly preserves countries with visa-free agreements without naming Belarus. No current primary source resolves that ordinary-passport exception.","searchedOfficialDomains":["cuba.travel","minrex.gob.cu","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"TM","reason":"No current Turkmen or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing; generic invitation or visa wording is insufficient.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"XK","reason":"No current Kosovo or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing. Recognition and border context do not establish a visitor taxonomy status.","searchedOfficialDomains":["mpb.rks-gov.net","mfa-ks.net","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"UA","reason":"Ukraine MFA's nationality table is expressly as of June 2023; no current Ukraine or Belarusian official source establishes the ordinary Belarusian-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"CG","reason":"No current Republic of the Congo or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"GA","reason":"No current Gabonese or Belarusian primary source establishes ordinary Belarusian-passport eligibility and whether online processing is electronic issuance or preapproval followed by airport issuance.","searchedOfficialDomains":["evisa.dgdi.ga","interieur.ga","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"SS","reason":"No current South Sudanese or Belarusian primary source establishes ordinary Belarusian-passport eligibility and electronic-issuance timing.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"TN","reason":"No current Tunisian or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gov.tn","interieur.gov.tn","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"CF","reason":"No current Central African or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"PA","reason":"No current Panamanian or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["migracion.gob.pa","mire.gob.pa","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"BA","reason":"No current Bosnia and Herzegovina or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mvp.gov.ba","granpol.gov.ba","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"CI","reason":"Côte d'Ivoire's general MFA and SNEDAI material describes an ordinary-passport visa process and airport issuance, but it does not establish whether a Belarusian ordinary-passport holder is subject to it rather than a nationality exception. The fallback evisa status is not promoted.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"GW","reason":"No current Guinea-Bissau or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mne.gw","gov.gw","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"LR","reason":"No current Liberian or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"ML","reason":"No current Malian or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"NE","reason":"No current Nigerien or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"BD","reason":"No current Bangladesh or Belarusian primary source establishes ordinary Belarusian-passport visitor eligibility or a conditional arrival-issuance route.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"TD","reason":"No current Chadian or Belarusian primary source establishes ordinary Belarusian-passport eligibility and whether online processing is electronic issuance.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mfa.gov.by"]},
+    {"passportCode":"BY","destinationCode":"KH","reason":"Cambodia's current official material does not establish ordinary Belarusian-passport eligibility for a tourist eVisa, advance visa or border issuance; portal availability and omission from an exemption list are insufficient.","searchedOfficialDomains":["immigration.gov.kh","evisa.gov.kh","mfa.gov.by"]}
+  ]
+}
