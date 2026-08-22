@@ -1,0 +1,412 @@
+{
+  "batchId": "iraq-outbound-low-coverage-destinations-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "iraq-unified-portal-federal-passport-service",
+      "title": "Iraq Unified Portal: passport issuance for Iraqis abroad",
+      "url": "https://ur.gov.iq/index/show-eservice/50974/10028/org",
+      "publisher": "Ministry of Foreign Affairs, Republic of Iraq",
+      "jurisdiction": "Republic of Iraq",
+      "kind": "government-guidance",
+      "language": "Arabic",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Iraq's official unified government portal describes federal passport issuance to Iraqi citizens abroad, separately describes a one-trip emergency travel document, and requires Iraqi nationality documentation for passport issuance.",
+      "supportingExcerpt": "إجراءات إصدار جواز السفر للعراقيين خارج العراق ... إصدار جديد ... جواز المرور."
+    },
+    {
+      "id": "nigeria-immigration-2026-tourism-evisa",
+      "title": "Nigeria Immigration Service: 2026 Tourism (F5A) visa service level",
+      "url": "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Federal Republic of Nigeria",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Nigeria Immigration Service's April 2026 service-level document makes F5A tourism available to citizens of all countries and provides electronic delivery of the visa certificate.",
+      "supportingExcerpt": "F5A- TOURISM VISA ... Eligibility: Citizens of all countries ... Receive Visa certificate via email."
+    },
+    {
+      "id": "equatorial-guinea-government-online-visa-announcement",
+      "title": "Equatorial Guinea Government: online visa is operational",
+      "url": "https://www.guineaecuatorialpress.com/index.php/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+      "publisher": "Government of the Republic of Equatorial Guinea Information and Press Office",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The institutional Government page identifies equatorialguinea-evisa.com as the operational visa site and says interested visitors can obtain a visa online without attending in person.",
+      "supportingExcerpt": "todos los interesados en viajar al país podrán conseguir su visado sin tener que desplazarse físicamente."
+    },
+    {
+      "id": "equatorial-guinea-evisa-live-translation",
+      "title": "Equatorial Guinea eVisa: live eligibility, regular passport and delivery translation asset",
+      "url": "https://equatorialguinea-evisa.com/assets/i18n/en-US.json",
+      "publisher": "Equatorial Guinea eVisa service",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The Government-authenticated exact domain's live English translation asset says all nationalities can apply, limits the process to a regular passport, and sends eVisas by email with PDF download.",
+      "supportingExcerpt": "All Nationalities can apply for an E- Visa ... All E-Visa are sent by email."
+    }
+  ],
+  "policies": [
+    {
+      "id": "iraqi-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Iraqi ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "IQ"
+      ],
+      "conditions": [
+        "Use the Iraqi ordinary passport issued through the Federal Ministry of Foreign Affairs service. The separately described laissez-passer is a return-only document and is not this route. F5A is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay. The emailed certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current document does not identify an Iraqi ordinary-passport exception; this is medium confidence."
+      ],
+      "sourceIds": [
+        "iraq-unified-portal-federal-passport-service",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Iraqi ordinary passport and stated tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present it for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "iraqi-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Iraqi ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "IQ"
+      ],
+      "conditions": [
+        "Use the Iraqi ordinary passport used for travel; the live asset excludes non-regular travel documents.",
+        "Register, upload visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not a visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": [
+        "iraq-unified-portal-federal-passport-service",
+        "equatorial-guinea-government-online-visa-announcement",
+        "equatorial-guinea-evisa-live-translation"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register using the Iraqi ordinary passport for travel.",
+          "Pay and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record for final immigration processing."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "IQ",
+      "destinationCode": "AF",
+      "reason": "No current primary source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing; closures and warnings are not taxonomy states.",
+      "searchedOfficialDomains": [
+        "mfa.gov.af",
+        "moi.gov.af",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "KP",
+      "reason": "No current primary source establishes a federal Iraqi ordinary-passport visitor route; closure or permission controls are not taxonomy states.",
+      "searchedOfficialDomains": [
+        "mfa.gov.kp",
+        "naenara.com.kp",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "LY",
+      "reason": "No current primary source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "moi.gov.ly",
+        "foreign.gov.ly",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "VG",
+      "reason": "No current primary source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing; undated nationality PDFs are insufficient.",
+      "searchedOfficialDomains": [
+        "bvi.gov.vg",
+        "gov.vg",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "PS",
+      "reason": "Crossing, Israeli permit and recognition controls do not establish a Palestine-only federal Iraqi-passport status.",
+      "searchedOfficialDomains": [
+        "mofa.pna.ps",
+        "gov.il",
+        "cogat.mod.gov.il",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "DJ",
+      "reason": "No current source establishes federal Iraqi ordinary-passport eligibility and electronic, advance or border issuance timing.",
+      "searchedOfficialDomains": [
+        "evisa.gouv.dj",
+        "interieur.gouv.dj",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "SD",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "mofa.gov.sd",
+        "passports.gov.sd",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "IQ",
+      "reason": "Already supported by canonical reviewed citizenship policy iraq-citizenship; no duplicate candidate policy is proposed.",
+      "searchedOfficialDomains": [
+        "moi.gov.iq",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "SY",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "mofaex.gov.sy",
+        "moi.gov.sy",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "KM",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "gouv.km",
+        "justice.gouv.km",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "CU",
+      "reason": "Cuba's current tourist guidance preserves unnamed visa-free-agreement exceptions and does not name Iraq; no current primary source resolves the ordinary-passport exception.",
+      "searchedOfficialDomains": [
+        "cuba.travel",
+        "minrex.gob.cu",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TM",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing; generic invitation wording is insufficient.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "XK",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing; recognition context is not a visa category.",
+      "searchedOfficialDomains": [
+        "mpb.rks-gov.net",
+        "mfa-ks.net",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "UA",
+      "reason": "Ukraine MFA's nationality table is expressly as of June 2023; no current 2026 source establishes the federal Iraqi ordinary-passport route.",
+      "searchedOfficialDomains": [
+        "mfa.gov.ua",
+        "dpsu.gov.ua",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "CG",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cg",
+        "dgrsp.cg",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "GA",
+      "reason": "No current source establishes federal Iraqi ordinary-passport eligibility and electronic versus airport issuance timing.",
+      "searchedOfficialDomains": [
+        "evisa.dgdi.ga",
+        "interieur.ga",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "SS",
+      "reason": "No current source establishes federal Iraqi ordinary-passport eligibility and electronic-issuance timing.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ss",
+        "mofaic.gov.ss",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TN",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gov.tn",
+        "interieur.gov.tn",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "CF",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cf",
+        "interieur.gouv.cf",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "PA",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "migracion.gob.pa",
+        "mire.gob.pa",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "BA",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "mvp.gov.ba",
+        "msb.gov.ba",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "CI",
+      "reason": "Côte d'Ivoire MFA and SNEDAI publish a generic ordinary-passport airport process but do not establish that federal Iraqi ordinary-passport holders are non-exempt.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ci",
+        "snedai.com",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "GW",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "mne.gw",
+        "gov.gw",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "LR",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "mofa.gov.lr",
+        "immigration.gov.lr",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "ML",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ml",
+        "securite.gouv.ml",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "NE",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ne",
+        "interieur.gouv.ne",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "BD",
+      "reason": "No current source establishes federal Iraqi ordinary-passport visitor eligibility or arrival-issuance timing.",
+      "searchedOfficialDomains": [
+        "visa.gov.bd",
+        "mofa.gov.bd",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TD",
+      "reason": "No current source establishes federal Iraqi ordinary-passport eligibility and electronic issuance timing.",
+      "searchedOfficialDomains": [
+        "evisa.td",
+        "diplomatie.gouv.td",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "KH",
+      "reason": "Already supported by canonical reviewed policy cambodia-ten-named-ordinary-passports-prior-tourist-visa; no duplicate candidate policy is proposed.",
+      "searchedOfficialDomains": [
+        "cambodiaembassyparis.gov.kh",
+        "evisa.gov.kh",
+        "mofa.gov.iq"
+      ]
+    }
+  ]
+}

@@ -255,7 +255,10 @@
     "sri-lanka-outbound-low-coverage-destinations-2026",
     "equatorial-guinea-outbound-low-coverage-destinations-2026",
     "lebanon-outbound-low-coverage-destinations-2026",
-    "nauru-outbound-low-coverage-destinations-2026"
+    "nauru-outbound-low-coverage-destinations-2026",
+    "iraq-outbound-low-coverage-destinations-2026",
+    "iran-outbound-low-coverage-destinations-2026",
+    "venezuela-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -13244,6 +13247,86 @@
       "url": "https://justice.gov.nr/passport-division/",
       "publisher": "Department of Justice and Border Control, Republic of Nauru",
       "jurisdiction": "Republic of Nauru",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "iraq-unified-portal-federal-passport-service",
+      "title": "Iraq Unified Portal: passport issuance for Iraqis abroad",
+      "url": "https://ur.gov.iq/index/show-eservice/50974/10028/org",
+      "publisher": "Ministry of Foreign Affairs, Republic of Iraq",
+      "jurisdiction": "Republic of Iraq",
+      "kind": "government-guidance",
+      "language": "Arabic",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "equatorial-guinea-evisa-live-translation",
+      "title": "Equatorial Guinea eVisa: live eligibility, regular passport and delivery translation asset",
+      "url": "https://equatorialguinea-evisa.com/assets/i18n/en-US.json",
+      "publisher": "Equatorial Guinea eVisa service",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "iran-interests-section-current-ordinary-passport-form",
+      "title": "Iranian Interests Section: current Form 500 passport type for a return-to-Iran request",
+      "url": "https://uapi.daftar.org/portal/find/DownloadById?id=ac0491ff-5359-4734-8276-f9ac1cc59e86",
+      "publisher": "Interests Section of the Islamic Republic of Iran, Washington, DC",
+      "jurisdiction": "Islamic Republic of Iran",
+      "kind": "government-guidance",
+      "language": "Persian",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "venezuela-mppre-current-adult-passport",
+      "title": "Venezuela MPPRE: adult passport issuance abroad",
+      "url": "https://mppre.gob.ve/descripcion/43",
+      "publisher": "Ministry of Popular Power for Foreign Affairs and International Trade of Venezuela",
+      "jurisdiction": "Bolivarian Republic of Venezuela",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "venezuela-mppre-current-emergency-travel-document",
+      "title": "Venezuela MPPRE: emergency travel document",
+      "url": "https://mppre.gob.ve/descripcion/6",
+      "publisher": "Ministry of Popular Power for Foreign Affairs and International Trade of Venezuela",
+      "jurisdiction": "Bolivarian Republic of Venezuela",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "venezuela-mppre-diplomatic-service-passport-agreement-scope",
+      "title": "Venezuela MPPRE: diplomatic and service passport visa-exemption agreement",
+      "url": "https://mppre.gob.ve/index.php/etiquetas?tag=pasaporte",
+      "publisher": "Ministry of Popular Power for Foreign Affairs and International Trade of Venezuela",
+      "jurisdiction": "Bolivarian Republic of Venezuela",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "bosnia-fipa-current-visa-free-list-venezuela",
+      "title": "Bosnia and Herzegovina FIPA: visa information for visitors",
+      "url": "https://fipa.vijeceministara.gov.ba/en/visasinformation-for-visitors",
+      "publisher": "Foreign Investment Promotion Agency of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "bosnia-sfa-current-visa-free-stay-limit",
+      "title": "Service for Foreigners' Affairs: stay of aliens in Bosnia and Herzegovina",
+      "url": "https://sps.gov.ba/en/information-for-foreigners/stay-of-aliens-in-bih/",
+      "publisher": "Service for Foreigners' Affairs of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
       "kind": "government-guidance",
       "language": "English",
       "reviewedAt": "2026-08-22"
@@ -59884,6 +59967,218 @@
         "label": "Equatorial Guinea official eVisa service",
         "steps": [
           "Register and submit the visitor eVisa application with the Nauruan ordinary passport to be used for travel.",
+          "Pay online and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record and meet entry-point and final-admission conditions."
+        ]
+      }
+    },
+    {
+      "id": "iraqi-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Iraqi ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "IQ"
+      ],
+      "conditions": [
+        "Use the Iraqi ordinary passport issued through the Federal Ministry of Foreign Affairs service. The separately described laissez-passer is a return-only document and is not this route. F5A is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay. The emailed certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current document does not identify an Iraqi ordinary-passport exception; this is medium confidence."
+      ],
+      "sourceIds": [
+        "iraq-unified-portal-federal-passport-service",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Iraqi ordinary passport and stated tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present it for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "iraqi-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Iraqi ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "IQ"
+      ],
+      "conditions": [
+        "Use the Iraqi ordinary passport used for travel; the live asset excludes non-regular travel documents.",
+        "Register, upload visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not a visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier and final-admission requirements remain separate."
+      ],
+      "sourceIds": [
+        "iraq-unified-portal-federal-passport-service",
+        "equatorial-guinea-government-online-visa-announcement",
+        "equatorial-guinea-evisa-live-translation"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register using the Iraqi ordinary passport for travel.",
+          "Pay and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record for final immigration processing."
+        ]
+      }
+    },
+    {
+      "id": "iranian-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Iranian ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism route accepts citizens of all countries and sends the tourism visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "IR"
+      ],
+      "conditions": [
+        "Apply online using a valid Iranian ordinary passport with the F5A tourism supporting documents and payment; the visitor route is single entry for up to 30 days.",
+        "The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current document does not identify an Iranian ordinary-passport waiver; the all-country eVisa route is retained with medium confidence."
+      ],
+      "sourceIds": [
+        "iran-interests-section-current-ordinary-passport-form",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Iranian ordinary passport and stated tourism documents.",
+          "Pay and receive the visa certificate by email before departure.",
+          "Present the certificate and supporting documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "iranian-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Iranian ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email as a PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "IR"
+      ],
+      "conditions": [
+        "Use the same valid Iranian ordinary passport for application and travel; non-regular travel documents are not accepted.",
+        "Apply through the authenticated eVisa service and receive the eVisa by email in PDF form before travel. This is electronic issuance, not a visa on arrival.",
+        "The ordinary visitor route does not establish work, residence, diplomatic, service, border, pilgrimage, emergency, group or other special-document, carrier or final-admission entitlement."
+      ],
+      "sourceIds": [
+        "iran-interests-section-current-ordinary-passport-form",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea eVisa service",
+        "steps": [
+          "Apply online using the Iranian ordinary passport for travel.",
+          "Receive and retain the emailed PDF eVisa before departure.",
+          "Present the same passport and eVisa for final immigration processing and admission."
+        ]
+      }
+    },
+    {
+      "id": "venezuelan-ordinary-passport-bosnia-short-visit-visa-exemption",
+      "title": "Venezuelan ordinary passports: Bosnia and Herzegovina short-visit visa exemption",
+      "summary": "Current Bosnia and Herzegovina government guidance lists Venezuela in the general visa-free rule and states an up-to-90-days-in-180-days stay limit.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BA"
+      ],
+      "passportCodes": [
+        "VE"
+      ],
+      "conditions": [
+        "Use the regular Venezuelan passport issued through SAIME/Foreign Ministry adult-passport service. Current BiH government guidance lists Venezuelan citizens as visa-exempt and sets the general visa-free stay at up to 90 days in 180 days.",
+        "This does not establish employment, residence, diplomatic, service, emergency travel document, identity-document, carrier or final-admission treatment."
+      ],
+      "sourceIds": [
+        "venezuela-mppre-current-adult-passport",
+        "venezuela-mppre-current-emergency-travel-document",
+        "venezuela-mppre-diplomatic-service-passport-agreement-scope",
+        "bosnia-fipa-current-visa-free-list-venezuela",
+        "bosnia-sfa-current-visa-free-stay-limit"
+      ]
+    },
+    {
+      "id": "venezuelan-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Venezuelan ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "VE"
+      ],
+      "conditions": [
+        "Use the regular Venezuelan passport issued through SAIME/Foreign Ministry adult-passport service. F5A is tourism only, single entry and up to 30 days, with the stated passport-validity and supporting-document requirements.",
+        "Apply online, upload documents and pay. The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current all-country document does not identify a Venezuelan ordinary-passport exception; this classification is medium confidence. Work, residence, diplomatic, service, emergency, identity and other special documents, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "venezuela-mppre-current-adult-passport",
+        "venezuela-mppre-current-emergency-travel-document",
+        "venezuela-mppre-diplomatic-service-passport-agreement-scope",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Venezuelan ordinary passport and required tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present the certificate and required documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "venezuelan-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Venezuelan ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's institutional Government page authenticates its online visa service; the live translation asset on that exact domain accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "VE"
+      ],
+      "conditions": [
+        "Apply using the regular Venezuelan passport issued through SAIME/Foreign Ministry adult-passport service; the live official translation asset excludes non-regular travel documents.",
+        "Register, upload the required visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not an ETA or visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "venezuela-mppre-current-adult-passport",
+        "venezuela-mppre-current-emergency-travel-document",
+        "venezuela-mppre-diplomatic-service-passport-agreement-scope",
+        "equatorial-guinea-government-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register and submit the visitor eVisa application with the Venezuelan ordinary passport to be used for travel.",
           "Pay online and receive the issued eVisa by email/PDF before travel.",
           "Carry the issued record and meet entry-point and final-admission conditions."
         ]
