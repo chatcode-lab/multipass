@@ -1,0 +1,92 @@
+{
+  "batchId": "saudi-arabia-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "uzbekistan-evisa-current-saudi-country-status",
+      "title": "Uzbekistan eVisa current country-status dataset",
+      "url": "https://e-visa.gov.uz:8443/api/v1/dic/countries/en",
+      "publisher": "Government of Uzbekistan eVisa service",
+      "jurisdiction": "Uzbekistan",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Uzbekistan's live eVisa government dataset returns the Saudi Arabia country record with status 2.",
+      "supportingExcerpt": "SAUDI ARABIA, status 2."
+    },
+    {
+      "id": "uzbekistan-evisa-current-status-two-definition",
+      "title": "Uzbekistan eVisa current status 2 definition",
+      "url": "https://e-visa.gov.uz:8443/api/v1/dic/visa/status/en/2",
+      "publisher": "Government of Uzbekistan eVisa service",
+      "jurisdiction": "Uzbekistan",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live status endpoint is served by the same official Uzbekistan eVisa service and defines the country dataset's status 2.",
+      "supportingExcerpt": "Visa-free entry for up to 30 days."
+    },
+    {
+      "id": "uzbekistan-president-saudi-visa-free-entry",
+      "title": "A New Era in the Uzbek-Saudi Relations",
+      "url": "https://president.uz/en/lists/view/5433",
+      "publisher": "President of the Republic of Uzbekistan",
+      "jurisdiction": "Uzbekistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The official President of Uzbekistan site records the introduction of visa-free entry for Saudi Arabian citizens.",
+      "supportingExcerpt": "introduction of a visa-free regime for entry into Uzbekistan for citizens of Saudi Arabia."
+    }
+  ],
+  "policies": [
+    {
+      "id": "saudi-ordinary-passport-uzbekistan-visa-free",
+      "title": "Saudi ordinary passports: Uzbekistan visa-free short visit",
+      "summary": "Uzbekistan's live government eVisa dataset assigns Saudi Arabia status 2, defined by the same service as visa-free entry for up to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": ["UZ"],
+      "passportCodes": ["SA"],
+      "conditions": [
+        "The live selector status defines a maximum visa-free stay of 30 days.",
+        "An official presidential statement separately confirms the introduction of visa-free entry for Saudi citizens; work, residence, special documents and final admission remain separate."
+      ],
+      "sourceIds": ["uzbekistan-evisa-current-saudi-country-status", "uzbekistan-evisa-current-status-two-definition", "uzbekistan-president-saudi-visa-free-entry"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"SA","destinationCode":"AF","reason":"No retrievable current Afghanistan or destination-government source establishes ordinary Saudi-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sa","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"SA","destinationCode":"BW","reason":"Botswana's current official named visa-free and visa-required schedules do not directly establish ordinary Saudi-passport treatment; no complement is inferred.","searchedOfficialDomains":["mofa.gov.sa","gov.bw","botswanaembassy.org","botswanatourism.co.bw"]},
+    {"passportCode":"SA","destinationCode":"BF","reason":"No retrievable current Burkina Faso authority source establishes ordinary Saudi-passport eligibility and actual electronic or mission issuance timing.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gov.bf","visaburkina.bf"]},
+    {"passportCode":"SA","destinationCode":"CV","reason":"Current Cabo Verde government schedules do not directly establish ordinary Saudi-passport visitor treatment and issuance timing; no complement is inferred.","searchedOfficialDomains":["mofa.gov.sa","gov.cv","mnec.gov.cv","ease.gov.cv"]},
+    {"passportCode":"SA","destinationCode":"CF","reason":"No retrievable current official source establishes an ordinary Saudi-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gouv.cf"]},
+    {"passportCode":"SA","destinationCode":"TD","reason":"No independent pair-specific Saudi or Chadian government guidance establishes the ordinary Saudi visitor route and timing; residual portal material is held.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gouv.td","evisa.td"]},
+    {"passportCode":"SA","destinationCode":"KM","reason":"No retrievable current Comorian authority source establishes ordinary Saudi-passport visitor eligibility and actual arrival or electronic issuance timing.","searchedOfficialDomains":["mofa.gov.sa","gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"SA","destinationCode":"CG","reason":"No retrievable current official source establishes an ordinary Saudi-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gouv.cg"]},
+    {"passportCode":"SA","destinationCode":"CI","reason":"No current Saudi or Ivorian authority source establishes ordinary Saudi-passport eligibility and actual issuance timing; a pre-enrolment portal alone is not evidence.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"SA","destinationCode":"DJ","reason":"The available Korean government destination material warns that Djibouti visa information changes frequently and contains inconsistent arrival/electronic process material; no current Saudi-specific baseline is established.","searchedOfficialDomains":["mofa.gov.sa","evisa.gouv.dj","diplomatie.gouv.dj"]},
+    {"passportCode":"SA","destinationCode":"GD","reason":"Grenada's retrievable nationality schedule is explicitly updated only in February 2021; no current-force instrument or current Saudi/Grenadian guidance establishes the 2026 Saudi visitor baseline.","searchedOfficialDomains":["mofa.gov.sa","mofa.gov.gd","gov.gd"]},
+    {"passportCode":"SA","destinationCode":"GW","reason":"No retrievable current official source establishes ordinary Saudi-passport visitor treatment or actual arrival-visa eligibility for Guinea-Bissau.","searchedOfficialDomains":["mofa.gov.sa","mne.gw","gov.gw"]},
+    {"passportCode":"SA","destinationCode":"IQ","reason":"No retrievable current Iraqi authority source establishes ordinary Saudi-passport visitor eligibility and actual electronic, mission or arrival issuance timing.","searchedOfficialDomains":["mofa.gov.sa","mofa.gov.iq","evisa.iq"]},
+    {"passportCode":"SA","destinationCode":"JO","reason":"Visit Jordan's current table groups Saudi Arabia with the GCC rows as arrival-visa ‘Applicable’ but gives no fee, while current direct GCC guidance identifies a visa-free route for the UAE. The table does not distinguish GCC exemption from paid visa-on-arrival treatment, so it cannot establish a Saudi passport-only baseline or conflict.","searchedOfficialDomains":["mofa.gov.sa","moi.gov.jo","visitjordan.com"]},
+    {"passportCode":"SA","destinationCode":"LR","reason":"No retrievable current official source establishes ordinary Saudi-passport eligibility and actual issuance timing for Liberia's online pre-application or arrival process.","searchedOfficialDomains":["mofa.gov.sa","mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"SA","destinationCode":"ML","reason":"No retrievable current official source establishes an ordinary Saudi-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"SA","destinationCode":"NE","reason":"No retrievable current official source establishes an ordinary Saudi-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gouv.ne"]},
+    {"passportCode":"SA","destinationCode":"KP","reason":"No retrievable current official source establishes an ordinary Saudi-passport visitor route; access restrictions are not a taxonomy outcome.","searchedOfficialDomains":["mofa.gov.sa","mfa.gov.kp"]},
+    {"passportCode":"SA","destinationCode":"MK","reason":"No retrievable current North Macedonian authority source establishes ordinary Saudi-passport short-visitor eligibility and actual advance or electronic issuance timing.","searchedOfficialDomains":["mofa.gov.sa","mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"SA","destinationCode":"PS","reason":"Crossing-specific Israeli controls and permits do not establish a Palestine-only ordinary Saudi-passport visitor status.","searchedOfficialDomains":["mofa.gov.sa","gov.il","cogat.mod.gov.il","mofa.pna.ps"]},
+    {"passportCode":"SA","destinationCode":"PA","reason":"No retrievable current Panamanian authority source establishes ordinary Saudi-passport visitor treatment and actual issuance timing; third-country-visa waivers are excluded.","searchedOfficialDomains":["mofa.gov.sa","migracion.gob.pa","mire.gob.pa"]},
+    {"passportCode":"SA","destinationCode":"ST","reason":"No retrievable current São Tomé and Príncipe authority source establishes ordinary Saudi-passport electronic visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sa","mnec.gov.st","evisa.st"]},
+    {"passportCode":"SA","destinationCode":"SL","reason":"No independent pair-specific Saudi or Sierra Leone government guidance establishes the ordinary Saudi visitor route and timing, so internally conflicting residual portal material is held.","searchedOfficialDomains":["mofa.gov.sa","slid.gov.sl","evisa.sl"]},
+    {"passportCode":"SA","destinationCode":"SB","reason":"Solomon Islands Immigration's generic visitor material says a visa on arrival may be given but does not establish unconditional ordinary Saudi-passport eligibility.","searchedOfficialDomains":["mofa.gov.sa","immigration.gov.sb","immigration.sig.gov.sb"]},
+    {"passportCode":"SA","destinationCode":"SS","reason":"No retrievable current official source establishes ordinary Saudi-passport eligibility and actual issuance timing for South Sudan's electronic service.","searchedOfficialDomains":["mofa.gov.sa","mofaic.gov.ss","evisa.gov.ss"]},
+    {"passportCode":"SA","destinationCode":"SD","reason":"No retrievable current official source establishes an ordinary Saudi-passport visitor route and actual issuance timing for Sudan.","searchedOfficialDomains":["mofa.gov.sa","mofa.gov.sd"]},
+    {"passportCode":"SA","destinationCode":"SY","reason":"Saudi government travel-warning material and Syria's generic advance-visa rule do not establish an ordinary Saudi-passport visitor baseline; warnings, exemptions not mapped to Saudi nationality, and operational restrictions are excluded.","searchedOfficialDomains":["mofa.gov.sa","my.gov.sa","mofaex.gov.sy","eaip.gaca.gov.sy"]},
+    {"passportCode":"SA","destinationCode":"TT","reason":"No retrievable current Saudi or Trinidad and Tobago authority source establishes ordinary Saudi-passport visitor treatment and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sa","immigration.gov.tt","foreign.gov.tt"]},
+    {"passportCode":"SA","destinationCode":"TN","reason":"No retrievable current Tunisian authority source establishes ordinary Saudi-passport visitor treatment and actual advance or electronic issuance timing.","searchedOfficialDomains":["mofa.gov.sa","diplomatie.gov.tn","consulat.tn"]},
+    {"passportCode":"SA","destinationCode":"TM","reason":"No retrievable current official source establishes an unconditional ordinary Saudi-passport visitor route; invitation/LOI-based routes are excluded from this baseline.","searchedOfficialDomains":["mofa.gov.sa","migration.gov.tm","tmembassy.gov.tm"]},
+    {"passportCode":"SA","destinationCode":"UA","reason":"Ukraine MFA's entry-regime table expressly identifies itself as current only through 8 June 2023; absent a current-force instrument or current pair-specific guidance it cannot establish the 2026 Saudi visitor baseline.","searchedOfficialDomains":["mofa.gov.sa","mfa.gov.ua","dpsu.gov.ua"]}
+  ]
+}
