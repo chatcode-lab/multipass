@@ -1043,7 +1043,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HK", "DZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DZ", "DZ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("NG")).toHaveLength(41);
+    expect(pairsFor("NG")).toHaveLength(44);
     expect(getVisaRelationshipEvidence("GH", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "NG", "evisa").supportsCurrentStatus).toBe(true);
@@ -1216,7 +1216,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CF", "CF", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GQ")).toHaveLength(26);
+    expect(pairsFor("GQ")).toHaveLength(28);
     expect(getVisaRelationshipEvidence("CM", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "GQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2356,6 +2356,19 @@ describe("official visa evidence", () => {
     }
     expect(getVisaRelationshipEvidence("IL", "PS", snapshot.passports.IL.statuses.PS).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("LK", "KH", "visa_required").supportsCurrentStatus).toBe(true);
+  });
+
+  it("supports reviewed Equatorial Guinean, Lebanese, and Nauruan outbound rows", () => {
+    expect(getVisaRelationshipEvidence("GQ", "NG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GQ", "CF", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GQ", "GQ", snapshot.passports.GQ.statuses.GQ).supportsCurrentStatus).toBe(false);
+
+    for (const passportCode of ["LB", "NR"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "NG", "evisa").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence(passportCode, "GQ", "evisa").supportsCurrentStatus).toBe(true);
+      expect(getVisaRelationshipEvidence(passportCode, "CU", snapshot.passports[passportCode].statuses.CU).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "CI", snapshot.passports[passportCode].statuses.CI).supportsCurrentStatus).toBe(false);
+    }
   });
 
   it("supports reviewed Spanish, Italian, and South Korean outbound rows", () => {

@@ -252,7 +252,10 @@
     "hong-kong-outbound-low-coverage-destinations-2026",
     "burkina-faso-outbound-low-coverage-destinations-2026",
     "israel-outbound-low-coverage-destinations-2026",
-    "sri-lanka-outbound-low-coverage-destinations-2026"
+    "sri-lanka-outbound-low-coverage-destinations-2026",
+    "equatorial-guinea-outbound-low-coverage-destinations-2026",
+    "lebanon-outbound-low-coverage-destinations-2026",
+    "nauru-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -13211,6 +13214,36 @@
       "url": "https://www.immigration.gov.lk/pages_e.php?id=7",
       "publisher": "Department of Immigration and Emigration, Sri Lanka",
       "jurisdiction": "Democratic Socialist Republic of Sri Lanka",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "equatorial-guinea-government-cemac-ordinary-passport-regulation",
+      "title": "Equatorial Guinea Government: CEMAC biometric-passport regulation",
+      "url": "https://www.guineaecuatorialpress.com/noticias/reglamento_de_aplicacion_del_decreto_de_expedicion_del_pasaporte_biometrico_cemac",
+      "publisher": "Government of the Republic of Equatorial Guinea",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "lebanon-general-security-current-biometric-passport-service",
+      "title": "Lebanese General Security: biometric passport application",
+      "url": "https://www.general-security.gov.lb/en/posts/11",
+      "publisher": "General Directorate of General Security, Lebanon",
+      "jurisdiction": "Lebanese Republic",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "nauru-justice-current-ordinary-passport-scope",
+      "title": "Nauru Department of Justice and Border Control: Passport Division",
+      "url": "https://justice.gov.nr/passport-division/",
+      "publisher": "Department of Justice and Border Control, Republic of Nauru",
+      "jurisdiction": "Republic of Nauru",
       "kind": "government-guidance",
       "language": "English",
       "reviewedAt": "2026-08-22"
@@ -59697,6 +59730,160 @@
         "label": "Equatorial Guinea official eVisa service",
         "steps": [
           "Register and submit the visitor eVisa application with the Sri Lankan ordinary passport to be used for travel.",
+          "Pay online and receive the issued eVisa by email/PDF before travel.",
+          "Carry the issued record and meet entry-point and final-admission conditions."
+        ]
+      }
+    },
+    {
+      "id": "equatorial-guinean-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Equatorial Guinean ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "GQ"
+      ],
+      "conditions": [
+        "Use the Equatorial Guinean ordinary CEMAC passport, not a diplomatic or service passport. F5A is tourism only, single entry and up to 30 days, with stated passport-validity and supporting-document requirements.",
+        "Apply online, upload documents and pay. The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current all-country document does not identify an Equatorial Guinean ordinary-passport exception; this classification is medium confidence. Work, residence, special documents, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "equatorial-guinea-government-cemac-ordinary-passport-regulation",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the ordinary CEMAC passport and required tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present the certificate and required documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "lebanese-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Lebanese ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism route accepts citizens of all countries and sends the tourism visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "LB"
+      ],
+      "conditions": [
+        "Apply online using a valid Lebanese ordinary biometric passport with the F5A tourism supporting documents and payment; the visitor route is single entry for up to 30 days.",
+        "The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current document does not identify a Lebanese ordinary-passport waiver; the all-country eVisa route is retained with medium confidence."
+      ],
+      "sourceIds": [
+        "lebanon-general-security-current-biometric-passport-service",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Lebanese ordinary passport and stated tourism documents.",
+          "Pay and receive the visa certificate by email before departure.",
+          "Present the certificate and supporting documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "lebanese-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Lebanese ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email as a PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "LB"
+      ],
+      "conditions": [
+        "Use the same valid Lebanese ordinary biometric passport for application and travel; non-regular travel documents are not accepted.",
+        "Apply through the authenticated eVisa service and receive the eVisa by email in PDF form before travel. This is electronic issuance, not a visa on arrival.",
+        "The ordinary visitor route does not establish work, residence, Palestinian travel-document, special-document, carrier or final-admission entitlement."
+      ],
+      "sourceIds": [
+        "lebanon-general-security-current-biometric-passport-service",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea eVisa service",
+        "steps": [
+          "Apply online using the Lebanese ordinary passport for travel.",
+          "Receive and retain the emailed PDF eVisa before departure.",
+          "Present the same passport and eVisa for final immigration processing and admission."
+        ]
+      }
+    },
+    {
+      "id": "nauruan-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Nauruan ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service accepts citizens of all countries and delivers the visa certificate by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "NR"
+      ],
+      "conditions": [
+        "Use a Nauruan ordinary passport. F5A is tourism only, single entry and up to 30 days, with the stated passport-validity and supporting-document requirements.",
+        "Apply online, upload documents and pay. The emailed visa certificate is electronic issuance before travel, not online preapproval followed by border issuance.",
+        "Nigeria excepts ECOWAS States and countries with a visa-waiver agreement. Its current all-country document does not identify a Nauruan ordinary-passport exception; this classification is medium confidence. Work, residence, diplomatic, official, refugee, emergency, special documents, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "nauru-justice-current-ordinary-passport-scope",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service tourism eVisa",
+        "steps": [
+          "Apply online with the Nauruan ordinary passport and required tourism documents.",
+          "Pay and obtain the visa certificate by email before departure.",
+          "Present the certificate and required documents for carrier and final-admission checks."
+        ]
+      }
+    },
+    {
+      "id": "nauruan-ordinary-passport-equatorial-guinea-electronic-visitor-visa",
+      "title": "Nauruan ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's institutional Government page authenticates its online visa service; the current service accepts all nationalities using a regular passport and sends the eVisa by email/PDF.",
+      "status": "evisa",
+      "destinationCodes": [
+        "GQ"
+      ],
+      "passportCodes": [
+        "NR"
+      ],
+      "conditions": [
+        "Apply using the Nauruan ordinary passport that will be used for travel; the official portal excludes non-regular travel documents.",
+        "Register, upload the required visitor documents, pay online and obtain the eVisa by email/PDF before travel. This is electronic issuance, not an ETA or visa on arrival.",
+        "Purpose, passport validity, health, entry-point, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "nauru-justice-current-ordinary-passport-scope",
+        "equatorial-guinea-government-current-online-visa-announcement",
+        "equatorial-guinea-evisa-all-nationalities",
+        "equatorial-guinea-evisa-regular-passport-process"
+      ],
+      "application": {
+        "url": "https://equatorialguinea-evisa.com/",
+        "label": "Equatorial Guinea official eVisa service",
+        "steps": [
+          "Register and submit the visitor eVisa application with the Nauruan ordinary passport to be used for travel.",
           "Pay online and receive the issued eVisa by email/PDF before travel.",
           "Carry the issued record and meet entry-point and final-admission conditions."
         ]
