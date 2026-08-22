@@ -1070,6 +1070,16 @@ Macao's current DSI passport-specific service adds 11 relationships for the Maca
 
 Burundi adds advance-visa access to Bosnia and Herzegovina and Kosovo plus EAC visa-free entry to South Sudan. The South Sudan route corrects fallback visa on arrival because current EAC guidance implements visa-free entry for citizens of other Partner States and expressly includes both countries. The same inaccessible British Virgin Islands PDF was removed here for consistency. Cuba, Bangladesh, Cambodia and Côte d'Ivoire remain unresolved because the reviewed sources did not establish both Burundian ordinary-passport eligibility and issuance timing.
 
+## Pass 119 result: Somalia, Syria and Angola outbound evidence
+
+This independently cross-reviewed outbound pass adds six relationships, raising complete-matrix evidence from 34,830 to 34,836 of 44,974 relationships (77.5%). The public status matrix now shows 34,836 fresh and 10,138 not-covered rows, with zero old or stale rows. Africa rises from 7,369 to 7,372 of 11,289 and the Caribbean from 3,697 to 3,700 of 4,962. The Americas remain 4,357 of 4,953, Asia 5,006 of 6,336, Europe 9,421 of 10,299, the Middle East 1,604 of 2,970, and Oceania 3,376 of 4,165. Canonical evidence contains 227 reviewed batches, 1,233 official sources and 785 policies.
+
+Somalia adds Cuba eVisa access and Côte d'Ivoire visa on arrival. Federal Somali ordinary-passport scope is tied to the Federal Immigration and Citizenship Agency service and the P-prefix document described by the civil-aviation authority; Somaliland or other non-Federal documents are not transferred. Côte d'Ivoire corrects from eVisa because pre-enrolment approval precedes biometric printing and issuance at Abidjan airport. The other 29 rows remain unresolved where current Federal-document eligibility and issuance timing were not both established.
+
+Syria adds the same Cuba eVisa and Côte d'Ivoire arrival-visa routes after independent review expanded an initially all-unresolved draft. The policies preserve Syrian government-transition, ordinary-document validity and recognition, mission operation, carrier and final-admission uncertainty rather than treating those issues as visa categories. Côte d'Ivoire is again corrected from eVisa to airport issuance; 29 rows remain unresolved.
+
+Angola likewise adds Cuba eVisa access and Côte d'Ivoire visa on arrival, supported by an official Angolan ordinary-passport definition and the direct destination workflows. Current Angola–Congo and Angola–Nigeria materials cover diplomatic, service or official passports only and were not transferred to ordinary travellers. Tunisia remains unresolved without a current ordinary-passport exemption source. Côte d'Ivoire is the sole fallback correction.
+
 ## Held from promotion: Americas, Africa and Asia near-complete gaps
 
 Twenty-five of the 28 examined residual cells remain unresolved. Kosovo document non-recognition or omission prevents nationality-only classifications for Mexico, Chile and Uruguay. Ecuador's current official source could not be stably retrieved for Hong Kong, Macao or Taiwan. Kenya's Gazette says “St. Kitts and Navis,” which is not silently corrected to the current issuer. Zimbabwe currently places Bolivia in an arrival-visa category while its eVisa FAQ says a pre-travel visa is required.

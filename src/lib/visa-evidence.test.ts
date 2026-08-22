@@ -1074,7 +1074,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "CM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CM", "CM", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("CI")).toHaveLength(26);
+    expect(pairsFor("CI")).toHaveLength(29);
     expect(getVisaRelationshipEvidence("GN", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2062,7 +2062,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("CU")).toHaveLength(21);
+    expect(pairsFor("CU")).toHaveLength(24);
     expect(getVisaRelationshipEvidence("CN", "CU", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "CU", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "CU", "evisa").supportsCurrentStatus).toBe(true);
@@ -2170,6 +2170,20 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BI", "VG", snapshot.passports.BI.statuses.VG).supportsCurrentStatus).toBe(false);
   });
 
+  it("supports reviewed Somali, Syrian, and Angolan outbound rows", () => {
+    expect(getVisaRelationshipEvidence("SO", "CU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SO", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SO", "BA", snapshot.passports.SO.statuses.BA).supportsCurrentStatus).toBe(false);
+
+    expect(getVisaRelationshipEvidence("SY", "CU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SY", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SY", "BA", snapshot.passports.SY.statuses.BA).supportsCurrentStatus).toBe(false);
+
+    expect(getVisaRelationshipEvidence("AO", "CU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AO", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AO", "TN", snapshot.passports.AO.statuses.TN).supportsCurrentStatus).toBe(false);
+  });
+
   it("supports reviewed Spanish, Italian, and South Korean outbound rows", () => {
     expect(getVisaRelationshipEvidence("ES", "VG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ES", "IQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2234,6 +2248,8 @@ describe("official visa evidence", () => {
       "um.dk",
       "www.dsi.gov.mo",
       "www.bvi.gov.vg",
+      "www.somalia.gov.so",
+      "italia.mirex.gov.ao",
       "www.exteriores.gob.es",
       "exteriores.gob.es",
       "www.viaggiaresicuri.it",

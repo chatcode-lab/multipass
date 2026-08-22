@@ -223,7 +223,10 @@
     "yemen-outbound-low-coverage-destinations-2026",
     "afghanistan-outbound-low-coverage-destinations-2026",
     "macao-outbound-low-coverage-destinations-2026",
-    "burundi-outbound-low-coverage-destinations-2026"
+    "burundi-outbound-low-coverage-destinations-2026",
+    "somalia-outbound-low-coverage-destinations-2026",
+    "syria-outbound-low-coverage-destinations-2026",
+    "angola-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -12524,6 +12527,36 @@
       "jurisdiction": "Bosnia and Herzegovina",
       "kind": "law",
       "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "somalia-ica-ordinary-passport-scope",
+      "title": "Federal Republic of Somalia: Ordinary Passport service",
+      "url": "https://www.somalia.gov.so/services/ordinary-passport",
+      "publisher": "Immigration and Citizenship Agency, Federal Republic of Somalia",
+      "jurisdiction": "Somalia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "somalia-scaa-federal-passport-document-validity",
+      "title": "Somali Civil Aviation Authority: Somali travel documents",
+      "url": "https://aip.scaa.gov.so/eAIC/HC-eAIC-2024-05-A-en-GB.html",
+      "publisher": "Somali Civil Aviation Authority",
+      "jurisdiction": "Somalia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "angola-mirex-ordinary-passport-scope",
+      "title": "Angola Ministry of External Relations: National Ordinary Passport",
+      "url": "https://italia.mirex.gov.ao/web/actos/320/emissao-de-passaporte",
+      "publisher": "Embassy of the Republic of Angola in Italy, Ministry of External Relations",
+      "jurisdiction": "Angola",
+      "kind": "government-guidance",
+      "language": "Portuguese",
       "reviewedAt": "2026-08-22"
     }
   ],
@@ -56286,6 +56319,183 @@
         "eac-current-partner-states",
         "eac-current-visa-free-entry"
       ]
+    },
+    {
+      "id": "somali-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Somali ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Somali visitor and makes the electronic tourist-visa route available from anywhere except the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "SO"
+      ],
+      "conditions": [
+        "Use a valid Federal Somali ordinary passport (P prefix), not a Somaliland or other non-Federal Somali document. Cuba names Chinese citizens as visa-exempt; a Somali ordinary-passport holder without Cuban residency must obtain the tourist visa.",
+        "Obtain the electronic tourist visa before travel; Cuba's D'Viajeros declaration is separate. The tourist visa is single-entry for up to 90 days, with a possible 90-day extension.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "somalia-ica-ordinary-passport-scope",
+        "somalia-scaa-federal-passport-document-validity",
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the valid Federal Somali ordinary passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "somali-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Somali ordinary passports: Côte d'Ivoire preapproved arrival visa",
+      "summary": "Côte d'Ivoire's official valid-ordinary-passport process gives online preapproval and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CI"
+      ],
+      "passportCodes": [
+        "SO"
+      ],
+      "conditions": [
+        "The route applies to a valid Federal Somali ordinary passport (P prefix), not a Somaliland or other non-Federal Somali document. Complete pre-enrolment, payment and document upload; board only with the approved D.S.T. response, payment receipt, passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "somalia-ica-ordinary-passport-scope",
+        "somalia-scaa-federal-passport-document-validity",
+        "cote-divoire-snedai-arrival-visa"
+      ],
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d'Ivoire official e-visa pre-enrolment",
+        "steps": [
+          "Submit the valid Federal Somali ordinary passport pre-enrolment and payment online, with the listed travel and hosting documents.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
+    },
+    {
+      "id": "syrian-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Syrian ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Syrian visitor and provides an electronic tourist-visa route online from anywhere outside the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "SY"
+      ],
+      "conditions": [
+        "This is the ordinary Syrian-passport tourist route described by Cuba's general valid-passport rule. It does not infer recognition of a particular issuing authority, obsolete document, special passport or residence status; carry a document valid for Cuba's stated six-month period.",
+        "Obtain the electronic tourist visa before travel and complete the separate D'Viajeros declaration. The tourist visa is single-entry for up to 90 days, extendable for a further 90 days. Work, residence, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Apply for the electronic tourist visa with a valid ordinary Syrian passport before departure.",
+          "Complete the separate D'Viajeros arrival declaration and travel with the resulting visa code and required travel documents."
+        ]
+      }
+    },
+    {
+      "id": "syrian-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Syrian ordinary passports: Côte d'Ivoire preapproved arrival visa",
+      "summary": "Côte d'Ivoire's official valid-ordinary-passport process gives online preapproval and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CI"
+      ],
+      "passportCodes": [
+        "SY"
+      ],
+      "conditions": [
+        "Use a valid ordinary Syrian passport and complete pre-enrolment, payment and document upload. Board only with the approved D.S.T. response, payment receipt, passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa. Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "cote-divoire-snedai-arrival-visa"
+      ],
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d'Ivoire official e-visa pre-enrolment",
+        "steps": [
+          "Submit the valid ordinary Syrian passport pre-enrolment and payment online, with the listed travel and hosting documents.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
+    },
+    {
+      "id": "angolan-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Angolan ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Angolan visitor and makes the electronic tourist-visa route available from anywhere except the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "AO"
+      ],
+      "conditions": [
+        "Use a valid Angolan National Ordinary Passport. Cuba names Chinese citizens as visa-exempt; an Angolan ordinary-passport holder without Cuban residency must obtain the tourist visa.",
+        "Obtain the electronic tourist visa before travel; Cuba's D'Viajeros declaration is separate. The tourist visa is single-entry for up to 90 days, with a possible 90-day extension.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "angola-mirex-ordinary-passport-scope",
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the Angolan National Ordinary Passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "angolan-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Angolan ordinary passports: Côte d'Ivoire preapproved arrival visa",
+      "summary": "Côte d'Ivoire's official valid-ordinary-passport process gives online preapproval and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CI"
+      ],
+      "passportCodes": [
+        "AO"
+      ],
+      "conditions": [
+        "The route applies to a valid Angolan National Ordinary Passport. Complete pre-enrolment, payment and document upload; board only with the approved D.S.T. response, payment receipt, passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "angola-mirex-ordinary-passport-scope",
+        "cote-divoire-snedai-arrival-visa"
+      ],
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d'Ivoire official e-visa pre-enrolment",
+        "steps": [
+          "Submit the valid Angolan National Ordinary Passport pre-enrolment and payment online, with the listed travel and hosting documents.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
     }
   ]
 }

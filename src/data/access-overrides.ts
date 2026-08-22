@@ -70,7 +70,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/399?travelPermit=0",
     reviewedAt: "2026-08-22",
   },
-  ...(["LY", "YE"] as const).map((passportCode) => ({
+  ...(["LY", "YE", "AO", "SO", "SY"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "CI" as const,
     status: "visa_on_arrival" as const,
