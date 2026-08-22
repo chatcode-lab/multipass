@@ -217,7 +217,10 @@
     "finland-outbound-low-coverage-destinations-2026",
     "belgium-outbound-low-coverage-destinations-2026",
     "denmark-outbound-low-coverage-destinations-2026",
-    "norway-outbound-low-coverage-destinations-2026"
+    "norway-outbound-low-coverage-destinations-2026",
+    "palestinian-territory-outbound-low-coverage-destinations-2026",
+    "libya-outbound-low-coverage-destinations-2026",
+    "yemen-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -12268,6 +12271,46 @@
       "jurisdiction": "Norway",
       "kind": "government-guidance",
       "language": "Norwegian",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "kosovo-mfa-current-inbound-visa-list",
+      "title": "Kosovo Visas",
+      "url": "https://ambasadat.net/visas/",
+      "publisher": "Ministry of Foreign Affairs and Diaspora of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "bangladesh-dip-online-visa-libya",
+      "title": "Bangladesh Department of Immigration and Passports: Online MRV Portal",
+      "url": "https://visa.gov.bd/",
+      "publisher": "Department of Immigration and Passports, Government of the People's Republic of Bangladesh",
+      "jurisdiction": "Bangladesh",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "libya-justice-foreigners-entry-law",
+      "title": "Libya Ministry of Justice: Law No. 6 of 1987 on foreign entry and residence",
+      "url": "https://aladel.gov.ly/home/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-6-%D9%84%D8%B3%D9%86%D8%A9-1987-%D9%81-%D8%A8%D8%B4%D8%A3%D9%86-%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%AF%D8%AE%D9%88%D9%84-%D9%88%D8%A5%D9%82%D8%A7%D9%85%D8%A9-%D8%A7%D9%84%D8%A3%D8%AC%D8%A7%D9%86%D8%A8-%D9%81%D9%8A-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D9%88%D8%AE%D8%B1%D9%88%D8%AC%D9%87%D9%85-%D9%85%D9%86%D9%87%D8%A7/",
+      "publisher": "Ministry of Justice, State of Libya",
+      "jurisdiction": "Libya",
+      "kind": "law",
+      "language": "Arabic",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "bangladesh-dip-online-visa-yemen",
+      "title": "Bangladesh Department of Immigration and Passports: Online MRV Portal",
+      "url": "https://visa.gov.bd/Home.aspx",
+      "publisher": "Department of Immigration and Passports, Government of the People's Republic of Bangladesh",
+      "jurisdiction": "Bangladesh",
+      "kind": "official-portal",
+      "language": "English",
       "reviewedAt": "2026-08-22"
     }
   ],
@@ -55590,6 +55633,211 @@
         "label": "Côte d'Ivoire official e-visa pre-enrolment",
         "steps": [
           "Submit the ordinary Norwegian passport pre-enrolment and payment online, with the listed travel and hosting documents.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
+    },
+    {
+      "id": "palestinian-ordinary-passports-kosovo-advance-short-stay-visa",
+      "title": "Palestinian ordinary passports: Kosovo advance short-stay visitor visa",
+      "summary": "Kosovo's current closed visa-exemption list does not include Palestine, and its Foreign Ministry requires other foreign nationals to use the in-person diplomatic or consular visa process before a visit.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "XK"
+      ],
+      "passportCodes": [
+        "PS"
+      ],
+      "conditions": [
+        "Submit the short-stay visa application in person to the relevant Kosovo diplomatic or consular mission no later than three months before the intended visit. The current official exemption list does not name Palestine, and no listed special-category exemption is inferred here.",
+        "This is an advance consular route, not an eVisa or nationality-wide visa-on-arrival route. Passport recognition, mission availability, transit, residence, work, special documents, carrier requirements and final admission remain separate."
+      ],
+      "sourceIds": [
+        "kosovo-mfa-current-inbound-visa-list"
+      ]
+    },
+    {
+      "id": "libya-ordinary-passport-bangladesh-advance-visitor-visa",
+      "title": "Libyan ordinary passports: Bangladesh advance visitor visa",
+      "summary": "Bangladesh's official portal accepts Libyan applications but requires the printed online submission, supporting documents and passport to be lodged with a Bangladesh mission for visa issuance before travel.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "BD"
+      ],
+      "passportCodes": [
+        "LY"
+      ],
+      "conditions": [
+        "The online form is an application, not an electronically issued visa. Use the Libyan ordinary passport, print the submitted form, and lodge it with required documents, fees and passport at the Bangladesh visa office or mission for issuance before travel.",
+        "The portal lists Tripoli, Libya among supported online-submission locations and separately lists the Libyan passport fee. Visitor purpose, duration, supporting documents, carrier rules and final admission remain subject to the Bangladesh mission and border authorities."
+      ],
+      "sourceIds": [
+        "bangladesh-dip-online-visa-libya"
+      ],
+      "application": {
+        "url": "https://visa.gov.bd/",
+        "label": "Bangladesh Department of Immigration and Passports online visa application",
+        "steps": [
+          "Submit the online application using the Libyan ordinary passport.",
+          "Print the submitted form and lodge it with the required documents, fee and passport at the Bangladesh visa office or mission before travel.",
+          "Travel only after the mission has issued the visa and comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "libya-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Libyan ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Libyan visitor and makes the electronic tourist-visa route available from anywhere except the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "LY"
+      ],
+      "conditions": [
+        "The source names Chinese citizens as visa-exempt; an ordinary Libyan passport holder without Cuban residency must obtain a tourist visa. Obtain the electronic tourist visa before travel; the D'Viajeros declaration is separate.",
+        "The tourist visa is single-entry for up to 90 days, with a possible 90-day extension. Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the Libyan passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "libya-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Libyan ordinary passports: Côte d'Ivoire preapproved arrival visa",
+      "summary": "Côte d'Ivoire's official ordinary-passport process gives online preapproval and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CI"
+      ],
+      "passportCodes": [
+        "LY"
+      ],
+      "conditions": [
+        "The route is for a valid ordinary passport. Complete pre-enrolment, payment and document upload; board only with the approved D.S.T. response, payment receipt, passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa. Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "cote-divoire-snedai-arrival-visa"
+      ],
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d'Ivoire official e-visa pre-enrolment",
+        "steps": [
+          "Submit the ordinary Libyan passport pre-enrolment and payment online, with the listed travel and hosting documents.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
+    },
+    {
+      "id": "libyan-citizens-in-libya",
+      "title": "Libyan citizens: Libya",
+      "summary": "Libya's official foreigner-entry statute distinguishes foreigners, so an ordinary Libyan passport holder entering Libya is classified as citizenship rather than a visa route.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "LY"
+      ],
+      "passportCodes": [
+        "LY"
+      ],
+      "conditions": [
+        "This records nationality/citizenship only. Passport validity, border operations, identity documentation, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "libya-justice-foreigners-entry-law"
+      ]
+    },
+    {
+      "id": "yemen-ordinary-passport-bangladesh-advance-visitor-visa",
+      "title": "Yemeni ordinary passports: Bangladesh advance visitor visa",
+      "summary": "Bangladesh's official portal accepts Yemeni applications but requires the printed online submission, supporting documents and passport to be lodged with a Bangladesh mission for issuance before travel.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "BD"
+      ],
+      "passportCodes": [
+        "YE"
+      ],
+      "conditions": [
+        "The online form is an application, not an electronically issued visa. Use the Yemeni ordinary passport, print the submitted form, and lodge it with required documents, fees and passport at the Bangladesh visa office or mission for issuance before travel.",
+        "Visitor purpose, duration, supporting documents, carrier rules and final admission remain subject to the Bangladesh mission and border authorities."
+      ],
+      "sourceIds": [
+        "bangladesh-dip-online-visa-yemen"
+      ],
+      "application": {
+        "url": "https://visa.gov.bd/Home.aspx",
+        "label": "Bangladesh Department of Immigration and Passports online visa application",
+        "steps": [
+          "Submit the online application using the Yemeni ordinary passport.",
+          "Print the submitted form and lodge it with the required documents, fee and passport at the Bangladesh visa office or mission before travel.",
+          "Travel only after the mission has issued the visa and comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "yemen-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Yemeni ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Yemeni visitor and makes the electronic tourist-visa route available from anywhere except the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "YE"
+      ],
+      "conditions": [
+        "The source names Chinese citizens as visa-exempt; an ordinary Yemeni passport holder without Cuban residency must obtain a tourist visa. Obtain the electronic tourist visa before travel; the D'Viajeros declaration is separate.",
+        "The tourist visa is single-entry for up to 90 days, with a possible 90-day extension. Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the Yemeni passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "yemen-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Yemeni ordinary passports: Côte d'Ivoire preapproved arrival visa",
+      "summary": "Côte d'Ivoire's official ordinary-passport process gives online preapproval and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CI"
+      ],
+      "passportCodes": [
+        "YE"
+      ],
+      "conditions": [
+        "The route is for a valid ordinary passport. Complete pre-enrolment, payment and document upload; board only with the approved D.S.T. response, payment receipt, passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa. Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "cote-divoire-snedai-arrival-visa"
+      ],
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d'Ivoire official e-visa pre-enrolment",
+        "steps": [
+          "Submit the ordinary Yemeni passport pre-enrolment and payment online, with the listed travel and hosting documents.",
           "Wait for the D.S.T. approved response before boarding.",
           "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
         ]

@@ -30,6 +30,22 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...(["LY", "YE"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "CI" as const,
+    status: "visa_on_arrival" as const,
+    reason: "Côte d'Ivoire's official ordinary-passport procedure requires approved online pre-enrolment before printing and issuing the biometric visa at Abidjan airport.",
+    sourceUrl: "https://snedai.com/e-visa/",
+    reviewedAt: "2026-08-22",
+  })),
+  {
+    passportCode: "LY",
+    destinationCode: "BD",
+    status: "visa_required",
+    reason: "Bangladesh's official portal lists Libyan applicants but requires the printed online form, supporting documents and passport to be lodged at a mission before issuance.",
+    sourceUrl: "https://visa.gov.bd/",
+    reviewedAt: "2026-08-22",
+  },
   ...(["BE", "DK", "NO"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "CI" as const,
