@@ -31,6 +31,14 @@ export interface VerifiedAccessOverride {
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "MR",
+    destinationCode: "GW",
+    status: "visa_free",
+    reason: "Mauritania's current Foreign Ministry list identifies Guinea-Bissau under an unqualified reciprocal visa-suppression agreement, distinct from its diplomatic/service-only entries.",
+    sourceUrl: "https://diplomatie.gov.mr/index.php/fr/node/50",
+    reviewedAt: "2026-08-22",
+  },
+  {
     passportCode: "MD",
     destinationCode: "BD",
     status: "visa_required",
@@ -142,7 +150,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/399?travelPermit=0",
     reviewedAt: "2026-08-22",
   },
-  ...(["LY", "YE", "AO", "SO", "SY", "MD", "ME", "ZM"] as const).map((passportCode) => ({
+  ...(["LY", "YE", "AO", "SO", "SY", "MD", "ME", "ZM", "ZW"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "CI" as const,
     status: "visa_on_arrival" as const,

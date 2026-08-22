@@ -229,7 +229,10 @@
     "angola-outbound-low-coverage-destinations-2026",
     "moldova-outbound-low-coverage-destinations-2026",
     "montenegro-outbound-low-coverage-destinations-2026",
-    "zambia-outbound-low-coverage-destinations-2026"
+    "zambia-outbound-low-coverage-destinations-2026",
+    "zimbabwe-outbound-low-coverage-destinations-2026",
+    "mauritania-outbound-low-coverage-destinations-2026",
+    "congo-republic-outbound-low-coverage-destinations-2026"
   ],
   "sources": [
     {
@@ -12659,6 +12662,76 @@
       "publisher": "Ministry of Foreign Affairs of Ukraine",
       "jurisdiction": "Ukraine",
       "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "zimbabwe-mfa-ordinary-passport-scope",
+      "title": "Zimbabwe Ministry of Foreign Affairs and International Trade: passport services",
+      "url": "https://zimfa.gov.zw/index.php/about-us",
+      "publisher": "Ministry of Foreign Affairs and International Trade, Government of Zimbabwe",
+      "jurisdiction": "Zimbabwe",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "ukraine-mfa-zimbabwe-entry-regime",
+      "title": "Ukraine MFA: entry regime for Zimbabwean travel passports",
+      "url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/entry-regime-ukraine-foreign-citizens",
+      "publisher": "Ministry of Foreign Affairs of Ukraine",
+      "jurisdiction": "Ukraine",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "mauritania-government-ordinary-passport-service",
+      "title": "Mauritania Government procedures: first ordinary-passport application",
+      "url": "https://procedures.gov.mr/fr/defaultservice/view/1588",
+      "publisher": "Government of the Islamic Republic of Mauritania",
+      "jurisdiction": "Mauritania",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "mauritania-mfa-current-reciprocal-visa-waivers",
+      "title": "Mauritania Ministry of Foreign Affairs: Visa information and reciprocal visa-waiver list",
+      "url": "https://diplomatie.gov.mr/index.php/fr/node/50",
+      "publisher": "Ministry of Foreign Affairs, Cooperation and Mauritanians Abroad",
+      "jurisdiction": "Mauritania",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "congo-sgg-ordinary-passport-decree",
+      "title": "Republic of the Congo Secretariat-General: ordinary-passport decree",
+      "url": "https://www.sgg.cg/textes-officiels/decrets/1998/congo-decret-1998-360.pdf",
+      "publisher": "Secretariat-General of the Government, Republic of the Congo",
+      "jurisdiction": "Republic of the Congo",
+      "kind": "law",
+      "language": "French",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "congo-sgg-current-foreigner-entry-statute",
+      "title": "Republic of the Congo Official Journal: current reference to foreigner-entry statute",
+      "url": "https://sgg.cg/JO/2026/congo-jo-2026-17-3.pdf",
+      "publisher": "Secretariat-General of the Government, Republic of the Congo",
+      "jurisdiction": "Republic of the Congo",
+      "kind": "law",
+      "language": "French",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "nigeria-immigration-2026-tourism-evisa",
+      "title": "Nigeria Immigration Service: 2026 Tourism (F5A) visa service level",
+      "url": "https://immigration.gov.ng/wp-content/uploads/2026/04/SERVICE-LEVEL-AGREEMENT-2026_.pdf",
+      "publisher": "Nigeria Immigration Service",
+      "jurisdiction": "Nigeria",
+      "kind": "official-dataset",
       "language": "English",
       "reviewedAt": "2026-08-22"
     }
@@ -56911,6 +56984,239 @@
       "sourceIds": [
         "zambia-moh-national-passport-ordinary-scope",
         "ukraine-mfa-zambia-entry-regime"
+      ]
+    },
+    {
+      "id": "zimbabwean-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Zimbabwean ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Zimbabwean visitor and provides an electronic tourist-visa route online from anywhere outside the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "ZW"
+      ],
+      "conditions": [
+        "Use a valid ordinary Zimbabwean passport, obtain the electronic tourist visa before travel and complete Cuba's separate D'Viajeros declaration.",
+        "The tourist visa is single-entry for up to 90 days, extendable for a further 90 days. Work, residence, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "zimbabwe-mfa-ordinary-passport-scope",
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Apply with a valid ordinary Zimbabwean passport before departure.",
+          "Complete D'Viajeros and travel with the resulting visa code and required travel documents."
+        ]
+      }
+    },
+    {
+      "id": "zimbabwean-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Zimbabwean ordinary passports: Côte d'Ivoire preapproved arrival visa",
+      "summary": "Côte d'Ivoire's official valid-ordinary-passport process gives online preapproval and prints/issues the visa at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "CI"
+      ],
+      "passportCodes": [
+        "ZW"
+      ],
+      "conditions": [
+        "Complete pre-enrolment, payment and document upload; board only with the approved D.S.T. response, payment receipt, valid ordinary passport and yellow-fever certificate.",
+        "At Abidjan airport complete biometric enrolment; the visa is printed and issued there. This is online preapproval followed by border issuance, not an eVisa."
+      ],
+      "sourceIds": [
+        "zimbabwe-mfa-ordinary-passport-scope",
+        "cote-divoire-snedai-arrival-visa"
+      ],
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d'Ivoire official e-visa pre-enrolment",
+        "steps": [
+          "Submit pre-enrolment and payment online.",
+          "Wait for the D.S.T. approved response before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is printed and issued."
+        ]
+      }
+    },
+    {
+      "id": "zimbabwean-ordinary-passport-nigeria-electronic-tourism-visa",
+      "title": "Zimbabwean ordinary passports: Nigeria electronic tourism visa",
+      "summary": "Nigeria Immigration Service makes its tourism e-Visa available to citizens of all countries and issues the visa certificate by email.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "ZW"
+      ],
+      "conditions": [
+        "Use the Nigeria Immigration Service tourism e-Visa route with a valid ordinary Zimbabwean passport, return ticket, accommodation evidence and other current portal requirements.",
+        "Apply, upload documents, pay online and obtain the visa certificate by email before travel. Work, residence, other visa classes and final admission remain separate."
+      ],
+      "sourceIds": [
+        "zimbabwe-mfa-ordinary-passport-scope",
+        "nigeria-nis-tourism-evisa-all-countries"
+      ]
+    },
+    {
+      "id": "zimbabwean-ordinary-passport-ukraine-advance-visitor-visa",
+      "title": "Zimbabwean ordinary passports: Ukraine advance visitor visa",
+      "summary": "Ukraine MFA's current travel-passport table requires a visa for Zimbabwean citizens, and its visa guidance routes required-visa applicants to Ukrainian embassies or consulates before travel.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "UA"
+      ],
+      "passportCodes": [
+        "ZW"
+      ],
+      "conditions": [
+        "Apply to the relevant Ukrainian embassy or consulate before travel; this is an advance consular route, not an eVisa or visa-on-arrival classification.",
+        "War-related border, air-access, occupied-territory permit, carrier and final-admission conditions remain separate from this visa classification."
+      ],
+      "sourceIds": [
+        "zimbabwe-mfa-ordinary-passport-scope",
+        "ukraine-mfa-zimbabwe-entry-regime"
+      ]
+    },
+    {
+      "id": "mauritanian-ordinary-passport-named-reciprocal-visa-free-visits",
+      "title": "Mauritanian ordinary passports: named reciprocal visa-free short visits",
+      "summary": "Mauritania's current MFA records reciprocal visa-waiver agreements, without a diplomatic/service-only limitation, for Libya, Tunisia, Mali, Niger, Côte d'Ivoire, Guinea-Bissau and Chad.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "LY",
+        "TN",
+        "CI",
+        "GW",
+        "ML",
+        "NE",
+        "TD"
+      ],
+      "passportCodes": [
+        "MR"
+      ],
+      "conditions": [
+        "Use a valid Mauritanian ordinary passport. The MFA page expressly limits several other agreements to diplomatic and service passports but does not apply that limitation to these seven named destinations.",
+        "The MFA list establishes the visa-waiver route only; it does not establish duration, work, residence, transit, entry point, carrier requirements, document-recognition, mission availability or final admission conditions.",
+        "This conclusion rests on Mauritania's named reciprocal agreements, not on ECOWAS membership or a regional free-movement presumption."
+      ],
+      "sourceIds": [
+        "mauritania-government-ordinary-passport-service",
+        "mauritania-mfa-current-reciprocal-visa-waivers"
+      ]
+    },
+    {
+      "id": "mauritanian-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Mauritanian ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Mauritanian visitor and makes the electronic tourist-visa route available from anywhere except the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "MR"
+      ],
+      "conditions": [
+        "Use a valid Mauritanian ordinary passport. Cuba names Chinese citizens as visa-exempt; a Mauritanian ordinary-passport holder without Cuban residency must obtain the tourist visa.",
+        "Obtain the electronic tourist visa before travel; Cuba's D'Viajeros declaration is separate. The tourist visa is single-entry for up to 90 days, with a possible 90-day extension.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "mauritania-government-ordinary-passport-service",
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the Mauritanian ordinary passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "congolese-ordinary-passport-cuba-electronic-tourist-visa",
+      "title": "Congolese ordinary passports: Cuba electronic tourist visa",
+      "summary": "Cuba's current official tourism guidance requires a tourist visa for a non-resident Congolese visitor and makes the electronic tourist-visa route available from anywhere except the United States.",
+      "status": "evisa",
+      "destinationCodes": [
+        "CU"
+      ],
+      "passportCodes": [
+        "CG"
+      ],
+      "conditions": [
+        "Use an ordinary Republic of the Congo passport. Cuba names Chinese citizens as visa-exempt; a Congolese ordinary-passport holder without Cuban residency must obtain the tourist visa.",
+        "Obtain the electronic tourist visa before travel; Cuba's D'Viajeros declaration is separate. The tourist visa is single-entry for up to 90 days, with a possible 90-day extension.",
+        "Work, residence, special passports, transit, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "congo-sgg-ordinary-passport-decree",
+        "cuba-travel-current-tourist-entry-evisa"
+      ],
+      "application": {
+        "url": "https://evisacuba.cu/en/",
+        "label": "Cuban electronic tourist visa service",
+        "steps": [
+          "Obtain the electronic tourist visa before departure using the Congolese ordinary passport for travel.",
+          "Complete Cuba's separate D'Viajeros arrival declaration as required.",
+          "Comply with carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "congolese-ordinary-passport-nigeria-tourism-evisa",
+      "title": "Congolese ordinary passports: Nigeria tourism eVisa",
+      "summary": "Nigeria Immigration Service's current F5A tourism service makes an online, emailed tourism visa available to citizens of all countries, subject to stated waiver exceptions and ordinary passport validity.",
+      "status": "evisa",
+      "destinationCodes": [
+        "NG"
+      ],
+      "passportCodes": [
+        "CG"
+      ],
+      "conditions": [
+        "Use a valid ordinary Republic of the Congo passport with at least six months' validity, photo, return ticket and the listed supporting evidence. The F5A route is tourism only, single entry and up to 30 days.",
+        "Apply online, upload documents and pay the fee. The Nigeria Immigration Service document says the applicant receives the visa certificate by email; this is electronic issuance, not online preapproval followed by border issuance.",
+        "The source excepts ECOWAS member states and countries with a visa-waiver agreement. It does not identify the Republic of the Congo as an exception. Work, residence, special passports, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "congo-sgg-ordinary-passport-decree",
+        "nigeria-immigration-2026-tourism-evisa"
+      ],
+      "application": {
+        "url": "https://immigration.gov.ng/",
+        "label": "Nigeria Immigration Service eVisa service",
+        "steps": [
+          "Apply online using the Congolese ordinary passport and upload the required tourism documents.",
+          "Pay the fee and await the emailed visa certificate before travel.",
+          "Use the electronic certificate subject to carrier and final-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "congolese-citizens-in-congo",
+      "title": "Congolese citizens: Republic of the Congo",
+      "summary": "The Republic of the Congo's official ordinary-passport decree identifies the holder as a Congolese citizen, while the current entry statute regulates foreigners; entry to the holder's own state is classified as citizenship rather than a visitor-visa route.",
+      "status": "citizenship",
+      "destinationCodes": [
+        "CG"
+      ],
+      "passportCodes": [
+        "CG"
+      ],
+      "conditions": [
+        "This records nationality/citizenship only. Passport validity, border operations, identity documentation, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": [
+        "congo-sgg-ordinary-passport-decree",
+        "congo-sgg-current-foreigner-entry-statute"
       ]
     }
   ]
