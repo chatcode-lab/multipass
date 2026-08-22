@@ -6565,6 +6565,57 @@
       "Keep the Macao SAR Passport distinct from the travel permit, PRC passport, Hong Kong documents, Portuguese passports and residence documents.",
       "Confirm the live record's issuance timing and airport limitation rather than relying on the route label alone."
     ]
+  },
+  {
+    "id": "kuwait-live-eligibility-api-residual-recheck-2026",
+    "priority": 384,
+    "objective": "Reproduce Kuwait MOI's current nationality-specific visitor eligibility flow and resolve the 140 unsupported ordinary-passport rows without conflating eVisa, arrival visa, or conditional third-country-document routes.",
+    "destinationCodes": ["KW"],
+    "passportCodes": ["CL", "AR", "BR", "BB", "IL", "BS", "MX", "VC", "UY", "KN", "AG", "SC", "MU", "CR", "PA", "LC", "GD", "PY", "PE", "TT", "DM", "TW", "SB", "WS", "GT", "RS", "CO", "SV", "MH", "TO", "TV", "HN", "ME", "NI", "KI", "FM", "MK", "PW", "BA", "AL", "VE", "MD", "RU", "ZA", "TL", "BZ", "EC", "MV", "FJ", "NR", "XK", "VU", "GY", "JM", "CN", "PG", "BW", "TH", "BY", "BO", "SR", "KZ", "ID", "LS", "DO", "NA", "SZ", "MA", "AZ", "GH", "KE", "MW", "TZ", "GM", "RW", "AM", "PH", "TN", "MN", "ZM", "CV", "MZ", "UG", "BJ", "SL", "KG", "ST", "UZ", "ZW", "BF", "IN", "CI", "CU", "MG", "SN", "GA", "NE", "TG", "TJ", "GN", "MR", "GQ", "ML", "VN", "TD", "GW", "DZ", "KM", "AO", "CM", "CG", "HT", "JO", "LR", "CF", "BI", "TM", "EG", "LB", "CD", "DJ", "MM", "NG", "LK", "ER", "IR", "LY", "KP", "ET", "PS", "SS", "SD", "BD", "PK", "NP", "SO", "YE", "IQ", "SY", "AF"],
+    "sourceHints": ["https://kuwaitvisa.moi.gov.kw/", "https://www.moi.gov.kw/"],
+    "notes": [
+      "Identify and replay the live first-party API or form requests with fresh sessions; retain request parameters and positive nationality responses as reproducible evidence.",
+      "A product endpoint is not eligibility evidence unless the controlling nationality gate positively exposes that product. Keep GCC residence and third-country-document pathways conditional and outside the passport-only baseline."
+    ]
+  },
+  {
+    "id": "oman-rop-live-eligibility-residual-recheck-2026",
+    "priority": 385,
+    "objective": "Reproduce Oman's current ROP nationality eligibility wizard for the 114 unsupported ordinary-passport rows and distinguish unconditional visitor routes from conditional group-two, GCC-resident, or third-country-document routes.",
+    "destinationCodes": ["OM"],
+    "passportCodes": ["BB", "IL", "BS", "MX", "VC", "KN", "AG", "CR", "PA", "LC", "GD", "PE", "TT", "DM", "TW", "SB", "WS", "GT", "SV", "MH", "TO", "TV", "HN", "ME", "NI", "KI", "FM", "PW", "TL", "BZ", "MV", "FJ", "NR", "XK", "VU", "GY", "JM", "PG", "BW", "LS", "DO", "NA", "SZ", "MA", "AZ", "GH", "KE", "MW", "TZ", "GM", "RW", "TN", "MN", "ZM", "CV", "MZ", "UG", "BJ", "SL", "KG", "ST", "ZW", "BF", "IN", "CI", "CU", "MG", "SN", "GA", "NE", "TG", "TJ", "GN", "MR", "GQ", "ML", "VN", "TD", "GW", "DZ", "KM", "AO", "BT", "KH", "CM", "CG", "HT", "JO", "LR", "CF", "LA", "BI", "TM", "EG", "CD", "DJ", "MM", "NG", "LK", "ER", "LY", "KP", "ET", "PS", "SS", "SD", "BD", "PK", "NP", "SO", "YE", "IQ", "SY", "AF"],
+    "sourceHints": ["https://evisa.rop.gov.om/", "https://www.fm.gov.om/visitors/entry-visas/"],
+    "notes": [
+      "Use fresh sessions to identify the controlling nationality/passport-type eligibility response and preserve evidence that an offered product is actually available to the selected ordinary passport.",
+      "Do not convert Oman's second group to an unconditional nationality rule when a qualifying Schengen, United States, United Kingdom, Canada, Australia or Japan document is required."
+    ]
+  },
+  {
+    "id": "cape-verde-ease-arrival-residual-recheck-2026",
+    "priority": 386,
+    "objective": "Resolve Cape Verde's 43 unsupported ordinary-passport rows from the current EASE, Border Police, legislation and government nationality schedules, keeping pre-registration distinct from ETA or visa issuance.",
+    "destinationCodes": ["CV"],
+    "passportCodes": ["JP", "NZ", "AU", "MY", "AE", "AR", "BB", "IL", "BS", "VC", "UY", "KN", "AG", "SC", "MU", "LC", "GD", "TW", "SB", "RS", "MH", "ME", "FM", "MK", "BA", "GE", "AL", "MD", "QA", "TR", "BZ", "KW", "MV", "FJ", "SA", "XK", "TH", "KE", "RW", "IN", "CU", "GQ", "CM"],
+    "sourceHints": ["https://www.ease.gov.cv/", "https://www.gov.cv/", "https://boe.incv.cv/"],
+    "notes": [
+      "Treat EASE security pre-registration and the airport-security fee as separate from a visa or ETA unless the official source expressly makes travel authorization contingent on approval.",
+      "Find a current named nationality schedule or operative legal complement before assigning airport issuance or advance visa; do not infer a residual route from omission."
+    ]
+  },
+  {
+    "id": "hong-kong-ukraine-current-waiver-2026",
+    "priority": 387,
+    "objective": "Verify the current ordinary HKSAR Passport short-visitor waiver for Ukraine from the operative bilateral agreement and current Ukrainian entry guidance.",
+    "destinationCodes": ["UA"],
+    "passportCodes": ["HK"],
+    "sourceHints": [
+      "https://zakon.rada.gov.ua/laws/show/en/344_004",
+      "https://mfa.gov.ua/consul/foreigners/entry-and-stay/rezhim-vyizdu-inozemciv-do-ukrayini-za-derzhavami"
+    ],
+    "notes": [
+      "Confirm that the treaty is still marked in force, that its annex expressly names the HKSAR Passport, and that the modeled 14-day visitor route is not transferred to other Hong Kong documents.",
+      "Use the current legal record rather than relying on the HKSAR outbound dataset's reference-only discovery entry."
+    ]
   }
 ]
 }

@@ -2068,7 +2068,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UA")).toHaveLength(65);
+    expect(pairsFor("UA")).toHaveLength(66);
     expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2083,6 +2083,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BZ", "UA", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PH", "UA", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("JM", "UA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "UA", "visa_free").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("DJ")).toHaveLength(15);
     expect(getVisaRelationshipEvidence("DJ", "DJ", "citizenship").supportsCurrentStatus).toBe(true);
