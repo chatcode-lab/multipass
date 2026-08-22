@@ -30,6 +30,15 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...(["AF", "DZ", "AO", "AM", "AZ", "BJ", "BT", "BA", "BF", "BI", "KH", "CM", "CV", "CF", "TD", "KM", "CG", "CD", "CI", "DJ", "DO", "GQ", "ER", "ET", "GA", "GN", "GW", "HT", "IR", "IQ", "KZ", "KG", "LA", "LB", "LR", "LY", "MG", "ML", "MR", "FM", "MN", "MZ", "MM", "NA", "NP", "NE", "KP", "PK", "PW", "PH", "WS", "ST", "SN", "SO", "SY", "TJ", "TH", "TL", "TN", "TM", "UZ", "VN", "YE", "AD", "PS"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "KN" as const,
+    status: "eta" as const,
+    reason: "Saint Kitts and Nevis made an approved electronic travel authorisation mandatory before departure for every visitor from 26 May 2025; these passports are outside its stated citizen, resident and OECS no-application exceptions.",
+    sourceUrl: "https://www.skn-igs.gov.kn/wp-content/uploads/2025/05/SKN-eTA-Press-Release.pdf",
+    reviewedAt: "2026-08-22",
+    effectiveFrom: "2025-05-26",
+  })),
   ...(["BD", "CG", "GW", "ML", "NE"] as const).map((destinationCode) => ({
     passportCode: "RW" as const,
     destinationCode,

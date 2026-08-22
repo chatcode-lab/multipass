@@ -1287,7 +1287,7 @@ describe("official visa evidence", () => {
 
     expect(maliPairs).toHaveLength(21);
     expect(nigerPairs).toHaveLength(19);
-    expect(liberiaPairs).toHaveLength(21);
+    expect(liberiaPairs).toHaveLength(22);
     expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "NE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "LR", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1300,7 +1300,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "LR", snapshot.passports.US.statuses.LR).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("ML", "ML", "citizenship").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("NE", "NE", "citizenship").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("LR", "LR", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("LR", "LR", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("uses Chad's current named exemption list without inferring an eVisa residual", () => {
@@ -2078,14 +2078,14 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("YE", "HT", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "HT", "visa_free").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KN")).toHaveLength(34);
+    expect(pairsFor("KN")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("KN", "KN", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AG", "KN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HR", "KN", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RU", "KN", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("UA", "KN", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("BY", "KN", snapshot.passports.BY.statuses.KN).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("US", "KN", snapshot.passports.US.statuses.KN).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BY", "KN", "eta").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "KN", "eta").supportsCurrentStatus).toBe(true);
   });
 
   it("supports the complete Saint Martin French territorial schedule", () => {
@@ -2449,6 +2449,19 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, "SS", snapshot.passports[passportCode].statuses.SS).supportsCurrentStatus).toBe(false);
       expect(getVisaRelationshipEvidence(passportCode, "DJ", snapshot.passports[passportCode].statuses.DJ).supportsCurrentStatus).toBe(false);
       expect(getVisaRelationshipEvidence(passportCode, "KM", snapshot.passports[passportCode].statuses.KM).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("applies the universal Saint Kitts and Nevis ETA without inferring Liberia or BVI complements", () => {
+    for (const passportCode of ["AF", "BR", "CZ", "US", "VA"] as const) {
+      expect(snapshot.passports[passportCode].statuses.KN).toBe("eta");
+      expect(getVisaRelationshipEvidence(passportCode, "KN", "eta").supportsCurrentStatus).toBe(true);
+    }
+
+    expect(getVisaRelationshipEvidence("LR", "LR", "citizenship").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["AF", "BR", "BY", "IN"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "LR", snapshot.passports[passportCode].statuses.LR).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "VG", snapshot.passports[passportCode].statuses.VG).supportsCurrentStatus).toBe(false);
     }
   });
 
@@ -3010,6 +3023,8 @@ describe("official visa evidence", () => {
       "anp.ne",
       "discoverliberia.lnta.gov.lr",
       "visaonarrival.lis.gov.lr",
+      "lis.gov.lr",
+      "senate.gov.lr",
       "evisa.td",
       "mfa.gov.rs",
       "slgl.pravno-informacioni-sistem.rs",

@@ -1218,6 +1218,18 @@ Djibouti's current E-Government guidance confirms that its approved eVisa is ema
 
 Comoros' current official service catalogue offers no foreigner service. Its live Justice Ministry law requires foreign nationals to hold a visa but expressly assigns airport/port issuance only to the five-day transit visa; the separately listed tourist visa receives no arrival-issuance rule. Public foreign-government advisories describe tourist visas on arrival, but no current Comorian destination authority confirms that broad route. All 182 fallback tourist-arrival rows remain unresolved rather than being inferred from the transit provision.
 
+## Pass 136 result: Saint Kitts and Nevis ETA and Liberia citizenship
+
+This independently cross-reviewed pass adds 165 foreign-access relationships, raising complete-matrix evidence from 35,354 to 35,519 of 44,974 relationships (79.0%). It also verifies Liberia's citizenship cell, which is excluded from the foreign-pair denominator. The public status matrix now contains 35,519 fresh and 9,455 not-covered rows, with zero old or stale rows. The Caribbean rises from 3,716 to 3,881 of 4,962. Africa remains 7,774 of 11,289, Asia 5,013 of 6,336, Europe 9,508 of 10,299, the Americas 4,360 of 4,953, the Middle East 1,607 of 2,970, and Oceania 3,376 of 4,165. Canonical evidence contains 273 reviewed batches, 1,335 official sources and 919 policies.
+
+Saint Kitts and Nevis' current Government release makes an approved eTA mandatory before departure for every visitor from 26 May 2025. Its no-application exceptions are limited to Saint Kitts and Nevis citizens/residents and OECS citizens, none of which occurs in the exact residual cohort. This verifies 100 existing ETA rows and corrects 65 fallback eVisa rows to ETA. The official portal confirms the eTA is distinct from the online immigration/customs declaration; CARICOM fee waivers are not treated as application exemptions.
+
+Liberia adds only its constitutional citizenship cell. Current Immigration Service material shows that the online route is conditional visa on arrival, not eVisa: QR approval precedes travel, but airport biometrics and sticker issuance complete the visa. Its current public material does not publish a nationality/ordinary-passport schedule or resolve whether its embassy restriction is based on nationality or residence, so the other 177 scoped rows remain unresolved rather than being mass-corrected.
+
+## Held from promotion: British Virgin Islands residual schedule
+
+All 189 assigned British Virgin Islands rows remain unresolved. The live entry page publishes no nationality mapping, while the downloadable visa list expressly dates itself to December 2019. The UK/US/Canada concession depends on holding a qualifying third-country visa and cannot establish a passport-only status. The official laws service is under maintenance through 24 August 2026, and current Government search exposes an email application route but no current exhaustive nationality instrument. This cohort should be rechecked after the laws service returns.
+
 ## Held from promotion: Sudan outbound evidence
 
 All 31 assigned Sudanese relationships remain unresolved. The live Sudan Embassy in Cairo page confirms an electronic passport for citizens but does not identify it as an ordinary passport. The only reviewed Sudanese page that expressly named an ordinary electronic passport now fails TLS hostname validation and returns 404; a year-old search cache is not treated as current direct evidence. Therefore otherwise plausible Cuba, Côte d'Ivoire and Nigeria routes were not promoted, and the dated Ukraine nationality table was also held. The validated candidate remains as a research artifact with all 31 cells explicitly partitioned for a future pass.
