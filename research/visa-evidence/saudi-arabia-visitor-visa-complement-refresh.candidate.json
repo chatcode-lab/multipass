@@ -1,6 +1,6 @@
 {
   "batchId": "saudi-arabia-visitor-visa-complement-refresh",
-  "researchedAt": "2026-08-21",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "saudi-refresh-visa-regulations-country-groups-api",
@@ -10,9 +10,9 @@
       "jurisdiction": "Saudi Arabia",
       "kind": "official-dataset",
       "language": "English",
-      "reviewedAt": "2026-08-21",
-      "officialityEvidence": "The live Visa Regulations page calls this Visit Saudi service Saudi Arabia's official tourist-visa guidance; its client receives this current Saudi Tourism Authority country-group dataset.",
-      "supportingExcerpt": "Bangladesh\", \"flag\": \"/content/dam/static-images/resources/flags/png/147-bangladesh.png\", \"visaGroup\": \"Visa by Package"
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Visit Saudi country-group dataset is served by the Saudi Tourism Authority official tourism domain and is the current nationality selector used by Visit Saudi visa regulations.",
+      "supportingExcerpt": "Israel is listed in the current country dataset with visaGroup eligible."
     },
     {
       "id": "saudi-refresh-visa-regulations-routes-api",
@@ -22,124 +22,42 @@
       "jurisdiction": "Saudi Arabia",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-21",
-      "officialityEvidence": "The live country-group endpoint feeds this current Visit Saudi route configuration, which labels its nationality-specific visitor routes and redirects applications to Saudi official services or approved providers.",
-      "supportingExcerpt": "obtain an instant tourist eVisa through integrated travel packages offered by qualified travel agencies."
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Visit Saudi route configuration is served by the Saudi Tourism Authority official tourism domain and defines the available visitor routes for each current visa group.",
+      "supportingExcerpt": "At the airport or entry point, use a kiosk or passport control office to apply for visa on arrival."
     }
   ],
   "policies": [
     {
-      "id": "saudi-refresh-visa-by-package-ordinary-passports-evisa",
-      "title": "Saudi Arabia: Visa by Package ordinary passports with tourist eVisa",
-      "summary": "The current Saudi Tourism Authority country dataset assigns Bangladesh, Egypt, India, Indonesia, Jordan, Mexico, and Pakistan to “Visa by Package”; the corresponding live route expressly issues an instant tourist eVisa through approved integrated travel packages.",
-      "status": "evisa",
+      "id": "saudi-israel-ordinary-passport-visa-on-arrival",
+      "title": "Israeli ordinary passports: Saudi Arabia visa on arrival",
+      "summary": "The live Saudi Tourism Authority nationality dataset now classifies Israel as eligible. The current eligible-group route configuration expressly offers visa on arrival, issued at the Saudi airport or entry point; it is the least-burdensome unconditional ordinary-passport visitor route.",
+      "status": "visa_on_arrival",
       "destinationCodes": [
         "SA"
       ],
       "passportCodes": [
-        "BD",
-        "EG",
-        "IN",
-        "ID",
-        "JO",
-        "MX",
-        "PK"
+        "IL"
       ],
       "conditions": [
-        "This narrow nationality group is a package-conditioned tourist eVisa route, not an unconditional eVisa or visa-free result. The live route calls it an instant tourist eVisa through travel packages offered by qualified agencies.",
-        "The required package includes a confirmed Ministry of Tourism-licensed four-star-or-higher hotel booking, confirmed round-trip flight, completed online visa application and medical insurance. The route limits a package to nine tourists aged over 18.",
-        "The route specifies a minimum package price of SAR 4,000 per adult for the first two days plus SAR 1,000 per extra day, a two-to-88-day package duration, travel beginning at least 48 hours after purchase, and destinations excluding Makkah and Madinah. It describes a single-entry visa valid three months from travel start.",
-        "The separate U.S./UK/Schengen visa or permanent-residence routes, GCC-resident eVisa route, generic embassy route, visa on arrival, transit/stopover route, GCC citizenship, work, study, residence, Hajj, special passports and final immigration admission are not normalized by this policy."
+        "The traveler applies at a Saudi airport or other entry point using the kiosk or passport-control office; this is arrival issuance, not an ETA or a prior eVisa requirement.",
+        "The route requires a passport generally valid at least six months; individual entry, security, and immigration-admission decisions remain separate.",
+        "The same eligible group also has a pre-travel eVisa option, but its availability does not displace the easier current visa-on-arrival route. This policy does not model package, third-country visa/residence, GCC-resident, diplomatic, special-document, work, Hajj, residence, transit, or other conditional routes."
       ],
       "sourceIds": [
         "saudi-refresh-visa-regulations-country-groups-api",
         "saudi-refresh-visa-regulations-routes-api"
       ],
-      "confidence": "high",
-      "application": {
-        "url": "https://www.visitsaudi.com/en/campaigns/package-visa",
-        "label": "Visit Saudi Package Visa service",
-        "steps": [
-          "Book a compliant visa-inclusive package with an approved provider through the official Visit Saudi Package Visa service.",
-          "Provide the required hotel and round-trip-flight booking details and complete the online visa application with medical insurance.",
-          "Wait for the issued tourist eVisa before travel and present it with the required package and travel documents for border examination."
-        ]
-      }
+      "confidence": "high"
     }
   ],
   "conflicts": [
     {
-      "passportCode": "BD",
+      "passportCode": "IL",
       "destinationCode": "SA",
       "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
-      "sourceIds": [
-        "saudi-refresh-visa-regulations-country-groups-api",
-        "saudi-refresh-visa-regulations-routes-api"
-      ]
-    },
-    {
-      "passportCode": "EG",
-      "destinationCode": "SA",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
-      "sourceIds": [
-        "saudi-refresh-visa-regulations-country-groups-api",
-        "saudi-refresh-visa-regulations-routes-api"
-      ]
-    },
-    {
-      "passportCode": "IN",
-      "destinationCode": "SA",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
-      "sourceIds": [
-        "saudi-refresh-visa-regulations-country-groups-api",
-        "saudi-refresh-visa-regulations-routes-api"
-      ]
-    },
-    {
-      "passportCode": "ID",
-      "destinationCode": "SA",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
-      "sourceIds": [
-        "saudi-refresh-visa-regulations-country-groups-api",
-        "saudi-refresh-visa-regulations-routes-api"
-      ]
-    },
-    {
-      "passportCode": "JO",
-      "destinationCode": "SA",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
-      "sourceIds": [
-        "saudi-refresh-visa-regulations-country-groups-api",
-        "saudi-refresh-visa-regulations-routes-api"
-      ]
-    },
-    {
-      "passportCode": "MX",
-      "destinationCode": "SA",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
-      "sourceIds": [
-        "saudi-refresh-visa-regulations-country-groups-api",
-        "saudi-refresh-visa-regulations-routes-api"
-      ]
-    },
-    {
-      "passportCode": "PK",
-      "destinationCode": "SA",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "evisa",
-      "explanation": "The live Saudi Tourism Authority country dataset places this passport nationality in Visa by Package, and the corresponding current route expressly describes an instant tourist eVisa. The current fallback's visa_required status omits that package-conditioned electronic visitor route.",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The live Saudi Tourism Authority country dataset now identifies Israel as eligible. The eligible route configuration expressly provides visa issuance on arrival at a kiosk or passport-control office, so the fallback advance-visa label is incorrect.",
       "sourceIds": [
         "saudi-refresh-visa-regulations-country-groups-api",
         "saudi-refresh-visa-regulations-routes-api"
@@ -303,17 +221,6 @@
     },
     {
       "passportCode": "RS",
-      "destinationCode": "SA",
-      "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
-      "searchedOfficialDomains": [
-        "visitsaudi.com",
-        "ksavisa.sa",
-        "mofa.gov.sa",
-        "visa.mofa.gov.sa"
-      ]
-    },
-    {
-      "passportCode": "TW",
       "destinationCode": "SA",
       "reason": "The live Saudi country dataset marks this nationality noneligible. Its route configuration offers eVisa/visa-on-arrival only with specified U.S./UK/Schengen visa or residence evidence, or a separate GCC-residence eVisa, and also displays generic embassy content without an explicit exhaustive nationality-to-advance-visa residual. No unconditional ordinary-passport visitor baseline is established.",
       "searchedOfficialDomains": [
@@ -1369,9 +1276,9 @@
       ]
     },
     {
-      "passportCode": "IL",
+      "passportCode": "CG",
       "destinationCode": "SA",
-      "reason": "The current Saudi Tourism Authority country dataset does not supply an Israel row, and no current official Saudi source recovered in this review establishes an ordinary Israeli-passport visitor route or an explicit advance-visa residual. Conditional U.S./UK/Schengen and GCC-residence material cannot be generalized.",
+      "reason": "The current Saudi Tourism Authority country dataset labels a “Congo” row with Democratic Republic of the Congo flag material, but does not provide a reproducible Republic of the Congo crosswalk. No separate official source establishes this ordinary passport's visitor baseline; conditional U.S./UK/Schengen and GCC-residence routes are not nationality-wide.",
       "searchedOfficialDomains": [
         "visitsaudi.com",
         "ksavisa.sa",
@@ -1380,9 +1287,75 @@
       ]
     },
     {
-      "passportCode": "CG",
+      "passportCode": "BD",
       "destinationCode": "SA",
-      "reason": "The current Saudi Tourism Authority country dataset labels a “Congo” row with Democratic Republic of the Congo flag material, but does not provide a reproducible Republic of the Congo crosswalk. No separate official source establishes this ordinary passport's visitor baseline; conditional U.S./UK/Schengen and GCC-residence routes are not nationality-wide.",
+      "reason": "The live Saudi Tourism Authority dataset places this nationality in Visa by Package. That route requires purchase of an approved integrated travel package and is not an unconditional ordinary-passport baseline; the generic noneligible/embassy material does not establish an exhaustive advance-visa complement. The restored fallback visa_required label is therefore unresolved rather than overridden.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "SA",
+      "reason": "The live Saudi Tourism Authority dataset places this nationality in Visa by Package. That route requires purchase of an approved integrated travel package and is not an unconditional ordinary-passport baseline; the generic noneligible/embassy material does not establish an exhaustive advance-visa complement. The restored fallback visa_required label is therefore unresolved rather than overridden.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SA",
+      "reason": "The live Saudi Tourism Authority dataset places this nationality in Visa by Package. That route requires purchase of an approved integrated travel package and is not an unconditional ordinary-passport baseline; the generic noneligible/embassy material does not establish an exhaustive advance-visa complement. The restored fallback visa_required label is therefore unresolved rather than overridden.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "SA",
+      "reason": "The live Saudi Tourism Authority dataset places this nationality in Visa by Package. That route requires purchase of an approved integrated travel package and is not an unconditional ordinary-passport baseline; the generic noneligible/embassy material does not establish an exhaustive advance-visa complement. The restored fallback visa_required label is therefore unresolved rather than overridden.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "SA",
+      "reason": "The live Saudi Tourism Authority dataset places this nationality in Visa by Package. That route requires purchase of an approved integrated travel package and is not an unconditional ordinary-passport baseline; the generic noneligible/embassy material does not establish an exhaustive advance-visa complement. The restored fallback visa_required label is therefore unresolved rather than overridden.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "SA",
+      "reason": "The live Saudi Tourism Authority dataset places this nationality in Visa by Package. That route requires purchase of an approved integrated travel package and is not an unconditional ordinary-passport baseline; the generic noneligible/embassy material does not establish an exhaustive advance-visa complement. The restored fallback visa_required label is therefore unresolved rather than overridden.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "ksavisa.sa",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "SA",
+      "reason": "The live Saudi Tourism Authority dataset places this nationality in Visa by Package. That route requires purchase of an approved integrated travel package and is not an unconditional ordinary-passport baseline; the generic noneligible/embassy material does not establish an exhaustive advance-visa complement. The restored fallback visa_required label is therefore unresolved rather than overridden.",
       "searchedOfficialDomains": [
         "visitsaudi.com",
         "ksavisa.sa",

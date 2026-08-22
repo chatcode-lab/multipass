@@ -3,7 +3,7 @@
   "researchedAt": "2026-08-22",
   "sources": [
     {
-      "id": "tonga-revenue-immigration-services-tls-risk",
+      "id": "tonga-revenue-immigration-services-current-cohort",
       "title": "Immigration and General Services",
       "url": "https://www.revenue.gov.to/immigration-and-general-services",
       "publisher": "Ministry of Revenue and Customs, Government of Tonga",
@@ -11,20 +11,32 @@
       "kind": "government-guidance",
       "language": "English",
       "reviewedAt": "2026-08-22",
-      "officialityEvidence": "Revenue's official Government immigration-services URL is the operational source for a named arrival-visitor cohort and an all-other-countries statement. At cross-review its server presented an incomplete TLS issuer chain, so normal secure retrieval failed; it is not used as independently verifiable current residual-schedule evidence.",
+      "officialityEvidence": "The live central Ministry of Revenue and Customs page identifies itself as Government of Tonga and was last modified 20 August 2026. Its server presents an incomplete TLS issuer chain, so the page was reopened only with certificate-validation bypass; that is retained as a confidence risk.",
       "supportingExcerpt": "Citizens of all other countries need visas to enter Tonga prior to arrival."
+    },
+    {
+      "id": "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+      "title": "Application for a Tongan Visitor's Permit and Entry Visa Checklist",
+      "url": "https://www.gov.to/wp-content/uploads/2025/01/Visitors-VISA.pdf",
+      "publisher": "Ministry of Foreign Affairs, Kingdom of Tonga",
+      "jurisdiction": "Tonga",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current government-hosted three-page Ministry of Foreign Affairs Visitor's VISA PDF was last modified on the official host in May 2025. It expressly identifies a pre-arrival letter format for passport holders from Non-Waiver Countries.",
+      "supportingExcerpt": "Non-Waiver Countries, issued in a letter format prior to arrival"
     },
     {
       "id": "tonga-embassy-china-visitor-guidance-legacy",
       "title": "Visas",
       "url": "https://tongaembassycn.gov.to/en/going-to-tonga-en/visas-en",
-      "publisher": "Embassy of the Kingdom of Tonga in the People’s Republic of China",
+      "publisher": "Embassy of the Kingdom of Tonga in the People's Republic of China",
       "jurisdiction": "Tonga",
       "kind": "government-guidance",
       "language": "English",
       "reviewedAt": "2026-08-22",
-      "officialityEvidence": "The live Embassy of Tonga in China page gives a competing named list and says unlisted travellers obtain a letter of authority before applying on arrival. Its page footer says Copyright 2018 and it does not state a later update, so it cannot control a current exhaustive nationality complement.",
-      "supportingExcerpt": "requires a letter of authority allowing him/her to travel to Tonga and apply on arrival"
+      "officialityEvidence": "The live official Embassy page publishes a broader competing visitor-arrival list, but expressly carries a Copyright 2018 footer and does not provide a later effective date or reconcile its list with the central 2025/2026 sources.",
+      "supportingExcerpt": "They will be issued upon arrival with a visitor’s visa for 31 days, free of charge."
     },
     {
       "id": "tonga-immigration-act-revised-2025-context",
@@ -35,1416 +47,302 @@
       "kind": "law",
       "language": "English",
       "reviewedAt": "2026-08-22",
-      "officialityEvidence": "Tonga's Attorney General publishes the revised Immigration Act and its 2025 amendment. The Act grants visitor-permit and visa powers but does not publish the current nationality categories needed to resolve the two operational sources.",
+      "officialityEvidence": "Tonga's Attorney General publishes the revised Immigration Act. It grants immigration officers visitor-permit and visa powers but does not publish a current nationality schedule; the newer central Ministry sources supply the relevant nationality and timing rules.",
       "supportingExcerpt": "A visitor permit may be issued at the discretion of an immigration officer."
-    },
-    {
-      "id": "tonga-immigration-regulations-permit-form",
-      "title": "Immigration Regulations, Chapter 10.01.01",
-      "url": "https://ago.gov.to/cms/images/LEGISLATION/SUBORDINATE/2502/2502-0001/ImmigrationRegulations_3.pdf",
-      "publisher": "Attorney General’s Office, Kingdom of Tonga",
-      "jurisdiction": "Tonga",
-      "kind": "law",
-      "language": "English",
-      "reviewedAt": "2026-08-22",
-      "officialityEvidence": "The Attorney General's Office publishes the revised regulations, including visitor-permit forms and fees, but no exhaustive ordinary-passport nationality schedule or publication-date reconciliation.",
-      "supportingExcerpt": "Visitor’s Permit for non-citizens who require permits for entry."
-    },
-    {
-      "id": "tonga-ago-2026-gazette-index",
-      "title": "Gazettes by Year: 2026",
-      "url": "https://www.ago.gov.to/cms/legislation/gazettes/gazettes-by-year.html?view=gazettes_by_year",
-      "publisher": "Attorney General’s Office, Kingdom of Tonga",
-      "jurisdiction": "Tonga",
-      "kind": "official-dataset",
-      "language": "English",
-      "reviewedAt": "2026-08-22",
-      "officialityEvidence": "The Attorney General's Office current 2026 Gazette index does not publish an immigration nationality-schedule reconciliation for the differing Revenue and Embassy visitor lists.",
-      "supportingExcerpt": "Gazette Supplement Extraordinary Nos. 01, 02, 03, and 04."
     }
   ],
-  "policies": [],
-  "conflicts": [],
-  "unresolved": [
+  "policies": [
+    {
+      "id": "tonga-current-switzerland-visitor-visa-on-arrival",
+      "title": "Swiss ordinary passport: visitor visa issued on arrival",
+      "summary": "Tonga Revenue's current named country cohort expressly includes Switzerland among travellers who may be issued a 30-day visitor visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "TO"
+      ],
+      "passportCodes": [
+        "CH"
+      ],
+      "conditions": [
+        "The current Revenue source says the visitor visa may be issued on arrival for 30 days, subject to a valid return ticket to a country the traveller may enter and sufficient funds.",
+        "This is an arrival-issued visitor visa, not visa-free access or a pre-travel eVisa. Work, business, study, residence, diplomatic, official, service, and special-document routes remain outside this ordinary-passport visitor baseline.",
+        "The legacy Embassy page claims a longer Schengen-linked benefit, but its stated 2018 publication context is not controlling against the central current source."
+      ],
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "tonga-current-nonwaiver-ordinary-passports-advance-entry-visa",
+      "title": "Non-waiver ordinary passports: Entry Visa required before arrival",
+      "summary": "Tonga Revenue states every country outside its current named arrival cohort needs a visa before arrival, while the current Ministry of Foreign Affairs Visitor's VISA checklist describes that non-waiver Entry Visa as issued in a letter format before arrival.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "TO"
+      ],
+      "passportCodes": [
+        "KR",
+        "IS",
+        "AE",
+        "LI",
+        "CL",
+        "AD",
+        "HK",
+        "AR",
+        "SM",
+        "IL",
+        "MX",
+        "UY",
+        "AG",
+        "VA",
+        "MU",
+        "CR",
+        "PA",
+        "GD",
+        "PY",
+        "TT",
+        "PE",
+        "MO",
+        "TW",
+        "SV",
+        "GT",
+        "RS",
+        "CO",
+        "HN",
+        "ME",
+        "MK",
+        "NI",
+        "BA",
+        "AL",
+        "GE",
+        "MD",
+        "VE",
+        "QA",
+        "ZA",
+        "TL",
+        "BZ",
+        "EC",
+        "KW",
+        "MV",
+        "SA",
+        "XK",
+        "GY",
+        "BH",
+        "JM",
+        "OM",
+        "CN",
+        "BW",
+        "TH",
+        "BY",
+        "BO",
+        "SR",
+        "KZ",
+        "ID",
+        "LS",
+        "NA",
+        "DO",
+        "SZ",
+        "AZ",
+        "KE",
+        "MW",
+        "MA",
+        "TZ",
+        "GH",
+        "GM",
+        "AM",
+        "PH",
+        "RW",
+        "TN",
+        "ZM",
+        "CV",
+        "MN",
+        "BJ",
+        "MZ",
+        "SL",
+        "UG",
+        "ST",
+        "KG",
+        "ZW",
+        "UZ",
+        "BF",
+        "IN",
+        "MG",
+        "SN",
+        "CI",
+        "CU",
+        "TG",
+        "GA",
+        "NE",
+        "TJ",
+        "GQ",
+        "GN",
+        "MR",
+        "ML",
+        "VN",
+        "TD",
+        "GW",
+        "KM",
+        "DZ",
+        "AO",
+        "KH",
+        "CG",
+        "HT",
+        "LR",
+        "BT",
+        "CM",
+        "CF",
+        "JO",
+        "LA",
+        "BI",
+        "TM",
+        "DJ",
+        "EG",
+        "LB",
+        "CD",
+        "MM",
+        "NG",
+        "LK",
+        "ET",
+        "IR",
+        "LY",
+        "ER",
+        "KP",
+        "PS",
+        "SS",
+        "SD",
+        "BD",
+        "SO",
+        "NP",
+        "PK",
+        "YE",
+        "IQ",
+        "SY",
+        "AF"
+      ],
+      "conditions": [
+        "The current Revenue page supplies the complete residual rule: citizens of all other countries need visas before arrival.",
+        "The Ministry of Foreign Affairs checklist expressly identifies an Entry Visa for Non-Waiver Countries issued as a letter before arrival. This is an advance visa route, not electronically issued eVisa or walk-up visa on arrival.",
+        "The legacy 2018 Embassy list names several additional visitor-arrival countries but does not reconcile its broader list with the central 2025/2026 sources; it is not used to widen the current cohort.",
+        "Return ticket, funds, purpose, work/business/study restrictions, immigration discretion, special documents, and final admission remain conditions outside the baseline."
+      ],
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-immigration-act-revised-2025-context"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
     {
       "passportCode": "KR",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "CH",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current central Revenue cohort names Switzerland for a 30-day visitor visa issued on arrival; the older fallback visa-free label is not supported.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "IS",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "AE",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "LI",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CL",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AD",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "HK",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AR",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "IL",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MX",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "UY",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "VA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MU",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CR",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "PA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GD",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "PY",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TT",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "PE",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "MO",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TW",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SV",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GT",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "RS",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CO",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "HN",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ME",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MK",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "NI",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AL",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GE",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MD",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "VE",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "QA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ZA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TL",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "EC",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "KW",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MV",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "XK",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GY",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BH",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "JM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "OM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     },
     {
       "passportCode": "CN",
       "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BW",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TH",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BY",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BO",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SR",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "KZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ID",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "LS",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "NA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "DO",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "KE",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MW",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GH",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "PH",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "RW",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TN",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ZM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CV",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MN",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BJ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SL",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "UG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ST",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "KG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ZW",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "UZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BF",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "IN",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SN",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CI",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CU",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "NE",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TJ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GQ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GN",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MR",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ML",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "VN",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TD",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "GW",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "KM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "DZ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AO",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "KH",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "HT",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "LR",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BT",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CF",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "JO",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "LA",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BI",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "TM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "DJ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "EG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "LB",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "CD",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "MM",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "NG",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "LK",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ET",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "IR",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "LY",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "ER",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "KP",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "PS",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SS",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SD",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "BD",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SO",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "NP",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "PK",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "YE",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "IQ",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "SY",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
-      ]
-    },
-    {
-      "passportCode": "AF",
-      "destinationCode": "TO",
-      "reason": "No current controlling ordinary-passport nationality schedule resolves this residual code. Revenue's operational page cannot complete normal TLS validation and its named/‘all other countries’ presentation conflicts with the live Embassy list. The Embassy page is visibly legacy (copyright 2018) and says an unlisted traveller needs advance authority to travel before applying for a visitor visa on arrival; that hybrid is neither a pre-travel eVisa nor a passport-wide arrival entitlement. The Immigration Act and Regulations supply permit powers rather than a nationality schedule, and the current Gazette index does not reconcile the conflict. Country labels also do not safely establish SAR, unrecognised or other document treatment. Do not infer the fallback label.",
-      "searchedOfficialDomains": [
-        "revenue.gov.to",
-        "tongaembassycn.gov.to",
-        "ago.gov.to"
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "The current central Revenue page places this passport outside its named arrival cohort and requires a visa before arrival. The current Ministry of Foreign Affairs checklist confirms a non-waiver Entry Visa issued in letter format before arrival; the broader 2018 Embassy arrival list is legacy.",
+      "sourceIds": [
+        "tonga-revenue-immigration-services-current-cohort",
+        "tonga-mfa-current-visitors-visa-nonwaiver-letter",
+        "tonga-embassy-china-visitor-guidance-legacy"
       ]
     }
-  ]
+  ],
+  "unresolved": []
 }

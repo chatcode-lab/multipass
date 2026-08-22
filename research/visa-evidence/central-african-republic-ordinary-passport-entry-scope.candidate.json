@@ -37,6 +37,66 @@
       "reviewedAt": "2026-08-21",
       "officialityEvidence": "The live Paris mission page is on the Central African Foreign Ministry official diplomatie.gouv.cf subdomain and describes the embassy short-stay visa processing workflow.",
       "supportingExcerpt": "Joignez ensuite votre passeport et envoyez le tout à l'adresse de l'ambassade pour le traitement."
+    },
+    {
+      "id": "us-state-car-entry-current",
+      "title": "Central African Republic International Travel Information",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/central-african-republic.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Current State Department travel information specifically identifies the ordinary U.S.-passport tourist visa requirement and timing.",
+      "supportingExcerpt": "A visa is required. You must apply for a visa before you travel."
+    },
+    {
+      "id": "fcdo-cf-entry-current",
+      "title": "FCDO Central African Republic entry requirements",
+      "url": "https://www.gov.uk/foreign-travel-advice/central-african-republic/entry-requirements",
+      "publisher": "Foreign, Commonwealth & Development Office",
+      "jurisdiction": "United Kingdom",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Current FCDO entry guidance applies to full British citizen passports and directs visa application through the CAR Paris Embassy.",
+      "supportingExcerpt": "You will need a visa to enter the Central African Republic."
+    },
+    {
+      "id": "de-fo-cf-current",
+      "title": "German Foreign Office: Central African Republic travel advice",
+      "url": "https://www.auswaertiges-amt.de/de/reiseundsicherheit/zentralafrikanischerepubliksicherheit-226450",
+      "publisher": "German Federal Foreign Office",
+      "jurisdiction": "Germany",
+      "kind": "government-guidance",
+      "language": "German",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Current German Foreign Office entry guidance specifies that German nationals need a visa before travel.",
+      "supportingExcerpt": "Deutsche Staatsangehörige benötigen für die Einreise ein Visum."
+    },
+    {
+      "id": "moldova-mfa-cf-current",
+      "title": "Moldova MFA: visa regime for Moldovan citizens",
+      "url": "https://mfa.gov.md/en/node/4478",
+      "publisher": "Ministry of Foreign Affairs of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Ministry table maps the ordinary Moldovan passport to Central African Republic visa treatment.",
+      "supportingExcerpt": "Republica Centrafricană — Viză. Misiunile diplomatice."
+    },
+    {
+      "id": "rwanda-dgie-cf-current",
+      "title": "Rwanda DGIE: visa-free destinations for Rwandan passport holders",
+      "url": "https://www.migration.gov.rw/1-1/sops-1",
+      "publisher": "Directorate General of Immigration and Emigration, Rwanda",
+      "jurisdiction": "Rwanda",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Rwanda DGIE ordinary-passport list explicitly includes Central African Republic in its visa-free destination schedule.",
+      "supportingExcerpt": "Central African Republic"
     }
   ],
   "policies": [
@@ -65,6 +125,52 @@
         "cemac-current-visa-free-movement"
       ],
       "confidence": "medium"
+    },
+    {
+      "id": "central-african-republic-canonical-outbound-advance-visa-carry-forward",
+      "title": "Central African Republic: existing named ordinary-passport advance visas",
+      "summary": "Current passport-specific government guidance already retained in canonical evidence requires advance visas for these named visitors.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "CF"
+      ],
+      "passportCodes": [
+        "US",
+        "GB",
+        "DE",
+        "FR",
+        "MD"
+      ],
+      "conditions": [
+        "Carried forward solely for this full-scope candidate. The sources expressly identify ordinary visitor visa requirements before travel or mission processing; no general residual complement is inferred."
+      ],
+      "sourceIds": [
+        "us-state-car-entry-current",
+        "fcdo-cf-entry-current",
+        "de-fo-cf-current",
+        "central-african-paris-embassy-short-stay-visa-workflow",
+        "moldova-mfa-cf-current"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "central-african-republic-rwanda-canonical-visa-free-carry-forward",
+      "title": "Rwandan ordinary passport: existing Central African Republic visa-free entry",
+      "summary": "Rwanda’s current DGIE ordinary-passport schedule expressly records Central African Republic as visa-free.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "CF"
+      ],
+      "passportCodes": [
+        "RW"
+      ],
+      "conditions": [
+        "Carried forward solely for this full-scope candidate; this named ordinary-passport row is not an inferred regional complement."
+      ],
+      "sourceIds": [
+        "rwanda-dgie-cf-current"
+      ],
+      "confidence": "high"
     }
   ],
   "conflicts": [],
@@ -107,18 +213,6 @@
     },
     {
       "passportCode": "FI",
-      "destinationCode": "CF",
-      "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
-      "searchedOfficialDomains": [
-        "cemac.int",
-        "diplomatie.gouv.cf",
-        "paris.diplomatie.gouv.cf",
-        "gouv.cf",
-        "justice.gouv.cf"
-      ]
-    },
-    {
-      "passportCode": "DE",
       "destinationCode": "CF",
       "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
       "searchedOfficialDomains": [
@@ -203,18 +297,6 @@
     },
     {
       "passportCode": "DK",
-      "destinationCode": "CF",
-      "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
-      "searchedOfficialDomains": [
-        "cemac.int",
-        "diplomatie.gouv.cf",
-        "paris.diplomatie.gouv.cf",
-        "gouv.cf",
-        "justice.gouv.cf"
-      ]
-    },
-    {
-      "passportCode": "FR",
       "destinationCode": "CF",
       "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
       "searchedOfficialDomains": [
@@ -311,18 +393,6 @@
     },
     {
       "passportCode": "AE",
-      "destinationCode": "CF",
-      "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
-      "searchedOfficialDomains": [
-        "cemac.int",
-        "diplomatie.gouv.cf",
-        "paris.diplomatie.gouv.cf",
-        "gouv.cf",
-        "justice.gouv.cf"
-      ]
-    },
-    {
-      "passportCode": "GB",
       "destinationCode": "CF",
       "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
       "searchedOfficialDomains": [
@@ -467,18 +537,6 @@
     },
     {
       "passportCode": "LT",
-      "destinationCode": "CF",
-      "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
-      "searchedOfficialDomains": [
-        "cemac.int",
-        "diplomatie.gouv.cf",
-        "paris.diplomatie.gouv.cf",
-        "gouv.cf",
-        "justice.gouv.cf"
-      ]
-    },
-    {
-      "passportCode": "US",
       "destinationCode": "CF",
       "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
       "searchedOfficialDomains": [
@@ -1150,18 +1208,6 @@
       ]
     },
     {
-      "passportCode": "MD",
-      "destinationCode": "CF",
-      "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
-      "searchedOfficialDomains": [
-        "cemac.int",
-        "diplomatie.gouv.cf",
-        "paris.diplomatie.gouv.cf",
-        "gouv.cf",
-        "justice.gouv.cf"
-      ]
-    },
-    {
       "passportCode": "RU",
       "destinationCode": "CF",
       "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
@@ -1607,18 +1653,6 @@
     },
     {
       "passportCode": "GH",
-      "destinationCode": "CF",
-      "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
-      "searchedOfficialDomains": [
-        "cemac.int",
-        "diplomatie.gouv.cf",
-        "paris.diplomatie.gouv.cf",
-        "gouv.cf",
-        "justice.gouv.cf"
-      ]
-    },
-    {
-      "passportCode": "RW",
       "destinationCode": "CF",
       "reason": "Current official CEMAC material directly supports only the five foreign Member-State citizens listed in the policy. The Paris Embassy's online short-stay form is printed, sent with the passport and processed by that mission; it does not establish a nationality-wide eVisa, airport-visa, exemption or residual ordinary-passport route. Status is not inferred.",
       "searchedOfficialDomains": [

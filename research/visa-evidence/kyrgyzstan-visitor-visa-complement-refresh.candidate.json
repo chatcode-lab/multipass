@@ -1,6 +1,6 @@
 {
   "batchId": "kyrgyzstan-visitor-visa-complement-refresh",
-  "researchedAt": "2026-08-21",
+  "researchedAt": "2026-08-22",
   "sources": [
     {
       "id": "kyrgyz-evisa-current-information-selector",
@@ -10,21 +10,21 @@
       "jurisdiction": "Kyrgyz Republic",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-21",
-      "officialityEvidence": "The live evisa.e-gov.kg service identifies the Ministry of Foreign Affairs and directs users to choose country, travel-document type and visa type to determine the available mechanism.",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live evisa.e-gov.kg service identifies the Ministry of Foreign Affairs and requires selection of country, travel-document type and visa type for eligibility information.",
       "supportingExcerpt": "Choose your Country, Type of Travel Document and Visa Type."
     },
     {
-      "id": "kyrgyz-evisa-current-visa-regime-backend",
+      "id": "kyrgyz-evisa-current-regime-backend-failure",
       "title": "Kyrgyz Republic eVisa country visa-regime selector backend",
       "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaTypeInfo",
       "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
       "jurisdiction": "Kyrgyz Republic",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-21",
-      "officialityEvidence": "This is the live same-origin endpoint called by the MFA eVisa selector for a selected passport-issuing country. It returned country-specific regime rows during this review, but later refused connections.",
-      "supportingExcerpt": "Visa free regime — Ordinary passport — up to 30 days."
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "This is the same-origin endpoint used by the MFA selector for country-specific regime information. It returned HTTP 500 without the required selector context during this recheck, so it cannot support an omitted-country inference.",
+      "supportingExcerpt": "HTTP 500"
     },
     {
       "id": "kyrgyz-evisa-current-portal",
@@ -34,7 +34,7 @@
       "jurisdiction": "Kyrgyz Republic",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-21",
+      "reviewedAt": "2026-08-22",
       "officialityEvidence": "The live official portal identifies the Ministry of Foreign Affairs as operator and describes online eVisa issuance.",
       "supportingExcerpt": "Electronic visa grants the same right to enter Kyrgyzstan as an ordinary sticker visa."
     },
@@ -46,1276 +46,1343 @@
       "jurisdiction": "Kyrgyz Republic",
       "kind": "law",
       "language": "Russian",
-      "reviewedAt": "2026-08-21",
+      "reviewedAt": "2026-08-22",
       "officialityEvidence": "The current Cabinet legal-acts portal publishes the foreign-citizen entry and stay regulation; it requires a visa unless a treaty or legal act establishes otherwise.",
       "supportingExcerpt": "Foreign citizens enter the Kyrgyz Republic with an entry visa, unless otherwise provided."
-    }
-  ],
-  "policies": [
-    {
-      "id": "kyrgyzstan-albania-ordinary-passport-30-day-visa-free",
-      "title": "Albania ordinary passports: 30-day visa-free regime",
-      "summary": "The MFA eVisa selector's country-specific live backend response directly identifies Albania's ordinary-passport visa-free regime as up to 30 days.",
-      "status": "visa_free",
-      "destinationCodes": [
-        "KG"
-      ],
-      "passportCodes": [
-        "AL"
-      ],
-      "conditions": [
-        "The result is an ordinary-passport baseline and records a stay of up to 30 days.",
-        "It does not establish work, residence, registration, transit, diplomatic, official, service or special-document treatment; normal entry and individual-admissibility checks remain applicable.",
-        "The response also labels a facilitated visa regime, but that label does not by itself identify a tourist eVisa route and is not normalized here."
-      ],
-      "sourceIds": [
-        "kyrgyz-evisa-current-information-selector",
-        "kyrgyz-evisa-current-visa-regime-backend"
-      ],
-      "confidence": "medium"
     },
     {
-      "id": "kyrgyzstan-thailand-ordinary-passport-30-day-visa-free",
-      "title": "Thailand ordinary passports: 30-day visa-free regime",
-      "summary": "The MFA eVisa selector's country-specific live backend response directly identifies Thailand's ordinary-passport visa-free regime as up to 30 days.",
-      "status": "visa_free",
-      "destinationCodes": [
-        "KG"
-      ],
-      "passportCodes": [
-        "TH"
-      ],
-      "conditions": [
-        "The result is an ordinary-passport baseline and records a stay of up to 30 days.",
-        "It does not establish work, residence, registration, transit, diplomatic, official, service or special-document treatment; normal entry and individual-admissibility checks remain applicable.",
-        "The response also labels a facilitated visa regime, but that label does not by itself identify a tourist eVisa route and is not normalized here."
-      ],
-      "sourceIds": [
-        "kyrgyz-evisa-current-information-selector",
-        "kyrgyz-evisa-current-visa-regime-backend"
-      ],
-      "confidence": "medium"
+      "id": "kyrgyz-export-agency-current-visa-free-list",
+      "title": "Kyrgyz Export: current visa-free regime list",
+      "url": "https://export.gov.kg/en/p/why-kyrgyzstan",
+      "publisher": "Export Promotion and Investment Agency of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The official government service publishes a positive current visa-free list and says it reflects the latest legislative amendments.",
+      "supportingExcerpt": "Citizens of 71 countries have the opportunity to visit Kyrgyzstan without obtaining a visa."
     }
   ],
+  "policies": [],
   "conflicts": [],
   "unresolved": [
     {
       "passportCode": "AF",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "DZ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "AO",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "AG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BS",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BD",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BB",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BZ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BJ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BT",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BO",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BW",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BF",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "BI",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "KH",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CV",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CF",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TD",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CN",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CO",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "KM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CD",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CR",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "CI",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "DJ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "DM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "DO",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "EC",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "EG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SV",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GQ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ER",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ET",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "FJ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GA",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GH",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GD",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GT",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GN",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GW",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "GY",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "HT",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "HN",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
-        "gov.kg"
-      ]
-    },
-    {
-      "passportCode": "IN",
-      "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
-      "searchedOfficialDomains": [
-        "evisa.e-gov.kg",
-        "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ID",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "IR",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "IQ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "IL",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "JM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "JO",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "KE",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "KI",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "XK",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
-        "gov.kg"
-      ]
-    },
-    {
-      "passportCode": "KG",
-      "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
-      "searchedOfficialDomains": [
-        "evisa.e-gov.kg",
-        "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "LA",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "LB",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "LS",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "LR",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "LY",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MK",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MW",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ML",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MH",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MR",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MU",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MX",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "FM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MA",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MZ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "MM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "NA",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "NR",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "NP",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "NI",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "NE",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "NG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PK",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PW",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PA",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PY",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PE",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PH",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "RW",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "WS",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ST",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SN",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SC",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SL",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SB",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SO",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ZA",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SS",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "LK",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "KN",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "LC",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "VC",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SD",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SR",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SZ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "SY",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TW",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TZ",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TL",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TO",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TT",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TN",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "TV",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "UG",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "UY",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "VU",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "VE",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "YE",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ZM",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "ZW",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     },
     {
       "passportCode": "PS",
       "destinationCode": "KG",
-      "reason": "The refreshed official eVisa review did not reproducibly establish this code's ordinary-passport tourist eVisa or advance-consular route. The portal's generic tourist product and a facilitated-regime label do not alone prove eligibility, and no complement is inferred from the unavailable selector response.",
+      "reason": "Current official sources establish that an eligible electronic visa is issued online and publish positive visa-free cohorts, but do not name this ordinary passport in either route. The live eVisa selector requires country, document and visa-type inputs; its country-regime backend returned HTTP 500 during this recheck. Selector availability, generic tourist products, the visa-unless-exempt legal default and an unavailable/omitted selector response do not establish a nationality-wide eVisa, visa-free, or advance-visa complement.",
       "searchedOfficialDomains": [
         "evisa.e-gov.kg",
         "mfa.gov.kg",
+        "export.gov.kg",
         "gov.kg"
       ]
     }

@@ -491,6 +491,44 @@ describe("passport calculations", () => {
     });
   });
 
+  it("applies current India ETA and British Virgin Islands eVisa corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "IN",
+      name: "India",
+      statuses: { IN: "citizenship", SL: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({
+      statuses: { IN: "citizenship", SL: "eta" },
+      mobilityScore: 1,
+    });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "AF",
+      name: "Afghanistan",
+      statuses: { AF: "citizenship", VG: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({
+      statuses: { AF: "citizenship", VG: "evisa" },
+      mobilityScore: 0,
+    });
+  });
+
+  it("applies Tonga's current visitor-route corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "CH",
+      name: "Switzerland",
+      statuses: { CH: "citizenship", TO: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { CH: "citizenship", TO: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "CN",
+      name: "China",
+      statuses: { CN: "citizenship", TO: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { CN: "citizenship", TO: "visa_required" }, mobilityScore: 0 });
+  });
+
   it("uses dense rank equivalents", () => {
     const passports = [190, 188, 188, 187, 180].map(
       (mobilityScore, index) => ({ mobilityScore, code: `${index}`, name: `${index}` }) as PassportSummary,

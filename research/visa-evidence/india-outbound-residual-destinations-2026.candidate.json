@@ -1,0 +1,587 @@
+{
+  "batchId": "india-outbound-residual-destinations-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "panama-snm-india-stamped-visa-decree",
+      "title": "Servicio Nacional de Migración: Decretos y Resoluciones 2018",
+      "url": "https://www.migracion.gob.pa/decretos-y-resoluciones-2018/",
+      "publisher": "Servicio Nacional de Migración",
+      "jurisdiction": "Republic of Panama",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live migracion.gob.pa page is the Panama National Migration Service's decree index.",
+      "supportingExcerpt": "Decreto Ejecutivo Nº 113 includes the Republic of India among countries that require a visa stamped by the Consul to enter national territory."
+    },
+    {
+      "id": "sri-lanka-die-current-india-free-tourist-eta",
+      "title": "Department of Immigration and Emigration: Special Notice to Short Term Visitors",
+      "url": "https://www.immigration.gov.lk/pages_e.php?id=60",
+      "publisher": "Department of Immigration and Emigration",
+      "jurisdiction": "Democratic Socialist Republic of Sri Lanka",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current immigration.gov.lk notice identifies the Department of Immigration and Emigration and was last updated 2026-08-21.",
+      "supportingExcerpt": "India is among the 40 countries; ordinary passports are eligible for the Tourist ETA and must obtain ETA before arrival."
+    },
+    {
+      "id": "sri-lanka-eta-current-official-overview",
+      "title": "Sri Lanka ETA official website: Online Visa Application",
+      "url": "https://www.eta.gov.lk/slvisa/visainfo/center.jsp?locale=en_US",
+      "publisher": "Department of Immigration and Emigration",
+      "jurisdiction": "Democratic Socialist Republic of Sri Lanka",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The eta.gov.lk page identifies itself as the Department of Immigration and Emigration's official ETA website and names the Department as issuing authority.",
+      "supportingExcerpt": "All foreign nationals, including the 40 countries, are required to obtain an ETA prior to arrival and must apply online."
+    },
+    {
+      "id": "kyrgyz-evisa-current-selector",
+      "title": "Kyrgyz Republic eVisa: Get Information / Do I need visa?",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live evisa.e-gov.kg service identifies the Ministry of Foreign Affairs as its operator and provides the country/document eligibility selector.",
+      "supportingExcerpt": "The selector supplies visa eligibility and available mechanisms after the traveller chooses the passport country."
+    },
+    {
+      "id": "kyrgyz-evisa-current-issuance",
+      "title": "Kyrgyz Republic eVisa official portal",
+      "url": "https://www.evisa.e-gov.kg/index.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live evisa.e-gov.kg portal says the Ministry of Foreign Affairs launched the service.",
+      "supportingExcerpt": "After receiving eVisa confirmation through the portal, the traveller can enter during its validity with the same right as a sticker visa."
+    }
+  ],
+  "policies": [
+    {
+      "id": "panama-india-ordinary-passport-stamped-consular-visa",
+      "title": "Indian ordinary passports: Panama stamped consular visa",
+      "summary": "Panama's current National Migration Service decree index expressly places India in the stamped-visa-by-consul cohort. The ordinary short-visitor baseline is therefore an advance consular visa, not an electronic or arrival-issued visa.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "PA"
+      ],
+      "passportCodes": [
+        "IN"
+      ],
+      "conditions": [
+        "This records the ordinary short-visitor baseline without a separate conditional waiver based on a valid third-country visa or residence document.",
+        "It does not determine admission, transit, employment, residence, diplomatic, official, service, emergency, or special-document treatment."
+      ],
+      "sourceIds": [
+        "panama-snm-india-stamped-visa-decree"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "sri-lanka-india-ordinary-passport-pretravel-eta",
+      "title": "Indian ordinary passports: Sri Lanka pre-travel Tourist ETA",
+      "summary": "India is expressly within Sri Lanka's current 40-country Tourist ETA scheme. The Department requires ETA before arrival and the official portal requires online application, so the route is ETA rather than visa-free or visa-on-arrival.",
+      "status": "eta",
+      "destinationCodes": [
+        "SL"
+      ],
+      "passportCodes": [
+        "IN"
+      ],
+      "effectiveFrom": "2026-05-25",
+      "conditions": [
+        "The fee-waived Tourist ETA is valid for a 30-day short visit and permits double entry within that period.",
+        "The classification concerns ordinary passports and short tourism only; individual immigration admission and non-tourist routes remain separate.",
+        "A limited airport facility for a traveller without prior ETA does not displace the Department's stated normal pre-arrival ETA requirement."
+      ],
+      "sourceIds": [
+        "sri-lanka-die-current-india-free-tourist-eta",
+        "sri-lanka-eta-current-official-overview"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://eta.gov.lk/etaslvisa/etaNavServ",
+        "label": "Sri Lanka ETA application",
+        "steps": [
+          "Apply for the ETA online before travel.",
+          "Carry the approved ETA and meet the Department's normal visitor-admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "kyrgyzstan-india-ordinary-passport-tourist-evisa",
+      "title": "Indian ordinary passports: Kyrgyz Republic Tourist eVisa",
+      "summary": "The live Kyrgyz MFA eVisa selector exposes Tourist (TS) after India is selected for the ordinary-passport application flow. The official portal says approval is an electronic visa confirmation received before entry, so this is an eVisa.",
+      "status": "evisa",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "IN"
+      ],
+      "conditions": [
+        "The ordinary short-visitor route is Tourist (TS), up to 30 days according to the official portal's visa-category information.",
+        "The traveller must complete the online application and receive electronic confirmation before entering; individual eligibility and border admission remain subject to the issuing authority.",
+        "This does not model the separate facilitated one-month route for qualifying Gulf resident-card holders or diplomatic/service treatment."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-current-selector",
+        "kyrgyz-evisa-current-issuance"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+        "label": "Kyrgyz Republic eVisa application",
+        "steps": [
+          "Select India, Ordinary passport, and Tourist (TS).",
+          "Complete the online eVisa application and wait for electronic confirmation before travel."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "IN",
+      "destinationCode": "SL",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "eta",
+      "explanation": "Sri Lanka's Department of Immigration and Emigration now expressly requires an ETA before arrival for Indian ordinary-passport visitors. The fee waiver does not make the pre-travel authorization an arrival-issued visa.",
+      "sourceIds": [
+        "sri-lanka-die-current-india-free-tourist-eta",
+        "sri-lanka-eta-current-official-overview"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "IN",
+      "destinationCode": "AF",
+      "reason": "The reviewed Afghan government pages describe visa categories but publish no current ordinary-passport nationality schedule or exhaustive default; no status is inferred from generic forms or travel restrictions.",
+      "searchedOfficialDomains": [
+        "mfa.gov.af",
+        "moi.gov.af"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "BD",
+      "reason": "Bangladesh's current mission/online materials do not establish an India-specific ordinary-passport visitor route; the MRV form is not proof of electronic issuance.",
+      "searchedOfficialDomains": [
+        "mofa.gov.bd",
+        "visa.gov.bd"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "BA",
+      "reason": "The controlling Bosnia and Herzegovina MFA selector and linked legal material could not be securely reproduced in this review (TLS/retrieval failures); no stale or conditional result is used.",
+      "searchedOfficialDomains": [
+        "mvp.gov.ba",
+        "granpol.gov.ba"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "VG",
+      "reason": "The BVI named nationality schedule is expressly dated 2019 and later government pages do not provide an equivalent current India mapping; third-country-document exceptions are not a baseline.",
+      "searchedOfficialDomains": [
+        "bvi.gov.vg",
+        "bvitourism.com"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "BF",
+      "reason": "The authenticated Burkina Faso electronic service demonstrates an online workflow but does not publish India's ordinary-passport eligibility or an exhaustive non-exempt complement.",
+      "searchedOfficialDomains": [
+        "gov.bf",
+        "visaburkina.bf"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "KH",
+      "reason": "Current Cambodian material does not establish a Tourist Visa T electronic or arrival entitlement specifically for an Indian ordinary passport; the business-visa electronic route is not substituted.",
+      "searchedOfficialDomains": [
+        "evisa.gov.kh",
+        "mfaic.gov.kh"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "CV",
+      "reason": "Current Cabo Verde official pages do not map an Indian ordinary passport to an arrival, electronic, or advance-visa route; EASE registration is not itself an issuance classification.",
+      "searchedOfficialDomains": [
+        "gov.cv",
+        "ease.gov.cv"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "CF",
+      "reason": "Current CAR/CEMAC material supports only its named regional waiver cohort and does not establish the Indian ordinary-passport complement.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cf",
+        "cemac.int"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TD",
+      "reason": "The Chad eVisa service is not accompanied by an exhaustive nationality-eligibility schedule for India, so portal availability alone is insufficient.",
+      "searchedOfficialDomains": [
+        "evisa.td",
+        "diplomatie.gouv.td"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "KM",
+      "reason": "Available Comorian material does not distinguish an Indian tourist visitor route from transit and border-processing references.",
+      "searchedOfficialDomains": [
+        "gouv.km",
+        "anacm.km"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "CG",
+      "reason": "No current Republic of the Congo authority was recovered that maps Indian ordinary passports to a complete visitor route and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cg",
+        "gouv.cg"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "CI",
+      "reason": "No current Côte d'Ivoire authority establishes that an Indian ordinary passport is outside all exemptions and eligible for a specific visitor eVisa route.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ci",
+        "snedai.com"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "CU",
+      "reason": "The reviewed Cuban electronic-visa material does not provide a current nationality-specific ordinary-passport eligibility statement for India that also resolves issuance timing.",
+      "searchedOfficialDomains": [
+        "minrex.gob.cu",
+        "evisacuba.cu"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "DJ",
+      "reason": "Djibouti's eVisa service does not publish an India-specific ordinary-passport eligibility result or an exhaustive visitor complement.",
+      "searchedOfficialDomains": [
+        "evisa.gouv.dj",
+        "diplomatie.gouv.dj"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "GD",
+      "reason": "Grenada's live mission page links a nationality schedule expressly dated February 2021; no newer controlling ordinary-passport schedule was recovered.",
+      "searchedOfficialDomains": [
+        "mofa.gov.gd",
+        "gndembassyprc.mofa.gov.gd"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "GW",
+      "reason": "No current Guinea-Bissau authority was recovered that maps Indian ordinary passports to a short-visitor issuance route.",
+      "searchedOfficialDomains": [
+        "mne.gov.gw",
+        "gov.gw"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "GY",
+      "reason": "No current Guyana government source establishes an Indian ordinary-passport visitor classification and its issuance timing.",
+      "searchedOfficialDomains": [
+        "minfor.gov.gy",
+        "dpi.gov.gy"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "HN",
+      "reason": "Honduras materials describe conditional third-country-visa/residence routes but do not establish an unconditional Indian ordinary-passport baseline.",
+      "searchedOfficialDomains": [
+        "inm.gob.hn",
+        "sreci.gob.hn"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "IR",
+      "reason": "Iran's current MFA eVisa material gives a named exemption cohort but does not establish India's complete ordinary-passport visitor complement from omission.",
+      "searchedOfficialDomains": [
+        "evisa.mfa.ir",
+        "mfa.gov.ir"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "IQ",
+      "reason": "No current Iraqi government source was recovered that supplies an exhaustive Indian ordinary-passport tourist-entry rule and timing.",
+      "searchedOfficialDomains": [
+        "mofa.gov.iq",
+        "evisa.iq"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "JO",
+      "reason": "Jordan's electronic services do not provide a reproducible India-specific ordinary-passport tourist eligibility result; generic portal access is not treated as proof.",
+      "searchedOfficialDomains": [
+        "moi.gov.jo",
+        "mfa.gov.jo"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "XK",
+      "reason": "Kosovo's web-published list is not reproducibly available through the current authenticated service in this review; no unlisted-country complement is inferred while its officiality/currentness cannot be independently verified.",
+      "searchedOfficialDomains": [
+        "ambasadat.net",
+        "mpb.rks-gov.net"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "KW",
+      "reason": "Kuwait's online service does not establish a nationality-wide Indian ordinary-passport visitor eVisa entitlement; residence/other-document routes are not a baseline.",
+      "searchedOfficialDomains": [
+        "moi.gov.kw",
+        "e.gov.kw"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "LR",
+      "reason": "No current Liberian authority establishes an Indian ordinary-passport visitor route and actual issuance point.",
+      "searchedOfficialDomains": [
+        "mofa.gov.lr",
+        "lis.gov.lr"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "LY",
+      "reason": "No current Libyan authority was recovered that proves India-specific ordinary-passport electronic visitor eligibility and pre-travel issuance.",
+      "searchedOfficialDomains": [
+        "mfa.gov.ly",
+        "evisa.gov.ly"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "ML",
+      "reason": "No current Mali authority was recovered that maps Indian ordinary passports to a short-visitor route and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ml",
+        "gouv.ml"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "NE",
+      "reason": "No current Niger authority was recovered that maps Indian ordinary passports to a short-visitor route and issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ne",
+        "gouv.ne"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "KP",
+      "reason": "No current DPR Korea authority was recovered that publishes an Indian ordinary-passport short-visitor schedule; sanctions/advisories are not a visa classification.",
+      "searchedOfficialDomains": [
+        "mfa.gov.kp",
+        "naenara.com.kp"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "MK",
+      "reason": "North Macedonia's current selector could not be reproduced and its general entry rules identify only waivers and conditional document routes; no complement is inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.mk",
+        "mvr.gov.mk"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "OM",
+      "reason": "Oman's current Foreign Ministry places India in a 14-day exemption cohort only when the traveller has qualifying third-country visa/residence or GCC-resident-profession evidence. That is not an unconditional ordinary-passport baseline, and its generic eVisa link does not prove India's eVisa eligibility.",
+      "searchedOfficialDomains": [
+        "fm.gov.om",
+        "rop.gov.om"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "PK",
+      "reason": "No current Pakistani authority was recovered that establishes a complete Indian ordinary-passport short-visitor issuance route; special approvals and travel restrictions are not normalized.",
+      "searchedOfficialDomains": [
+        "mofa.gov.pk",
+        "visa.nadra.gov.pk"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "PS",
+      "reason": "No current Palestinian authority was recovered that establishes an Indian ordinary-passport short-visitor entry route independent of controlling border/third-party documentation.",
+      "searchedOfficialDomains": [
+        "mofa.pna.ps",
+        "moi.pna.ps"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "PE",
+      "reason": "Peru's current material does not establish an unconditional Indian ordinary-passport visitor baseline independent of its conditional third-country-document routes.",
+      "searchedOfficialDomains": [
+        "gob.pe",
+        "rree.gob.pe"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "ST",
+      "reason": "The reviewed São Tomé material does not establish an India-specific current ordinary-passport electronic visitor route.",
+      "searchedOfficialDomains": [
+        "mne.gov.st",
+        "evisa.st"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SB",
+      "reason": "No current Solomon Islands authority was recovered that maps Indian ordinary passports to a specific short-visitor issuance route.",
+      "searchedOfficialDomains": [
+        "immigration.gov.sb",
+        "mfaet.gov.sb"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "KR",
+      "reason": "Korea's current K-ETA materials identify named eligible/exempt cohorts but do not establish India's ordinary-passport baseline from its absence.",
+      "searchedOfficialDomains": [
+        "k-eta.go.kr",
+        "visa.go.kr"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SS",
+      "reason": "South Sudan's authenticated eVisa service proves a pre-travel workflow but does not publish India-specific ordinary-passport eligibility.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ss",
+        "mofaic.gov.ss"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SD",
+      "reason": "Current Sudanese material does not publish a nationality-specific Indian ordinary-passport visitor schedule; conflict/closure material is not a substitute.",
+      "searchedOfficialDomains": [
+        "mofa.gov.sd",
+        "passport.gov.sd"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SY",
+      "reason": "Current Syrian aviation/entry guidance gives a general advance-visa rule but no nationality schedule or eVisa eligibility for Indian ordinary passports.",
+      "searchedOfficialDomains": [
+        "gaca.gov.sy",
+        "mofa.gov.sy"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "GM",
+      "reason": "No current Gambian authority was recovered that proves an Indian ordinary-passport visitor waiver or other route; uncorroborated reciprocal claims are held.",
+      "searchedOfficialDomains": [
+        "mofa.gov.gm",
+        "gambia.gov.gm"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TO",
+      "reason": "Tonga's official sources conflict on prior authority versus arrival processing and do not provide a controlling current India mapping.",
+      "searchedOfficialDomains": [
+        "revenue.gov.to",
+        "tongaportal.gov.to"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TT",
+      "reason": "No current Trinidad and Tobago source establishes an India-specific ordinary-passport visitor waiver or electronic/advance route; the available electronic material is not an exhaustive eligibility schedule.",
+      "searchedOfficialDomains": [
+        "foreign.gov.tt",
+        "immigration.gov.tt"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TN",
+      "reason": "Tunisia's current government sources establish a consular framework but no current India-specific ordinary-passport schedule; an announced eVisa project is not an operating issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatie.gov.tn",
+        "econsulat.tn"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TR",
+      "reason": "Türkiye's eVisa route for Indian nationals is conditional on qualifying third-country visa/residence evidence; it is not an unconditional passport baseline and the live electronic route was not independently operationally verified.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tr",
+        "evisa.gov.tr"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TM",
+      "reason": "Turkmenistan's general visa law and invitation material do not establish an India-specific ordinary-passport visitor complement or issuance timing.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "UA",
+      "reason": "Ukraine's nationality table is dated and not reproducibly current; wartime advisories and travel constraints are kept separate from a passport-visa classification.",
+      "searchedOfficialDomains": [
+        "mfa.gov.ua",
+        "dpsu.gov.ua"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "VE",
+      "reason": "Venezuela's current foreign-ministry guidance does not establish India's land/sea/air ordinary-passport baseline or a pre-travel electronic route.",
+      "searchedOfficialDomains": [
+        "mppre.gob.ve",
+        "saime.gob.ve"
+      ]
+    }
+  ]
+}
