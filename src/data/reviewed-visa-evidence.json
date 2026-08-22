@@ -299,7 +299,10 @@
     "british-virgin-islands-currentness-recovery-2026",
     "kosovo-complete-visitor-entry-refresh",
     "marshall-islands-residual-visa-regime-audit-2026",
-    "marshall-islands-diplomatic-ties-cohort-a-2026"
+    "marshall-islands-diplomatic-ties-cohort-a-2026",
+    "albania-guyana-current-waiver-2026",
+    "guyana-current-outbound-waivers-2026",
+    "macao-guinea-bissau-arrival-visa-2026"
   ],
   "sources": [
     {
@@ -14959,6 +14962,26 @@
       "publisher": "Ministry of Foreign Affairs and Trade, Republic of the Marshall Islands",
       "jurisdiction": "Republic of the Marshall Islands",
       "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "guyana-mfa-current-outbound-visa-information",
+      "title": "Visa Information",
+      "url": "https://minfor.gov.gy/index.php/visa-information",
+      "publisher": "Ministry of Foreign Affairs and International Cooperation, Cooperative Republic of Guyana",
+      "jurisdiction": "Guyana",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22"
+    },
+    {
+      "id": "macao-dsi-guinea-bissau-arrival-visa-record",
+      "title": "Macao DSI: Guinea-Bissau travel-convenience record",
+      "url": "https://www.dsi.gov.mo/api/v1/web/entry/country/406?travelPermit=0",
+      "publisher": "Identification Services Bureau, Macao SAR Government",
+      "jurisdiction": "Macao Special Administrative Region",
+      "kind": "official-portal",
       "language": "English",
       "reviewedAt": "2026-08-22"
     }
@@ -67597,6 +67620,66 @@
       "sourceIds": [
         "rmi-nitijela-current-immigration-regulations-2009",
         "rmi-mofat-2025-antigua-barbuda-diplomatic-ties"
+      ]
+    },
+    {
+      "id": "albania-guyanese-ordinary-passport-visa-free",
+      "title": "Guyanese ordinary passports: Albania visa-free short visits",
+      "summary": "Guyana's current Foreign Ministry outgoing schedule expressly states that Guyanese travellers do not require a visa for Albania for stays of up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "AL"
+      ],
+      "passportCodes": [
+        "GY"
+      ],
+      "conditions": [
+        "The published exemption is limited to stays not exceeding 90 days; the source does not specify a separate rolling reference period.",
+        "Admission, passport validity, purpose-of-stay evidence, work, study, residence, transit and other individual requirements remain outside this ordinary short-visitor classification."
+      ],
+      "sourceIds": [
+        "guyana-mfa-current-outbound-visa-information"
+      ]
+    },
+    {
+      "id": "guyana-current-outbound-grenada-panama-waivers",
+      "title": "Guyanese ordinary passports: Grenada and Panama visa-free visits",
+      "summary": "Guyana's current Foreign Ministry outbound schedule says Guyanese travellers do not require visas for Grenada and for Panamanian tourism stays not exceeding 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "GD",
+        "PA"
+      ],
+      "passportCodes": [
+        "GY"
+      ],
+      "conditions": [
+        "Panama is limited to tourism stays not exceeding 90 days; the schedule states no uniform stay limit for Grenada.",
+        "Admission, passport validity, work, study, residence, transit and other individual requirements remain outside this ordinary short-visitor classification."
+      ],
+      "sourceIds": [
+        "guyana-mfa-current-outbound-visa-information"
+      ]
+    },
+    {
+      "id": "macao-sar-passport-guinea-bissau-arrival-visa",
+      "title": "Macao SAR passports: Guinea-Bissau arrival visa",
+      "summary": "The current Macao DSI passport-specific record classifies Guinea-Bissau as visa on arrival, rather than visa-free access, for the Macao SAR Passport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "GW"
+      ],
+      "passportCodes": [
+        "MO"
+      ],
+      "conditions": [
+        "This applies only to the Macao SAR Passport, not to a PRC passport, Hong Kong document, Portuguese passport, residence document or other travel document.",
+        "The DSI record identifies Osvaldo Vieira International Airport as the arrival-visa location and states a maximum period of 90 days.",
+        "Purpose, passport validity, fees, carrier requirements and final admission remain subject to the Guinea-Bissau authorities."
+      ],
+      "sourceIds": [
+        "macao-dsi-passport-eligibility",
+        "macao-dsi-guinea-bissau-arrival-visa-record"
       ]
     }
   ]

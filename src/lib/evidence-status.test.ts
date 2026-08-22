@@ -7,7 +7,7 @@ const snapshot = fallbackSnapshot as DataSnapshot;
 
 describe("evidence status matrix", () => {
   it("aligns every passport with every destination in the selected region", () => {
-    const matrix = buildEvidenceStatusRegion(snapshot.manifest, snapshot.passports, "EUROPE", "2026-08-20");
+    const matrix = buildEvidenceStatusRegion(snapshot.manifest, snapshot.passports, "EUROPE", "2026-08-22");
     expect(matrix.passports).toHaveLength(snapshot.manifest.passports.length);
     expect(matrix.destinations).toHaveLength(
       snapshot.manifest.destinations.filter(({ region }) => region === "EUROPE").length,
@@ -28,7 +28,8 @@ describe("evidence status matrix", () => {
     expect(matrix.dates[japanRow.cells[germanyIndex][2]]).toBe("2026-08-20");
     expect(japanRow.cells[germanyIndex][3]).toBeGreaterThan(0);
     expect(japanRow.cells[germanyIndex][4]).toBeGreaterThan(0);
-    expect(guyanaRow.cells[albaniaIndex]).toEqual([snapshot.passports.GY.statuses.AL, 0, -1, 0, 0]);
+    expect(guyanaRow.cells[albaniaIndex].slice(0, 2)).toEqual(["visa_free", 1]);
+    expect(matrix.dates[guyanaRow.cells[albaniaIndex][2]]).toBe("2026-08-22");
   });
 
   it("does not count an expired temporary policy as current verification", () => {
@@ -49,8 +50,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(38_068);
-    expect(summary.percent).toBe(84.6);
+    expect(summary.covered).toBe(38_072);
+    expect(summary.percent).toBe(84.7);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });
 });

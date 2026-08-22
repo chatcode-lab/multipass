@@ -1184,12 +1184,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GH", "BF", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "BF", snapshot.passports.US.statuses.BF).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GW")).toHaveLength(22);
+    expect(pairsFor("GW")).toHaveLength(23);
     expect(getVisaRelationshipEvidence("GH", "GW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "GW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "GW", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "GW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("JP", "GW", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MO", "GW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GW", snapshot.passports.US.statuses.GW).supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("SL")).toHaveLength(14);
@@ -1683,7 +1684,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(25);
+    expect(pairs).toHaveLength(26);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_free").supportsCurrentStatus).toBe(false);
@@ -1692,6 +1693,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("RU", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "PA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GY", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AU", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "PA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1902,10 +1904,10 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("AL")).toHaveLength(198);
+    expect(pairsFor("AL")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("BH", "AL", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("QA", "AL", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("GY", "AL", snapshot.passports.GY.statuses.AL).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GY", "AL", "visa_free").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("GE")).toHaveLength(190);
     expect(getVisaRelationshipEvidence("CN", "GE", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2367,6 +2369,12 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("RS", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "CU", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "UA", snapshot.passports.RS.statuses.UA).supportsCurrentStatus).toBe(false);
+  });
+
+  it("supports Guyana's current named outbound waivers", () => {
+    for (const destinationCode of ["AL", "GD", "PA"] as const) {
+      expect(getVisaRelationshipEvidence("GY", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+    }
   });
 
   it("supports reviewed Tongan, Haitian, and Myanmar outbound rows", () => {

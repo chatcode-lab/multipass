@@ -1,0 +1,56 @@
+{
+  "batchId": "macao-guinea-bissau-arrival-visa-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "macao-dsi-passport-eligibility",
+      "title": "Macao SAR Government / DSI: Macao SAR Passport eligibility",
+      "url": "https://www.gov.mo/en/services/ps-1066/",
+      "publisher": "Identification Services Bureau, Macao SAR Government",
+      "jurisdiction": "Macao Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Macao Government service page identifies the DSI passport service and limits this document to Macao permanent residents with Chinese nationality.",
+      "supportingExcerpt": "Permanent Resident of the Macao SAR with Chinese nationality."
+    },
+    {
+      "id": "macao-dsi-guinea-bissau-arrival-visa-record",
+      "title": "Macao DSI: Guinea-Bissau travel-convenience record",
+      "url": "https://www.dsi.gov.mo/api/v1/web/entry/country/406?travelPermit=0",
+      "publisher": "Identification Services Bureau, Macao SAR Government",
+      "jurisdiction": "Macao Special Administrative Region",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live DSI passport-specific record sets travelPermit to 0, visaFree to 0 and visaOnArrival to 1; its English remark identifies Osvaldo Vieira International Airport.",
+      "supportingExcerpt": "Visitors can obtain visa upon arrival at Osvaldo International Airport."
+    }
+  ],
+  "policies": [
+    {
+      "id": "macao-sar-passport-guinea-bissau-arrival-visa",
+      "title": "Macao SAR passports: Guinea-Bissau arrival visa",
+      "summary": "The current Macao DSI passport-specific record classifies Guinea-Bissau as visa on arrival, rather than visa-free access, for the Macao SAR Passport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "GW"
+      ],
+      "passportCodes": [
+        "MO"
+      ],
+      "conditions": [
+        "This applies only to the Macao SAR Passport, not to a PRC passport, Hong Kong document, Portuguese passport, residence document or other travel document.",
+        "The DSI record identifies Osvaldo Vieira International Airport as the arrival-visa location and states a maximum period of 90 days.",
+        "Purpose, passport validity, fees, carrier requirements and final admission remain subject to the Guinea-Bissau authorities."
+      ],
+      "sourceIds": [
+        "macao-dsi-passport-eligibility",
+        "macao-dsi-guinea-bissau-arrival-visa-record"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}
