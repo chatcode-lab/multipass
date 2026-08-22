@@ -793,7 +793,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "PH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "PH", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KH")).toHaveLength(35);
+    expect(pairsFor("KH")).toHaveLength(36);
     expect(getVisaRelationshipEvidence("SG", "KH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "KH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "KH", "visa_required").supportsCurrentStatus).toBe(true);
@@ -1043,7 +1043,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HK", "DZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DZ", "DZ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("NG")).toHaveLength(25);
+    expect(pairsFor("NG")).toHaveLength(28);
     expect(getVisaRelationshipEvidence("GH", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "NG", "evisa").supportsCurrentStatus).toBe(true);
@@ -1074,7 +1074,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "CM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CM", "CM", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("CI")).toHaveLength(37);
+    expect(pairsFor("CI")).toHaveLength(40);
     expect(getVisaRelationshipEvidence("GN", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1216,7 +1216,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CF", "CF", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GQ")).toHaveLength(11);
+    expect(pairsFor("GQ")).toHaveLength(12);
     expect(getVisaRelationshipEvidence("CM", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "GQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2026,7 +2026,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UA")).toHaveLength(22);
+    expect(pairsFor("UA")).toHaveLength(24);
     expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2062,7 +2062,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("CU")).toHaveLength(33);
+    expect(pairsFor("CU")).toHaveLength(36);
     expect(getVisaRelationshipEvidence("CN", "CU", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "CU", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "CU", "evisa").supportsCurrentStatus).toBe(true);
@@ -2242,6 +2242,28 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CD", "NG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CD", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CD", "CG", snapshot.passports.CD.statuses.CG).supportsCurrentStatus).toBe(false);
+  });
+
+  it("supports reviewed Malawian, Tanzanian, and Lao outbound rows", () => {
+    expect(getVisaRelationshipEvidence("MW", "CU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MW", "NG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MW", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MW", "GQ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MW", "UA", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MW", "KH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MW", "GA", snapshot.passports.MW.statuses.GA).supportsCurrentStatus).toBe(false);
+
+    expect(getVisaRelationshipEvidence("TZ", "CU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TZ", "NG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TZ", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TZ", "GQ", snapshot.passports.TZ.statuses.GQ).supportsCurrentStatus).toBe(false);
+
+    expect(getVisaRelationshipEvidence("LA", "CU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LA", "NG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LA", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LA", "UA", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LA", "KH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LA", "KP", snapshot.passports.LA.statuses.KP).supportsCurrentStatus).toBe(false);
   });
 
   it("supports reviewed Spanish, Italian, and South Korean outbound rows", () => {
@@ -2702,6 +2724,7 @@ describe("official visa evidence", () => {
       "www.immigration.go.tz",
       "www.parliament.go.tz",
       "evisa.gov.mw",
+      "immigration.gov.mw",
       "visitmalawi.mw",
       "www.malawi.gov.mw",
       "malawihighcommission.co.uk",
@@ -2743,6 +2766,9 @@ describe("official visa evidence", () => {
       "us.embassyeritrea.org",
       "balkaununiku.gov.tl",
       "diplomatie.gouv.cd",
+      "www.guineaecuatorialpress.com",
+      "equatorialguinea-evisa.com",
+      "lsp.moic.gov.la",
       "aladel.gov.ly",
       "lana.gov.ly",
       "embassies.foreign.gov.ly",

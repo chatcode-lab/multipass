@@ -31,6 +31,14 @@ export interface VerifiedAccessOverride {
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "MW",
+    destinationCode: "KH",
+    status: "evisa",
+    reason: "Cambodia's current official Tourist Visa T service provides electronic issuance before travel and its named exemption group does not include Malawi.",
+    sourceUrl: "https://www.evisa.gov.kh/information/visa_type/4?vcode=134",
+    reviewedAt: "2026-08-22",
+  },
+  {
     passportCode: "MR",
     destinationCode: "GW",
     status: "visa_free",
@@ -150,7 +158,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/399?travelPermit=0",
     reviewedAt: "2026-08-22",
   },
-  ...(["LY", "YE", "AO", "SO", "SY", "MD", "ME", "ZM", "ZW", "ER", "TL", "CD"] as const).map((passportCode) => ({
+  ...(["LY", "YE", "AO", "SO", "SY", "MD", "ME", "ZM", "ZW", "ER", "TL", "CD", "MW", "TZ", "LA"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "CI" as const,
     status: "visa_on_arrival" as const,
