@@ -1316,6 +1316,52 @@ Panama's broad candidate maps historical cohorts from named decrees but does not
 
 Russia, China, India, Haiti and Kosovo also depend on older or archive-only instruments without a current nationality-specific confirmation. The broad candidate remains a research artifact pending a current consolidated schedule, Gazette amendment crosswalk or direct non-repeal confirmation. This hold does not include the separately reviewed Cuba, Dominican Republic and Venezuela stamped-visa rows promoted in Pass 105.
 
+## Pass 138 result: French West Indies shared territorial schedule
+
+This independently cross-reviewed pass adds 158 foreign-access relationships, raising complete-matrix evidence from 35,863 to 36,021 of 44,974 relationships (80.1%). The public status matrix now contains 36,021 fresh and 8,953 not-covered rows, with zero old or stale rows. Caribbean coverage rises from 4,040 to 4,198 of 4,962 (84.6%); Africa remains 7,959 of 11,289, Asia 5,013 of 6,336, Europe 9,508 of 10,299, the Americas 4,360 of 4,953, the Middle East 1,607 of 2,970, and Oceania 3,376 of 4,165. Canonical evidence contains 277 reviewed batches, 1,349 official sources and 925 policies.
+
+The catalog's French West Indies aggregate is explicitly treated as the intersection of Guadeloupe, Martinique, Saint-Martin and Saint-Barthélemy—not French Guiana or every French overseas territory. Current consolidated Légifrance annexes support 55 ordinary-passport visa-free rows and 103 advance territorial-visa rows shared by all four components. Nine fallback advance-visa labels change to visa-free: Micronesia, Kiribati, the Marshall Islands, Nauru, Peru, Palau, Solomon Islands, Timor-Leste and Tuvalu.
+
+Nine rows remain unresolved instead of being flattened across materially different document conditions. Albania, Bosnia and Herzegovina, Moldova, Montenegro, North Macedonia, Serbia and Ukraine depend on biometric or document-specific wording; Vanuatu depends on the passport's issue date; and Ecuador has an ordinary-passport waiver for Guadeloupe and Martinique but only a diplomatic/service waiver for Saint-Martin and Saint-Barthélemy.
+
+## Held from promotion: North Macedonia, Kosovo, Tonga, and Trinidad and Tobago residuals
+
+North Macedonia's exact 166-row residual remains unresolved. The live Foreign Ministry selector and entry pages repeatedly timed out, while accessible official material establishes only already-canonical EU/Schengen access and conditional substitutions based on residence permits or third-country visas. Those individual-document conditions do not establish the ordinary-passport baseline.
+
+Kosovo's exact 173-row residual also remains unresolved. The accessible official-linked nationality schedule was last modified in November 2025 and demonstrably retains entries superseded by a December 2025 Fiji decision. A January 2026 Interior page describes general entry conditions but publishes no current nationality annex. The candidate's proposed 170-row partition is therefore retained only as stale research; Bosnia and Herzegovina, Fiji and Slovenia were already unresolved within it.
+
+Tonga's 138 rows remain unresolved because current central Immigration material does not expose a current exhaustive nationality schedule. An official embassy page carries a different list and a 2018 footer, while the available advance-letter process ends with an arrival application and cannot be relabeled as a universal eVisa or passport-wide visa-on-arrival route.
+
+Trinidad and Tobago's 124 rows remain unresolved. Its waiver PDF cannot be safely mapped to every scoped ordinary passport, and the live entitlement checker could not be retrieved without its blocked JavaScript flow. The eVisa service proves an electronic application route only after a traveller has independently been classified as visa-required; it does not supply the missing nationality classification.
+
+## Pass 139 result: narrow São Tomé and Príncipe waivers
+
+This independently cross-reviewed pass adds two foreign-access relationships, raising complete-matrix evidence from 36,021 to 36,023 of 44,974 relationships (80.1%). The public status matrix now contains 36,023 fresh and 8,951 not-covered rows, with zero old or stale rows. Africa coverage rises from 7,959 to 7,961 of 11,289 (70.5%); all other regional totals remain unchanged. Canonical evidence contains 278 reviewed batches, 1,353 official sources and 927 policies.
+
+The live Migration and Border Service notice supports a 15-day Swiss visa waiver and expressly gives South African ordinary passports up to 90 days visa-free. South Africa corrects from fallback eVisa to visa-free. The Swiss policy also cites the controlling foreigner law for its ordinary-passport entry baseline. Both rows retain medium confidence because the notice describes Swiss citizens rather than separately discussing every passport type.
+
+Rwanda and the other 139 scoped São Tomé rows remain unresolved. Rwanda appears in a mixed section for agreements covering ordinary or specific passports but, unlike South Africa, has no ordinary-passport statement. The governing law preserves unspecified international-agreement exemptions, and the live electronic entry-authorization service publishes no nationality schedule, so neither an advance-visa complement nor a universal eVisa/arrival route is inferred.
+
+## Held from promotion: Chad and Burkina Faso residual electronic-visa claims
+
+Chad's exact 171-row residual remains unresolved. The live `evisa.td` service makes current, broad claims about electronic applications and issuance, but no independently retrievable central-government page authenticated or linked the portal during review. The Security Ministry returned 403, the Foreign Ministry displayed maintenance, and the portal does not expressly delimit ordinary from special passports. Self-identification by the service is not enough to verify an all-nationality cohort under the dataset's authentication rule.
+
+Burkina Faso's exact 144-row residual also remains unresolved. Its official Paris consulate authenticates the Visa Burkina service and describes ordinary-passport online submission and payment, but says visas are issued as a wet stamp or sticker. The authenticated service FAQ instead describes ministerially approved eVisas sent by email. Neither source publishes a current exhaustive nationality eligibility or exemption schedule, so the apparent disagreement and generic visa-unless-exempt language cannot verify 142 fallback eVisa rows or the two fallback waivers.
+
+## Pass 140 result: Armenia and Kiribati advance-visa complements
+
+This independently cross-reviewed pass adds 130 foreign-access relationships, raising complete-matrix evidence from 36,023 to 36,153 of 44,974 relationships (80.4%). The public status matrix now contains 36,153 fresh and 8,821 not-covered rows, with zero old or stale rows. Middle East coverage rises from 1,607 to 1,662 of 2,970 (56.0%), and Oceania rises from 3,376 to 3,451 of 4,165 (82.9%); all other regional totals remain unchanged. Canonical evidence contains 280 reviewed batches, 1,361 official sources and 929 policies.
+
+Armenia adds all 55 residual rows as advance visa required. Every scoped nationality appears in the current MFA-linked invitation-only schedule, and the current ARLIS procedure independently requires those applicants to use Armenian diplomatic missions or consular posts while excluding them from eVisa eligibility. The schedule itself says it was updated in February 2024 but remains directly linked by the live MFA framework and matches the current legal procedure; that currentness chain is retained for routine recheck. All 55 fallback labels already matched, so no user-facing route changes were necessary.
+
+Kiribati adds all 75 residual rows as advance visa required. The live Immigration Division pages, modified in August 2026, expressly designate the 2023 Visa Exemption Order as the current exemption instrument and say non-exempt visitor nationalities must apply in advance by form, emailed documents and subsequent payment instructions. The Order's named schedule is disjoint from the exact residual, and its document clause does not create a special-passport spillover. All 75 fallback labels already matched.
+
+## Held from promotion: Cabo Verde residual schedule omissions
+
+Cabo Verde's exact 43-row residual remains unresolved. Forty-two scoped nationalities are absent from both new live government visa-free and visa-required tables, and the visa-required page instructs unlisted travellers to contact a mission rather than establishing a complement. Cuba appears only with a mission-duration exemption, not an ordinary short-visitor waiver.
+
+The authenticated EASE flow is traveller preregistration, security information and airport-tax payment rather than a nationality-wide ETA: official guidance says an unregistered traveller can complete it on arrival. Generic online, exceptional-arrival and residence-based routes likewise do not establish any missing passport-level classification, so no fallback label is promoted from omission.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

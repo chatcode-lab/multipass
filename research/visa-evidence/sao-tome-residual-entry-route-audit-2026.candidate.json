@@ -1,0 +1,1371 @@
+{
+  "batchId": "sao-tome-residual-entry-route-audit-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "stp-smf-current-visa-waiver-notice",
+      "title": "SMF: Visa exemption for São Tomé and Príncipe",
+      "url": "https://www.smf.st/noticiaSingle.php?idnews=20&loock=noticiasSingle",
+      "publisher": "Serviço de Migração e Fronteiras",
+      "jurisdiction": "São Tomé and Príncipe",
+      "kind": "government-guidance",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Serviço de Migração e Fronteiras notice, dated 4 December 2025, sets out its current short-stay waiver categories and conditions.",
+      "supportingExcerpt": "Cidadãos dos seguintes países e territórios podem entrar e permanecer ... por um período máximo de 15 dias sem visto."
+    },
+    {
+      "id": "stp-law-foreign-citizens-regime",
+      "title": "Law No. 5/2008: legal regime for foreign citizens",
+      "url": "https://www.smf.st/resource/upload/fileLegislacao/regimejuridico.pdf",
+      "publisher": "National Assembly of the Democratic Republic of São Tomé and Príncipe",
+      "jurisdiction": "São Tomé and Príncipe",
+      "kind": "law",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "SMF's legal-document repository publishes the Diário da República text of Law No. 5/2008, including the visa default, exemption and issuance provisions.",
+      "supportingExcerpt": "Com excepção dos casos de isenção ou dispensa de vistos previstos na Lei ou em acordos internacionais."
+    },
+    {
+      "id": "stp-smf-current-evisa-portal",
+      "title": "e-VisaST entry-authorization portal",
+      "url": "https://www.smf.st/evisa/",
+      "publisher": "Serviço de Migração e Fronteiras",
+      "jurisdiction": "São Tomé and Príncipe",
+      "kind": "official-portal",
+      "language": "Portuguese and English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live SMF service provides the entry-authorization application flow and response process but exposes no nationality eligibility schedule.",
+      "supportingExcerpt": "Terá uma resposta ao seu pedido num período de 7 dias úteis."
+    },
+    {
+      "id": "stp-smf-current-entry-authorisation-faq",
+      "title": "SMF frequently asked questions: entry authorization",
+      "url": "https://www.smf.st/fq.php",
+      "publisher": "Serviço de Migração e Fronteiras",
+      "jurisdiction": "São Tomé and Príncipe",
+      "kind": "government-guidance",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "SMF's live FAQ says a resident of a country without São Toméan consular representation requires individual entry authorization through eVisaST, not a routine visa on arrival.",
+      "supportingExcerpt": "A AE é individual e pode ser pedida ... através do eVisaST."
+    }
+  ],
+  "policies": [
+    {
+      "id": "stp-smf-2025-switzerland-ordinary-passport-visa-free",
+      "title": "Swiss ordinary passports: visa-free short visits",
+      "summary": "The current SMF waiver notice names Switzerland among the nationalities that may enter São Tomé and Príncipe without a visa for up to 15 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "ST"
+      ],
+      "passportCodes": [
+        "CH"
+      ],
+      "conditions": [
+        "The live SMF notice names Swiss citizens and sets a maximum 15-day stay, a passport valid for at least three months on entry, funds, and return/onward evidence. Law No. 5/2008 supplies the ordinary-passport entry baseline; the notice does not separately describe Swiss special passports.",
+        "This is an ordinary short-visitor nationality baseline only; it does not establish work, residence, business, transit, crew, diplomatic, official or final-admission treatment."
+      ],
+      "sourceIds": [
+        "stp-smf-current-visa-waiver-notice",
+        "stp-law-foreign-citizens-regime"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "stp-smf-2025-south-africa-ordinary-passport-visa-free",
+      "title": "South African ordinary passports: visa-free short visits",
+      "summary": "The current SMF waiver notice states that South African ordinary-passport holders are visa-exempt for stays of up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "ST"
+      ],
+      "passportCodes": [
+        "ZA"
+      ],
+      "conditions": [
+        "The notice expressly limits this 90-day agreement entry to ordinary passports; it says separate diplomatic/service agreements were approved in November 2024.",
+        "The result is a visitor nationality baseline only and remains subject to passport validity, funds, return/onward evidence, border checks and final admission."
+      ],
+      "sourceIds": [
+        "stp-smf-current-visa-waiver-notice"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "ZA",
+      "destinationCode": "ST",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_free",
+      "explanation": "The current SMF waiver notice expressly gives South African ordinary passports visa-free entry for up to 90 days.",
+      "sourceIds": [
+        "stp-smf-current-visa-waiver-notice"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "SG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice names Rwanda in a 90-day agreement list but says that list may concern ordinary or specific passports without mapping Rwanda's passport type. No direct current legal instrument establishes an ordinary-passport baseline.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "ST",
+      "reason": "The current SMF notice is not an exhaustive ordinary-passport treaty inventory. Article 23 preserves exemptions under any international visa-waiver agreement, while the live eVisaST portal and FAQ provide no nationality-eligibility schedule; no route is inferred.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st"
+      ]
+    }
+  ]
+}

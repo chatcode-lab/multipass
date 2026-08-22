@@ -2545,4 +2545,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://evisa.dgdi.ga/",
     reviewedAt: "2026-08-22",
   })),
+  ...(["FM", "KI", "MH", "NR", "PE", "PW", "SB", "TL", "TV"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "FW" as const,
+    status: "visa_free" as const,
+    reason: "The current French territorial schedules waive short-stay visas for every passport type from this country across Guadeloupe, Martinique, Saint-Martin and Saint-Barthélemy.",
+    sourceUrl: "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051759462",
+    reviewedAt: "2026-08-22",
+  })),
+  {
+    passportCode: "ZA",
+    destinationCode: "ST",
+    status: "visa_free",
+    reason: "São Tomé and Príncipe's current Migration and Border Service notice expressly waives visas for South African ordinary passports for visits of up to 90 days.",
+    sourceUrl: "https://www.smf.st/noticiaSingle.php?idnews=20&loock=noticiasSingle",
+    reviewedAt: "2026-08-22",
+  },
 ] as const;

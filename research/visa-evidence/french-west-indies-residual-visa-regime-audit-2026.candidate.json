@@ -1,0 +1,227 @@
+{
+  "batchId": "french-west-indies-residual-visa-regime-audit-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "france-interior-current-overseas-territory-framework",
+      "title": "French Interior Ministry: visas for overseas France",
+      "url": "https://www.immigration.interieur.gouv.fr/limmigration-en-france/visas-en-france/visas-pour-loutre-mer",
+      "publisher": "French Ministry of the Interior, Directorate-General for Foreign Nationals",
+      "jurisdiction": "France / overseas territories",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The current Interior Ministry guidance identifies different ministerial orders for Guadeloupe and Martinique versus Saint-Martin and Saint-Barthélemy, and confirms that overseas visas are territory-specific.",
+      "supportingExcerpt": "les conditions de délivrance des visas ... sont définies par des arrêtés spécifiques à chaque collectivité ou territoire d'outre-mer"
+    },
+    {
+      "id": "france-visas-current-overseas-short-stay-rules",
+      "title": "France-Visas: short-stay visas for non-European French territories",
+      "url": "https://www.france-visas.gouv.fr/en/visa-de-court-sejour",
+      "publisher": "France-Visas, Ministry for Europe and Foreign Affairs",
+      "jurisdiction": "France / overseas territories",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "France-Visas identifies itself as the official French visa website and directs nationality-based overseas waivers to the territorial ministerial orders.",
+      "supportingExcerpt": "a Schengen visa will not allow you entry"
+    },
+    {
+      "id": "france-drom-current-annex-ii-guadeloupe-martinique",
+      "title": "Current Annex II: Guadeloupe and Martinique entry visas",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051759462",
+      "publisher": "Légifrance, French Government legal-publication service",
+      "jurisdiction": "France / Guadeloupe / Martinique",
+      "kind": "law",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Légifrance publishes the consolidated Annex II in force from 19 June 2025 for Guadeloupe, Martinique and the other named DROM territories.",
+      "supportingExcerpt": "Liste des pays ... dont les titulaires de passeport sont dispensés de visa pour entrer sur le territoire de la Guadeloupe ... [et] la Martinique"
+    },
+    {
+      "id": "france-saint-martin-barthelemy-current-annex-ii",
+      "title": "Current Annex II: Saint-Martin and Saint-Barthélemy entry visas",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051759455",
+      "publisher": "Légifrance, French Government legal-publication service",
+      "jurisdiction": "France / Saint-Martin / Saint-Barthélemy",
+      "kind": "law",
+      "language": "French",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Légifrance publishes the separate consolidated Annex II in force from 19 June 2025 for Saint-Martin and Saint-Barthélemy.",
+      "supportingExcerpt": "Liste des pays ... dont les titulaires de passeport sont dispensés de visa pour entrer sur le territoire des collectivités de Saint-Barthélemy et de Saint-Martin"
+    }
+  ],
+  "policies": [
+    {
+      "id": "french-west-indies-shared-ordinary-passport-short-visa-free",
+      "title": "French West Indies aggregate: shared ordinary-passport visa-free short visits",
+      "summary": "The current Guadeloupe/Martinique and Saint-Martin/Saint-Barthélemy Annex II schedules each waive a short-stay visa for these ordinary passports; the aggregate result is visa-free only where all four constituent territories have the same nationality baseline.",
+      "status": "visa_free",
+      "destinationCodes": ["FW"],
+      "passportCodes": ["AD", "AG", "AR", "AU", "BS", "BB", "BO", "BN", "CA", "CL", "HK", "MO", "CO", "CR", "SV", "AE", "US", "GD", "GT", "HN", "IL", "JP", "KR", "KI", "MY", "MH", "MU", "MX", "FM", "MC", "NR", "NI", "NZ", "PW", "PA", "PY", "PE", "GB", "KN", "SM", "VA", "VC", "SB", "WS", "SC", "SG", "TL", "TO", "TT", "TV", "UY", "VE", "BR", "DM", "LC"],
+      "conditions": [
+        "For this upstream aggregate, French West Indies means Guadeloupe, Martinique, Saint-Martin and Saint-Barthélemy. The two governing orders are separate; this policy retains only ordinary-passport waivers common to both territorial schedules.",
+        "The ordinary visitor waiver is for no more than 90 days in any 180-day period unless the row states a narrower limit. Dominica and Saint Lucia are limited in every constituent territory to stays of no more than 15 days and 120 cumulative days in 12 months.",
+        "Brazil is visa-free for Guadeloupe and Martinique and separately for Saint-Martin and Saint-Barthélemy; the French-Guiana exception does not alter this aggregate. Australia, Japan, South Korea, Mexico, Singapore, the United States and Venezuela retain the schedules' paid-activity/work-authorisation exception.",
+        "This is a nationality-and-ordinary-passport visitor baseline only. It does not establish work, residence, paid activity, transit, cruise, biometric/document-specific, diplomatic, official/service, special-document or final-admission treatment. A Schengen visa alone is not sufficient for these territories."
+      ],
+      "sourceIds": [
+        "france-interior-current-overseas-territory-framework",
+        "france-visas-current-overseas-short-stay-rules",
+        "france-drom-current-annex-ii-guadeloupe-martinique",
+        "france-saint-martin-barthelemy-current-annex-ii"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "french-west-indies-other-ordinary-passports-advance-territory-visa",
+      "title": "French West Indies aggregate: other ordinary passports require an advance overseas-territory visa",
+      "summary": "For the remaining cleanly modelled ordinary-passport codes, neither current territorial Annex II gives an unconditional nationality waiver across Guadeloupe, Martinique, Saint-Martin and Saint-Barthélemy. An overseas-territory visa is required through the normal pre-travel route; a narrowly discretionary border visa does not create a nationality entitlement.",
+      "status": "visa_required",
+      "destinationCodes": ["FW"],
+      "passportCodes": ["GE", "RU", "QA", "TR", "ZA", "BZ", "KW", "MV", "FJ", "SA", "XK", "GY", "BH", "JM", "OM", "CN", "PG", "BW", "TH", "BY", "SR", "KZ", "ID", "LS", "NA", "DO", "SZ", "AZ", "KE", "MW", "MA", "TZ", "GH", "GM", "AM", "PH", "RW", "TN", "ZM", "CV", "MN", "BJ", "MZ", "SL", "UG", "ST", "KG", "ZW", "UZ", "BF", "IN", "MG", "SN", "CI", "CU", "TG", "GA", "NE", "TJ", "GQ", "GN", "MR", "ML", "VN", "TD", "GW", "KM", "DZ", "AO", "KH", "CG", "HT", "LR", "BT", "CM", "CF", "JO", "LA", "BI", "TM", "DJ", "EG", "LB", "CD", "MM", "NG", "LK", "ET", "IR", "LY", "ER", "KP", "PS", "SS", "SD", "BD", "SO", "NP", "PK", "YE", "IQ", "SY", "AF"],
+      "conditions": [
+        "The result is the ordinary visitor baseline across all four constituent territories, not a Schengen classification. The normal visa route is territory-specific and pre-travel; a narrowly exceptional, discretionary border visa does not alter this baseline. A Schengen short-stay visa alone does not authorize entry.",
+        "Bahrain, Belarus, China, India, Indonesia, Kuwait, Oman, Qatar, Russia, Saudi Arabia, South Africa and Thailand may have a separate waiver when the traveller holds the specified valid French-consular multiple-entry visa (six months to five years). That third-document condition does not change this ordinary-passport baseline.",
+        "Valid French/Schengen residence or long-stay documents, cruise/transit treatment, diplomatic and service passports, and other individual exceptions remain conditional and are not normalized into this policy."
+      ],
+      "sourceIds": [
+        "france-interior-current-overseas-territory-framework",
+        "france-visas-current-overseas-short-stay-rules",
+        "france-drom-current-annex-ii-guadeloupe-martinique",
+        "france-saint-martin-barthelemy-current-annex-ii"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "KI",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Kiribati passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Micronesian passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Nauru passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Palauan passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Timor-Leste passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Peruvian passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Solomon Islands passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Marshall Islands passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "FW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Both current territorial Annex II schedules extend the short-stay waiver to all Tuvalu passport types, including ordinary passports.",
+      "sourceIds": ["france-drom-current-annex-ii-guadeloupe-martinique", "france-saint-martin-barthelemy-current-annex-ii"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "AL",
+      "destinationCode": "FW",
+      "reason": "Both schedules waive only biometric Albanian passports; the ordinary-passport code does not establish the required biometric document property for every holder.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "FW",
+      "reason": "Both schedules waive only biometric Bosnian passports; the ordinary-passport code does not establish the required biometric document property for every holder.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "FW",
+      "reason": "The Guadeloupe/Martinique schedule waives ordinary Ecuadorian passports, but the Saint-Martin/Saint-Barthélemy schedule limits Ecuador to diplomatic or service passports. The aggregate has no single nationality baseline.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "FW",
+      "reason": "Both schedules waive only biometric Moldovan passports; the ordinary-passport code does not establish the required biometric document property for every holder.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "FW",
+      "reason": "Both schedules waive only biometric Montenegrin passports; the ordinary-passport code does not establish the required biometric document property for every holder.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "FW",
+      "reason": "Both schedules waive only biometric North Macedonian passports; the ordinary-passport code does not establish the required biometric document property for every holder.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "FW",
+      "reason": "Both schedules limit Serbia's waiver to biometric passports and expressly exclude Serbian coordination-directorate passports, so the ordinary-passport code has no uniform baseline.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "FW",
+      "reason": "Both schedules waive only biometric Ukrainian passports; the ordinary-passport code does not establish the required biometric document property for every holder.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "FW",
+      "reason": "Both schedules limit Vanuatu's ordinary-passport waiver to documents issued before 25 May 2015, so the ordinary-passport code has no current uniform baseline.",
+      "searchedOfficialDomains": ["immigration.interieur.gouv.fr", "france-visas.gouv.fr", "legifrance.gouv.fr"]
+    }
+  ]
+}

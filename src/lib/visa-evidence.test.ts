@@ -696,10 +696,10 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SY", "LB", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("EG", "LB", snapshot.passports.EG.statuses.LB).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("AM")).toHaveLength(144);
+    expect(pairsFor("AM")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("AZ", "AM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "AM", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "AM", snapshot.passports.AF.statuses.AM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "AM", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("keeps Iran and Iraq evidence conservative when official nationality scope is incomplete", () => {
@@ -1246,7 +1246,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "ST");
 
-    expect(pairs).toHaveLength(56);
+    expect(pairs).toHaveLength(58);
     expect(getVisaRelationshipEvidence("CN", "ST", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "ST", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "ST", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1378,10 +1378,10 @@ describe("official visa evidence", () => {
 
     const frenchWestIndiesPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "FW");
-    expect(frenchWestIndiesPairs).toHaveLength(32);
+    expect(frenchWestIndiesPairs).toHaveLength(190);
     expect(getVisaRelationshipEvidence("NO", "FW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FR", "FW", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CO", "FW", snapshot.passports.CO.statuses.FW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("EC", "FW", snapshot.passports.EC.statuses.FW).supportsCurrentStatus).toBe(false);
   });
 
   it("maps Saint Lucia's current visa schedules and treaty waivers", () => {
@@ -1855,17 +1855,17 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GT", "MH", snapshot.passports.GT.statuses.MH).supportsCurrentStatus).toBe(false);
   });
 
-  it("maps Kiribati's named schedule and treaty evidence without inferring a residual", () => {
+  it("maps Kiribati's current exemption schedule and advance-visa complement", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "KI");
 
-    expect(pairs).toHaveLength(124);
+    expect(pairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("KI", "KI", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TZ", "KI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "KI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "KI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MT", "KI", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "KI", snapshot.passports.AF.statuses.KI).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "KI", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("keeps Albania, Georgia, and Azerbaijan aligned to independently reviewed current schedules", () => {
@@ -2489,6 +2489,30 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("supports the shared French West Indies territorial schedule without flattening document exceptions", () => {
+    for (const passportCode of ["BR", "KI", "PE", "SG"] as const) {
+      expect(snapshot.passports[passportCode].statuses.FW).toBe("visa_free");
+      expect(getVisaRelationshipEvidence(passportCode, "FW", "visa_free").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["AF", "CN", "IN", "ZA"] as const) {
+      expect(snapshot.passports[passportCode].statuses.FW).toBe("visa_required");
+      expect(getVisaRelationshipEvidence(passportCode, "FW", "visa_required").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["AL", "BA", "EC", "MD", "ME", "MK", "RS", "UA", "VU"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "FW", snapshot.passports[passportCode].statuses.FW).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("supports narrow São Tomé waivers without inferring the residual complement", () => {
+    for (const passportCode of ["CH", "ZA"] as const) {
+      expect(snapshot.passports[passportCode].statuses.ST).toBe("visa_free");
+      expect(getVisaRelationshipEvidence(passportCode, "ST", "visa_free").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["AF", "RW", "SG"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "ST", snapshot.passports[passportCode].statuses.ST).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("supports reviewed Spanish, Italian, and South Korean outbound rows", () => {
     expect(getVisaRelationshipEvidence("ES", "VG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ES", "IQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2839,6 +2863,7 @@ describe("official visa evidence", () => {
       "www.general-security.gov.lb",
       "www.mfa.am",
       "evisa.mfa.am",
+      "www.arlis.am",
       "evisa.mfa.ir",
       "www.moj.gov.iq",
       "evisa.iq",

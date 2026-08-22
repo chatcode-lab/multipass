@@ -276,6 +276,26 @@ describe("passport calculations", () => {
     }
   });
 
+  it("applies the shared French West Indies ordinary-passport waivers", () => {
+    for (const code of ["FM", "KI", "MH", "NR", "PE", "PW", "SB", "TL", "TV"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", FW: "visa_required" },
+        mobilityScore: 0,
+      })).toMatchObject({ statuses: { [code]: "citizenship", FW: "visa_free" }, mobilityScore: 1 });
+    }
+  });
+
+  it("applies South Africa's current São Tomé ordinary-passport waiver", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "ZA",
+      name: "South Africa",
+      statuses: { ZA: "citizenship", ST: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { ZA: "citizenship", ST: "visa_free" }, mobilityScore: 1 });
+  });
+
   it("applies Honduras' current CA-4 category corrections", () => {
     for (const code of ["CR", "FJ"] as const) {
       expect(applyVerifiedAccessOverrides({
