@@ -37,10 +37,11 @@ interface ReviewedArtifact {
 const args = process.argv.slice(2);
 const append = args.includes("--append");
 const replace = args.includes("--replace");
+const fromHead = args.includes("--from-head");
 if (append && replace) throw new Error("Choose either --append or --replace");
-const candidatePaths = args.filter((arg) => arg !== "--append" && arg !== "--replace");
+const candidatePaths = args.filter((arg) => arg !== "--append" && arg !== "--replace" && arg !== "--from-head");
 if (!candidatePaths.length) {
-  throw new Error("Usage: npm run evidence:promote -- [--append|--replace] <reviewed-candidate.json> [...]");
+  throw new Error("Usage: npm run evidence:promote -- [--append|--replace] [--from-head] <reviewed-candidate.json> [...]");
 }
 
 const canonicalSource = await readFile(resolve("src/data/visa-evidence.ts"), "utf8");
@@ -54,13 +55,17 @@ const existingSourceIds = new Set(
 const batches = await Promise.all(candidatePaths.map(async (candidatePath) =>
   JSON.parse(await readFile(resolve(candidatePath), "utf8")) as CandidateBatch));
 const artifactPath = resolve("src/data/reviewed-visa-evidence.json");
-const existingArtifact = append || replace
-  ? JSON.parse(await readFile(artifactPath, "utf8")) as ReviewedArtifact
-  : { batchIds: [], sources: [], policies: [] };
+const run = promisify(execFile);
+const existingArtifact = fromHead
+  ? JSON.parse((await run(
+    "git",
+    ["show", "HEAD:src/data/reviewed-visa-evidence.json"],
+    { maxBuffer: 20 * 1024 * 1024 },
+  )).stdout) as ReviewedArtifact
+  : JSON.parse(await readFile(artifactPath, "utf8")) as ReviewedArtifact;
 let committedArtifact: ReviewedArtifact | undefined;
 
 if (replace) {
-  const run = promisify(execFile);
   const { stdout: committedArtifactSource } = await run(
     "git",
     ["show", "HEAD:src/data/reviewed-visa-evidence.json"],
@@ -155,5 +160,5 @@ await writeFile(
   "utf8",
 );
 
-const action = append ? "Appended" : replace ? "Replaced" : "Promoted";
+const action = replace ? "Replaced" : append ? "Appended" : "Promoted";
 process.stdout.write(`${action} ${batches.length} batches; canonical totals: ${artifact.batchIds.length} batches, ${artifact.sources.length} sources, ${artifact.policies.length} policies.\n`);

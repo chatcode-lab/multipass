@@ -40,7 +40,7 @@ Store rules at policy level. A regional agreement or nationality list should be 
 7. Compare the supported status with the current snapshot. Record conflicts for review rather than silently changing either dataset.
 8. Run unit, route, sitemap, and structured-data tests. Manually open at least one generated pair per policy.
 9. Record the review date. Recheck mutable guidance on a schedule and laws after a reported policy change.
-10. Promote only reviewed candidates with `npm run evidence:promote -- <all-approved-candidate-paths>`. This command regenerates the complete reviewed artifact, so always pass every candidate that should remain canonical.
+10. Promote only reviewed candidates with `npm run evidence:promote -- <approved-candidate-paths>`. The command appends to the reviewed artifact; use `--replace` only for already-promoted batches and `--from-head` only to recover from the committed artifact.
 
 Good first bulk sources include government nationality lists, official open-data CSV files, and multilateral agreements. Reviewed examples in this repository cover Angola’s 98-nationality tourist exemption, Hong Kong's ordinary-passport visitor schedule and Indian pre-arrival registration, Kenya’s ETA, DR Congo’s official eVisa route, and the EU–Brazil short-stay agreement.
 
@@ -1865,6 +1865,14 @@ The independently reviewed pass adds seven current-status foreign relationships,
 Brazil's live Itamaraty treaty registry and operative texts add visa-free short-visitor relationships for Grenada, Tunisia, Trinidad and Tobago, and Ukraine. The current official Jordan Tourism Board nationality table adds Brazil's 40-JOD visa on arrival. Strong review removed a stale Trinidad and Tobago embassy page and retained that waiver at medium confidence from Brazil's current in-force treaty record alone. It also removed an uncited crossing-specific caveat from the Jordan policy.
 
 Argentina adds the same current Jordan visa-on-arrival route and a visa-free Ukraine relationship from the Verkhovna Rada's in-force bilateral agreement, which expressly covers ordinary passports for tourism and other non-remunerated visits. New Zealand and the Philippines add no relationship. A proposed New Zealand-to-Niue correction was rejected because Niue Tourism's detailed waiver schedule omits New Zealand while its FAQ names it; that internally contradictory row remains unresolved rather than being forced into visa-free or visa-on-arrival. The Philippine review likewise found no current official source that names the passport and actual issuance route for its exact 30-row residual.
+
+## Pass 194 result: final Liechtenstein, Cabo Verdean, Qatari and Mauritian outbound gaps
+
+Four independently reviewed audits add eleven currently supported relationships, raising complete-matrix evidence from 38,600 to 38,611 of 44,974 relationships (85.9%). The public `/status` matrix contains 38,611 fresh and 6,363 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 448 reviewed batches, 2,121 official sources and 1,387 policies. Regional coverage is Africa 8,439 of 11,289 (74.8%), the Americas 4,695 of 4,953 (94.8%), the Caribbean 4,508 of 4,962 (90.9%), Asia 5,310 of 6,336 (83.8%), Europe 9,977 of 10,299 (96.9%), the Middle East 1,814 of 2,970 (61.1%) and Oceania 3,868 of 4,165 (92.9%).
+
+Liechtenstein adds Bangladesh and Jordan as `visa_on_arrival` and Ukraine as `visa_free`. Bangladesh Police's live Special Branch guidance covers tourists from European countries, a geographic cohort that safely includes Liechtenstein, and preserves its 30-day, single-entry, Dhaka-airport and immigration-officer conditions.
+
+Cabo Verde adds Panama `visa_required` and corrects two unsupported fallback classifications: Jordan becomes `visa_required`, not `visa_on_arrival`, and Türkiye becomes `visa_required`, not an unconditional `evisa`. Türkiye's electronic alternative depends on a qualifying Schengen, United States, United Kingdom or Ireland visa or residence permit, so it is not the passport-only baseline. Qatar adds Ukraine `visa_free` and Turkmenistan `visa_required`, while correcting Jordan from `visa_free` to `visa_on_arrival` and Iraq from `evisa` to `visa_required`. Mauritius adds Jordan `visa_on_arrival`.
 
 ## Official bulk sources identified for later passes
 

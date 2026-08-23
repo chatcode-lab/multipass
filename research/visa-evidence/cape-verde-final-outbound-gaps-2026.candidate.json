@@ -1,0 +1,145 @@
+{
+  "batchId": "cape-verde-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "jordan-tourism-board-cape-verde-prior-visa-2026",
+      "title": "Jordan Tourism Board: visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live official Jordan Tourism Board site publishes a nationality-by-nationality arrival-visa table and expressly directs Cabo Verde nationals to obtain a visa before arrival.",
+      "supportingExcerpt": "Cape Verde | Not-Applicable | obtain a visa before you arrive."
+    },
+    {
+      "id": "panama-embassy-cabo-verde-authorized-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "Spanish and English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live official Embassy consular page expressly includes Cabo Verde in its authorized-visa cohort and describes in-person consular filing and approval before travel.",
+      "supportingExcerpt": "Cabo Verde ... you will need an authorized visa"
+    },
+    {
+      "id": "turkiye-mfa-cabo-verde-ordinary-passport-visa-2026",
+      "title": "Visa information for foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa?ios_app=true",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's live Foreign Ministry nationality schedule directly states the ordinary Cabo Verde passport rule and separately limits eVisa access to qualifying third-country-document holders.",
+      "supportingExcerpt": "Cape Verde: Ordinary and official passport holders are required to have visa to enter Türkiye."
+    }
+  ],
+  "policies": [
+    {
+      "id": "cabo-verdean-ordinary-passport-jordan-prior-visitor-visa",
+      "title": "Cabo Verdean ordinary passports: Jordan advance visitor visa",
+      "summary": "The official Jordan Tourism Board's live nationality table states that Cabo Verde nationals are not eligible for visa on arrival and must obtain a visa before arrival.",
+      "status": "visa_required",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["CV"],
+      "conditions": [
+        "Applies to Cabo Verdean ordinary-passport short visitors, who must contact the nearest Jordanian embassy and obtain a visa before travel.",
+        "Complete the Gateway2Jordan pre-departure registration and obtain its QR code before travel.",
+        "This policy does not cover work, residence, special travel documents, conditional third-country-document routes, or final admission."
+      ],
+      "sourceIds": ["jordan-tourism-board-cape-verde-prior-visa-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "cabo-verdean-ordinary-passport-panama-authorized-visitor-visa",
+      "title": "Cabo Verdean ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule expressly includes Cabo Verde in its authorized-visa cohort, requiring consular filing and approval before travel unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["CV"],
+      "conditions": [
+        "Applies to an ordinary Cabo Verdean passport holder travelling as a short visitor who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Authorized-visa applicants must appear in person at the consulate; approval may take up to 60 business days.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-cabo-verde-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on verification and document completion.",
+        "steps": [
+          "Determine that the separate third-country visa or residence waiver does not apply.",
+          "Appear in person at the competent Panamanian consulate with the required authorized-visa application documents.",
+          "Do not finalize travel arrangements until the authorized visa has been granted."
+        ]
+      }
+    },
+    {
+      "id": "cabo-verdean-ordinary-passport-turkiye-prior-visitor-visa",
+      "title": "Cabo Verdean ordinary passports: Türkiye advance visitor visa",
+      "summary": "Türkiye's current Foreign Ministry schedule says Cabo Verde ordinary-passport holders require a visa; its eVisa route is conditional on specified third-country visas or residence permits.",
+      "status": "visa_required",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["CV"],
+      "conditions": [
+        "The passport-only baseline requires a visa before travel.",
+        "A separate 30-day single-entry eVisa route may apply only with a qualifying Schengen, United States, United Kingdom or Ireland visa or residence permit and the eVisa service's other criteria.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["turkiye-mfa-cabo-verde-ordinary-passport-visa-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CV",
+      "destinationCode": "JO",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "The fallback says visa on arrival, while Jordan's current official nationality table expressly says Cabo Verde is not arrival-eligible and requires a visa before travel.",
+      "sourceIds": ["jordan-tourism-board-cape-verde-prior-visa-2026"]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The fallback treats Türkiye as an eVisa route, while the current Foreign Ministry schedule requires ordinary Cabo Verde passports to hold a visa and limits eVisa eligibility to holders of qualifying third-country documents.",
+      "sourceIds": ["turkiye-mfa-cabo-verde-ordinary-passport-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"CV","destinationCode":"CF","reason":"No current official source reviewed establishes ordinary Cabo Verdean visitor issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"TD","reason":"Chad's portal does not establish ordinary Cabo Verdean eligibility and actual electronic issuance.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"KM","reason":"No current official source reviewed establishes ordinary Cabo Verdean visitor issuance timing.","searchedOfficialDomains":["gouvernement.km","interieur.gouv.km","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"CG","reason":"No current official source reviewed establishes ordinary Cabo Verdean visitor issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"DJ","reason":"Djibouti's electronic service does not publish an ordinary Cabo Verdean eligibility result; portal availability alone is insufficient.","searchedOfficialDomains":["egouv.dj","evisa.gouv.dj","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"SS","reason":"South Sudan's portal does not publish ordinary Cabo Verdean eligibility and actual issuance timing.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"SD","reason":"No current official source reviewed establishes ordinary Cabo Verdean visitor eligibility and actual visa issuance timing.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"TN","reason":"Current Tunisian and Cabo Verdean official material reviewed does not positively establish the ordinary Cabo Verdean short-visitor waiver.","searchedOfficialDomains":["diplomatie.gov.tn","interieur.gov.tn","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"GD","reason":"Grenada's available official nationality schedule is stale and no current source establishes the ordinary Cabo Verdean baseline.","searchedOfficialDomains":["mofa.gov.gd","gov.gd","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"TT","reason":"Trinidad and Tobago's current no-visa list omits Cabo Verde but does not define the omitted cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"AF","reason":"No current official source establishes a stable usable ordinary Cabo Verdean visitor route amid restricted entry arrangements.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"BD","reason":"Bangladesh's current material does not establish ordinary Cabo Verdean tourist arrival eligibility or another exact issuance route.","searchedOfficialDomains":["voa.specialbranch.gov.bd","mofa.gov.bd","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"KG","reason":"Kyrgyzstan's portal does not publish a retrievable ordinary Cabo Verdean eligibility and issuance result.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"MM","reason":"Current official material reviewed does not establish an available ordinary Cabo Verdean visitor issuance route amid operational restrictions.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"KP","reason":"No current official source establishes an available ordinary Cabo Verdean short-visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.kp","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"TM","reason":"No current official source establishes whether the ordinary Cabo Verdean visitor visa is advance, electronic or border-issued.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"MK","reason":"North Macedonia's current public page states conditional third-country waivers but no unconditional Cabo Verdean passport result.","searchedOfficialDomains":["mfa.gov.mk","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"UA","reason":"Ukraine's retrievable nationality table is expressly dated June 2023 and is retained as stale rather than current evidence.","searchedOfficialDomains":["mfa.gov.ua","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"IR","reason":"Current Iranian official material reviewed does not establish ordinary Cabo Verdean visitor eligibility and actual issuance timing.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"IQ","reason":"Iraq's current services do not publish ordinary Cabo Verdean eligibility and one federal issuance result.","searchedOfficialDomains":["evisa.iq","mofa.gov.iq","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"KW","reason":"Current Kuwaiti official material reviewed does not establish an unconditional ordinary Cabo Verdean visitor route and issuance timing.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"OM","reason":"Oman's current public route is conditional and does not establish a nationality-only ordinary Cabo Verdean baseline.","searchedOfficialDomains":["evisa.rop.gov.om","fm.gov.om","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"PS","reason":"Crossing and permit controls do not establish a Palestine-wide ordinary Cabo Verdean passport ETA or visa status.","searchedOfficialDomains":["gov.il","moi.pna.ps","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"SA","reason":"Saudi Arabia's current visitor routes do not establish unconditional ordinary Cabo Verdean eligibility and actual issuance timing.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"SY","reason":"No current official source reviewed establishes ordinary Cabo Verdean visitor visa issuance timing.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mnec.gov.cv"]},
+    {"passportCode":"CV","destinationCode":"SB","reason":"Solomon Islands' current material does not map ordinary Cabo Verdean visitors to one nationality-specific issuance route.","searchedOfficialDomains":["commerce.gov.sb","mfaet.gov.sb","mnec.gov.cv"]}
+  ]
+}

@@ -81,11 +81,13 @@ Official evidence is stored as policy-level records in `src/data/visa-evidence.t
 
 Narrow destination-authority corrections live in `src/data/access-overrides.ts` and are reapplied to every complete staged snapshot before scores and combination insights are published. For assisted evidence collection, generate a bounded packet with `npm run --silent evidence:packet -- <batch-id>`, then validate the model's candidate JSON with `npm run evidence:validate -- <candidate.json>`. The full small-model handoff and strong-review gate are documented in `docs/visa-evidence-model-handoff.md`.
 
-After a human or stronger-model review opens every official source and resolves conflicts, regenerate the production evidence artifact with every approved candidate (the command replaces, rather than appends to, the artifact):
+After a human or stronger-model review opens every official source and resolves conflicts, append the approved candidates to the production evidence artifact:
 
 ```bash
 npm run evidence:promote -- research/visa-evidence/<approved-batch-1>.candidate.json research/visa-evidence/<approved-batch-2>.candidate.json
 ```
+
+Use `--replace` only to update candidates that are already promoted. `--from-head` is a recovery option that starts from the committed artifact before applying the selected candidates.
 
 The generated `src/data/reviewed-visa-evidence.json` contains only publishable source and policy fields. Candidate-only excerpts, confidence notes, conflicts, and unresolved-pair research remain outside the production bundle.
 
