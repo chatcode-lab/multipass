@@ -1850,6 +1850,14 @@ Switzerland adds Bangladesh `visa_on_arrival`. Independent review rejected the i
 
 Rwanda, Malaysia and South Korea add no normalized relationships. Rwanda's undated DGIE table conflicts with or is weaker than current destination evidence. Malaysia's remaining routes depend on stale schedules, unnamed nationality cohorts, conditional documents or generic portals. South Korea's Ukraine page combines a 90-day visa waiver with an operative Korean travel prohibition that the taxonomy cannot represent safely; its other hard-tail portals do not publish Republic of Korea passport eligibility. These 76 relationships remain uncovered rather than being forced into misleading labels.
 
+## Pass 192 result: final Thai, Uzbek, Bruneian and Kazakh outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add no normalized relationship, so complete-matrix coverage remains 38,593 of 44,974 relationships (85.8%). The public `/status` matrix remains at 38,593 fresh and 6,381 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 440 reviewed batches, 2,096 official sources and 1,369 policies.
+
+Thailand's current 4 August 2026 Foreign Ministry schedule has no positive ordinary-passport outcome in the scoped set: its Bangladesh, Kuwait, Mali, Palestine, Trinidad and Tobago, and Tunisia arrangements are limited to diplomatic or official documents. Uzbekistan's seven current Foreign Ministry promotions were already canonical and outside this final residual set; the remaining rows still lack nationality-specific issuance timing. Brunei's remaining routes depend on stale schedules, unnamed portal eligibility, invitation or third-country-document conditions, and route-specific controls.
+
+Kazakhstan's live Foreign Ministry table distinguishes ordinary passports but gives only bare `visa` labels for most scoped destinations, which do not prove advance, electronic or arrival issuance. Iran's 14-day ordinary-passport waiver is already canonical and was outside this final set. Djibouti and South Sudan portals do not publish Kazakh eligibility. The 108 audited relationships remain uncovered rather than inferring issuance timing or nationality coverage.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
