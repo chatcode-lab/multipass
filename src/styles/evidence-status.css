@@ -187,7 +187,7 @@
 
 .evidence-status-toolbar {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(190px, .58fr);
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(190px, .58fr) auto;
   gap: 10px;
   margin-top: 12px;
 }
@@ -201,6 +201,33 @@
 .evidence-status-toolbar select {
   min-width: 0;
   width: 100%;
+}
+
+.evidence-status-refresh {
+  display: inline-flex;
+  min-height: 42px;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 5px;
+  background: var(--white);
+  color: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+
+.evidence-status-refresh:hover:not(:disabled) { border-color: var(--green); background: var(--paper-2); }
+.evidence-status-refresh:disabled { cursor: wait; opacity: .68; }
+
+.evidence-status-refresh-state {
+  margin: 10px 0 -2px;
+  color: var(--ink-soft);
+  font-size: 12px;
 }
 
 .evidence-status-summary {

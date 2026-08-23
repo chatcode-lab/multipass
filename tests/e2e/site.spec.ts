@@ -688,14 +688,14 @@ test("destination passport filters support controls, query parameters, and tie-l
   await expect(page).toHaveURL(/#passport-access$/);
 });
 
-test("unindexed evidence matrix audits every passport against a destination region", async ({ page, request }) => {
+test("public evidence matrix audits every passport against a destination region", async ({ page, request }) => {
   const legacy = await request.get("/evidence-status?region=EUROPE&state=pending", { maxRedirects: 0 });
   expect(legacy.status()).toBe(301);
   expect(legacy.headers().location).toMatch(/\/status\?region=EUROPE&state=pending$/);
 
   const response = await page.goto("/status?region=EUROPE");
-  expect(response?.headers()["x-robots-tag"]).toBe("noindex, nofollow");
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex,nofollow");
+  expect(response?.headers()["x-robots-tag"]).toBeUndefined();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Evidence coverage matrix.");
   await expect(page.locator(".evidence-matrix-table")).toBeVisible({ timeout: 15_000 });
   await expect(page.locator(".evidence-completion")).toContainText("Overall completion");
@@ -703,6 +703,7 @@ test("unindexed evidence matrix audits every passport against a destination regi
   await expect(page.locator(".evidence-completion")).toContainText("Stale");
   await expect(page.locator(".evidence-completion")).toContainText("Old");
   await expect(page.locator(".evidence-completion")).toContainText("Fresh");
+  await expect(page.getByRole("button", { name: "Refresh status" })).toBeVisible();
   await expect(page.locator(".evidence-matrix-table tbody tr")).toHaveCount(199);
   await expect(page.locator(".evidence-status-summary")).toContainText("199 passports × 52 destinations");
 
@@ -735,7 +736,7 @@ test("unindexed evidence matrix audits every passport against a destination regi
   const sitemap = await request.get("/sitemap.xml");
   const sitemapText = await sitemap.text();
   expect(sitemapText).not.toContain("evidence-status");
-  expect(sitemapText).not.toContain("https://multipassrank.com/status");
+  expect(sitemapText).toContain("https://multipassrank.com/status");
 });
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {

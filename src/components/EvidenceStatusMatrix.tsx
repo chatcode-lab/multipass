@@ -1,4 +1,4 @@
-import { Search } from "lucide-react";
+import { RefreshCw, Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import type { EvidenceStatusCell, EvidenceStatusRegion } from "@/lib/evidence-status";
 import { formatRegion } from "@/lib/geography";
@@ -105,20 +105,32 @@ export default function EvidenceStatusMatrix({
   const [passportQuery, setPassportQuery] = useState("");
   const [destinationQuery, setDestinationQuery] = useState("");
   const [matrix, setMatrix] = useState<EvidenceStatusRegion | null>(null);
+  const [displayedRegion, setDisplayedRegion] = useState<Region>(initialRegion);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [requestKey, setRequestKey] = useState(0);
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch(`/api/v1/evidence-status?region=${encodeURIComponent(region)}&schema=2`, { signal: controller.signal })
+    const refresh = requestKey ? `&refresh=${requestKey}` : "";
+    fetch(`/api/v1/evidence-status?region=${encodeURIComponent(region)}&schema=2${refresh}`, {
+      signal: controller.signal,
+      cache: requestKey ? "no-store" : "default",
+    })
       .then(async (response) => {
         if (!response.ok) throw new Error(`Evidence API returned ${response.status}`);
         return response.json() as Promise<EvidenceStatusRegion>;
       })
-      .then(setMatrix)
+      .then((nextMatrix) => {
+        setMatrix(nextMatrix);
+        setDisplayedRegion(nextMatrix.region);
+      })
       .catch((reason: unknown) => {
         if (controller.signal.aborted) return;
         setError(reason instanceof Error ? reason.message : "Unable to load the evidence matrix");
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setIsLoading(false);
       });
     return () => controller.abort();
   }, [region, requestKey]);
@@ -206,8 +218,8 @@ export default function EvidenceStatusMatrix({
             aria-pressed={region === value}
             onClick={() => {
               if (region === value) return;
-              setMatrix(null);
               setError(null);
+              setIsLoading(true);
               setRegion(value);
             }}
             key={value}
@@ -236,7 +248,26 @@ export default function EvidenceStatusMatrix({
             <option value="verified">Verified only</option>
           </select>
         </label>
+        <button
+          className="evidence-status-refresh"
+          type="button"
+          disabled={isLoading}
+          onClick={() => {
+            setError(null);
+            setIsLoading(true);
+            setRequestKey((value) => value + 1);
+          }}
+        >
+          <RefreshCw size={16} aria-hidden="true" />
+          {isLoading ? "Refreshing status…" : "Refresh status"}
+        </button>
       </div>
+
+      {matrix && isLoading && (
+        <p className="evidence-status-refresh-state" role="status">
+          Loading {formatRegion(region)} evidence. Showing the previous {formatRegion(displayedRegion)} snapshot until the update is ready.
+        </p>
+      )}
 
       {matrix && (
         <div className="evidence-status-summary" aria-live="polite">
@@ -250,10 +281,10 @@ export default function EvidenceStatusMatrix({
 
       {error && (
         <div className="evidence-status-error" role="alert">
-          <strong>Matrix unavailable.</strong> {error}
+          <strong>{matrix ? "Latest update unavailable." : "Matrix unavailable."}</strong> {error}
           <button type="button" onClick={() => {
-            setMatrix(null);
             setError(null);
+            setIsLoading(true);
             setRequestKey((value) => value + 1);
           }}>Try again</button>
         </div>
@@ -265,7 +296,7 @@ export default function EvidenceStatusMatrix({
       {matrix && visibleDestinationIndexes.length > 0 && !visibleRows.length && <p className="empty-state">No passport rows match those filters.</p>}
 
       {matrix && visibleDestinationIndexes.length > 0 && visibleRows.length > 0 && (
-        <div className="evidence-matrix-scroll" tabIndex={0} aria-label={`${formatRegion(region)} evidence matrix; scroll horizontally to see destinations`}>
+        <div className="evidence-matrix-scroll" tabIndex={0} aria-busy={isLoading} aria-label={`${formatRegion(displayedRegion)} evidence matrix; scroll horizontally to see destinations`}>
           <table className="evidence-matrix-table">
             <thead>
               <tr>

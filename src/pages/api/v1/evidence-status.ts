@@ -4,6 +4,7 @@ import { buildEvidenceStatusRegion } from "@/lib/evidence-status";
 import { REGIONS, type Region } from "@/lib/types";
 
 export const GET: APIRoute = async ({ locals, url }) => {
+  const bypassCache = url.searchParams.has("refresh");
   const requestedRegion = (url.searchParams.get("region") ?? "EUROPE").toUpperCase();
   if (!REGIONS.includes(requestedRegion as Region)) {
     return Response.json(
@@ -29,7 +30,7 @@ export const GET: APIRoute = async ({ locals, url }) => {
 
   return Response.json(matrix, {
     headers: {
-      "Cache-Control": "public, max-age=300, s-maxage=1800, stale-while-revalidate=86400",
+      "Cache-Control": bypassCache ? "no-store" : "public, max-age=300, s-maxage=1800, stale-while-revalidate=86400",
       "X-Content-Type-Options": "nosniff",
       "X-Robots-Tag": "noindex, nofollow",
     },

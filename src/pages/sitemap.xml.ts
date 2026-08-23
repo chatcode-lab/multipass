@@ -20,6 +20,7 @@ export const GET: APIRoute = async ({ locals }) => {
     "",
     "rank",
     "destinations",
+    "status",
     "compare",
     "dual-passport",
     "best-passport-combination",

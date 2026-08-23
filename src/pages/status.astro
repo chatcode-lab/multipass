@@ -30,18 +30,15 @@ const checkedDate = new Intl.DateTimeFormat("en-GB", {
 }).format(new Date(manifest.checkedAt));
 
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=1800, stale-while-revalidate=86400");
-Astro.response.headers.set("X-Robots-Tag", "noindex, nofollow");
 ---
 
 <BaseLayout
   title="Official Evidence Coverage Matrix | MultiPass Rank"
-  description="Internal audit matrix showing official evidence coverage for every passport and destination relationship in MultiPass Rank."
+  description="Explore official evidence coverage for every passport and destination relationship in MultiPass Rank."
   canonical="/status"
-  noindex
-  robots="noindex,nofollow"
 >
   <header class="page-intro evidence-status-intro">
-    <span class="eyebrow">Internal data audit</span>
+    <span class="eyebrow">Evidence coverage</span>
     <h1>Evidence coverage matrix.</h1>
     <p>
       Review the current access classification, official-evidence state, and latest source-review date for every passport–destination relationship. Destinations load one region at a time to keep the audit usable.
@@ -53,8 +50,7 @@ Astro.response.headers.set("X-Robots-Tag", "noindex, nofollow");
       <span>Access snapshot checked {checkedDate}</span>
     </div>
     <p class="evidence-status-intro__note">
-      This operational page is intentionally absent from navigation and the sitemap and is marked <code>noindex, nofollow</code>.
-      The initial view is {formatRegion(initialRegion)}.
+      The initial view is {formatRegion(initialRegion)}. Select a destination region to review its current coverage.
     </p>
   </header>
 
