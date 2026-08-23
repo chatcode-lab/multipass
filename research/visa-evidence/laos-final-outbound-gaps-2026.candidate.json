@@ -1,0 +1,179 @@
+{
+  "batchId": "laos-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-laos-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-laos-april-2024-schedule-current-2026",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The Embassy's currently linked schedule is marked updated April 2024, separately names the Lao People's Democratic Republic, and places it Prior to Arrival.",
+      "supportingExcerpt": "Lao People's Democratic Republic Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-laos-authorized-visa-current-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy guidance names Laos in its authorized-visa cohort and says applicants must appear personally at the consulate.",
+      "supportingExcerpt": "Kyrgyzstan, Laos, Lesotho, Lebanon, Liberia"
+    },
+    {
+      "id": "us-state-laos-full-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The State Department's live PP 10998 implementation notice, last updated February 2, 2026, names Laos in the fully suspended nationality cohort.",
+      "supportingExcerpt": "Iran, Laos, Libya, Mali, Niger, Sierra Leone"
+    },
+    {
+      "id": "us-code-geographic-united-states-laos-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands, and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "lao-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Lao ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule places the Lao People's Democratic Republic in its prior-to-arrival cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["LA"],
+      "conditions": [
+        "Applies to an ordinary Lao passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained from a Grenadian mission or consulate before travel.",
+        "Work, residence, study, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-laos-2026", "grenada-embassy-laos-april-2024-schedule-current-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "lao-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Lao ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Laos in its authorized-visa cohort for advance consular approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["LA"],
+      "conditions": [
+        "Applies to an ordinary Lao passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "The cited Embassy says authorized-visa approval may take up to 60 business days and requires an in-person consular application.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-laos-authorized-visa-current-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "LA",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The current full suspension preserves valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-laos-full-suspension-current-2026"]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-laos-full-suspension-current-2026", "us-code-geographic-united-states-laos-current-2026"]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-laos-full-suspension-current-2026", "us-code-geographic-united-states-laos-current-2026"]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-laos-full-suspension-current-2026", "us-code-geographic-united-states-laos-current-2026"]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-laos-full-suspension-current-2026", "us-code-geographic-united-states-laos-current-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"LA","destinationCode":"AF","reason":"No current Afghan or Lao primary source establishes a usable ordinary Lao-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mofa.gov.la"]},
+    {"passportCode":"LA","destinationCode":"AO","reason":"Angola's current tourist-exemption list does not name Laos, while generic tourist-visa material does not establish the passport-only route.","searchedOfficialDomains":["mirex.gov.ao","governo.gov.ao","smevisa.gov.ao"]},
+    {"passportCode":"LA","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish ordinary Lao-passport eligibility or actual visitor-visa issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immi.gov.bd"]},
+    {"passportCode":"LA","destinationCode":"BF","reason":"No current Burkina Faso or Lao primary source establishes ordinary Lao-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gov.bf","servicepublic.gov.bf","mofa.gov.la"]},
+    {"passportCode":"LA","destinationCode":"CF","reason":"No current Central African or Lao primary source establishes ordinary Lao-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mofa.gov.la"]},
+    {"passportCode":"LA","destinationCode":"TD","reason":"Chad's official portal does not publish a reproducible ordinary Lao-passport eligibility result or prove actual issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"LA","destinationCode":"KM","reason":"Comorian law preserves unenumerated conventions and special rules while no current nationality schedule maps the ordinary Lao passport.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km"]},
+    {"passportCode":"LA","destinationCode":"CG","reason":"No current Republic of the Congo or Lao primary source establishes ordinary Lao-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mofa.gov.la"]},
+    {"passportCode":"LA","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not publish a reproducible ordinary Lao-passport eligibility or exemption result.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj"]},
+    {"passportCode":"LA","destinationCode":"GW","reason":"No current Guinea-Bissau or Lao primary source establishes ordinary Lao-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw"]},
+    {"passportCode":"LA","destinationCode":"HN","reason":"Honduras's accessible official schedules do not provide a current reconciled ordinary Lao-passport visitor classification.","searchedOfficialDomains":["inm.gob.hn","sreci.gob.hn"]},
+    {"passportCode":"LA","destinationCode":"IR","reason":"Iran's official visa endpoints do not expose a stable current ordinary Lao-passport nationality decision or reliably retrievable issuance path.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir"]},
+    {"passportCode":"LA","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Lao-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"LA","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Lao-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"LA","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no ordinary Lao-passport nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"LA","destinationCode":"ML","reason":"Mali's current official assistant depends on nationality, passport type, residence and filing location without a stable Lao visitor result.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"LA","destinationCode":"MH","reason":"Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes an ordinary Lao-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov"]},
+    {"passportCode":"LA","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Lao-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"LA","destinationCode":"KP","reason":"No current DPRK or Lao primary source establishes a usable ordinary Lao-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mofa.gov.la"]},
+    {"passportCode":"LA","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Lao-passport result; generic application material and third-country waivers do not establish the baseline.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"LA","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Lao-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om"]},
+    {"passportCode":"LA","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Lao-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"LA","destinationCode":"PR","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"LA","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Lao eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st"]},
+    {"passportCode":"LA","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Lao-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com"]},
+    {"passportCode":"LA","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Lao application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl"]},
+    {"passportCode":"LA","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Lao-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb"]},
+    {"passportCode":"LA","destinationCode":"SS","reason":"Current EAC sources describe Partner-State visa-free entry, while South Sudan's current MFA table does not establish an ordinary Lao-passport visitor route.","searchedOfficialDomains":["eac.int","mofaic.gov.ss","evisa.gov.ss"]},
+    {"passportCode":"LA","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Lao-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd"]},
+    {"passportCode":"LA","destinationCode":"SY","reason":"Current Syrian official material does not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Lao passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"LA","destinationCode":"TT","reason":"Trinidad and Tobago's named waiver schedule does not include Laos, while its electronic service applies only after visa-required nationality eligibility is established. No complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","homelandsecurity.gov.tt","foreign.gov.tt"]},
+    {"passportCode":"LA","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Lao-passport baseline. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn"]},
+    {"passportCode":"LA","destinationCode":"TM","reason":"No current Turkmen or Lao primary source establishes ordinary Lao-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm"]},
+    {"passportCode":"LA","destinationCode":"US","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov"]},
+    {"passportCode":"LA","destinationCode":"VI","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"LA","destinationCode":"GU","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"LA","destinationCode":"MP","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]}
+  ]
+}
