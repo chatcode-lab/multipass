@@ -1,0 +1,218 @@
+{
+  "batchId": "czechia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "czech-mfa-djibouti-tourist-evisa-2026",
+      "title": "Djibouti: entry visa regime",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/afrika/dzibuti/cestovani/visa.html",
+      "publisher": "Ministry of Foreign Affairs of the Czech Republic",
+      "jurisdiction": "Czechia / Djibouti",
+      "kind": "government-guidance",
+      "language": "Czech",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Czech MFA Consular Department traveller database expressly gives the ordinary Czech-citizen tourist entry route and distinguishes it from other purposes.",
+      "supportingExcerpt": "Pro cesty je povinné si předem vyřídit turistické eVisa (elektronické vízum online)."
+    },
+    {
+      "id": "czech-mfa-south-sudan-tourist-evisa-2026",
+      "title": "South Sudan: entry visa regime",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/afrika/jizni_sudan/cestovani/visa.html",
+      "publisher": "Ministry of Foreign Affairs of the Czech Republic",
+      "jurisdiction": "Czechia / South Sudan",
+      "kind": "government-guidance",
+      "language": "Czech",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Czech MFA Consular Department traveller database expressly requires a pre-travel tourist eVisa for Czech citizens and says the issued visa must be printed.",
+      "supportingExcerpt": "O eVisa se žádá online na oficiálních stránkách evisa.gov.ss."
+    }
+  ],
+  "policies": [
+    {
+      "id": "czech-ordinary-passport-djibouti-tourist-evisa-2026",
+      "title": "Czech ordinary passports: Djibouti electronic tourist visa",
+      "summary": "Czech MFA guidance requires Czech tourists to obtain Djibouti's eVisa online before travel and says airport visa applications are unavailable.",
+      "status": "evisa",
+      "destinationCodes": ["DJ"],
+      "passportCodes": ["CZ"],
+      "conditions": [
+        "Apply before travel through Djibouti's official eVisa service; the stated tourist eVisa is single entry and valid up to 90 days.",
+        "Czech MFA says visa applications on arrival have not been available since 2019. Work, study, residence, special documents, carrier controls and final admission remain separate.",
+        "Recheck before travel because the live Czech MFA entry record does not display a substantive update date."
+      ],
+      "sourceIds": ["czech-mfa-djibouti-tourist-evisa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.gouv.dj/",
+        "label": "Djibouti official eVisa",
+        "processingTime": "Czech MFA reports processing can take up to two weeks.",
+        "steps": [
+          "Submit the tourist application through the official eVisa service before travel.",
+          "Print the issued visa and keep it with the passport for entry."
+        ]
+      }
+    },
+    {
+      "id": "czech-ordinary-passport-south-sudan-tourist-evisa-2026",
+      "title": "Czech ordinary passports: South Sudan electronic tourist visa",
+      "summary": "Czech MFA guidance requires Czech tourists to obtain South Sudan's eVisa online before travel and present the printed issued visa at entry.",
+      "status": "evisa",
+      "destinationCodes": ["SS"],
+      "passportCodes": ["CZ"],
+      "conditions": [
+        "Apply before travel through South Sudan's official eVisa service; Czech MFA says the issued visa must be printed and carried in the passport.",
+        "Czech MFA says airport visa applications are unavailable. The alternative embassy route, registration after arrival, work, residence, transit, special documents, carrier controls and final admission remain separate.",
+        "Recheck before travel because the live Czech MFA entry record does not display a substantive update date."
+      ],
+      "sourceIds": ["czech-mfa-south-sudan-tourist-evisa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.gov.ss/",
+        "label": "South Sudan official eVisa",
+        "processingTime": "Czech MFA reports processing of two to three days.",
+        "steps": [
+          "Submit the tourist eVisa application through the official service before travel.",
+          "Print the issued visa and present it with the passport at entry."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CZ",
+      "destinationCode": "DJ",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The fallback labels Djibouti visa on arrival, but Czech MFA requires a tourist eVisa before travel and says airport visa applications are unavailable.",
+      "sourceIds": ["czech-mfa-djibouti-tourist-evisa-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "CZ",
+      "destinationCode": "AF",
+      "reason": "No current official source reviewed establishes a usable ordinary Czech-passport short-visitor issuance route amid Afghanistan's operational restrictions.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "VG",
+      "reason": "No current official source positively maps an ordinary Czech passport to British Virgin Islands visitor treatment; conditional third-country-document paths are not baseline evidence.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "gov.vg", "bvi.gov.vg", "laws.gov.vg"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "BF",
+      "reason": "The available Czech Embassy description of Burkina Faso arrival access is from 2023 and the current official portal does not map Czech ordinary-passport eligibility; no route is promoted.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "visaburkina.bf", "diplomatie.gov.bf"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "CF",
+      "reason": "No current official source reviewed establishes the ordinary Czech-passport visitor rule and actual issuance timing for the Central African Republic.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "diplomatie.gouv.cf", "cemac.int"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "TD",
+      "reason": "A live eVisa site claims universal online processing, but no independently retrievable Chadian central-government source authenticates the claim for Czech ordinary passports.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "evisa.td", "diplomatie.gouv.td", "securite.gouv.td"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "KM",
+      "reason": "No current official source reviewed establishes an ordinary Czech-passport visitor channel and actual issuance timing for Comoros.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "justice.gouv.km", "egouv.km"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "CG",
+      "reason": "Czech MFA confirms a visa is needed but no current official source reviewed establishes the ordinary Czech-passport visitor issuance channel and timing.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "diplomatie.gouv.cg", "dgrsp.cg"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "CI",
+      "reason": "Côte d’Ivoire's airport-printing process is evidenced, but the available Czech passport-specific description is from 2023; no current Czech ordinary-passport eligibility evidence is inferred.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "snedai.com", "diplomatie.gouv.ci"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "GW",
+      "reason": "No current official source establishes whether an ordinary Czech tourist is issued a Guinea-Bissau visa at a mission, electronically or on arrival.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mne.gw", "gov.gw"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "IR",
+      "reason": "Czech MFA's August 2025 guidance limits tourist visas to organised Iranian travel-agency tours; this conditional route does not establish a normal ordinary Czech visitor baseline.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mfa.gov.ir", "evisatraveller.mfa.ir"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "IQ",
+      "reason": "Czech MFA says border issuance requires a prior electronic application, but does not establish whether that application results in electronic issuance or another issuance step.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "eservice.evisa.iq", "moi.gov.iq"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "LR",
+      "reason": "Czech MFA mentions an application at Liberia's Embassy in Brussels, but does not establish that this is the sole ordinary Czech tourist issuance route or its current timing.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mofa.gov.lr", "immigration.gov.lr"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "ML",
+      "reason": "No current official source reviewed establishes ordinary Czech-passport visitor treatment and issuance timing for Mali.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "diplomatiemdc.gouv.ml", "securite.gouv.ml"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "NE",
+      "reason": "No current official source reviewed maps an ordinary Czech passport to a Niger tourist issuance route and timing.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "diplomatie.gouv.ne", "interieur.gouv.ne"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "KP",
+      "reason": "No current official source reviewed establishes ordinary Czech-passport tourist eligibility and a usable visitor issuance route; closure and permission cases are not normalized.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mfa.gov.kp", "naenara.com.kp"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "PS",
+      "reason": "Israeli, West Bank and Gaza access controls do not establish one destination-wide ordinary Czech visitor status; the fallback ETA is not promoted.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mfae.gov.ps", "gov.il", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "SL",
+      "reason": "Czech MFA identifies a Sierra Leone embassy application but does not establish exclusivity or reconcile the current electronic and airport-issuance descriptions.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "slid.gov.sl", "evisa.sl", "ntb.gov.sl"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "SD",
+      "reason": "The available Czech consular-visa description does not establish a current operational ordinary visitor route amid Sudan's conflict and is not promoted.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mofa.gov.sd", "moi.gov.sd"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "SY",
+      "reason": "The Czech mission-visa description contains materially dated operational detail and no current official source establishes an ordinary Czech visitor issuance route.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mofaex.gov.sy", "moi.gov.sy"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "TM",
+      "reason": "No current official source distinguishes a Czech ordinary tourist baseline from invitation-dependent or special processing for Turkmenistan.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "migration.gov.tm", "mfa.gov.tm"]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "UA",
+      "reason": "Ukraine's live nationality table is not current enough under the documented decision; no newer Ukrainian primary source was found that safely replaces it for Czech ordinary passports.",
+      "searchedOfficialDomains": ["mzv.gov.cz", "mfa.gov.ua", "dpsu.gov.ua"]
+    }
+  ]
+}

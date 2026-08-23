@@ -60,5 +60,10 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.HK.statuses.AO).toBe("visa_free");
     expect(snapshot.passports.HK.statuses.BO).toBe("visa_on_arrival");
     expect(snapshot.passports.DM.statuses.TR).toBe("visa_required");
+    expect(snapshot.passports.HU.statuses.TD).toBe("evisa");
+    expect(snapshot.passports.HU.statuses.CI).toBe("visa_on_arrival");
+    expect(snapshot.passports.CZ.statuses.DJ).toBe("evisa");
+    expect(snapshot.passports.SI.statuses.IR).toBe("evisa");
+    expect(snapshot.passports.SI.statuses.SS).toBe("visa_required");
   });
 });
