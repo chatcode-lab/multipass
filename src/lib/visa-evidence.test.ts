@@ -1714,7 +1714,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(76);
+    expect(pairs).toHaveLength(78);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_free").supportsCurrentStatus).toBe(false);
@@ -1764,14 +1764,14 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PE");
 
-    expect(pairs).toHaveLength(197);
+    expect(pairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("GE", "PE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "PE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "PE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PE", "PE", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "PE", snapshot.passports.CN.statuses.PE).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "PE", snapshot.passports.IN.statuses.PE).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("VE", "PE", snapshot.passports.VE.statuses.PE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("VE", "PE", snapshot.passports.VE.statuses.PE).supportsCurrentStatus).toBe(true);
   });
 
   it("maps St Helena's eVisa schedule and border-issued short-term entry permit", () => {
@@ -3047,6 +3047,36 @@ describe("official visa evidence", () => {
       ["AG", "US"],
       ["MH", "UA"],
       ["NR", "BZ"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
+  it("covers reviewed Timorese, Venezuelan, Zambian and Zimbabwean residuals conservatively", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["TL", "GD", "visa_required"],
+      ["TL", "IS", "visa_free"],
+      ["VE", "PE", "visa_required"],
+      ["ZM", "GD", "visa_free"],
+      ["ZM", "PA", "visa_required"],
+      ["ZW", "GD", "visa_required"],
+      ["ZW", "PA", "visa_required"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["TL", "PA"],
+      ["VE", "US"],
+      ["ZM", "US"],
+      ["ZW", "US"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(

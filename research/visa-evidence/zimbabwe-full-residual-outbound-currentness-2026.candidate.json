@@ -1,0 +1,190 @@
+{
+  "batchId": "zimbabwe-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "zimbabwe-mfa-ordinary-passport-scope",
+      "title": "Zimbabwe Ministry of Foreign Affairs and International Trade: passport services",
+      "url": "https://zimfa.gov.zw/index.php/about-us",
+      "publisher": "Ministry of Foreign Affairs and International Trade, Government of Zimbabwe",
+      "jurisdiction": "Zimbabwe",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Zimbabwe's current Foreign Ministry service description expressly distinguishes ordinary, service and diplomatic passports among official documents issued to Zimbabweans.",
+      "supportingExcerpt": "Facilitate the issuance of all official documents such as ordinary, service and diplomatic passports."
+    },
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page states that visa requirements depend on citizenship and currently links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-zimbabwe-apr-2024-schedule",
+      "title": "Visa requirements for traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule identifies itself as updated April 2024, names Zimbabwe, and defines Prior to Arrival as a visa obtained before travel.",
+      "supportingExcerpt": "Zimbabwe — Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-zimbabwe-stamped-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy consular page directly places Zimbabwe in the stamped-visa cohort and requires the issued visa to be stamped at the consulate before travel.",
+      "supportingExcerpt": "Stamped Visa ... Zimbabwe"
+    },
+    {
+      "id": "us-state-zimbabwe-partial-suspension-2026",
+      "title": "Suspension of visa issuance to foreign nationals",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "United States Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The current State Department notice, last updated 2 February 2026, implements Proclamation 10998 and expressly includes Zimbabwe in the partial suspension of B-1/B-2 visitor visa issuance and entry effective 1 January 2026.",
+      "supportingExcerpt": "partially suspended visa issuance ... Zimbabwe"
+    },
+    {
+      "id": "us-code-geographic-united-states-zimbabwe-2026",
+      "title": "8 U.S.C. 1101: Definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official current U.S. Code compilation defines United States geographically in the INA to include Puerto Rico, Guam, the U.S. Virgin Islands and CNMI.",
+      "supportingExcerpt": "means the continental United States, Alaska, Hawaii, Puerto Rico, Guam, the Virgin Islands ... and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "grenada-zimbabwe-ordinary-passports-prior-to-arrival-visa",
+      "title": "Grenada: Zimbabwean ordinary passports",
+      "summary": "Grenada's active Embassy nationality schedule assigns Zimbabwean visitors to Prior to Arrival, defined as mission or consular visa issuance before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["ZW"],
+      "conditions": [
+        "Applies to a current ordinary Zimbabwean passport for short visitor travel.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained at a Grenadian mission or consulate before travel.",
+        "Work, residence, diplomatic, official, service, special-document and final-admission treatment are outside this classification.",
+        "The actively linked schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement."
+      ],
+      "sourceIds": ["zimbabwe-mfa-ordinary-passport-scope", "grenada-embassy-visitors-current-2026", "grenada-embassy-zimbabwe-apr-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "panama-zimbabwe-ordinary-passports-stamped-visa",
+      "title": "Panama: Zimbabwean ordinary passports",
+      "summary": "Panama's live Embassy visitor schedule expressly requires Zimbabwean visitors to obtain a stamped visa before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["ZW"],
+      "conditions": [
+        "Applies to a current ordinary Zimbabwean passport for short visitor travel.",
+        "File the stated visitor documents and, if approved, attend the consulate to have the visa stamped in the passport before travel.",
+        "The separate waiver for a qualifying third-country visa or residence document is conditional and is not used for this passport-only baseline.",
+        "Work, residence, diplomatic, official, transit, invitation-based and final-admission rules remain separate."
+      ],
+      "sourceIds": ["zimbabwe-mfa-ordinary-passport-scope", "panama-embassy-zimbabwe-stamped-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "ZW",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-zimbabwe-partial-suspension-2026"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-zimbabwe-partial-suspension-2026", "us-code-geographic-united-states-zimbabwe-2026"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-zimbabwe-partial-suspension-2026", "us-code-geographic-united-states-zimbabwe-2026"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes CNMI. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-zimbabwe-partial-suspension-2026", "us-code-geographic-united-states-zimbabwe-2026"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-zimbabwe-partial-suspension-2026", "us-code-geographic-united-states-zimbabwe-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"ZW","destinationCode":"AF","reason":"No current Afghan or Zimbabwean primary source establishes ordinary Zimbabwean-passport visitor eligibility and issuance timing; operational restrictions are not normalized as a visa status.","searchedOfficialDomains":["zimfa.gov.zw","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"ZW","destinationCode":"BD","reason":"Bangladesh's current official material does not map a Zimbabwean ordinary passport to an unconditional arrival or advance visitor route.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immi.gov.bd"]},
+    {"passportCode":"ZW","destinationCode":"VG","reason":"Current British Virgin Islands government material does not establish the ordinary Zimbabwean-passport nationality status or issuance timing.","searchedOfficialDomains":["bvi.gov.vg","gov.vg","zimfa.gov.zw"]},
+    {"passportCode":"ZW","destinationCode":"CF","reason":"No current Central African primary source establishes an ordinary Zimbabwean-passport visitor route outside named regional or bilateral treatment.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"ZW","destinationCode":"TD","reason":"Chad's official portal and published exceptions do not establish an authenticated ordinary Zimbabwean-passport baseline or issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"ZW","destinationCode":"KM","reason":"Comorian law preserves unnamed conventions and special rules while no current nationality schedule maps the Zimbabwean ordinary passport.","searchedOfficialDomains":["justice.gouv.km","gouv.km","zimfa.gov.zw"]},
+    {"passportCode":"ZW","destinationCode":"CD","reason":"No current Congolese or Zimbabwean primary source establishes an operative ordinary-passport waiver or actual visitor-visa issuance timing for this pair.","searchedOfficialDomains":["evisa.gouv.cd","diplomatie.gouv.cd","zimfa.gov.zw"]},
+    {"passportCode":"ZW","destinationCode":"CG","reason":"Republic of the Congo sources preserve particular agreements but publish no current Zimbabwean ordinary-passport schedule.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"ZW","destinationCode":"DJ","reason":"Djibouti's official eVisa material does not publish a reproducible Zimbabwean ordinary-passport eligibility or exemption result.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj"]},
+    {"passportCode":"ZW","destinationCode":"EG","reason":"Egypt's official electronic service does not expose a stable Zimbabwean nationality decision establishing whether issuance is electronic, at the border or consular.","searchedOfficialDomains":["visa2egypt.gov.eg","mfa.gov.eg"]},
+    {"passportCode":"ZW","destinationCode":"GW","reason":"Current Guinea-Bissau material directly supports named regional or bilateral treatment only and does not establish this ordinary Zimbabwean-passport route.","searchedOfficialDomains":["mne.gw","gov.gw"]},
+    {"passportCode":"ZW","destinationCode":"IQ","reason":"Iraq's official portal proves electronic issuance generally but does not expose a current eligible-passport partition that includes Zimbabwe.","searchedOfficialDomains":["evisa.iq","mofa.gov.iq","moi.gov.iq"]},
+    {"passportCode":"ZW","destinationCode":"JO","reason":"Jordan's visitor routes depend on an account-gated nationality decision or residence and third-country documents; no unconditional Zimbabwean baseline is established.","searchedOfficialDomains":["moi.gov.jo","international.visitjordan.com"]},
+    {"passportCode":"ZW","destinationCode":"KW","reason":"Kuwait's current official arrival cohort does not establish the Zimbabwean ordinary-passport route and no exhaustive advance-visa complement is published.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"ZW","destinationCode":"KG","reason":"Kyrgyzstan's live portal proves electronic issuance for eligible applicants but did not yield a stable positive nationality gate for Zimbabwe.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"ZW","destinationCode":"LA","reason":"No current Lao or Zimbabwean primary source directly establishes the Zimbabwean ordinary-passport visitor route and actual issuance timing.","searchedOfficialDomains":["immigration.gov.la","mofa.gov.la"]},
+    {"passportCode":"ZW","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no Zimbabwean nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"ZW","destinationCode":"ML","reason":"Mali's current official assistant depends on nationality, passport type, residence and filing location without a stable Zimbabwean visitor result.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"ZW","destinationCode":"MH","reason":"No current Marshall Islands or Zimbabwean primary source establishes the ordinary Zimbabwean-passport visitor route and issuance timing.","searchedOfficialDomains":["rmiimmigration.org","rmiembassyus.org","zimfa.gov.zw"]},
+    {"passportCode":"ZW","destinationCode":"MM","reason":"Myanmar's current official material does not establish an ordinary Zimbabwean-passport visitor route and issuance timing.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm"]},
+    {"passportCode":"ZW","destinationCode":"NE","reason":"Niger's current framework preserves unenumerated regional and bilateral exemptions and supplies no reconciled Zimbabwean schedule.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"ZW","destinationCode":"KP","reason":"No current DPRK government or mission source establishes an available ordinary Zimbabwean-passport visitor route or safe residual default.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","zimfa.gov.zw"]},
+    {"passportCode":"ZW","destinationCode":"MK","reason":"North Macedonia's current selector does not yield a reproducible Zimbabwean result and no operative nationality instrument was recovered.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"ZW","destinationCode":"OM","reason":"Oman's current electronic products depend on a nationality gate or conditional third-country documents and no unconditional Zimbabwean result is established.","searchedOfficialDomains":["rop.gov.om","fm.gov.om"]},
+    {"passportCode":"ZW","destinationCode":"PS","reason":"Palestinian access is route-, permit- and territory-dependent; no destination-wide ordinary Zimbabwean-passport status is established.","searchedOfficialDomains":["mofa.pna.ps","moi.pna.ps","cogat.mod.gov.il"]},
+    {"passportCode":"ZW","destinationCode":"ST","reason":"Sao Tome and Principe's current law and eVisa service supply no authenticated Zimbabwean nationality schedule or exhaustive visitor complement.","searchedOfficialDomains":["smf.st","mne.gov.st","dre.gov.st"]},
+    {"passportCode":"ZW","destinationCode":"SA","reason":"Saudi Arabia's current electronic and package routes do not establish an unconditional ordinary Zimbabwean-passport visitor baseline.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa"]},
+    {"passportCode":"ZW","destinationCode":"SL","reason":"Sierra Leone's current official electronic and arrival issuance descriptions conflict, so no single normalized timing is assigned for Zimbabwe.","searchedOfficialDomains":["slid.gov.sl","evisa.sl"]},
+    {"passportCode":"ZW","destinationCode":"SB","reason":"No current Solomon Islands or Zimbabwean primary source establishes the ordinary Zimbabwean-passport route outside conditional or permission-based treatment.","searchedOfficialDomains":["immigration.gov.sb","mfaet.gov.sb","zimfa.gov.zw"]},
+    {"passportCode":"ZW","destinationCode":"SS","reason":"South Sudan's official material does not map the Zimbabwean ordinary passport to a specific electronic, mission or border issuance route.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"ZW","destinationCode":"SD","reason":"No current Sudanese or Zimbabwean government source establishes ordinary Zimbabwean-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sd","passports.gov.sd","zimfa.gov.zw"]},
+    {"passportCode":"ZW","destinationCode":"SY","reason":"Syria's current electronic service and official material do not expose a verified ordinary Zimbabwean-passport eligibility result or issuance route.","searchedOfficialDomains":["evisa.sy","mofaex.gov.sy"]},
+    {"passportCode":"ZW","destinationCode":"TN","reason":"Tunisia's current official material publishes no visa-subject nationality cohort or current bilateral schedule mapping Zimbabwe.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.tn"]},
+    {"passportCode":"ZW","destinationCode":"TM","reason":"Turkmenistan publishes no exhaustive treaty-waiver or electronic-visa eligibility roster for a Zimbabwean ordinary passport.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm"]}
+  ]
+}
