@@ -310,4 +310,13 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.NI.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.NI.statuses.PA).toBe("visa_free");
   });
+
+  it("applies the final Antiguan, Jordanian, Myanmar and Timorese outbound audits", () => {
+    expect(snapshot.passports.AG.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.JO.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.JO.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.MM.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.MM.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.TL.statuses.TR).toBe("evisa");
+  });
 });

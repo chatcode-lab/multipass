@@ -1,0 +1,106 @@
+{
+  "batchId": "antigua-and-barbuda-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "jordan-tourism-antigua-barbuda-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps Antigua and Barbuda to a visa obtained on arrival.",
+      "supportingExcerpt": "Antigua and Barbuda | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    },
+    {
+      "id": "us-state-antigua-barbuda-partial-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The State Department's current PP 10998 notice names Antigua and Barbuda in the partially suspended B-1/B-2 visitor-visa cohort and preserves valid-visa grandfathering, exceptions and case-by-case national-interest decisions.",
+      "supportingExcerpt": "Angola, Antigua and Barbuda, Benin, Burundi, Cote D’Ivoire"
+    },
+    {
+      "id": "us-code-geographic-united-states-antigua-barbuda-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "antigua-barbuda-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "Antigua and Barbuda ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says Antigua and Barbuda visitors can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["AG"],
+      "conditions": [
+        "Applies to an ordinary Antigua and Barbuda passport holder travelling as a short visitor.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code.",
+        "Restricted crossings, non-visitor purposes and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-antigua-barbuda-arrival-visa-table-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {"passportCode":"AG","destinationCode":"US","snapshotStatus":"visa_required","officialStatus":"b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions","explanation":"The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.","sourceIds":["us-state-antigua-barbuda-partial-suspension-current-2026"]},
+    {"passportCode":"AG","destinationCode":"PR","snapshotStatus":"visa_required","officialStatus":"b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions","explanation":"The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-antigua-barbuda-partial-suspension-current-2026","us-code-geographic-united-states-antigua-barbuda-current-2026"]},
+    {"passportCode":"AG","destinationCode":"GU","snapshotStatus":"visa_required","officialStatus":"b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions","explanation":"The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-antigua-barbuda-partial-suspension-current-2026","us-code-geographic-united-states-antigua-barbuda-current-2026"]},
+    {"passportCode":"AG","destinationCode":"MP","snapshotStatus":"visa_required","officialStatus":"b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions","explanation":"The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-antigua-barbuda-partial-suspension-current-2026","us-code-geographic-united-states-antigua-barbuda-current-2026"]},
+    {"passportCode":"AG","destinationCode":"VI","snapshotStatus":"visa_required","officialStatus":"b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions","explanation":"The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-antigua-barbuda-partial-suspension-current-2026","us-code-geographic-united-states-antigua-barbuda-current-2026"]}
+  ],
+  "unresolved": [
+    {"passportCode":"AG","destinationCode":"AF","reason":"No current Afghan primary source establishes an ordinary Antigua and Barbuda-passport short-visitor route or actual issuance timing; portal availability and omission are not treated as a residual rule.","searchedOfficialDomains":["mfa.gov.af","evisa.mfa.gov.af"]},
+    {"passportCode":"AG","destinationCode":"BD","reason":"Current Bangladeshi government and mission material does not publish an ordinary Antigua and Barbuda-passport visitor schedule or an exhaustive residual rule.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immigration.gov.bd"]},
+    {"passportCode":"AG","destinationCode":"VG","reason":"The available British Virgin Islands nationality schedule is dated and its electronic entry card is not visa eligibility evidence; no current unconditional ordinary-passport baseline is established.","searchedOfficialDomains":["bvi.gov.vg","gov.vg"]},
+    {"passportCode":"AG","destinationCode":"BF","reason":"Burkina Faso's official portal does not expose a reproducible ordinary Antigua and Barbuda-passport tourist eligibility or issuance result; online filing alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","mae.gov.bf"]},
+    {"passportCode":"AG","destinationCode":"CV","reason":"Cape Verde's current entry services do not publish an ordinary Antigua and Barbuda-passport visitor route or actual issuance timing; pre-registration is not a visa classification.","searchedOfficialDomains":["ease.gov.cv","mnec.gov.cv"]},
+    {"passportCode":"AG","destinationCode":"CF","reason":"No current Central African primary nationality schedule establishes a normalized short-visitor route for an ordinary Antigua and Barbuda passport.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"AG","destinationCode":"TD","reason":"Chad's online material does not independently establish ordinary Antigua and Barbuda-passport eligibility or the actual visitor-visa issuance route.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"AG","destinationCode":"KM","reason":"Comorian law preserves treaty and special-law exceptions while no current tourist nationality schedule maps an ordinary Antigua and Barbuda passport; no complement is inferred.","searchedOfficialDomains":["justice.gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"AG","destinationCode":"CG","reason":"No current Republic of the Congo primary nationality schedule establishes an ordinary Antigua and Barbuda-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"AG","destinationCode":"CI","reason":"Côte d'Ivoire's official material does not establish a current ordinary Antigua and Barbuda-passport visitor route and actual issuance timing; online pre-enrolment is not an eligibility complement.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"AG","destinationCode":"DJ","reason":"Djibouti's official electronic-visa material does not publish a current ordinary Antigua and Barbuda-passport eligibility or exemption partition.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj"]},
+    {"passportCode":"AG","destinationCode":"GU","reason":"Not established as a normalized status: the current federal partial suspension reaches Guam under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","guam.gov"]},
+    {"passportCode":"AG","destinationCode":"GW","reason":"No current Guinea-Bissau primary source establishes an unconditional ordinary Antigua and Barbuda-passport visitor route; regional treatment does not establish this non-ECOWAS passport baseline.","searchedOfficialDomains":["mne.gw","gov.gw","ecowas.int"]},
+    {"passportCode":"AG","destinationCode":"IR","reason":"Iran's current official visitor material does not establish an ordinary Antigua and Barbuda-passport nationality route and issuance form without invitation, host or other conditions.","searchedOfficialDomains":["mfa.gov.ir","evisa.mfa.ir"]},
+    {"passportCode":"AG","destinationCode":"IQ","reason":"Iraq's official electronic and one-stop services do not publish a current ordinary Antigua and Barbuda-passport tourist schedule or actual issuance outcome; Kurdistan-region rules are not substituted for federal Iraq.","searchedOfficialDomains":["ur.gov.iq","moi.gov.iq","mofa.gov.iq"]},
+    {"passportCode":"AG","destinationCode":"KW","reason":"Kuwait's official visitor services do not publish a current ordinary Antigua and Barbuda-passport eligibility or issuance route.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.kw"]},
+    {"passportCode":"AG","destinationCode":"KG","reason":"Kyrgyzstan's eVisa selector does not provide a reproducible controlling ordinary Antigua and Barbuda-passport tourist result, and no exhaustive complement is published.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"AG","destinationCode":"LR","reason":"Liberia's current portal material does not establish ordinary Antigua and Barbuda-passport eligibility and actual visitor-visa issuance timing.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"AG","destinationCode":"ML","reason":"No current Malian primary nationality schedule establishes an ordinary Antigua and Barbuda-passport visitor baseline; regional treatment does not establish this non-ECOWAS passport route.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","ecowas.int"]},
+    {"passportCode":"AG","destinationCode":"MM","reason":"Myanmar's current official material does not establish a positive ordinary Antigua and Barbuda-passport visitor route; no residual classification is inferred from list omission.","searchedOfficialDomains":["evisa.moip.gov.mm","moip.gov.mm"]},
+    {"passportCode":"AG","destinationCode":"NE","reason":"No current Niger primary nationality schedule establishes an ordinary Antigua and Barbuda-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"AG","destinationCode":"KP","reason":"No retrievable current official source establishes an available ordinary Antigua and Barbuda-passport short-visitor route and issuance timing; closure or permission restrictions cannot be normalized.","searchedOfficialDomains":["mfa.gov.kp"]},
+    {"passportCode":"AG","destinationCode":"MK","reason":"North Macedonia's live MFA selector and accessible entry material do not establish an operative nationality rule for an ordinary Antigua and Barbuda passport; conditional third-country-document waivers are excluded.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","slvesnik.com.mk"]},
+    {"passportCode":"AG","destinationCode":"MP","reason":"Not established as a normalized status: the current federal partial suspension reaches CNMI under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","gov.mp"]},
+    {"passportCode":"AG","destinationCode":"OM","reason":"Oman's public visitor material does not establish an unconditional ordinary Antigua and Barbuda-passport route; third-country-document and other conditional paths are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om"]},
+    {"passportCode":"AG","destinationCode":"PS","reason":"Palestinian visitor treatment cannot be separated from Israeli and Egyptian crossing controls; no destination-wide ordinary Antigua and Barbuda-passport baseline is asserted.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"AG","destinationCode":"PR","reason":"Not established as a normalized status: the current federal partial suspension reaches Puerto Rico under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","pr.gov"]},
+    {"passportCode":"AG","destinationCode":"ST","reason":"São Tomé and Príncipe's current law leaves further exemptions to decree; document-conditioned exceptions do not establish an ordinary Antigua and Barbuda-passport baseline.","searchedOfficialDomains":["gov.st","lex.st"]},
+    {"passportCode":"AG","destinationCode":"SA","reason":"Saudi Arabia's public visitor routes do not establish an unconditional ordinary Antigua and Barbuda-passport classification; package and document-conditioned routes are excluded.","searchedOfficialDomains":["visitsaudi.com","visa.visitsaudi.com"]},
+    {"passportCode":"AG","destinationCode":"SL","reason":"Current Sierra Leone official material does not establish actual visitor-visa issuance timing for an ordinary Antigua and Barbuda passport.","searchedOfficialDomains":["immigration.gov.sl","mofaic.gov.sl"]},
+    {"passportCode":"AG","destinationCode":"SS","reason":"South Sudan's official electronic material does not publish ordinary Antigua and Barbuda-passport eligibility and actual visitor-visa issuance timing.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"AG","destinationCode":"SD","reason":"No current Sudanese primary source establishes an ordinary Antigua and Barbuda-passport short-visitor issuance route or confirms any historic bilateral arrangement remains operative.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd"]},
+    {"passportCode":"AG","destinationCode":"SY","reason":"Syria's current eAIP states a general mission-visa rule but preserves unspecified exemptions; it does not map an ordinary Antigua and Barbuda passport to a visitor route.","searchedOfficialDomains":["eaip.gaca.gov.sy","mofa.gov.sy"]},
+    {"passportCode":"AG","destinationCode":"TN","reason":"Tunisia's current official material identifies no visa-subject nationality cohort and no current waiver register establishes an ordinary Antigua and Barbuda-passport baseline.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.gov.tn"]},
+    {"passportCode":"AG","destinationCode":"TM","reason":"Turkmenistan's statutory visa baseline preserves treaty exceptions and the electronic service publishes no current ordinary Antigua and Barbuda-passport eligibility roster.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm"]},
+    {"passportCode":"AG","destinationCode":"UA","reason":"Available Ukrainian nationality tables are dated and no current primary source establishes an ordinary Antigua and Barbuda-passport short-visitor baseline.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua"]},
+    {"passportCode":"AG","destinationCode":"US","reason":"Not established as a normalized status: current rules partially suspend B-1/B-2 visitor entry and visa issuance for Antigua and Barbuda, subject to grandfathering, specific exceptions and case-by-case waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","cbp.gov"]},
+    {"passportCode":"AG","destinationCode":"VI","reason":"Not established as a normalized status: the current federal partial suspension reaches the U.S. Virgin Islands under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","usvi.gov"]}
+  ]
+}
