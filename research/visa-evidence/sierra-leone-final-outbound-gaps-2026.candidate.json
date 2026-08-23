@@ -1,0 +1,151 @@
+{
+  "batchId": "sierra-leone-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-sierra-leone-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-sierra-leone-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy country schedule is marked updated April 2024 and explicitly lists Sierra Leone as not requiring a visa.",
+      "supportingExcerpt": "Sierra Leone No Visa required"
+    },
+    {
+      "id": "panama-embassy-sierra-leone-authorized-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Sierra Leone in its authorized-visa cohort and requires in-person consular application before travel.",
+      "supportingExcerpt": "Sierra Leone ... will need an authorized visa"
+    },
+    {
+      "id": "us-state-sierra-leone-full-suspension-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Current Department of State guidance, updated 2 February 2026, says PP10998 fully suspends Sierra Leonean entry and visa issuance with limited exceptions and valid-visa grandfathering.",
+      "supportingExcerpt": "fully suspended visa issuance ... Sierra Leone"
+    },
+    {
+      "id": "us-code-geographic-united-states-sierra-leone-2026",
+      "title": "8 USC 1101: Definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code's INA geographic definition expressly includes Puerto Rico, Guam, the U.S. Virgin Islands and the Commonwealth of the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands ... Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "sierra-leonean-ordinary-passport-grenada-visa-free-2026",
+      "title": "Sierra Leonean ordinary passports: Grenada short-visitor visa exemption",
+      "summary": "Grenada's live Embassy-linked nationality schedule lists Sierra Leone as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["SL"],
+      "conditions": [
+        "Applies to an ordinary Sierra Leonean passport holder travelling as a short visitor.",
+        "Grenada's active Embassy schedule is marked updated April 2024; recheck if the Embassy publishes a replacement.",
+        "Work, study, residence, transit, crew, diplomatic, official, service, special-document and final-admission treatment are outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-sierra-leone-2026", "grenada-embassy-sierra-leone-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "sierra-leonean-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Sierra Leonean ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule lists Sierra Leone in the authorized-visa cohort, requiring advance consular approval unless a separate waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["SL"],
+      "conditions": [
+        "Applies to an ordinary Sierra Leonean passport holder travelling as a short visitor who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Apply in person at the competent Panamanian consulate before travel; the Embassy says approval may take up to 60 business days.",
+        "Work, residence, transit, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-sierra-leone-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Submit the authorized-visa documents in person to the competent Panamanian consulate before travel.",
+          "Travel only after the consular visa has been granted and carry all required supporting documents."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {"passportCode":"SL","destinationCode":"US","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The current full suspension preserves valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.","sourceIds":["us-state-sierra-leone-full-suspension-2026"]},
+    {"passportCode":"SL","destinationCode":"PR","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-sierra-leone-full-suspension-2026","us-code-geographic-united-states-sierra-leone-2026"]},
+    {"passportCode":"SL","destinationCode":"GU","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-sierra-leone-full-suspension-2026","us-code-geographic-united-states-sierra-leone-2026"]},
+    {"passportCode":"SL","destinationCode":"MP","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-sierra-leone-full-suspension-2026","us-code-geographic-united-states-sierra-leone-2026"]},
+    {"passportCode":"SL","destinationCode":"VI","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-sierra-leone-full-suspension-2026","us-code-geographic-united-states-sierra-leone-2026"]}
+  ],
+  "unresolved": [
+    {"passportCode":"SL","destinationCode":"AF","reason":"No current Afghan or Sierra Leonean primary source establishes a usable ordinary Sierra Leonean-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"AO","reason":"Angola's current positive tourist-exemption schedule does not name Sierra Leone, while official sources do not establish the residual ordinary Sierra Leonean visitor issuance route. No complement is inferred.","searchedOfficialDomains":["governo.gov.ao","sme.gov.ao","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"BD","reason":"Bangladesh's current official material does not directly establish an unconditional ordinary Sierra Leonean-passport visitor route and actual issuance timing; discretion is not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"VG","reason":"British Virgin Islands material establishes electronic visa services and conditional third-country-document waivers, but not the ordinary Sierra Leonean-passport baseline. No complement is inferred.","searchedOfficialDomains":["bvi.gov.vg","gov.vg","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"CF","reason":"No current Central African or Sierra Leonean primary source establishes ordinary Sierra Leonean-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"TD","reason":"No current Chadian or Sierra Leonean primary source establishes ordinary Sierra Leonean-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.td","interieur.gouv.td","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Sierra Leonean passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"CG","reason":"No current Republic of the Congo or Sierra Leonean primary source establishes ordinary Sierra Leonean-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Sierra Leonean eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"GU","reason":"PP10998 fully suspends Sierra Leonean visa issuance and entry, but its valid-visa grandfathering, exceptions and waivers cannot be normalized for Guam.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","uscis.gov"]},
+    {"passportCode":"SL","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Sierra Leonean-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Sierra Leonean eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"SL","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Sierra Leonean-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Sierra Leonean-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"LA","reason":"Laos's official electronic-visa and entry material does not publish a reproducible ordinary Sierra Leonean-passport eligibility result; portal availability alone is insufficient.","searchedOfficialDomains":["laoevisa.gov.la","immigration.gov.la","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"MH","reason":"No current Marshall Islands or Sierra Leonean primary source establishes ordinary Sierra Leonean-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","rmiimmigration.org","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"MM","reason":"Myanmar's current named preapproved-arrival cohort does not include Sierra Leone, and no current authority establishes the residual route. No complement is inferred.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"KP","reason":"No current DPRK or Sierra Leonean primary source establishes a usable ordinary Sierra Leonean-passport visitor route; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"MK","reason":"North Macedonia's current nationality checker does not yield a reproducible ordinary Sierra Leonean-passport visitor result; no output is inferred.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"MP","reason":"PP10998 fully suspends Sierra Leonean visa issuance and entry, but its valid-visa grandfathering, exceptions and waivers cannot be normalized for the Northern Mariana Islands.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","uscis.gov"]},
+    {"passportCode":"SL","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Sierra Leonean-passport route; residence and qualifying third-country-document programmes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Sierra Leonean-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"PR","reason":"PP10998 fully suspends Sierra Leonean visa issuance and entry, but its valid-visa grandfathering, exceptions and waivers cannot be normalized for Puerto Rico.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","uscis.gov"]},
+    {"passportCode":"SL","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay routes depend on qualifying third-country documents, while electronic services do not publish Sierra Leonean eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Sierra Leonean-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Sierra Leonean-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Sierra Leonean eligibility and describes both downloadable approval and final port stamping, leaving classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Sierra Leonean-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"SY","reason":"Current Syrian and Sierra Leonean official sources do not establish whether online filing produces an electronically issued visa or only an advance application.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"TN","reason":"No current Tunisian or Sierra Leonean primary source directly establishes ordinary Sierra Leonean-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"TM","reason":"No current Turkmen or Sierra Leonean primary source establishes ordinary Sierra Leonean-passport visitor eligibility and actual issuance timing; generic visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"UA","reason":"Ukraine's accessible official nationality table is expressly dated June 2023; no current source establishes the ordinary Sierra Leonean-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mofaic.gov.sl"]},
+    {"passportCode":"SL","destinationCode":"US","reason":"PP10998 fully suspends Sierra Leonean visitor entry and visa issuance for people outside the United States without a valid visa on 1 January 2026, subject to exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","uscis.gov"]},
+    {"passportCode":"SL","destinationCode":"VI","reason":"PP10998 fully suspends Sierra Leonean visa issuance and entry, but its valid-visa grandfathering, exceptions and waivers cannot be normalized for the U.S. Virgin Islands.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","uscis.gov"]}
+  ]
+}

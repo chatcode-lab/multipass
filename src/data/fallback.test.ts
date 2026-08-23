@@ -83,4 +83,38 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.MV.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.MV.statuses.TR).toBe("evisa");
   });
+
+  it("applies the final Salvadoran, Honduran, Indian and Mozambican outbound audits", () => {
+    expect(snapshot.passports.SV.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.SV.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.SV.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.HN.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.HN.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.HN.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.IN.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.IN.statuses.JO).toBe("visa_required");
+    expect(snapshot.passports.MZ.statuses.AO).toBe("visa_free");
+    expect(snapshot.passports.MZ.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.MZ.statuses.PA).toBe("visa_required");
+  });
+
+  it("applies the final Nepali, Peruvian, Serbian and Sierra Leonean outbound audits", () => {
+    expect(snapshot.passports.NP.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.NP.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.PE.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.PE.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.PE.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.PE.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.RS.statuses.AO).toBe("visa_required");
+    expect(snapshot.passports.RS.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.RS.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.RS.statuses.KW).toBe("visa_required");
+    expect(snapshot.passports.RS.statuses.MN).toBe("evisa");
+    expect(snapshot.passports.RS.statuses.MK).toBe("visa_free");
+    expect(snapshot.passports.RS.statuses.SA).toBe("visa_required");
+    expect(snapshot.passports.RS.statuses.SL).toBe("visa_required");
+    expect(snapshot.passports.RS.statuses.UA).toBe("visa_free");
+    expect(snapshot.passports.SL.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.SL.statuses.PA).toBe("visa_required");
+  });
 });

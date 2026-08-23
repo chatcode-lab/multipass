@@ -1,0 +1,141 @@
+{
+  "batchId": "el-salvador-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-salvador-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-el-salvador-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy country schedule is marked updated April 2024 and expressly lists El Salvador as No Visa required.",
+      "supportingExcerpt": "El Salvador — No Visa required"
+    },
+    {
+      "id": "panama-embassy-el-salvador-no-visa-current-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy immigration page places El Salvador in its no-visa nationality list and sets a three-month maximum stay.",
+      "supportingExcerpt": "No Visa Required: If you are from any of the following countries ... El Salvador"
+    },
+    {
+      "id": "jordan-tourism-el-salvador-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps El Salvador to a visa issued on arrival for 40 JOD.",
+      "supportingExcerpt": "Salvador — Aplicable — El visado se puede obtener a la llegada"
+    }
+  ],
+  "policies": [
+    {
+      "id": "salvadoran-ordinary-passport-grenada-visa-free-2026",
+      "title": "Salvadoran ordinary passports: Grenada short-visitor visa exemption",
+      "summary": "Grenada's live Embassy-linked nationality schedule lists El Salvador as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["SV"],
+      "conditions": [
+        "Applies to an ordinary Salvadoran passport holder travelling as a short visitor.",
+        "Grenada's active Embassy schedule is marked updated April 2024; recheck if the Embassy publishes a replacement.",
+        "Work, study, residence, transit, crew, diplomatic, official, service, special-document and final-admission treatment are outside scope."
+      ],
+      "sourceIds": [
+        "grenada-embassy-visitors-current-salvador-2026",
+        "grenada-embassy-el-salvador-april-2024-schedule"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "salvadoran-ordinary-passport-panama-visa-free-2026",
+      "title": "Salvadoran ordinary passports: Panama short-visitor visa exemption",
+      "summary": "Panama's live Embassy nationality list explicitly includes El Salvador in its no-visa cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["SV"],
+      "conditions": [
+        "Applies to an ordinary Salvadoran passport holder travelling as a short visitor.",
+        "Panama's page gives a maximum stay of three months for this no-visa cohort.",
+        "Work, residence, transit, special documents, final admission and the separate third-country-document waiver are outside scope."
+      ],
+      "sourceIds": ["panama-embassy-el-salvador-no-visa-current-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "salvadoran-ordinary-passport-jordan-arrival-visa-2026",
+      "title": "Salvadoran ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says Salvadoran visitors can obtain a visa on arrival for 40 JOD.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["SV"],
+      "conditions": [
+        "Applies to an ordinary Salvadoran passport holder travelling as a short visitor.",
+        "The official table states a total charge of 40 JOD for the visa obtained on arrival.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code.",
+        "Work, study, residence, transit, restricted crossings, special documents and final admission are outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-el-salvador-arrival-visa-table-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"SV","destinationCode":"AF","reason":"No current Afghan or Salvadoran primary source establishes a usable ordinary Salvadoran-passport short-visitor route and actual issuance timing; operational restrictions are not a taxonomy state.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"AO","reason":"Angola's current positive tourist-exemption schedule does not name El Salvador, while official sources do not establish the residual ordinary Salvadoran visitor issuance route. No complement is inferred.","searchedOfficialDomains":["governo.gov.ao","sme.gov.ao","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"BD","reason":"Bangladesh's official arrival-visa material does not directly establish an unconditional ordinary Salvadoran-passport visitor route; discretion and mission-availability conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"VG","reason":"British Virgin Islands material establishes visa services and conditional third-country-document waivers, but not a current ordinary Salvadoran-passport baseline. No complement is inferred.","searchedOfficialDomains":["bvi.gov.vg","gov.vg","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"BF","reason":"Burkina Faso's electronic-visa material does not publish a reproducible ordinary Salvadoran-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mae.gov.bf","evisa.gov.bf","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"CF","reason":"No current Central African or Salvadoran primary source establishes ordinary Salvadoran-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"TD","reason":"No current Chadian or Salvadoran primary source establishes ordinary Salvadoran-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.td","interieur.gouv.td","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Salvadoran passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"CG","reason":"No current Republic of the Congo or Salvadoran primary source establishes ordinary Salvadoran-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"CI","reason":"Côte d'Ivoire's official pre-enrolment material does not establish ordinary Salvadoran-passport eligibility or actual issuance timing; no exemption complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Salvadoran eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"GW","reason":"No current Guinea-Bissau or Salvadoran primary source establishes whether an ordinary Salvadoran visitor is issued a visa at a mission, electronically or at arrival.","searchedOfficialDomains":["mne.gw","gov.gw","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Salvadoran-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Salvadoran eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"SV","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Salvadoran-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Salvadoran-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"LR","reason":"No current Liberian or Salvadoran primary source establishes ordinary Salvadoran-passport eligibility and actual issuance timing for an electronic, arrival or advance visitor route.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"ML","reason":"No current Malian or Salvadoran primary source establishes ordinary Salvadoran-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"MM","reason":"Myanmar's current named preapproved-arrival cohort does not include El Salvador, and no current authority establishes the residual ordinary Salvadoran-passport route. No complement is inferred.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"NE","reason":"Niger's general visitor framework preserves bilateral and community exemptions, but no current ordinary Salvadoran-passport schedule establishes a visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"KP","reason":"No current DPRK or Salvadoran primary source establishes a usable ordinary Salvadoran-passport visitor route and actual issuance timing; practical access restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"MK","reason":"North Macedonia's current nationality checker does not yield a reproducible ordinary Salvadoran-passport visitor result; no output is inferred.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Salvadoran-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay routes depend on qualifying third-country documents, while its electronic services do not publish Salvadoran eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Salvadoran-passport short-visitor issuance route; portal availability and positive cohorts are not treated as a residual rule.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"SL","reason":"No current Sierra Leonean or Salvadoran primary source establishes ordinary Salvadoran-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.sl","mofaic.gov.sl","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Salvadoran-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Salvadoran eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Salvadoran-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"SY","reason":"Current Syrian and Salvadoran official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Salvadoran passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"TT","reason":"Trinidad and Tobago's official country schedule is not currently dated and presents a mixed visa-required field and waiver remark for El Salvador; no current normalized visitor status is established.","searchedOfficialDomains":["foreign.gov.tt","nationalsecurity.gov.tt","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"TN","reason":"No current Tunisian or Salvadoran primary source directly establishes ordinary Salvadoran-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","rree.gob.sv"]},
+    {"passportCode":"SV","destinationCode":"TM","reason":"No current Turkmen or Salvadoran primary source establishes ordinary Salvadoran-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","rree.gob.sv"]}
+  ]
+}

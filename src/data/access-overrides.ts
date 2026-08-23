@@ -3661,4 +3661,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "IN",
+    destinationCode: "JO",
+    status: "visa_required",
+    reason: "Jordan's live Tourism Board nationality table limits Indian visitors' arrival issuance to qualifying tour-operator, residence or third-country-visa routes and otherwise requires an embassy visa before arrival.",
+    sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "RS",
+    destinationCode: "KW",
+    status: "visa_required",
+    reason: "Serbia's live Foreign Ministry guidance says Serbian citizens require a Kuwait visa and expressly excludes eVisa and arrival-visa issuance.",
+    sourceUrl: "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/kuwait",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "RS",
+    destinationCode: "MN",
+    status: "evisa",
+    reason: "Mongolia's official eVisa service expressly lists Serbia, issues the approved document before travel and requires travelers to carry the eVisa for arrival scanning.",
+    sourceUrl: "https://www.evisa.mn/en",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

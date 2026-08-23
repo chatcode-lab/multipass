@@ -1,0 +1,147 @@
+{
+  "batchId": "mozambique-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "angola-mirex-mozambique-ordinary-waiver-registry-2026",
+      "title": "Agreements on visa exemption, suppression and facilitation",
+      "url": "https://sys.portais.gov.ao/uploads/acordo_de_isencao_e_supressao_de_vistos_3e38d50d12.pdf",
+      "publisher": "Ministry of External Relations of Angola, Directorate of Legal Affairs, Treaties and Litigation",
+      "jurisdiction": "Angola",
+      "kind": "official-dataset",
+      "language": "Portuguese",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The current official Angolan government treaty registry distinguishes passport types and directly records the reciprocal Mozambique agreement for ordinary passports.",
+      "supportingExcerpt": "República de Moçambique ... Passaportes ... Ordinários (17.11.2017)."
+    },
+    {
+      "id": "grenada-embassy-visitors-current-mozambique-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page says requirements depend on citizenship and actively links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-mozambique-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy visitor page actively links this April 2024 country schedule, which directly lists the ordinary Mozambican visitor outcome.",
+      "supportingExcerpt": "Mozambique No Visa required"
+    },
+    {
+      "id": "panama-embassy-mozambique-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy of Panama page expressly names Mozambique in its authorized-visa cohort and publishes advance consular processing requirements.",
+      "supportingExcerpt": "Mozambique ... will need an authorized visa"
+    }
+  ],
+  "policies": [
+    {
+      "id": "mozambican-ordinary-passport-angola-reciprocal-visa-waiver-2026",
+      "title": "Mozambican ordinary passports: Angola reciprocal visa waiver",
+      "summary": "Angola's current official treaty registry records its reciprocal visa-exemption agreement with Mozambique as covering ordinary passports.",
+      "status": "visa_free",
+      "destinationCodes": ["AO"],
+      "passportCodes": ["MZ"],
+      "conditions": [
+        "Applies to an ordinary Mozambican passport holder making a short visit to Angola under the bilateral agreement recorded for ordinary passports.",
+        "The registry records 17 November 2017 for the ordinary-passport agreement; passport validity, border formalities and final admission remain separate.",
+        "Work, residence, study, special documents and other non-visitor purposes remain outside scope."
+      ],
+      "sourceIds": ["angola-mirex-mozambique-ordinary-waiver-registry-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "mozambican-ordinary-passport-grenada-visa-free-2026",
+      "title": "Mozambican ordinary passports: Grenada visa-free short visits",
+      "summary": "Grenada's actively linked April 2024 Embassy schedule lists Mozambique as requiring no visitor visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["MZ"],
+      "conditions": [
+        "Applies to an ordinary Mozambican passport holder travelling to Grenada as a short visitor.",
+        "The Embassy's live visitor page confirms requirements depend on citizenship; work, study, residence, special documents and other purposes remain outside scope.",
+        "The linked schedule was updated April 2024; carrier checks, entry conditions and final admission remain separate."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-mozambique-2026", "grenada-embassy-mozambique-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "mozambican-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Mozambican ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule names Mozambique in the authorized-visa cohort, requiring advance consular approval unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["MZ"],
+      "conditions": [
+        "Applies to an ordinary Mozambican passport holder who does not qualify for Panama's separate valid third-country visa or residence waiver.",
+        "The authorized visa must be processed by the competent Panamanian consulate before travel; the Embassy says approval may take up to 60 business days.",
+        "Work, residence, transit, special documents, consular jurisdiction and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-mozambique-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Submit the listed authorized-visa documents to the competent Panamanian consulate before travel.",
+          "Do not finalize travel arrangements until the visa has been granted."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"MZ","destinationCode":"AF","reason":"No current Afghan or Mozambican primary source establishes a stable usable ordinary Mozambican-passport visitor route amid restricted operational access.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"BD","reason":"Bangladesh's current arrival-visa material does not directly establish an unconditional ordinary Mozambican-passport visitor route; discretionary and mission conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"CF","reason":"No current Central African or Mozambican primary source establishes ordinary Mozambican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"TD","reason":"Chad's current eVisa page lists named exemptions and online applications but does not establish the ordinary Mozambican passport's eligibility or issuance route. No complement is inferred.","searchedOfficialDomains":["evisa.td","journalofficiel.gouv.td","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Mozambican passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"CG","reason":"No current Republic of the Congo or Mozambican primary source establishes ordinary Mozambican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"DJ","reason":"Djibouti's current official material proves electronic-visa processing but does not map an ordinary Mozambican passport to eligibility, exemption or an arrival-issued route.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"GW","reason":"No current Guinea-Bissau or Mozambican primary source establishes ordinary Mozambican-passport visitor eligibility and actual issuance timing; CPLP membership alone is insufficient.","searchedOfficialDomains":["mne.gw","gov.gw","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"HN","reason":"Honduras's current official material does not expose a reproducible ordinary Mozambican-passport visitor category and actual issuance route.","searchedOfficialDomains":["sreci.gob.hn","inm.gob.hn","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Mozambican-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Mozambican-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"KW","reason":"Kuwait's current official material does not establish one unconditional ordinary Mozambican-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Mozambican-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"LA","reason":"Laos's current official electronic and arrival-visa material does not directly establish the ordinary Mozambican passport's eligibility and actual issuance timing.","searchedOfficialDomains":["laoevisa.gov.la","immigration.gov.la","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"LR","reason":"Liberia's arrival-visa workflow is residence and mission dependent, not a passport-only route; no current Mozambican nationality schedule resolves the baseline.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"ML","reason":"No current direct, reconcilable Malian nationality schedule establishes ordinary Mozambican-passport visa-free, electronic, arrival or advance-visa treatment.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"MH","reason":"Marshall Islands' live official pages do not publish a current complete nationality schedule; no source establishes the ordinary Mozambican visitor route and issuance timing.","searchedOfficialDomains":["rmiembassyus.org","immigration.gov.mh","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"MM","reason":"Myanmar's current electronic-visa material does not establish ordinary Mozambican-passport eligibility and actual issuance timing; a portal alone is insufficient.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"NE","reason":"Niger's current foreign-entry rule preserves unenumerated bilateral and community exemptions; no current Mozambican ordinary-passport complement is published.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"KP","reason":"No current DPRK or Mozambican primary source establishes a usable ordinary Mozambican-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"MK","reason":"North Macedonia's nationality checker was not reproducibly readable during review; generic procedure cannot establish the current ordinary Mozambican result.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Mozambican-passport route; residence and qualifying third-country-document programmes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Mozambican-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"SA","reason":"Saudi Arabia's current official visitor material does not positively establish an unconditional ordinary Mozambican-passport route and actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"SL","reason":"Sierra Leone's live official material conflicts between emailed eVisa issuance and visa issuance at the airport or border; actual timing for Mozambique remains unresolved.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"SB","reason":"No current Solomon Islands authority directly maps this ordinary passport to an unconditional short-tourist status. No complement is inferred from omission or permits.","searchedOfficialDomains":["solomons.gov.sb","immigration.gov.sb","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"SS","reason":"South Sudan's current table says a visa is needed but does not establish whether an ordinary Mozambican visitor receives eVisa, visa on arrival or an advance visa.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"SD","reason":"Sudan Passport Directorate material describes visitor categories and counter processing but no ordinary Mozambican-passport eligibility or prior-approval schedule.","searchedOfficialDomains":["passports.gov.sd","moi.gov.sd","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"SY","reason":"Current Syrian and Mozambican official sources do not establish whether online filing produces an electronically issued visa or only an advance application.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"TT","reason":"Trinidad and Tobago's current explicit eVisa cohort does not name Mozambique, while no current authority establishes the residual advance route. No complement is inferred.","searchedOfficialDomains":["foreign.gov.tt","homelandsecurity.gov.tt","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"TN","reason":"Tunisia's current consular material establishes a visa process and treaty-qualified waivers but no current ordinary Mozambican-passport schedule or effective agreement register.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"TM","reason":"No current Turkmen or Mozambican primary source establishes ordinary Mozambican-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","minec.gov.mz"]},
+    {"passportCode":"MZ","destinationCode":"UA","reason":"Ukraine's accessible official nationality table is expressly dated June 2023; no current source establishes the ordinary Mozambican-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","minec.gov.mz"]}
+  ]
+}
