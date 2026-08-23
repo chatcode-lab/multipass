@@ -1,0 +1,131 @@
+{
+  "batchId": "albania-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-albania-apr-2024",
+      "title": "Visa requirements for traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's official Embassy currently serves this nationality schedule, revised in April 2024.",
+      "supportingExcerpt": "Albania — Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-albania-current",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's Embassy publishes the live visitor nationality schedule and links the current 2024 Migration decree.",
+      "supportingExcerpt": "Authorized Visas ... Albania"
+    },
+    {
+      "id": "ukraine-mfa-albania-current",
+      "title": "Agreement between Ukraine and Albania on mutual abolition of visa requirements",
+      "url": "https://zakon.rada.gov.ua/go/008_001-16",
+      "publisher": "Verkhovna Rada of Ukraine",
+      "jurisdiction": "Ukraine",
+      "kind": "law",
+      "language": "Ukrainian",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Ukraine's official parliamentary legislation database marks the bilateral ordinary-travel-document visa-abolition agreement in force, with entry into force on 1 April 2017.",
+      "supportingExcerpt": "чинний ... Набрання чинності ... 01.04.2017"
+    }
+  ],
+  "policies": [
+    {
+      "id": "grenada-albania-ordinary-passports-visa-required",
+      "title": "Grenada: Albanian ordinary passports",
+      "summary": "Grenada's current Embassy schedule directly requires Albanian visitors to obtain a visa before arrival.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["AL"],
+      "conditions": [
+        "Applies to an ordinary Albanian passport for short visitor travel.",
+        "Prior to Arrival is normalized as visa_required, not arrival issuance.",
+        "The schedule was revised in April 2024 and should be rechecked early if Grenada publishes a replacement."
+      ],
+      "sourceIds": ["grenada-embassy-albania-apr-2024"],
+      "confidence": "medium"
+    },
+    {
+      "id": "panama-albania-ordinary-passports-visa-required",
+      "title": "Panama: Albanian ordinary passports",
+      "summary": "Panama's live Embassy nationality schedule places Albania in the authorized-visa cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["AL"],
+      "conditions": [
+        "Applies to an ordinary Albanian passport for short visitor travel.",
+        "Excludes Panama's separate conditional waiver for holders of qualifying third-country visas or residence documents.",
+        "Does not classify diplomatic, work, residence, transit or case-specific facilitation."
+      ],
+      "sourceIds": ["panama-embassy-albania-current"],
+      "confidence": "medium"
+    },
+    {
+      "id": "ukraine-albania-ordinary-passports-visa-free",
+      "title": "Ukraine: Albanian ordinary passports",
+      "summary": "Ukraine's current treaty database marks the bilateral visa-abolition agreement for valid national travel documents in force.",
+      "status": "visa_free",
+      "destinationCodes": ["UA"],
+      "passportCodes": ["AL"],
+      "conditions": [
+        "Applies to a valid ordinary Albanian foreign passport for entry, exit, transit and stays up to 90 days in any 180-day period.",
+        "Does not classify study, work, residence, refugee, stateless or other non-national travel documents."
+      ],
+      "sourceIds": ["ukraine-mfa-albania-current"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"AL","destinationCode":"AF","reason":"No current Afghan primary source establishes an ordinary Albanian-passport short-visitor baseline; no status is inferred from a portal or omission.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","econsulate.mfa.gov.af"]},
+    {"passportCode":"AL","destinationCode":"AO","reason":"Angola's current exemption material does not name Albania, while generic electronic application availability does not establish the passport baseline.","searchedOfficialDomains":["governo.gov.ao","mirex.gov.ao","smevisa.gov.ao"]},
+    {"passportCode":"AL","destinationCode":"BD","reason":"Bangladesh's current mission and online-form material does not establish actual issuance on arrival for this ordinary passport.","searchedOfficialDomains":["mofa.gov.bd","dip.gov.bd","visa.gov.bd"]},
+    {"passportCode":"AL","destinationCode":"BF","reason":"Burkina Faso's official eVisa service proves electronic filing but publishes no authenticated Albania eligibility or exhaustive nationality rule.","searchedOfficialDomains":["visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"AL","destinationCode":"CV","reason":"Cabo Verde's current EASE and consular material does not establish arrival visa issuance for an Albanian ordinary passport.","searchedOfficialDomains":["gov.cv","portalconsular.mnec.gov.cv","ease.gov.cv"]},
+    {"passportCode":"AL","destinationCode":"CF","reason":"No current Central African primary nationality schedule establishes this ordinary-passport visitor route outside named community treatment.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","cemac.int"]},
+    {"passportCode":"AL","destinationCode":"TD","reason":"Chad's current official material preserves community and bilateral exceptions but publishes no Albanian ordinary-passport baseline.","searchedOfficialDomains":["journalofficiel.gouv.td","diplomatie.gouv.td","cemac.int"]},
+    {"passportCode":"AL","destinationCode":"KM","reason":"Comorian law preserves conventions and special rules while no current nationality schedule maps this passport or issuance timing.","searchedOfficialDomains":["justice.gouv.km","gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"AL","destinationCode":"CG","reason":"Republic of the Congo sources preserve particular agreements and publish no current Albanian ordinary-passport schedule.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","cemac.int"]},
+    {"passportCode":"AL","destinationCode":"CI","reason":"Côte d'Ivoire's current official material proves a conditional electronic workflow but not authenticated Albanian nationality eligibility.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"AL","destinationCode":"DJ","reason":"Djibouti's official eVisa material does not publish a current ordinary-passport eligibility or exemption partition for Albania.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj","journalofficiel.dj"]},
+    {"passportCode":"AL","destinationCode":"DO","reason":"Dominican official sources expose document-conditioned admission and inconsistent nationality views; the ordinary Albanian passport alone is not safely classifiable.","searchedOfficialDomains":["mirex.gob.do","consultas.mirex.gob.do","dgii.gov.do"]},
+    {"passportCode":"AL","destinationCode":"GF","reason":"French Guiana's current waiver is limited to biometric Albanian passports, a document property not represented by the passport code.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"AL","destinationCode":"PF","reason":"French Polynesia's current territory order makes the Albanian exemption biometric-document-qualified rather than a code-only baseline.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"AL","destinationCode":"FW","reason":"French West Indies aggregates distinct territories whose separate orders cannot be collapsed into one Albanian passport rule.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"AL","destinationCode":"GW","reason":"Current Guinea-Bissau material directly supports named regional treatment only, not this non-regional ordinary-passport route.","searchedOfficialDomains":["ecowas.int","mne.gw","gov.gw"]},
+    {"passportCode":"AL","destinationCode":"HN","reason":"Honduras's accessible official schedules do not provide a current reconciled Albanian ordinary-passport visitor classification.","searchedOfficialDomains":["inm.gob.hn","sreci.gob.hn"]},
+    {"passportCode":"AL","destinationCode":"IR","reason":"Iran's official eVisa material does not authenticate Albanian eligibility or actual issuance timing; generic application access is insufficient.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir"]},
+    {"passportCode":"AL","destinationCode":"IQ","reason":"Iraq's federal eVisa portal publishes no usable current nationality map establishing the Albanian ordinary-passport route.","searchedOfficialDomains":["evisa.iq","moi.gov.iq","mofa.gov.iq"]},
+    {"passportCode":"AL","destinationCode":"JO","reason":"Jordan's current official services establish electronic and conditional processes but do not map this passport to an unconditional arrival route.","searchedOfficialDomains":["moi.gov.jo","eservices.moi.gov.jo","mfa.gov.jo"]},
+    {"passportCode":"AL","destinationCode":"KW","reason":"Kuwait's enumerated arrival cohort does not establish a complete residual classification for Albania; sponsor and residence routes are excluded.","searchedOfficialDomains":["kuwaitvisa.moi.gov.kw","moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"AL","destinationCode":"LR","reason":"Liberia's current electronic or arrival process is mission- and residence-dependent and has no Albanian nationality baseline.","searchedOfficialDomains":["lis.gov.lr","visaonarrival.lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"AL","destinationCode":"ML","reason":"Current Malian and regional official sources publish no Albanian ordinary-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","ecowas.int"]},
+    {"passportCode":"AL","destinationCode":"MH","reason":"No current Marshall Islands primary nationality or diplomatic-ties schedule establishes this ordinary-passport baseline.","searchedOfficialDomains":["rmiimmigration.org","rmiparliament.org","rmiembassyus.org"]},
+    {"passportCode":"AL","destinationCode":"YT","reason":"Mayotte's current exemption is biometric-passport-qualified, a document property not represented by code AL.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"AL","destinationCode":"NC","reason":"New Caledonia's current territory order makes the Albania exemption biometric-document-qualified rather than a code-only baseline.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"AL","destinationCode":"NE","reason":"Niger's current default preserves unenumerated bilateral and community exemptions, with no reconciled Albanian schedule.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","gouv.ne"]},
+    {"passportCode":"AL","destinationCode":"KP","reason":"No current DPRK government or mission source publishes an Albanian ordinary-passport visitor schedule or safe residual default.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"AL","destinationCode":"MK","reason":"The recovered Albania source mentions North Macedonia only comparatively in a 2021 Serbia identity-card announcement, while the current North Macedonian selector does not yield a reproducible Albanian result.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","punetejashtme.gov.al"]},
+    {"passportCode":"AL","destinationCode":"PS","reason":"Palestinian access is route-, permit- and territory-dependent; no single destination-wide ordinary-passport status is established.","searchedOfficialDomains":["mofa.pna.ps","moi.pna.ps","cogat.mod.gov.il"]},
+    {"passportCode":"AL","destinationCode":"RE","reason":"Réunion's current exemption is biometric-passport-qualified, a property not represented by code AL.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"AL","destinationCode":"ST","reason":"São Tomé and Príncipe exemptions depend on third-country documents or unlisted decrees, and its eVisa service has no Albanian eligibility schedule.","searchedOfficialDomains":["smf.st","mne.gov.st","gov.st"]},
+    {"passportCode":"AL","destinationCode":"SL","reason":"Current Sierra Leone official material does not safely resolve whether this passport receives advance electronic or border issuance.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","immigration.gov.sl"]},
+    {"passportCode":"AL","destinationCode":"SB","reason":"Solomon Islands official material conflicts on electronic, manual and arrival issuance and does not map Albania to one route.","searchedOfficialDomains":["immigration.gov.sb","immigration.sig.gov.sb","solomons.gov.sb"]},
+    {"passportCode":"AL","destinationCode":"SS","reason":"South Sudan's portal proves electronic PDF issuance but asks applicants to establish eligibility and supplies no Albanian nationality schedule.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","immigration.eservices.gov.ss"]},
+    {"passportCode":"AL","destinationCode":"SD","reason":"Sudan publishes visitor processes but no Albanian nationality eligibility or complete ordinary-passport default.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd","passport.gov.sd"]},
+    {"passportCode":"AL","destinationCode":"SY","reason":"Syria's official framework supplies no current ordinary-Albanian-passport exemption or authenticated electronic eligibility route.","searchedOfficialDomains":["mofaex.gov.sy","evisa.sy","gaca.gov.sy"]},
+    {"passportCode":"AL","destinationCode":"TT","reason":"Trinidad and Tobago's older indexed Albania row is internally inconsistent and its cited PDF no longer opens directly; no current source resolves the visitor rule.","searchedOfficialDomains":["foreign.gov.tt","nationalsecurity.gov.tt","immigration.gov.tt"]},
+    {"passportCode":"AL","destinationCode":"TN","reason":"Tunisia publishes no current ordinary-passport nationality schedule or operative bilateral-waiver register establishing this route.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.tn","interieur.gov.tn"]},
+    {"passportCode":"AL","destinationCode":"TM","reason":"Turkmenistan publishes no exhaustive treaty-waiver or eVisa-eligibility roster for an Albanian ordinary passport.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","mejlis.gov.tm"]}
+  ]
+}

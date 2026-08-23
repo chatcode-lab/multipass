@@ -1714,7 +1714,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(65);
+    expect(pairs).toHaveLength(68);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_free").supportsCurrentStatus).toBe(false);
@@ -2099,7 +2099,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UA")).toHaveLength(79);
+    expect(pairsFor("UA")).toHaveLength(80);
     expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2421,7 +2421,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence("AL", destinationCode, "evisa").supportsCurrentStatus).toBe(true);
     }
     expect(getVisaRelationshipEvidence("AL", "CI", snapshot.passports.AL.statuses.CI).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("AL", "UA", snapshot.passports.AL.statuses.UA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AL", "UA", snapshot.passports.AL.statuses.UA).supportsCurrentStatus).toBe(true);
 
     expect(getVisaRelationshipEvidence("MK", "BA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MK", "NG", "evisa").supportsCurrentStatus).toBe(true);
@@ -2927,6 +2927,36 @@ describe("official visa evidence", () => {
       expect(
         getVisaRelationshipEvidence(passportCode, "US", snapshot.passports[passportCode].statuses.US)
           .supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
+  it("covers reviewed Albanian, Somali and Syrian residuals while preserving conditional holds", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["AL", "GD", "visa_required"],
+      ["AL", "PA", "visa_required"],
+      ["AL", "UA", "visa_free"],
+      ["SO", "GD", "visa_required"],
+      ["SO", "PA", "visa_required"],
+      ["SY", "PA", "visa_required"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["AL", "MK"],
+      ["AL", "TT"],
+      ["LY", "TR"],
+      ["LY", "US"],
+      ["SO", "US"],
+      ["SY", "US"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
       ).toBe(false);
     }
   });
@@ -3558,6 +3588,7 @@ describe("official visa evidence", () => {
       "mire.gob.pa",
       "www2.mre.gov.py",
       "www.embassyofpanama.org",
+      "uscode.house.gov",
       "sp.visitjordan.com",
       "voa.specialbranch.gov.bd",
       "www.mfa.gov.lv",
