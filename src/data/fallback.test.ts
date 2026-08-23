@@ -117,4 +117,20 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.SL.statuses.GD).toBe("visa_free");
     expect(snapshot.passports.SL.statuses.PA).toBe("visa_required");
   });
+
+  it("applies the final Turkmen, Barbadian, Botswanan and Algerian outbound audits", () => {
+    expect(snapshot.passports.TM.statuses.GD).toBe("visa_on_arrival");
+    expect(snapshot.passports.TM.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.TM.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.BB.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.BB.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.BB.statuses.LR).toBe("visa_free");
+    expect(snapshot.passports.BW.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.BW.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.DZ.statuses.BD).toBe("visa_required");
+    expect(snapshot.passports.DZ.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.DZ.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.DZ.statuses.MN).toBe("evisa");
+    expect(snapshot.passports.DZ.statuses.PA).toBe("visa_required");
+  });
 });

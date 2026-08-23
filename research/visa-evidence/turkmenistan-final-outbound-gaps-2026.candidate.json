@@ -1,0 +1,464 @@
+{
+  "batchId": "turkmenistan-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-visitors-tm-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page links its complete country schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-turkmenistan-schedule-2024",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The currently linked Embassy schedule marks Turkmenistan Port of Entry.",
+      "supportingExcerpt": "Turkmenistan Port of Entry"
+    },
+    {
+      "id": "panama-turkmenistan-authorized-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Turkmenistan in authorized visas.",
+      "supportingExcerpt": "Turkmenistan ... will need an authorized visa"
+    },
+    {
+      "id": "jordan-turkmenistan-arrival-visa-2026",
+      "title": "Visas To Jordan",
+      "url": "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan Tourism Board's live table maps Turkmenistan to arrival visa.",
+      "supportingExcerpt": "Turkmenistan | Applicable | Visa can be obtained upon arrival"
+    }
+  ],
+  "policies": [
+    {
+      "id": "tm-gd-voa-2026",
+      "title": "Turkmen ordinary passports: Grenada visa at arrival",
+      "summary": "Grenada's live-linked schedule marks Turkmenistan Port of Entry.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "GD"
+      ],
+      "passportCodes": [
+        "TM"
+      ],
+      "conditions": [
+        "Ordinary Turkmen passport; short visitor only.",
+        "Grenada defines Port of Entry as visa granted on arrival.",
+        "Other purposes and final admission are outside scope."
+      ],
+      "sourceIds": [
+        "grenada-visitors-tm-2026",
+        "grenada-turkmenistan-schedule-2024"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "tm-pa-authorized-visa-2026",
+      "title": "Turkmen ordinary passports: Panama authorized visa",
+      "summary": "Panama names Turkmenistan in its authorized-visa cohort.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "PA"
+      ],
+      "passportCodes": [
+        "TM"
+      ],
+      "conditions": [
+        "Ordinary Turkmen passport; short visitor without Panama's separate third-country-document waiver.",
+        "In-person consular application; approval may take up to 60 business days."
+      ],
+      "sourceIds": [
+        "panama-turkmenistan-authorized-visa-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "tm-jo-voa-2026",
+      "title": "Turkmen ordinary passports: Jordan visa on arrival",
+      "summary": "Jordan's Tourism Board table maps Turkmenistan to visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "TM"
+      ],
+      "conditions": [
+        "Ordinary Turkmen passport; short visitor only.",
+        "Register for Gateway2Jordan QR code before departure.",
+        "Entry point and final admission remain governed by Jordanian authorities."
+      ],
+      "sourceIds": [
+        "jordan-turkmenistan-arrival-visa-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TM",
+      "destinationCode": "GD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Grenada's live Embassy-linked nationality schedule explicitly classifies Turkmenistan as Port of Entry, defined as a visa granted on arrival.",
+      "sourceIds": [
+        "grenada-visitors-tm-2026",
+        "grenada-turkmenistan-schedule-2024"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "TM",
+      "destinationCode": "AF",
+      "reason": "No current Afghan or Turkmen primary source establishes a usable ordinary Turkmen-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "AO",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "BD",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "BF",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "CF",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "TD",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "KM",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "CG",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "CI",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "DJ",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "GW",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "IR",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "IQ",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "KW",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "KG",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "LR",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "ML",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "MN",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "MM",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "NE",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "KP",
+      "reason": "No current DPRK or Turkmen primary source establishes a usable ordinary Turkmen-passport visitor route; practical access restrictions are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "MK",
+      "reason": "North Macedonia's nationality checker does not yield a reproducible ordinary Turkmen-passport visitor result; no output is inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "PS",
+      "reason": "Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Turkmen-passport visitor status.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "ST",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SA",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SL",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SB",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SS",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SD",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SY",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "TT",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "TN",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "UA",
+      "reason": "No current destination or Turkmen primary source establishes ordinary Turkmen-passport short-visitor eligibility and actual issuance timing; portal availability, generic visa wording and omitted positive cohorts are not inferred.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "official destination immigration or foreign-ministry authority"
+      ]
+    }
+  ]
+}

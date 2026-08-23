@@ -676,7 +676,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BD", "SA", "visa_required").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BR", "SA", snapshot.passports.BR.statuses.SA).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("JO")).toHaveLength(135);
+    expect(pairsFor("JO")).toHaveLength(138);
     expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -847,7 +847,7 @@ describe("official visa evidence", () => {
     const mongoliaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "MN");
 
-    expect(mongoliaPairs).toHaveLength(168);
+    expect(mongoliaPairs).toHaveLength(169);
     expect(getVisaRelationshipEvidence("US", "MN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "MN", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KW", "MN", "evisa").supportsCurrentStatus).toBe(true);
@@ -934,7 +934,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "BT", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BT", "BT", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("BD")).toHaveLength(55);
+    expect(pairsFor("BD")).toHaveLength(56);
     expect(getVisaRelationshipEvidence("EG", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1377,7 +1377,7 @@ describe("official visa evidence", () => {
 
     expect(maliPairs).toHaveLength(36);
     expect(nigerPairs).toHaveLength(36);
-    expect(liberiaPairs).toHaveLength(34);
+    expect(liberiaPairs).toHaveLength(35);
     expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "NE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "LR", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1766,7 +1766,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(125);
+    expect(pairs).toHaveLength(128);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GN", "PA", "visa_required").supportsCurrentStatus).toBe(true);
@@ -3708,6 +3708,42 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("closes the reviewed Turkmen, Barbadian, Botswanan, and Algerian final gaps", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["TM", "GD", "visa_on_arrival"],
+      ["TM", "PA", "visa_required"],
+      ["TM", "JO", "visa_on_arrival"],
+      ["BB", "GD", "visa_free"],
+      ["BB", "JO", "visa_on_arrival"],
+      ["BB", "LR", "visa_free"],
+      ["BW", "GD", "visa_free"],
+      ["BW", "PA", "visa_free"],
+      ["DZ", "BD", "visa_required"],
+      ["DZ", "GD", "visa_required"],
+      ["DZ", "JO", "visa_on_arrival"],
+      ["DZ", "MN", "evisa"],
+      ["DZ", "PA", "visa_required"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["TM", "UA"],
+      ["BB", "TR"],
+      ["BW", "AF"],
+      ["DZ", "TR"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -3722,6 +3758,7 @@ describe("official visa evidence", () => {
       "www.bvi.gov.vg",
       "gndembassyprc.mofa.gov.gd",
       "grenadaembassyusa.org",
+      "algiers.mofa.gov.bd",
       "laws.gov.gd",
       "grenadaparliament.gd",
       "www.gov.gd",
