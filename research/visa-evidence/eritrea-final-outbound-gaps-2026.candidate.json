@@ -1,0 +1,114 @@
+{
+  "batchId": "eritrea-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-eritrea-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-eritrea-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Eritrea as Prior to Arrival.",
+      "supportingExcerpt": "Eritrea Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-eritrea-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Eritrea in its authorized-visa cohort and says approval may take up to 60 business days before travel.",
+      "supportingExcerpt": "Eritrea, Ethiopia, Equatorial Guinea, Gambia, Gabon, Georgia"
+    }
+  ],
+  "policies": [
+    {
+      "id": "eritrean-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Eritrean ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Eritrea as Prior to Arrival, which it defines as obtaining a visa from a mission or consulate before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["ER"],
+      "conditions": [
+        "Applies to an ordinary Eritrean passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained at a mission or consulate before travel.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-eritrea-2026", "grenada-embassy-eritrea-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "eritrean-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Eritrean ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Eritrea in its authorized-visa cohort for advance consular approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["ER"],
+      "conditions": [
+        "Applies to an ordinary Eritrean passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Authorized-visa approval may take up to 60 business days and must be granted before travel.",
+        "Washington-specific filing mechanics are not generalized to every consular district; final admission remains discretionary."
+      ],
+      "sourceIds": ["panama-embassy-eritrea-authorized-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"ER","destinationCode":"AF","reason":"No current Afghan or Eritrean primary source establishes a stable usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"AO","reason":"No current Angolan or Eritrean primary source establishes ordinary-passport visitor eligibility and actual issuance timing without inferring from a portal.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Eritrean-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"CF","reason":"No current Central African or Eritrean primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Eritrean-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Eritrean passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"CG","reason":"No current Republic of the Congo or Eritrean primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Eritrean eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"GU","reason":"United States territory entry requirements depend on U.S. visa and waiver-document status, while current Eritrean entry suspensions cannot be represented as a separate Guam taxonomy state.","searchedOfficialDomains":["cbp.gov","travel.state.gov","whitehouse.gov"]},
+    {"passportCode":"ER","destinationCode":"GW","reason":"No current Guinea-Bissau or Eritrean primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"HN","reason":"Current Honduran and Eritrean primary sources do not establish one unconditional ordinary-passport visitor route and actual issuance timing.","searchedOfficialDomains":["inm.gob.hn","sreci.gob.hn","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Eritrean-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Eritrean eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"ER","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Eritrean-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Eritrean-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"LR","reason":"No current Liberian or Eritrean primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"ML","reason":"No current Malian or Eritrean primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"MH","reason":"No current Marshall Islands or Eritrean primary source establishes one ordinary-passport visitor route and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","rmiparliament.org","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Eritrean-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"KP","reason":"No current DPRK or Eritrean primary source establishes a usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Eritrean-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"MP","reason":"United States territory entry requirements depend on U.S. visa and waiver-document status, while current Eritrean entry suspensions cannot be represented as a distinct Northern Mariana Islands taxonomy state.","searchedOfficialDomains":["cbp.gov","travel.state.gov","whitehouse.gov"]},
+    {"passportCode":"ER","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Eritrean-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Eritrean-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"PR","reason":"United States territory entry requirements depend on U.S. visa and waiver-document status, while current Eritrean entry suspensions cannot be represented as a distinct Puerto Rico taxonomy state.","searchedOfficialDomains":["cbp.gov","travel.state.gov","whitehouse.gov"]},
+    {"passportCode":"ER","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Eritrean eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Eritrean-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether an Eritrean application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"SB","reason":"Solomon Islands' official material does not establish one reproducible ordinary Eritrean-passport visitor route and actual issuance timing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Eritrean eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Eritrean-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"SY","reason":"Current Syrian and Eritrean official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Eritrean cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Eritrean-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"TM","reason":"No current Turkmen or Eritrean primary source establishes ordinary-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","shabait.com"]},
+    {"passportCode":"ER","destinationCode":"US","reason":"Current United States entry suspensions for Eritrean nationals contain exceptions and waiver provisions that the six-status taxonomy cannot represent without flattening material conditions.","searchedOfficialDomains":["whitehouse.gov","travel.state.gov","cbp.gov"]},
+    {"passportCode":"ER","destinationCode":"VI","reason":"United States territory entry requirements depend on U.S. visa and waiver-document status, while current Eritrean entry suspensions cannot be represented as a distinct U.S. Virgin Islands taxonomy state.","searchedOfficialDomains":["cbp.gov","travel.state.gov","whitehouse.gov"]}
+  ]
+}

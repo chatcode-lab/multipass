@@ -676,7 +676,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BD", "SA", "visa_required").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BR", "SA", snapshot.passports.BR.statuses.SA).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("JO")).toHaveLength(166);
+    expect(pairsFor("JO")).toHaveLength(167);
     expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1766,7 +1766,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(165);
+    expect(pairs).toHaveLength(168);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GN", "PA", "visa_required").supportsCurrentStatus).toBe(true);
@@ -4085,6 +4085,37 @@ describe("official visa evidence", () => {
       ["NR", "BZ"],
       ["PW", "JO"],
       ["BD", "MN"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
+  it("closes the reviewed Cameroonian, Congolese, Dominican, and Eritrean final gaps", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["CM", "GD", "visa_free"],
+      ["CM", "PA", "visa_required"],
+      ["CD", "GD", "visa_required"],
+      ["CD", "PA", "visa_required"],
+      ["DO", "GD", "visa_free"],
+      ["DO", "JO", "visa_on_arrival"],
+      ["ER", "GD", "visa_required"],
+      ["ER", "PA", "visa_required"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["CM", "AF"],
+      ["CD", "BS"],
+      ["DO", "MD"],
+      ["ER", "US"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(

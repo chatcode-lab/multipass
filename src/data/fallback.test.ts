@@ -285,4 +285,15 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.BD.statuses.PA).toBe("visa_required");
     expect(snapshot.passports.BD.statuses.TR).toBe("visa_required");
   });
+
+  it("applies the final Cameroonian, Congolese, Dominican and Eritrean outbound audits", () => {
+    expect(snapshot.passports.CM.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.CM.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.CD.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.CD.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.DO.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.DO.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.ER.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.ER.statuses.PA).toBe("visa_required");
+  });
 });

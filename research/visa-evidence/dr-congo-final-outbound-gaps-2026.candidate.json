@@ -1,0 +1,117 @@
+{
+  "batchId": "dr-congo-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-drc-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-drc-april-2024-schedule-current-2026",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The Embassy's currently linked schedule is marked updated April 2024, separately names the Democratic Republic of the Congo, and places it Prior to Arrival.",
+      "supportingExcerpt": "Democratic Republic of The Congo Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-drc-authorized-visa-current-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy guidance lists the Democratic Republic of Congo in its authorized-visa cohort and requires the applicant to appear at the consulate.",
+      "supportingExcerpt": "Costa de Marfil, Democratic Republic of Congo, Djibouti, Egypt, Eritrea"
+    }
+  ],
+  "policies": [
+    {
+      "id": "drc-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Democratic Republic of the Congo ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule places the Democratic Republic of the Congo in its prior-to-arrival cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["CD"],
+      "conditions": [
+        "Applies to an ordinary Democratic Republic of the Congo passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained from a Grenadian mission or consulate before travel.",
+        "Work, residence, study, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "grenada-embassy-visitors-current-drc-2026",
+        "grenada-embassy-drc-april-2024-schedule-current-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "drc-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Democratic Republic of the Congo ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places the Democratic Republic of Congo in its authorized-visa cohort for advance consular approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["CD"],
+      "conditions": [
+        "Applies to an ordinary Democratic Republic of the Congo passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "The cited Embassy says authorized-visa approval may take up to 60 business days and requires an in-person consular application.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-drc-authorized-visa-current-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"CD","destinationCode":"AF","reason":"No current Afghan or DRC primary source establishes a stable usable ordinary DRC-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","diplomatie.gouv.cd"]},
+    {"passportCode":"CD","destinationCode":"AO","reason":"Angola's current tourist-exemption list does not name the Democratic Republic of the Congo, while generic tourist-visa material does not establish the passport-only route.","searchedOfficialDomains":["mirex.gov.ao","governo.gov.ao","smevisa.gov.ao"]},
+    {"passportCode":"CD","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish ordinary DRC-passport eligibility or actual visitor-visa issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immi.gov.bd"]},
+    {"passportCode":"CD","destinationCode":"CF","reason":"No current Central African or DRC primary source establishes ordinary DRC-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","diplomatie.gouv.cd"]},
+    {"passportCode":"CD","destinationCode":"TD","reason":"Chad's official portal does not publish a reproducible ordinary DRC-passport eligibility result or prove actual issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"CD","destinationCode":"KM","reason":"Comorian law preserves unenumerated conventions and special rules while no current nationality schedule maps the ordinary DRC passport.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km"]},
+    {"passportCode":"CD","destinationCode":"CG","reason":"No current Republic of the Congo or DRC primary source establishes ordinary DRC-passport visitor eligibility and actual issuance timing; the two Congos are not interchangeable.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","diplomatie.gouv.cd"]},
+    {"passportCode":"CD","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not publish a reproducible ordinary DRC-passport eligibility or exemption result.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj"]},
+    {"passportCode":"CD","destinationCode":"SZ","reason":"No current Eswatini or DRC primary source establishes ordinary DRC-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["gov.sz","foreignaffairs.gov.sz","diplomatie.gouv.cd"]},
+    {"passportCode":"CD","destinationCode":"GW","reason":"No current Guinea-Bissau or DRC primary source establishes ordinary DRC-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw"]},
+    {"passportCode":"CD","destinationCode":"HN","reason":"Honduras's accessible official schedules do not provide a current reconciled ordinary DRC-passport visitor classification.","searchedOfficialDomains":["inm.gob.hn","sreci.gob.hn"]},
+    {"passportCode":"CD","destinationCode":"IR","reason":"Iran's official visa endpoints do not expose a stable current ordinary DRC-passport nationality decision or reliably retrievable issuance path.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir"]},
+    {"passportCode":"CD","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary DRC-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"CD","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary DRC-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"CD","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary DRC-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"CD","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no ordinary DRC-passport nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"CD","destinationCode":"ML","reason":"Mali's current official assistant depends on nationality, passport type, residence and filing location without a stable DRC visitor result.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"CD","destinationCode":"MH","reason":"Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes an ordinary DRC-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov"]},
+    {"passportCode":"CD","destinationCode":"MM","reason":"Myanmar's current electronic service does not publish a reproducible ordinary DRC-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm"]},
+    {"passportCode":"CD","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary DRC-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"CD","destinationCode":"KP","reason":"No current DPRK or DRC primary source establishes a usable ordinary DRC-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","diplomatie.gouv.cd"]},
+    {"passportCode":"CD","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary DRC-passport result; generic application material and third-country waivers do not establish the baseline.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"CD","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary DRC-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om"]},
+    {"passportCode":"CD","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary DRC-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"CD","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish DRC eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st"]},
+    {"passportCode":"CD","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary DRC-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com"]},
+    {"passportCode":"CD","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a DRC application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl"]},
+    {"passportCode":"CD","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary DRC-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb"]},
+    {"passportCode":"CD","destinationCode":"SS","reason":"Current EAC sources describe Partner-State visa-free entry, while South Sudan's current MFA table marks the Democratic Republic of the Congo visa-required; issuance timing remains unreconciled.","searchedOfficialDomains":["eac.int","mofaic.gov.ss","evisa.gov.ss"]},
+    {"passportCode":"CD","destinationCode":"LC","reason":"Saint Lucia's current Revised Laws conflict between a Democratic Republic of Congo prior-visa row and a legacy Zaire arrival-visa row; no source reconciles the issuer identity.","searchedOfficialDomains":["attorneygeneralchambers.com","govt.lc","externalaffairs.govt.lc"]},
+    {"passportCode":"CD","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary DRC-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd"]},
+    {"passportCode":"CD","destinationCode":"SY","reason":"Current Syrian official material does not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary DRC passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"CD","destinationCode":"BS","reason":"The Bahamas government's historic labels Congo and Zaire do not identify a current Democratic Republic of the Congo ordinary-passport rule.","searchedOfficialDomains":["mofa.gov.bs","evisa.mofa.gov.bs","immigration.gov.bs"]},
+    {"passportCode":"CD","destinationCode":"TT","reason":"Trinidad and Tobago's named waiver schedule does not include the Democratic Republic of the Congo, while its electronic service applies only after visa-required nationality eligibility is established. No complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","homelandsecurity.gov.tt","foreign.gov.tt"]},
+    {"passportCode":"CD","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary DRC-passport baseline. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn"]},
+    {"passportCode":"CD","destinationCode":"TM","reason":"No current Turkmen or DRC primary source establishes ordinary DRC-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm"]},
+    {"passportCode":"CD","destinationCode":"UA","reason":"Ukraine's accessible nationality table is expressly dated June 2023; no current Ukrainian or DRC source establishes the ordinary DRC-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","diplomatie.gouv.cd"]}
+  ]
+}
