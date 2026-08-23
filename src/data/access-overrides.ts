@@ -3245,4 +3245,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.nederlandwereldwijd.nl/reisadvies/iran",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "NO",
+    destinationCode: "LR",
+    status: "visa_on_arrival",
+    reason: "Norway's current Foreign Ministry guidance expressly places Norwegian citizens in Liberia's no-embassy visa-on-arrival route; online approval precedes airport biometrics and visa-sticker issuance.",
+    sourceUrl: "https://www.regjeringen.no/no/tema/utenrikssaker/reiseinformasjon/velg-land/reiseinfo_liberia/id2414685/",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "NO",
+    destinationCode: "ML",
+    status: "visa_on_arrival",
+    reason: "Norway's current Foreign Ministry guidance distinguishes Mali's electronic entry authorization from the visa itself, which is issued at Bamako on arrival.",
+    sourceUrl: "https://www.regjeringen.no/no/tema/utenrikssaker/reiseinformasjon/velg-land/reiseinfo_mali/id2424320/",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "NO",
+    destinationCode: "SY",
+    status: "visa_required",
+    reason: "Norway's current Foreign Ministry guidance directs Norwegian visitors to apply for Syria's visa through the Syrian Embassy in Sweden before travel.",
+    sourceUrl: "https://www.regjeringen.no/no/tema/utenrikssaker/reiseinformasjon/velg-land/syria_reiseinfo/id2429139/",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
