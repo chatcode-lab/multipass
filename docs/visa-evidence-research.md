@@ -1956,6 +1956,16 @@ Liberia adds Grenada, Panama and North Macedonia as `visa_required`. Madagascar 
 
 Vietnam adds Grenada, North Macedonia and Jordan as `visa_required`, plus Panama as `visa_free`. Jordan corrects fallback `visa_on_arrival`: the current official tourism-board nationality table marks Vietnam ineligible for arrival issuance and directs travelers to obtain an embassy visa before arrival. Conditional third-country-document, residence, invitation and route-specific outcomes remain unresolved instead of being treated as ordinary-passport access.
 
+## Pass 205 result: final Azerbaijani, South African, Burkinabe and Bahamian outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add fourteen currently supported relationships, raising complete-matrix evidence from 38,728 to 38,742 of 44,974 relationships (86.1%). The public `/status` matrix contains 38,742 fresh and 6,232 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 492 reviewed batches, 2,259 official sources and 1,490 policies. Regional coverage is Africa 8,463 of 11,289 (75.0%), the Americas 4,724 of 4,953 (95.4%), the Caribbean 4,531 of 4,962 (91.3%), Asia 5,324 of 6,336 (84.0%), Europe 9,992 of 10,299 (97.0%), the Middle East 1,838 of 2,970 (61.9%) and Oceania 3,870 of 4,165 (92.9%).
+
+Azerbaijan adds Grenada and Jordan as `visa_on_arrival`, plus Panama as `visa_required`; Grenada corrects fallback `visa_free`. A proposed North Macedonia relationship was rejected during independent review because its nationality checker was not reproducibly readable, so the generic application procedure alone was insufficient to establish Azerbaijani eligibility.
+
+South Africa adds Angola, Grenada and Panama as `visa_free`, plus Jordan as `visa_on_arrival`. Angola's official Interior/SME schedule records the ordinary-passport agreement under Presidential Decree 321/17 as in force. Burkina Faso adds Grenada, Panama and Mongolia as `visa_required`; the United States, Puerto Rico, Guam, Northern Mariana Islands and U.S. Virgin Islands remain explicit PP10998 conflicts because the full suspension, valid-visa grandfathering, exceptions and waivers cannot be represented as a normal six-status result.
+
+The Bahamas adds Grenada and Panama as `visa_free`, corrects Jordan from fallback `visa_on_arrival` to advance `visa_required`, and corrects Türkiye from fallback `visa_on_arrival` to `evisa`. The remaining conditional, portal-only, operationally restricted and non-reproducible relationships stay uncovered.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

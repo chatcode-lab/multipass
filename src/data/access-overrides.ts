@@ -3597,4 +3597,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "AZ",
+    destinationCode: "GD",
+    status: "visa_on_arrival",
+    reason: "Grenada's actively linked April 2024 schedule places Azerbaijani ordinary passports in its port-of-entry visa cohort.",
+    sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "BS",
+    destinationCode: "JO",
+    status: "visa_required",
+    reason: "Jordan's live Tourism Board nationality table marks Bahamian ordinary-passport visitors ineligible for arrival issuance and requires an embassy visa before arrival.",
+    sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "BS",
+    destinationCode: "TR",
+    status: "evisa",
+    reason: "Turkiye's current Foreign Ministry schedule expressly offers a three-month multiple-entry eVisa to ordinary Bahamian passport holders.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
