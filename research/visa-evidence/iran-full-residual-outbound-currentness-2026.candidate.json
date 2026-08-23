@@ -1,0 +1,171 @@
+{
+  "batchId": "iran-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-iran-prior-arrival-apr-2024",
+      "title": "Visa requirements for traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's official Embassy currently serves this nationality schedule, revised in April 2024, and defines its prior-arrival category as a mission or consular visa before travel.",
+      "supportingExcerpt": "Iran (Islamic Republic of) Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-iran-authorized-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy consular page expressly includes Iran in its authorized-visa list and describes prior in-person consular filing and approval.",
+      "supportingExcerpt": "Iran ... you will need an authorized visa"
+    },
+    {
+      "id": "us-state-iran-full-suspension-2026",
+      "title": "Suspension of visa issuance to foreign nationals",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "United States Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The current State Department notice implements Presidential Proclamation 10998, effective 1 January 2026, and expressly names Iran in the full suspension.",
+      "supportingExcerpt": "fully suspended visa issuance ... Iran"
+    },
+    {
+      "id": "us-code-geographic-united-states-2026",
+      "title": "8 U.S.C. 1101: Definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official current U.S. Code compilation states that the INA's geographical definition of United States includes Puerto Rico, Guam, the U.S. Virgin Islands, and CNMI.",
+      "supportingExcerpt": "means the continental United States, Alaska, Hawaii, Puerto Rico, Guam, the Virgin Islands ... and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "grenada-iran-ordinary-passports-prior-arrival-visa",
+      "title": "Grenada: Iranian ordinary passports",
+      "summary": "Grenada's live Embassy nationality schedule directly places Iran in the prior-arrival visa category.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["IR"],
+      "conditions": [
+        "Applies to an ordinary Iranian passport for short visitor travel.",
+        "The schedule defines Prior To Arrival as a visa obtained at a Grenada mission or consulate before travel.",
+        "The schedule was revised in April 2024; recheck early if Grenada publishes a later schedule.",
+        "Does not classify work, residence, transit, crew, diplomatic, official, service or special-document travel."
+      ],
+      "sourceIds": ["grenada-embassy-iran-prior-arrival-apr-2024"],
+      "confidence": "medium"
+    },
+    {
+      "id": "panama-iran-ordinary-passports-authorized-visa",
+      "title": "Panama: Iranian ordinary passports",
+      "summary": "Panama's live Embassy visitor schedule expressly includes Iran in its authorized-visa cohort, requiring consular filing before travel for visitors without the separate third-country-document waiver.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["IR"],
+      "conditions": [
+        "Applies to an ordinary Iranian passport holder travelling as a short visitor who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "The published authorized-visa procedure requires the applicant to appear in person at the consulate and says approval can take up to 60 business days.",
+        "Work, residence, transit, diplomatic, official, service, special-document, invitation and final-admission treatment are not classified by this policy."
+      ],
+      "sourceIds": ["panama-embassy-iran-authorized-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "IR",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The current full entry and visa-issuance suspension, valid-visa grandfathering, listed exceptions and case-by-case waivers cannot be faithfully flattened to a normal visitor status.",
+      "sourceIds": ["us-state-iran-full-suspension-2026"]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-iran-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-iran-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes CNMI. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-iran-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The suspension is an INA entry and visa-issuance rule; the INA geographical definition of United States includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-iran-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"IR","destinationCode":"AF","reason":"No current Afghan primary source establishes an ordinary Iranian-passport short-visitor route or actual issuance timing; portal availability and omission are not treated as a residual rule.","searchedOfficialDomains":["mfa.gov.af","evisa.mfa.gov.af"]},
+    {"passportCode":"IR","destinationCode":"AO","reason":"No current Angolan primary nationality schedule maps an ordinary Iranian passport to a passport-only visitor route; electronic service availability is not eligibility evidence.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao"]},
+    {"passportCode":"IR","destinationCode":"BD","reason":"Current Bangladeshi government and mission material does not publish an ordinary Iranian-passport visitor schedule or an exhaustive residual rule.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immigration.gov.bd"]},
+    {"passportCode":"IR","destinationCode":"BF","reason":"Burkina Faso's official portal does not expose a reproducible ordinary Iranian-passport tourist eligibility or issuance result; online filing alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf"]},
+    {"passportCode":"IR","destinationCode":"CF","reason":"No current Central African primary nationality schedule establishes a normalized short-visitor route for an ordinary Iranian passport.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"IR","destinationCode":"TD","reason":"Chad's online material does not independently establish ordinary Iranian-passport eligibility or the actual visitor-visa issuance route.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"IR","destinationCode":"KM","reason":"Comorian law preserves treaty and special-law exceptions while no current tourist nationality schedule maps an ordinary Iranian passport; no complement is inferred.","searchedOfficialDomains":["justice.gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"IR","destinationCode":"CG","reason":"No current Republic of the Congo primary nationality schedule establishes an ordinary Iranian-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"IR","destinationCode":"CI","reason":"Côte d'Ivoire's official material does not establish a current ordinary Iranian-passport visitor route and actual issuance timing; online pre-enrolment is not an eligibility complement.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"IR","destinationCode":"DJ","reason":"Djibouti's official electronic-visa material does not publish a current ordinary Iranian-passport eligibility or exemption partition.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj"]},
+    {"passportCode":"IR","destinationCode":"GU","reason":"Not established as a normalized status: the current federal suspension reaches Guam under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","guam.gov"]},
+    {"passportCode":"IR","destinationCode":"GW","reason":"No current Guinea-Bissau primary source establishes an unconditional ordinary Iranian-passport visitor route; regional treatment does not establish this non-ECOWAS passport baseline.","searchedOfficialDomains":["mne.gw","gov.gw","ecowas.int"]},
+    {"passportCode":"IR","destinationCode":"HN","reason":"Honduras's current official material does not establish an ordinary Iranian-passport visitor route without conditional residence, visa or document treatment.","searchedOfficialDomains":["migracion.gob.hn","cancilleria.gob.hn"]},
+    {"passportCode":"IR","destinationCode":"IQ","reason":"Iraq's official electronic and one-stop services do not publish a current ordinary Iranian-passport tourist schedule or actual issuance outcome; Kurdistan-region rules are not substituted for federal Iraq.","searchedOfficialDomains":["ur.gov.iq","moi.gov.iq","mofa.gov.iq"]},
+    {"passportCode":"IR","destinationCode":"KW","reason":"Kuwait's official visitor services do not publish a current ordinary Iranian-passport eligibility or issuance route.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.kw"]},
+    {"passportCode":"IR","destinationCode":"KG","reason":"Kyrgyzstan's eVisa selector does not provide a reproducible controlling ordinary Iranian-passport tourist result, and no exhaustive complement is published.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"IR","destinationCode":"LA","reason":"No current Lao primary nationality schedule establishes an ordinary Iranian-passport short-visitor baseline; generic electronic application availability is insufficient.","searchedOfficialDomains":["laoevisa.gov.la","immigration.gov.la","mofa.gov.la"]},
+    {"passportCode":"IR","destinationCode":"LR","reason":"Liberia's current portal material does not establish ordinary Iranian-passport eligibility and actual visitor-visa issuance timing.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"IR","destinationCode":"ML","reason":"No current Malian primary nationality schedule establishes an ordinary Iranian-passport visitor baseline; regional treatment does not establish this non-ECOWAS passport route.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","ecowas.int"]},
+    {"passportCode":"IR","destinationCode":"MH","reason":"No current Marshall Islands primary nationality schedule establishes an ordinary Iranian-passport short-visitor baseline.","searchedOfficialDomains":["rmiembassyus.org","rmi.gov"]},
+    {"passportCode":"IR","destinationCode":"MN","reason":"Mongolia's current eVisa material is a positive eligibility list and does not establish an advance-visa complement for an unlisted ordinary Iranian passport.","searchedOfficialDomains":["evisa.mn","consul.mn"]},
+    {"passportCode":"IR","destinationCode":"MM","reason":"Myanmar's current official material does not establish a positive ordinary Iranian-passport visitor route; no residual classification is inferred from list omission.","searchedOfficialDomains":["evisa.moip.gov.mm","moip.gov.mm"]},
+    {"passportCode":"IR","destinationCode":"NE","reason":"No current Niger primary nationality schedule establishes an ordinary Iranian-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"IR","destinationCode":"KP","reason":"No retrievable current official source establishes an available ordinary Iranian-passport short-visitor route and issuance timing; closure or permission restrictions cannot be normalized.","searchedOfficialDomains":["mfa.gov.kp"]},
+    {"passportCode":"IR","destinationCode":"MK","reason":"North Macedonia's live MFA selector and accessible entry material do not establish an operative nationality rule for an ordinary Iranian passport; conditional third-country-document waivers are excluded.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","slvesnik.com.mk"]},
+    {"passportCode":"IR","destinationCode":"MP","reason":"Not established as a normalized status: the current federal suspension reaches CNMI under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","gov.mp"]},
+    {"passportCode":"IR","destinationCode":"PS","reason":"Palestinian visitor treatment cannot be separated from Israeli and Egyptian crossing controls; no destination-wide ordinary Iranian-passport baseline is asserted.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"IR","destinationCode":"PR","reason":"Not established as a normalized status: the current federal suspension reaches Puerto Rico under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","pr.gov"]},
+    {"passportCode":"IR","destinationCode":"ST","reason":"São Tomé and Príncipe's current law leaves further exemptions to decree; document-conditioned exceptions do not establish an ordinary Iranian-passport baseline.","searchedOfficialDomains":["gov.st","lex.st"]},
+    {"passportCode":"IR","destinationCode":"SL","reason":"Current Sierra Leone official material does not establish actual visitor-visa issuance timing for an ordinary Iranian passport.","searchedOfficialDomains":["immigration.gov.sl","mofaic.gov.sl"]},
+    {"passportCode":"IR","destinationCode":"SB","reason":"No current Solomon Islands primary nationality schedule establishes an ordinary Iranian-passport short-visitor baseline.","searchedOfficialDomains":["immigration.gov.sb","mfaet.gov.sb"]},
+    {"passportCode":"IR","destinationCode":"SS","reason":"South Sudan's official electronic material does not publish ordinary Iranian-passport eligibility and actual visitor-visa issuance timing.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"IR","destinationCode":"SD","reason":"No current Sudanese primary source establishes an ordinary Iranian-passport short-visitor issuance route or confirms any historic bilateral arrangement remains operative.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd"]},
+    {"passportCode":"IR","destinationCode":"SY","reason":"Syria's current eAIP states a general mission-visa rule but preserves unspecified exemptions; it does not map an ordinary Iranian passport to a visitor route.","searchedOfficialDomains":["eaip.gaca.gov.sy","mofa.gov.sy"]},
+    {"passportCode":"IR","destinationCode":"TT","reason":"Trinidad and Tobago's electronic application material does not publish current ordinary Iranian-passport eligibility or an exemption map; portal availability is not a baseline.","searchedOfficialDomains":["foreign.gov.tt","immigration.gov.tt"]},
+    {"passportCode":"IR","destinationCode":"TN","reason":"Tunisia's current official material identifies no visa-subject nationality cohort and no current waiver register establishes an ordinary Iranian-passport baseline.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.gov.tn"]},
+    {"passportCode":"IR","destinationCode":"TM","reason":"Turkmenistan's statutory visa baseline preserves treaty exceptions and the electronic service publishes no current ordinary Iranian-passport eligibility roster.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm"]},
+    {"passportCode":"IR","destinationCode":"UA","reason":"Available Ukrainian nationality tables are dated and no current primary source establishes an ordinary Iranian-passport short-visitor baseline.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua"]},
+    {"passportCode":"IR","destinationCode":"US","reason":"Not established as a normalized status: current rules fully suspend Iranian entry and visa issuance, subject to grandfathering, specific exceptions and case-by-case waivers.","searchedOfficialDomains":["travel.state.gov","federalregister.gov","cbp.gov"]},
+    {"passportCode":"IR","destinationCode":"VI","reason":"Not established as a normalized status: the current federal suspension reaches the U.S. Virgin Islands under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","usvi.gov"]}
+  ]
+}

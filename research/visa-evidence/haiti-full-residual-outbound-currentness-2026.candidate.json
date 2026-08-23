@@ -1,0 +1,159 @@
+{
+  "batchId": "haiti-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-current-visitors-page-2026",
+      "title": "Embassy of Grenada: Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live embassy visitor page states that rules turn on citizenship and currently links the complete country visa-requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-haiti-no-visa-schedule-2026",
+      "title": "Embassy of Grenada: Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The currently linked official embassy nationality schedule is marked Updated April 2024, expressly has a Haiti ordinary-passport row, and defines No Visa Required as no visa needed for entry.",
+      "supportingExcerpt": "Haiti No Visa required"
+    },
+    {
+      "id": "us-state-haiti-full-suspension-2026",
+      "title": "Suspension of visa issuance to foreign nationals",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "United States Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The current State Department notice implements Presidential Proclamation 10998 from 1 January 2026 and expressly names Haiti in the full suspension.",
+      "supportingExcerpt": "The Department of State fully suspended visa issuance ... Haiti."
+    },
+    {
+      "id": "us-code-geographic-united-states-2026",
+      "title": "8 U.S.C. 1101: Definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official current U.S. Code compilation defines the INA's geographical United States to include Puerto Rico, Guam, the U.S. Virgin Islands, and CNMI.",
+      "supportingExcerpt": "means the continental United States, Alaska, Hawaii, Puerto Rico, Guam, the Virgin Islands ... and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "haitian-ordinary-passports-grenada-visa-free-2026",
+      "title": "Haitian ordinary passports: Grenada visa-free visitor entry",
+      "summary": "Grenada's currently linked official nationality schedule expressly lists Haiti as no-visa required; its glossary says that this means a visa is not required for entry.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["HT"],
+      "conditions": [
+        "Applies to a Haitian ordinary passport holder making a short visitor entry; the schedule separately lists special Haitian passports, so this record does not rely on that treatment.",
+        "The schedule is marked Updated April 2024 and is actively linked by Grenada's current embassy visitor page; recheck if the embassy replaces the schedule.",
+        "Work, residence, study, other purposes, carrier requirements and final admission remain outside this classification."
+      ],
+      "sourceIds": [
+        "grenada-embassy-current-visitors-page-2026",
+        "grenada-embassy-haiti-no-visa-schedule-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "HT",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The current full suspension retains valid-visa grandfathering, enumerated exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-haiti-full-suspension-2026"]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-haiti-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-haiti-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes CNMI. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-haiti-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-haiti-full-suspension-2026", "us-code-geographic-united-states-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"HT","destinationCode":"AF","reason":"No current Afghan primary source establishes an ordinary Haitian-passport short-visitor route or actual issuance timing; portal availability and omission are not treated as a residual rule.","searchedOfficialDomains":["mfa.gov.af","evisa.mfa.gov.af","mae.gouv.ht"]},
+    {"passportCode":"HT","destinationCode":"BD","reason":"Current Bangladeshi government and mission material does not publish ordinary Haitian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immigration.gov.bd"]},
+    {"passportCode":"HT","destinationCode":"BF","reason":"No current Burkinabè primary source establishes an ordinary Haitian-passport short-visitor route or whether online processing is electronic issuance.","searchedOfficialDomains":["mae.gov.bf","evisa.gov.bf","interieur.gov.bf"]},
+    {"passportCode":"HT","destinationCode":"CF","reason":"No current Central African primary nationality schedule establishes a normalized short-visitor route for an ordinary Haitian passport.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"HT","destinationCode":"TD","reason":"No current Chadian primary source establishes an ordinary Haitian-passport visitor route and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.td","evisa.td","presidence.td"]},
+    {"passportCode":"HT","destinationCode":"KM","reason":"Comorian law preserves treaty and special-law exceptions while no current tourist nationality schedule maps an ordinary Haitian passport; no complement is inferred.","searchedOfficialDomains":["justice.gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"HT","destinationCode":"CG","reason":"No current Republic of the Congo primary nationality schedule establishes an ordinary Haitian-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"HT","destinationCode":"CI","reason":"Côte d'Ivoire's official pre-enrolment material does not establish ordinary Haitian-passport eligibility or whether the visitor visa is electronically or airport issued.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","interieur.gouv.ci"]},
+    {"passportCode":"HT","destinationCode":"DJ","reason":"Djibouti's official electronic-visa material does not publish a current ordinary Haitian-passport eligibility or exemption partition.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj"]},
+    {"passportCode":"HT","destinationCode":"GU","reason":"Not established as a normalized status: the current federal full suspension reaches Guam under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","guam.gov"]},
+    {"passportCode":"HT","destinationCode":"GW","reason":"No current Guinea-Bissau primary source establishes an unconditional ordinary Haitian-passport visitor route; regional treatment does not establish this non-ECOWAS passport baseline.","searchedOfficialDomains":["mne.gw","gov.gw","ecowas.int"]},
+    {"passportCode":"HT","destinationCode":"IR","reason":"Iran's current official visitor material does not establish an ordinary Haitian-passport nationality route and issuance form without invitation, host or other conditions.","searchedOfficialDomains":["mfa.gov.ir","evisa.mfa.ir"]},
+    {"passportCode":"HT","destinationCode":"IQ","reason":"Iraq's official electronic and one-stop services do not publish a current ordinary Haitian-passport tourist schedule or actual issuance outcome.","searchedOfficialDomains":["ur.gov.iq","moi.gov.iq","mofa.gov.iq"]},
+    {"passportCode":"HT","destinationCode":"JO","reason":"Jordan's current restricted-nationality schedule does not list Haiti, but omission does not establish an ordinary Haitian-passport visitor route or issuance form.","searchedOfficialDomains":["moi.gov.jo","eservices.moi.gov.jo"]},
+    {"passportCode":"HT","destinationCode":"KW","reason":"Kuwait's official visitor services do not publish a current ordinary Haitian-passport eligibility or issuance route.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.kw"]},
+    {"passportCode":"HT","destinationCode":"KG","reason":"No current Kyrgyz primary source establishes an ordinary Haitian-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["mfa.gov.kg","evisa.e-gov.kg","mvd.gov.kg"]},
+    {"passportCode":"HT","destinationCode":"LR","reason":"No current Liberian primary source establishes an ordinary Haitian-passport short-visitor route or electronic-issuance eligibility.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"HT","destinationCode":"ML","reason":"No current Malian primary source establishes an ordinary Haitian-passport visitor route and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"HT","destinationCode":"MH","reason":"No current Marshall Islands primary source establishes an ordinary Haitian-passport visitor route or arrival-issuance outcome.","searchedOfficialDomains":["rmiembassyus.org","rmigovernment.org"]},
+    {"passportCode":"HT","destinationCode":"MM","reason":"Myanmar's official visitor material does not establish ordinary Haitian-passport eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.mm","evisa.moip.gov.mm"]},
+    {"passportCode":"HT","destinationCode":"NE","reason":"No current Nigerien primary source establishes an ordinary Haitian-passport short-visitor route or electronic-issuance eligibility.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"HT","destinationCode":"KP","reason":"No current DPRK primary source establishes an ordinary Haitian-passport visitor route; border controls and special permissions cannot be flattened to a normal status.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"HT","destinationCode":"MK","reason":"North Macedonia's current primary sources do not establish an ordinary Haitian-passport short-visitor route or actual issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"HT","destinationCode":"MP","reason":"Not established as a normalized status: the current federal full suspension reaches CNMI under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","dps.gov.mp"]},
+    {"passportCode":"HT","destinationCode":"OM","reason":"Oman's official visitor services do not publish a current ordinary Haitian-passport nationality baseline independent of residence, host or third-country-document conditions.","searchedOfficialDomains":["rop.gov.om","evisa.rop.gov.om","fm.gov.om"]},
+    {"passportCode":"HT","destinationCode":"PS","reason":"Crossing, Israeli permit and Palestinian-document rules do not establish a Palestine-only ordinary Haitian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"HT","destinationCode":"PA","reason":"Panama's official 2014 decree requires prior Executive authorization for Haitian nationals, but no current primary source establishes the resulting ordinary visitor document or issuance timing; it is not flattened to a normal status.","searchedOfficialDomains":["migracion.gob.pa","mire.gob.pa"]},
+    {"passportCode":"HT","destinationCode":"PR","reason":"Not established as a normalized status: the current federal full suspension reaches Puerto Rico under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","pr.gov"]},
+    {"passportCode":"HT","destinationCode":"ST","reason":"São Tomé and Príncipe's online visitor services do not publish a current ordinary Haitian-passport eligibility or issuance route.","searchedOfficialDomains":["migracao.gov.st","consulado.st"]},
+    {"passportCode":"HT","destinationCode":"SA","reason":"Saudi Arabia's current visitor selector does not establish an ordinary Haitian-passport visitor baseline independent of residence, group, host or special-document conditions.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa"]},
+    {"passportCode":"HT","destinationCode":"SL","reason":"No current Sierra Leone primary source establishes an ordinary Haitian-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["mofaic.gov.sl","immigration.gov.sl"]},
+    {"passportCode":"HT","destinationCode":"SB","reason":"No current Solomon Islands primary source establishes an ordinary Haitian-passport short-visitor route or arrival-issuance outcome.","searchedOfficialDomains":["immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"HT","destinationCode":"SS","reason":"No current South Sudan primary source establishes ordinary Haitian-passport eligibility and whether online processing is electronic issuance.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"HT","destinationCode":"SD","reason":"No current Sudanese primary source establishes an ordinary Haitian-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"HT","destinationCode":"SY","reason":"No current Syrian primary nationality schedule establishes an ordinary Haitian-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"HT","destinationCode":"TT","reason":"The government-hosted Haitian row requires a visa/waiver approval but its linked all-country schedule is currently unavailable; no current re-openable primary schedule establishes the ordinary Haitian visitor baseline.","searchedOfficialDomains":["foreign.gov.tt","nationalsecurity.gov.tt","immigration.gov.tt"]},
+    {"passportCode":"HT","destinationCode":"TN","reason":"No current Tunisian primary source establishes an ordinary Haitian-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["interieur.gov.tn","diplomatie.gov.tn"]},
+    {"passportCode":"HT","destinationCode":"TR","reason":"Türkiye's official eVisa and consular material does not establish an ordinary Haitian-passport visitor route independent of third-country-document or residence conditions.","searchedOfficialDomains":["evisa.gov.tr","mfa.gov.tr"]},
+    {"passportCode":"HT","destinationCode":"TM","reason":"No current Turkmen primary source establishes an ordinary Haitian-passport visitor route; invitation-only and host-dependent material is not a baseline.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"HT","destinationCode":"US","reason":"Not established as a normalized status: the current full entry and visa-issuance suspension has valid-visa grandfathering, listed exceptions and case-by-case waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov"]},
+    {"passportCode":"HT","destinationCode":"VI","reason":"Not established as a normalized status: the current federal full suspension reaches the U.S. Virgin Islands under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","usvi.gov"]}
+  ]
+}

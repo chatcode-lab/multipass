@@ -1714,7 +1714,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(71);
+    expect(pairs).toHaveLength(73);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_free").supportsCurrentStatus).toBe(false);
@@ -2099,7 +2099,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UA")).toHaveLength(81);
+    expect(pairsFor("UA")).toHaveLength(82);
     expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2250,7 +2250,7 @@ describe("official visa evidence", () => {
   });
 
   it("keeps conditional and explicitly stale outbound claims unresolved", () => {
-    for (const passportCode of ["LU", "IS", "MT", "IL"] as const) {
+    for (const passportCode of ["LU", "IS", "MT"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(false);
     }
     expect(getVisaRelationshipEvidence("IL", "JO", snapshot.passports.IL.statuses.JO).supportsCurrentStatus).toBe(false);
@@ -2984,6 +2984,37 @@ describe("official visa evidence", () => {
       ["BI", "US"],
       ["CG", "US"],
       ["MK", "VU"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
+  it("covers reviewed Israeli, Haitian, Iranian and Sudanese residuals while preserving prohibitions", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["IL", "GD", "visa_free"],
+      ["IL", "UA", "visa_free"],
+      ["HT", "GD", "visa_free"],
+      ["IR", "GD", "visa_required"],
+      ["IR", "PA", "visa_required"],
+      ["SD", "GD", "visa_required"],
+      ["SD", "PA", "visa_required"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["IL", "MV"],
+      ["IL", "SA"],
+      ["HT", "US"],
+      ["IR", "US"],
+      ["SD", "US"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(
