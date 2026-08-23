@@ -161,4 +161,21 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.NG.statuses.MN).toBe("evisa");
     expect(snapshot.passports.NG.statuses.PA).toBe("visa_required");
   });
+
+  it("applies the final Saint Kitts and Nevis, DPRK, Saint Lucian and Pakistani outbound audits", () => {
+    expect(snapshot.passports.KN.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.KN.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.KN.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.KP.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.KP.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.LC.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.LC.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.LC.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.LC.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.LC.statuses.TR).toBe("evisa");
+    expect(snapshot.passports.PK.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.PK.statuses.MN).toBe("evisa");
+    expect(snapshot.passports.PK.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.PK.statuses.TR).toBe("visa_required");
+  });
 });

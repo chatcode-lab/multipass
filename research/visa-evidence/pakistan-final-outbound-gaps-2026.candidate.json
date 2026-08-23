@@ -1,0 +1,203 @@
+{
+  "batchId": "pakistan-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-pakistan-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-pakistan-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Pakistan as Prior to Arrival.",
+      "supportingExcerpt": "Pakistan Prior to Arrival"
+    },
+    {
+      "id": "mongolia-evisa-pakistan-live-list-2026",
+      "title": "Electronic Visa Application System",
+      "url": "https://www.evisa.mn/en",
+      "publisher": "Immigration Agency of Mongolia",
+      "jurisdiction": "Mongolia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Mongolia's live Immigration Agency eVisa portal expressly includes Pakistan in its current visa-country list and describes apply, pay and receive steps.",
+      "supportingExcerpt": "Oman Pakistan ... In 3 Steps your evisa is ready!"
+    },
+    {
+      "id": "mongolia-immigration-pakistan-pretravel-evisa-process-2026",
+      "title": "Mongolia has started issuing e-visas",
+      "url": "https://www.immigration.gov.mn/en/articles/124/",
+      "publisher": "Immigration Agency of Mongolia",
+      "jurisdiction": "Mongolia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Mongolia's Immigration Agency documents online application, review and emailed approval before the electronic document is scanned at the border.",
+      "supportingExcerpt": "If approved, your ETA /Electronic Travel Authorization/ will be sent to your e-mail address"
+    },
+    {
+      "id": "panama-embassy-pakistan-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy guidance directly places Pakistan in its authorized-visa cohort and says approval can take up to 60 business days.",
+      "supportingExcerpt": "Nigeria, Oman, Pakistan, Palestine, People's Republic of Korea"
+    },
+    {
+      "id": "turkiye-mfa-pakistan-ordinary-passport-baseline-2026",
+      "title": "Visa Information For Foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's live Foreign Ministry schedule expressly requires Pakistani ordinary passport holders to have a visa and limits eVisa access to qualifying third-country documents.",
+      "supportingExcerpt": "Ordinary passport holders are required to have visa to enter Türkiye."
+    }
+  ],
+  "policies": [
+    {
+      "id": "pakistani-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Pakistani ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule places Pakistan in its Prior to Arrival cohort, which it defines as mission or consulate issuance before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["PK"],
+      "conditions": [
+        "Applies to a Pakistani ordinary passport holder travelling as a short visitor.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-pakistan-2026", "grenada-embassy-pakistan-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "pakistani-ordinary-passport-mongolia-electronic-visitor-visa-2026",
+      "title": "Pakistani ordinary passports: Mongolia electronic visitor visa",
+      "summary": "Mongolia's live official portal lists Pakistan, accepts the application and payment online, and sends approval electronically before border scanning.",
+      "status": "evisa",
+      "destinationCodes": ["MN"],
+      "passportCodes": ["PK"],
+      "conditions": [
+        "Applies to a Pakistani ordinary passport holder using Mongolia's short tourist eVisa route.",
+        "Apply and pay online, receive the approved document by email before travel, and carry it for scanning at the immigration check post.",
+        "Approval does not guarantee admission; work, residence, other visa classes and special documents remain outside scope."
+      ],
+      "sourceIds": ["mongolia-evisa-pakistan-live-list-2026", "mongolia-immigration-pakistan-pretravel-evisa-process-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.mn/en/apply",
+        "label": "Mongolia eVisa application",
+        "processingTime": "The Immigration Agency says applications are processed within three working days or 72 hours.",
+        "steps": [
+          "Start an application and select Pakistan, ordinary passport and the tourist eVisa category.",
+          "Complete the form, upload the required documents and pay online.",
+          "Receive the approved electronic document by email and carry it for arrival scanning."
+        ]
+      }
+    },
+    {
+      "id": "pakistani-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Pakistani ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy guidance places Pakistan in its authorized-visa cohort, requiring approval before travel unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["PK"],
+      "conditions": [
+        "Applies to a Pakistani ordinary passport holder who does not independently qualify for Panama's separate third-country visa or residence waiver.",
+        "The authorized-visa process may take up to 60 business days and must be completed before travel.",
+        "Transit, work, residence, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-pakistan-authorized-visa-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "pakistani-ordinary-passport-turkiye-baseline-advance-visa-2026",
+      "title": "Pakistani ordinary passports: Türkiye baseline advance visitor visa",
+      "summary": "Türkiye's current Foreign Ministry schedule requires Pakistani ordinary passports to hold a visa; eVisa access depends on a separate qualifying Schengen, U.S., UK or Irish visa or residence permit.",
+      "status": "visa_required",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["PK"],
+      "conditions": [
+        "Applies to the nationality-wide baseline for a Pakistani ordinary passport holder travelling for a short visit.",
+        "A one-month single-entry eVisa is available only when the traveler also holds a qualifying Schengen, U.S., UK or Irish visa or residence permit.",
+        "That third-country-document route is conditional and does not replace the passport-only baseline; work, residence and final admission remain outside scope."
+      ],
+      "sourceIds": ["turkiye-mfa-pakistan-ordinary-passport-baseline-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "PK",
+      "destinationCode": "MN",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Mongolia's live official eVisa portal expressly lists Pakistan and documents electronic approval before travel.",
+      "sourceIds": ["mongolia-evisa-pakistan-live-list-2026", "mongolia-immigration-pakistan-pretravel-evisa-process-2026"]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Türkiye's current Foreign Ministry schedule expressly requires Pakistani ordinary passports to have a visa; its eVisa route requires separate qualifying third-country documents.",
+      "sourceIds": ["turkiye-mfa-pakistan-ordinary-passport-baseline-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"PK","destinationCode":"AF","reason":"No current Afghan or Pakistani primary source establishes a stable usable ordinary Pakistani-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"AO","reason":"Current Angolan and Pakistani official material does not establish ordinary Pakistani-passport short-visitor eligibility and actual issuance timing without relying on an interactive portal or unstated complement.","searchedOfficialDomains":["mirex.gov.ao","sme.gov.ao","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"BD","reason":"Bangladesh's mission pages provide forms and fee material but do not give a current nationality-specific ordinary Pakistani visitor route and actual issuance result sufficient for classification.","searchedOfficialDomains":["islamabad.mofa.gov.bd","karachi.mofa.gov.bd","visa.gov.bd"]},
+    {"passportCode":"PK","destinationCode":"BF","reason":"Burkina Faso's electronic service does not publish a reproducible ordinary Pakistani-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","police.gov.bf","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"CF","reason":"No current Central African or Pakistani primary source establishes ordinary Pakistani-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Pakistani-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Pakistani passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"CG","reason":"No current Republic of the Congo or Pakistani primary source establishes ordinary Pakistani-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"CI","reason":"Côte d'Ivoire's electronic process does not establish whether an ordinary Pakistani passport retains an exemption or receives its visa only after airport biometrics; portal availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Pakistani eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"GW","reason":"No current Guinea-Bissau or Pakistani primary source establishes ordinary Pakistani-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"IR","reason":"Iran's current electronic service and Pakistan's current travel advice do not publish a reproducible ordinary Pakistani-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Pakistani eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"PK","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Pakistani-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Pakistani-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"LA","reason":"Laos's current electronic service does not publish a reproducible ordinary Pakistani-passport eligibility result or a complete current exemption/default schedule.","searchedOfficialDomains":["laoevisa.gov.la","mofa.gov.la","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"LR","reason":"Liberia's current visitor services do not establish whether an ordinary Pakistani applicant receives a visa electronically before travel or only at the border.","searchedOfficialDomains":["lis.gov.lr","evisa.lis.gov.lr","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"ML","reason":"No current Malian or Pakistani primary source establishes ordinary Pakistani-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Pakistani-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"KP","reason":"No current DPRK or Pakistani primary source establishes a usable ordinary Pakistani-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Pakistani-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Pakistani-passport short-visitor issuance route; portal availability and document-conditioned programmes are not baseline rules.","searchedOfficialDomains":["rop.gov.om","evisa.rop.gov.om","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Pakistani-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Pakistani eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Pakistani-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Pakistani application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Pakistani-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Pakistani eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Pakistani-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"SY","reason":"Current Syrian and Pakistani official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Pakistani passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Pakistani-passport baseline. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"TM","reason":"No current Turkmen or Pakistani primary source establishes ordinary Pakistani-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mofa.gov.pk"]},
+    {"passportCode":"PK","destinationCode":"UA","reason":"Ukraine's accessible nationality table is expressly dated June 2023; no current Ukrainian or Pakistani source establishes the ordinary Pakistani-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mofa.gov.pk"]}
+  ]
+}

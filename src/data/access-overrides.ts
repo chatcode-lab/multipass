@@ -3750,4 +3750,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.evisa.mn/en",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "LC",
+    destinationCode: "TR",
+    status: "evisa",
+    reason: "Türkiye's current Foreign Ministry guidance expressly offers ordinary Saint Lucian passport holders a multiple-entry eVisa issued electronically before travel.",
+    sourceUrl: "https://www.mfa.gov.tr/san-lucia-seyahat-edecek-turk-vatandaslarinin-dikkatine.tr.mfa",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "PK",
+    destinationCode: "MN",
+    status: "evisa",
+    reason: "Mongolia's official eVisa service expressly lists Pakistan and its Immigration Agency documents emailed pre-travel approval for border scanning.",
+    sourceUrl: "https://www.evisa.mn/en",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "PK",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry schedule requires ordinary Pakistani passport holders to obtain a visa; the eVisa route depends on qualifying third-country documents.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
