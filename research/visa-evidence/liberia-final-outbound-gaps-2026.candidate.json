@@ -1,0 +1,166 @@
+{
+  "batchId": "liberia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page says visa requirements depend on citizenship and actively links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-liberia-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy visitor page actively links this April 2024 country-by-country visa schedule, which defines its prior-to-arrival category.",
+      "supportingExcerpt": "Liberia Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-liberia-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy of Panama consular page publishes its named authorized-visa cohort, current third-country-document waiver and advance consular requirements.",
+      "supportingExcerpt": "Liberia ... you will need an authorized visa"
+    },
+    {
+      "id": "north-macedonia-mfa-liberia-visa-needed-2026",
+      "title": "Do you need a visa?",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza?region=africa",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "North Macedonia's live Foreign Ministry nationality checker lists Liberia under Africa and returns that a visa is needed for foreign citizens.",
+      "supportingExcerpt": "Liberia ... Visa for foreign citizens: Needed"
+    },
+    {
+      "id": "north-macedonia-mfa-advance-visa-procedure-2026",
+      "title": "Visa Application Procedure",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "North Macedonia's Foreign Ministry publishes this current application procedure on mfa.gov.mk, including the pre-travel competent-representation process.",
+      "supportingExcerpt": "The foreigner submits a visa application to the competent diplomatic-consular representation."
+    }
+  ],
+  "policies": [
+    {
+      "id": "liberian-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Liberian ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's actively linked April 2024 Embassy schedule places Liberia in its Prior to Arrival visa category.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["LR"],
+      "conditions": [
+        "Applies to an ordinary Liberian passport holder visiting Grenada; the schedule defines 'Prior To Arrival' as a visa obtained at a Grenada mission or consulate before travel.",
+        "The Embassy's live visitor page confirms requirements depend on citizenship; work, study, residence, diplomatic, official, service and special-document treatment remain outside scope.",
+        "Admission remains subject to Grenada immigration control and the requirements of the competent mission or consulate."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-liberia-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "liberian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Liberian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule names Liberia in the authorized-visa cohort, requiring advance consular processing unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["LR"],
+      "conditions": [
+        "Applies to an ordinary Liberian passport holder who does not qualify for Panama's separate valid third-country visa or residence waiver.",
+        "The Embassy requires an authorized-visa applicant to appear in person at the consulate before travel; approval may take up to 60 business days.",
+        "Work, residence, transit, diplomatic, official, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-liberia-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Appear in person and submit the listed authorized-visa documents to the competent Panamanian consulate before travel.",
+          "Do not finalize travel arrangements until the visa has been granted."
+        ]
+      }
+    },
+    {
+      "id": "liberian-ordinary-passport-north-macedonia-advance-visitor-visa-2026",
+      "title": "Liberian ordinary passports: North Macedonia advance visitor visa",
+      "summary": "North Macedonia's live Foreign Ministry checker returns that Liberian foreign citizens need a visa, and its procedure requires pre-travel application through a competent representation.",
+      "status": "visa_required",
+      "destinationCodes": ["MK"],
+      "passportCodes": ["LR"],
+      "conditions": [
+        "The Foreign Ministry's nationality checker returns 'Needed' for Liberia.",
+        "Separate third-country-document entry waivers, if applicable, are not an ordinary Liberian-passport baseline.",
+        "Work, residence, transit, special travel documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["north-macedonia-mfa-liberia-visa-needed-2026", "north-macedonia-mfa-advance-visa-procedure-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+        "label": "North Macedonia visa application procedure",
+        "steps": [
+          "Apply through the competent North Macedonian diplomatic-consular representation before the intended trip.",
+          "Submit the application no more than six months and at least 15 days before travel."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"LR","destinationCode":"AF","reason":"No current Afghan or Liberian primary source establishes a stable usable ordinary Liberian-passport visitor route amid restricted operational access.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"AO","reason":"Angola's current official material does not establish ordinary Liberian visitor eligibility and actual issuance timing.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"BD","reason":"Bangladesh's current official arrival-visa material does not directly establish an unconditional ordinary Liberian-passport visitor route; reciprocal, mission and discretionary conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"BO","reason":"Bolivia's current official visa material does not establish an ordinary Liberian-passport visitor eligibility and issuance category without relying on portal availability or an inferred complement.","searchedOfficialDomains":["cancilleria.gob.bo","migracion.gob.bo","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"CF","reason":"No current Central African or Liberian primary source establishes ordinary Liberian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"TD","reason":"Chad's current eVisa page lists named visa-exempt countries and online applications but does not establish every unlisted ordinary passport's eligibility or issuance route. No complement is inferred.","searchedOfficialDomains":["evisa.td","journalofficiel.gouv.td","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Liberian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"CG","reason":"No current Republic of the Congo or Liberian primary source establishes ordinary Liberian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"DJ","reason":"Djibouti's current official material proves electronic-visa processing but does not map an ordinary Liberian passport to eligibility, exemption or an arrival-issued route.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"HN","reason":"Honduras' current official material does not directly establish an ordinary Liberian-passport short-visitor eligibility and actual issuance route without inferring an omitted nationality category.","searchedOfficialDomains":["cancilleria.gob.hn","inm.gob.hn","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"ID","reason":"Indonesia's current visitor material makes Liberian nationals subject to Calling Visa treatment; no ordinary passport-only short-tourist route and issuance timing is established.","searchedOfficialDomains":["imigrasi.go.id","evisa.imigrasi.go.id","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Liberian-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Liberian-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"KW","reason":"Kuwait's current Interior data exposes visitor products but no positive controlling ordinary Liberian tourist-nationality decision. Conditional GCC-resident, sponsor and third-country-document routes are excluded.","searchedOfficialDomains":["kuwaitvisa.moi.gov.kw","moi.gov.kw","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Liberian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"LA","reason":"Laos' current electronic-visa material does not publish a reproducible ordinary Liberian-passport eligibility decision and arrival issuance cannot be inferred from portal availability.","searchedOfficialDomains":["laoevisa.gov.la","mofa.gov.la","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"MH","reason":"Marshall Islands' live official pages do not publish a current complete nationality schedule; no source establishes the ordinary Liberian visitor route and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","immigration.gov.mh","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"MN","reason":"Mongolia's current official visitor material does not establish ordinary Liberian-passport eligibility and actual visa issuance timing without relying on generic or non-nationality-specific portal wording.","searchedOfficialDomains":["immigration.gov.mn","consul.mn","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"MM","reason":"Myanmar's current named electronic and preapproved-arrival cohorts do not establish ordinary Liberian-passport eligibility, and no residual route is inferred from omission.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"KP","reason":"No current DPRK or Liberian primary source establishes a usable ordinary Liberian-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Liberian-passport route; residence and qualifying third-country-document programmes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Liberian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"ST","reason":"São Tomé and Príncipe's documented exception depends on a valid Schengen or United States visa and a short stay; that document-conditioned route is not an unconditional nationality baseline.","searchedOfficialDomains":["smf.st","mne.gov.st","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"SA","reason":"Saudi Arabia's current official visitor material does not positively establish an unconditional ordinary Liberian-passport route and actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"SB","reason":"No current Solomon Islands authority directly maps this ordinary passport to an unconditional short-tourist status. No complement is inferred from omission, permits or special arrangements.","searchedOfficialDomains":["solomons.gov.sb","immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"LR","destinationCode":"SS","reason":"South Sudan's current table says a visa is needed but does not establish whether an ordinary Liberian visitor receives eVisa, visa on arrival or an advance visa.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"SD","reason":"Sudan Passport Directorate material describes visitor categories and counter processing but no ordinary Liberian-passport eligibility or prior-approval schedule.","searchedOfficialDomains":["passports.gov.sd","moi.gov.sd","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"SY","reason":"Current Syrian and Liberian official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Liberian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Liberian cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"TN","reason":"Tunisia's current consular material establishes a visa process and treaty-qualified waivers but no current ordinary Liberian-passport schedule or effective agreement register.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"TM","reason":"No current Turkmen or Liberian primary source establishes ordinary Liberian-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mofa.gov.lr"]},
+    {"passportCode":"LR","destinationCode":"UA","reason":"Ukraine's accessible official nationality table is expressly dated June 2023; no current source establishes the ordinary Liberian-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mofa.gov.lr"]}
+  ]
+}

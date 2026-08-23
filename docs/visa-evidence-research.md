@@ -1948,6 +1948,14 @@ Djibouti adds Grenada, Panama and North Macedonia as `visa_required`. Egypt adds
 
 Indonesia adds Grenada and Panama as `visa_required` and Jordan as `visa_on_arrival`. Comoros adds Grenada and North Macedonia as `visa_required` and Panama as `visa_free`. Panama's live Embassy schedule directly includes Comoros/Comoros Islands in its no-visa-required cohort; no complement or portal-only inference is used.
 
+## Pass 204 result: final Liberian, Malagasy, Trinidadian and Vietnamese outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add twelve currently supported relationships, raising complete-matrix evidence from 38,716 to 38,728 of 44,974 relationships (86.1%). The public `/status` matrix contains 38,728 fresh and 6,246 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 488 reviewed batches, 2,238 official sources and 1,476 policies. Regional coverage is Africa 8,462 of 11,289 (75.0%), the Americas 4,720 of 4,953 (95.3%), the Caribbean 4,527 of 4,962 (91.2%), Asia 5,323 of 6,336 (84.0%), Europe 9,991 of 10,299 (97.0%), the Middle East 1,835 of 2,970 (61.8%) and Oceania 3,870 of 4,165 (92.9%).
+
+Liberia adds Grenada, Panama and North Macedonia as `visa_required`. Madagascar adds Grenada as `visa_required` and Panama as `visa_free`. Trinidad and Tobago adds Grenada and Panama as `visa_free`, plus Jordan as `visa_on_arrival`.
+
+Vietnam adds Grenada, North Macedonia and Jordan as `visa_required`, plus Panama as `visa_free`. Jordan corrects fallback `visa_on_arrival`: the current official tourism-board nationality table marks Vietnam ineligible for arrival issuance and directs travelers to obtain an embassy visa before arrival. Conditional third-country-document, residence, invitation and route-specific outcomes remain unresolved instead of being treated as ordinary-passport access.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

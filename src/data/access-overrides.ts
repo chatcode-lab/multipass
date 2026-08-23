@@ -3589,4 +3589,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "VN",
+    destinationCode: "JO",
+    status: "visa_required",
+    reason: "Jordan's live Tourism Board nationality table marks Vietnamese ordinary-passport visitors ineligible for arrival issuance and requires an embassy visa before arrival.",
+    sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
