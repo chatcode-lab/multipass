@@ -1,0 +1,107 @@
+{
+  "batchId": "germany-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "german-foreign-office-afghanistan-currentness-2026",
+      "title": "Afghanistan: travel and security advice",
+      "url": "https://www.auswaertiges-amt.de/de/reiseundsicherheit/afghanistansicherheit-204692",
+      "publisher": "German Federal Foreign Office",
+      "jurisdiction": "Germany",
+      "kind": "government-guidance",
+      "language": "German",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The German Federal Foreign Office's live Afghanistan page expressly says its entry material is not legally binding and describes rules from before August 2021 that it believes remain applied.",
+      "supportingExcerpt": "Zu Einreise- und Zollbestimmungen können keine rechtsverbindlichen Angaben gemacht werden."
+    },
+    {
+      "id": "niger-foreign-ministry-entry-conditions-2026",
+      "title": "Entry into Niger",
+      "url": "https://diplomatie.gouv.ne/index.php/services-aux-usagers/entree-au-niger",
+      "publisher": "Ministry of Foreign Affairs, Cooperation, African Integration and Nigeriens Abroad",
+      "jurisdiction": "Niger",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Niger's live Foreign Ministry entry page states the general foreigner visa rule, ordinary consular filing from the applicant's residence, and the limited exceptional border-visa procedure.",
+      "supportingExcerpt": "tous les étrangers ... un titre de voyage revêtu d’un visa nigérien"
+    },
+    {
+      "id": "niger-brussels-embassy-german-ordinary-visa-filing-2025",
+      "title": "New arrangements for issuing Niger entry visas",
+      "url": "https://www.ambaniger-bruxelles.be/index.php/component/content/?view=featured",
+      "publisher": "Embassy of the Republic of Niger in Brussels",
+      "jurisdiction": "Niger",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live official Niger Embassy page has a 27 August 2025 notice expressly naming Germany and directing ordinary-passport holders to file entry-visa applications at Niger missions in Geneva, Ankara or Moscow.",
+      "supportingExcerpt": "République fédérale d’Allemagne ... déposer leurs demandes de visa"
+    },
+    {
+      "id": "german-foreign-office-sierra-leone-entry-2026",
+      "title": "Sierra Leone: travel and security advice",
+      "url": "https://www.auswaertiges-amt.de/de/reiseundsicherheit/sierraleonesicherheit-203500",
+      "publisher": "German Federal Foreign Office",
+      "jurisdiction": "Germany",
+      "kind": "government-guidance",
+      "language": "German",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Federal Foreign Office entry section is expressly for German nationals and says the online eVisa must be approved before travel but is issued on arrival at the border.",
+      "supportingExcerpt": "Nach Genehmigung des Online-Antrags wird das eVisum bei Ankunft am Grenzübergang ausgestellt."
+    }
+  ],
+  "policies": [
+    {
+      "id": "german-ordinary-passport-niger-advance-visitor-visa-2026",
+      "title": "German ordinary passports: Niger advance visitor visa",
+      "summary": "Niger's current official guidance requires ordinary German-passport holders to file an entry-visa application with a Niger mission before short visitor travel.",
+      "status": "visa_required",
+      "destinationCodes": ["NE"],
+      "passportCodes": ["DE"],
+      "conditions": [
+        "The live Niger Embassy notice expressly names ordinary German-passport holders and directs them to lodge visa applications at Niger missions in Geneva, Ankara or Moscow.",
+        "Niger's Foreign Ministry states that normal filing is at a mission from the applicant's residence and gives a 15-day issuance time.",
+        "A border visa is exceptional, requires Interior Ministry authorisation, and is limited to departure from a country without a Niger diplomatic or consular mission; it is not the normal visitor baseline.",
+        "Diplomatic, service, transit, bilateral or community-exempt, residence, work and final-admission treatment are outside this classification."
+      ],
+      "sourceIds": [
+        "niger-foreign-ministry-entry-conditions-2026",
+        "niger-brussels-embassy-german-ordinary-visa-filing-2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "german-ordinary-passport-sierra-leone-border-issued-evisa-2026",
+      "title": "German ordinary passports: Sierra Leone border-issued visitor eVisa",
+      "summary": "German ordinary-passport visitors must obtain Sierra Leone's online approval before travel; the visa itself is issued on arrival at the border.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["SL"],
+      "passportCodes": ["DE"],
+      "conditions": [
+        "Apply and pay online sufficiently before travel; the German Federal Foreign Office says issuance follows at arrival at the border after approval.",
+        "This is normalized as visa_on_arrival because the visa is issued at the border, despite the mandatory online pre-application.",
+        "Passport validity, yellow-fever documentation, health declaration, extension, work, residence, special documents and final admission remain separate."
+      ],
+      "sourceIds": ["german-foreign-office-sierra-leone-entry-2026"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.sl/",
+        "label": "Sierra Leone Immigration eVisa service",
+        "steps": [
+          "Apply and pay online before departure using the German ordinary passport to be used for travel.",
+          "After approval, present the required documents at the border for visa issuance."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "DE",
+      "destinationCode": "AF",
+      "reason": "The current German Foreign Office page expressly limits its entry information to pre-August-2021 rules it believes remain applied. Current Afghan sources establish generic or conditional routes but not a working German ordinary-passport visitor issuance channel, so visa_required is not promoted.",
+      "searchedOfficialDomains": ["auswaertiges-amt.de", "mfa.gov.af", "econsulate.mfa.gov.af", "afghanembassy.berlin"]
+    }
+  ]
+}
