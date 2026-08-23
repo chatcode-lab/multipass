@@ -3838,4 +3838,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://en.consul.mn/visa/c/83",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "BD",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry schedule requires ordinary Bangladeshi passport holders to obtain a visa; the eVisa route depends on qualifying third-country documents.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

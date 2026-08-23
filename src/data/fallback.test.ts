@@ -273,4 +273,16 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.VA.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.VA.statuses.PA).toBe("visa_free");
   });
+
+  it("applies the final Nigerien, Nauruan, Palauan and Bangladeshi outbound audits", () => {
+    expect(snapshot.passports.NE.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.NE.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.NR.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.PW.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.PW.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.PW.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.BD.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.BD.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.BD.statuses.TR).toBe("visa_required");
+  });
 });

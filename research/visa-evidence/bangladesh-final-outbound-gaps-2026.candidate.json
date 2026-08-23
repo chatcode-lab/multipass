@@ -1,0 +1,149 @@
+{
+  "batchId": "bangladesh-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-bangladesh-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-bangladesh-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Bangladesh as No Visa required.",
+      "supportingExcerpt": "Bangladesh No Visa required"
+    },
+    {
+      "id": "panama-embassy-bangladesh-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page expressly lists Bangladesh in the authorized-visa cohort and says approval can take up to 60 business days before travel.",
+      "supportingExcerpt": "Afghanistan, Albania, Algeria, Angola, Azerbaijan, Bahrain, Bangladesh"
+    },
+    {
+      "id": "turkiye-mfa-bangladesh-ordinary-visa-2026",
+      "title": "Visa Information For Foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's live Foreign Ministry register says ordinary Bangladeshi passports require a visa and limits eVisa access to holders of specified third-country visas or residence permits.",
+      "supportingExcerpt": "Ordinary passport holders are required to have visa."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bangladeshi-ordinary-passport-grenada-visitor-waiver-2026",
+      "title": "Bangladeshi ordinary passports: Grenada visitor visa waiver",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Bangladesh as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["BD"],
+      "conditions": [
+        "Applies to an ordinary Bangladeshi passport holder travelling as a short visitor.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-bangladesh-2026", "grenada-embassy-bangladesh-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "bangladeshi-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Bangladeshi ordinary passports: Panama advance authorized visitor visa",
+      "summary": "Panama's live Embassy nationality schedule places Bangladesh in its authorized-visa cohort, requiring approval before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["BD"],
+      "conditions": [
+        "Applies to an ordinary Bangladeshi passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Authorized-visa approval can take up to 60 business days and must be granted before travel.",
+        "Washington-specific filing mechanics are not generalized to every consular district; final admission remains discretionary."
+      ],
+      "sourceIds": ["panama-embassy-bangladesh-authorized-visa-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "bangladeshi-ordinary-passport-turkiye-advance-visitor-visa-2026",
+      "title": "Bangladeshi ordinary passports: Türkiye advance visitor visa baseline",
+      "summary": "Türkiye's Foreign Ministry requires ordinary Bangladeshi passport holders to have a visa; eVisa access depends on qualifying third-country documentation.",
+      "status": "visa_required",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["BD"],
+      "conditions": [
+        "Applies to an ordinary Bangladeshi passport holder travelling as a short visitor without a qualifying Schengen, United States, United Kingdom or Irish visa or residence permit.",
+        "The conditional eVisa alternative does not change the passport-wide baseline.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["turkiye-mfa-bangladesh-ordinary-visa-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BD",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Türkiye's live Foreign Ministry register makes eVisa access conditional on qualifying third-country documents; the unconditional ordinary-passport baseline requires a visa.",
+      "sourceIds": ["turkiye-mfa-bangladesh-ordinary-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"BD","destinationCode":"AF","reason":"No current Afghan or Bangladeshi primary source establishes a stable usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"AO","reason":"No current Angolan or Bangladeshi primary source establishes ordinary-passport visitor eligibility and actual issuance timing without inferring from a portal.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"VG","reason":"No current British Virgin Islands or United Kingdom primary source establishes ordinary Bangladeshi-passport short-visitor eligibility and issuance timing for this territory.","searchedOfficialDomains":["bvi.gov.vg","gov.uk","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"BF","reason":"Burkina Faso's electronic service does not publish a reproducible ordinary Bangladeshi-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","police.gov.bf","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"CF","reason":"No current Central African or Bangladeshi primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Bangladeshi-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Bangladeshi passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"CG","reason":"No current Republic of the Congo or Bangladeshi primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Bangladeshi eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Bangladeshi eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"GW","reason":"No current Guinea-Bissau or Bangladeshi primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"HN","reason":"Current Honduran and Bangladeshi primary sources do not establish one unconditional ordinary-passport visitor route and actual issuance timing.","searchedOfficialDomains":["inm.gob.hn","sreci.gob.hn","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Bangladeshi-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Bangladeshi eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"BD","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Bangladeshi-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Bangladeshi-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"LA","reason":"Laos's electronic and arrival services do not publish a reproducible ordinary Bangladeshi-passport eligibility result and actual issuance timing.","searchedOfficialDomains":["immigration.gov.la","evisa.gov.la","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"LR","reason":"No current Liberian or Bangladeshi primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"ML","reason":"No current Malian or Bangladeshi primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"MH","reason":"No current Marshall Islands or Bangladeshi primary source establishes one ordinary-passport visitor route and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","rmiparliament.org","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"MN","reason":"Mongolia's authoritative live eVisa eligibility list omits Bangladesh while a portal nationality selector includes it; that tension does not establish a usable ordinary-passport eVisa route or a visa-required complement.","searchedOfficialDomains":["immigration.gov.mn","evisa.gov.mn","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Bangladeshi-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"KP","reason":"No current DPRK or Bangladeshi primary source establishes a usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Bangladeshi-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Bangladeshi-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Bangladeshi-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Bangladeshi eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Bangladeshi-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Bangladeshi application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"SB","reason":"Solomon Islands' official material does not establish one reproducible ordinary Bangladeshi-passport visitor route and actual issuance timing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Bangladeshi eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Bangladeshi-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"SY","reason":"Current Syrian and Bangladeshi official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Bangladeshi-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"TM","reason":"No current Turkmen or Bangladeshi primary source establishes ordinary-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mofa.gov.bd"]},
+    {"passportCode":"BD","destinationCode":"UA","reason":"Ukraine's current official material does not establish an ordinary Bangladeshi-passport visitor baseline and actual issuance timing; older nationality schedules are not treated as current.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mofa.gov.bd"]}
+  ]
+}
