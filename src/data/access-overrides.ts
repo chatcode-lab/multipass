@@ -3549,4 +3549,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://mfa.gov.sc/wp-content/uploads/2025/07/LIST-OF-COUNTRIES-SEYCHELLES-PASSPORT-HOLDERS-NEED-VISAS-Updated-July-2025.pdf",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "OM",
+    destinationCode: "JO",
+    status: "visa_on_arrival",
+    reason: "Jordan's live Tourism Board nationality table expressly lists Omani ordinary-passport visitors as eligible to obtain a visa on arrival for 40 JOD.",
+    sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

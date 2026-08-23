@@ -1924,6 +1924,14 @@ Seychelles closes 32 of its 34 final gaps. Its Foreign Ministry's July 2025 sche
 
 Monaco adds Bangladesh and Jordan `visa_on_arrival`, plus Grenada and Panama `visa_free`. Vanuatu remains explicitly unresolved because its live Immigration page places Monaco in both exempt and non-exempt cohorts. Panama and Guyana each add Jordan `visa_on_arrival` from Jordan's current official nationality table. All Jordan policies retain the Gateway2Jordan pre-departure QR condition and medium confidence because the live table has no visible update date.
 
+## Pass 201 result: final Jamaican, Omani, Surinamese and Gambian outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add eleven currently supported relationships, raising complete-matrix evidence from 38,677 to 38,688 of 44,974 relationships (86.0%). The public `/status` matrix contains 38,688 fresh and 6,286 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 476 reviewed batches, 2,189 official sources and 1,436 policies. Regional coverage is Africa 8,462 of 11,289 (75.0%), the Americas 4,708 of 4,953 (95.1%), the Caribbean 4,515 of 4,962 (91.0%), Asia 5,321 of 6,336 (84.0%), Europe 9,983 of 10,299 (96.9%), the Middle East 1,829 of 2,970 (61.6%) and Oceania 3,870 of 4,165 (92.9%).
+
+Jamaica adds Grenada `visa_free` and Jordan `visa_on_arrival`. Suriname adds Grenada `visa_free`, Panama `visa_required` and Jordan `visa_on_arrival`. The Grenada classifications come from the Embassy's actively linked April 2024 country schedule; Jordan's live Tourism Board nationality table names both passports and retains its Gateway2Jordan registration and 40-JOD conditions.
+
+Oman adds Ukraine `visa_free` under the operative presidential decree, plus Jordan `visa_on_arrival`, correcting the unsupported fallback `visa_free` classification. Mongolia and North Macedonia remain `visa_required`: their published exemptions do not cover an ordinary Omani passport without separate qualifying documents. Gambia adds Grenada `visa_free` and Panama `visa_required`. Its United States and four territorial rows remain explicit conflicts because current B-1/B-2 issuance and entry are partially suspended subject to exceptions and waivers that cannot be represented by the six-status taxonomy.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

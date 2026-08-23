@@ -1,0 +1,155 @@
+{
+  "batchId": "suriname-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "jordan-tourism-suriname-arrival-visa-table-2026",
+      "title": "Visas to Jordan: nationality table",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Jordan Tourism Board nationality table gives visitor-visa procedures and arrival availability by nationality.",
+      "supportingExcerpt": "Suriname | Applicable | Visa can be obtained upon arrival."
+    },
+    {
+      "id": "panama-embassy-suriname-authorized-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy of Panama consular page publishes its named authorized-visa nationality cohort and application requirements.",
+      "supportingExcerpt": "Suriname ... will need an authorized visa."
+    },
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page states that visa requirements depend on citizenship and currently links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-suriname-apr-2024-schedule",
+      "title": "Visa requirements for traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy country schedule identifies itself as updated April 2024 and directly lists Suriname as no visa required.",
+      "supportingExcerpt": "Suriname — No Visa required"
+    }
+  ],
+  "policies": [
+    {
+      "id": "surinamese-ordinary-passport-jordan-arrival-visa-2026",
+      "title": "Surinamese ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's live Tourism Board nationality table expressly lists Suriname as eligible for a visitor visa on arrival for 40 JOD.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["SR"],
+      "conditions": [
+        "Applies to an ordinary Surinamese passport holder travelling as a short visitor; the table states that the arrival visa costs 40 JOD.",
+        "Jordan's live page says non-Jordanian travellers must complete Gateway2Jordan registration and receive a QR code before departure.",
+        "Work, residence, transit, special documents, particular border-crossing restrictions and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-suriname-arrival-visa-table-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+        "label": "Jordan Tourism Board visa requirements",
+        "steps": [
+          "Complete the required Gateway2Jordan registration and receive its QR code before departure.",
+          "Present the ordinary Surinamese passport at a Jordanian arrival point that issues visitor visas.",
+          "Pay the stated 40-JOD arrival-visa fee and satisfy immigration's final admission requirements."
+        ]
+      }
+    },
+    {
+      "id": "surinamese-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Surinamese ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule expressly puts Suriname in the authorized-visa cohort, requiring advance consular approval unless the separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["SR"],
+      "conditions": [
+        "Applies to an ordinary Surinamese passport holder travelling as a short visitor who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Submit the authorized-visa application and listed documents before travel to the competent Panamanian consulate; the Embassy says approval may take up to 60 business days.",
+        "Work, residence, transit, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-suriname-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Submit the listed authorized-visa documents to the competent Panamanian consulate before travel.",
+          "Travel only after the consular visa has been granted and carry all required supporting documents."
+        ]
+      }
+    },
+    {
+      "id": "surinamese-ordinary-passport-grenada-visa-free-2026",
+      "title": "Surinamese ordinary passports: Grenada visa-free visitor entry",
+      "summary": "Grenada's actively linked April 2024 Embassy schedule expressly classifies Suriname as requiring no visa for entry.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["SR"],
+      "conditions": [
+        "Applies to an ordinary Surinamese passport holder visiting Grenada; the schedule defines 'No Visa Required' as 'Visa not required for entry'.",
+        "The schedule does not state one Surinamese stay limit; it says visitor permission beyond an approved 14-day, 30-day, 60-day, 90-day or six-month period requires a visa.",
+        "Work, study, residence, diplomatic, official, service and special-document treatment remain outside scope; admission remains subject to Grenada immigration control.",
+        "The actively linked schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-suriname-apr-2024-schedule"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"SR","destinationCode":"AF","reason":"No current Afghan or Surinamese primary source establishes a usable ordinary Surinamese-passport short-visitor route and actual issuance timing; closure, permission and security restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"BD","reason":"Bangladesh's current official arrival-visa material does not directly establish an unconditional ordinary Surinamese-passport visitor route; discretionary, reciprocal and mission-availability conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Surinamese-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"LA","reason":"Laos's current electronic service does not establish ordinary Surinamese-passport eligibility or actual issuance timing; a portal alone is insufficient.","searchedOfficialDomains":["immigration.gov.la","laoevisa.gov.la","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"MM","reason":"Myanmar's current named preapproved-arrival cohort does not include Suriname, and no current authority establishes the residual ordinary Surinamese-passport route. No complement is inferred.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"KP","reason":"No current DPRK or Surinamese primary source establishes a usable ordinary Surinamese-passport visitor route; operational access restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"TM","reason":"No current Turkmen or Surinamese primary source establishes ordinary Surinamese-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"MK","reason":"No current North Macedonian or Surinamese primary source establishes ordinary Surinamese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"TR","reason":"Türkiye's current MFA describes a Surinamese ordinary-passport eVisa route, but the official application links currently redirect to an unrelated commercial domain, so electronic issuance is not operationally verifiable.","searchedOfficialDomains":["mfa.gov.tr","evisa.gov.tr","goc.gov.tr"]},
+    {"passportCode":"SR","destinationCode":"BF","reason":"Burkina Faso's current eVisa service proves electronic issuance for eligible applicants but gives no current ordinary Surinamese-passport eligibility or exemption result.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"CF","reason":"No current Central African or Surinamese primary source establishes ordinary Surinamese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Surinamese passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"CG","reason":"No current Republic of the Congo or Surinamese primary source establishes ordinary Surinamese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"CI","reason":"Côte d'Ivoire's recognised SNEDAI process confirms online pre-enrolment followed by airport biometric visa printing, but publishes no Surinamese eligibility schedule. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"DJ","reason":"Djibouti's current official material proves eVisa processing but does not map an ordinary Surinamese passport to eligibility, exemption or an arrival-issued route.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"GW","reason":"No current Guinea-Bissau or Surinamese primary source establishes ordinary Surinamese-passport visitor eligibility and actual arrival-visa timing.","searchedOfficialDomains":["mne.gw","gov.gw","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"LR","reason":"Liberia's Visa on Arrival workflow is residence and mission dependent, not a passport-only route; no current Surinamese nationality schedule resolves the baseline.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"ML","reason":"No current direct, reconcilable Malian nationality schedule establishes ordinary Surinamese-passport visa-free, electronic, arrival or advance-visa treatment.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"NE","reason":"Niger's current foreign-entry rule preserves unenumerated bilateral and community exemptions; no current Surinamese ordinary-passport complement is published.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"ST","reason":"São Tomé and Príncipe's documented Surinamese route depends on holding a valid Schengen or United States visa and a short stay; that document-conditioned exception is not an unconditional nationality baseline. Its eVisa service publishes no Surinamese eligibility schedule.","searchedOfficialDomains":["smf.st","mne.gov.st","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"SL","reason":"Sierra Leone's live official material conflicts between emailed eVisa issuance and visa issuance at the airport or border. No current source resolves actual issuance timing for Suriname.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"SS","reason":"South Sudan's current table says a visa is needed but does not establish whether an ordinary Surinamese visitor receives eVisa, visa on arrival or an advance visa.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"SD","reason":"Sudan Passport Directorate material describes visitor categories and counter processing but no ordinary Surinamese-passport eligibility or prior-approval schedule.","searchedOfficialDomains":["passports.gov.sd","moi.gov.sd","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"TN","reason":"Tunisia's current consular material establishes a visa process and treaty-qualified waivers but no current ordinary Surinamese-passport schedule or effective agreement register.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"SB","reason":"No current Solomon Islands authority directly maps this ordinary passport to an unconditional short-tourist status. No complement is inferred from omission, permits or special arrangements.","searchedOfficialDomains":["solomons.gov.sb","immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"SR","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Surinamese-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Surinamese-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"KW","reason":"Kuwait's current Interior data exposes visitor products but no positive controlling ordinary Surinamese tourist-nationality decision. Conditional GCC-resident, sponsor and third-country-document routes are excluded.","searchedOfficialDomains":["kuwaitvisa.moi.gov.kw","moi.gov.kw","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Surinamese-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Surinamese-passport short-visitor issuance route; portal availability and positive cohorts are not treated as a residual rule.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","gov.sr"]},
+    {"passportCode":"SR","destinationCode":"SY","reason":"Current Syrian and Surinamese official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Surinamese passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","gov.sr"]}
+  ]
+}
