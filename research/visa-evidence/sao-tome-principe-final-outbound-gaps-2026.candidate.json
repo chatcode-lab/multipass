@@ -1,0 +1,138 @@
+{
+  "batchId": "sao-tome-principe-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-sao-tome-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-sao-tome-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Sao Tome and Principe as Prior to Arrival.",
+      "supportingExcerpt": "Sao Tome & Principe Prior to Arrival"
+    },
+    {
+      "id": "jordan-tourism-sao-tome-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps São Tomé and Príncipe to a visa issued on arrival.",
+      "supportingExcerpt": "São Tomé and Príncipe | Applicable | Visa can be obtained upon arrival"
+    },
+    {
+      "id": "panama-embassy-sao-tome-no-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Saint Thomas and Prince, its English rendering of São Tomé and Príncipe, in the No Visa Required nationality cohort for up to three months.",
+      "supportingExcerpt": "Saint Thomas and Prince ... No Visa Required"
+    }
+  ],
+  "policies": [
+    {
+      "id": "sao-tome-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "São Tomé and Príncipe ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule requires São Tomé and Príncipe visitors to obtain a visa before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["ST"],
+      "conditions": [
+        "Applies to a São Tomé and Príncipe ordinary passport holder travelling as a short visitor.",
+        "The schedule defines Prior to Arrival as a visa obtained at a Grenada mission or consulate before travel.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-sao-tome-2026", "grenada-embassy-sao-tome-april-2024-schedule"],
+      "confidence": "high"
+    },
+    {
+      "id": "sao-tome-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "São Tomé and Príncipe ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says São Tomé and Príncipe visitors can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["ST"],
+      "conditions": [
+        "Applies to a São Tomé and Príncipe ordinary passport holder travelling as a short visitor.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code.",
+        "Restricted crossings, non-visitor purposes and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-sao-tome-arrival-visa-table-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "sao-tome-ordinary-passport-panama-visitor-waiver-2026",
+      "title": "São Tomé and Príncipe ordinary passports: Panama visitor visa waiver",
+      "summary": "Panama's live Embassy nationality schedule lists São Tomé and Príncipe in its No Visa Required cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["ST"],
+      "conditions": [
+        "Applies to a São Tomé and Príncipe ordinary passport holder travelling as a short visitor for up to three months.",
+        "The Embassy page uses the legacy English rendering Saint Thomas and Prince for São Tomé and Príncipe.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-sao-tome-no-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"ST","destinationCode":"AF","reason":"No current Afghan or São Tomé and Príncipe primary source establishes a stable usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"AO","reason":"Angola's official 2022 notice records only signature of an ordinary-passport visa-waiver agreement, while its current 98-country tourist-exemption list omits São Tomé and Príncipe. Entry into force is not established.","searchedOfficialDomains":["governo.gov.ao","mirex.gov.ao","sme.gov.ao"]},
+    {"passportCode":"ST","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary São Tomé and Príncipe-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"CF","reason":"No current Central African or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary São Tomé and Príncipe-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary São Tomé and Príncipe passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"CG","reason":"No current Republic of the Congo or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary São Tomé and Príncipe eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary São Tomé and Príncipe eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"EG","reason":"Egypt's current official material does not publish a reproducible ordinary São Tomé and Príncipe-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mfa.gov.eg","visa2egypt.gov.eg","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"GW","reason":"No current Guinea-Bissau or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary São Tomé and Príncipe-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary São Tomé and Príncipe eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"ST","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary São Tomé and Príncipe-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary São Tomé and Príncipe-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"LR","reason":"No current Liberian or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"ML","reason":"No current Malian or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"MH","reason":"No current Marshall Islands or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","rmi-mfa.com","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"MM","reason":"Myanmar's electronic-visa guidance does not publish a reproducible ordinary São Tomé and Príncipe-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary São Tomé and Príncipe-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"KP","reason":"No current DPRK or São Tomé and Príncipe primary source establishes a usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary São Tomé and Príncipe-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary São Tomé and Príncipe-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary São Tomé and Príncipe-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary São Tomé and Príncipe-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a São Tomé and Príncipe application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"SB","reason":"No current Solomon Islands or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.sb","mfaet.gov.sb","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish São Tomé and Príncipe eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary São Tomé and Príncipe-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"SY","reason":"Current Syrian and São Tomé and Príncipe official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"TT","reason":"Trinidad and Tobago's official material does not establish an ordinary São Tomé and Príncipe-passport visitor baseline or actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["foreign.gov.tt","immigration.gov.tt","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary São Tomé and Príncipe-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"TM","reason":"No current Turkmen or São Tomé and Príncipe primary source establishes ordinary-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","mne.gov.st"]},
+    {"passportCode":"ST","destinationCode":"UA","reason":"Ukraine's current official material does not establish an ordinary São Tomé and Príncipe-passport visitor baseline and actual issuance timing; older nationality schedules are not treated as current.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mne.gov.st"]}
+  ]
+}

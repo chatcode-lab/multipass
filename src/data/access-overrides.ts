@@ -3774,4 +3774,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "SN",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry schedule requires ordinary Senegalese passport holders to obtain a visa; the eVisa route depends on qualifying third-country documents.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

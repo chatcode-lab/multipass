@@ -178,4 +178,19 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.PK.statuses.PA).toBe("visa_required");
     expect(snapshot.passports.PK.statuses.TR).toBe("visa_required");
   });
+
+  it("applies the final Senegalese, São Toméan, Ugandan and Vincentian outbound audits", () => {
+    expect(snapshot.passports.SN.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.SN.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.SN.statuses.TR).toBe("visa_required");
+    expect(snapshot.passports.ST.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.ST.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.ST.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.UG.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.UG.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.VC.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.VC.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.VC.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.VC.statuses.PA).toBe("visa_free");
+  });
 });

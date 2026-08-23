@@ -2036,6 +2036,16 @@ Saint Lucia adds Grenada, Iceland and Panama as `visa_free`, Jordan as `visa_on_
 
 Pakistan adds Grenada and Panama as `visa_required`, corrects Mongolia from fallback `visa_required` to `evisa`, and corrects Türkiye from fallback `evisa` to the passport-only `visa_required` baseline. Türkiye's eVisa path depends on a qualifying Schengen, U.S., UK or Irish visa or residence permit and is therefore not a nationality-wide category. Conditional, portal-only, omission-based and operationally unresolved residuals remain uncovered.
 
+## Pass 214 result: final Senegalese, São Toméan, Ugandan and Vincentian outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add twelve currently supported relationships, raising complete-matrix evidence from 38,857 to 38,869 of 44,974 relationships (86.4%). The public `/status` matrix contains 38,869 fresh and 6,105 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 528 reviewed batches, 2,424 official sources and 1,617 policies. Regional coverage is Africa 8,476 of 11,289 (75.1%), the Americas 4,757 of 4,953 (96.0%), the Caribbean 4,567 of 4,962 (92.0%), Asia 5,330 of 6,336 (84.1%), Europe 10,005 of 10,299 (97.1%), the Middle East 1,863 of 2,970 (62.7%) and Oceania 3,871 of 4,165 (92.9%).
+
+Senegal adds Grenada and Panama as advance `visa_required` routes and corrects Türkiye from fallback `evisa` to the ordinary-passport `visa_required` baseline. Türkiye's eVisa alternative requires a qualifying Schengen, U.S., UK or Irish visa or residence permit and is therefore conditional rather than passport-wide. Senegal's United States, Puerto Rico, Guam, Northern Mariana Islands and U.S. Virgin Islands rows remain explicit PP10998 partial-suspension conflicts because grandfathered visas, exceptions and waivers cannot be represented by the six-status taxonomy.
+
+São Tomé and Príncipe adds Grenada `visa_required`, Jordan `visa_on_arrival` and Panama `visa_free`. Angola remains uncovered: an official 2022 notice only records an initialled ordinary-passport waiver, while the current exemption list does not establish that it entered into force. Uganda adds Grenada `visa_free` and Panama `visa_required`; Panama's Washington-specific filing instructions are not generalized to applicants elsewhere.
+
+Saint Vincent and the Grenadines adds Grenada, Iceland and Panama as `visa_free` plus Jordan as `visa_on_arrival`. Iceland's base Regulation 795/2022 and Nauru-only 2026 amendment establish current Annex 9 treatment. Guinea remains uncovered because the current official portal does not expose a reproducible nationality decision. Conditional, portal-only, omission-based and operationally unresolved residuals remain uncovered.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
