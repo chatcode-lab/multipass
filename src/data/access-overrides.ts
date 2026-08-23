@@ -3862,4 +3862,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "LK",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry schedule requires ordinary Sri Lankan passport holders to obtain a visa; eVisa eligibility depends on qualifying third-country documents.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

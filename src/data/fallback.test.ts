@@ -333,4 +333,13 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.CU.statuses.GD).toBe("visa_free");
     expect(snapshot.passports.DM.statuses.JO).toBe("visa_on_arrival");
   });
+
+  it("applies the final Congolese, Israeli, Sri Lankan and Tanzanian outbound audits", () => {
+    expect(snapshot.passports.IL.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.LK.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.LK.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.LK.statuses.TR).toBe("visa_required");
+    expect(snapshot.passports.TZ.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.TZ.statuses.PA).toBe("visa_required");
+  });
 });

@@ -1,0 +1,150 @@
+{
+  "batchId": "sri-lanka-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's current embassy consular Visitors page says visa requirements are based on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-country-visa-schedule-april-2024",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live embassy Visitors page links this country schedule, marked UPDATED APRIL 2024, which directly states Sri Lanka's visitor treatment.",
+      "supportingExcerpt": "Sri Lanka No Visa required"
+    },
+    {
+      "id": "panama-embassy-authorized-visa-list-current-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live embassy page says named nationals who do not qualify for the third-country-document waiver need an authorized visa, directly lists Sri Lanka, and explains it is approved before travel.",
+      "supportingExcerpt": "Somalia, Sri Lanka, Sudan, Suriname, Syria, Tajikistan, Tanzania"
+    },
+    {
+      "id": "turkiye-mfa-sri-lanka-ordinary-passport-visa-current-2026",
+      "title": "Visa Information For Foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa?ios_app=true",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's live MFA nationality table expressly requires visas for Sri Lankan ordinary passports and makes eVisa eligibility conditional on a separate valid Schengen, United States, United Kingdom or Ireland document.",
+      "supportingExcerpt": "Sri Lanka: Official and ordinary passport holders are required to have visa to enter Türkiye."
+    }
+  ],
+  "policies": [
+    {
+      "id": "sri-lankan-ordinary-passport-grenada-visa-free-visitor-2026",
+      "title": "Sri Lankan ordinary passports: Grenada visa-free visitor entry",
+      "summary": "Grenada's active embassy country schedule says Sri Lanka requires no visa for a visitor entry.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["LK"],
+      "conditions": [
+        "Applies to an ordinary Sri Lankan passport holder travelling as a short visitor.",
+        "The live embassy page links the April 2024 schedule; recheck it before travel for changes.",
+        "Work, residence, study, diplomatic, official and service passports, carrier requirements and final admission remain outside this finding."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-country-visa-schedule-april-2024"],
+      "confidence": "medium"
+    },
+    {
+      "id": "sri-lankan-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Sri Lankan ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's current embassy visa schedule lists Sri Lanka in the authorized-visa cohort when the holder does not qualify for the separate third-country-document waiver.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["LK"],
+      "conditions": [
+        "This is the ordinary Sri Lankan-passport baseline without a qualifying third-country visa or residence document. That separate document-conditioned waiver is not normalized as the baseline.",
+        "The authorized visa must be granted before travel; the current source warns that approval may take up to 60 business days.",
+        "The cited embassy's personal-appearance and U.S.-ID filing directions may be mission-specific. Use the competent Panamanian mission for an actual application."
+      ],
+      "sourceIds": ["panama-embassy-authorized-visa-list-current-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "sri-lankan-ordinary-passport-turkiye-advance-visa-2026",
+      "title": "Sri Lankan ordinary passports: Türkiye advance visitor visa",
+      "summary": "Türkiye's current MFA table requires a visa for Sri Lankan ordinary passports; its eVisa route is conditional on a separate qualifying visa or residence permit.",
+      "status": "visa_required",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["LK"],
+      "conditions": [
+        "Applies to an ordinary Sri Lankan passport holder without the third-country visa or residence permit required for Türkiye's conditional eVisa route.",
+        "A qualifying valid Schengen, United States, United Kingdom or Ireland visa or residence permit may make eVisa available, but that document-conditioned route is not the ordinary-passport baseline.",
+        "Work, residence, special passports, carrier requirements and final admission remain outside this finding."
+      ],
+      "sourceIds": ["turkiye-mfa-sri-lanka-ordinary-passport-visa-current-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "LK",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Türkiye's current MFA table requires a visa for Sri Lankan ordinary passports; eVisa is only available with a separate qualifying third-country visa or residence permit.",
+      "sourceIds": ["turkiye-mfa-sri-lanka-ordinary-passport-visa-current-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"LK","destinationCode":"AF","reason":"No current Afghan or Sri Lankan primary source establishes a usable ordinary Sri Lankan-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"AO","reason":"Angola's public electronic-visa material does not publish a reproducible ordinary Sri Lankan-passport visitor eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish ordinary Sri Lankan-passport eligibility and whether a visitor visa is actually issued before travel or at arrival.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"VG","reason":"No current British Virgin Islands or United Kingdom primary source establishes ordinary Sri Lankan-passport short-visitor eligibility and actual issuance timing for this territory.","searchedOfficialDomains":["bvi.gov.vg","gov.uk","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"BF","reason":"Burkina Faso's official portal does not expose a reproducible ordinary Sri Lankan-passport tourist eligibility or issuance result; online filing alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","mae.gov.bf","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"CF","reason":"No current Central African or Sri Lankan primary source establishes ordinary Sri Lankan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"TD","reason":"Chad's online material does not independently establish ordinary Sri Lankan-passport eligibility or actual visitor-visa issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"KM","reason":"Comorian law preserves treaty and special-law exceptions while no current visitor schedule maps an ordinary Sri Lankan passport; no complement is inferred.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"CG","reason":"No current Republic of the Congo or Sri Lankan primary source establishes ordinary Sri Lankan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"CI","reason":"Côte d’Ivoire's online pre-enrolment does not establish a nationality-specific ordinary Sri Lankan-passport visitor route or actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not publish a reproducible ordinary Sri Lankan-passport eligibility or exemption result.","searchedOfficialDomains":["evisa.gouv.dj","mae.dj","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"GW","reason":"No current Guinea-Bissau or Sri Lankan primary source establishes ordinary Sri Lankan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"IR","reason":"Iran's current official visitor material does not establish an ordinary Sri Lankan-passport nationality route and issuance form without invitation, host or other conditions.","searchedOfficialDomains":["mfa.gov.ir","evisa.mfa.ir","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"IQ","reason":"Iraq's current federal electronic services do not publish a reproducible ordinary Sri Lankan-passport visitor eligibility or resolve federal and regional routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"LK","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Sri Lankan-passport tourist route; residence and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.kw"]},
+    {"passportCode":"LK","destinationCode":"KG","reason":"Kyrgyzstan's eVisa selector does not provide a reproducible controlling ordinary Sri Lankan-passport tourist result, and no exhaustive complement is published.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no ordinary Sri Lankan-passport nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"MW","reason":"Malawi's current notice distinguishes Category One and Category Two nationals but does not publish Sri Lanka's category; its eligibility wizard is not a reproducible answer.","searchedOfficialDomains":["immigration.gov.mw","evisa.gov.mw","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"ML","reason":"Mali's current official assistant depends on nationality, passport type, residence and filing location without a stable Sri Lankan visitor result.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"MH","reason":"Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes an ordinary Sri Lankan-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"MN","reason":"Mongolia's current official schedule does not positively map an ordinary Sri Lankan passport to an entry route or actual issuance timing.","searchedOfficialDomains":["consul.mn","evisa.mn","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Sri Lankan-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"KP","reason":"No current DPRK or Sri Lankan primary source establishes a usable ordinary Sri Lankan-passport short-visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Sri Lankan-passport result; conditional third-country-document waivers are excluded.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Sri Lankan-passport short-visitor issuance route; conditional routes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-wide ordinary Sri Lankan-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"LK","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Sri Lankan eligibility.","searchedOfficialDomains":["smf.st","mne.gov.st","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Sri Lankan-passport short-visitor issuance route; conditional programmes are excluded.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Sri Lankan application produces a pre-travel visa or a border-issued instrument.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Sri Lankan-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"SS","reason":"South Sudan's electronic-visa material does not establish ordinary Sri Lankan-passport eligibility and actual visitor issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"SD","reason":"No current Sudanese or Sri Lankan primary source establishes an ordinary Sri Lankan-passport short-visitor issuance route or confirms any historic bilateral arrangement remains operative.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"SY","reason":"Current Syrian official material does not establish whether online filing produces an electronically issued visa or an advance application for an ordinary Sri Lankan passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"TT","reason":"Trinidad and Tobago's named waiver schedule does not include Sri Lanka, while its electronic service applies only after visa-required eligibility is established. No complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","foreign.gov.tt","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"TN","reason":"Tunisia's current consular material does not directly identify the ordinary Sri Lankan-passport visitor baseline; no complement is inferred from an unlisted nationality.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"TM","reason":"Turkmenistan's statutory visa baseline preserves treaty exceptions and its electronic service publishes no current ordinary Sri Lankan-passport eligibility roster.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mfa.gov.lk"]},
+    {"passportCode":"LK","destinationCode":"UA","reason":"Current Ukrainian official material does not establish an ordinary Sri Lankan-passport short-visitor baseline and issuance route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mfa.gov.lk"]}
+  ]
+}

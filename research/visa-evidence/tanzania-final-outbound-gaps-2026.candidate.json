@@ -1,0 +1,545 @@
+{
+  "batchId": "tanzania-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-tanzania-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-tanzania-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Tanzania as No Visa required.",
+      "supportingExcerpt": "Tanzania No Visa required"
+    },
+    {
+      "id": "panama-embassy-tanzania-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Tanzania in its authorized-visa cohort and says approval may take up to 60 business days before travel.",
+      "supportingExcerpt": "Tajikistan, Tanzania, Tunisia, Turkmenistan, Uganda"
+    },
+    {
+      "id": "us-state-tanzania-partial-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The State Department's live PP 10998 implementation notice, last updated February 2, 2026, names Tanzania in the partially suspended B-1/B-2 visitor-visa cohort and preserves valid-visa grandfathering, exceptions and case-by-case national-interest decisions.",
+      "supportingExcerpt": "Nigeria, Senegal, Tanzania, Togo, Tonga, Venezuela, Zambia"
+    },
+    {
+      "id": "us-code-geographic-united-states-tanzania-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "tanzanian-ordinary-passport-grenada-visitor-waiver-2026",
+      "title": "Tanzanian ordinary passports: Grenada visitor visa waiver",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Tanzania as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "GD"
+      ],
+      "passportCodes": [
+        "TZ"
+      ],
+      "conditions": [
+        "Applies to an ordinary Tanzanian passport holder travelling as a short visitor.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "grenada-embassy-visitors-current-tanzania-2026",
+        "grenada-embassy-tanzania-april-2024-schedule"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "tanzanian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Tanzanian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Tanzania in its authorized-visa cohort for advance immigration approval.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "PA"
+      ],
+      "passportCodes": [
+        "TZ"
+      ],
+      "conditions": [
+        "Applies to an ordinary Tanzanian passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Authorized-visa approval may take up to 60 business days and must be granted before travel.",
+        "Washington-specific filing mechanics are not generalized to every consular district; final admission remains discretionary."
+      ],
+      "sourceIds": [
+        "panama-embassy-tanzania-authorized-visa-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TZ",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-tanzania-partial-suspension-current-2026"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-tanzania-partial-suspension-current-2026",
+        "us-code-geographic-united-states-tanzania-current-2026"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-tanzania-partial-suspension-current-2026",
+        "us-code-geographic-united-states-tanzania-current-2026"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-tanzania-partial-suspension-current-2026",
+        "us-code-geographic-united-states-tanzania-current-2026"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-tanzania-partial-suspension-current-2026",
+        "us-code-geographic-united-states-tanzania-current-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "TZ",
+      "destinationCode": "AF",
+      "reason": "No current Afghan or Tanzanian primary source establishes a usable ordinary Tanzanian-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.",
+      "searchedOfficialDomains": [
+        "mfa.gov.af",
+        "moi.gov.af",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "BD",
+      "reason": "No current Bangladeshi or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofa.gov.bd",
+        "visa.gov.bd",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "VG",
+      "reason": "No current British Virgin Islands or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "bvi.gov.vg",
+        "gov.vg",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "CF",
+      "reason": "No current Central African or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cf",
+        "interieur.gouv.cf",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "TD",
+      "reason": "No current Chadian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.td",
+        "diplomatie.gouv.td",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "KM",
+      "reason": "No current Comorian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "justice.gouv.km",
+        "gouvernement.km",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "CD",
+      "reason": "No current Democratic Republic of the Congo or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cd",
+        "dgm.cd",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "CG",
+      "reason": "No current Republic of the Congo or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cg",
+        "dgrsp.cg",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "DJ",
+      "reason": "No current Djiboutian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.gouv.dj",
+        "gouv.dj",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "GU",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "GW",
+      "reason": "No current Guinea-Bissau or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mne.gov.gw",
+        "gov.gw",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "IQ",
+      "reason": "No current Iraqi or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "moi.gov.iq",
+        "evisa.iq",
+        "mofa.gov.iq",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "KW",
+      "reason": "No current Kuwaiti or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "moi.gov.kw",
+        "e.gov.kw",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "KG",
+      "reason": "No current Kyrgyz or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "LR",
+      "reason": "No current Liberian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofa.gov.lr",
+        "immigration.gov.lr",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "ML",
+      "reason": "No current Malian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ml",
+        "interieur.gouv.ml",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "MH",
+      "reason": "No current Marshall Islands or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "rmiembassyus.org",
+        "travel.state.gov",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "MM",
+      "reason": "No current Myanmar or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.moip.gov.mm",
+        "mofa.gov.mm",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "NE",
+      "reason": "No current Nigerien or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ne",
+        "interieur.gouv.ne",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "KP",
+      "reason": "No current DPRK or Tanzanian primary source establishes a usable ordinary Tanzanian-passport visitor route and actual issuance timing; operational restrictions are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.kp",
+        "naenara.com.kp",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "MK",
+      "reason": "No current North Macedonian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.mk",
+        "mvr.gov.mk",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "MP",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "OM",
+      "reason": "No current Omani or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "rop.gov.om",
+        "mofa.gov.om",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "PS",
+      "reason": "Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Tanzanian-passport visitor status.",
+      "searchedOfficialDomains": [
+        "mofa.pna.ps",
+        "gov.il",
+        "cogat.mod.gov.il",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "PR",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "ST",
+      "reason": "No current São Tomé and Príncipe or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "SA",
+      "reason": "No current Saudi or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofa.gov.sa",
+        "visitsaudi.com",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "SL",
+      "reason": "No current Sierra Leone or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "immigration.gov.sl",
+        "evisa.sl",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "SB",
+      "reason": "No current Solomon Islands or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "immigration.gov.sb",
+        "solomons.gov.sb",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "LC",
+      "reason": "Saint Lucia's official nationality schedule naming Tanzania is marked last partially updated January 2013; no current replacement confirms an ordinary Tanzanian-passport visitor route.",
+      "searchedOfficialDomains": [
+        "govt.lc",
+        "external.gov.lc",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "SD",
+      "reason": "No current Sudanese or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "passports.gov.sd",
+        "mofa.gov.sd",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "SY",
+      "reason": "No current Syrian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofaex.gov.sy",
+        "moi.gov.sy",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "TT",
+      "reason": "No current Trinidad and Tobago or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "homelandsecurity.gov.tt",
+        "foreign.gov.tt",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "TN",
+      "reason": "No current Tunisian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "econsulat.tn",
+        "diplomatie.gov.tn",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "TM",
+      "reason": "No current Turkmen or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "UA",
+      "reason": "No current Ukrainian or Tanzanian primary source directly establishes ordinary Tanzanian-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.ua",
+        "dpsu.gov.ua",
+        "foreign.go.tz"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "US",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "VI",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    }
+  ]
+}
