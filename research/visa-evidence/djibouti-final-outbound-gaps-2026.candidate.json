@@ -1,0 +1,166 @@
+{
+  "batchId": "djibouti-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page says visa requirements depend on citizenship and actively links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-djibouti-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy visitor page actively links this April 2024 country-by-country visa schedule, which defines its prior-to-arrival category.",
+      "supportingExcerpt": "Djibouti Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-djibouti-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy of Panama consular page publishes its named authorized-visa cohort, current third-country-document waiver and advance consular requirements.",
+      "supportingExcerpt": "Djibouti ... you will need an authorized visa"
+    },
+    {
+      "id": "north-macedonia-mfa-djibouti-visa-needed-2026",
+      "title": "Do you need a visa?",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza?region=africa",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "North Macedonia's live Foreign Ministry nationality checker lists Djibouti under Africa and returns that a visa is needed for foreign citizens.",
+      "supportingExcerpt": "Djibouti ... Visa for foreign citizens: Needed"
+    },
+    {
+      "id": "north-macedonia-mfa-advance-visa-procedure-2026",
+      "title": "Visa Application Procedure",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "North Macedonia's Foreign Ministry publishes this current application procedure on mfa.gov.mk, including the pre-travel competent-representation process.",
+      "supportingExcerpt": "The foreigner submits a visa application to the competent diplomatic-consular representation."
+    }
+  ],
+  "policies": [
+    {
+      "id": "djiboutian-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Djiboutian ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's actively linked April 2024 Embassy schedule places Djibouti in its Prior to Arrival visa category.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["DJ"],
+      "conditions": [
+        "Applies to an ordinary Djiboutian passport holder visiting Grenada; the schedule defines 'Prior To Arrival' as a visa obtained at a Grenada mission or consulate before travel.",
+        "The Embassy's live visitor page confirms requirements depend on citizenship; work, study, residence, diplomatic, official, service and special-document treatment remain outside scope.",
+        "Admission remains subject to Grenada immigration control and the requirements of the competent mission or consulate."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-djibouti-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "djiboutian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Djiboutian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule names Djibouti in the authorized-visa cohort, requiring advance consular processing unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["DJ"],
+      "conditions": [
+        "Applies to an ordinary Djiboutian passport holder who does not qualify for Panama's separate valid third-country visa or residence waiver.",
+        "The Embassy requires an authorized-visa applicant to appear in person at the consulate before travel; approval may take up to 60 business days.",
+        "Work, residence, transit, diplomatic, official, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-djibouti-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Appear in person and submit the listed authorized-visa documents to the competent Panamanian consulate before travel.",
+          "Do not finalize travel arrangements until the visa has been granted."
+        ]
+      }
+    },
+    {
+      "id": "djiboutian-ordinary-passport-north-macedonia-advance-visitor-visa-2026",
+      "title": "Djiboutian ordinary passports: North Macedonia advance visitor visa",
+      "summary": "North Macedonia's live Foreign Ministry checker returns that Djiboutian foreign citizens need a visa, and its procedure requires pre-travel application through a competent representation.",
+      "status": "visa_required",
+      "destinationCodes": ["MK"],
+      "passportCodes": ["DJ"],
+      "conditions": [
+        "The Foreign Ministry's nationality checker returns 'Needed' for Djibouti.",
+        "Separate third-country-document entry waivers, if applicable, are not an ordinary Djiboutian-passport baseline.",
+        "Work, residence, transit, special travel documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["north-macedonia-mfa-djibouti-visa-needed-2026", "north-macedonia-mfa-advance-visa-procedure-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+        "label": "North Macedonia visa application procedure",
+        "steps": [
+          "Apply through the competent North Macedonian diplomatic-consular representation before the intended trip.",
+          "Submit the application no more than six months and at least 15 days before travel."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"DJ","destinationCode":"AF","reason":"No current Afghan or Djiboutian primary source establishes a stable usable ordinary Djiboutian-passport visitor route amid restricted operational access.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"AO","reason":"Angola's current official material does not establish ordinary Djiboutian visitor eligibility and actual issuance timing.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"BD","reason":"Bangladesh's current official arrival-visa material does not directly establish an unconditional ordinary Djiboutian-passport visitor route; reciprocal, mission and discretionary conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"CF","reason":"No current Central African or Djiboutian primary source establishes ordinary Djiboutian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"TD","reason":"No current Chadian or Djiboutian primary source establishes ordinary Djiboutian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.td","interieur.gouv.td","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Djiboutian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"CG","reason":"No current Congolese or Djiboutian primary source establishes ordinary Djiboutian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"CI","reason":"Côte d'Ivoire's recognised SNEDAI process describes pre-enrolment and airport biometric visa printing but does not establish the ordinary Djiboutian nationality baseline. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"GW","reason":"No current Guinea-Bissau or Djiboutian primary source establishes ordinary Djiboutian-passport visitor eligibility and actual arrival-visa timing.","searchedOfficialDomains":["mne.gw","gov.gw","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Djiboutian-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Djiboutian-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"KW","reason":"Kuwait's current Interior data exposes visitor products but no positive controlling ordinary Djiboutian tourist-nationality decision. Conditional GCC-resident, sponsor and third-country-document routes are excluded.","searchedOfficialDomains":["kuwaitvisa.moi.gov.kw","moi.gov.kw","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Djiboutian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"LR","reason":"Liberia's Visa on Arrival workflow is residence and mission dependent, not a passport-only route; no current Djiboutian nationality schedule resolves the baseline.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"ML","reason":"No current direct, reconcilable Malian nationality schedule establishes ordinary Djiboutian-passport visa-free, electronic, arrival or advance-visa treatment.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"MH","reason":"Marshall Islands' live official pages do not publish a current complete nationality schedule; no source establishes the ordinary Djiboutian visitor route and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","immigration.gov.mh","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"MM","reason":"Myanmar's current named electronic and preapproved-arrival cohorts do not establish ordinary Djiboutian-passport eligibility, and no residual route is inferred from omission.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"NE","reason":"Niger's current foreign-entry rule preserves unenumerated bilateral and community exemptions; no current Djiboutian ordinary-passport complement is published.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"KP","reason":"No current DPRK or Djiboutian primary source establishes a usable ordinary Djiboutian-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Djiboutian-passport route; residence and qualifying third-country-document programmes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Djiboutian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"ST","reason":"São Tomé and Príncipe's documented exception depends on a valid Schengen or United States visa and a short stay; that document-conditioned route is not an unconditional nationality baseline.","searchedOfficialDomains":["smf.st","mne.gov.st","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"SA","reason":"Saudi Arabia's current official visitor material does not positively establish an unconditional ordinary Djiboutian-passport route and actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"SL","reason":"Sierra Leone's live official material conflicts between emailed eVisa issuance and visa issuance at the airport or border. No current source resolves actual issuance timing for Djibouti.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"SB","reason":"No current Solomon Islands authority directly maps this ordinary passport to an unconditional short-tourist status. No complement is inferred from omission, permits or special arrangements.","searchedOfficialDomains":["solomons.gov.sb","immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"DJ","destinationCode":"SS","reason":"South Sudan's current table says a visa is needed but does not establish whether an ordinary Djiboutian visitor receives eVisa, visa on arrival or an advance visa.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"SD","reason":"Sudan Passport Directorate material describes visitor categories and counter processing but no ordinary Djiboutian-passport eligibility or prior-approval schedule.","searchedOfficialDomains":["passports.gov.sd","moi.gov.sd","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"SY","reason":"Current Syrian and Djiboutian official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Djiboutian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Djiboutian cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"TN","reason":"Tunisia's current consular material establishes a visa process and treaty-qualified waivers but no current ordinary Djiboutian-passport schedule or effective agreement register.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"TM","reason":"No current Turkmen or Djiboutian primary source establishes ordinary Djiboutian-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","diplomatie.gouv.dj"]},
+    {"passportCode":"DJ","destinationCode":"UA","reason":"Ukraine's accessible official nationality table is expressly dated June 2023; no current source establishes the ordinary Djiboutian-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","diplomatie.gouv.dj"]}
+  ]
+}

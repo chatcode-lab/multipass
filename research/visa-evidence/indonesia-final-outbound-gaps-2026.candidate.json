@@ -1,0 +1,147 @@
+{
+  "batchId": "indonesia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-indonesia-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page says requirements depend on citizenship and links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-indonesia-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy country schedule identifies itself as updated April 2024, names Indonesia, and defines Prior to Arrival as a visa obtained before travel.",
+      "supportingExcerpt": "Indonesia Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-indonesia-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy consular page expressly lists Indonesia in its authorized-visa cohort and describes advance consular approval.",
+      "supportingExcerpt": "Indonesia ... you will need an authorized visa"
+    },
+    {
+      "id": "jordan-tourism-board-indonesia-arrival-visa-2026",
+      "title": "Visas To Jordan",
+      "url": "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "French / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live official Jordan Tourism Board visa table expressly maps Indonesia to an applicable visa on arrival for 40 JOD.",
+      "supportingExcerpt": "Indonesia | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    }
+  ],
+  "policies": [
+    {
+      "id": "indonesian-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Indonesian ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy nationality schedule places Indonesia in its Prior to Arrival cohort, requiring a visa from a Grenadian mission or consulate before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["ID"],
+      "conditions": [
+        "Applies to an ordinary Indonesian passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained at a Grenadian mission or consulate before travel.",
+        "The actively linked schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, crew, diplomatic, official, service and special-document routes are outside this classification."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-indonesia-2026", "grenada-embassy-indonesia-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "indonesian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Indonesian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule expressly places Indonesia in the authorized-visa cohort, requiring advance consular approval unless the separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["ID"],
+      "conditions": [
+        "Applies to an ordinary Indonesian passport holder travelling as a short visitor who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Submit the authorized-visa application and listed documents before travel to the competent Panamanian consulate; the Embassy says approval may take up to 60 business days.",
+        "Work, residence, transit, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-indonesia-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Submit the listed authorized-visa documents to the competent Panamanian consulate before travel.",
+          "Travel only after the consular visa has been granted and carry all required supporting documents."
+        ]
+      }
+    },
+    {
+      "id": "indonesian-ordinary-passport-jordan-arrival-visa-2026",
+      "title": "Indonesian ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's live Tourism Board nationality table states that Indonesian visitors can obtain a 40-JOD visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["ID"],
+      "conditions": [
+        "Applies to an ordinary Indonesian passport holder travelling as a short visitor.",
+        "The Tourism Board table says all non-Jordanians must register for a Gateway2Jordan QR code before departure.",
+        "Entry-point, admission and non-visitor categories remain governed by Jordanian authorities."
+      ],
+      "sourceIds": ["jordan-tourism-board-indonesia-arrival-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"ID","destinationCode":"AF","reason":"No current Afghan or Indonesian primary source establishes a usable ordinary Indonesian-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"BD","reason":"Bangladesh's current arrival-visa material does not directly establish an unconditional ordinary Indonesian-passport visitor route; discretionary and mission-availability conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"BF","reason":"No current Burkinabè or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mae.gov.bf","dgm.bf","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"CF","reason":"No current Central African or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"TD","reason":"No current Chadian or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.td","interieur.gouv.td","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Indonesian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"CG","reason":"No current Republic of the Congo or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"CI","reason":"Côte d’Ivoire's electronic-visa material does not establish the exact ordinary Indonesian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Indonesian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"GW","reason":"No current Guinea-Bissau or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"GY","reason":"Guyana's current official schedules conflict on Indonesia's ordinary-passport treatment, so no normalized visitor status is asserted.","searchedOfficialDomains":["minfor.gov.gy","immigration.gov.gy","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"HN","reason":"No current Honduran or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["inm.gob.hn","sre.gob.hn","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Indonesian eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"ID","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Indonesian-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Indonesian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"LR","reason":"No current Liberian or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"ML","reason":"No current Malian or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.ml","interieur.gov.ml","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"NE","reason":"No current Nigerien or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"KP","reason":"No current DPRK or Indonesian primary source establishes a usable ordinary Indonesian-passport visitor route; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"MK","reason":"No current North Macedonian or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Indonesian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"ST","reason":"São Tomé and Príncipe's documented route depends on holding a valid Schengen or United States visa and a short stay; that document-conditioned exception is not an unconditional nationality baseline.","searchedOfficialDomains":["smf.st","mne.gov.st","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"SA","reason":"Saudi Arabia's current Visa by Package route for Indonesian passports requires a qualifying travel package; this conditional issuance route is not a passport-wide baseline.","searchedOfficialDomains":["visitsaudi.com","mofa.gov.sa","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"SL","reason":"The Sierra Leone hold remains: conflicting official portal material does not establish current ordinary Indonesian eligibility and issuance timing.","searchedOfficialDomains":["evisa.sl","immigration.gov.sl","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Indonesian-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Indonesian eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Indonesian-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"SY","reason":"Current Syrian and Indonesian official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Indonesian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"GM","reason":"The Gambia Immigration schedules conflict on Indonesia's ordinary-passport treatment; neither side of the conflict is normalized as a visitor status.","searchedOfficialDomains":["immigration.gov.gm","gov.gm","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"TT","reason":"Trinidad and Tobago's current explicit eVisa cohort does not name Indonesia, while no current authority establishes the residual ordinary Indonesian-passport advance route. No complement is inferred.","searchedOfficialDomains":["foreign.gov.tt","homelandsecurity.gov.tt","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"TN","reason":"No current Tunisian or Indonesian primary source directly establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","kemlu.go.id"]},
+    {"passportCode":"ID","destinationCode":"TM","reason":"No current Turkmen or Indonesian primary source establishes ordinary Indonesian-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","kemlu.go.id"]}
+  ]
+}
