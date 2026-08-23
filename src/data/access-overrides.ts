@@ -3229,4 +3229,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "NL",
+    destinationCode: "DJ",
+    status: "evisa",
+    reason: "The Dutch Foreign Ministry directs Dutch-passport visitors to Djibouti's government online visa channel, and Djibouti's government says the electronically delivered eVisa replaces point-of-entry issuance.",
+    sourceUrl: "https://www.nederlandwereldwijd.nl/reisadvies/djibouti",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "NL",
+    destinationCode: "IR",
+    status: "visa_required",
+    reason: "The Dutch Foreign Ministry requires Dutch-passport visitors to apply for Iran's visa through the Iranian Embassy in The Hague before travel.",
+    sourceUrl: "https://www.nederlandwereldwijd.nl/reisadvies/iran",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

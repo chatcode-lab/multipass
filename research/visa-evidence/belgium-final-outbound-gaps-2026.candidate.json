@@ -1,0 +1,149 @@
+{
+  "batchId": "belgium-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "bangladesh-brussels-visa-on-arrival-page-2025",
+      "title": "Visa on Arrival",
+      "url": "https://brussels.mofa.gov.bd/pages/static-pages/6952667f35ce18e1c05a9956",
+      "publisher": "Embassy of the People's Republic of Bangladesh, Brussels",
+      "jurisdiction": "Bangladesh",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Bangladesh's official Brussels embassy page is a live National Portal publication. Its current page hosts a Visa on Arrival PDF but does not expose a Belgian ordinary-passport eligibility or issuance rule in the page text.",
+      "supportingExcerpt": "This content was last updated on: Tuesday, May 27, 2025"
+    },
+    {
+      "id": "mali-brussels-embassy-visa-application-page-2025",
+      "title": "Le Visa",
+      "url": "https://www.amba-mali.be/article/les-visas",
+      "publisher": "Embassy of Mali in Belgium and Europe",
+      "jurisdiction": "Mali",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Mali's Embassy in Belgium and Europe publishes this live consular page, updated 20 March 2025. It directs applicants to a platform but does not state whether an ordinary Belgian short-visitor visa is electronically, at-border, or mission issued.",
+      "supportingExcerpt": "nous vous invitons à suivre le lien ci-dessous"
+    },
+    {
+      "id": "belgian-foreign-affairs-south-sudan-visa-applications-2025",
+      "title": "South Sudan: practical information",
+      "url": "https://diplomatie.belgium.be/fr/pays/soudan-du-sud/voyager-au-soudan-du-sud-conseils-aux-voyageurs/informations-pratiques-pour-le-soudan-du-sud",
+      "publisher": "SPF Affaires étrangères, Commerce extérieur et Coopération au Développement",
+      "jurisdiction": "Belgium / South Sudan",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Belgian Foreign Affairs' live destination-specific advice for Belgian travellers was last updated 1 April 2025. It confirms a valid visa is required but describes only application channels, not the visa's actual issuance timing.",
+      "supportingExcerpt": "Les demandes de visa ... peuvent être introduites en ligne ou via une ambassade compétente."
+    },
+    {
+      "id": "south-sudan-interior-evisa-portal",
+      "title": "South Sudan eVisa",
+      "url": "https://www.evisa.gov.ss/",
+      "publisher": "Ministry of Interior, Department of e-Visa and Immigration Service",
+      "jurisdiction": "South Sudan",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live South Sudan government portal states that approved applicants download an electronic visa PDF before travel.",
+      "supportingExcerpt": "Download your e-visa PDF from anywhere within 72 hours."
+    }
+  ],
+  "policies": [
+    {
+      "id": "belgium-south-sudan-ordinary-passports-electronic-visa-2026",
+      "title": "Belgian ordinary passports: South Sudan electronic visitor visa",
+      "summary": "Belgian Foreign Affairs confirms that Belgian visitors may apply online, and South Sudan's government service issues an approved eVisa PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": ["SS"],
+      "passportCodes": ["BE"],
+      "conditions": [
+        "Applies to a current ordinary Belgian passport for short visitor travel.",
+        "Submit the online application before departure and download the approved eVisa PDF for presentation at entry.",
+        "The separate embassy channel, registration after arrival, work, residence, transit, special documents and final admission remain outside this classification.",
+        "Belgian Foreign Affairs advises against travel; this classification does not imply safety or guaranteed admission."
+      ],
+      "sourceIds": ["belgian-foreign-affairs-south-sudan-visa-applications-2025", "south-sudan-interior-evisa-portal"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.evisa.gov.ss/",
+        "label": "South Sudan government eVisa",
+        "steps": [
+          "Create an account and submit the visitor application and fee online before travel.",
+          "Download the approved eVisa PDF and present it with the same passport at entry."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "BE",
+      "destinationCode": "AF",
+      "reason": "Current official material does not establish a stable ordinary Belgian-passport short-visitor issuance channel amid Afghanistan's restricted and contested entry arrangements.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "mfa.gov.af", "econsulate.mfa.gov.af"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "BD",
+      "reason": "The current Bangladesh embassy page hosts Visa on Arrival material but does not positively state ordinary Belgian-passport eligibility or actual issuance timing; no complement is inferred.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "brussels.mofa.gov.bd", "immi.gov.bd"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "VG",
+      "reason": "The live BVI service uses a positive visa-required nationality schedule but does not say omitted nationalities are visa-exempt. No complement is inferred.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "bvi.gov.vg", "laws.gov.vg"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "BF",
+      "reason": "The official eVisa portal describes electronic delivery generally but does not positively establish the ordinary Belgian visitor's visa requirement and eligibility together.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "visaburkina.bf", "securite.gov.bf"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "CF",
+      "reason": "Current official material reviewed does not establish the ordinary Belgian-passport visitor's visa requirement and actual issuance timing.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "diplomatie.gouv.cf"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "KM",
+      "reason": "Current official material does not positively establish an ordinary Belgian-passport visitor arrival, electronic, or advance-visa route.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "gouvernement.km", "interieur.gouv.km"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "ML",
+      "reason": "Mali's Brussels embassy directs applicants to a platform but does not state actual issuance timing for the ordinary Belgian short-visitor baseline.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "amba-mali.be", "diplomatie.gouv.ml"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "KP",
+      "reason": "No current official source reviewed establishes an available ordinary Belgian-passport short-visitor route and its issuance timing; closure and permission restrictions cannot be normalized.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "mfa.gov.kp"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "SD",
+      "reason": "Current official material reviewed does not establish ordinary Belgian-passport visitor eligibility and actual visa issuance timing.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "mofa.gov.sd", "interior.gov.sd"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "TN",
+      "reason": "Current Belgian and Tunisian official material does not positively establish the ordinary Belgian-passport short-visitor visa-free route.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "diplomatie.gov.tn", "interieur.gov.tn"]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "UA",
+      "reason": "Accessible Ukrainian nationality-list material is legacy-dated, and current official material reviewed does not establish the ordinary Belgian-passport visa-free route. No complement is inferred.",
+      "searchedOfficialDomains": ["diplomatie.belgium.be", "mfa.gov.ua", "dmsu.gov.ua"]
+    }
+  ]
+}
