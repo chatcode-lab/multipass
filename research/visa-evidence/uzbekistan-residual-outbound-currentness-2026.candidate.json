@@ -1,0 +1,100 @@
+{
+  "batchId": "uzbekistan-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "uzbekistan-mfa-current-outbound-visa-requirements",
+      "title": "Visa requirements for citizens of Uzbekistan",
+      "url": "https://gov.uz/oz/mfa/pages/o-zbekiston-respublikasi-fuqarolari-uchun-viza-talablari",
+      "publisher": "Ministry of Foreign Affairs of Uzbekistan",
+      "jurisdiction": "Uzbekistan / worldwide",
+      "kind": "government-guidance",
+      "language": "Uzbek",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Uzbekistan MFA's live outbound-passport page was last updated 29 December 2025 and names visa-free and arrival-visa routes for Uzbek foreign-passport holders.",
+      "supportingExcerpt": "O‘zbekiston fuqarolari uchun to‘liq vizasiz kirish mavjud bo‘lgan davlatlar"
+    }
+  ],
+  "policies": [
+    {
+      "id": "uzbekistan-ordinary-passport-current-visa-free",
+      "title": "Uzbek ordinary passports: current visa-free short visits",
+      "summary": "Uzbekistan MFA's current outbound list expressly includes Grenada, Jordan and Ukraine among states granting Uzbek foreign-passport holders visa-free entry.",
+      "status": "visa_free",
+      "destinationCodes": ["GD", "JO", "UA"],
+      "passportCodes": ["UZ"],
+      "conditions": [
+        "This is the listed ordinary Uzbek foreign-passport visa-free baseline; duration, purpose, carrier and final admission remain destination-specific.",
+        "Jordan's separately listed visa-on-arrival route does not displace the current visa-free option."
+      ],
+      "sourceIds": ["uzbekistan-mfa-current-outbound-visa-requirements"],
+      "confidence": "high"
+    },
+    {
+      "id": "uzbekistan-ordinary-passport-current-arrival-visas",
+      "title": "Uzbek ordinary passports: current arrival-issued visitor visas",
+      "summary": "Uzbekistan MFA's current outbound list expressly places Comoros and Guinea-Bissau among states issuing a visa on arrival to Uzbek foreign-passport holders.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["KM", "GW"],
+      "passportCodes": ["UZ"],
+      "conditions": [
+        "Use a valid ordinary Uzbek foreign-travel passport for the listed short-visitor arrival-visa route; destination-specific fees, duration, documents and final admission remain applicable.",
+        "This policy does not infer arrival treatment for countries omitted from the current named list."
+      ],
+      "sourceIds": ["uzbekistan-mfa-current-outbound-visa-requirements"],
+      "confidence": "high"
+    },
+    {
+      "id": "uzbekistan-ordinary-passport-current-electronic-visas",
+      "title": "Uzbek ordinary passports: current electronic visitor visas",
+      "summary": "Uzbekistan MFA's current outbound list expressly places Djibouti and South Sudan among states providing an electronic visa to Uzbek foreign-passport holders.",
+      "status": "evisa",
+      "destinationCodes": ["DJ", "SS"],
+      "passportCodes": ["UZ"],
+      "conditions": [
+        "Use a valid ordinary Uzbek foreign-travel passport and complete the destination's applicable electronic-visa process before travel.",
+        "Purpose, duration, fees, supporting documents, carrier checks and final admission remain destination-specific."
+      ],
+      "sourceIds": ["uzbekistan-mfa-current-outbound-visa-requirements"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "UZ",
+      "destinationCode": "DJ",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "Uzbekistan MFA's current outbound schedule expressly assigns Djibouti to its electronic-visa group rather than its visa-on-arrival group.",
+      "sourceIds": ["uzbekistan-mfa-current-outbound-visa-requirements"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"UZ","destinationCode":"AF","reason":"No current Afghan or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"AO","reason":"No current Angolan or Uzbek primary source positively establishes ordinary Uzbek-passport visitor eligibility and actual electronic issuance timing.","searchedOfficialDomains":["evisa.gov.ao","mirex.gov.ao","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"BD","reason":"No current Bangladeshi or Uzbek primary source establishes the ordinary Uzbek-passport visitor baseline or a non-conditional arrival route.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"BF","reason":"No current Burkina Faso or Uzbek primary source positively establishes ordinary Uzbek-passport eVisa eligibility and actual issuance; a portal alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"CF","reason":"No current Central African or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"TD","reason":"Portal material alone does not authenticate an ordinary Uzbek-passport route or actual issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"CG","reason":"No current Republic of the Congo or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"CI","reason":"Official pre-enrolment material does not positively establish ordinary Uzbek-passport eligibility and actual issuance timing, so eVisa is not inferred.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"IQ","reason":"No current Iraqi or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"KW","reason":"No current Kuwaiti or Uzbek primary source establishes an unconditional ordinary Uzbek-passport visitor baseline.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"LR","reason":"No current Liberian or Uzbek primary source establishes ordinary Uzbek-passport electronic eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"ML","reason":"No current Malian or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"MH","reason":"No current Marshall Islands or Uzbek primary source establishes the ordinary Uzbek-passport visitor baseline and issuance timing.","searchedOfficialDomains":["rmiembassyus.org","rmimofa.gov.mh","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"NE","reason":"No current Nigerien or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"KP","reason":"No current North Korean or Uzbek primary source establishes a usable ordinary Uzbek-passport short-visitor baseline; tour or invitation controls are not visa states.","searchedOfficialDomains":["mfa.gov.kp","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"MK","reason":"No current North Macedonian or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"PS","reason":"No current Palestinian or Uzbek primary source establishes an independent ordinary Uzbek-passport visitor visa state; route-specific external-border controls are outside this taxonomy.","searchedOfficialDomains":["mofa.pna.ps","moi.pna.ps","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"PA","reason":"Panama's live guidance does not expressly place Uzbekistan in a controlling unconditional ordinary-passport category; omission is not used to infer a visa state.","searchedOfficialDomains":["migracion.gob.pa","embassyofpanama.org","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"ST","reason":"No current São Toméan or Uzbek primary source establishes ordinary Uzbek-passport eligibility and actual electronic or border issuance timing.","searchedOfficialDomains":["mnec.gov.st","gov.st","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"SL","reason":"Reviewed Sierra Leone government material does not consistently establish ordinary Uzbek-passport eligibility and actual issuance timing.","searchedOfficialDomains":["evisa.sl","immigration.gov.sl","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"SB","reason":"No current Solomon Islands or Uzbek primary source establishes the ordinary Uzbek-passport visitor baseline and whether authority is issued before travel or at arrival.","searchedOfficialDomains":["commerce.gov.sb","mfaet.gov.sb","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"SD","reason":"No current Sudanese or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sd","sudan.gov.sd","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"SY","reason":"No current Syrian or Uzbek primary source establishes a usable ordinary Uzbek-passport short-visitor baseline; security and invitation controls are not taxonomy states.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"TT","reason":"No current Trinidad and Tobago or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["foreign.gov.tt","nationalsecurity.gov.tt","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"TN","reason":"No current Tunisian or Uzbek primary source establishes ordinary Uzbek-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gov.tn","interieur.gov.tn","gov.uz"]},
+    {"passportCode":"UZ","destinationCode":"TM","reason":"No current Turkmen or Uzbek primary source establishes an unconditional ordinary Uzbek-passport visitor baseline; invitation and tour-letter requirements are excluded.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","gov.uz"]}
+  ]
+}

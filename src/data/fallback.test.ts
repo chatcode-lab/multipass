@@ -54,5 +54,8 @@ describe("bundled passport snapshot", () => {
 
   it("applies verified destination-authority corrections to the bundled snapshot", () => {
     expect(snapshot.passports.IN.statuses.HK).toBe("eta");
+    expect(snapshot.passports.MD.statuses.GD).toBe("visa_on_arrival");
+    expect(snapshot.passports.UZ.statuses.DJ).toBe("evisa");
+    expect(snapshot.passports.PH.statuses.TR).toBe("visa_required");
   });
 });

@@ -3125,4 +3125,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://mofa.gov.iq/kualalumpur/2025/01/21/iraq-grants-entry-visa-to-malaysian-citizen-at-points-of-entry/",
     reviewedAt: "2026-08-22",
   },
+  {
+    passportCode: "MD",
+    destinationCode: "GD",
+    status: "visa_on_arrival",
+    reason: "Grenada's official Embassy schedule, updated April 2024, expressly assigns Moldova to Port of Entry and defines that treatment as a visa granted on arrival.",
+    sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "UZ",
+    destinationCode: "DJ",
+    status: "evisa",
+    reason: "Uzbekistan MFA's current outbound schedule expressly assigns Djibouti to its electronic-visa group rather than its visa-on-arrival group.",
+    sourceUrl: "https://gov.uz/oz/mfa/pages/o-zbekiston-respublikasi-fuqarolari-uchun-viza-talablari",
+    reviewedAt: "2026-08-22",
+  },
+  {
+    passportCode: "PH",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye MFA requires ordinary Philippine-passport holders to have a visa; its eVisa route additionally requires a qualifying Schengen, United States, United Kingdom or Ireland visa or residence permit.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-22",
+  },
 ] as const;

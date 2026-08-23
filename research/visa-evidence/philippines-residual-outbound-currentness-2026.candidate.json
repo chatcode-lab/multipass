@@ -1,0 +1,154 @@
+{
+  "batchId": "philippines-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "paraguay-migration-visa-suppression-schedule-january-2026",
+      "title": "Visa-suppression agreements in force",
+      "url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+      "publisher": "National Directorate of Migration",
+      "jurisdiction": "Paraguay",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Paraguay's national migration authority published this January 2026 schedule of visa-suppression agreements on its official government domain; its Philippines row cites Decree 5219 of 29 December 2025.",
+      "supportingExcerpt": "FILIPINAS ... NO REQUIERE VISA: para permanencia de hasta 30 días"
+    },
+    {
+      "id": "panama-embassy-philippines-stamped-visa-list-2026",
+      "title": "Embassy of Panama: immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "The live Panamanian Government embassy immigration page places the Philippines in its stamped-visa country list, separately from visa-exempt and conditional third-country-document routes.",
+      "supportingExcerpt": "Stamped Visa ... Philippines"
+    },
+    {
+      "id": "turkiye-mfa-philippines-ordinary-passport-visa-2026",
+      "title": "Visa information for foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Türkiye's current MFA country-by-country visa guidance directly distinguishes Philippine ordinary passports from diplomatic and official passports and states the conditional prerequisite for eVisa use.",
+      "supportingExcerpt": "Ordinary passport holders are required to have visa."
+    },
+    {
+      "id": "grenada-embassy-visa-schedule-april-2024",
+      "title": "Visa requirements for Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-22",
+      "officialityEvidence": "Grenada's official Embassy currently serves this April 2024 nationality schedule; it defines Prior to Arrival and expressly assigns that treatment to the Philippines.",
+      "supportingExcerpt": "Philippines Prior to Arrival"
+    }
+  ],
+  "policies": [
+    {
+      "id": "philippine-ordinary-passport-paraguay-visa-free-2026",
+      "title": "Philippine ordinary passports: Paraguay short-visit visa exemption",
+      "summary": "Paraguay's January 2026 migration schedule states that Philippine ordinary-passport holders do not require a visa for stays up to 30 days.",
+      "status": "visa_free",
+      "destinationCodes": ["PY"],
+      "passportCodes": ["PH"],
+      "conditions": [
+        "Use a valid ordinary Philippine passport for a visitor stay of no more than 30 days under Paraguay's cited unilateral exemption.",
+        "Work, residence, study, special passports, other purposes and final admission remain outside this short-visitor classification."
+      ],
+      "sourceIds": ["paraguay-migration-visa-suppression-schedule-january-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "philippine-ordinary-passport-panama-stamped-visa-2026",
+      "title": "Philippine ordinary passports: Panama advance stamped visa",
+      "summary": "Panama's current embassy guidance lists the Philippines among nationalities requiring a stamped visa rather than in its visa-exempt list.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["PH"],
+      "conditions": [
+        "An ordinary Philippine-passport visitor must obtain the applicable stamped visa before travel unless a separately documented conditional exception applies.",
+        "Conditional routes based on a qualifying third-country visa or residence permit are deliberately excluded from this ordinary-passport baseline."
+      ],
+      "sourceIds": ["panama-embassy-philippines-stamped-visa-list-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "philippine-ordinary-passport-turkiye-advance-visa-2026",
+      "title": "Philippine ordinary passports: Türkiye advance visa baseline",
+      "summary": "Türkiye's current MFA guidance requires ordinary Philippine-passport holders to have a visa; eVisa eligibility depends on an additional qualifying Schengen, United States, United Kingdom or Ireland visa or residence permit.",
+      "status": "visa_required",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["PH"],
+      "conditions": [
+        "This is the unconditional ordinary-passport baseline for a short visit; obtain the appropriate visa before travel.",
+        "The conditional eVisa route requiring a valid Schengen, United States, United Kingdom or Ireland visa or residence permit is excluded from the normalized baseline. Diplomatic, official and service-passport exemptions are also excluded."
+      ],
+      "sourceIds": ["turkiye-mfa-philippines-ordinary-passport-visa-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "philippine-ordinary-passport-grenada-advance-visa-2026",
+      "title": "Philippine ordinary passports: Grenada advance visa",
+      "summary": "Grenada's April 2024 official Embassy schedule assigns the Philippines to Prior to Arrival, defined as obtaining a visa from a Grenadian mission or consulate before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["PH"],
+      "conditions": [
+        "An ordinary Philippine-passport visitor must obtain the visa from a Grenadian mission or consulate before travel.",
+        "Work, residence, transit, special passports, other purposes and final admission remain outside this ordinary short-visitor classification."
+      ],
+      "sourceIds": ["grenada-embassy-visa-schedule-april-2024"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "PH",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Türkiye's MFA says Philippine ordinary-passport holders require a visa and limits eVisa access to travellers who also hold a qualifying third-country visa or residence permit; the project excludes that conditional route from the baseline.",
+      "sourceIds": ["turkiye-mfa-philippines-ordinary-passport-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"PH","destinationCode":"AF","reason":"No current Afghan or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing; operational warnings are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"BD","reason":"No current Bangladeshi or Philippine primary source establishes the ordinary Philippine-passport visitor baseline or a non-conditional arrival route.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"BF","reason":"No current Burkina Faso or Philippine primary source positively establishes ordinary Philippine-passport eVisa eligibility and actual issuance; a portal alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"CF","reason":"No current Central African or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"TD","reason":"Portal material alone does not authenticate an ordinary Philippine-passport route or actual issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"KM","reason":"No current Comorian or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["gouvernement.km","interieur.gouv.km","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"CG","reason":"No current Republic of the Congo or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"CI","reason":"Official pre-enrolment material does not positively establish ordinary Philippine-passport eligibility and actual issuance timing, so eVisa is not inferred.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"DJ","reason":"Current electronic-visa material reviewed does not establish the exact ordinary Philippine-passport eligibility and issuance result; online application alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"GW","reason":"No current Guinea-Bissau or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mne.gw","gov.gw","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"IR","reason":"No current Iranian or Philippine primary source establishes the ordinary Philippine-passport visitor baseline and actual issuance timing.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"IQ","reason":"No current Iraqi or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"KW","reason":"No current Kuwaiti or Philippine primary source establishes an unconditional ordinary Philippine-passport visitor baseline; employment and residency guidance is outside scope.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"KG","reason":"No current Kyrgyz or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and actual issuance timing without a conditional third-country document.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"LR","reason":"No current Liberian or Philippine primary source establishes ordinary Philippine-passport electronic eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"ML","reason":"No current Malian or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"NE","reason":"No current Nigerien or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"KP","reason":"No current North Korean or Philippine primary source establishes a usable ordinary Philippine-passport short-visitor baseline; tour or invitation controls are not treated as visa states.","searchedOfficialDomains":["mfa.gov.kp","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"MK","reason":"No current North Macedonian or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"PS","reason":"No current Palestinian or Philippine primary source establishes an independent ordinary Philippine-passport visitor visa state; route-specific external-border controls are outside this taxonomy.","searchedOfficialDomains":["mofa.pna.ps","moi.pna.ps","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"ST","reason":"No current São Toméan or Philippine primary source establishes ordinary Philippine-passport eligibility and actual electronic or border issuance timing.","searchedOfficialDomains":["mnec.gov.st","gov.st","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"SA","reason":"No current Saudi or Philippine primary source establishes an unconditional ordinary Philippine-passport tourist baseline; employment, invitation and conditional document routes are excluded.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"SL","reason":"Reviewed Sierra Leone government material does not consistently establish ordinary Philippine-passport eligibility and actual issuance timing, so the relationship remains unresolved.","searchedOfficialDomains":["evisa.sl","immigration.gov.sl","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"SB","reason":"No current Solomon Islands or Philippine primary source establishes the ordinary Philippine-passport visitor baseline and whether authority is issued before travel or at arrival.","searchedOfficialDomains":["commerce.gov.sb","mfaet.gov.sb","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"SS","reason":"No current South Sudanese or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"SD","reason":"No current Sudanese or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sd","sudan.gov.sd","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"SY","reason":"No current Syrian or Philippine primary source establishes a usable ordinary Philippine-passport short-visitor baseline; security and invitation controls are not taxonomy states.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"TT","reason":"No current Trinidad and Tobago or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing; diplomatic-passport treatment is excluded.","searchedOfficialDomains":["foreign.gov.tt","nationalsecurity.gov.tt","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"TN","reason":"No current Tunisian or Philippine primary source establishes ordinary Philippine-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gov.tn","interieur.gov.tn","dfa.gov.ph"]},
+    {"passportCode":"PH","destinationCode":"TM","reason":"No current Turkmen or Philippine primary source establishes an unconditional ordinary Philippine-passport visitor baseline; invitation and tour-letter requirements are excluded.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","dfa.gov.ph"]}
+  ]
+}
