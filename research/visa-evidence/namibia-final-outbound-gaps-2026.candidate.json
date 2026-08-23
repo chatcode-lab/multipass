@@ -1,0 +1,167 @@
+{
+  "batchId": "namibia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-namibia-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-namibia-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Namibia as No Visa required.",
+      "supportingExcerpt": "Namibia No Visa required"
+    },
+    {
+      "id": "panama-embassy-namibia-no-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page expressly lists Namibia in its No Visa Required nationality cohort for up to three months.",
+      "supportingExcerpt": "Namibia ... No Visa Required"
+    },
+    {
+      "id": "turkiye-mfa-namibia-ordinary-passport-evisa-2026",
+      "title": "Visa Information For Foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's live Foreign Ministry country schedule expressly says Namibian ordinary passport holders can obtain an eVisa from 5 May 2025.",
+      "supportingExcerpt": "Ordinary passport holders can obtain e-Visa as of May 5, 2025"
+    },
+    {
+      "id": "turkiye-evisa-official-electronic-issuance-2026",
+      "title": "What is e-Visa?",
+      "url": "https://www.evisa.gov.tr/en/info/what-is-e-visa/",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's official MFA eVisa portal says applicants enter information and pay electronically, then receive an emailed download link.",
+      "supportingExcerpt": "Applicants obtain their visas electronically after entering required information and making payments."
+    }
+  ],
+  "policies": [
+    {
+      "id": "namibian-ordinary-passport-grenada-visitor-waiver-2026",
+      "title": "Namibian ordinary passports: Grenada visitor visa waiver",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Namibia as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["NA"],
+      "conditions": [
+        "Applies to a Namibian ordinary passport holder travelling as a short visitor.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-namibia-2026", "grenada-embassy-namibia-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "namibian-ordinary-passport-panama-visitor-waiver-2026",
+      "title": "Namibian ordinary passports: Panama visitor visa waiver",
+      "summary": "Panama's live Embassy nationality schedule lists Namibia in its No Visa Required cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["NA"],
+      "conditions": [
+        "Applies to a Namibian ordinary passport holder travelling as a short visitor for up to three months.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-namibia-no-visa-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "namibian-ordinary-passport-turkiye-electronic-visitor-visa-2026",
+      "title": "Namibian ordinary passports: Türkiye electronic visitor visa",
+      "summary": "Türkiye's current Foreign Ministry schedule makes Namibian ordinary passports eligible for an eVisa from 5 May 2025, delivered electronically before travel.",
+      "status": "evisa",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["NA"],
+      "conditions": [
+        "Applies to a Namibian ordinary passport holder travelling for tourism or trade; the eVisa portal does not cover work or residence.",
+        "Türkiye's official eVisa portal requires application information and payment before it emails the download link.",
+        "The source states Namibian ordinary-passport eVisa availability from 5 May 2025; final admission remains outside scope."
+      ],
+      "sourceIds": ["turkiye-mfa-namibia-ordinary-passport-evisa-2026", "turkiye-evisa-official-electronic-issuance-2026"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.evisa.gov.tr/en/",
+        "label": "Türkiye eVisa application",
+        "steps": [
+          "Start an application using the ordinary Namibian passport details and travel dates.",
+          "Enter the required information and pay electronically by an accepted card.",
+          "Download the eVisa from the emailed link before travel and retain a copy for arrival."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "NA",
+      "destinationCode": "TR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Türkiye's current Foreign Ministry schedule expressly makes Namibian ordinary passports eligible for an eVisa from 5 May 2025, issued electronically before travel.",
+      "sourceIds": ["turkiye-mfa-namibia-ordinary-passport-evisa-2026", "turkiye-evisa-official-electronic-issuance-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"NA","destinationCode":"AF","reason":"No current Afghan or Namibian primary source establishes a stable usable ordinary Namibian-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"AO","reason":"Namibia Home Affairs' potentially relevant 2025 fact-sheet PDF could not be retrieved directly during review, and no separately accessible Angolan or Namibian primary source establishes ordinary Namibian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mha.gov.na","mhaiss.gov.na","mirex.gov.ao","smevisa.gov.ao","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Namibian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"VG","reason":"No current British Virgin Islands or United Kingdom primary source establishes ordinary Namibian-passport short-visitor eligibility and issuance timing for this territory.","searchedOfficialDomains":["bvi.gov.vg","gov.uk","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"CF","reason":"No current Central African or Namibian primary source establishes ordinary Namibian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Namibian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Namibian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"CG","reason":"No current Republic of the Congo or Namibian primary source establishes ordinary Namibian-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Namibian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Namibian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"GW","reason":"No current Guinea-Bissau or Namibian primary source establishes ordinary Namibian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Namibian-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Namibian eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"NA","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Namibian-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Namibian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"LR","reason":"No current Liberian or Namibian primary source establishes ordinary Namibian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"ML","reason":"No current Malian or Namibian primary source establishes ordinary Namibian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"MH","reason":"The Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes a Namibian ordinary-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"MM","reason":"Myanmar's electronic-visa guidance does not publish a reproducible ordinary Namibian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Namibian-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"KP","reason":"No current DPRK or Namibian primary source establishes a usable ordinary Namibian-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Namibian-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Namibian-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Namibian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Namibian eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Namibian-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Namibian application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Namibian-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Namibian eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Namibian-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"SY","reason":"Current Syrian and Namibian official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Namibian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Namibian-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"TM","reason":"No current Turkmen or Namibian primary source establishes ordinary Namibian-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mfa.gov.na"]},
+    {"passportCode":"NA","destinationCode":"UA","reason":"Ukraine's accessible nationality table is expressly dated June 2023; no current Ukrainian or Namibian source establishes the ordinary Namibian-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mfa.gov.na"]}
+  ]
+}

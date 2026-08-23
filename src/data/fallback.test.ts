@@ -146,4 +146,19 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.GD.statuses.IS).toBe("visa_free");
     expect(snapshot.passports.GD.statuses.PA).toBe("visa_free");
   });
+
+  it("applies the final Kiribati, Mongolian, Namibian and Nigerian outbound audits", () => {
+    expect(snapshot.passports.KI.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.KI.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.KI.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.KI.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.MN.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.MN.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.NA.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.NA.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.NA.statuses.TR).toBe("evisa");
+    expect(snapshot.passports.NG.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.NG.statuses.MN).toBe("evisa");
+    expect(snapshot.passports.NG.statuses.PA).toBe("visa_required");
+  });
 });

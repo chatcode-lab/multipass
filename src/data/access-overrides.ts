@@ -3733,4 +3733,21 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.embassyofpanama.org/visas-1",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "NA",
+    destinationCode: "TR",
+    status: "evisa",
+    reason: "Türkiye's current Foreign Ministry schedule expressly makes Namibian ordinary passports eligible for an eVisa from 5 May 2025, issued electronically before travel.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+    effectiveFrom: "2025-05-05",
+  },
+  {
+    passportCode: "NG",
+    destinationCode: "MN",
+    status: "evisa",
+    reason: "Mongolia's official eVisa service expressly lists Nigeria and its Immigration Agency documents emailed pre-travel approval for border scanning.",
+    sourceUrl: "https://www.evisa.mn/en",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
