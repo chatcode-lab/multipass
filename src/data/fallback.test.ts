@@ -241,4 +241,22 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.LS.statuses.PA).toBe("visa_required");
     expect(snapshot.passports.MH.statuses.JO).toBe("visa_on_arrival");
   });
+
+  it("applies the final Solomon Islands, Tuvaluan, Ukrainian and Uruguayan outbound audits", () => {
+    expect(snapshot.passports.SB.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.SB.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.SB.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.SB.statuses.TR).toBe("visa_required");
+    expect(snapshot.passports.TV.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.TV.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.TV.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.TV.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.UA.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.UA.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.UA.statuses.MN).toBe("visa_free");
+    expect(snapshot.passports.UA.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.UY.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.UY.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.UY.statuses.PA).toBe("visa_free");
+  });
 });

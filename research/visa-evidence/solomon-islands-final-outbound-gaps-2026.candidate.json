@@ -1,0 +1,173 @@
+{
+  "batchId": "solomon-islands-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-solomon-islands-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-solomon-islands-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Solomon Islands as No Visa required.",
+      "supportingExcerpt": "Solomon Islands No Visa required"
+    },
+    {
+      "id": "jordan-tourism-solomon-islands-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps the Solomon Islands to a visa obtained on arrival.",
+      "supportingExcerpt": "Solomon Islands | Applicable | Visa can be obtained upon arrival"
+    },
+    {
+      "id": "panama-embassy-solomon-islands-no-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page expressly lists Solomon Islands in its No Visa Required nationality cohort for up to three months.",
+      "supportingExcerpt": "No Visa Required ... Solomon Islands"
+    },
+    {
+      "id": "turkiye-mfa-solomon-islands-ordinary-mission-visa-2026",
+      "title": "Visa Information For Foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's live Foreign Ministry nationality register says ordinary Solomon Islands passport holders obtain 15-day visas from Turkish diplomatic representations abroad.",
+      "supportingExcerpt": "Ordinary passport holders can get their 15 day period visas from Turkish diplomatic representations abroad."
+    }
+  ],
+  "policies": [
+    {
+      "id": "solomon-islands-ordinary-passport-grenada-visitor-waiver-2026",
+      "title": "Solomon Islands ordinary passports: Grenada visitor visa waiver",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Solomon Islands as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["SB"],
+      "conditions": [
+        "Applies to an ordinary Solomon Islands passport holder travelling as a short visitor.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-solomon-islands-2026", "grenada-embassy-solomon-islands-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "solomon-islands-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "Solomon Islands ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says Solomon Islands visitors can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["SB"],
+      "conditions": [
+        "Applies to an ordinary Solomon Islands passport holder travelling as a short visitor.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code.",
+        "Restricted crossings, non-visitor purposes and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-solomon-islands-arrival-visa-table-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "solomon-islands-ordinary-passport-panama-visitor-waiver-2026",
+      "title": "Solomon Islands ordinary passports: Panama visitor visa waiver",
+      "summary": "Panama's live Embassy nationality schedule lists Solomon Islands in its No Visa Required cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["SB"],
+      "conditions": [
+        "Applies to an ordinary Solomon Islands passport holder travelling as a short visitor for up to three months.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-solomon-islands-no-visa-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "solomon-islands-ordinary-passport-turkiye-mission-visitor-visa-2026",
+      "title": "Solomon Islands ordinary passports: Türkiye advance mission visitor visa",
+      "summary": "Türkiye's Foreign Ministry says ordinary Solomon Islands passport holders obtain a 15-day visa from Turkish diplomatic representations abroad.",
+      "status": "visa_required",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["SB"],
+      "conditions": [
+        "Applies to an ordinary Solomon Islands passport holder travelling as a short visitor.",
+        "The Foreign Ministry specifies a 15-day visa obtained from Turkish diplomatic representations abroad, before travel.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["turkiye-mfa-solomon-islands-ordinary-mission-visa-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "SB",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Türkiye's live Foreign Ministry register states that ordinary Solomon Islands passport holders obtain 15-day visas from diplomatic representations abroad; it does not establish an e-Visa route.",
+      "sourceIds": ["turkiye-mfa-solomon-islands-ordinary-mission-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"SB","destinationCode":"AF","reason":"No current Afghan or Solomon Islands primary source establishes a stable usable ordinary passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Solomon Islands-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"BO","reason":"Bolivia's electronic-visa material does not publish a reproducible ordinary Solomon Islands-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["cancilleria.gob.bo","migracion.gob.bo","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"VG","reason":"No current British Virgin Islands or United Kingdom primary source establishes ordinary Solomon Islands-passport short-visitor eligibility and issuance timing for this territory.","searchedOfficialDomains":["bvi.gov.vg","gov.uk","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"BF","reason":"Burkina Faso's electronic service does not publish a reproducible ordinary Solomon Islands-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","police.gov.bf","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"CV","reason":"Cape Verde's electronic-visa material does not publish a reproducible ordinary Solomon Islands-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mnec.gov.cv","evisa.gov.cv","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"CF","reason":"No current Central African or Solomon Islands primary source establishes ordinary passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Solomon Islands-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Solomon Islands passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"CG","reason":"No current Republic of the Congo or Solomon Islands primary source establishes ordinary passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Solomon Islands eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Solomon Islands eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"GW","reason":"No current Guinea-Bissau or Solomon Islands primary source establishes ordinary passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Solomon Islands-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Solomon Islands eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"SB","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Solomon Islands-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Solomon Islands-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"LR","reason":"No current Liberian or Solomon Islands primary source establishes ordinary passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"ML","reason":"No current Malian or Solomon Islands primary source establishes ordinary passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"MM","reason":"Myanmar's electronic-visa guidance does not publish a reproducible ordinary Solomon Islands-passport eligibility result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Solomon Islands-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"KP","reason":"No current DPRK or Solomon Islands primary source establishes a usable ordinary passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Solomon Islands-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Solomon Islands-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Solomon Islands-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"PY","reason":"Paraguay's online visa material does not establish a reproducible ordinary Solomon Islands-passport eligibility and issuance route; portal availability alone is insufficient.","searchedOfficialDomains":["mre.gov.py","migraciones.gov.py","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Solomon Islands eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Solomon Islands-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Solomon Islands application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Solomon Islands eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Solomon Islands-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"SY","reason":"Current Syrian and Solomon Islands official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Solomon Islands-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mfaet.gov.sb"]},
+    {"passportCode":"SB","destinationCode":"TM","reason":"No current Turkmen or Solomon Islands primary source establishes ordinary passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mfaet.gov.sb"]}
+  ]
+}

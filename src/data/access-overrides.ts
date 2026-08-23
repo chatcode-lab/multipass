@@ -3822,4 +3822,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "SB",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry schedule requires ordinary Solomon Islands passport holders to obtain a 15-day visa from a Turkish diplomatic representation before travel.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "UA",
+    destinationCode: "MN",
+    status: "visa_free",
+    reason: "Mongolia's current Foreign Ministry schedule expressly exempts Ukrainian ordinary passports for up to 90 days when the traveller presents the required official invitation.",
+    sourceUrl: "https://en.consul.mn/visa/c/83",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
