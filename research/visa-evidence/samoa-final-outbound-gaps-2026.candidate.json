@@ -1,0 +1,140 @@
+{
+  "batchId": "samoa-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-samoa-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-samoa-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Samoa as No Visa required.",
+      "supportingExcerpt": "Samoa (Independent State of) No visa required"
+    },
+    {
+      "id": "jordan-tourism-samoa-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps Samoa to a visa issued on arrival.",
+      "supportingExcerpt": "Samoa | Applicable | Visa can be obtained upon arrival"
+    },
+    {
+      "id": "panama-embassy-samoa-no-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Samoa in its No Visa Required nationality cohort for up to three months.",
+      "supportingExcerpt": "Samoa ... No Visa Required"
+    }
+  ],
+  "policies": [
+    {
+      "id": "samoa-ordinary-passport-grenada-visitor-waiver-2026",
+      "title": "Samoan ordinary passports: Grenada visitor visa waiver",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Samoa as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["WS"],
+      "conditions": [
+        "Applies to a Samoan ordinary passport holder travelling as a short visitor.",
+        "The schedule defines No Visa Required as a visa not required for entry.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "grenada-embassy-visitors-current-samoa-2026",
+        "grenada-embassy-samoa-april-2024-schedule"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "samoa-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "Samoan ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says Samoan visitors can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["WS"],
+      "conditions": [
+        "Applies to a Samoan ordinary passport holder travelling as a short visitor.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code.",
+        "Restricted crossings, non-visitor purposes and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-samoa-arrival-visa-table-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "samoa-ordinary-passport-panama-visitor-waiver-2026",
+      "title": "Samoan ordinary passports: Panama visitor visa waiver",
+      "summary": "Panama's live Embassy nationality schedule lists Samoa in its No Visa Required cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["WS"],
+      "conditions": [
+        "Applies to a Samoan ordinary passport holder travelling as a short visitor for up to three months.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-samoa-no-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"WS","destinationCode":"AF","reason":"No current Afghan or Samoan primary source establishes a stable usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Samoan-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"VG","reason":"No current British Virgin Islands or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["gov.vg","bvi.gov.vg","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"BF","reason":"No current Burkina Faso or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mae.gov.bf","dgm.bf","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"CF","reason":"No current Central African or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Samoan-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Samoan passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"CG","reason":"No current Republic of the Congo or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Samoan eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Samoan eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"DO","reason":"Dominican DGII includes Samoa in its named visa-required list, but the live MIREX ordinary-passport tourist selector says no visa. No reconciled current primary instrument establishes one status.","searchedOfficialDomains":["dgii.gov.do","mirex.gob.do","migracion.gob.do"]},
+    {"passportCode":"WS","destinationCode":"GW","reason":"No current Guinea-Bissau or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Samoan-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Samoan eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"WS","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Samoan-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Samoan-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"LR","reason":"No current Liberian or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"MW","reason":"Current Malawi Government Tourism material marks Samoa visa required, while the Department's live eVisa selector returns an ordinary-passport no-visa result. The official sources are irreconcilable.","searchedOfficialDomains":["evisa.gov.mw","immigration.gov.mw","visitmalawi.mw"]},
+    {"passportCode":"WS","destinationCode":"ML","reason":"No current Malian or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"MM","reason":"Myanmar's electronic-visa guidance does not publish a reproducible ordinary Samoan-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Samoan-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"KP","reason":"No current DPRK or Samoan primary source establishes a usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Samoan-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Samoan-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Samoan-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"PY","reason":"Samoa is not directly mapped in Paraguay's current National Migration Directorate tourist-country table. No residual conclusion is inferred from omission.","searchedOfficialDomains":["migraciones.gov.py","www.mre.gov.py"]},
+    {"passportCode":"WS","destinationCode":"ST","reason":"No current São Tomé and Príncipe or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.st","smf.st","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Samoan-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Samoan application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Samoan eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Samoan-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"SY","reason":"Current Syrian and Samoan official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Samoan-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mfat.gov.ws"]},
+    {"passportCode":"WS","destinationCode":"TM","reason":"No current Turkmen or Samoan primary source establishes ordinary-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","mfat.gov.ws"]}
+  ]
+}

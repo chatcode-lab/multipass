@@ -193,4 +193,22 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.VC.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.VC.statuses.PA).toBe("visa_free");
   });
+
+  it("applies the final Tajik, Vanuatu, Samoan and Armenian outbound audits", () => {
+    expect(snapshot.passports.TJ.statuses.GD).toBe("visa_on_arrival");
+    expect(snapshot.passports.TJ.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.TJ.statuses.MN).toBe("evisa");
+    expect(snapshot.passports.TJ.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.VU.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.VU.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.VU.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.VU.statuses.TR).toBe("visa_required");
+    expect(snapshot.passports.WS.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.WS.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.WS.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.AM.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.AM.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.AM.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.AM.statuses.TR).toBe("evisa");
+  });
 });
