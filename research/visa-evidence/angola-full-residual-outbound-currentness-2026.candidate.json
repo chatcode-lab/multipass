@@ -1,0 +1,158 @@
+{
+  "batchId": "angola-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-current-visitors-page-2026",
+      "title": "Embassy of Grenada: Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live embassy visitor page states that requirements turn on citizenship and currently links the complete country visa-requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-angola-prior-to-arrival-schedule-2026",
+      "title": "Embassy of Grenada: Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The currently linked official embassy nationality schedule is marked Updated April 2024, expressly lists Angola as Prior to Arrival, and defines that term as a visa obtained at a Grenadian mission or consulate before travel.",
+      "supportingExcerpt": "Angola Prior to Arrival"
+    },
+    {
+      "id": "us-state-angola-partial-suspension-2026",
+      "title": "Suspension of visa issuance to foreign nationals",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "United States Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The current State Department notice implements Presidential Proclamation 10998 from 1 January 2026 and expressly names Angola in the partial suspension for B-1/B-2 visitor visas.",
+      "supportingExcerpt": "The Department of State partially suspended visa issuance ... Angola."
+    },
+    {
+      "id": "us-code-geographic-united-states-2026",
+      "title": "8 U.S.C. 1101: Definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official current U.S. Code compilation defines the INA's geographical United States to include Puerto Rico, Guam, the U.S. Virgin Islands, and CNMI.",
+      "supportingExcerpt": "means the continental United States, Alaska, Hawaii, Puerto Rico, Guam, the Virgin Islands ... and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "angolan-ordinary-passports-grenada-prior-visa-2026",
+      "title": "Angolan ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's currently linked official nationality schedule lists Angola as Prior to Arrival, which its glossary defines as obtaining a visa at a Grenadian mission or consulate before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["AO"],
+      "conditions": [
+        "Applies to an ordinary Angolan passport holder travelling for a short visitor stay; the schedule requires the visa before travel rather than at the port of entry.",
+        "The schedule is marked Updated April 2024 and is actively linked by Grenada's current embassy visitor page; recheck if it is replaced.",
+        "Work, residence, study, other purposes, carrier requirements and final admission remain outside this classification."
+      ],
+      "sourceIds": [
+        "grenada-embassy-current-visitors-page-2026",
+        "grenada-embassy-angola-prior-to-arrival-schedule-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "AO",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-angola-partial-suspension-2026"]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-angola-partial-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-angola-partial-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes CNMI. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-angola-partial-suspension-2026", "us-code-geographic-united-states-2026"]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-angola-partial-suspension-2026", "us-code-geographic-united-states-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"AO","destinationCode":"AF","reason":"No current Afghan primary source establishes an ordinary Angolan-passport short-visitor route or actual issuance timing; portal availability and omission are not treated as a residual rule.","searchedOfficialDomains":["mfa.gov.af","evisa.mfa.gov.af","mirex.gov.ao"]},
+    {"passportCode":"AO","destinationCode":"BD","reason":"Current Bangladeshi government and mission material does not publish ordinary Angolan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immigration.gov.bd"]},
+    {"passportCode":"AO","destinationCode":"BW","reason":"Botswana's current government guidance identifies Commonwealth and named bilateral-agreement exemptions but does not establish an ordinary Angolan-passport visitor baseline.","searchedOfficialDomains":["gov.bw","immigration.gov.bw","mir.gov.bw"]},
+    {"passportCode":"AO","destinationCode":"CF","reason":"No current Central African primary nationality schedule establishes a normalized short-visitor route for an ordinary Angolan passport.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"AO","destinationCode":"TD","reason":"No current Chadian primary source establishes an ordinary Angolan-passport visitor route and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.td","evisa.td","presidence.td"]},
+    {"passportCode":"AO","destinationCode":"KM","reason":"Comorian law preserves treaty and special-law exceptions while no current tourist nationality schedule maps an ordinary Angolan passport; no complement is inferred.","searchedOfficialDomains":["justice.gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"AO","destinationCode":"CG","reason":"No current Republic of the Congo primary nationality schedule establishes an ordinary Angolan-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"AO","destinationCode":"DJ","reason":"Djibouti's official electronic-visa material does not publish a current ordinary Angolan-passport eligibility or exemption partition.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj"]},
+    {"passportCode":"AO","destinationCode":"EG","reason":"Egypt's current official visitor services do not establish a reproducible ordinary Angolan-passport visitor route or issuance timing.","searchedOfficialDomains":["visa2egypt.gov.eg","mfa.gov.eg","moiegypt.gov.eg"]},
+    {"passportCode":"AO","destinationCode":"GU","reason":"Not established as a normalized status: the current federal partial suspension reaches Guam under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","guam.gov"]},
+    {"passportCode":"AO","destinationCode":"GW","reason":"No current Guinea-Bissau primary source establishes an unconditional ordinary Angolan-passport visitor route; Lusophone and regional ties do not establish a baseline.","searchedOfficialDomains":["mne.gw","gov.gw","ecowas.int"]},
+    {"passportCode":"AO","destinationCode":"HN","reason":"No current Honduran primary source establishes an ordinary Angolan-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["sre.gob.hn","inm.gob.hn"]},
+    {"passportCode":"AO","destinationCode":"IR","reason":"Iran's current official visitor material does not establish an ordinary Angolan-passport nationality route and issuance form without invitation, host or other conditions.","searchedOfficialDomains":["mfa.gov.ir","evisa.mfa.ir"]},
+    {"passportCode":"AO","destinationCode":"IQ","reason":"Iraq's official electronic and one-stop services do not publish a current ordinary Angolan-passport tourist schedule or actual issuance outcome.","searchedOfficialDomains":["ur.gov.iq","moi.gov.iq","mofa.gov.iq"]},
+    {"passportCode":"AO","destinationCode":"KW","reason":"Kuwait's official visitor services do not publish a current ordinary Angolan-passport eligibility or issuance route.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.kw"]},
+    {"passportCode":"AO","destinationCode":"KG","reason":"No current Kyrgyz primary source establishes an ordinary Angolan-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["mfa.gov.kg","evisa.e-gov.kg","mvd.gov.kg"]},
+    {"passportCode":"AO","destinationCode":"LR","reason":"No current Liberian primary source establishes an ordinary Angolan-passport short-visitor route or electronic-issuance eligibility.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"AO","destinationCode":"ML","reason":"No current Malian primary source establishes an ordinary Angolan-passport visitor route and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"AO","destinationCode":"MH","reason":"No current Marshall Islands primary source establishes an ordinary Angolan-passport visitor route or arrival-issuance outcome.","searchedOfficialDomains":["rmiembassyus.org","rmigovernment.org"]},
+    {"passportCode":"AO","destinationCode":"MM","reason":"Myanmar's official visitor material does not establish ordinary Angolan-passport eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.mm","evisa.moip.gov.mm"]},
+    {"passportCode":"AO","destinationCode":"NE","reason":"No current Nigerien primary source establishes an ordinary Angolan-passport short-visitor route or electronic-issuance eligibility.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"AO","destinationCode":"KP","reason":"No current DPRK primary source establishes an ordinary Angolan-passport visitor route; border controls and special permissions cannot be flattened to a normal status.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"AO","destinationCode":"MK","reason":"North Macedonia's current primary sources do not establish an ordinary Angolan-passport short-visitor route or actual issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"AO","destinationCode":"MP","reason":"Not established as a normalized status: the current federal partial suspension reaches CNMI under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","dps.gov.mp"]},
+    {"passportCode":"AO","destinationCode":"OM","reason":"Oman's official visitor services do not publish a current ordinary Angolan-passport nationality baseline independent of residence, host or third-country-document conditions.","searchedOfficialDomains":["rop.gov.om","evisa.rop.gov.om","fm.gov.om"]},
+    {"passportCode":"AO","destinationCode":"PS","reason":"Crossing, Israeli permit and Palestinian-document rules do not establish a Palestine-only ordinary Angolan-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"AO","destinationCode":"PA","reason":"Panama's official services do not publish a current ordinary Angolan-passport visitor eligibility or actual issuance route independent of third-country-document conditions.","searchedOfficialDomains":["migracion.gob.pa","mire.gob.pa"]},
+    {"passportCode":"AO","destinationCode":"PR","reason":"Not established as a normalized status: the current federal partial suspension reaches Puerto Rico under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","pr.gov"]},
+    {"passportCode":"AO","destinationCode":"SA","reason":"Saudi Arabia's current visitor selector does not establish an ordinary Angolan-passport visitor baseline independent of residence, group, host or special-document conditions.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa"]},
+    {"passportCode":"AO","destinationCode":"SL","reason":"No current Sierra Leone primary source establishes an ordinary Angolan-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["mofaic.gov.sl","immigration.gov.sl"]},
+    {"passportCode":"AO","destinationCode":"SB","reason":"No current Solomon Islands primary source establishes an ordinary Angolan-passport short-visitor route or arrival-issuance outcome.","searchedOfficialDomains":["immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"AO","destinationCode":"SS","reason":"No current South Sudan primary source establishes ordinary Angolan-passport eligibility and whether online processing is electronic issuance.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"AO","destinationCode":"SD","reason":"No current Sudanese primary source establishes an ordinary Angolan-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"AO","destinationCode":"SY","reason":"No current Syrian primary nationality schedule establishes an ordinary Angolan-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"AO","destinationCode":"TT","reason":"Trinidad and Tobago's current official electronic services do not expose a reproducible ordinary Angolan-passport nationality result; no complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","foreign.gov.tt","evisa.ttservices.online"]},
+    {"passportCode":"AO","destinationCode":"TN","reason":"No current Tunisian primary source establishes an ordinary Angolan-passport short-visitor route and actual issuance timing.","searchedOfficialDomains":["diplomatie.gov.tn","interieur.gov.tn"]},
+    {"passportCode":"AO","destinationCode":"TM","reason":"No current Turkmen primary source establishes an ordinary Angolan-passport visitor route; invitation-only and host-dependent material is not a baseline.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"AO","destinationCode":"UA","reason":"Ukraine MFA's ordinary-passport nationality table marks Angola visa-required but is expressly dated June 2023; no current 2026 official source establishes the visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua"]},
+    {"passportCode":"AO","destinationCode":"US","reason":"Not established as a normalized status: the current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, listed exceptions and case-by-case waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov"]},
+    {"passportCode":"AO","destinationCode":"VI","reason":"Not established as a normalized status: the current federal partial suspension reaches the U.S. Virgin Islands under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov","usvi.gov"]}
+  ]
+}

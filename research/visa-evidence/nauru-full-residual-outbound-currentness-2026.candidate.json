@@ -1,0 +1,143 @@
+{
+  "batchId": "nauru-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page states that visa requirements depend on citizenship and currently links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-nauru-apr-2024-schedule",
+      "title": "Visa requirements for traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked official Embassy schedule identifies itself as updated April 2024 and directly places Nauru in the no-visa-required cohort.",
+      "supportingExcerpt": "Nauru — No Visa required"
+    },
+    {
+      "id": "iceland-regulation-405-2026-nauru-visa-required",
+      "title": "Regulation No. 405/2026 amending Regulation No. 795/2022 on visas",
+      "url": "https://island.is/stjornartidindi/nr/530cec49-092f-42a3-a843-b549a28416e9",
+      "publisher": "Ministry of Justice, Government of Iceland",
+      "jurisdiction": "Iceland",
+      "kind": "law",
+      "language": "Icelandic",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Iceland's official gazette records the amendment signed 7 April and published 28 April 2026, effective immediately upon publication, adding Nauru to Annex 8 and removing it from Annex 9.",
+      "supportingExcerpt": "Á eftir orðinu „Namibía“ ... Naúrú ... Orðið „Nárú“ fellur brott."
+    },
+    {
+      "id": "panama-embassy-nauru-visa-free-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy consular page expressly places Nauru in its no-visa-required nationality cohort and states a three-month visitor maximum.",
+      "supportingExcerpt": "No Visa Required ... Namibia, Nauru, The Netherlands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "grenada-nauru-ordinary-passports-visa-free",
+      "title": "Grenada: Nauruan ordinary passports",
+      "summary": "Grenada's actively linked Embassy nationality schedule directly lists Nauru as not requiring a visitor visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["NR"],
+      "conditions": [
+        "Applies to a current ordinary Nauruan passport for short visitor travel.",
+        "The schedule defines No Visa Required as no visa needed for entry and was revised in April 2024; recheck early if Grenada publishes a replacement.",
+        "Work, residence, study, transit, diplomatic, official, special-document and final-admission rules remain separate."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-nauru-apr-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "iceland-nauru-ordinary-passports-visa-required-apr-2026",
+      "title": "Iceland: Nauruan ordinary passports",
+      "summary": "Iceland's April 2026 regulation moved Nauru into Annex 8's visa-required cohort and removed it from Annex 9's exemption cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["IS"],
+      "passportCodes": ["NR"],
+      "effectiveFrom": "2026-04-28",
+      "conditions": [
+        "Applies to a current ordinary Nauruan passport for short visitor travel.",
+        "The amendment was signed on 7 April, published on 28 April 2026 and took immediate effect upon publication; it expressly changed both the visa-required and visa-exempt annexes.",
+        "Family-member rights, residence, long stays, diplomatic or special documents and final admission remain separate."
+      ],
+      "sourceIds": ["iceland-regulation-405-2026-nauru-visa-required"],
+      "confidence": "high"
+    },
+    {
+      "id": "panama-nauru-ordinary-passports-visa-free",
+      "title": "Panama: Nauruan ordinary passports",
+      "summary": "Panama's live Embassy nationality schedule expressly includes Nauru in its no-visa-required visitor cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["NR"],
+      "conditions": [
+        "Applies to a current ordinary Nauruan passport for tourist stays of up to three months.",
+        "This passport-wide rule is distinct from Panama's conditional waiver for holders of qualifying third-country visas or residence documents.",
+        "Work, residence, study, transit, diplomatic, official, special-document and final-admission rules remain separate."
+      ],
+      "sourceIds": ["panama-embassy-nauru-visa-free-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"NR","destinationCode":"AF","reason":"No current Afghan or Nauruan primary source establishes ordinary Nauruan-passport visitor eligibility and issuance timing; operational restrictions are not normalized as a visa status.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","justice.gov.nr"]},
+    {"passportCode":"NR","destinationCode":"BD","reason":"Bangladesh's current official material does not map a Nauruan ordinary passport to an unconditional arrival or advance visitor route.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immi.gov.bd"]},
+    {"passportCode":"NR","destinationCode":"BZ","reason":"Belize Immigration's current nationality table gives Nauru the internally contradictory value YES - NO; no current primary clarification resolves it.","searchedOfficialDomains":["immigration.gov.bz","ins.gov.bz"]},
+    {"passportCode":"NR","destinationCode":"VG","reason":"Current British Virgin Islands government material does not establish the ordinary Nauruan-passport nationality status or issuance timing.","searchedOfficialDomains":["bvi.gov.vg","gov.vg"]},
+    {"passportCode":"NR","destinationCode":"BF","reason":"Burkina Faso's official electronic service proves pre-travel issuance but publishes no authenticated Nauruan nationality eligibility result or exhaustive complement.","searchedOfficialDomains":["visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"NR","destinationCode":"CF","reason":"No current Central African primary source establishes an ordinary Nauruan-passport visitor route outside named regional or bilateral treatment.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"NR","destinationCode":"TD","reason":"Chad's official portal and published exceptions do not establish an authenticated ordinary Nauruan-passport baseline or issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"NR","destinationCode":"KM","reason":"Comorian law preserves unnamed conventions and special rules while no current nationality schedule maps the Nauruan ordinary passport.","searchedOfficialDomains":["justice.gouv.km","gouv.km"]},
+    {"passportCode":"NR","destinationCode":"CG","reason":"Republic of the Congo sources preserve particular agreements but publish no current Nauruan ordinary-passport schedule.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"NR","destinationCode":"CI","reason":"Cote d'Ivoire's official material proves a conditional airport workflow but not whether the Nauruan ordinary passport is in the applicable non-exempt cohort.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"NR","destinationCode":"DJ","reason":"Djibouti's official eVisa material does not publish a reproducible Nauruan ordinary-passport eligibility or exemption result.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj"]},
+    {"passportCode":"NR","destinationCode":"GE","reason":"Georgia's current visa-free list omits Nauru, while its interactive eVisa service does not expose a stable nationality result sufficient to establish actual issuance timing.","searchedOfficialDomains":["sda.gov.ge","matsne.gov.ge","evisa.gov.ge"]},
+    {"passportCode":"NR","destinationCode":"GW","reason":"Current Guinea-Bissau material directly supports named regional or bilateral treatment only and does not establish this ordinary Nauruan-passport route.","searchedOfficialDomains":["mne.gw","gov.gw"]},
+    {"passportCode":"NR","destinationCode":"IR","reason":"Iran's official visa endpoints do not expose a stable current Nauruan ordinary-passport nationality decision or reliably retrievable issuance path.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir"]},
+    {"passportCode":"NR","destinationCode":"IQ","reason":"Iraq's official portal proves electronic issuance generally but does not expose a current eligible-passport partition that includes Nauru.","searchedOfficialDomains":["evisa.iq","mofa.gov.iq","moi.gov.iq"]},
+    {"passportCode":"NR","destinationCode":"JO","reason":"Jordan's visitor routes depend on an account-gated nationality decision or residence and third-country documents; no unconditional Nauruan baseline is established.","searchedOfficialDomains":["moi.gov.jo","international.visitjordan.com"]},
+    {"passportCode":"NR","destinationCode":"KW","reason":"Kuwait's current official arrival cohort does not name Nauru and no complete advance-visa complement or electronic route is established.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"NR","destinationCode":"KG","reason":"Kyrgyzstan's live portal proves electronic issuance for eligible applicants but did not yield a stable positive nationality gate for Nauru.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"NR","destinationCode":"LA","reason":"No current Lao or Nauruan primary source directly establishes the Nauruan ordinary-passport visitor route and actual issuance timing.","searchedOfficialDomains":["immigration.gov.la","mofa.gov.la"]},
+    {"passportCode":"NR","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no Nauruan nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"NR","destinationCode":"MW","reason":"No current Malawian or Nauruan primary source directly establishes the claimed ordinary Nauruan short-visitor exemption without a complement inference.","searchedOfficialDomains":["immigration.gov.mw","justice.gov.nr"]},
+    {"passportCode":"NR","destinationCode":"ML","reason":"Mali's current official assistant depends on nationality, passport type, residence and filing location without a stable Nauruan visitor result.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"NR","destinationCode":"MM","reason":"Myanmar's current official material does not establish an ordinary Nauruan-passport visitor route and issuance timing.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm"]},
+    {"passportCode":"NR","destinationCode":"NE","reason":"Niger's current framework preserves unenumerated regional and bilateral exemptions and supplies no reconciled Nauruan schedule.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"NR","destinationCode":"KP","reason":"No current DPRK government or mission source establishes an available ordinary Nauruan-passport visitor route or safe residual default.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"NR","destinationCode":"MK","reason":"North Macedonia's current selector does not yield a reproducible Nauruan result and no operative nationality instrument was recovered.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"NR","destinationCode":"OM","reason":"Oman's current electronic products depend on a nationality gate or conditional third-country documents and no unconditional Nauruan result is established.","searchedOfficialDomains":["rop.gov.om","fm.gov.om"]},
+    {"passportCode":"NR","destinationCode":"PS","reason":"Palestinian access is route-, permit- and territory-dependent; no destination-wide ordinary Nauruan-passport status is established.","searchedOfficialDomains":["mofa.pna.ps","moi.pna.ps","cogat.mod.gov.il"]},
+    {"passportCode":"NR","destinationCode":"PY","reason":"Paraguay's current official tourist schedule does not produce a directly reconciled Nauruan ordinary-passport result with issuance timing.","searchedOfficialDomains":["migraciones.gov.py","mre.gov.py"]},
+    {"passportCode":"NR","destinationCode":"ST","reason":"Sao Tome and Principe's current law and eVisa service supply no authenticated Nauruan nationality schedule or exhaustive visitor complement.","searchedOfficialDomains":["smf.st","mne.gov.st","dre.gov.st"]},
+    {"passportCode":"NR","destinationCode":"SA","reason":"Saudi Arabia's current electronic and package routes do not establish an unconditional ordinary Nauruan-passport visitor baseline.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa"]},
+    {"passportCode":"NR","destinationCode":"SL","reason":"Sierra Leone's current official electronic and arrival issuance descriptions conflict, so no single normalized timing is assigned for Nauru.","searchedOfficialDomains":["slid.gov.sl","evisa.sl"]},
+    {"passportCode":"NR","destinationCode":"SS","reason":"South Sudan's official material does not map the Nauruan ordinary passport to a specific electronic, mission or border issuance route.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"NR","destinationCode":"SD","reason":"No current Sudanese or Nauruan government source establishes ordinary Nauruan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.sd","passports.gov.sd"]},
+    {"passportCode":"NR","destinationCode":"SY","reason":"Syria's current electronic service and official material do not expose a verified ordinary Nauruan-passport eligibility result or issuance route.","searchedOfficialDomains":["evisa.sy","mofaex.gov.sy"]},
+    {"passportCode":"NR","destinationCode":"TN","reason":"Tunisia's current official material publishes no visa-subject nationality cohort or current bilateral schedule mapping Nauru.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.tn"]},
+    {"passportCode":"NR","destinationCode":"TM","reason":"Turkmenistan publishes no exhaustive treaty-waiver or electronic-visa eligibility roster for a Nauruan ordinary passport.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"NR","destinationCode":"VA","reason":"Vatican City is reached through Italian-controlled external access, but no Vatican authority source establishes a standalone ordinary Nauruan visitor classification.","searchedOfficialDomains":["vaticanstate.va","esteri.va"]}
+  ]
+}

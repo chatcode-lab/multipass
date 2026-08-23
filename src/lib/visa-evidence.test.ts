@@ -1714,7 +1714,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(73);
+    expect(pairs).toHaveLength(76);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_free").supportsCurrentStatus).toBe(false);
@@ -3026,6 +3026,38 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("covers reviewed Angolan, Antiguan, Marshallese and Nauruan residuals conservatively", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["AO", "GD", "visa_required"],
+      ["AG", "GD", "visa_free"],
+      ["AG", "PA", "visa_free"],
+      ["MH", "GD", "visa_required"],
+      ["MH", "IS", "visa_free"],
+      ["MH", "PA", "visa_free"],
+      ["NR", "GD", "visa_free"],
+      ["NR", "IS", "visa_required"],
+      ["NR", "PA", "visa_free"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["AO", "US"],
+      ["AG", "US"],
+      ["MH", "UA"],
+      ["NR", "BZ"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -3686,6 +3718,7 @@ describe("official visa evidence", () => {
       "peraturan.go.id",
       "www.mofa.pna.ps",
       "island.is",
+      "files.reglugerd.is",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
