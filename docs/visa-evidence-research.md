@@ -2008,6 +2008,14 @@ Turkmenistan adds Grenada and Jordan as `visa_on_arrival`, plus Panama as `visa_
 
 Botswana adds Grenada and Panama as `visa_free`. Algeria adds Grenada, Bangladesh and Panama as advance `visa_required` routes, Jordan as `visa_on_arrival`, and Mongolia as `evisa`. Bangladesh corrects fallback `evisa` through its current Embassy-in-Algiers application guidance, while Mongolia corrects fallback `visa_required` through the official eVisa nationality list and pre-travel issuance workflow. Conditional, portal-only, omission-based and operationally unresolved residuals remain uncovered.
 
+## Pass 211 result: final Ecuadorian, Eswatini, Gabonese and Grenadian outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add ten currently supported relationships, raising complete-matrix evidence from 38,821 to 38,831 of 44,974 relationships (86.3%). The public `/status` matrix contains 38,831 fresh and 6,143 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 516 reviewed batches, 2,363 official sources and 1,579 policies. Regional coverage is Africa 8,476 of 11,289 (75.1%), the Americas 4,746 of 4,953 (95.8%), the Caribbean 4,555 of 4,962 (91.8%), Asia 5,328 of 6,336 (84.1%), Europe 9,999 of 10,299 (97.1%), the Middle East 1,856 of 2,970 (62.5%) and Oceania 3,871 of 4,165 (92.9%).
+
+Ecuador adds Grenada and Panama as `visa_free` plus Jordan as `visa_on_arrival`. Eswatini adds Grenada `visa_free` and Panama `visa_required`, and corrects Jordan from fallback `visa_on_arrival` to the advance `visa_required` route in Jordan's current official nationality table. Gabon adds Grenada and Panama as advance `visa_required` routes; Panama corrects fallback `visa_free` unless the traveller independently qualifies for Panama's separate third-country-document waiver.
+
+Grenada adds Iceland and Panama as `visa_free`. Iceland's current consolidated Regulation 795/2022 expressly includes Grenada in its visa-exempt Annex 9 schedule. Gabon's United States, Puerto Rico, Guam, Northern Mariana Islands and U.S. Virgin Islands rows remain explicit PP10998 partial-suspension conflicts because valid-visa grandfathering, exceptions and waivers cannot be represented by the six-status taxonomy. Conditional, portal-only, omission-based and operationally unresolved residuals remain uncovered.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

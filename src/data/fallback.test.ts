@@ -133,4 +133,17 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.DZ.statuses.MN).toBe("evisa");
     expect(snapshot.passports.DZ.statuses.PA).toBe("visa_required");
   });
+
+  it("applies the final Ecuadorian, Eswatini, Gabonese and Grenadian outbound audits", () => {
+    expect(snapshot.passports.EC.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.EC.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.EC.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.SZ.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.SZ.statuses.JO).toBe("visa_required");
+    expect(snapshot.passports.SZ.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.GA.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.GA.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.GD.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.GD.statuses.PA).toBe("visa_free");
+  });
 });

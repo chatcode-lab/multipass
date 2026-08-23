@@ -1,0 +1,196 @@
+{
+  "batchId": "gabon-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-gabon-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-gabon-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly places Gabon in its Prior to Arrival category.",
+      "supportingExcerpt": "Gabon Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-gabon-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Gabon in its authorized-visa cohort and requires in-person consular application before travel.",
+      "supportingExcerpt": "Gabon ... will need an authorized visa"
+    },
+    {
+      "id": "us-state-gabon-partial-suspension-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Current Department of State guidance, last updated 2 February 2026, identifies Gabon in the operative Proclamation 10998 partial suspension.",
+      "supportingExcerpt": "Gabon ... for nonimmigrant B-1/B-2 visitor visas"
+    },
+    {
+      "id": "us-code-geographic-united-states-gabon-2026",
+      "title": "8 USC 1101: Definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication gives the INA geographical definition governing these federal entry restrictions.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands ... Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "gabonese-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Gabonese ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Gabon as requiring a visa prior to arrival.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["GA"],
+      "conditions": [
+        "Applies to an ordinary Gabonese passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained at a Grenada mission or consulate before travel.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-gabon-2026", "grenada-embassy-gabon-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "gabonese-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Gabonese ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Gabon in its authorized-visa cohort for advance consular approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["GA"],
+      "conditions": [
+        "Applies to an ordinary Gabonese passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Apply in person at the competent Panamanian consulate before travel; approval may take up to 60 business days.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-gabon-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that the separate third-country-document waiver does not apply.",
+          "Submit the required documents in person to the competent Panamanian consulate.",
+          "Travel only after the authorized visa is granted."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "GA",
+      "destinationCode": "PA",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "Panama's current Embassy guidance expressly places Gabon in the advance authorized-visa cohort unless the separate third-country-document waiver applies.",
+      "sourceIds": ["panama-embassy-gabon-authorized-visa-2026"]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension preserves valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-gabon-partial-suspension-2026"]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The B-1/B-2 suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-gabon-partial-suspension-2026", "us-code-geographic-united-states-gabon-2026"]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The B-1/B-2 suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-gabon-partial-suspension-2026", "us-code-geographic-united-states-gabon-2026"]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The B-1/B-2 suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-gabon-partial-suspension-2026", "us-code-geographic-united-states-gabon-2026"]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The B-1/B-2 suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-gabon-partial-suspension-2026", "us-code-geographic-united-states-gabon-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"GA","destinationCode":"AF","reason":"No current Afghan or Gabonese primary source establishes a stable usable ordinary Gabonese-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"AO","reason":"No current Angolan or Gabonese primary source establishes ordinary Gabonese-passport visitor eligibility and actual issuance timing; diplomatic or official agreements are outside scope.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Gabonese-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Gabonese passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Gabonese eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Gabonese eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"GW","reason":"No current Guinea-Bissau or Gabonese primary source establishes ordinary Gabonese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Gabonese-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Gabonese eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"GA","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Gabonese-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Gabonese-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"LR","reason":"No current Liberian or Gabonese primary source establishes ordinary Gabonese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"ML","reason":"No current Malian or Gabonese primary source establishes ordinary Gabonese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"MH","reason":"The Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes a Gabonese ordinary-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"MM","reason":"Myanmar's electronic-visa guidance does not publish a reproducible ordinary Gabonese-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Gabonese-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"KP","reason":"No current DPRK or Gabonese primary source establishes a usable ordinary Gabonese-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Gabonese-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Gabonese-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Gabonese-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Gabonese-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Gabonese application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Gabonese-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Gabonese eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Gabonese-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"SY","reason":"Current Syrian and Gabonese official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Gabonese passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Gabonese cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Gabonese-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"TM","reason":"No current Turkmen or Gabonese primary source establishes ordinary Gabonese-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"UA","reason":"Ukraine's accessible nationality table is expressly dated June 2023; no current Ukrainian or Gabonese source establishes the ordinary Gabonese-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","diplomatie.gouv.ga"]},
+    {"passportCode":"GA","destinationCode":"US","reason":"Not established as a normalized status: current U.S. rules partially suspend Gabonese B-1/B-2 visitor entry and visa issuance, subject to grandfathering, specified exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","uscode.house.gov"]},
+    {"passportCode":"GA","destinationCode":"PR","reason":"Not established as a normalized status: current U.S. rules partially suspend Gabonese B-1/B-2 visitor entry and visa issuance, subject to grandfathering, specified exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","uscode.house.gov"]},
+    {"passportCode":"GA","destinationCode":"GU","reason":"Not established as a normalized status: current U.S. rules partially suspend Gabonese B-1/B-2 visitor entry and visa issuance, subject to grandfathering, specified exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","uscode.house.gov"]},
+    {"passportCode":"GA","destinationCode":"MP","reason":"Not established as a normalized status: current U.S. rules partially suspend Gabonese B-1/B-2 visitor entry and visa issuance, subject to grandfathering, specified exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","uscode.house.gov"]},
+    {"passportCode":"GA","destinationCode":"VI","reason":"Not established as a normalized status: current U.S. rules partially suspend Gabonese B-1/B-2 visitor entry and visa issuance, subject to grandfathering, specified exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","uscode.house.gov"]}
+  ]
+}

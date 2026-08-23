@@ -3717,4 +3717,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.evisa.mn/en",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "SZ",
+    destinationCode: "JO",
+    status: "visa_required",
+    reason: "Jordan's live Tourism Board nationality table marks Eswatini ordinary-passport visitors ineligible for arrival issuance and requires an embassy visa before arrival.",
+    sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "GA",
+    destinationCode: "PA",
+    status: "visa_required",
+    reason: "Panama's live Embassy guidance expressly places Gabon in the advance authorized-visa cohort unless its separate third-country-document waiver applies.",
+    sourceUrl: "https://www.embassyofpanama.org/visas-1",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
