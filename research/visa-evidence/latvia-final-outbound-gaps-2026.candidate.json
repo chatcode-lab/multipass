@@ -1,0 +1,206 @@
+{
+  "batchId": "latvia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "lv-mfa-cote-divoire-visa-2026",
+      "title": "Kotdivuāra",
+      "url": "https://www.mfa.gov.lv/lv/kotdivuara-celojumu-bridinajumi",
+      "publisher": "Ministry of Foreign Affairs of Latvia",
+      "jurisdiction": "Latvia / Côte d’Ivoire",
+      "kind": "government-guidance",
+      "language": "Latvian",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Latvia's live MFA traveller guidance, updated 27 June 2026, expressly covers Latvian citizens and directs them to Côte d’Ivoire's visa-conditions service.",
+      "supportingExcerpt": "Latvijas pilsoņiem un nepilsoņiem ieceļošanai Kotdivuārā ir nepieciešama vīza."
+    },
+    {
+      "id": "cote-divoire-snedai-current-airport-issuance",
+      "title": "Côte d’Ivoire visa procedure: pre-enrolment and airport enrolment",
+      "url": "https://snedai.com/e-visa/",
+      "publisher": "SNEDAI, State-approved Côte d’Ivoire visa application service",
+      "jurisdiction": "Côte d’Ivoire",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live service identifies SNEDAI as the only visa-application website officially recognised and approved by the State of Côte d’Ivoire and specifies issuance timing.",
+      "supportingExcerpt": "Le visa est imprimé et délivré immédiatement à l’aéroport d’Abidjan."
+    },
+    {
+      "id": "lv-mfa-sudan-consular-visa-2025",
+      "title": "Sudāna",
+      "url": "https://www.mfa.gov.lv/lv/sudana-celojumu-bridinajumi",
+      "publisher": "Ministry of Foreign Affairs of Latvia",
+      "jurisdiction": "Latvia / Sudan",
+      "kind": "government-guidance",
+      "language": "Latvian",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Latvia's live MFA traveller guidance, updated 11 October 2025, expressly directs Latvian citizens and non-citizens to obtain Sudan entry visas through Sudan's Embassy in Sweden.",
+      "supportingExcerpt": "Latvijas pilsoņiem un nepilsoņiem ieceļošanai Sudānā ir jānoformē vīza Sudānas vēstniecībā Zviedrijā."
+    }
+  ],
+  "policies": [
+    {
+      "id": "latvian-ordinary-passport-cote-divoire-preapproved-arrival-visa",
+      "title": "Latvian ordinary passports: Côte d’Ivoire preapproved arrival visa",
+      "summary": "Latvian visitors need a Côte d’Ivoire visa; the State-approved flow pre-approves online but prints and issues it at Abidjan airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["CI"],
+      "passportCodes": ["LV"],
+      "conditions": [
+        "Complete pre-enrolment and carry the approved document before boarding; at Abidjan airport complete biometric enrolment, where the visa is printed and issued.",
+        "This normalizes actual issuance timing only; work, residence, special passports, eligibility checks and final admission remain separate."
+      ],
+      "sourceIds": ["lv-mfa-cote-divoire-visa-2026", "cote-divoire-snedai-current-airport-issuance"],
+      "confidence": "high",
+      "application": {
+        "url": "https://snedai.com/e-visa/",
+        "label": "Côte d’Ivoire visa pre-enrolment",
+        "steps": [
+          "Submit pre-enrolment through the State-approved service and obtain approval before boarding.",
+          "Complete biometric enrolment at Abidjan airport, where the visa is issued."
+        ]
+      }
+    },
+    {
+      "id": "latvian-ordinary-passport-sudan-consular-visa",
+      "title": "Latvian ordinary passports: Sudan consular visitor visa",
+      "summary": "Latvia's MFA directs Latvian visitors to obtain Sudan's entry visa through Sudan's Embassy in Sweden before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["SD"],
+      "passportCodes": ["LV"],
+      "conditions": [
+        "Obtain the visa through Sudan's Embassy in Sweden before travel, as directed by Latvia's MFA.",
+        "This is limited to ordinary Latvian-passport short visits and excludes work, residence, special documents, operational restrictions and final admission."
+      ],
+      "sourceIds": ["lv-mfa-sudan-consular-visa-2025"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "LV",
+      "destinationCode": "CI",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Côte d’Ivoire's State-approved flow requires online pre-approval, but the visa is physically printed and issued at Abidjan airport; actual issuance timing controls normalization.",
+      "sourceIds": ["lv-mfa-cote-divoire-visa-2026", "cote-divoire-snedai-current-airport-issuance"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "LV",
+      "destinationCode": "AF",
+      "reason": "No current official source established a usable ordinary Latvian-passport short-visitor issuance route amid Afghanistan's operational restrictions.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "BD",
+      "reason": "Latvian guidance says a visa must be arranged, but does not establish Latvian visitor eligibility and actual issuance timing for an arrival, mission or electronic route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mofa.gov.bd", "visa.gov.bd"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "VG",
+      "reason": "No current official source established ordinary Latvian-passport short-visitor treatment for the British Virgin Islands.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "bvi.gov.vg"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "BF",
+      "reason": "No current official source established an ordinary Latvian-passport visitor channel and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gov.bf", "visaburkina.bf"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "CF",
+      "reason": "Latvian guidance confirms a visa is needed but does not establish a reliable ordinary Latvian-passport visitor channel and issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.cf"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "TD",
+      "reason": "Latvian guidance confirms a visa is needed but only directs questions to a mission; it does not establish the visitor route or actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.td", "evisa.td"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "KM",
+      "reason": "No current official source established an ordinary Latvian-passport visitor channel and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "gouv.km"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "CG",
+      "reason": "No current official source established an ordinary Latvian-passport visitor channel and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.cg"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "DJ",
+      "reason": "No current official source established ordinary Latvian-passport electronic-visa eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "evisa.gouv.dj"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "GW",
+      "reason": "No current official source established an ordinary Latvian-passport visitor channel and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mne.gw"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "IR",
+      "reason": "Latvian guidance says a visa is needed but does not establish reliable Latvian visitor issuance timing among online, mission and arrival processes.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mfa.ir", "evisa.mfa.ir"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "LR",
+      "reason": "Latvian guidance says a visa is needed but does not establish ordinary Latvian visitor eligibility and actual issuance timing for a current electronic or arrival route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mofa.gov.lr", "immigration.gov.lr"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "ML",
+      "reason": "Latvian guidance says a visa is needed but does not establish the ordinary Latvian-passport visitor route or actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.ml", "securite.gouv.ml"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "NE",
+      "reason": "Latvian guidance says a visa is needed but only refers travellers to a mission for procedure information; timing is not established.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.ne"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "KP",
+      "reason": "Latvian guidance limits entry mainly to organised tourism groups and reports the South Korea route closed; this operational situation is not a single taxonomy outcome.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mfa.gov.kp"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "PS",
+      "reason": "Israeli crossing controls and permits do not establish a Palestine-only ordinary Latvian-passport short-visitor status.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "gov.il", "mofa.pna.ps"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "SL",
+      "reason": "Available official portal material does not independently establish ordinary Latvian-passport eligibility and a consistent actual issuance route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "slid.gov.sl", "evisa.sl"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "SS",
+      "reason": "No current official source established ordinary Latvian-passport eligibility and actual issuance timing for a visitor electronic route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mofaic.gov.ss", "evisa.gov.ss"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "TM",
+      "reason": "Latvian guidance mentions Ashgabat airport issuance, but current Turkmen official guidance makes that route conditional on a State Migration Service-certified invitation; it is not an unconditional baseline.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "tmembassy.gov.tm", "migration.gov.tm"]
+    }
+  ]
+}
