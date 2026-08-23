@@ -3154,6 +3154,26 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("closes Ireland's current Grenada gap while retaining hard residual routes", () => {
+    expect(getVisaRelationshipEvidence("IE", "GD", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.IE.statuses.GD).toBe("visa_free");
+
+    for (const [passportCode, destinationCode] of [
+      ["KW", "SS"],
+      ["AE", "TM"],
+      ["PS", "US"],
+      ["IE", "SL"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
