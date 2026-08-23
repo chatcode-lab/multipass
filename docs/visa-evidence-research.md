@@ -1874,6 +1874,14 @@ Liechtenstein adds Bangladesh and Jordan as `visa_on_arrival` and Ukraine as `vi
 
 Cabo Verde adds Panama `visa_required` and corrects two unsupported fallback classifications: Jordan becomes `visa_required`, not `visa_on_arrival`, and Türkiye becomes `visa_required`, not an unconditional `evisa`. Türkiye's electronic alternative depends on a qualifying Schengen, United States, United Kingdom or Ireland visa or residence permit, so it is not the passport-only baseline. Qatar adds Ukraine `visa_free` and Turkmenistan `visa_required`, while correcting Jordan from `visa_free` to `visa_on_arrival` and Iraq from `evisa` to `visa_required`. Mauritius adds Jordan `visa_on_arrival`.
 
+## Pass 195 result: final Guinea-Bissauan, Saudi, Sammarinese and Ghanaian outbound gaps
+
+Four independently reviewed audits add sixteen currently supported relationships, raising complete-matrix evidence from 38,611 to 38,627 of 44,974 relationships (85.9%). The public `/status` matrix contains 38,627 fresh and 6,347 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 452 reviewed batches, 2,138 official sources and 1,403 policies. Regional coverage is Africa 8,444 of 11,289 (74.8%), the Americas 4,699 of 4,953 (94.9%), the Caribbean 4,509 of 4,962 (90.9%), Asia 5,312 of 6,336 (83.8%), Europe 9,979 of 10,299 (96.9%), the Middle East 1,816 of 2,970 (61.1%) and Oceania 3,868 of 4,165 (92.9%).
+
+Guinea-Bissau adds Panama `visa_required`, while Ghana adds the same advance stamped-visa route. Panama's current official Embassy schedules directly name both passports in their respective visitor-visa cohorts. Saudi Arabia adds Panama `visa_free` and corrects Jordan from fallback `visa_free` to `visa_on_arrival` under Jordan's current nationality table.
+
+San Marino adds Angola and Trinidad and Tobago as `evisa`; Côte d’Ivoire and Jordan as `visa_on_arrival`; North Macedonia, Panama, Tunisia and Ukraine as `visa_free`; and Mali, Myanmar, Niger and Turkmenistan as `visa_required`. Angola, Côte d’Ivoire and Trinidad and Tobago correct unsupported fallback classifications. The Palestine row remains unresolved because relief depends on holding a valid multiple-entry Schengen visa, which is not an unconditional passport-only status.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
