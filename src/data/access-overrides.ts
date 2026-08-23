@@ -3445,4 +3445,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.guineaecuatorialpress.com/index.php/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "TW",
+    destinationCode: "SB",
+    status: "visa_required",
+    reason: "Taiwan's current consular guidance says Solomon Islands cancelled visa on arrival for Taiwan passports on 24 April 2025 and now requires advance application.",
+    sourceUrl: "https://www.boca.gov.tw/sp-foof-countrycp-01-3-9ae38-1.html",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

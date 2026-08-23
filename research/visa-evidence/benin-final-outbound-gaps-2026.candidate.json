@@ -1,0 +1,141 @@
+{
+  "batchId": "benin-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "panama-embassy-benin-authorized-visa-2026",
+      "title": "Panama Embassy: immigration and visa requirements",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live embassyofpanama.org page is the official website of Panama's Embassy in Washington, D.C. and publishes its consular visa requirements.",
+      "supportingExcerpt": "Benin ... will need an authorized visa."
+    },
+    {
+      "id": "us-state-benin-partial-suspension-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Current Department of State visa-news guidance, last updated 2 February 2026, explains the operative Proclamation 10998 suspensions.",
+      "supportingExcerpt": "partially suspended visa issuance ... Benin"
+    },
+    {
+      "id": "us-code-geographic-united-states-benin-2026",
+      "title": "8 USC 1101: definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication gives the INA geographical definition that governs these federal entry restrictions.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands ... Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "beninese-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Beninese ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule expressly places Benin in the authorized-visa cohort, requiring advance consular approval before a short visitor journey unless the separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["BJ"],
+      "conditions": [
+        "Applies to an ordinary Beninese passport holder travelling as a short visitor who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Submit the authorized-visa application and listed documents before travel to the competent Panamanian consulate; the Embassy says approval may take up to 60 business days.",
+        "Work, residence, transit, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-benin-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Submit the listed authorized-visa documents to the competent Panamanian consulate before travel.",
+          "Travel only after the consular visa has been granted and carry all required supporting documents."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BJ",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-benin-partial-suspension-2026"]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-benin-partial-suspension-2026", "us-code-geographic-united-states-benin-2026"]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-benin-partial-suspension-2026", "us-code-geographic-united-states-benin-2026"]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes CNMI. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-benin-partial-suspension-2026", "us-code-geographic-united-states-benin-2026"]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-benin-partial-suspension-2026", "us-code-geographic-united-states-benin-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"BJ","destinationCode":"AF","reason":"No current Afghan or Beninese primary source establishes a usable ordinary Beninese-passport short-visitor route and actual issuance timing; closure, permission and security restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"AO","reason":"Angola's current positive tourist-exemption schedule does not name Benin, while current official sources do not establish the ordinary Beninese-passport visitor issuance route. No complement is inferred.","searchedOfficialDomains":["governo.gov.ao","sme.gov.ao","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"BD","reason":"Bangladesh's current official arrival-visa material does not directly establish an unconditional ordinary Beninese-passport visitor route; discretionary and mission-availability conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"BO","reason":"Current Bolivian official sources state the Group I/II/III framework but do not directly map this ordinary passport nationality in a current, complete schedule. No residual classification is inferred from omission or generic online forms.","searchedOfficialDomains":["cancilleria.gob.bo","migracion.gob.bo","visas.cancilleria.gob.bo"]},
+    {"passportCode":"BJ","destinationCode":"CF","reason":"No current Central African or Beninese primary source establishes ordinary Beninese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Beninese passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"CG","reason":"No current Republic of the Congo or Beninese primary source establishes ordinary Beninese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["sgg.cg","diplomatie.gouv.cg","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"DJ","reason":"No current Djiboutian or Beninese primary source establishes ordinary Beninese-passport visitor eligibility and actual issuance timing; a generic eVisa service is not nationality proof.","searchedOfficialDomains":["egouv.dj","evisa.gouv.dj","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"GD","reason":"Grenada's live official index still relies on a nationality schedule dated February 2021, which is too stale to establish the current Beninese visitor status.","searchedOfficialDomains":["mofa.gov.gd","gndembassyprc.mofa.gov.gd","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Beninese-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"IQ","reason":"Iraq's current official electronic service does not publish a reproducible ordinary Beninese-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Beninese-passport tourist route; residence, profession and third-country-document programs are excluded.","searchedOfficialDomains":["e.gov.kw","moi.gov.kw","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Beninese-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"MM","reason":"Myanmar's current named preapproved-arrival cohort does not include Benin, and no current authority establishes the residual ordinary Beninese-passport route. No complement is inferred.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"KP","reason":"No current DPRK or Beninese primary source establishes a usable ordinary Beninese-passport visitor route; operational access restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"MK","reason":"No current North Macedonian or Beninese primary source establishes ordinary Beninese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Beninese-passport route; residence and qualifying third-country-document programs are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Beninese-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"ST","reason":"São Tomé and Príncipe's documented Benin route depends on holding a valid Schengen or United States visa and a short stay; that document-conditioned exception is not an unconditional nationality baseline. Its eVisa service publishes no Beninese eligibility schedule.","searchedOfficialDomains":["smf.st","mne.gov.st","stp.gov.st"]},
+    {"passportCode":"BJ","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Beninese-passport short-visitor issuance route; portal availability and positive cohorts are not treated as a residual rule.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Beninese-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Beninese eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Beninese-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"SY","reason":"Current Syrian and Beninese official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Beninese passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"TT","reason":"Trinidad and Tobago's current explicit eVisa cohort does not name Benin, while no current authority establishes the residual ordinary Beninese-passport advance route. No complement is inferred.","searchedOfficialDomains":["foreign.gov.tt","homelandsecurity.gov.tt","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"TN","reason":"No current Tunisian or Beninese primary source directly establishes ordinary Beninese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"TM","reason":"No current Turkmen or Beninese primary source establishes ordinary Beninese-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","diplomatie.gouv.bj"]},
+    {"passportCode":"BJ","destinationCode":"UA","reason":"Ukraine's accessible official nationality table is expressly dated June 2023; no current source establishes the ordinary Beninese-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","diplomatie.gouv.bj"]}
+  ]
+}
