@@ -676,7 +676,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BD", "SA", "visa_required").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BR", "SA", snapshot.passports.BR.statuses.SA).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("JO")).toHaveLength(171);
+    expect(pairsFor("JO")).toHaveLength(174);
     expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -4207,6 +4207,33 @@ describe("official visa evidence", () => {
       ["ZM", "US"],
       ["ZW", "US"],
       ["AO", "US"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
+  it("closes the reviewed Albanian, Bosnian, Cuban, and Dominican final gaps", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["AL", "JO", "visa_required"],
+      ["BA", "JO", "visa_on_arrival"],
+      ["CU", "GD", "visa_free"],
+      ["DM", "JO", "visa_on_arrival"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["AL", "AF"],
+      ["BA", "XK"],
+      ["CU", "US"],
+      ["DM", "US"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(

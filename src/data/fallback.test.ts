@@ -326,4 +326,11 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.ZW.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.AO.statuses.PA).toBe("visa_required");
   });
+
+  it("applies the final Albanian, Bosnian, Cuban and Dominican outbound audits", () => {
+    expect(snapshot.passports.AL.statuses.JO).toBe("visa_required");
+    expect(snapshot.passports.BA.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.CU.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.DM.statuses.JO).toBe("visa_on_arrival");
+  });
 });

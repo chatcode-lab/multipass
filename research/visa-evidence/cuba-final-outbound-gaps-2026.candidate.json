@@ -1,0 +1,154 @@
+{
+  "batchId": "cuba-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's current embassy consular Visitors page says that visa requirements are based on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-country-visa-schedule-april-2024",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live embassy Visitors page links this country schedule, which is marked UPDATED APRIL 2024 and directly gives Cuba's visitor treatment and 60-day limit.",
+      "supportingExcerpt": "Cuba No Visa required (60 days)"
+    },
+    {
+      "id": "us-state-cuba-partial-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The State Department's February 2, 2026 PP 10998 notice names Cuba in the partially suspended B-1/B-2 cohort and preserves exceptions, national-interest decisions and valid-visa grandfathering.",
+      "supportingExcerpt": "Cote D’Ivoire, Cuba, Dominica, Gabon, The Gambia"
+    },
+    {
+      "id": "us-code-geographic-united-states-cuba-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "cuban-ordinary-passport-grenada-visa-free-visitor-2026",
+      "title": "Cuban ordinary passports: Grenada visa-free visitor entry",
+      "summary": "Grenada's active embassy country schedule says Cuba requires no visa for a 60-day visit.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["CU"],
+      "conditions": [
+        "Applies to an ordinary Cuban passport holder making a short visitor visit of up to 60 days.",
+        "The live embassy page links the April 2024 country schedule; recheck the schedule before travel for changes.",
+        "Work, residence, study, diplomatic, official and service passports, carrier requirements and final admission are outside this finding."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-country-visa-schedule-april-2024"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CU",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-cuba-partial-suspension-current-2026"]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-cuba-partial-suspension-current-2026", "us-code-geographic-united-states-cuba-current-2026"]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-cuba-partial-suspension-current-2026", "us-code-geographic-united-states-cuba-current-2026"]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-cuba-partial-suspension-current-2026", "us-code-geographic-united-states-cuba-current-2026"]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-cuba-partial-suspension-current-2026", "us-code-geographic-united-states-cuba-current-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"CU","destinationCode":"AF","reason":"No current Afghan or Cuban primary source establishes a usable ordinary Cuban-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"AO","reason":"Angola's public electronic-visa material does not publish a reproducible ordinary Cuban-passport visitor eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish ordinary Cuban-passport eligibility and whether a visitor visa is actually issued before travel or at arrival.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"BF","reason":"Burkina Faso's official portal does not expose a reproducible ordinary Cuban-passport tourist eligibility or issuance result; online filing alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","mae.gov.bf","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"CV","reason":"Cape Verde's current entry material identifies Cuba only for a purpose-limited mission category, not an ordinary Cuban-passport short visitor route.","searchedOfficialDomains":["gov.cv","ease.gov.cv","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"CF","reason":"No current Central African or Cuban primary source establishes ordinary Cuban-passport short-visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"TD","reason":"Chad's online material does not independently establish ordinary Cuban-passport eligibility or actual visitor-visa issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"KM","reason":"Comorian law preserves treaty and special-law exceptions while no current visitor schedule maps an ordinary Cuban passport; no complement is inferred.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"CG","reason":"No current Republic of the Congo or Cuban primary source establishes ordinary Cuban-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"CI","reason":"Côte d’Ivoire's online pre-enrolment does not establish a nationality-specific ordinary Cuban-passport visitor route or actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not publish a reproducible ordinary Cuban-passport eligibility or exemption result.","searchedOfficialDomains":["evisa.gouv.dj","mae.dj","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"GU","reason":"Not established as a normalized status: the current federal partial suspension reaches Guam under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"CU","destinationCode":"GW","reason":"No current Guinea-Bissau or Cuban primary source establishes ordinary Cuban-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"GY","reason":"Guyana's current MFA schedule limits Cuba's exemption to diplomatic, official and service passports; it does not affirm an ordinary Cuban-passport visitor rule.","searchedOfficialDomains":["minfor.gov.gy","moha.gov.gy","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"IQ","reason":"Iraq's current federal electronic services do not publish a reproducible ordinary Cuban-passport visitor eligibility or resolve federal and regional routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"CU","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Cuban-passport tourist route; residence and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.kw"]},
+    {"passportCode":"CU","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no ordinary Cuban-passport nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"ML","reason":"Mali's current official assistant depends on nationality, passport type, residence and filing location without a stable Cuban visitor result.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"MN","reason":"Mongolia's current MFA schedule lists Cuba only under diplomatic and official passports; no source positively maps ordinary Cuban-passport visitor treatment.","searchedOfficialDomains":["consul.mn","evisa.mn","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"MM","reason":"Myanmar's current electronic-visa material does not publish a reproducible ordinary Cuban-passport visitor eligibility and actual issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Cuban-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"KP","reason":"No current DPRK or Cuban primary source establishes a usable ordinary Cuban-passport short-visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Cuban-passport result; conditional third-country-document waivers are excluded.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"MP","reason":"Not established as a normalized status: the current federal partial suspension reaches CNMI under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"CU","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Cuban-passport short-visitor issuance route; conditional routes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-wide ordinary Cuban-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"CU","destinationCode":"PR","reason":"Not established as a normalized status: the current federal partial suspension reaches Puerto Rico under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"CU","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Cuban eligibility.","searchedOfficialDomains":["smf.st","mne.gov.st","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Cuban-passport short-visitor issuance route; conditional programmes are excluded.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Cuban application produces a pre-travel visa or a border-issued instrument.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Cuban-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"SS","reason":"South Sudan's electronic-visa material does not establish ordinary Cuban-passport eligibility and actual visitor issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"SD","reason":"No current Sudanese or Cuban primary source establishes an ordinary Cuban-passport short-visitor issuance route or confirms any historic bilateral arrangement remains operative.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"SY","reason":"Current Syrian official material does not establish whether online filing produces an electronically issued visa or an advance application for an ordinary Cuban passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"TN","reason":"Tunisia's current consular material does not directly identify the ordinary Cuban-passport visitor baseline; no complement is inferred from an unlisted nationality.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"TM","reason":"Turkmenistan's statutory visa baseline preserves treaty exceptions and its electronic service publishes no current ordinary Cuban-passport eligibility roster.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"UA","reason":"Current Ukrainian official material does not establish an ordinary Cuban-passport short-visitor baseline and issuance route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","cubaminrex.cu"]},
+    {"passportCode":"CU","destinationCode":"US","reason":"Not established as a normalized status: current rules partially suspend B-1/B-2 visitor entry and visa issuance for Cuba, subject to grandfathering, specific exceptions and case-by-case waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","cbp.gov"]},
+    {"passportCode":"CU","destinationCode":"VI","reason":"Not established as a normalized status: the current federal partial suspension reaches the U.S. Virgin Islands under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]}
+  ]
+}

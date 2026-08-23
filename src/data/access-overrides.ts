@@ -3854,4 +3854,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "AL",
+    destinationCode: "JO",
+    status: "visa_required",
+    reason: "Jordan's current official nationality table directs Albanian passport holders to obtain a visa from the nearest Jordanian Embassy before arrival.",
+    sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
