@@ -1,0 +1,224 @@
+{
+  "batchId": "bulgaria-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "bg-mfa-bangladesh-preissued-visa-2025",
+      "title": "Bangladesh travel advice",
+      "url": "https://www.mfa.bg/en/embassyinfo/bangladesh",
+      "publisher": "Ministry of Foreign Affairs of Bulgaria",
+      "jurisdiction": "Bulgaria / Bangladesh",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Bulgarian MFA travel-advice page, last updated 1 December 2025, directly labels regular Bulgarian passports visa-required and specifies a pre-issued visa.",
+      "supportingExcerpt": "Bulgarian citizens need a pre-issued visa and should contact a diplomatic mission of Bangladesh."
+    },
+    {
+      "id": "bangladesh-special-branch-european-tourist-arrival-visa-bulgaria-2026",
+      "title": "Visa-on-Arrival in Bangladesh",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-info.html",
+      "publisher": "Special Branch, Bangladesh Police",
+      "jurisdiction": "Bangladesh / European countries",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Bangladesh Police's live Special Branch service says tourists from European countries may obtain an arrival visa, conflicting with Bulgaria's pre-issued-visa instruction.",
+      "supportingExcerpt": "People from the following categories in European countries may obtain a Visa on Arrival ... Tourists."
+    },
+    {
+      "id": "bg-mfa-botswana-visa-free-2025",
+      "title": "Botswana travel advice",
+      "url": "https://www.mfa.bg/en/embassyinfo/botswana",
+      "publisher": "Ministry of Foreign Affairs of Bulgaria",
+      "jurisdiction": "Bulgaria / Botswana",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The Bulgarian MFA's live travel-advice page, last updated 15 October 2025, names regular Bulgarian passports and the Botswana short-visit exemption.",
+      "supportingExcerpt": "Bulgarian nationals do not need visa for visits up to 90 days."
+    },
+    {
+      "id": "bg-mfa-panama-visa-free-2026",
+      "title": "Panama travel advice",
+      "url": "https://www.mfa.bg/bg/embassyinfo/panama",
+      "publisher": "Ministry of Foreign Affairs of Bulgaria",
+      "jurisdiction": "Bulgaria / Panama",
+      "kind": "government-guidance",
+      "language": "Bulgarian",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Bulgarian MFA Panama travel-advice page, last updated 18 February 2026, directly specifies the Bulgarian citizen visa-free stay limit.",
+      "supportingExcerpt": "Българските граждани могат да пребивават в страната без визи за срок до 90 дни."
+    },
+    {
+      "id": "bg-mfa-tunisia-visa-free-2025",
+      "title": "Tunisia travel advice",
+      "url": "https://www.mfa.bg/bg/embassyinfo/tunisia",
+      "publisher": "Ministry of Foreign Affairs of Bulgaria",
+      "jurisdiction": "Bulgaria / Tunisia",
+      "kind": "government-guidance",
+      "language": "Bulgarian",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Bulgarian MFA Tunisia travel-advice page, last updated 15 October 2025, labels ordinary passports visa-free and gives the short-visit limit.",
+      "supportingExcerpt": "Българските граждани не се нуждаят от виза за посещения в Република Тунис за период до 90 дни."
+    },
+    {
+      "id": "bg-mfa-ukraine-biometric-visa-free-2026",
+      "title": "Ukraine travel advice",
+      "url": "https://www.mfa.bg/bg/embassyinfo/ukraine",
+      "publisher": "Ministry of Foreign Affairs of Bulgaria",
+      "jurisdiction": "Bulgaria / Ukraine",
+      "kind": "government-guidance",
+      "language": "Bulgarian",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Bulgarian MFA Ukraine travel-advice page, last updated 17 February 2026, labels ordinary passports visa-free and expressly limits the exemption to biometric passports.",
+      "supportingExcerpt": "Освобождават се от виза само притежателите на биометрични паспорти."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bulgarian-ordinary-passport-named-visa-free-short-visits-2026",
+      "title": "Bulgarian ordinary passports: named visa-free short visits",
+      "summary": "Current Bulgarian MFA travel guidance directly records visa-free short visits for Bulgarian citizens to Botswana, Panama, Tunisia and Ukraine.",
+      "status": "visa_free",
+      "destinationCodes": ["BW", "PA", "TN", "UA"],
+      "passportCodes": ["BG"],
+      "conditions": [
+        "Botswana, Panama and Tunisia each allow a stay of up to 90 days according to the cited Bulgarian MFA guidance.",
+        "Ukraine's exemption is limited to biometric passports and permits short stays of up to 90 days within six months; non-biometric passport holders require a visa.",
+        "For every destination, work, residence, transit, special documents, border access, carrier rules and final admission remain separate."
+      ],
+      "sourceIds": ["bg-mfa-botswana-visa-free-2025", "bg-mfa-panama-visa-free-2026", "bg-mfa-tunisia-visa-free-2025", "bg-mfa-ukraine-biometric-visa-free-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "BG",
+      "destinationCode": "AF",
+      "reason": "No current Bulgarian or Afghan authority source establishes a usable ordinary Bulgarian-passport visitor issuance route; operational restrictions are not a status.",
+      "searchedOfficialDomains": ["mfa.bg", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "BD",
+      "reason": "Bulgaria's current MFA says a pre-issued visa is required, while Bangladesh Police says European tourists may receive a visa on arrival. The authorities conflict on issuance timing.",
+      "searchedOfficialDomains": ["mfa.bg", "voa.specialbranch.gov.bd", "mofa.gov.bd"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "VG",
+      "reason": "No current British Virgin Islands authority schedule establishes ordinary Bulgarian-passport visitor treatment; conditional third-country-document routes are excluded.",
+      "searchedOfficialDomains": ["mfa.bg", "bvi.gov.vg", "gov.vg", "laws.gov.vg"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "BF",
+      "reason": "Burkina Faso's electronic service does not publish current Bulgarian ordinary-passport eligibility or an exemption crosswalk. Portal availability does not prove this pair.",
+      "searchedOfficialDomains": ["mfa.bg", "visaburkina.bf", "diplomatie.gov.bf"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "CF",
+      "reason": "No current Bulgarian or Central African authority source maps an ordinary Bulgarian passport to a short-visitor mission, electronic or border issuance route.",
+      "searchedOfficialDomains": ["mfa.bg", "diplomatie.gouv.cf", "interieur.gouv.cf"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "TD",
+      "reason": "Chad's eVisa service is not independently authenticated by a retrievable current central-government source and does not safely establish Bulgarian visitor issuance.",
+      "searchedOfficialDomains": ["mfa.bg", "evisa.td", "diplomatie.gouv.td", "securite.gouv.td"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "KM",
+      "reason": "Current Comorian material preserves conventions and special treatment, but no current Bulgarian ordinary-passport schedule establishes advance, electronic or arrival issuance.",
+      "searchedOfficialDomains": ["mfa.bg", "justice.gouv.km", "gouv.km"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "CG",
+      "reason": "No current Bulgarian or Republic of the Congo authority source establishes ordinary Bulgarian-passport visitor treatment and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.bg", "diplomatie.gouv.cg", "dgrsp.cg"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "CI",
+      "reason": "Côte d'Ivoire's airport-printing workflow does not establish whether an ordinary Bulgarian passport is subject to it; no exemption complement is inferred.",
+      "searchedOfficialDomains": ["mfa.bg", "snedai.com", "diplomatie.gouv.ci"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "DJ",
+      "reason": "Current Djibouti government material proves electronic issuance generally but supplies no Bulgarian ordinary-passport eligibility schedule.",
+      "searchedOfficialDomains": ["mfa.bg", "egouv.dj", "evisa.gouv.dj"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "GW",
+      "reason": "No current Bulgarian or Guinea-Bissau authority source establishes whether ordinary Bulgarian visitors receive a mission, electronic or border-issued visa.",
+      "searchedOfficialDomains": ["mfa.bg", "mne.gw", "gov.gw"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "IR",
+      "reason": "Current Iranian electronic services do not provide a usable Bulgarian nationality result; generic airport and application wording is not an arrival-visa baseline.",
+      "searchedOfficialDomains": ["mfa.bg", "mfa.gov.ir", "evisa.mfa.ir"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "LR",
+      "reason": "Liberia's arrival route depends on embassy availability, so it does not establish a passport-wide Bulgarian baseline.",
+      "searchedOfficialDomains": ["mfa.bg", "lis.gov.lr", "immigration.gov.lr"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "ML",
+      "reason": "No current Bulgarian or Malian authority source establishes ordinary Bulgarian-passport visitor treatment and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.bg", "diplomatiemdc.gouv.ml", "securite.gouv.ml"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "NE",
+      "reason": "No current Bulgarian or Nigerien authority source maps ordinary Bulgarian visitors to one unconditional issuance route; no complement is inferred from exceptions.",
+      "searchedOfficialDomains": ["mfa.bg", "diplomatie.gouv.ne", "interieur.gouv.ne"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "KP",
+      "reason": "No current official source establishes an available ordinary Bulgarian short-visitor route and issuance timing for North Korea; permissions are not a normalized status.",
+      "searchedOfficialDomains": ["mfa.bg", "mfa.gov.kp", "naenara.com.kp"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "PS",
+      "reason": "Palestinian access depends on Israeli-controlled crossings, permits, identity records and route-specific conditions. No current source establishes a Palestine-wide Bulgarian-passport status.",
+      "searchedOfficialDomains": ["mfa.bg", "mofa.pna.ps", "gov.il", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "SL",
+      "reason": "Sierra Leone's official service describes online approval and issuance at arrival, while other current material is inconsistent; one Bulgarian route cannot be normalized.",
+      "searchedOfficialDomains": ["mfa.bg", "evisa.sl", "slid.gov.sl", "ntb.gov.sl"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "SS",
+      "reason": "South Sudan's government portal proves pre-travel PDF issuance but does not publish current Bulgarian ordinary-passport eligibility; portal availability alone is insufficient.",
+      "searchedOfficialDomains": ["mfa.bg", "evisa.gov.ss", "mofaic.gov.ss"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "SD",
+      "reason": "No current Bulgarian or Sudanese authority source establishes ordinary Bulgarian-passport visitor eligibility and actual issuance timing amid disrupted operations.",
+      "searchedOfficialDomains": ["mfa.bg", "mofa.gov.sd", "moi.gov.sd"]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "SY",
+      "reason": "No current Bulgarian or Syrian authority source establishes ordinary Bulgarian-passport visitor eligibility and actual electronic or mission issuance timing.",
+      "searchedOfficialDomains": ["mfa.bg", "mofaex.gov.sy", "moi.gov.sy", "evisa.sy"]
+    }
+  ]
+}

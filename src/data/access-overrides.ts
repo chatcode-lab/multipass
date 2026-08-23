@@ -3357,4 +3357,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.gov.si/drzave/juzni-sudan/",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "PL",
+    destinationCode: "CI",
+    status: "visa_on_arrival",
+    reason: "Poland's current MFA profile establishes the Polish biometric-passport route, while Côte d'Ivoire's State-approved process prints and issues the preapproved visa at Abidjan airport.",
+    sourceUrl: "https://odyseusz.gov.pl/api/v1/informacje/profile-panstw/CI",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
