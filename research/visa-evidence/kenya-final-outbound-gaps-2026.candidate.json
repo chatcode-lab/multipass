@@ -1,0 +1,139 @@
+{
+  "batchId": "kenya-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-kenya-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-kenya-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024 and directly lists Kenya as No Visa required.",
+      "supportingExcerpt": "Kenya No Visa required"
+    },
+    {
+      "id": "jordan-tourism-kenya-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps Kenya to a visa obtained on arrival.",
+      "supportingExcerpt": "Kenya | Applicable | Visa can be obtained upon arrival"
+    },
+    {
+      "id": "panama-embassy-kenya-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Kenya in its authorized-visa cohort and says approval may take up to 60 business days.",
+      "supportingExcerpt": "Kenya ... will need an authorized visa"
+    }
+  ],
+  "policies": [
+    {
+      "id": "kenyan-ordinary-passport-grenada-visitor-waiver-2026",
+      "title": "Kenyan ordinary passports: Grenada visitor visa waiver",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Kenya as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["KE"],
+      "conditions": [
+        "Applies to an ordinary Kenyan passport holder travelling as a short visitor.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-kenya-2026", "grenada-embassy-kenya-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kenyan-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "Kenyan ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says Kenyan visitors can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["KE"],
+      "conditions": [
+        "Applies to an ordinary Kenyan passport holder travelling as a short visitor.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code.",
+        "Restricted crossings, non-visitor purposes and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-kenya-arrival-visa-table-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kenyan-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Kenyan ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Kenya in its authorized-visa cohort for advance consular approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["KE"],
+      "conditions": [
+        "Applies to an ordinary Kenyan passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "The cited Embassy says authorized-visa approval may take up to 60 business days; applicants must confirm the procedure with their competent Panamanian consulate before travel.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-kenya-authorized-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"KE","destinationCode":"AF","reason":"No current Afghan or Kenyan primary source establishes a stable usable ordinary Kenyan-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"AO","reason":"No current Angolan or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing; diplomatic or official agreements are outside scope.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Kenyan-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"VG","reason":"No current British Virgin Islands or United Kingdom primary source establishes ordinary Kenyan-passport short-visitor eligibility and issuance timing for this territory.","searchedOfficialDomains":["bvi.gov.vg","gov.uk","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"CV","reason":"Cape Verde's electronic-visa material does not publish a reproducible ordinary Kenyan-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mnec.gov.cv","evisa.gov.cv","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"CF","reason":"No current Central African or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Kenyan-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Kenyan passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"CD","reason":"No current Democratic Republic of the Congo or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing; regional arrangements are not normalized without passport-specific terms.","searchedOfficialDomains":["diplomatie.gouv.cd","dgm.cd","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"CG","reason":"No current Republic of the Congo or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Kenyan eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Kenyan eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"GW","reason":"No current Guinea-Bissau or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Kenyan-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Kenyan eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"KE","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Kenyan-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Kenyan-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"LR","reason":"No current Liberian or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"ML","reason":"No current Malian or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"MH","reason":"The Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes a Kenyan ordinary-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Kenyan-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"NG","reason":"Nigeria's electronic-visa services do not directly establish ordinary Kenyan-passport visitor eligibility and actual issuance timing; a portal is not an eligibility schedule.","searchedOfficialDomains":["immigration.gov.ng","visa.immigration.gov.ng","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"KP","reason":"No current DPRK or Kenyan primary source establishes a usable ordinary Kenyan-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Kenyan-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Kenyan-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Kenyan-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Kenyan eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Kenyan-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Kenyan application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Kenyan-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Kenyan-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"SY","reason":"Current Syrian and Kenyan official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Kenyan passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Kenyan-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"TM","reason":"No current Turkmen or Kenyan primary source establishes ordinary Kenyan-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mfa.go.ke"]},
+    {"passportCode":"KE","destinationCode":"UA","reason":"Ukraine's accessible nationality table is expressly dated June 2023; no current Ukrainian or Kenyan source establishes the ordinary Kenyan-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mfa.go.ke"]}
+  ]
+}

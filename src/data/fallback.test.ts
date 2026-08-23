@@ -228,4 +228,17 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.FM.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.FM.statuses.PA).toBe("visa_free");
   });
+
+  it("applies the final Kenyan, Lebanese, Lesotho and Marshallese outbound audits", () => {
+    expect(snapshot.passports.KE.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.KE.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.KE.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.LB.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.LB.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.LB.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.LS.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.LS.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.LS.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.MH.statuses.JO).toBe("visa_on_arrival");
+  });
 });

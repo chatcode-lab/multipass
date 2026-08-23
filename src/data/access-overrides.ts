@@ -3814,4 +3814,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.evisa.mn/en",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "LB",
+    destinationCode: "JO",
+    status: "visa_on_arrival",
+    reason: "Jordan's live official nationality table says Lebanese ordinary-passport visitors obtain a visa on arrival; it does not establish visa-free admission.",
+    sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
