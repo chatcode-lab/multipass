@@ -1,0 +1,133 @@
+{
+  "batchId": "seychelles-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "seychelles-mfa-july-2025-prior-visa-list",
+      "title": "List of countries Seychelles passport holders need visas",
+      "url": "https://mfa.gov.sc/wp-content/uploads/2025/07/LIST-OF-COUNTRIES-SEYCHELLES-PASSPORT-HOLDERS-NEED-VISAS-Updated-July-2025.pdf",
+      "publisher": "Ministry of Foreign Affairs and the Diaspora",
+      "jurisdiction": "Seychelles",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Seychelles' Foreign Ministry publishes this passport-holder schedule on its official mfa.gov.sc domain and marks it updated as of July 2025.",
+      "supportingExcerpt": "Seychelles passport holders are required to obtain visas before entry"
+    },
+    {
+      "id": "seychelles-mfa-live-waiver-list-2026",
+      "title": "Visa",
+      "url": "https://mfa.gov.sc/visa/",
+      "publisher": "Ministry of Foreign Affairs and the Diaspora",
+      "jurisdiction": "Seychelles",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Foreign Ministry consular page identifies its table as countries where Seychelles nationals do not require a visa and gives passport-type and stay conditions.",
+      "supportingExcerpt": "Countries where Seychelles Nationals do not require a visa"
+    },
+    {
+      "id": "panama-embassy-seychelles-visa-free-list-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live official Embassy consular page publishes its named no-visa visitor-country list and expressly includes Seychelles.",
+      "supportingExcerpt": "No Visa RequireD: IF you are from ... Seychelles"
+    },
+    {
+      "id": "jordan-tourism-board-seychelles-arrival-visa-2026",
+      "title": "Visas To Jordan",
+      "url": "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The page identifies visitjordan.com as the official Jordan Tourism Board site and publishes a nationality-by-nationality arrival-visa table.",
+      "supportingExcerpt": "Seychelles | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    }
+  ],
+  "policies": [
+    {
+      "id": "seychellois-ordinary-passport-july-2025-advance-visa-cohort",
+      "title": "Seychellois passports: named advance visitor-visa cohort",
+      "summary": "Seychelles' July 2025 passport-holder schedule expressly requires these destinations to issue a visa before entry, rather than treating an online form or airport process as the visitor baseline.",
+      "status": "visa_required",
+      "destinationCodes": ["AF", "CF", "TD", "CG", "GW", "IQ", "KW", "KG", "LR", "ML", "MM", "NE", "NG", "KP", "ST", "SS", "SD", "SY", "TM"],
+      "passportCodes": ["SC"],
+      "conditions": [
+        "Applies to the ordinary Seychellois passport short-visitor baseline in the Ministry's current named list.",
+        "The schedule's wording requires a visa before entry but does not establish an electronic or border-issued route, so this is normalized only as advance visa required.",
+        "Mission availability, individual grant, document, route, transit, work, residence, diplomatic, official and special-passport treatment remain outside scope."
+      ],
+      "sourceIds": ["seychelles-mfa-july-2025-prior-visa-list"],
+      "confidence": "medium"
+    },
+    {
+      "id": "seychellois-ordinary-passport-live-waiver-cohort",
+      "title": "Seychellois passports: named visa-free short-visit cohort",
+      "summary": "Seychelles' live Foreign Ministry waiver table expressly identifies these destinations as not requiring a visa for Seychellois passport holders and supplies the listed stay limits.",
+      "status": "visa_free",
+      "destinationCodes": ["BD", "KH", "MK", "CV", "KM", "CI", "DJ", "SL", "TN", "SB", "GD"],
+      "passportCodes": ["SC"],
+      "conditions": [
+        "The source lists Bangladesh for one to three months; Cambodia for two weeks; North Macedonia for 90 to 180 days; and Cabo Verde for 60 days.",
+        "It lists Comoros, Sierra Leone, Tunisia and Solomon Islands for one to three months; Côte d'Ivoire and Djibouti for 30 days; and Grenada for 90 days.",
+        "The table is a live passport-government schedule but has no visible table update date; confirm directly before travel. Work, residence, transit, special passports and final admission remain outside scope."
+      ],
+      "sourceIds": ["seychelles-mfa-live-waiver-list-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "seychellois-ordinary-passport-panama-visa-free-short-visits-2026",
+      "title": "Seychellois ordinary passports: Panama visa-free short visits",
+      "summary": "Panama's live Embassy visitor schedule expressly includes Seychelles in its no-visa-required cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["SC"],
+      "conditions": [
+        "The Embassy page states a maximum stay of three months for the named no-visa-required cohort.",
+        "This covers ordinary Seychellois passports and short visitor travel only; passport validity, onward travel, funds, work, residence, carrier checks and final admission remain separate."
+      ],
+      "sourceIds": ["panama-embassy-seychelles-visa-free-list-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "seychellois-ordinary-passport-jordan-arrival-visa-2026",
+      "title": "Seychellois ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official Tourism Board table expressly makes a visitor visa available to Seychellois nationals on arrival for 40 JOD.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["SC"],
+      "conditions": [
+        "The listed visa is obtained on arrival and costs 40 JOD.",
+        "Jordan's table says all non-Jordanians must register on Gateway2Jordan before departure for a QR code.",
+        "Work, residence, special travel documents, entry-point limits, carrier checks and final admission remain separate."
+      ],
+      "sourceIds": ["jordan-tourism-board-seychelles-arrival-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {"passportCode":"SC","destinationCode":"CV","snapshotStatus":"visa_on_arrival","officialStatus":"visa_free","explanation":"Seychelles' live Foreign Ministry waiver table expressly lists Cabo Verde as not requiring a visa for up to 60 days.","sourceIds":["seychelles-mfa-live-waiver-list-2026"]},
+    {"passportCode":"SC","destinationCode":"KM","snapshotStatus":"visa_on_arrival","officialStatus":"visa_free","explanation":"Seychelles' live Foreign Ministry waiver table expressly lists Comoros as not requiring a visa for one to three months.","sourceIds":["seychelles-mfa-live-waiver-list-2026"]},
+    {"passportCode":"SC","destinationCode":"DJ","snapshotStatus":"visa_on_arrival","officialStatus":"visa_free","explanation":"Seychelles' live Foreign Ministry waiver table expressly lists Djibouti as not requiring a visa for 30 days.","sourceIds":["seychelles-mfa-live-waiver-list-2026"]},
+    {"passportCode":"SC","destinationCode":"GW","snapshotStatus":"visa_on_arrival","officialStatus":"visa_required","explanation":"The July 2025 Seychelles passport-holder schedule expressly requires a visa before entry for Guinea-Bissau.","sourceIds":["seychelles-mfa-july-2025-prior-visa-list"]},
+    {"passportCode":"SC","destinationCode":"KG","snapshotStatus":"evisa","officialStatus":"visa_required","explanation":"The July 2025 Seychelles passport-holder schedule expressly requires a visa before entry for Kyrgyzstan.","sourceIds":["seychelles-mfa-july-2025-prior-visa-list"]},
+    {"passportCode":"SC","destinationCode":"LR","snapshotStatus":"evisa","officialStatus":"visa_required","explanation":"The July 2025 Seychelles passport-holder schedule expressly requires a visa before entry for Liberia.","sourceIds":["seychelles-mfa-july-2025-prior-visa-list"]},
+    {"passportCode":"SC","destinationCode":"NG","snapshotStatus":"visa_free","officialStatus":"visa_required","explanation":"The July 2025 Seychelles passport-holder schedule expressly requires a visa before entry for Nigeria.","sourceIds":["seychelles-mfa-july-2025-prior-visa-list"]},
+    {"passportCode":"SC","destinationCode":"SL","snapshotStatus":"visa_on_arrival","officialStatus":"visa_free","explanation":"Seychelles' live Foreign Ministry waiver table expressly lists Sierra Leone as not requiring a visa for one to three months.","sourceIds":["seychelles-mfa-live-waiver-list-2026"]},
+    {"passportCode":"SC","destinationCode":"SB","snapshotStatus":"visa_required","officialStatus":"visa_free","explanation":"Seychelles' live Foreign Ministry waiver table expressly lists Solomon Islands as not requiring a visa for one to three months.","sourceIds":["seychelles-mfa-live-waiver-list-2026"]},
+    {"passportCode":"SC","destinationCode":"SS","snapshotStatus":"evisa","officialStatus":"visa_required","explanation":"The July 2025 Seychelles passport-holder schedule expressly requires a visa before entry for South Sudan.","sourceIds":["seychelles-mfa-july-2025-prior-visa-list"]},
+    {"passportCode":"SC","destinationCode":"ST","snapshotStatus":"evisa","officialStatus":"visa_required","explanation":"The July 2025 Seychelles passport-holder schedule expressly requires a visa before entry for São Tomé and Príncipe.","sourceIds":["seychelles-mfa-july-2025-prior-visa-list"]},
+    {"passportCode":"SC","destinationCode":"SY","snapshotStatus":"evisa","officialStatus":"visa_required","explanation":"The July 2025 Seychelles passport-holder schedule expressly requires a visa before entry for Syria.","sourceIds":["seychelles-mfa-july-2025-prior-visa-list"]}
+  ],
+  "unresolved": [
+    {"passportCode":"SC","destinationCode":"VG","reason":"British Virgin Islands' current positive visa-required and conditional-document schedules do not establish an ordinary Seychellois baseline by omission.","searchedOfficialDomains":["bvi.gov.vg","laws.gov.vg","mfa.gov.sc"]},
+    {"passportCode":"SC","destinationCode":"PS","reason":"Seychelles' outbound schedule cannot displace route-specific Israeli-controlled crossing, permit and recognition conditions; no Palestine-wide ordinary Seychellois visitor status is established.","searchedOfficialDomains":["mfa.gov.sc","mofa.pna.ps","gov.il","cogat.mod.gov.il"]}
+  ]
+}

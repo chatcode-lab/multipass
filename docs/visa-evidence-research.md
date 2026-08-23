@@ -1916,6 +1916,14 @@ Benin adds Panama `visa_required` through Panama's live authorized-visa schedule
 
 Belarus adds no normalized relationship. Its 2012 Panama waiver material lacks a current operative schedule or amendment crosswalk, while the other final gaps remain conditional, stale, portal-only, internally conflicting, operationally restricted or insufficient to establish ordinary-passport issuance timing.
 
+## Pass 200 result: final Monegasque, Seychellois, Panamanian and Guyanese outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add 38 currently supported relationships, raising complete-matrix evidence from 38,639 to 38,677 of 44,974 relationships (86.0%). The public `/status` matrix contains 38,677 fresh and 6,297 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 472 reviewed batches, 2,173 official sources and 1,425 policies. Regional coverage is Africa 8,462 of 11,289 (75.0%), the Americas 4,706 of 4,953 (95.0%), the Caribbean 4,512 of 4,962 (90.9%), Asia 5,320 of 6,336 (84.0%), Europe 9,981 of 10,299 (96.9%), the Middle East 1,826 of 2,970 (61.5%) and Oceania 3,870 of 4,165 (92.9%).
+
+Seychelles closes 32 of its 34 final gaps. Its Foreign Ministry's July 2025 schedule directly names nineteen destinations for which a visa must be obtained before entry, while its live consular waiver table directly names eleven visa-free destinations. Panama is independently `visa_free`, and Jordan is `visa_on_arrival`. Twelve unsupported fallback labels are corrected to match those schedules. The British Virgin Islands remains unresolved because current positive lists do not support an omission-based complement, and Palestine remains route-specific.
+
+Monaco adds Bangladesh and Jordan `visa_on_arrival`, plus Grenada and Panama `visa_free`. Vanuatu remains explicitly unresolved because its live Immigration page places Monaco in both exempt and non-exempt cohorts. Panama and Guyana each add Jordan `visa_on_arrival` from Jordan's current official nationality table. All Jordan policies retain the Gateway2Jordan pre-departure QR condition and medium confidence because the live table has no visible update date.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
