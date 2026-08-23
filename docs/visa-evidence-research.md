@@ -1882,6 +1882,14 @@ Guinea-Bissau adds Panama `visa_required`, while Ghana adds the same advance sta
 
 San Marino adds Angola and Trinidad and Tobago as `evisa`; Côte d’Ivoire and Jordan as `visa_on_arrival`; North Macedonia, Panama, Tunisia and Ukraine as `visa_free`; and Mali, Myanmar, Niger and Turkmenistan as `visa_required`. Angola, Côte d’Ivoire and Trinidad and Tobago correct unsupported fallback classifications. The Palestine row remains unresolved because relief depends on holding a valid multiple-entry Schengen visa, which is not an unconditional passport-only status.
 
+## Pass 196 result: final Australian, Singaporean, Turkish and Chinese outbound gaps
+
+Four independently reviewed audits add one currently supported relationship, raising complete-matrix evidence from 38,627 to 38,628 of 44,974 relationships (85.9%). The public `/status` matrix contains 38,628 fresh and 6,346 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 456 reviewed batches, 2,145 official sources and 1,404 policies. Regional coverage is Africa 8,445 of 11,289 (74.8%), the Americas 4,699 of 4,953 (94.9%), the Caribbean 4,509 of 4,962 (90.9%), Asia 5,312 of 6,336 (83.8%), Europe 9,979 of 10,299 (96.9%), the Middle East 1,816 of 2,970 (61.1%) and Oceania 3,868 of 4,165 (92.9%).
+
+Türkiye adds Equatorial Guinea `evisa`, correcting the unsupported fallback `visa_free` label. Türkiye's current Foreign Ministry table says ordinary Turkish passports require a visa, while Equatorial Guinea's Government-authenticated current service accepts regular passports from all nationalities and delivers the eVisa as an emailed PDF before travel.
+
+Australia, Singapore and China add no normalized relationship. Their 61 audited rows remain held where current official sources are stale, conditional, portal-only, internally conflicting, route-specific or do not establish both ordinary-passport eligibility and actual issuance timing. China's final 23-row cohort exactly rechecks the unresolved relationships from its 22 August currentness audit; Macao and Taiwan remain document-and-permit regimes rather than ordinary foreign-passport visitor statuses.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

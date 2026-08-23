@@ -3437,4 +3437,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.esteri.sm/pub1/EsteriSM/dettaglio_info.html?idItem=d794f5a9-5248-4a0f-8520-b7e5ab845be6",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "TR",
+    destinationCode: "GQ",
+    status: "evisa",
+    reason: "Türkiye's current Foreign Ministry table requires ordinary Turkish passports to hold a visa, and Equatorial Guinea's Government-authenticated current service issues its eVisa by email before travel.",
+    sourceUrl: "https://www.guineaecuatorialpress.com/index.php/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

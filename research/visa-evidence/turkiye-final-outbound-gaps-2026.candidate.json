@@ -1,0 +1,98 @@
+{
+  "batchId": "turkiye-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "turkiye-mfa-current-outbound-visa-table-2026",
+      "title": "Visa practices applicable to Turkish citizens",
+      "url": "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye / outbound travel",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Türkiye's live Foreign Ministry table expressly separates ordinary, diplomatic, service and special passports and states that ordinary Turkish passports are visa-subject for Equatorial Guinea.",
+      "supportingExcerpt": "Ekvator Ginesi: Umuma Mahsus Pasaport hamilleri vizeye tabidir."
+    },
+    {
+      "id": "equatorial-guinea-government-online-visa-announcement-2026",
+      "title": "Equatorial Guinea Government: online visa is operational",
+      "url": "https://www.guineaecuatorialpress.com/index.php/noticias/ya_esta_operativo_el_visado_online_en_guinea_ecuatorial",
+      "publisher": "Government of the Republic of Equatorial Guinea Information and Press Office",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Equatorial Guinea's institutional Government page identifies its exact online-visa domain as the means to obtain a visitor visa without attending in person.",
+      "supportingExcerpt": "todos los interesados en viajar al país podrán conseguir su visado sin tener que desplazarse físicamente."
+    },
+    {
+      "id": "equatorial-guinea-evisa-current-service-asset-2026",
+      "title": "Equatorial Guinea eVisa: current eligibility and electronic delivery service asset",
+      "url": "https://equatorialguinea-evisa.com/assets/i18n/en-US.json",
+      "publisher": "Equatorial Guinea eVisa service",
+      "jurisdiction": "Republic of Equatorial Guinea",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The exact domain is authenticated by the Government announcement. Its live English asset was last modified 30 July 2026 and specifies all-nationality regular-passport eligibility and emailed PDF delivery.",
+      "supportingExcerpt": "All Nationalities can apply for an E-Visa. All E-Visa are sent by email."
+    }
+  ],
+  "policies": [
+    {
+      "id": "turkiye-ordinary-passport-equatorial-guinea-electronic-visitor-visa-2026",
+      "title": "Turkish ordinary passports: Equatorial Guinea electronic visitor visa",
+      "summary": "Equatorial Guinea's Government-authenticated live eVisa service accepts all nationalities using a regular passport and sends the eVisa by email as a PDF before travel.",
+      "status": "evisa",
+      "destinationCodes": ["GQ"],
+      "passportCodes": ["TR"],
+      "conditions": [
+        "Türkiye's current MFA table confirms that ordinary Turkish passport holders require a visa for Equatorial Guinea; the destination service supplies the electronic route.",
+        "Use the same regular Turkish passport for application and travel. The service states the eVisa is emailed and downloadable as a PDF before travel.",
+        "Work, residence, diplomatic, service, special-document, carrier and final-admission treatment are outside this ordinary short-visitor baseline."
+      ],
+      "sourceIds": ["turkiye-mfa-current-outbound-visa-table-2026","equatorial-guinea-government-online-visa-announcement-2026","equatorial-guinea-evisa-current-service-asset-2026"],
+      "confidence": "high",
+      "application": {
+        "url": "https://egonline.vfsevisa.com/gnq/en/login",
+        "label": "Equatorial Guinea eVisa application (VFS)",
+        "steps": [
+          "Apply online using the ordinary Turkish passport for travel.",
+          "Receive and retain the emailed PDF eVisa before departure.",
+          "Present the same passport and eVisa for final immigration processing and admission."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TR",
+      "destinationCode": "GQ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "evisa",
+      "explanation": "Türkiye's ordinary-passport table requires a visa and Equatorial Guinea's current Government-authenticated service supplies electronic issuance before travel.",
+      "sourceIds": ["turkiye-mfa-current-outbound-visa-table-2026","equatorial-guinea-government-online-visa-announcement-2026","equatorial-guinea-evisa-current-service-asset-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"TR","destinationCode":"BF","reason":"Türkiye's current table says ordinary passports are visa-subject but does not establish whether Burkina Faso issues the visitor visa electronically, at arrival or through a mission.","searchedOfficialDomains":["mfa.gov.tr","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"TR","destinationCode":"CV","reason":"Türkiye's current table says a visa is required, while Cabo Verde's EASE service does not establish ordinary Turkish-passport visitor-visa issuance timing.","searchedOfficialDomains":["mfa.gov.tr","ease.gov.cv","mnec.gov.cv"]},
+    {"passportCode":"TR","destinationCode":"CF","reason":"No current authority source establishes the Central African visitor visa's actual issuance route and timing for ordinary Turkish passports.","searchedOfficialDomains":["mfa.gov.tr","diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"TR","destinationCode":"TD","reason":"Türkiye's current table says ordinary passports are visa-subject but does not authenticate Chad's portal or establish actual issuance for this pair.","searchedOfficialDomains":["mfa.gov.tr","evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"TR","destinationCode":"CG","reason":"No current source establishes whether the Republic of the Congo issues this ordinary Turkish visitor visa before travel, electronically or at arrival.","searchedOfficialDomains":["mfa.gov.tr","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"TR","destinationCode":"CI","reason":"No current source establishes eligibility and actual timing for Côte d'Ivoire's airport-issued pre-enrolment route for ordinary Turkish passports.","searchedOfficialDomains":["mfa.gov.tr","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"TR","destinationCode":"GD","reason":"Türkiye's current table requires a visa but does not establish Grenada's current issuance route; the accessible nationality schedule is dated February 2021.","searchedOfficialDomains":["mfa.gov.tr","mofa.gov.gd","gov.gd"]},
+    {"passportCode":"TR","destinationCode":"GW","reason":"No current Guinea-Bissau authority source establishes whether the ordinary Turkish visitor visa is issued before travel or at arrival.","searchedOfficialDomains":["mfa.gov.tr","mne.gw","gov.gw"]},
+    {"passportCode":"TR","destinationCode":"IQ","reason":"Türkiye's current Iraq rule varies by age: ordinary passport holders below 15 or above 50 are visa-free while ages 15–50 are visa-subject.","searchedOfficialDomains":["mfa.gov.tr","mofa.gov.iq","evisa.iq"]},
+    {"passportCode":"TR","destinationCode":"LR","reason":"Liberia's arrival route requires prior online application and depends on embassy availability, so it is not a passport-only ordinary visitor baseline.","searchedOfficialDomains":["mfa.gov.tr","visaonarrival.lis.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"TR","destinationCode":"LY","reason":"Türkiye's current table says ordinary passports are visa-subject but does not establish Libya's actual visitor issuance route and timing.","searchedOfficialDomains":["mfa.gov.tr","mfa.gov.ly"]},
+    {"passportCode":"TR","destinationCode":"ML","reason":"No current source establishes Mali's actual ordinary Turkish visitor issuance route and timing.","searchedOfficialDomains":["mfa.gov.tr","diplomatie.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"TR","destinationCode":"NE","reason":"No current source establishes Niger's actual ordinary Turkish visitor issuance route and timing.","searchedOfficialDomains":["mfa.gov.tr","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"TR","destinationCode":"KP","reason":"No current official source establishes a normal available ordinary Turkish-passport visitor route; operational permission restrictions are not normalized as a visa status.","searchedOfficialDomains":["mfa.gov.tr","mfa.gov.kp"]},
+    {"passportCode":"TR","destinationCode":"SL","reason":"Current material does not resolve Sierra Leone's conflicting electronic-versus-arrival issuance routes for ordinary Turkish passports.","searchedOfficialDomains":["mfa.gov.tr","slid.gov.sl","evisa.sl"]},
+    {"passportCode":"TR","destinationCode":"SB","reason":"No current source establishes Solomon Islands ordinary Turkish visitor issuance timing.","searchedOfficialDomains":["mfa.gov.tr","commerce.gov.sb","mfaet.gov.sb"]},
+    {"passportCode":"TR","destinationCode":"SS","reason":"No current source establishes South Sudan electronic, arrival or mission issuance timing for ordinary Turkish passports.","searchedOfficialDomains":["mfa.gov.tr","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"TR","destinationCode":"GM","reason":"No current source establishes The Gambia's present advance, clearance or border issuance timing for ordinary Turkish passports.","searchedOfficialDomains":["mfa.gov.tr","gid.gov.gm","gambia.gov.gm"]}
+  ]
+}
