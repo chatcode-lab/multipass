@@ -676,7 +676,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BD", "SA", "visa_required").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BR", "SA", snapshot.passports.BR.statuses.SA).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("JO")).toHaveLength(99);
+    expect(pairsFor("JO")).toHaveLength(101);
     expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -686,6 +686,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IE", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MT", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AR", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the reviewed UAE, Kuwait, Lebanon, and Armenia pass", () => {
@@ -1119,7 +1121,7 @@ describe("official visa evidence", () => {
     expect(snapshot.passports.PL.statuses.CI).toBe("visa_on_arrival");
     expect(getVisaRelationshipEvidence("CI", "CI", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("TN")).toHaveLength(40);
+    expect(pairsFor("TN")).toHaveLength(41);
     expect(getVisaRelationshipEvidence("KZ", "TN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "TN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RU", "TN", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1133,6 +1135,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("JP", "TN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BG", "TN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PL", "TN", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "TN", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the reviewed Egypt and Mauritania visitor schedules", () => {
@@ -2133,7 +2136,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UA")).toHaveLength(85);
+    expect(pairsFor("UA")).toHaveLength(87);
     expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2152,6 +2155,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BG", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IS", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PL", "UA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BR", "UA", "visa_free").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("DJ")).toHaveLength(29);
     expect(getVisaRelationshipEvidence("DJ", "DJ", "citizenship").supportsCurrentStatus).toBe(true);
@@ -2577,7 +2582,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, "GQ", "evisa").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence(passportCode, "CU", snapshot.passports[passportCode].statuses.CU).supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence(passportCode, "CI", snapshot.passports[passportCode].statuses.CI).supportsCurrentStatus).toBe(false);
-      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(passportCode === "AR");
     }
     expect(getVisaRelationshipEvidence("AR", "TN", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AR", "PA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2610,7 +2615,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, "CU", snapshot.passports[passportCode].statuses.CU).supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence(passportCode, "CI", snapshot.passports[passportCode].statuses.CI).supportsCurrentStatus).toBe(false);
       expect(getVisaRelationshipEvidence(passportCode, "KH", snapshot.passports[passportCode].statuses.KH).supportsCurrentStatus).toBe(true);
-      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(passportCode === "BZ");
+      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(passportCode === "BZ" || passportCode === "BR");
     }
   });
 
@@ -3990,6 +3995,7 @@ describe("official visa evidence", () => {
       "evisa.rop.gov.om",
       "president.uz",
       "aplicacao.itamaraty.gov.br",
+      "de.visitjordan.com",
       "peraturan.go.id",
       "www.mofa.pna.ps",
       "island.is",
