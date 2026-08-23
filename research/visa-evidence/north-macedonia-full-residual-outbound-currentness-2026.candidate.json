@@ -1,0 +1,140 @@
+{
+  "batchId": "north-macedonia-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-north-macedonia-apr-2024",
+      "title": "Visa requirements for traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's official Embassy currently serves this nationality schedule, revised in April 2024, and its notes define Port of Entry as a visa granted on arrival.",
+      "supportingExcerpt": "Macedonia (The Former Yugoslav Rep. of) — Port of Entry"
+    },
+    {
+      "id": "panama-embassy-north-macedonia-current",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's Embassy publishes the live visitor nationality schedule and separately identifies the current 2024 amendment to its third-country-document waiver.",
+      "supportingExcerpt": "No Visa Required ... Macedonia"
+    },
+    {
+      "id": "ukraine-rada-north-macedonia-current",
+      "title": "Agreement between Ukraine and North Macedonia on conditions for mutual travel of citizens",
+      "url": "https://zakon.rada.gov.ua/go/808_001-19",
+      "publisher": "Verkhovna Rada of Ukraine",
+      "jurisdiction": "Ukraine",
+      "kind": "law",
+      "language": "Ukrainian",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Ukraine's official parliamentary legislation database marks the bilateral agreement current and in force, with entry into force on 22 December 2019.",
+      "supportingExcerpt": "чинний ... Набрання чинності ... 22.12.2019"
+    }
+  ],
+  "policies": [
+    {
+      "id": "grenada-north-macedonia-ordinary-passports-visa-on-arrival",
+      "title": "Grenada: North Macedonian ordinary passports",
+      "summary": "Grenada's current Embassy schedule directly assigns North Macedonian visitors to a visa granted at the port of entry.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["MK"],
+      "conditions": [
+        "Applies to an ordinary North Macedonian passport for short visitor travel.",
+        "The schedule's own legend defines Port of Entry as a visa granted on arrival in Grenada.",
+        "The schedule was revised in April 2024 and should be rechecked early if Grenada publishes a replacement."
+      ],
+      "sourceIds": ["grenada-embassy-north-macedonia-apr-2024"],
+      "confidence": "medium"
+    },
+    {
+      "id": "panama-north-macedonia-ordinary-passports-visa-free",
+      "title": "Panama: North Macedonian ordinary passports",
+      "summary": "Panama's live Embassy nationality schedule lists Macedonia in its no-visa-required cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["MK"],
+      "conditions": [
+        "Applies to an ordinary North Macedonian passport for a tourist visit of up to three months.",
+        "This passport-wide rule is distinct from Panama's conditional waiver for holders of qualifying third-country visas or residence documents.",
+        "Work, residence, study, transit, diplomatic and final-admission rules remain separate."
+      ],
+      "sourceIds": ["panama-embassy-north-macedonia-current"],
+      "confidence": "medium"
+    },
+    {
+      "id": "ukraine-north-macedonia-biometric-passports-visa-free",
+      "title": "Ukraine: North Macedonian biometric passports",
+      "summary": "Ukraine's current treaty register marks the permanent bilateral visa-abolition agreement for valid biometric travel documents in force.",
+      "status": "visa_free",
+      "destinationCodes": ["UA"],
+      "passportCodes": ["MK"],
+      "conditions": [
+        "Applies to a valid biometric North Macedonian ordinary passport for entry, exit, transit and stays up to 90 days in any 180-day period.",
+        "Non-biometric, refugee, stateless, residence, work and other special-document routes are outside this policy."
+      ],
+      "sourceIds": ["ukraine-rada-north-macedonia-current"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MK",
+      "destinationCode": "GD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Grenada's current official nationality schedule assigns the North Macedonian ordinary passport to Port of Entry and defines that route as a visa granted on arrival, not visa-free access.",
+      "sourceIds": ["grenada-embassy-north-macedonia-apr-2024"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"MK","destinationCode":"AF","reason":"No current Afghan primary source establishes an ordinary North Macedonian-passport short-visitor baseline; no status is inferred from a portal or omission.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","econsulate.mfa.gov.af"]},
+    {"passportCode":"MK","destinationCode":"AO","reason":"Angola's current exemption material does not name North Macedonia, while generic electronic application availability does not establish the passport baseline.","searchedOfficialDomains":["governo.gov.ao","mirex.gov.ao","smevisa.gov.ao"]},
+    {"passportCode":"MK","destinationCode":"BD","reason":"Bangladesh's current mission and online-form material does not establish actual issuance on arrival for this ordinary passport.","searchedOfficialDomains":["mofa.gov.bd","dip.gov.bd","visa.gov.bd"]},
+    {"passportCode":"MK","destinationCode":"BF","reason":"Burkina Faso's official eVisa service proves electronic filing but publishes no authenticated North Macedonian eligibility or exhaustive nationality rule.","searchedOfficialDomains":["visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"MK","destinationCode":"CV","reason":"Cabo Verde's current EASE and consular material does not establish arrival visa issuance for a North Macedonian ordinary passport.","searchedOfficialDomains":["gov.cv","portalconsular.mnec.gov.cv","ease.gov.cv","boe.incv.cv"]},
+    {"passportCode":"MK","destinationCode":"CF","reason":"No current Central African primary nationality schedule establishes this ordinary-passport visitor route outside named community treatment.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","cemac.int"]},
+    {"passportCode":"MK","destinationCode":"TD","reason":"Chad's current official material preserves community and bilateral exceptions but publishes no North Macedonian ordinary-passport baseline.","searchedOfficialDomains":["journalofficiel.gouv.td","diplomatie.gouv.td","cemac.int"]},
+    {"passportCode":"MK","destinationCode":"KM","reason":"Comorian law preserves conventions and special rules while no current nationality schedule maps this passport or issuance timing.","searchedOfficialDomains":["justice.gouv.km","gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"MK","destinationCode":"CG","reason":"Republic of the Congo sources preserve particular agreements and publish no current North Macedonian ordinary-passport schedule.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","cemac.int"]},
+    {"passportCode":"MK","destinationCode":"CI","reason":"Cote d'Ivoire's current official material proves a conditional electronic workflow but not authenticated North Macedonian nationality eligibility.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"MK","destinationCode":"DJ","reason":"Djibouti's official eVisa material does not publish a current ordinary-passport eligibility or exemption partition for North Macedonia.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj","journalofficiel.dj"]},
+    {"passportCode":"MK","destinationCode":"GF","reason":"French Guiana's current waiver is limited to biometric North Macedonian passports, a document property not represented by the passport code.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"MK","destinationCode":"PF","reason":"French Polynesia's current territory order makes the North Macedonian exemption biometric-document-qualified rather than a code-only baseline.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"MK","destinationCode":"FW","reason":"French West Indies aggregates distinct territories whose separate biometric-passport orders cannot be collapsed into one North Macedonian passport rule.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"MK","destinationCode":"GW","reason":"Current Guinea-Bissau material directly supports named regional treatment only, not this non-regional ordinary-passport route.","searchedOfficialDomains":["ecowas.int","mne.gw","gov.gw"]},
+    {"passportCode":"MK","destinationCode":"IR","reason":"Iran's official eVisa material does not authenticate North Macedonian eligibility or actual issuance timing; generic application access is insufficient.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir"]},
+    {"passportCode":"MK","destinationCode":"IQ","reason":"Iraq's federal eVisa portal publishes no usable current nationality map establishing the North Macedonian ordinary-passport route.","searchedOfficialDomains":["evisa.iq","moi.gov.iq","mofa.gov.iq"]},
+    {"passportCode":"MK","destinationCode":"JO","reason":"Jordan's current official services establish electronic and conditional processes but do not map this passport to an unconditional arrival route.","searchedOfficialDomains":["moi.gov.jo","eservices.moi.gov.jo","mfa.gov.jo"]},
+    {"passportCode":"MK","destinationCode":"KW","reason":"Kuwait's enumerated arrival cohort does not establish a complete residual classification for North Macedonia; sponsor and residence routes are excluded.","searchedOfficialDomains":["kuwaitvisa.moi.gov.kw","moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"MK","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic-visa service does not publish a stable North Macedonian nationality result or prove issuance timing for this passport.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","gov.kg"]},
+    {"passportCode":"MK","destinationCode":"LR","reason":"Liberia's current electronic or arrival process is mission- and residence-dependent and has no North Macedonian nationality baseline.","searchedOfficialDomains":["lis.gov.lr","visaonarrival.lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"MK","destinationCode":"ML","reason":"Current Malian and regional official sources publish no North Macedonian ordinary-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","ecowas.int"]},
+    {"passportCode":"MK","destinationCode":"YT","reason":"Mayotte's current exemption is biometric-passport-qualified, a document property not represented by code MK.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"MK","destinationCode":"MM","reason":"Myanmar's current official eVisa material does not provide an authenticated North Macedonian eligibility result or a safe residual rule.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","moi.gov.mm"]},
+    {"passportCode":"MK","destinationCode":"NC","reason":"New Caledonia's current territory order makes the North Macedonian exemption biometric-document-qualified rather than a code-only baseline.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"MK","destinationCode":"NE","reason":"Niger's current default preserves unenumerated bilateral and community exemptions, with no reconciled North Macedonian schedule.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","gouv.ne"]},
+    {"passportCode":"MK","destinationCode":"KP","reason":"No current DPRK government or mission source publishes a North Macedonian ordinary-passport visitor schedule or safe residual default.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"MK","destinationCode":"PS","reason":"Palestinian access is route-, permit- and territory-dependent; no single destination-wide ordinary-passport status is established.","searchedOfficialDomains":["mofa.pna.ps","moi.pna.ps","cogat.mod.gov.il"]},
+    {"passportCode":"MK","destinationCode":"RE","reason":"Reunion's current exemption is biometric-passport-qualified, a property not represented by code MK.","searchedOfficialDomains":["legifrance.gouv.fr","france-visas.gouv.fr","immigration.interieur.gouv.fr"]},
+    {"passportCode":"MK","destinationCode":"ST","reason":"Sao Tome and Principe exemptions depend on third-country documents or unlisted decrees, and its eVisa service has no North Macedonian eligibility schedule.","searchedOfficialDomains":["smf.st","mne.gov.st","gov.st"]},
+    {"passportCode":"MK","destinationCode":"SA","reason":"No current official source establishes a nationality-wide ordinary-passport eVisa, visa-free, arrival or consular-visa baseline; third-country-document and GCC-resident routes are excluded.","searchedOfficialDomains":["visa.visitsaudi.com","visitsaudi.com","mofa.gov.sa","visa.mofa.gov.sa"]},
+    {"passportCode":"MK","destinationCode":"SL","reason":"Sierra Leone's current official electronic and arrival issuance descriptions conflict, so no single normalized timing is assigned to this passport.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","ntb.gov.sl","ecowas.int"]},
+    {"passportCode":"MK","destinationCode":"SB","reason":"Solomon Islands official material conflicts on electronic, manual and arrival issuance and does not map North Macedonia to one route.","searchedOfficialDomains":["immigration.gov.sb","immigration.sig.gov.sb","solomons.gov.sb"]},
+    {"passportCode":"MK","destinationCode":"SS","reason":"South Sudan's official material says a visa is needed but does not resolve whether this nationality receives advance electronic, mission or border issuance.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","immigration.eservices.gov.ss"]},
+    {"passportCode":"MK","destinationCode":"SD","reason":"Sudan publishes visitor processes but no North Macedonian nationality eligibility or complete ordinary-passport default.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd","passport.gov.sd"]},
+    {"passportCode":"MK","destinationCode":"SY","reason":"Syria's official framework supplies no current ordinary North Macedonian-passport exemption or authenticated electronic eligibility route.","searchedOfficialDomains":["mofaex.gov.sy","evisa.sy","gaca.gov.sy"]},
+    {"passportCode":"MK","destinationCode":"TT","reason":"Trinidad and Tobago's current official waiver material does not name North Macedonia and its live eVisa nationality checker is not reproducibly retrievable; no complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","homelandsecurity.gov.tt","foreign.gov.tt","evisa.ttservices.online"]},
+    {"passportCode":"MK","destinationCode":"TN","reason":"Tunisia publishes no current ordinary-passport nationality schedule or operative bilateral-waiver register establishing this route.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.tn","interieur.gov.tn"]},
+    {"passportCode":"MK","destinationCode":"TM","reason":"Turkmenistan publishes no exhaustive treaty-waiver or eVisa-eligibility roster for a North Macedonian ordinary passport.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","mejlis.gov.tm"]},
+    {"passportCode":"MK","destinationCode":"VU","reason":"No live Vanuatu DIPS cohort names North Macedonia; a generic visa or pre-clearance application does not establish electronic issuance or the mandatory nationality route.","searchedOfficialDomains":["immigration.gov.vu","evisa.gov.vu","tradeportal.gov.vu","parliament.gov.vu","mfaicet.gov.vu"]}
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "batchId": "bosnia-and-herzegovina-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "bosnia-iddeea-current-biometric-civil-passport-2026",
+      "title": "Passport of Bosnia and Herzegovina",
+      "url": "https://www.iddeea.gov.ba/en/elementor-56420/",
+      "publisher": "Agency for Identification Documents, Registers and Data Exchange of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "IDDEEA's current official passport page identifies the civil passport issued to BiH citizens and confirms that civil, diplomatic and service BiH passports are biometric.",
+      "supportingExcerpt": "The biometric passport of BiH (civil, diplomatic and service) has been issued since 15 September 2009."
+    },
+    {
+      "id": "grenada-embassy-current-visitors-page-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page states that entry requirements are based on citizenship and currently links its complete country requirements and port-of-entry materials.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-biometric-bosnia-port-of-entry-schedule-2026",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The currently linked Embassy country schedule was updated in April 2024, directly lists Bosnia and Herzegovina as Port of Entry, and defines that category as a visa granted on arrival.",
+      "supportingExcerpt": "Bosnia & Herzegovina Port of Entry"
+    },
+    {
+      "id": "dominican-republic-dgii-bosnia-consular-visa-list-2026",
+      "title": "Tourist Card entry rules",
+      "url": "https://dgii.gov.do/sobretarjetaturista/Paginas/default.aspx",
+      "publisher": "Dirección General de Impuestos Internos",
+      "jurisdiction": "Dominican Republic",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The current Dominican tax authority page expressly says the listed tourists cannot use the Tourist Card and must obtain a visa from a Dominican mission; Bosnia and Herzegovina is listed.",
+      "supportingExcerpt": "Bosnia y Herzegovina ... deben solicitar un visado"
+    },
+    {
+      "id": "panama-embassy-current-visa-nationality-list-2026",
+      "title": "Immigration and Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page publishes the ordinary nationality no-visa list, expressly includes Bosnia and Herzegovina, and states a three-month visitor maximum for that cohort.",
+      "supportingExcerpt": "No Visa RequireD: IF you are from ... Bosnia and Herzegovina"
+    }
+  ],
+  "policies": [
+    {
+      "id": "bosnia-biometric-passport-grenada-port-of-entry-visa-2026",
+      "title": "Bosnia and Herzegovina biometric civil passports: Grenada visa at entry",
+      "summary": "Grenada's currently linked country schedule directly assigns Bosnia and Herzegovina to Port of Entry, defined as a visa granted on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["BA"],
+      "conditions": [
+        "Applies to the ordinary biometric civil passport identified by Bosnia and Herzegovina's passport authority and to short visitor travel.",
+        "Grenada defines Port of Entry as a visa granted on arrival; its separate prior-to-arrival, diplomatic, official, work, residence, cruise and other-document routes are outside this classification.",
+        "The active Embassy schedule is updated April 2024 and should be rechecked if Grenada publishes a later country schedule. Final admission remains a border decision."
+      ],
+      "sourceIds": ["bosnia-iddeea-current-biometric-civil-passport-2026", "grenada-embassy-current-visitors-page-2026", "grenada-embassy-biometric-bosnia-port-of-entry-schedule-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "bosnia-biometric-passport-dominican-republic-consular-visa-2026",
+      "title": "Bosnia and Herzegovina biometric civil passports: Dominican Republic advance visa",
+      "summary": "The Dominican Republic's current official Tourist Card list expressly requires tourists from Bosnia and Herzegovina to obtain a visa at a Dominican diplomatic mission instead of entering with a Tourist Card.",
+      "status": "visa_required",
+      "destinationCodes": ["DO"],
+      "passportCodes": ["BA"],
+      "conditions": [
+        "Applies to short tourism using an ordinary biometric civil Bosnia and Herzegovina passport.",
+        "Obtain the visa through a Dominican diplomatic mission before travel; the Tourist Card route does not apply to the expressly listed nationality.",
+        "Work, study, residence, diplomatic, official, special-document and final-admission treatment are outside this classification."
+      ],
+      "sourceIds": ["bosnia-iddeea-current-biometric-civil-passport-2026", "dominican-republic-dgii-bosnia-consular-visa-list-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "bosnia-biometric-passport-panama-short-visitor-visa-free-2026",
+      "title": "Bosnia and Herzegovina biometric civil passports: Panama visa-free short visit",
+      "summary": "Panama's live Embassy nationality list expressly includes Bosnia and Herzegovina in its no-visa ordinary visitor cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["BA"],
+      "conditions": [
+        "Applies to short visitor travel using an ordinary biometric civil Bosnia and Herzegovina passport, for up to three months as stated by the official list.",
+        "The separate waiver based on a qualifying third-country visa or residence permit is conditional and is not needed for this named no-visa rule.",
+        "Work, residence, diplomatic, official, other-document and final-admission conditions remain outside this classification."
+      ],
+      "sourceIds": ["bosnia-iddeea-current-biometric-civil-passport-2026", "panama-embassy-current-visa-nationality-list-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BA",
+      "destinationCode": "GD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Grenada's active Embassy schedule directly assigns Bosnia and Herzegovina to Port of Entry and defines that category as a visa granted on arrival.",
+      "sourceIds": ["grenada-embassy-current-visitors-page-2026", "grenada-embassy-biometric-bosnia-port-of-entry-schedule-2026"]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "DO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The Dominican Republic's current official list names Bosnia and Herzegovina among tourists who cannot use the Tourist Card and must obtain a consular visa.",
+      "sourceIds": ["dominican-republic-dgii-bosnia-consular-visa-list-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"BA","destinationCode":"AF","reason":"Not established: current Afghan primary material reviewed does not map an ordinary biometric Bosnia and Herzegovina passport to a short-visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","evisa.mfa.gov.af"]},
+    {"passportCode":"BA","destinationCode":"AO","reason":"Not established: current Angolan exemption and electronic-service material does not directly map this passport or state an exhaustive residual visitor route.","searchedOfficialDomains":["mirex.gov.ao","sme.gov.ao","governo.gov.ao"]},
+    {"passportCode":"BA","destinationCode":"BD","reason":"Not established: current Bangladeshi official material reviewed does not publish an ordinary Bosnia and Herzegovina-passport visitor schedule or residual issuance rule.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","dip.gov.bd"]},
+    {"passportCode":"BA","destinationCode":"BF","reason":"Not established: Burkina Faso's electronic service does not publish a reproducible nationality result or an exhaustive ordinary visitor complement for this passport.","searchedOfficialDomains":["visaburkina.bf","diplomatie.gov.bf","police.gov.bf"]},
+    {"passportCode":"BA","destinationCode":"CV","reason":"Not established: Cabo Verde's current exemption and prior-visa schedules do not directly map Bosnia and Herzegovina; EASE registration is not a visa-status decision.","searchedOfficialDomains":["gov.cv","portalconsular.mnec.gov.cv","ease.gov.cv"]},
+    {"passportCode":"BA","destinationCode":"CF","reason":"Not established: current Central African official material proves CEMAC treatment but does not establish this non-CEMAC ordinary-passport visitor route.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","cemac.int"]},
+    {"passportCode":"BA","destinationCode":"TD","reason":"Not established: Chad's official material preserves regional and bilateral exceptions but provides no current ordinary Bosnia and Herzegovina-passport residual route or issuance timing.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","cemac.int"]},
+    {"passportCode":"BA","destinationCode":"KM","reason":"Not established: Comorian law preserves conventions and special-law exceptions while no current nationality schedule maps this ordinary visitor passport.","searchedOfficialDomains":["justice.gouv.km","gouv.km","comores-diplomatie.km"]},
+    {"passportCode":"BA","destinationCode":"CG","reason":"Not established: Republic of the Congo sources preserve particular agreements and do not publish an ordinary Bosnia and Herzegovina-passport visitor schedule or eVisa residual.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg","cemac.int"]},
+    {"passportCode":"BA","destinationCode":"CI","reason":"Not established: current Ivorian pre-enrolment material does not establish whether this passport is eligible for a visa issued at Abidjan airport rather than a nationality exception.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","interieur.gouv.ci"]},
+    {"passportCode":"BA","destinationCode":"DJ","reason":"Not established: Djibouti's official electronic-visa material does not expose a reproducible ordinary Bosnia and Herzegovina-passport eligibility and issuance result.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj"]},
+    {"passportCode":"BA","destinationCode":"GF","reason":"Not established: French overseas entry is governed by territory-specific orders; no directly verified current French Guiana rule maps this biometric passport.","searchedOfficialDomains":["immigration.interieur.gouv.fr","legifrance.gouv.fr","france-visas.gouv.fr"]},
+    {"passportCode":"BA","destinationCode":"PF","reason":"Not established: French Polynesia has territory-specific entry orders, but no directly verified current rule maps this biometric passport to a visitor status.","searchedOfficialDomains":["legifrance.gouv.fr","polynesie-francaise.gouv.fr","france-visas.gouv.fr"]},
+    {"passportCode":"BA","destinationCode":"FW","reason":"Not established: French West Indies is an aggregate catalog destination with distinct territory-specific entry orders; component rules cannot be merged into one status.","searchedOfficialDomains":["immigration.interieur.gouv.fr","legifrance.gouv.fr","france-visas.gouv.fr"]},
+    {"passportCode":"BA","destinationCode":"GW","reason":"Not established: current Guinea-Bissau official material reviewed does not establish ordinary Bosnia and Herzegovina-passport visitor eligibility or issuance timing.","searchedOfficialDomains":["mne.gw","gov.gw"]},
+    {"passportCode":"BA","destinationCode":"HN","reason":"Not established: Honduras publishes visa and consulted-visa procedures but no current official nationality mapping establishes which route applies to this ordinary passport.","searchedOfficialDomains":["inm.gob.hn","sreci.gob.hn"]},
+    {"passportCode":"BA","destinationCode":"IQ","reason":"Not established: current Iraqi official material does not establish an exact ordinary Bosnia and Herzegovina-passport visitor outcome; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.iq","evisa.iq","moi.gov.iq"]},
+    {"passportCode":"BA","destinationCode":"JO","reason":"Not established: Jordanian official material reviewed does not publish an unconditional ordinary Bosnia and Herzegovina-passport visitor route independent of approval or document conditions.","searchedOfficialDomains":["mfa.gov.jo","moi.gov.jo"]},
+    {"passportCode":"BA","destinationCode":"XK","reason":"Not established: current Kosovo and Bosnia and Herzegovina official material does not establish an ordinary biometric Bosnia and Herzegovina-passport visitor route; recognition and regional context are not visa statuses.","searchedOfficialDomains":["mpb.rks-gov.net","mfa-ks.net","mvp.gov.ba"]},
+    {"passportCode":"BA","destinationCode":"KW","reason":"Not established: current Kuwaiti official sources reviewed do not establish an unconditional ordinary Bosnia and Herzegovina-passport visitor baseline or actual issuance form.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"BA","destinationCode":"LR","reason":"Not established: current Liberian official material reviewed does not establish ordinary Bosnia and Herzegovina-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"BA","destinationCode":"ML","reason":"Not established: current Malian official material reviewed does not map an ordinary Bosnia and Herzegovina passport to a visitor route and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"BA","destinationCode":"YT","reason":"Not established: Mayotte has a distinct French overseas entry order, but no directly verified current rule maps this biometric passport to a visitor status.","searchedOfficialDomains":["legifrance.gouv.fr","immigration.interieur.gouv.fr","france-visas.gouv.fr"]},
+    {"passportCode":"BA","destinationCode":"NC","reason":"Not established: New Caledonia has a distinct French overseas entry order, but no directly verified current rule maps this biometric passport to a visitor status.","searchedOfficialDomains":["legifrance.gouv.fr","nouvelle-caledonie.gouv.fr","france-visas.gouv.fr"]},
+    {"passportCode":"BA","destinationCode":"NE","reason":"Not established: current Nigerien official material reviewed does not establish ordinary Bosnia and Herzegovina-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"BA","destinationCode":"KP","reason":"Not established: no current North Korean government or mission source recovered establishes an ordinary Bosnia and Herzegovina-passport visitor route; operational restrictions cannot be normalized.","searchedOfficialDomains":["mfa.gov.kp","dprk.gov.kp"]},
+    {"passportCode":"BA","destinationCode":"MK","reason":"Not established: current North Macedonian official visa guidance reviewed does not directly map this ordinary passport or publish a complete visitor complement.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"BA","destinationCode":"PS","reason":"Not established: current material concerns crossing permits and Israeli controls rather than one Palestine-only ordinary Bosnia and Herzegovina-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","moi.pna.ps","cogat.mod.gov.il"]},
+    {"passportCode":"BA","destinationCode":"RE","reason":"Not established: Réunion's French overseas entry rules are territory-specific and no directly verified current rule maps this biometric passport.","searchedOfficialDomains":["legifrance.gouv.fr","immigration.interieur.gouv.fr","france-visas.gouv.fr"]},
+    {"passportCode":"BA","destinationCode":"ST","reason":"Not established: current São Tomé and Príncipe material reviewed does not establish ordinary Bosnia and Herzegovina-passport eVisa eligibility and actual issuance timing.","searchedOfficialDomains":["mnec.gov.st","migration.gov.st","smf.st"]},
+    {"passportCode":"BA","destinationCode":"SA","reason":"Not established: Saudi public visitor routes do not establish an unconditional ordinary Bosnia and Herzegovina-passport short-visitor classification; package and document-conditioned routes are excluded.","searchedOfficialDomains":["visitsaudi.com","visa.visitsaudi.com","mofa.gov.sa"]},
+    {"passportCode":"BA","destinationCode":"SL","reason":"Not established: current Sierra Leone official material does not safely resolve actual visitor-visa issuance timing for this ordinary passport.","searchedOfficialDomains":["evisa.sl","slid.gov.sl","immigration.gov.sl"]},
+    {"passportCode":"BA","destinationCode":"SB","reason":"Not established: current Solomon Islands official material reviewed does not establish ordinary Bosnia and Herzegovina-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.sb","mfaet.gov.sb"]},
+    {"passportCode":"BA","destinationCode":"SS","reason":"Not established: South Sudan's official portal does not publish a reproducible nationality-specific ordinary Bosnia and Herzegovina-passport result and actual issuance timing.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"BA","destinationCode":"SD","reason":"Not established: current Sudanese official material reviewed does not establish ordinary Bosnia and Herzegovina-passport visitor eligibility and a reliably available issuance route.","searchedOfficialDomains":["mofa.gov.sd","passport.gov.sd"]},
+    {"passportCode":"BA","destinationCode":"SY","reason":"Not established: current Syrian official material reviewed does not establish a reliably available ordinary Bosnia and Herzegovina-passport visitor route and issuance timing.","searchedOfficialDomains":["mofaex.gov.sy","evisa.sy"]},
+    {"passportCode":"BA","destinationCode":"TT","reason":"Not established: current Trinidad and Tobago sources do not map this ordinary passport; the electronic service does not provide a reproducible nationality result and no complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","foreign.gov.tt","ttconnect.gov.tt"]},
+    {"passportCode":"BA","destinationCode":"TN","reason":"Not established: current Tunisian primary material reviewed does not establish the ordinary Bosnia and Herzegovina-passport short-visitor status; bilateral and operational material is not treated as a visa rule.","searchedOfficialDomains":["interieur.gov.tn","diplomatie.gov.tn","econsulat.gov.tn"]},
+    {"passportCode":"BA","destinationCode":"TM","reason":"Not established: current Turkmen primary material reviewed does not establish an unconditional ordinary Bosnia and Herzegovina-passport visitor route; invitation and sponsor conditions cannot be flattened.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"BA","destinationCode":"UA","reason":"Not established: available Ukrainian nationality tables are dated and no current primary source establishes this ordinary Bosnia and Herzegovina-passport short-visitor baseline.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua"]}
+  ]
+}

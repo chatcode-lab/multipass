@@ -3205,4 +3205,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "BA",
+    destinationCode: "GD",
+    status: "visa_on_arrival",
+    reason: "Grenada's current Embassy schedule assigns Bosnia and Herzegovina to Port of Entry and defines that treatment as a visa granted on arrival.",
+    sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "BA",
+    destinationCode: "DO",
+    status: "visa_required",
+    reason: "The Dominican Republic's current official Tourist Card guidance expressly requires Bosnia and Herzegovina tourists to obtain a visa at a Dominican mission.",
+    sourceUrl: "https://dgii.gov.do/sobretarjetaturista/Paginas/default.aspx",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "MK",
+    destinationCode: "GD",
+    status: "visa_on_arrival",
+    reason: "Grenada's current Embassy schedule assigns North Macedonia to Port of Entry and defines that treatment as a visa granted on arrival.",
+    sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
