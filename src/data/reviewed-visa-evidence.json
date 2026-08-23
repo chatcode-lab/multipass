@@ -455,7 +455,11 @@
     "australia-final-outbound-gaps-2026",
     "singapore-final-outbound-gaps-2026",
     "turkiye-final-outbound-gaps-2026",
-    "china-final-outbound-gaps-2026"
+    "china-final-outbound-gaps-2026",
+    "estonia-final-outbound-gaps-2026",
+    "moldova-final-outbound-gaps-2026",
+    "guinea-final-outbound-gaps-2026",
+    "andorra-final-outbound-gaps-2026"
   ],
   "sources": [
     {
@@ -21905,6 +21909,36 @@
       "publisher": "Equatorial Guinea eVisa service",
       "jurisdiction": "Republic of Equatorial Guinea",
       "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-23"
+    },
+    {
+      "id": "jordan-tourism-board-estonia-arrival-visa-2026",
+      "title": "Visas To Jordan",
+      "url": "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23"
+    },
+    {
+      "id": "panama-embassy-guinea-authorized-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "Spanish and English",
+      "reviewedAt": "2026-08-23"
+    },
+    {
+      "id": "jordan-tourism-board-andorra-arrival-visa-2026",
+      "title": "Visas To Jordan",
+      "url": "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
       "language": "English",
       "reviewedAt": "2026-08-23"
     }
@@ -83095,6 +83129,76 @@
           "Present the same passport and eVisa for final immigration processing and admission."
         ]
       }
+    },
+    {
+      "id": "estonian-ordinary-passport-jordan-arrival-visa-2026",
+      "title": "Estonian ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official Tourism Board table expressly makes a visa available to Estonian nationals on arrival for 40 JOD.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "EE"
+      ],
+      "conditions": [
+        "The listed visa is obtained on arrival and costs 40 JOD.",
+        "Jordan's table says all non-Jordanians must register on Gateway2Jordan before departure for a QR code.",
+        "Work, residence, special travel documents, entry-point limits, carrier checks and final admission remain separate."
+      ],
+      "sourceIds": [
+        "jordan-tourism-board-estonia-arrival-visa-2026"
+      ]
+    },
+    {
+      "id": "guinean-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Guinean ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule expressly includes Guinea in its authorized-visa cohort, requiring consular filing and approval before travel unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "PA"
+      ],
+      "passportCodes": [
+        "GN"
+      ],
+      "conditions": [
+        "Applies to an ordinary Guinean passport holder travelling as a short visitor who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Authorized-visa applicants must appear in person at the consulate; approval may take up to 60 business days.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "panama-embassy-guinea-authorized-visa-2026"
+      ],
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on verification and document completion.",
+        "steps": [
+          "Determine that the separate third-country visa or residence waiver does not apply.",
+          "Appear in person at the competent Panamanian consulate with the required authorized-visa documents.",
+          "Do not finalize travel arrangements until the authorized visa has been granted."
+        ]
+      }
+    },
+    {
+      "id": "andorran-ordinary-passport-jordan-arrival-visa-2026",
+      "title": "Andorran ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official Tourism Board table expressly makes a visa available to Andorran nationals on arrival for 40 JOD.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "AD"
+      ],
+      "conditions": [
+        "The listed visa is obtained on arrival and costs 40 JOD.",
+        "Jordan's table says all non-Jordanians must register on Gateway2Jordan before departure for a QR code.",
+        "Work, residence, special travel documents, entry-point limits, carrier checks and final admission remain separate."
+      ],
+      "sourceIds": [
+        "jordan-tourism-board-andorra-arrival-visa-2026"
+      ]
     }
   ]
 }

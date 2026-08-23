@@ -1890,6 +1890,14 @@ Türkiye adds Equatorial Guinea `evisa`, correcting the unsupported fallback `vi
 
 Australia, Singapore and China add no normalized relationship. Their 61 audited rows remain held where current official sources are stale, conditional, portal-only, internally conflicting, route-specific or do not establish both ordinary-passport eligibility and actual issuance timing. China's final 23-row cohort exactly rechecks the unresolved relationships from its 22 August currentness audit; Macao and Taiwan remain document-and-permit regimes rather than ordinary foreign-passport visitor statuses.
 
+## Pass 197 result: final Estonian, Moldovan, Guinean and Andorran outbound gaps
+
+Four independently reviewed audits add three currently supported relationships, raising complete-matrix evidence from 38,628 to 38,631 of 44,974 relationships (85.9%). The public `/status` matrix contains 38,631 fresh and 6,343 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 460 reviewed batches, 2,148 official sources and 1,407 policies. Regional coverage is Africa 8,445 of 11,289 (74.8%), the Americas 4,700 of 4,953 (94.9%), the Caribbean 4,509 of 4,962 (90.9%), Asia 5,312 of 6,336 (83.8%), Europe 9,979 of 10,299 (96.9%), the Middle East 1,818 of 2,970 (61.2%) and Oceania 3,868 of 4,165 (92.9%).
+
+Estonia and Andorra add Jordan `visa_on_arrival`. Jordan's live official Tourism Board nationality table expressly names each country, the 40-JOD arrival route and mandatory pre-departure Gateway2Jordan QR registration. Both policies remain medium confidence because the live table is undated. Guinea adds Panama `visa_required`: Panama's current official Embassy schedule directly names Guinea in the authorized-visa cohort, with personal consular filing and approval that may take up to 60 business days.
+
+Moldova adds no normalized relationship. Its 24-row final cohort exactly confirms the later residual audit: French-overseas waivers depend on biometric passports, Nicaragua's current official categories conflict, several routes depend on residence or third-country documents, and North Korea and Palestine remain operationally or route-specific. Andorra's Guatemala row likewise remains unresolved because Guatemala's current Foreign Ministry schedule places Andorra in both Category A and Category B.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
