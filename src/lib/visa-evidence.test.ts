@@ -920,7 +920,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "BT", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BT", "BT", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("BD")).toHaveLength(50);
+    expect(pairsFor("BD")).toHaveLength(51);
     expect(getVisaRelationshipEvidence("EG", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -3281,7 +3281,7 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("closes supportable Portuguese, Mexican, Russian, and Romanian final gaps conservatively", () => {
+  it("closes supportable Portuguese, Mexican, Russian, Romanian, and Swiss final gaps conservatively", () => {
     for (const [passportCode, destinationCode, status] of [
       ["MX", "BD", "visa_required"],
       ["MX", "TD", "visa_required"],
@@ -3300,6 +3300,7 @@ describe("official visa evidence", () => {
       ["RO", "BD", "visa_on_arrival"],
       ["RO", "JO", "visa_on_arrival"],
       ["RO", "PA", "visa_free"],
+      ["CH", "BD", "visa_on_arrival"],
     ] as const) {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
       expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
@@ -3311,6 +3312,9 @@ describe("official visa evidence", () => {
       ["RU", "DJ"],
       ["RU", "SS"],
       ["RO", "DO"],
+      ["RW", "JO"],
+      ["MY", "JO"],
+      ["KR", "UA"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(

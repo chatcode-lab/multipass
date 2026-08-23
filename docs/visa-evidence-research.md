@@ -1842,6 +1842,14 @@ Romania adds Bangladesh and Jordan as `visa_on_arrival`, plus Panama `visa_free`
 
 Portugal adds no normalized relationship. All twenty-five final gaps remain uncovered where official portals do not establish Portuguese-passport eligibility, Liberia's arrival route depends on embassy availability, Palestine is route-specific, or the only accessible Ukraine nationality table is expressly dated 2023.
 
+## Pass 191 result: final Rwandan, Swiss, Malaysian and South Korean outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add one current relationship, raising complete-matrix coverage from 38,592 to 38,593 of 44,974 relationships (85.8%). The public `/status` matrix contains 38,593 fresh and 6,381 not-covered rows, with zero old or stale rows as of 23 August 2026. Regional coverage is Asia 5,308 of 6,336 (83.8%), Europe 9,972 of 10,299 (96.8%), Africa 8,438 of 11,289 (74.7%), Oceania 3,868 of 4,165 (92.9%), the Caribbean 4,506 of 4,962 (90.8%), the Americas 4,694 of 4,953 (94.8%) and the Middle East 1,807 of 2,970 (60.8%). Canonical evidence contains 436 reviewed batches, 2,093 official sources and 1,369 policies.
+
+Switzerland adds Bangladesh `visa_on_arrival`. Independent review rejected the initial hold because Bangladesh Police's live Special Branch guidance expressly covers tourists from European countries, making Switzerland part of a positive geographic cohort rather than an omission-based inference. The policy preserves Dhaka-airport, 30-day, single-entry, documentary and immigration-officer conditions.
+
+Rwanda, Malaysia and South Korea add no normalized relationships. Rwanda's undated DGIE table conflicts with or is weaker than current destination evidence. Malaysia's remaining routes depend on stale schedules, unnamed nationality cohorts, conditional documents or generic portals. South Korea's Ukraine page combines a 90-day visa waiver with an operative Korean travel prohibition that the taxonomy cannot represent safely; its other hard-tail portals do not publish Republic of Korea passport eligibility. These 76 relationships remain uncovered rather than being forced into misleading labels.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
