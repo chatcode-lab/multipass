@@ -1830,6 +1830,18 @@ Poland's live Odyseusz Foreign Ministry API, with the cited country profiles upd
 
 Bangladesh remains unresolved for both Bulgarian and Polish passports. Current Bulgarian and Polish Foreign Ministry guidance directs travellers to pre-issued mission visas, while Bangladesh Police's live Special Branch service says tourists from European countries may obtain a visa on arrival at Dhaka. Afghanistan likewise remains held for Poland: a prior-visa obligation without a currently usable ordinary-tourist issuance channel is not enough to normalize the relationship.
 
+## Pass 190 result: final Portuguese, Mexican, Russian and Romanian outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add seventeen current relationships, raising complete-matrix coverage from 38,575 to 38,592 of 44,974 relationships (85.8%). The public `/status` matrix contains 38,592 fresh and 6,382 not-covered rows, with zero old or stale rows as of 23 August 2026. Regional coverage is Asia 5,307 of 6,336 (83.8%), Europe 9,972 of 10,299 (96.8%), Africa 8,438 of 11,289 (74.7%), Oceania 3,868 of 4,165 (92.9%), the Caribbean 4,506 of 4,962 (90.8%), the Americas 4,694 of 4,953 (94.8%) and the Middle East 1,807 of 2,970 (60.8%). Canonical evidence contains 432 reviewed batches, 2,090 official sources and 1,368 policies.
+
+Mexico's current Foreign Ministry guidance adds advance visas for Bangladesh, Chad and Sudan, plus Comoros `visa_on_arrival`. Bangladesh corrects fallback `evisa` to `visa_required`: the Mexican guidance directs visitors to the embassy and does not establish electronic issuance.
+
+Russia adds Burkina Faso `evisa`, Comoros `visa_on_arrival`, and advance visa routes for the Central African Republic, Chad, the Republic of the Congo, Liberia, Mali, Niger, North Macedonia and Sudan. Independent review removed proposed Djibouti and South Sudan rows. Djibouti's 2021 wording describes eVisas for foreigners without proving Russian-passport eligibility, while the South Sudan page is demonstrably stale and predates the current eVisa service; the current portals alone do not establish the missing nationality mappings.
+
+Romania adds Bangladesh and Jordan as `visa_on_arrival`, plus Panama `visa_free`. Bangladesh Police expressly covers tourists from European countries; Jordan's official tourism-board table directly names Romania; and Panama's embassy names Romania in its no-visa schedule. The Panama policy remains medium confidence because the live schedule has no visible update date. The Dominican Republic remains unresolved because DGII's visa-required list and MIREX's ordinary-passport selector directly contradict one another.
+
+Portugal adds no normalized relationship. All twenty-five final gaps remain uncovered where official portals do not establish Portuguese-passport eligibility, Liberia's arrival route depends on embassy availability, Palestine is route-specific, or the only accessible Ukraine nationality table is expressly dated 2023.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

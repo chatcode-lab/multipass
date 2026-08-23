@@ -1,0 +1,250 @@
+{
+  "batchId": "mexico-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "mexico-sre-bangladesh-advance-visa-2026",
+      "title": "Bangladesh",
+      "url": "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/283-bangladesh",
+      "publisher": "Secretariat of Foreign Affairs of Mexico",
+      "jurisdiction": "Mexico / Bangladesh",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Mexico's live official traveler guidance expressly addresses Mexican nationals and directs their visa request to Bangladesh's embassy in Mexico.",
+      "supportingExcerpt": "Las personas mexicanas SÍ necesitan visa para viajar a Bangladesh."
+    },
+    {
+      "id": "mexico-sre-chad-advance-visa-2026",
+      "title": "Chad",
+      "url": "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/297-chad",
+      "publisher": "Secretariat of Foreign Affairs of Mexico",
+      "jurisdiction": "Mexico / Chad",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Mexico's live official traveler guidance expressly maps Mexican citizens to a visa obtained at Chad's nearest diplomatic or consular representation.",
+      "supportingExcerpt": "La visa debe ser tramitada en la representación diplomática o consular de Chad más cercana."
+    },
+    {
+      "id": "mexico-sre-comoros-arrival-visa-2026",
+      "title": "Comoros",
+      "url": "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/300-comoras",
+      "publisher": "Secretariat of Foreign Affairs of Mexico",
+      "jurisdiction": "Mexico / Comoros",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Mexico's live official traveler guidance expressly states that Mexican nationals obtain the visitor visa on arrival at the entry port.",
+      "supportingExcerpt": "Las personas mexicanas requieren visa para viajar a Comoras y se puede tramitar al arribar al puerto de entrada."
+    },
+    {
+      "id": "mexico-sre-sudan-advance-visa-2026",
+      "title": "Sudan",
+      "url": "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/422-sudan",
+      "publisher": "Secretariat of Foreign Affairs of Mexico",
+      "jurisdiction": "Mexico / Sudan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Mexico's live official traveler guidance expressly maps Mexican citizens to a Sudanese diplomatic or consular application route.",
+      "supportingExcerpt": "La visa debe ser tramitada en la representación diplomática o consular sudanesa más cercana."
+    }
+  ],
+  "policies": [
+    {
+      "id": "mexican-ordinary-passport-bangladesh-advance-visa-2026",
+      "title": "Mexican ordinary passports: Bangladesh advance visitor visa",
+      "summary": "Mexico's current traveler guidance directs Mexican visitors to Bangladesh's embassy for visa processing.",
+      "status": "visa_required",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["MX"],
+      "conditions": [
+        "Ordinary Mexican-passport visitor travel; Bangladesh's embassy determines the visa category and duration.",
+        "Final admission remains a decision of Bangladeshi authorities."
+      ],
+      "sourceIds": ["mexico-sre-bangladesh-advance-visa-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "mexican-ordinary-passport-chad-advance-visa-2026",
+      "title": "Mexican ordinary passports: Chad advance visitor visa",
+      "summary": "Mexico's current traveler guidance requires Mexican visitors to apply at Chad's nearest diplomatic or consular representation.",
+      "status": "visa_required",
+      "destinationCodes": ["TD"],
+      "passportCodes": ["MX"],
+      "conditions": [
+        "Ordinary Mexican-passport visitor travel; the visa is obtained through a Chadian diplomatic or consular representation.",
+        "Registration with the National Police is required within three days after entry."
+      ],
+      "sourceIds": ["mexico-sre-chad-advance-visa-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "mexican-ordinary-passport-comoros-arrival-visa-2026",
+      "title": "Mexican ordinary passports: Comoros visitor visa on arrival",
+      "summary": "Mexico's current traveler guidance says Mexican visitors request the visa at Comoros' entry port.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["KM"],
+      "passportCodes": ["MX"],
+      "conditions": [
+        "Ordinary Mexican-passport visitor travel; the visa is requested at the entry port for up to 45 days.",
+        "A return ticket and hotel reservation are required for the arrival-visa request."
+      ],
+      "sourceIds": ["mexico-sre-comoros-arrival-visa-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "mexican-ordinary-passport-sudan-advance-visa-2026",
+      "title": "Mexican ordinary passports: Sudan advance visitor visa",
+      "summary": "Mexico's current traveler guidance requires Mexican visitors to apply at the nearest Sudanese diplomatic or consular representation.",
+      "status": "visa_required",
+      "destinationCodes": ["SD"],
+      "passportCodes": ["MX"],
+      "conditions": [
+        "Ordinary Mexican-passport visitor travel; the visa is obtained through a Sudanese diplomatic or consular representation.",
+        "A passport with Israeli entry or exit stamps is refused a Sudanese visa or entry."
+      ],
+      "sourceIds": ["mexico-sre-sudan-advance-visa-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MX",
+      "destinationCode": "BD",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Current Mexican government guidance directs Mexican visitors to Bangladesh's embassy for visa processing, rather than documenting a pre-travel electronically issued visitor visa.",
+      "sourceIds": ["mexico-sre-bangladesh-advance-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MX",
+      "destinationCode": "AF",
+      "reason": "Current Mexican guidance names a consular requirement but does not establish a working ordinary-tourist issuance channel under Afghanistan's de facto authorities.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "VG",
+      "reason": "No retrievable current operative BVI authority source directly establishes the ordinary Mexican-passport short-visitor exemption.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "bvi.gov.vg"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "BF",
+      "reason": "No retrievable current Burkina Faso authority source positively establishes ordinary Mexican-passport electronic visitor eligibility and actual issuance.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "diplomatie.gov.bf", "visaburkina.bf"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "CF",
+      "reason": "No retrievable current official source establishes the ordinary Mexican-passport visitor route and actual issuance timing for the Central African Republic.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "diplomatie.gouv.cf"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "CG",
+      "reason": "No retrievable current Republic of the Congo authority source establishes the ordinary Mexican visitor route and actual issuance timing.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "diplomatie.gouv.cg"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "CI",
+      "reason": "No retrievable current Ivorian authority source positively establishes ordinary Mexican-passport eligibility and actual issuance timing; online pre-enrolment alone is insufficient.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "diplomatie.gouv.ci", "snedai.com"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "DJ",
+      "reason": "No retrievable current Djiboutian authority source directly establishes ordinary Mexican-passport arrival issuance; an electronic portal does not prove that fallback status.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "evisa.gouv.dj", "diplomatie.gouv.dj"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "GW",
+      "reason": "No retrievable current Guinea-Bissau authority source directly establishes ordinary Mexican-passport arrival issuance.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mne.gw", "gov.gw"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "IQ",
+      "reason": "No retrievable current Iraqi authority source establishes the ordinary Mexican-passport visitor route and actual issuance timing.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mofa.gov.iq", "evisa.iq"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "KW",
+      "reason": "Current Mexican guidance records an advance visa requirement but also says Kuwaiti embassies are not issuing visas; operational unavailability is not normalized as a normal visitor route.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "moi.gov.kw", "e.gov.kw"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "LR",
+      "reason": "No current Liberian authority source positively establishes an unconditional ordinary Mexican-passport electronic visitor route and actual issuance.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mofa.gov.lr", "immigration.gov.lr"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "ML",
+      "reason": "No retrievable current Malian authority source establishes the ordinary Mexican-passport visitor route and actual issuance timing.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "diplomatie.gouv.ml"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "NE",
+      "reason": "No retrievable current Nigerien authority source establishes the ordinary Mexican-passport visitor route and actual issuance timing.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "diplomatie.gouv.ne"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "KP",
+      "reason": "No retrievable current official source establishes a normal ordinary Mexican-passport visitor route; access restrictions are not a taxonomy outcome.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mfa.gov.kp"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "PS",
+      "reason": "Crossing-specific Israeli controls and permits do not establish a Palestine-only ordinary Mexican-passport ETA baseline.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "gov.il", "cogat.mod.gov.il", "mofa.pna.ps"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "ST",
+      "reason": "The retrievable Mexican traveler page is not current enough to resolve whether the ordinary visitor route is mission-issued or electronic in 2026.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mnec.gov.st", "evisa.st"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "SL",
+      "reason": "No independent pair-specific current guidance resolves Sierra Leone's internally conflicting electronic-versus-border issuance descriptions for Mexican visitors.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "slid.gov.sl", "evisa.sl"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "SB",
+      "reason": "The current Mexican guide says a visa is needed but does not establish actual pre-arrival or border issuance timing for an ordinary passport.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "immigration.gov.sb", "immigration.sig.gov.sb"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "SS",
+      "reason": "No retrievable current South Sudan authority source positively establishes ordinary Mexican-passport electronic visitor eligibility and actual issuance.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mofaic.gov.ss", "evisa.gov.ss"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "SY",
+      "reason": "No retrievable current Syrian authority source authenticates ordinary Mexican-passport electronic visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "mofaex.gov.sy", "evisa.sy"]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "TM",
+      "reason": "No retrievable current official source establishes an unconditional ordinary Mexican-passport visitor route; invitation and preapproval routes are outside the baseline.",
+      "searchedOfficialDomains": ["portales.sre.gob.mx", "migration.gov.tm", "tmembassy.gov.tm"]
+    }
+  ]
+}

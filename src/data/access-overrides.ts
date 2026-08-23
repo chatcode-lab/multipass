@@ -3365,4 +3365,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://odyseusz.gov.pl/api/v1/informacje/profile-panstw/CI",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "MX",
+    destinationCode: "BD",
+    status: "visa_required",
+    reason: "Mexico's current Foreign Ministry traveler guidance directs Mexican visitors to obtain Bangladesh's visa through its embassy rather than through a pre-travel electronic issuance route.",
+    sourceUrl: "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/283-bangladesh",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

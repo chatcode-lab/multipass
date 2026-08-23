@@ -1,0 +1,119 @@
+{
+  "batchId": "romania-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "bangladesh-special-branch-european-tourist-voa-2026",
+      "title": "Visa on Arrival in Bangladesh",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-info.html",
+      "publisher": "Special Branch, Bangladesh Police",
+      "jurisdiction": "Bangladesh",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Special Branch immigration page sets the current categories, conditions, duration and entry point for Bangladesh visa on arrival, expressly including tourists from European countries.",
+      "supportingExcerpt": "People from the following categories in European countries may obtain a Visa on Arrival ... Tourists"
+    },
+    {
+      "id": "jordan-tourism-board-romania-voa-2026",
+      "title": "Visas to Jordan: Romania",
+      "url": "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live national tourism-board visa table names Romania and states that a visa can be obtained on arrival for 40 JOD.",
+      "supportingExcerpt": "Romania Applicable Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    },
+    {
+      "id": "panama-embassy-romania-visa-free-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live official embassy visitor schedule names Romania under its no-visa-required cohort and states a three-month maximum stay.",
+      "supportingExcerpt": "No Visa RequireD: IF you are from any of the following countries ... Romania"
+    }
+  ],
+  "policies": [
+    {
+      "id": "romanian-ordinary-passport-bangladesh-visitor-voa",
+      "title": "Romanian ordinary passports: Bangladesh visa on arrival",
+      "summary": "Bangladesh Police Special Branch states that tourists from European countries may obtain a visa on arrival at Hazrat Shahjalal International Airport in Dhaka.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["RO"],
+      "conditions": [
+        "Applies to Romanian ordinary-passport tourists as members of the page's European-country category, for arrival at Hazrat Shahjalal International Airport in Dhaka.",
+        "The visa is a single-entry visa for no more than 30 days and is issued only after the immigration officer reviews the required documents and compliance.",
+        "Applicants must meet the stated passport, return-ticket, funds and fee requirements and should use the same port for entry and departure.",
+        "This policy does not cover prohibited-country cases, work, residence, study, transit, diplomatic or official passports, special travel documents, or final admission."
+      ],
+      "sourceIds": ["bangladesh-special-branch-european-tourist-voa-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "romanian-ordinary-passport-jordan-visitor-voa",
+      "title": "Romanian ordinary passports: Jordan visa on arrival",
+      "summary": "Jordan's current national tourism-board table specifically states that Romanian visitors can obtain a visa on arrival for 40 JOD.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["RO"],
+      "conditions": [
+        "Applies to the ordinary Romanian visitor baseline represented by the tourism board's nationality table.",
+        "The tourism board requires travelers to register through Gateway2Jordan before departure and present the issued QR code at check-in and boarding.",
+        "The listed arrival visa costs 40 JOD; passport validity, purpose, border-point availability, security screening and final admission remain applicable.",
+        "This policy does not establish work, residence, study, transit, diplomatic, official, service or special-document treatment."
+      ],
+      "sourceIds": ["jordan-tourism-board-romania-voa-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "romanian-ordinary-passport-panama-visitor-waiver",
+      "title": "Romanian ordinary passports: Panama visa-free visits",
+      "summary": "Panama's current embassy visitor schedule expressly places Romania in its no-visa-required cohort for stays of up to three months.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["RO"],
+      "conditions": [
+        "Applies to an ordinary Romanian passport for the short tourist treatment in the embassy's no-visa-required schedule, for up to three months.",
+        "The embassy separately advises at least three months of passport validity, a round-trip ticket and proof of economic solvency; border screening and final admission remain applicable.",
+        "This policy does not establish work, residence, study, transit, diplomatic, official, service or special-document treatment."
+      ],
+      "sourceIds": ["panama-embassy-romania-visa-free-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"RO","destinationCode":"AF","reason":"No current Romanian or Afghan authority source establishes a usable ordinary Romanian-passport visitor issuance route; operational restrictions are not a normalized status.","searchedOfficialDomains":["mae.ro","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"RO","destinationCode":"BW","reason":"Botswana's current government guidance describes exemptions generically but does not publish a retrievable current schedule establishing ordinary Romanian-passport treatment.","searchedOfficialDomains":["mae.ro","gov.bw","mir.gov.bw"]},
+    {"passportCode":"RO","destinationCode":"VG","reason":"No current British Virgin Islands authority schedule establishes ordinary Romanian-passport visitor treatment; conditional third-country-document routes are excluded.","searchedOfficialDomains":["mae.ro","bvi.gov.vg","gov.vg","laws.gov.vg"]},
+    {"passportCode":"RO","destinationCode":"BF","reason":"Burkina Faso's electronic service does not publish current Romanian ordinary-passport eligibility or an exemption crosswalk. Portal availability does not prove this pair.","searchedOfficialDomains":["mae.ro","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"RO","destinationCode":"CF","reason":"No current Romanian or Central African authority source maps an ordinary Romanian passport to a short-visitor mission, electronic or border issuance route.","searchedOfficialDomains":["mae.ro","diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"RO","destinationCode":"TD","reason":"Chad's eVisa service is not independently authenticated by a retrievable current central-government source and does not safely establish Romanian visitor issuance.","searchedOfficialDomains":["mae.ro","evisa.td","diplomatie.gouv.td","securite.gouv.td"]},
+    {"passportCode":"RO","destinationCode":"KM","reason":"Current Comorian material does not publish a nationality schedule establishing ordinary Romanian-passport advance, electronic or arrival issuance.","searchedOfficialDomains":["mae.ro","justice.gouv.km","gouv.km"]},
+    {"passportCode":"RO","destinationCode":"CG","reason":"No current Romanian or Republic of the Congo authority source establishes ordinary Romanian-passport visitor treatment and actual issuance timing.","searchedOfficialDomains":["mae.ro","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"RO","destinationCode":"CI","reason":"Cote d'Ivoire's airport-printing workflow does not establish whether an ordinary Romanian passport is subject to it; no exemption complement is inferred.","searchedOfficialDomains":["mae.ro","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"RO","destinationCode":"DJ","reason":"Djibouti's current state e-government page proves electronic issuance generally but supplies no Romanian ordinary-passport eligibility schedule.","searchedOfficialDomains":["mae.ro","egouv.dj","evisa.gouv.dj"]},
+    {"passportCode":"RO","destinationCode":"DO","reason":"DGII includes Romania in its visa-required list, while the live MIREX ordinary-passport tourist selector says no visa under Decree 690-07. No current primary instrument reconciles the conflict.","searchedOfficialDomains":["mae.ro","dgii.gov.do","mirex.gob.do","consultas.mirex.gob.do"]},
+    {"passportCode":"RO","destinationCode":"GW","reason":"No current Romanian or Guinea-Bissau authority source establishes whether ordinary Romanian visitors receive a mission, electronic or border-issued visa.","searchedOfficialDomains":["mae.ro","mne.gw","gov.gw"]},
+    {"passportCode":"RO","destinationCode":"IR","reason":"Current Iranian electronic services do not provide a usable Romanian-nationality result; generic airport and application wording is not an arrival-visa baseline.","searchedOfficialDomains":["mae.ro","mfa.gov.ir","evisa.mfa.ir"]},
+    {"passportCode":"RO","destinationCode":"IQ","reason":"Current federal Iraqi electronic services do not publish Romanian eligibility or one issuance route; Kurdistan Region rules are not an Iraq-wide baseline.","searchedOfficialDomains":["mae.ro","moi.gov.iq","evisa.iq"]},
+    {"passportCode":"RO","destinationCode":"LR","reason":"Liberia's arrival route depends on embassy availability, so it does not establish a passport-wide Romanian baseline.","searchedOfficialDomains":["mae.ro","lis.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"RO","destinationCode":"ML","reason":"No current Romanian or Malian authority source establishes ordinary Romanian-passport visitor treatment and actual issuance timing.","searchedOfficialDomains":["mae.ro","diplomatiemdc.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"RO","destinationCode":"NE","reason":"No current Romanian or Nigerien authority source maps ordinary Romanian visitors to one unconditional issuance route; no complement is inferred from exceptions.","searchedOfficialDomains":["mae.ro","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"RO","destinationCode":"KP","reason":"No current official source establishes an available ordinary Romanian short-visitor route and issuance timing for North Korea; permissions are not a normalized status.","searchedOfficialDomains":["mae.ro","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"RO","destinationCode":"PS","reason":"Palestinian access depends on Israeli-controlled crossings, permits, identity records and route-specific conditions. No current source establishes a Palestine-wide Romanian-passport status.","searchedOfficialDomains":["mae.ro","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"RO","destinationCode":"SL","reason":"Sierra Leone's official service describes online approval and issuance at arrival, while other current material is inconsistent; one Romanian route cannot be normalized.","searchedOfficialDomains":["mae.ro","evisa.sl","slid.gov.sl","ntb.gov.sl"]},
+    {"passportCode":"RO","destinationCode":"SS","reason":"South Sudan's government portal proves pre-travel PDF issuance but does not publish current Romanian ordinary-passport eligibility; portal availability alone is insufficient.","searchedOfficialDomains":["mae.ro","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"RO","destinationCode":"SD","reason":"No current Romanian or Sudanese authority source establishes ordinary Romanian-passport visitor eligibility and actual issuance timing amid disrupted operations.","searchedOfficialDomains":["mae.ro","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"RO","destinationCode":"SY","reason":"No current Romanian or Syrian authority source establishes ordinary Romanian-passport visitor eligibility and actual electronic or mission issuance timing.","searchedOfficialDomains":["mae.ro","mofaex.gov.sy","moi.gov.sy","evisa.sy"]},
+    {"passportCode":"RO","destinationCode":"TN","reason":"No current Tunisian or Romanian authority source establishes an ordinary Romanian-passport short-visitor exemption and conditions.","searchedOfficialDomains":["mae.ro","diplomatie.gov.tn","econsulat.tn"]},
+    {"passportCode":"RO","destinationCode":"UA","reason":"Ukraine MFA's accessible Romania table is expressly dated 2023; no current Romanian or Ukrainian authority source establishes the 2026 ordinary Romanian-passport route.","searchedOfficialDomains":["mae.ro","mfa.gov.ua","dpsu.gov.ua"]}
+  ]
+}
