@@ -1,0 +1,154 @@
+{
+  "batchId": "bhutan-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page says visa requirements depend on citizenship and actively links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-bhutan-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy visitor page actively links this April 2024 country-by-country visa schedule, which defines its prior-to-arrival category.",
+      "supportingExcerpt": "Bhutan Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-bhutan-visa-free-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy of Panama consular page publishes its named no-visa-required cohort and directly includes Bhutan.",
+      "supportingExcerpt": "No Visa Required ... Bhutan"
+    },
+    {
+      "id": "jordan-tourism-bhutan-advance-visa-table-2026",
+      "title": "Visas to Jordan: nationality table",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live visitjordan.com nationality table identifies itself as the official Jordan Tourism Board site and gives country-specific visitor-visa procedures.",
+      "supportingExcerpt": "Bhutan | Not-Applicable | contact with the closest Jordanian Embassy ... obtain a visa before you arrive."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bhutanese-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Bhutanese ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's actively linked April 2024 Embassy schedule places Bhutan in its Prior to Arrival visa category.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["BT"],
+      "conditions": [
+        "Applies to an ordinary Bhutanese passport holder visiting Grenada; the schedule defines 'Prior To Arrival' as a visa obtained at a Grenada mission or consulate before travel.",
+        "The Embassy's live visitor page confirms requirements depend on citizenship; work, study, residence, diplomatic, official, service and special-document treatment remain outside scope.",
+        "Admission remains subject to Grenada immigration control and the requirements of the competent mission or consulate."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-bhutan-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "bhutanese-ordinary-passport-panama-visa-free-2026",
+      "title": "Bhutanese ordinary passports: Panama visa-free short visits",
+      "summary": "Panama's live Embassy schedule expressly includes Bhutan in its no-visa-required cohort for short visitor stays.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["BT"],
+      "conditions": [
+        "Applies to an ordinary Bhutanese passport holder travelling to Panama as a short visitor; the Embassy states a maximum stay of three months for this cohort.",
+        "Passport validity, return travel, means of support, carrier checks and final admission remain separately required.",
+        "Work, residence, transit, diplomatic, official, special documents and other non-visitor purposes remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-bhutan-visa-free-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "bhutanese-ordinary-passport-jordan-advance-visitor-visa-2026",
+      "title": "Bhutanese ordinary passports: Jordan advance visitor visa",
+      "summary": "Jordan's live Tourism Board nationality table expressly marks Bhutan ineligible for an arrival visa and directs travellers to obtain a visa from an embassy before arrival.",
+      "status": "visa_required",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["BT"],
+      "conditions": [
+        "Applies to an ordinary Bhutanese passport holder travelling to Jordan as a short visitor.",
+        "The official table directs Bhutanese visitors to contact the nearest Jordanian Embassy and obtain the visa before arrival.",
+        "Work, residence, transit, special documents, carrier checks, border-crossing limits and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-bhutan-advance-visa-table-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+        "label": "Jordan Tourism Board visa requirements",
+        "steps": [
+          "Contact the competent Jordanian Embassy before travel.",
+          "Obtain the visitor visa before departure and carry the required supporting documents."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BT",
+      "destinationCode": "JO",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "The fallback says visa on arrival, while Jordan's live official nationality table marks Bhutan not applicable for arrival issuance and requires an embassy visa before arrival.",
+      "sourceIds": ["jordan-tourism-bhutan-advance-visa-table-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"BT","destinationCode":"AF","reason":"No current Afghan or Bhutanese primary source establishes a stable usable ordinary Bhutanese-passport visitor route amid restricted operational access.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"AO","reason":"Angola's current official material does not establish ordinary Bhutanese visitor eligibility and actual issuance timing.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"BD","reason":"Bangladesh's current official material does not establish whether ordinary Bhutanese visitors are exempt, required to use a mission route, or eligible for arrival issuance; no complement is inferred.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","immi.gov.bd","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"BF","reason":"Burkina Faso's current eVisa service proves electronic issuance for eligible applicants but gives no current ordinary Bhutanese-passport eligibility or exemption result.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"CF","reason":"No current Central African or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TD","reason":"Chad's current eVisa page lists named visa-exempt countries and online applications but does not establish every unlisted ordinary passport's eligibility or issuance route. No complement is inferred.","searchedOfficialDomains":["evisa.td","journalofficiel.gouv.td","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Bhutanese passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"CG","reason":"No current Republic of the Congo or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"CI","reason":"Côte d'Ivoire's recognised SNEDAI process describes pre-enrolment and airport biometric visa printing but does not establish the ordinary Bhutanese nationality baseline. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"DJ","reason":"Djibouti's current official material proves electronic-visa processing but does not map an ordinary Bhutanese passport to eligibility, exemption or an arrival-issued route.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"GW","reason":"No current Guinea-Bissau or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and actual arrival-visa timing.","searchedOfficialDomains":["mne.gw","gov.gw","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Bhutanese-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Bhutanese-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Bhutanese-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"LR","reason":"Liberia's Visa on Arrival workflow is residence and mission dependent, not a passport-only route; no current Bhutanese nationality schedule resolves the baseline.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"ML","reason":"No current direct, reconcilable Malian nationality schedule establishes ordinary Bhutanese-passport visa-free, electronic, arrival or advance-visa treatment.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"MH","reason":"Marshall Islands' live official pages do not publish a current complete nationality schedule; no source establishes the ordinary Bhutanese visitor route and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","immigration.gov.mh","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"NE","reason":"Niger's current foreign-entry rule preserves unenumerated bilateral and community exemptions; no current Bhutanese ordinary-passport complement is published.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"KP","reason":"No current DPRK or Bhutanese primary source establishes a usable ordinary Bhutanese-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"MK","reason":"North Macedonia's nationality checker was not reproducibly readable during independent review; the generic procedure alone cannot establish current Bhutanese eligibility.","searchedOfficialDomains":["mfa.gov.mk","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Bhutanese-passport route; residence and qualifying third-country-document programmes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Bhutanese-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"ST","reason":"São Tomé and Príncipe's documented exception depends on a valid Schengen or United States visa and a short stay; that document-conditioned route is not an unconditional nationality baseline.","searchedOfficialDomains":["smf.st","mne.gov.st","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SA","reason":"Saudi Arabia's current official visitor material does not positively establish an unconditional ordinary Bhutanese-passport route and actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SL","reason":"Sierra Leone's live official material conflicts between emailed eVisa issuance and visa issuance at the airport or border. No current source resolves actual issuance timing for Bhutan.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SB","reason":"No current Solomon Islands authority directly maps this ordinary passport to an unconditional short-tourist status. No complement is inferred from omission, permits or special arrangements.","searchedOfficialDomains":["solomons.gov.sb","immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"BT","destinationCode":"SS","reason":"South Sudan's current table says a visa is needed but does not establish whether an ordinary Bhutanese visitor receives eVisa, visa on arrival or an advance visa.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SD","reason":"Sudan Passport Directorate material describes visitor categories and counter processing but no ordinary Bhutanese-passport eligibility or prior-approval schedule.","searchedOfficialDomains":["passports.gov.sd","moi.gov.sd","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"SY","reason":"Current Syrian and Bhutanese official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Bhutanese passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Bhutanese cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TN","reason":"Tunisia's current consular material establishes a visa process and treaty-qualified waivers but no current ordinary Bhutanese-passport schedule or effective agreement register.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TR","reason":"Türkiye's current Foreign Ministry material says Bhutanese ordinary passports require a consular visa, while eVisa eligibility is not reproducible by passport type; no electronic or arrival issuance is inferred.","searchedOfficialDomains":["mfa.gov.tr","evisa.gov.tr","mfa.gov.bt"]},
+    {"passportCode":"BT","destinationCode":"TM","reason":"No current Turkmen or Bhutanese primary source establishes ordinary Bhutanese-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mfa.gov.bt"]}
+  ]
+}

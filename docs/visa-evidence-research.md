@@ -1966,6 +1966,16 @@ South Africa adds Angola, Grenada and Panama as `visa_free`, plus Jordan as `vis
 
 The Bahamas adds Grenada and Panama as `visa_free`, corrects Jordan from fallback `visa_on_arrival` to advance `visa_required`, and corrects Türkiye from fallback `visa_on_arrival` to `evisa`. The remaining conditional, portal-only, operationally restricted and non-reproducible relationships stay uncovered.
 
+## Pass 206 result: final Bhutanese, Colombian, Costa Rican and Ethiopian outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add twenty-six currently supported relationships, raising complete-matrix evidence from 38,742 to 38,768 of 44,974 relationships (86.2%). The public `/status` matrix contains 38,768 fresh and 6,206 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 496 reviewed batches, 2,273 official sources and 1,516 policies. Regional coverage is Africa 8,471 of 11,289 (75.0%), the Americas 4,729 of 4,953 (95.5%), the Caribbean 4,536 of 4,962 (91.4%), Asia 5,325 of 6,336 (84.0%), Europe 9,994 of 10,299 (97.0%), the Middle East 1,842 of 2,970 (62.0%) and Oceania 3,871 of 4,165 (92.9%).
+
+Bhutan adds Grenada and Jordan as `visa_required`, plus Panama as `visa_free`; Jordan corrects fallback `visa_on_arrival`. A proposed North Macedonia policy was rejected during independent review because the nationality checker returned an internal error, so the generic procedure alone was insufficient to establish Bhutanese eligibility.
+
+Colombia's live May 2026 Foreign Ministry visitor table closes eighteen relationships: Bangladesh `visa_on_arrival`; Chad, Côte d’Ivoire and Djibouti `evisa`; Guyana, North Macedonia, Panama, Trinidad and Tobago, and Ukraine `visa_free`; and the Central African Republic, Republic of the Congo, Grenada, Guinea-Bissau, Iran, Kuwait, Mali, Solomon Islands and Tunisia `visa_required`. Chad corrects fallback `visa_required` to `evisa`, Djibouti corrects `visa_on_arrival` to `evisa`, and Guinea-Bissau corrects `visa_on_arrival` to advance `visa_required`. Mixed, conditional and operationally ambiguous rows remain unresolved.
+
+Costa Rica adds Grenada and Panama as `visa_free` and Jordan as `visa_on_arrival`. Ethiopia adds Grenada and Panama as `visa_required`. Both audits leave generic portal, omission-only, stale and non-reproducible nationality routes uncovered.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

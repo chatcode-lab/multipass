@@ -1,0 +1,137 @@
+{
+  "batchId": "costa-rica-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-costa-rica-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page says requirements depend on citizenship and links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-costa-rica-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy country schedule identifies itself as updated April 2024 and lists Costa Rica as No Visa required.",
+      "supportingExcerpt": "Costa Rica No Visa required"
+    },
+    {
+      "id": "panama-embassy-costa-rica-visa-waiver-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy consular page includes Costa Rica in its named no-visa visitor cohort.",
+      "supportingExcerpt": "Costa Rica ... No Visa Required"
+    },
+    {
+      "id": "jordan-tourism-board-costa-rica-arrival-visa-2026",
+      "title": "Visas To Jordan",
+      "url": "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "French / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live official Jordan Tourism Board visa table expressly maps Costa Rica to an applicable visa on arrival for 40 JOD.",
+      "supportingExcerpt": "Costa Rica | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    }
+  ],
+  "policies": [
+    {
+      "id": "costa-rican-ordinary-passport-grenada-short-visit-visa-free-2026",
+      "title": "Costa Rican ordinary passports: Grenada visa-free short visits",
+      "summary": "Grenada's active Embassy nationality schedule lists Costa Rica as requiring no visitor visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["CR"],
+      "conditions": [
+        "Applies to an ordinary Costa Rican passport holder travelling as a short visitor.",
+        "The actively linked schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement.",
+        "Work, study, residence, transit, crew, diplomatic, official, service and special-document routes are outside this classification."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-costa-rica-2026", "grenada-embassy-costa-rica-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "costa-rican-ordinary-passport-panama-short-visit-visa-free-2026",
+      "title": "Costa Rican ordinary passports: Panama visa-free short visits",
+      "summary": "Panama's live Embassy schedule expressly places Costa Rica in its no-visa visitor cohort for stays up to three months.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["CR"],
+      "conditions": [
+        "Applies to an ordinary Costa Rican passport holder travelling as a short visitor.",
+        "The Embassy's named no-visa cohort states a maximum tourist stay of three months.",
+        "Work, residence, transit, special documents, final admission and separate third-country-document waiver rules remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-costa-rica-visa-waiver-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "costa-rican-ordinary-passport-jordan-arrival-visa-2026",
+      "title": "Costa Rican ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's live Tourism Board nationality table states that Costa Rican visitors can obtain a 40-JOD visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["CR"],
+      "conditions": [
+        "Applies to an ordinary Costa Rican passport holder travelling as a short visitor.",
+        "The Tourism Board table says all non-Jordanians must register for a Gateway2Jordan QR code before departure.",
+        "Entry-point, admission and non-visitor categories remain governed by Jordanian authorities."
+      ],
+      "sourceIds": ["jordan-tourism-board-costa-rica-arrival-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"CR","destinationCode":"AF","reason":"No current Afghan or Costa Rican primary source establishes a usable ordinary Costa Rican-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"AO","reason":"Angola's current positive visitor material does not name Costa Rica, while no primary source establishes the ordinary Costa Rican visitor issuance route. No complement is inferred.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"BD","reason":"Bangladesh's current arrival-visa material does not directly establish an unconditional ordinary Costa Rican-passport visitor route; discretionary and mission-availability conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"VG","reason":"No current British Virgin Islands or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["bvi.gov.vg","gov.uk","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"BF","reason":"Burkina Faso's current eVisa service proves electronic issuance for eligible applicants but gives no current ordinary Costa Rican-passport eligibility or exemption result.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"CF","reason":"No current Central African or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"TD","reason":"No current Chadian or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.td","interieur.gouv.td","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Costa Rican passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"CG","reason":"No current Republic of the Congo or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"CI","reason":"Côte d’Ivoire's electronic-visa material does not establish the exact ordinary Costa Rican eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Costa Rican eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"GW","reason":"No current Guinea-Bissau or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Costa Rican-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Costa Rican eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"CR","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Costa Rican-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Costa Rican-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"LR","reason":"No current Liberian or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"ML","reason":"No current Malian or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.ml","interieur.gov.ml","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"NE","reason":"No current Nigerien or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"KP","reason":"No current DPRK or Costa Rican primary source establishes a usable ordinary Costa Rican-passport visitor route; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"MK","reason":"No current North Macedonian or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Costa Rican-passport route; residence and qualifying third-country-document programmes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Costa Rican-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"ST","reason":"São Tomé and Príncipe's documented route depends on holding a valid Schengen or United States visa and a short stay; that document-conditioned exception is not an unconditional nationality baseline.","searchedOfficialDomains":["smf.st","mne.gov.st","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not publish a reproducible nationality decision for an ordinary Costa Rican passport; conditional third-country-document and residence routes are excluded.","searchedOfficialDomains":["my.gov.sa","mofa.gov.sa","visitsaudi.com"]},
+    {"passportCode":"CR","destinationCode":"SL","reason":"The Sierra Leone hold remains: conflicting official portal material does not establish current ordinary Costa Rican eligibility and issuance timing.","searchedOfficialDomains":["evisa.sl","immigration.gov.sl","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Costa Rican-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Costa Rican eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Costa Rican-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"SY","reason":"Current Syrian and Costa Rican official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Costa Rican passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Costa Rican cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"TN","reason":"No current Tunisian or Costa Rican primary source directly establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","rree.go.cr"]},
+    {"passportCode":"CR","destinationCode":"TM","reason":"No current Turkmen or Costa Rican primary source establishes ordinary Costa Rican-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","rree.go.cr"]}
+  ]
+}
