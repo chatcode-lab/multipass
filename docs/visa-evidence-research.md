@@ -1976,6 +1976,14 @@ Colombia's live May 2026 Foreign Ministry visitor table closes eighteen relation
 
 Costa Rica adds Grenada and Panama as `visa_free` and Jordan as `visa_on_arrival`. Ethiopia adds Grenada and Panama as `visa_required`. Both audits leave generic portal, omission-only, stale and non-reproducible nationality routes uncovered.
 
+## Pass 207 result: final Georgian, Malian, Mauritanian and Maldivian outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add twelve currently supported relationships, raising complete-matrix evidence from 38,768 to 38,780 of 44,974 relationships (86.2%). The public `/status` matrix contains 38,780 fresh and 6,194 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 500 reviewed batches, 2,292 official sources and 1,528 policies. Regional coverage is Africa 8,472 of 11,289 (75.0%), the Americas 4,733 of 4,953 (95.6%), the Caribbean 4,540 of 4,962 (91.5%), Asia 5,325 of 6,336 (84.0%), Europe 9,995 of 10,299 (97.0%), the Middle East 1,844 of 2,970 (62.1%) and Oceania 3,871 of 4,165 (92.9%).
+
+Georgia adds Grenada `visa_free`, Panama `visa_required` and Jordan `visa_on_arrival`. Mali adds Grenada and Panama as `visa_required`; its United States, Puerto Rico, Guam, Northern Mariana Islands and U.S. Virgin Islands rows remain explicit conflicts because Presidential Proclamation 10998 fully suspends visitor issuance and entry subject to valid-visa grandfathering, exceptions and waivers that the six-status taxonomy cannot represent.
+
+Mauritania adds Grenada and Panama as `visa_required` and Gambia as `visa_free`. Its five United States and territorial rows remain explicit partial-suspension conflicts for the same representational reason. Maldives adds Grenada and Panama as `visa_free`, Jordan as `visa_on_arrival`, and corrects Türkiye from fallback `visa_on_arrival` to `evisa` under Türkiye's live Foreign Ministry schedule. The broad Maldives outbound lists dated March and April 2024 were not used to close other rows because they now contain known internal and current-policy contradictions; those relationships remain uncovered until a current destination authority or pair-specific source resolves them.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

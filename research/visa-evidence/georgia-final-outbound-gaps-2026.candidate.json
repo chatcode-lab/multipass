@@ -1,0 +1,147 @@
+{
+  "batchId": "georgia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page says visa requirements depend on citizenship and actively links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-georgia-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy visitor page actively links this April 2024 country-by-country visa schedule, which directly lists Georgia's ordinary visitor outcome.",
+      "supportingExcerpt": "Georgia No Visa required"
+    },
+    {
+      "id": "panama-embassy-georgia-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy of Panama consular page publishes its named authorized-visa cohort, current third-country-document waiver and advance consular requirements.",
+      "supportingExcerpt": "Georgia ... you will need an authorized visa"
+    },
+    {
+      "id": "jordan-tourism-georgia-arrival-visa-table-2026",
+      "title": "Visas to Jordan: nationality table",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live visitjordan.com nationality table identifies itself as the official Jordan Tourism Board site and gives country-specific visitor-visa procedures.",
+      "supportingExcerpt": "Georgia | Applicable | Visa can be obtained upon arrival."
+    }
+  ],
+  "policies": [
+    {
+      "id": "georgian-ordinary-passport-grenada-visa-free-2026",
+      "title": "Georgian ordinary passports: Grenada visa-free short visits",
+      "summary": "Grenada's actively linked April 2024 Embassy schedule lists Georgia as requiring no visitor visa.",
+      "status": "visa_free",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["GE"],
+      "conditions": [
+        "Applies to an ordinary Georgian passport holder travelling to Grenada as a short visitor.",
+        "The Embassy's live visitor page confirms requirements depend on citizenship; work, study, residence, diplomatic, official, service and special-document treatment remain outside scope.",
+        "Admission remains subject to Grenada immigration control, carrier checks and final entry conditions."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-georgia-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "georgian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Georgian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule names Georgia in the authorized-visa cohort, requiring advance consular processing unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["GE"],
+      "conditions": [
+        "Applies to an ordinary Georgian passport holder who does not qualify for Panama's separate valid third-country visa or residence waiver.",
+        "The Embassy requires an authorized-visa applicant to appear in person at the consulate before travel; approval may take up to 60 business days.",
+        "Work, residence, transit, diplomatic, official, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-georgia-authorized-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy authorized-visa instructions",
+        "processingTime": "Up to 60 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Appear in person and submit the listed authorized-visa documents to the competent Panamanian consulate before travel.",
+          "Do not finalize travel arrangements until the visa has been granted."
+        ]
+      }
+    },
+    {
+      "id": "georgian-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "Georgian ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's live Tourism Board nationality table expressly identifies Georgia as eligible to obtain a visitor visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["GE"],
+      "conditions": [
+        "Applies to an ordinary Georgian passport holder travelling to Jordan as a short visitor.",
+        "The official table says the visa can be obtained upon arrival and states a 40 JOD total charge.",
+        "Work, residence, transit, special documents, carrier checks, border-crossing limits and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-georgia-arrival-visa-table-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"GE","destinationCode":"AF","reason":"No current Afghan or Georgian primary source establishes a stable usable ordinary Georgian-passport visitor route amid restricted operational access.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"AO","reason":"Angola's current official material does not establish ordinary Georgian visitor eligibility and actual issuance timing.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"BD","reason":"Bangladesh's current official arrival-visa material does not directly establish an unconditional ordinary Georgian-passport visitor route; reciprocal, mission and discretionary conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"BF","reason":"Burkina Faso's current eVisa service proves electronic issuance for eligible applicants but gives no current ordinary Georgian-passport eligibility or exemption result.","searchedOfficialDomains":["visaburkina.bf","securite.gov.bf","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"CV","reason":"No current Cabo Verde primary source establishes the ordinary Georgian-passport short-visitor status and actual issuance timing.","searchedOfficialDomains":["portalconsular.mnec.gov.cv","ease.gov.cv","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"CF","reason":"No current Central African or Georgian primary source establishes ordinary Georgian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"TD","reason":"Chad's current eVisa page lists named visa-exempt countries and online applications but does not establish every unlisted ordinary passport's eligibility or issuance route. No complement is inferred.","searchedOfficialDomains":["evisa.td","journalofficiel.gouv.td","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Georgian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"CG","reason":"No current Republic of the Congo or Georgian primary source establishes ordinary Georgian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"CI","reason":"Côte d'Ivoire's recognised SNEDAI process describes pre-enrolment and airport biometric visa printing but does not establish the ordinary Georgian nationality baseline. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"DJ","reason":"Djibouti's current official material proves electronic-visa processing but does not map an ordinary Georgian passport to eligibility, exemption or an arrival-issued route.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"DO","reason":"Dominican Republic's live MIREX ordinary-tourist selector conflicts with its consular-visa list for Georgia; no current reconciled instrument establishes the ordinary Georgian baseline.","searchedOfficialDomains":["mirex.gob.do","migracion.gob.do","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"GW","reason":"No current Guinea-Bissau or Georgian primary source establishes ordinary Georgian-passport visitor eligibility and actual arrival-visa timing.","searchedOfficialDomains":["mne.gw","gov.gw","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Georgian-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"LR","reason":"Liberia's Visa on Arrival workflow is residence and mission dependent, not a passport-only route; no current Georgian nationality schedule resolves the baseline.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"ML","reason":"No current direct, reconcilable Malian nationality schedule establishes ordinary Georgian-passport visa-free, electronic, arrival or advance-visa treatment.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"MN","reason":"Mongolia's current official visitor material does not establish ordinary Georgian-passport eligibility and actual visa issuance timing without relying on generic or non-nationality-specific portal wording.","searchedOfficialDomains":["immigration.gov.mn","consul.mn","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"NE","reason":"Niger's current foreign-entry rule preserves unenumerated bilateral and community exemptions; no current Georgian ordinary-passport complement is published.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"NG","reason":"Nigeria Immigration's current fee appendix labels Georgia's single-entry row gratis but does not establish whether that denotes a waiver or a zero-fee electronic tourism route.","searchedOfficialDomains":["immigration.gov.ng","evisa.immigration.gov.ng","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"KP","reason":"No current DPRK or Georgian primary source establishes a usable ordinary Georgian-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"MK","reason":"North Macedonia's current official information does not expose a reproducible Georgia-specific ordinary-passport result; third-country-document waivers do not establish the baseline.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Georgian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"ST","reason":"São Tomé and Príncipe's documented exception depends on a valid Schengen or United States visa and a short stay; that document-conditioned route is not an unconditional nationality baseline.","searchedOfficialDomains":["smf.st","mne.gov.st","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"SL","reason":"Sierra Leone's live official material conflicts between emailed eVisa issuance and visa issuance at the airport or border. No current source resolves actual issuance timing for Georgia.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"SB","reason":"No current Solomon Islands authority directly maps this ordinary passport to an unconditional short-tourist status. No complement is inferred from omission, permits or special arrangements.","searchedOfficialDomains":["solomons.gov.sb","immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"GE","destinationCode":"SS","reason":"South Sudan's current table says a visa is needed but does not establish whether an ordinary Georgian visitor receives eVisa, visa on arrival or an advance visa.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"LC","reason":"Saint Lucia's available nationality schedule is dated February 2016; no current primary source establishes the ordinary Georgian visitor route or actual issuance timing.","searchedOfficialDomains":["govt.lc","externalaffairs.govt.lc","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"SD","reason":"Sudan Passport Directorate material describes visitor categories and counter processing but no ordinary Georgian-passport eligibility or prior-approval schedule.","searchedOfficialDomains":["passports.gov.sd","moi.gov.sd","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"SY","reason":"Current Syrian and Georgian official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Georgian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Georgian cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"TN","reason":"Tunisia's current consular material establishes a visa process and treaty-qualified waivers but no current ordinary Georgian-passport schedule or effective agreement register.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"TM","reason":"No current Turkmen or Georgian primary source establishes ordinary Georgian-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mfa.gov.ge"]},
+    {"passportCode":"GE","destinationCode":"UA","reason":"Ukraine's accessible official nationality table is expressly dated June 2023; no current source establishes the ordinary Georgian-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mfa.gov.ge"]}
+  ]
+}

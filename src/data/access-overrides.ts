@@ -3653,4 +3653,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.cancilleria.gov.co/sites/default/files/FOTOS2025/Lista-Paises-exigen-visa-mayo-2026.pdf",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "MV",
+    destinationCode: "TR",
+    status: "evisa",
+    reason: "Türkiye's current Foreign Ministry schedule expressly offers a three-month multiple-entry eVisa to ordinary Maldivian passport holders.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
