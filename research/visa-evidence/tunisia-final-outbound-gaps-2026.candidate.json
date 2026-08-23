@@ -1,0 +1,139 @@
+{
+  "batchId": "tunisia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-tunisia-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-tunisia-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The Embassy's currently linked schedule is marked updated April 2024, lists Tunisia as Prior to Arrival, and defines that as a visa obtained from a Grenadian mission before travel.",
+      "supportingExcerpt": "Tunisia Prior to Arrival"
+    },
+    {
+      "id": "jordan-tourism-tunisia-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps Tunisia to a visa obtainable on arrival.",
+      "supportingExcerpt": "Tunisia | Applicable | Visa can be obtained upon arrival"
+    },
+    {
+      "id": "panama-embassy-tunisia-authorized-visa-current-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Tunisia in its authorized-visa cohort and says approval may take up to 60 business days.",
+      "supportingExcerpt": "Tunisia ... will need an authorized visa"
+    }
+  ],
+  "policies": [
+    {
+      "id": "tunisian-ordinary-passport-grenada-prior-visitor-visa-2026",
+      "title": "Tunisian ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule places Tunisia in the prior-to-arrival cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["TN"],
+      "conditions": [
+        "Applies to an ordinary Tunisian passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained from a Grenadian mission or consulate before travel.",
+        "The active Embassy schedule was updated April 2024 and should be rechecked if Grenada publishes a replacement."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-tunisia-2026", "grenada-embassy-tunisia-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "tunisian-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "Tunisian ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says Tunisian visitors can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["TN"],
+      "conditions": [
+        "Applies to an ordinary Tunisian passport holder travelling as a short visitor.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code.",
+        "Restricted crossings, non-visitor purposes and final admission remain outside scope."
+      ],
+      "sourceIds": ["jordan-tourism-tunisia-arrival-visa-table-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "tunisian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Tunisian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Tunisia in its authorized-visa cohort for advance consular approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["TN"],
+      "conditions": [
+        "Applies to an ordinary Tunisian passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "The cited Embassy says authorized-visa approval may take up to 60 business days; applicants must confirm the procedure with their competent Panamanian consulate before travel.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-tunisia-authorized-visa-current-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"TN","destinationCode":"AF","reason":"No current Afghan or Tunisian primary source establishes a stable usable ordinary Tunisian-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"AO","reason":"No current Angolan or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing; diplomatic or official agreements are outside scope.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Tunisian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"VG","reason":"No current British Virgin Islands or United Kingdom primary source establishes ordinary Tunisian-passport short-visitor eligibility and issuance timing for this territory.","searchedOfficialDomains":["bvi.gov.vg","gov.uk","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"CF","reason":"No current Central African or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Tunisian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Tunisian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"CG","reason":"No current Republic of the Congo or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Tunisian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Tunisian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"GQ","reason":"No current Equatorial Guinean or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["minexteriores.gob.gq","guineaecuatorialpress.com","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"GW","reason":"No current Guinea-Bissau or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Tunisian eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"TN","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Tunisian-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Tunisian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"LR","reason":"No current Liberian or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"ML","reason":"No current Malian or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing; regional arrangements are not normalized without passport-specific terms.","searchedOfficialDomains":["diplomatie.gouv.ml","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"MH","reason":"Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes a Tunisian ordinary-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"MN","reason":"Mongolia's current consular schedule lists Tunisia only for diplomatic and special passports; it does not establish the ordinary-passport route. No complement is inferred.","searchedOfficialDomains":["consul.mn","immigration.gov.mn","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"MM","reason":"Myanmar's current electronic service does not publish a reproducible ordinary Tunisian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Tunisian-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"KP","reason":"No current DPRK or Tunisian primary source establishes a usable ordinary Tunisian-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Tunisian-passport result; generic application material and third-country waivers do not establish the baseline.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Tunisian-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Tunisian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Tunisian eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Tunisian-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Tunisian application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Tunisian-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"SS","reason":"South Sudan's electronic-visa material does not establish ordinary Tunisian-passport eligibility and actual visitor issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["mofaic.gov.ss","immigration.gov.ss","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Tunisian-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"SY","reason":"Current Syrian and Tunisian official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Tunisian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"TT","reason":"Trinidad and Tobago's named waiver schedule does not include Tunisia, while its electronic service applies only after visa-required nationality eligibility is established. No complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","homelandsecurity.gov.tt","foreign.gov.tt","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"TM","reason":"No current Turkmen or Tunisian primary source establishes ordinary Tunisian-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","diplomatie.gov.tn"]},
+    {"passportCode":"TN","destinationCode":"UA","reason":"Ukraine's accessible nationality table is expressly dated June 2023; no current Ukrainian or Tunisian source establishes the ordinary Tunisian-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","diplomatie.gov.tn"]}
+  ]
+}

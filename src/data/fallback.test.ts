@@ -259,4 +259,18 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.UY.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.UY.statuses.PA).toBe("visa_free");
   });
+
+  it("applies the final Papuan, Paraguayan, Tunisian and Vatican outbound audits", () => {
+    expect(snapshot.passports.PG.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.PG.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.PY.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.PY.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.PY.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.TN.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.TN.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.TN.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.VA.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.VA.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.VA.statuses.PA).toBe("visa_free");
+  });
 });
