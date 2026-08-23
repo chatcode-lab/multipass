@@ -319,4 +319,11 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.MM.statuses.PA).toBe("visa_required");
     expect(snapshot.passports.TL.statuses.TR).toBe("evisa");
   });
+
+  it("applies the final Chadian, Zambian, Zimbabwean and Angolan outbound audits", () => {
+    expect(snapshot.passports.TD.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.TD.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.ZW.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.AO.statuses.PA).toBe("visa_required");
+  });
 });

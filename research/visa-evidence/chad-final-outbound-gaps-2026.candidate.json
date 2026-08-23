@@ -1,0 +1,144 @@
+{
+  "batchId": "chad-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-chad-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-chad-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's currently linked Embassy schedule is marked updated April 2024, directly lists Chad as Prior to Arrival, and defines that term as a mission or consulate visa before travel.",
+      "supportingExcerpt": "Chad Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-chad-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Panama's live Embassy page lists Chad in its authorized-visa cohort, gives a pre-travel approval timeframe, and distinguishes it from the third-country-document waiver.",
+      "supportingExcerpt": "Burundi, Chad, Cabo Verde, Costa de Marfil"
+    },
+    {
+      "id": "us-state-chad-full-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The State Department's live PP 10998 implementation notice, last updated February 2, 2026, names Chad in the fully suspended nationality cohort and preserves exceptions and valid-visa grandfathering.",
+      "supportingExcerpt": "Afghanistan, Burma, Burkina Faso, Chad, Republic of the Congo, Equatorial Guinea"
+    },
+    {
+      "id": "us-code-geographic-united-states-chad-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands, and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "chadian-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Chadian ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule lists Chad as Prior to Arrival, defined as a mission or consulate visa before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["TD"],
+      "conditions": [
+        "Applies to an ordinary Chadian passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained at a Grenada mission or consulate before travel.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-chad-2026", "grenada-embassy-chad-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "chadian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Chadian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Chad in its authorized-visa cohort for advance immigration approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["TD"],
+      "conditions": [
+        "Applies to an ordinary Chadian passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Authorized-visa approval may take up to 60 business days and must be granted before travel.",
+        "Washington-specific filing mechanics are not generalized to every consular district; final admission remains discretionary."
+      ],
+      "sourceIds": ["panama-embassy-chad-authorized-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {"passportCode":"TD","destinationCode":"US","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The current full suspension preserves valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.","sourceIds":["us-state-chad-full-suspension-current-2026"]},
+    {"passportCode":"TD","destinationCode":"PR","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-chad-full-suspension-current-2026","us-code-geographic-united-states-chad-current-2026"]},
+    {"passportCode":"TD","destinationCode":"GU","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-chad-full-suspension-current-2026","us-code-geographic-united-states-chad-current-2026"]},
+    {"passportCode":"TD","destinationCode":"MP","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-chad-full-suspension-current-2026","us-code-geographic-united-states-chad-current-2026"]},
+    {"passportCode":"TD","destinationCode":"VI","snapshotStatus":"visa_required","officialStatus":"all-nonimmigrant-and-immigrant-entry-and-visa-issuance-fully-suspended-with-limited-exceptions-and-valid-visa-grandfathering","explanation":"The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.","sourceIds":["us-state-chad-full-suspension-current-2026","us-code-geographic-united-states-chad-current-2026"]}
+  ],
+  "unresolved": [
+    {"passportCode":"TD","destinationCode":"AF","reason":"No current Afghan or Chadian primary source establishes a stable usable ordinary-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"AO","reason":"No current Angolan or Chadian primary source establishes ordinary Chadian-passport visitor eligibility and actual issuance timing without inferring from a portal.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Chadian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Chadian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Chadian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not establish the exact ordinary Chadian eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"GU","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"TD","destinationCode":"GW","reason":"No current Guinea-Bissau or Chadian primary source establishes ordinary Chadian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Chadian-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Chadian eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"TD","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Chadian-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Chadian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"LR","reason":"No current Liberian or Chadian primary source establishes ordinary Chadian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mofa.gov.lr","immigration.gov.lr","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"ML","reason":"No current Malian or Chadian primary source establishes ordinary Chadian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"MH","reason":"The Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes a Chadian ordinary-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"MN","reason":"Mongolia's current electronic-visa material does not establish ordinary Chadian-passport eligibility and actual issuance timing; omitted-country treatment is not inferred.","searchedOfficialDomains":["immigration.gov.mn","en.consul.mn","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"MM","reason":"Myanmar's current electronic-visa material does not establish a reproducible ordinary Chadian-passport eligibility result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Chadian-passport schedule establishes the visitor route. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"NG","reason":"Nigeria's electronic-visa services do not directly establish ordinary Chadian-passport visitor eligibility and actual issuance timing; a portal is not an eligibility schedule.","searchedOfficialDomains":["immigration.gov.ng","visa.immigration.gov.ng","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"KP","reason":"No current DPRK or Chadian primary source establishes a usable ordinary Chadian-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Chadian-passport result; generic application material does not establish issuance timing.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"MP","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"TD","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Chadian-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Chadian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"PR","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"TD","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Chadian eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Chadian application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Chadian-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"SS","reason":"South Sudan's current eVisa service does not publish Chadian eligibility and describes both downloadable approval and final port stamping, leaving actual issuance classification unresolved.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Chadian-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"SY","reason":"Current Syrian and Chadian official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Chadian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Chadian cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Chadian-passport exemption. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"TM","reason":"No current Turkmen or Chadian primary source establishes ordinary Chadian-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"UA","reason":"Ukraine's accessible nationality guidance does not establish a current ordinary Chadian-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","diplomatie.gouv.td"]},
+    {"passportCode":"TD","destinationCode":"US","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov"]},
+    {"passportCode":"TD","destinationCode":"VI","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]}
+  ]
+}
