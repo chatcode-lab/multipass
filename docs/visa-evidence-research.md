@@ -1932,6 +1932,14 @@ Jamaica adds Grenada `visa_free` and Jordan `visa_on_arrival`. Suriname adds Gre
 
 Oman adds Ukraine `visa_free` under the operative presidential decree, plus Jordan `visa_on_arrival`, correcting the unsupported fallback `visa_free` classification. Mongolia and North Macedonia remain `visa_required`: their published exemptions do not cover an ordinary Omani passport without separate qualifying documents. Gambia adds Grenada `visa_free` and Panama `visa_required`. Its United States and four territorial rows remain explicit conflicts because current B-1/B-2 issuance and entry are partially suspended subject to exceptions and waivers that cannot be represented by the six-status taxonomy.
 
+## Pass 202 result: final Central African, Ivorian, Kyrgyz and Bahraini outbound gaps
+
+Four independently cross-reviewed ordinary-passport audits add fifteen currently supported relationships, raising complete-matrix evidence from 38,688 to 38,703 of 44,974 relationships (86.1%). The public `/status` matrix contains 38,703 fresh and 6,271 not-covered rows, with zero old or stale rows as of 23 August 2026. Canonical evidence contains 480 reviewed batches, 2,210 official sources and 1,451 policies. Regional coverage is Africa 8,462 of 11,289 (75.0%), the Americas 4,712 of 4,953 (95.1%), the Caribbean 4,519 of 4,962 (91.1%), Asia 5,322 of 6,336 (84.0%), Europe 9,987 of 10,299 (97.0%), the Middle East 1,831 of 2,970 (61.6%) and Oceania 3,870 of 4,165 (92.9%).
+
+The Central African Republic adds Grenada, Panama and North Macedonia as `visa_required`. Côte d’Ivoire adds Grenada and Panama as `visa_required`; its United States, Puerto Rico, Guam, Northern Mariana Islands and U.S. Virgin Islands rows remain explicit PP10998 conflicts rather than being flattened into normal visitor access.
+
+Kyrgyzstan adds Ukraine `visa_free`, Jordan and Grenada `visa_on_arrival`, and Panama `visa_required`; Grenada corrects the unsupported fallback `visa_free` label. Bahrain adds Ukraine `visa_free`, Jordan `visa_on_arrival`, and Mongolia, North Macedonia, Grenada and Panama as `visa_required`; Jordan corrects fallback `visa_free`. Vanuatu remains unresolved because its live Immigration page places Bahrain in both the exempt and non-exempt cohorts.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

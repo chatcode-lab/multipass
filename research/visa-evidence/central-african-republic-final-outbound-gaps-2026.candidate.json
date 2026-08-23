@@ -1,0 +1,165 @@
+{
+  "batchId": "central-african-republic-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Grenada's live official Embassy visitor page states that visa requirements depend on citizenship and currently links the complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-central-african-republic-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy visitor page actively links this April 2024 country-by-country visa schedule, which defines its prior-to-arrival category.",
+      "supportingExcerpt": "Central African Republic Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-central-african-republic-stamped-visa-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English and Spanish",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Embassy of Panama consular page publishes its named stamped-visa cohort, its document requirements and its current third-country-document waiver conditions.",
+      "supportingExcerpt": "Stamped Visa: If you are from one of the following countries ... Central African Republic"
+    },
+    {
+      "id": "north-macedonia-mfa-central-african-republic-visa-needed-2026",
+      "title": "Do you need a visa?",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza?region=africa",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "North Macedonia's live Foreign Ministry nationality checker lists the Central African Republic under Africa and returns that a visa is needed for foreign citizens.",
+      "supportingExcerpt": "Central African Republic ... Visa for foreign citizens: Needed"
+    },
+    {
+      "id": "north-macedonia-mfa-advance-visa-procedure-2026",
+      "title": "Visa Application Procedure",
+      "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+      "publisher": "Ministry of Foreign Affairs and Foreign Trade of the Republic of North Macedonia",
+      "jurisdiction": "North Macedonia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "North Macedonia's Foreign Ministry publishes this current application procedure on mfa.gov.mk, including the pre-travel competent-representation process.",
+      "supportingExcerpt": "The foreigner submits a visa application to the competent diplomatic-consular representation."
+    }
+  ],
+  "policies": [
+    {
+      "id": "central-african-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Central African ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's actively linked April 2024 Embassy schedule places the Central African Republic in its Prior to Arrival visa category.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["CF"],
+      "conditions": [
+        "Applies to an ordinary Central African passport holder visiting Grenada; the schedule defines 'Prior To Arrival' as a visa obtained at a Grenada mission or consulate before travel.",
+        "The Embassy's live visitor page confirms requirements depend on citizenship; work, study, residence, diplomatic, official, service and special-document treatment remain outside scope.",
+        "Admission remains subject to Grenada immigration control and the requirements of the competent mission or consulate."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-2026", "grenada-embassy-central-african-republic-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "central-african-ordinary-passport-panama-stamped-visitor-visa-2026",
+      "title": "Central African ordinary passports: Panama stamped visitor visa",
+      "summary": "Panama's live Embassy schedule names the Central African Republic in the stamped-visa cohort, which requires advance consular processing unless a separate third-country-document waiver applies.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["CF"],
+      "conditions": [
+        "Applies to an ordinary Central African passport holder who does not qualify for Panama's separate valid third-country visa or residence waiver.",
+        "The Embassy says a stamped-visa applicant submits the listed documents before travel and, if granted, personally obtains the visa stamp at the consulate; approval may take up to 30 business days.",
+        "Work, residence, transit, diplomatic, official, special documents, consular-jurisdiction requirements and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-central-african-republic-stamped-visa-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.embassyofpanama.org/visas-1",
+        "label": "Panama Embassy stamped-visa instructions",
+        "processingTime": "Up to 30 business days, depending on document verification and completion.",
+        "steps": [
+          "Determine that Panama's separate third-country visa or residence waiver does not apply.",
+          "Submit the listed stamped-visa documents to the competent Panamanian consulate before travel.",
+          "If granted, personally obtain the visa stamp at the consulate before travel."
+        ]
+      }
+    },
+    {
+      "id": "central-african-ordinary-passport-north-macedonia-advance-visitor-visa-2026",
+      "title": "Central African ordinary passports: North Macedonia advance visitor visa",
+      "summary": "North Macedonia's live Foreign Ministry checker returns that Central African foreign citizens need a visa, and its procedure requires pre-travel application through a competent representation.",
+      "status": "visa_required",
+      "destinationCodes": ["MK"],
+      "passportCodes": ["CF"],
+      "conditions": [
+        "The Foreign Ministry's nationality checker returns 'Needed' for the Central African Republic.",
+        "Separate third-country-document entry waivers, if applicable, are not an ordinary Central African-passport baseline.",
+        "Work, residence, transit, special travel documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["north-macedonia-mfa-central-african-republic-visa-needed-2026", "north-macedonia-mfa-advance-visa-procedure-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/postapka-za-izdavanje-na-viza",
+        "label": "North Macedonia visa application procedure",
+        "steps": [
+          "Apply through the competent North Macedonian diplomatic-consular representation before the intended trip.",
+          "Submit the application no more than six months and at least 15 days before travel."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {"passportCode":"CF","destinationCode":"AF","reason":"No current Afghan or Central African primary source establishes a stable usable ordinary Central African-passport visitor route amid restricted operational access.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"AO","reason":"Angola's current official material does not establish ordinary Central African visitor eligibility and actual issuance timing.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"BD","reason":"Bangladesh's current official arrival-visa material does not directly establish an unconditional ordinary Central African-passport visitor route; reciprocal, mission and discretionary conditions are not flattened.","searchedOfficialDomains":["visa.gov.bd","voa.specialbranch.gov.bd","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"BO","reason":"Bolivia's current official visa material does not establish an ordinary Central African-passport visitor eligibility and issuance category without relying on portal availability or an inferred complement.","searchedOfficialDomains":["cancilleria.gob.bo","migracion.gob.bo","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Central African passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouv.km","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"CI","reason":"Côte d'Ivoire's recognised SNEDAI process describes pre-enrolment and airport biometric visa printing but does not establish the ordinary Central African nationality baseline. No complement is inferred.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"DJ","reason":"Djibouti's current official material proves electronic-visa processing but does not map an ordinary Central African passport to eligibility, exemption or an arrival-issued route.","searchedOfficialDomains":["evisa.gouv.dj","interieur.gouv.dj","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"GW","reason":"No current Guinea-Bissau or Central African primary source establishes ordinary Central African-passport visitor eligibility and actual arrival-visa timing.","searchedOfficialDomains":["mne.gw","gov.gw","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"IR","reason":"Iran's current electronic service does not publish a reproducible ordinary Central African-passport eligibility and issuance result; portal availability is not proof.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Central African-passport eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"KW","reason":"Kuwait's current Interior data exposes visitor products but no positive controlling ordinary Central African tourist-nationality decision. Conditional GCC-resident, sponsor and third-country-document routes are excluded.","searchedOfficialDomains":["kuwaitvisa.moi.gov.kw","moi.gov.kw","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"KG","reason":"Kyrgyzstan's current official electronic service does not publish a reproducible ordinary Central African-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"LR","reason":"Liberia's Visa on Arrival workflow is residence and mission dependent, not a passport-only route; no current Central African nationality schedule resolves the baseline.","searchedOfficialDomains":["immigration.gov.lr","mofa.gov.lr","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"ML","reason":"No current direct, reconcilable Malian nationality schedule establishes ordinary Central African-passport visa-free, electronic, arrival or advance-visa treatment.","searchedOfficialDomains":["diplomatie.gouv.ml","securite.gouv.ml","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"MH","reason":"Marshall Islands' live official pages do not publish a current complete nationality schedule; no source establishes the ordinary Central African visitor route and actual issuance timing.","searchedOfficialDomains":["rmiembassyus.org","immigration.gov.mh","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"MM","reason":"Myanmar's current named electronic and preapproved-arrival cohorts do not establish ordinary Central African-passport eligibility, and no residual route is inferred from omission.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"NE","reason":"Niger's current foreign-entry rule preserves unenumerated bilateral and community exemptions; no current Central African ordinary-passport complement is published.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"KP","reason":"No current DPRK or Central African primary source establishes a usable ordinary Central African-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"OM","reason":"Oman's current official sources do not establish an unconditional ordinary Central African-passport route; residence and qualifying third-country-document programmes are excluded.","searchedOfficialDomains":["fm.gov.om","rop.gov.om","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Central African-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"ST","reason":"São Tomé and Príncipe's documented exception depends on a valid Schengen or United States visa and a short stay; that document-conditioned route is not an unconditional nationality baseline.","searchedOfficialDomains":["smf.st","mne.gov.st","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"SA","reason":"Saudi Arabia's current official visitor material does not positively establish an unconditional ordinary Central African-passport route and actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"SL","reason":"Sierra Leone's live official material conflicts between emailed eVisa issuance and visa issuance at the airport or border. No current source resolves actual issuance timing for the Central African Republic.","searchedOfficialDomains":["slid.gov.sl","evisa.sl","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"SB","reason":"No current Solomon Islands authority directly maps this ordinary passport to an unconditional short-tourist status. No complement is inferred from omission, permits or special arrangements.","searchedOfficialDomains":["solomons.gov.sb","immigration.gov.sb","commerce.gov.sb"]},
+    {"passportCode":"CF","destinationCode":"SS","reason":"South Sudan's current table says a visa is needed but does not establish whether an ordinary Central African visitor receives eVisa, visa on arrival or an advance visa.","searchedOfficialDomains":["mofaic.gov.ss","evisa.gov.ss","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"SD","reason":"Sudan Passport Directorate material describes visitor categories and counter processing but no ordinary Central African-passport eligibility or prior-approval schedule.","searchedOfficialDomains":["passports.gov.sd","moi.gov.sd","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"SY","reason":"Current Syrian and Central African official sources do not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Central African passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"TT","reason":"Trinidad and Tobago's current positive waiver list does not define the omitted ordinary Central African cohort; no complement is inferred.","searchedOfficialDomains":["homelandsecurity.gov.tt","foreign.gov.tt","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"TN","reason":"Tunisia's current consular material establishes a visa process and treaty-qualified waivers but no current ordinary Central African-passport schedule or effective agreement register.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"TM","reason":"No current Turkmen or Central African primary source establishes ordinary Central African-passport visitor eligibility and actual issuance timing; generic visa and invitation wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","diplomatie.gouv.cf"]},
+    {"passportCode":"CF","destinationCode":"UA","reason":"Ukraine's accessible official nationality table is expressly dated June 2023; no current source establishes the ordinary Central African-passport visitor route.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","diplomatie.gouv.cf"]}
+  ]
+}

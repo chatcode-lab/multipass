@@ -3557,4 +3557,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://sp.visitjordan.com/page/4/visas-to-jordan/",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "KG",
+    destinationCode: "GD",
+    status: "visa_on_arrival",
+    reason: "Grenada's actively linked April 2024 schedule places Kyrgyzstan in the port-of-entry cohort subject to a pre-clearance letter.",
+    sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "BH",
+    destinationCode: "JO",
+    status: "visa_on_arrival",
+    reason: "Jordan's live Tourism Board nationality table expressly lists Bahraini ordinary-passport visitors as eligible to obtain a visa on arrival.",
+    sourceUrl: "https://fr.visitjordan.com/page/4/visas-to-jordan/",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;
