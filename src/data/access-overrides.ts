@@ -3181,4 +3181,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "HK",
+    destinationCode: "AO",
+    status: "visa_free",
+    reason: "The Hong Kong Immigration Department's current HKSAR-passport dataset expressly classifies Angola as visa-free for up to 30 days per entry and 90 days per year.",
+    sourceUrl: "https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/VFA_list.csv",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "HK",
+    destinationCode: "BO",
+    status: "visa_on_arrival",
+    reason: "The Hong Kong Immigration Department's current HKSAR-passport dataset expressly says a tourist visa for Bolivia may be obtained on arrival for up to 30 days.",
+    sourceUrl: "https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/VFA_list.csv",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "DM",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry guidance expressly requires ordinary Commonwealth of Dominica passport holders to have a visa; the separate Dominican Republic rule does not apply.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
 ] as const;

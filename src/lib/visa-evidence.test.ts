@@ -557,7 +557,7 @@ describe("official visa evidence", () => {
     expect(ANGOLA_TOURIST_VISA_EXEMPT_CODES).toHaveLength(98);
     const angolaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination, status }) => destination.code === "AO" && status === "visa_free");
-    expect(angolaPairs).toHaveLength(97);
+    expect(angolaPairs).toHaveLength(98);
     expect(getVisaRelationshipEvidence("PH", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(snapshot.manifest.passports.some(({ code }) => code === "CK" || code === "NU")).toBe(false);
   });
@@ -1382,7 +1382,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "AO");
 
-    expect(pairs).toHaveLength(99);
+    expect(pairs).toHaveLength(100);
     expect(getVisaRelationshipEvidence("WS", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PH", "AO", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1666,7 +1666,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "BO");
 
-    expect(pairs).toHaveLength(178);
+    expect(pairs).toHaveLength(179);
     expect(getVisaRelationshipEvidence("KR", "BO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "BO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HN", "BO", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1714,7 +1714,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(64);
+    expect(pairs).toHaveLength(65);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_free").supportsCurrentStatus).toBe(false);
@@ -1964,7 +1964,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "RS", snapshot.passports.TW.statuses.RS).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "RS", snapshot.passports.XK.statuses.RS).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("TR")).toHaveLength(166);
+    expect(pairsFor("TR")).toHaveLength(167);
     expect(getVisaRelationshipEvidence("AG", "TR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AO", "TR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AM", "TR", snapshot.passports.AM.statuses.TR).supportsCurrentStatus).toBe(false);
@@ -2125,7 +2125,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "DJ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("JP", "DJ", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KM")).toHaveLength(23);
+    expect(pairsFor("KM")).toHaveLength(24);
     expect(getVisaRelationshipEvidence("KM", "KM", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "KM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "KM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2905,6 +2905,32 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("covers reviewed Hong Kong, Dominica and Tonga residuals without flattening U.S. suspensions", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["HK", "AO", "visa_free"],
+      ["HK", "BO", "visa_on_arrival"],
+      ["HK", "KM", "visa_on_arrival"],
+      ["DM", "GD", "visa_free"],
+      ["DM", "IS", "visa_free"],
+      ["DM", "PA", "visa_free"],
+      ["DM", "TR", "visa_required"],
+      ["TO", "IS", "visa_free"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+    }
+
+    expect(snapshot.passports.HK.statuses.AO).toBe("visa_free");
+    expect(snapshot.passports.HK.statuses.BO).toBe("visa_on_arrival");
+    expect(snapshot.passports.DM.statuses.TR).toBe("visa_required");
+
+    for (const passportCode of ["DM", "TO"] as const) {
+      expect(
+        getVisaRelationshipEvidence(passportCode, "US", snapshot.passports[passportCode].statuses.US)
+          .supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -3562,6 +3588,7 @@ describe("official visa evidence", () => {
       "aplicacao.itamaraty.gov.br",
       "peraturan.go.id",
       "www.mofa.pna.ps",
+      "island.is",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

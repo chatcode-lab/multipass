@@ -1,0 +1,365 @@
+{
+  "batchId": "hong-kong-full-residual-outbound-currentness-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "hong-kong-immd-hksar-passport-scope-2026",
+      "title": "Application for HKSAR Passport",
+      "url": "https://www.immd.gov.hk/eng/service/travel_document/apply_for_hksar_passport.html?s=100101002",
+      "publisher": "Hong Kong Immigration Department",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The live Immigration Department page states the eligibility and scope of an HKSAR Passport issued by the Hong Kong Special Administrative Region Government.",
+      "supportingExcerpt": "Chinese citizen; permanent resident of the HKSAR; holder of a valid Hong Kong permanent identity card."
+    },
+    {
+      "id": "hong-kong-immd-current-hksar-vfa-dataset-2026",
+      "title": "Visa-free access or visa-on-arrival for HKSAR passport",
+      "url": "https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/VFA_list.csv",
+      "publisher": "Hong Kong Immigration Department",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Immigration Department publishes this live official open-data CSV specifically for HKSAR Passport holders, with country-level notes and remarks.",
+      "supportingExcerpt": "HKSAR passport holders can apply for a visa upon arrival."
+    }
+  ],
+  "policies": [
+    {
+      "id": "hksar-passport-angola-current-visa-free-2026",
+      "title": "HKSAR passport: Angola short-visitor visa exemption",
+      "summary": "Hong Kong Immigration's current HKSAR-passport dataset expressly says that holders may visit Angola visa-free for up to 30 days per entry.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "AO"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Full HKSAR passport holder; up to 30 days per entry and 90 days per year, as stated in the current dataset.",
+        "BN(O), HKSAR Document of Identity, Mainland Chinese, Macao SAR, diplomatic, official and other travel documents are outside this policy."
+      ],
+      "sourceIds": [
+        "hong-kong-immd-hksar-passport-scope-2026",
+        "hong-kong-immd-current-hksar-vfa-dataset-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "hksar-passport-bolivia-current-arrival-visa-2026",
+      "title": "HKSAR passport: Bolivia short-visitor visa on arrival",
+      "summary": "Hong Kong Immigration's current HKSAR-passport dataset expressly says that holders can apply for a Bolivian tourist visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "BO"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Full HKSAR passport holder; tourist visa on arrival for a stated stay of up to 30 days, subject to the destination's documentary and fee requirements.",
+        "BN(O), HKSAR Document of Identity, Mainland Chinese, Macao SAR, diplomatic, official and other travel documents are outside this policy."
+      ],
+      "sourceIds": [
+        "hong-kong-immd-hksar-passport-scope-2026",
+        "hong-kong-immd-current-hksar-vfa-dataset-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "hksar-passport-comoros-current-arrival-visa-2026",
+      "title": "HKSAR passport: Comoros short-visitor visa on arrival",
+      "summary": "Hong Kong Immigration's current HKSAR-passport dataset expressly states that holders can apply for a visa upon arrival in Comoros.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "KM"
+      ],
+      "passportCodes": [
+        "HK"
+      ],
+      "conditions": [
+        "Full HKSAR passport holder; the dataset records a stay of up to 45 days and says to consult the relevant embassy or consulate before travel.",
+        "BN(O), HKSAR Document of Identity, Mainland Chinese, Macao SAR, diplomatic, official and other travel documents are outside this policy."
+      ],
+      "sourceIds": [
+        "hong-kong-immd-hksar-passport-scope-2026",
+        "hong-kong-immd-current-hksar-vfa-dataset-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "AO",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_free",
+      "explanation": "The current HKSAR-passport dataset expressly reports visa-free access to Angola, but no current Angolan source separately maps the HKSAR document; the issuance-timing correction is held.",
+      "sourceIds": [
+        "hong-kong-immd-current-hksar-vfa-dataset-2026"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The current HKSAR-passport dataset expressly says a tourist visa may be applied for on arrival in Bolivia, but no current Bolivian authority maps that document's issuance timing; the correction is held.",
+      "sourceIds": [
+        "hong-kong-immd-current-hksar-vfa-dataset-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "AF",
+      "reason": "Afghanistan is absent from the current positive HKSAR schedule; no current Afghan authority or treaty source establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BD",
+      "reason": "Bangladesh is absent from the current positive HKSAR schedule; no current Bangladeshi authority establishes the ordinary HKSAR-passport visitor route and issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mofa.gov.bd", "immi.gov.bd"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VG",
+      "reason": "The HKSAR dataset includes the British Virgin Islands only in an undifferentiated visa-free-or-arrival list; no current destination authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "bvi.gov.vg", "laws.gov.vg"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BF",
+      "reason": "The HKSAR dataset includes Burkina Faso only in an undifferentiated visa-free-or-arrival list; no current destination authority establishes eligibility and issuance. A portal alone is insufficient.",
+      "searchedOfficialDomains": ["immd.gov.hk", "visaburkina.bf", "securite.gov.bf"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CF",
+      "reason": "The Central African Republic is absent from the current positive HKSAR schedule; no current destination authority or treaty establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "diplomatie.gouv.cf"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TD",
+      "reason": "Chad is absent from the current positive HKSAR schedule; portal material alone is not authenticated independent government evidence of an ordinary HKSAR-passport visitor route.",
+      "searchedOfficialDomains": ["immd.gov.hk", "evisa.td", "diplomatie.gouv.td"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CN",
+      "reason": "No current PRC or Hong Kong authority maps an ordinary HKSAR Passport to a normal Mainland China visitor baseline without substituting a Home Return Permit or PRC passport.",
+      "searchedOfficialDomains": ["immd.gov.hk", "nia.gov.cn", "mfa.gov.cn"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CG",
+      "reason": "The Republic of the Congo is absent from the current positive HKSAR schedule; no current destination authority or treaty establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "diplomatie.gouv.cg", "interieur.gouv.cg"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CI",
+      "reason": "Côte d'Ivoire's official pre-enrolment material does not positively establish ordinary HKSAR-passport eligibility and actual issuance timing; it is not inferred as eVisa.",
+      "searchedOfficialDomains": ["immd.gov.hk", "snedai.com", "diplomatie.gouv.ci"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "DJ",
+      "reason": "The HKSAR dataset includes Djibouti only in an undifferentiated visa-free-or-arrival list; current electronic-visa material does not establish the exact passport eligibility and issuance result.",
+      "searchedOfficialDomains": ["immd.gov.hk", "evisa.gouv.dj", "gouv.dj"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "EC",
+      "reason": "The HKSAR dataset includes Ecuador only in an undifferentiated visa-free-or-arrival list; no current Ecuadorian authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "cancilleria.gob.ec", "migracion.gob.ec"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "EG",
+      "reason": "The HKSAR dataset includes Egypt only in an undifferentiated visa-free-or-arrival list; no current Egyptian authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mfa.gov.eg", "emigration.gov.eg"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GE",
+      "reason": "The HKSAR dataset includes Georgia only in an undifferentiated visa-free-or-arrival list; no current Georgian authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mfa.gov.ge", "geoconsul.gov.ge"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GD",
+      "reason": "The HKSAR dataset includes Grenada only in an undifferentiated visa-free-or-arrival list; the recovered destination schedule is not current enough to resolve the status.",
+      "searchedOfficialDomains": ["immd.gov.hk", "gov.gd", "immigration.gov.gd"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GT",
+      "reason": "Guatemala is absent from the current positive HKSAR schedule; no current destination authority or treaty establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "minex.gob.gt", "igm.gob.gt"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GN",
+      "reason": "Guinea is absent from the current positive HKSAR schedule; no current Guinean authority establishes ordinary HKSAR-passport visitor eligibility and issuance. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "diplomatie.gov.gn", "interieur.gov.gn"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GW",
+      "reason": "Guinea-Bissau is absent from the current positive HKSAR schedule; no authenticated current government schedule establishes its ordinary HKSAR-passport route.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mne.gw", "gov.gw"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "HN",
+      "reason": "Honduras is absent from the current positive HKSAR schedule; no current destination authority or treaty establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "cancilleria.gob.hn", "inigob.hn"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IR",
+      "reason": "The HKSAR dataset includes Iran only in an undifferentiated visa-free-or-arrival list; no current Iranian authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "evisa.mfa.ir", "mfa.gov.ir"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IQ",
+      "reason": "Iraq's current official arrival-visa page lists China but not Hong Kong; PRC passport treatment is not transferred to an ordinary HKSAR passport and no complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mofa.gov.iq", "evisa.iq"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "JO",
+      "reason": "The HKSAR dataset includes Jordan only in an undifferentiated visa-free-or-arrival list; current Jordanian material does not establish the exact passport route and issuance timing.",
+      "searchedOfficialDomains": ["immd.gov.hk", "moi.gov.jo", "mfa.gov.jo"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LR",
+      "reason": "Liberia is absent from the current positive HKSAR schedule; current material does not establish ordinary HKSAR-passport electronic eligibility and issuance timing.",
+      "searchedOfficialDomains": ["immd.gov.hk", "immigration.gov.lr", "mofa.gov.lr"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MO",
+      "reason": "No current Macao or Hong Kong authority maps an ordinary HKSAR Passport to a normal Macao visitor baseline without substituting another document or territory-specific control.",
+      "searchedOfficialDomains": ["immd.gov.hk", "dsal.gov.mo", "publicsecurity.gov.mo"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ML",
+      "reason": "The HKSAR dataset includes Mali only in an undifferentiated visa-free-or-arrival list; no current Malian authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "diplomatie.gouv.ml", "interieur.gouv.ml"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MH",
+      "reason": "The Marshall Islands is absent from the current positive HKSAR schedule; no current destination authority establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "rmiembassyus.org", "rmiepp.com"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NI",
+      "reason": "The HKSAR dataset includes Nicaragua only in an undifferentiated visa-free-or-arrival list; no current Nicaraguan authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "cancilleria.gob.ni", "migracion.gob.ni"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NE",
+      "reason": "The HKSAR dataset includes Niger only in an undifferentiated visa-free-or-arrival list; no current Nigerien authority resolves the exact status. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "diplomatie.gouv.ne", "interieur.gouv.ne"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KP",
+      "reason": "No retrievable current official source establishes an available ordinary HKSAR-passport short-visitor route and issuance timing; closure or permission restrictions cannot be normalized to a visa baseline.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mfa.gov.kp"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MK",
+      "reason": "The HKSAR dataset includes North Macedonia only in an undifferentiated visa-free-or-arrival list; no current destination authority resolves the exact status.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mfa.gov.mk"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PK",
+      "reason": "Pakistan is absent from the current positive HKSAR schedule; no current Pakistani authority establishes the ordinary HKSAR-passport visitor route and issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mofa.gov.pk", "visa.nadra.gov.pk"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PS",
+      "reason": "No current official source maps an entry authorisation or travel-document status directly to an ordinary HKSAR passport Palestinian Territory baseline; territory controls are not flattened into ETA.",
+      "searchedOfficialDomains": ["immd.gov.hk", "gov.il", "moi.pna.ps"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PY",
+      "reason": "Paraguay is absent from the current positive HKSAR schedule; no current Paraguayan authority establishes the ordinary HKSAR-passport visitor route and issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mre.gov.py", "migraciones.gov.py"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ST",
+      "reason": "São Tomé and Príncipe is absent from the current positive HKSAR schedule; no current destination authority establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "migracao.st", "mirex.gov.st"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SL",
+      "reason": "Sierra Leone is absent from the current positive HKSAR schedule; internally conflicting portal material does not establish the ordinary HKSAR-passport route or issuance timing.",
+      "searchedOfficialDomains": ["immd.gov.hk", "slid.gov.sl", "evisa.sl"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SB",
+      "reason": "The Solomon Islands is absent from the current positive HKSAR schedule; no current destination authority establishes the ordinary HKSAR-passport visitor route. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "immigration.gov.sb", "mfaet.gov.sb"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SS",
+      "reason": "South Sudan is absent from the current positive HKSAR schedule; online application availability alone does not establish HKSAR-passport eligibility and issuance timing.",
+      "searchedOfficialDomains": ["immd.gov.hk", "evisa.gov.ss", "mofaic.gov.ss"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SD",
+      "reason": "Sudan is absent from the current positive HKSAR schedule; no current Sudanese authority establishes the ordinary HKSAR-passport visitor route and issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mofa.gov.sd", "interior.gov.sd"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SY",
+      "reason": "Syria is absent from the current positive HKSAR schedule; no current Syrian authority establishes the ordinary HKSAR-passport visitor route and issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mofaex.gov.sy", "moi.gov.sy"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GM",
+      "reason": "The Gambia is absent from the current positive HKSAR schedule; no current Gambian authority establishes the ordinary HKSAR-passport visitor route and issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": ["immd.gov.hk", "mofa.gov.gm", "gambiaimmigration.gov.gm"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TN",
+      "reason": "The HKSAR dataset includes Tunisia only in an undifferentiated visa-free-or-arrival list; no current Tunisian authority resolves the exact status.",
+      "searchedOfficialDomains": ["immd.gov.hk", "diplomatie.gov.tn", "interieur.gov.tn"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TM",
+      "reason": "Turkmenistan is absent from the current positive HKSAR schedule; no current Turkmen authority establishes whether the HKSAR visitor visa is advance-issued, electronic or border-issued.",
+      "searchedOfficialDomains": ["immd.gov.hk", "migration.gov.tm", "mfa.gov.tm"]
+    }
+  ]
+}
