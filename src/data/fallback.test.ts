@@ -211,4 +211,21 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.AM.statuses.PA).toBe("visa_free");
     expect(snapshot.passports.AM.statuses.TR).toBe("evisa");
   });
+
+  it("applies the final Bolivian, Fijian, Guatemalan and Micronesian outbound audits", () => {
+    expect(snapshot.passports.BO.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.BO.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.BO.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.FJ.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.FJ.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.FJ.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.FJ.statuses.TR).toBe("evisa");
+    expect(snapshot.passports.GT.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.GT.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.GT.statuses.PA).toBe("visa_free");
+    expect(snapshot.passports.FM.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.FM.statuses.IS).toBe("visa_free");
+    expect(snapshot.passports.FM.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.FM.statuses.PA).toBe("visa_free");
+  });
 });
