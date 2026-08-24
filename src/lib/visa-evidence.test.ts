@@ -3587,6 +3587,29 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("records Germany, UK, and Spain final outbound audits without inventing issuance routes", () => {
+    expect(
+      OFFICIAL_VISA_SOURCES.some(({ id }) => id === "german-foreign-office-current-afghanistan-entry-visa-germans-2026"),
+    ).toBe(true);
+
+    for (const [passportCode, destinationCode] of [
+      ["DE", "AF"],
+      ["GB", "AF"],
+      ["GB", "PS"],
+      ["ES", "AF"],
+      ["ES", "IR"],
+      ["ES", "KP"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("closes the reviewed Jamaica, Oman, Suriname, and Gambia final gaps", () => {
     for (const [passportCode, destinationCode, status] of [
       ["JM", "JO", "visa_on_arrival"],

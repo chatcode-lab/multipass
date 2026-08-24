@@ -1,6 +1,6 @@
 {
   "batchId": "spain-final-outbound-gaps-2026",
-  "researchedAt": "2026-08-23",
+  "researchedAt": "2026-08-24",
   "sources": [
     {
       "id": "maec-afghanistan-spanish-visitor-documents-2026",
@@ -10,8 +10,8 @@
       "jurisdiction": "Spain",
       "kind": "government-guidance",
       "language": "Spanish",
-      "reviewedAt": "2026-08-23",
-      "officialityEvidence": "Spain's live Foreign Ministry country guidance was last updated 24 April 2026 and directly addresses entry documentation for Spanish travellers to Afghanistan.",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Spain's live Foreign Ministry country guidance is current on 24 August 2026, was last updated 24 April 2026, and directly addresses entry documentation for Spanish travellers to Afghanistan.",
       "supportingExcerpt": "Para entrar en Afganistán se requiere visado. No es posible obtener visado en frontera."
     },
     {
@@ -22,9 +22,9 @@
       "jurisdiction": "Spain",
       "kind": "government-guidance",
       "language": "Spanish",
-      "reviewedAt": "2026-08-23",
-      "officialityEvidence": "Spain's Embassy in Tehran publishes live MAEC travel guidance, last updated 13 April 2026, for Spanish nationals travelling to Iran.",
-      "supportingExcerpt": "Irán dejó de expedir visados en frontera ... se requiere realizar una presolicitud en su web"
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Spain's Embassy in Tehran publishes live MAEC travel guidance, current on 24 August 2026 and last updated 13 April 2026, for Spanish nationals travelling to Iran.",
+      "supportingExcerpt": "Irán dejó de expedir visados en frontera (visa on arrival) desde el inicio de la pandemia."
     },
     {
       "id": "maec-dprk-spanish-visitor-documents-2026",
@@ -34,30 +34,39 @@
       "jurisdiction": "Spain",
       "kind": "government-guidance",
       "language": "Spanish",
-      "reviewedAt": "2026-08-23",
-      "officialityEvidence": "Spain's live Foreign Ministry country guidance was last updated 6 May 2026 and directly states the documentary and route conditions for Spanish travellers to DPRK.",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Spain's live Foreign Ministry country guidance is current on 24 August 2026, was last updated 6 May 2026, and directly states the documentary and route conditions for Spanish travellers to DPRK.",
       "supportingExcerpt": "Se necesita visado, ya sea por turismo o negocios."
     }
   ],
   "policies": [],
-  "conflicts": [],
+  "conflicts": [
+    {
+      "passportCode": "ES",
+      "destinationCode": "IR",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback calls Iran visa-on-arrival, but current MAEC guidance says that route has not officially resumed. The same guidance requires pre-application but does not establish the ordinary Spanish tourist visa's resulting issuance timing.",
+      "sourceIds": ["maec-iran-spanish-tourist-visa-2026"]
+    }
+  ],
   "unresolved": [
     {
       "passportCode": "ES",
       "destinationCode": "AF",
-      "reason": "Current MAEC guidance says a visa is required and unavailable at the border, but it does not establish a current ordinary Spanish tourist issuance channel; fallback advance-visa status is not promoted.",
-      "searchedOfficialDomains": ["exteriores.gob.es", "mfa.gov.af"]
+      "reason": "Current MAEC guidance says a visa is required and unavailable at the border, but de facto entry requirements may vary or be non-public and no ordinary Spanish tourist issuance channel is established. The matching fallback is not promoted.",
+      "searchedOfficialDomains": ["exteriores.gob.es", "mfa.gov.af", "moi.gov.af"]
     },
     {
       "passportCode": "ES",
       "destinationCode": "IR",
-      "reason": "MAEC says border visas have not officially resumed and requires pre-application before travel, but does not establish whether the ordinary Spanish tourist visa is electronically or mission-issued.",
+      "reason": "MAEC says border visas have not officially resumed and requires online pre-application before travel, but does not establish whether the resulting ordinary Spanish tourist visa is electronically or mission-issued. The visa-on-arrival fallback is therefore not retained.",
       "searchedOfficialDomains": ["exteriores.gob.es", "mfa.gov.ir", "evisa.mfa.ir"]
     },
     {
       "passportCode": "ES",
       "destinationCode": "KP",
-      "reason": "MAEC says a tourist visa is required and tourist travel must be through official agencies, but does not establish the ordinary Spanish visitor issuance channel or operational availability.",
+      "reason": "MAEC says a tourism or business visa is required and identifies China and Russia as the present entry and exit routes, but it does not establish an ordinary Spanish visitor issuance channel or operational availability. A warning, route fact and accompanying-guide condition are not a visa-timing result.",
       "searchedOfficialDomains": ["exteriores.gob.es", "mfa.gov.kp"]
     }
   ]
