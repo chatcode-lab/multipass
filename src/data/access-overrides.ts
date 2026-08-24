@@ -4005,4 +4005,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://gov.om/en/w/get-sponsored-tourist-visa",
     reviewedAt: "2026-08-24",
   })),
+  {
+    passportCode: "CD",
+    destinationCode: "BS",
+    status: "visa_required",
+    reason: "The Bahamas' current visa regulations expressly designate the Democratic Republic of the Congo and require advance consular endorsement in the passport; the online service establishes filing, not electronic issuance.",
+    sourceUrl: "https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2015/2015-0005/2015-0005_2.pdf",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;

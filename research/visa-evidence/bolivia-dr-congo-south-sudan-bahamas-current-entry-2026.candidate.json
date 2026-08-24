@@ -1,0 +1,104 @@
+{
+  "batchId": "bolivia-dr-congo-south-sudan-bahamas-current-entry-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "bahamas-current-visitor-country-requirements-table",
+      "title": "Visa Requirements for Foreigners Travelling to The Bahamas",
+      "url": "https://cdn.bahamas.gov.bs/tenant/tenanttgotb/documents/Visa-Requirements-for-Visitors-Travelling-to-TheBahamas1-20240216054224-20250528004922.pdf",
+      "publisher": "Government of The Bahamas",
+      "jurisdiction": "The Bahamas",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Bahamas government CDN document is headed Visa Requirements for Foreigners Travelling to The Bahamas and provides the country/document/visa-requirement/visit-period columns. It retains an internal 2014 update date, so its Bolivia row is corroborated against current official legislation.",
+      "supportingExcerpt": "BOLIVIA, REPUBLIC OF PASSPORT NO 3 MONTHS"
+    },
+    {
+      "id": "bahamas-current-visas-regulations-designated-country-rule",
+      "title": "Ministry of Foreign Affairs (Visas) Regulations: designated-country visitor visa rule",
+      "url": "https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2015/2015-0005/2015-0005_2.pdf",
+      "publisher": "Laws of The Bahamas",
+      "jurisdiction": "The Bahamas",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Laws of The Bahamas current-regulations record is the official consolidated Ministry of Foreign Affairs (Visas) Regulations and sets both the designated-country rule and the Second Schedule.",
+      "supportingExcerpt": "is a citizen of a country designated in the Second Schedule"
+    },
+    {
+      "id": "bahamas-current-visas-regulations-physical-issuance-definition",
+      "title": "Ministry of Foreign Affairs (Visas) Regulations: visa issuance definition",
+      "url": "https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2015/2015-0005/2015-0005_2.pdf",
+      "publisher": "Laws of The Bahamas",
+      "jurisdiction": "The Bahamas",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official consolidated Regulations define a visa and specify its consular/passport issuance form; the current Second Schedule expressly includes Democratic Republic of Congo.",
+      "supportingExcerpt": "an authenticating endorsement issued by or on behalf of the Minister and placed in a passport"
+    },
+    {
+      "id": "bahamas-mfa-evisa-faq-release-4-12-2026",
+      "title": "BHS eVisa Online Portal FAQ Release 4.12",
+      "url": "https://evisa.mofa.gov.bs/bs-evics-entitlement-online-ui/resources/docs/FAQ.pdf",
+      "publisher": "Ministry of Foreign Affairs of The Bahamas",
+      "jurisdiction": "The Bahamas",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Ministry of Foreign Affairs eVisa FAQ is expressly dated 16 March 2026 and describes an online application process, while preserving the Government's ability to require in-person visa-office resubmission.",
+      "supportingExcerpt": "The government reserves the right to require you to resubmit documents in person at the Visa office."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bolivian-ordinary-passports-bahamas-visa-free-2026",
+      "title": "Bolivian ordinary passports: Bahamas visa-free short visits",
+      "summary": "The Bahamas' live visitor requirements table directly marks a Bolivian passport as not requiring a visa for a three-month visit; current legislation's designated-country rule is consistent with that visitor result.",
+      "status": "visa_free",
+      "destinationCodes": ["BS"],
+      "passportCodes": ["BO"],
+      "conditions": [
+        "Applies to an ordinary Bolivian passport visitor for up to three months in the official country table.",
+        "Work, education, residence, special travel documents and final immigration admission are outside this visitor baseline.",
+        "The table retains an internal 2014 date despite current Bahamas government hosting; current designated-country legislation is used only as legal corroboration, not as a general omission inference."
+      ],
+      "sourceIds": ["bahamas-current-visitor-country-requirements-table", "bahamas-current-visas-regulations-designated-country-rule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "dr-congo-ordinary-passports-bahamas-advance-visitor-visa-2026",
+      "title": "DR Congo ordinary passports: Bahamas advance visitor visa",
+      "summary": "Current Bahamas legislation expressly designates the Democratic Republic of Congo as visa-required and defines the visa as a consular endorsement placed in the passport; its eVisa site supports online filing but not electronic issuance.",
+      "status": "visa_required",
+      "destinationCodes": ["BS"],
+      "passportCodes": ["CD"],
+      "conditions": [
+        "Applies to an ordinary Democratic Republic of the Congo passport visitor for leisure; the Regulations categorize tourist visas as leisure travel.",
+        "The visa is an endorsement in the passport issued by or for the Minister after consular examination; online filing does not make this an electronically issued visa.",
+        "A single-entry tourist visa is valid for one entry within three months; final admission remains subject to Immigration Act requirements."
+      ],
+      "sourceIds": ["bahamas-current-visas-regulations-designated-country-rule", "bahamas-current-visas-regulations-physical-issuance-definition", "bahamas-mfa-evisa-faq-release-4-12-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CD",
+      "destinationCode": "BS",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The current Bahamas legal definition requires a consular endorsement placed in the passport. The March 2026 eVisa service establishes online application mechanics only and allows in-person visa-office resubmission; it does not establish electronic issuance.",
+      "sourceIds": ["bahamas-current-visas-regulations-physical-issuance-definition", "bahamas-mfa-evisa-faq-release-4-12-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "SS",
+      "destinationCode": "BS",
+      "reason": "South Sudan is not directly named in the live Bahamas visitor table or the current statutory designated-country schedule. Neither omission is normalized as a visa-free or visa-required result, and the 2026 eVisa FAQ does not provide a South Sudan nationality result or prove electronic issuance.",
+      "searchedOfficialDomains": ["bahamas.gov.bs", "laws.bahamas.gov.bs", "mofa.gov.bs", "evisa.mofa.gov.bs"]
+    }
+  ]
+}

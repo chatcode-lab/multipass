@@ -236,9 +236,15 @@ describe("official visa evidence", () => {
   });
 
   it("keeps The Bahamas' explicit current classifications and ambiguous rows separate", () => {
+    const bahamasPairs = evidenceRelationshipPairs(snapshot.manifest)
+      .filter(({ destination }) => destination.code === "BS");
+
+    expect(bahamasPairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("XK", "BS", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "BS", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "BS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BO", "BS", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CD", "BS", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "BS", "evisa").supportsCurrentStatus).toBe(false);
   });
 
@@ -831,7 +837,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "PH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "PH", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KH")).toHaveLength(197);
+    expect(pairsFor("KH")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("SG", "KH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "KH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "KH", "visa_required").supportsCurrentStatus).toBe(true);
@@ -841,6 +847,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("JP", "KH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SG", "KH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "KH", snapshot.passports.US.statuses.KH).supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MV", "KH", "visa_free").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("LA")).toHaveLength(162);
     expect(getVisaRelationshipEvidence("BY", "LA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1322,7 +1329,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CF", "CF", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GQ")).toHaveLength(196);
+    expect(pairsFor("GQ")).toHaveLength(197);
     expect(getVisaRelationshipEvidence("CM", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "GQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1330,6 +1337,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GQ", "GQ", "citizenship").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("TR", "GQ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BB", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the reviewed Lesotho and Eswatini schedules conservatively", () => {
@@ -4321,6 +4329,7 @@ describe("official visa evidence", () => {
       ["CM", "GD", "visa_free"],
       ["CM", "PA", "visa_required"],
       ["CD", "GD", "visa_required"],
+      ["CD", "BS", "visa_required"],
       ["CD", "PA", "visa_required"],
       ["DO", "GD", "visa_free"],
       ["DO", "JO", "visa_on_arrival"],
@@ -4333,7 +4342,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["CM", "AF"],
-      ["CD", "BS"],
       ["DO", "MD"],
       ["ER", "US"],
     ] as const) {
@@ -4835,6 +4843,7 @@ describe("official visa evidence", () => {
       "imigresen-online.imi.gov.my",
       "www.kln.gov.my",
       "www.foreign.gov.bb",
+      "laws.bahamas.gov.bs",
       "immigration.gov.bb",
       "apps.immigration.gov.bb",
       "kanwilsultra.imigrasi.go.id",
