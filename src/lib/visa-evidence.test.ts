@@ -1244,7 +1244,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HU", "SD", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "SD", snapshot.passports.CA.statuses.SD).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SS")).toHaveLength(26);
+    expect(pairsFor("SS")).toHaveLength(27);
     expect(getVisaRelationshipEvidence("KE", "SS", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("UG", "SS", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "SS", "visa_required").supportsCurrentStatus).toBe(true);
@@ -4606,6 +4606,28 @@ describe("official visa evidence", () => {
           snapshot.passports[passportCode].statuses[destinationCode],
         ).supportsCurrentStatus,
       ).toBe(false);
+    }
+  });
+
+  it("supports South Korea's South Sudan eVisa while preserving pairwise Sierra Leone and Djibouti holds", () => {
+    expect(getVisaRelationshipEvidence("KR", "SS", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.KR.statuses.SS).toBe("evisa");
+    expect(evidenceRelationshipPairs(snapshot.manifest).filter(({ destination }) => destination.code === "SS"))
+      .toHaveLength(27);
+
+    for (const passportCode of ["SG", "JP", "IT", "CH", "FI", "LU", "PT", "AT", "MT", "NZ", "GR"] as const) {
+      const status = snapshot.passports[passportCode].statuses.SS;
+      expect(getVisaRelationshipEvidence(passportCode, "SS", status).supportsCurrentStatus).toBe(false);
+    }
+
+    for (const passportCode of ["CH", "FI", "SE", "LU", "KR", "IE", "NL", "PT", "AT", "MT", "NZ", "GR"] as const) {
+      const status = snapshot.passports[passportCode].statuses.SL;
+      expect(getVisaRelationshipEvidence(passportCode, "SL", status).supportsCurrentStatus).toBe(false);
+    }
+
+    for (const passportCode of ["SG", "CH", "FI", "LU", "KR", "PT", "MT", "NZ", "GR", "LV", "LT"] as const) {
+      const status = snapshot.passports[passportCode].statuses.DJ;
+      expect(getVisaRelationshipEvidence(passportCode, "DJ", status).supportsCurrentStatus).toBe(false);
     }
   });
 
