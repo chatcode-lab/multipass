@@ -1,0 +1,52 @@
+{
+  "batchId": "israel-north-macedonia-mexico-kyrgyzstan-visa-free-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kyrgyz-evisa-do-i-need-visa-selector-2026",
+      "title": "Kyrgyz Republic eVisa: Get Information / Do I need visa?",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en&n=1",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.e-gov.kg government eVisa service describes itself as the Kyrgyzstan Official Electronic Visa Portal and presents the nationality/document visa-regime selector.",
+      "supportingExcerpt": "This tool provides general information about visa eligibility for holders of passports and documents of different countries."
+    },
+    {
+      "id": "kyrgyz-evisa-regime-api-ordinary-results-2026",
+      "title": "Kyrgyz Republic eVisa nationality visa-regime API",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaTypeInfo",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The selector's live same-origin JavaScript posts doc_issued_by to this endpoint and renders the returned ordinary-passport regime table.",
+      "supportingExcerpt": "\"regime\":\"Visa free regime\",\"ordinary_passport\":\"up to 30 days\""
+    }
+  ],
+  "policies": [
+    {
+      "id": "kyrgyzstan-live-selector-israel-north-macedonia-mexico-ordinary-visa-free-2026",
+      "title": "Israel, North Macedonia and Mexico ordinary passports: 30-day visa-free visit",
+      "summary": "The live MFA eVisa selector directly returns Visa free regime, up to 30 days, in the Ordinary Passport column for Israel, Macedonia and Mexico.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["IL", "MK", "MX"],
+      "conditions": [
+        "Direct selector replay used the page's country IDs 109 (Israel), 131 (Macedonia, mapped to North Macedonia/MK), and 143 (Mexico), then POSTed each doc_issued_by value to getVisaTypeInfo in the same PHP session.",
+        "Each returned ordinary-passport value is Visa free regime up to 30 days. No electronic, border-issued, diplomatic, service, residence, work, transit, security, carrier, or individual-admission route is inferred.",
+        "The response is session-bound and mutable; recheck the live official selector before travel. The portal labels MK as Macedonia rather than North Macedonia."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-do-i-need-visa-selector-2026",
+        "kyrgyz-evisa-regime-api-ordinary-results-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

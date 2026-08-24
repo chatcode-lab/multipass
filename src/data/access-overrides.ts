@@ -3989,6 +3989,14 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
     reviewedAt: "2026-08-24",
   })),
+  {
+    passportCode: "BT",
+    destinationCode: "BD",
+    status: "visa_on_arrival",
+    reason: "Bhutan's current Foreign Ministry notice confirms that Bhutanese ordinary-passport visitors may obtain Bangladesh's visa on arrival, subject to the stated traveler-document conditions.",
+    sourceUrl: "https://www.mfa.gov.bt/%F0%9D%90%8D%F0%9D%90%8E%F0%9D%90%93%F0%9D%90%88%F0%9D%90%85%F0%9D%90%88%F0%9D%90%82%F0%9D%90%80%F0%9D%90%93%F0%9D%90%88%F0%9D%90%8E%F0%9D%90%8D/",
+    reviewedAt: "2026-08-24",
+  },
   ...(["IL", "TO", "SS"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "OM" as const,

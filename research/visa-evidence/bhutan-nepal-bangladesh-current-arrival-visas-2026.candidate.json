@@ -1,0 +1,75 @@
+{
+  "batchId": "bhutan-nepal-bangladesh-current-arrival-visas-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "bhutan-mfa-bangladesh-arrival-visa-notice-2026",
+      "title": "Notification on Visa on Arrival facility for Bangladesh",
+      "url": "https://www.mfa.gov.bt/%F0%9D%90%8D%F0%9D%90%8E%F0%9D%90%93%F0%9D%90%88%F0%9D%90%85%F0%9D%90%88%F0%9D%90%82%F0%9D%90%80%F0%9D%90%93%F0%9D%90%88%F0%9D%90%8E%F0%9D%90%8D/",
+      "publisher": "Ministry of Foreign Affairs and External Trade, Royal Government of Bhutan",
+      "jurisdiction": "Bhutan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Bhutan's live Ministry of Foreign Affairs and External Trade notice reports the Bangladesh Embassy in Thimphu's current confirmation for Bhutanese passport holders.",
+      "supportingExcerpt": "Bhutanese passport holders travelling to Bangladesh may continue to avail themselves of the \"Visa on Arrival\" facility."
+    },
+    {
+      "id": "bangladesh-kathmandu-nepal-arrival-visa-guidance-2026",
+      "title": "Visa information for Nepali nationals",
+      "url": "https://kathmandu.mofa.gov.bd/pages/static-pages/6952668735ce18e1c05a9d30",
+      "publisher": "Embassy of the People's Republic of Bangladesh, Kathmandu",
+      "jurisdiction": "Bangladesh",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Bangladesh's official Ministry of Foreign Affairs mission page is marked updated 1 January 2026 and directly states the Nepali-national tourist arrival-visa rule. Its current TLS chain is incomplete, so the source needs periodic secure-access recheck.",
+      "supportingExcerpt": "may get a 30 days single entry visa once a year (without any fee) at any international airport in Bangladesh."
+    }
+  ],
+  "policies": [
+    {
+      "id": "bhutanese-ordinary-passport-bangladesh-arrival-visitor-visa-2026",
+      "title": "Bhutanese ordinary passports: Bangladesh visa on arrival",
+      "summary": "Bhutan's current Foreign Ministry notice confirms that Bhutanese passport holders may use Bangladesh's visa-on-arrival facility.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["BT"],
+      "conditions": [
+        "Applies to a Bhutanese ordinary passport holder visiting Bangladesh for a short stay.",
+        "Visa issuance is at arrival; carry accommodation details in Bangladesh and a return air ticket.",
+        "Military and security officials must complete formalities with the Bangladesh Embassy in Thimphu before travel.",
+        "Residence, work, study, transit, special passports and final admission are outside scope."
+      ],
+      "sourceIds": ["bhutan-mfa-bangladesh-arrival-visa-notice-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "nepali-ordinary-passport-bangladesh-tourist-arrival-visa-2026",
+      "title": "Nepali ordinary passports: Bangladesh tourist visa on arrival",
+      "summary": "Bangladesh's current Kathmandu Embassy guidance allows a Nepali national a single-entry tourist visa at a Bangladesh international airport once yearly.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["NP"],
+      "conditions": [
+        "Applies to a Nepali ordinary passport holder visiting Bangladesh for tourism.",
+        "A 30-day single-entry visa may be issued at any Bangladesh international airport once per year.",
+        "Bangladesh's general eligibility selector currently returns a conflicting mission-visa result; the newer passport-specific Embassy guidance controls this policy.",
+        "Residence, work, study, transit, special passports and final admission are outside scope."
+      ],
+      "sourceIds": ["bangladesh-kathmandu-nepal-arrival-visa-guidance-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BT",
+      "destinationCode": "BD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Bhutan's current Foreign Ministry notice confirms Bangladesh visa on arrival for Bhutanese passport holders; the fallback's visa-free status is incorrect.",
+      "sourceIds": ["bhutan-mfa-bangladesh-arrival-visa-notice-2026"]
+    }
+  ],
+  "unresolved": []
+}

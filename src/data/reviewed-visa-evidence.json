@@ -637,7 +637,9 @@
     "marshall-islands-bilateral-proof-cohort-c-2026",
     "oman-sponsored-tourist-evisa-residual-2026",
     "sri-lanka-bangladesh-current-advance-visa-correction-2026",
-    "ukraine-operative-evisa-and-uk-waiver-refresh-2026"
+    "ukraine-operative-evisa-and-uk-waiver-refresh-2026",
+    "bhutan-nepal-bangladesh-current-arrival-visas-2026",
+    "israel-north-macedonia-mexico-kyrgyzstan-visa-free-2026"
   ],
   "sources": [
     {
@@ -28648,6 +28650,46 @@
       "jurisdiction": "Ukraine",
       "kind": "law",
       "language": "Ukrainian",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "bhutan-mfa-bangladesh-arrival-visa-notice-2026",
+      "title": "Notification on Visa on Arrival facility for Bangladesh",
+      "url": "https://www.mfa.gov.bt/%F0%9D%90%8D%F0%9D%90%8E%F0%9D%90%93%F0%9D%90%88%F0%9D%90%85%F0%9D%90%88%F0%9D%90%82%F0%9D%90%80%F0%9D%90%93%F0%9D%90%88%F0%9D%90%8E%F0%9D%90%8D/",
+      "publisher": "Ministry of Foreign Affairs and External Trade, Royal Government of Bhutan",
+      "jurisdiction": "Bhutan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "bangladesh-kathmandu-nepal-arrival-visa-guidance-2026",
+      "title": "Visa information for Nepali nationals",
+      "url": "https://kathmandu.mofa.gov.bd/pages/static-pages/6952668735ce18e1c05a9d30",
+      "publisher": "Embassy of the People's Republic of Bangladesh, Kathmandu",
+      "jurisdiction": "Bangladesh",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "kyrgyz-evisa-do-i-need-visa-selector-2026",
+      "title": "Kyrgyz Republic eVisa: Get Information / Do I need visa?",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en&n=1",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "kyrgyz-evisa-regime-api-ordinary-results-2026",
+      "title": "Kyrgyz Republic eVisa nationality visa-regime API",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaTypeInfo",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
       "reviewedAt": "2026-08-24"
     }
   ],
@@ -98549,6 +98591,71 @@
       ],
       "sourceIds": [
         "rada-ukraine-uk-visa-waiver-2025-2026"
+      ]
+    },
+    {
+      "id": "bhutanese-ordinary-passport-bangladesh-arrival-visitor-visa-2026",
+      "title": "Bhutanese ordinary passports: Bangladesh visa on arrival",
+      "summary": "Bhutan's current Foreign Ministry notice confirms that Bhutanese passport holders may use Bangladesh's visa-on-arrival facility.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "BD"
+      ],
+      "passportCodes": [
+        "BT"
+      ],
+      "conditions": [
+        "Applies to a Bhutanese ordinary passport holder visiting Bangladesh for a short stay.",
+        "Visa issuance is at arrival; carry accommodation details in Bangladesh and a return air ticket.",
+        "Military and security officials must complete formalities with the Bangladesh Embassy in Thimphu before travel.",
+        "Residence, work, study, transit, special passports and final admission are outside scope."
+      ],
+      "sourceIds": [
+        "bhutan-mfa-bangladesh-arrival-visa-notice-2026"
+      ]
+    },
+    {
+      "id": "nepali-ordinary-passport-bangladesh-tourist-arrival-visa-2026",
+      "title": "Nepali ordinary passports: Bangladesh tourist visa on arrival",
+      "summary": "Bangladesh's current Kathmandu Embassy guidance allows a Nepali national a single-entry tourist visa at a Bangladesh international airport once yearly.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "BD"
+      ],
+      "passportCodes": [
+        "NP"
+      ],
+      "conditions": [
+        "Applies to a Nepali ordinary passport holder visiting Bangladesh for tourism.",
+        "A 30-day single-entry visa may be issued at any Bangladesh international airport once per year.",
+        "Bangladesh's general eligibility selector currently returns a conflicting mission-visa result; the newer passport-specific Embassy guidance controls this policy.",
+        "Residence, work, study, transit, special passports and final admission are outside scope."
+      ],
+      "sourceIds": [
+        "bangladesh-kathmandu-nepal-arrival-visa-guidance-2026"
+      ]
+    },
+    {
+      "id": "kyrgyzstan-live-selector-israel-north-macedonia-mexico-ordinary-visa-free-2026",
+      "title": "Israel, North Macedonia and Mexico ordinary passports: 30-day visa-free visit",
+      "summary": "The live MFA eVisa selector directly returns Visa free regime, up to 30 days, in the Ordinary Passport column for Israel, Macedonia and Mexico.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "IL",
+        "MK",
+        "MX"
+      ],
+      "conditions": [
+        "Direct selector replay used the page's country IDs 109 (Israel), 131 (Macedonia, mapped to North Macedonia/MK), and 143 (Mexico), then POSTed each doc_issued_by value to getVisaTypeInfo in the same PHP session.",
+        "Each returned ordinary-passport value is Visa free regime up to 30 days. No electronic, border-issued, diplomatic, service, residence, work, transit, security, carrier, or individual-admission route is inferred.",
+        "The response is session-bound and mutable; recheck the live official selector before travel. The portal labels MK as Macedonia rather than North Macedonia."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-do-i-need-visa-selector-2026",
+        "kyrgyz-evisa-regime-api-ordinary-results-2026"
       ]
     }
   ]
