@@ -145,8 +145,13 @@ describe("official visa evidence", () => {
 
     const hongKongPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "HK");
-    expect(hongKongPairs).toHaveLength(194);
+    expect(hongKongPairs).toHaveLength(195);
     expect(getVisaRelationshipEvidence("CN", "HK", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TL", "HK", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.TL.statuses.HK).toBe("visa_free");
+    expect(getVisaRelationshipEvidence("MO", "HK", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "HK", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "HK", "visa_required").supportsCurrentStatus).toBe(false);
   });
 
   it("models Kenya's current ETA scope while leaving the misspelled Saint Kitts entry unresolved", () => {
@@ -4428,7 +4433,6 @@ describe("official visa evidence", () => {
       ["AG", "US"],
       ["JO", "EG"],
       ["MM", "US"],
-      ["TL", "HK"],
       ["TL", "LC"],
     ] as const) {
       expect(

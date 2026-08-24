@@ -1,0 +1,101 @@
+{
+  "batchId": "hong-kong-final-foreign-passport-entry-gaps-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "hong-kong-immd-current-visitor-requirements-august-2026",
+      "title": "Visit Visa / Entry Permit Requirements for the Hong Kong Special Administrative Region",
+      "url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Immigration Department visitor-requirements chapter contains the current foreign-country/travel-document table, says it was updated in August 2026, and expressly gives its residual other-foreign-countries visitor cohort seven days. It also says a person who needs a visa or entry permit must obtain it before travelling.",
+      "supportingExcerpt": "Nationals of other foreign countries do not require visas for a visit"
+    },
+    {
+      "id": "hong-kong-immd-current-macao-taiwan-entry-arrangements-june-2026",
+      "title": "Entry Arrangements for Mainland, Macao, Taiwan & Overseas Chinese Residents",
+      "url": "https://www.immd.gov.hk/eng/services/visas/overseas-chinese-entry-arrangement.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Immigration Department page is revised 2 June 2026. It separately states Macao resident-card and Visit Permit concessions, Macao-SAR-passport transit, and Chinese-resident-of-Taiwan PAR and entry-permit arrangements; these rules do not use a generic foreign-passport schedule.",
+      "supportingExcerpt": "Holders of Macao SAR passports and holders of Macao SAR Travel Permits may transit Hong Kong for a stay up to 7 days"
+    },
+    {
+      "id": "hong-kong-immd-timor-leste-current-visitor-scheme-country-scope-2026",
+      "title": "Immigration Facilitation Scheme for Invited Persons",
+      "url": "https://www.immd.gov.hk/eng/invitedpersons.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Immigration Department visitor-facilitation page expressly identifies Timor-Leste as an ASEAN member state from 26 October 2025. It independently confirms the Department's current country treatment for the positive other-foreign-countries residual; its invitation-only benefits are not used to determine the baseline.",
+      "supportingExcerpt": "TIMOR-LESTE (since 26 Oct 2025)"
+    }
+  ],
+  "policies": [
+    {
+      "id": "hong-kong-other-foreign-country-timor-leste-seven-day-visitor-2026",
+      "title": "Timor-Leste ordinary passports: seven-day Hong Kong visitor waiver",
+      "summary": "Hong Kong Immigration's current visitor table expressly assigns nationals of other foreign countries to a visa-free visitor stay of up to seven days. Timor-Leste is classified only through that affirmative residual, not through absence from the named rows.",
+      "status": "visa_free",
+      "destinationCodes": ["HK"],
+      "passportCodes": ["TL"],
+      "conditions": [
+        "The express current residual is limited to a visit not exceeding seven days for the foreign-country passport cohort.",
+        "The current Immigration Department separately identifies Timor-Leste in a visitor-facilitation country table; that scheme's invitation-only benefits do not define this ordinary-passport baseline.",
+        "For work, study, establishing or joining a business, residence, or a visitor stay longer than the allowed visa-free period, the current Immigration Department guidance requires the appropriate visa or entry permit before travel.",
+        "Normal immigration requirements, funds, onward or return travel, passport validity, individual admission and security controls remain separate."
+      ],
+      "sourceIds": [
+        "hong-kong-immd-current-visitor-requirements-august-2026",
+        "hong-kong-immd-timor-leste-current-visitor-scheme-country-scope-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "HK",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback's visa-free label cannot be supported for a Macao SAR ordinary passport alone. The current Immigration Department route splits Macao permanent-resident cards and Visit Permits from a passport-only seven-day transit concession; it does not establish a passport-only visitor waiver.",
+      "sourceIds": ["hong-kong-immd-current-macao-taiwan-entry-arrangements-june-2026"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "HK",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback's advance-visa label cannot be made into one ordinary Taiwan-passport rule. The current Immigration Department route divides Taiwan cases by Chinese-resident status, residence, birth or prior-admission history, travel documents, conditional PAR and entry permits.",
+      "sourceIds": ["hong-kong-immd-current-macao-taiwan-entry-arrangements-june-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "HK",
+      "reason": "The current Immigration Department arrangements give entry-permit-free visits to specified Macao permanent-resident card or Visit Permit holders, and a separate 30-day Visit Permit route for certain non-permanent residents. A Macao SAR passport is expressly described only for qualifying seven-day transit with onward travel. Those resident, permit and transit rules do not establish a passport-only short-visitor baseline for the MO ordinary-passport code; the foreign-country residual is not used for Macao.",
+      "searchedOfficialDomains": ["immd.gov.hk", "data.gov.hk"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "HK",
+      "reason": "Current Immigration Department arrangements treat Chinese residents of Taiwan through purpose-specific entry permits, a conditional PAR route for people born in Taiwan or previously admitted as Taiwan residents, and a separate Mainland Travel Permit route. Those rules additionally depend on current residence, birth/admission history and other travel-document facts. They do not establish one ordinary Taiwan-passport visitor baseline, and the foreign-country residual is not used for Taiwan.",
+      "searchedOfficialDomains": ["immd.gov.hk", "data.gov.hk"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "HK",
+      "reason": "The current Immigration Department table has no direct Kosovo passport row. Its seven-day residual is expressly framed for nationals of other foreign countries, but the current Hong Kong materials reviewed provide no affirmative Kosovo-recognition or travel-document mapping to that cohort. Neither a waiver nor a pre-travel visa/entry-permit route is assigned from omission or an unproven residual scope.",
+      "searchedOfficialDomains": ["immd.gov.hk", "data.gov.hk"]
+    }
+  ]
+}
