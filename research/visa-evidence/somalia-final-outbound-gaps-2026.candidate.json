@@ -1,0 +1,117 @@
+{
+  "batchId": "somalia-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "us-state-pp10998-somalia-full-suspension-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "United States Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live State Department notice, last updated February 2, 2026, implements Presidential Proclamation 10998 and names Somalia in the full-suspension cohort.",
+      "supportingExcerpt": "Somalia"
+    },
+    {
+      "id": "us-code-ina-geographic-united-states-current",
+      "title": "8 U.S.C. § 1101: Definitions",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The official U.S. Code publishes INA section 101(a)(38), defining the geographic United States to include Puerto Rico, Guam, the Virgin Islands and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "SO",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "PP10998 fully suspends Somali nationals' entry and visa issuance, but valid-visa grandfathering, specified exceptions and discretionary determinations cannot be flattened to one visitor status.",
+      "sourceIds": ["us-state-pp10998-somalia-full-suspension-2026"]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is materially conditional and INA's geographic definition includes Puerto Rico; exceptions and valid-visa grandfathering prevent normalization.",
+      "sourceIds": ["us-state-pp10998-somalia-full-suspension-2026", "us-code-ina-geographic-united-states-current"]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is materially conditional and INA's geographic definition includes Guam; exceptions and valid-visa grandfathering prevent normalization.",
+      "sourceIds": ["us-state-pp10998-somalia-full-suspension-2026", "us-code-ina-geographic-united-states-current"]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is materially conditional and INA's geographic definition includes the Northern Mariana Islands; exceptions and valid-visa grandfathering prevent normalization.",
+      "sourceIds": ["us-state-pp10998-somalia-full-suspension-2026", "us-code-ina-geographic-united-states-current"]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is materially conditional and INA's geographic definition includes the Virgin Islands; exceptions and valid-visa grandfathering prevent normalization.",
+      "sourceIds": ["us-state-pp10998-somalia-full-suspension-2026", "us-code-ina-geographic-united-states-current"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"SO","destinationCode":"AF","reason":"No current Afghan authority establishes a recognized ordinary Somali-passport short-visitor baseline; no status is inferred from a portal or omission.","searchedOfficialDomains":["mfa.gov.af","evisa.mfa.gov.af"]},
+    {"passportCode":"SO","destinationCode":"AO","reason":"No current Angolan primary nationality schedule establishes a recognized ordinary Somali-passport visitor baseline; electronic application availability is not eligibility evidence.","searchedOfficialDomains":["smevisa.gov.ao","mirex.gov.ao"]},
+    {"passportCode":"SO","destinationCode":"BD","reason":"Current Bangladeshi material does not map a recognized ordinary Somali passport to a passport-only visitor status or actual issuance timing.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd"]},
+    {"passportCode":"SO","destinationCode":"CF","reason":"No current Central African primary nationality schedule establishes a normalized short-visitor route for this recognized ordinary passport.","searchedOfficialDomains":["diplomatie.gouv.cf","douanes.cf"]},
+    {"passportCode":"SO","destinationCode":"TD","reason":"Chad's portal material does not independently establish ordinary Somali-passport eligibility or the actual visitor-visa issuance route.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"SO","destinationCode":"KM","reason":"Comoros law preserves treaty and special-law exceptions while no current tourist nationality schedule maps this ordinary Somali passport; no complement is inferred.","searchedOfficialDomains":["comores-diplomatie.km","justice.gouv.km"]},
+    {"passportCode":"SO","destinationCode":"CG","reason":"No current Republic of the Congo primary nationality schedule establishes this recognized ordinary Somali-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.cg","interieur.gouv.cg"]},
+    {"passportCode":"SO","destinationCode":"DJ","reason":"Djibouti's official electronic-visa material does not publish a current ordinary Somali-passport eligibility or exemption partition.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj"]},
+    {"passportCode":"SO","destinationCode":"GU","reason":"Not normalized: current PP10998 full suspension has valid-visa grandfathering, exceptions and case-specific determinations.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"SO","destinationCode":"GW","reason":"No current Guinea-Bissau primary source establishes an unconditional ordinary Somali-passport visitor baseline; conflicting foreign guidance is not substituted.","searchedOfficialDomains":["mne.gw","gov.gw"]},
+    {"passportCode":"SO","destinationCode":"ID","reason":"Indonesia's Calling Visa material is not a normalized ordinary visitor route, and current official regional lists conflict over its nationality scope.","searchedOfficialDomains":["imigrasi.go.id","evisa.imigrasi.go.id"]},
+    {"passportCode":"SO","destinationCode":"IR","reason":"Iran's current MFA eVisa endpoints remain inaccessible and no current official nationality rule establishes this ordinary Somali-passport visitor baseline.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir"]},
+    {"passportCode":"SO","destinationCode":"IQ","reason":"Iraq's official eVisa portal proves a pre-travel route but publishes no nonempty current nationality eligibility map; no complement is inferred.","searchedOfficialDomains":["evisa.iq","moi.gov.iq"]},
+    {"passportCode":"SO","destinationCode":"KW","reason":"Kuwait's live official arrival data confirms only a named cohort and does not establish an unconditional residual route for Somalia.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"SO","destinationCode":"KG","reason":"Kyrgyzstan's current eVisa portal does not return a positive controlling tourist-eligibility result for this ordinary passport.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"SO","destinationCode":"LA","reason":"No current Lao primary nationality schedule establishes this recognized ordinary Somali-passport visitor baseline; generic eVisa availability is insufficient.","searchedOfficialDomains":["immigration.gov.la","mofa.gov.la"]},
+    {"passportCode":"SO","destinationCode":"LR","reason":"Liberia's current visitor processes are conditional and do not publish a nationality-specific ordinary Somali-passport short-visitor baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"SO","destinationCode":"ML","reason":"Mali's current Foreign Ministry service depends on residence and filing location and does not establish a passport-only visitor baseline for Somalia.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"SO","destinationCode":"MH","reason":"No current Marshall Islands primary nationality schedule establishes this recognized ordinary Somali-passport visitor baseline.","searchedOfficialDomains":["rmiembassyus.org","rmieppso.org"]},
+    {"passportCode":"SO","destinationCode":"MN","reason":"Mongolia's current eVisa page is a positive eligibility list and does not establish an advance-visa complement for an unlisted ordinary Somali passport.","searchedOfficialDomains":["evisa.mn","consul.mn"]},
+    {"passportCode":"SO","destinationCode":"MM","reason":"Myanmar's current official material does not establish a positive ordinary Somali-passport visitor route; no residual classification is inferred from list omission.","searchedOfficialDomains":["evisa.moip.gov.mm","moip.gov.mm"]},
+    {"passportCode":"SO","destinationCode":"NE","reason":"No current Niger primary nationality schedule establishes this recognized ordinary Somali-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"SO","destinationCode":"KP","reason":"No retrievable current official source establishes an available ordinary Somali-passport short-visitor route and issuance timing; closure or permission restrictions cannot be normalized.","searchedOfficialDomains":["mfa.gov.kp"]},
+    {"passportCode":"SO","destinationCode":"MK","reason":"North Macedonia's live MFA selector and entry page remain unavailable; accessible material proves only conditional or partial routes, not this passport baseline.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"SO","destinationCode":"MP","reason":"Not normalized: current PP10998 full suspension has valid-visa grandfathering, exceptions and case-specific determinations.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"SO","destinationCode":"OM","reason":"Oman's current second-group treatment depends on third-country documents or GCC profession, and the ROP wizard does not establish an unconditional route.","searchedOfficialDomains":["fm.gov.om","rop.gov.om"]},
+    {"passportCode":"SO","destinationCode":"PK","reason":"Pakistan's current detailed ordinary-passport visitor schedule does not name Somalia; the recent Somalia-Pakistan waiver applies only to diplomatic passports.","searchedOfficialDomains":["mofa.gov.pk","visa.nadra.gov.pk","web.mfa.gov.so"]},
+    {"passportCode":"SO","destinationCode":"PS","reason":"Palestinian visitor treatment cannot be separated from Israeli and Egyptian crossing controls; no destination-wide ordinary Somali-passport baseline is asserted.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"SO","destinationCode":"PR","reason":"Not normalized: current PP10998 full suspension has valid-visa grandfathering, exceptions and case-specific determinations.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"SO","destinationCode":"ST","reason":"São Tomé and Príncipe's current law leaves further exemptions to decree, while document-conditioned exceptions do not establish this passport-only baseline.","searchedOfficialDomains":["gov.st","lex.st"]},
+    {"passportCode":"SO","destinationCode":"SA","reason":"Saudi Arabia's public visitor routes do not establish an unconditional ordinary Somali-passport short-visitor classification; package and document-conditioned routes are excluded.","searchedOfficialDomains":["visitsaudi.com","visa.visitsaudi.com"]},
+    {"passportCode":"SO","destinationCode":"SL","reason":"Current Sierra Leone official material does not safely resolve actual visitor-visa issuance timing for this ordinary passport.","searchedOfficialDomains":["immigration.gov.sl","mofaic.gov.sl"]},
+    {"passportCode":"SO","destinationCode":"SB","reason":"No current Solomon Islands primary nationality schedule establishes this recognized ordinary Somali-passport visitor baseline.","searchedOfficialDomains":["immigration.gov.sb","mfaet.gov.sb"]},
+    {"passportCode":"SO","destinationCode":"SS","reason":"Current EAC-wide visa-free guidance includes Somalia and South Sudan as Partner States, but South Sudan's Foreign Ministry expressly names only Egypt, Kenya, Tanzania and Uganda as exempt; no normalized baseline is selected from that conflict.","searchedOfficialDomains":["eac.int","mofaic.gov.ss","immigration.gov.ss"]},
+    {"passportCode":"SO","destinationCode":"SD","reason":"Somalia-Sudan material establishes a waiver only for diplomatic passports; no current primary source maps a recognized ordinary Somali passport to a visitor baseline.","searchedOfficialDomains":["web.mfa.gov.so","mofa.gov.sd"]},
+    {"passportCode":"SO","destinationCode":"SY","reason":"No current Syrian primary nationality schedule establishes an ordinary Somali-passport visitor baseline without route or approval conditions.","searchedOfficialDomains":["mofaex.gov.sy","evisa.sy"]},
+    {"passportCode":"SO","destinationCode":"TT","reason":"Trinidad and Tobago's electronic application material does not publish a current ordinary Somali-passport eligibility or exemption map; portal availability is not a baseline.","searchedOfficialDomains":["foreign.gov.tt","immigration.gov.tt"]},
+    {"passportCode":"SO","destinationCode":"TN","reason":"Tunisia's current official material names no visa-subject nationality cohort and no current waiver register establishes this ordinary Somali-passport baseline.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.gov.tn"]},
+    {"passportCode":"SO","destinationCode":"TM","reason":"Turkmenistan's statutory visa baseline preserves treaty exceptions and the eVisa service publishes no current ordinary-passport eligibility roster.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm"]},
+    {"passportCode":"SO","destinationCode":"UA","reason":"Available Ukrainian nationality tables are dated and no current primary source establishes this ordinary Somali-passport short-visitor baseline.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua"]},
+    {"passportCode":"SO","destinationCode":"US","reason":"Not normalized: current PP10998 full suspension has valid-visa grandfathering, exceptions and case-specific determinations.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"SO","destinationCode":"VI","reason":"Not normalized: current PP10998 full suspension has valid-visa grandfathering, exceptions and case-specific determinations.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]}
+  ]
+}

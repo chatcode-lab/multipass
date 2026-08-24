@@ -1,0 +1,183 @@
+{
+  "batchId": "syria-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-syria-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Grenada's live Embassy visitor page states that requirements turn on citizenship and currently links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-syria-april-2024-schedule-current-2026",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Embassy-linked schedule is marked Updated April 2024, expressly names the Syrian Arab Republic, and places it Prior to Arrival.",
+      "supportingExcerpt": "Syrian Arab Republic Prior to Arrival"
+    },
+    {
+      "id": "jordan-tourism-syria-advance-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table maps Syria to no arrival visa and instructs applicants to obtain a visa before arrival through the closest Jordanian Embassy.",
+      "supportingExcerpt": "Syria | Not-Applicable | You will need to get in contact with the closest Jordanian Embassy in order to obtain a visa before you arrive"
+    },
+    {
+      "id": "us-state-syria-full-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The State Department's live PP 10998 implementation notice, last updated February 2, 2026, names Syria in the full suspension and preserves exceptions and valid-visa grandfathering.",
+      "supportingExcerpt": "Sierra Leone, Somalia, South Sudan, Sudan, Syria, and Yemen"
+    },
+    {
+      "id": "us-code-geographic-united-states-syria-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands, and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "syrian-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Syrian ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule places the Syrian Arab Republic in its prior-to-arrival cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["SY"],
+      "conditions": [
+        "Applies to an ordinary Syrian passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained from a Grenadian mission or consulate before travel.",
+        "Work, residence, study, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-syria-2026", "grenada-embassy-syria-april-2024-schedule-current-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "syrian-ordinary-passport-jordan-advance-visitor-visa-2026",
+      "title": "Syrian ordinary passports: Jordan advance visitor visa",
+      "summary": "Jordan's official nationality table says Syrian visitors must obtain a visa from the closest Jordanian Embassy before arrival.",
+      "status": "visa_required",
+      "destinationCodes": ["JO"],
+      "passportCodes": ["SY"],
+      "conditions": [
+        "Applies to an ordinary Syrian passport holder travelling as a short visitor.",
+        "Jordan's table expressly states that Syria is not eligible for an arrival visa and directs the traveller to obtain a visa before arrival from the closest Jordanian Embassy.",
+        "Gateway2Jordan QR registration, restricted crossings, non-visitor purposes and final admission remain separate conditions."
+      ],
+      "sourceIds": ["jordan-tourism-syria-advance-visa-table-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "SY",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-syria-full-suspension-current-2026"]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-syria-full-suspension-current-2026", "us-code-geographic-united-states-syria-current-2026"]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-syria-full-suspension-current-2026", "us-code-geographic-united-states-syria-current-2026"]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-syria-full-suspension-current-2026", "us-code-geographic-united-states-syria-current-2026"]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_and_visa_issuance_fully_suspended_with_limited_exceptions",
+      "explanation": "The full suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-syria-full-suspension-current-2026", "us-code-geographic-united-states-syria-current-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"SY","destinationCode":"AF","reason":"No current Afghan or Syrian primary source establishes a usable ordinary Syrian-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"AO","reason":"Angola's electronic service does not publish a reproducible ordinary Syrian-passport eligibility and issuance result; portal availability is insufficient.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"BD","reason":"No current Bangladeshi or Syrian primary source directly establishes ordinary Syrian-passport visitor eligibility and actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"BF","reason":"Burkina Faso's official portal does not expose a reproducible ordinary Syrian-passport tourist eligibility or issuance result; online filing alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","mae.gov.bf","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"CF","reason":"No current Central African or Syrian primary source establishes ordinary Syrian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Syrian-passport eligibility result or prove actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"KM","reason":"No current Comorian or Syrian primary source establishes ordinary Syrian-passport visitor eligibility and actual issuance timing; treaty and special-law exceptions are not a complement.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"CG","reason":"No current Republic of the Congo or Syrian primary source establishes ordinary Syrian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"DJ","reason":"Djibouti's official electronic-visa material does not publish a current ordinary Syrian-passport eligibility or exemption partition.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"GE","reason":"Georgia's current official entry material does not establish an ordinary Syrian-passport visitor route without conditional residence, visa or document treatment.","searchedOfficialDomains":["mfa.gov.ge","geoconsul.gov.ge","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"GU","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"SY","destinationCode":"GW","reason":"No current Guinea-Bissau or Syrian primary source establishes an unconditional ordinary Syrian-passport visitor route and actual issuance timing; regional treatment does not establish this baseline.","searchedOfficialDomains":["mne.gw","gov.gw","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"IQ","reason":"Iraq's official electronic and one-stop services do not publish a current ordinary Syrian-passport tourist schedule or actual issuance outcome.","searchedOfficialDomains":["evisa.iq","moi.gov.iq","mofa.gov.iq"]},
+    {"passportCode":"SY","destinationCode":"KW","reason":"Kuwait's official visitor services do not publish a current ordinary Syrian-passport eligibility or issuance route.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","mofa.gov.kw"]},
+    {"passportCode":"SY","destinationCode":"KG","reason":"Kyrgyzstan's electronic service does not publish a reproducible ordinary Syrian-passport eligibility result; portal availability is insufficient.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"LA","reason":"No current Lao or Syrian primary source establishes ordinary Syrian-passport short-visitor eligibility and actual issuance timing; generic electronic application availability is insufficient.","searchedOfficialDomains":["laoevisa.gov.la","immigration.gov.la","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no ordinary Syrian-passport nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"ML","reason":"No current Malian or Syrian primary source establishes ordinary Syrian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"MH","reason":"Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes an ordinary Syrian-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","rmi.gov","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"MN","reason":"Mongolia's current eVisa material is a positive eligibility list and does not establish an advance-visa complement for an unlisted ordinary Syrian passport.","searchedOfficialDomains":["evisa.mn","consul.mn","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"MM","reason":"Myanmar's current official material does not establish a positive ordinary Syrian-passport visitor route; no residual classification is inferred from list omission.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Syrian-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"KP","reason":"No current DPRK or Syrian primary source establishes a usable ordinary Syrian-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Syrian-passport result; generic application material and third-country waivers do not establish the baseline.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"MP","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"SY","destinationCode":"OM","reason":"Oman's official visitor services do not publish a current ordinary Syrian-passport nationality baseline independent of residence, host or third-country-document conditions.","searchedOfficialDomains":["rop.gov.om","evisa.rop.gov.om","fm.gov.om"]},
+    {"passportCode":"SY","destinationCode":"PS","reason":"Israeli-controlled crossings, permits, identity records and recognition conditions do not establish a Palestine-only ordinary Syrian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"PR","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"SY","destinationCode":"ST","reason":"São Tomé and Príncipe's online visitor services do not publish a current ordinary Syrian-passport eligibility or issuance route; portal availability is insufficient.","searchedOfficialDomains":["smf.st","mne.gov.st","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"SA","reason":"Saudi Arabia's current visitor selector does not establish an ordinary Syrian-passport visitor baseline independent of residence, group, host or special-document conditions.","searchedOfficialDomains":["visa.visitsaudi.com","mofa.gov.sa","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"SL","reason":"No current Sierra Leone or Syrian primary source establishes ordinary Syrian-passport short-visitor eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.sl","mofaic.gov.sl","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"SB","reason":"No current Solomon Islands or Syrian primary source establishes ordinary Syrian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"SS","reason":"No current South Sudanese or Syrian primary source establishes ordinary Syrian-passport eligibility and whether online processing is electronic issuance.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"LK","reason":"Sri Lanka's current nationality alert and broader ETA/airport guidance do not reconcile an ordinary Syrian-passport visitor route safely.","searchedOfficialDomains":["immigration.gov.lk","eta.gov.lk","mfa.gov.lk"]},
+    {"passportCode":"SY","destinationCode":"SD","reason":"No current Sudanese or Syrian primary source establishes an ordinary Syrian-passport short-visitor issuance route or confirms any historic bilateral arrangement remains operative.","searchedOfficialDomains":["mofa.gov.sd","interior.gov.sd","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"TT","reason":"Trinidad and Tobago's named waiver schedule does not include Syria, while its electronic service applies only after visa-required nationality eligibility is established. No complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","foreign.gov.tt","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"TN","reason":"No current Tunisian or Syrian primary source establishes ordinary Syrian-passport short-visitor eligibility and actual issuance timing.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"TM","reason":"No current Turkmen or Syrian primary source establishes ordinary Syrian-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"UA","reason":"Ukraine's accessible nationality guidance does not establish a current ordinary Syrian-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua","mofaex.gov.sy"]},
+    {"passportCode":"SY","destinationCode":"US","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov"]},
+    {"passportCode":"SY","destinationCode":"VI","reason":"The current PP 10998 full-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]}
+  ]
+}
