@@ -2394,6 +2394,16 @@ All twelve scoped Sierra Leone rows remain unresolved. The Immigration Departmen
 
 All eleven scoped Djibouti rows also remain unresolved. Djibouti's current E-Government guidance says the emailed eVisa replaced point-of-entry issuance, but publishes no nationality schedule and the operative entry law preserves unnamed bilateral and special regimes. Korea still describes online or airport issuance, while Singapore refers travellers to Djibouti's embassy without classifying access. Those pair-specific sources are insufficient to assign one current nationality-wide issuance route.
 
+## Pass 255 result: South Korea, Bangladesh and Iran pairwise issuance rechecks
+
+Three exact and independently cross-reviewed audits add seven current-status relationships, raising complete-matrix evidence from 39,210 to 39,217 of 44,974 relationships (87.2%). The public `/status` matrix contains 39,217 fresh and 5,757 not-covered rows, with zero old or stale rows as of 24 August 2026. Canonical evidence now contains 661 reviewed batches, 2,876 official sources and 1,816 policies. Asia coverage increases from 5,339 to 5,341 of 6,336 relationships, Africa from 8,499 to 8,502 of 11,289, and the Caribbean from 4,617 to 4,619 of 4,962; every other regional total is unchanged.
+
+Republic of Korea Foreign Ministry country panels directly verify visa-free access to Eswatini, Grenada and Trinidad and Tobago, plus an advance mission visa for Mali. Côte d’Ivoire's official process requires preapproval but prints and issues the biometric visa at Abidjan airport, correcting KR→CI from `evisa` to `visa_on_arrival`. Eighteen other Korean residual rows remain unresolved because of travel prohibitions, issuance ambiguity, invitation conditions or conflicting official routes.
+
+Bulgaria's current Foreign Ministry guidance corrects BG→BD from `visa_on_arrival` to `visa_required`. Argentina's current embassy guidance verifies AR→BD `visa_on_arrival`. Ten other Bangladesh rows remain unresolved because broad conditional arrival language does not establish a pair-specific ordinary-passport baseline.
+
+Iran's pass promotes no relationship. Spain's current guidance contradicts the `visa_on_arrival` fallback but does not identify the final electronic or mission issuance route, so ES→IR remains a documented conflict and unresolved. Independent review rejected proposed CA/US eVisa promotions because the cited Iranian Interests Section workflow applies only to applicants residing in the United States or Canada; all fifteen scoped Iran rows remain unresolved.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

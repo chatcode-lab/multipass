@@ -4029,4 +4029,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2015/2015-0005/2015-0005_2.pdf",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "KR",
+    destinationCode: "CI",
+    status: "visa_on_arrival",
+    reason: "Korea's current Foreign Ministry guidance requires approved pre-enrolment before departure, while Côte d'Ivoire's official service prints and issues the biometric visa at Abidjan airport.",
+    sourceUrl: "https://snedai.com/e-visa/",
+    reviewedAt: "2026-08-24",
+  },
+  {
+    passportCode: "BG",
+    destinationCode: "BD",
+    status: "visa_required",
+    reason: "Bulgaria's current Foreign Ministry guidance requires Bulgarian ordinary-passport visitors to obtain a Bangladesh visa in advance through a competent diplomatic mission.",
+    sourceUrl: "https://www.mfa.bg/bg/embassyinfo/bangladesh",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;

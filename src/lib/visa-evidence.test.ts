@@ -952,7 +952,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "BT", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BT", "BT", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("BD")).toHaveLength(60);
+    expect(pairsFor("BD")).toHaveLength(62);
     expect(getVisaRelationshipEvidence("EG", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1147,7 +1147,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "CM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CM", "CM", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("CI")).toHaveLength(56);
+    expect(pairsFor("CI")).toHaveLength(57);
     expect(getVisaRelationshipEvidence("GN", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1352,7 +1352,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IE", "LS", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LS", "LS", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SZ")).toHaveLength(194);
+    expect(pairsFor("SZ")).toHaveLength(195);
     expect(getVisaRelationshipEvidence("TW", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "SZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1405,7 +1405,7 @@ describe("official visa evidence", () => {
     const liberiaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "LR");
 
-    expect(maliPairs).toHaveLength(36);
+    expect(maliPairs).toHaveLength(37);
     expect(nigerPairs).toHaveLength(36);
     expect(liberiaPairs).toHaveLength(36);
     expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2027,7 +2027,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("NZ", "CV", snapshot.passports.NZ.statuses.CV).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("CL", "KW", snapshot.passports.CL.statuses.KW).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("CM", "MH", snapshot.passports.CM.statuses.MH).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("KR", "TT", snapshot.passports.KR.statuses.TT).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KR", "TT", snapshot.passports.KR.statuses.TT).supportsCurrentStatus).toBe(true);
   });
 
   it("maps Kiribati's current exemption schedule and advance-visa complement", () => {
@@ -3574,7 +3574,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["KR", "SZ"],
       ["XK", "SZ"],
       ["CN", "SZ"],
       ["CD", "SZ"],
@@ -4631,6 +4630,38 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("closes supportable Korean and Bangladesh pairwise gaps while preserving Iran's scoped holds", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["KR", "CI", "visa_on_arrival"],
+      ["KR", "SZ", "visa_free"],
+      ["KR", "GD", "visa_free"],
+      ["KR", "ML", "visa_required"],
+      ["KR", "TT", "visa_free"],
+      ["BG", "BD", "visa_required"],
+      ["AR", "BD", "visa_on_arrival"],
+    ] as const) {
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+    }
+
+    for (const destinationCode of [
+      "AF", "VG", "BF", "CF", "CG", "DJ", "GW", "IR", "IQ", "LR", "NE", "KP", "PS", "SL", "SD", "SY", "TM", "UA",
+    ] as const) {
+      const status = snapshot.passports.KR.statuses[destinationCode];
+      expect(getVisaRelationshipEvidence("KR", destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+
+    for (const passportCode of ["BE", "LU", "AT", "LV", "LT", "PL", "EE", "CL", "AD", "BR"] as const) {
+      const status = snapshot.passports[passportCode].statuses.BD;
+      expect(getVisaRelationshipEvidence(passportCode, "BD", status).supportsCurrentStatus).toBe(false);
+    }
+
+    for (const passportCode of ["ES", "CH", "FI", "SE", "LU", "KR", "IE", "PT", "AT", "DK", "MT", "NZ", "GR", "CA", "US"] as const) {
+      const status = snapshot.passports[passportCode].statuses.IR;
+      expect(getVisaRelationshipEvidence(passportCode, "IR", status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -5268,6 +5299,8 @@ describe("official visa evidence", () => {
       "francia.consuladovenezuela.org",
       "nalog.gov.by",
       "etune.cancilleria.gob.ar",
+      "ebang.cancilleria.gob.ar",
+      "static.daftar.org",
       "uapi.daftar.org",
       "fipa.vijeceministara.gov.ba",
       "sps.gov.ba",
