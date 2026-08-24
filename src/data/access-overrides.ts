@@ -4045,4 +4045,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.bg/bg/embassyinfo/bangladesh",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "BJ",
+    destinationCode: "GD",
+    status: "visa_required",
+    reason: "Grenada's actively linked April 2024 citizenship schedule places Beninese ordinary passports in its Prior to Arrival cohort, requiring mission or consulate issuance before travel.",
+    sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+    reviewedAt: "2026-08-24",
+  },
+  ...(["BY", "KZ"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "GD" as const,
+    status: "visa_on_arrival" as const,
+    reason: "Grenada's actively linked April 2024 schedule places this ordinary passport in its Port of Entry cohort. A pre-clearance letter is required before travel, but the visa itself is granted on arrival.",
+    sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+    reviewedAt: "2026-08-24",
+  })),
 ] as const;

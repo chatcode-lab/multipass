@@ -2879,7 +2879,7 @@ describe("official visa evidence", () => {
   it("covers reviewed Argentine, Chilean, Russian, and Kuwaiti residuals conservatively", () => {
     expect(getVisaRelationshipEvidence("AR", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AR", "TT", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AR", "GD", snapshot.passports.AR.statuses.GD).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AR", "GD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CL", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CL", "MK", snapshot.passports.CL.statuses.MK).supportsCurrentStatus).toBe(false);
 
@@ -2903,6 +2903,7 @@ describe("official visa evidence", () => {
 
   it("covers reviewed Bruneian, Chinese, Thai, and Moroccan residuals conservatively", () => {
     expect(getVisaRelationshipEvidence("BN", "PA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BN", "GD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MA", "PA", "visa_required").supportsCurrentStatus).toBe(true);
 
     for (const [destinationCode, status] of [
@@ -2926,7 +2927,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["BN", "GD"],
       ["CN", "SY"],
       ["TH", "DJ"],
       ["MA", "UA"],
@@ -4682,6 +4682,31 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["VA", "JM"], ["CG", "JM"], ["PT", "NU"], ["NZ", "NU"], ["RS", "VA"], ["NR", "VA"],
     ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("completes Grenada's foreign-passport column while preserving Mongolia and Gambia holds", () => {
+    for (const passportCode of ["NZ", "MY", "AU", "CL", "AR", "BN", "MU", "MA", "GH", "RW"] as const) {
+      expect(snapshot.passports[passportCode].statuses.GD).toBe("visa_free");
+      expect(getVisaRelationshipEvidence(passportCode, "GD", "visa_free").supportsCurrentStatus).toBe(true);
+    }
+
+    for (const passportCode of ["AD", "PA", "TW", "QA", "TR", "SA", "XK", "OM", "TH", "CV", "BJ", "TG", "GN", "GW", "KH", "SS"] as const) {
+      expect(snapshot.passports[passportCode].statuses.GD).toBe("visa_required");
+      expect(getVisaRelationshipEvidence(passportCode, "GD", "visa_required").supportsCurrentStatus).toBe(true);
+    }
+
+    for (const passportCode of ["BY", "KZ"] as const) {
+      expect(snapshot.passports[passportCode].statuses.GD).toBe("visa_on_arrival");
+      expect(getVisaRelationshipEvidence(passportCode, "GD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    }
+
+    expect(evidenceRelationshipPairs(snapshot.manifest).filter(({ destination }) => destination.code === "GD"))
+      .toHaveLength(198);
+
+    for (const [passportCode, destinationCode] of [["GE", "MN"], ["ID", "GM"]] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
     }
