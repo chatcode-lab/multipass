@@ -2464,6 +2464,16 @@ Syria-to-Sri Lanka also remains unresolved. Sri Lanka's current ETA alert direct
 
 Vatican City-to-Jamaica remains unresolved. Jamaica's current PICA nationality schedule is expressly dated 19 July 2023 and does not name Vatican City or the Holy See, while the Foreign Ministry supplies only generic visa-application guidance. The Vatican's current ordinary-passport specification confirms that this is a distinct document; Italian passport treatment is therefore not transferred to it. No status is inferred from the dated schedule's omission.
 
+## Pass 262 result: final Ecuador, Kenya and Kosovo destination cells
+
+Three exact and independently cross-reviewed audits cover four terminal cells but add no normalizable relationship, so complete-matrix evidence remains 39,258 of 44,974 relationships (87.3%). The public `/status` matrix remains 39,258 fresh and 5,716 not-covered rows, with zero old or stale rows as of 24 August 2026. Canonical evidence now contains 684 reviewed batches, 2,957 official sources and 1,828 policies. No fallback status is changed in this pass.
+
+Macao-to-Ecuador remains unresolved. Ecuador's current visitor-visa schedule names the People's Republic of China but does not directly map the distinct Macao SAR passport, and that mainland result is not transferred. Macao's live Identification Services Bureau travel service identifies the passport type but returns no Ecuador result or issuance route; its historic Ecuador material is not treated as current proof. The `visa_free` fallback therefore remains unverified rather than contradicted.
+
+Saint Kitts and Nevis-to-Kenya also remains unresolved. Both Kenya's controlling consolidated 2025 regulation and the current eTA exemption page publish the malformed label `St. Kitts and Navis`. Neither authority supplies a country code or passport-issuer crosswalk that directly maps that label to the KN ordinary passport. The likely spelling error is not silently repaired in evidence, so the `visa_free` fallback is still not counted as verified.
+
+Bosnia and Herzegovina and Fiji to Kosovo remain unresolved. Kosovo's direct Bosnia decision exempts entry with a valid biometric identity card, not the ordinary-passport baseline represented by this matrix. For Fiji, the live Foreign Ministry schedule still says visa-free, while signed Decision 14/280 introduces a visa regime only when published in the Official Gazette. No controlling Gazette publication or later reconciling act was recovered; that direct official conflict is recorded instead of choosing the fallback waiver or inferring an advance visa.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

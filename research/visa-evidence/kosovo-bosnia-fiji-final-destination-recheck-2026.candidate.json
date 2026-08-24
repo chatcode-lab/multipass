@@ -1,0 +1,95 @@
+{
+  "batchId": "kosovo-bosnia-fiji-final-destination-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kosovo-mfa-live-visa-schedule-and-procedure-2026",
+      "title": "Kosovo Visas | Embassies of the Republic of Kosovo",
+      "url": "https://ambasadat.net/visas/",
+      "publisher": "Ministry of Foreign Affairs and Diaspora of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "government-guidance",
+      "language": "Albanian and English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live ambasadat.net platform identifies Kosovo's Ministry of Foreign Affairs and Diaspora in its footer. It lists Fiji (Fixhi) among visa-exempt countries, defines the visa-required residual rule, and publishes the in-person consular procedure.",
+      "supportingExcerpt": "you must apply for a Kosovo visa"
+    },
+    {
+      "id": "kosovo-pm-decision-237-bosnia-biometric-id-route-2024",
+      "title": "Decision No. 02/237: Bosnia and Herzegovina identity-card entry",
+      "url": "https://kryeministri.rks-gov.net/wp-content/uploads/2024/12/Decision-237.pdf",
+      "publisher": "Government of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Prime Minister's official kryeministri.rks-gov.net domain hosts the signed Government decision. It directly limits the Bosnia and Herzegovina exemption to travel with a valid biometric identity card and makes the decision effective on Gazette publication.",
+      "supportingExcerpt": "with a valid biometric identity card"
+    },
+    {
+      "id": "kosovo-pm-decision-280-fiji-gazette-condition-2025",
+      "title": "Decision No. 14/280 amending the Fiji visa-regime annex",
+      "url": "https://kryeministri.rks-gov.net/wp-content/uploads/2025/12/Vendimet-e-mbledhjes-se-280-te-te-Qeverise_.pdf",
+      "publisher": "Government of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Prime Minister's official domain hosts signed Decision No. 14/280, which amends the Fiji visa-regime annex but expressly makes effect conditional on publication in the Official Gazette.",
+      "supportingExcerpt": "Vendimi hyn në fuqi ditën e publikimit në Gazetën Zyrtare të Republikës së Kosovës."
+    },
+    {
+      "id": "kosovo-official-gazette-register-2026",
+      "title": "Official Gazette of the Republic of Kosovo",
+      "url": "https://gzk.rks-gov.net/",
+      "publisher": "Official Gazette of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "official-dataset",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Government Gazette register provides search fields and legal-act records. Searches for Fiji/Fixhi and Decision 14/280 did not retrieve a publication record; that unsuccessful search is recorded only as a currentness limitation, not as proof of nonpublication.",
+      "supportingExcerpt": "Gazeta Zyrtare e Republikës së Kosovës"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "FJ",
+      "destinationCode": "XK",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: live Fiji waiver listing conflicts with a signed Fiji visa amendment whose Gazette effect is unverified",
+      "explanation": "Kosovo's live MFA schedule directly lists Fiji as visa-exempt, while signed Decision No. 14/280 introduces a Fiji visa regime only on Official Gazette publication. No publication record or later controlling Fiji act was retrieved, so the fallback cannot be confirmed or corrected.",
+      "sourceIds": [
+        "kosovo-mfa-live-visa-schedule-and-procedure-2026",
+        "kosovo-pm-decision-280-fiji-gazette-condition-2025",
+        "kosovo-official-gazette-register-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "BA",
+      "destinationCode": "XK",
+      "reason": "Decision No. 02/237 directly establishes Bosnia and Herzegovina visa exemption only with a valid biometric identity card, not an ordinary passport. Its own Gazette-publication condition is also not a passport rule. No current Kosovo or Bosnia primary source directly establishes the ordinary Bosnian-passport short-visitor baseline; do not convert the identity-card route, recognition, or an unlisted-country residual into a passport result.",
+      "searchedOfficialDomains": [
+        "ambasadat.net",
+        "kryeministri.rks-gov.net",
+        "gzk.rks-gov.net",
+        "mpb.rks-gov.net",
+        "mvp.gov.ba"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "XK",
+      "reason": "Kosovo's live MFA schedule directly lists Fiji (Fixhi) as visa-exempt, but signed Decision No. 14/280 introduces a Fiji visa regime only from Official Gazette publication. The current Gazette register search did not retrieve that publication or a later controlling act, which is not treated as proof of nonpublication. This material conflict prevents selection of either the fallback visa-free status or an advance-visa status.",
+      "searchedOfficialDomains": [
+        "ambasadat.net",
+        "kryeministri.rks-gov.net",
+        "gzk.rks-gov.net",
+        "mpb.rks-gov.net",
+        "foreignaffairs.gov.fj"
+      ]
+    }
+  ]
+}
