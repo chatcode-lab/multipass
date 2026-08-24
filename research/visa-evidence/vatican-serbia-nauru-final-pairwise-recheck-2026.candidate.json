@@ -1,0 +1,87 @@
+{
+  "batchId": "vatican-serbia-nauru-final-pairwise-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "italy-consulate-vatican-schengen-public-access-2026",
+      "title": "Italian Consulate General in Vancouver: Visas",
+      "url": "https://consvancouver.esteri.it/it/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/",
+      "publisher": "Consulate General of Italy in Vancouver, Ministry of Foreign Affairs and International Cooperation",
+      "jurisdiction": "Italy / Schengen external border",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Italy's official consular page says Vatican City has an open border with neighbouring Schengen countries and that public travel necessarily transits a Schengen member country.",
+      "supportingExcerpt": "Vatican City microstates maintain open borders with neighbouring Schengen countries."
+    },
+    {
+      "id": "italy-mfa-current-serbia-nauru-short-stay-list-2026",
+      "title": "Italian MFA: Countries exempt from short-stay visas",
+      "url": "https://www.esteri.it/en/servizi-opportunita/ingressosoggiornoinitalia/visto_ingresso/paesi_esenti_visto/",
+      "publisher": "Ministry of Foreign Affairs and International Cooperation",
+      "jurisdiction": "Italy / Schengen external border",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Italy's live MFA list expressly names Serbia and Nauru for short-stay access, but limits Serbia's waiver to biometric passports and excludes Coordination Directorate passports.",
+      "supportingExcerpt": "the visa waiver applies only to the holders of biometric passports."
+    },
+    {
+      "id": "eu-council-current-nauru-waiver-agreement-status-2026",
+      "title": "Council of the European Union: EU visa agreements with non-EU countries",
+      "url": "https://www.consilium.europa.eu/en/infographics/eu-visa-agreements-with-non-eu-countries/",
+      "publisher": "Council of the European Union",
+      "jurisdiction": "European Union / Schengen external borders",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Council's live official register flags Nauru separately and says its visa-free regime depends on a waiver agreement being concluded, contradicting Italy's current exemption list.",
+      "supportingExcerpt": "Visa-free regime will apply only once Nauru and EU have concluded a visa waiver agreement."
+    },
+    {
+      "id": "eu-2018-1806-current-serbia-biometric-rule-2026",
+      "title": "Regulation (EU) 2018/1806, consolidated 30 December 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A02018R1806-20251230",
+      "publisher": "European Union, EUR-Lex",
+      "jurisdiction": "European Union / Schengen external borders",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "EUR-Lex identifies the consolidated Regulation as in force. Its Annex II footnote conditions Serbia's visa waiver on biometric passports and excludes Coordination Directorate passports.",
+      "supportingExcerpt": "The exemption from the visa requirement shall apply only to holders of biometric passports."
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "RS",
+      "destinationCode": "VA",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The Italy/Schengen public-access route waives visas only for biometric Serbian passports and excludes Coordination Directorate passports. A bare ordinary Serbian passport code cannot represent that material document split.",
+      "sourceIds": ["italy-consulate-vatican-schengen-public-access-2026", "italy-mfa-current-serbia-nauru-short-stay-list-2026", "eu-2018-1806-current-serbia-biometric-rule-2026"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "VA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "conflicting_official_italy_and_eu_agreement_sources",
+      "explanation": "Italy's live MFA exemption list names Nauru, but the Council's current agreement register says the visa-free regime applies only once an EU–Nauru waiver agreement is concluded. The access-leg conflict cannot be normalized.",
+      "sourceIds": ["italy-consulate-vatican-schengen-public-access-2026", "italy-mfa-current-serbia-nauru-short-stay-list-2026", "eu-council-current-nauru-waiver-agreement-status-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "RS",
+      "destinationCode": "VA",
+      "reason": "Ordinary public access to Vatican City is through Italy/Schengen. Current Italian and EU rules waive the Serbian access visa only for biometric passports and expressly exclude Coordination Directorate passports. The catalog's bare ordinary-passport code does not resolve those document conditions.",
+      "searchedOfficialDomains": ["vaticanstate.va", "esteri.it", "eur-lex.europa.eu"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "VA",
+      "reason": "Ordinary public access to Vatican City is through Italy/Schengen. Italy's current MFA exemption list names Nauru, while the Council's current agreement register says the waiver applies only once an agreement is concluded. No Vatican or controlling access source resolves that contradiction.",
+      "searchedOfficialDomains": ["vaticanstate.va", "esteri.it", "consilium.europa.eu", "eur-lex.europa.eu"]
+    }
+  ]
+}

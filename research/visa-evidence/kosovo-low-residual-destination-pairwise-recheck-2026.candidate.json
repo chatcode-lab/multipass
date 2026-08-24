@@ -1,0 +1,143 @@
+{
+  "batchId": "kosovo-low-residual-destination-pairwise-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "mauritius-geneva-current-kosovo-passport-advance-visa-2026",
+      "title": "High Commission of Mauritius in Geneva: consular services",
+      "url": "https://mauritius-geneva.govmu.org/Pages/Services%20to%20Mauritians/Consular-Services_updated.aspx",
+      "publisher": "High Commission of the Republic of Mauritius in Geneva",
+      "jurisdiction": "Mauritius",
+      "kind": "government-guidance",
+      "language": "English and French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "This live consular page is hosted on the Government of Mauritius govmu.org domain. Its current numbered service entry is expressly headed ‘Visa Requirements for holders of Kosovo Passport’ and gives a pre-departure application time.",
+      "supportingExcerpt": "Holders of a Kosovo Passport must apply for a visa at least one month prior to their departure for Mauritius"
+    },
+    {
+      "id": "mauritius-pio-current-advance-visa-processing-2026",
+      "title": "Mauritius Passport and Immigration Office: Application for Visa",
+      "url": "https://passport.govmu.org/passport/?page_id=620",
+      "publisher": "Passport and Immigration Office, Republic of Mauritius",
+      "jurisdiction": "Mauritius",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Passport and Immigration Office page is hosted on Mauritius's govmu.org government domain and directly instructs visa applicants to receive the application outcome before travelling.",
+      "supportingExcerpt": "Applicants should wait for the outcome of their application before undertaking any travel to Mauritius."
+    },
+    {
+      "id": "uruguay-interior-current-exhaustive-admission-visa-regime-2026",
+      "title": "Uruguay Ministry of the Interior: Admission visa regime",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/regimen-visas-admision",
+      "publisher": "Ministry of the Interior",
+      "jurisdiction": "Uruguay",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Uruguay's Ministry of the Interior published this current schedule on 19 August 2025. It expressly makes the common-passport table exhaustive by requiring a prior consular visa for citizens of countries absent from it; Kosovo is absent.",
+      "supportingExcerpt": "Los ciudadanos de los países que no figuran en la presente nómina están sujetos al requisito de previa visa consular en las distintas categorías."
+    },
+    {
+      "id": "uruguay-mfa-current-advance-visa-application-timing-2026",
+      "title": "Uruguay Ministry of Foreign Affairs: Application for a visa to enter Uruguay",
+      "url": "https://www.gub.uy/ministerio-relaciones-exteriores/consulado-general-asuncion/tramites-servicios/solicitud-visa-para-ingresar-uruguay",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Uruguay",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official consular procedure tells nationalities subject to Uruguay's admission-visa regime to apply at least 30 business days before travel, directly establishing advance issuance timing.",
+      "supportingExcerpt": "La solicitud de visa debe realizarse al menos con 30 días hábiles de antelación a la fecha del viaje."
+    }
+  ],
+  "policies": [
+    {
+      "id": "kosovo-ordinary-passports-mauritius-advance-visa-2026",
+      "title": "Kosovo ordinary passports: Mauritius advance visa",
+      "summary": "Mauritius's current government consular page expressly says Kosovo passport holders need a visa and must apply at least one month before departure.",
+      "status": "visa_required",
+      "destinationCodes": ["MU"],
+      "passportCodes": ["XK"],
+      "conditions": [
+        "Applies to a valid ordinary Kosovo passport for a short visitor trip; diplomatic, official, service, refugee, alien and other travel documents are outside this finding.",
+        "Apply for the visa at least one month before departure for Mauritius; this is an advance-visa baseline, not electronic or arrival issuance.",
+        "Final admission, passport validity, return travel, accommodation, funds, work, residence, transit and any individual immigration-officer conditions remain separate."
+      ],
+      "sourceIds": ["mauritius-geneva-current-kosovo-passport-advance-visa-2026", "mauritius-pio-current-advance-visa-processing-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kosovo-ordinary-passports-uruguay-advance-visa-2026",
+      "title": "Kosovo ordinary passports: Uruguay advance consular visa",
+      "summary": "Uruguay's current exhaustive common-passport schedule requires citizens of countries absent from the table, including Kosovo, to obtain a consular visa before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["UY"],
+      "passportCodes": ["XK"],
+      "conditions": [
+        "Applies to a valid ordinary Kosovo passport for a short visitor trip; diplomatic, official, service, refugee, alien and other travel documents are outside this finding.",
+        "Uruguay's schedule expressly requires a prior consular visa for citizens of countries not present in its common-passport table, and Kosovo is not present.",
+        "Apply through a competent Uruguayan consulate before travel; the current consular procedure says applications must be made at least 30 business days before the trip."
+      ],
+      "sourceIds": ["uruguay-interior-current-exhaustive-admission-visa-regime-2026", "uruguay-mfa-current-advance-visa-application-timing-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "XK",
+      "destinationCode": "AZ",
+      "reason": "No current Azerbaijani or Kosovo passport-authority source directly maps an ordinary Kosovo passport to a short-visitor route and actual issuance timing. Azerbaijan's listed eVisa and visa materials are not treated as a Kosovo-eligibility complement.",
+      "searchedOfficialDomains": ["mfa.gov.az", "migration.gov.az", "evisa.gov.az", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "BY",
+      "reason": "No current Belarusian or Kosovo passport-authority source directly identifies an ordinary Kosovo passport in a visitor visa, border or electronic-issuance rule. Recognition and omission are not used to infer a status.",
+      "searchedOfficialDomains": ["mfa.gov.by", "gpk.gov.by", "visa.gov.by", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "CL",
+      "reason": "Current Chilean consular material says Chile does not recognize Kosovo as a subject of international law, but does not directly state how an ordinary Kosovo-passport visitor document is processed. That non-recognition statement is not normalized as a visa status.",
+      "searchedOfficialDomains": ["minrel.gob.cl", "consulado.gob.cl", "serviciomigraciones.cl", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GA",
+      "reason": "No current Gabonese or Kosovo passport-authority source directly maps ordinary Kosovo passports to a nationality-wide visitor route. Gabon's eVisa materials do not provide a direct Kosovo eligibility and issuance result.",
+      "searchedOfficialDomains": ["diplomatie.gouv.ga", "interieur.gouv.ga", "evisa.gouv.ga", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "KZ",
+      "reason": "Kazakhstan's current passport-type table and eVisa guidance do not directly identify Kosovo. A missing row cannot establish a visa-required, electronic or arrival route for an ordinary Kosovo passport.",
+      "searchedOfficialDomains": ["gov.kz", "mfa.gov.kz", "vmp.gov.kz", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "MS",
+      "reason": "No current Montserrat or Kosovo passport-authority source directly establishes the ordinary Kosovo-passport short-visitor route or its issuance timing. Immigration-law country omissions are not used as a complement.",
+      "searchedOfficialDomains": ["gov.ms", "agc.gov.ms", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "MX",
+      "reason": "Mexico's current official consular guidance says it does not recognize Kosovo passports and cannot issue a Mexican visa or migration privilege to their holders. The available taxonomy has no document-unrecognized or entry-impossible status, so this cannot be normalized as fallback visa_required.",
+      "searchedOfficialDomains": ["embamex.sre.gob.mx", "consulmex.sre.gob.mx", "inm.gob.mx", "gob.mx"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "RS",
+      "reason": "No current Serbian or Kosovo authority source directly establishes a nationality-wide ordinary Kosovo-passport short-visitor route and issuance timing. Serbian treatment, recognition and route controls are not inferred into a visa-free baseline.",
+      "searchedOfficialDomains": ["mfa.gov.rs", "mup.gov.rs", "srbija.gov.rs", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "UZ",
+      "reason": "No current Uzbek or Kosovo passport-authority source directly maps an ordinary Kosovo passport to a short-visitor route or actual issuance timing. Absence from named eVisa or visa-waiver materials is not a complement.",
+      "searchedOfficialDomains": ["gov.uz", "mfa.uz", "e-visa.gov.uz", "mfa-ks.net"]
+    }
+  ]
+}

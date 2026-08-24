@@ -252,13 +252,13 @@ describe("official visa evidence", () => {
     const mauritiusPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "MU");
 
-    expect(mauritiusPairs).toHaveLength(197);
+    expect(mauritiusPairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("US", "MU", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ID", "MU", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GY", "MU", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "MU", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "MU", "visa_required").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("XK", "MU", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "MU", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("covers Malaysia's current social-visit framework and expires India's temporary exemption", () => {
@@ -1725,13 +1725,13 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "UY");
 
-    expect(pairs).toHaveLength(198);
+    expect(pairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("US", "UY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HK", "UY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MO", "UY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "UY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PS", "UY", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("XK", "UY", snapshot.passports.XK.statuses.UY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "UY", snapshot.passports.XK.statuses.UY).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("UY", "UY", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -4662,6 +4662,30 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("closes Kosovo's Mauritius and Uruguay gaps while preserving low-residual source conflicts", () => {
+    for (const destinationCode of ["MU", "UY"] as const) {
+      expect(snapshot.passports.XK.statuses[destinationCode]).toBe("visa_required");
+      expect(getVisaRelationshipEvidence("XK", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
+    }
+
+    for (const destinationCode of ["AZ", "BY", "CL", "GA", "KZ", "MS", "MX", "RS", "UZ"] as const) {
+      const status = snapshot.passports.XK.statuses[destinationCode];
+      expect(getVisaRelationshipEvidence("XK", destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+
+    for (const destinationCode of ["BS", "KY", "BA", "BZ", "GT", "NI", "DO"] as const) {
+      const status = snapshot.passports.SS.statuses[destinationCode];
+      expect(getVisaRelationshipEvidence("SS", destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["VA", "JM"], ["CG", "JM"], ["PT", "NU"], ["NZ", "NU"], ["RS", "VA"], ["NR", "VA"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -5363,6 +5387,8 @@ describe("official visa evidence", () => {
       "island.is",
       "files.reglugerd.is",
       "egyptconsulate.co.uk",
+      "mauritius-geneva.govmu.org",
+      "pica.gov.jm",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

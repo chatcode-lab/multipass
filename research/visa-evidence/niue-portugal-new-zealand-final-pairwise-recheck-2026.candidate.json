@@ -1,0 +1,63 @@
+{
+  "batchId": "niue-portugal-new-zealand-final-pairwise-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "niue-tourism-current-visitor-entry-rules-2026",
+      "title": "Niue Tourism: Travelling to Niue",
+      "url": "https://www.niueisland.com/discover-niue/travelling-to-niue",
+      "publisher": "Niue Tourism Office",
+      "jurisdiction": "Niue",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Niue Tourism page links visitors to Niue Immigration and the Government arrival service. The Government's FY2025–26 budget identifies Niue Tourism as a Government of Niue department. The page gives the detailed named permit cohort and separately provides its conflicting New Zealand FAQ wording.",
+      "supportingExcerpt": "Portugal (permanent residents)"
+    },
+    {
+      "id": "niue-government-budget-tourism-department-2025-26",
+      "title": "Government of Niue FY 2025–26 Budget Overview",
+      "url": "https://mof.gov.nu/wp-content/uploads/2025/07/Budget-FY-2025_26-Book2.pdf",
+      "publisher": "Ministry of Finance, Government of Niue",
+      "jurisdiction": "Niue",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Government of Niue Ministry of Finance publishes this current fiscal-year document on its official mof.gov.nu domain and identifies Niue Tourism as a Government department.",
+      "supportingExcerpt": "NIUE TOURISM Department Budget Summary"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "PT",
+      "destinationCode": "NU",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "unresolved",
+      "explanation": "Niue's current named arrival-permit rule limits Portugal to permanent residents; the page says all other travellers require a visitor visa before travel. A Portuguese passport alone cannot be flattened to the unqualified arrival fallback.",
+      "sourceIds": ["niue-tourism-current-visitor-entry-rules-2026"]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "NU",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "unresolved",
+      "explanation": "Niue's detailed arrival-permit list omits New Zealand, while the same page's FAQ says New Zealand is included and its passport notes distinguish Niuean-origin and resident stickers. The unqualified arrival fallback cannot represent that conflict.",
+      "sourceIds": ["niue-tourism-current-visitor-entry-rules-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "PT",
+      "destinationCode": "NU",
+      "reason": "The current Niue visitor page names Portugal only as permanent residents for a 30-day visitor permit on arrival and says all other travellers must obtain a visitor visa before travel. Permanent residence is not a passport-code attribute, so no Portugal-wide route is established.",
+      "searchedOfficialDomains": ["www.niueisland.com", "www.gov.nu", "mof.gov.nu", "mne.gov.pt"]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "NU",
+      "reason": "Niue's detailed named arrival-permit list omits New Zealand, but the same page's FAQ says it is included. The page also distinguishes Niueans and descendants through New Zealand-passport exemption stickers and birth-place details. Do not collapse citizenship, origin or residence conditions into one New Zealand-passport visitor rule.",
+      "searchedOfficialDomains": ["www.niueisland.com", "www.gov.nu", "mfat.govt.nz", "immigration.govt.nz"]
+    }
+  ]
+}
