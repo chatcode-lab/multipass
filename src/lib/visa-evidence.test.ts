@@ -4980,6 +4980,28 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves Singaporean, Australian and Icelandic final route gaps as uncovered", () => {
+    for (const sourceId of [
+      "djibouti-egovernment-no-singapore-eligibility-refresh-2026",
+      "cabo-verde-government-current-positive-visa-exemption-list-2026",
+      "sierra-leone-evisa-current-conflicting-issuance-language-2026",
+    ] as const) {
+      expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["SG", "DJ"],
+      ["SG", "LR"],
+      ["AU", "CV"],
+      ["AU", "SL"],
+      ["IS", "TD"],
+      ["IS", "VG"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
