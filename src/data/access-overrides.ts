@@ -3909,4 +3909,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "BO",
+    destinationCode: "ZW",
+    status: "visa_on_arrival",
+    reason: "Zimbabwe's current Immigration Department schedule places Bolivia in Category B, which expressly permits visa issuance at the port of entry.",
+    sourceUrl: "https://www.zimimmigration.gov.zw/?p=7186",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;

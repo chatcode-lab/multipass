@@ -1041,11 +1041,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MT", "NA", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NA", "NA", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("ZW")).toHaveLength(198);
+    expect(pairsFor("ZW")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("US", "ZW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "ZW", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ZW", "ZW", "citizenship").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("BO", "ZW", snapshot.passports.BO.statuses.ZW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BO", "ZW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("ET")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("KE", "ET", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1064,10 +1064,12 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "GH", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "GH", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("TZ")).toHaveLength(196);
+    expect(pairsFor("TZ")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("CD", "TZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LK", "TZ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "TZ", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DO", "TZ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SS", "TZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TZ", "TZ", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -4948,6 +4950,7 @@ describe("official visa evidence", () => {
       "migracion.gob.do",
       "mirex.gob.do",
       "immigration.gov.bz",
+      "immigration.go.tz",
       "pgrweb.go.cr",
       "www.minex.gob.gt",
       "igm.gob.gt",

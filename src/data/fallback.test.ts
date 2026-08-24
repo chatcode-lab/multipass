@@ -388,4 +388,10 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.YE.statuses.PA).toBe("visa_required");
     expect(snapshot.passports.YE.statuses.TR).toBe("visa_required");
   });
+
+  it("applies the final Tanzania and Zimbabwe inbound gap audits", () => {
+    expect(snapshot.passports.DO.statuses.TZ).toBe("visa_on_arrival");
+    expect(snapshot.passports.SS.statuses.TZ).toBe("visa_free");
+    expect(snapshot.passports.BO.statuses.ZW).toBe("visa_on_arrival");
+  });
 });

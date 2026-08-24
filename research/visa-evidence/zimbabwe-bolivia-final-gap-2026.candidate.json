@@ -1,0 +1,58 @@
+{
+  "batchId": "zimbabwe-bolivia-final-gap-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "zimbabwe-immigration-current-category-b-definition-2026",
+      "title": "Department of Immigration Zimbabwe: visa regime",
+      "url": "https://www.zimimmigration.gov.zw/",
+      "publisher": "Department of Immigration Zimbabwe",
+      "jurisdiction": "Zimbabwe",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Zimbabwe's live Immigration Department homepage defines Category B as visa-required nationalities whose visa can be obtained at the port of entry.",
+      "supportingExcerpt": "These countries nationals require a visa but the visa can also be obtained at the port of entry"
+    },
+    {
+      "id": "zimbabwe-immigration-current-category-b-bolivia-2026",
+      "title": "Category B",
+      "url": "https://www.zimimmigration.gov.zw/?p=7186",
+      "publisher": "Department of Immigration Zimbabwe",
+      "jurisdiction": "Zimbabwe",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Category B nationality page published by Zimbabwe's Immigration Department expressly includes Bolivia.",
+      "supportingExcerpt": "Australia | Bolivia | Canada | Croatia | El Salvador"
+    }
+  ],
+  "policies": [
+    {
+      "id": "bolivian-ordinary-passport-zimbabwe-arrival-visa-2026",
+      "title": "Bolivian ordinary passports: Zimbabwe visa on arrival",
+      "summary": "Zimbabwe's Immigration Department lists Bolivia in Category B, whose visas may be obtained at the port of entry.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["ZW"],
+      "passportCodes": ["BO"],
+      "conditions": [
+        "Applies to an ordinary Bolivian passport holder travelling as a short visitor.",
+        "Category B requires a visa but allows it to be obtained at the port of entry after payment of the corresponding fee.",
+        "The optional online process does not change the category's border-issuance baseline; purpose, documents, fees and final admission remain separate."
+      ],
+      "sourceIds": ["zimbabwe-immigration-current-category-b-definition-2026", "zimbabwe-immigration-current-category-b-bolivia-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BO",
+      "destinationCode": "ZW",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Zimbabwe's current Immigration Department schedule places Bolivia in Category B, which expressly permits visa issuance at the port of entry rather than requiring advance electronic issuance.",
+      "sourceIds": ["zimbabwe-immigration-current-category-b-definition-2026", "zimbabwe-immigration-current-category-b-bolivia-2026"]
+    }
+  ],
+  "unresolved": []
+}

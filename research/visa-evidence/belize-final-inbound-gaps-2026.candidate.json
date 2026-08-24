@@ -1,0 +1,40 @@
+{
+  "batchId": "belize-final-inbound-gaps-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "belize-immigration-live-nationality-table-2026",
+      "title": "Do you need a visa to travel to Belize?",
+      "url": "https://immigration.gov.bz/visa/visa-who-qualify/",
+      "publisher": "Government of Belize Ministry of Immigration, Governance and Labour",
+      "jurisdiction": "Belize",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Belize Immigration's live government nationality table supplies visitor entry-visa YES/NO results, but has no Timor-Leste or South Sudan row and gives Nauru the internally contradictory value YES - NO.",
+      "supportingExcerpt": "Nauru | YES - NO |"
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "TL",
+      "destinationCode": "BZ",
+      "reason": "Belize Immigration's live named YES/NO table contains no Timor-Leste row. No direct nationality result or express exhaustive default was recovered, so no status is inferred from omission.",
+      "searchedOfficialDomains": ["immigration.gov.bz", "mfa.gov.bz", "mnec.gov.tl"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "BZ",
+      "reason": "Belize Immigration's live nationality table gives Nauru the internally contradictory value YES - NO. No current official clarification resolves visitor issuance timing or status.",
+      "searchedOfficialDomains": ["immigration.gov.bz", "mfa.gov.bz", "naurugov.nr"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "BZ",
+      "reason": "Belize Immigration's live named YES/NO table contains no South Sudan row. No direct nationality result or express exhaustive default was recovered, so no status is inferred from omission.",
+      "searchedOfficialDomains": ["immigration.gov.bz", "mfa.gov.bz", "mofaic.gov.ss"]
+    }
+  ]
+}

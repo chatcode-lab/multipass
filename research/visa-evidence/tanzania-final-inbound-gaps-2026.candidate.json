@@ -1,0 +1,70 @@
+{
+  "batchId": "tanzania-final-inbound-gaps-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "tanzania-immigration-visa-guidelines-current-2026",
+      "title": "Tanzania Visa Guidelines",
+      "url": "https://immigration.go.tz/documents/Visa-guideline.pdf",
+      "publisher": "Tanzania Immigration Services Department",
+      "jurisdiction": "United Republic of Tanzania",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live PDF is published directly on Tanzania Immigration's official immigration.go.tz domain. It defines the current visa-free EAC group and expressly lists Dominican Republic in the named online-and-arrival cohort.",
+      "supportingExcerpt": "Nationals from the listed countries below are eligible for both Online as well as on arrival Visa facility."
+    },
+    {
+      "id": "eac-current-partner-states-south-sudan-tanzania-2026",
+      "title": "East African Community: EAC at a Glance",
+      "url": "https://www.eac.int/",
+      "publisher": "East African Community",
+      "jurisdiction": "East African Community",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official EAC site identifies both the Republic of South Sudan and the United Republic of Tanzania among its eight Partner States.",
+      "supportingExcerpt": "Republic of South Sudan, Republic of Uganda and United Republic of Tanzania"
+    }
+  ],
+  "policies": [
+    {
+      "id": "dominican-ordinary-passport-tanzania-visitor-visa-on-arrival-2026",
+      "title": "Dominican ordinary passports: Tanzania visitor visa on arrival",
+      "summary": "Tanzania Immigration's current named schedule includes the Dominican Republic in the cohort eligible for either online processing or a visa at an official entry point.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["TZ"],
+      "passportCodes": ["DO"],
+      "conditions": [
+        "Applies to an ordinary Dominican passport holder travelling as a short visitor.",
+        "The official guidance expressly permits either online processing or a visa on arrival; this is normalized as visa_on_arrival because issuance at an official entry point is directly available.",
+        "The guide says visa on arrival is available at an official entry point and separately requires six-month passport validity and a return ticket."
+      ],
+      "sourceIds": ["tanzania-immigration-visa-guidelines-current-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "south-sudan-ordinary-passport-tanzania-eac-visitor-waiver-2026",
+      "title": "South Sudanese ordinary passports: Tanzania EAC visitor visa waiver",
+      "summary": "Tanzania Immigration's current guide says EAC Member State nationals do not require a visa, and the current EAC site identifies South Sudan and Tanzania as Partner States.",
+      "status": "visa_free",
+      "destinationCodes": ["TZ"],
+      "passportCodes": ["SS"],
+      "conditions": [
+        "Applies to an ordinary South Sudanese passport holder travelling as a short visitor.",
+        "The Immigration guide does not state a common stay duration or work entitlement; this policy concerns the visa requirement only."
+      ],
+      "sourceIds": ["tanzania-immigration-visa-guidelines-current-2026", "eac-current-partner-states-south-sudan-tanzania-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "NI",
+      "destinationCode": "TZ",
+      "reason": "Nicaragua is absent from Tanzania's current named visa-on-arrival, referral and visa-free groups. No current official source states an exhaustive ordinary-passport default, so no route is inferred from the general portal.",
+      "searchedOfficialDomains": ["immigration.go.tz", "visa.immigration.go.tz", "eac.int", "mirex.gob.ni"]
+    }
+  ]
+}
