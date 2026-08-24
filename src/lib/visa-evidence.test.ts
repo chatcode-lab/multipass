@@ -682,12 +682,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "QA", "evisa").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.HK.statuses.QA).toBe("visa_on_arrival");
 
-    expect(pairsFor("SA")).toHaveLength(82);
+    expect(pairsFor("SA")).toHaveLength(83);
     expect(getVisaRelationshipEvidence("GB", "SA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RU", "SA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IL", "SA", "visa_on_arrival").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BD", "SA", "visa_required").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("BR", "SA", snapshot.passports.BR.statuses.SA).supportsCurrentStatus).toBe(false);
+    expect(snapshot.passports.BR.statuses.SA).toBe("evisa");
+    expect(getVisaRelationshipEvidence("BR", "SA", "evisa").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("JO")).toHaveLength(194);
     expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
@@ -5097,6 +5098,25 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("corrects Brazil to Saudi eVisa while preserving Chilean and Peruvian final holds", () => {
+    expect(OFFICIAL_VISA_SOURCES.some(({ id }) =>
+      id === "saudi-evisa-terms-brazil-permitted-country-current-2026")).toBe(true);
+    expect(snapshot.passports.BR.statuses.SA).toBe("evisa");
+    expect(getVisaRelationshipEvidence("BR", "SA", "evisa").supportsCurrentStatus).toBe(true);
+
+    for (const [passportCode, destinationCode] of [
+      ["CL", "BD"],
+      ["CL", "TT"],
+      ["PE", "BD"],
+      ["PE", "MK"],
+      ["PE", "TT"],
+      ["PE", "UA"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -5771,6 +5791,7 @@ describe("official visa evidence", () => {
       "odyseusz.gov.pl",
       "www.stjornarradid.is",
       "voa.specialbranch.gov.bd",
+      "bresil.diplomatie.gov.bf",
       "immi.specialbranch.gov.bd",
       "colombo.mofa.gov.bd",
       "kathmandu.mofa.gov.bd",

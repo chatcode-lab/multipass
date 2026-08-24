@@ -4194,4 +4194,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.eaip.gaca.gov.sy/section/40",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "BR",
+    destinationCode: "SA",
+    status: "evisa",
+    reason: "Saudi Arabia's current Ministry of Tourism terms expressly name Brazil as an eligible country and deliver an accepted tourist eVisa by email before travel.",
+    sourceUrl: "https://visa.visitsaudi.com/Home/TermsConditions",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;
