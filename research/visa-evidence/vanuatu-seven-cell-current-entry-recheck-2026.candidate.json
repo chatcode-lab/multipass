@@ -1,0 +1,153 @@
+{
+  "batchId": "vanuatu-seven-cell-current-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "vanuatu-dips-live-visitor-visa-country-cohorts-2026",
+      "title": "Vanuatu Department of Immigration and Passport Services: Visa Upon Arrival",
+      "url": "https://immigration.gov.vu/visa-exempted-countries/",
+      "publisher": "Department of Immigration and Passport Services",
+      "jurisdiction": "Vanuatu",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Vanuatu's Department of Immigration and Passport Services publishes this live ordinary visitor-visa country page on immigration.gov.vu.",
+      "supportingExcerpt": "COUNTRIES REQUIRING A VISITOR VISA TO ENTER VANUATU (NON-EXEMPTED COUNTRIES)"
+    },
+    {
+      "id": "vanuatu-dips-live-tourist-visa-issuance-timing-2026",
+      "title": "Vanuatu Department of Immigration and Passport Services: Visit Vanuatu",
+      "url": "https://immigration.gov.vu/visit/",
+      "publisher": "Department of Immigration and Passport Services",
+      "jurisdiction": "Vanuatu",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Department's live visitor-category guidance expressly distinguishes arrival-issued tourist visas for exempt countries from pre-travel approval for non-exempt countries.",
+      "supportingExcerpt": "If you are from a non-exempted country, you must apply for the visa in advance and obtain approval before traveling to Vanuatu."
+    },
+    {
+      "id": "moldova-mfa-current-vanuatu-ordinary-passport-evisa-row-2026",
+      "title": "Moldova MFA: Visa regime for citizens of the Republic of Moldova",
+      "url": "https://mfa.gov.md/en/node/4478",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "official-dataset",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Moldova's Foreign Ministry publishes this live country-by-passport-category table, explicitly updated 20 February 2026; its ordinary-passport Vanuatu row states both the visa requirement and eVisa method.",
+      "supportingExcerpt": "Vanuatu | Viza este necesară | Viza este necesară | Viza este necesară | eVisa"
+    },
+    {
+      "id": "rwanda-dgie-current-ordinary-passport-vanuatu-visa-free-row-2026",
+      "title": "Rwanda Directorate General of Immigration and Emigration: Rwandan Passport Holders – Visa-Free Countries",
+      "url": "https://www.migration.gov.rw/1-1/sops-1",
+      "publisher": "Directorate General of Immigration and Emigration",
+      "jurisdiction": "Rwanda",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Rwanda's live immigration-authority table directly names Vanuatu and separately identifies ordinary, service and diplomatic Rwandan passports.",
+      "supportingExcerpt": "VANUATU | Visa not required | Visa not required | Visa not required"
+    }
+  ],
+  "policies": [
+    {
+      "id": "vanuatu-moldovan-ordinary-passports-electronic-visitor-visa-2026",
+      "title": "Vanuatu: Moldovan ordinary passports require an electronic visitor visa",
+      "summary": "Moldova MFA's current passport-category table directly states that a Moldovan ordinary passport requires a Vanuatu visa and identifies eVisa as its method; Vanuatu Immigration requires non-exempt travellers to obtain approval before travel.",
+      "status": "evisa",
+      "destinationCodes": ["VU"],
+      "passportCodes": ["MD"],
+      "conditions": [
+        "Applies only to an ordinary Moldovan passport holder travelling for a short visitor or tourist purpose.",
+        "The Moldovan Foreign Ministry's table is explicitly updated 20 February 2026 and places eVisa in its visa-obtainment-method field for the ordinary-passport Vanuatu row.",
+        "Vanuatu Immigration says non-exempt travellers must apply and obtain approval before travel. This is pre-travel electronic issuance, not visa-free entry or a visa issued on arrival.",
+        "No duration, entries, fee, work, residence, transit, diplomatic, official, special-document, third-country-document, or final-admission rule is inferred."
+      ],
+      "sourceIds": [
+        "moldova-mfa-current-vanuatu-ordinary-passport-evisa-row-2026",
+        "vanuatu-dips-live-tourist-visa-issuance-timing-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MD",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Moldova MFA's current ordinary-passport Vanuatu row says a visa is required and identifies eVisa as the method; Vanuatu Immigration confirms non-exempt travellers obtain approval before travel.",
+      "sourceIds": [
+        "moldova-mfa-current-vanuatu-ordinary-passport-evisa-row-2026",
+        "vanuatu-dips-live-tourist-visa-issuance-timing-2026"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Vanuatu's live list names Bahrain in both exempt and non-exempt cohorts",
+      "explanation": "Vanuatu Immigration's current country page places Bahrain in both its exempt and non-exempt visitor-visa lists. The internal contradiction cannot be normalized to the fallback's visa-free status.",
+      "sourceIds": ["vanuatu-dips-live-visitor-visa-country-cohorts-2026"]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Vanuatu's live list names Monaco in both exempt and non-exempt cohorts",
+      "explanation": "Vanuatu Immigration's current country page places Monaco in both its exempt and non-exempt visitor-visa lists. The internal contradiction cannot be normalized to the fallback's visa-free status.",
+      "sourceIds": ["vanuatu-dips-live-visitor-visa-country-cohorts-2026"]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: current Rwanda and Vanuatu official sources conflict",
+      "explanation": "Rwanda's live passport table says Vanuatu requires no visa for an ordinary Rwandan passport, while Vanuatu Immigration lists Rwanda in both exempt and non-exempt cohorts. The conflict cannot be normalized.",
+      "sourceIds": [
+        "rwanda-dgie-current-ordinary-passport-vanuatu-visa-free-row-2026",
+        "vanuatu-dips-live-visitor-visa-country-cohorts-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "BH",
+      "destinationCode": "VU",
+      "reason": "Vanuatu Immigration's live country page places Bahrain in both exempt and non-exempt visitor-visa cohorts. The Department's timing guidance gives incompatible arrival and pre-approval outcomes for those cohorts, so neither is normalized.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "mfaicet.gov.vu", "mofa.gov.bh"]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "VU",
+      "reason": "No current direct Vanuatu or Kyrgyz passport-authority source maps Kyrgyzstan to a Vanuatu visitor-visa cohort. Vanuatu Immigration's omission is not treated as a residual non-exempt classification, and no portal route is inferred.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "mfaicet.gov.vu", "gov.kg", "e-consul.gov.kg"]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "VU",
+      "reason": "No current direct Vanuatu or North Macedonian passport-authority source maps North Macedonia to a Vanuatu visitor-visa cohort. Vanuatu Immigration's omission is not treated as a residual non-exempt classification, and no portal route is inferred.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "mfaicet.gov.vu", "mfa.gov.mk"]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "VU",
+      "reason": "No current direct Vanuatu or Mongolian passport-authority source maps Mongolia to a Vanuatu visitor-visa cohort. Vanuatu Immigration's omission is not treated as a residual non-exempt classification, and no portal route is inferred.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "mfaicet.gov.vu", "consul.mn"]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "VU",
+      "reason": "Vanuatu Immigration's live country page places Monaco in both exempt and non-exempt visitor-visa cohorts. The Department's timing guidance gives incompatible arrival and pre-approval outcomes for those cohorts, so neither is normalized.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "mfaicet.gov.vu", "gouv.mc"]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "VU",
+      "reason": "Rwanda's live ordinary-passport table says Vanuatu is visa-free, while Vanuatu Immigration puts Rwanda in both exempt and non-exempt cohorts. The authorities' conflicting current outcomes are retained unresolved.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "migration.gov.rw", "mfaicet.gov.vu"]
+    }
+  ]
+}

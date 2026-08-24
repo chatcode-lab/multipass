@@ -617,9 +617,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IL", "PW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
 
     expect(VANUATU_VOA_ORDINARY_PASSPORT_CODES).toHaveLength(113);
-    expect(pairsFor("VU")).toHaveLength(192);
+    expect(pairsFor("VU")).toHaveLength(193);
     expect(getVisaRelationshipEvidence("US", "VU", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CM", "VU", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MD", "VU", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.MD.statuses.VU).toBe("evisa");
     expect(getVisaRelationshipEvidence("BH", "VU", snapshot.passports.BH.statuses.VU).supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("CV")).toHaveLength(161);
@@ -5301,6 +5303,7 @@ describe("official visa evidence", () => {
       "www.mofa.pna.ps",
       "island.is",
       "files.reglugerd.is",
+      "egyptconsulate.co.uk",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

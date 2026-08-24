@@ -962,6 +962,14 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://bcbp.pw/?page_id=165",
     reviewedAt: "2026-08-20",
   },
+  {
+    passportCode: "MD",
+    destinationCode: "VU",
+    status: "evisa",
+    reason: "Moldova MFA's current ordinary-passport table requires a Vanuatu visa and expressly identifies eVisa as the application method; Vanuatu Immigration requires non-exempt visitors to obtain approval before travel.",
+    sourceUrl: "https://mfa.gov.md/en/node/4478",
+    reviewedAt: "2026-08-24",
+  },
   ...VANUATU_VOA_ORDINARY_PASSPORT_CODES.map((passportCode) => ({
     passportCode,
     destinationCode: "VU",
