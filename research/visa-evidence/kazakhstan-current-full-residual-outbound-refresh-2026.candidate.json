@@ -1,0 +1,113 @@
+{
+  "batchId": "kazakhstan-current-full-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kazakhstan-mfa-current-outbound-ordinary-passport-visa-matrix-2026",
+      "title": "Visa regime for citizens of the Republic of Kazakhstan",
+      "url": "https://www.gov.kz/memleket/entities/mfa/activities/34741?lang=en&parentId=3064",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Kazakhstan",
+      "jurisdiction": "Kazakhstan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Kazakhstan MFA's live official table separates diplomatic, service/official and ordinary passports. Its scoped ordinary-passport entries use only the bare label 'visa' and do not establish electronic, mission or border issuance timing.",
+      "supportingExcerpt": "N – ordinary passport."
+    },
+    {
+      "id": "chad-evisa-current-exclusive-online-notice-kazakh-refresh-2026",
+      "title": "New visa tariffs in the Republic of Chad",
+      "url": "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      "publisher": "Direction de l’Immigration et de l’Émigration and E-Visa Subdirectorate",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 11 May 2026 Immigration and E-Visa Subdirectorate notice says all new visa applications are exclusively online through the official evisa.td platform and outside-platform visas are invalid after 21 May.",
+      "supportingExcerpt": "toutes les demandes de visa se font désormais exclusivement en ligne via plateforme officielle evisa.td"
+    },
+    {
+      "id": "chad-evisa-current-processing-circular-kazakh-refresh-2026",
+      "title": "E-Visa circular",
+      "url": "https://evisa.td/articles/11/note-circulaire",
+      "publisher": "Direction de l’Immigration et de l’Émigration / E-Visa Subdirectorate",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 4 June 2026 official circular gives electronic-visa processing periods, confirming a pre-travel electronic route rather than arrival issuance.",
+      "supportingExcerpt": "Demande de e-Visa standard : 10 jours ouvrables; Demande de e-Visa express: 72 heures"
+    }
+  ],
+  "policies": [
+    {
+      "id": "kazakhstani-ordinary-passports-chad-electronic-visitor-visa-2026",
+      "title": "Kazakhstani ordinary passports: Chad electronic visitor visa",
+      "summary": "Kazakhstan MFA's ordinary-passport matrix identifies Chad as visa-subject, while Chad requires new visa applications exclusively through its electronic platform before travel.",
+      "status": "evisa",
+      "destinationCodes": ["TD"],
+      "passportCodes": ["KZ"],
+      "conditions": [
+        "Applies to an ordinary Kazakhstan passport: the current Kazakhstan MFA matrix labels Chad's ordinary-passport row 'visa'.",
+        "Apply through Chad's official eVisa platform before travel; standard processing is 10 working days and express processing is 72 hours.",
+        "Approval, documentary, health, security, carrier and final border-admission checks remain applicable."
+      ],
+      "sourceIds": [
+        "kazakhstan-mfa-current-outbound-ordinary-passport-visa-matrix-2026",
+        "chad-evisa-current-exclusive-online-notice-kazakh-refresh-2026",
+        "chad-evisa-current-processing-circular-kazakh-refresh-2026"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.td/",
+        "label": "Chad official e-Visa platform",
+        "processingTime": "10 working days standard or 72 hours express.",
+        "steps": [
+          "Submit the ordinary Kazakhstan-passport visitor application online before travel.",
+          "Travel only after issuance and retain the required supporting documents."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "KZ",
+      "destinationCode": "TD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Kazakhstan MFA's ordinary-passport table identifies Chad as visa-subject; Chad's current notices make new visa applications exclusively electronic before travel.",
+      "sourceIds": [
+        "kazakhstan-mfa-current-outbound-ordinary-passport-visa-matrix-2026",
+        "chad-evisa-current-exclusive-online-notice-kazakh-refresh-2026",
+        "chad-evisa-current-processing-circular-kazakh-refresh-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"KZ","destinationCode":"AF","reason":"Kazakhstan MFA's ordinary-passport table says only 'visa'; no current Afghan authority establishes a usable Kazakh short-visitor issuance route and timing.","searchedOfficialDomains":["gov.kz","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"KZ","destinationCode":"AO","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish the Angola issuance route. A portal or unlisted-nation inference is not used.","searchedOfficialDomains":["gov.kz","governo.gov.ao","mirex.gov.ao","smevisa.gov.ao"]},
+    {"passportCode":"KZ","destinationCode":"BD","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish whether Bangladesh issues electronically, before travel or on arrival. No direct destination timing was found.","searchedOfficialDomains":["gov.kz","mofa.gov.bd","visa.gov.bd","voa.specialbranch.gov.bd"]},
+    {"passportCode":"KZ","destinationCode":"BF","reason":"Kazakhstan MFA's bare ordinary-passport visa label and Burkina Faso's electronic service do not directly establish Kazakh eligibility or actual issuance timing.","searchedOfficialDomains":["gov.kz","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"KZ","destinationCode":"CF","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish a Central African mission, electronic or border issuance route for Kazakh visitors.","searchedOfficialDomains":["gov.kz","diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"KZ","destinationCode":"KM","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish a Comorian advance, electronic or arrival issuance route for Kazakh visitors.","searchedOfficialDomains":["gov.kz","justice.gouv.km","gouv.km"]},
+    {"passportCode":"KZ","destinationCode":"CG","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish actual Republic of the Congo visitor-visa issuance timing.","searchedOfficialDomains":["gov.kz","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"KZ","destinationCode":"CI","reason":"Kazakhstan MFA's bare ordinary-passport visa label and Côte d’Ivoire airport-pre-enrolment material do not establish Kazakh eligibility or actual issuance timing.","searchedOfficialDomains":["gov.kz","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"KZ","destinationCode":"DJ","reason":"Kazakhstan MFA's bare ordinary-passport visa label and Djibouti's general electronic service do not publish a Kazakh ordinary-passport eligibility schedule.","searchedOfficialDomains":["gov.kz","egouv.dj","evisa.gouv.dj"]},
+    {"passportCode":"KZ","destinationCode":"GW","reason":"No current Kazakhstan or Guinea-Bissau authority establishes whether ordinary Kazakh visitors receive a mission, electronic or border-issued visa.","searchedOfficialDomains":["gov.kz","mne.gw","gov.gw"]},
+    {"passportCode":"KZ","destinationCode":"IQ","reason":"Kazakhstan MFA's bare ordinary-passport visa label and Iraqi electronic services do not establish Kazakh eligibility or one actual issuance route.","searchedOfficialDomains":["gov.kz","moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"KZ","destinationCode":"KW","reason":"No current source establishes unconditional ordinary Kazakh visitor eligibility and a single Kuwaiti issuance timing; sponsor, residence and third-country routes are excluded.","searchedOfficialDomains":["gov.kz","moi.gov.kw","kuwaitvisa.moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"KZ","destinationCode":"LR","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish a passport-wide Liberian visitor route or its actual issuance timing.","searchedOfficialDomains":["gov.kz","lis.gov.lr","immigration.gov.lr"]},
+    {"passportCode":"KZ","destinationCode":"ML","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish ordinary Kazakh visitor treatment and actual Malian issuance timing.","searchedOfficialDomains":["gov.kz","diplomatiemdc.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"KZ","destinationCode":"NE","reason":"No current Kazakhstan or Nigerien authority maps ordinary Kazakh visitors to one unconditional issuance route; no complement is inferred from exceptions.","searchedOfficialDomains":["gov.kz","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"KZ","destinationCode":"KP","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish a usable Kazakh short-visitor route for DPRK; operational controls are not normalized.","searchedOfficialDomains":["gov.kz","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"KZ","destinationCode":"MK","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish North Macedonian issuance timing; residence and third-country-document exemptions are excluded.","searchedOfficialDomains":["gov.kz","mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"KZ","destinationCode":"PS","reason":"Palestinian access depends on Israeli-controlled crossings, permits, identity records and route-specific conditions. No Palestine-wide Kazakh-passport status is established.","searchedOfficialDomains":["gov.kz","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"KZ","destinationCode":"ST","reason":"São Tomé and Príncipe's conditional third-country-document waiver and electronic service do not establish unconditional Kazakh eligibility or actual issuance timing.","searchedOfficialDomains":["gov.kz","smf.st","mne.gov.st","evisa.st"]},
+    {"passportCode":"KZ","destinationCode":"SL","reason":"Current Sierra Leone official material conflicts on electronic versus arrival issuance timing and does not resolve an ordinary Kazakh route.","searchedOfficialDomains":["gov.kz","evisa.sl","slid.gov.sl","immigration.gov.sl"]},
+    {"passportCode":"KZ","destinationCode":"SB","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish ordinary Kazakh visitor eligibility and actual Solomon Islands issuance timing.","searchedOfficialDomains":["gov.kz","immigration.gov.sb","mfaet.gov.sb"]},
+    {"passportCode":"KZ","destinationCode":"SS","reason":"South Sudan's portal does not publish current ordinary Kazakh-passport eligibility; Kazakhstan MFA's bare visa label does not establish actual issuance timing.","searchedOfficialDomains":["gov.kz","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"KZ","destinationCode":"SD","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish Sudanese visitor-visa issuance timing amid disrupted operations.","searchedOfficialDomains":["gov.kz","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"KZ","destinationCode":"SY","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish whether a Syrian online filing produces eVisa issuance or only an advance application.","searchedOfficialDomains":["gov.kz","mofaex.gov.sy","moi.gov.sy","evisa.sy"]},
+    {"passportCode":"KZ","destinationCode":"TT","reason":"Kazakhstan MFA's bare ordinary-passport visa label does not establish Trinidad and Tobago visitor issuance timing; waiver-list omission and portal availability are not inferred.","searchedOfficialDomains":["gov.kz","nationalsecurity.gov.tt","foreign.gov.tt","immigration.gov.tt"]}
+  ]
+}
