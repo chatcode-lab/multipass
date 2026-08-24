@@ -5023,6 +5023,20 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves Bruneian, Liechtenstein and Argentine final route gaps as uncovered", () => {
+    for (const [passportCode, destinationCode] of [
+      ["BN", "MK"],
+      ["BN", "UA"],
+      ["LI", "SL"],
+      ["LI", "TT"],
+      ["AR", "CV"],
+      ["AR", "SA"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
