@@ -1,0 +1,57 @@
+{
+  "batchId": "russia-barbados-single-cell-final-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "russia-mfa-july-2026-barbados-entry-table",
+      "title": "Russian MFA Consular Department: entry and stay conditions by foreign passport type",
+      "url": "https://www.kdmid.ru/cons/visas/conditions-of-entry-foreign-citizens-in-russian-federation/",
+      "publisher": "Consular Department, Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russian Federation",
+      "kind": "official-dataset",
+      "language": "Russian",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The MFA Consular Department publishes this country-by-country table on its official kdmid.ru domain, identifies it as current as of July 2026, and the Barbados row expressly permits entry by electronic visa for up to 30 days after listing the all-passport visa rule.",
+      "supportingExcerpt": "Могут въезжать по электронной визе на срок до 30 дней."
+    },
+    {
+      "id": "russia-mfa-unified-evisa-pretravel-issuance-2026",
+      "title": "Processing of an e-visa | Consular Department of MFA Russia",
+      "url": "https://evisa.kdmid.ru/Home/Instruction?tt_force_outside=1",
+      "publisher": "Consular Department, Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russian Federation",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.kdmid.ru application page identifies the Russian MFA and its Consular Department, states that eligibility is limited to the Government-approved nationality list, and renders 64 eligible nationalities without Barbados.",
+      "supportingExcerpt": "Only citizens of the following foreign countries, the list of which is approved by the Government of the Russian Federation, are eligible"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "BB",
+      "destinationCode": "RU",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved",
+      "explanation": "Russia's MFA country table, current as of July 2026, directly says Barbados may enter by eVisa for up to 30 days. The live MFA eVisa service instead limits eligibility to its rendered Government-approved list, which omits Barbados. The two current official routes do not reconcile the discrepancy, so actual issuance cannot be classified safely.",
+      "sourceIds": [
+        "russia-mfa-july-2026-barbados-entry-table",
+        "russia-mfa-unified-evisa-pretravel-issuance-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "BB",
+      "destinationCode": "RU",
+      "reason": "Two current Russian MFA sources conflict: the July 2026 entry table expressly permits Barbadian citizens to use eVisa, but the operative eVisa service says only its Government-approved nationality list is eligible and omits Barbados. Neither source explains which controls actual issuance.",
+      "searchedOfficialDomains": [
+        "kdmid.ru",
+        "evisa.kdmid.ru",
+        "government.ru",
+        "publication.pravo.gov.ru"
+      ]
+    }
+  ]
+}
