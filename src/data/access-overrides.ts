@@ -3965,6 +3965,22 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.indembassyankara.gov.in/eoiank_pages/MjE2",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "MD",
+    destinationCode: "NI",
+    status: "visa_required",
+    reason: "Moldova's current Foreign Ministry ordinary-passport table says Nicaragua requires a visa issued through diplomatic missions before travel.",
+    sourceUrl: "https://mfa.gov.md/en/node/4478",
+    reviewedAt: "2026-08-24",
+  },
+  {
+    passportCode: "VE",
+    destinationCode: "NI",
+    status: "visa_required",
+    reason: "Nicaragua's current Category C schedule requires Venezuelan ordinary-passport visitors to obtain consular Directorate-General approval before entry.",
+    sourceUrl: "https://www.cocesna.org/aipca/AIPMN/AIP_2506/Eurocontrol/NICARAGUA/2025-10-30-AIRAC/html/eAIP/ES-MN-GEN-1.3-es-ES.html",
+    reviewedAt: "2026-08-24",
+  },
   ...(["CA", "KR"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "TD",

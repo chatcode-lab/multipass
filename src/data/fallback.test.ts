@@ -411,4 +411,9 @@ describe("bundled passport snapshot", () => {
       expect(snapshot.passports[passportCode].statuses.TR).toBe("visa_required");
     }
   });
+
+  it("applies the current Nicaragua residual corrections", () => {
+    expect(snapshot.passports.MD.statuses.NI).toBe("visa_required");
+    expect(snapshot.passports.VE.statuses.NI).toBe("visa_required");
+  });
 });

@@ -1096,7 +1096,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HK", "DZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DZ", "DZ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("NG")).toHaveLength(189);
+    expect(pairsFor("NG")).toHaveLength(194);
     expect(getVisaRelationshipEvidence("GH", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "NG", "evisa").supportsCurrentStatus).toBe(true);
@@ -1689,13 +1689,13 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "NI");
 
-    expect(pairs).toHaveLength(190);
+    expect(pairs).toHaveLength(194);
     expect(getVisaRelationshipEvidence("AD", "NI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AO", "NI", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "NI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GT", "NI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NI", "NI", "citizenship").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("MD", "NI", snapshot.passports.MD.statuses.NI).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MD", "NI", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("maps Uruguay's current common-passport admission schedule without filling unsupported rows", () => {
@@ -2679,7 +2679,7 @@ describe("official visa evidence", () => {
     for (const passportCode of ["CZ", "TR", "US", "VA"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "NG", "evisa").supportsCurrentStatus).toBe(true);
     }
-    for (const passportCode of ["AF", "BB", "GE", "KE", "SZ", "ZA"] as const) {
+    for (const passportCode of ["AF", "GE", "SZ"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "NG", snapshot.passports[passportCode].statuses.NG).supportsCurrentStatus).toBe(false);
     }
 
@@ -3447,6 +3447,42 @@ describe("official visa evidence", () => {
       ["XK", "ID"],
       ["HK", "EG"],
       ["JO", "EG"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
+  it("covers current Nicaragua and Nigeria residual routes while preserving Saint Lucia holds", () => {
+    for (const [passportCode, status] of [
+      ["HK", "visa_free"],
+      ["DO", "visa_free"],
+      ["MD", "visa_required"],
+      ["VE", "visa_required"],
+    ] as const) {
+      expect(snapshot.passports[passportCode].statuses.NI).toBe(status);
+      expect(getVisaRelationshipEvidence(passportCode, "NI", status).supportsCurrentStatus).toBe(true);
+    }
+    for (const [passportCode, status] of [
+      ["CM", "visa_free"],
+      ["TD", "visa_free"],
+      ["BB", "evisa"],
+      ["KE", "evisa"],
+      ["ZA", "evisa"],
+    ] as const) {
+      expect(snapshot.passports[passportCode].statuses.NG).toBe(status);
+      expect(getVisaRelationshipEvidence(passportCode, "NG", status).supportsCurrentStatus).toBe(true);
+    }
+    for (const [passportCode, destinationCode] of [
+      ["GE", "LC"],
+      ["CD", "LC"],
+      ["SS", "LC"],
+      ["KN", "NG"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(
@@ -4836,6 +4872,7 @@ describe("official visa evidence", () => {
       "cglondon.mfa.gov.dz",
       "embbrussels.mfa.gov.dz",
       "immigration.gov.ng",
+      "www.nigeriaconsulateatlanta.org",
       "lecard.immigration.gov.ng",
       "ecowas.int",
       "www.ecowas.int",
@@ -4858,6 +4895,7 @@ describe("official visa evidence", () => {
       "royaumeuni.diplomatie.gouv.ci",
       "visa2egypt.gov.eg",
       "www.gov.hk",
+      "www.info.gov.hk",
       "moi.gov.eg",
       "www.mfa.gov.eg",
       "anrpts.gov.mr",
