@@ -50,8 +50,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(39_082);
-    expect(summary.notCovered.count).toBe(5_892);
+    expect(summary.covered).toBe(39_083);
+    expect(summary.notCovered.count).toBe(5_891);
     expect(summary.percent).toBe(86.9);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

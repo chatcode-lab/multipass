@@ -1385,7 +1385,7 @@ describe("official visa evidence", () => {
 
     expect(maliPairs).toHaveLength(36);
     expect(nigerPairs).toHaveLength(36);
-    expect(liberiaPairs).toHaveLength(35);
+    expect(liberiaPairs).toHaveLength(36);
     expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "NE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "LR", "visa_free").supportsCurrentStatus).toBe(true);
@@ -3183,6 +3183,7 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode, status] of [
       ["DE", "NE", "visa_required"],
       ["DE", "SL", "visa_on_arrival"],
+      ["IT", "LR", "visa_required"],
       ["IT", "PS", "eta"],
     ] as const) {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
@@ -3194,7 +3195,6 @@ describe("official visa evidence", () => {
       ["GB", "PS"],
       ["ES", "IR"],
       ["DE", "AF"],
-      ["IT", "LR"],
       ["IT", "SS"],
     ] as const) {
       expect(
@@ -4539,6 +4539,41 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves the reviewed Italian, Canadian, and Norwegian final outbound partition", () => {
+    for (const [passportCode, destinationCode, status] of [
+      ["IT", "LR", "visa_required"],
+      ["IT", "PS", "eta"],
+      ["CA", "TD", "evisa"],
+      ["NO", "KM", "visa_on_arrival"],
+      ["NO", "LR", "visa_on_arrival"],
+      ["NO", "ML", "visa_on_arrival"],
+      ["NO", "SS", "evisa"],
+      ["NO", "SY", "visa_required"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["IT", "AF"],
+      ["IT", "CF"],
+      ["IT", "SS"],
+      ["CA", "AF"],
+      ["CA", "IR"],
+      ["NO", "AF"],
+      ["NO", "VG"],
+      ["NO", "PS"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -4719,6 +4754,7 @@ describe("official visa evidence", () => {
       "www.immd.gov.hk",
       "travel.state.gov",
       "travel.gc.ca",
+      "mofa.gov.lr",
       "www.k-eta.go.kr",
       "overseas.mofa.go.kr",
       "www.immigration.go.kr",
