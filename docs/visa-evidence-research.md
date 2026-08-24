@@ -2592,6 +2592,16 @@ All twenty-five Greek rows also remain uncovered. Independent review removed thr
 
 All twenty-five Luxembourg rows remain uncovered. A review initially proposed Ukraine `evisa` from a Luxembourg MFA page updated in January 2026, but re-audit found Ukraine MFA's explicit Luxembourg `visa_free` row in a table dated June 2023. The dated Ukrainian table is too old to verify the fallback, while its direct contradiction prevents using the Luxembourg page to change the status. Both official sources and the unresolved conflict are retained; no inbound Luxembourg consular rule is misused as outbound passport evidence.
 
+## Pass 275 result: Finland, Malta and New Zealand final outbound rechecks
+
+Three exact and independently cross-reviewed audits cover 74 terminal cells but add no normalizable relationship, so complete-matrix evidence remains 39,288 of 44,974 relationships (87.4%). The public `/status` matrix remains 39,288 fresh and 5,686 not-covered rows, with zero old or stale rows as of 24 August 2026. Canonical evidence now contains 723 reviewed batches, 3,109 official sources and 1,858 policies. No fallback classification changes.
+
+All twenty-two Finnish rows remain uncovered. Independent review removed a Finland-to-Ukraine page after it returned access denied, corrected two nonliteral excerpts and re-established Sierra Leone service provenance through its Immigration Department. Ukraine's direct nationality table remains dated 2023; Liberia remains application-country and embassy-dependent; Sierra Leone still contradicts itself on electronic delivery versus airport-or-border issuance; and the BVI, Palestine and operational routes remain unflattened.
+
+All twenty-three Maltese rows remain uncovered. Malta's Foreign Ministry WAF returned a reproducible 403, and the reviewer removed an inaccessible Israeli source rather than retaining its claim. Djibouti proves electronic delivery without Maltese eligibility, Liberia is condition-dependent, Sierra Leone has the same timing conflict, the BVI publishes no Maltese schedule, and Palestine remains crossing- and permit-specific.
+
+All twenty-nine New Zealand rows remain uncovered. Niue's live tourism page internally conflicts: its detailed arrival-permit list omits New Zealand while its FAQ says New Zealand is included, then separately describes Niuean-origin, birthplace, permanent-residence and exemption-sticker cases. Those status conditions do not apply to every ordinary New Zealand passport. Independent review removed an invalid standalone conflict object but retained both official sources and the contradiction in the terminal hold; New Zealand citizenship or residence is not silently converted into a Niue passport-access rule.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

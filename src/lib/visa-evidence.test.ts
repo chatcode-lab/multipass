@@ -4959,6 +4959,27 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves Finnish, Maltese and New Zealand final route conflicts as uncovered", () => {
+    for (const sourceId of [
+      "niue-tourism-current-visitor-entry-rules-2026",
+      "niue-government-budget-tourism-department-2025-26",
+    ] as const) {
+      expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["FI", "UA"],
+      ["FI", "SL"],
+      ["MT", "DJ"],
+      ["MT", "VG"],
+      ["NZ", "NU"],
+      ["NZ", "IQ"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -5030,6 +5051,7 @@ describe("official visa evidence", () => {
       "mvs.gov.ua",
       "mfa.gov.ua",
       "mae.gouvernement.lu",
+      "foreign.gov.mt",
       "www.egouv.dj",
       "guide.visitdjibouti.dj",
       "www.journalofficiel.dj",
