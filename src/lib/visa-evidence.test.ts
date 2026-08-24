@@ -719,10 +719,10 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("AE")).toHaveLength(198);
+    expect(pairsFor("AE")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("US", "AE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BD", "AE", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("TW", "AE", snapshot.passports.TW.statuses.AE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "AE", "visa_required").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("KW")).toHaveLength(63);
     expect(getVisaRelationshipEvidence("MO", "KW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1773,7 +1773,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PY");
 
-    expect(pairs).toHaveLength(198);
+    expect(pairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("BS", "PY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("QA", "PY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("OM", "PY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1782,7 +1782,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("PY", "PY", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "PY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PH", "PY", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("MN", "PY", snapshot.passports.MN.statuses.PY).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MN", "PY", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("covers Venezuela's named air-entry waivers and electronic tourist visas", () => {
@@ -3613,7 +3613,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["MN", "PY"],
       ["UA", "FW"],
       ["EC", "FW"],
       ["LT", "BO"],
@@ -5088,6 +5087,7 @@ describe("official visa evidence", () => {
       "www.immigration.gov.la",
       "api.immigration.gov.la",
       "en.consul.mn",
+      "www.consul.mn",
       "immigration.gov.mn",
       "www.immigration.gov.mn",
       "evisa.mn",
@@ -5211,6 +5211,7 @@ describe("official visa evidence", () => {
       "diplomatie.gouv.cd",
       "www.guineaecuatorialpress.com",
       "equatorialguinea-evisa.com",
+      "www.uae-embassy.org",
       "lsp.moic.gov.la",
       "aladel.gov.ly",
       "lana.gov.ly",
@@ -5376,6 +5377,7 @@ describe("official visa evidence", () => {
       "legislation.gov.fk",
       "www.legislation.gov.fk",
       "www.migracion.gob.pa",
+      "silpy.congreso.gov.py",
       "www.gacetaoficial.gob.pa",
       "mire.gob.pa",
       "www2.mre.gov.py",

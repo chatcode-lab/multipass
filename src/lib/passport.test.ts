@@ -372,6 +372,13 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { BD: "citizenship", AE: "evisa" }, mobilityScore: 0 });
 
     expect(applyVerifiedAccessOverrides({
+      code: "TW",
+      name: "Taiwan",
+      statuses: { TW: "citizenship", AE: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { TW: "citizenship", AE: "visa_required" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
       code: "MO",
       name: "Macao",
       statuses: { MO: "citizenship", KW: "visa_required" },

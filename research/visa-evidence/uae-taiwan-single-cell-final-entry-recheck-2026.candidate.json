@@ -1,0 +1,65 @@
+{
+  "batchId": "uae-taiwan-single-cell-final-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "uae-embassy-washington-current-taiwan-regular-passport-status-2026",
+      "title": "Taiwan | UAE Embassy in Washington, DC",
+      "url": "https://www.uae-embassy.org/visa-requirement/taiwan",
+      "publisher": "Embassy of the United Arab Emirates in Washington, DC",
+      "jurisdiction": "United Arab Emirates",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live UAE Embassy in Washington, DC country record identifies Taiwan and marks each passport category, including Regular, on the Embassy's official domain. The Embassy site links to the UAE Ministry of Foreign Affairs.",
+      "supportingExcerpt": "Visa Required"
+    },
+    {
+      "id": "uae-embassy-washington-current-non-us-tourist-visa-timing-2026",
+      "title": "Visas for Non-US Citizens | UAE Embassy",
+      "url": "https://www.uae-embassy.org/visas-for-non-us-citizens",
+      "publisher": "Embassy of the United Arab Emirates in Washington, DC",
+      "jurisdiction": "United Arab Emirates",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live UAE Embassy page publishes the passport-type visa schedule and current instructions for non-exempt ordinary/tourist-passport visitors, including advance receipt of a tourist-visa copy.",
+      "supportingExcerpt": "Tourist Visa is processed by visa agents or hotels in the UAE. Ensure you receive a copy before traveling."
+    }
+  ],
+  "policies": [
+    {
+      "id": "uae-embassy-taiwan-regular-passport-advance-tourist-visa-2026",
+      "title": "Taiwan ordinary passports: UAE advance tourist visa",
+      "summary": "The UAE Embassy's current Taiwan record marks Regular passports Visa Required; its non-exempt visitor instructions require obtaining the tourist-visa copy before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["AE"],
+      "passportCodes": ["TW"],
+      "conditions": [
+        "Applies only to the UAE Embassy's Taiwan Regular-passport category and an ordinary short tourist visit.",
+        "A visa on arrival is restricted to exempt nationalities with the appropriate passport type; Taiwan Regular is marked Visa Required.",
+        "For a tourist visit, the Embassy says UAE visa agents or hotels process the visa and that the traveller must receive a copy before travel.",
+        "This does not establish an eVisa, airline transit visa, GCC-resident route, work, residence, diplomatic, official, service, special-document, or final-admission rule."
+      ],
+      "sourceIds": [
+        "uae-embassy-washington-current-taiwan-regular-passport-status-2026",
+        "uae-embassy-washington-current-non-us-tourist-visa-timing-2026"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TW",
+      "destinationCode": "AE",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The UAE Embassy's live Taiwan record marks a Regular passport Visa Required. Its non-exempt visitor instructions require a tourist-visa copy before travelling, so the electronic-visa fallback is not the supported baseline.",
+      "sourceIds": [
+        "uae-embassy-washington-current-taiwan-regular-passport-status-2026",
+        "uae-embassy-washington-current-non-us-tourist-visa-timing-2026"
+      ]
+    }
+  ],
+  "unresolved": []
+}

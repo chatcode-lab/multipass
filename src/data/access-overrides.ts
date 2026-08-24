@@ -4090,4 +4090,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: `https://www.evisa.gov.ge/GeoVisa/en/VisaApp/CheckCountry?countryid=${countryId}`,
     reviewedAt: "2026-08-24",
   })),
+  {
+    passportCode: "TW",
+    destinationCode: "AE",
+    status: "visa_required",
+    reason: "The UAE Embassy's current Taiwan schedule marks regular passports Visa Required, and its tourist guidance requires travelers to obtain a visa copy through a UAE agent or hotel before travel.",
+    sourceUrl: "https://www.uae-embassy.org/visa-requirement/taiwan",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;
