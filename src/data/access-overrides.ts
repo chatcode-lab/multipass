@@ -3917,4 +3917,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.zimimmigration.gov.zw/?p=7186",
     reviewedAt: "2026-08-24",
   },
+  ...(["CA", "KR"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "TD",
+    status: "evisa" as const,
+    reason: "Current passport-authority guidance confirms that this ordinary passport requires a Chad visitor visa, while Chad's current official notices require new visas to be applied for and issued online before travel.",
+    sourceUrl: "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+    reviewedAt: "2026-08-24",
+  })),
 ] as const;

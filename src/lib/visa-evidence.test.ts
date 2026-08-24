@@ -1413,7 +1413,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "TD");
 
-    expect(pairs).toHaveLength(42);
+    expect(pairs).toHaveLength(44);
     expect(getVisaRelationshipEvidence("CM", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BB", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SG", "TD", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1421,6 +1421,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AU", "TD", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "TD", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HU", "TD", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CA", "TD", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KR", "TD", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "TD", snapshot.passports.US.statuses.TD).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("TD", "TD", "citizenship").supportsCurrentStatus).toBe(false);
   });
@@ -4852,6 +4854,8 @@ describe("official visa evidence", () => {
       "mofaic.gov.ss",
       "www.evisa.gov.ss",
       "evisa.gov.ss",
+      "accounts.eservices.gov.ss",
+      "mojca.gov.ss",
       "tradeinfohub.gov.ss",
       "gouvernement.gov.bf",
       "turkiye.diplomatie.gov.bf",
@@ -4896,6 +4900,7 @@ describe("official visa evidence", () => {
       "lis.gov.lr",
       "senate.gov.lr",
       "evisa.td",
+      "journalofficiel.gouv.td",
       "mfa.gov.rs",
       "slgl.pravno-informacioni-sistem.rs",
       "www.mfa.gov.tr",
