@@ -1,0 +1,172 @@
+{
+  "batchId": "kyrgyzstan-current-gate-americas-caribbean-oceania-residual-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kyrgyz-evisa-official-portal-current-2026",
+      "title": "Kyrgyz Republic eVisa official portal",
+      "url": "https://www.evisa.e-gov.kg/index.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.e-gov.kg homepage identifies the Ministry of Foreign Affairs of Kyrgyzstan as the portal's launcher and links directly to the application and current eligibility information pages.",
+      "supportingExcerpt": "Ministry of Foreign Affairs of Kyrgyzstan has launched e-Visa portal"
+    },
+    {
+      "id": "kyrgyz-evisa-application-form-current-gate-2026",
+      "title": "Kyrgyz Republic eVisa application form and controlling eligibility gate",
+      "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official form offers the passport-country and Ordinary document selections. Its JavaScript calls same-origin getList7 with doc_issued_by before a visa type is selected; getVisaList_2 is a later product-description request.",
+      "supportingExcerpt": "url: \"api.php?method=getList7\""
+    },
+    {
+      "id": "kyrgyz-evisa-current-gate-americas-oceania-replay-2026",
+      "title": "Kyrgyz Republic eVisa current getList7 Tourist eligibility replay",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getList7",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "In fresh retained official-form sessions, POST doc_issued_by values BB=20, BS=17, VC=191, KN=187, AG=10, LC=188, GD=89, TT=225, DM=64, JM=111, DO=65, HT=97, UY=237, CR=56, PA=171, PY=173, PE=174, GT=92, SV=68, CO=51, HN=100, NI=160, VE=240, BZ=23, EC=66, GY=96, BO=27, SR=211, SB=203, WS=192, MH=138, TO=224, TV=230, KI=117, FM=144, PW=169, FJ=75, NR=154, VU=239 and PG=172 each directly returned the Tourist (TS) option. This positive gate, not a generic product response, is the eligibility evidence.",
+      "supportingExcerpt": "Tourist (TS)"
+    },
+    {
+      "id": "kyrgyz-evisa-current-tourist-ordinary-product-replay-2026",
+      "title": "Kyrgyz Republic eVisa current Tourist ordinary-passport product replay",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaList_2",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Only after each positive getList7 Tourist gate, the same fresh sessions submitted ids=56, visa_subtype=0, the exact doc_issued_by value, doc_type=1 (Ordinary), visa_filtr=0 and service_level=1. Every listed country directly returned the same Tourist TS description; this replay is not treated as evidence for a country without a positive gate.",
+      "supportingExcerpt": "Tourist visa («TS») is issued to an applicant, intending to visit Kyrgyz Republic with purpose of tourism, for a period up to 30 days."
+    },
+    {
+      "id": "kyrgyz-evisa-current-electronic-confirmation-2026",
+      "title": "Kyrgyz Republic eVisa current information and electronic confirmation",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official portal information page explains that the traveller completes and pays for an online eVisa application, then enters after receiving portal confirmation. It also directs eligibility checks to country, travel-document type and visa type selection.",
+      "supportingExcerpt": "After receiving your e-Visa confirmation through this portal, you can enter the Kyrgyz Republic during e-Visa validity period."
+    },
+    {
+      "id": "kyrgyz-evisa-electronic-entry-checkpoint-2026",
+      "title": "Kyrgyz Republic eVisa service terms: permitted electronic-visa checkpoints",
+      "url": "https://www.evisa.e-gov.kg/conditions.php?lng=en",
+      "publisher": "Government of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The current evisa.e-gov.kg terms identify the Government of Kyrgyzstan as making the service available and set a route condition for electronic visas received through the portal.",
+      "supportingExcerpt": "Electronic visa, received via this portal, can be used only if you travel via Manas International Airport, Osh International Airport, Ak-dzol checkpoint."
+    }
+  ],
+  "policies": [
+    {
+      "id": "kyrgyz-evisa-tourist-ordinary-americas-caribbean-oceania-2026",
+      "title": "Kyrgyz Republic Tourist eVisa for directly gated ordinary passports",
+      "summary": "The current official eVisa application flow directly exposes Tourist (TS) for each listed passport-country ID. With Ordinary selected, the directly returned Tourist product is for tourism up to 30 days, and the official portal requires electronic confirmation before entry.",
+      "status": "evisa",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "BB",
+        "BS",
+        "VC",
+        "KN",
+        "AG",
+        "LC",
+        "GD",
+        "TT",
+        "DM",
+        "JM",
+        "DO",
+        "HT",
+        "UY",
+        "CR",
+        "PA",
+        "PY",
+        "PE",
+        "GT",
+        "SV",
+        "CO",
+        "HN",
+        "NI",
+        "VE",
+        "BZ",
+        "EC",
+        "GY",
+        "BO",
+        "SR",
+        "SB",
+        "WS",
+        "MH",
+        "TO",
+        "TV",
+        "KI",
+        "FM",
+        "PW",
+        "FJ",
+        "NR",
+        "VU",
+        "PG"
+      ],
+      "conditions": [
+        "Direct current eligibility evidence is the positive getList7 Tourist (TS) response for each exact passport-country ID; a generic product response alone was not used.",
+        "The replay selected doc_type=1 (Ordinary), Tourist (TS), standard service, and the exact country ID before requesting the product description.",
+        "The Tourist TS product is for tourism for a period up to 30 days and says it cannot be issued while the foreign national is in the Kyrgyz Republic.",
+        "The applicant completes and pays through the official portal; entry follows eVisa confirmation through that portal during the eVisa validity period.",
+        "An electronic visa received through this portal is usable only via Manas International Airport, Osh International Airport or Ak-dzol checkpoint; normal security and individual-admission checks remain separate.",
+        "The selector's legacy label 'Saint Vincent and Grenadines' is mapped only to catalog passport VC, Saint Vincent and the Grenadines."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-official-portal-current-2026",
+        "kyrgyz-evisa-application-form-current-gate-2026",
+        "kyrgyz-evisa-current-gate-americas-oceania-replay-2026",
+        "kyrgyz-evisa-current-tourist-ordinary-product-replay-2026",
+        "kyrgyz-evisa-current-electronic-confirmation-2026",
+        "kyrgyz-evisa-electronic-entry-checkpoint-2026"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+        "label": "Kyrgyz Republic eVisa application",
+        "steps": [
+          "Select the exact passport country, Ordinary travel document and Tourist (TS) in the official eVisa form.",
+          "Complete the electronic application and payment through the official portal.",
+          "Enter during the visa validity period after receiving eVisa confirmation through the portal."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "VE",
+      "destinationCode": "KG",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current official application flow directly returns Tourist (TS) at the positive controlling getList7 gate for Venezuela country ID 240, then returns the ordinary-passport Tourist product and requires eVisa confirmation before entry. This direct electronic issuance path, not a generic product response, supersedes the unverified fallback visa-on-arrival hypothesis.",
+      "sourceIds": [
+        "kyrgyz-evisa-current-gate-americas-oceania-replay-2026",
+        "kyrgyz-evisa-current-tourist-ordinary-product-replay-2026",
+        "kyrgyz-evisa-current-electronic-confirmation-2026"
+      ]
+    }
+  ],
+  "unresolved": []
+}

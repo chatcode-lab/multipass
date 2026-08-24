@@ -918,7 +918,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "BN", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BN", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("KG")).toHaveLength(84);
+    expect(pairsFor("KG")).toHaveLength(195);
     expect(getVisaRelationshipEvidence("RS", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MV", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AL", "KG", "visa_free").supportsCurrentStatus).toBe(true);
@@ -926,7 +926,16 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IL", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MK", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MX", "KG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MU", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BB", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TL", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ZA", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("VE", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ID", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PH", "KG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "KG", snapshot.passports.AF.statuses.KG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "KG", snapshot.passports.TW.statuses.KG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "KG", snapshot.passports.XK.statuses.KG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("KG", "KG", "citizenship").supportsCurrentStatus).toBe(false);
   });
 

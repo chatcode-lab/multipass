@@ -69,6 +69,10 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.SI.statuses.SS).toBe("visa_required");
     expect(snapshot.passports.PL.statuses.CI).toBe("visa_on_arrival");
     expect(snapshot.passports.MX.statuses.BD).toBe("visa_required");
+    expect(snapshot.passports.ZA.statuses.KG).toBe("evisa");
+    expect(snapshot.passports.VE.statuses.KG).toBe("evisa");
+    expect(snapshot.passports.ID.statuses.KG).toBe("evisa");
+    expect(snapshot.passports.PH.statuses.KG).toBe("evisa");
   });
 
   it("applies the final Georgian, Malian, Mauritanian and Maldivian outbound audits", () => {

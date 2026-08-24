@@ -1,0 +1,192 @@
+{
+  "batchId": "kyrgyzstan-current-gate-asia-middle-east-europe-residual-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kyrgyz-evisa-mfa-portal-current-2026",
+      "title": "Kyrgyz Republic eVisa official portal",
+      "url": "https://www.evisa.e-gov.kg/index.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.e-gov.kg homepage identifies the Kyrgyz Ministry of Foreign Affairs as having launched the eVisa portal and links the application workflow.",
+      "supportingExcerpt": "Ministry of Foreign Affairs of Kyrgyzstan has launched e-Visa portal to facilitate visa issuance process for genuine travellers."
+    },
+    {
+      "id": "kyrgyz-evisa-application-gate-form-2026",
+      "title": "Kyrgyz Republic eVisa application eligibility form",
+      "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live MFA application form presents country and travel-document selections, including Ordinary, and its same-origin JavaScript calls getList7 after the passport-country selection.",
+      "supportingExcerpt": "url: \"api.php?method=getList7\""
+    },
+    {
+      "id": "kyrgyz-evisa-getlist7-ordinary-tourist-gate-2026",
+      "title": "Kyrgyz Republic eVisa controlling Tourist eligibility gate",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getList7",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "In a fresh retained PHP session, this controlling same-origin gate returned the positive Tourist option for the exact country identifiers documented in the policy; it is the preceding eligibility gate, not the generic product endpoint.",
+      "supportingExcerpt": "Tourist (TS)"
+    },
+    {
+      "id": "kyrgyz-evisa-ordinary-tourist-result-2026",
+      "title": "Kyrgyz Republic eVisa ordinary-passport Tourist result",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaList_2",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Using document type 1 (Ordinary) and the positive Tourist identifier after the controlling gate, this live same-origin endpoint returned the short tourism result for every promoted country identifier.",
+      "supportingExcerpt": "Tourist visa («TS») is issued to an applicant, intending to visit Kyrgyz Republic with purpose of tourism, for a period up to 30 days."
+    },
+    {
+      "id": "kyrgyz-evisa-current-confirmation-before-entry-2026",
+      "title": "Kyrgyz Republic eVisa information and application FAQ",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live MFA eVisa FAQ describes completion and payment through the electronic portal, then entry after an eVisa confirmation is received through that portal.",
+      "supportingExcerpt": "After receiving your e-Visa confirmation through this portal, you can enter the Kyrgyz Republic during e-Visa validity period."
+    },
+    {
+      "id": "kyrgyz-evisa-electronic-entry-checkpoint-2026",
+      "title": "Kyrgyz Republic eVisa service terms: permitted electronic-visa checkpoints",
+      "url": "https://www.evisa.e-gov.kg/conditions.php?lng=en",
+      "publisher": "Government of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The current evisa.e-gov.kg terms identify the Government of Kyrgyzstan as making the service available and set a route condition for electronic visas received through the portal.",
+      "supportingExcerpt": "Electronic visa, received via this portal, can be used only if you travel via Manas International Airport, Osh International Airport, Ak-dzol checkpoint."
+    }
+  ],
+  "policies": [
+    {
+      "id": "kyrgyzstan-live-gate-ordinary-tourist-evisa-asia-middle-east-europe-2026",
+      "title": "Named ordinary passports: Kyrgyz Republic 30-day Tourist eVisa",
+      "summary": "The live MFA application's controlling gate directly exposes Tourist (TS) for these exact passport countries, and the ordinary-passport Tourist result is an electronic, up-to-30-day visitor visa confirmed through the portal before entry.",
+      "status": "evisa",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "TL",
+        "ID",
+        "PH",
+        "KH",
+        "BT",
+        "LA",
+        "TM",
+        "MM",
+        "LK",
+        "BD",
+        "PK",
+        "NP",
+        "JO",
+        "LB",
+        "IR",
+        "YE",
+        "IQ",
+        "SY"
+      ],
+      "conditions": [
+        "Direct replay in one fresh retained PHP session used the form's exact country identifiers: TL 221, ID 104, PH 175, KH 38, BT 26, LA 122, TM 228, MM 152, LK 209, BD 19, PK 168, NP 155, JO 114, LB 124, IR 105, YE 245, IQ 106 and SY 216. For each, POST doc_issued_by to getList7 returned Tourist (TS).",
+        "The same session then used the Ordinary document type (doc_type=1) with Tourist (ids=56) in getVisaList_2; each direct result states that the Tourist visa is for tourism for up to 30 days. The application must be completed and paid online, and the portal says entry follows receipt of eVisa confirmation through the portal; this is electronic issuance before travel, not a border-issued visa.",
+        "The Tourist result says this category cannot be issued while the foreign national is in the Kyrgyz Republic. Grant, visa validity, carrier checks and final admission remain conditional; work, residence, transit, diplomatic, service, other-document and individual-admission routes are outside this classification.",
+        "An electronic visa received through this portal is usable only via Manas International Airport, Osh International Airport or Ak-dzol checkpoint.",
+        "The session-bound selector is mutable. Recheck the live MFA portal before travel; this finding is limited to the named ordinary passport issuers and does not create a complement rule."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-mfa-portal-current-2026",
+        "kyrgyz-evisa-application-gate-form-2026",
+        "kyrgyz-evisa-getlist7-ordinary-tourist-gate-2026",
+        "kyrgyz-evisa-ordinary-tourist-result-2026",
+        "kyrgyz-evisa-current-confirmation-before-entry-2026",
+        "kyrgyz-evisa-electronic-entry-checkpoint-2026"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+        "label": "Kyrgyz Republic MFA eVisa application",
+        "steps": [
+          "Select the exact passport country and Ordinary travel document; proceed only where the controlling gate offers Tourist (TS).",
+          "Complete the Tourist eVisa application and online payment using the passport to be used for travel.",
+          "Receive the eVisa confirmation through the portal before entry, then use it through Manas International Airport, Osh International Airport or Ak-dzol checkpoint with the same ordinary passport."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "ID",
+      "destinationCode": "KG",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA controlling gate directly offers Tourist (TS) for Indonesia and its ordinary-passport result is electronic confirmation through the portal before entry, rather than a border-issued visa.",
+      "sourceIds": [
+        "kyrgyz-evisa-getlist7-ordinary-tourist-gate-2026",
+        "kyrgyz-evisa-ordinary-tourist-result-2026",
+        "kyrgyz-evisa-current-confirmation-before-entry-2026"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "KG",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current MFA controlling gate directly offers Tourist (TS) for the Philippines and its ordinary-passport result is electronic confirmation through the portal before entry, rather than a border-issued visa.",
+      "sourceIds": [
+        "kyrgyz-evisa-getlist7-ordinary-tourist-gate-2026",
+        "kyrgyz-evisa-ordinary-tourist-result-2026",
+        "kyrgyz-evisa-current-confirmation-before-entry-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "TW",
+      "destinationCode": "KG",
+      "reason": "Taiwan is absent from the live MFA application's country selector, so no exact ordinary-passport country identifier or positive controlling getList7 result can be replayed. Neither absence, China treatment, another document type nor a generic Tourist product establishes a Taiwan route or issuance timing.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "gov.kg"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "KG",
+      "reason": "The live controlling getList7 response for Afghanistan's exact identifier 1 does not expose Tourist (TS). Its subsequent generic Tourist product text cannot substitute for the missing positive controlling gate, so no ordinary Afghan-passport visitor route or issuance timing is established.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "gov.kg"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "KG",
+      "reason": "Kosovo is absent from the live MFA application's country selector, so no exact ordinary-passport country identifier or positive controlling getList7 result can be replayed. Recognition, another document type, another nationality or a generic Tourist product cannot establish a Kosovo route or issuance timing.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "gov.kg"
+      ]
+    }
+  ]
+}

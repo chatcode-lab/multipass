@@ -1,0 +1,185 @@
+{
+  "batchId": "kyrgyzstan-current-gate-africa-residual-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kyrgyz-evisa-ordinary-gate-53-africa-2026",
+      "title": "Kyrgyz Republic eVisa application form and controlling eligibility call",
+      "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The MFA-operated evisa.e-gov.kg application form selects passport country and Ordinary document type, and its same-origin script POSTs doc_issued_by to getList7 before requesting a visa product.",
+      "supportingExcerpt": "url: \"api.php?method=getList7\""
+    },
+    {
+      "id": "kyrgyz-evisa-africa-current-tourist-gate-replay-2026",
+      "title": "Kyrgyz Republic eVisa controlling Tourist eligibility gate",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getList7",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "In fresh retained official-form sessions, POST doc_issued_by for each of the 53 exact selector IDs documented in the policy directly returned the positive Tourist option. This is the controlling eligibility gate, not a generic product response.",
+      "supportingExcerpt": "Tourist (TS)"
+    },
+    {
+      "id": "kyrgyz-evisa-africa-current-ordinary-tourist-result-2026",
+      "title": "Kyrgyz Republic eVisa ordinary-passport Tourist result",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaList_2",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Only after every positive Tourist gate, the retained official-form session submitted the exact country ID, Tourist visa type and Ordinary document type. Every scoped passport returned the short tourism result.",
+      "supportingExcerpt": "Tourist visa («TS») is issued to an applicant, intending to visit Kyrgyz Republic with purpose of tourism, for a period up to 30 days."
+    },
+    {
+      "id": "kyrgyz-evisa-electronic-confirmation-current-2026",
+      "title": "Kyrgyz Republic eVisa information: electronic confirmation and eligibility method",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The MFA's live eVisa information page describes the electronic application, confirmation before use, and selecting country, travel-document type and visa type to determine eligibility.",
+      "supportingExcerpt": "After receiving your e-Visa confirmation through this portal, you can enter the Kyrgyz Republic during e-Visa validity period."
+    },
+    {
+      "id": "kyrgyz-evisa-electronic-entry-checkpoint-2026",
+      "title": "Kyrgyz Republic eVisa service terms: permitted electronic-visa checkpoints",
+      "url": "https://www.evisa.e-gov.kg/conditions.php?lng=en",
+      "publisher": "Government of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The current evisa.e-gov.kg terms identify the Government of Kyrgyzstan as making the service available and set a route condition for electronic visas received through the portal.",
+      "supportingExcerpt": "Electronic visa, received via this portal, can be used only if you travel via Manas International Airport, Osh International Airport, Ak-dzol checkpoint."
+    },
+    {
+      "id": "kyrgyz-evisa-mfa-operator-current-2026",
+      "title": "Kyrgyz Republic eVisa official portal",
+      "url": "https://www.evisa.e-gov.kg/index.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.e-gov.kg home page identifies the Ministry of Foreign Affairs of Kyrgyzstan as the portal operator and says its electronic application has the same entry right as a sticker visa.",
+      "supportingExcerpt": "Ministry of Foreign Affairs of Kyrgyzstan has launched e-Visa portal"
+    }
+  ],
+  "policies": [
+    {
+      "id": "kyrgyzstan-53-africa-ordinary-tourist-evisa-current-gate-2026",
+      "title": "53 African ordinary passports: Kyrgyz Republic Tourist eVisa",
+      "summary": "The live MFA eVisa application's controlling nationality gate directly returned Tourist (TS) for every queued passport-country ID. After that positive gate, the same session's ordinary-passport Tourist response says the visa is issued for tourism for up to 30 days; the MFA portal requires eVisa confirmation through the portal before entry.",
+      "status": "evisa",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "MU",
+        "ZA",
+        "BW",
+        "LS",
+        "NA",
+        "MA",
+        "SZ",
+        "GH",
+        "KE",
+        "MW",
+        "TZ",
+        "GM",
+        "RW",
+        "TN",
+        "ZM",
+        "CV",
+        "MZ",
+        "UG",
+        "SL",
+        "BJ",
+        "ST",
+        "ZW",
+        "BF",
+        "CI",
+        "MG",
+        "SN",
+        "NE",
+        "TG",
+        "GA",
+        "GN",
+        "MR",
+        "GQ",
+        "ML",
+        "TD",
+        "GW",
+        "DZ",
+        "KM",
+        "AO",
+        "CM",
+        "CG",
+        "LR",
+        "CF",
+        "BI",
+        "EG",
+        "CD",
+        "DJ",
+        "NG",
+        "ER",
+        "LY",
+        "SS",
+        "ET",
+        "SD",
+        "SO"
+      ],
+      "conditions": [
+        "Fresh-session gate replay used the exact application selector IDs MU=141, ZA=205, BW=29, LS=125, NA=153, MA=150, SZ=213, GH=85, KE=116, MW=133, TZ=219, GM=82, RW=184, TN=226, ZM=246, CV=41, MZ=151, UG=231, SL=199, BJ=24, ST=194, ZW=247, BF=36, CI=57, MG=132, SN=196, NE=161, TG=222, GA=81, GN=94, MR=140, GQ=69, ML=136, TD=44, GW=95, DZ=4, KM=52, AO=7, CM=39, CG=53, LR=126, CF=43, BI=37, EG=67, CD=54, DJ=63, NG=162, ER=70, LY=127, SS=207, ET=72, SD=210 and SO=204. Each POST to getList7 returned Tourist (TS).",
+        "Only after that positive gate, each ordinary-passport replay used ids=56 (Tourist), doc_type=1 (Ordinary), visa_filtr=1 (Single Entry) and service_level=2. All 53 getVisaList_2 responses said Tourist visa (TS) is issued for tourism for a period up to 30 days; the live form labels service level 2 as consideration within 2 business days.",
+        "Complete the online eVisa application and receive the electronic confirmation through the portal before entry. The portal's public two-business-day text describes expedited consideration, not a guaranteed standard decision time.",
+        "The electronic visa is usable only through Manas International Airport, Osh International Airport or Ak-dzol checkpoint. The service requires the ordinary passport to meet its document rules; work, residence, transit, diplomatic, service/official, other-document, security and individual admission decisions are outside this short-visitor policy."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-ordinary-gate-53-africa-2026",
+        "kyrgyz-evisa-africa-current-tourist-gate-replay-2026",
+        "kyrgyz-evisa-africa-current-ordinary-tourist-result-2026",
+        "kyrgyz-evisa-electronic-confirmation-current-2026",
+        "kyrgyz-evisa-electronic-entry-checkpoint-2026",
+        "kyrgyz-evisa-mfa-operator-current-2026"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+        "label": "Kyrgyz Republic eVisa application",
+        "processingTime": "The live form offers expedited “Consideration of the application within 2 business days”; it does not promise a standard decision time.",
+        "steps": [
+          "Before travel, select the passport country, Ordinary, and the positive Tourist (TS) option in the MFA eVisa application.",
+          "Complete the electronic application, pay and receive the eVisa confirmation through the portal before travel.",
+          "Use the confirmed eVisa at Manas International Airport, Osh International Airport or Ak-dzol checkpoint, subject to normal admission checks."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "ZA",
+      "destinationCode": "KG",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The live MFA eVisa gate selected South Africa's exact country ID 205 and returned Tourist (TS). The subsequent Ordinary (doc_type=1) tourist replay said the visa is issued for tourism up to 30 days, while the portal requires electronic confirmation before entry. No airport-issuance evidence was used.",
+      "sourceIds": [
+        "kyrgyz-evisa-ordinary-gate-53-africa-2026",
+        "kyrgyz-evisa-africa-current-tourist-gate-replay-2026",
+        "kyrgyz-evisa-africa-current-ordinary-tourist-result-2026",
+        "kyrgyz-evisa-electronic-confirmation-current-2026"
+      ]
+    }
+  ],
+  "unresolved": []
+}

@@ -4202,4 +4202,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://visa.visitsaudi.com/Home/TermsConditions",
     reviewedAt: "2026-08-24",
   },
+  ...(["ZA", "VE", "ID", "PH"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "KG" as const,
+    status: "evisa" as const,
+    reason: "Kyrgyzstan's current MFA application gate directly offers the Tourist visa for this exact ordinary-passport issuer, and the official portal delivers eVisa confirmation before entry rather than issuing the visa at the border.",
+    sourceUrl: "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+    reviewedAt: "2026-08-24",
+  })),
 ] as const;
