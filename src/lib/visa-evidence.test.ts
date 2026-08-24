@@ -5649,6 +5649,8 @@ describe("official visa evidence", () => {
       "mojca.gov.ss",
       "tradeinfohub.gov.ss",
       "gouvernement.gov.bf",
+      "www.securite.gov.bf",
+      "www.service-public.gov.bf",
       "turkiye.diplomatie.gov.bf",
       "www.visaburkina.bf",
       "police.gov.bf",
