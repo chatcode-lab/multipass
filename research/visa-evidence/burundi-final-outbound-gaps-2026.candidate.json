@@ -1,0 +1,181 @@
+{
+  "batchId": "burundi-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-burundi-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete country requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-burundi-april-2024-schedule-current-2026",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Embassy's currently linked schedule is marked updated April 2024, separately names Burundi, and places it Prior to Arrival.",
+      "supportingExcerpt": "Burundi Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-burundi-authorized-visa-current-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Panama's live Embassy guidance names Burundi in the authorized-visa cohort and says approval may take up to 60 business days before travel.",
+      "supportingExcerpt": "Burundi, Chad, Cabo Verde, Costa de Marfil, Democratic Republic of Congo, Djibouti, Egypt"
+    },
+    {
+      "id": "us-state-burundi-partial-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The State Department's live PP 10998 notice, last updated February 2, 2026, names Burundi in the partially suspended B-1/B-2 visitor-visa cohort and preserves valid-visa grandfathering, exceptions and national-interest decisions.",
+      "supportingExcerpt": "Angola, Antigua and Barbuda, Benin, Burundi, Cote D’Ivoire, Cuba, Dominica"
+    },
+    {
+      "id": "us-code-geographic-united-states-burundi-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "burundian-ordinary-passport-grenada-advance-visitor-visa-2026",
+      "title": "Burundian ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule places Burundi in its prior-to-arrival cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["BI"],
+      "conditions": [
+        "Applies to an ordinary Burundian passport holder travelling as a short visitor.",
+        "Grenada's schedule defines Prior to Arrival as a visa obtained from a Grenadian mission or consulate before travel.",
+        "Work, residence, study, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-burundi-2026", "grenada-embassy-burundi-april-2024-schedule-current-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "burundian-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Burundian ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Burundi in its authorized-visa cohort for advance immigration approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["BI"],
+      "conditions": [
+        "Applies to an ordinary Burundian passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "The cited Embassy says authorized-visa approval may take up to 60 business days and requires an in-person consular application.",
+        "Work, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["panama-embassy-burundi-authorized-visa-current-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BI",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-burundi-partial-suspension-current-2026"]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-burundi-partial-suspension-current-2026", "us-code-geographic-united-states-burundi-current-2026"]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-burundi-partial-suspension-current-2026", "us-code-geographic-united-states-burundi-current-2026"]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-burundi-partial-suspension-current-2026", "us-code-geographic-united-states-burundi-current-2026"]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions-and-valid-visa-grandfathering",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": ["us-state-burundi-partial-suspension-current-2026", "us-code-geographic-united-states-burundi-current-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"BI","destinationCode":"AF","reason":"No current Afghan or Burundian primary source establishes a usable ordinary Burundian-passport visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mae.gov.bi","migration.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"AO","reason":"Angola's electronic service does not publish a reproducible ordinary Burundian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"BD","reason":"Bangladesh's electronic form does not establish an ordinary Burundian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["visa.gov.bd","mofa.gov.bd","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"CF","reason":"No current Central African or Burundian primary source establishes ordinary Burundian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"TD","reason":"Chad's electronic service does not publish a reproducible ordinary Burundian-passport eligibility result or prove actual issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"BI","destinationCode":"KM","reason":"Comorian law and guidance do not directly map an ordinary Burundian passport to a current advance, electronic or arrival-issued visitor instrument.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"CG","reason":"No current Republic of the Congo or Burundian primary source establishes ordinary Burundian-passport visitor eligibility and actual issuance timing; regional treatment is not inferred.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"CI","reason":"Côte d'Ivoire's electronic-visa material does not establish the exact ordinary Burundian eligibility and issuance result; online application availability alone is insufficient.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"BI","destinationCode":"DJ","reason":"Djibouti's electronic-visa material does not publish a reproducible ordinary Burundian-passport eligibility or exemption result.","searchedOfficialDomains":["evisa.gouv.dj","gouv.dj"]},
+    {"passportCode":"BI","destinationCode":"GU","reason":"Not established as a normalized status: the current federal partial suspension reaches Guam under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"BI","destinationCode":"GW","reason":"No current Guinea-Bissau or Burundian primary source establishes ordinary Burundian-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.gw","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"IR","reason":"Iran's current MFA eVisa endpoints do not expose a stable ordinary Burundian-passport nationality decision or reliable issuance path.","searchedOfficialDomains":["evisa.mfa.ir","mfa.ir"]},
+    {"passportCode":"BI","destinationCode":"IQ","reason":"Iraq's current federal electronic service does not publish a reproducible ordinary Burundian eligibility result or resolve federal and regional visitor routes.","searchedOfficialDomains":["moi.gov.iq","evisa.iq","mofa.gov.iq"]},
+    {"passportCode":"BI","destinationCode":"KW","reason":"Current Kuwaiti official material does not establish one unconditional ordinary Burundian-passport tourist route; residence, profession and third-country-document programmes are excluded.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"BI","destinationCode":"KG","reason":"Kyrgyzstan's current electronic service does not publish a reproducible ordinary Burundian-passport eligibility result; portal availability is not proof.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"BI","destinationCode":"LA","reason":"Laos's electronic service does not publish a reproducible ordinary Burundian-passport eligibility result; portal availability and nonexhaustive information are not proof.","searchedOfficialDomains":["laoevisa.gov.la","immigration.gov.la","mofa.gov.la"]},
+    {"passportCode":"BI","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no ordinary Burundian-passport nationality baseline.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"BI","destinationCode":"ML","reason":"Mali's current official assistant depends on nationality, passport type, residence and filing location without a stable Burundian visitor result.","searchedOfficialDomains":["diplomatie.gouv.ml","interieur.gouv.ml"]},
+    {"passportCode":"BI","destinationCode":"MH","reason":"Compact and United States-linked visitor arrangements are document- and admission-specific; no current primary source establishes an ordinary Burundian-passport visitor status.","searchedOfficialDomains":["rmiembassyus.org","travel.state.gov"]},
+    {"passportCode":"BI","destinationCode":"MM","reason":"Myanmar's current electronic-visa materials do not establish a reproducible ordinary Burundian-passport eligibility and issuance result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.moip.gov.mm","mofa.gov.mm"]},
+    {"passportCode":"BI","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exemptions; no current ordinary Burundian-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"BI","destinationCode":"KP","reason":"No current DPRK or Burundian primary source establishes a usable ordinary Burundian-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"MK","reason":"North Macedonia's nationality checker did not yield a reproducible ordinary Burundian-passport result; generic application material and third-country waivers do not establish the baseline.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk"]},
+    {"passportCode":"BI","destinationCode":"MP","reason":"Not established as a normalized status: the current federal partial suspension reaches CNMI under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"BI","destinationCode":"OM","reason":"Oman's current official sources do not establish an ordinary Burundian-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["rop.gov.om","mofa.gov.om"]},
+    {"passportCode":"BI","destinationCode":"PS","reason":"Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Burundian-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"BI","destinationCode":"PR","reason":"Not established as a normalized status: the current federal partial suspension reaches Puerto Rico under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]},
+    {"passportCode":"BI","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay route depends on qualifying third-country documents, while electronic services do not publish Burundian eligibility. Conditional routes are excluded.","searchedOfficialDomains":["smf.st","mne.gov.st"]},
+    {"passportCode":"BI","destinationCode":"SA","reason":"Saudi Arabia's current official sources do not establish an ordinary Burundian-passport short-visitor issuance route; portal availability and positive cohorts are not residual rules.","searchedOfficialDomains":["mofa.gov.sa","visitsaudi.com"]},
+    {"passportCode":"BI","destinationCode":"SL","reason":"Sierra Leone's current visitor-visa material does not establish whether a Burundian application produces a pre-travel visa or a border-issued instrument; actual issuance timing is unresolved.","searchedOfficialDomains":["immigration.gov.sl","evisa.sl"]},
+    {"passportCode":"BI","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Burundian-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb"]},
+    {"passportCode":"BI","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Burundian-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd"]},
+    {"passportCode":"BI","destinationCode":"SY","reason":"Current Syrian official material does not establish whether online filing produces an electronically issued visa or only an advance application for an ordinary Burundian passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"BI","destinationCode":"TT","reason":"Trinidad and Tobago's named waiver schedule does not include Burundi, while its electronic service applies only after visa-required nationality eligibility is established. No complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","homelandsecurity.gov.tt","foreign.gov.tt"]},
+    {"passportCode":"BI","destinationCode":"TN","reason":"Tunisia's current consular page describes only the process for visa-subject nationalities and does not directly identify the ordinary Burundian-passport baseline. No complement is inferred.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn"]},
+    {"passportCode":"BI","destinationCode":"TM","reason":"No current Turkmen or Burundian primary source establishes ordinary Burundian-passport visitor eligibility and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mae.gov.bi"]},
+    {"passportCode":"BI","destinationCode":"UA","reason":"Ukraine's accessible nationality guidance does not establish a current ordinary Burundian-passport visitor route and issuance timing.","searchedOfficialDomains":["mfa.gov.ua","dpsu.gov.ua"]},
+    {"passportCode":"BI","destinationCode":"US","reason":"Not established as a normalized status: current rules partially suspend B-1/B-2 visitor entry and visa issuance for Burundi, subject to grandfathering, specific exceptions and case-by-case waivers.","searchedOfficialDomains":["travel.state.gov","whitehouse.gov","cbp.gov"]},
+    {"passportCode":"BI","destinationCode":"VI","reason":"Not established as a normalized status: the current federal partial suspension reaches the U.S. Virgin Islands under the INA geographical definition but retains exceptions and waivers.","searchedOfficialDomains":["travel.state.gov","uscode.house.gov"]}
+  ]
+}

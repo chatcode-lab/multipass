@@ -1,0 +1,137 @@
+{
+  "batchId": "iraq-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "grenada-embassy-visitors-current-iraq-2026",
+      "title": "Visitors",
+      "url": "https://grenadaembassyusa.org/consulate/consular-visitors/",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Grenada's live Embassy visitor page says requirements depend on citizenship and links its complete current country-requirements schedule.",
+      "supportingExcerpt": "Visa requirements for travel to Grenada are based on your country of citizenship."
+    },
+    {
+      "id": "grenada-embassy-iraq-april-2024-schedule",
+      "title": "Visa Requirements for Traveling to Grenada",
+      "url": "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
+      "publisher": "Embassy of Grenada in the United States",
+      "jurisdiction": "Grenada",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Grenada's actively linked April 2024 schedule directly lists Iraq as Prior to Arrival and defines that category as a mission- or consulate-issued visa before travel.",
+      "supportingExcerpt": "Iraq Prior to Arrival"
+    },
+    {
+      "id": "panama-embassy-iraq-authorized-visa-2026",
+      "title": "Visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Panama's live Embassy page lists Iraq in its authorized-visa cohort and says approval can take up to 60 business days before travel.",
+      "supportingExcerpt": "Indonesia, Iran, Iraq, Ivory Coast, Jordan, Kazakhstan"
+    },
+    {
+      "id": "turkiye-mfa-iraq-current-mixed-ordinary-passport-rule-2026",
+      "title": "Visa Information For Foreigners",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Türkiye's current nationality schedule splits Iraqi ordinary passports by age: under 15 and over 50 are exempt, while ages 15–50 require visas and only conditionally qualify for eVisa with specified third-country documents.",
+      "supportingExcerpt": "Ordinary passport holder Iraqi nationals between the ages of 15-50 are required to have visa to enter Türkiye."
+    }
+  ],
+  "policies": [
+    {
+      "id": "iraqi-ordinary-passport-grenada-prior-visitor-visa-2026",
+      "title": "Iraqi ordinary passports: Grenada advance visitor visa",
+      "summary": "Grenada's active Embassy-linked nationality schedule places Iraq in its Prior to Arrival visa cohort.",
+      "status": "visa_required",
+      "destinationCodes": ["GD"],
+      "passportCodes": ["IQ"],
+      "conditions": [
+        "Applies to an ordinary Iraqi passport holder travelling as a short visitor.",
+        "The schedule defines Prior to Arrival as obtaining the visa at a Grenadian mission or consulate before travel.",
+        "Work, study, residence, transit, special documents and final admission remain outside scope."
+      ],
+      "sourceIds": ["grenada-embassy-visitors-current-iraq-2026", "grenada-embassy-iraq-april-2024-schedule"],
+      "confidence": "medium"
+    },
+    {
+      "id": "iraqi-ordinary-passport-panama-authorized-visitor-visa-2026",
+      "title": "Iraqi ordinary passports: Panama authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Iraq in its authorized-visa cohort for advance immigration approval.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["IQ"],
+      "conditions": [
+        "Applies to an ordinary Iraqi passport holder who does not qualify for Panama's separate third-country visa or residence waiver.",
+        "Authorized-visa approval may take up to 60 business days and must be granted before travel.",
+        "Washington-specific filing mechanics are not generalized to every consular district; final admission remains discretionary."
+      ],
+      "sourceIds": ["panama-embassy-iraq-authorized-visa-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "age-split-visa-exemption-and-advance-visa-with-conditional-evisa",
+      "explanation": "Türkiye exempts Iraqi ordinary-passport holders under 15 and over 50, requires ages 15–50 to hold a visa, and limits their eVisa to qualifying third-country documents; no single passport-only status represents the current rule.",
+      "sourceIds": ["turkiye-mfa-iraq-current-mixed-ordinary-passport-rule-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"IQ","destinationCode":"AF","reason":"No current Afghan or Iraqi primary source establishes a usable ordinary Iraqi-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"AO","reason":"No current Angolan or Iraqi primary nationality schedule directly establishes ordinary Iraqi-passport visitor eligibility and actual issuance timing; portal availability is insufficient.","searchedOfficialDomains":["mirex.gov.ao","smevisa.gov.ao","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"BD","reason":"Bangladesh's current official material does not directly establish ordinary Iraqi-passport short-visitor eligibility and actual electronic or border issuance timing.","searchedOfficialDomains":["mofa.gov.bd","visa.gov.bd","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"BF","reason":"Burkina Faso's official portal does not expose a reproducible ordinary Iraqi-passport tourist eligibility and issuance result; online filing alone is insufficient.","searchedOfficialDomains":["visaburkina.bf","mae.gov.bf"]},
+    {"passportCode":"IQ","destinationCode":"CF","reason":"No current Central African or Iraqi primary source directly establishes a normalized ordinary Iraqi-passport short-visitor route.","searchedOfficialDomains":["diplomatie.gouv.cf","interieur.gouv.cf","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"TD","reason":"Chad's electronic service does not directly establish ordinary Iraqi-passport visitor eligibility and actual issuance timing; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.td","diplomatie.gouv.td"]},
+    {"passportCode":"IQ","destinationCode":"KM","reason":"Comorian law preserves treaty and special-law exceptions while no current nationality schedule directly maps an ordinary Iraqi passport; no complement is inferred.","searchedOfficialDomains":["justice.gouv.km","gouvernement.km"]},
+    {"passportCode":"IQ","destinationCode":"CG","reason":"No current Republic of the Congo or Iraqi primary nationality schedule establishes an ordinary Iraqi-passport short-visitor baseline.","searchedOfficialDomains":["diplomatie.gouv.cg","dgrsp.cg","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"CI","reason":"Côte d'Ivoire's official online material does not establish the exact ordinary Iraqi-passport eligibility and issuance outcome; pre-enrolment availability is insufficient.","searchedOfficialDomains":["diplomatie.gouv.ci","snedai.com"]},
+    {"passportCode":"IQ","destinationCode":"DJ","reason":"Djibouti's official electronic-visa material does not publish a current ordinary Iraqi-passport eligibility or exemption result with reproducible issuance timing.","searchedOfficialDomains":["evisa.gouv.dj","mae.gov.dj"]},
+    {"passportCode":"IQ","destinationCode":"GW","reason":"No current Guinea-Bissau primary source establishes an unconditional ordinary Iraqi-passport visitor route; regional treatment does not establish this non-ECOWAS baseline.","searchedOfficialDomains":["mne.gw","gov.gw","ecowas.int"]},
+    {"passportCode":"IQ","destinationCode":"HN","reason":"No current Honduran or Iraqi primary source directly establishes an ordinary Iraqi-passport visitor route and actual issuance timing without a conditional third-country document.","searchedOfficialDomains":["cancilleria.gob.hn","inm.gob.hn","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"IR","reason":"Current official material does not safely normalize the ordinary Iraqi-passport Iran route independently of changing border, reciprocity and operational conditions.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"KW","reason":"Kuwait's current named arrival cohort does not include Iraq and its online services do not establish an exhaustive ordinary Iraqi-passport complement or issuance route.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw"]},
+    {"passportCode":"IQ","destinationCode":"KG","reason":"Kyrgyzstan's live selector result for an ordinary Iraqi passport was not reproducible as a stable visitor route and issuance outcome.","searchedOfficialDomains":["evisa.e-gov.kg","mfa.gov.kg"]},
+    {"passportCode":"IQ","destinationCode":"LA","reason":"Laos' current electronic-visa records and arrival guidance do not directly establish treatment for an ordinary Iraqi passport; no omission inference is used.","searchedOfficialDomains":["laoevisa.gov.la","immigration.gov.la"]},
+    {"passportCode":"IQ","destinationCode":"LB","reason":"Lebanon's current provisions for Iraqi visitors overlap with profession-, residence- and document-specific conditions, so no single ordinary-passport baseline is established.","searchedOfficialDomains":["general-security.gov.lb","mfa.gov.lb"]},
+    {"passportCode":"IQ","destinationCode":"LR","reason":"Liberia's current process is mission-, residence- and preapproval-dependent and supplies no ordinary Iraqi-passport nationality baseline with issuance timing.","searchedOfficialDomains":["lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"IQ","destinationCode":"ML","reason":"Mali's current official services do not publish an ordinary Iraqi-passport tourist route and actual issuance timing; application availability is insufficient.","searchedOfficialDomains":["diplomatie.gouv.ml","servicepublic.gouv.ml"]},
+    {"passportCode":"IQ","destinationCode":"MH","reason":"Marshall Islands' visitor regulation depends on diplomatic-ties and other conditions that no current primary source directly resolves for an ordinary Iraqi passport.","searchedOfficialDomains":["rmiembassyus.org","rmiparliament.org"]},
+    {"passportCode":"IQ","destinationCode":"MN","reason":"Mongolia's current named eVisa and waiver schedules do not directly list Iraq, while omission is not used to infer an advance-visa complement.","searchedOfficialDomains":["evisa.mn","consul.mn","immigration.gov.mn"]},
+    {"passportCode":"IQ","destinationCode":"MM","reason":"Myanmar's current named visitor routes do not directly establish ordinary Iraqi-passport tourist eligibility and actual issuance timing; no residual complement is inferred.","searchedOfficialDomains":["evisa.moip.gov.mm","moip.gov.mm"]},
+    {"passportCode":"IQ","destinationCode":"NE","reason":"Niger's entry framework preserves unenumerated bilateral and community exceptions; no current ordinary Iraqi-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"IQ","destinationCode":"KP","reason":"No current DPRK or Iraqi primary source establishes a usable ordinary Iraqi-passport visitor route and actual issuance timing; operational restrictions are not normalized.","searchedOfficialDomains":["mfa.gov.kp","naenara.com.kp","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"MK","reason":"No current North Macedonian or Iraqi primary source directly establishes an ordinary Iraqi-passport visitor route and issuance timing without conditional documents or omission inference.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"OM","reason":"Oman's current official material does not directly establish the unconditional ordinary Iraqi-passport baseline independently of electronic and conditional third-country routes.","searchedOfficialDomains":["rop.gov.om","evisa.rop.gov.om","fm.gov.om"]},
+    {"passportCode":"IQ","destinationCode":"PS","reason":"Crossing permits, identity records, recognition and Israeli-controlled access do not establish a Palestine-only ordinary Iraqi-passport visitor status.","searchedOfficialDomains":["mofa.pna.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"IQ","destinationCode":"ST","reason":"São Tomé and Príncipe's current online material does not directly establish ordinary Iraqi-passport eligibility and actual electronic issuance; portal availability is insufficient.","searchedOfficialDomains":["mne.gov.st","evisa.st"]},
+    {"passportCode":"IQ","destinationCode":"SA","reason":"Saudi Arabia's current official services do not expose a reproducible ordinary Iraqi-passport visitor route and actual issuance result without conditional residence or document treatment.","searchedOfficialDomains":["visa.mofa.gov.sa","ksavisa.sa","mofa.gov.sa"]},
+    {"passportCode":"IQ","destinationCode":"SL","reason":"No current Sierra Leonean or Iraqi primary source directly establishes ordinary Iraqi-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["evisa.sl","mofaic.gov.sl","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"SB","reason":"Solomon Islands' current official material does not establish one reproducible ordinary Iraqi-passport route among advance, electronic and border processing.","searchedOfficialDomains":["immigration.gov.sb","solomons.gov.sb"]},
+    {"passportCode":"IQ","destinationCode":"SS","reason":"South Sudan's authenticated electronic service does not publish a direct ordinary Iraqi-passport visitor eligibility result; portal availability alone is insufficient.","searchedOfficialDomains":["evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"IQ","destinationCode":"SD","reason":"Sudan's current official material does not establish ordinary Iraqi-passport eligibility and actual visitor issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd"]},
+    {"passportCode":"IQ","destinationCode":"SY","reason":"Current Syrian official material does not establish whether online filing produces an electronically issued visitor visa or only an advance application for an ordinary Iraqi passport.","searchedOfficialDomains":["mofaex.gov.sy","moi.gov.sy"]},
+    {"passportCode":"IQ","destinationCode":"TT","reason":"Trinidad and Tobago's current named schedules and electronic service do not directly establish an ordinary Iraqi-passport visitor route; no complement is inferred.","searchedOfficialDomains":["nationalsecurity.gov.tt","homelandsecurity.gov.tt","foreign.gov.tt"]},
+    {"passportCode":"IQ","destinationCode":"TN","reason":"Tunisia's current official material does not directly establish the ordinary Iraqi-passport visitor route and actual issuance timing without historical or reciprocal inference.","searchedOfficialDomains":["diplomatie.gov.tn","econsulat.tn"]},
+    {"passportCode":"IQ","destinationCode":"TR","reason":"Türkiye's current ordinary-passport rule is age-split and conditionally electronic: under-15 and over-50 travelers are exempt, while ages 15–50 require a visa and need qualifying third-country documents for eVisa. No single taxonomy status represents the relationship.","searchedOfficialDomains":["mfa.gov.tr","evisa.gov.tr"]},
+    {"passportCode":"IQ","destinationCode":"TM","reason":"No current Turkmen or Iraqi primary source establishes an ordinary Iraqi-passport visitor route and actual issuance timing; generic invitation and visa wording is insufficient.","searchedOfficialDomains":["mfa.gov.tm","migration.gov.tm","mofa.gov.iq"]},
+    {"passportCode":"IQ","destinationCode":"UA","reason":"Current Ukrainian official material does not directly establish an ordinary Iraqi-passport short-visitor route and actual issuance timing under present operational conditions.","searchedOfficialDomains":["mfa.gov.ua","dmsu.gov.ua","mofa.gov.iq"]}
+  ]
+}

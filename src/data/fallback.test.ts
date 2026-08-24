@@ -358,4 +358,15 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.IN.statuses.SL).toBe("visa_on_arrival");
     expect(snapshot.passports.VE.statuses.JO).toBe("visa_on_arrival");
   });
+
+  it("applies the final Iranian, Burundian, Haitian and Iraqi outbound audits", () => {
+    expect(snapshot.passports.BI.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.BI.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.HT.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.HT.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.HT.statuses.TR).toBe("visa_required");
+    expect(snapshot.passports.IQ.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.IQ.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.IQ.statuses.TR).toBe("evisa");
+  });
 });

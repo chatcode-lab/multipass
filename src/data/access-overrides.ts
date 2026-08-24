@@ -3869,4 +3869,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/450?travelPermit=0",
     reviewedAt: "2026-08-23",
   },
+  {
+    passportCode: "HT",
+    destinationCode: "TR",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry schedule requires ordinary Haitian passport holders to obtain a visa before travel.",
+    sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;
