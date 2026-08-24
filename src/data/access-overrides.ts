@@ -2596,15 +2596,6 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.evisa.gov.bh/list-of-onarrival-visa-country.html",
     reviewedAt: "2026-08-22",
   },
-  {
-    passportCode: "IN",
-    destinationCode: "SL",
-    status: "eta",
-    reason: "Sri Lanka's Department of Immigration and Emigration currently requires Indian ordinary-passport visitors to obtain a Tourist ETA before arrival; the fee waiver does not make this an arrival-issued visa.",
-    sourceUrl: "https://www.immigration.gov.lk/pages_e.php?id=60",
-    reviewedAt: "2026-08-22",
-    effectiveFrom: "2026-05-25",
-  },
   ...(["AF", "AL", "DZ", "AO", "AM", "AZ", "BH", "BY", "BJ", "BT", "BA", "BF", "BI", "KH", "CM", "CV", "CF", "TD", "CO", "KM", "CG", "CD", "CI", "CU", "DJ", "DO", "EG", "GQ", "ER", "ET", "GA", "GE", "GN", "GW", "HT", "ID", "IR", "IQ", "IL", "JM", "JO", "KZ", "KW", "KG", "LA", "LB", "LR", "LY", "MK", "MG", "ML", "MR", "MD", "MN", "ME", "MA", "MZ", "MM", "NP", "NE", "NG", "KP", "OM", "PK", "PE", "PH", "QA", "RU", "RW", "ST", "SA", "SN", "SO", "SD", "SR", "SY", "TJ", "TH", "TG", "TR", "TM", "UA", "AE", "UZ", "VN", "YE", "PS"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "VG" as const,
@@ -3868,6 +3859,14 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     status: "visa_required",
     reason: "Türkiye's current Foreign Ministry schedule requires ordinary Sri Lankan passport holders to obtain a visa; eVisa eligibility depends on qualifying third-country documents.",
     sourceUrl: "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    passportCode: "MO",
+    destinationCode: "AO",
+    status: "evisa",
+    reason: "Macao DSI's current Macao-SAR-passport record explicitly classifies Angola as an eVisa route available before travel.",
+    sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/450?travelPermit=0",
     reviewedAt: "2026-08-23",
   },
 ] as const;

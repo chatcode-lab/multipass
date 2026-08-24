@@ -342,4 +342,20 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.TZ.statuses.GD).toBe("visa_free");
     expect(snapshot.passports.TZ.statuses.PA).toBe("visa_required");
   });
+
+  it("applies the final North Macedonian, Macao, Sudanese and Venezuelan outbound audits", () => {
+    expect(snapshot.passports.MK.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.MO.statuses.AO).toBe("evisa");
+    expect(snapshot.passports.MO.statuses.BF).toBe("evisa");
+    expect(snapshot.passports.MO.statuses.GD).toBe("visa_free");
+    expect(snapshot.passports.MO.statuses.GE).toBe("visa_free");
+    expect(snapshot.passports.MO.statuses.GN).toBe("evisa");
+    expect(snapshot.passports.MO.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.MO.statuses.MK).toBe("visa_free");
+    expect(snapshot.passports.MO.statuses.ST).toBe("evisa");
+    expect(snapshot.passports.MO.statuses.VU).toBe("visa_free");
+    expect(snapshot.passports.MO.statuses.SL).toBe("evisa");
+    expect(snapshot.passports.IN.statuses.SL).toBe("visa_on_arrival");
+    expect(snapshot.passports.VE.statuses.JO).toBe("visa_on_arrival");
+  });
 });

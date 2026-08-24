@@ -15,30 +15,6 @@
       "supportingExcerpt": "Decreto Ejecutivo Nº 113 includes the Republic of India among countries that require a visa stamped by the Consul to enter national territory."
     },
     {
-      "id": "sri-lanka-die-current-india-free-tourist-eta",
-      "title": "Department of Immigration and Emigration: Special Notice to Short Term Visitors",
-      "url": "https://www.immigration.gov.lk/pages_e.php?id=60",
-      "publisher": "Department of Immigration and Emigration",
-      "jurisdiction": "Democratic Socialist Republic of Sri Lanka",
-      "kind": "government-guidance",
-      "language": "English",
-      "reviewedAt": "2026-08-22",
-      "officialityEvidence": "The current immigration.gov.lk notice identifies the Department of Immigration and Emigration and was last updated 2026-08-21.",
-      "supportingExcerpt": "India is among the 40 countries; ordinary passports are eligible for the Tourist ETA and must obtain ETA before arrival."
-    },
-    {
-      "id": "sri-lanka-eta-current-official-overview",
-      "title": "Sri Lanka ETA official website: Online Visa Application",
-      "url": "https://www.eta.gov.lk/slvisa/visainfo/center.jsp?locale=en_US",
-      "publisher": "Department of Immigration and Emigration",
-      "jurisdiction": "Democratic Socialist Republic of Sri Lanka",
-      "kind": "official-portal",
-      "language": "English",
-      "reviewedAt": "2026-08-22",
-      "officialityEvidence": "The eta.gov.lk page identifies itself as the Department of Immigration and Emigration's official ETA website and names the Department as issuing authority.",
-      "supportingExcerpt": "All foreign nationals, including the 40 countries, are required to obtain an ETA prior to arrival and must apply online."
-    },
-    {
       "id": "kyrgyz-evisa-current-selector",
       "title": "Kyrgyz Republic eVisa: Get Information / Do I need visa?",
       "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
@@ -85,37 +61,6 @@
       "confidence": "medium"
     },
     {
-      "id": "sri-lanka-india-ordinary-passport-pretravel-eta",
-      "title": "Indian ordinary passports: Sri Lanka pre-travel Tourist ETA",
-      "summary": "India is expressly within Sri Lanka's current 40-country Tourist ETA scheme. The Department requires ETA before arrival and the official portal requires online application, so the route is ETA rather than visa-free or visa-on-arrival.",
-      "status": "eta",
-      "destinationCodes": [
-        "SL"
-      ],
-      "passportCodes": [
-        "IN"
-      ],
-      "effectiveFrom": "2026-05-25",
-      "conditions": [
-        "The fee-waived Tourist ETA is valid for a 30-day short visit and permits double entry within that period.",
-        "The classification concerns ordinary passports and short tourism only; individual immigration admission and non-tourist routes remain separate.",
-        "A limited airport facility for a traveller without prior ETA does not displace the Department's stated normal pre-arrival ETA requirement."
-      ],
-      "sourceIds": [
-        "sri-lanka-die-current-india-free-tourist-eta",
-        "sri-lanka-eta-current-official-overview"
-      ],
-      "confidence": "high",
-      "application": {
-        "url": "https://eta.gov.lk/etaslvisa/etaNavServ",
-        "label": "Sri Lanka ETA application",
-        "steps": [
-          "Apply for the ETA online before travel.",
-          "Carry the approved ETA and meet the Department's normal visitor-admission requirements."
-        ]
-      }
-    },
-    {
       "id": "kyrgyzstan-india-ordinary-passport-tourist-evisa",
       "title": "Indian ordinary passports: Kyrgyz Republic Tourist eVisa",
       "summary": "The live Kyrgyz MFA eVisa selector exposes Tourist (TS) after India is selected for the ordinary-passport application flow. The official portal says approval is an electronic visa confirmation received before entry, so this is an eVisa.",
@@ -146,19 +91,7 @@
       }
     }
   ],
-  "conflicts": [
-    {
-      "passportCode": "IN",
-      "destinationCode": "SL",
-      "snapshotStatus": "visa_on_arrival",
-      "officialStatus": "eta",
-      "explanation": "Sri Lanka's Department of Immigration and Emigration now expressly requires an ETA before arrival for Indian ordinary-passport visitors. The fee waiver does not make the pre-travel authorization an arrival-issued visa.",
-      "sourceIds": [
-        "sri-lanka-die-current-india-free-tourist-eta",
-        "sri-lanka-eta-current-official-overview"
-      ]
-    }
-  ],
+  "conflicts": [],
   "unresolved": [
     {
       "passportCode": "IN",
@@ -473,6 +406,16 @@
       "searchedOfficialDomains": [
         "immigration.gov.sb",
         "mfaet.gov.sb"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SL",
+      "reason": "No current Sierra Leonean or Indian primary source establishes ordinary Indian-passport visitor eligibility and actual issuance timing; Sri Lanka ETA guidance is unrelated to destination code SL.",
+      "searchedOfficialDomains": [
+        "evisa.sl",
+        "mofaic.gov.sl",
+        "mea.gov.in"
       ]
     },
     {

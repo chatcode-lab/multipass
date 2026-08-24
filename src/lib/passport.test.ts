@@ -491,14 +491,14 @@ describe("passport calculations", () => {
     });
   });
 
-  it("applies current India ETA and British Virgin Islands eVisa corrections", () => {
+  it("does not conflate Sierra Leone with Sri Lanka and applies British Virgin Islands eVisa corrections", () => {
     expect(applyVerifiedAccessOverrides({
       code: "IN",
       name: "India",
       statuses: { IN: "citizenship", SL: "visa_on_arrival" },
       mobilityScore: 1,
     })).toMatchObject({
-      statuses: { IN: "citizenship", SL: "eta" },
+      statuses: { IN: "citizenship", SL: "visa_on_arrival" },
       mobilityScore: 1,
     });
 

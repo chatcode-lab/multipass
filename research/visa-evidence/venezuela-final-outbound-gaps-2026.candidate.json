@@ -1,0 +1,509 @@
+{
+  "batchId": "venezuela-final-outbound-gaps-2026",
+  "researchedAt": "2026-08-23",
+  "sources": [
+    {
+      "id": "jordan-tourism-venezuela-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish / English table",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "Jordan's live official tourism-board nationality table directly maps Venezuela to a visa obtained on arrival.",
+      "supportingExcerpt": "Venezuela | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    },
+    {
+      "id": "us-state-venezuela-partial-suspension-current-2026",
+      "title": "Suspension of Visa Issuance to Foreign Nationals to Protect the Security of the United States",
+      "url": "https://travel.state.gov/content/travel/en/News/visas-news/suspension-of-visa-issuance-to-foreign-nationals-to-protect-the-security-of-the-united-states.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The State Department's live PP 10998 implementation notice, last updated February 2, 2026, names Venezuela in the partially suspended B-1/B-2 visitor-visa cohort and preserves valid-visa grandfathering, exceptions and case-by-case national-interest decisions.",
+      "supportingExcerpt": "Nigeria, Senegal, Tanzania, Togo, Tonga, Venezuela, Zambia"
+    },
+    {
+      "id": "us-code-geographic-united-states-venezuela-current-2026",
+      "title": "8 U.S.C. 1101(a)(38), geographical definition of United States",
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A8+section%3A1101+edition%3Aprelim%29",
+      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+      "jurisdiction": "United States",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The official U.S. Code publication defines the United States for INA purposes to include Puerto Rico, Guam, the Virgin Islands and the Northern Mariana Islands.",
+      "supportingExcerpt": "Puerto Rico, Guam, the Virgin Islands of the United States, and the Commonwealth of the Northern Mariana Islands"
+    }
+  ],
+  "policies": [
+    {
+      "id": "venezuelan-ordinary-passport-jordan-arrival-visitor-visa-2026",
+      "title": "Venezuelan ordinary passports: Jordan visitor visa on arrival",
+      "summary": "Jordan's official nationality table says Venezuelan visitors can obtain a visa on arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "VE"
+      ],
+      "conditions": [
+        "Applies to an ordinary Venezuelan passport holder travelling as a short visitor.",
+        "Jordan's table says a visa can be obtained on arrival for a total of 40 JOD.",
+        "Jordan's page instructs non-Jordanian visitors to register through Gateway2Jordan before departure and present the resulting QR code. Restricted crossings, non-visitor purposes and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "jordan-tourism-venezuela-arrival-visa-table-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "VE",
+      "destinationCode": "US",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The current B-1/B-2 entry and visa-issuance suspension retains valid-visa grandfathering, specified exceptions and case-by-case waivers, so it cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-venezuela-partial-suspension-current-2026"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "PR",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Puerto Rico. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-venezuela-partial-suspension-current-2026",
+        "us-code-geographic-united-states-venezuela-current-2026"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "GU",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes Guam. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-venezuela-partial-suspension-current-2026",
+        "us-code-geographic-united-states-venezuela-current-2026"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "MP",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the Northern Mariana Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-venezuela-partial-suspension-current-2026",
+        "us-code-geographic-united-states-venezuela-current-2026"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "VI",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "b1-b2-visitor-entry-and-visa-issuance-partially-suspended-with-limited-exceptions",
+      "explanation": "The partial suspension is an INA entry and visa-issuance rule; the INA geographical definition includes the U.S. Virgin Islands. Its exceptions cannot be flattened to a normal visitor status.",
+      "sourceIds": [
+        "us-state-venezuela-partial-suspension-current-2026",
+        "us-code-geographic-united-states-venezuela-current-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "VE",
+      "destinationCode": "AF",
+      "reason": "No current Afghan or Venezuelan primary source establishes a usable ordinary Venezuelan-passport short-visitor route and actual issuance timing; operational restrictions are not taxonomy states.",
+      "searchedOfficialDomains": [
+        "mfa.gov.af",
+        "moi.gov.af",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "AO",
+      "reason": "No current Angolan or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mirex.gov.ao",
+        "smevisa.gov.ao",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "BD",
+      "reason": "No current Bangladeshi or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofa.gov.bd",
+        "visa.gov.bd",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "VG",
+      "reason": "No current British Virgin Islands or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "bvi.gov.vg",
+        "gov.vg",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "BF",
+      "reason": "No current Burkina Faso or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "visaburkina.bf",
+        "mae.gov.bf",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "CF",
+      "reason": "No current Central African or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cf",
+        "interieur.gouv.cf",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "TD",
+      "reason": "No current Chadian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.td",
+        "diplomatie.gouv.td",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "KM",
+      "reason": "No current Comorian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "justice.gouv.km",
+        "gouvernement.km",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "CG",
+      "reason": "No current Republic of the Congo or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cg",
+        "dgrsp.cg",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "CI",
+      "reason": "No current Ivorian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ci",
+        "snedai.com",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "DJ",
+      "reason": "No current Djiboutian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.gouv.dj",
+        "gouv.dj",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "GE",
+      "reason": "No current Georgian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ge",
+        "mfa.gov.ge",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "GU",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "GW",
+      "reason": "No current Guinea-Bissau or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mne.gov.gw",
+        "gov.gw",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "IQ",
+      "reason": "No current Iraqi or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "moi.gov.iq",
+        "evisa.iq",
+        "mofa.gov.iq",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "KW",
+      "reason": "No current Kuwaiti or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "moi.gov.kw",
+        "e.gov.kw",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "KG",
+      "reason": "No current Kyrgyz or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "LR",
+      "reason": "No current Liberian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofa.gov.lr",
+        "immigration.gov.lr",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "ML",
+      "reason": "No current Malian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ml",
+        "interieur.gouv.ml",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "MH",
+      "reason": "No current Marshall Islands or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "rmiembassyus.org",
+        "rmi.gov",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "NI",
+      "reason": "No current Nicaraguan or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.ni",
+        "migob.gob.ni",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "NE",
+      "reason": "No current Nigerien or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.ne",
+        "interieur.gouv.ne",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "KP",
+      "reason": "No current DPRK or Venezuelan primary source establishes a usable ordinary Venezuelan-passport visitor route and actual issuance timing; operational restrictions are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.kp",
+        "naenara.com.kp",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "MK",
+      "reason": "No current North Macedonian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.mk",
+        "mvr.gov.mk",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "MP",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "PS",
+      "reason": "Israeli-controlled crossings, permits and recognition conditions do not establish a Palestine-only ordinary Venezuelan-passport visitor status.",
+      "searchedOfficialDomains": [
+        "mofa.pna.ps",
+        "gov.il",
+        "cogat.mod.gov.il",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "PR",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "ST",
+      "reason": "No current São Tomé and Príncipe or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "smf.st",
+        "mne.gov.st",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SA",
+      "reason": "No current Saudi or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofa.gov.sa",
+        "visitsaudi.com",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SL",
+      "reason": "No current Sierra Leone or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "immigration.gov.sl",
+        "evisa.sl",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SB",
+      "reason": "No current Solomon Islands or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "immigration.gov.sb",
+        "solomons.gov.sb",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SS",
+      "reason": "No current South Sudanese or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ss",
+        "mofaic.gov.ss",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SD",
+      "reason": "No current Sudanese or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "passports.gov.sd",
+        "mofa.gov.sd",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SY",
+      "reason": "No current Syrian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mofaex.gov.sy",
+        "moi.gov.sy",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "TN",
+      "reason": "No current Tunisian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "econsulat.tn",
+        "diplomatie.gov.tn",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "TM",
+      "reason": "No current Turkmen or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tm",
+        "migration.gov.tm",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "UA",
+      "reason": "No current Ukrainian or Venezuelan primary source directly establishes ordinary Venezuelan-passport short-visitor eligibility and actual issuance timing; portal availability, omission and conditional document routes are not normalized.",
+      "searchedOfficialDomains": [
+        "mfa.gov.ua",
+        "dpsu.gov.ua",
+        "mppre.gob.ve"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "US",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "VI",
+      "reason": "The current PP 10998 B-1/B-2 partial-suspension rule includes exceptions and valid-visa grandfathering, so no normal short-visitor taxonomy status is established.",
+      "searchedOfficialDomains": [
+        "travel.state.gov",
+        "uscode.house.gov"
+      ]
+    }
+  ]
+}
