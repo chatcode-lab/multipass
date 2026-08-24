@@ -4170,4 +4170,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://snedai.com/e-visa/",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "IE",
+    destinationCode: "TD",
+    status: "evisa",
+    reason: "Ireland's current travel guidance requires Irish visitors to hold a Chad visa, while Chad's May and June 2026 notices make new non-diplomatic applications exclusively electronic before travel.",
+    sourceUrl: "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;

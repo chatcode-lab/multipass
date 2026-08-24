@@ -1437,7 +1437,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "TD");
 
-    expect(pairs).toHaveLength(52);
+    expect(pairs).toHaveLength(53);
     expect(getVisaRelationshipEvidence("CM", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BB", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SG", "TD", "visa_free").supportsCurrentStatus).toBe(true);
@@ -4906,6 +4906,22 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("supports the reviewed Irish Chad eVisa without guessing Swedish or Japanese gaps", () => {
+    expect(snapshot.passports.IE.statuses.TD).toBe("evisa");
+    expect(getVisaRelationshipEvidence("IE", "TD", "evisa").supportsCurrentStatus).toBe(true);
+
+    for (const [passportCode, destinationCode] of [
+      ["IE", "SY"],
+      ["SE", "LR"],
+      ["SE", "SL"],
+      ["JP", "TD"],
+      ["JP", "UA"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -5002,6 +5018,7 @@ describe("official visa evidence", () => {
       "ambasadat.net",
       "www.smartraveller.gov.au",
       "www.ireland.ie",
+      "api.ireland.ie",
       "www.auswaertiges-amt.de",
       "www.anzen.mofa.go.jp",
       "www.sem.admin.ch",

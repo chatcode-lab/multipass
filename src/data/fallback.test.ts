@@ -437,4 +437,8 @@ describe("bundled passport snapshot", () => {
   it("applies Côte d'Ivoire's airport-issued route for Emirati passports", () => {
     expect(snapshot.passports.AE.statuses.CI).toBe("visa_on_arrival");
   });
+
+  it("applies Chad's electronic route for Irish passports", () => {
+    expect(snapshot.passports.IE.statuses.TD).toBe("evisa");
+  });
 });

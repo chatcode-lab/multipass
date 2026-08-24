@@ -1,0 +1,147 @@
+{
+  "batchId": "ireland-current-final-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "ireland-dfa-chad-ordinary-passport-visa-current-2026",
+      "title": "Chad Travel Advice",
+      "url": "https://api.ireland.ie/en/dfa/overseas-travel/advice/chad/",
+      "publisher": "Department of Foreign Affairs, Ireland",
+      "jurisdiction": "Ireland / Chad",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Ireland.ie Department of Foreign Affairs country page is current Irish-citizen travel guidance and directly states Irish visitor visa liability for Chad.",
+      "supportingExcerpt": "Irish citizens require a visa to enter Chad."
+    },
+    {
+      "id": "chad-evisa-exclusive-online-notice-irish-refresh-2026",
+      "title": "New visa tariffs in the Republic of Chad",
+      "url": "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      "publisher": "Direction de l’Immigration et de l’Émigration / Sous-Direction de E-Visa",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official evisa.td notice identifies Chad's Immigration and Emigration Directorate and says all new non-diplomatic and non-courtesy visa requests are exclusively online.",
+      "supportingExcerpt": "toutes les demandes de visa se font désormais exclusivement en ligne via plateforme officielle evisa.td."
+    },
+    {
+      "id": "chad-evisa-processing-circular-irish-refresh-2026",
+      "title": "E-Visa circular",
+      "url": "https://evisa.td/articles/11/note-circulaire",
+      "publisher": "Direction de l’Immigration et de l’Émigration / Sous-Direction de E-Visa",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 4 June 2026 official circular gives eVisa processing periods, confirming electronic pre-travel processing rather than border issuance.",
+      "supportingExcerpt": "Demande de e-Visa standard : 10 jours ouvrables; Demande de e-Visa express: 72 heures"
+    }
+  ],
+  "policies": [
+    {
+      "id": "irish-ordinary-passports-chad-electronic-visitor-visa-2026",
+      "title": "Irish ordinary passports: Chad electronic visitor visa",
+      "summary": "Ireland's current guidance makes Irish citizens visa-subject for Chad, and Chad's current immigration notices require new non-diplomatic visa applications exclusively through evisa.td before travel.",
+      "status": "evisa",
+      "destinationCodes": ["TD"],
+      "passportCodes": ["IE"],
+      "conditions": [
+        "Applies to an ordinary Irish-passport short visitor who needs a Chad visa; diplomatic and courtesy visas are excluded from the electronic rule.",
+        "Submit the new visa request through evisa.td before travel. Standard eVisa processing is 10 working days and express processing is 72 hours.",
+        "Purpose, documentary, health, security, carrier, final-admission, work, residence, transit and special-document conditions remain separate."
+      ],
+      "sourceIds": ["ireland-dfa-chad-ordinary-passport-visa-current-2026", "chad-evisa-exclusive-online-notice-irish-refresh-2026", "chad-evisa-processing-circular-irish-refresh-2026"],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.td/",
+        "label": "Chad official eVisa application",
+        "processingTime": "10 working days standard or 72 hours express.",
+        "steps": [
+          "Submit the ordinary Irish-passport visitor application through evisa.td before travel.",
+          "Complete electronic immigration checks and retain the approved visa with required admission documents.",
+          "Travel only after issuance and comply with final border-admission requirements."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "IE",
+      "destinationCode": "TD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Current Chad notices require new non-diplomatic visa applications exclusively through evisa.td before travel, with stated electronic processing periods.",
+      "sourceIds": ["ireland-dfa-chad-ordinary-passport-visa-current-2026", "chad-evisa-exclusive-online-notice-irish-refresh-2026", "chad-evisa-processing-circular-irish-refresh-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "IE",
+      "destinationCode": "AF",
+      "reason": "Current Irish guidance requires a visa but Afghanistan's recognition, mission and operational uncertainty does not establish a usable ordinary Irish visitor issuance route.",
+      "searchedOfficialDomains": ["ireland.ie", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "CF",
+      "reason": "Ireland confirms visa liability and identifies the Central African Republic Embassy in Paris for information, but no current direct source establishes actual ordinary Irish visitor issuance timing.",
+      "searchedOfficialDomains": ["ireland.ie", "diplomatie.gouv.cf", "paris.diplomatie.gouv.cf"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "CG",
+      "reason": "Ireland confirms visa liability and refers visitors to the Republic of Congo Embassy in London, but does not establish actual ordinary Irish visitor issuance timing.",
+      "searchedOfficialDomains": ["ireland.ie", "diplomatie.gouv.cg", "dgrsp.cg"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "ML",
+      "reason": "Current Irish guidance confirms visa liability amid serious security and operational risk, but does not establish the ordinary visitor issuance route or timing.",
+      "searchedOfficialDomains": ["ireland.ie", "diplomatie.gouv.ml", "securite.gouv.ml"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "NE",
+      "reason": "Current Irish guidance requires a visa and directs travellers to Niger's Embassy in Geneva, without establishing a usable ordinary visitor issuance channel or timing.",
+      "searchedOfficialDomains": ["ireland.ie", "ambassade-niger-geneve.net", "diplomatie.gouv.ne"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "SL",
+      "reason": "Ireland says Irish citizens can obtain an eVisa online, but current Sierra Leone government service material conflicts on whether the visa itself is electronic or issued at the airport or border.",
+      "searchedOfficialDomains": ["ireland.ie", "slid.gov.sl", "evisa.sl"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "SD",
+      "reason": "Current Irish guidance requires a visa and identifies Sudan's Embassy in London, but does not establish a stable ordinary visitor issuance route amid operational restrictions.",
+      "searchedOfficialDomains": ["ireland.ie", "sudanembassy.org.uk", "mofa.gov.sd"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "KP",
+      "reason": "Current official guidance describes entry as highly restricted and borders as mostly closed. Permission and operational restrictions do not establish a normalizable ordinary visitor route.",
+      "searchedOfficialDomains": ["ireland.ie", "mfa.gov.kp", "naenara.com.kp"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "TM",
+      "reason": "Irish guidance requires a visa, invitation letter and prior permission, and says there is no visa on arrival. It proves neither an unconditional ordinary visitor issuance route nor timing.",
+      "searchedOfficialDomains": ["ireland.ie", "migration.gov.tm", "mfa.gov.tm"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "IR",
+      "reason": "Ireland confirms visa liability but current Iranian services do not directly establish an ordinary Irish-passport issuance mode; portal filing is not treated as electronic issuance.",
+      "searchedOfficialDomains": ["ireland.ie", "mfa.gov.ir", "evisa.mfa.ir"]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "SY",
+      "reason": "Ireland confirms visa liability amid current security and operational risk, but no current direct source establishes the ordinary Irish visitor issuance route or timing.",
+      "searchedOfficialDomains": ["ireland.ie", "mofaex.gov.sy", "moi.gov.sy"]
+    }
+  ]
+}
