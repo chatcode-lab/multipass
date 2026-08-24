@@ -1,0 +1,169 @@
+{
+  "batchId": "malawi-seven-cell-final-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "malawi-evisa-effective-category-notice-2026-08-24",
+      "title": "Malawi e-Visa System: public notice on Visa on Arrival eligibility",
+      "url": "https://evisa.gov.mw/",
+      "publisher": "Department of Immigration and Citizenship Services, Government of Malawi",
+      "jurisdiction": "Malawi",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.gov.mw portal identifies the Malawi Department of Immigration and Citizenship Services in its footer. Its current notice is effective 24 February 2026 and directs airlines to its Category One and Category Two schedules.",
+      "supportingExcerpt": "Category Two Countries are now eligible to obtain a Visa on Arrival at all designated ports."
+    },
+    {
+      "id": "malawi-evisa-current-category-one-schedule-2026-08-24",
+      "title": "Malawi Department of Immigration: Category One Countries",
+      "url": "https://evisa.gov.mw/PDFs/CategoryOneCountries.pdf",
+      "publisher": "Department of Immigration and Citizenship Services, Government of Malawi",
+      "jurisdiction": "Malawi",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official eVisa notice links this Department PDF as its Category One schedule. The reviewed current PDF directly includes Burkina Faso, Cameroon and Sri Lanka in the advance-or-prior-authorisation cohort.",
+      "supportingExcerpt": "Countries and regions that require a visa well in advance, or prior authorization."
+    },
+    {
+      "id": "malawi-evisa-current-category-two-schedule-2026-08-24",
+      "title": "Malawi Department of Immigration: Category Two Countries",
+      "url": "https://evisa.gov.mw/PDFs/CategoryTwoCountries.pdf",
+      "publisher": "Department of Immigration and Citizenship Services, Government of Malawi",
+      "jurisdiction": "Malawi",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official eVisa notice links this Department PDF as its Category Two schedule. The reviewed current PDF directly includes Israel, Burkina Faso, Cameroon and Sri Lanka in its arrival-visa cohort.",
+      "supportingExcerpt": "Countries and regions that can obtain a visa on arrival with or without prior authorization."
+    },
+    {
+      "id": "malawi-tourism-current-nationality-grid-2026-08-24",
+      "title": "Department of Tourism: Malawi Visa Arrangements",
+      "url": "https://visitmalawi.mw/visas-immigration-and-customs/",
+      "publisher": "Department of Tourism, Government of Malawi",
+      "jurisdiction": "Malawi",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live visitmalawi.mw page identifies the Department of Tourism and provides its country-by-country visa grid. It directly labels Israel Visa Free and Samoa, Tuvalu, Nauru, Burkina Faso, Cameroon and Sri Lanka VISA Required, while warning that exemptions are subject to reciprocity.",
+      "supportingExcerpt": "Entry visas are required for all foreign nationals, except for the categories listed below."
+    },
+    {
+      "id": "malawi-evisa-live-nationality-validator-2026-08-24",
+      "title": "Malawi e-Visa Visa Assistance: nationality validator",
+      "url": "https://evisa.gov.mw/VisaAssistance",
+      "publisher": "Department of Immigration and Citizenship Services, Government of Malawi",
+      "jurisdiction": "Malawi",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live authenticated page publishes the Department's Visa Assistance form and its browser code calls the same-origin ValidateNationality endpoint. On 24 August 2026 it returned true for Israel, Samoa, Tuvalu and Nauru, which the live handler renders as no-visa; the tourism grid gives materially different results for Samoa, Tuvalu and Nauru.",
+      "supportingExcerpt": "nationals do not require Visa"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "MW",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Tourism visa-free and Department Category Two visa-on-arrival schedules conflict",
+      "explanation": "The current Tourism grid directly marks Israel Visa Free, while the Department's current Category Two schedule and effective notice provide Visa on Arrival. Neither source supplies a hierarchy or reconciliation.",
+      "sourceIds": ["malawi-tourism-current-nationality-grid-2026-08-24", "malawi-evisa-effective-category-notice-2026-08-24", "malawi-evisa-current-category-two-schedule-2026-08-24"]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "MW",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Tourism visa-required and live Department selector no-visa results conflict",
+      "explanation": "The current Tourism grid directly marks Samoa VISA Required, while the Department's live ordinary-nationality validator returns its explicit no-visa result. The sources are unreconciled.",
+      "sourceIds": ["malawi-tourism-current-nationality-grid-2026-08-24", "malawi-evisa-live-nationality-validator-2026-08-24"]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "MW",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Tourism visa-required and live Department selector no-visa results conflict",
+      "explanation": "The current Tourism grid directly marks Tuvalu VISA Required, while the Department's live ordinary-nationality validator returns its explicit no-visa result. The sources are unreconciled.",
+      "sourceIds": ["malawi-tourism-current-nationality-grid-2026-08-24", "malawi-evisa-live-nationality-validator-2026-08-24"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "MW",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Tourism visa-required and live Department selector no-visa results conflict",
+      "explanation": "The current Tourism grid directly marks Nauru VISA Required, while the Department's live ordinary-nationality validator returns its explicit no-visa result. The sources are unreconciled.",
+      "sourceIds": ["malawi-tourism-current-nationality-grid-2026-08-24", "malawi-evisa-live-nationality-validator-2026-08-24"]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "MW",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "unresolved: Category One advance issuance and Category Two visa-on-arrival schedules conflict",
+      "explanation": "Current Department Category One directly lists Burkina Faso as requiring a visa well in advance or prior authorization; Category Two simultaneously lists it for Visa on Arrival. The effective notice does not rank the schedules.",
+      "sourceIds": ["malawi-evisa-effective-category-notice-2026-08-24", "malawi-evisa-current-category-one-schedule-2026-08-24", "malawi-evisa-current-category-two-schedule-2026-08-24"]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "MW",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "unresolved: Category One advance issuance and Category Two visa-on-arrival schedules conflict",
+      "explanation": "Current Department Category One directly lists Cameroon as requiring a visa well in advance or prior authorization; Category Two simultaneously lists it for Visa on Arrival. The effective notice does not rank the schedules.",
+      "sourceIds": ["malawi-evisa-effective-category-notice-2026-08-24", "malawi-evisa-current-category-one-schedule-2026-08-24", "malawi-evisa-current-category-two-schedule-2026-08-24"]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "MW",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "unresolved: Category One advance issuance and Category Two visa-on-arrival schedules conflict",
+      "explanation": "Current Department Category One directly lists Sri Lanka as requiring a visa well in advance or prior authorization; Category Two simultaneously lists it for Visa on Arrival. The effective notice does not rank the schedules.",
+      "sourceIds": ["malawi-evisa-effective-category-notice-2026-08-24", "malawi-evisa-current-category-one-schedule-2026-08-24", "malawi-evisa-current-category-two-schedule-2026-08-24"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "MW",
+      "reason": "The current Department Category Two schedule and effective notice provide a Visa on Arrival baseline for Israel, while the current Government Tourism grid directly marks Israel Visa Free. The sources give no hierarchy or reconciliation, so neither issuance timing can be selected.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "immigration.gov.mw", "visitmalawi.mw", "gov.il"]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "MW",
+      "reason": "The current Tourism grid directly marks Samoa VISA Required, but the live Department ordinary-nationality validator returns its explicit no-visa result. This is a direct official contradiction, not a portal-availability inference, and no resulting visitor route is normalized.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "immigration.gov.mw", "visitmalawi.mw", "mfat.gov.ws"]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "MW",
+      "reason": "The current Tourism grid directly marks Tuvalu VISA Required, but the live Department ordinary-nationality validator returns its explicit no-visa result. This is a direct official contradiction, not a portal-availability inference, and no resulting visitor route is normalized.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "immigration.gov.mw", "visitmalawi.mw", "gov.tv"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "MW",
+      "reason": "The current Tourism grid directly marks Nauru VISA Required, but the live Department ordinary-nationality validator returns its explicit no-visa result. This is a direct official contradiction, not a portal-availability inference, and no resulting visitor route is normalized.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "immigration.gov.mw", "visitmalawi.mw", "naurugov.nr"]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "MW",
+      "reason": "The current Department Category One PDF requires advance visa or prior authorization for Burkina Faso, while Category Two simultaneously gives Visa on Arrival. The live selector exposes electronic visa products, but portal products cannot resolve the two controlling schedules' issuance-timing conflict.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "immigration.gov.mw", "visitmalawi.mw", "mae.gov.bf"]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "MW",
+      "reason": "The current Department Category One PDF requires advance visa or prior authorization for Cameroon, while Category Two simultaneously gives Visa on Arrival. The live selector exposes electronic visa products, but portal products cannot resolve the two controlling schedules' issuance-timing conflict.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "immigration.gov.mw", "visitmalawi.mw", "diplomatie.gouv.cm"]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "MW",
+      "reason": "The current Department Category One PDF requires advance visa or prior authorization for Sri Lanka, while Category Two simultaneously gives Visa on Arrival. The live selector exposes electronic visa products, but portal products cannot resolve the two controlling schedules' issuance-timing conflict.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "immigration.gov.mw", "visitmalawi.mw", "mfa.gov.lk"]
+    }
+  ]
+}

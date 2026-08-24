@@ -970,12 +970,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("NP", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BD", "BD", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("PK")).toHaveLength(190);
+    expect(pairsFor("PK")).toHaveLength(191);
     expect(getVisaRelationshipEvidence("MV", "PK", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "PK", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("QA", "PK", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "PK", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DZ", "PK", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "PK", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PK", "PK", "citizenship").supportsCurrentStatus).toBe(false);
   });
 

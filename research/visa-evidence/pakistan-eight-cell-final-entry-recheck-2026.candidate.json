@@ -1,0 +1,113 @@
+{
+  "batchId": "pakistan-eight-cell-final-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "pakistan-dgip-current-visa-categories-2026-recheck",
+      "title": "Visa Categories",
+      "url": "https://dgip.gov.pk/visa/categories.php",
+      "publisher": "Directorate General of Immigration & Passports, Ministry of Interior, Government of Pakistan",
+      "jurisdiction": "Pakistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "DGIP's live Ministry of Interior page carries a 2026 Government of Pakistan copyright. Its visitor schedules say India and Somalia are List B, Armenia/Israel/Taiwan are in no list, and Afghanistan has a separate policy; the category page was last modified 11 March 2024.",
+      "supportingExcerpt": "There are 2 countries in list B (i-e. India & Somalia)."
+    },
+    {
+      "id": "pakistan-dgip-current-indian-national-visitor-visa-2026-recheck",
+      "title": "Visa for Indian Nationals",
+      "url": "https://dgip.gov.pk/visa/indians.php",
+      "publisher": "Directorate General of Immigration & Passports, Ministry of Interior, Government of Pakistan",
+      "jurisdiction": "Pakistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "DGIP's live Ministry of Interior Indian-national page directly states the ordinary Indian visitor obligation and identifies High Commission issuance before travel. It was last modified 4 October 2023 and remains live under the 2026 DGIP site copyright.",
+      "supportingExcerpt": "A non-extendable tourist visa valid for 14 days is issued by Pakistan High Commission, New Delhi through approved tour operators/travel agents."
+    },
+    {
+      "id": "pakistan-dgip-current-afghan-visitor-visa-policy-2026-recheck",
+      "title": "Visa Policy for Afghanistan",
+      "url": "https://dgip.gov.pk/visa/afghan-visa.php",
+      "publisher": "Directorate General of Immigration & Passports, Ministry of Interior, Government of Pakistan",
+      "jurisdiction": "Pakistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "DGIP's live separate Afghanistan policy is on the Ministry of Interior site. It makes visit issuance conditional on a sponsor/guarantor and security consultation, and its Afghanistan-mission route is discretionary; it was last modified 4 October 2023.",
+      "supportingExcerpt": "All Pakistan Missions abroad, excluding Afghanistan, may grant entry visit visa for 45-days"
+    }
+  ],
+  "policies": [
+    {
+      "id": "indian-ordinary-passport-pakistan-advance-tourist-visa-2026",
+      "title": "Indian ordinary passports: Pakistan advance tourist visa",
+      "summary": "Pakistan's live DGIP Indian-national page requires a valid visa and says the short tourist visa is issued by the Pakistan High Commission in New Delhi before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["PK"],
+      "passportCodes": ["IN"],
+      "conditions": [
+        "Applies to an ordinary Indian passport holder undertaking a short tourist visit; the published tourist visa is non-extendable and valid for 14 days.",
+        "The tourist visa is issued in advance by the Pakistan High Commission in New Delhi through approved tour operators or travel agents.",
+        "The page requires a valid passport and application; visitor, business, transit, Indian-origin, residence, work, religious-tourism, diplomatic/official documents, border-route, police-reporting, security and final-admission arrangements are outside this baseline."
+      ],
+      "sourceIds": ["pakistan-dgip-current-indian-national-visitor-visa-2026-recheck"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "AF",
+      "destinationCode": "PK",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved",
+      "explanation": "DGIP's separate Afghan policy uses sponsor- and security-conditioned mission visit visas, including a discretionary Afghanistan-mission route. It does not establish a nationality-wide eVisa or one unconditional ordinary visitor baseline.",
+      "sourceIds": ["pakistan-dgip-current-afghan-visitor-visa-policy-2026-recheck"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "PK",
+      "reason": "DGIP's tourist schedules do not separately map an HKSAR ordinary passport. Hong Kong appears only in the business-friendly list, which requires business documents, so it cannot establish a short tourist route; PRC or HKSAR-document treatment is not transferred.",
+      "searchedOfficialDomains": ["dgip.gov.pk", "mofa.gov.pk", "visa.nadra.gov.pk", "immd.gov.hk"]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "PK",
+      "reason": "DGIP says Israel is not part of any current visitor list. No current Pakistani or Israeli authority directly establishes ordinary Israeli-passport short-visitor eligibility, recognition treatment, issuance timing or an operational route.",
+      "searchedOfficialDomains": ["dgip.gov.pk", "mofa.gov.pk", "visa.nadra.gov.pk", "gov.il"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "PK",
+      "reason": "DGIP's tourist schedules do not separately map a Macao SAR ordinary passport. No current Pakistani or Macao passport authority establishes a national-passport visitor route; PRC-passport treatment and travel-alert material are not transferred.",
+      "searchedOfficialDomains": ["dgip.gov.pk", "mofa.gov.pk", "visa.nadra.gov.pk", "gov.mo", "dsi.gov.mo"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "PK",
+      "reason": "DGIP expressly says Taiwan is not part of any list. No current Pakistani or Taiwanese authority directly establishes recognition, ordinary-passport visitor eligibility, issuance timing or an operational route; a Taiwan eVisa page for travel to Taiwan is irrelevant.",
+      "searchedOfficialDomains": ["dgip.gov.pk", "mofa.gov.pk", "visa.nadra.gov.pk", "boca.gov.tw"]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "PK",
+      "reason": "Armenia is expressly outside DGIP's current visitor lists. No current Pakistani or Armenian authority directly maps an ordinary Armenian passport to a short-visitor issuance route; online-visa availability and an unnamed 120-country VPA statement are insufficient.",
+      "searchedOfficialDomains": ["dgip.gov.pk", "mofa.gov.pk", "visa.nadra.gov.pk", "mfa.am"]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "PK",
+      "reason": "DGIP labels Somalia List B but supplies no List-B tourist eligibility, issuance channel or timing. Somalia's absence from its named eVisa, VPA and List-A schedules is not used as a complement or to disprove an eVisa route.",
+      "searchedOfficialDomains": ["dgip.gov.pk", "mofa.gov.pk", "visa.nadra.gov.pk", "mfa.gov.so"]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "PK",
+      "reason": "DGIP's separate Afghan visitor rules require a Pakistan guarantor or sponsor and security-agency consultation for mission issuance; the Afghanistan-mission route says it may allow ordinary nationals a multiple-entry visa. Those discretionary, security and route conditions cannot be represented as one ordinary-passport short-visitor status.",
+      "searchedOfficialDomains": ["dgip.gov.pk", "mofa.gov.pk", "visa.nadra.gov.pk", "mfa.gov.af"]
+    }
+  ]
+}

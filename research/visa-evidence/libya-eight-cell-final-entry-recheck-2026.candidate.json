@@ -1,0 +1,159 @@
+{
+  "batchId": "libya-eight-cell-final-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "libya-lana-evisa-national-platform-activation-2026",
+      "title": "Libyan News Agency: activation of E-VISA LIBYA",
+      "url": "https://lana.gov.ly/post.php?id=360555&lang=ar",
+      "publisher": "Libyan News Agency",
+      "jurisdiction": "Libya",
+      "kind": "government-guidance",
+      "language": "Arabic",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "LANA is Libya's state news agency. Its 29 June 2026 report reproduces the Government circular identifying E-VISA LIBYA as the approved national electronic-visa platform.",
+      "supportingExcerpt": "باعتبارهما المنصة الوطنية المعتمدة لإدارة التأشيرات الإلكترونية"
+    },
+    {
+      "id": "libya-evisa-live-ordinary-passport-and-visa-types-2026",
+      "title": "E-VISA LIBYA: live ordinary-passport and visa-type configuration",
+      "url": "https://back.evisa.gov.ly/api/v1/landing-resource",
+      "publisher": "E-VISA LIBYA national platform",
+      "jurisdiction": "Libya",
+      "kind": "official-portal",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live resource behind evisa.gov.ly identifies the regular passport type and electronic visa type. LANA's current government circular identifies E-VISA LIBYA as the approved national platform.",
+      "supportingExcerpt": "Regular"
+    },
+    {
+      "id": "libya-evisa-live-turkey-country-configuration-2026",
+      "title": "E-VISA LIBYA: live Türkiye country configuration",
+      "url": "https://back.evisa.gov.ly/api/v1/countries",
+      "publisher": "E-VISA LIBYA national platform",
+      "jurisdiction": "Libya",
+      "kind": "official-portal",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live public national-platform country configuration directly returns Türkiye with its ISO code, availability, exemption type, online-application setting and visa-delivery type. It is used only for the positive Türkiye record, not as a complement for other codes.",
+      "supportingExcerpt": "\"code\": \"TR\", \"path\": null, \"exemption_type\": \"PARTIAL\""
+    },
+    {
+      "id": "libya-evisa-live-turkey-age-checker-2026",
+      "title": "E-VISA LIBYA: live Türkiye demographic eligibility checker",
+      "url": "https://back.evisa.gov.ly/api/v1/check-config",
+      "publisher": "E-VISA LIBYA national platform",
+      "jurisdiction": "Libya",
+      "kind": "official-portal",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The public evisa.gov.ly checker submits regular-passport nationality, date of birth and gender to this endpoint. On 24 August 2026, Türkiye returned PROCEED21 for MALE/1990-01-01 and CNTRYEXEMPT23 for FEMALE/2010-01-01 and MALE/1940-01-01. These samples establish a material demographic split, without isolating age from gender, not a passport-wide result.",
+      "supportingExcerpt": "\"code\":\"PROCEED21\""
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "TR",
+      "destinationCode": "LY",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: demographic-dependent exemption and electronic-application cohorts",
+      "explanation": "Libya's live national platform marks Türkiye as PARTIAL. Its public ordinary-passport checker returned different outcomes for sampled date-of-birth and gender combinations, so the passport-wide visa-free fallback cannot be normalized.",
+      "sourceIds": [
+        "libya-lana-evisa-national-platform-activation-2026",
+        "libya-evisa-live-turkey-country-configuration-2026",
+        "libya-evisa-live-turkey-age-checker-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "LY",
+      "reason": "No current Libyan or Israeli passport-government source directly establishes an ordinary Israeli-passport short-visitor route and its issuance timing. Absence from the national platform is not treated as proof of prohibition, exemption or a visa route.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "mfa.gov.il"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "LY",
+      "reason": "No current Libyan or Uruguayan passport-government source directly maps an ordinary Uruguayan passport to a short-visitor Libyan route and actual issuance timing. The platform is not used as an omission-based complement.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "gub.uy"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "LY",
+      "reason": "The live platform explicitly lists Taiwan as unavailable, but no current primary source states whether that represents recognition, prohibition, a mission route or another status. No ordinary Taiwan-passport visitor result is normalized.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "boca.gov.tw"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "LY",
+      "reason": "No current Libyan or Russian passport-government source directly maps an ordinary Russian passport to a short-visitor Libyan route and actual issuance timing. Portal availability or general consular filing is not treated as eligibility evidence.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "mid.ru"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "LY",
+      "reason": "Libya's live ordinary-passport checker returned different outcomes for sampled Turkish date-of-birth and gender combinations. The samples do not isolate which demographic field controls the split, and the passport-code model represents neither, so no single visitor status is safe.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "mfa.gov.tr"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "LY",
+      "reason": "The live platform explicitly lists Kosovo as unavailable, but no current primary source directly states the ordinary Kosovo-passport visitor route, recognition consequence or issuance timing. Unavailability is not normalized as a visa status.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "mfa-ks.net"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "LY",
+      "reason": "No current Libyan or Rwandan passport-government source directly maps an ordinary Rwandan passport to a Libyan short-visitor route and actual issuance timing. No inference is made from platform coverage or omissions.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "migration.gov.rw"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "LY",
+      "reason": "The live platform explicitly lists South Sudan as unavailable, but no current primary source directly establishes the ordinary South Sudanese-passport visitor route or actual issuance timing. Non-availability is not treated as a prohibition or advance-visa result.",
+      "searchedOfficialDomains": [
+        "evisa.gov.ly",
+        "back.evisa.gov.ly",
+        "foreign.gov.ly",
+        "mofaic.gov.ss"
+      ]
+    }
+  ]
+}
