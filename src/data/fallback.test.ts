@@ -369,4 +369,23 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.IQ.statuses.PA).toBe("visa_required");
     expect(snapshot.passports.IQ.statuses.TR).toBe("evisa");
   });
+
+  it("applies the final Libyan, Montenegrin and Yemeni outbound audits", () => {
+    expect(snapshot.passports.LY.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.LY.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.LY.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.ME.statuses.BD).toBe("visa_on_arrival");
+    expect(snapshot.passports.ME.statuses.DO).toBe("visa_free");
+    expect(snapshot.passports.ME.statuses.SZ).toBe("visa_free");
+    expect(snapshot.passports.ME.statuses.GD).toBe("visa_on_arrival");
+    expect(snapshot.passports.ME.statuses.GM).toBe("visa_required");
+    expect(snapshot.passports.ME.statuses.MU).toBe("visa_on_arrival");
+    expect(snapshot.passports.ME.statuses.MK).toBe("visa_free");
+    expect(snapshot.passports.ME.statuses.TT).toBe("visa_free");
+    expect(snapshot.passports.ME.statuses.TN).toBe("visa_free");
+    expect(snapshot.passports.ME.statuses.ZM).toBe("visa_free");
+    expect(snapshot.passports.YE.statuses.GD).toBe("visa_required");
+    expect(snapshot.passports.YE.statuses.PA).toBe("visa_required");
+    expect(snapshot.passports.YE.statuses.TR).toBe("visa_required");
+  });
 });
