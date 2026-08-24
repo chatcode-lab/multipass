@@ -743,7 +743,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("IR")).toHaveLength(53);
+    expect(pairsFor("IR")).toHaveLength(54);
     expect(getVisaRelationshipEvidence("BR", "IR", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LB", "IR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FR", "IR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -970,7 +970,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("NP", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BD", "BD", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("PK")).toHaveLength(191);
+    expect(pairsFor("PK")).toHaveLength(192);
     expect(getVisaRelationshipEvidence("MV", "PK", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "PK", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("QA", "PK", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -4713,6 +4713,27 @@ describe("official visa evidence", () => {
       .toHaveLength(198);
 
     for (const [passportCode, destinationCode] of [["GE", "MN"], ["ID", "GM"]] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("uses Macao's rebuilt passport service without flattening Hong Kong and Taiwan residuals", () => {
+    for (const [destinationCode, status] of [
+      ["IR", "visa_free"],
+      ["PK", "evisa"],
+    ] as const) {
+      expect(snapshot.passports.MO.statuses[destinationCode]).toBe(status);
+      expect(getVisaRelationshipEvidence("MO", destinationCode, status).supportsCurrentStatus).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["MO", "EC"],
+      ["HK", "MK"],
+      ["HK", "TN"],
+      ["TW", "OM"],
+      ["TW", "UA"],
+    ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
     }

@@ -4098,4 +4098,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.uae-embassy.org/visa-requirement/taiwan",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "MO",
+    destinationCode: "IR",
+    status: "visa_free",
+    reason: "Macao's current passport-specific DSI record marks Iran visa-free, not visa on arrival, for ordinary Macao SAR passports for stays up to 21 days.",
+    sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/405?travelPermit=0",
+    reviewedAt: "2026-08-24",
+  },
+  {
+    passportCode: "MO",
+    destinationCode: "PK",
+    status: "evisa",
+    reason: "Macao's current passport-specific DSI record maps Pakistan to eVisa, and Pakistan's immigration authority confirms electronic authorization is obtained online before travel.",
+    sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/463?travelPermit=0",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;

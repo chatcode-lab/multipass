@@ -1,0 +1,287 @@
+{
+  "batchId": "macao-current-full-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "macao-dsi-current-sar-passport-iran-record-2026",
+      "title": "Travel Convenience Privilege: Iran",
+      "url": "https://www.dsi.gov.mo/api/v1/web/entry/country/405?travelPermit=0",
+      "publisher": "Identification Services Bureau, Macao SAR Government",
+      "jurisdiction": "Macao Special Administrative Region / Iran",
+      "kind": "official-dataset",
+      "language": "Chinese / English fields",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "This live DSI API record is returned by the Macao SAR Government's current Travel Convenience Privilege service when its Macao SAR Passport selection is queried for Iran. It identifies Iran, marks visaFree 1, visaOnArrival 0 and evisa 0, and gives a 21-day maximum stay.",
+      "supportingExcerpt": "\"countryName\":\"伊朗\",\"visaFree\":1,\"visaOnArrival\":0"
+    },
+    {
+      "id": "macao-dsi-current-sar-passport-pakistan-record-2026",
+      "title": "Travel Convenience Privilege: Pakistan",
+      "url": "https://www.dsi.gov.mo/api/v1/web/entry/country/463?travelPermit=0",
+      "publisher": "Identification Services Bureau, Macao SAR Government",
+      "jurisdiction": "Macao Special Administrative Region / Pakistan",
+      "kind": "official-dataset",
+      "language": "Chinese / English fields",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "This live DSI API record is returned by the Macao SAR Government's current Travel Convenience Privilege service when its Macao SAR Passport selection is queried for Pakistan. It identifies Pakistan, marks visa-free and visa-on-arrival false, marks evisa 1, and links to Pakistan's official online visa service.",
+      "supportingExcerpt": "\"countryName\":\"巴基斯坦\",\"visaFree\":0,\"visaOnArrival\":0,\"evisa\":1"
+    },
+    {
+      "id": "macao-dsi-current-travel-convenience-sar-passport-service-2026",
+      "title": "Travel Convenience Privilege",
+      "url": "https://www.dsi.gov.mo/en/visa",
+      "publisher": "Identification Services Bureau, Macao SAR Government",
+      "jurisdiction": "Macao Special Administrative Region",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "DSI's live official service identifies the selected document as the Macao SAR Passport and uses its current data API for country-specific visa-free, arrival-visa and eVisa information. The service is used only for direct country records, never as an omission-based residual rule.",
+      "supportingExcerpt": "Macao SAR Passport"
+    },
+    {
+      "id": "pakistan-dgip-current-visa-in-your-inbox-issuance-2026",
+      "title": "Visa Categories",
+      "url": "https://dgip.gov.pk/visa/categories.php",
+      "publisher": "Directorate General of Immigration & Passports, Ministry of Interior, Government of Pakistan",
+      "jurisdiction": "Pakistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Pakistan's current Directorate General of Immigration & Passports visa-policy page defines its renamed Visa in Your Inbox route. Combined with DSI's direct Macao-passport Pakistan record, it establishes that the listed electronic authorization is obtained before travel rather than at the border.",
+      "supportingExcerpt": "the applicant will apply online from his/her home country and will get electronic authorization to travel."
+    }
+  ],
+  "policies": [
+    {
+      "id": "macao-sar-ordinary-passports-iran-visa-free-2026",
+      "title": "Macao SAR ordinary passports: Iran visa-free short visits",
+      "summary": "Macao's current passport-specific DSI record directly identifies Iran as visa-free for the Macao SAR Passport, with a maximum stay of 21 days.",
+      "status": "visa_free",
+      "destinationCodes": ["IR"],
+      "passportCodes": ["MO"],
+      "conditions": [
+        "Applies only to the ordinary Macao SAR Passport selected in DSI's live Travel Convenience Privilege service.",
+        "The direct DSI record states a maximum stay of 21 days and marks visa-on-arrival and eVisa false.",
+        "Visitor purpose, passport validity, admission, security, itinerary, transit, residence, work and all non-ordinary document routes remain outside this policy."
+      ],
+      "sourceIds": [
+        "macao-dsi-current-travel-convenience-sar-passport-service-2026",
+        "macao-dsi-current-sar-passport-iran-record-2026"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "macao-sar-ordinary-passports-pakistan-electronic-visa-2026",
+      "title": "Macao SAR ordinary passports: Pakistan electronic visitor visa",
+      "summary": "Macao's current passport-specific DSI record maps Pakistan to eVisa. Pakistan's current immigration authority confirms applicants apply online from their home country and receive electronic authorization to travel before arrival.",
+      "status": "evisa",
+      "destinationCodes": ["PK"],
+      "passportCodes": ["MO"],
+      "conditions": [
+        "Applies only to the ordinary Macao SAR Passport selected in DSI's live Travel Convenience Privilege service.",
+        "Apply online from the home country and receive electronic authorization before travel; show it to immigration for passport stamping on arrival.",
+        "The policy does not establish business, work, residence, pilgrimage, diplomatic, official, service, group-tour, special-document or final-admission treatment."
+      ],
+      "sourceIds": [
+        "macao-dsi-current-travel-convenience-sar-passport-service-2026",
+        "macao-dsi-current-sar-passport-pakistan-record-2026",
+        "pakistan-dgip-current-visa-in-your-inbox-issuance-2026"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://visa.nadra.gov.pk/e-visa/",
+        "label": "Pakistan Online Visa System",
+        "steps": [
+          "Apply through Pakistan's official online visa system from the home country.",
+          "Receive the electronic authorization to travel before departure.",
+          "Present the authorization to immigration for passport stamping on arrival."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "IR",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_free",
+      "explanation": "DSI's current ordinary-Macao-SAR-passport Iran record marks visaFree 1 and visaOnArrival 0 for a 21-day stay.",
+      "sourceIds": ["macao-dsi-current-sar-passport-iran-record-2026"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "PK",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "DSI directly maps the ordinary Macao SAR Passport to Pakistan eVisa, and Pakistan's immigration authority confirms electronic authorization before travel.",
+      "sourceIds": [
+        "macao-dsi-current-sar-passport-pakistan-record-2026",
+        "pakistan-dgip-current-visa-in-your-inbox-issuance-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "AF",
+      "reason": "No current Afghan or direct Macao-passport source establishes a usable short-visitor route and its actual issuance timing. Operational restrictions are not taxonomy states.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "BD",
+      "reason": "No current Bangladesh authority or direct Macao-passport DSI record establishes the ordinary short-visitor route. An electronic application service is not used as eligibility evidence.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "visa.gov.bd", "mofa.gov.bd"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "BO",
+      "reason": "No current Bolivian authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "cancilleria.gob.bo", "migracion.gob.bo"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "BW",
+      "reason": "No current Botswana authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "gov.bw", "immigration.gov.bw"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "CF",
+      "reason": "No current Central African authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "diplomatie.gouv.cf", "interieur.gouv.cf"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "TD",
+      "reason": "Chad's electronic service does not provide direct ordinary Macao SAR Passport eligibility. Portal availability and an exemption-list omission are not used as a residual rule.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "evisa.td", "diplomatie.gouv.td"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "CN",
+      "reason": "Mainland China entry can depend on Macao-resident permits and document-specific arrangements; no current primary source establishes a Macao SAR Passport-only visitor classification.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "nia.gov.cn", "gov.mo"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "CG",
+      "reason": "No current Republic of the Congo authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "diplomatie.gouv.cg", "dgrsp.cg"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "CI",
+      "reason": "No current Côte d’Ivoire authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing. Online application availability is insufficient.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "diplomatie.gouv.ci", "snedai.com"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "EC",
+      "reason": "No current Ecuadorian authority directly maps a Macao SAR passport. PRC treatment and historic Macao material are not transferred to this distinct passport.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "cancilleria.gob.ec", "gob.ec"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "GT",
+      "reason": "No current Guatemalan authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "minex.gob.gt", "igm.gob.gt"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "HN",
+      "reason": "No current Honduran authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "cancilleria.gob.hn", "inm.gob.hn"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "HK",
+      "reason": "Hong Kong entry rules distinguish Macao residence, identity-card and permit routes. No current source maps an ordinary Macao SAR Passport alone to a short-visitor baseline.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "immd.gov.hk", "gov.hk"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "LR",
+      "reason": "No current Liberian authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "lis.gov.lr", "mofa.gov.lr"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "MH",
+      "reason": "No current Marshall Islands authority or direct Macao-passport source establishes an ordinary short-visitor route. Compact or United States-linked arrangements are not transferred.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "rmiembassyus.org", "rmi.gov.mh"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "NI",
+      "reason": "No current Nicaraguan authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "cancilleria.gob.ni", "migob.gob.ni"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "NE",
+      "reason": "No current Nigerien authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "diplomatie.gouv.ne", "interieur.gouv.ne"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "KP",
+      "reason": "No current DPRK or direct Macao-passport source establishes a usable ordinary visitor route and actual issuance timing. Operational restrictions are not normalized.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "mfa.gov.kp", "naenara.com.kp"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "PS",
+      "reason": "Israeli-controlled crossings, permits, identity records and recognition conditions do not establish a Palestine-only ordinary Macao SAR Passport visitor status.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "mofa.pna.ps", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "PA",
+      "reason": "No current Panamanian authority or direct Macao-passport source establishes the ordinary baseline. Qualifying third-country-document routes are not used.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "migracion.gob.pa", "embassyofpanama.org"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "SL",
+      "reason": "No current Sierra Leone authority or direct Macao-passport source establishes ordinary visitor eligibility and whether the visa is issued electronically, at a mission or at entry.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "evisa.sl", "mofaic.gov.sl"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "SB",
+      "reason": "No current Solomon Islands authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "immigration.gov.sb", "solomons.gov.sb"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "SD",
+      "reason": "No current Sudanese authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "mofa.gov.sd", "passports.gov.sd"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "SY",
+      "reason": "No current Syrian authority or direct Macao-passport source establishes whether any online filing produces an eVisa or only an advance application.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "mofaex.gov.sy", "moi.gov.sy"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "GM",
+      "reason": "No current Gambian authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "mofa.gov.gm", "immigration.gov.gm"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "TT",
+      "reason": "No current Trinidad and Tobago authority or direct Macao-passport source establishes the ordinary visitor baseline. Electronic application availability is not eligibility evidence.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "nationalsecurity.gov.tt", "foreign.gov.tt"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "TM",
+      "reason": "No current Turkmen authority or direct Macao-passport source establishes ordinary visitor eligibility and actual issuance timing. Generic invitation wording is insufficient.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "mfa.gov.tm", "migration.gov.tm"]
+    }
+  ]
+}
