@@ -3487,10 +3487,10 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
     passportCode: "SC",
     destinationCode: "KG",
-    status: "visa_required",
-    reason: "Seychelles' July 2025 passport-holder schedule expressly requires a visa before entry for Kyrgyzstan.",
-    sourceUrl: "https://mfa.gov.sc/wp-content/uploads/2025/07/LIST-OF-COUNTRIES-SEYCHELLES-PASSPORT-HOLDERS-NEED-VISAS-Updated-July-2025.pdf",
-    reviewedAt: "2026-08-23",
+    status: "evisa",
+    reason: "Kyrgyzstan's current MFA application gate directly offers the Tourist visa for a Seychellois ordinary passport, returns a 30-day Tourist product and delivers eVisa confirmation before entry.",
+    sourceUrl: "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+    reviewedAt: "2026-08-24",
   },
   {
     passportCode: "SC",

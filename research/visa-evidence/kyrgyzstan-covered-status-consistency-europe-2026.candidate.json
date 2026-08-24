@@ -1,0 +1,160 @@
+{
+  "batchId": "kyrgyzstan-covered-status-consistency-europe-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kyrgyz-evisa-mfa-portal-current-2026",
+      "title": "Kyrgyz Republic eVisa official portal",
+      "url": "https://www.evisa.e-gov.kg/index.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.e-gov.kg homepage identifies the Kyrgyz Ministry of Foreign Affairs as having launched the eVisa portal and links the application workflow.",
+      "supportingExcerpt": "Ministry of Foreign Affairs of Kyrgyzstan has launched e-Visa portal to facilitate visa issuance process for genuine travellers."
+    },
+    {
+      "id": "kyrgyz-evisa-do-i-need-visa-selector-2026",
+      "title": "Kyrgyz Republic eVisa: Get Information / Do I need visa?",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en&n=1",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.e-gov.kg government eVisa service describes itself as the Kyrgyzstan Official Electronic Visa Portal and presents the nationality/document visa-regime selector.",
+      "supportingExcerpt": "This tool provides general information about visa eligibility for holders of passports and documents of different countries."
+    },
+    {
+      "id": "kyrgyz-evisa-regime-api-ordinary-results-2026",
+      "title": "Kyrgyz Republic eVisa nationality visa-regime API",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaTypeInfo",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The selector's live same-origin JavaScript posts doc_issued_by to this endpoint and renders the returned ordinary-passport regime table.",
+      "supportingExcerpt": "\"regime\":\"Visa free regime\",\"ordinary_passport\":\"up to 30 days\""
+    }
+  ],
+  "policies": [
+    {
+      "id": "kyrgyzstan-europe-live-selector-ordinary-visa-free-90-days-2026",
+      "title": "Ukraine, Serbia and Türkiye ordinary passports: 90-day visa-free visit",
+      "summary": "The live MFA nationality selector directly returns Visa free regime, up to 90 days, in the Ordinary Passport column for Ukraine, Serbia and Turkey.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "UA",
+        "RS",
+        "TR"
+      ],
+      "conditions": [
+        "Fresh retained PHP-session replays POSTed selector IDs 232 (Ukraine), 197 (Serbia) and 227 (Turkey, mapped to TR) to getVisaTypeInfo. Each direct Ordinary Passport result is Visa free regime, up to 90 days.",
+        "This records only the current ordinary-passport short-visitor selector result. It does not infer electronic, border-issued, diplomatic, service, residence, work, transit, security, carrier or individual-admission treatment.",
+        "The result is session-bound and mutable; recheck the live MFA selector before travel. The portal retains the legacy Turkey label for TR."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-mfa-portal-current-2026",
+        "kyrgyz-evisa-do-i-need-visa-selector-2026",
+        "kyrgyz-evisa-regime-api-ordinary-results-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyzstan-europe-live-selector-ordinary-visa-free-30-days-2026",
+      "title": "Named European ordinary passports: 30-day visa-free visit",
+      "summary": "The live MFA nationality selector directly returns Visa free regime, up to 30 days, in the Ordinary Passport column for each named passport issuer.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "IT",
+        "ES",
+        "CH",
+        "FI",
+        "DE",
+        "SE",
+        "BE",
+        "FR",
+        "LU",
+        "NO",
+        "GB",
+        "IE",
+        "NL",
+        "PT",
+        "AT",
+        "DK",
+        "MT",
+        "GR",
+        "HU",
+        "LV",
+        "LT",
+        "PL",
+        "SK",
+        "CZ",
+        "EE",
+        "IS",
+        "SI",
+        "HR",
+        "LI",
+        "MC",
+        "CY",
+        "RO",
+        "BG",
+        "AD",
+        "SM",
+        "VA",
+        "ME",
+        "BA",
+        "AL",
+        "MK"
+      ],
+      "conditions": [
+        "Fresh retained PHP-session replays POSTed the exact selector IDs IT=110, ES=208, CH=215, FI=76, DE=84, SE=214, BE=22, FR=77, LU=130, NO=166, GB=234, IE=107, NL=156, PT=178, AT=15, DK=62, MT=137, GR=87, HU=101, LV=123, LT=129, PL=177, SK=201, CZ=61, EE=71, IS=102, SI=202, HR=58, LI=128, MC=146, CY=60, RO=182, BG=35, AD=6, SM=193, VA=99, ME=148, BA=28, AL=3 and MK=131. Each direct Ordinary Passport result is Visa free regime, up to 30 days.",
+        "The selector labels MK as Macedonia and CZ as Czech Republic; those direct labels are mapped only to the catalog issuers North Macedonia/MK and Czechia/CZ. No country-group, treaty, reciprocity, residence, third-country-document, electronic, border-issued, diplomatic, service, work, transit, security, carrier or individual-admission inference is made.",
+        "The result is session-bound and mutable; recheck the live MFA selector before travel."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-mfa-portal-current-2026",
+        "kyrgyz-evisa-do-i-need-visa-selector-2026",
+        "kyrgyz-evisa-regime-api-ordinary-results-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyzstan-europe-live-selector-ordinary-visa-free-duration-unstated-2026",
+      "title": "Russia, Belarus, Georgia, Moldova and Azerbaijan ordinary passports: visa-free selector result",
+      "summary": "The live MFA nationality selector directly returns Visa free regime with the Ordinary Passport value yes for the named passport issuers; the selector does not state a duration in these responses.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "KG"
+      ],
+      "passportCodes": [
+        "RU",
+        "BY",
+        "GE",
+        "MD",
+        "AZ"
+      ],
+      "conditions": [
+        "Fresh retained PHP-session replays POSTed selector IDs 183 (Russian Federation, mapped to RU), 21 (Belarus), 83 (Georgia), 145 (Moldova) and 16 (Azerbaijan) to getVisaTypeInfo. Each direct Ordinary Passport result is Visa free regime with the value yes.",
+        "The current direct responses do not print a duration for these five ordinary-passport results. No common stay limit, treaty term, facilitated regime, residence condition, electronic, border-issued, diplomatic, service, work, transit, security, carrier or individual-admission treatment is inferred.",
+        "The result is session-bound and mutable; recheck the live MFA selector before travel. The portal retains the Russian Federation label for RU."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-mfa-portal-current-2026",
+        "kyrgyz-evisa-do-i-need-visa-selector-2026",
+        "kyrgyz-evisa-regime-api-ordinary-results-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

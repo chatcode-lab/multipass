@@ -1,0 +1,271 @@
+{
+  "batchId": "kyrgyzstan-covered-status-consistency-asia-middle-east-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "kyrgyz-evisa-covered-mfa-portal-2026",
+      "title": "Kyrgyz Republic eVisa official portal",
+      "url": "https://www.evisa.e-gov.kg/index.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live evisa.e-gov.kg homepage identifies the Ministry of Foreign Affairs of Kyrgyzstan as the portal's launcher and links the official application workflow and current information page.",
+      "supportingExcerpt": "Ministry of Foreign Affairs of Kyrgyzstan has launched e-Visa portal"
+    },
+    {
+      "id": "kyrgyz-evisa-covered-information-selector-2026",
+      "title": "Kyrgyz Republic eVisa current information and special visa-free notices",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official information page contains the passport-country selector and expressly states the special 30-day visa-free treatment for permanent residents of Hong Kong and Macao SARs and for Maldives citizens, all travel-document types.",
+      "supportingExcerpt": "Citizens of the Maldives have a 30-day visa-free regime for all types of travel documents."
+    },
+    {
+      "id": "kyrgyz-evisa-covered-regime-api-replay-2026",
+      "title": "Kyrgyz Republic eVisa current ordinary-passport visa-regime query",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaTypeInfo",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "In a fresh retained official-selector session, exact IDs AM=12, BH=18, BN=34, IL=109, JP=112, KZ=115, KR=119, KW=120, MY=134, MN=147, OM=167, QA=180, SA=195, SG=200, TJ=218, TH=220, AE=233, UZ=238 and VN=241 directly returned positive ordinary_passport values in Visa free regime. CN=46, IN=103, KP=118 and PS=170 directly returned ordinary_passport=no. Macao=48 and Maldives=135 also return no in the generic query, so their separate express special notices, not an omission inference, control their permanent-resident and Maldives scopes.",
+      "supportingExcerpt": "\"regime\":\"Visa free regime\""
+    },
+    {
+      "id": "kyrgyz-evisa-covered-application-gate-form-2026",
+      "title": "Kyrgyz Republic eVisa application form and controlling eligibility call",
+      "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official application form exposes country and Ordinary document selections. Its JavaScript calls same-origin getList7 after country selection, before the later getVisaList_2 product request.",
+      "supportingExcerpt": "url: \"api.php?method=getList7\""
+    },
+    {
+      "id": "kyrgyz-evisa-covered-tourist-gate-replay-2026",
+      "title": "Kyrgyz Republic eVisa current controlling Tourist eligibility replay",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getList7",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "In one fresh retained official-form session, POST doc_issued_by IN=103, CN=46, PS=170 and KP=118 each directly returned the positive Tourist (TS) option. The Tourist result is used only after this positive controlling gate and does not override direct visa-free results for other passport IDs.",
+      "supportingExcerpt": "Tourist (TS)"
+    },
+    {
+      "id": "kyrgyz-evisa-covered-ordinary-tourist-result-2026",
+      "title": "Kyrgyz Republic eVisa current ordinary-passport Tourist result",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaList_2",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Only after the positive exact-country Tourist gates, the same fresh sessions submitted ids=56, visa_subtype=0, doc_type=1 (Ordinary), the exact country ID, visa_filtr=0 and service_level=1. IN, CN, PS and KP each directly returned the same Tourist TS visitor product; generic product text was not used without its preceding positive gate.",
+      "supportingExcerpt": "Tourist visa («TS») is issued to an applicant, intending to visit Kyrgyz Republic with purpose of tourism, for a period up to 30 days."
+    },
+    {
+      "id": "kyrgyz-evisa-covered-electronic-confirmation-2026",
+      "title": "Kyrgyz Republic eVisa current electronic confirmation guidance",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live official FAQ says an applicant completes and pays through the portal, then may enter after receiving eVisa confirmation through that portal. This establishes electronic issuance before travel for the directly gated Tourist results.",
+      "supportingExcerpt": "After receiving your e-Visa confirmation through this portal, you can enter the Kyrgyz Republic during e-Visa validity period."
+    },
+    {
+      "id": "kyrgyz-evisa-covered-electronic-checkpoints-2026",
+      "title": "Kyrgyz Republic eVisa service terms: permitted electronic-visa checkpoints",
+      "url": "https://www.evisa.e-gov.kg/conditions.php?lng=en",
+      "publisher": "Government of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Government eVisa service terms set a current route limitation for electronic visas received through the portal; this condition is attached only to the directly established eVisa policies.",
+      "supportingExcerpt": "Electronic visa, received via this portal, can be used only if you travel via Manas International Airport, Osh International Airport, Ak-dzol checkpoint."
+    }
+  ],
+  "policies": [
+    {
+      "id": "kyrgyz-covered-eaeu-ordinary-visa-free-2026",
+      "title": "Armenian and Kazakh ordinary passports: current visa-free regime",
+      "summary": "The current MFA regime API directly reports Visa free regime for Armenian and Kazakh ordinary passports.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["AM", "KZ"],
+      "conditions": [
+        "The direct current ordinary-passport results are positive but do not print a stay duration; no duration or rolling-period rule is inferred here.",
+        "This is an ordinary-passport visitor status only; work, residence, registration, special-document, security and individual-admission rules remain separate."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-covered-regime-api-replay-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-uzbek-ordinary-visa-free-2026",
+      "title": "Uzbek ordinary passports: current 60-day visa-free regime",
+      "summary": "The current MFA regime API directly reports Visa free regime up to 60 days for Uzbek ordinary passports.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["UZ"],
+      "conditions": [
+        "The direct current ordinary-passport result says Visa free regime up to 60 days; no rolling-period rule is inferred here.",
+        "This does not establish work, residence, registration, special-document, security or individual-admission rights."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-covered-regime-api-replay-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-mongolia-ordinary-visa-free-2026",
+      "title": "Mongolian ordinary passports: current 90-day visa-free regime",
+      "summary": "The current MFA regime query directly gives Mongolia's ordinary passport a visa-free regime up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["MN"],
+      "conditions": [
+        "The direct current ordinary-passport result says Visa free regime up to 90 days.",
+        "No work, residence, registration, special-document, security or individual-admission route is inferred."
+      ],
+      "sourceIds": ["kyrgyz-evisa-covered-regime-api-replay-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-gulf-six-ordinary-visa-free-2026",
+      "title": "Six Gulf ordinary passports: current 180-day visa-free regime",
+      "summary": "The current MFA regime API directly reports Visa free regime up to 180 days for the six named Gulf ordinary passports.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["AE", "QA", "KW", "SA", "BH", "OM"],
+      "conditions": [
+        "The named group is the United Arab Emirates, Qatar, Kuwait, Saudi Arabia, Bahrain and Oman.",
+        "Each direct current ordinary-passport result says Visa free regime up to 180 days; no rolling-period rule is inferred here.",
+        "This does not establish work, residence, registration, special-document, security or individual-admission rights."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-covered-regime-api-replay-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-current-selector-30-day-visa-free-2026",
+      "title": "Named ordinary passports: current 30-day Kyrgyz visa-free regime",
+      "summary": "The current MFA regime API directly reports Visa free regime up to 30 days for these named ordinary passport IDs.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["BN", "IL", "JP", "KR", "MY", "SG", "TH", "VN"],
+      "conditions": [
+        "Each exact current ordinary-passport query returns Visa free regime up to 30 days.",
+        "Facilitated-regime labels appearing in some responses are not interpreted as a different visitor route or used to override the direct visa-free result.",
+        "This does not establish work, residence, registration, transit, special-document, security or individual-admission rights."
+      ],
+      "sourceIds": ["kyrgyz-evisa-covered-regime-api-replay-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-tajik-ordinary-visa-free-2026",
+      "title": "Tajik ordinary passports: current visa-free regime",
+      "summary": "The current MFA regime API directly reports Visa free regime for Tajik ordinary passports.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["TJ"],
+      "conditions": [
+        "The direct current ordinary-passport result is positive but does not print a stay duration; no duration is inferred here.",
+        "This does not establish work, residence, registration, special-document, security or individual-admission rights."
+      ],
+      "sourceIds": ["kyrgyz-evisa-covered-regime-api-replay-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-hong-kong-macao-permanent-resident-visa-free-2026",
+      "title": "Hong Kong and Macao permanent residents: 30-day visa-free",
+      "summary": "The current MFA information page expressly grants the special 30-day visa-free regime to permanent residents of the Hong Kong and Macao SARs for all travel-document types.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["HK", "MO"],
+      "conditions": [
+        "Requires permanent-resident status in the relevant SAR and applies to ordinary, service and diplomatic travel documents; this policy records only the ordinary-passport baseline.",
+        "Stay is up to 30 days. No work, residence, registration, security or individual-admission right is inferred."
+      ],
+      "sourceIds": ["kyrgyz-evisa-covered-information-selector-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-maldives-ordinary-visa-free-2026",
+      "title": "Maldives ordinary passports: 30-day visa-free",
+      "summary": "The current MFA information page expressly gives Maldives citizens a 30-day visa-free regime for all travel-document types.",
+      "status": "visa_free",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["MV"],
+      "conditions": [
+        "Stay is up to 30 days; the official text covers all travel-document types, while this policy records ordinary passports only.",
+        "No work, residence, registration, security or individual-admission right is inferred."
+      ],
+      "sourceIds": ["kyrgyz-evisa-covered-information-selector-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kyrgyz-covered-named-ordinary-tourist-evisa-2026",
+      "title": "Indian, Chinese and Palestinian ordinary passports: Tourist eVisa",
+      "summary": "The current official application gate directly exposes Tourist (TS) for the exact India, China and Palestinian Territory selector IDs. With Ordinary selected, the direct product is tourism up to 30 days, electronically confirmed before entry.",
+      "status": "evisa",
+      "destinationCodes": ["KG"],
+      "passportCodes": ["IN", "CN", "PS"],
+      "conditions": [
+        "Direct current positive gates used IN=103, CN=46 and PS=170 (selector label Palestinian Territory), then the Ordinary document selection and Tourist TS product.",
+        "The Tourist TS result is for tourism up to 30 days and says it cannot be issued while the foreign national is in the Kyrgyz Republic.",
+        "The applicant completes and pays online and may enter only after receiving eVisa confirmation through the portal during its validity period.",
+        "An electronic visa received through the portal may be used only through Manas International Airport, Osh International Airport or Ak-dzol checkpoint.",
+        "No residence, third-country document, service, diplomatic, other-document, work, transit, security or individual-admission route is inferred."
+      ],
+      "sourceIds": [
+        "kyrgyz-evisa-covered-application-gate-form-2026",
+        "kyrgyz-evisa-covered-tourist-gate-replay-2026",
+        "kyrgyz-evisa-covered-ordinary-tourist-result-2026",
+        "kyrgyz-evisa-covered-electronic-confirmation-2026",
+        "kyrgyz-evisa-covered-electronic-checkpoints-2026",
+        "kyrgyz-evisa-covered-regime-api-replay-2026"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+        "label": "Kyrgyz Republic eVisa application",
+        "steps": [
+          "Select the exact passport country, Ordinary travel document and Tourist (TS) in the official eVisa form.",
+          "Complete the electronic application and payment through the official portal.",
+          "Receive eVisa confirmation before travel and use the listed electronic-visa checkpoint."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "KP",
+      "destinationCode": "KG",
+      "reason": "Current official materials conflict and no accessible controlling current law, treaty-status notice, amendment, suspension or hierarchy resolves them. The canonical Export Promotion and Investment Agency guidance, directly reviewed on 2026-08-21, expressly lists North Korea as visa-free; the live MFA visa-free guidance also lists КНДР, but is dated 2020. In contrast, the fresh session-bound current MFA nationality endpoint returns Visa free regime / Ordinary Passport: no for the Democratic Peoples Republic of Korea selector (ID 118), while the current form's positive Tourist gate and Ordinary product establish an eVisa option. That option cannot silently displace the direct official waiver guidance: a direct waiver passport may expose the same gate/product. The Export host was DNS-unavailable during this review, and the current Cabinet legal portal failed trusted TLS validation; neither failure is treated as evidence. KP is therefore held rather than classified as visa-free or eVisa.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.kg",
+        "export.gov.kg",
+        "gov.kg"
+      ]
+    }
+  ]
+}

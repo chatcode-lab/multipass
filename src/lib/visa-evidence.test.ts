@@ -918,7 +918,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "BN", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BN", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("KG")).toHaveLength(195);
+    expect(pairsFor("KG")).toHaveLength(193);
     expect(getVisaRelationshipEvidence("RS", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MV", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AL", "KG", "visa_free").supportsCurrentStatus).toBe(true);
@@ -933,9 +933,12 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("VE", "KG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ID", "KG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PH", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SC", "KG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "KG", snapshot.passports.AF.statuses.KG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("TW", "KG", snapshot.passports.TW.statuses.KG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("XK", "KG", snapshot.passports.XK.statuses.KG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CU", "KG", snapshot.passports.CU.statuses.KG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KP", "KG", snapshot.passports.KP.statuses.KG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("KG", "KG", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
@@ -3444,10 +3447,12 @@ describe("official visa evidence", () => {
       expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
     }
 
-    for (const destinationCode of ["AF", "CF", "TD", "CG", "GW", "IQ", "KW", "KG", "LR", "ML", "MM", "NE", "NG", "KP", "ST", "SS", "SD", "SY", "TM"] as const) {
+    for (const destinationCode of ["AF", "CF", "TD", "CG", "GW", "IQ", "KW", "LR", "ML", "MM", "NE", "NG", "KP", "ST", "SS", "SD", "SY", "TM"] as const) {
       expect(getVisaRelationshipEvidence("SC", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
       expect(snapshot.passports.SC.statuses[destinationCode]).toBe("visa_required");
     }
+    expect(getVisaRelationshipEvidence("SC", "KG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.SC.statuses.KG).toBe("evisa");
     for (const destinationCode of ["BD", "KH", "MK", "CV", "KM", "CI", "DJ", "SL", "TN", "SB", "GD"] as const) {
       expect(getVisaRelationshipEvidence("SC", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(snapshot.passports.SC.statuses[destinationCode]).toBe("visa_free");
@@ -5854,6 +5859,7 @@ describe("official visa evidence", () => {
       "egyptconsulate.co.uk",
       "mauritius-geneva.govmu.org",
       "pica.gov.jm",
+      "mfa.kg",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
