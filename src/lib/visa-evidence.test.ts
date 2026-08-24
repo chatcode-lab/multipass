@@ -1307,7 +1307,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("CG")).toHaveLength(27);
+    expect(pairsFor("CG")).toHaveLength(28);
     expect(getVisaRelationshipEvidence("CM", "CG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "CG", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CG", "visa_required").supportsCurrentStatus).toBe(true);
@@ -4916,6 +4916,22 @@ describe("official visa evidence", () => {
       ["SE", "SL"],
       ["JP", "TD"],
       ["JP", "UA"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("supports Denmark's reviewed Congo route without guessing Austrian or Slovak gaps", () => {
+    expect(snapshot.passports.DK.statuses.CG).toBe("visa_required");
+    expect(getVisaRelationshipEvidence("DK", "CG", "visa_required").supportsCurrentStatus).toBe(true);
+
+    for (const [passportCode, destinationCode] of [
+      ["AT", "SL"],
+      ["AT", "UA"],
+      ["DK", "LR"],
+      ["DK", "IQ"],
+      ["SK", "TD"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
