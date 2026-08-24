@@ -1,0 +1,88 @@
+{
+  "batchId": "guatemala-current-residual-pair-confirmations-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "guatemala-minex-current-visa-country-classification-2026",
+      "title": "Visas para extranjeros: country classification",
+      "url": "https://www.minex.gob.gt/din/26-visas-para-extranjeros",
+      "publisher": "Ministerio de Relaciones Exteriores de Guatemala",
+      "jurisdiction": "Guatemala",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "MINEX is Guatemala's competent foreign ministry, and this nationality-classification endpoint is on its official .gob.gt domain. The live endpoint is Cloudflare-protected in this review environment.",
+      "supportingExcerpt": "Categoría “A” Exento; Categoría “B” Visa consular; Categoría “C” Visa consultada."
+    },
+    {
+      "id": "guatemala-igm-current-country-category-guidance-2026",
+      "title": "Clasificación de países",
+      "url": "https://igm.gob.gt/clasificacion-de-paises/",
+      "publisher": "Instituto Guatemalteco de Migración",
+      "jurisdiction": "Guatemala",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "IGM is Guatemala's national migration authority and its live official page defines the three visitor-visa categories.",
+      "supportingExcerpt": "Los países que se encuentran en la categoría A, no necesitan visa para ingresar al territorio guatemalteco."
+    },
+    {
+      "id": "guatemala-igm-current-visa-faq-2026",
+      "title": "Consultas frecuentes para trámite de visas guatemaltecas",
+      "url": "https://igm.gob.gt/consultas-frecuentes-para-tramite-de-visas-guatemaltecas/",
+      "publisher": "Instituto Guatemalteco de Migración",
+      "jurisdiction": "Guatemala",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "IGM's live official visa FAQ says Category B and C foreign nationals must apply and distinguishes consular issuance from Institute consultation.",
+      "supportingExcerpt": "Las personas extranjeras que se encuentren clasificadas dentro de las categorías “B” y “C”"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "AD",
+      "destinationCode": "GT",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "Guatemala's current Foreign Ministry schedule places Andorra in both visa-exempt Category A and consular-visa Category B, so it does not establish one ordinary-passport result.",
+      "sourceIds": [
+        "guatemala-minex-current-visa-country-classification-2026",
+        "guatemala-igm-current-country-category-guidance-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "AD",
+      "destinationCode": "GT",
+      "reason": "The controlling current MINEX schedule places Andorra in both Category A and Category B. The official category guidance cannot reconcile those contradictory ordinary-passport results, so neither baseline is inferred.",
+      "searchedOfficialDomains": ["minex.gob.gt", "igm.gob.gt"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GT",
+      "reason": "MINEX's United Kingdom wording addresses certain British passports connected to Hong Kong, not an HKSAR ordinary passport. No current Guatemalan primary source directly maps this passport, and no substitute-document inference is made.",
+      "searchedOfficialDomains": ["minex.gob.gt", "igm.gob.gt", "immd.gov.hk"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "GT",
+      "reason": "No current Guatemalan primary source directly classifies an ordinary Macao SAR passport. China or other special-document wording, omission from a schedule and conditional visa-holder routes do not establish a baseline.",
+      "searchedOfficialDomains": ["minex.gob.gt", "igm.gob.gt", "dsi.gov.mo"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GT",
+      "reason": "Kosovo is not expressly named in the current Guatemalan ordinary-passport categories. The categories and generic advance-visa process do not create an inferred residual rule or resolve document-recognition treatment.",
+      "searchedOfficialDomains": ["minex.gob.gt", "igm.gob.gt", "rks-gov.net"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "GT",
+      "reason": "The current schedule's Sudan row does not directly classify an ordinary South Sudan passport. No current Guatemalan or South Sudanese authority supplies a separate visitor route; a legacy-name or complement inference is excluded.",
+      "searchedOfficialDomains": ["minex.gob.gt", "igm.gob.gt", "mofaic.gov.ss"]
+    }
+  ]
+}

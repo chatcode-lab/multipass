@@ -2226,6 +2226,14 @@ Nigeria adds visa-free access for Cameroon and Chad under its current visa-aboli
 
 Saint Lucia adds no normalizable relationship. Georgia appears in both the visa-required and arrival schedules while an announced waiver lacks entry-into-force proof; the Democratic Republic of the Congo cannot inherit the arrival result published under the legacy name `Zaire`. Six Schedule-1-only nationalities do not have a proven ordinary-passport issuance route, and Vatican City, Timor-Leste and South Sudan are not directly mapped. All eleven rows remain documented as unresolved instead of assigning a route from discretionary airport filing, historical names or schedule omission.
 
+## Pass 237 result: current Moldova, Guatemala and Lebanon residuals
+
+Three exact and independently cross-reviewed destination audits add no normalizable relationship, so complete-matrix evidence remains 39,067 of 44,974 relationships (86.9%). The public `/status` matrix remains 39,067 fresh and 5,907 not-covered rows, with zero old or stale rows as of 24 August 2026. Canonical evidence now contains 619 reviewed batches, 2,741 official sources and 1,785 policies.
+
+Moldova's current Foreign Ministry schedules do not directly map Dominica, Taiwan or Kosovo. The Dominican Republic appears in both the required-visa and visa-exempt lists, while the required-list exception depends on a qualifying third-country visa or residence permit. Guatemala's current schedule places Andorra in both visa-exempt Category A and consular-visa Category B; Hong Kong SAR, Macao SAR and Kosovo are not directly mapped, and South Sudan cannot inherit the schedule's Sudan row.
+
+Lebanon's current General Security page does not establish a normal ordinary-passport visitor route for Israel. Its Ghanaian and Egyptian arrival wording overlaps a female-tourist prior-authorisation rule, while its broad Iraqi tourist wording overlaps a later automatic route limited to specified occupations. All thirteen relationships remain reviewed holds rather than flattening official contradictions, gender or profession conditions, possible prohibitions, document conditions, omissions or legacy names into false access statuses.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

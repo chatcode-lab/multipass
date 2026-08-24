@@ -3494,6 +3494,40 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves current Moldova, Guatemala, and Lebanon residual conflicts as reviewed holds", () => {
+    for (const sourceId of [
+      "moldova-mfa-current-foreign-visa-regime-2026",
+      "guatemala-minex-current-visa-country-classification-2026",
+      "lebanon-general-security-current-tourist-arrival-rules-2026",
+    ] as const) {
+      expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["DM", "MD"],
+      ["TW", "MD"],
+      ["XK", "MD"],
+      ["DO", "MD"],
+      ["AD", "GT"],
+      ["HK", "GT"],
+      ["MO", "GT"],
+      ["XK", "GT"],
+      ["SS", "GT"],
+      ["IL", "LB"],
+      ["GH", "LB"],
+      ["EG", "LB"],
+      ["IQ", "LB"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("closes the reviewed Jamaica, Oman, Suriname, and Gambia final gaps", () => {
     for (const [passportCode, destinationCode, status] of [
       ["JM", "JO", "visa_on_arrival"],
