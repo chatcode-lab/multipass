@@ -4114,7 +4114,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.dsi.gov.mo/api/v1/web/entry/country/463?travelPermit=0",
     reviewedAt: "2026-08-24",
   },
-  ...(["RS", "PL", "KZ"] as const).map((passportCode) => ({
+  ...(["RS", "PL", "KZ", "CZ", "BG"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "TD" as const,
     status: "evisa" as const,
@@ -4144,6 +4144,22 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     status: "visa_on_arrival",
     reason: "Poland's current Foreign Ministry guidance says Polish visitors can obtain Syria's visa directly at named international airports and Lebanon or Jordan land crossings.",
     sourceUrl: "https://odyseusz.gov.pl/api/v1/informacje/profile-panstw/SY",
+    reviewedAt: "2026-08-24",
+  },
+  {
+    passportCode: "BG",
+    destinationCode: "KM",
+    status: "visa_required",
+    reason: "Bulgaria's current Foreign Ministry guidance requires ordinary Bulgarian visitors to obtain the Comorian visa at the Embassy in Paris before travel.",
+    sourceUrl: "https://www.mfa.bg/bg/embassyinfo/comoros",
+    reviewedAt: "2026-08-24",
+  },
+  {
+    passportCode: "BG",
+    destinationCode: "IR",
+    status: "visa_required",
+    reason: "Bulgaria's current Foreign Ministry guidance says the online form is followed by visa collection at Iran's Embassy in Sofia before travel.",
+    sourceUrl: "https://www.mfa.bg/bg/embassyinfo/iran",
     reviewedAt: "2026-08-24",
   },
 ] as const;

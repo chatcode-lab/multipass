@@ -416,4 +416,11 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.MD.statuses.NI).toBe("visa_required");
     expect(snapshot.passports.VE.statuses.NI).toBe("visa_required");
   });
+
+  it("applies the current Czech and Bulgarian residual corrections", () => {
+    expect(snapshot.passports.CZ.statuses.TD).toBe("evisa");
+    expect(snapshot.passports.BG.statuses.TD).toBe("evisa");
+    expect(snapshot.passports.BG.statuses.KM).toBe("visa_required");
+    expect(snapshot.passports.BG.statuses.IR).toBe("visa_required");
+  });
 });
