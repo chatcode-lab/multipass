@@ -1982,18 +1982,29 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "MH");
 
-    expect(pairs).toHaveLength(127);
+    expect(pairs).toHaveLength(128);
     expect(getVisaRelationshipEvidence("MH", "MH", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "MH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "MH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TO", "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LC", "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AM", "MH", "visa_required").supportsCurrentStatus).toBe(true);
     for (const passportCode of ["PK", "SR", "BJ", "SA", "PA", "GM", "RW", "BF", "RS", "SM", "JM", "NP", "QA", "AG"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     }
     expect(getVisaRelationshipEvidence("GT", "MH", snapshot.passports.GT.statuses.MH).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BS", "MH", snapshot.passports.BS.statuses.MH).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("AL", "MH", snapshot.passports.AL.statuses.MH).supportsCurrentStatus).toBe(false);
+  });
+
+  it("retains direct Kosovo waiver evidence while keeping negative route checks unresolved", () => {
+    expect(getVisaRelationshipEvidence("XK", "ES", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "NO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("XK", "CH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NZ", "CV", snapshot.passports.NZ.statuses.CV).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CL", "KW", snapshot.passports.CL.statuses.KW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CM", "MH", snapshot.passports.CM.statuses.MH).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KR", "TT", snapshot.passports.KR.statuses.TT).supportsCurrentStatus).toBe(false);
   });
 
   it("maps Kiribati's current exemption schedule and advance-visa complement", () => {
@@ -4673,6 +4684,7 @@ describe("official visa evidence", () => {
       "www.auswaertiges-amt.de",
       "www.anzen.mofa.go.jp",
       "www.sem.admin.ch",
+      "www.udi.no",
       "immi.homeaffairs.gov.au",
       "www.legislation.gov.au",
       "www.mofa.go.jp",
@@ -4845,6 +4857,7 @@ describe("official visa evidence", () => {
       "foreign.gov.tt",
       "homelandsecurity.gov.tt",
       "ttconnect.gov.tt",
+      "evisa.ttservices.online",
       "mpmc.gov.ws",
       "www.ag.gov.ws",
       "www.samoa.travel",
@@ -4855,6 +4868,8 @@ describe("official visa evidence", () => {
       "bcbp.pw",
       "immigration.gov.vu",
       "www.gov.cv",
+      "www.aai.gov.cv",
+      "www.ease.gov.cv",
       "portalconsular.mnec.gov.cv",
       "boe.incv.cv",
       "evisa.gov.mz",

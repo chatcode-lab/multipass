@@ -1,6 +1,6 @@
 {
   "batchId": "kuwait-live-eligibility-api-residual-recheck-2026",
-  "researchedAt": "2026-08-22",
+  "researchedAt": "2026-08-24",
   "sources": [
     {
       "id": "kuwait-moi-current-arrival-nationality-dataset-recheck",
@@ -10,21 +10,21 @@
       "jurisdiction": "Kuwait",
       "kind": "official-dataset",
       "language": "English and Arabic",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-24",
       "officialityEvidence": "The current Kuwait Visa front end served from the Ministry of Interior domain calls this first-party endpoint; fresh sessions returned a successful 53-record dataset.",
       "supportingExcerpt": "\"visaOnArrival\":true"
     },
     {
-      "id": "kuwait-moi-current-encrypted-country-list-flow-recheck",
-      "title": "Kuwait Visa: encrypted country-list eligibility flow",
-      "url": "https://kuwaitvisa.moi.gov.kw/kuwaitVisa/portal/countryList",
+      "id": "kuwait-moi-current-tourist-nationality-eligibility-recheck",
+      "title": "Kuwait Visa: live tourist nationality-eligibility endpoint",
+      "url": "https://kuwaitvisa.moi.gov.kw/kuwaitVisa/portal/checkCountryEligibility",
       "publisher": "Ministry of Interior, State of Kuwait",
       "jurisdiction": "Kuwait",
       "kind": "official-portal",
       "language": "English and Arabic",
-      "reviewedAt": "2026-08-22",
-      "officialityEvidence": "The current Ministry of Interior front-end bundle configures this endpoint and RSA-encrypts a visaTypeId request before posting it.",
-      "supportingExcerpt": "visaTypeId must be a number"
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The current Ministry of Interior front end submits RSA-encrypted tourist visaTypeId and ordinary-passport OCR-code requests to this first-party endpoint. Fresh direct checks for all 140 scoped codes returned code 1 with each electronic/arrival flag false.",
+      "supportingExcerpt": "Applicant is not eligible for applying e-visa."
     },
     {
       "id": "kuwait-moi-current-tourist-instructions-data-recheck",
@@ -34,7 +34,7 @@
       "jurisdiction": "Kuwait",
       "kind": "official-dataset",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-24",
       "officialityEvidence": "The live Ministry of Interior Kuwait Visa application serves this no-cache English instruction dataset.",
       "supportingExcerpt": "Countries Eligible for E-Visa or Visa on Arrival"
     }
@@ -45,7 +45,7 @@
     {
       "passportCode": "CL",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -55,7 +55,7 @@
     {
       "passportCode": "AR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -65,7 +65,7 @@
     {
       "passportCode": "BR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -75,7 +75,7 @@
     {
       "passportCode": "BB",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -85,7 +85,7 @@
     {
       "passportCode": "IL",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -95,7 +95,7 @@
     {
       "passportCode": "BS",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -105,7 +105,7 @@
     {
       "passportCode": "MX",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -115,7 +115,7 @@
     {
       "passportCode": "VC",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -125,7 +125,7 @@
     {
       "passportCode": "UY",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -135,7 +135,7 @@
     {
       "passportCode": "KN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -145,7 +145,7 @@
     {
       "passportCode": "AG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -155,7 +155,7 @@
     {
       "passportCode": "SC",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -165,7 +165,7 @@
     {
       "passportCode": "MU",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -175,7 +175,7 @@
     {
       "passportCode": "CR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -185,7 +185,7 @@
     {
       "passportCode": "PA",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -195,7 +195,7 @@
     {
       "passportCode": "LC",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -205,7 +205,7 @@
     {
       "passportCode": "GD",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -215,7 +215,7 @@
     {
       "passportCode": "PY",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -225,7 +225,7 @@
     {
       "passportCode": "PE",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -235,7 +235,7 @@
     {
       "passportCode": "TT",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -245,7 +245,7 @@
     {
       "passportCode": "DM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -255,7 +255,7 @@
     {
       "passportCode": "TW",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -265,7 +265,7 @@
     {
       "passportCode": "SB",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -275,7 +275,7 @@
     {
       "passportCode": "WS",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -285,7 +285,7 @@
     {
       "passportCode": "GT",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -295,7 +295,7 @@
     {
       "passportCode": "RS",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -305,7 +305,7 @@
     {
       "passportCode": "CO",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -315,7 +315,7 @@
     {
       "passportCode": "SV",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -325,7 +325,7 @@
     {
       "passportCode": "MH",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -335,7 +335,7 @@
     {
       "passportCode": "TO",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -345,7 +345,7 @@
     {
       "passportCode": "TV",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -355,7 +355,7 @@
     {
       "passportCode": "HN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -365,7 +365,7 @@
     {
       "passportCode": "ME",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -375,7 +375,7 @@
     {
       "passportCode": "NI",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -385,7 +385,7 @@
     {
       "passportCode": "KI",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -395,7 +395,7 @@
     {
       "passportCode": "FM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -405,7 +405,7 @@
     {
       "passportCode": "MK",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -415,7 +415,7 @@
     {
       "passportCode": "PW",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -425,7 +425,7 @@
     {
       "passportCode": "BA",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -435,7 +435,7 @@
     {
       "passportCode": "AL",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -445,7 +445,7 @@
     {
       "passportCode": "VE",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -455,7 +455,7 @@
     {
       "passportCode": "MD",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -465,7 +465,7 @@
     {
       "passportCode": "RU",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -475,7 +475,7 @@
     {
       "passportCode": "ZA",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -485,7 +485,7 @@
     {
       "passportCode": "TL",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -495,7 +495,7 @@
     {
       "passportCode": "BZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -505,7 +505,7 @@
     {
       "passportCode": "EC",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -515,7 +515,7 @@
     {
       "passportCode": "MV",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -525,7 +525,7 @@
     {
       "passportCode": "FJ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -535,7 +535,7 @@
     {
       "passportCode": "NR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -545,7 +545,7 @@
     {
       "passportCode": "XK",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -555,7 +555,7 @@
     {
       "passportCode": "VU",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -565,7 +565,7 @@
     {
       "passportCode": "GY",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -575,7 +575,7 @@
     {
       "passportCode": "JM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -585,7 +585,7 @@
     {
       "passportCode": "CN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -595,7 +595,7 @@
     {
       "passportCode": "PG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -605,7 +605,7 @@
     {
       "passportCode": "BW",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -615,7 +615,7 @@
     {
       "passportCode": "TH",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -625,7 +625,7 @@
     {
       "passportCode": "BY",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -635,7 +635,7 @@
     {
       "passportCode": "BO",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -645,7 +645,7 @@
     {
       "passportCode": "SR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -655,7 +655,7 @@
     {
       "passportCode": "KZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -665,7 +665,7 @@
     {
       "passportCode": "ID",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -675,7 +675,7 @@
     {
       "passportCode": "LS",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -685,7 +685,7 @@
     {
       "passportCode": "DO",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -695,7 +695,7 @@
     {
       "passportCode": "NA",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -705,7 +705,7 @@
     {
       "passportCode": "SZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -715,7 +715,7 @@
     {
       "passportCode": "MA",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -725,7 +725,7 @@
     {
       "passportCode": "AZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -735,7 +735,7 @@
     {
       "passportCode": "GH",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -745,7 +745,7 @@
     {
       "passportCode": "KE",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -755,7 +755,7 @@
     {
       "passportCode": "MW",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -765,7 +765,7 @@
     {
       "passportCode": "TZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -775,7 +775,7 @@
     {
       "passportCode": "GM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -785,7 +785,7 @@
     {
       "passportCode": "RW",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -795,7 +795,7 @@
     {
       "passportCode": "AM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -805,7 +805,7 @@
     {
       "passportCode": "PH",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -815,7 +815,7 @@
     {
       "passportCode": "TN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -825,7 +825,7 @@
     {
       "passportCode": "MN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -835,7 +835,7 @@
     {
       "passportCode": "ZM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -845,7 +845,7 @@
     {
       "passportCode": "CV",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -855,7 +855,7 @@
     {
       "passportCode": "MZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -865,7 +865,7 @@
     {
       "passportCode": "UG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -875,7 +875,7 @@
     {
       "passportCode": "BJ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -885,7 +885,7 @@
     {
       "passportCode": "SL",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -895,7 +895,7 @@
     {
       "passportCode": "KG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -905,7 +905,7 @@
     {
       "passportCode": "ST",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -915,7 +915,7 @@
     {
       "passportCode": "UZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -925,7 +925,7 @@
     {
       "passportCode": "ZW",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -935,7 +935,7 @@
     {
       "passportCode": "BF",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -945,7 +945,7 @@
     {
       "passportCode": "IN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -955,7 +955,7 @@
     {
       "passportCode": "CI",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -965,7 +965,7 @@
     {
       "passportCode": "CU",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -975,7 +975,7 @@
     {
       "passportCode": "MG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -985,7 +985,7 @@
     {
       "passportCode": "SN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -995,7 +995,7 @@
     {
       "passportCode": "GA",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1005,7 +1005,7 @@
     {
       "passportCode": "NE",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1015,7 +1015,7 @@
     {
       "passportCode": "TG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1025,7 +1025,7 @@
     {
       "passportCode": "TJ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1035,7 +1035,7 @@
     {
       "passportCode": "GN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1045,7 +1045,7 @@
     {
       "passportCode": "MR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1055,7 +1055,7 @@
     {
       "passportCode": "GQ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1065,7 +1065,7 @@
     {
       "passportCode": "ML",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1075,7 +1075,7 @@
     {
       "passportCode": "VN",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1085,7 +1085,7 @@
     {
       "passportCode": "TD",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1095,7 +1095,7 @@
     {
       "passportCode": "GW",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1105,7 +1105,7 @@
     {
       "passportCode": "DZ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1115,7 +1115,7 @@
     {
       "passportCode": "KM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1125,7 +1125,7 @@
     {
       "passportCode": "AO",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1135,7 +1135,7 @@
     {
       "passportCode": "CM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1145,7 +1145,7 @@
     {
       "passportCode": "CG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1155,7 +1155,7 @@
     {
       "passportCode": "HT",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1165,7 +1165,7 @@
     {
       "passportCode": "JO",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1175,7 +1175,7 @@
     {
       "passportCode": "LR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1185,7 +1185,7 @@
     {
       "passportCode": "CF",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1195,7 +1195,7 @@
     {
       "passportCode": "BI",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1205,7 +1205,7 @@
     {
       "passportCode": "TM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1215,7 +1215,7 @@
     {
       "passportCode": "EG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1225,7 +1225,7 @@
     {
       "passportCode": "LB",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1235,7 +1235,7 @@
     {
       "passportCode": "CD",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1245,7 +1245,7 @@
     {
       "passportCode": "DJ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1255,7 +1255,7 @@
     {
       "passportCode": "MM",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1265,7 +1265,7 @@
     {
       "passportCode": "NG",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1275,7 +1275,7 @@
     {
       "passportCode": "LK",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1285,7 +1285,7 @@
     {
       "passportCode": "ER",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1295,7 +1295,7 @@
     {
       "passportCode": "IR",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1305,7 +1305,7 @@
     {
       "passportCode": "LY",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1315,7 +1315,7 @@
     {
       "passportCode": "KP",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1325,7 +1325,7 @@
     {
       "passportCode": "ET",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1335,7 +1335,7 @@
     {
       "passportCode": "PS",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1345,7 +1345,7 @@
     {
       "passportCode": "SS",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1355,7 +1355,7 @@
     {
       "passportCode": "SD",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1365,7 +1365,7 @@
     {
       "passportCode": "BD",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1375,7 +1375,7 @@
     {
       "passportCode": "PK",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1385,7 +1385,7 @@
     {
       "passportCode": "NP",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1395,7 +1395,7 @@
     {
       "passportCode": "SO",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1405,7 +1405,7 @@
     {
       "passportCode": "YE",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1415,7 +1415,7 @@
     {
       "passportCode": "IQ",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1425,7 +1425,7 @@
     {
       "passportCode": "SY",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",
@@ -1435,7 +1435,7 @@
     {
       "passportCode": "AF",
       "destinationCode": "KW",
-      "reason": "Fresh Ministry of Interior sessions returned the same 53-entry visa-on-arrival dataset, but the current encrypted countryList flow supplied broad product collections by visaTypeId rather than a positive controlling tourist-nationality decision for this ordinary passport. No eVisa, visa-on-arrival, or advance-visa baseline is established; GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
+      "reason": "Fresh direct Ministry of Interior tourist checks for this ordinary-passport OCR code returned false for visaOnArrival, visaOnline and evisa. That excludes only those arrival/electronic routes; it does not establish an unconditional embassy or advance-visa baseline. GCC residence, profession, US/UK/Schengen document, sponsor and other conditional routes are excluded.",
       "searchedOfficialDomains": [
         "kuwaitvisa.moi.gov.kw",
         "moi.gov.kw",

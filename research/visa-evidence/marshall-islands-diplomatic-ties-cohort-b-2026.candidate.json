@@ -1,6 +1,6 @@
 {
   "batchId": "marshall-islands-diplomatic-ties-cohort-b-2026",
-  "researchedAt": "2026-08-22",
+  "researchedAt": "2026-08-24",
   "sources": [
     {
       "id": "rmi-nitijela-current-immigration-regulations-2009-diplomatic-ties",
@@ -10,7 +10,7 @@
       "jurisdiction": "Republic of the Marshall Islands",
       "kind": "law",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-24",
       "officialityEvidence": "Nitijela's live legislation index lists the Immigration Regulations, 2009 and links this Parliament-hosted regulatory text.",
       "supportingExcerpt": "Visitor Visas, to citizens of Countries which the Republic has diplomatic ties with."
     },
@@ -22,9 +22,9 @@
       "jurisdiction": "Republic of the Marshall Islands",
       "kind": "government-guidance",
       "language": "English",
-      "reviewedAt": "2026-08-22",
-      "officialityEvidence": "The live Embassy page identifies itself as the Republic of the Marshall Islands Embassy's consular information service and describes the current visitor-visa categories.",
-      "supportingExcerpt": "Citizens of the countries that have diplomatic relations with the Republic of the Marshall Islands will be granted Visa On Arrival."
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Embassy consular page publishes a complete A/B/C visitor-visa partition and an express residual rule for countries outside the named exemptions and diplomatic-relations cohort. Its linked country summary returned HTTP 404 on review.",
+      "supportingExcerpt": "Citizens from ALL OTHER countries not listed in A or B above must apply for visa PRIOR TO traveling to the Republic."
     },
     {
       "id": "armenia-mfa-current-marshall-islands-no-diplomatic-relations",
@@ -34,20 +34,32 @@
       "jurisdiction": "Republic of Armenia",
       "kind": "government-guidance",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-24",
       "officialityEvidence": "Armenia's live Foreign Ministry bilateral-relations page is the Ministry's country-specific record for the Republic of the Marshall Islands and was updated 18 May 2026.",
       "supportingExcerpt": "Diplomatic relations between the Republic of Armenia and the Republic of the Marshall Islands have not been established."
     }
   ],
-  "policies": [],
+  "policies": [
+    {
+      "id": "armenian-ordinary-passports-marshall-islands-advance-visitor-visa-2026",
+      "title": "Armenian ordinary passports: Marshall Islands advance visitor visa",
+      "summary": "The Marshall Islands Embassy requires countries outside its named exemptions and diplomatic-relations cohort to obtain a visa before travel. Armenia's current Foreign Ministry record expressly says bilateral diplomatic relations have not been established.",
+      "status": "visa_required",
+      "destinationCodes": ["MH"],
+      "passportCodes": ["AM"],
+      "conditions": [
+        "Applies to a current ordinary Armenian passport for short visitor travel. Armenia is not in the Embassy's named A exemption cohort, and Armenia's Foreign Ministry expressly establishes that it is outside the diplomatic-relations B cohort.",
+        "The advance visitor-visa rule does not promise approval or admission and does not cover residence, work, business licensing, diplomatic or official passports, crew, visiting forces, international-organization exemptions or other special categories."
+      ],
+      "sourceIds": [
+        "rmi-embassy-current-consular-diplomatic-ties-visa-guidance",
+        "armenia-mfa-current-marshall-islands-no-diplomatic-relations"
+      ],
+      "confidence": "high"
+    }
+  ],
   "conflicts": [],
   "unresolved": [
-    {
-      "passportCode": "AM",
-      "destinationCode": "MH",
-      "reason": "Armenia's current Foreign Ministry record expressly says diplomatic relations with the RMI have not been established. The RMI rule therefore cannot support a visa-on-arrival finding. This audit does not infer a prior-visa outcome from a schedule complement, so the ordinary-passport route remains held.",
-      "searchedOfficialDomains": ["mfa.am", "rmiembassyus.org", "rmiimmigration.org", "rmiparliament.org", "rminitijela.com"]
-    },
     {
       "passportCode": "TN",
       "destinationCode": "MH",
