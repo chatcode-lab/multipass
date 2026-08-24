@@ -4178,4 +4178,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "MX",
+    destinationCode: "GW",
+    status: "visa_required",
+    reason: "Mexico's current Foreign Ministry travel guide requires Mexican visitors to obtain a Guinea-Bissau visa through a diplomatic mission before travel.",
+    sourceUrl: "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/339-guinea-bissau",
+    reviewedAt: "2026-08-24",
+  },
+  {
+    passportCode: "CO",
+    destinationCode: "SY",
+    status: "visa_required",
+    reason: "Colombia's current Foreign Ministry table requires an ordinary consular visa, and Syria's current aeronautical entry guidance requires visitors to obtain an entry visa from a Syrian diplomatic mission before travel unless exempt.",
+    sourceUrl: "https://www.eaip.gaca.gov.sy/section/40",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;

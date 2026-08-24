@@ -1,0 +1,202 @@
+{
+  "batchId": "colombia-current-final-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "colombia-mfa-may-2026-outbound-visitor-table-current",
+      "title": "Lista de países que exigen visa de turismo a colombianos",
+      "url": "https://www.cancilleria.gov.co/sites/default/files/FOTOS2025/Lista-Paises-exigen-visa-mayo-2026.pdf",
+      "publisher": "Ministry of Foreign Affairs of Colombia",
+      "jurisdiction": "Colombia",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live May 2026 country-by-country visitor table is published on the Colombian Foreign Ministry's official domain and directly states Colombian travellers' visa routes.",
+      "supportingExcerpt": "LISTA DE PAÍSES QUE EXIGEN VISA DE TURISMO A COLOMBIANOS"
+    },
+    {
+      "id": "niger-mfa-current-foreign-visitor-entry-guidance",
+      "title": "Entrée au Niger",
+      "url": "https://diplomatie.gouv.ne/index.php/services-aux-usagers/entree-au-niger?tmpl=component",
+      "publisher": "Ministry of Foreign Affairs of Niger",
+      "jurisdiction": "Niger",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Niger's Foreign Ministry publishes the foreign-visitor entry rule, ordinary consular application channel, and narrow minister-authorised border exception on its official domain.",
+      "supportingExcerpt": "En principe la demande de visa se fait auprès de la représentation diplomatique ou consulaire du Niger."
+    },
+    {
+      "id": "syria-gaca-current-passenger-entry-guidance-2026",
+      "title": "GEN 1.3 — Entry, Transit and Departure of Passengers and Crew",
+      "url": "https://www.eaip.gaca.gov.sy/section/40",
+      "publisher": "Syrian General Authority of Civil Aviation",
+      "jurisdiction": "Syria",
+      "kind": "government-guidance",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live eAIP is published at the Syrian civil-aviation authority's official .gov.sy subdomain and identifies itself as Syria's official ICAO Annex 15 publication.",
+      "supportingExcerpt": "Entry visa (obtained in advance from a Syrian diplomatic mission, unless exempt)"
+    }
+  ],
+  "policies": [
+    {
+      "id": "colombian-ordinary-passport-niger-consular-visitor-visa-2026",
+      "title": "Colombian ordinary passports: Niger advance visitor visa",
+      "summary": "Colombia's current country-specific visitor table and Niger's Foreign Ministry both establish the ordinary visitor baseline as an advance consular Nigerien visa.",
+      "status": "visa_required",
+      "destinationCodes": ["NE"],
+      "passportCodes": ["CO"],
+      "conditions": [
+        "This covers short tourism or business travel on an ordinary Colombian passport only.",
+        "Colombia's current table says there is no conditional Colombian exemption and that neither eVisa nor visa on arrival is available for this route.",
+        "Niger's Foreign Ministry says visas are normally requested from its diplomatic or consular representation. Its exceptional border route requires Interior Minister authorisation and is not treated as the ordinary Colombian-passport baseline.",
+        "Work, residence, transit, diplomatic, official, service and special-document treatment, carrier requirements and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "colombia-mfa-may-2026-outbound-visitor-table-current",
+        "niger-mfa-current-foreign-visitor-entry-guidance"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "colombian-ordinary-passport-syria-consular-visitor-visa-2026",
+      "title": "Colombian ordinary passports: Syria advance visitor visa",
+      "summary": "Colombia's current visitor table and Syria's current civil-aviation entry publication establish an advance diplomatic-mission visa for an ordinary Colombian short visitor, not electronic issuance.",
+      "status": "visa_required",
+      "destinationCodes": ["SY"],
+      "passportCodes": ["CO"],
+      "conditions": [
+        "This applies to short tourism, business or family-visit travel using an ordinary Colombian passport.",
+        "The current Colombian table says an ordinary visa must be processed at a consulate; many visas are linked to a tour organised by an agency.",
+        "The organised-tour condition, security and operational requirements remain material. Work, residence, transit, special passports and final admission are outside scope."
+      ],
+      "sourceIds": [
+        "colombia-mfa-may-2026-outbound-visitor-table-current",
+        "syria-gaca-current-passenger-entry-guidance-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CO",
+      "destinationCode": "AF",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "ambiguous (current Colombian table describes a tourism eVisa via authorised agencies)",
+      "explanation": "The live Colombian table describes an eVisa via authorised tourism agencies and no arrival route, unlike the fallback advance-visa label. It does not establish a current reliable Afghan ordinary-passport issuance workflow, so no normalized replacement is assigned.",
+      "sourceIds": ["colombia-mfa-may-2026-outbound-visitor-table-current"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "SD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "ambiguous (current Colombian table describes eVisa or visa on arrival)",
+      "explanation": "The live Colombian table names electronic and border-issued Sudan visitor alternatives, which conflicts with a plain advance-visa fallback but does not identify one unconditional ordinary Colombian-passport route.",
+      "sourceIds": ["colombia-mfa-may-2026-outbound-visitor-table-current"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "SY",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Colombia's current table directs Colombian tourism, business and family visitors to an ordinary consular visa, and Syria's current eAIP says entry visas are obtained in advance from a Syrian diplomatic mission unless exempt; neither source describes electronic issuance for this route.",
+      "sourceIds": [
+        "colombia-mfa-may-2026-outbound-visitor-table-current",
+        "syria-gaca-current-passenger-entry-guidance-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "CO",
+      "destinationCode": "AF",
+      "reason": "Colombia's live table describes a tourism eVisa via authorised agencies, but no current reliable Afghan primary source directly establishes the ordinary Colombian-passport application's actual electronic, mission or border issuance timing. No route is inferred from a generic form or a compromised source.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mfa.gov.af", "econsulate.mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "AO",
+      "reason": "The live Colombian table describes both an advance consular visa and an eVisa for Angola. Angola's official portal is a generic request interface and does not directly map an ordinary Colombian passport to one actual issuance route, so the alternatives are not flattened.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "sme.gov.ao", "smevisa.gov.ao", "mirex.gov.ao"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "BF",
+      "reason": "The live Colombian table describes a prior consular visa or an optional official electronic route for Burkina Faso. Current accessible destination material did not directly establish the ordinary Colombian passport's actual issuance timing, so online filing is not normalized as an eVisa.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "diplomatie.gov.bf", "service-public.gov.bf", "visaburkina.bf"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "KM",
+      "reason": "The current Colombian table names both electronic and arrival-issued Comorian visitor routes. No current Comorian primary source directly selects one route for an ordinary Colombian passport, so neither alternative is assumed to be the baseline.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "gouv.km", "douane.gov.km", "mirex.gov.km"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "IQ",
+      "reason": "The Colombian table distinguishes federal Iraq's operator and ministerial-approval route from limited electronic cases such as the Kurdistan Region. Federal and regional treatment cannot be collapsed into one ordinary Colombian-passport result.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mofa.gov.iq", "ur.gov.iq", "eservice.evisa.iq"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "KG",
+      "reason": "Colombia's table confirms visa liability but supplies no issuance timing. Kyrgyzstan's official service says eligibility depends on a country, passport-type and visa-type selection; no reproducible ordinary Colombian result was published, and portal availability is not proof.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "evisa.e-gov.kg", "mfa.gov.kg"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "LR",
+      "reason": "The Colombian table names both eVisa and visa-on-arrival alternatives. Liberia Immigration says its arrival route is unavailable where a Liberian embassy is in the traveller's country, but no current official source directly maps the resulting route for an ordinary Colombian passport.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "lis.gov.lr", "visaonarrival.lis.gov.lr", "mofa.gov.lr"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "KP",
+      "reason": "The live Colombian table establishes only visa liability. No current reliable DPRK primary source establishes a usable ordinary Colombian-passport short-visitor issuance route or timing; operational restrictions are not normalized as a visa category.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mfa.gov.kp", "naenara.com.kp"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "PS",
+      "reason": "Although Colombia's table says an ordinary passport needs a consular visa for Palestinian territories, Israeli, Palestinian and Egyptian crossing, permit and security controls do not establish one Palestine-wide ordinary Colombian-passport visitor status.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mofa.pna.ps", "gov.il", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "ST",
+      "reason": "The current Colombian table describes São Tomé and Príncipe as permitting either an eVisa or visa on arrival. No current destination primary source directly identifies one ordinary Colombian-passport baseline, so the alternatives remain separate.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mne.gov.st", "smf.st"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "SA",
+      "reason": "The live Colombian table makes its Saudi electronic and arrival alternatives conditional on a qualifying third-country visa or GCC residence. Those conditions do not establish an unconditional ordinary Colombian-passport visitor issuance route, and no conclusion is drawn from an eligibility-list omission.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mofa.gov.sa", "visa.visitsaudi.com"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "SL",
+      "reason": "The Colombian table says most Colombians need either an eVisa or an embassy visa, while a narrow visa-free route depends on qualifying third-country visas. Sierra Leone's official electronic service does not publish a direct ordinary Colombian nationality result or one unconditioned issuance baseline.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "immigration.gov.sl", "evisa.sl"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "SS",
+      "reason": "Colombia's table describes South Sudan's faster eVisa and consular alternatives. Its official eVisa workflow proves electronic pre-travel delivery generally, but no current destination nationality source directly maps the ordinary Colombian passport to that route rather than mission processing.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "evisa.gov.ss", "mofaic.gov.ss", "immigration.eservices.gov.ss"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "SD",
+      "reason": "The live Colombian table describes Sudan eVisa and arrival-visa alternatives for up to 30 days. No current destination primary source directly selects an unconditional ordinary Colombian-passport issuance route, so the conflict is recorded without guessing a normalized replacement.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mofa.gov.sd", "passports.gov.sd", "sca.gov.sd"]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "TM",
+      "reason": "Colombia's current table establishes visa liability but no issuance timing. Current Turkmen primary material did not directly establish a Colombian ordinary-passport tourist route independent of invitation, mission or operational conditions.",
+      "searchedOfficialDomains": ["cancilleria.gov.co", "mfa.gov.tm", "migration.gov.tm"]
+    }
+  ]
+}
