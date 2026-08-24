@@ -271,12 +271,12 @@ describe("official visa evidence", () => {
     const barbadosPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "BB");
 
-    expect(barbadosPairs).toHaveLength(198);
+    expect(barbadosPairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("CG", "BB", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HT", "BB", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "BB", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "BB", "evisa").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("MV", "BB", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("MV", "BB", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PS", "BB", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
@@ -4951,6 +4951,8 @@ describe("official visa evidence", () => {
       "mirex.gob.do",
       "immigration.gov.bz",
       "immigration.go.tz",
+      "foreign.gov.mv",
+      "gov.ky",
       "pgrweb.go.cr",
       "www.minex.gob.gt",
       "igm.gob.gt",
