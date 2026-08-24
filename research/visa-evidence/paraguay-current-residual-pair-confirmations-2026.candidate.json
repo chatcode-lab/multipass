@@ -1,0 +1,84 @@
+{
+  "batchId": "paraguay-current-residual-pair-confirmations-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "paraguay-mre-current-no-visa-list-explicit-complement-2026",
+      "title": "Paraguay MFA: visa requirements by country",
+      "url": "https://www.mre.gov.py/requisitos-de-visa-por-paises/",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Paraguay",
+      "jurisdiction": "Paraguay",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Paraguayan MFA's live country-requirements page publishes a closed no-visa list and expressly states the rule for a country absent from that list.",
+      "supportingExcerpt": "Si su país no figura en el listado, usted SÍ requiere visa para ingresar al Paraguay."
+    },
+    {
+      "id": "paraguay-mre-current-regular-consular-visa-issuance-2026",
+      "title": "Paraguay MFA: visas",
+      "url": "https://www.mre.gov.py/visas-new/",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Paraguay",
+      "jurisdiction": "Paraguay",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The MFA's live visa service explains that the digital application is reviewed by a Paraguayan consular office and proceeds to a consular interview, rather than electronically issuing the visa.",
+      "supportingExcerpt": "Posteriormente, se le comunicará una fecha y horario para acudir a la entrevista ante la oficina consular"
+    },
+    {
+      "id": "paraguay-dnm-january-2026-mongolia-tourist-waiver-row",
+      "title": "Paraguay National Migration Directorate: January 2026 tourist-visa schedule",
+      "url": "https://migraciones.gov.py/wp-content/uploads/2026/01/ACUERDOS-DE-SUPRESION-DE-VISAS-2026.pdf",
+      "publisher": "National Migration Directorate",
+      "jurisdiction": "Paraguay",
+      "kind": "official-dataset",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The National Migration Directorate's official January 2026 PDF schedule directly names Mongolia and its tourist-entry outcome; it was accessible on the Directorate's live domain during review.",
+      "supportingExcerpt": "MONGOLIA LEY N° 7206/17/11/2023 NO REQUIERE VISA: para permanencia de hasta 90 días"
+    }
+  ],
+  "policies": [
+    {
+      "id": "paraguay-current-unlisted-ordinary-passports-advance-visa-2026",
+      "title": "Unlisted ordinary passports: Paraguay advance visitor visa",
+      "summary": "Paraguay MFA's current closed no-visa list expressly requires a visa for an unlisted country; its ordinary visitor procedure is reviewed and completed through a Paraguayan consular office before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["PY"],
+      "passportCodes": ["HK", "MO", "SB", "WS", "MH", "TO", "TV", "KI", "FM", "PW", "FJ", "NR", "XK", "VU", "PG"],
+      "conditions": [
+        "Each listed passport is absent from the MFA's current closed no-visa list; no status is derived from a migration-table omission or another nationality.",
+        "The standard tourist route requires digital filing followed by consular review and a notified consular interview before travel; it is an advance visa, not an eVisa.",
+        "MFA's separate exceptional arrival process requires a justified case, an inviter and prior Ministry approval. It is not an unconditional nationality-wide visa-on-arrival route.",
+        "Work, residence, study, transit, special passports, qualifying third-country documents and final admission are excluded."
+      ],
+      "sourceIds": [
+        "paraguay-mre-current-no-visa-list-explicit-complement-2026",
+        "paraguay-mre-current-regular-consular-visa-issuance-2026"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "MN",
+      "destinationCode": "PY",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The MFA's closed no-visa list omits Mongolia and expressly requires a visa for an unlisted country, while the National Migration Directorate's official January 2026 schedule gives Mongolia a 90-day tourist waiver. The directly conflicting current authorities do not establish one baseline.",
+      "sourceIds": [
+        "paraguay-mre-current-no-visa-list-explicit-complement-2026",
+        "paraguay-dnm-january-2026-mongolia-tourist-waiver-row"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MN",
+      "destinationCode": "PY",
+      "reason": "The National Migration Directorate's official January 2026 schedule directly grants Mongolia a 90-day tourist waiver, while the MFA's closed no-visa list omits Mongolia and says an unlisted country requires a visa. The official conflict is not normalized.",
+      "searchedOfficialDomains": ["migraciones.gov.py", "mre.gov.py"]
+    }
+  ]
+}

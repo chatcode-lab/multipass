@@ -1746,7 +1746,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PY");
 
-    expect(pairs).toHaveLength(183);
+    expect(pairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("BS", "PY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("QA", "PY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("OM", "PY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -3562,6 +3562,31 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("covers Paraguay's express residual advance-visa rule while preserving current schedule conflicts", () => {
+    for (const passportCode of [
+      "HK", "MO", "SB", "WS", "MH", "TO", "TV", "KI", "FM", "PW", "FJ", "NR", "XK", "VU", "PG",
+    ] as const) {
+      expect(snapshot.passports[passportCode].statuses.PY).toBe("visa_required");
+      expect(getVisaRelationshipEvidence(passportCode, "PY", "visa_required").supportsCurrentStatus).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["MN", "PY"],
+      ["UA", "FW"],
+      ["EC", "FW"],
+      ["LT", "BO"],
+      ["MO", "BO"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("closes the reviewed Jamaica, Oman, Suriname, and Gambia final gaps", () => {
     for (const [passportCode, destinationCode, status] of [
       ["JM", "JO", "visa_on_arrival"],
@@ -3934,6 +3959,7 @@ describe("official visa evidence", () => {
       ["KI", "IS", "visa_free"],
       ["KI", "JO", "visa_on_arrival"],
       ["KI", "PA", "visa_free"],
+      ["KI", "PY", "visa_required"],
       ["MN", "GD", "visa_required"],
       ["MN", "PA", "visa_free"],
       ["NA", "GD", "visa_free"],
@@ -3948,7 +3974,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["KI", "PY"],
       ["MN", "AF"],
       ["NA", "AO"],
       ["NG", "US"],
