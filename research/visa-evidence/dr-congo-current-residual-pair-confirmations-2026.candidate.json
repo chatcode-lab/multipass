@@ -1,0 +1,101 @@
+{
+  "batchId": "dr-congo-current-residual-pair-confirmations-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "drc-mfa-current-visa-consular-filing-service-2026",
+      "title": "Democratic Republic of the Congo MFA: coming to the DRC",
+      "url": "https://diplomatie.gouv.cd/services/",
+      "publisher": "Ministry of Foreign Affairs, International Cooperation, Francophonie and Congolese Diaspora",
+      "jurisdiction": "Democratic Republic of the Congo",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The DRC MFA's live services page identifies the competent DRC visa application channel but publishes no nationality-specific ordinary-passport exemption or issuance schedule.",
+      "supportingExcerpt": "Vous devez vous présenter personnellement auprès de l’ambassade ou du consulat de la République Démocratique du Congo compétent(e)"
+    },
+    {
+      "id": "eac-current-visa-free-entry-all-partner-states-2026",
+      "title": "EAC visa-free entry",
+      "url": "https://www.eac.int/immigration/migration-management/visa-free-entry",
+      "publisher": "East African Community",
+      "jurisdiction": "East African Community",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The EAC is the regional intergovernmental body publishing this Partner-State entry guidance. Its endpoint returned HTTP 403 in this review environment on 2026-08-24; the live indexed text states the Article 7(1) implementation claim.",
+      "supportingExcerpt": "All Partner States are implementing Article 7(1) of the EAC Common Market Protocol"
+    },
+    {
+      "id": "eac-current-faq-drc-exception-2026",
+      "title": "East African Community FAQ: legacy DRC exception",
+      "url": "https://www.eac.int/frequently-asked-questions",
+      "publisher": "East African Community",
+      "jurisdiction": "East African Community",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The EAC's official FAQ retains a direct DRC exception, but is labelled as written in 2016. Its endpoint returned HTTP 403 in this review environment on 2026-08-24, so it is retained only as a conflict, not as a current rule.",
+      "supportingExcerpt": "Nationals of East African Community Partner States (with the exception of DRC) do not require visas"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "KE",
+      "destinationCode": "CD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The EAC's current migration page says all Partner States implement visa-free entry for citizens into other Partner-State territories, while its still-live 2016 FAQ expressly excludes DRC both as origin and destination. The DRC MFA has no Kenyan nationality decision to resolve the conflict.",
+      "sourceIds": [
+        "eac-current-visa-free-entry-all-partner-states-2026",
+        "eac-current-faq-drc-exception-2026",
+        "drc-mfa-current-visa-consular-filing-service-2026"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "CD",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The EAC's current migration page says all Partner States implement visa-free entry for citizens into other Partner-State territories, while its still-live 2016 FAQ expressly excludes DRC both as origin and destination. The DRC MFA has no Tanzanian nationality decision to resolve the conflict.",
+      "sourceIds": [
+        "eac-current-visa-free-entry-all-partner-states-2026",
+        "eac-current-faq-drc-exception-2026",
+        "drc-mfa-current-visa-consular-filing-service-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MU",
+      "destinationCode": "CD",
+      "reason": "The current DRC MFA service describes consular filing but supplies no Mauritius ordinary-passport result or issuance timing. No arrival route is inferred from older or non-DRC material.",
+      "searchedOfficialDomains": ["diplomatie.gouv.cd", "dgm.cd", "foreign.govmu.org", "passport.govmu.org"]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "CD",
+      "reason": "The EAC's current migration page states a Partner-State visa-free rule that directly covers Kenyan citizens entering another Partner State, but its still-live 2016 FAQ expressly excludes DRC as origin and destination. DRC MFA consular wording does not resolve this contradiction, so no baseline is normalized.",
+      "searchedOfficialDomains": ["diplomatie.gouv.cd", "dgm.cd", "eac.int", "immigration.go.ke"]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "CD",
+      "reason": "The EAC's current migration page states a Partner-State visa-free rule that directly covers Tanzanian citizens entering another Partner State, but its still-live 2016 FAQ expressly excludes DRC as origin and destination. DRC MFA consular wording does not resolve this contradiction, so no baseline is normalized.",
+      "searchedOfficialDomains": ["diplomatie.gouv.cd", "dgm.cd", "eac.int", "immigration.go.tz"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "CD",
+      "reason": "No current DRC or Zimbabwean authority directly establishes ordinary Zimbabwean-passport visitor eligibility or issuance timing. The generic consular service is not used as a nationality complement.",
+      "searchedOfficialDomains": ["diplomatie.gouv.cd", "dgm.cd", "zim.gov.zw", "mfa.gov.zw"]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "CD",
+      "reason": "No current DRC or Republic of the Congo authority directly establishes an ordinary Republic-of-the-Congo passport visitor route. CEMAC, reciprocity and similarly named Congo sources are not transferred.",
+      "searchedOfficialDomains": ["diplomatie.gouv.cd", "dgm.cd", "diplomatie.gouv.cg", "dgrsp.cg"]
+    }
+  ]
+}

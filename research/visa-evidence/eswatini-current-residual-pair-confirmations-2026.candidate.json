@@ -1,0 +1,130 @@
+{
+  "batchId": "eswatini-current-residual-pair-confirmations-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "eswatini-home-affairs-current-required-visa-country-table-2026",
+      "title": "Immigrants requiring visas to enter the Kingdom of Swaziland",
+      "url": "https://www.gov.sz/index.php?id=314",
+      "publisher": "Government of the Kingdom of Eswatini / Ministry of Home Affairs",
+      "jurisdiction": "Eswatini",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live .gov.sz Home Affairs visitor page carries the Government of the Kingdom of Eswatini copyright and publishes the Y/N country table together with visitor-visa processing information.",
+      "supportingExcerpt": "REPUBLIC OF KOREA N"
+    },
+    {
+      "id": "eswatini-government-current-visa-free-country-list-2026",
+      "title": "Immigrants not requiring visas to enter the Kingdom of Swaziland",
+      "url": "https://www.gov.sz/index.php?id=315&view=article",
+      "publisher": "Government of the Kingdom of Eswatini",
+      "jurisdiction": "Eswatini",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live .gov.sz Government page is expressly headed as the visa-free list and names individual countries; it carries the Government of the Kingdom of Eswatini copyright.",
+      "supportingExcerpt": "Republic of korea"
+    },
+    {
+      "id": "eswatini-home-affairs-current-predeparture-visa-guidance-2026",
+      "title": "Visa: proposed pre-departure issuance guidance",
+      "url": "https://gov.sz/index.php/services-sp-22242747/visa",
+      "publisher": "Ministry of Home Affairs, Kingdom of Eswatini",
+      "jurisdiction": "Eswatini",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Ministry of Home Affairs service page retains a proposal to suspend visa-on-arrival issuance and affix visas before departure; it is not treated as an unqualified operative timing rule.",
+      "supportingExcerpt": "It is proposed that all people intending to enter the country visas would be issued and affixed to a passport before departing"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "KR",
+      "destinationCode": "SZ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The current required-visa table gives the Republic of Korea N but separately gives South Korea Y, while the current visa-free list names Republic of Korea. Those incompatible direct official entries cannot yield one ordinary-passport baseline.",
+      "sourceIds": [
+        "eswatini-home-affairs-current-required-visa-country-table-2026",
+        "eswatini-government-current-visa-free-country-list-2026"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "SZ",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved",
+      "explanation": "The current required-visa table gives China N and People’s Republic of China Y, while the current visa-free list names China. These incompatible direct official entries cannot yield one ordinary-passport baseline.",
+      "sourceIds": [
+        "eswatini-home-affairs-current-required-visa-country-table-2026",
+        "eswatini-government-current-visa-free-country-list-2026"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "SZ",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved",
+      "explanation": "The country table directly marks DRC visa-required, but the current official pages conflict on actual issuance timing: one retains a conditional arrival process while another says arrival issuance should be suspended and proposes pre-departure affixing.",
+      "sourceIds": [
+        "eswatini-home-affairs-current-required-visa-country-table-2026",
+        "eswatini-home-affairs-current-predeparture-visa-guidance-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "KR",
+      "destinationCode": "SZ",
+      "reason": "Eswatini’s current official materials directly conflict: the required-visa page has Republic of Korea N and South Korea Y, while the visa-free page names Republic of Korea. No ordinary-passport baseline is selected.",
+      "searchedOfficialDomains": [
+        "gov.sz",
+        "evisa.gov.sz",
+        "mofa.go.kr"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "SZ",
+      "reason": "The current Eswatini pages name the former state Serbia and Montenegro, not Serbia. No direct current Eswatini or Serbian authority maps an ordinary Serbian passport; no legacy-state or omission inference is made.",
+      "searchedOfficialDomains": [
+        "gov.sz",
+        "evisa.gov.sz",
+        "mfa.gov.rs"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "SZ",
+      "reason": "Kosovo is not directly named in Eswatini’s current country lists. No current Eswatini or Kosovan authority establishes ordinary-passport recognition or visitor issuance timing; no omission or complement inference is made.",
+      "searchedOfficialDomains": [
+        "gov.sz",
+        "evisa.gov.sz",
+        "rks-gov.net"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "SZ",
+      "reason": "Eswatini’s current official materials directly conflict: the required-visa table has China N and People’s Republic of China Y, while the visa-free page names China. No ordinary-passport baseline is selected.",
+      "searchedOfficialDomains": [
+        "gov.sz",
+        "evisa.gov.sz",
+        "fmprc.gov.cn"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "SZ",
+      "reason": "Eswatini’s current country table directly marks DRC visa-required, but its live guidance does not establish one actual route: it retains a conditional arrival process while a separate page says that arrival issuance should be suspended and proposes pre-departure affixing. The timing is held unresolved.",
+      "searchedOfficialDomains": [
+        "gov.sz",
+        "evisa.gov.sz",
+        "drcmfa.gov.cd"
+      ]
+    }
+  ]
+}

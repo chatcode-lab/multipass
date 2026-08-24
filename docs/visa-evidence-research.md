@@ -2234,6 +2234,14 @@ Moldova's current Foreign Ministry schedules do not directly map Dominica, Taiwa
 
 Lebanon's current General Security page does not establish a normal ordinary-passport visitor route for Israel. Its Ghanaian and Egyptian arrival wording overlaps a female-tourist prior-authorisation rule, while its broad Iraqi tourist wording overlaps a later automatic route limited to specified occupations. All thirteen relationships remain reviewed holds rather than flattening official contradictions, gender or profession conditions, possible prohibitions, document conditions, omissions or legacy names into false access statuses.
 
+## Pass 238 result: current Eswatini, DR Congo and Guinea residuals
+
+Three exact and independently cross-reviewed destination audits add no normalizable relationship, so complete-matrix evidence remains 39,067 of 44,974 relationships (86.9%). The public `/status` matrix remains 39,067 fresh and 5,907 not-covered rows, with zero old or stale rows as of 24 August 2026. Canonical evidence now contains 622 reviewed batches, 2,751 official sources and 1,785 policies.
+
+Eswatini's live government tables contradict themselves for South Korea and China. Serbia appears only under the obsolete state name Serbia and Montenegro, Kosovo is unmapped, and the DR Congo row combines a direct visa-required marker with inconsistent conditional-arrival guidance and a non-operative proposal for pre-departure-only issuance. DR Congo's Foreign Ministry publishes generic consular filing without a nationality schedule. The EAC's live general Article 7 implementation statement conflicts with its separate DRC exception for Kenyan and Tanzanian nationals, while Mauritius, Zimbabwe and the Republic of the Congo lack a direct current passport-specific route.
+
+Guinea's Border Police registry identifies Hong Kong, Saint Vincent and the Grenadines and Zambia but marks all three entries inactive. Its generic electronic application page expressly warns that an online application does not itself grant a visa, so neither portal presence nor the inactive registry establishes eligibility or issuance. All thirteen rows remain reviewed holds rather than converting duplicate names, former states, regional membership, generic filing, portal mechanics or omissions into false statuses.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

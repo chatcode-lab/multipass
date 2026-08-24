@@ -3528,6 +3528,40 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves current Eswatini, DR Congo, and Guinea residual conflicts as reviewed holds", () => {
+    for (const sourceId of [
+      "eswatini-home-affairs-current-required-visa-country-table-2026",
+      "drc-mfa-current-visa-consular-filing-service-2026",
+      "guinea-paf-live-visitor-electronic-application-2026",
+    ] as const) {
+      expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["KR", "SZ"],
+      ["RS", "SZ"],
+      ["XK", "SZ"],
+      ["CN", "SZ"],
+      ["CD", "SZ"],
+      ["MU", "CD"],
+      ["KE", "CD"],
+      ["TZ", "CD"],
+      ["ZW", "CD"],
+      ["CG", "CD"],
+      ["HK", "GN"],
+      ["VC", "GN"],
+      ["ZM", "GN"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("closes the reviewed Jamaica, Oman, Suriname, and Gambia final gaps", () => {
     for (const [passportCode, destinationCode, status] of [
       ["JM", "JO", "visa_on_arrival"],
@@ -4985,6 +5019,7 @@ describe("official visa evidence", () => {
       "www.homeaffairs.gov.ls",
       "www.gov.ls",
       "www.gov.sz",
+      "gov.sz",
       "evisa.gov.sz",
       "www.smf.st",
       "mne.gov.st",
