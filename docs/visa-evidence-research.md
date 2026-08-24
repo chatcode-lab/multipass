@@ -2334,6 +2334,16 @@ Bolivia-to-The Bahamas is now directly supported as `visa_free` for a three-mont
 
 Uruguay, Indonesia and Cuba to Guyana all remain unresolved after direct official-source comparison. Guyana's Foreign Ministry, Immigration Support Services and Trinidad mission publish mutually incompatible ordinary-passport scope for these three nationalities. No authority supplies a current reconciliation, so the three fallback `visa_free` values remain unverified rather than being promoted through source preference, omission or complement inference.
 
+## Pass 249 result: Paraguay duration correction and conservative Bolivia/Afghanistan replay
+
+Three previously promoted residual audits were replayed against live official sources. They add no new relationship, so complete-matrix evidence remains 39,203 of 44,974 relationships (87.2%), with 5,771 not-covered rows and no old or stale rows as of 24 August 2026. Canonical totals remain 644 reviewed batches, 2,819 official sources and 1,802 policies.
+
+Paraguay's 15 supported residual advance-visa rows remain correct. Its Foreign Ministry expressly says a passport outside the published no-visa list requires a visa, and the current workflow ends with embassy or consulate collection after digital filing, review and interview. The audit corrects one evidence detail: the live Migration Directorate now gives Mongolia a 30-day waiver, not the 90 days stated by the previously retained PDF. Mongolia remains unresolved because that direct waiver still conflicts with the Foreign Ministry's equally current closed residual rule; the correction changes the recorded duration, not the access status.
+
+All 20 scoped Bolivia rows remain uncovered. Bolivia's live Foreign Ministry framework defines Groups I, II and III but does not assign these passports to a group: some API records are null, some are absent, Kosovo appears only inside obsolete Serbia wording and Libya has inconsistent legacy/current labels. Neither a visa portal, a blank group, omission nor another document category is treated as a nationality result.
+
+Germany-to-Afghanistan also remains uncovered. A first review found an undated page under an apparent Afghan Foreign Ministry subdomain claiming that the Bonn consulate issues in-person visas, but independent authentication rejected it: the ministry apex currently serves unrelated gambling content, the page mixes Islamic Republic and Islamic Emirate identities, and Germany's Foreign Office directory disclaims the accuracy of mission contact details. The compromised source was removed rather than promoted. The remaining German directory entry records only that a Bonn contact is listed; it does not establish a current usable visitor-visa issuance route.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

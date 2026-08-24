@@ -3618,7 +3618,7 @@ describe("official visa evidence", () => {
 
   it("records Germany, UK, and Spain final outbound audits without inventing issuance routes", () => {
     expect(
-      OFFICIAL_VISA_SOURCES.some(({ id }) => id === "german-foreign-office-current-afghanistan-entry-visa-germans-2026"),
+      OFFICIAL_VISA_SOURCES.some(({ id }) => id === "german-foreign-office-current-afghan-bonn-consulate-directory-2026"),
     ).toBe(true);
 
     for (const [passportCode, destinationCode] of [
