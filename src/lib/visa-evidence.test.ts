@@ -2043,11 +2043,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "RS", snapshot.passports.TW.statuses.RS).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "RS", snapshot.passports.XK.statuses.RS).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("TR")).toHaveLength(185);
+    expect(pairsFor("TR")).toHaveLength(194);
     expect(getVisaRelationshipEvidence("AG", "TR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AO", "TR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AM", "TR", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("BT", "TR", snapshot.passports.BT.statuses.TR).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BT", "TR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CY", "TR", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CV", "TR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MV", "TR", "evisa").supportsCurrentStatus).toBe(true);
@@ -3433,6 +3433,31 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AO", "BW", snapshot.passports.AO.statuses.BW).supportsCurrentStatus).toBe(false);
   });
 
+  it("covers Türkiye's current residual routes while preserving Indonesia and Egypt holds", () => {
+    for (const passportCode of ["BB", "GD", "JM", "SR", "VN", "ZA"] as const) {
+      expect(snapshot.passports[passportCode].statuses.TR).toBe("evisa");
+      expect(getVisaRelationshipEvidence(passportCode, "TR", "evisa").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["BT", "IN", "NP"] as const) {
+      expect(snapshot.passports[passportCode].statuses.TR).toBe("visa_required");
+      expect(getVisaRelationshipEvidence(passportCode, "TR", "visa_required").supportsCurrentStatus).toBe(true);
+    }
+    for (const [passportCode, destinationCode] of [
+      ["AF", "ID"],
+      ["XK", "ID"],
+      ["HK", "EG"],
+      ["JO", "EG"],
+    ] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          destinationCode,
+          snapshot.passports[passportCode].statuses[destinationCode],
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
+  });
+
   it("closes the reviewed Jamaica, Oman, Suriname, and Gambia final gaps", () => {
     for (const [passportCode, destinationCode, status] of [
       ["JM", "JO", "visa_on_arrival"],
@@ -3453,7 +3478,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["OM", "BW"],
-      ["SR", "TR"],
       ["GM", "LC"],
     ] as const) {
       expect(
@@ -3563,7 +3587,6 @@ describe("official visa evidence", () => {
       ["LR", "UA"],
       ["MG", "UA"],
       ["TT", "TN"],
-      ["VN", "TR"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(
@@ -3598,7 +3621,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["AZ", "MK"],
-      ["ZA", "TR"],
       ["BF", "US"],
       ["BS", "MK"],
     ] as const) {
@@ -3682,7 +3704,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["SV", "AF"],
       ["HN", "AF"],
-      ["IN", "TR"],
       ["MZ", "UA"],
     ] as const) {
       expect(
@@ -3757,7 +3778,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["TM", "UA"],
-      ["BB", "TR"],
       ["BW", "AF"],
       ["DZ", "TR"],
     ] as const) {
@@ -4837,6 +4857,7 @@ describe("official visa evidence", () => {
       "www.diplomatie.gouv.ci",
       "royaumeuni.diplomatie.gouv.ci",
       "visa2egypt.gov.eg",
+      "www.gov.hk",
       "moi.gov.eg",
       "www.mfa.gov.eg",
       "anrpts.gov.mr",
@@ -4916,6 +4937,7 @@ describe("official visa evidence", () => {
       "mfa.gov.rs",
       "slgl.pravno-informacioni-sistem.rs",
       "www.mfa.gov.tr",
+      "www.indembassyankara.gov.in",
       "www.oeacp.infosi.gov.ao",
       "evisa.gov.tr",
       "www.evisa.gov.tr",

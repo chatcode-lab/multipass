@@ -402,4 +402,13 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.RW.statuses.JO).toBe("visa_on_arrival");
     expect(snapshot.passports.SS.statuses.JO).toBe("visa_on_arrival");
   });
+
+  it("applies the current Türkiye residual corrections", () => {
+    for (const passportCode of ["BB", "GD", "JM"] as const) {
+      expect(snapshot.passports[passportCode].statuses.TR).toBe("evisa");
+    }
+    for (const passportCode of ["BT", "IN", "NP"] as const) {
+      expect(snapshot.passports[passportCode].statuses.TR).toBe("visa_required");
+    }
+  });
 });
