@@ -10790,6 +10790,30 @@
     "passportCodes":["XK","MO","TW","TL"],
     "sourceHints":["https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv","https://www.immd.gov.hk/eng/services/visas/visit_transit.html","https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_taiwan_residents.html"],
     "notes":["Produce one exact promotion-safe partition for all four ordinary-passport short-visitor relationships.","Do not transfer Macao resident-card, Visit Permit or seven-day transit treatment to an ordinary Macao SAR passport without direct document mapping.","Do not flatten Taiwan birthplace, residence-history, travel-document or Mainland-permit conditions; do not use the residual other-country row or omission to infer Kosovo or Timor-Leste."]
+  },
+  {
+    "id":"fiji-kosovo-gazette-effect-recheck-2026","priority":723,
+    "objective":"Determine whether Kosovo Decision No. 14/280 adding Fiji to the visa regime became operative through publication in the Official Gazette, and establish the current ordinary Fijian-passport visitor baseline.",
+    "destinationCodes":["XK"],
+    "passportCodes":["FJ"],
+    "sourceHints":["https://gzk.rks-gov.net/","https://kryeministri.rks-gov.net/","https://mfa-ks.net/"],
+    "notes":["Produce one exact promotion-safe partition for FJ to XK.","Retrieve the actual Gazette publication or another direct controlling government record; a signed decision whose effect is conditional on publication is not enough by itself.","Reconcile any operative Gazette result with the live MFA country list and record the fallback conflict explicitly; do not choose between current official sources without a legal-currentness basis."]
+  },
+  {
+    "id":"hong-kong-macao-ecuador-current-entry-recheck-2026","priority":724,
+    "objective":"Resolve the exact Hong Kong SAR and Macao SAR ordinary-passport visitor relationships with Ecuador using current direct Ecuadorian and SAR passport-authority evidence.",
+    "destinationCodes":["EC"],
+    "passportCodes":["HK","MO"],
+    "sourceHints":["https://www.cancilleria.gob.ec/","https://www.immd.gov.hk/eng/service/travel_document/visa_free_access.html","https://www.dsi.gov.mo/en/visa"],
+    "notes":["Produce one exact promotion-safe partition for HK and MO to EC.","Do not transfer the People's Republic of China passport rule to either SAR passport and do not use an undifferentiated visa-free-or-arrival label to select issuance timing.","Prefer a direct Ecuadorian document-specific schedule, bilateral waiver instrument, or SAR passport record that expressly distinguishes visa-free from arrival issuance."]
+  },
+  {
+    "id":"nicaragua-tanzania-current-entry-recheck-2026","priority":725,
+    "objective":"Resolve the exact Nicaraguan ordinary-passport visitor relationship with Tanzania using a current direct immigration or passport-government nationality result.",
+    "destinationCodes":["TZ"],
+    "passportCodes":["NI"],
+    "sourceHints":["https://immigration.go.tz/","https://serviciosenlinea.migob.gob.ni/","https://www.cancilleria.gob.ni/"],
+    "notes":["Produce one exact promotion-safe partition for NI to TZ.","Do not infer visa-on-arrival, eVisa or referral treatment from portal availability or omission from Tanzania's named lists.","Normalize by actual issuance timing and retain any current passport-government versus destination-government conflict unresolved unless a controlling source reconciles it."]
   }
 ]
 }

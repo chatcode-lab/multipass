@@ -1,0 +1,80 @@
+{
+  "batchId": "hong-kong-macao-ecuador-current-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "hksar-immigration-live-ecuador-90-day-access-list-2026",
+      "title": "Visa-free access or visa-on-arrival for HKSAR Passport",
+      "url": "https://www.immd.gov.hk/eng/service/travel_document/visa_free_access.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live HKSAR Immigration Department nationality selector expressly applies to the HKSAR Passport and returns Ecuador with a 90-day stay. Its combined heading does not itself fix issuance timing, so the category comes from the underlying visa-abolition agreement.",
+      "supportingExcerpt": "Duration of Stay: 90 days"
+    },
+    {
+      "id": "hksar-government-ecuador-visa-abolition-agreement-1999",
+      "title": "Visa-free arrangement for HKSAR passport holders",
+      "url": "https://www.info.gov.hk/gia/general/199909/03/0903152.htm",
+      "publisher": "Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live info.gov.hk Government archive records the HKSAR Secretary for Security signing the reciprocal Ecuador Visa Abolition Agreement, its 3 October 1999 effective date, and the exact HKSAR-passport visitor entitlement. The current Immigration Department list continues to include Ecuador at the same 90-day duration.",
+      "supportingExcerpt": "The Agreement gives visa-free access for a period up to 90 days to HKSAR passport holders visiting Ecuador."
+    },
+    {
+      "id": "ecuador-mfa-current-required-visa-nationalities-2025",
+      "title": "Ecuador will require a transitory visitor visa from 1 September 2025",
+      "url": "https://www.cancilleria.gob.ec/2025/08/30/ecuador-exigira-visa-de-transeunte-a-partir-del-1-de-septiembre-de-2025/",
+      "publisher": "Ministry of Foreign Affairs and Human Mobility",
+      "jurisdiction": "Ecuador",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Ecuador's live Foreign Ministry announcement gives the operative 1 September 2025 visitor-visa list. It names the People's Republic of China but does not identify Hong Kong SAR or Macao SAR passports as distinct travel documents.",
+      "supportingExcerpt": "a aquellos nacionales de los países a los que actualmente se les solicita visa para ingresar al país"
+    },
+    {
+      "id": "macao-dsi-live-sar-passport-travel-convenience-service-2026",
+      "title": "Travel Convenience Privilege",
+      "url": "https://www.dsi.gov.mo/en/visa",
+      "publisher": "Identification Services Bureau of the Macao Special Administrative Region",
+      "jurisdiction": "Macao Special Administrative Region",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live DSI service identifies the Macao SAR Passport as its travel document and its possible output groups as visa-free access or visa on arrival, eVisa, and automated clearance. Its dynamic interface did not expose a direct Ecuador result or issuance method; portal presence is not used as eligibility evidence.",
+      "supportingExcerpt": "Macao SAR Passport"
+    }
+  ],
+  "policies": [
+    {
+      "id": "ecuador-hksar-ordinary-passports-visa-free",
+      "title": "Ecuador: HKSAR ordinary passports visa-free short visits",
+      "summary": "Ecuador's reciprocal Visa Abolition Agreement expressly gives HKSAR passport holders visa-free visits up to 90 days; the live HKSAR Immigration Department list continues to show Ecuador with a 90-day stay.",
+      "status": "visa_free",
+      "destinationCodes": ["EC"],
+      "passportCodes": ["HK"],
+      "conditions": [
+        "Applies to HKSAR passport holders visiting Ecuador for up to 90 days under the reciprocal Visa Abolition Agreement.",
+        "The 1999 agreement took effect on 3 October 1999; the current HKSAR Immigration Department Ecuador entry still displays a 90-day stay.",
+        "Employment, residence, study, non-HKSAR travel documents, passport validity, health, security and final border-admission requirements remain outside this short-visitor policy."
+      ],
+      "sourceIds": ["hksar-government-ecuador-visa-abolition-agreement-1999", "hksar-immigration-live-ecuador-90-day-access-list-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "EC",
+      "reason": "No current Ecuadorian source directly maps a Macao SAR passport to an Ecuador visitor route. Ecuador's PRC nationality listing is not transferred, and the live Macao DSI interface did not provide a reproducible Ecuador issuance result.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "cancilleria.gob.ec", "gob.ec"]
+    }
+  ]
+}

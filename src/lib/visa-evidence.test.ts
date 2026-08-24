@@ -358,11 +358,11 @@ describe("official visa evidence", () => {
       .filter(({ destination }) => destination.code === "EC");
 
     expect(ECUADOR_EVISA_ORDINARY_PASSPORT_CODES).toHaveLength(45);
-    expect(ecuadorPairs).toHaveLength(197);
+    expect(ecuadorPairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("AL", "EC", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PK", "EC", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "EC", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("HK", "EC", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("HK", "EC", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "EC", "visa_required").supportsCurrentStatus).toBe(false);
   });
 
@@ -1083,11 +1083,12 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "GH", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "GH", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("TZ")).toHaveLength(198);
+    expect(pairsFor("TZ")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("CD", "TZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LK", "TZ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "TZ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "TZ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NI", "TZ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "TZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TZ", "TZ", "citizenship").supportsCurrentStatus).toBe(true);
   });
@@ -5220,6 +5221,7 @@ describe("official visa evidence", () => {
       "mirex.gob.do",
       "immigration.gov.bz",
       "immigration.go.tz",
+      "oagmis.oag.go.tz",
       "foreign.gov.mv",
       "gov.ky",
       "pgrweb.go.cr",
