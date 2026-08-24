@@ -37,9 +37,37 @@
       "reviewedAt": "2026-08-24",
       "officialityEvidence": "The live Ministry of Home Affairs service page retains a proposal to suspend visa-on-arrival issuance and affix visas before departure; it is not treated as an unqualified operative timing rule.",
       "supportingExcerpt": "It is proposed that all people intending to enter the country visas would be issued and affixed to a passport before departing"
+    },
+    {
+      "id": "serbia-mfa-current-eswatini-ordinary-passport-guidance-2026",
+      "title": "Serbian MFA: Eswatini travel and visa regime",
+      "url": "https://www.mfa.gov.rs/lat/gradjani/putovanje-u-inostranstvo/vize-i-informacije-o-drzavama/esvatini",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Serbia",
+      "jurisdiction": "Serbia",
+      "kind": "government-guidance",
+      "language": "Serbian",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Serbian MFA destination page is headed Eswatini and separately states the regular-passport visa regime, entry passport validity and the non-resident Serbian mission responsible for Eswatini.",
+      "supportingExcerpt": "Obični pasoši i druge putne isprave: Viza nije potrebna"
     }
   ],
-  "policies": [],
+  "policies": [
+    {
+      "id": "serbian-ordinary-passports-eswatini-visa-free-2026",
+      "title": "Serbian ordinary passports: Eswatini visa-free visits",
+      "summary": "Serbia's current Foreign Ministry Eswatini guidance expressly says ordinary Serbian passports do not require a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["SZ"],
+      "passportCodes": ["RS"],
+      "conditions": [
+        "Applies to an ordinary Serbian passport for a short visitor trip; the source does not publish a visitor-stay duration.",
+        "The passport must be valid for six months from intended entry and have two blank pages.",
+        "Diplomatic, official, travel-document, residence, work, study, transit and final-admission circumstances are outside this baseline."
+      ],
+      "sourceIds": ["serbia-mfa-current-eswatini-ordinary-passport-guidance-2026"],
+      "confidence": "high"
+    }
+  ],
   "conflicts": [
     {
       "passportCode": "KR",
@@ -68,7 +96,7 @@
       "destinationCode": "SZ",
       "snapshotStatus": "visa_required",
       "officialStatus": "unresolved",
-      "explanation": "The country table directly marks DRC visa-required, but the current official pages conflict on actual issuance timing: one retains a conditional arrival process while another says arrival issuance should be suspended and proposes pre-departure affixing.",
+      "explanation": "The country table directly marks DRC visa-required, but the live service guidance does not establish actual issuance timing: it describes Ministry or mission applications while treating pre-departure affixing only as a proposal.",
       "sourceIds": [
         "eswatini-home-affairs-current-required-visa-country-table-2026",
         "eswatini-home-affairs-current-predeparture-visa-guidance-2026"
@@ -84,16 +112,6 @@
         "gov.sz",
         "evisa.gov.sz",
         "mofa.go.kr"
-      ]
-    },
-    {
-      "passportCode": "RS",
-      "destinationCode": "SZ",
-      "reason": "The current Eswatini pages name the former state Serbia and Montenegro, not Serbia. No direct current Eswatini or Serbian authority maps an ordinary Serbian passport; no legacy-state or omission inference is made.",
-      "searchedOfficialDomains": [
-        "gov.sz",
-        "evisa.gov.sz",
-        "mfa.gov.rs"
       ]
     },
     {
@@ -119,7 +137,7 @@
     {
       "passportCode": "CD",
       "destinationCode": "SZ",
-      "reason": "Eswatini’s current country table directly marks DRC visa-required, but its live guidance does not establish one actual route: it retains a conditional arrival process while a separate page says that arrival issuance should be suspended and proposes pre-departure affixing. The timing is held unresolved.",
+      "reason": "Eswatini’s current country table directly marks DRC visa-required, but its live service guidance does not establish actual issuance timing. It describes Ministry or mission applications while treating suspension of arrival issuance and pre-departure affixing only as proposals. The timing is held unresolved.",
       "searchedOfficialDomains": [
         "gov.sz",
         "evisa.gov.sz",

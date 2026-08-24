@@ -1341,10 +1341,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IE", "LS", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LS", "LS", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SZ")).toHaveLength(193);
+    expect(pairsFor("SZ")).toHaveLength(194);
     expect(getVisaRelationshipEvidence("TW", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "SZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("RS", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "SZ", snapshot.passports.CN.statuses.SZ).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("SZ", "SZ", "citizenship").supportsCurrentStatus).toBe(false);
   });
@@ -3560,7 +3561,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["KR", "SZ"],
-      ["RS", "SZ"],
       ["XK", "SZ"],
       ["CN", "SZ"],
       ["CD", "SZ"],
