@@ -432,6 +432,29 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { GH: "citizenship", LK: "eta" }, mobilityScore: 1 });
   });
 
+  it("applies reviewed Dominican Republic and Georgia corrections", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "WS",
+      name: "Samoa",
+      statuses: { WS: "citizenship", DO: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { WS: "citizenship", DO: "visa_free" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "AL",
+      name: "Albania",
+      statuses: { AL: "citizenship", DO: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { AL: "citizenship", DO: "visa_required" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "NI",
+      name: "Nicaragua",
+      statuses: { NI: "citizenship", GE: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { NI: "citizenship", GE: "visa_required" }, mobilityScore: 0 });
+  });
+
   it("applies Thailand's reviewed visa-on-arrival corrections", () => {
     expect(applyVerifiedAccessOverrides({
       code: "ET",

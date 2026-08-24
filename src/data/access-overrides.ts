@@ -4061,4 +4061,33 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://grenadaembassyusa.org/wp-content/uploads/2024/07/Visa-Requirements-for-Grenada-final-UPDATED-April-2024-Approved1.pdf",
     reviewedAt: "2026-08-24",
   })),
+  {
+    passportCode: "WS",
+    destinationCode: "DO",
+    status: "visa_free",
+    reason: "Dominican Republic Decree 690-07 expressly authorizes Samoan tourists to enter using a Tourist Card, and the current MIREX ordinary-passport result confirms that waiver.",
+    sourceUrl: "https://www.consultoria.gov.do/Consulta/Home/FileManagement?documentId=3347895&managementType=1",
+    reviewedAt: "2026-08-24",
+  },
+  {
+    passportCode: "AL",
+    destinationCode: "DO",
+    status: "visa_required",
+    reason: "DGII directly requires Albanian tourists to obtain a Dominican mission visa; MIREX's no-visa result applies only to holders of qualifying third-country residence or multiple-entry visa documents.",
+    sourceUrl: "https://dgii.gov.do/sobretarjetaturista/Paginas/default.aspx",
+    reviewedAt: "2026-08-24",
+  },
+  ...([
+    ["NI", "497"],
+    ["VE", "433"],
+    ["NR", "492"],
+    ["SY", "526"],
+  ] as const).map(([passportCode, countryId]) => ({
+    passportCode,
+    destinationCode: "GE" as const,
+    status: "visa_required" as const,
+    reason: "Georgia's live MFA ordinary-passport result requires a visa and denies electronic issuance; current law places regular visa issuance with the MFA, diplomatic missions and consular offices abroad.",
+    sourceUrl: `https://www.evisa.gov.ge/GeoVisa/en/VisaApp/CheckCountry?countryid=${countryId}`,
+    reviewedAt: "2026-08-24",
+  })),
 ] as const;

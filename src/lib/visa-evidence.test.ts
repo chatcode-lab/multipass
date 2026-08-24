@@ -1546,13 +1546,16 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "DO");
 
-    expect(pairs).toHaveLength(192);
+    expect(pairs).toHaveLength(195);
     expect(getVisaRelationshipEvidence("MA", "DO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MN", "DO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "DO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "DO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "DO", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AL", "DO", snapshot.passports.AL.statuses.DO).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("RO", "DO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("WS", "DO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AL", "DO", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GE", "DO", snapshot.passports.GE.statuses.DO).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("DO", "DO", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
@@ -2053,11 +2056,15 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("QA", "AL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GY", "AL", "visa_free").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("GE")).toHaveLength(192);
+    expect(pairsFor("GE")).toHaveLength(197);
     expect(getVisaRelationshipEvidence("CN", "GE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "GE", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IR", "GE", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("HK", "GE", snapshot.passports.HK.statuses.GE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("HK", "GE", "visa_free").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["NI", "VE", "NR", "SY"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "GE", "visa_required").supportsCurrentStatus).toBe(true);
+    }
+    expect(getVisaRelationshipEvidence("TW", "GE", snapshot.passports.TW.statuses.GE).supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("AZ")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("BH", "AZ", "visa_free").supportsCurrentStatus).toBe(true);
@@ -3389,6 +3396,7 @@ describe("official visa evidence", () => {
       ["RO", "BD", "visa_on_arrival"],
       ["RO", "JO", "visa_on_arrival"],
       ["RO", "PA", "visa_free"],
+      ["RO", "DO", "visa_free"],
       ["CH", "BD", "visa_on_arrival"],
     ] as const) {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
@@ -3400,7 +3408,6 @@ describe("official visa evidence", () => {
       ["MX", "KW"],
       ["RU", "DJ"],
       ["RU", "SS"],
-      ["RO", "DO"],
       ["KR", "UA"],
     ] as const) {
       expect(
@@ -4131,6 +4138,7 @@ describe("official visa evidence", () => {
       ["WS", "GD", "visa_free"],
       ["WS", "JO", "visa_on_arrival"],
       ["WS", "PA", "visa_free"],
+      ["WS", "DO", "visa_free"],
       ["AM", "GD", "visa_required"],
       ["AM", "JO", "visa_on_arrival"],
       ["AM", "PA", "visa_free"],
@@ -4143,7 +4151,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["TJ", "AF"],
       ["VU", "FW"],
-      ["WS", "DO"],
       ["AM", "UA"],
     ] as const) {
       expect(
@@ -4827,6 +4834,7 @@ describe("official visa evidence", () => {
       "e-visa.al",
       "qbz.gov.al",
       "france.mfa.gov.ge",
+      "china.mfa.gov.ge",
       "ge.china-embassy.gov.cn",
       "www.matsne.gov.ge",
       "matsne.gov.ge",
@@ -5176,6 +5184,7 @@ describe("official visa evidence", () => {
       "diplomatie.gouv.sn",
       "api.acces-maroc.ma",
       "www.acces-maroc.ma",
+      "en.mofa.gov.tw",
       "adala.justice.gov.ma",
       "www.diplocam.cm",
       "spm.gov.cm",
@@ -5316,6 +5325,7 @@ describe("official visa evidence", () => {
       "www.netherlandsworldwide.nl",
       "gobiernu.cw",
       "dgii.gov.do",
+      "www.consultoria.gov.do",
       "www.tribunalconstitucional.gob.do",
       "tribunalsitestorage.blob.core.windows.net",
       "servicios360.mirex.gob.do",

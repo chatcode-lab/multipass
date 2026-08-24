@@ -1,0 +1,96 @@
+{
+  "batchId": "morocco-four-cell-final-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "taiwan-mofa-current-morocco-vcl-suspension-2026",
+      "title": "Taiwan Ministry of Foreign Affairs: suspension of Moroccan visa confirmation letters",
+      "url": "https://en.mofa.gov.tw/News_Content.aspx?Create=1&n=1328&s=122758&sms=273",
+      "publisher": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+      "jurisdiction": "Taiwan (Republic of China)",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live mofa.gov.tw release is a dated Ministry of Foreign Affairs statement from its Department of West Asian and African Affairs. It reports Morocco's worldwide instruction to stop receiving Taiwanese VCL applications.",
+      "supportingExcerpt": "would temporarily stop accepting applications for visa confirmation letters (VCL) from Taiwanese nationals"
+    },
+    {
+      "id": "morocco-acces-maroc-current-nationality-reference-2026-recheck",
+      "title": "Accès Maroc: current nationality reference endpoint",
+      "url": "https://api.acces-maroc.ma/api/api/referentiel/nationalite/fr",
+      "publisher": "Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates",
+      "jurisdiction": "Morocco",
+      "kind": "official-dataset",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Accès Maroc public API is configured by the Ministry-branded Accès Maroc portal. It provides its selectable nationality reference data, but does not provide an express ordinary-passport result for Monaco, Taiwan, Timor-Leste or Kosovo.",
+      "supportingExcerpt": "\"typePays\":\"reconnu\""
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "TW",
+      "destinationCode": "MA",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved",
+      "explanation": "Taiwan's current passport authority says Morocco suspended worldwide VCL applications, Taiwan was ineligible for Moroccan eVisas, and VCL was its only short-business/tourist route. The taxonomy cannot represent the current route suspension or grandfathered pre-20-July VCLs as a normal advance-visa baseline.",
+      "sourceIds": [
+        "taiwan-mofa-current-morocco-vcl-suspension-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MC",
+      "destinationCode": "MA",
+      "reason": "No current Moroccan or Monegasque primary source directly maps an ordinary Monaco passport to exemption, AEVM, eVisa, advance visa or border issuance. Accès Maroc has no selectable Monaco result, which is not used as a complement.",
+      "searchedOfficialDomains": [
+        "acces-maroc.ma",
+        "api.acces-maroc.ma",
+        "consulat.ma",
+        "diplomatie.ma",
+        "gouv.mc"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "MA",
+      "reason": "Taiwan's current Foreign Ministry says Morocco has suspended the only ordinary Taiwanese short-business/tourist VCL route and Taiwan is not eligible for Morocco's eVisa. Pre-suspension VCLs remain valid, so no current nationality-wide normalized visitor status is claimed.",
+      "searchedOfficialDomains": [
+        "acces-maroc.ma",
+        "api.acces-maroc.ma",
+        "consulat.ma",
+        "diplomatie.ma",
+        "mofa.gov.tw",
+        "boca.gov.tw"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "MA",
+      "reason": "No current Moroccan or Timor-Leste primary source directly maps an ordinary Timor-Leste passport to exemption, AEVM, eVisa, advance visa or border issuance. Accès Maroc has no selectable Timor-Leste result, which is not used as a complement.",
+      "searchedOfficialDomains": [
+        "acces-maroc.ma",
+        "api.acces-maroc.ma",
+        "consulat.ma",
+        "diplomatie.ma",
+        "migracao.gov.tl",
+        "mnec.gov.tl"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "MA",
+      "reason": "No current Moroccan or Kosovo primary source directly maps an ordinary Kosovo passport to an available short-visitor route. Recognition and any third-country-document exception are not transferred; Accès Maroc has no selectable Kosovo result and is not used as a complement.",
+      "searchedOfficialDomains": [
+        "acces-maroc.ma",
+        "api.acces-maroc.ma",
+        "consulat.ma",
+        "diplomatie.ma",
+        "mfa-ks.net",
+        "mpb.rks-gov.net"
+      ]
+    }
+  ]
+}
