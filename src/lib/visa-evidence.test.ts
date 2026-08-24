@@ -5067,6 +5067,36 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves US-territory, Saudi, and Trinidad and Tobago final destination residuals", () => {
+    for (const sourceId of [
+      "us-white-house-pp10998",
+      "us-ecfr-current-8-cfr-212-1",
+      "us-code-current-ina-geographical-united-states",
+      "saudi-refresh-visa-regulations-country-groups-api",
+      "saudi-refresh-visa-regulations-routes-api",
+      "tt-foreign-affairs-september-2025-visa-instructions",
+      "tt-immigration-2024-visa-exempt-list",
+    ] as const) {
+      expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["AG", "US"],
+      ["BF", "GU"],
+      ["AF", "MP"],
+      ["PS", "PR"],
+      ["SY", "VI"],
+      ["CL", "SA"],
+      ["IL", "SA"],
+      ["CH", "TT"],
+      ["NZ", "TT"],
+      ["PH", "TT"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
