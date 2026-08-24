@@ -1,0 +1,70 @@
+{
+  "batchId": "hong-kong-four-cell-current-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "hksar-immigration-live-visitor-requirements-open-data-2026",
+      "title": "Visit Visa / Entry Permit Requirements for the Hong Kong Special Administrative Region",
+      "url": "https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "This live immd.gov.hk open-data CSV is the Immigration Department's visitor-requirements dataset. Its published snapshot is expressly labelled as at 31 December 2025; it provides no direct XK or TL ordinary-passport row.",
+      "supportingExcerpt": "National of foreign country (territory)/Type of travel document, Visa free period for visiting the Hong Kong Special Administrative Region"
+    },
+    {
+      "id": "hksar-immigration-current-macao-taiwan-special-arrangements-2026",
+      "title": "Entry Arrangements for Mainland, Macao, Taiwan & Overseas Chinese Residents",
+      "url": "https://www.immd.gov.hk/eng/services/visas/overseas-chinese-entry-arrangement.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The current Immigration Department special-arrangements page, revised 2 June 2026, separately specifies Macao resident-document arrangements, Macao SAR passport transit, and conditional Taiwan-resident entry routes.",
+      "supportingExcerpt": "Holders of Macao SAR passports and holders of Macao SAR Travel Permits may transit Hong Kong for a stay up to 7 days."
+    },
+    {
+      "id": "hksar-immigration-current-taiwan-par-conditions-2026",
+      "title": "Pre-arrival Registration for Taiwan Residents",
+      "url": "https://www.immd.gov.hk/eng/services/visas/pre-arrival_registration_for_taiwan_residents.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live Immigration Department page identifies PAR eligibility by Taiwan-resident birth/admission history and travel-document attributes, rather than an ordinary Taiwan passport alone.",
+      "supportingExcerpt": "were born in Taiwan; or were born outside Taiwan but have been admitted to Hong Kong as a Taiwan resident before"
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "XK",
+      "destinationCode": "HK",
+      "reason": "The current Immigration Department foreign-country dataset has no direct Kosovo ordinary-passport row. Its residual other-foreign-countries row is not used to infer passport recognition, a waiver or issuance timing.",
+      "searchedOfficialDomains": ["immd.gov.hk", "gov.hk", "data.gov.hk"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "HK",
+      "reason": "Current Hong Kong rules grant visit concessions by Macao resident identity card or Visit Permit, while Macao SAR passports are directly covered only for qualifying seven-day transit. Neither establishes an ordinary Macao SAR passport visitor baseline.",
+      "searchedOfficialDomains": ["immd.gov.hk", "gov.hk", "dsi.gov.mo"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "HK",
+      "reason": "Current Taiwan PAR and entry-permit routes depend on Chinese-resident status, birthplace or prior Taiwan-resident admission, and permitted travel documents. Those personal conditions cannot establish one ordinary Taiwan-passport visitor baseline.",
+      "searchedOfficialDomains": ["immd.gov.hk", "gov.hk", "boca.gov.tw"]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "HK",
+      "reason": "The current Immigration Department foreign-country dataset has no direct Timor-Leste ordinary-passport row. Its residual other-foreign-countries row is not used to infer a waiver or issuance timing.",
+      "searchedOfficialDomains": ["immd.gov.hk", "gov.hk", "mnec.gov.tl"]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "batchId": "turkiye-five-cell-current-entry-recheck-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "turkiye-mfa-current-algeria-ordinary-visitor-regime-2026",
+      "title": "Republic of Türkiye Ministry of Foreign Affairs: Visa Information for Foreigners — Algeria",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Türkiye's Foreign Ministry publishes this live nationality-by-passport visa register on mfa.gov.tr.",
+      "supportingExcerpt": "Ordinary passport holders between the age of 15 and 50 are required to have visa."
+    },
+    {
+      "id": "turkiye-mfa-current-cambodia-ordinary-visitor-regime-2026",
+      "title": "Republic of Türkiye Ministry of Foreign Affairs: Visa Information for Foreigners — Cambodia",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Türkiye's Foreign Ministry publishes this live nationality-by-passport visa register on mfa.gov.tr.",
+      "supportingExcerpt": "Ordinary passport holders are required to have visa to enter Türkiye."
+    },
+    {
+      "id": "turkiye-mfa-current-egypt-ordinary-visitor-regime-2026",
+      "title": "Republic of Türkiye Ministry of Foreign Affairs: Visa Information for Foreigners — Egypt",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Türkiye's Foreign Ministry publishes this live nationality-by-passport visa register on mfa.gov.tr.",
+      "supportingExcerpt": "Egyptian nationals who are under 15 years of age or above 45 years of age may obtain e-Visa without additional contidion."
+    },
+    {
+      "id": "turkiye-mfa-current-iraq-ordinary-visitor-regime-2026",
+      "title": "Republic of Türkiye Ministry of Foreign Affairs: Visa Information for Foreigners — Iraq",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Türkiye's Foreign Ministry publishes this live nationality-by-passport visa register on mfa.gov.tr.",
+      "supportingExcerpt": "Ordinary passport holder Iraqi nationals between the ages of 15-50 are required to have visa to enter Türkiye."
+    },
+    {
+      "id": "turkiye-mfa-current-libya-ordinary-visitor-regime-2026",
+      "title": "Republic of Türkiye Ministry of Foreign Affairs: Visa Information for Foreigners — Libya",
+      "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Türkiye's Foreign Ministry publishes this live nationality-by-passport visa register on mfa.gov.tr.",
+      "supportingExcerpt": "Ordinary passport holders between the age of 16 and 45 are required to have visa."
+    },
+    {
+      "id": "turkiye-mfa-current-sticker-visa-issuance-process-2026",
+      "title": "Republic of Türkiye Ministry of Foreign Affairs: General Information About Turkish Visas",
+      "url": "https://www.mfa.gov.tr/general-information-about-turkish-visas.en.mfa",
+      "publisher": "Republic of Türkiye Ministry of Foreign Affairs",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Türkiye's Foreign Ministry publishes this live consular visa-process guidance on mfa.gov.tr.",
+      "supportingExcerpt": "All other applicants will need to obtain a visa through Turkish Representations in the abroad."
+    }
+  ],
+  "policies": [
+    {
+      "id": "turkiye-cambodian-ordinary-passports-advance-visitor-visa-2026",
+      "title": "Türkiye: Cambodian ordinary passports require an advance visitor visa",
+      "summary": "Türkiye's current Foreign Ministry register directly says ordinary Cambodian passport holders require a visa. Its current visa-process guidance directs non-exempt visitors to obtain visas or schedule a Turkish consular appointment, establishing advance consular issuance rather than a passport-wide electronic visa.",
+      "status": "visa_required",
+      "destinationCodes": ["TR"],
+      "passportCodes": ["KH"],
+      "conditions": [
+        "Applies only to an ordinary Cambodian passport holder travelling for a short visitor or tourist purpose.",
+        "The register separately exempts official Cambodian passports; that official-passport rule is not applied to ordinary passports.",
+        "The applicable route is a pre-travel Turkish consular/sticker-visa process. No arrival issuance, electronic eligibility, duration, entries, fee, work, residence, transit, special-document, or third-country-document route is inferred."
+      ],
+      "sourceIds": [
+        "turkiye-mfa-current-cambodia-ordinary-visitor-regime-2026",
+        "turkiye-mfa-current-sticker-visa-issuance-process-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "DZ",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved: age-based visa-free, visa-required, and conditional eVisa cohorts",
+      "explanation": "The current Turkish MFA register directly divides ordinary Algerian passports by age: under 15 and over 50 are visa-exempt, ages 15–50 require a visa, and only specified age bands may obtain eVisa with qualifying third-country documents. The passport-wide fallback eVisa cannot be normalized.",
+      "sourceIds": ["turkiye-mfa-current-algeria-ordinary-visitor-regime-2026"]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved: age-based unconditional and condition-dependent eVisa cohorts plus visa-required baseline",
+      "explanation": "The current Turkish MFA register says ordinary Egyptian passports require a visa, while only travellers under 15 or over 45 may obtain eVisa without an additional condition; ages 15–45 require qualifying documents and named airlines. This cannot support a passport-wide eVisa status.",
+      "sourceIds": ["turkiye-mfa-current-egypt-ordinary-visitor-regime-2026"]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved: age-based visa-free, visa-required, and conditional eVisa cohorts",
+      "explanation": "The current Turkish MFA register exempts Iraqi ordinary passports under 15 and over 50, requires visas for ages 15–50, and limits eVisa to that latter group with qualifying third-country documents. The passport-wide fallback eVisa cannot be normalized.",
+      "sourceIds": ["turkiye-mfa-current-iraq-ordinary-visitor-regime-2026"]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved: age-based visa-free, visa-required, and conditional eVisa cohorts",
+      "explanation": "The current Turkish MFA register exempts Libyan ordinary passports under 16 and over 45, requires visas for ages 16–45, and limits eVisa to that latter group with qualifying third-country documents. The passport-wide fallback eVisa cannot be normalized.",
+      "sourceIds": ["turkiye-mfa-current-libya-ordinary-visitor-regime-2026"]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "TR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Türkiye's current MFA register directly requires a visa for ordinary Cambodian passport holders, and its live process guidance places non-exempt visitors in the Turkish consular/sticker-visa route before travel.",
+      "sourceIds": [
+        "turkiye-mfa-current-cambodia-ordinary-visitor-regime-2026",
+        "turkiye-mfa-current-sticker-visa-issuance-process-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "DZ",
+      "destinationCode": "TR",
+      "reason": "Türkiye's current MFA register splits ordinary Algerian visitors among age-based visa exemption, a visa-required baseline, and a third-country-document-conditioned eVisa route. The supplied passport code carries no age or qualifying-document attribute, so no single status is normalized.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "evisa.gov.tr", "visa.gov.tr"]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "TR",
+      "reason": "Türkiye's current MFA register makes eVisa unconditional only for ordinary Egyptian visitors under 15 or over 45 and makes the 15–45 route depend on qualifying documents and named airlines, while stating the ordinary-passport baseline requires a visa. No passport-wide status is normalized.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "evisa.gov.tr", "visa.gov.tr"]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TR",
+      "reason": "Türkiye's current MFA register splits ordinary Iraqi visitors among age-based visa exemption, a visa-required baseline, and a third-country-document-conditioned eVisa route. The supplied passport code carries no age or qualifying-document attribute, so no single status is normalized.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "evisa.gov.tr", "visa.gov.tr"]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "TR",
+      "reason": "Türkiye's current MFA register splits ordinary Libyan visitors among age-based visa exemption, a visa-required baseline, and a third-country-document-conditioned eVisa route. The supplied passport code carries no age or qualifying-document attribute, so no single status is normalized.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "evisa.gov.tr", "visa.gov.tr"]
+    }
+  ]
+}

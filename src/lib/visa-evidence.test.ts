@@ -2076,13 +2076,15 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "RS", snapshot.passports.TW.statuses.RS).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "RS", snapshot.passports.XK.statuses.RS).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("TR")).toHaveLength(194);
+    expect(pairsFor("TR")).toHaveLength(195);
     expect(getVisaRelationshipEvidence("AG", "TR", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AO", "TR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AM", "TR", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BT", "TR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CY", "TR", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CV", "TR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KH", "TR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.KH.statuses.TR).toBe("visa_required");
     expect(getVisaRelationshipEvidence("MV", "TR", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("YE", "TR", "visa_required").supportsCurrentStatus).toBe(true);
 
