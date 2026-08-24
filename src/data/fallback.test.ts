@@ -433,4 +433,8 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.LV.statuses.TD).toBe("evisa");
     expect(snapshot.passports.EE.statuses.BW).toBe("visa_free");
   });
+
+  it("applies Côte d'Ivoire's airport-issued route for Emirati passports", () => {
+    expect(snapshot.passports.AE.statuses.CI).toBe("visa_on_arrival");
+  });
 });

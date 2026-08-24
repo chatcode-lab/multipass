@@ -1148,7 +1148,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "CM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CM", "CM", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("CI")).toHaveLength(57);
+    expect(pairsFor("CI")).toHaveLength(58);
     expect(getVisaRelationshipEvidence("GN", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1160,6 +1160,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HU", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PL", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SM", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.PL.statuses.CI).toBe("visa_on_arrival");
     expect(getVisaRelationshipEvidence("CI", "CI", "citizenship").supportsCurrentStatus).toBe(false);
 
@@ -4881,6 +4882,24 @@ describe("official visa evidence", () => {
       ["NO", "AF"],
       ["NO", "TD"],
       ["NO", "VG"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("supports the reviewed Emirati airport visa without guessing Dutch or Belgian gaps", () => {
+    expect(snapshot.passports.AE.statuses.CI).toBe("visa_on_arrival");
+    expect(getVisaRelationshipEvidence("AE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+
+    for (const [passportCode, destinationCode] of [
+      ["AE", "LR"],
+      ["AE", "IQ"],
+      ["NL", "GW"],
+      ["NL", "SL"],
+      ["NL", "SY"],
+      ["BE", "BD"],
+      ["BE", "VG"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);

@@ -4162,4 +4162,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.bg/bg/embassyinfo/iran",
     reviewedAt: "2026-08-24",
   },
+  {
+    passportCode: "AE",
+    destinationCode: "CI",
+    status: "visa_on_arrival",
+    reason: "UAE MOFA maps the normal Emirati passport to Côte d'Ivoire's electronic pre-enrolment route, while the State-approved procedure prints and issues the biometric visa at Abidjan airport.",
+    sourceUrl: "https://snedai.com/e-visa/",
+    reviewedAt: "2026-08-24",
+  },
 ] as const;
