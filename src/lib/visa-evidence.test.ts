@@ -1038,7 +1038,7 @@ describe("official visa evidence", () => {
       snapshot.passports[passport.code].statuses.BW === status,
     );
 
-    expect(currentBotswanaPairs).toHaveLength(184);
+    expect(currentBotswanaPairs).toHaveLength(185);
     expect(getVisaRelationshipEvidence("US", "BW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RW", "BW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MZ", "BW", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1436,7 +1436,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "TD");
 
-    expect(pairs).toHaveLength(51);
+    expect(pairs).toHaveLength(52);
     expect(getVisaRelationshipEvidence("CM", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BB", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SG", "TD", "visa_free").supportsCurrentStatus).toBe(true);
@@ -4810,6 +4810,23 @@ describe("official visa evidence", () => {
       ["HR", "SL"],
       ["SI", "IQ"],
       ["SI", "PS"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("supports reviewed Latvian and Estonian routes without guessing held Baltic gaps", () => {
+    expect(snapshot.passports.LV.statuses.TD).toBe("evisa");
+    expect(getVisaRelationshipEvidence("LV", "TD", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.EE.statuses.BW).toBe("visa_free");
+    expect(getVisaRelationshipEvidence("EE", "BW", "visa_free").supportsCurrentStatus).toBe(true);
+
+    for (const [passportCode, destinationCode] of [
+      ["EE", "TD"],
+      ["EE", "BD"],
+      ["LT", "BW"],
+      ["LT", "TD"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);

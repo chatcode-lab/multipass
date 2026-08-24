@@ -1,0 +1,196 @@
+{
+  "batchId": "latvia-current-full-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "latvia-mfa-current-chad-latvian-visa-liability-2026",
+      "title": "Republic of Chad",
+      "url": "https://www.mfa.gov.lv/lv/cada-celojumu-bridinajumi",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Latvia",
+      "jurisdiction": "Latvia / Chad",
+      "kind": "government-guidance",
+      "language": "Latvian",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Latvia MFA's live Chad travel guidance was updated 16 May 2026 and directly says Latvian citizens need a visa for Chad. Chad's newer immigration authority determines issuance timing.",
+      "supportingExcerpt": "Latvijas pilsoņiem un nepilsoņiem nepieciešams saņemt vīzu ieceļošanai Čadā."
+    },
+    {
+      "id": "chad-evisa-exclusive-online-notice-latvia-refresh-2026",
+      "title": "New visa tariffs in the Republic of Chad",
+      "url": "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      "publisher": "Directorate of Immigration and Emigration and E-Visa Subdirectorate, Republic of Chad",
+      "jurisdiction": "Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 11 May 2026 Immigration and E-Visa Subdirectorate notice requires all new non-diplomatic, non-courtesy visa applications exclusively through evisa.td.",
+      "supportingExcerpt": "toutes les demandes de visa se font désormais exclusivement en ligne via plateforme officielle evisa.td"
+    },
+    {
+      "id": "chad-evisa-processing-circular-latvia-refresh-2026",
+      "title": "E-Visa circular",
+      "url": "https://evisa.td/articles/11/note-circulaire",
+      "publisher": "Directorate of Immigration and Emigration / E-Visa Subdirectorate, Republic of Chad",
+      "jurisdiction": "Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 4 June 2026 eVisa circular supplies standard and express electronic-visa processing periods, corroborating pre-travel issuance.",
+      "supportingExcerpt": "Demande de e-Visa standard : 10 jours ouvrables; Demande de e-Visa express: 72 heures"
+    }
+  ],
+  "policies": [
+    {
+      "id": "latvian-ordinary-passports-chad-electronic-visitor-visa-2026-refresh",
+      "title": "Latvian ordinary passports: Chad electronic visitor visa",
+      "summary": "Latvia's MFA says Latvian citizens need a Chad visa; Chad now requires new non-diplomatic visitor visa requests exclusively online before travel.",
+      "status": "evisa",
+      "destinationCodes": ["TD"],
+      "passportCodes": ["LV"],
+      "conditions": [
+        "Applies to ordinary Latvian-passport short visitors who need a Chad visa.",
+        "Submit the new request exclusively through evisa.td before travel; standard processing is 10 working days and express processing is 72 hours.",
+        "Diplomatic and courtesy visas, and all purpose, security, documentary, carrier and final-admission requirements, remain outside this policy."
+      ],
+      "sourceIds": [
+        "latvia-mfa-current-chad-latvian-visa-liability-2026",
+        "chad-evisa-exclusive-online-notice-latvia-refresh-2026",
+        "chad-evisa-processing-circular-latvia-refresh-2026"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://evisa.td/",
+        "label": "Chad official eVisa application",
+        "processingTime": "10 working days standard or 72 hours express.",
+        "steps": [
+          "Submit the ordinary Latvian-passport visitor application through evisa.td before travel.",
+          "Travel only after visa issuance and with the required supporting documents."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "LV",
+      "destinationCode": "TD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Latvia's MFA establishes Chad visa liability, while Chad's current authority requires every new non-diplomatic visa request exclusively through evisa.td before travel.",
+      "sourceIds": [
+        "latvia-mfa-current-chad-latvian-visa-liability-2026",
+        "chad-evisa-exclusive-online-notice-latvia-refresh-2026",
+        "chad-evisa-processing-circular-latvia-refresh-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "LV",
+      "destinationCode": "BF",
+      "reason": "No current Latvian or Burkina Faso authority directly maps an ordinary Latvian passport to a short-visitor issuance route; portal availability is not proof.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gov.bf", "visaburkina.bf"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "CF",
+      "reason": "No current Latvian or Central African authority maps an ordinary Latvian passport to a short-visitor mission, electronic or border issuance route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.cf", "interieur.gouv.cf"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "KM",
+      "reason": "No current Comorian or Latvian official schedule directly establishes an ordinary Latvian short-visitor advance, electronic or arrival issuance route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "gouv.km", "justice.gouv.km"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "CG",
+      "reason": "No current Latvian or Republic of the Congo authority directly establishes ordinary Latvian-passport visitor treatment and issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.cg", "dgrsp.cg"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "DJ",
+      "reason": "Djibouti's electronic service does not publish a current ordinary Latvian-passport eligibility result; a portal alone is not proof.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "egouv.dj", "evisa.gouv.dj"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "GW",
+      "reason": "No current Latvian or Guinea-Bissau authority establishes whether ordinary Latvian visitors receive a mission, electronic or border-issued visa.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mne.gw", "gov.gw"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "LR",
+      "reason": "No current Latvian or Liberian authority maps an ordinary Latvian passport to an unconditional short-visitor electronic, mission or arrival issuance route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mofa.gov.lr", "immigration.gov.lr"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "ML",
+      "reason": "No current Latvian or Malian authority establishes ordinary Latvian-passport visitor treatment and actual issuance timing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatiemdc.gouv.ml", "securite.gouv.ml"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "NE",
+      "reason": "No current Latvian or Nigerien authority directly maps an ordinary Latvian passport to a tourist visitor issuance route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "diplomatie.gouv.ne", "interieur.gouv.ne"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "SL",
+      "reason": "Current Sierra Leone official services do not publish ordinary Latvian-passport eligibility and give inconsistent electronic-versus-arrival issuance descriptions.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "slid.gov.sl", "evisa.sl"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "SS",
+      "reason": "South Sudan's electronic service does not publish current ordinary Latvian-passport visitor eligibility; portal availability is not enough.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "evisa.gov.ss", "mofaic.gov.ss"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "AF",
+      "reason": "No current official source establishes a usable ordinary Latvian-passport short-visitor route amid Afghanistan's recognition and operational constraints.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "BD",
+      "reason": "No current Latvian or Bangladeshi authority establishes ordinary Latvian visitor eligibility and actual issuance timing for an arrival, mission or electronic route.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mofa.gov.bd", "visa.gov.bd"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "KP",
+      "reason": "No current official source establishes an available ordinary Latvian short-visitor route and issuance timing for DPRK; closure and permission cases are not normalized.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mfa.gov.kp", "naenara.com.kp"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "TM",
+      "reason": "Current material does not distinguish an ordinary Latvian tourist baseline from invitation-dependent or special Turkmenistan processing.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "migration.gov.tm", "mfa.gov.tm"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "VG",
+      "reason": "No current official source establishes an ordinary Latvian-passport visitor exemption or issuance route for the British Virgin Islands without conditional third-country documents.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "bvi.gov.vg", "gov.vg", "laws.gov.vg"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "IR",
+      "reason": "No current Latvian or Iranian authority establishes reliable ordinary Latvian visitor issuance timing among online, mission and arrival processes.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mfa.gov.ir", "evisa.mfa.ir"]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "PS",
+      "reason": "Israeli-controlled crossing, permit and operational rules do not establish one Palestine-wide ordinary Latvian-passport visitor status.",
+      "searchedOfficialDomains": ["mfa.gov.lv", "mfae.gov.ps", "gov.il", "cogat.mod.gov.il"]
+    }
+  ]
+}

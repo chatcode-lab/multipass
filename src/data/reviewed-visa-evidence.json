@@ -695,7 +695,10 @@
     "hungary-current-full-residual-outbound-refresh-2026",
     "croatia-current-full-residual-outbound-refresh-2026",
     "slovakia-current-full-residual-outbound-refresh-2026",
-    "slovenia-current-full-residual-outbound-refresh-2026"
+    "slovenia-current-full-residual-outbound-refresh-2026",
+    "latvia-current-full-residual-outbound-refresh-2026",
+    "estonia-current-full-residual-outbound-refresh-2026",
+    "lithuania-current-full-residual-outbound-refresh-2026"
   ],
   "sources": [
     {
@@ -30836,6 +30839,46 @@
       "jurisdiction": "Republic of Chad",
       "kind": "official-portal",
       "language": "French",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "latvia-mfa-current-chad-latvian-visa-liability-2026",
+      "title": "Republic of Chad",
+      "url": "https://www.mfa.gov.lv/lv/cada-celojumu-bridinajumi",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Latvia",
+      "jurisdiction": "Latvia / Chad",
+      "kind": "government-guidance",
+      "language": "Latvian",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "chad-evisa-exclusive-online-notice-latvia-refresh-2026",
+      "title": "New visa tariffs in the Republic of Chad",
+      "url": "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      "publisher": "Directorate of Immigration and Emigration and E-Visa Subdirectorate, Republic of Chad",
+      "jurisdiction": "Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "chad-evisa-processing-circular-latvia-refresh-2026",
+      "title": "E-Visa circular",
+      "url": "https://evisa.td/articles/11/note-circulaire",
+      "publisher": "Directorate of Immigration and Emigration / E-Visa Subdirectorate, Republic of Chad",
+      "jurisdiction": "Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "estonia-mfa-current-botswana-ordinary-passport-waiver-2026",
+      "title": "Botswana travel advice",
+      "url": "https://reisitargalt.vm.ee/sihtkoht/botswana/",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Estonia",
+      "jurisdiction": "Estonia / Botswana",
+      "kind": "government-guidance",
+      "language": "Estonian",
       "reviewedAt": "2026-08-24"
     }
   ],
@@ -102129,6 +102172,56 @@
           "Travel only after issuance and retain the required supporting documents."
         ]
       }
+    },
+    {
+      "id": "latvian-ordinary-passports-chad-electronic-visitor-visa-2026-refresh",
+      "title": "Latvian ordinary passports: Chad electronic visitor visa",
+      "summary": "Latvia's MFA says Latvian citizens need a Chad visa; Chad now requires new non-diplomatic visitor visa requests exclusively online before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "TD"
+      ],
+      "passportCodes": [
+        "LV"
+      ],
+      "conditions": [
+        "Applies to ordinary Latvian-passport short visitors who need a Chad visa.",
+        "Submit the new request exclusively through evisa.td before travel; standard processing is 10 working days and express processing is 72 hours.",
+        "Diplomatic and courtesy visas, and all purpose, security, documentary, carrier and final-admission requirements, remain outside this policy."
+      ],
+      "sourceIds": [
+        "latvia-mfa-current-chad-latvian-visa-liability-2026",
+        "chad-evisa-exclusive-online-notice-latvia-refresh-2026",
+        "chad-evisa-processing-circular-latvia-refresh-2026"
+      ],
+      "application": {
+        "url": "https://evisa.td/",
+        "label": "Chad official eVisa application",
+        "processingTime": "10 working days standard or 72 hours express.",
+        "steps": [
+          "Submit the ordinary Latvian-passport visitor application through evisa.td before travel.",
+          "Travel only after visa issuance and with the required supporting documents."
+        ]
+      }
+    },
+    {
+      "id": "estonian-ordinary-passports-botswana-visa-free-2026",
+      "title": "Estonian ordinary passports: Botswana visa-free short visit",
+      "summary": "Estonia's current MFA guidance explicitly permits Estonian citizens to visit Botswana visa-free for up to 90 days.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BW"
+      ],
+      "passportCodes": [
+        "EE"
+      ],
+      "conditions": [
+        "Applies to ordinary Estonian-passport stays of up to 90 days.",
+        "Work, residence, special documents, carrier requirements and final admission remain outside this policy."
+      ],
+      "sourceIds": [
+        "estonia-mfa-current-botswana-ordinary-passport-waiver-2026"
+      ]
     }
   ]
 }

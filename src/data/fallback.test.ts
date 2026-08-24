@@ -428,4 +428,9 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.HR.statuses.TD).toBe("evisa");
     expect(snapshot.passports.SI.statuses.TD).toBe("evisa");
   });
+
+  it("applies the current Latvian correction and retains Estonia's Botswana result", () => {
+    expect(snapshot.passports.LV.statuses.TD).toBe("evisa");
+    expect(snapshot.passports.EE.statuses.BW).toBe("visa_free");
+  });
 });
