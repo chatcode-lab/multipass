@@ -4848,6 +4848,24 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("keeps final British, Seychellois and Kuwaiti residual routes uncovered", () => {
+    for (const [passportCode, destinationCode] of [
+      ["GB", "AF"],
+      ["GB", "PS"],
+      ["SC", "PS"],
+      ["SC", "VG"],
+      ["KW", "BF"],
+      ["KW", "CI"],
+      ["KW", "SL"],
+      ["KW", "SS"],
+      ["KW", "IQ"],
+      ["KW", "PS"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
