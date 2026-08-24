@@ -1,0 +1,73 @@
+{
+  "batchId": "spain-current-final-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "spain-maec-current-afghanistan-entry-documents-2026",
+      "title": "Afghanistan travel recommendations",
+      "url": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Afganist%C3%A1n",
+      "publisher": "Ministry of Foreign Affairs, European Union and Cooperation of Spain",
+      "jurisdiction": "Spain / Afghanistan",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Spain's live MAEC destination guidance, last updated 24 April 2026, directly addresses entry documents for Spanish travellers to Afghanistan.",
+      "supportingExcerpt": "Para entrar en Afganistán se requiere visado. No es posible obtener visado en frontera."
+    },
+    {
+      "id": "spain-maec-current-iran-tourist-visa-2026",
+      "title": "Iran travel recommendations",
+      "url": "https://www.exteriores.gob.es/Embajadas/teheran/es/ViajarA/Paginas/Recomendaciones-de-viaje.aspx",
+      "publisher": "Embassy of Spain in Tehran, Ministry of Foreign Affairs",
+      "jurisdiction": "Spain / Iran",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Spain's live Embassy in Tehran MAEC guidance, last updated 13 April 2026, directly addresses Spanish citizens' tourist-visa treatment.",
+      "supportingExcerpt": "Irán dejó de expedir visados en frontera (visa on arrival) desde el inicio de la pandemia."
+    },
+    {
+      "id": "spain-maec-current-dprk-entry-documents-2026",
+      "title": "North Korea travel recommendations",
+      "url": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=Corea-del-norte",
+      "publisher": "Ministry of Foreign Affairs, European Union and Cooperation of Spain",
+      "jurisdiction": "Spain / Democratic People's Republic of Korea",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Spain's live MAEC destination guidance, last updated 6 May 2026, directly states the visitor-visa and current-route conditions for Spanish travellers to DPRK.",
+      "supportingExcerpt": "Se necesita visado, ya sea por turismo o negocios."
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "ES",
+      "destinationCode": "IR",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "unresolved",
+      "explanation": "Current MAEC guidance says Iran has not officially resumed border visas and requires a pre-application, but does not establish the resulting ordinary tourist visa's issuance point.",
+      "sourceIds": ["spain-maec-current-iran-tourist-visa-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "ES",
+      "destinationCode": "AF",
+      "reason": "Current MAEC guidance requires a visa and excludes border issuance, but de facto requirements may vary or be non-public and no usable ordinary Spanish tourist issuance channel is established.",
+      "searchedOfficialDomains": ["exteriores.gob.es", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "KP",
+      "reason": "MAEC requires a tourism or business visa and identifies China and Russia as current access routes, but does not establish ordinary Spanish visitor issuance timing or operational availability.",
+      "searchedOfficialDomains": ["exteriores.gob.es", "mfa.gov.kp", "naenara.com.kp"]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "IR",
+      "reason": "MAEC says Iran has not officially resumed border visas and requires a pre-application before travel, but does not establish whether the resulting ordinary Spanish tourist visa is electronic or mission-issued.",
+      "searchedOfficialDomains": ["exteriores.gob.es", "mfa.gov.ir", "evisa.mfa.ir"]
+    }
+  ]
+}

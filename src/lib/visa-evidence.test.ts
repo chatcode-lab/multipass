@@ -4833,6 +4833,21 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("keeps final German, Italian and Spanish operationally ambiguous routes uncovered", () => {
+    for (const [passportCode, destinationCode] of [
+      ["DE", "AF"],
+      ["IT", "AF"],
+      ["IT", "CF"],
+      ["IT", "SS"],
+      ["ES", "AF"],
+      ["ES", "KP"],
+      ["ES", "IR"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
