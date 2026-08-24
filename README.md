@@ -1,10 +1,40 @@
 # MultiPass Rank
 
-MultiPass Rank is a fast passport-ranking and multi-passport comparison tool for [multipassrank.com](https://multipassrank.com). It ranks 199 passports, shows destination-level access across 227 countries and territories, and calculates the practical reach of passport combinations.
+[![CI](https://github.com/chatcode-lab/multipass/actions/workflows/ci.yml/badge.svg)](https://github.com/chatcode-lab/multipass/actions/workflows/ci.yml)
+[![Live site](https://img.shields.io/website?url=https%3A%2F%2Fmultipassrank.com&label=live)](https://multipassrank.com)
+[![License: MIT](https://img.shields.io/badge/code-MIT-2f6f5e.svg)](LICENSE)
 
-The application is intentionally direct: no accounts, lead forms, analytics, or commercial ranking adjustments.
+MultiPass Rank is an evidence-aware passport-ranking and multi-passport combination tool. It ranks 199 passports, compares access across 227 countries and territories, and answers the question ordinary rankings skip: **what does a set of passports cover together?**
+
+[Open the live tool](https://multipassrank.com) · [Browse destinations](https://multipassrank.com/destinations) · [Inspect evidence coverage](https://multipassrank.com/status) · [Read the AI guide](https://multipassrank.com/ai)
+
+The application is intentionally direct: no accounts, lead forms, analytics, or commercial ranking adjustments. It was built with Codex through [chatcode.dev](https://chatcode.dev) in partnership with [Settlers Club](https://settlers.club), and is published as a [Chatcode Lab](https://chatcode.dev/lab/multipass-rank-passport-combination-calculator/) project.
+
+## What it does
+
+- Ranks individual passports using visa-free, visa-on-arrival, and ETA access.
+- Combines up to five passports and places the resulting set into the global ranking.
+- Compares individual or combined sets destination by destination, with regional filters and differences-only mode.
+- Gives every passport, destination, and verified passport–destination relationship a stable HTML and Markdown URL.
+- Publishes an inspectable evidence matrix showing which current access claims have official-source support and when they were reviewed.
+- Exposes same-origin JSON endpoints and an AI-oriented guide for reproducible comparisons.
+
+As of 24 August 2026, the official-source layer supports 39,314 of 44,974 foreign-access relationships (87.4%). The live [status page](https://multipassrank.com/status) is the current authority for progress.
 
 Regional and language collections are generated from the registry in `src/lib/geography.ts`. Language groups use official or nationally designated administrative/working-language status rather than ethnicity or assumed individual fluency.
+
+## Data and trust boundary
+
+MultiPass Rank is not yet an independent replacement for its upstream ranking feed. The sync Worker currently uses the public Henley Passport Index API to bootstrap a complete access snapshot, then applies narrowly reviewed corrections. A separate official-source evidence layer verifies current relationships without treating the upstream classification as proof.
+
+The distinction is deliberate:
+
+- `src/data/fallback.json` is a generated operational snapshot derived from the upstream feed. It is not covered by this repository's MIT license.
+- `src/data/reviewed-visa-evidence.json` contains reviewed policy and source metadata built from official government, treaty, gazette, immigration, and foreign-ministry material.
+- `src/data/access-overrides.ts` contains only corrections for which the official taxonomy clearly disagrees with the upstream status.
+- Unsupported relationships remain visible in the product, but their evidence pages are marked incomplete and excluded from indexing.
+
+See [NOTICE.md](NOTICE.md), the live [data license](https://multipassrank.com/data-license), and [docs/visa-evidence-research.md](docs/visa-evidence-research.md) before reusing data.
 
 ## Stack
 
@@ -144,3 +174,11 @@ Visa-free, visa on arrival, and ETA destinations count toward a passport's mobil
 For combined sets, the easiest available status wins per destination. All citizenship countries count as accessible, then one home destination is subtracted so a one-passport set exactly matches its individual score. Combined positions are displayed as rank equivalents, not official passport ranks.
 
 Travel requirements can change without notice. Verify rules with official destination authorities before making travel arrangements.
+
+## Contributing and security
+
+Evidence contributions are welcome, but every relationship must pass the repository's strict official-source and independent-review gate. Start with [CONTRIBUTING.md](CONTRIBUTING.md). Please report security issues privately as described in [SECURITY.md](SECURITY.md).
+
+## License
+
+The original application code is available under the [MIT License](LICENSE). Original evidence metadata is separately offered under CC BY 4.0. The upstream access snapshot, official source documents, logos, trademarks, and other third-party material are excluded; see [NOTICE.md](NOTICE.md) for the exact boundary.
