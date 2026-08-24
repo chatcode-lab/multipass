@@ -4866,6 +4866,27 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("keeps final US, Canadian and Norwegian residual routes uncovered", () => {
+    for (const [passportCode, destinationCode] of [
+      ["US", "AF"],
+      ["US", "BF"],
+      ["US", "TD"],
+      ["US", "IR"],
+      ["US", "KP"],
+      ["US", "ML"],
+      ["US", "PS"],
+      ["CA", "AF"],
+      ["CA", "GW"],
+      ["CA", "TM"],
+      ["NO", "AF"],
+      ["NO", "TD"],
+      ["NO", "VG"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",

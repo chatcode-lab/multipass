@@ -1,0 +1,161 @@
+{
+  "batchId": "united-states-current-final-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "us-state-afghanistan-entry-current-2026",
+      "title": "Afghanistan Travel Advisory",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/afghanistan.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / Afghanistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Live U.S. Department of State guidance gives U.S.-passport entry information and identifies current Afghan visa-recognition uncertainty.",
+      "supportingExcerpt": "Afghan immigration officials may refuse to accept visas that were issued by Afghan Republic-era officials."
+    },
+    {
+      "id": "us-state-burkina-faso-entry-current-2026",
+      "title": "Burkina Faso Travel Advisory",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/burkina-faso.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / Burkina Faso",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Live U.S. Department of State guidance expressly reports Burkina Faso's nationality-specific visa-issuance suspension.",
+      "supportingExcerpt": "As of Dec 30, 2025, the Government of Burkina Faso suspended visas to Americans with limited exceptions."
+    },
+    {
+      "id": "us-state-chad-entry-current-2026",
+      "title": "Chad Travel Advisory",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/chad.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / Chad",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Live U.S. Department of State guidance addresses visa issuance and arrival issuance for U.S. citizens.",
+      "supportingExcerpt": "Government of Chad is not routinely issuing visas to U.S. citizens at this time."
+    },
+    {
+      "id": "us-state-iran-entry-current-2026",
+      "title": "Iran Travel Advisory",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/iran.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / Iran",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Live U.S. Department of State guidance states the U.S.-visitor tourist-visa liability but no usable issuance route.",
+      "supportingExcerpt": "A tourist visa is required, except for Kish Island."
+    },
+    {
+      "id": "us-state-north-korea-entry-current-2026",
+      "title": "North Korea Travel Advisory",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/destination.prk.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / North Korea",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Live U.S. Department of State guidance establishes the special-validation restriction on ordinary U.S. passports.",
+      "supportingExcerpt": "U.S. passports are not valid for travel into or through North Korea unless they contain a special validation."
+    },
+    {
+      "id": "us-state-mali-entry-current-2026",
+      "title": "Mali Travel Advisory",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/mali.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / Mali",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Live U.S. Department of State guidance expressly reports Mali's nationality-specific visa-issuance suspension.",
+      "supportingExcerpt": "As of January 1, 2026, the government of Mali suspended visa issuance to U.S. citizens."
+    },
+    {
+      "id": "us-state-israel-west-bank-gaza-entry-current-2026",
+      "title": "Israel, the West Bank, and Gaza International Travel Information",
+      "url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/IsraeltheWestBankandGaza.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / Israel, West Bank and Gaza",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Live U.S. Department of State entry guidance distinguishes governing authorities and crossing-specific controls for the West Bank and Gaza.",
+      "supportingExcerpt": "All persons seeking to enter or depart Israel, the West Bank, or Gaza are subject to immigration and security screening."
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "US",
+      "destinationCode": "BF",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unavailable (visa issuance suspended, limited exceptions)",
+      "explanation": "Current State Department guidance says Burkina Faso suspended visas to Americans from 30 December 2025, with limited exceptions. This cannot be represented as a functioning ordinary visitor eVisa route.",
+      "sourceIds": ["us-state-burkina-faso-entry-current-2026"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "TD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unavailable (not routinely issuing visas to U.S. citizens)",
+      "explanation": "Current State Department guidance says Chad is not routinely issuing visas to U.S. citizens and visas are unavailable on arrival. The fallback advance-visa label does not describe current ordinary issuance.",
+      "sourceIds": ["us-state-chad-entry-current-2026"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "ML",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unavailable (visa issuance suspended, limited exceptions)",
+      "explanation": "Current State Department guidance says Mali suspended visa issuance to U.S. citizens from 1 January 2026, with limited exceptions. This cannot be represented as a functioning ordinary visitor route.",
+      "sourceIds": ["us-state-mali-entry-current-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "US",
+      "destinationCode": "AF",
+      "reason": "The State Department says an Afghan visa is required before travel but warns that Afghanistan may refuse some overseas-mission visas. It does not establish a current usable ordinary-passport issuance channel.",
+      "searchedOfficialDomains": ["travel.state.gov", "mfa.gov.af", "evisa.gov.af"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "BF",
+      "reason": "Current guidance reports a suspension of visas to Americans with limited exceptions. That exceptional suspension cannot be normalized as a functioning ordinary short-visitor route.",
+      "searchedOfficialDomains": ["travel.state.gov", "diplomatie.gov.bf", "mae.gov.bf"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "TD",
+      "reason": "Current guidance says Chad is not routinely issuing visas to U.S. citizens. It therefore does not establish a reliable ordinary visitor issuance route or timing.",
+      "searchedOfficialDomains": ["travel.state.gov", "diplomatie.gouv.td", "evisa.td"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "IR",
+      "reason": "Current guidance states tourist-visa liability but does not establish an ordinary U.S.-passport issuance mode or usable nationwide visitor route. No portal route is inferred.",
+      "searchedOfficialDomains": ["travel.state.gov", "mfa.gov.ir", "evisa.mfa.ir"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "KP",
+      "reason": "An ordinary U.S. passport is invalid for North Korea travel without narrowly granted special validation. No ordinary visitor issuance route is established, and the taxonomy has no passport-invalid status.",
+      "searchedOfficialDomains": ["travel.state.gov", "state.gov", "mfa.gov.kp"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "ML",
+      "reason": "Current guidance reports a suspension of visa issuance to U.S. citizens with limited exceptions. That exceptional suspension cannot be normalized as a functioning ordinary short-visitor route.",
+      "searchedOfficialDomains": ["travel.state.gov", "diplomatie.gouv.ml", "mae.gov.ml"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "PS",
+      "reason": "Current guidance distinguishes Israeli, Palestinian and Egyptian crossing controls, security screening, and Gaza access. It does not establish one ordinary U.S.-passport status for the PS destination scope.",
+      "searchedOfficialDomains": ["travel.state.gov", "gov.il", "cogat.mod.gov.il", "moi.pna.ps"]
+    }
+  ]
+}
