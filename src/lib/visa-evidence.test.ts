@@ -5002,6 +5002,27 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves Cypriot, Romanian and Malaysian final route gaps as uncovered", () => {
+    for (const sourceId of [
+      "botswana-washington-embassy-romanian-list-2026",
+      "botswana-tourism-romanian-required-list-2026",
+    ] as const) {
+      expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["CY", "SL"],
+      ["CY", "SS"],
+      ["RO", "BW"],
+      ["RO", "IQ"],
+      ["MY", "GW"],
+      ["MY", "TM"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
