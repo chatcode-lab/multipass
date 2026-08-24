@@ -1,0 +1,96 @@
+{
+  "batchId": "oman-sponsored-tourist-evisa-residual-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "oman-gov-sponsored-tourist-visa-all-nationalities-2026",
+      "title": "Get Sponsored Tourist Visa",
+      "url": "https://gov.om/en/w/get-sponsored-tourist-visa",
+      "publisher": "Royal Oman Police / Gov.om",
+      "jurisdiction": "Sultanate of Oman",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Oman's national government services portal identifies the Royal Oman Police as the service owner and records that the page was updated on 5 August 2025.",
+      "supportingExcerpt": "tourists of all nationalities ... sponsored by tourism companies with a license to practice tourism activities"
+    },
+    {
+      "id": "oman-rop-evisa-sponsored-tourist-delivery-2026",
+      "title": "Frequently Asked Questions - eVisa",
+      "url": "https://evisa.rop.gov.om/en/frequently-asked-questions",
+      "publisher": "Royal Oman Police",
+      "jurisdiction": "Sultanate of Oman",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Royal Oman Police eVisa service names sponsored tourist visas as an eVisa-system product and states how an approved visa is delivered.",
+      "supportingExcerpt": "if approved, you will be getting an electronic visa sent to your registered e-mail"
+    },
+    {
+      "id": "oman-fm-online-visitor-visa-authority-2026",
+      "title": "Entry visas",
+      "url": "https://www.fm.gov.om/en/visitors/entry-visas/",
+      "publisher": "Foreign Ministry, Sultanate of Oman",
+      "jurisdiction": "Sultanate of Oman",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Foreign Ministry page was updated on 16 January 2026 and identifies the Royal Oman Police as the authority managing visitor visas.",
+      "supportingExcerpt": "Visa applications for Oman are available online."
+    }
+  ],
+  "policies": [
+    {
+      "id": "oman-sponsored-tourist-evisa-all-nationalities-residual-2026",
+      "title": "Ordinary passports: sponsored electronic tourist visa",
+      "summary": "Oman's Royal Oman Police offers tourists of all nationalities a sponsored 30-day tourist visa. The authority classifies sponsored tourist visas within its eVisa system and sends approved visas electronically before travel.",
+      "status": "evisa",
+      "destinationCodes": ["OM"],
+      "passportCodes": ["BB", "IL", "BS", "VC", "KN", "AG", "CR", "PA", "LC", "GD", "PE", "TT", "DM", "SB", "WS", "GT", "SV", "MH", "TO", "TV", "HN", "ME", "NI", "KI", "FM", "PW", "TL", "BZ", "FJ", "MV", "NR", "XK", "VU", "GY", "JM", "PG", "BW", "LS", "DO", "NA", "MA", "AZ", "SZ", "GH", "KE", "MW", "TZ", "GM", "RW", "TN", "MN", "ZM", "CV", "MZ", "UG", "BJ", "SL", "KG", "ST", "ZW", "BF", "CI", "CU", "IN", "MG", "SN", "NE", "TG", "GA", "TJ", "GN", "MR", "GQ", "ML", "TD", "GW", "VN", "DZ", "KM", "AO", "KH", "CM", "CG", "JO", "LR", "BT", "CF", "HT", "LA", "BI", "EG", "TM", "CD", "DJ", "MM", "NG", "LK", "ER", "LY", "SS", "ET", "SD", "BD", "PK", "NP", "SO", "YE", "IQ", "SY"],
+      "conditions": [
+        "A tourism company licensed in Oman must sponsor the application. This is not an unsponsored eVisa entitlement, visa exemption, visa on arrival, or ETA.",
+        "The tourist visa is valid for 30 days and may be extended for a similar period. The application must be approved before travel; an approved electronic visa is sent to the registered email address.",
+        "Use a valid ordinary passport and meet the sponsor, application, payment, supporting-document, carrier, border-control, and final-admission requirements. Work, residence, transit, diplomatic, official, emergency, refugee, stateless, and other special-document treatment remain outside this policy.",
+        "Afghanistan, DPRK, and Palestine remain outside this batch under the project's conservative direct-evidence rule. Taiwan remains outside because current Omani authority lists diverge on its visa-free treatment."
+      ],
+      "sourceIds": ["oman-gov-sponsored-tourist-visa-all-nationalities-2026", "oman-rop-evisa-sponsored-tourist-delivery-2026", "oman-fm-online-visitor-visa-authority-2026"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.rop.gov.om/",
+        "label": "Royal Oman Police eVisa service",
+        "steps": [
+          "Arrange sponsorship through an Oman-licensed tourism company and submit the tourist visa application through the Royal Oman Police eVisa system.",
+          "Complete the required documents and payment, then wait for approval before departure.",
+          "Retain the electronic visa sent to the registered email address and present it with the same passport for carrier and final-admission checks."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "OM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current Royal Oman Police service expressly covers tourists of all nationalities and delivers an approved sponsored tourist visa electronically before travel; no official nationality exception is stated.",
+      "sourceIds": ["oman-gov-sponsored-tourist-visa-all-nationalities-2026", "oman-rop-evisa-sponsored-tourist-delivery-2026"]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "OM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current Royal Oman Police service expressly covers tourists of all nationalities and delivers the approved sponsored tourist visa electronically before travel.",
+      "sourceIds": ["oman-gov-sponsored-tourist-visa-all-nationalities-2026", "oman-rop-evisa-sponsored-tourist-delivery-2026"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "OM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current Royal Oman Police service expressly covers tourists of all nationalities and delivers the approved sponsored tourist visa electronically before travel.",
+      "sourceIds": ["oman-gov-sponsored-tourist-visa-all-nationalities-2026", "oman-rop-evisa-sponsored-tourist-delivery-2026"]
+    }
+  ],
+  "unresolved": []
+}

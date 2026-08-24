@@ -305,16 +305,20 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("RW", "RW", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
-  it("keeps Oman's conditional exemptions explicit and its source divergence unresolved", () => {
+  it("keeps Oman's conditional exemptions explicit alongside the sponsored tourist eVisa", () => {
     const omanPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "OM");
 
-    expect(omanPairs).toHaveLength(109);
+    expect(omanPairs).toHaveLength(218);
     expect(getVisaRelationshipEvidence("DE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "OM", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IN", "OM", "evisa").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IN", "OM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "OM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TO", "OM", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("SS", "OM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "OM", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "OM", "evisa").supportsCurrentStatus).toBe(false);
   });
 
   it("covers Jamaica's explicit ordinary-passport table without inferring omitted rows", () => {
@@ -936,7 +940,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "BT", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BT", "BT", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("BD")).toHaveLength(57);
+    expect(pairsFor("BD")).toHaveLength(58);
     expect(getVisaRelationshipEvidence("EG", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -949,6 +953,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MT", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LI", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LK", "BD", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BD", "BD", "citizenship").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("PK")).toHaveLength(190);
@@ -3823,6 +3828,7 @@ describe("official visa evidence", () => {
       ["CR", "GD", "visa_free"],
       ["CR", "PA", "visa_free"],
       ["CR", "JO", "visa_on_arrival"],
+      ["CR", "OM", "evisa"],
       ["ET", "GD", "visa_required"],
       ["ET", "PA", "visa_required"],
     ] as const) {
@@ -3833,7 +3839,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["BT", "MK"],
       ["CO", "BF"],
-      ["CR", "OM"],
       ["ET", "MK"],
     ] as const) {
       expect(
@@ -5245,6 +5250,8 @@ describe("official visa evidence", () => {
       "odyseusz.gov.pl",
       "www.stjornarradid.is",
       "voa.specialbranch.gov.bd",
+      "immi.specialbranch.gov.bd",
+      "colombo.mofa.gov.bd",
       "www.mfa.gov.lv",
       "www.bmeia.gv.at",
       "konzinfo.mfa.gov.hu",
@@ -5269,6 +5276,7 @@ describe("official visa evidence", () => {
       "evisa.gov.mn",
       "portales.sre.gob.mx",
       "evisa.rop.gov.om",
+      "gov.om",
       "president.uz",
       "www.president.gov.ua",
       "aplicacao.itamaraty.gov.br",

@@ -3989,4 +3989,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
     reviewedAt: "2026-08-24",
   })),
+  ...(["IL", "TO", "SS"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "OM" as const,
+    status: "evisa" as const,
+    reason: "Oman's Royal Oman Police offers tourists of all nationalities a sponsored tourist visa through its eVisa system and sends approved visas electronically before travel.",
+    sourceUrl: "https://gov.om/en/w/get-sponsored-tourist-visa",
+    reviewedAt: "2026-08-24",
+  })),
 ] as const;
