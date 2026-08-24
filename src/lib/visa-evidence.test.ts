@@ -4938,6 +4938,27 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("preserves Portuguese, Greek and Luxembourg final route conflicts as uncovered", () => {
+    for (const sourceId of [
+      "luxembourg-mfa-current-ukraine-etourist-visa-2026",
+      "ukraine-mfa-luxembourg-legacy-visa-free-entry-table-2023",
+    ] as const) {
+      expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
+      ["PT", "NU"],
+      ["PT", "SL"],
+      ["GR", "IQ"],
+      ["GR", "VG"],
+      ["LU", "UA"],
+      ["LU", "SL"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("contains only direct HTTPS official-source URLs", () => {
     const officialHosts = new Set([
       "mvp.gov.ba",
@@ -5008,6 +5029,7 @@ describe("official visa evidence", () => {
       "dmsu.gov.ua",
       "mvs.gov.ua",
       "mfa.gov.ua",
+      "mae.gouvernement.lu",
       "www.egouv.dj",
       "guide.visitdjibouti.dj",
       "www.journalofficiel.dj",
