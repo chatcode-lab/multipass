@@ -1436,7 +1436,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "TD");
 
-    expect(pairs).toHaveLength(49);
+    expect(pairs).toHaveLength(51);
     expect(getVisaRelationshipEvidence("CM", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BB", "TD", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SG", "TD", "visa_free").supportsCurrentStatus).toBe(true);
@@ -4791,6 +4791,25 @@ describe("official visa evidence", () => {
       ["HU", "DJ"],
       ["HU", "IQ"],
       ["HU", "TM"],
+    ] as const) {
+      const status = snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("supports reviewed Croatian and Slovenian Chad routes without guessing Slovakia", () => {
+    for (const passportCode of ["HR", "SI"] as const) {
+      expect(snapshot.passports[passportCode].statuses.TD).toBe("evisa");
+      expect(getVisaRelationshipEvidence(passportCode, "TD", "evisa").supportsCurrentStatus).toBe(true);
+    }
+
+    expect(getVisaRelationshipEvidence("SK", "TD", snapshot.passports.SK.statuses.TD).supportsCurrentStatus)
+      .toBe(false);
+
+    for (const [passportCode, destinationCode] of [
+      ["HR", "SL"],
+      ["SI", "IQ"],
+      ["SI", "PS"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);

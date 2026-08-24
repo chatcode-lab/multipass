@@ -423,4 +423,9 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.BG.statuses.KM).toBe("visa_required");
     expect(snapshot.passports.BG.statuses.IR).toBe("visa_required");
   });
+
+  it("applies the current Croatian and Slovenian residual corrections", () => {
+    expect(snapshot.passports.HR.statuses.TD).toBe("evisa");
+    expect(snapshot.passports.SI.statuses.TD).toBe("evisa");
+  });
 });

@@ -1,0 +1,103 @@
+{
+  "batchId": "slovenia-current-full-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "slovenian-mfa-chad-current-ordinary-passport-visa-2026-refresh",
+      "title": "Chad: entry conditions",
+      "url": "https://www.gov.si/drzave/cad/",
+      "publisher": "Ministry of Foreign and European Affairs of the Republic of Slovenia",
+      "jurisdiction": "Slovenia / Chad",
+      "kind": "government-guidance",
+      "language": "Slovenian",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Slovenia's live GOV.SI country page was last changed 2 June 2026 and directly states the entry rule for Slovenian citizens, including a required visa and ordinary-passport validity.",
+      "supportingExcerpt": "Slovenski državljani potrebujejo vizum za vstop v Čad."
+    },
+    {
+      "id": "chad-evisa-current-exclusive-online-notice-slovenia-refresh-2026",
+      "title": "New visa tariffs in the Republic of Chad",
+      "url": "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      "publisher": "Direction de l’Immigration et de l’Émigration and E-Visa Subdirectorate",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 11 May 2026 Immigration and E-Visa Subdirectorate notice says all new visa applications are exclusively online through the official evisa.td platform and visas issued outside it are invalid after 21 May.",
+      "supportingExcerpt": "toutes les demandes de visa se font désormais exclusivement en ligne via plateforme officielle evisa.td"
+    },
+    {
+      "id": "chad-evisa-current-processing-circular-slovenia-refresh-2026",
+      "title": "E-Visa circular",
+      "url": "https://evisa.td/articles/11/note-circulaire",
+      "publisher": "Direction de l’Immigration et de l’Émigration / E-Visa Subdirectorate",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 4 June 2026 official circular gives electronic-visa processing periods, confirming pre-travel electronic issuance rather than a border-issued visitor visa.",
+      "supportingExcerpt": "Demande de e-Visa standard : 10 jours ouvrables; Demande de e-Visa express: 72 heures"
+    }
+  ],
+  "policies": [
+    {
+      "id": "slovenian-ordinary-passports-chad-electronic-visitor-visa-2026-refresh",
+      "title": "Slovenian ordinary passports: Chad electronic visitor visa",
+      "summary": "Slovenia's current guidance says Slovenians need a visa for Chad, whose current official notices require new visa applications electronically before travel.",
+      "status": "evisa",
+      "destinationCodes": ["TD"],
+      "passportCodes": ["SI"],
+      "conditions": [
+        "Apply through Chad's official eVisa platform before travel; standard processing is 10 working days and express processing is 72 hours.",
+        "The Slovenian passport must be valid at least six months on entry; approval, documentary, health, security, carrier and final-admission checks remain applicable.",
+        "This applies only to the ordinary Slovenian visitor passport that Slovenia's current guidance says requires a visa."
+      ],
+      "sourceIds": [
+        "slovenian-mfa-chad-current-ordinary-passport-visa-2026-refresh",
+        "chad-evisa-current-exclusive-online-notice-slovenia-refresh-2026",
+        "chad-evisa-current-processing-circular-slovenia-refresh-2026"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.td/",
+        "label": "Chad official e-Visa platform",
+        "processingTime": "10 working days standard or 72 hours express.",
+        "steps": [
+          "Submit the ordinary Slovenian-passport visitor application online before travel.",
+          "Travel only after issuance and retain the required supporting documents."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "SI",
+      "destinationCode": "TD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Slovenia's current guidance establishes visa liability, while Chad's current notices require new visa applications electronically before travel.",
+      "sourceIds": [
+        "slovenian-mfa-chad-current-ordinary-passport-visa-2026-refresh",
+        "chad-evisa-current-exclusive-online-notice-slovenia-refresh-2026",
+        "chad-evisa-current-processing-circular-slovenia-refresh-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"SI","destinationCode":"BF","reason":"Slovenia says the visa application may be filed electronically, but does not establish electronic issuance. Portal availability is not used to normalize the route.","searchedOfficialDomains":["gov.si","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"SI","destinationCode":"CF","reason":"No current Slovenian or Central African official source directly establishes an ordinary Slovenian-passport visitor route and actual issuance timing.","searchedOfficialDomains":["gov.si","diplomatie.gouv.cf","interieur.gouv.cf"]},
+    {"passportCode":"SI","destinationCode":"KM","reason":"Slovenian guidance says a visa is required but does not establish advance, electronic or arrival issuance; current Comorian material supplies no Slovenian schedule.","searchedOfficialDomains":["gov.si","justice.gouv.km","gouv.km"]},
+    {"passportCode":"SI","destinationCode":"CG","reason":"Slovenian guidance says a visa is required but does not establish the ordinary visitor issuance route and timing for the Republic of the Congo.","searchedOfficialDomains":["gov.si","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"SI","destinationCode":"CI","reason":"Côte d’Ivoire's official process describes online pre-enrolment and airport printing, but no current source establishes whether an ordinary Slovenian passport is subject to it.","searchedOfficialDomains":["gov.si","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"SI","destinationCode":"DJ","reason":"Slovenian guidance says a visa is required but does not establish actual electronic, mission or arrival issuance timing for an ordinary Slovenian passport.","searchedOfficialDomains":["gov.si","evisa.gouv.dj","egouv.dj"]},
+    {"passportCode":"SI","destinationCode":"GW","reason":"Slovenian guidance names a Ljubljana consular route, but current official sources do not resolve advance, arrival and conditional-arrival issuance into one ordinary Slovenian baseline.","searchedOfficialDomains":["gov.si","mne.gw","gov.gw"]},
+    {"passportCode":"SI","destinationCode":"LR","reason":"The current Slovenian page points to an embassy for information but does not resolve conditional arrival, electronic and mission routes for ordinary Slovenian tourists.","searchedOfficialDomains":["gov.si","immigration.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"SI","destinationCode":"SL","reason":"Slovenian guidance names a Berlin embassy route, while Sierra Leone's live official material conflicts on electronic and airport issuance. The timing is not flattened.","searchedOfficialDomains":["gov.si","slid.gov.sl","evisa.sl","ntb.gov.sl"]},
+    {"passportCode":"SI","destinationCode":"SD","reason":"Slovenian guidance says a visa is required but no current source establishes ordinary visitor issuance timing amid disrupted operations.","searchedOfficialDomains":["gov.si","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"SI","destinationCode":"AF","reason":"No current official source establishes a usable ordinary Slovenian-passport short-visitor issuance route amid Afghanistan's operational restrictions.","searchedOfficialDomains":["gov.si","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"SI","destinationCode":"KP","reason":"Slovenia reports that entry is currently not allowed and organised tourist travel is suspended. Closure and permission cases are not normalized as a visitor status.","searchedOfficialDomains":["gov.si","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"SI","destinationCode":"TM","reason":"Slovenian guidance says a visa is required but does not distinguish ordinary tourist issuance from invitation-dependent or special processing.","searchedOfficialDomains":["gov.si","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"SI","destinationCode":"IQ","reason":"Slovenia says federal Iraq needs a visa but the Kurdistan Region has a 15-day visa-free rule. The material route split does not establish one Iraq-wide status.","searchedOfficialDomains":["gov.si","mofa.gov.iq","eservice.evisa.iq","visit.gov.krd"]},
+    {"passportCode":"SI","destinationCode":"PS","reason":"Slovenia states no visa is needed but directs travellers to Israeli authorities for route-specific procedures; Israeli-controlled crossings and admission conditions do not establish one Palestine-wide status.","searchedOfficialDomains":["gov.si","gov.il","cogat.mod.gov.il","mofa.pna.ps"]}
+  ]
+}

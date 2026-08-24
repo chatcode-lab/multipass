@@ -1,0 +1,96 @@
+{
+  "batchId": "croatia-current-full-residual-outbound-refresh-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "croatia-mfa-current-chad-ordinary-passport-requirement-2026",
+      "title": "Visa requirements overview: Chad",
+      "url": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/visas-22807/visa-requirements-overview-22879/22879?country=24",
+      "publisher": "Ministry of Foreign and European Affairs of the Republic of Croatia",
+      "jurisdiction": "Croatia / Chad",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Croatia's live MFA visa-requirements service has a passport-type matrix for a Croatian citizen and Chad. It directly labels an ordinary Croatian passport visa-required; Chad's newer authority supplies issuance timing.",
+      "supportingExcerpt": "Ordinary passport: Yes"
+    },
+    {
+      "id": "chad-evisa-current-exclusive-online-notice-croatian-refresh-2026",
+      "title": "New visa tariffs in the Republic of Chad",
+      "url": "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      "publisher": "Direction de l’Immigration et de l’Émigration and E-Visa Subdirectorate",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 11 May 2026 Immigration and E-Visa Subdirectorate notice says all new visa applications are exclusively online through evisa.td and visas outside the platform are invalid after 21 May.",
+      "supportingExcerpt": "toutes les demandes de visa se font désormais exclusivement en ligne via plateforme officielle evisa.td"
+    },
+    {
+      "id": "chad-evisa-current-processing-circular-croatian-refresh-2026",
+      "title": "E-Visa circular",
+      "url": "https://evisa.td/articles/11/note-circulaire",
+      "publisher": "Direction de l’Immigration et de l’Émigration / E-Visa Subdirectorate",
+      "jurisdiction": "Republic of Chad",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live 4 June 2026 official circular gives electronic-visa processing periods, confirming pre-travel electronic issuance rather than arrival issuance.",
+      "supportingExcerpt": "Demande de e-Visa standard : 10 jours ouvrables; Demande de e-Visa express: 72 heures"
+    }
+  ],
+  "policies": [
+    {
+      "id": "croatian-ordinary-passports-chad-electronic-visitor-visa-2026-refresh",
+      "title": "Croatian ordinary passports: Chad electronic visitor visa",
+      "summary": "Croatia's MFA identifies ordinary Croatian passports as visa-required for Chad, while Chad now requires new visas exclusively through its electronic platform before travel.",
+      "status": "evisa",
+      "destinationCodes": ["TD"],
+      "passportCodes": ["HR"],
+      "conditions": [
+        "Applies to an ordinary Croatian passport: Croatia's MFA Chad matrix says a visa is required.",
+        "Apply through Chad's official eVisa platform before travel; standard processing is 10 working days and express processing is 72 hours.",
+        "Approval, documentary, health, security, carrier and final border-admission checks remain applicable."
+      ],
+      "sourceIds": ["croatia-mfa-current-chad-ordinary-passport-requirement-2026", "chad-evisa-current-exclusive-online-notice-croatian-refresh-2026", "chad-evisa-current-processing-circular-croatian-refresh-2026"],
+      "confidence": "high",
+      "application": {
+        "url": "https://evisa.td/",
+        "label": "Chad official e-Visa platform",
+        "processingTime": "10 working days standard or 72 hours express.",
+        "steps": ["Submit the ordinary Croatian-passport visitor application online before travel.", "Travel only after issuance and retain the required supporting documents."]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "HR",
+      "destinationCode": "TD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "Croatia's MFA identifies Chad as visa-required for ordinary Croatian passports; Chad's current notices require new visas exclusively online before travel.",
+      "sourceIds": ["croatia-mfa-current-chad-ordinary-passport-requirement-2026", "chad-evisa-current-exclusive-online-notice-croatian-refresh-2026", "chad-evisa-current-processing-circular-croatian-refresh-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"HR","destinationCode":"BF","reason":"Burkina Faso's electronic service does not publish a current Croatian ordinary-passport eligibility schedule or exception crosswalk. Portal availability is not proof.","searchedOfficialDomains":["mvep.gov.hr","visaburkina.bf","diplomatie.gov.bf"]},
+    {"passportCode":"HR","destinationCode":"CF","reason":"No current Croatian or Central African authority maps an ordinary Croatian passport to a short-visitor mission, electronic or border issuance route.","searchedOfficialDomains":["mvep.gov.hr","diplomatie.gouv.cf","paris.diplomatie.gouv.cf"]},
+    {"passportCode":"HR","destinationCode":"KM","reason":"Current Comorian material preserves conventions and special treatment but no current Croatian ordinary-passport schedule establishes advance, electronic or arrival issuance.","searchedOfficialDomains":["mvep.gov.hr","justice.gouv.km","gouv.km"]},
+    {"passportCode":"HR","destinationCode":"CG","reason":"No current Croatian or Republic of the Congo authority establishes ordinary Croatian-passport visitor treatment and actual issuance timing.","searchedOfficialDomains":["mvep.gov.hr","diplomatie.gouv.cg","dgrsp.cg"]},
+    {"passportCode":"HR","destinationCode":"CI","reason":"Côte d’Ivoire's airport-printing workflow does not establish whether an ordinary Croatian passport is subject to it; no exemption complement is inferred.","searchedOfficialDomains":["mvep.gov.hr","snedai.com","diplomatie.gouv.ci"]},
+    {"passportCode":"HR","destinationCode":"DJ","reason":"Djibouti's e-government service proves electronic issuance generally but supplies no current Croatian ordinary-passport eligibility schedule.","searchedOfficialDomains":["mvep.gov.hr","egouv.dj","evisa.gouv.dj"]},
+    {"passportCode":"HR","destinationCode":"GW","reason":"No current Croatian or Guinea-Bissau authority establishes whether ordinary Croatian visitors receive a mission, electronic or border-issued visa.","searchedOfficialDomains":["mvep.gov.hr","mne.gw","gov.gw"]},
+    {"passportCode":"HR","destinationCode":"LR","reason":"Croatia confirms a Liberian visa is needed but defers entry requirements to Liberian authorities; no current source resolves Croatian visitor issuance timing.","searchedOfficialDomains":["mvep.gov.hr","visaonarrival.lis.gov.lr","mofa.gov.lr"]},
+    {"passportCode":"HR","destinationCode":"ML","reason":"No current Croatian or Malian authority establishes ordinary Croatian-passport visitor treatment and actual issuance timing.","searchedOfficialDomains":["mvep.gov.hr","diplomatiemdc.gouv.ml","securite.gouv.ml"]},
+    {"passportCode":"HR","destinationCode":"NE","reason":"No current Croatian or Nigerien authority maps ordinary Croatian visitors to one unconditional issuance route; no complement is inferred from exceptions.","searchedOfficialDomains":["mvep.gov.hr","diplomatie.gouv.ne","interieur.gouv.ne"]},
+    {"passportCode":"HR","destinationCode":"SL","reason":"Croatia confirms a visa is needed, but Sierra Leone's official service describes electronic application and airport-or-border issuance; actual timing remains conflicted.","searchedOfficialDomains":["mvep.gov.hr","evisa.sl","slid.gov.sl","ntb.gov.sl"]},
+    {"passportCode":"HR","destinationCode":"SS","reason":"South Sudan's government portal proves pre-travel PDF issuance but does not publish current Croatian ordinary-passport eligibility; portal availability alone is insufficient.","searchedOfficialDomains":["mvep.gov.hr","evisa.gov.ss","mofaic.gov.ss"]},
+    {"passportCode":"HR","destinationCode":"SD","reason":"No current Croatian or Sudanese authority establishes ordinary Croatian-passport visitor eligibility and actual issuance timing amid disrupted operations.","searchedOfficialDomains":["mvep.gov.hr","mofa.gov.sd","moi.gov.sd"]},
+    {"passportCode":"HR","destinationCode":"AF","reason":"No current Croatian or Afghan authority establishes a usable ordinary Croatian-passport short-visitor issuance route; operational restrictions are not normalized.","searchedOfficialDomains":["mvep.gov.hr","mfa.gov.af","moi.gov.af"]},
+    {"passportCode":"HR","destinationCode":"KP","reason":"No current official source establishes an available ordinary Croatian short-visitor route and issuance timing for DPRK; closure and permissions are not a normalized status.","searchedOfficialDomains":["mvep.gov.hr","mfa.gov.kp","naenara.com.kp"]},
+    {"passportCode":"HR","destinationCode":"TM","reason":"No current Croatian or Turkmen authority distinguishes ordinary Croatian tourist issuance timing from invitation-dependent or special processing.","searchedOfficialDomains":["mvep.gov.hr","migration.gov.tm","mfa.gov.tm"]},
+    {"passportCode":"HR","destinationCode":"VG","reason":"No current official source establishes an ordinary Croatian-passport visitor exemption or issuance route for the British Virgin Islands; conditional third-country-document routes are excluded.","searchedOfficialDomains":["mvep.gov.hr","bvi.gov.vg","gov.vg","laws.gov.vg"]},
+    {"passportCode":"HR","destinationCode":"PS","reason":"Palestinian access depends on Israeli-controlled crossings, permits, identity records and route-specific conditions. No Palestine-wide Croatian-passport status is established.","searchedOfficialDomains":["mvep.gov.hr","mfae.gov.ps","gov.il","cogat.mod.gov.il"]},
+    {"passportCode":"HR","destinationCode":"SY","reason":"Croatia's current Syria notice contains operational advice but no ordinary Croatian visitor issuance rule; generic online services do not establish this passport's status.","searchedOfficialDomains":["mvep.gov.hr","mofaex.gov.sy","evisa.sy"]}
+  ]
+}
