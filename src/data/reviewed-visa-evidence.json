@@ -606,7 +606,10 @@
     "south-sudan-complete-visitor-entry-refresh",
     "chad-residual-entry-route-audit-2026",
     "sierra-leone-residual-visitor-route-audit-2026",
-    "chad-current-evisa-pair-confirmations-2026"
+    "chad-current-evisa-pair-confirmations-2026",
+    "botswana-current-residual-pair-confirmations-2026",
+    "panama-current-residual-pair-confirmations-2026",
+    "jordan-current-residual-pair-confirmations-2026"
   ],
   "sources": [
     {
@@ -27667,6 +27670,56 @@
       "jurisdiction": "Republic of Korea",
       "kind": "government-guidance",
       "language": "Korean",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "panama-embassy-live-no-visa-schedule-2026",
+      "title": "Immigration and visas: No Visa Required schedule",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "panama-embassy-live-authorized-visa-schedule-2026",
+      "title": "Immigration and visas: Authorized Visas schedule",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "panama-mire-authorized-visa-preauthorization-2026",
+      "title": "Consular services: processing stamped and authorized visas",
+      "url": "https://mire.gob.pa/servicios-consulares/",
+      "publisher": "Ministerio de Relaciones Exteriores",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "jordan-tourism-board-live-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish site; English nationality table",
+      "reviewedAt": "2026-08-24"
+    },
+    {
+      "id": "jordan-tourism-board-live-advance-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish site; English nationality table",
       "reviewedAt": "2026-08-24"
     }
   ],
@@ -96802,6 +96855,106 @@
           "Travel only after issuance; final admission remains for Chadian immigration authorities."
         ]
       }
+    },
+    {
+      "id": "panama-current-schedule-named-ordinary-passports-visa-free-2026",
+      "title": "Panama: named ordinary passports visa-free for short visitors",
+      "summary": "Panama's current Embassy nationality schedule expressly places Andorra, Barbados, Belarus, Denmark and Jamaica in its No Visa Required cohort.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "PA"
+      ],
+      "passportCodes": [
+        "AD",
+        "BB",
+        "BY",
+        "DK",
+        "JM"
+      ],
+      "conditions": [
+        "Applies to ordinary passports from the named nationalities for short visitor travel.",
+        "The live schedule gives a maximum stay of three months.",
+        "Work, residence, transit, diplomatic or special passports, and final admission are outside this classification."
+      ],
+      "sourceIds": [
+        "panama-embassy-live-no-visa-schedule-2026"
+      ]
+    },
+    {
+      "id": "panama-current-schedule-named-ordinary-passports-authorized-visa-2026",
+      "title": "Panama: named ordinary passports requiring an authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Kazakhstan, Kosovo, Oman, Rwanda and Usbekistan in the authorized-visa cohort; current Foreign Ministry guidance confirms National Migration authorization precedes consular grant.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "PA"
+      ],
+      "passportCodes": [
+        "KZ",
+        "OM",
+        "RW",
+        "UZ",
+        "XK"
+      ],
+      "conditions": [
+        "Applies to ordinary passports from the named nationalities for short visitor travel.",
+        "The authorized visa is an advance instrument: the consular grant follows National Migration Service authorization; the Embassy cautions against travel until granted.",
+        "Excludes the separate conditional waiver for holders of qualifying third-country visas or residence documents.",
+        "Work, residence, transit, diplomatic or special passports, and final admission are outside this classification."
+      ],
+      "sourceIds": [
+        "panama-embassy-live-authorized-visa-schedule-2026",
+        "panama-mire-authorized-visa-preauthorization-2026"
+      ]
+    },
+    {
+      "id": "jordan-tourism-board-named-ordinary-passport-arrival-visas-2026",
+      "title": "Jordan: named nationalities with visa issued on arrival",
+      "summary": "Jordan Tourism Board's live nationality table says these named nationalities may obtain a visa upon arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "CH",
+        "LT",
+        "MY",
+        "BN",
+        "XK",
+        "BY",
+        "RW",
+        "SS"
+      ],
+      "conditions": [
+        "Applies to the ordinary-passport, short-visitor baseline only; the table is nationality-specific and does not establish diplomatic, service, travel-pass, residence, work, transit or other special-document treatment.",
+        "The live table directly names Switzerland, Lithuania, Malaysia, Brunei, Kosovo, Belarus, Rwanda and South Sudan as Applicable and states that a visa can be obtained upon arrival.",
+        "The table also asks all non-Jordanians to obtain a Gateway2Jordan QR code before departure. That registration is not itself a visa or ETA and does not change this arrival-issuance classification.",
+        "The table does not establish port availability, duration, entries, waiver eligibility, security screening, final admission or other individual conditions."
+      ],
+      "sourceIds": [
+        "jordan-tourism-board-live-arrival-visa-table-2026"
+      ]
+    },
+    {
+      "id": "jordan-tourism-board-named-ordinary-passport-advance-visas-2026",
+      "title": "Jordan: named nationalities requiring a visa before arrival",
+      "summary": "Jordan Tourism Board's live nationality table directs these named nationalities to contact the closest Jordanian Embassy to obtain a visa before arrival.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "CO",
+        "ME",
+        "MD"
+      ],
+      "conditions": [
+        "Applies to the ordinary-passport, short-visitor baseline only; diplomatic, service, travel-pass, residence, work, transit and other special-document treatment are outside scope.",
+        "The live table directly names Colombia, Montenegro and Moldova as Not-Applicable for on-arrival issuance and directs the traveller to obtain a visa from the closest Jordanian Embassy before arrival.",
+        "The table does not establish duration, entries, fee, sponsor, security, final-admission or country-of-application conditions."
+      ],
+      "sourceIds": [
+        "jordan-tourism-board-live-advance-visa-table-2026"
+      ]
     }
   ]
 }

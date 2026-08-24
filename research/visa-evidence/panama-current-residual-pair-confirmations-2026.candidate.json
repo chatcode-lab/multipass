@@ -1,0 +1,102 @@
+{
+  "batchId": "panama-current-residual-pair-confirmations-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "panama-embassy-live-no-visa-schedule-2026",
+      "title": "Immigration and visas: No Visa Required schedule",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Panama's live Embassy page publishes a nationality schedule headed ‘No Visa Required’, states a three-month maximum, and directly names these five ordinary-passport nationalities.",
+      "supportingExcerpt": "Denmark, Dominica, Ecuador, El Salvador, Estonia"
+    },
+    {
+      "id": "panama-embassy-live-authorized-visa-schedule-2026",
+      "title": "Immigration and visas: Authorized Visas schedule",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Panama's live Embassy schedule expressly places Kazakhstan, Kosovo, Oman, Rwanda and Usbekistan in the authorized-visa cohort, and says not to travel until the visa has been granted. Its Korea label is not used to classify DPRK passports.",
+      "supportingExcerpt": "you will need an authorized visa"
+    },
+    {
+      "id": "panama-mire-authorized-visa-preauthorization-2026",
+      "title": "Consular services: processing stamped and authorized visas",
+      "url": "https://mire.gob.pa/servicios-consulares/",
+      "publisher": "Ministerio de Relaciones Exteriores",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Panama's current Foreign Ministry page explains that a consul grants an authorized visa only after National Migration Service authorization, establishing an advance, not border-issued, instrument.",
+      "supportingExcerpt": "el Cónsul puede otorgar una visa al solicitante previa autorización del Servicio Nacional de Migración"
+    }
+  ],
+  "policies": [
+    {
+      "id": "panama-current-schedule-named-ordinary-passports-visa-free-2026",
+      "title": "Panama: named ordinary passports visa-free for short visitors",
+      "summary": "Panama's current Embassy nationality schedule expressly places Andorra, Barbados, Belarus, Denmark and Jamaica in its No Visa Required cohort.",
+      "status": "visa_free",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["AD", "BB", "BY", "DK", "JM"],
+      "conditions": [
+        "Applies to ordinary passports from the named nationalities for short visitor travel.",
+        "The live schedule gives a maximum stay of three months.",
+        "Work, residence, transit, diplomatic or special passports, and final admission are outside this classification."
+      ],
+      "sourceIds": ["panama-embassy-live-no-visa-schedule-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "panama-current-schedule-named-ordinary-passports-authorized-visa-2026",
+      "title": "Panama: named ordinary passports requiring an authorized visitor visa",
+      "summary": "Panama's live Embassy schedule places Kazakhstan, Kosovo, Oman, Rwanda and Usbekistan in the authorized-visa cohort; current Foreign Ministry guidance confirms National Migration authorization precedes consular grant.",
+      "status": "visa_required",
+      "destinationCodes": ["PA"],
+      "passportCodes": ["KZ", "OM", "RW", "UZ", "XK"],
+      "conditions": [
+        "Applies to ordinary passports from the named nationalities for short visitor travel.",
+        "The authorized visa is an advance instrument: the consular grant follows National Migration Service authorization; the Embassy cautions against travel until granted.",
+        "Excludes the separate conditional waiver for holders of qualifying third-country visas or residence documents.",
+        "Work, residence, transit, diplomatic or special passports, and final admission are outside this classification."
+      ],
+      "sourceIds": ["panama-embassy-live-authorized-visa-schedule-2026", "panama-mire-authorized-visa-preauthorization-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "PA",
+      "reason": "Panama's live official schedule does not directly name an ordinary Macao SAR passport. No status is inferred from its China row, an omission, or the conditional third-country-document waiver.",
+      "searchedOfficialDomains": ["embassyofpanama.org", "migracion.gob.pa", "mire.gob.pa"]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "PA",
+      "reason": "No current Panamanian primary source directly maps an ordinary Timor-Leste passport to a short-visitor instrument and actual issuance timing; omission and conditional-waiver inference are excluded.",
+      "searchedOfficialDomains": ["embassyofpanama.org", "migracion.gob.pa", "mire.gob.pa"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "PA",
+      "reason": "Panama's schedule names Sudan but not South Sudan. That distinction does not establish an ordinary South Sudan passport's visitor baseline, and no complement or conditional waiver is inferred.",
+      "searchedOfficialDomains": ["embassyofpanama.org", "migracion.gob.pa", "mire.gob.pa"]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "PA",
+      "reason": "Panama's schedule uses the label ‘People's Republic of Korea’, which does not directly identify a Democratic People's Republic of Korea ordinary passport. This naming ambiguity is not resolved by inference.",
+      "searchedOfficialDomains": ["embassyofpanama.org", "migracion.gob.pa", "mire.gob.pa"]
+    }
+  ]
+}

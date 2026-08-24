@@ -1,0 +1,168 @@
+{
+  "batchId": "jordan-current-residual-pair-confirmations-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "jordan-tourism-board-live-arrival-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish site; English nationality table",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live page identifies itself as the official Jordan Tourism Board site and publishes a nationality-by-nationality On-Arrival and Procedure table, including the named arrival rows relied on here.",
+      "supportingExcerpt": "Switzerland | Applicable | Visa can be obtained upon arrival, it will cost a total of 40 JOD."
+    },
+    {
+      "id": "jordan-tourism-board-live-advance-visa-table-2026",
+      "title": "Visas to Jordan",
+      "url": "https://sp.visitjordan.com/page/4/visas-to-jordan/",
+      "publisher": "Jordan Tourism Board",
+      "jurisdiction": "Jordan",
+      "kind": "government-guidance",
+      "language": "Spanish site; English nationality table",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live page identifies itself as the official Jordan Tourism Board site and publishes a nationality-by-nationality On-Arrival and Procedure table, including the named before-arrival rows relied on here.",
+      "supportingExcerpt": "Colombia | Not-Applicable | You will need to get in contact with the closest Jordanian Embassy"
+    }
+  ],
+  "policies": [
+    {
+      "id": "jordan-tourism-board-named-ordinary-passport-arrival-visas-2026",
+      "title": "Jordan: named nationalities with visa issued on arrival",
+      "summary": "Jordan Tourism Board's live nationality table says these named nationalities may obtain a visa upon arrival.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "CH",
+        "LT",
+        "MY",
+        "BN",
+        "XK",
+        "BY",
+        "RW",
+        "SS"
+      ],
+      "conditions": [
+        "Applies to the ordinary-passport, short-visitor baseline only; the table is nationality-specific and does not establish diplomatic, service, travel-pass, residence, work, transit or other special-document treatment.",
+        "The live table directly names Switzerland, Lithuania, Malaysia, Brunei, Kosovo, Belarus, Rwanda and South Sudan as Applicable and states that a visa can be obtained upon arrival.",
+        "The table also asks all non-Jordanians to obtain a Gateway2Jordan QR code before departure. That registration is not itself a visa or ETA and does not change this arrival-issuance classification.",
+        "The table does not establish port availability, duration, entries, waiver eligibility, security screening, final admission or other individual conditions."
+      ],
+      "sourceIds": [
+        "jordan-tourism-board-live-arrival-visa-table-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "jordan-tourism-board-named-ordinary-passport-advance-visas-2026",
+      "title": "Jordan: named nationalities requiring a visa before arrival",
+      "summary": "Jordan Tourism Board's live nationality table directs these named nationalities to contact the closest Jordanian Embassy to obtain a visa before arrival.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "JO"
+      ],
+      "passportCodes": [
+        "CO",
+        "ME",
+        "MD"
+      ],
+      "conditions": [
+        "Applies to the ordinary-passport, short-visitor baseline only; diplomatic, service, travel-pass, residence, work, transit and other special-document treatment are outside scope.",
+        "The live table directly names Colombia, Montenegro and Moldova as Not-Applicable for on-arrival issuance and directs the traveller to obtain a visa from the closest Jordanian Embassy before arrival.",
+        "The table does not establish duration, entries, fee, sponsor, security, final-admission or country-of-application conditions."
+      ],
+      "sourceIds": [
+        "jordan-tourism-board-live-advance-visa-table-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "ME",
+      "destinationCode": "JO",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "visa_required",
+      "explanation": "Jordan Tourism Board's live Montenegro row says on-arrival issuance is Not-Applicable and directs obtaining a visa before arrival from the closest Jordanian Embassy.",
+      "sourceIds": [
+        "jordan-tourism-board-live-advance-visa-table-2026"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "JO",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Jordan Tourism Board's live Rwanda row says a visa can be obtained upon arrival, rather than visa-free entry.",
+      "sourceIds": [
+        "jordan-tourism-board-live-arrival-visa-table-2026"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "JO",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Jordan Tourism Board's live South Sudan row says a visa can be obtained upon arrival, rather than requiring issuance before travel.",
+      "sourceIds": [
+        "jordan-tourism-board-live-arrival-visa-table-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "GR",
+      "destinationCode": "JO",
+      "reason": "Greece is not named in Jordan Tourism Board's live nationality table. No current direct Jordanian or Greek passport-authority source was recovered for the ordinary-passport short-visitor route; no complement is inferred.",
+      "searchedOfficialDomains": [
+        "sp.visitjordan.com",
+        "moi.gov.jo",
+        "mfa.gr"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "JO",
+      "reason": "Grenada is not named in Jordan Tourism Board's live nationality table. No current direct Jordanian or Grenadian passport-authority source was recovered for the ordinary-passport short-visitor route; no complement is inferred.",
+      "searchedOfficialDomains": [
+        "sp.visitjordan.com",
+        "moi.gov.jo",
+        "mofa.gov.gd"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "JO",
+      "reason": "Palau is not named in Jordan Tourism Board's live nationality table. No current direct Jordanian or Palauan passport-authority source was recovered for the ordinary-passport short-visitor route; no complement is inferred.",
+      "searchedOfficialDomains": [
+        "sp.visitjordan.com",
+        "moi.gov.jo",
+        "palaugov.pw"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "JO",
+      "reason": "Timor-Leste is not named in Jordan Tourism Board's live nationality table. No current direct Jordanian or Timor-Leste passport-authority source was recovered for the ordinary-passport short-visitor route; no complement is inferred.",
+      "searchedOfficialDomains": [
+        "sp.visitjordan.com",
+        "moi.gov.jo",
+        "gov.tl"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "JO",
+      "reason": "The live Morocco row simultaneously says on-arrival issuance is Not-Applicable for females aged 16-60 and says a visa can be obtained upon arrival. This gender-dependent conflict cannot establish one passport-wide ordinary-visitor status.",
+      "searchedOfficialDomains": [
+        "sp.visitjordan.com",
+        "moi.gov.jo",
+        "diplomatie.ma"
+      ]
+    }
+  ]
+}

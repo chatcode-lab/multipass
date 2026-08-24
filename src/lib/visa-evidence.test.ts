@@ -677,7 +677,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BD", "SA", "visa_required").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("BR", "SA", snapshot.passports.BR.statuses.SA).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("JO")).toHaveLength(183);
+    expect(pairsFor("JO")).toHaveLength(194);
     expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1777,7 +1777,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(184);
+    expect(pairs).toHaveLength(194);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GN", "PA", "visa_required").supportsCurrentStatus).toBe(true);
@@ -2915,8 +2915,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["MY", "SL"],
-      ["RW", "JO"],
-      ["KZ", "PA"],
       ["MU", "AF"],
     ] as const) {
       expect(
@@ -2949,7 +2947,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["BY", "PA"],
       ["UZ", "PS"],
       ["UZ", "SL"],
       ["PH", "SA"],
@@ -3367,8 +3364,6 @@ describe("official visa evidence", () => {
       ["RU", "DJ"],
       ["RU", "SS"],
       ["RO", "DO"],
-      ["RW", "JO"],
-      ["MY", "JO"],
       ["KR", "UA"],
     ] as const) {
       expect(
@@ -3420,6 +3415,24 @@ describe("official visa evidence", () => {
     }
   });
 
+  it("covers the current Panama and Jordan residual schedules without flattening Botswana conflicts", () => {
+    for (const passportCode of ["AD", "BB", "BY", "DK", "JM"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "PA", "visa_free").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["KZ", "OM", "RW", "UZ", "XK"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "PA", "visa_required").supportsCurrentStatus).toBe(true);
+    }
+    for (const [passportCode, status] of [
+      ["ME", "visa_required"],
+      ["RW", "visa_on_arrival"],
+      ["SS", "visa_on_arrival"],
+    ] as const) {
+      expect(snapshot.passports[passportCode].statuses.JO).toBe(status);
+      expect(getVisaRelationshipEvidence(passportCode, "JO", status).supportsCurrentStatus).toBe(true);
+    }
+    expect(getVisaRelationshipEvidence("AO", "BW", snapshot.passports.AO.statuses.BW).supportsCurrentStatus).toBe(false);
+  });
+
   it("closes the reviewed Jamaica, Oman, Suriname, and Gambia final gaps", () => {
     for (const [passportCode, destinationCode, status] of [
       ["JM", "JO", "visa_on_arrival"],
@@ -3439,7 +3452,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["JM", "PA"],
       ["OM", "BW"],
       ["SR", "TR"],
       ["GM", "LC"],

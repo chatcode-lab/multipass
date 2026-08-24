@@ -396,4 +396,10 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.SS.statuses.TZ).toBe("visa_free");
     expect(snapshot.passports.BO.statuses.ZW).toBe("visa_on_arrival");
   });
+
+  it("applies the current Jordan residual corrections", () => {
+    expect(snapshot.passports.ME.statuses.JO).toBe("visa_required");
+    expect(snapshot.passports.RW.statuses.JO).toBe("visa_on_arrival");
+    expect(snapshot.passports.SS.statuses.JO).toBe("visa_on_arrival");
+  });
 });
