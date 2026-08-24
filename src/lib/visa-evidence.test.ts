@@ -1694,13 +1694,14 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "SV");
 
-    expect(pairs).toHaveLength(197);
+    expect(pairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("US", "SV", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("EC", "SV", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BO", "SV", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PK", "SV", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "SV", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HK", "SV", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MO", "SV", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SV", "SV", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
@@ -1860,13 +1861,13 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PE");
 
-    expect(pairs).toHaveLength(198);
+    expect(pairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("GE", "PE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "PE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "PE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PE", "PE", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "PE", snapshot.passports.CN.statuses.PE).supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IN", "PE", snapshot.passports.IN.statuses.PE).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IN", "PE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("VE", "PE", snapshot.passports.VE.statuses.PE).supportsCurrentStatus).toBe(true);
   });
 

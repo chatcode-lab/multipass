@@ -1,0 +1,61 @@
+{
+  "batchId": "macao-el-salvador-current-entry-2026",
+  "researchedAt": "2026-08-24",
+  "sources": [
+    {
+      "id": "macao-dsi-live-el-salvador-online-visa-application",
+      "title": "Macao SAR Passport visa information: El Salvador",
+      "url": "https://www.dsi.gov.mo/api/v1/web/entry/country/467",
+      "publisher": "Identification Services Bureau, Macao SAR Government",
+      "jurisdiction": "Macao SAR / El Salvador",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live DSI ordinary Macao SAR Passport interface resolves El Salvador record 467 on the Macao SAR Government domain. Its response marks visa-free and arrival visa false, marks the eVisa/online-application group true, and links directly to El Salvador's official PEI service. The group label does not itself prove electronic issuance.",
+      "supportingExcerpt": "{\"travelPermit\":\"0\",\"countryName\":\"薩爾瓦多\""
+    },
+    {
+      "id": "el-salvador-dgme-pei-arrival-stamping-process",
+      "title": "DGME launches the Special Entry Permit online platform",
+      "url": "https://www.migracion.gob.sv/noticias/migracion-lanza-plataforma-en-linea-de-permiso-especial-de-ingreso-a-el-salvador-pei/",
+      "publisher": "Dirección General de Migración y Extranjería",
+      "jurisdiction": "El Salvador",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The live DGME announcement on El Salvador's official migracion.gob.sv domain identifies the PEI service, its pre-travel approval workflow, and the permit's passport stamping at entry. The exact PEI portal it names is live and is the URL mapped by DSI for Macao SAR passports.",
+      "supportingExcerpt": "obtendrá el permiso especial estampado en su pasaporte al momento de ingresar al territorio nacional."
+    }
+  ],
+  "policies": [
+    {
+      "id": "macao-sar-ordinary-passports-el-salvador-advance-pei-2026",
+      "title": "Macao SAR ordinary passports: El Salvador advance Special Entry Permit",
+      "summary": "Macao's current passport authority directly maps the ordinary Macao SAR Passport to El Salvador's online application route. Salvadoran Immigration requires a favourable PEI decision before travel and treats the resulting passport-stamped permit as equivalent to an entry visa, so it remains an advance visa route.",
+      "status": "visa_required",
+      "destinationCodes": ["SV"],
+      "passportCodes": ["MO"],
+      "conditions": [
+        "Applies to the ordinary Macao SAR Passport short-visitor route expressly mapped by DSI to El Salvador's PEI service.",
+        "Complete the PEI application and receive a favourable result before travel; the approved product is equivalent to an entry visa and is not a walk-up visa on arrival, ETA or electronically issued visa.",
+        "DGME stamps the approved Special Entry Permit in the passport on entry through an air, sea, or land border. Purpose, stay, supporting documents, final admission, residence, work, diplomatic, official, service, and special-document routes are outside scope."
+      ],
+      "sourceIds": [
+        "macao-dsi-live-el-salvador-online-visa-application",
+        "el-salvador-dgme-pei-arrival-stamping-process"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://elsalvadorpei.migracion.gob.sv/en",
+        "label": "El Salvador Special Entry Permit (PEI)",
+        "steps": [
+          "Register and submit the Special Entry Permit application through the official PEI service before travel.",
+          "Wait for the approval notification before travelling to El Salvador.",
+          "Present for entry so that DGME stamps the Special Entry Permit in the passport."
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}
