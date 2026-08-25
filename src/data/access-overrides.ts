@@ -46,6 +46,15 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-25",
     effectiveFrom: "2025-04-15",
   },
+  {
+    passportCode: "US",
+    destinationCode: "ML",
+    status: "entry_restricted",
+    reason: "Mali's Foreign Ministry suspended entry for United States nationals with immediate effect on 30 December 2025, subject to valid-visa, permanent-residence, categorical and national-interest exceptions.",
+    sourceUrl: "https://maliembassy.us/mali-foreign-ministry-communique-suspension-of-entry-for-u-s-nationals-jan-2-2026/",
+    reviewedAt: "2026-08-25",
+    effectiveFrom: "2025-12-30",
+  },
   ...US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES.flatMap((passportCode) =>
     US_PP10998_DESTINATION_CODES.map((destinationCode) => ({
       passportCode,

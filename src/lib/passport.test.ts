@@ -277,6 +277,18 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { CN: "citizenship", TT: "evisa" }, mobilityScore: 0 });
   });
 
+  it("applies Mali's current United States-national entry suspension", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "US",
+      name: "United States",
+      statuses: { US: "citizenship", ML: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({
+      statuses: { US: "citizenship", ML: "entry_restricted" },
+      mobilityScore: 0,
+    });
+  });
+
   it("applies PP 10998 visitor-entry restrictions across the United States and its territories", () => {
     expect(US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES).toHaveLength(39);
     expect(US_PP10998_DESTINATION_CODES).toEqual(["US", "GU", "MP", "PR", "VI"]);

@@ -1,6 +1,6 @@
 {
   "batchId": "united-states-residual-outbound-currentness-2026",
-  "researchedAt": "2026-08-22",
+  "researchedAt": "2026-08-25",
   "sources": [
     {
       "id": "us-state-north-macedonia-2026",
@@ -46,9 +46,21 @@
       "jurisdiction": "United States",
       "kind": "government-guidance",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-25",
       "officialityEvidence": "The U.S. Department of State publishes current Burkina Faso visitor requirements on travel.state.gov.",
       "supportingExcerpt": "As of December 30, 2025, the Government of Burkina Faso has suspended visas to Americans."
+    },
+    {
+      "id": "burkina-government-us-visa-reciprocal-measures-2025",
+      "title": "Communiqué suite à la restriction des visas des Etats-Unis d’Amérique",
+      "url": "https://gouvernement.gov.bf/communiques/communique-du-gouvernement-du-30-12-2025/",
+      "publisher": "Service d’Information du Gouvernement du Burkina Faso",
+      "jurisdiction": "Burkina Faso",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live Government Information Service page hosts the signed 30 December 2025 Foreign Ministry government communiqué applying reciprocal visa measures to U.S. nationals.",
+      "supportingExcerpt": "d'appliquer aux ressortissants des États-Unis d'Amérique des mesures équivalentes en matière de visas."
     },
     {
       "id": "us-state-chad-2026",
@@ -118,9 +130,33 @@
       "jurisdiction": "United States",
       "kind": "government-guidance",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-25",
       "officialityEvidence": "The U.S. Department of State publishes current Mali visitor requirements on travel.state.gov.",
       "supportingExcerpt": "As of January 1, 2026, the Government of Mali has suspended visa issuance to U.S. citizens."
+    },
+    {
+      "id": "mali-embassy-reciprocal-us-conditions-immediate-2025",
+      "title": "Mali Responds to New U.S. Entry Restrictions on Malian Nationals",
+      "url": "https://maliembassy.us/mali-responds-to-new-u-s-entry-restrictions-on-malian-nationals/",
+      "publisher": "Embassy of the Republic of Mali in the United States",
+      "jurisdiction": "Mali",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live official Embassy page hosts the signed 30 December 2025 Foreign Ministry communiqué imposing reciprocal conditions on U.S. nationals with immediate effect.",
+      "supportingExcerpt": "appliquera, avec effet immédiat aux ressortissants américains, les mêmes conditions et exigences"
+    },
+    {
+      "id": "mali-embassy-us-entry-suspension-implementation-2026",
+      "title": "Mali Foreign Ministry Communiqué: Suspension of Entry for U.S. Nationals",
+      "url": "https://maliembassy.us/mali-foreign-ministry-communique-suspension-of-entry-for-u-s-nationals-jan-2-2026/",
+      "publisher": "Embassy of the Republic of Mali in the United States",
+      "jurisdiction": "Mali",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live official Embassy page hosts the signed 2 January 2026 Foreign Ministry communiqué defining the U.S.-national entry suspension and its exceptions.",
+      "supportingExcerpt": "l'entrée, sur le territoire malien, des ressortissants américains est totalement suspendue"
     },
     {
       "id": "us-state-niger-2026",
@@ -279,6 +315,27 @@
       ],
       "sourceIds": ["us-state-paraguay-2026"],
       "confidence": "high"
+    },
+    {
+      "id": "mali-us-passport-entry-restricted-2025",
+      "title": "Mali suspends entry for United States nationals",
+      "summary": "Mali's Foreign Ministry suspends entry to Mali for United States nationals under a reciprocal measure, subject to its express valid-visa, residence, category, and national-interest exceptions.",
+      "status": "entry_restricted",
+      "destinationCodes": ["ML"],
+      "passportCodes": ["US"],
+      "effectiveFrom": "2025-12-30",
+      "conditions": [
+        "The signed 30 December 2025 communiqué applies the measure to U.S. nationals with immediate effect; the signed 2 January 2026 communiqué sets out its implementation.",
+        "United States nationals permanently resident in Mali and United States nationals holding a currently valid Malian visa are excepted from the entry suspension.",
+        "The stated exceptions also include certain categories of United States nationals, including athletes, diplomats, and persons whose entry serves the interests of the Republic of Mali.",
+        "Mali states that the measure will be evaluated and that any adjustment will be communicated through the usual channels."
+      ],
+      "sourceIds": [
+        "mali-embassy-reciprocal-us-conditions-immediate-2025",
+        "mali-embassy-us-entry-suspension-implementation-2026",
+        "us-state-mali-2026"
+      ],
+      "confidence": "high"
     }
   ],
   "conflicts": [
@@ -295,8 +352,8 @@
       "destinationCode": "BF",
       "snapshotStatus": "evisa",
       "officialStatus": "unavailable (visa issuance suspended, limited exceptions)",
-      "explanation": "The current State Department page says Burkina Faso suspended visas to Americans as of 30 December 2025. It establishes neither a functioning ordinary visitor e-visa nor another generally available issuance route.",
-      "sourceIds": ["us-state-burkina-faso-2026"]
+      "explanation": "Burkina Faso's signed government communiqué applies reciprocal measures in visa matters to U.S. nationals, and current State guidance reports a visa suspension from 30 December 2025. Neither source says that a U.S.-passport holder with a valid existing Burkina Faso visa is barred from entry, so entry_restricted is not established.",
+      "sourceIds": ["burkina-government-us-visa-reciprocal-measures-2025", "us-state-burkina-faso-2026"]
     },
     {
       "passportCode": "US",
@@ -310,9 +367,9 @@
       "passportCode": "US",
       "destinationCode": "ML",
       "snapshotStatus": "visa_required",
-      "officialStatus": "unavailable (visa issuance suspended, limited exceptions)",
-      "explanation": "The current State Department page says Mali suspended visa issuance to U.S. citizens as of 1 January 2026. The fallback advance-visa status does not represent currently available ordinary visitor issuance.",
-      "sourceIds": ["us-state-mali-2026"]
+      "officialStatus": "entry_restricted",
+      "explanation": "Mali's signed Foreign Ministry implementation communiqué expressly suspends entry of U.S. nationals, with exceptions for valid visas, permanent residents, certain categories, and national-interest entrants. That current entry restriction supersedes the fallback advance-visa classification.",
+      "sourceIds": ["mali-embassy-reciprocal-us-conditions-immediate-2025", "mali-embassy-us-entry-suspension-implementation-2026", "us-state-mali-2026"]
     },
     {
       "passportCode": "US",

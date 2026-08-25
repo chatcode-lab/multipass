@@ -1428,7 +1428,7 @@ describe("official visa evidence", () => {
     const liberiaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "LR");
 
-    expect(maliPairs).toHaveLength(37);
+    expect(maliPairs).toHaveLength(38);
     expect(nigerPairs).toHaveLength(39);
     expect(liberiaPairs).toHaveLength(36);
     expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1439,7 +1439,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IE", "LR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "ML", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "LR", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("US", "ML", snapshot.passports.US.statuses.ML).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("US", "ML", "entry_restricted").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "NE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "LR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "ML", "evisa").supportsCurrentStatus).toBe(true);
@@ -3286,7 +3286,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["US", "BF"],
       ["US", "TD"],
-      ["US", "ML"],
       ["CA", "IR"],
       ["BE", "BD"],
       ["NL", "SL"],
@@ -4894,7 +4893,6 @@ describe("official visa evidence", () => {
       ["US", "TD"],
       ["US", "IR"],
       ["US", "KP"],
-      ["US", "ML"],
       ["US", "PS"],
       ["CA", "AF"],
       ["CA", "GW"],
@@ -5881,6 +5879,8 @@ describe("official visa evidence", () => {
       "mauritius-geneva.govmu.org",
       "pica.gov.jm",
       "mfa.kg",
+      "maliembassy.us",
+      "gouvernement.gov.bf",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
