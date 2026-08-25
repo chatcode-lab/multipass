@@ -494,7 +494,7 @@ describe("official visa evidence", () => {
     expect(israelPairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("TV", "IL", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MD", "IL", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("PS", "IL", "unknown").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("PS", "IL", "visa_required").supportsCurrentStatus).toBe(false);
   });
 
   it("covers Taiwan's current ordinary-passport entry scope without flattening special documents", () => {
@@ -5195,6 +5195,7 @@ describe("official visa evidence", () => {
       "plataformacipra.gov.ao",
       "www.sme.gov.ao",
       "etakenya.go.ke",
+      "immigration.go.ke",
       "new.kenyalaw.org",
       "evisa.gouv.cd",
       "eur-lex.europa.eu",
@@ -5419,6 +5420,7 @@ describe("official visa evidence", () => {
       "mofa.gov.np",
       "www.immigration.gov.mv",
       "imuga.immigration.gov.mv",
+      "presidency.gov.mv",
       "www.ics.gov.sc",
       "mfa.gov.sc",
       "www.gov.sc",

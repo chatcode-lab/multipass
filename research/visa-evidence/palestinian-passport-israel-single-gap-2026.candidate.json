@@ -1,0 +1,68 @@
+{
+  "batchId": "palestinian-passport-israel-single-gap-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "israel-cogat-palestinian-population-registry-current-2026",
+      "title": "Population Registry",
+      "url": "https://www.gov.il/en/departments/units/population_registrar_unit",
+      "publisher": "Coordination of Government Activities in the Territories, Government of Israel",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "COGAT's live Government of Israel page describes the Israeli-held Palestinian registry and its separate Judea-and-Samaria and Gaza responsibilities, including foreign visitors' permits.",
+      "supportingExcerpt": "Handling of Palestinian Authority requests for visitors' permits for foreigners, with the approval of COGAT"
+    },
+    {
+      "id": "israel-piba-entry-country-data-palestine-authority-current-2026",
+      "title": "Israel Entry country and passport-type data",
+      "url": "https://israel-entry.piba.gov.il/api/getalldata",
+      "publisher": "Population and Immigration Authority, Government of Israel",
+      "jurisdiction": "Israel",
+      "kind": "official-dataset",
+      "language": "English, French, Spanish and Russian",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live dataset is served on the Population and Immigration Authority's Israel-entry portal; its Palestine Authority item is separate and is not presented as an ordinary passport-country visitor result.",
+      "supportingExcerpt": "PALESTINE AUTHORITY (BG)"
+    },
+    {
+      "id": "israel-palestinian-american-tourism-procedure-january-2025",
+      "title": "American Tourism in Israel Procedure – January 2025 Update",
+      "url": "https://www.gov.il/BlobFolder/policy/us-tourist-permit-procedure/en/US%20Tourist%20Permit%20Procedure.pdf",
+      "publisher": "Government of Israel",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live Government of Israel procedure specifically regulates entry, documents, permits and crossings for United States citizens recorded as Palestinian residents in the Israeli Population Registry.",
+      "supportingExcerpt": "his entry will be permitted and he will not be eligible for a permit/visa to Israel."
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "PS",
+      "destinationCode": "IL",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved: registry, residence, document, permit, crossing and individual-screening treatment; no passport-wide ordinary-visitor rule published",
+      "explanation": "The fallback's advance-visa label would flatten a current official regime that distinguishes Palestinian registry status, foreign passports, Palestinian documentation, permits and crossings. The reviewed authorities do not establish a current ordinary Palestinian-passport short-visitor classification or issuance timing.",
+      "sourceIds": [
+        "israel-cogat-palestinian-population-registry-current-2026",
+        "israel-piba-entry-country-data-palestine-authority-current-2026",
+        "israel-palestinian-american-tourism-procedure-january-2025"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "PS",
+      "destinationCode": "IL",
+      "reason": "No current accessible Israeli primary source supplies a passport-wide ordinary Palestinian-passport short-visitor rule or issuance timing. The reviewed regime is instead conditional on population-registry or residence status, Palestinian or foreign documents, permits, crossings and individual screening; those routes must not be normalized as visa_required.",
+      "searchedOfficialDomains": [
+        "gov.il",
+        "israel-entry.piba.gov.il"
+      ]
+    }
+  ]
+}

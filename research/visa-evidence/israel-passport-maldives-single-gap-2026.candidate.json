@@ -1,0 +1,69 @@
+{
+  "batchId": "israel-passport-maldives-single-gap-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "maldives-presidency-third-immigration-amendment-ratification-2025",
+      "title": "President ratifies Third Amendment to the Maldives Immigration Act, prohibiting entry of Israeli passport holders",
+      "url": "https://presidency.gov.mv/Press/Article/33500",
+      "publisher": "The President's Office",
+      "jurisdiction": "Maldives",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live President's Office release records the President's 15 April 2025 ratification of the Third Amendment to the Maldives Immigration Act and describes its Israeli-passport scope.",
+      "supportingExcerpt": "expressly prohibiting the entry of individuals holding Israeli passports into the territory of the Republic of Maldives."
+    },
+    {
+      "id": "maldives-immigration-israeli-passport-prohibition-effective-2025",
+      "title": "Entry into the Maldives is prohibited on Israeli passports",
+      "url": "https://www.immigration.gov.mv/press-announcements/7693",
+      "publisher": "Maldives Immigration",
+      "jurisdiction": "Maldives",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "Maldives Immigration's live official announcement states the Third Amendment's legal basis, Israeli-passport scope and commencement date, and links the official Gazette record.",
+      "supportingExcerpt": "entry into the Maldives on Israeli passports is prohibited effective from 15th April 2025."
+    },
+    {
+      "id": "maldives-immigration-tourist-visa-israeli-passport-prohibition-current-2026",
+      "title": "Tourist Visa – On Arrival",
+      "url": "https://www.immigration.gov.mv/visa/tourist-visa",
+      "publisher": "Maldives Immigration",
+      "jurisdiction": "Maldives",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live official tourist-visa page, marked updated 27 August 2025, states the normal arrival-visa workflow and expressly preserves the Israeli-passport prohibition as its exception.",
+      "supportingExcerpt": "Effective from 15th April 2025, entry to the Maldives will not be granted on Israeli passports."
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "MV",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "entry_prohibited_for_holders_of_israeli_passports_effective_2025-04-15",
+      "explanation": "The Third Amendment was ratified on 15 April 2025 and Maldives Immigration states that entry on Israeli passports has been prohibited from that date. This passport-specific entry prohibition supersedes the otherwise on-arrival tourist workflow and cannot be represented as visa_required.",
+      "sourceIds": [
+        "maldives-presidency-third-immigration-amendment-ratification-2025",
+        "maldives-immigration-israeli-passport-prohibition-effective-2025",
+        "maldives-immigration-tourist-visa-israeli-passport-prohibition-current-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "MV",
+      "reason": "Current Maldives Immigration guidance prohibits entry on Israeli passports from 15 April 2025. An entry prohibition is not any of the six normalizable visitor statuses, so it cannot be recast as visa_required or the generic tourist visa on arrival. The reviewed sources state passport scope, not a separate dual-nationality or other-travel-document route.",
+      "searchedOfficialDomains": [
+        "presidency.gov.mv",
+        "immigration.gov.mv",
+        "gazette.gov.mv"
+      ]
+    }
+  ]
+}
