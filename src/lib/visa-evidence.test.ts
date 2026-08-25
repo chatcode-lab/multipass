@@ -473,7 +473,12 @@ describe("official visa evidence", () => {
       .filter(({ destination }) => destination.code === "SG");
     expect(singaporePairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("SS", "SG", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CN", "SG", "visa_free").supportsCurrentStatus).toBe(true);
+    const chinaEvidence = getVisaRelationshipEvidence("CN", "SG", "visa_free");
+    expect(chinaEvidence.supportsCurrentStatus).toBe(true);
+    expect(chinaEvidence.policies.map(({ id }) => id)).toContain(
+      "singapore-s441-prc-ordinary-passport-current-visa-exemption-2026",
+    );
+    expect(chinaEvidence.reviewedAt).toBe("2026-08-25");
     expect(getVisaRelationshipEvidence("HK", "SG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "SG", "visa_free").supportsCurrentStatus).toBe(true);
   });
