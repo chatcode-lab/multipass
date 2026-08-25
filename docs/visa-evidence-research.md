@@ -2850,6 +2850,16 @@ This corrects eight fallback `visa_on_arrival` labels to `visa_free` and correct
 
 The audit also found and repaired an incorrect canonical source record. An April 2026 Official Journal issue had been described as reaffirming Law No. 29-2017, but the cited issue does not contain that reference. The source now points to the reproducible 2 October 2025 Official Journal, whose 12 September 2025 Interior Ministry order expressly invokes the foreigner-entry law. The former citation was not used to retain any visitor-access status after this correction.
 
+## Pass 304 result: South Sudan final inbound residual
+
+Three exact and independently cross-reviewed audits cover all 170 remaining foreign-passport relationships into South Sudan and add two current relationships. Complete-matrix current-status evidence rises from 39,813 to 39,815 of 44,974 relationships (88.5%), leaving 5,159 not covered and zero old or stale rows as of 25 August 2026. Africa coverage rises from 8,705 to 8,707 of 11,289 relationships (77.1%); every other regional total is unchanged. Canonical evidence now contains 774 reviewed batches, 3,271 official source records and 1,920 policies.
+
+Australian and Emirati ordinary-passport visitors are verified as using South Sudan's `evisa` route. Australia's current Smartraveller page directs Australian travellers to obtain the visa before travel through the South Sudan Department of E-Visa and Immigration Services. The UAE Foreign Ministry's page, modified 9 July 2026, selects the normal passport, states visa liability and sends UAE nationals to the same issuer. South Sudan's Interior service confirms that an approved eVisa PDF is downloaded before travel and presented for verification and passport stamping at entry. The UAE guidance describes a 30-day stay; the portal's stated 72-hour delivery is retained as a service description rather than a guarantee.
+
+The other 168 cells remain unresolved. The secure eVisa portal asks whether an applicant is eligible but publishes no public nationality schedule. South Sudan's Foreign Ministry country table and visa pages currently fail verified HTTPS, so neither those pages nor an inferred all-nationalities portal rule was used. India's current Foreign Ministry page appears to list South Sudan eVisa access for ordinary Indian passports, but the exact page returned HTTP 403 to independent current clients; cached search content was not promoted as evidence.
+
+No fallback classification changes: Australia and the UAE were already labelled `evisa`. This pass verifies those labels while preserving every unproven electronic route as visibly uncovered.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

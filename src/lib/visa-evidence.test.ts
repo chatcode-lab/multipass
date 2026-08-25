@@ -1261,7 +1261,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GM", "GM", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps Sudan conservative and supports only South Sudan's named exemptions", () => {
+  it("keeps Sudan conservative and supports scoped South Sudan routes", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
@@ -1274,7 +1274,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HU", "SD", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "SD", snapshot.passports.CA.statuses.SD).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SS")).toHaveLength(28);
+    expect(pairsFor("SS")).toHaveLength(30);
     expect(getVisaRelationshipEvidence("KE", "SS", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("UG", "SS", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "SS", "visa_required").supportsCurrentStatus).toBe(true);
@@ -1283,6 +1283,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "SS", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "SS", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BE", "SS", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AU", "SS", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AE", "SS", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NL", "SS", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CZ", "SS", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SI", "SS", "visa_required").supportsCurrentStatus).toBe(true);
@@ -2935,7 +2937,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "HK", snapshot.passports.TW.statuses.HK).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("SA", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "LR", snapshot.passports.AE.statuses.LR).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("AE", "SS", snapshot.passports.AE.statuses.SS).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AE", "SS", snapshot.passports.AE.statuses.SS).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "TT", snapshot.passports.AE.statuses.TT).supportsCurrentStatus).toBe(false);
   });
 
@@ -4668,7 +4670,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("KR", "SS", "evisa").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.KR.statuses.SS).toBe("evisa");
     expect(evidenceRelationshipPairs(snapshot.manifest).filter(({ destination }) => destination.code === "SS"))
-      .toHaveLength(28);
+      .toHaveLength(30);
 
     for (const passportCode of ["SG", "JP", "IT", "CH", "FI", "LU", "PT", "AT", "MT", "NZ", "GR"] as const) {
       const status = snapshot.passports[passportCode].statuses.SS;
