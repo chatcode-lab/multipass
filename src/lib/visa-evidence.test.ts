@@ -1025,8 +1025,9 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "TM", snapshot.passports.CA.statuses.TM).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("AF")).toHaveLength(8);
+    expect(pairsFor("AF")).toHaveLength(9);
     expect(getVisaRelationshipEvidence("IN", "AF", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("QA", "AF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FR", "AF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NL", "AF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "AF", "visa_required").supportsCurrentStatus).toBe(true);
@@ -2839,6 +2840,8 @@ describe("official visa evidence", () => {
   it("supports the Indian advance Afghan visa without inferring inaccessible outbound routes", () => {
     expect(snapshot.passports.IN.statuses.AF).toBe("visa_required");
     expect(getVisaRelationshipEvidence("IN", "AF", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("QA", "AF", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("US", "AF", "visa_required").supportsCurrentStatus).toBe(false);
 
     for (const destinationCode of ["BD", "BF", "CV", "DJ", "SS", "SY", "TN"] as const) {
       expect(
