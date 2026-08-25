@@ -5373,6 +5373,7 @@ describe("official visa evidence", () => {
       "guide.visitdjibouti.dj",
       "www.journalofficiel.dj",
       "justice.gouv.km",
+      "mirex.egouv.km",
       "www.cuba.travel",
       "www.kdmid.ru",
       "www.mfa.gov.rs",
