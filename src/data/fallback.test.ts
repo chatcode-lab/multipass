@@ -94,6 +94,12 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.GB.statuses.GB).toBe("citizenship");
   });
 
+  it("keeps South Africa's locally branded ETA platform in the eVisa taxonomy", () => {
+    for (const passportCode of ["CN", "IN", "ID", "MX"] as const) {
+      expect(snapshot.passports[passportCode].statuses.ZA).toBe("evisa");
+    }
+  });
+
   it("applies the final Georgian, Malian, Mauritanian and Maldivian outbound audits", () => {
     expect(snapshot.passports.GE.statuses.GD).toBe("visa_free");
     expect(snapshot.passports.GE.statuses.PA).toBe("visa_required");

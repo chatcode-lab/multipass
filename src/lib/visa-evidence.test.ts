@@ -236,7 +236,15 @@ describe("official visa evidence", () => {
 
     expect(southAfricaPairs).toHaveLength(198);
     expect(getVisaRelationshipEvidence("AU", "ZA", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IN", "ZA", "evisa").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["CN", "IN", "ID", "MX"]) {
+      const evidence = getVisaRelationshipEvidence(passportCode, "ZA", "evisa");
+      expect(evidence.supportsCurrentStatus, passportCode).toBe(true);
+      expect(
+        evidence.policies.some(({ id }) => id === "south-africa-eta-platform-four-country-electronic-visitor-visas-current-2026"),
+        passportCode,
+      ).toBe(true);
+      expect(getVisaRelationshipEvidence(passportCode, "ZA", "eta").supportsCurrentStatus, passportCode).toBe(false);
+    }
     expect(getVisaRelationshipEvidence("AF", "ZA", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
@@ -6014,6 +6022,7 @@ describe("official visa evidence", () => {
       "beit-salam.km",
       "international.visitjordan.com",
       "embassymalawi.be",
+      "dirco.gov.za",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
