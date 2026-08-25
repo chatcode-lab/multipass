@@ -211,13 +211,13 @@ describe("official visa evidence", () => {
       .filter(({ destination }) => destination.code === "MX");
 
     expect(brazilPairs).toHaveLength(199);
-    expect(mexicoPairs).toHaveLength(198);
+    expect(mexicoPairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("CN", "BR", "visa_free", "2026-08-20").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "BR", "visa_free", "2027-01-01").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("US", "BR", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BR", "MX", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("VA", "MX", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("XK", "MX", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "MX", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("covers Fiji's complete visa-exempt and pre-entry-visa cohorts", () => {
@@ -1762,12 +1762,12 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "CL");
 
-    expect(pairs).toHaveLength(198);
+    expect(pairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("ID", "CL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MN", "CL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SR", "CL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "CL", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("XK", "CL", snapshot.passports.XK.statuses.CL).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "CL", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CL", "CL", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -3047,7 +3047,6 @@ describe("official visa evidence", () => {
       ["PS", "US"],
       ["AF", "US"],
       ["SS", "US"],
-      ["XK", "CL"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(
@@ -4689,7 +4688,12 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence("XK", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
     }
 
-    for (const destinationCode of ["AZ", "BY", "CL", "GA", "KZ", "MS", "MX", "RS", "UZ"] as const) {
+    for (const destinationCode of ["CL", "MX"] as const) {
+      expect(snapshot.passports.XK.statuses[destinationCode]).toBe("visa_required");
+      expect(getVisaRelationshipEvidence("XK", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
+    }
+
+    for (const destinationCode of ["AZ", "BY", "GA", "KZ", "MS", "RS", "UZ"] as const) {
       const status = snapshot.passports.XK.statuses[destinationCode];
       expect(getVisaRelationshipEvidence("XK", destinationCode, status).supportsCurrentStatus).toBe(false);
     }
