@@ -2304,7 +2304,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("NL", "DJ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CZ", "DJ", "evisa").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KM")).toHaveLength(31);
+    expect(pairsFor("KM")).toHaveLength(33);
     expect(getVisaRelationshipEvidence("KM", "KM", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "KM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "KM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
