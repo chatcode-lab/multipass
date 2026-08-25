@@ -53,6 +53,11 @@ describe("evidence status matrix", () => {
     const azerbaijanIndex = matrix.destinations.findIndex(({ code }) => code === "AZ");
 
     expect(kosovoRow.cells[azerbaijanIndex]).toEqual(["unknown", 0, -1, 0, 0]);
+
+    const libyaMatrix = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-08-25");
+    const libyaIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "LY");
+    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "TR")!.cells[libyaIndex])
+      .toEqual(["unknown", 0, -1, 0, 0]);
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {

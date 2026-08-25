@@ -113,6 +113,10 @@ describe("visa relationship URLs", () => {
     expect(REVIEWED_UNKNOWN_OVERRIDES.every((override) =>
       override.sourceIds.every((sourceId) => sourceIds.has(sourceId))
     )).toBe(true);
+    expect(getVisaRelationshipEvidence("TR", "LY", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
+    expect(getVisaRelationshipEvidence("MA", "JO", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_on_arrival" });
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {

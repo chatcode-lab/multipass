@@ -77,6 +77,15 @@ describe("passport calculations", () => {
       statuses: { XK: "citizenship", AZ: "visa_required" },
       mobilityScore: 0,
     })).toMatchObject({ statuses: { XK: "citizenship", AZ: "visa_required" }, mobilityScore: 0 });
+
+    for (const [code, destinationCode] of [["TR", "LY"], ["MA", "JO"]] as const) {
+      expect(applyAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", [destinationCode]: code === "TR" ? "visa_free" : "visa_on_arrival" },
+        mobilityScore: 1,
+      })).toMatchObject({ statuses: { [code]: "citizenship", [destinationCode]: "unknown" }, mobilityScore: 0 });
+    }
   });
 
   it("applies the reviewed Malawi and Oman corrections", () => {

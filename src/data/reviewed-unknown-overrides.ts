@@ -73,6 +73,32 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-25",
     recheckBy: "2026-11-25",
   },
+  {
+    passportCode: "TR",
+    destinationCode: "LY",
+    rejectedStatus: "visa_free",
+    reason: "Libya's official ordinary-passport checker makes Turkish access demographic-dependent, returning both country-exempt and electronic-application outcomes. No single passport-wide category is accurate.",
+    sourceIds: [
+      "libya-lana-evisa-national-platform-activation-2026",
+      "libya-evisa-live-ordinary-passport-and-visa-types-2026",
+      "libya-evisa-live-turkey-country-configuration-2026",
+      "libya-evisa-live-turkey-age-checker-2026",
+    ],
+    reviewedAt: "2026-08-25",
+    recheckBy: "2026-11-25",
+  },
+  {
+    passportCode: "MA",
+    destinationCode: "JO",
+    rejectedStatus: "visa_on_arrival",
+    reason: "Jordan's current official nationality table makes visa on arrival unavailable to Moroccan women aged 16–60 while also stating the general arrival route. No single passport-wide category is accurate.",
+    sourceIds: [
+      "jordan-tourism-board-live-nationality-visa-table-2026",
+      "jordan-moi-current-restricted-nationalities-definition-2026",
+    ],
+    reviewedAt: "2026-08-25",
+    recheckBy: "2026-11-25",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

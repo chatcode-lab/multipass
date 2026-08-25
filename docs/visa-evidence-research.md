@@ -3134,6 +3134,16 @@ Six relationships pass that stricter gate. Azerbaijan's official ASAN conditions
 
 The first five changes do not affect mobility scoring because eVisas were already unscored. Spain loses one mobility point, from 191 to 190 in the refreshed fallback, and moves from dense rank 3 to rank 4. Canonical evidence remains 40,030 of 44,974 relationships (89.0%) with 4,944 pending: reviewed unknowns improve displayed accuracy without claiming that a replacement route has been verified. Canonical policy and source totals remain 831 batches, 3,487 sources and 1,953 policies.
 
+## Pass 342 result: demographic access splits
+
+Two further current official rules directly disprove a passport-wide fallback without supplying one normalized replacement. Libya's live national eVisa platform marks Türkiye `PARTIAL`, identifies the regular-passport and emailed electronic-visa route, and returns both country-exempt and electronic-application outcomes for different dates of birth. TR→LY therefore changes from `visa_free` to reviewed `unknown`. Türkiye loses one mobility point, from 108 to 107, while retaining dense rank 55.
+
+Jordan's official nationality table simultaneously says Moroccan visitors may obtain a visa on arrival and marks arrival issuance unavailable for females aged 16–60. That direct demographic split cannot be represented as an unconditional Moroccan ordinary-passport arrival route. MA→JO changes from `visa_on_arrival` to reviewed `unknown`; Morocco loses one mobility point, from 71 to 70, and moves from dense rank 73 to rank 74.
+
+Four tempting rows remain unchanged after independent review. Palestinian access to Israel depends on registry, document, residence, permit and crossing facts, but current sources do not expressly disprove the fallback for its exact ordinary-passport cohort. Macao and Taiwan access to Hong Kong likewise depends on residence, identity, birth, prior-admission and additional-document facts without a direct all-holder negation. Hong Kong-to-Bosnia remains verified `visa_free`: Bosnia's current MFA card directly exempts the Hong Kong SAR passport and is more specific than a separate state-agency page mentioning business passports. Morocco-to-Jordan meets the strict correction gate because the current official table's `On-Arrival` column itself expressly excludes the 16–60 female cohort; the correction does not rely on inference from omission.
+
+Both new cells were already outside current-status evidence coverage, so the complete matrix remains 40,030 of 44,974 relationships (89.0%) with 4,944 pending. No policy or source is added, and canonical totals remain 831 batches, 3,487 sources and 1,953 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
