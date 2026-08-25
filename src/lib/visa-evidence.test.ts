@@ -699,7 +699,7 @@ describe("official visa evidence", () => {
     expect(snapshot.passports.BR.statuses.SA).toBe("evisa");
     expect(getVisaRelationshipEvidence("BR", "SA", "evisa").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("JO")).toHaveLength(194);
+    expect(pairsFor("JO")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("MM", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "JO", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -718,6 +718,13 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MU", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SA", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GE", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["GR", "GD", "PW", "TL"] as const) {
+      expect(snapshot.passports[passportCode].statuses.JO).toBe("visa_on_arrival");
+      expect(getVisaRelationshipEvidence(passportCode, "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    }
+    expect(
+      getVisaRelationshipEvidence("MA", "JO", snapshot.passports.MA.statuses.JO).supportsCurrentStatus,
+    ).toBe(false);
     expect(getVisaRelationshipEvidence("MV", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SM", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("EE", "JO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -3677,7 +3684,7 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("preserves current Eswatini, DR Congo, and Guinea residual conflicts as reviewed holds", () => {
+  it("covers the current EAC and Mauritian DR Congo results while preserving the remaining holds", () => {
     for (const sourceId of [
       "eswatini-home-affairs-current-required-visa-country-table-2026",
       "drc-mfa-current-visa-consular-filing-service-2026",
@@ -3686,13 +3693,14 @@ describe("official visa evidence", () => {
       expect(OFFICIAL_VISA_SOURCES.some(({ id }) => id === sourceId)).toBe(true);
     }
 
+    expect(getVisaRelationshipEvidence("MU", "CD", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KE", "CD", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TZ", "CD", "visa_free").supportsCurrentStatus).toBe(true);
+
     for (const [passportCode, destinationCode] of [
       ["XK", "SZ"],
       ["CN", "SZ"],
       ["CD", "SZ"],
-      ["MU", "CD"],
-      ["KE", "CD"],
-      ["TZ", "CD"],
       ["ZW", "CD"],
       ["CG", "CD"],
       ["HK", "GN"],
@@ -4109,7 +4117,6 @@ describe("official visa evidence", () => {
       ["EC", "AF"],
       ["SZ", "AF"],
       ["GA", "US"],
-      ["GD", "JO"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(
@@ -4424,7 +4431,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["NE", "AF"],
       ["NR", "BZ"],
-      ["PW", "JO"],
       ["BD", "MN"],
     ] as const) {
       expect(
@@ -6008,6 +6014,8 @@ describe("official visa evidence", () => {
       "italie.diplomatie.gouv.ci",
       "kw.slembassy.gov.sl",
       "mof.gov.sl",
+      "foreign.govmu.org",
+      "international.visitjordan.com",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

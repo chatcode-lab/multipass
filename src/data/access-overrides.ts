@@ -38,6 +38,14 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "MU",
+    destinationCode: "CD",
+    status: "visa_required",
+    reason: "Mauritius's current Foreign Ministry traveler table requires Mauritian ordinary-passport visitors to obtain a DR Congo visa before departure.",
+    sourceUrl: "https://foreign.govmu.org/Documents/2025/Visa%20Information/VISA%20FOR%20WEBSITE_25062025.pdf",
+    reviewedAt: "2026-08-25",
+  },
+  {
     passportCode: "JP",
     destinationCode: "TM",
     status: "visa_on_arrival",

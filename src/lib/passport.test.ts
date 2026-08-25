@@ -114,6 +114,13 @@ describe("passport calculations", () => {
 
   it("applies reviewed Mauritius and Malaysia corrections", () => {
     expect(applyVerifiedAccessOverrides({
+      code: "MU",
+      name: "Mauritius",
+      statuses: { MU: "citizenship", CD: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { MU: "citizenship", CD: "visa_required" }, mobilityScore: 0 });
+
+    expect(applyVerifiedAccessOverrides({
       code: "GY",
       name: "Guyana",
       statuses: { GY: "citizenship", MU: "visa_free" },
