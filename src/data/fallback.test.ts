@@ -76,6 +76,13 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.SC.statuses.KG).toBe("evisa");
   });
 
+  it("bundles Chad's reviewed eVisa transition while retaining Palestine's unresolved route", () => {
+    for (const passportCode of ["ES", "SE", "BE", "FR", "GB", "NL", "AT", "DK", "AU", "MX", "SC", "RU", "KW"] as const) {
+      expect(snapshot.passports[passportCode].statuses.TD).toBe("evisa");
+    }
+    expect(snapshot.passports.PS.statuses.TD).toBe("visa_required");
+  });
+
   it("applies the final Georgian, Malian, Mauritanian and Maldivian outbound audits", () => {
     expect(snapshot.passports.GE.statuses.GD).toBe("visa_free");
     expect(snapshot.passports.GE.statuses.PA).toBe("visa_required");
@@ -361,7 +368,7 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.MO.statuses.MK).toBe("visa_free");
     expect(snapshot.passports.MO.statuses.ST).toBe("evisa");
     expect(snapshot.passports.MO.statuses.VU).toBe("visa_free");
-    expect(snapshot.passports.MO.statuses.SL).toBe("evisa");
+    expect(snapshot.passports.MO.statuses.SL).toBe("visa_on_arrival");
     expect(snapshot.passports.IN.statuses.SL).toBe("visa_on_arrival");
     expect(snapshot.passports.VE.statuses.JO).toBe("visa_on_arrival");
   });

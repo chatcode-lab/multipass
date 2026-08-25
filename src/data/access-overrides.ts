@@ -37,6 +37,16 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...(["ES", "SE", "BE", "FR", "GB", "NL", "AT", "DK", "AU", "MX", "SC", "RU", "KW"] as const)
+    .map((passportCode) => ({
+      passportCode,
+      destinationCode: "TD" as const,
+      status: "evisa" as const,
+      reason: "Current passport-government guidance establishes Chad visa liability for this ordinary passport, while Chad's May and June 2026 notices require every new non-diplomatic or courtesy visa application exclusively online and issue the visa before travel.",
+      sourceUrl: "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      reviewedAt: "2026-08-25",
+      effectiveFrom: "2026-05-11",
+    })),
   {
     passportCode: "IL",
     destinationCode: "MW",
