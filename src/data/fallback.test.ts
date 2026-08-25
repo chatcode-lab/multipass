@@ -3,6 +3,7 @@ import fallbackSnapshot from "./fallback.json";
 import combinationInsights from "./combination-insights.json";
 import { PASSPORT_COLORS } from "./passport-colors";
 import { COUNTRY_MAPS, REGION_MAPS } from "./world-map";
+import { UNITED_KINGDOM_VISITOR_VISA_CODES } from "./visa-evidence";
 import { calculateMobilityScore } from "../lib/passport";
 import type { CombinationInsights, DataSnapshot } from "../lib/types";
 
@@ -81,6 +82,16 @@ describe("bundled passport snapshot", () => {
       expect(snapshot.passports[passportCode].statuses.TD).toBe("evisa");
     }
     expect(snapshot.passports.PS.statuses.TD).toBe("visa_required");
+  });
+
+  it("bundles the United Kingdom's complete Standard Visitor eVisa cutover", () => {
+    expect(UNITED_KINGDOM_VISITOR_VISA_CODES).toHaveLength(114);
+    for (const passportCode of UNITED_KINGDOM_VISITOR_VISA_CODES) {
+      expect(snapshot.passports[passportCode].statuses.GB, passportCode).toBe("evisa");
+    }
+    expect(snapshot.passports.TW.statuses.GB).toBe("eta");
+    expect(snapshot.passports.IE.statuses.GB).toBe("visa_free");
+    expect(snapshot.passports.GB.statuses.GB).toBe("citizenship");
   });
 
   it("applies the final Georgian, Malian, Mauritanian and Maldivian outbound audits", () => {

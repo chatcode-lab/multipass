@@ -542,7 +542,9 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IE", "GB", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "GB", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "GB", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "GB", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "GB", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "GB", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "GB", "visa_required", "2026-06-30").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the United States visitor baseline and preserves narrow exceptions", () => {
@@ -6009,6 +6011,7 @@ describe("official visa evidence", () => {
       "kw.slembassy.gov.sl",
       "mof.gov.sl",
       "foreign.govmu.org",
+      "beit-salam.km",
       "international.visitjordan.com",
       "embassymalawi.be",
     ]);

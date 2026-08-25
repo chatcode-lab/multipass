@@ -103,13 +103,13 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { GY: "citizenship", XX: "visa_free" }, mobilityScore: 1 });
   });
 
-  it("normalizes the UK visa-national cohort to an advance visitor visa", () => {
+  it("normalizes the UK visa-national cohort to the current digitally issued visitor visa", () => {
     expect(applyVerifiedAccessOverrides({
       code: "AF",
       name: "Afghanistan",
-      statuses: { AF: "citizenship", GB: "evisa" },
-      mobilityScore: 1,
-    })).toMatchObject({ statuses: { AF: "citizenship", GB: "visa_required" }, mobilityScore: 0 });
+      statuses: { AF: "citizenship", GB: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { AF: "citizenship", GB: "evisa" }, mobilityScore: 0 });
   });
 
   it("applies Mexico's reviewed electronic-visa and visa-list corrections", () => {

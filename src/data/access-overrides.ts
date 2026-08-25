@@ -1345,10 +1345,11 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   ...UNITED_KINGDOM_VISITOR_VISA_CODES.map((passportCode) => ({
     passportCode,
     destinationCode: "GB",
-    status: "visa_required" as const,
-    reason: "The UK Visa National List requires advance entry clearance; an online form and visa-centre appointment are not a universal eVisa route.",
-    sourceUrl: "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-visitor-visa-national-list",
-    reviewedAt: "2026-08-20",
+    status: "evisa" as const,
+    reason: "The UK Visa National List still requires advance entry clearance, but UKVI stopped issuing new visa vignettes on 1 July 2026 and now gives successful applicants an eVisa before travel.",
+    sourceUrl: "https://www.gov.uk/government/publications/updates-on-the-move-to-evisas/updates-on-the-move-to-evisas",
+    reviewedAt: "2026-08-25",
+    effectiveFrom: "2026-07-01",
   })),
   {
     passportCode: "RS",
