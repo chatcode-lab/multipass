@@ -4,6 +4,7 @@ import {
   US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES,
 } from "@/data/access-overrides";
 import {
+  applyAccessOverrides,
   applyVerifiedAccessOverrides,
   calculateMobilityScore,
   comparePassportSets,
@@ -53,6 +54,29 @@ describe("passport calculations", () => {
       statuses: { IN: "citizenship", HK: "eta" },
       mobilityScore: 1,
     });
+  });
+
+  it("renders directly disproved imported categories as pending unknowns", () => {
+    expect(applyAccessOverrides({
+      code: "XK",
+      name: "Kosovo",
+      statuses: { XK: "citizenship", AZ: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { XK: "citizenship", AZ: "unknown" }, mobilityScore: 0 });
+
+    expect(applyAccessOverrides({
+      code: "ES",
+      name: "Spain",
+      statuses: { ES: "citizenship", IR: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { ES: "citizenship", IR: "unknown" }, mobilityScore: 0 });
+
+    expect(applyAccessOverrides({
+      code: "XK",
+      name: "Kosovo",
+      statuses: { XK: "citizenship", AZ: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { XK: "citizenship", AZ: "visa_required" }, mobilityScore: 0 });
   });
 
   it("applies the reviewed Malawi and Oman corrections", () => {

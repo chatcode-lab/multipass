@@ -1,5 +1,5 @@
 import fallbackSnapshot from "../src/data/fallback.json" with { type: "json" };
-import { applyVerifiedAccessOverrides } from "../src/lib/passport";
+import { applyAccessOverrides } from "../src/lib/passport";
 import { getVisaRelationshipEvidence } from "../src/lib/visa-evidence";
 import type { DataSnapshot } from "../src/lib/types";
 
@@ -12,7 +12,7 @@ const PRIORITY_DESTINATION_RESEARCH_CODES = [
 
 const snapshot = fallbackSnapshot as DataSnapshot;
 const details = Object.fromEntries(
-  Object.entries(snapshot.passports).map(([code, detail]) => [code, applyVerifiedAccessOverrides(detail)]),
+  Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]),
 );
 const includeAllDestinations = process.argv.includes("--all");
 const onlyIncomplete = process.argv.includes("--incomplete");

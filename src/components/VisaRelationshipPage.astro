@@ -28,7 +28,9 @@ const reviewedDate = evidence.reviewedAt
   : null;
 const matchingApplication = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
 const title = `${passport.name} Passport to ${destination.name}: ${statusMeta.label} | MultiPass Rank`;
-const description = status === "entry_restricted"
+const description = evidence.reviewedUnknown
+  ? `Official review rejected the imported ${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} category for ${passport.name} passport travel to ${destination.name}. A single replacement route is not yet established.`
+  : status === "entry_restricted"
   ? `Ordinary visitor entry to ${destination.name} on a ${passport.name} passport is currently restricted. See the effective rule, conditions, and official sources.`
   : `${passport.name} passport holders currently have ${statusMeta.label.toLowerCase()} access to ${destination.name}. See official sources, evidence history, conditions, and application guidance.`;
 const structuredData = [
@@ -80,7 +82,11 @@ const structuredData = [
       </p>
       <div class="visa-relation-meta">
         <span class:list={["evidence-state", evidence.supportsCurrentStatus && "evidence-state--verified"]}>
-          {evidence.supportsCurrentStatus ? "Official evidence collected" : "Official-source review pending"}
+          {evidence.supportsCurrentStatus
+            ? "Official evidence collected"
+            : evidence.reviewedUnknown
+              ? "Imported classification rejected"
+              : "Official-source review pending"}
         </span>
         <span>{source === "live" ? "Access data checked" : "Bundled access snapshot"} {checkedDate}</span>
         {reviewedDate && <span>Sources reviewed {reviewedDate}</span>}
@@ -90,9 +96,17 @@ const structuredData = [
 
   <section class="evidence-layout">
     <div>
-      <span class="eyebrow">Evidence timeline</span>
-      <h2>How this access rule is documented</h2>
-      <VisaEvidenceTimeline policies={evidence.policies} sources={evidence.sources} passports={manifest.passports} />
+      <span class="eyebrow">Evidence review</span>
+      <h2>{evidence.reviewedUnknown ? "Why no single status is shown" : "How this access rule is documented"}</h2>
+      {evidence.reviewedUnknown ? (
+        <div class="notice">
+          <p><strong>The imported {STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} label is not current.</strong></p>
+          <p>{evidence.reviewedUnknown.reason}</p>
+          <p>No single replacement category is established. This relationship remains pending in evidence coverage and is scheduled for recheck by {new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${evidence.reviewedUnknown.recheckBy}T00:00:00Z`))}.</p>
+        </div>
+      ) : (
+        <VisaEvidenceTimeline policies={evidence.policies} sources={evidence.sources} passports={manifest.passports} />
+      )}
     </div>
     <aside class="evidence-scope">
       <span class="eyebrow">What this status means</span>

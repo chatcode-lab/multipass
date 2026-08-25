@@ -1,4 +1,5 @@
 import { OFFICIAL_VISA_SOURCES, VISA_POLICY_EVIDENCE, type OfficialVisaSource, type VisaPolicyEvidence } from "@/data/visa-evidence";
+import { getReviewedUnknownOverride, type ReviewedUnknownOverride } from "@/data/reviewed-unknown-overrides";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "./types";
 export {
   destinationSlug,
@@ -16,6 +17,7 @@ export interface VisaRelationshipEvidence {
   sources: OfficialVisaSource[];
   supportsCurrentStatus: boolean;
   reviewedAt?: string;
+  reviewedUnknown?: ReviewedUnknownOverride;
 }
 
 export function policyApplies(policy: VisaPolicyEvidence, passportCode: string, destinationCode: string): boolean {
@@ -31,13 +33,19 @@ export function getVisaRelationshipEvidence(
   currentStatus: AccessStatus,
   asOf = new Date().toISOString().slice(0, 10),
 ): VisaRelationshipEvidence {
+  const reviewedUnknown = currentStatus === "unknown"
+    ? getReviewedUnknownOverride(passportCode, destinationCode)
+    : undefined;
   const policies = VISA_POLICY_EVIDENCE
     .filter((policy) =>
       policyApplies(policy, passportCode, destinationCode)
       && (policy.status === currentStatus || Boolean(policy.effectiveTo))
     )
     .sort((first, second) => (second.effectiveFrom ?? second.announcedOn ?? "").localeCompare(first.effectiveFrom ?? first.announcedOn ?? ""));
-  const sourceIds = new Set(policies.flatMap((policy) => [...policy.sourceIds]));
+  const sourceIds = new Set([
+    ...policies.flatMap((policy) => [...policy.sourceIds]),
+    ...(reviewedUnknown?.sourceIds ?? []),
+  ]);
   const sources = [...sourceIds].flatMap((id) => {
     const source = SOURCE_BY_ID.get(id);
     return source ? [source] : [];
@@ -52,6 +60,7 @@ export function getVisaRelationshipEvidence(
       && (!policy.effectiveTo || policy.effectiveTo >= asOf)
     ),
     reviewedAt,
+    reviewedUnknown,
   };
 }
 

@@ -77,6 +77,15 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.SC.statuses.KG).toBe("evisa");
   });
 
+  it("bundles reviewed unknowns without inventing replacement access categories", () => {
+    expect(snapshot.passports.XK.statuses.AZ).toBe("unknown");
+    for (const passportCode of ["DZ", "EG", "IQ", "LY"] as const) {
+      expect(snapshot.passports[passportCode].statuses.TR, passportCode).toBe("unknown");
+    }
+    expect(snapshot.passports.ES.statuses.IR).toBe("unknown");
+    expect(snapshot.passports.ES.mobilityScore).toBe(190);
+  });
+
   it("bundles Chad's reviewed eVisa transition while retaining Palestine's unresolved route", () => {
     for (const passportCode of ["ES", "SE", "BE", "FR", "GB", "NL", "AT", "DK", "AU", "MX", "SC", "RU", "KW"] as const) {
       expect(snapshot.passports[passportCode].statuses.TD).toBe("evisa");
@@ -398,7 +407,7 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.HT.statuses.TR).toBe("visa_required");
     expect(snapshot.passports.IQ.statuses.GD).toBe("visa_required");
     expect(snapshot.passports.IQ.statuses.PA).toBe("visa_required");
-    expect(snapshot.passports.IQ.statuses.TR).toBe("evisa");
+    expect(snapshot.passports.IQ.statuses.TR).toBe("unknown");
   });
 
   it("applies the final Libyan, Montenegrin and Yemeni outbound audits", () => {

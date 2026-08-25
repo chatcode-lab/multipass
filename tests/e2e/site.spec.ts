@@ -594,6 +594,17 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
   expect(xml).toContain("<loc>https://multipassrank.com/destination/angola</loc>");
   expect(xml).toContain("<loc>https://multipassrank.com/belgium-angola-visa-free</loc>");
   expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-afghanistan-visa</loc>");
+
+  const rejected = await request.get("/kosovo-azerbaijan-evisa", { maxRedirects: 0 });
+  expect(rejected.status()).toBe(308);
+  expect(rejected.headers().location).toBe("/kosovo-azerbaijan-status-unknown");
+
+  await page.goto("/kosovo-azerbaijan-status-unknown");
+  await expect(page.getByText("Imported classification rejected", { exact: true })).toBeVisible();
+  await expect(page.getByText(/No single replacement category is established/)).toBeVisible();
+  await expect(page.locator('a[href="https://www.evisa.gov.az/en/countries"]')).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+  expect(xml).not.toContain("<loc>https://multipassrank.com/kosovo-azerbaijan-status-unknown</loc>");
 });
 
 test("entry restrictions have a canonical evidence page and stale-status redirect", async ({ page, request }) => {

@@ -14,6 +14,7 @@ import {
   type SourcePassportDetail,
 } from "./types";
 import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
+import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
 import { ACCESS_EASE_WEIGHT, slugifyCountry } from "./passport-shared";
 
 export { ACCESS_EASE_WEIGHT, STATUS_META, slugifyCountry } from "./passport-shared";
@@ -112,7 +113,7 @@ export function normalizePassportDetail(
   }
 
   statuses[code] = "citizenship";
-  return applyVerifiedAccessOverrides({
+  return applyAccessOverrides({
     code,
     name: detail.country.trim(),
     statuses,
@@ -142,6 +143,26 @@ export function applyVerifiedAccessOverrides(detail: PassportAccess): PassportAc
   }
 
   return changed ? { ...detail, statuses, mobilityScore: calculateMobilityScore(statuses) } : detail;
+}
+
+export function applyAccessOverrides(detail: PassportAccess): PassportAccess {
+  const verifiedDetail = applyVerifiedAccessOverrides(detail);
+  const applicable = REVIEWED_UNKNOWN_OVERRIDES.filter(({ passportCode }) => passportCode === verifiedDetail.code);
+  if (!applicable.length) return verifiedDetail;
+
+  const statuses = { ...verifiedDetail.statuses };
+  let changed = false;
+  for (const override of applicable) {
+    // Do not mask a future upstream correction or a stronger verified override.
+    // This negative finding rejects only the exact imported category reviewed.
+    if (statuses[override.destinationCode] !== override.rejectedStatus) continue;
+    statuses[override.destinationCode] = "unknown";
+    changed = true;
+  }
+
+  return changed
+    ? { ...verifiedDetail, statuses, mobilityScore: calculateMobilityScore(statuses) }
+    : verifiedDetail;
 }
 
 export function reconcileManifestPassportDetails(

@@ -32,14 +32,28 @@ export function visaRelationshipMarkdown(
   const statusMeta = STATUS_META[status];
   const sources = new Map(evidence.sources.map((source) => [source.id, source]));
   const application = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
-  const timeline = evidence.policies.length
+  const timeline = evidence.reviewedUnknown
+    ? `The imported **${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label}** classification was rejected during official-source review.
+
+${escapeMarkdown(evidence.reviewedUnknown.reason)}
+
+No single replacement category has been established. Recheck scheduled by ${readableDate(evidence.reviewedUnknown.recheckBy)}.
+
+Official ${evidence.sources.length === 1 ? "source" : "sources"}:
+${evidence.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.title)}](${source.url})`).join("\n")}`
+    : evidence.policies.length
     ? evidence.policies.map((policy) => policyMarkdown(policy, sources)).join("\n\n")
     : "No official-source timeline has been completed for this relationship. The page remains excluded from search indexing until review is complete.";
+  const evidenceStatus = evidence.supportsCurrentStatus
+    ? "official evidence collected"
+    : evidence.reviewedUnknown
+      ? "imported classification rejected; replacement route unresolved"
+      : "official-source review pending";
   return `# ${escapeMarkdown(passport.name)} passport to ${escapeMarkdown(destination.name)}: ${statusMeta.label}
 
 Current access classification: **${statusMeta.label}** — ${statusMeta.description}.
 
-Access data checked ${readableDate(manifest.checkedAt.slice(0, 10))}. Evidence status: **${evidence.supportsCurrentStatus ? "official evidence collected" : "official-source review pending"}**.
+Access data checked ${readableDate(manifest.checkedAt.slice(0, 10))}. Evidence status: **${evidenceStatus}**.
 
 This page concerns ordinary short visits unless an official source states otherwise. Authorities apply the current rule, and individual circumstances can change the applicable treatment.
 

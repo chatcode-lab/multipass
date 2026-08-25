@@ -1,12 +1,12 @@
 import { describe, expect, it } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
 import { buildEvidenceCompletionSummary, buildEvidenceStatusRegion } from "./evidence-status";
-import { applyVerifiedAccessOverrides } from "./passport";
+import { applyAccessOverrides } from "./passport";
 import type { DataSnapshot } from "./types";
 
 const snapshot = fallbackSnapshot as DataSnapshot;
 const details = Object.fromEntries(
-  Object.entries(snapshot.passports).map(([code, detail]) => [code, applyVerifiedAccessOverrides(detail)]),
+  Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]),
 );
 
 describe("evidence status matrix", () => {
@@ -45,6 +45,14 @@ describe("evidence status matrix", () => {
 
     expect(currentSwissRow.cells[koreaIndex].slice(0, 2)).toEqual(["visa_free", 1]);
     expect(expiredSwissRow.cells[koreaIndex]).toEqual(["visa_free", 0, -1, 0, 0]);
+  });
+
+  it("keeps reviewed unknown relationships pending rather than claiming verified coverage", () => {
+    const matrix = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-25");
+    const kosovoRow = matrix.rows.find(({ passportCode }) => passportCode === "XK")!;
+    const azerbaijanIndex = matrix.destinations.findIndex(({ code }) => code === "AZ");
+
+    expect(kosovoRow.cells[azerbaijanIndex]).toEqual(["unknown", 0, -1, 0, 0]);
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {

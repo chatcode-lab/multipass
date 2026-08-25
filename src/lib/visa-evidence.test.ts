@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
+import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
 import {
   ANGOLA_TOURIST_VISA_EXEMPT_CODES,
   AUSTRALIA_ETA_CODES,
@@ -96,6 +97,22 @@ describe("visa relationship URLs", () => {
       destination: { code: "TD" },
       requestedStatus: "evisa",
     });
+  });
+
+  it("resolves reviewed unknown relationship URLs without treating them as verified", () => {
+    expect(resolveVisaRelationshipSlug("kosovo-azerbaijan-status-unknown", snapshot.manifest)).toMatchObject({
+      passport: { code: "XK" },
+      destination: { code: "AZ" },
+      requestedStatus: "unknown",
+    });
+    const evidence = getVisaRelationshipEvidence("XK", "AZ", "unknown");
+    expect(evidence.supportsCurrentStatus).toBe(false);
+    expect(evidence.reviewedUnknown).toMatchObject({ rejectedStatus: "evisa" });
+    expect(evidence.sources.map(({ id }) => id)).toContain("azerbaijan-asan-current-evisa-country-list-2026");
+    const sourceIds = new Set(OFFICIAL_VISA_SOURCES.map(({ id }) => id));
+    expect(REVIEWED_UNKNOWN_OVERRIDES.every((override) =>
+      override.sourceIds.every((sourceId) => sourceIds.has(sourceId))
+    )).toBe(true);
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
