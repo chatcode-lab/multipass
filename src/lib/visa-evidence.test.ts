@@ -1346,16 +1346,16 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "GW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "GW", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("SL")).toHaveLength(33);
+    expect(pairsFor("SL")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("GH", "SL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NE", "SL", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FR", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "SL", snapshot.passports.AF.statuses.SL).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "SL", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HU", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IE", "SL", snapshot.passports.IE.statuses.SL).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IE", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("BI")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("SO", "BI", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2759,7 +2759,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("PH", "XK", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "LK", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IN", "SL", snapshot.passports.IN.statuses.SL).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IN", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "KG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "GD", "visa_free").supportsCurrentStatus).toBe(true);
     for (const passportCode of ["CH", "IS", "LI", "NO", "SM", "US", "VE"] as const) {
@@ -2995,7 +2995,8 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence("KW", destinationCode, "visa_on_arrival").supportsCurrentStatus).toBe(true);
     }
     for (const destinationCode of ["BF", "CI", "IQ", "PS", "SL", "SS"] as const) {
-      expect(getVisaRelationshipEvidence("KW", destinationCode, snapshot.passports.KW.statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL" ? "visa_on_arrival" : snapshot.passports.KW.statuses[destinationCode];
+      expect(getVisaRelationshipEvidence("KW", destinationCode, status).supportsCurrentStatus).toBe(destinationCode === "SL");
     }
   });
 
@@ -3052,13 +3053,16 @@ describe("official visa evidence", () => {
       ["MY", "SL"],
       ["MU", "AF"],
     ] as const) {
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
       expect(
         getVisaRelationshipEvidence(
           passportCode,
           destinationCode,
-          snapshot.passports[passportCode].statuses[destinationCode],
+          status,
         ).supportsCurrentStatus,
-      ).toBe(false);
+      ).toBe(destinationCode === "SL");
     }
   });
 
@@ -3086,13 +3090,16 @@ describe("official visa evidence", () => {
       ["UZ", "SL"],
       ["PH", "SA"],
     ] as const) {
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
       expect(
         getVisaRelationshipEvidence(
           passportCode,
           destinationCode,
-          snapshot.passports[passportCode].statuses[destinationCode],
+          status,
         ).supportsCurrentStatus,
-      ).toBe(false);
+      ).toBe(destinationCode === "SL");
     }
   });
 
@@ -3359,13 +3366,16 @@ describe("official visa evidence", () => {
       ["BE", "BD"],
       ["NL", "SL"],
     ] as const) {
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
       expect(
         getVisaRelationshipEvidence(
           passportCode,
           destinationCode,
-          snapshot.passports[passportCode].statuses[destinationCode],
+          status,
         ).supportsCurrentStatus,
-      ).toBe(false);
+      ).toBe(destinationCode === "SL");
     }
   });
 
@@ -3379,13 +3389,16 @@ describe("official visa evidence", () => {
       ["PS", "US"],
       ["IE", "SL"],
     ] as const) {
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
       expect(
         getVisaRelationshipEvidence(
           passportCode,
           destinationCode,
-          snapshot.passports[passportCode].statuses[destinationCode],
+          status,
         ).supportsCurrentStatus,
-      ).toBe(false);
+      ).toBe(destinationCode === "SL");
     }
   });
 
@@ -3455,13 +3468,16 @@ describe("official visa evidence", () => {
       ["LV", "TM"],
       ["SK", "CI"],
     ] as const) {
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
       expect(
         getVisaRelationshipEvidence(
           passportCode,
           destinationCode,
-          snapshot.passports[passportCode].statuses[destinationCode],
+          status,
         ).supportsCurrentStatus,
-      ).toBe(false);
+      ).toBe(destinationCode === "SL");
     }
   });
 
@@ -4624,13 +4640,16 @@ describe("official visa evidence", () => {
       ["SD", "US"],
       ["VE", "US"],
     ] as const) {
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
       expect(
         getVisaRelationshipEvidence(
           passportCode,
           destinationCode,
-          snapshot.passports[passportCode].statuses[destinationCode],
+          status,
         ).supportsCurrentStatus,
-      ).toBe(false);
+      ).toBe(destinationCode === "SL");
     }
   });
 
@@ -4699,7 +4718,7 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("supports South Korea's South Sudan eVisa while preserving pairwise Sierra Leone and Djibouti holds", () => {
+  it("supports South Korea's South Sudan eVisa, closes Sierra Leone, and preserves Djibouti holds", () => {
     expect(getVisaRelationshipEvidence("KR", "SS", "evisa").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.KR.statuses.SS).toBe("evisa");
     expect(evidenceRelationshipPairs(snapshot.manifest).filter(({ destination }) => destination.code === "SS"))
@@ -4711,8 +4730,7 @@ describe("official visa evidence", () => {
     }
 
     for (const passportCode of ["CH", "FI", "SE", "LU", "KR", "IE", "NL", "PT", "AT", "MT", "NZ", "GR"] as const) {
-      const status = snapshot.passports[passportCode].statuses.SL;
-      expect(getVisaRelationshipEvidence(passportCode, "SL", status).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     }
 
     for (const passportCode of ["SG", "CH", "FI", "LU", "KR", "PT", "MT", "NZ", "GR", "LV", "LT"] as const) {
@@ -4738,8 +4756,8 @@ describe("official visa evidence", () => {
     for (const destinationCode of [
       "AF", "VG", "BF", "CF", "DJ", "GW", "IR", "IQ", "LR", "NE", "KP", "PS", "SL", "SD", "SY", "TM",
     ] as const) {
-      const status = snapshot.passports.KR.statuses[destinationCode];
-      expect(getVisaRelationshipEvidence("KR", destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL" ? "visa_on_arrival" : snapshot.passports.KR.statuses[destinationCode];
+      expect(getVisaRelationshipEvidence("KR", destinationCode, status).supportsCurrentStatus).toBe(destinationCode === "SL");
     }
     expect(getVisaRelationshipEvidence("KR", "CG", "visa_required").supportsCurrentStatus).toBe(true);
 
@@ -4901,8 +4919,11 @@ describe("official visa evidence", () => {
       ["SI", "IQ"],
       ["SI", "PS"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -4951,8 +4972,11 @@ describe("official visa evidence", () => {
       ["KW", "IQ"],
       ["KW", "PS"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -4988,8 +5012,11 @@ describe("official visa evidence", () => {
       ["BE", "BD"],
       ["BE", "VG"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5004,8 +5031,11 @@ describe("official visa evidence", () => {
       ["JP", "TD"],
       ["JP", "UA"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5020,8 +5050,11 @@ describe("official visa evidence", () => {
       ["DK", "IQ"],
       ["SK", "TD"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5041,8 +5074,11 @@ describe("official visa evidence", () => {
       ["LU", "UA"],
       ["LU", "SL"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5062,8 +5098,11 @@ describe("official visa evidence", () => {
       ["NZ", "NU"],
       ["NZ", "IQ"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5084,8 +5123,11 @@ describe("official visa evidence", () => {
       ["IS", "TD"],
       ["IS", "VG"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5105,8 +5147,11 @@ describe("official visa evidence", () => {
       ["MY", "GW"],
       ["MY", "TM"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5118,8 +5163,11 @@ describe("official visa evidence", () => {
       ["AR", "CV"],
       ["AR", "SA"],
     ] as const) {
-      const status = snapshot.passports[passportCode].statuses[destinationCode];
-      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
+      const status = destinationCode === "SL"
+        ? "visa_on_arrival"
+        : snapshot.passports[passportCode].statuses[destinationCode];
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5958,6 +6006,8 @@ describe("official visa evidence", () => {
       "gouvernement.gov.bf",
       "www.hcipos.gov.in",
       "italie.diplomatie.gouv.ci",
+      "kw.slembassy.gov.sl",
+      "mof.gov.sl",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

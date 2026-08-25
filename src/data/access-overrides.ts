@@ -4280,4 +4280,20 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.apicongo.cg/entrer_et_travailler_au_congo.php?lang=fr",
     reviewedAt: "2026-08-25",
   })),
+  ...([
+    "IS", "MC", "CL", "AD", "AR", "HK", "SM", "MX", "UY", "VA",
+    "CR", "PA", "PY", "PE", "TW", "GT", "SV", "MH", "CO", "HN",
+    "ME", "NI", "FM", "MK", "PW", "BA", "AL", "VE", "EC", "MV",
+    "XK", "SR", "DO", "MN", "PH", "CU", "GQ", "JO", "BT", "HT",
+    "LA", "DJ", "MM", "KP", "ET", "NP", "YE", "IQ", "SY", "AF",
+    "UA", "MO", "GE", "MD", "BY", "KZ", "AZ", "AM", "KG", "UZ",
+    "TJ", "TM",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "SL" as const,
+    status: "visa_on_arrival" as const,
+    reason: "Sierra Leone's current official consular guidance makes a visa on arrival directly available to non-ECOWAS ordinary-passport tourists; the optional eVisa service does not remove that border-issued route.",
+    sourceUrl: "https://kw.slembassy.gov.sl/visas/",
+    reviewedAt: "2026-08-25",
+  })),
 ] as const;
