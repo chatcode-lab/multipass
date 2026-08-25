@@ -320,7 +320,7 @@ describe("official visa evidence", () => {
     const omanPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "OM");
 
-    expect(omanPairs).toHaveLength(218);
+    expect(omanPairs).toHaveLength(219);
     expect(getVisaRelationshipEvidence("DE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "OM", "visa_free").supportsCurrentStatus).toBe(true);
@@ -328,7 +328,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IL", "OM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TO", "OM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "OM", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("TW", "OM", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("TW", "OM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "OM", "evisa").supportsCurrentStatus).toBe(false);
   });
 
@@ -1148,17 +1148,20 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TZ", "TZ", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
-  it("covers Malawi's reviewed schedules without resolving current source conflicts", () => {
+  it("covers Malawi's reviewed schedules while preserving the remaining category conflicts", () => {
     const malawiPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "MW");
 
-    expect(malawiPairs).toHaveLength(192);
+    expect(malawiPairs).toHaveLength(196);
     expect(getVisaRelationshipEvidence("DO", "MW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CH", "MW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CD", "MW", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MW", "MW", "citizenship").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("WS", "MW", snapshot.passports.WS.statuses.MW).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("IL", "MW", snapshot.passports.IL.statuses.MW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("WS", "MW", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TV", "MW", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NR", "MW", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "MW", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BF", "MW", snapshot.passports.BF.statuses.MW).supportsCurrentStatus).toBe(false);
   });
 
   it("covers the reviewed Algeria, Nigeria, and Senegal schedules", () => {
@@ -4850,7 +4853,6 @@ describe("official visa evidence", () => {
       ["MO", "EC"],
       ["HK", "MK"],
       ["HK", "TN"],
-      ["TW", "OM"],
       ["TW", "UA"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
@@ -6024,6 +6026,7 @@ describe("official visa evidence", () => {
       "mof.gov.sl",
       "foreign.govmu.org",
       "international.visitjordan.com",
+      "embassymalawi.be",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

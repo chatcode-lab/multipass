@@ -55,6 +55,31 @@ describe("passport calculations", () => {
     });
   });
 
+  it("applies the reviewed Malawi and Oman corrections", () => {
+    for (const code of ["WS", "TV", "NR"] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", MW: "visa_free" },
+        mobilityScore: 1,
+      })).toMatchObject({ statuses: { [code]: "citizenship", MW: "evisa" }, mobilityScore: 0 });
+    }
+
+    expect(applyVerifiedAccessOverrides({
+      code: "IL",
+      name: "Israel",
+      statuses: { IL: "citizenship", MW: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { IL: "citizenship", MW: "visa_on_arrival" }, mobilityScore: 1 });
+
+    expect(applyVerifiedAccessOverrides({
+      code: "TW",
+      name: "Taiwan",
+      statuses: { TW: "citizenship", OM: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { TW: "citizenship", OM: "visa_free" }, mobilityScore: 1 });
+  });
+
   it("applies reviewed Kenya ETA corrections to live passport records", () => {
     expect(applyVerifiedAccessOverrides({
       code: "GY",

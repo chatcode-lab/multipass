@@ -1,0 +1,90 @@
+{
+  "batchId": "taiwan-oman-current-conflict-tiebreak-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "oman-rop-taiwan-static-visa-free-list-2026",
+      "title": "Visa-Free Entry Countries",
+      "url": "https://www.rop.gov.om/english/VisaExempt.aspx",
+      "publisher": "Royal Oman Police",
+      "jurisdiction": "Sultanate of Oman",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live ROP page returned HTTPS 200, labels List No. (1) as enterable without a tourist visa, and includes Taiwan.",
+      "supportingExcerpt": "List No. (1): Countries that can be entered without a tourist visa"
+    },
+    {
+      "id": "oman-rop-taiwan-eligibility-wizard-products-2026",
+      "title": "Visa Eligibility Wizard - Unsponsored Visas",
+      "url": "https://evisa.rop.gov.om/visa-eligibility",
+      "publisher": "Royal Oman Police",
+      "jurisdiction": "Sultanate of Oman",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "A fresh ordinary Taiwan/China passport, non-GCC-resident POST replay returned Group-1 tourist products 26A, 26B and 36B, each marked Apply online and qualified as possible eligibility.",
+      "supportingExcerpt": "You might be eligible for the following visa(s)."
+    },
+    {
+      "id": "oman-fm-entry-visas-current-2026-taiwan",
+      "title": "Entry visas",
+      "url": "https://www.fm.gov.om/en/visitors/entry-visas/",
+      "publisher": "Foreign Ministry, Sultanate of Oman",
+      "jurisdiction": "Sultanate of Oman",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live Foreign Ministry page returned HTTPS 200 and directs travellers to the ROP eVisa eligibility service for nationality-specific options.",
+      "supportingExcerpt": "Citizens of other nationalities can establish their visa options via the ROP’s eVisa website."
+    },
+    {
+      "id": "taiwan-boca-oman-ordinary-passport-entry-guidance-2026",
+      "title": "Oman visa and entry information",
+      "url": "https://www.boca.gov.tw/sp-foof-countrycp-01-47-5f61f-02-1.html",
+      "publisher": "Bureau of Consular Affairs, Ministry of Foreign Affairs, Republic of China (Taiwan)",
+      "jurisdiction": "Taiwan",
+      "kind": "government-guidance",
+      "language": "Chinese",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "Taiwan's live passport authority page directly identifies ROC (Taiwan) passport holders, states Oman's 14-day non-extendable visa-free route, and identifies Taiwan as ROP passport code 901.",
+      "supportingExcerpt": "阿曼政府予我國人免簽證、落地簽證及電子簽證待遇。免簽證效期為14天，不可延期"
+    }
+  ],
+  "policies": [
+    {
+      "id": "oman-taiwan-ordinary-passport-fourteen-day-visa-free-entry",
+      "title": "Taiwanese ordinary passports: 14-day visa-free entry",
+      "summary": "Holders of ordinary Republic of China (Taiwan) passports may enter Oman without a visa for a visit of up to 14 days. Taiwan's passport authority identifies the ROP system code as 901 and distinguishes the short visa-free route from optional longer visa-on-arrival and eVisa products.",
+      "status": "visa_free",
+      "destinationCodes": ["OM"],
+      "passportCodes": ["TW"],
+      "conditions": [
+        "The visa-free stay is limited to 14 days and cannot be extended.",
+        "The traveller must use an ordinary Republic of China (Taiwan) passport; the ROP system identifies this passport as code 901 rather than a People's Republic of China passport.",
+        "For tourism beyond 14 days, the official guidance describes optional 30-day visa-on-arrival and unsponsored eVisa routes. Those alternatives do not negate the easier short-stay visa-free status.",
+        "Normal passport-validity, purpose, onward-travel and admissibility rules continue to apply."
+      ],
+      "sourceIds": [
+        "oman-rop-taiwan-static-visa-free-list-2026",
+        "taiwan-boca-oman-ordinary-passport-entry-guidance-2026"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TW",
+      "destinationCode": "OM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "Taiwan's passport authority directly confirms a 14-day non-extendable visa-free route for ROC (Taiwan) passports and explains that the 30-day online tourist products are optional longer-stay routes, reconciling the ROP static list and eligibility wizard.",
+      "sourceIds": [
+        "oman-rop-taiwan-static-visa-free-list-2026",
+        "oman-rop-taiwan-eligibility-wizard-products-2026",
+        "taiwan-boca-oman-ordinary-passport-entry-guidance-2026"
+      ]
+    }
+  ],
+  "unresolved": []
+}

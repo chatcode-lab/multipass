@@ -38,6 +38,30 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "IL",
+    destinationCode: "MW",
+    status: "visa_on_arrival",
+    reason: "Malawi's replacement statutory schedule requires a visa for Israeli ordinary-passport visitors, while current Department and official mission guidance expressly permit boarding without one and issuance at the port of entry.",
+    sourceUrl: "https://evisa.gov.mw/PDFs/CategoryTwoCountries.pdf",
+    reviewedAt: "2026-08-25",
+  },
+  ...(["WS", "TV", "NR"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "MW" as const,
+    status: "evisa" as const,
+    reason: "Malawi's replacement statutory schedule requires a visa for this ordinary passport, and the current official mission process supplies electronic application, approval and PDF delivery before travel.",
+    sourceUrl: "https://embassymalawi.be/ova_dep/malawi-visa-application-process/",
+    reviewedAt: "2026-08-25",
+  })),
+  {
+    passportCode: "TW",
+    destinationCode: "OM",
+    status: "visa_free",
+    reason: "Taiwan's current passport-authority guidance confirms that ROC (Taiwan) ordinary-passport visitors may enter Oman visa-free for up to 14 non-extendable days; online products are optional longer-stay routes.",
+    sourceUrl: "https://www.boca.gov.tw/sp-foof-countrycp-01-47-5f61f-02-1.html",
+    reviewedAt: "2026-08-25",
+  },
+  {
     passportCode: "MU",
     destinationCode: "CD",
     status: "visa_required",

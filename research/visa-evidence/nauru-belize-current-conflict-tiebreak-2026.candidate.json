@@ -1,0 +1,37 @@
+{
+  "batchId": "nauru-belize-current-conflict-tiebreak-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "belize-immigration-nauru-contradictory-visa-table-2026",
+      "title": "Who qualifies for a visa",
+      "url": "https://immigration.gov.bz/visa/visa-who-qualify/",
+      "publisher": "Government of Belize Ministry of Immigration, Governance and Labour",
+      "jurisdiction": "Belize",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live Belize Immigration table returned HTTPS 200 and identifies its country-level Visa Required field.",
+      "supportingExcerpt": "Nauru | YES - NO"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "NR",
+      "destinationCode": "BZ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: the current Belize Immigration cell is internally contradictory (YES - NO)",
+      "explanation": "The single field does not identify a duration, document category, correction, visa channel or ordering between YES and NO. Neither half can safely be treated as the ordinary-passport rule.",
+      "sourceIds": ["belize-immigration-nauru-contradictory-visa-table-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "NR",
+      "destinationCode": "BZ",
+      "reason": "Belize Immigration's current Nauru row reads YES - NO. No controlling law, corrected schedule, direct nationality selector, Nauruan passport-authority guidance, or actual issuance-timing rule resolves the contradiction, so the fallback visa-free label is not confirmed or replaced.",
+      "searchedOfficialDomains": ["immigration.gov.bz", "mfa.gov.bz", "naurugov.nr"]
+    }
+  ]
+}
