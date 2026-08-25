@@ -871,8 +871,20 @@ describe("official visa evidence", () => {
       .filter(({ destination }) => destination.code === "TH");
 
     expect(thailandPairs).toHaveLength(199);
-    expect(getVisaRelationshipEvidence("NL", "TH", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("ET", "TH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    const netherlandsEvidence = getVisaRelationshipEvidence("NL", "TH", "visa_free");
+    expect(netherlandsEvidence.supportsCurrentStatus).toBe(true);
+    expect(netherlandsEvidence.policies.map(({ id }) => id)).toContain(
+      "thailand-current-60-day-waiver-until-gazette-transition-2026",
+    );
+    expect(netherlandsEvidence.reviewedAt).toBe("2026-08-25");
+    const ethiopiaEvidence = getVisaRelationshipEvidence("ET", "TH", "visa_on_arrival");
+    expect(ethiopiaEvidence.supportsCurrentStatus).toBe(true);
+    expect(ethiopiaEvidence.policies.map(({ id }) => id)).toContain(
+      "thailand-current-15-day-voa-until-gazette-transition-2026",
+    );
+    expect(getVisaRelationshipEvidence("IN", "TH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AZ", "TH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AZ", "TH", "visa_on_arrival").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("AF", "TH", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TH", "TH", "citizenship").supportsCurrentStatus).toBe(true);
   });
@@ -6028,6 +6040,7 @@ describe("official visa evidence", () => {
       "international.visitjordan.com",
       "embassymalawi.be",
       "dirco.gov.za",
+      "www.thailand.go.th",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
