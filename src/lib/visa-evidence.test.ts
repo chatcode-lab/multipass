@@ -1025,7 +1025,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "TM", snapshot.passports.CA.statuses.TM).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("AF")).toHaveLength(7);
+    expect(pairsFor("AF")).toHaveLength(8);
+    expect(getVisaRelationshipEvidence("IN", "AF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FR", "AF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NL", "AF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "AF", "visa_required").supportsCurrentStatus).toBe(true);
@@ -2832,6 +2833,18 @@ describe("official visa evidence", () => {
     }
     for (const passportCode of ["AF", "SG"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "ST", snapshot.passports[passportCode].statuses.ST).supportsCurrentStatus).toBe(false);
+    }
+  });
+
+  it("supports the Indian advance Afghan visa without inferring inaccessible outbound routes", () => {
+    expect(snapshot.passports.IN.statuses.AF).toBe("visa_required");
+    expect(getVisaRelationshipEvidence("IN", "AF", "visa_required").supportsCurrentStatus).toBe(true);
+
+    for (const destinationCode of ["BD", "BF", "CV", "DJ", "SS", "SY", "TN"] as const) {
+      expect(
+        getVisaRelationshipEvidence("IN", destinationCode, snapshot.passports.IN.statuses[destinationCode])
+          .supportsCurrentStatus,
+      ).toBe(false);
     }
   });
 
@@ -5590,6 +5603,7 @@ describe("official visa evidence", () => {
       "www.turkmenistan.gov.tm",
       "moi.gov.af",
       "mfa.gov.af",
+      "mumbai.mfa.gov.af",
       "afghanembassy.org",
       "customs.gov.tl",
       "timor-leste.gov.tl",
