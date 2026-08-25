@@ -5294,6 +5294,7 @@ describe("official visa evidence", () => {
       "diplomatie.belgium.be",
       "um.dk",
       "e.gov.kw",
+      "www.e.gov.kw",
       "dailynews.gov.bw",
       "www.dsi.gov.mo",
       "www.bvi.gov.vg",
