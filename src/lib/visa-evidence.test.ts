@@ -575,8 +575,9 @@ describe("official visa evidence", () => {
     expect(ANGOLA_TOURIST_VISA_EXEMPT_CODES).toHaveLength(98);
     const angolaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination, status }) => destination.code === "AO" && status === "visa_free");
-    expect(angolaPairs).toHaveLength(100);
+    expect(angolaPairs).toHaveLength(101);
     expect(getVisaRelationshipEvidence("PH", "AO", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("NA", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(snapshot.manifest.passports.some(({ code }) => code === "CK" || code === "NU")).toBe(false);
   });
 
@@ -1541,7 +1542,8 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "AO");
 
-    expect(pairs).toHaveLength(105);
+    expect(pairs).toHaveLength(106);
+    expect(getVisaRelationshipEvidence("NA", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("WS", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PH", "AO", "visa_free").supportsCurrentStatus).toBe(true);
@@ -4153,7 +4155,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["MN", "AF"],
-      ["NA", "AO"],
       ["NG", "US"],
     ] as const) {
       expect(
