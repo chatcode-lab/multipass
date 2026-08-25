@@ -62,6 +62,10 @@ describe("evidence status matrix", () => {
     const tunisiaIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "TN");
     expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "UA")!.cells[tunisiaIndex])
       .toEqual(["unknown", 0, -1, 0, 0]);
+
+    const guineaBissauIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "GW");
+    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "KR")!.cells[guineaBissauIndex])
+      .toEqual(["unknown", 0, -1, 0, 0]);
   });
 
   it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
@@ -76,6 +80,20 @@ describe("evidence status matrix", () => {
       .toEqual(["visa_required", 1]);
   });
 
+  it("counts the reviewed Singaporean, Korean and Mexican African routes as supported", () => {
+    const africa = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-08-25");
+    const destinationIndex = (code: string) => africa.destinations.findIndex((destination) => destination.code === code);
+    const cell = (passportCode: string, destinationCode: string) =>
+      africa.rows.find((row) => row.passportCode === passportCode)!.cells[destinationIndex(destinationCode)];
+
+    expect(cell("SG", "LR").slice(0, 2)).toEqual(["visa_required", 1]);
+    expect(cell("SG", "GW").slice(0, 2)).toEqual(["visa_on_arrival", 1]);
+    expect(cell("SG", "NE").slice(0, 2)).toEqual(["visa_required", 1]);
+    expect(cell("KR", "CF").slice(0, 2)).toEqual(["visa_required", 1]);
+    expect(cell("KR", "SD").slice(0, 2)).toEqual(["visa_on_arrival", 1]);
+    expect(cell("MX", "LR").slice(0, 2)).toEqual(["visa_required", 1]);
+  });
+
   it("reports a complete four-state summary for every foreign-access relationship", () => {
     const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-21");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
@@ -83,8 +101,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_032);
-    expect(summary.notCovered.count).toBe(4_942);
+    expect(summary.covered).toBe(40_038);
+    expect(summary.notCovered.count).toBe(4_936);
     expect(summary.percent).toBe(89);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

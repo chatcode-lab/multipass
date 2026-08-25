@@ -108,6 +108,15 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-25",
     recheckBy: "2026-11-25",
   },
+  {
+    passportCode: "KR",
+    destinationCode: "GW",
+    rejectedStatus: "visa_on_arrival",
+    reason: "Korea's current Foreign Ministry page expressly says ordinary Korean passports are not visa-free for Guinea-Bissau, arrival visas are not issued, and visa-less arrivals are refused. It does not identify one safe replacement issuance route.",
+    sourceIds: ["korea-mofa-guinea-bissau-entry-2026"],
+    reviewedAt: "2026-08-25",
+    recheckBy: "2026-11-25",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

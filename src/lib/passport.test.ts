@@ -93,6 +93,13 @@ describe("passport calculations", () => {
       statuses: { UA: "citizenship", TN: "visa_free" },
       mobilityScore: 1,
     })).toMatchObject({ statuses: { UA: "citizenship", TN: "unknown" }, mobilityScore: 0 });
+
+    expect(applyAccessOverrides({
+      code: "KR",
+      name: "South Korea",
+      statuses: { KR: "citizenship", GW: "visa_on_arrival" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { KR: "citizenship", GW: "unknown" }, mobilityScore: 0 });
   });
 
   it("applies Ireland's reviewed advance-visa correction for Syria", () => {
@@ -102,6 +109,21 @@ describe("passport calculations", () => {
       statuses: { IE: "citizenship", SY: "evisa" },
       mobilityScore: 0,
     })).toMatchObject({ statuses: { IE: "citizenship", SY: "visa_required" }, mobilityScore: 0 });
+  });
+
+  it("applies the reviewed Singaporean, Korean and Mexican route corrections", () => {
+    for (const [code, destinationCode, importedStatus, officialStatus, mobilityScore] of [
+      ["SG", "LR", "evisa", "visa_required", 0],
+      ["KR", "SD", "visa_required", "visa_on_arrival", 1],
+      ["MX", "LR", "evisa", "visa_required", 0],
+    ] as const) {
+      expect(applyVerifiedAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", [destinationCode]: importedStatus },
+        mobilityScore: 0,
+      })).toMatchObject({ statuses: { [code]: "citizenship", [destinationCode]: officialStatus }, mobilityScore });
+    }
   });
 
   it("applies the reviewed Malawi and Oman corrections", () => {

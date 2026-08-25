@@ -4347,4 +4347,28 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://eaip.gaca.gov.sy/section/40",
     reviewedAt: "2026-08-25",
   },
+  {
+    passportCode: "SG",
+    destinationCode: "LR",
+    status: "visa_required",
+    reason: "Singapore's current passport-specific guidance requires a visa before travel. Liberia's separate airport-sticker service is residence and mission-availability conditioned and is not an eVisa entitlement for every Singapore passport holder.",
+    sourceUrl: "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/liberia/",
+    reviewedAt: "2026-08-25",
+  },
+  {
+    passportCode: "KR",
+    destinationCode: "SD",
+    status: "visa_on_arrival",
+    reason: "Korea's current passport-specific guidance requires a Sudan Entry Permit before travel and places physical Entry Visa issuance at the airport.",
+    sourceUrl: "https://0404.go.kr/ntnSafetyInfo/122/detail",
+    reviewedAt: "2026-08-25",
+  },
+  {
+    passportCode: "MX",
+    destinationCode: "LR",
+    status: "visa_required",
+    reason: "Mexico's current passport-specific guidance requires Mexican tourists to obtain the Liberia visa through the Washington Embassy's postal process before travel and expressly excludes arrival issuance.",
+    sourceUrl: "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/362-liberia",
+    reviewedAt: "2026-08-25",
+  },
 ] as const;
