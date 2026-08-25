@@ -4272,4 +4272,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.evisa.e-gov.kg/step_1.php?lng=en",
     reviewedAt: "2026-08-24",
   })),
+  ...(["BJ", "BF", "CI", "GN", "MA", "MR", "NE", "SN", "TG"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "CG" as const,
+    status: "visa_free" as const,
+    reason: "The Republic of the Congo's public investment agency expressly names this nationality among the exhaustive exceptions to its entry-visa requirement.",
+    sourceUrl: "https://www.apicongo.cg/entrer_et_travailler_au_congo.php?lang=fr",
+    reviewedAt: "2026-08-25",
+  })),
 ] as const;

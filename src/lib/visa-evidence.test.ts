@@ -1336,11 +1336,14 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("CG")).toHaveLength(29);
+    expect(pairsFor("CG")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("CM", "CG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "CG", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CG", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "CG", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BJ", "CG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("GN", "CG", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "CG", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CG", "CG", "citizenship").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("GA")).toHaveLength(200);
@@ -2538,7 +2541,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CD", "CU", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CD", "NG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CD", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CD", "CG", snapshot.passports.CD.statuses.CG).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CD", "CG", snapshot.passports.CD.statuses.CG).supportsCurrentStatus).toBe(true);
   });
 
   it("supports reviewed Malawian, Tanzanian, and Lao outbound rows", () => {
@@ -4698,11 +4701,12 @@ describe("official visa evidence", () => {
     }
 
     for (const destinationCode of [
-      "AF", "VG", "BF", "CF", "CG", "DJ", "GW", "IR", "IQ", "LR", "NE", "KP", "PS", "SL", "SD", "SY", "TM",
+      "AF", "VG", "BF", "CF", "DJ", "GW", "IR", "IQ", "LR", "NE", "KP", "PS", "SL", "SD", "SY", "TM",
     ] as const) {
       const status = snapshot.passports.KR.statuses[destinationCode];
       expect(getVisaRelationshipEvidence("KR", destinationCode, status).supportsCurrentStatus).toBe(false);
     }
+    expect(getVisaRelationshipEvidence("KR", "CG", "visa_required").supportsCurrentStatus).toBe(true);
 
     for (const passportCode of ["BE", "LU", "AT", "LV", "LT", "PL", "EE", "CL", "AD", "BR"] as const) {
       const status = snapshot.passports[passportCode].statuses.BD;
@@ -5892,6 +5896,7 @@ describe("official visa evidence", () => {
       "reisitargalt.vm.ee",
       "romania.tmembassy.gov.tm",
       "japan.tmembassy.gov.tm",
+      "www.apicongo.cg",
       "tunisz.mfa.gov.hu",
       "www.gov.si",
       "cdn.www.gob.pe",
