@@ -14210,6 +14210,55 @@
         "Exact Lane C partitions: NC: UA, RS, ME, MK, AL; NI: CH, MO, ZA, XK, SS; NG: KN, GE, SZ, AF; OM: TW, KP, PS, AF; PK: HK, IL, TW, AM, SO, AF; PA: MO, TL, KP, SS; RE: UA, RS, ME, MK, AL; TR: DZ, EG, LY, IQ; VU: MC, MK, BH, RW, MN, KG.",
         "All 139 pairs are unresolved. Do not infer from omission, portal/form availability, generic filing, fee/default, third-country documentation, residence, special passports, historic sources or an un-replayable selector. Preserve direct-source conflicts and document, recognition, biometric, demographic, occupation and issuance-timing splits."
       ]
+    },
+    {
+      "id": "mali-current-final-inbound-residual-2026",
+      "priority": 859,
+      "objective": "Recheck and terminally partition the exact 160 unsupported foreign ordinary-passport relationships into Mali at the start of Pass 319.",
+      "destinationCodes": ["ML"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.diplomatiemdc.gouv.ml/vitrine/",
+        "https://diplomatiemdc.gouv.ml/document/LOI%20N%C2%B004-AN-RM%20CONDITIONS%20D%27ENTREE%20DE%20SEJOUR%20ET%20D%27etablissement%20d%27%C3%A9trangers%20au%20MALI.pdf",
+        "https://sgg-mali.ml/JO/2005/mali-jo-2005-28.pdf"
+      ],
+      "notes": [
+        "Return a terminal partition of the 160 foreign rows unsupported at batch start; exclude ML-ML citizenship from the foreign residual.",
+        "Only DZ-ML, MA-ML and TD-ML are supported by valid selectable ordinary-passport no-visa results. Cyprus is absent from the nationality dropdown, and the valid Türkiye value returns visa-required; unknown values default incorrectly to no-visa.",
+        "Do not use the portal's visa-required alert as an advance-visa classification. It conflicts with stronger current regional and passport-government results and does not establish the actual issuance route."
+      ]
+    },
+    {
+      "id": "niger-current-final-inbound-residual-2026",
+      "priority": 860,
+      "objective": "Recheck and terminally partition the exact 159 unsupported foreign ordinary-passport relationships into Niger at the start of Pass 319.",
+      "destinationCodes": ["NE"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://diplomatie.gouv.ne/index.php/services-aux-usagers/entree-au-niger",
+        "https://anp.ne/espace-aes-pas-de-visa-pour-les-ressortissants-de-la-cedeao/"
+      ],
+      "notes": [
+        "Return a terminal partition of the 159 foreign rows unsupported at batch start; exclude NE-NE citizenship from the foreign residual.",
+        "The live MFA default expressly preserves unenumerated bilateral and community exemptions, so it cannot support a visa-required complement. Exceptional minister-authorized border issuance is not a nationality baseline."
+      ]
+    },
+    {
+      "id": "guinea-bissau-current-final-inbound-residual-2026",
+      "priority": 861,
+      "objective": "Recheck and terminally partition the exact 160 unsupported foreign ordinary-passport relationships into Guinea-Bissau at the start of Pass 319.",
+      "destinationCodes": ["GW"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.ecowas.int/member-states/",
+        "https://ecowas.int/wp-content/uploads/2024/08/PROTOCOL-RELATING-TO-FREE-MOVEMENT-OF-PERSONS.pdf",
+        "https://www.ecowas.int/press-statement-2/"
+      ],
+      "notes": [
+        "Return a terminal partition of the 160 foreign rows unsupported at batch start; exclude GW-GW citizenship from the foreign residual.",
+        "Do not use rgb-visa.com: it retains 2014/2015 copy, is not authenticated by a current government authority and its live HTML contains injected gambling links.",
+        "No result may be inferred from a stale portal, a non-resolving claimed government host, list omission or foreign travel advice."
+      ]
     }
   ]
 }

@@ -1471,7 +1471,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TG", "TG", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps Mali, Niger, and Liberia to their directly supported ECOWAS and AES cohorts", () => {
+  it("keeps Mali, Niger, and Liberia to directly supported current cohorts", () => {
     const maliPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "ML");
     const nigerPairs = evidenceRelationshipPairs(snapshot.manifest)
@@ -1479,10 +1479,13 @@ describe("official visa evidence", () => {
     const liberiaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "LR");
 
-    expect(maliPairs).toHaveLength(38);
+    expect(maliPairs).toHaveLength(41);
     expect(nigerPairs).toHaveLength(39);
     expect(liberiaPairs).toHaveLength(36);
     expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("DZ", "ML", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("MA", "ML", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TD", "ML", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "NE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "LR", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AU", "NE", "visa_required").supportsCurrentStatus).toBe(true);

@@ -786,7 +786,10 @@
     "french-overseas-five-by-five-document-subtype-recheck-2026",
     "drc-jordan-turkiye-compact-final-residuals-2026",
     "botswana-gambia-bolivia-final-conflict-recheck-2026",
-    "small-destination-residual-independent-replay-2026"
+    "small-destination-residual-independent-replay-2026",
+    "mali-current-final-inbound-residual-2026",
+    "niger-current-final-inbound-residual-2026",
+    "guinea-bissau-current-final-inbound-residual-2026"
   ],
   "sources": [
     {
@@ -33747,6 +33750,16 @@
       "jurisdiction": "Türkiye",
       "kind": "government-guidance",
       "language": "English",
+      "reviewedAt": "2026-08-25"
+    },
+    {
+      "id": "mali-mfa-live-ordinary-visa-assistant-2026",
+      "title": "Malian diplomatic missions: visa assistant",
+      "url": "https://www.diplomatiemdc.gouv.ml/vitrine/",
+      "publisher": "Ministry of Foreign Affairs and International Cooperation, Mali",
+      "jurisdiction": "Mali",
+      "kind": "official-portal",
+      "language": "French",
       "reviewedAt": "2026-08-25"
     }
   ],
@@ -107316,6 +107329,30 @@
       "sourceIds": [
         "jordan-moi-current-restricted-nationalities-definition-2026",
         "jordan-tourism-board-current-border-visa-rule-2026"
+      ]
+    },
+    {
+      "id": "mali-selected-ordinary-passport-visa-free-2026",
+      "title": "Algerian, Moroccan and Chadian ordinary passports: visa-free Mali visits",
+      "summary": "Mali MFA’s live assistant returns an explicit no-visa decision for the three valid nationality selections when the passport type is ordinary.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "ML"
+      ],
+      "passportCodes": [
+        "DZ",
+        "MA",
+        "TD"
+      ],
+      "conditions": [
+        "The valid nationality selections are exactly “Algérie”, “Maroc” and “Tchad”, with passport type set to “Ordinaire”.",
+        "Independent replays used France and Ghana as residence/competent-post inputs; each valid selection returned the same explicit no-visa result.",
+        "The portal publishes no short-visitor stay cap; work, residence, diplomatic, official, service, refugee, laissez-passer, special-document and final-admission rules are outside scope.",
+        "The selector is dynamic and mutable. Unknown nationality values default incorrectly to its no-visa alert: Cyprus is not listed, and invalid “Turquie”/“Turkey” must not be treated as Türkiye.",
+        "Recheck before use because the assistant has known conflicts with stronger regional and passport-government evidence for other nationalities."
+      ],
+      "sourceIds": [
+        "mali-mfa-live-ordinary-visa-assistant-2026"
       ]
     }
   ]

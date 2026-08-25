@@ -1,0 +1,1461 @@
+{
+  "batchId": "mali-current-final-inbound-residual-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "mali-mfa-live-ordinary-visa-assistant-2026",
+      "title": "Malian diplomatic missions: visa assistant",
+      "url": "https://www.diplomatiemdc.gouv.ml/vitrine/",
+      "publisher": "Ministry of Foreign Affairs and International Cooperation, Mali",
+      "jurisdiction": "Mali",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live diplomatiemdc.gouv.ml Ministry portal exposes a nationality and passport-type assistant, including the selectable ordinary-passport value, and returns a current traveller result.",
+      "supportingExcerpt": "Vous n’avez pas besoin d’un visa pour vous rendre au Mali, présentez-vous avec les pièces d’identité ou passeport en vigueur dans votre pays."
+    }
+  ],
+  "policies": [
+    {
+      "id": "mali-selected-ordinary-passport-visa-free-2026",
+      "title": "Algerian, Moroccan and Chadian ordinary passports: visa-free Mali visits",
+      "summary": "Mali MFA’s live assistant returns an explicit no-visa decision for the three valid nationality selections when the passport type is ordinary.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "ML"
+      ],
+      "passportCodes": [
+        "DZ",
+        "MA",
+        "TD"
+      ],
+      "conditions": [
+        "The valid nationality selections are exactly “Algérie”, “Maroc” and “Tchad”, with passport type set to “Ordinaire”.",
+        "Independent replays used France and Ghana as residence/competent-post inputs; each valid selection returned the same explicit no-visa result.",
+        "The portal publishes no short-visitor stay cap; work, residence, diplomatic, official, service, refugee, laissez-passer, special-document and final-admission rules are outside scope.",
+        "The selector is dynamic and mutable. Unknown nationality values default incorrectly to its no-visa alert: Cyprus is not listed, and invalid “Turquie”/“Turkey” must not be treated as Türkiye.",
+        "Recheck before use because the assistant has known conflicts with stronger regional and passport-government evidence for other nationalities."
+      ],
+      "sourceIds": [
+        "mali-mfa-live-ordinary-visa-assistant-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "SG",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BE",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "NL",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AU",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "ML",
+      "reason": "Cyprus is absent from the live nationality dropdown. The unknown value “Chypre” defaults to a false no-visa alert, so no valid ordinary-passport selector result exists.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BG",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "ML",
+      "reason": "The valid selectable value “Türkiye” returns only the portal’s generic visa-required alert; invalid “Turquie” and “Turkey” values default falsely to no visa. Actual issuance timing remains unproved.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "ML",
+      "reason": "The live ordinary-passport selector returns only its generic visa-required alert, conflicting with the current ID fallback. It does not establish consular, electronic or arrival issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "ML",
+      "reason": "The live ordinary-passport selector returns only its generic visa-required alert, conflicting with the current KE fallback. It does not establish consular, electronic or arrival issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "ML",
+      "reason": "The live ordinary-passport selector returns only its generic visa-required alert, conflicting with the current TN fallback. It does not establish consular, electronic or arrival issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "ML",
+      "reason": "The live ordinary-passport selector returns only its generic visa-required alert, conflicting with the current CM fallback. It does not establish consular, electronic or arrival issuance timing.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "ML",
+      "reason": "The live selector has no competent-post response for the exact nationality/residence input, so it produces no valid individual visitor decision. No current stronger primary source closes the route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "ML",
+      "reason": "The valid ordinary-passport selector returns only a generic visa-required alert. Its known regional errors and the law/decree’s exemptions and exceptional issuance prevent inferring a nationality-wide issuance route.",
+      "searchedOfficialDomains": [
+        "diplomatiemdc.gouv.ml",
+        "sgg-mali.ml"
+      ]
+    }
+  ]
+}
