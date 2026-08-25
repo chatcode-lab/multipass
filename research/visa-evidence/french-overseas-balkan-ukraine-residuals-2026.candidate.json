@@ -1,6 +1,6 @@
 {
-  "batchId": "french-overseas-short-stay-destinations",
-  "researchedAt": "2026-08-22",
+  "batchId": "french-overseas-balkan-ukraine-residuals-2026",
+  "researchedAt": "2026-08-25",
   "sources": [
     {
       "id": "france-interior-current-overseas-visa-framework",
@@ -85,9 +85,101 @@
       "reviewedAt": "2026-08-22",
       "officialityEvidence": "Légifrance publishes the current consolidated Saint-Martin and Saint-Barthélemy Annex II, in force from 19 June 2025.",
       "supportingExcerpt": "Version en vigueur depuis le 19 juin 2025"
+    },
+    {
+      "id": "bosnia-iddeea-current-biometric-civil-passport-2026",
+      "title": "Passport of Bosnia and Herzegovina",
+      "url": "https://www.iddeea.gov.ba/en/elementor-56420/",
+      "publisher": "Agency for Identification Documents, Registers and Data Exchange of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "IDDEEA's current official passport page identifies the civil passport issued to BiH citizens and confirms that civil, diplomatic and service BiH passports are biometric.",
+      "supportingExcerpt": "The biometric passport of BiH (civil, diplomatic and service) has been issued since 15 September 2009."
+    },
+    {
+      "id": "bosnia-travel-documents-law-validity-electronic-passport-2026",
+      "title": "Law on Amendments to the Law on Travel Documents of Bosnia and Herzegovina",
+      "url": "https://www.iddeea.gov.ba/wp-content/uploads/WEB/ZAKONODAVSTVO/ZAKONI/1/law%20on%20the%20amendments%20to%20the%20law%20on%20travel%20documents%20of%20bih%20bih_60-13_eng_cor.pdf",
+      "publisher": "Parliamentary Assembly of Bosnia and Herzegovina / IDDEEA",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The official IDDEEA legislation repository publishes the enacted travel-document amendments, including electronic-document requirements, biometric-capture exceptions and fixed passport validity terms.",
+      "supportingExcerpt": "Passport for citizens of Bosnia and Herzegovina shall be issued for a validity period of ten years."
+    },
+    {
+      "id": "moldova-asp-current-passport-biometric-data-validity-2026",
+      "title": "Issuance of the Moldovan citizen passport",
+      "url": "https://www.asp.gov.md/ro/servicii/persoane-fizice/acte-identitate/pasaport/155",
+      "publisher": "Public Services Agency of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "Moldova's current passport-issuing authority describes the electronic storage medium, facial and fingerprint biometric data, the 4/7/10-year terms, and the child and medically impossible-fingerprint issuance routes.",
+      "supportingExcerpt": "datele biometrice ale titularului: imaginea facială şi imaginile amprentelor digitale"
+    },
+    {
+      "id": "moldova-mfa-biometric-exclusive-issuance-no-extension-2026",
+      "title": "Biometric passport for travel abroad",
+      "url": "https://germania.mfa.gov.md/en/node/176",
+      "publisher": "Embassy of the Republic of Moldova in Germany, Ministry of Foreign Affairs",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "Moldova's official MFA mission guidance states that issuance has been exclusively biometric since 1 January 2011, explains the treatment of earlier passports, and states that passports are not extended.",
+      "supportingExcerpt": "Paşapoartele nu se prelungesc."
+    },
+    {
+      "id": "moldova-asp-2018-passport-term-amendment-2026",
+      "title": "New Moldovan passport models from 5 February",
+      "url": "https://www.asp.gov.md/ro/media/2018-02-02",
+      "publisher": "Public Services Agency of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "Romanian",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The passport authority's 2018 notice records the legislative change extending the adult passport term from seven to ten years, which fixes the pre-change adult maximum relevant to the no-extension legacy analysis.",
+      "supportingExcerpt": "de la 7 la 10 ani"
     }
   ],
-  "policies": [],
+  "policies": [
+    {
+      "id": "bosnia-ordinary-biometric-passport-french-overseas-short-visitor-visa-free-2026",
+      "title": "Bosnia and Herzegovina ordinary passports: French overseas visa-free short visit",
+      "summary": "All currently valid ordinary/civil Bosnia and Herzegovina passports are covered by the French biometric-passport waiver for the six scoped overseas destinations.",
+      "status": "visa_free",
+      "destinationCodes": ["GF", "PF", "FW", "YT", "NC", "RE"],
+      "passportCodes": ["BA"],
+      "conditions": [
+        "Applies to the ordinary civil Bosnia and Herzegovina passport for short visitor travel. IDDEEA identifies the civil passport as biometric; the governing passport law fixes its validity and keeps the temporary no-fingerprint route within the electronic travel-document regime.",
+        "The French current Annex II schedules waive Bosnia and Herzegovina biometric passports: Guadeloupe/French Guiana/Réunion, Mayotte, French Polynesia, New Caledonia, and both Saint-Martin and Saint-Barthélemy. The FW aggregate is uniform because the Guadeloupe/Martinique and Saint-Martin/Saint-Barthélemy component schedules use the same Bosnia biometric-passport condition.",
+        "The French maximum is 90 days in 180 days for GF, FW, YT and RE, and three months in six months for PF and NC. Work, residence, transit, diplomatic, service, refugee/stateless, travel-certificate and final-admission rules are outside this ordinary visitor classification."
+      ],
+      "sourceIds": ["bosnia-iddeea-current-biometric-civil-passport-2026", "bosnia-travel-documents-law-validity-electronic-passport-2026", "france-drom-current-annex-ii", "france-mayotte-current-annex-ii", "france-polynesia-current-entry-order", "france-new-caledonia-current-entry-order", "france-saint-martin-barthelemy-current-annex-ii"],
+      "confidence": "high"
+    },
+    {
+      "id": "moldova-ordinary-biometric-passport-french-overseas-short-visitor-visa-free-2026",
+      "title": "Moldovan ordinary passports: French overseas visa-free short visit",
+      "summary": "All currently valid ordinary Moldovan passports are covered by the French biometric-passport waiver for the six scoped overseas destinations.",
+      "status": "visa_free",
+      "destinationCodes": ["GF", "PF", "FW", "YT", "NC", "RE"],
+      "passportCodes": ["MD"],
+      "conditions": [
+        "Applies to the ordinary Moldovan citizen passport for short visitor travel. Moldova has issued such passports exclusively with biometric data since 1 January 2011; the passport authority specifies electronic storage including facial biometric data and fixed 4/7/10-year terms.",
+        "No legacy extension creates a current non-biometric ordinary passport: Moldova MFA states passports are not extended, and the passport authority records that the former adult term was seven years before its 2018 increase. The child and medically impossible-fingerprint routes are still passport issuance routes with electronic biometric data; temporarily impossible fingerprints produce a one-year passport.",
+        "The French current Annex II schedules waive Moldovan biometric passports in Guadeloupe/French Guiana/Réunion, Mayotte, French Polynesia, New Caledonia, and both Saint-Martin and Saint-Barthélemy. The FW aggregate is uniform because both its component schedules use the same Moldovan biometric-passport condition.",
+        "The French maximum is 90 days in 180 days for GF, FW, YT and RE, and three months in six months for PF and NC. Work, residence, transit, diplomatic, service, refugee/stateless, travel-certificate and final-admission rules are outside this ordinary visitor classification."
+      ],
+      "sourceIds": ["moldova-asp-current-passport-biometric-data-validity-2026", "moldova-mfa-biometric-exclusive-issuance-no-extension-2026", "moldova-asp-2018-passport-term-amendment-2026", "france-drom-current-annex-ii", "france-mayotte-current-annex-ii", "france-polynesia-current-entry-order", "france-new-caledonia-current-entry-order", "france-saint-martin-barthelemy-current-annex-ii"],
+      "confidence": "high"
+    }
+  ],
   "conflicts": [],
   "unresolved": [
     {
@@ -131,16 +223,6 @@
       ]
     },
     {
-      "passportCode": "BA",
-      "destinationCode": "GF",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
       "passportCode": "AL",
       "destinationCode": "GF",
       "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
@@ -151,16 +233,6 @@
       ]
     },
     {
-      "passportCode": "MD",
-      "destinationCode": "GF",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
       "passportCode": "UA",
       "destinationCode": "PF",
       "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
@@ -201,27 +273,7 @@
       ]
     },
     {
-      "passportCode": "BA",
-      "destinationCode": "PF",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
       "passportCode": "AL",
-      "destinationCode": "PF",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
-      "passportCode": "MD",
       "destinationCode": "PF",
       "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
       "searchedOfficialDomains": [
@@ -271,27 +323,7 @@
       ]
     },
     {
-      "passportCode": "BA",
-      "destinationCode": "YT",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
       "passportCode": "AL",
-      "destinationCode": "YT",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
-      "passportCode": "MD",
       "destinationCode": "YT",
       "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
       "searchedOfficialDomains": [
@@ -341,27 +373,7 @@
       ]
     },
     {
-      "passportCode": "BA",
-      "destinationCode": "NC",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
       "passportCode": "AL",
-      "destinationCode": "NC",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
-      "passportCode": "MD",
       "destinationCode": "NC",
       "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
       "searchedOfficialDomains": [
@@ -411,27 +423,7 @@
       ]
     },
     {
-      "passportCode": "BA",
-      "destinationCode": "RE",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
       "passportCode": "AL",
-      "destinationCode": "RE",
-      "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
-      "passportCode": "MD",
       "destinationCode": "RE",
       "reason": "The current Annex II waiver is limited to biometric ordinary passports; the catalog specifies only an ordinary passport. The current official schedule therefore does not establish one nationality-wide ordinary-passport visitor result.",
       "searchedOfficialDomains": [
@@ -481,27 +473,7 @@
       ]
     },
     {
-      "passportCode": "BA",
-      "destinationCode": "FW",
-      "reason": "All four French West Indies component schedules agree that this nationality's waiver is limited to biometric ordinary passports; the aggregate catalog code does not establish that document attribute, so no uniform result is established.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
       "passportCode": "AL",
-      "destinationCode": "FW",
-      "reason": "All four French West Indies component schedules agree that this nationality's waiver is limited to biometric ordinary passports; the aggregate catalog code does not establish that document attribute, so no uniform result is established.",
-      "searchedOfficialDomains": [
-        "legifrance.gouv.fr",
-        "france-visas.gouv.fr",
-        "immigration.interieur.gouv.fr"
-      ]
-    },
-    {
-      "passportCode": "MD",
       "destinationCode": "FW",
       "reason": "All four French West Indies component schedules agree that this nationality's waiver is limited to biometric ordinary passports; the aggregate catalog code does not establish that document attribute, so no uniform result is established.",
       "searchedOfficialDomains": [
