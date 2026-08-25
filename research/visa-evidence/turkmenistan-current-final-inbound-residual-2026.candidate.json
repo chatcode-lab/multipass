@@ -1,0 +1,2023 @@
+{
+  "batchId": "turkmenistan-current-final-inbound-residual-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "singapore-mfa-current-turkmenistan-ordinary-passport-advance-visa-2026",
+      "title": "Turkmenistan",
+      "url": "https://www.mfa.gov.sg/travelling-overseas/travel-advisories-notices-and-visa-information/turkmenistan/",
+      "publisher": "Ministry of Foreign Affairs of Singapore",
+      "jurisdiction": "Singapore / Turkmenistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live Singapore Government MFA page is scoped to Singaporeans, expressly names ordinary Singapore passports and displays a last update of 25 August 2026.",
+      "supportingExcerpt": "Singaporeans are required to obtain a visa before travelling to Turkmenistan."
+    },
+    {
+      "id": "korea-mofa-current-turkmenistan-ordinary-passport-airport-arrival-visa-2026",
+      "title": "Turkmenistan: entry and visa information",
+      "url": "https://0404.go.kr/ntnSafetyInfo/366/detail",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Korea",
+      "jurisdiction": "Republic of Korea / Turkmenistan",
+      "kind": "government-guidance",
+      "language": "Korean",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live Korean Foreign Ministry overseas-safety page is served over valid TLS, directly distinguishes ordinary passports from diplomatic and official passports, and states the arrival-issuance point and invitation prerequisite.",
+      "supportingExcerpt": "초청장 지참 입국, 공항에서 도착사증 부착"
+    },
+    {
+      "id": "turkmenistan-tokyo-embassy-current-airport-arrival-visa-2026",
+      "title": "Visa application flow",
+      "url": "https://japan.tmembassy.gov.tm/ja/consular-services/visa-application",
+      "publisher": "Embassy of Turkmenistan in Japan",
+      "jurisdiction": "Turkmenistan / Japan",
+      "kind": "government-guidance",
+      "language": "Japanese",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live MFA-managed Turkmen Embassy in Japan page is served over valid TLS, gives the Japan-specific visa process and fees, and directly states airport issuance after a Migration invitation.",
+      "supportingExcerpt": "招待状を受けていればトルクメニスタンの空港で査証を取得しトルクメニスタンに入国できます"
+    }
+  ],
+  "policies": [
+    {
+      "id": "singaporean-ordinary-passport-turkmenistan-advance-visitor-visa-2026",
+      "title": "Singaporean ordinary passports: Turkmenistan advance visitor visa",
+      "summary": "Singapore’s current Foreign Ministry guidance directly requires Singaporeans to obtain a Turkmen visa before travel and separately requires ordinary Singapore passport holders to obtain a local-entity invitation before travelling.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "TM"
+      ],
+      "passportCodes": [
+        "SG"
+      ],
+      "conditions": [
+        "Applies to a Singaporean travelling on an ordinary passport for a short visit.",
+        "Obtain the visa and a letter of invitation from a qualifying local entity before travel; the guidance identifies the Turkmen Embassy in Seoul as the relevant contact.",
+        "Purpose-specific invitation requirements, work, residence, special documents, registration, restricted areas and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "singapore-mfa-current-turkmenistan-ordinary-passport-advance-visa-2026"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "korean-ordinary-passport-turkmenistan-airport-arrival-visa-2026",
+      "title": "South Korean ordinary passports: Turkmenistan airport arrival visa",
+      "summary": "Korea’s current Foreign Ministry guidance directly says ordinary passports are not visa-free and that the Turkmen visa is affixed at the airport when the traveller carries the required Migration-approved official invitation.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "TM"
+      ],
+      "passportCodes": [
+        "KR"
+      ],
+      "conditions": [
+        "Applies to a South Korean citizen travelling on an ordinary passport for a short visit.",
+        "Before travel, obtain an official invitation approved by the State Migration Service; the guidance warns that boarding is unavailable without it.",
+        "The visa itself is affixed on arrival at a Turkmen airport. Tourist invitations are requested through a local travel agency; land-border issuance, work, residence, special documents, restricted areas and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "korea-mofa-current-turkmenistan-ordinary-passport-airport-arrival-visa-2026"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "japanese-ordinary-passport-turkmenistan-airport-arrival-visa-2026",
+      "title": "Japanese ordinary passports: Turkmenistan airport arrival visa",
+      "summary": "Turkmenistan’s current Embassy in Japan guidance directly says a traveller holding the required Migration invitation may obtain the visa at a Turkmen airport and enter.",
+      "status": "visa_on_arrival",
+      "destinationCodes": [
+        "TM"
+      ],
+      "passportCodes": [
+        "JP"
+      ],
+      "conditions": [
+        "Applies to a Japanese citizen travelling on an ordinary passport for a short visit under the Japan-specific mission process.",
+        "Before travel, obtain an invitation issued through the State Migration Service; tourists apply through a qualifying travel company and carriers may require the invitation before boarding.",
+        "The visa itself is issued at a Turkmen airport. Land-border issuance, work, residence, special documents, restricted areas and final admission remain outside scope."
+      ],
+      "sourceIds": [
+        "turkmenistan-tokyo-embassy-current-airport-arrival-visa-2026"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "KR",
+      "destinationCode": "TM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The fallback treats the route as advance-issued, while current Korean MFA guidance directly says the visa is affixed at a Turkmen airport after the mandatory Migration-approved invitation.",
+      "sourceIds": [
+        "korea-mofa-current-turkmenistan-ordinary-passport-airport-arrival-visa-2026"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "TM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The fallback treats the route as advance-issued, while the current Turkmen Embassy in Japan states that a traveller holding the required Migration invitation can obtain the visa at a Turkmen airport.",
+      "sourceIds": [
+        "turkmenistan-tokyo-embassy-current-airport-arrival-visa-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "CH",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "FI",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MT",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LV",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LT",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SK",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "EE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "TM",
+      "reason": "No reproducible current primary source directly establishes this ordinary passport’s short-visitor nationality and actual advance, electronic, arrival, exempt or restricted route. Turkmen law preserves unpublished treaty exceptions, while generic invitation, visa, airport-fee and electronic-system provisions provide no nationality-terminal result.",
+      "searchedOfficialDomains": [
+        "migration.gov.tm",
+        "mfa.gov.tm",
+        "turkmenistan.gov.tm",
+        "tmembassy.gov.tm"
+      ]
+    }
+  ]
+}

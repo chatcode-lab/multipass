@@ -1013,7 +1013,10 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("WS", "TJ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TJ", "TJ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("TM")).toHaveLength(24);
+    expect(pairsFor("TM")).toHaveLength(27);
+    expect(getVisaRelationshipEvidence("SG", "TM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("JP", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KR", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TM", "TM", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "TM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RU", "TM", "visa_required").supportsCurrentStatus).toBe(true);
@@ -5888,6 +5891,7 @@ describe("official visa evidence", () => {
       "mzv.gov.cz",
       "reisitargalt.vm.ee",
       "romania.tmembassy.gov.tm",
+      "japan.tmembassy.gov.tm",
       "tunisz.mfa.gov.hu",
       "www.gov.si",
       "cdn.www.gob.pe",

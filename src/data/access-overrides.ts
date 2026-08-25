@@ -38,6 +38,22 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "JP",
+    destinationCode: "TM",
+    status: "visa_on_arrival",
+    reason: "Turkmenistan's Embassy in Japan says a Japanese visitor holding the required Migration invitation may obtain the visa at a Turkmen airport.",
+    sourceUrl: "https://japan.tmembassy.gov.tm/ja/consular-services/visa-application",
+    reviewedAt: "2026-08-25",
+  },
+  {
+    passportCode: "KR",
+    destinationCode: "TM",
+    status: "visa_on_arrival",
+    reason: "Korea's Foreign Ministry says the Turkmen visa is affixed at the airport when an ordinary-passport traveller carries a Migration-approved official invitation.",
+    sourceUrl: "https://0404.go.kr/ntnSafetyInfo/366/detail",
+    reviewedAt: "2026-08-25",
+  },
+  {
     passportCode: "BG",
     destinationCode: "SY",
     status: "visa_on_arrival",
