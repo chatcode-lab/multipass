@@ -10,7 +10,7 @@
       "jurisdiction": "Sierra Leone",
       "kind": "government-guidance",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-25",
       "officialityEvidence": "The current Sierra Leone Immigration Department homepage on slid.gov.sl identifies its eVisa link as the Official Portal and directs applicants to evisa.sl.",
       "supportingExcerpt": "Apply eVisa Official Portal Apply online via the official Sierra Leone eVisa portal."
     },
@@ -22,7 +22,7 @@
       "jurisdiction": "Sierra Leone",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-25",
       "officialityEvidence": "SLID directly links www.evisa.sl as its official eVisa portal; the current portal frontend loads this live translation bundle, which contains both the terms and FAQ/home issuance instructions.",
       "supportingExcerpt": "If your eVisa application is accepted, we will be sending you the eVisa as an email attachment."
     },
@@ -70,7 +70,7 @@
       "jurisdiction": "ECOWAS / Côte d’Ivoire",
       "kind": "law",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-25",
       "officialityEvidence": "ECOWAS publishes the Protocol on its official domain. Article 3 directly establishes visa-free entry for Community citizens visiting a Member State for up to 90 days with the specified travel and health documents.",
       "supportingExcerpt": "enter the territory of that Member State free of visa requirements for a maximum period of ninety (90) days."
     },
@@ -82,9 +82,9 @@
       "jurisdiction": "ECOWAS / Nigeria",
       "kind": "official-dataset",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-25",
       "officialityEvidence": "The current ECOWAS member-state page on ecowas.int identifies twelve Member States, including Sierra Leone and eleven foreign catalog passport states.",
-      "supportingExcerpt": "12 Member States, one region."
+      "supportingExcerpt": "Sierra Leone"
     },
     {
       "id": "ecowas-aes-withdrawal-visa-free-transition-2025",
@@ -94,9 +94,9 @@
       "jurisdiction": "ECOWAS / Burkina Faso",
       "kind": "government-guidance",
       "language": "English",
-      "reviewedAt": "2026-08-22",
+      "reviewedAt": "2026-08-25",
       "officialityEvidence": "ECOWAS’s current official press statement says the three withdrawals took effect on 29 January 2025 and requires relevant authorities in and outside ECOWAS Member States to preserve visa-free movement until further notice.",
-      "supportingExcerpt": "allow citizens of the three affected countries to continue to enjoy the right of visa free movement ... until further notice."
+      "supportingExcerpt": "allow citizens of the three affected countries to continue to enjoy the right of visa free movement"
     }
   ],
   "policies": [
@@ -123,7 +123,7 @@
       ],
       "conditions": [
         "Article 3 requires a valid travel document and international health certificate and gives a maximum 90-day stay. Immigration retains admissibility and public-order controls under the Protocol.",
-        "The current twelve-State roster excludes Burkina Faso, Mali and Niger following their withdrawal; the separately documented transitional treatment applies to Burkina Faso and Mali below.",
+        "The current twelve-State roster excludes Burkina Faso, Mali and Niger following their withdrawal; the separately documented transitional treatment applies to all three below.",
         "This policy does not decide residence, work, transit, crew, diplomatic, official, service, special documents, individual admissibility or any bilateral arrangement."
       ],
       "sourceIds": [
@@ -134,26 +134,27 @@
       "confidence": "high"
     },
     {
-      "id": "sierra-leone-aes-transition-burkina-mali-visa-free",
-      "title": "Sierra Leone: Burkina Faso and Mali ordinary passports — ECOWAS transitional visa-free movement",
-      "summary": "Although Burkina Faso and Mali are no longer shown on ECOWAS’s current twelve-State roster, ECOWAS’s withdrawal transition instruction requires Member-State authorities to continue visa-free movement for their citizens until further notice. Sierra Leone is an ECOWAS Member State.",
+      "id": "sierra-leone-aes-transition-burkina-mali-niger-visa-free",
+      "title": "Sierra Leone: Burkina Faso, Mali and Niger ordinary passports — ECOWAS transitional visa-free movement",
+      "summary": "Although Burkina Faso, Mali and Niger are no longer shown on ECOWAS’s current twelve-State roster, ECOWAS’s withdrawal transition instruction requires Member-State authorities to continue visa-free movement for citizens of all three until further notice. Sierra Leone is an ECOWAS Member State.",
       "status": "visa_free",
       "destinationCodes": [
         "SL"
       ],
       "passportCodes": [
         "BF",
-        "ML"
+        "ML",
+        "NE"
       ],
       "conditions": [
         "This is a temporary ECOWAS transition, not a current membership classification. It remains subject to a contrary later notice, ordinary admission controls, travel-document and health requirements.",
-        "The official eVisa nationality endpoints return no electronic form for Burkina Faso and Mali. That operational result is consistent with the transition but is not the legal basis for visa-free status.",
+        "Article 3 supplies a maximum 90-day visitor scope and requires a valid travel document and international health certificate; Article 4 preserves public-order and inadmissibility controls.",
         "It does not establish residence, work, transit, crew, diplomatic, official, service or special-document treatment."
       ],
       "sourceIds": [
         "ecowas-aes-withdrawal-visa-free-transition-2025",
-        "sierra-leone-live-evisa-api-form-selector",
-        "sierra-leone-live-evisa-api-mali-no-form"
+        "ecowas-free-movement-protocol",
+        "ecowas-current-member-states"
       ],
       "confidence": "medium"
     }
@@ -1868,19 +1869,6 @@
     },
     {
       "passportCode": "NI",
-      "destinationCode": "SL",
-      "reason": "The SLID-authenticated live eVisa frontend is internally inconsistent: its terms say an accepted eVisa is sent as an email attachment and must be carried at first arrival, while its current home and FAQ text say an approved applicant is issued the visa at the terminal, airport or border. The live form is nationality-specific, and the only broad visa-on-arrival schedule located is expressly dated 2019. No current exhaustive ordinary-passport arrival schedule resolves whether this code is pre-travel electronic or border-issued, so the fallback status remains unverified.",
-      "searchedOfficialDomains": [
-        "slid.gov.sl",
-        "evisa.sl",
-        "ntb.gov.sl",
-        "ecowas.int",
-        "immigration.gov.sl",
-        "moia.gov.sl"
-      ]
-    },
-    {
-      "passportCode": "NE",
       "destinationCode": "SL",
       "reason": "The SLID-authenticated live eVisa frontend is internally inconsistent: its terms say an accepted eVisa is sent as an email attachment and must be carried at first arrival, while its current home and FAQ text say an approved applicant is issued the visa at the terminal, airport or border. The live form is nationality-specific, and the only broad visa-on-arrival schedule located is expressly dated 2019. No current exhaustive ordinary-passport arrival schedule resolves whether this code is pre-travel electronic or border-issued, so the fallback status remains unverified.",
       "searchedOfficialDomains": [
