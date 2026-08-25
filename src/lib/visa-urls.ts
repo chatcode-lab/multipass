@@ -8,6 +8,7 @@ export const VISA_STATUS_SLUGS: Record<AccessStatus, string> = {
   visa_on_arrival: "visa-on-arrival",
   evisa: "evisa",
   visa_required: "visa",
+  entry_restricted: "entry-restricted",
   unknown: "status-unknown",
 };
 

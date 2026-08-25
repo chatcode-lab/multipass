@@ -586,6 +586,7 @@ describe("official visa evidence", () => {
 
     expect(getVisaRelationshipEvidence("AZ", "MV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IL", "MV", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("IL", "MV", "entry_restricted").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "SC", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AT", "WS", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "TT", "evisa").supportsCurrentStatus).toBe(true);
@@ -5491,6 +5492,7 @@ describe("official visa evidence", () => {
       "www.iaa.gov.il",
       "eaip.gaca.gov.sy",
       "www.eaip.gaca.gov.sy",
+      "sana.sy",
       "www.mofa-ye.org",
       "yemenevisa.org",
       "www.mha.gov.in",

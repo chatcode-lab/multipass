@@ -1,4 +1,5 @@
 import fallbackSnapshot from "../src/data/fallback.json" with { type: "json" };
+import { applyVerifiedAccessOverrides } from "../src/lib/passport";
 import { getVisaRelationshipEvidence } from "../src/lib/visa-evidence";
 import type { DataSnapshot } from "../src/lib/types";
 
@@ -10,6 +11,9 @@ const PRIORITY_DESTINATION_RESEARCH_CODES = [
 ] as const;
 
 const snapshot = fallbackSnapshot as DataSnapshot;
+const details = Object.fromEntries(
+  Object.entries(snapshot.passports).map(([code, detail]) => [code, applyVerifiedAccessOverrides(detail)]),
+);
 const includeAllDestinations = process.argv.includes("--all");
 const onlyIncomplete = process.argv.includes("--incomplete");
 const summaryOnly = process.argv.includes("--summary");
@@ -23,7 +27,7 @@ const rows = destinationCodes.map((destinationCode) => {
   const destination = destinationByCode.get(destinationCode);
   const scopedPassports = passportCodes.filter((passportCode) => passportCode !== destinationCode);
   const supported = scopedPassports.filter((passportCode) => {
-    const status = snapshot.passports[passportCode]?.statuses[destinationCode];
+    const status = details[passportCode]?.statuses[destinationCode];
     return status ? getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus : false;
   }).length;
   return {

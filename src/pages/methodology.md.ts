@@ -7,11 +7,11 @@ MultiPass Rank answers one practical question: how many destinations can a passp
 
 ## Individual passport score
 
-Visa-free, visa-on-arrival, and ETA destinations each add one point. eVisas and traditional visas require approval before travel and do not add a point. Equal scores share a dense rank. [Learn how an eVisa differs from an ETA](${absoluteUrl("/evisa-vs-eta")}).
+Visa-free, visa-on-arrival, and ETA destinations each add one point. eVisas and traditional visas require approval before travel, while entry restrictions provide no ordinary visitor route, so none adds a point. Equal scores share a dense rank. [Learn how an eVisa differs from an ETA](${absoluteUrl("/evisa-vs-eta")}).
 
 ## Combined passport score
 
-For each destination, the calculator keeps the easiest access available across every passport in a set. Citizenship is strongest, followed by visa-free, ETA, visa on arrival, eVisa, and visa required. One home destination is subtracted so a single-passport combination matches that passport's individual score.
+For each destination, the calculator keeps the easiest access available across every passport in a set. Citizenship is strongest, followed by visa-free, ETA, visa on arrival, eVisa, visa required, and entry restricted. A restriction is used only when current official evidence shows ordinary visitor entry is prohibited or suspended. One home destination is subtracted so a single-passport combination matches that passport's individual score.
 
 A combined result is a **rank equivalent**, not an official passport rank.
 

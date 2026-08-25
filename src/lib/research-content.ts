@@ -34,7 +34,7 @@ export function bestPassportCombinationMarkdown(
 
 Using MultiPass Rank's ${checked} snapshot, **${pairNames.join(" + ")}** is ${pairStanding} and **${tripleNames.join(" + ")}** is ${tripleStanding} among all ${manifest.passports.length} passport issuers.
 
-“Coverage” here means citizenship, visa-free, ETA, or visa-on-arrival access. It does not include eVisas or traditional visas and says nothing about whether the citizenships can legally or realistically be acquired together.
+“Coverage” here means citizenship, visa-free, ETA, or visa-on-arrival access. It does not include eVisas, traditional visas, or entry restrictions and says nothing about whether the citizenships can legally or realistically be acquired together.
 
 ## Best two-passport combination
 

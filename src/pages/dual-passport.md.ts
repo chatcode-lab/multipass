@@ -3,7 +3,7 @@ import { absoluteUrl, markdownResponse } from "@/lib/markdown";
 
 export const GET: APIRoute = () => markdownResponse(`# Dual passport travel benefits and combined rankings
 
-A second passport changes travel access when it provides an easier entry category for a destination than the first. MultiPass Rank checks every destination and keeps the best available status across the selected passports: citizenship, visa-free, ETA, visa on arrival, eVisa, or visa required.
+A second passport changes travel access when it provides an easier entry category for a destination than the first. MultiPass Rank checks every destination and keeps the best available status across the selected passports: citizenship, visa-free, ETA, visa on arrival, eVisa, visa required, or entry restricted.
 
 The combined mobility score counts destinations reachable without prior visa approval. Its **rank equivalent** shows where that score would sit among current individual passport scores; it is not an official passport ranking.
 

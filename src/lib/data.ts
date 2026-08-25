@@ -80,7 +80,8 @@ export async function getPassportAccess(
     }
   }
 
-  return fallback.passports[normalizedCode] ?? null;
+  const fallbackDetail = fallback.passports[normalizedCode];
+  return fallbackDetail ? applyVerifiedAccessOverrides(fallbackDetail) : null;
 }
 
 export async function getPassportAccessBatch(

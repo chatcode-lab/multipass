@@ -34,6 +34,11 @@ export const STATUS_META: Record<
     shortLabel: "Visa",
     description: "Traditional visa required before travel",
   },
+  entry_restricted: {
+    label: "Entry restricted",
+    shortLabel: "Restricted",
+    description: "Ordinary visitor entry is prohibited or currently suspended",
+  },
   unknown: {
     label: "Unknown",
     shortLabel: "—",
@@ -48,7 +53,8 @@ export const ACCESS_EASE_WEIGHT: Record<AccessStatus, number> = {
   visa_on_arrival: 3,
   evisa: 2,
   visa_required: 1,
-  unknown: 0,
+  entry_restricted: 0,
+  unknown: -1,
 };
 
 export function slugifyCountry(value: string): string {

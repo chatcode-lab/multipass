@@ -9,7 +9,7 @@ import type { DataSnapshot } from "../src/lib/types";
 const code = z.string().regex(/^[A-Z]{2}$/);
 const date = z.iso.date();
 const httpsUrl = z.url().refine((value) => new URL(value).protocol === "https:", "URL must use HTTPS");
-const status = z.enum(["visa_free", "eta", "visa_on_arrival", "evisa", "visa_required", "citizenship"]);
+const status = z.enum(["visa_free", "eta", "visa_on_arrival", "evisa", "visa_required", "entry_restricted", "citizenship"]);
 const source = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: z.string().min(1),

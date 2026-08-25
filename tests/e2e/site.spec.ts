@@ -596,6 +596,24 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
   expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-afghanistan-visa</loc>");
 });
 
+test("entry restrictions have a canonical evidence page and stale-status redirect", async ({ page, request }) => {
+  const legacy = await request.get("/israel-maldives-visa", { maxRedirects: 0 });
+  expect(legacy.status()).toBe(308);
+  expect(legacy.headers().location).toBe("/israel-maldives-entry-restricted");
+
+  await page.goto("/israel-maldives-entry-restricted");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Israel to Maldives");
+  await expect(page.getByText("Entry restricted", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
+
+  const markdown = await request.get("/israel-maldives-entry-restricted.md");
+  expect(markdown.ok()).toBe(true);
+  expect(await markdown.text()).toContain("# Israel passport to Maldives: Entry restricted");
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/israel-maldives-entry-restricted</loc>");
+});
+
 test("corrected Saint Martin URLs retain St. Maarten compatibility redirects", async ({ page, request }) => {
   await page.goto("/destination/st-maarten");
   await expect(page).toHaveURL(/\/destination\/saint-martin-french-part$/);

@@ -41,7 +41,7 @@ Current access classification: **${statusMeta.label}** — ${statusMeta.descript
 
 Access data checked ${readableDate(manifest.checkedAt.slice(0, 10))}. Evidence status: **${evidence.supportsCurrentStatus ? "official evidence collected" : "official-source review pending"}**.
 
-This page concerns ordinary short visits unless an official source states otherwise. Border authorities retain the final admission decision.
+This page concerns ordinary short visits unless an official source states otherwise. Authorities apply the current rule, and individual circumstances can change the applicable treatment.
 
 ## Evidence timeline
 

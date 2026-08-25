@@ -21,6 +21,7 @@ const STATUS_LABELS: Record<AccessStatus, string> = {
   visa_on_arrival: "Visa on arrival",
   evisa: "eVisa",
   visa_required: "Visa required",
+  entry_restricted: "Entry restricted",
   unknown: "Unknown",
 };
 
@@ -31,6 +32,7 @@ const STATUS_SHORT_LABELS: Record<AccessStatus, string> = {
   visa_on_arrival: "VOA",
   evisa: "eVisa",
   visa_required: "Visa",
+  entry_restricted: "Restricted",
   unknown: "—",
 };
 
@@ -41,6 +43,7 @@ const STATUS_SLUGS: Record<AccessStatus, string> = {
   visa_on_arrival: "visa-on-arrival",
   evisa: "evisa",
   visa_required: "visa",
+  entry_restricted: "entry-restricted",
   unknown: "status-unknown",
 };
 

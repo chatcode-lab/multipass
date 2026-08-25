@@ -30,6 +30,15 @@ export interface VerifiedAccessOverride {
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  {
+    passportCode: "IL",
+    destinationCode: "MV",
+    status: "entry_restricted",
+    reason: "Maldives law and current Immigration guidance prohibit entry on Israeli passports from 15 April 2025; this is not an ordinary advance-visa route.",
+    sourceUrl: "https://www.immigration.gov.mv/visa/tourist-visa",
+    reviewedAt: "2026-08-25",
+    effectiveFrom: "2025-04-15",
+  },
   ...(["AF", "DZ", "AO", "AM", "AZ", "BJ", "BT", "BA", "BF", "BI", "KH", "CM", "CV", "CF", "TD", "KM", "CG", "CD", "CI", "DJ", "DO", "GQ", "ER", "ET", "GA", "GN", "GW", "HT", "IR", "IQ", "KZ", "KG", "LA", "LB", "LR", "LY", "MG", "ML", "MR", "FM", "MN", "MZ", "MM", "NA", "NP", "NE", "KP", "PK", "PW", "PH", "WS", "ST", "SN", "SO", "SY", "TJ", "TH", "TL", "TN", "TM", "UZ", "VN", "YE", "AD", "PS"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "KN" as const,

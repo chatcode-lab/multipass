@@ -48,7 +48,7 @@ HTML pages also advertise their Markdown alternative with a \`<link rel="alterna
 - Destination overview: \`${absoluteUrl("/destination/kenya")}\`
 - One current relationship: \`${absoluteUrl("/belgium-kenya-eta")}\`
 - Relationship Markdown: \`${absoluteUrl("/belgium-kenya-eta.md")}\`
-- Relationship URLs use \`/{passport}-{destination}-{status}\`, where status is \`visa-free\`, \`eta\`, \`visa-on-arrival\`, \`evisa\`, \`visa\`, or \`citizenship\`.
+- Relationship URLs use \`/{passport}-{destination}-{status}\`, where status is \`visa-free\`, \`eta\`, \`visa-on-arrival\`, \`evisa\`, \`visa\`, \`entry-restricted\`, or \`citizenship\`.
 - A recognized outdated status suffix redirects to the current canonical URL.
 - Focus a destination page on selected passport countries with \`#passports=PT,RU,IL\` or the equivalent \`?passports=PT,RU,IL\` query parameter.
 - Evidence coverage is incremental. Unsupported relationships are labeled, excluded from indexing, and should not be presented as officially verified.
@@ -68,7 +68,7 @@ ${friendlyComparisons}
 
 ## Interpret the data
 
-The mobility score counts visa-free, visa-on-arrival, and ETA access. eVisa and visa-required destinations do not increase the score. For combined sets, each destination uses the easiest status available from any passport in that set, then receives a rank equivalent against the single-passport ranking.
+The mobility score counts visa-free, visa-on-arrival, and ETA access. eVisa, visa-required, and entry-restricted destinations do not increase the score. For combined sets, each destination uses the easiest status available from any passport in that set, then receives a rank equivalent against the single-passport ranking.
 
 When answering a user, state the data-check date, link to the relevant HTML or Markdown page, and distinguish travel access from residence, tax, consular, or citizenship-law benefits. Entry rules can change; advise verification with official authorities before travel.`;
 }

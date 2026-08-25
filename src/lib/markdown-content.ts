@@ -149,7 +149,7 @@ export function passportMarkdown(
 
 The ${passport.name} passport ranks **#${passport.rank} globally** and **#${regionalRank} among ${regionalPassports.length} ${formatRegion(passport.region)} passports**. Its mobility score is **${passport.mobilityScore}**.
 
-Current profile: ${statusCounts.visa_free ?? 0} visa-free, ${statusCounts.visa_on_arrival ?? 0} visa on arrival, ${statusCounts.eta ?? 0} ETA, ${statusCounts.evisa ?? 0} eVisa, and ${statusCounts.visa_required ?? 0} visa-required destinations.
+Current profile: ${statusCounts.visa_free ?? 0} visa-free, ${statusCounts.visa_on_arrival ?? 0} visa on arrival, ${statusCounts.eta ?? 0} ETA, ${statusCounts.evisa ?? 0} eVisa, ${statusCounts.visa_required ?? 0} visa-required, and ${statusCounts.entry_restricted ?? 0} entry-restricted destinations.
 
 Data checked ${checkedDate(manifest)}. Entry rules can change; verify official requirements before travel.
 

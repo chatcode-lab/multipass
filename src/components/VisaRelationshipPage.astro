@@ -28,7 +28,9 @@ const reviewedDate = evidence.reviewedAt
   : null;
 const matchingApplication = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
 const title = `${passport.name} Passport to ${destination.name}: ${statusMeta.label} | MultiPass Rank`;
-const description = `${passport.name} passport holders currently have ${statusMeta.label.toLowerCase()} access to ${destination.name}. See official sources, evidence history, conditions, and application guidance.`;
+const description = status === "entry_restricted"
+  ? `Ordinary visitor entry to ${destination.name} on a ${passport.name} passport is currently restricted. See the effective rule, conditions, and official sources.`
+  : `${passport.name} passport holders currently have ${statusMeta.label.toLowerCase()} access to ${destination.name}. See official sources, evidence history, conditions, and application guidance.`;
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -95,7 +97,7 @@ const structuredData = [
     <aside class="evidence-scope">
       <span class="eyebrow">What this status means</span>
       <h2>{statusMeta.label}</h2>
-      <p>{statusMeta.description}. Border officers retain the final admission decision, and purpose, duration, passport type, or personal circumstances can change the applicable rule.</p>
+      <p>{statusMeta.description}. Authorities apply the current rule, and purpose, duration, passport type, or personal circumstances can change the applicable treatment.</p>
       <a href={`/passport/${passport.slug}`}>Back to {passport.name} access list</a>
       <a href={`/destination/${destinationSlug(destination)}`}>All passports for {destination.name}</a>
     </aside>

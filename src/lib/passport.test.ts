@@ -25,6 +25,7 @@ describe("passport calculations", () => {
         CC: "eta",
         DD: "visa_on_arrival",
         EE: "evisa",
+        FF: "entry_restricted",
       }),
     ).toBe(3);
   });
@@ -236,6 +237,13 @@ describe("passport calculations", () => {
   });
 
   it("applies reviewed Maldives, Seychelles, Samoa, and Trinidad and Tobago classifications", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "IL",
+      name: "Israel",
+      statuses: { IL: "citizenship", MV: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { IL: "citizenship", MV: "entry_restricted" }, mobilityScore: 0 });
+
     expect(applyVerifiedAccessOverrides({
       code: "AZ",
       name: "Azerbaijan",
@@ -635,5 +643,27 @@ describe("passport calculations", () => {
     expect(result.rows[1].isEqual).toBe(true);
     expect(result.scenarios[0].mobilityScore).toBe(1);
     expect(result.scenarios[1].mobilityScore).toBe(1);
+  });
+
+  it("prefers an issuable visa route over an entry restriction", () => {
+    const manifest: SnapshotManifest = {
+      schemaVersion: 1,
+      version: "test",
+      checkedAt: "2026-01-01T00:00:00.000Z",
+      publishedAt: "2026-01-01T00:00:00.000Z",
+      destinations: [{ code: "DD", name: "Destination", region: "ASIA" }],
+      passports: [
+        { code: "AA", name: "Alpha", slug: "alpha", region: "EUROPE", mobilityScore: 0, rank: 1 },
+        { code: "BB", name: "Beta", slug: "beta", region: "ASIA", mobilityScore: 0, rank: 1 },
+      ],
+    };
+    const details: Record<string, PassportAccess> = {
+      AA: { code: "AA", name: "Alpha", mobilityScore: 0, statuses: { DD: "entry_restricted" } },
+      BB: { code: "BB", name: "Beta", mobilityScore: 0, statuses: { DD: "visa_required" } },
+    };
+
+    const result = comparePassportSets([{ codes: ["AA", "BB"] }], manifest, details);
+    expect(result.rows[0].cells[0]).toEqual({ status: "visa_required", via: ["BB"] });
+    expect(result.scenarios[0].mobilityScore).toBe(0);
   });
 });

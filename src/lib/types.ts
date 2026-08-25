@@ -17,6 +17,7 @@ export const ACCESS_STATUSES = [
   "visa_on_arrival",
   "evisa",
   "visa_required",
+  "entry_restricted",
   "unknown",
 ] as const;
 
