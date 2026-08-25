@@ -1576,27 +1576,37 @@ describe("official visa evidence", () => {
     for (const destinationCode of ["GF", "YT", "RE"] as const) {
       const pairs = evidenceRelationshipPairs(snapshot.manifest)
         .filter(({ destination }) => destination.code === destinationCode);
-      expect(pairs, destinationCode).toHaveLength(194);
+      expect(pairs, destinationCode).toHaveLength(197);
       expect(getVisaRelationshipEvidence("NO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("CO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("US", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("AF", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("BA", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("MD", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
-      expect(getVisaRelationshipEvidence("AL", destinationCode, snapshot.passports.AL.statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+      for (const passportCode of ["AL", "ME", "MK"] as const) {
+        expect(getVisaRelationshipEvidence(passportCode, destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      }
+      for (const passportCode of ["RS", "UA"] as const) {
+        expect(getVisaRelationshipEvidence(passportCode, destinationCode, snapshot.passports[passportCode].statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+      }
     }
 
     for (const destinationCode of ["PF", "NC"] as const) {
       const pairs = evidenceRelationshipPairs(snapshot.manifest)
         .filter(({ destination }) => destination.code === destinationCode);
-      expect(pairs, destinationCode).toHaveLength(194);
+      expect(pairs, destinationCode).toHaveLength(197);
       expect(getVisaRelationshipEvidence("NO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("CO", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("US", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("AF", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("BA", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
       expect(getVisaRelationshipEvidence("MD", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
-      expect(getVisaRelationshipEvidence("AL", destinationCode, snapshot.passports.AL.statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+      for (const passportCode of ["AL", "ME", "MK"] as const) {
+        expect(getVisaRelationshipEvidence(passportCode, destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
+      }
+      for (const passportCode of ["RS", "UA"] as const) {
+        expect(getVisaRelationshipEvidence(passportCode, destinationCode, snapshot.passports[passportCode].statuses[destinationCode]).supportsCurrentStatus).toBe(false);
+      }
     }
     expect(getVisaRelationshipEvidence("GE", "NC", "visa_required").supportsCurrentStatus).toBe(true);
 
@@ -5889,6 +5899,7 @@ describe("official visa evidence", () => {
       "www.evisa.gov.md",
       "www.border.gov.md",
       "www.gov.me",
+      "wapi.gov.me",
       "mfa.gov.mk",
       "mvr.gov.mk",
       "migration.mia.gov.am",
