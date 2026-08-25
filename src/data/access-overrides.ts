@@ -38,6 +38,14 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   {
+    passportCode: "BG",
+    destinationCode: "SY",
+    status: "visa_on_arrival",
+    reason: "Bulgaria's current Foreign Ministry guidance says Bulgarian citizens travelling on regular passports may obtain a Syrian visa upon entry through a land border.",
+    sourceUrl: "https://mfa.bg/en/embassyinfo/syria",
+    reviewedAt: "2026-08-25",
+  },
+  {
     passportCode: "IL",
     destinationCode: "MV",
     status: "entry_restricted",
