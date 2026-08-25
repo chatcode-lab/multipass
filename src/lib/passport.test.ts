@@ -86,6 +86,22 @@ describe("passport calculations", () => {
         mobilityScore: 1,
       })).toMatchObject({ statuses: { [code]: "citizenship", [destinationCode]: "unknown" }, mobilityScore: 0 });
     }
+
+    expect(applyAccessOverrides({
+      code: "UA",
+      name: "Ukraine",
+      statuses: { UA: "citizenship", TN: "visa_free" },
+      mobilityScore: 1,
+    })).toMatchObject({ statuses: { UA: "citizenship", TN: "unknown" }, mobilityScore: 0 });
+  });
+
+  it("applies Ireland's reviewed advance-visa correction for Syria", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "IE",
+      name: "Ireland",
+      statuses: { IE: "citizenship", SY: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { IE: "citizenship", SY: "visa_required" }, mobilityScore: 0 });
   });
 
   it("applies the reviewed Malawi and Oman corrections", () => {

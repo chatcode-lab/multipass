@@ -58,6 +58,22 @@ describe("evidence status matrix", () => {
     const libyaIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "LY");
     expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "TR")!.cells[libyaIndex])
       .toEqual(["unknown", 0, -1, 0, 0]);
+
+    const tunisiaIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "TN");
+    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "UA")!.cells[tunisiaIndex])
+      .toEqual(["unknown", 0, -1, 0, 0]);
+  });
+
+  it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
+    const middleEast = buildEvidenceStatusRegion(snapshot.manifest, details, "MIDDLE EAST", "2026-08-25");
+    const asia = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-25");
+    const syriaIndex = middleEast.destinations.findIndex(({ code }) => code === "SY");
+    const turkmenistanIndex = asia.destinations.findIndex(({ code }) => code === "TM");
+
+    expect(middleEast.rows.find(({ passportCode }) => passportCode === "IE")!.cells[syriaIndex].slice(0, 2))
+      .toEqual(["visa_required", 1]);
+    expect(asia.rows.find(({ passportCode }) => passportCode === "IE")!.cells[turkmenistanIndex].slice(0, 2))
+      .toEqual(["visa_required", 1]);
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {
@@ -67,8 +83,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_030);
-    expect(summary.notCovered.count).toBe(4_944);
+    expect(summary.covered).toBe(40_032);
+    expect(summary.notCovered.count).toBe(4_942);
     expect(summary.percent).toBe(89);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

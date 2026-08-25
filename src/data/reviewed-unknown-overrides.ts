@@ -99,6 +99,15 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-25",
     recheckBy: "2026-11-25",
   },
+  {
+    passportCode: "UA",
+    destinationCode: "TN",
+    rejectedStatus: "visa_free",
+    reason: "Ukraine's current Foreign Ministry matrix places ordinary Ukrainian foreign-travel passports under Tunisia's visa regime while limiting visa-free treatment to diplomatic, service and special passports. It does not establish one safe replacement issuance route.",
+    sourceIds: ["ukraine-mfa-tunisia-ordinary-passport-visa-regime-2026"],
+    reviewedAt: "2026-08-25",
+    recheckBy: "2026-11-25",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

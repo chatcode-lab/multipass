@@ -1,0 +1,104 @@
+{
+  "batchId": "ireland-syria-turkmenistan-ukraine-tunisia-route-recovery-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "ireland-dfa-sy-entry",
+      "title": "Syria travel advice",
+      "url": "https://www.ireland.ie/en/dfa/overseas-travel/advice/syria/",
+      "publisher": "Department of Foreign Affairs",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Ireland.ie publishes the Department of Foreign Affairs' current destination travel advice for Irish citizens.",
+      "supportingExcerpt": "Irish citizens require a visa to enter Syria."
+    },
+    {
+      "id": "syria-gaca-current-advance-entry-visa-rule-2026",
+      "title": "GEN 1.3 — Entry, Transit and Departure of Passengers and Crew",
+      "url": "https://eaip.gaca.gov.sy/section/40",
+      "publisher": "Syrian General Authority of Civil Aviation",
+      "jurisdiction": "Syrian Arab Republic",
+      "kind": "government-guidance",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "Syria's civil-aviation authority publishes the current eAIP entry rules and their effective date.",
+      "supportingExcerpt": "Entry visa (obtained in advance from a Syrian diplomatic mission, unless exempt)."
+    },
+    {
+      "id": "ireland-dfa-tm-entry",
+      "title": "Turkmenistan travel advice",
+      "url": "https://www.ireland.ie/en/dfa/overseas-travel/advice/turkmenistan/",
+      "publisher": "Department of Foreign Affairs",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "Ireland.ie publishes the Department of Foreign Affairs' current destination travel advice for Irish citizens.",
+      "supportingExcerpt": "Irish citizens require a visa and letter of invitation to enter Turkmenistan."
+    },
+    {
+      "id": "ukraine-mfa-tunisia-ordinary-passport-visa-regime-2026",
+      "title": "Countries of the world: warnings, advice and entry regimes",
+      "url": "https://mfa.gov.ua/podorozhnim/krayini-svitu-poperedzhennya-ta-poradi-rezhim-vyizdu",
+      "publisher": "Ministry of Foreign Affairs of Ukraine",
+      "jurisdiction": "Ukraine",
+      "kind": "government-guidance",
+      "language": "Ukrainian",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "Ukraine's Foreign Ministry publishes the live country-by-country passport entry-regime matrix for Ukrainian travellers.",
+      "supportingExcerpt": "Visa regime for holders of a Ukrainian citizen's passport for travel abroad."
+    }
+  ],
+  "policies": [
+    {
+      "id": "irish-ordinary-passport-syria-advance-visitor-visa-2026",
+      "title": "Irish ordinary passports: advance Syrian visitor visa",
+      "summary": "Ireland's current passport-specific advice establishes that Irish citizens are visa-liable, and Syria's current entry rule requires non-exempt visitors to obtain the visa from a diplomatic mission in advance.",
+      "status": "visa_required",
+      "destinationCodes": ["SY"],
+      "passportCodes": ["IE"],
+      "conditions": [
+        "Ordinary Irish passport and short visitor travel only; an Irish passport card is not valid for the journey.",
+        "Obtain the entry visa from a Syrian diplomatic mission before travel; the current Syrian rule separately exempts qualifying transit passengers and crew.",
+        "Security, dual-national treatment, document validity and final admission remain separate from the normalized issuance route."
+      ],
+      "sourceIds": ["ireland-dfa-sy-entry", "syria-gaca-current-advance-entry-visa-rule-2026"],
+      "confidence": "high"
+    },
+    {
+      "id": "irish-ordinary-passport-turkmenistan-advance-visitor-visa-2026",
+      "title": "Irish ordinary passports: advance Turkmenistan visitor visa",
+      "summary": "Ireland's current passport-specific advice requires Irish citizens to obtain a visa and invitation, directs them to the Turkmen Embassy, and expressly excludes visa on arrival.",
+      "status": "visa_required",
+      "destinationCodes": ["TM"],
+      "passportCodes": ["IE"],
+      "conditions": [
+        "Ordinary Irish passport and short visitor travel only; passport cards cannot be used.",
+        "Obtain the visa and State Migration Service-approved invitation before travel through the Turkmen Embassy route identified by Ireland's Department of Foreign Affairs.",
+        "Transit visas, restricted-area permits, local registration, dual-national treatment and final admission remain separate conditions."
+      ],
+      "sourceIds": ["ireland-dfa-tm-entry"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "IE",
+      "destinationCode": "SY",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "Current Irish guidance makes Irish citizens visa-liable, and Syria's current entry rule requires the visa from a diplomatic mission before travel unless exempt.",
+      "sourceIds": ["ireland-dfa-sy-entry", "syria-gaca-current-advance-entry-visa-rule-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "UA",
+      "destinationCode": "TN",
+      "reason": "Ukraine's current matrix directly disproves ordinary-passport visa-free access but does not establish one safe advance, electronic or arrival issuance route.",
+      "searchedOfficialDomains": ["mfa.gov.ua"]
+    }
+  ]
+}

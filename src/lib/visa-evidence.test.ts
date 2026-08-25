@@ -117,6 +117,8 @@ describe("visa relationship URLs", () => {
       .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("MA", "JO", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_on_arrival" });
+    expect(getVisaRelationshipEvidence("UA", "TN", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
@@ -848,7 +850,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "PS", snapshot.passports.US.statuses.PS).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PS", "PS", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SY")).toHaveLength(23);
+    expect(pairsFor("SY")).toHaveLength(24);
     expect(getVisaRelationshipEvidence("BG", "SY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "SY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "SY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1082,7 +1084,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("WS", "TJ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TJ", "TJ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("TM")).toHaveLength(27);
+    expect(pairsFor("TM")).toHaveLength(28);
     expect(getVisaRelationshipEvidence("SG", "TM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("JP", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KR", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -5065,9 +5067,11 @@ describe("official visa evidence", () => {
   it("supports the reviewed Irish Chad eVisa without guessing Swedish or Japanese gaps", () => {
     expect(snapshot.passports.IE.statuses.TD).toBe("evisa");
     expect(getVisaRelationshipEvidence("IE", "TD", "evisa").supportsCurrentStatus).toBe(true);
+    expect(snapshot.passports.IE.statuses.SY).toBe("visa_required");
+    expect(getVisaRelationshipEvidence("IE", "SY", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IE", "TM", "visa_required").supportsCurrentStatus).toBe(true);
 
     for (const [passportCode, destinationCode] of [
-      ["IE", "SY"],
       ["SE", "LR"],
       ["SE", "SL"],
       ["JP", "TD"],

@@ -4339,4 +4339,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://kw.slembassy.gov.sl/visas/",
     reviewedAt: "2026-08-25",
   })),
+  {
+    passportCode: "IE",
+    destinationCode: "SY",
+    status: "visa_required",
+    reason: "Ireland's current passport-specific advice makes Irish citizens visa-liable, while Syria's current entry rule requires non-exempt visitors to obtain the visa from a diplomatic mission before travel.",
+    sourceUrl: "https://eaip.gaca.gov.sy/section/40",
+    reviewedAt: "2026-08-25",
+  },
 ] as const;
