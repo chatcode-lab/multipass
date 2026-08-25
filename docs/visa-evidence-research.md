@@ -2928,6 +2928,16 @@ The Gambia's current central government page says airport issuance is available 
 
 Coverage therefore remains 39,995 of 44,974 relationships (88.9%), with 4,979 not covered and zero old or stale rows as of 25 August 2026. No fallback status, mobility score or rank changes. Canonical evidence now contains 786 reviewed batches, 3,296 official source records and 1,927 policies.
 
+## Pass 318 result: independent replay of every three-to-ten-cell destination residual
+
+Three independent lanes rechecked the exact 139 unsupported relationships left across the 29 destination columns with three through ten gaps. No relationship is promoted. Root replay rejected five initially proposed closures: the Dominican Republic's live MIREX ordinary-passport selector directly conflicts with DGII's current named or express residual rules for Georgia, Papua New Guinea and South Sudan; Eswatini's live schedule places “China” and “People's Republic of China” in opposing visa cohorts; and its Democratic Republic of the Congo row still does not unambiguously establish actual issuance timing against the page's conditional arrival process.
+
+The replay preserves other active source conflicts rather than choosing a convenient authority. Guyana's central Foreign Ministry and Trinidad mission disagree for Uruguay, Indonesia and Cuba. Malawi's department and tourism schedules conflict across seven passports. Moldova places the Dominican Republic in both required and exempt lists. Oman gives Taiwan incompatible no-tourist-visa and conditional product results. Vanuatu places Monaco, Bahrain and Rwanda in both exempt and non-exempt cohorts. Belize's live table gives Nauru the contradictory value “YES - NO”. Lebanese rules remain demographic or occupation split, while Türkiye's four residuals remain age-, document- or airline-conditioned.
+
+The French overseas rows remain document-subtype holds: the current territorial waivers are biometric-passport-specific and Serbian waivers also exclude Coordination Directorate documents. The other residuals lack a reproducible direct nationality result, controlling recognition rule or actual issuance timing. No status is inferred from list omission, a portal or form, a generic procedure, fee defaults, historic material, conditional residence or third-country documents, or special-passport treatment.
+
+Coverage remains 39,995 of 44,974 relationships (88.9%), with 4,979 not covered and zero old or stale rows as of 25 August 2026. No fallback status, mobility score or rank changes. Canonical evidence now contains 787 reviewed batches, 3,296 official source records and 1,927 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
