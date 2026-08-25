@@ -160,7 +160,10 @@ test("country access can be narrowed to one destination region", async ({ page }
   })).toBe(true);
   await expect(statusFilter.locator("option", { hasText: "Easy access" })).toHaveCount(1);
   await expect(statusFilter.locator("option", { hasText: "Citizenship" })).toHaveCount(0);
-  await expect(statusFilter.locator("option", { hasText: "Unknown" })).toHaveCount(0);
+  await expect(statusFilter.locator("option", { hasText: "Unknown" })).toHaveCount(1);
+  await statusFilter.selectOption("unknown");
+  await expect(page.locator(".access-row")).toHaveCount(1);
+  await expect(page.locator(".access-row")).toHaveAttribute("href", "/spain-iran-status-unknown");
   await statusFilter.selectOption("easy");
   await expect(page.locator(".access-row")).not.toHaveCount(0);
   await expect(page.locator(".access-row .status-pill--citizenship, .access-row .status-pill--visa_required, .access-row .status-pill--unknown")).toHaveCount(0);
