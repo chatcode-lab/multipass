@@ -79,6 +79,14 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-25",
     effectiveFrom: "2025-12-30",
   },
+  {
+    passportCode: "US",
+    destinationCode: "KP",
+    status: "entry_restricted",
+    reason: "The U.S. Department of State says ordinary U.S. passports are invalid for travel to, in or through North Korea; only limited national-interest special validations are available.",
+    sourceUrl: "https://travel.state.gov/en/passports/apply/unique-needs/special-validation.html",
+    reviewedAt: "2026-08-25",
+  },
   ...US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES.flatMap((passportCode) =>
     US_PP10998_DESTINATION_CODES.map((destinationCode) => ({
       passportCode,
