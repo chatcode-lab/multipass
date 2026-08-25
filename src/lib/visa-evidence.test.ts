@@ -774,6 +774,15 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("FR", "IQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NL", "IQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("QA", "IQ", "visa_required").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["TR", "AE", "KR", "IL"] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          "IQ",
+          snapshot.passports[passportCode].statuses.IQ,
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
   });
 
   it("keeps route-split Palestinian access unresolved while applying the supported Syria and Yemen rules", () => {
@@ -5541,6 +5550,7 @@ describe("official visa evidence", () => {
       "evisa.mfa.ir",
       "www.moj.gov.iq",
       "evisa.iq",
+      "api.evisa.iq",
       "mofa.gov.iq",
       "ur.gov.iq",
       "www.iaa.gov.il",

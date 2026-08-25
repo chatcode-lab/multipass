@@ -2870,6 +2870,14 @@ Complete-matrix current-status evidence decreases from 39,823 to 39,814 of 44,97
 
 The same replacement pass removed superseded German and Dutch Gabon `evisa` associations from two older grouped policies. Both pairs remain verified as `visa_on_arrival` under the later current evidence that pre-travel authorization ends with physical visa-sticker issuance at Libreville airport.
 
+## Pass 311 result: federal Iraq final inbound residual
+
+The exact 166-cell residual audit adds no supported federal-Iraq relationship. Iraq's live Ministry of Interior service proves that an eligible eVisa is delivered before border control, but the country selector's current public endpoint returns an empty array. Residence Law No. 76 of 2017 defines visa and entry machinery while preserving treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions; it does not publish an ordinary-passport nationality schedule. The Iraqi Consulate General in Los Angeles page is live and directs applicants to the electronic service, but likewise gives no nationality schedule. No Kurdistan Region rule was transferred to the federal destination column.
+
+Four fallback labels are now recorded explicitly as unresolved conflicts. Türkiye's rule divides ordinary passports by age: holders under 15 or over 50 are visa-free for 30 days, while ages 15–50 are visa-subject. The UAE page labels Normal passports Electronic Visa but simultaneously bans Emirati citizens from travelling to Iraq. Korean guidance requires exceptional passport-use permission for entry or stay, and Israeli law prohibits citizen travel to Iraq. A plain `evisa` or `visa_required` cell cannot faithfully represent those legal restrictions or the Turkish age split, while `entry_restricted` is reserved for destination-side admission restrictions rather than outbound passport-use law.
+
+Complete-matrix current-status evidence remains 39,814 of 44,974 relationships (88.5%), leaving 5,160 not covered. Federal Iraq remains 33 supported catalog relationships, including citizenship, and 166 uncovered rows. Canonical evidence now contains 780 reviewed batches, 3,282 official source records and 1,920 policies. No displayed fallback label, mobility score or rank changes in this pass; the status matrix continues to distinguish these hypotheses from verified evidence.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

@@ -1,0 +1,2460 @@
+{
+  "batchId": "iraq-current-final-inbound-residual-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "iraq-official-gazette-foreigners-residence-law-2017",
+      "title": "Foreigners Residence Law No. 76 of 2017",
+      "url": "https://www.moj.gov.iq/upload/pdf/%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A5%D9%82%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%A3%D8%AC%D8%A7%D9%86%D8%A8.pdf",
+      "publisher": "Official Gazette of Iraq / Ministry of Justice",
+      "jurisdiction": "Federal Iraq",
+      "kind": "law",
+      "language": "Arabic and English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The Ministry of Justice hosts the Official Gazette text, Issue No. 4466 of 23 October 2017. It defines federal entry and residence rules but no ordinary-passport nationality schedule.",
+      "supportingExcerpt": "The provisions of this law shall not be applied to Iraqis and their children who hold foreign passports."
+    },
+    {
+      "id": "iraq-moi-evisa-visa-instructions",
+      "title": "Iraqi Electronic Visa: Visa Types and Instructions",
+      "url": "https://evisa.iq/en/Instructions",
+      "publisher": "Ministry of Interior, Directorate of Residency Affairs",
+      "jurisdiction": "Federal Iraq",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live federal service identifies itself as the Ministry of Interior eVisa site, requests country and passport type, and describes pre-border electronic delivery.",
+      "supportingExcerpt": "Search for visa requirements by your country and passport type."
+    },
+    {
+      "id": "iraq-mofa-los-angeles-electronic-visa",
+      "title": "Electronic Visa",
+      "url": "https://mofa.gov.iq/losangeles/en/electronic-visa/",
+      "publisher": "Consulate General of the Republic of Iraq in Los Angeles / Ministry of Foreign Affairs",
+      "jurisdiction": "Federal Iraq",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The currently live Iraqi Foreign Ministry consulate page directs applicants to the federal electronic-visa service, but publishes no ordinary-passport nationality schedule.",
+      "supportingExcerpt": "Apply for an entry visa to Iraq electronically through the Iraqi electronic visa platform."
+    },
+    {
+      "id": "iraq-moi-evisa-country-selector-empty-current-2026",
+      "title": "Iraqi eVisa country selector endpoint",
+      "url": "https://api.evisa.iq/api/Countries",
+      "publisher": "Ministry of Interior, Directorate of Residency Affairs",
+      "jurisdiction": "Federal Iraq",
+      "kind": "official-dataset",
+      "language": "JSON",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The backend used by the live federal eVisa instructions currently returns a successful but empty country array, so it supplies no nationality eligibility result.",
+      "supportingExcerpt": "[]"
+    },
+    {
+      "id": "turkiye-mfa-current-outbound-visa-table-2026",
+      "title": "Visa practices applicable to Turkish citizens",
+      "url": "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye / outbound travel",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live Foreign Ministry table directly distinguishes ordinary Turkish passports and gives an age-split rule for Iraq.",
+      "supportingExcerpt": "Irak: 15 yaşından küçük ve 50 yaşından büyük umuma mahsus pasaport hamilleri 30 gün süreyle vizeden muaftır."
+    },
+    {
+      "id": "uae-mofa-iraq-normal-passport-current-2026",
+      "title": "Emirates travel requirements — Iraq",
+      "url": "https://www.mofa.gov.ae/en/travel-updates?code=irq",
+      "publisher": "Ministry of Foreign Affairs, United Arab Emirates",
+      "jurisdiction": "United Arab Emirates / Iraq",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live destination page, modified 9 July 2026, labels Normal passports Electronic Visa while imposing an Emirati outbound travel ban.",
+      "supportingExcerpt": "UAE citizens are banned from traveling to the Republic of Iraq."
+    },
+    {
+      "id": "south-korea-mofa-iraq-passport-use-prohibition-current-2026",
+      "title": "Republic of Korea Overseas Safety: Iraq",
+      "url": "https://0404.go.kr/ntnSafetyInfo/174/detail",
+      "publisher": "Ministry of Foreign Affairs, Republic of Korea",
+      "jurisdiction": "Republic of Korea / Iraq",
+      "kind": "government-guidance",
+      "language": "Korean",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The current Foreign Ministry Iraq page labels the destination travel-prohibited and directly says entry and stay require exceptional passport-use permission.",
+      "supportingExcerpt": "이라크는 여행금지 국가로 지정되어 우리 정부의 예외적 여권사용 허가를 발급받지 않고는 입국 및 체류가 불가능합니다."
+    },
+    {
+      "id": "israel-nsc-statutory-prohibited-destinations-2026",
+      "title": "National Security Council travel guidance and statutory destination prohibitions",
+      "url": "https://www.gov.il/he/pages/1tunisia",
+      "publisher": "National Security Council, State of Israel",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "Hebrew",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The current government page, updated 26 March 2026, says Israeli law prohibits citizens from visiting five named destinations including Iraq and makes a visit a criminal offence.",
+      "supportingExcerpt": "נאסר על אזרחי ישראל לבקר בסוריה, לבנון, ערב הסעודית, תימן ועיראק"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "TR",
+      "destinationCode": "IQ",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback advance-visa label does not represent the current age split: ordinary Turkish passports under 15 and over 50 are visa-free, while ages 15–50 are visa-subject.",
+      "sourceIds": [
+        "turkiye-mfa-current-outbound-visa-table-2026"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "IQ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved",
+      "explanation": "The Normal-passport eVisa label cannot be presented as a usable baseline while the same current UAE authority bans Emirati citizens from travelling to Iraq.",
+      "sourceIds": [
+        "uae-mofa-iraq-normal-passport-current-2026"
+      ]
+    },
+    {
+      "passportCode": "KR",
+      "destinationCode": "IQ",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback eVisa label omits Korea’s current statutory passport-use restriction, which requires exceptional permission for entry or stay in Iraq.",
+      "sourceIds": [
+        "south-korea-mofa-iraq-passport-use-prohibition-current-2026"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "IQ",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved",
+      "explanation": "The fallback advance-visa label cannot represent Israel’s current statutory prohibition on citizen travel to Iraq; the taxonomy has no faithful outbound-prohibition state.",
+      "sourceIds": [
+        "israel-nsc-statutory-prohibited-destinations-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "SG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KR",
+      "destinationCode": "IQ",
+      "reason": "Current Korean government guidance designates Iraq a travel-prohibition country and says entry or stay requires exceptional passport-use permission. Generic federal Iraqi eVisa delivery guidance does not establish a normal usable ordinary Korean visitor baseline.",
+      "searchedOfficialDomains": [
+        "0404.go.kr",
+        "overseas.mofa.go.kr",
+        "evisa.iq",
+        "api.evisa.iq",
+        "moj.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "SE",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LU",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "DK",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "HU",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "IS",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SI",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LI",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AE",
+      "destinationCode": "IQ",
+      "reason": "UAE MOFA simultaneously labels the Normal Emirati passport Electronic Visa and states that UAE citizens are banned from travelling to Iraq. Because the legal outbound prohibition prevents a usable ordinary short-visitor baseline, the fallback eVisa label remains uncovered rather than being presented as a normal route.",
+      "searchedOfficialDomains": [
+        "mofa.gov.ae",
+        "evisa.iq",
+        "api.evisa.iq",
+        "moj.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CY",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "RO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CL",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "IQ",
+      "reason": "Current Israeli government guidance states that Israeli citizens are legally prohibited from visiting Iraq and that a visit is a criminal offence. No current Iraqi primary source establishes a usable ordinary Israeli-passport route, so the fallback advance-visa label is not a faithful baseline.",
+      "searchedOfficialDomains": [
+        "gov.il",
+        "evisa.iq",
+        "api.evisa.iq",
+        "moj.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "BS",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "VC",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LC",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GD",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TT",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "DM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "WS",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TV",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KI",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "IQ",
+      "reason": "Türkiye’s current Foreign Ministry rule splits ordinary passports by age: holders under 15 or over 50 are visa-free for 30 days, while ages 15–50 are visa-subject. The passport-only model cannot publish one faithful baseline, and the federal Iraqi sources do not resolve the visa-subject cohort’s issuance route.",
+      "searchedOfficialDomains": [
+        "mfa.gov.tr",
+        "evisa.iq",
+        "api.evisa.iq",
+        "moj.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MV",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "VU",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TH",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "IQ",
+      "reason": "Federal Iraq’s live MOI service proves that eligible eVisas are delivered before border control, but its current public country endpoint returns no nationality records. Residence Law No. 76 of 2017 defines visa classes and preserves treaty, Iraqi-origin, border-resident, diplomatic, crew and other exceptions without publishing an ordinary-passport nationality schedule. No current primary source directly resolves this passport’s federal short-visitor route, and Kurdistan Region rules are not transferred.",
+      "searchedOfficialDomains": [
+        "evisa.iq",
+        "api.evisa.iq",
+        "eservice.evisa.iq",
+        "moi.gov.iq",
+        "mofa.gov.iq",
+        "moj.gov.iq",
+        "official passport-government sources"
+      ]
+    }
+  ]
+}
