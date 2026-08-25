@@ -1194,7 +1194,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "CM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CM", "CM", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("CI")).toHaveLength(58);
+    expect(pairsFor("CI")).toHaveLength(65);
     expect(getVisaRelationshipEvidence("GN", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1207,6 +1207,19 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("PL", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SM", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["SG", "MA", "TN", "PH", "TD", "CG", "CF"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "CI", "visa_free").supportsCurrentStatus).toBe(true);
+      expect(snapshot.passports[passportCode].statuses.CI).toBe("visa_free");
+    }
+    for (const passportCode of ["CH", "IN", "PS"] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          "CI",
+          snapshot.passports[passportCode].statuses.CI,
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
     expect(snapshot.passports.PL.statuses.CI).toBe("visa_on_arrival");
     expect(getVisaRelationshipEvidence("CI", "CI", "citizenship").supportsCurrentStatus).toBe(false);
 
@@ -2543,7 +2556,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CG", "CG", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CG", "CU", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CG", "NG", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CG", "CI", snapshot.passports.CG.statuses.CI).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CG", "CI", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("supports reviewed Eritrean, Timorese, and DRC outbound rows", () => {
@@ -5944,6 +5957,7 @@ describe("official visa evidence", () => {
       "maliembassy.us",
       "gouvernement.gov.bf",
       "www.hcipos.gov.in",
+      "italie.diplomatie.gouv.ci",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
