@@ -1408,11 +1408,13 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("CF")).toHaveLength(20);
+    expect(pairsFor("CF")).toHaveLength(22);
     expect(getVisaRelationshipEvidence("CM", "CF", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CF", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IE", "CF", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IT", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CF", "CF", "citizenship").supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("GQ")).toHaveLength(197);
@@ -3430,6 +3432,7 @@ describe("official visa evidence", () => {
       ["NO", "ML", "visa_on_arrival"],
       ["NO", "SS", "evisa"],
       ["NO", "SY", "visa_required"],
+      ["IT", "CF", "visa_required"],
       ["DK", "TD", "visa_required"],
       ["JP", "CV", "visa_on_arrival"],
       ["JP", "CG", "visa_required"],
@@ -4718,7 +4721,6 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["IT", "AF"],
-      ["IT", "CF"],
       ["IT", "PS"],
       ["IT", "SS"],
       ["CA", "AF"],
@@ -4962,11 +4964,10 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("keeps final German, Italian and Spanish operationally ambiguous routes uncovered", () => {
+  it("keeps remaining German, Italian and Spanish operationally ambiguous routes uncovered", () => {
     for (const [passportCode, destinationCode] of [
       ["DE", "AF"],
       ["IT", "AF"],
-      ["IT", "CF"],
       ["IT", "SS"],
       ["ES", "AF"],
       ["ES", "KP"],
