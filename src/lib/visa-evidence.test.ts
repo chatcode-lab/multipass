@@ -596,6 +596,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("ZM", "TT", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ZW", "TT", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "TT", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "TT", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AD", "TT", snapshot.passports.AD.statuses.TT).supportsCurrentStatus).toBe(false);
   });
 
@@ -5893,6 +5894,7 @@ describe("official visa evidence", () => {
       "mfa.kg",
       "maliembassy.us",
       "gouvernement.gov.bf",
+      "www.hcipos.gov.in",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);
