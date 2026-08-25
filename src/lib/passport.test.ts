@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
+  US_PP10998_DESTINATION_CODES,
+  US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES,
+} from "@/data/access-overrides";
+import {
   applyVerifiedAccessOverrides,
   calculateMobilityScore,
   comparePassportSets,
@@ -271,6 +275,28 @@ describe("passport calculations", () => {
       statuses: { CN: "citizenship", TT: "visa_required" },
       mobilityScore: 0,
     })).toMatchObject({ statuses: { CN: "citizenship", TT: "evisa" }, mobilityScore: 0 });
+  });
+
+  it("applies PP 10998 visitor-entry restrictions across the United States and its territories", () => {
+    expect(US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES).toHaveLength(39);
+    expect(US_PP10998_DESTINATION_CODES).toEqual(["US", "GU", "MP", "PR", "VI"]);
+
+    for (const passportCode of ["AF", "AG", "PS"] as const) {
+      const statuses = Object.fromEntries([
+        [passportCode, "citizenship"],
+        ...US_PP10998_DESTINATION_CODES.map((destinationCode) => [destinationCode, "visa_required"]),
+      ]);
+      const result = applyVerifiedAccessOverrides({
+        code: passportCode,
+        name: passportCode,
+        statuses,
+        mobilityScore: 0,
+      });
+
+      expect(US_PP10998_DESTINATION_CODES.map((destinationCode) => result.statuses[destinationCode]))
+        .toEqual(Array.from({ length: 5 }, () => "entry_restricted"));
+      expect(result.mobilityScore).toBe(0);
+    }
   });
 
   it("applies Saint Vincent and the Grenadines' current pre-entry visa corrections", () => {

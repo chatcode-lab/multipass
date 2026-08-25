@@ -38,7 +38,7 @@
           "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
           "title": { "type": "string", "minLength": 1 },
           "summary": { "type": "string", "minLength": 1 },
-          "status": { "enum": ["visa_free", "eta", "visa_on_arrival", "evisa", "visa_required", "citizenship"] },
+          "status": { "enum": ["visa_free", "eta", "visa_on_arrival", "evisa", "visa_required", "entry_restricted", "citizenship"] },
           "destinationCodes": { "$ref": "#/$defs/codes" },
           "passportCodes": { "$ref": "#/$defs/codes" },
           "excludedPassportCodes": { "$ref": "#/$defs/codes" },

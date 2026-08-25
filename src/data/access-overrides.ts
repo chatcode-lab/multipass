@@ -25,6 +25,13 @@ export interface VerifiedAccessOverride {
   effectiveTo?: string;
 }
 
+export const US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES = [
+  "AF", "BF", "CG", "ER", "GQ", "HT", "IR", "LA", "LY", "ML", "MM", "NE", "PS", "SD", "SL", "SO", "SS", "SY", "TD", "YE",
+  "AG", "AO", "BI", "BJ", "CI", "CU", "DM", "GA", "GM", "MR", "MW", "NG", "SN", "TG", "TO", "TZ", "VE", "ZM", "ZW",
+] as const;
+
+export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as const;
+
 /**
  * Corrections where a current destination authority is more specific than the
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
@@ -39,6 +46,19 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-25",
     effectiveFrom: "2025-04-15",
   },
+  ...US_PP10998_ENTRY_RESTRICTED_PASSPORT_CODES.flatMap((passportCode) =>
+    US_PP10998_DESTINATION_CODES.map((destinationCode) => ({
+      passportCode,
+      destinationCode,
+      status: "entry_restricted" as const,
+      reason: passportCode === "PS"
+        ? "Presidential Proclamation 10998 suspends ordinary visitor entry on Palestinian Authority-issued or -endorsed travel documents, subject to grandfathered visas and exceptions."
+        : "Presidential Proclamation 10998 suspends ordinary visitor entry for this nationality, subject to grandfathered visas, categorical exceptions and discretionary exceptions.",
+      sourceUrl: "https://www.whitehouse.gov/presidential-actions/2025/12/restricting-and-limiting-the-entry-of-foreign-nationals-to-protect-the-security-of-the-united-states/",
+      reviewedAt: "2026-08-25",
+      effectiveFrom: "2026-01-01",
+    })),
+  ),
   ...(["AF", "DZ", "AO", "AM", "AZ", "BJ", "BT", "BA", "BF", "BI", "KH", "CM", "CV", "CF", "TD", "KM", "CG", "CD", "CI", "DJ", "DO", "GQ", "ER", "ET", "GA", "GN", "GW", "HT", "IR", "IQ", "KZ", "KG", "LA", "LB", "LR", "LY", "MG", "ML", "MR", "FM", "MN", "MZ", "MM", "NA", "NP", "NE", "KP", "PK", "PW", "PH", "WS", "ST", "SN", "SO", "SY", "TJ", "TH", "TL", "TN", "TM", "UZ", "VN", "YE", "AD", "PS"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "KN" as const,

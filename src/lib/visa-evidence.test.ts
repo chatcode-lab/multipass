@@ -551,13 +551,15 @@ describe("official visa evidence", () => {
     expect(UNITED_STATES_PP10998_VISITOR_RESTRICTION_CODES).toHaveLength(39);
     const unitedStatesPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "US");
-    expect(unitedStatesPairs).toHaveLength(160);
+    expect(unitedStatesPairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("JP", "US", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CA", "US", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BR", "US", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BS", "US", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("FM", "US", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "US", snapshot.passports.AF.statuses.US).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "US", "entry_restricted").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AG", "US", "entry_restricted").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PS", "US", "entry_restricted").supportsCurrentStatus).toBe(true);
   });
 
   it("keeps the Colombia and Peru EU agreements directional while allowing independent inbound rules", () => {
@@ -1618,10 +1620,10 @@ describe("official visa evidence", () => {
   it("maps reviewed visitor cohorts for United States territories conservatively", () => {
     const expectedCounts = new Map([
       ["AS", 199],
-      ["GU", 160],
-      ["MP", 160],
-      ["PR", 160],
-      ["VI", 160],
+      ["GU", 199],
+      ["MP", 199],
+      ["PR", 199],
+      ["VI", 199],
     ]);
 
     for (const [destinationCode, expected] of expectedCounts) {
@@ -1638,8 +1640,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("CN", "MP", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BS", "GU", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BS", "MP", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "GU", snapshot.passports.AF.statuses.GU).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("AF", "MP", snapshot.passports.AF.statuses.MP).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "GU", "entry_restricted").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AF", "MP", "entry_restricted").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PT", "PR", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PT", "VI", "eta").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BS", "PR", "visa_free").supportsCurrentStatus).toBe(true);
@@ -5084,10 +5086,12 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("preserves US-territory, Saudi, and Trinidad and Tobago final destination residuals", () => {
+  it("covers PP 10998 territory restrictions while preserving Saudi and Trinidad and Tobago residuals", () => {
     for (const sourceId of [
-      "us-white-house-pp10998",
-      "us-ecfr-current-8-cfr-212-1",
+      "us-white-house-pp10998-full-suspension",
+      "us-white-house-pp10998-partial-b-visitor-suspension",
+      "us-state-pp10998-current-full-suspension-2026",
+      "us-state-pp10998-current-partial-suspension-2026",
       "us-code-current-ina-geographical-united-states",
       "saudi-refresh-visa-regulations-country-groups-api",
       "saudi-refresh-visa-regulations-routes-api",
@@ -5103,6 +5107,11 @@ describe("official visa evidence", () => {
       ["AF", "MP"],
       ["PS", "PR"],
       ["SY", "VI"],
+    ] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, destinationCode, "entry_restricted").supportsCurrentStatus).toBe(true);
+    }
+
+    for (const [passportCode, destinationCode] of [
       ["CL", "SA"],
       ["IL", "SA"],
       ["CH", "TT"],

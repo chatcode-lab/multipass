@@ -29,6 +29,8 @@ Read the attached research playbook, packet, and JSON schema completely. Browse 
 
 Treat every snapshot status in the packet as an unverified hypothesis. Open every cited URL. Confirm that the page itself supports the nationality, destination, ordinary-passport type, visitor purpose, access category, conditions, and any date you return. Distinguish announcement, publication, and effective dates. Do not infer a rule from silence, a catch-all label, a portal's branding, or a reciprocal rule that the source does not state.
 
+Use entry_restricted only when a current official source directly prohibits or suspends ordinary visitor entry. Preserve its exact document or nationality scope, effective time, valid-visa grandfathering, categorical exceptions, and discretionary waivers; otherwise leave the pair unresolved.
+
 Return exactly one JSON object matching candidate.schema.json and no surrounding prose or Markdown. Use ISO alpha-2 codes from the packet. Put unsupported pairs in unresolved. Put disagreements with the snapshot in conflicts. Use “not established” in a reason instead of guessing. Keep each supportingExcerpt to 25 words or fewer; it is for review only and will not be published. Set confidence to high only when a direct official source explicitly supports the complete normalized rule.
 
 Do not edit canonical source files. Do not propose travel, citizenship, or legal advice.
