@@ -776,18 +776,20 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("QA", "IQ", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
-  it("supports named Turkish access to Palestine and Syria while applying Yemen's advance-visa grid", () => {
+  it("keeps route-split Palestinian access unresolved while applying the supported Syria and Yemen rules", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("PS")).toHaveLength(9);
-    expect(getVisaRelationshipEvidence("TR", "PS", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CA", "PS", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IE", "PS", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("DE", "PS", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("FR", "PS", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("NL", "PS", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IT", "PS", "eta").supportsCurrentStatus).toBe(true);
+    expect(pairsFor("PS")).toHaveLength(0);
+    for (const passportCode of ["TR", "CA", "IE", "DE", "FR", "NL", "ES", "BE", "IT"] as const) {
+      expect(
+        getVisaRelationshipEvidence(
+          passportCode,
+          "PS",
+          snapshot.passports[passportCode].statuses.PS,
+        ).supportsCurrentStatus,
+      ).toBe(false);
+    }
     expect(getVisaRelationshipEvidence("US", "PS", snapshot.passports.US.statuses.PS).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PS", "PS", "citizenship").supportsCurrentStatus).toBe(false);
 
@@ -1355,7 +1357,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "CG", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CG", "CG", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("GA")).toHaveLength(200);
+    expect(pairsFor("GA")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("CG", "GA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "GA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "GA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -3293,7 +3295,6 @@ describe("official visa evidence", () => {
       ["DE", "NE", "visa_required"],
       ["DE", "SL", "visa_on_arrival"],
       ["IT", "LR", "visa_required"],
-      ["IT", "PS", "eta"],
     ] as const) {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
       expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
@@ -3304,6 +3305,7 @@ describe("official visa evidence", () => {
       ["GB", "PS"],
       ["ES", "IR"],
       ["DE", "AF"],
+      ["IT", "PS"],
       ["IT", "SS"],
     ] as const) {
       expect(
@@ -4643,7 +4645,6 @@ describe("official visa evidence", () => {
   it("preserves the reviewed Italian, Canadian, and Norwegian final outbound partition", () => {
     for (const [passportCode, destinationCode, status] of [
       ["IT", "LR", "visa_required"],
-      ["IT", "PS", "eta"],
       ["CA", "TD", "evisa"],
       ["NO", "KM", "visa_on_arrival"],
       ["NO", "LR", "visa_on_arrival"],
@@ -4658,6 +4659,7 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["IT", "AF"],
       ["IT", "CF"],
+      ["IT", "PS"],
       ["IT", "SS"],
       ["CA", "AF"],
       ["CA", "IR"],

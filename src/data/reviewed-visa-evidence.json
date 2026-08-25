@@ -777,7 +777,8 @@
     "djibouti-current-final-inbound-residual-2026",
     "comoros-current-final-inbound-residual-2026",
     "north-korea-current-final-inbound-residual-2026",
-    "palestine-current-final-inbound-residual-2026"
+    "palestine-current-final-inbound-residual-2026",
+    "palestine-existing-route-classifications-recheck-2026"
   ],
   "sources": [
     {
@@ -74124,7 +74125,6 @@
       "summary": "Türkiye's current MFA table explicitly records the listed ordinary Turkish passports as visa-free for the stated short visitor scope.",
       "status": "visa_free",
       "destinationCodes": [
-        "PS",
         "SY",
         "TN",
         "UA",
@@ -74135,7 +74135,6 @@
         "TR"
       ],
       "conditions": [
-        "Palestinian access is stated visa-free by the destination, but the MFA says Turkish citizens normally need an Israeli visa to reach it; the Egypt-to-Gaza exception is separate.",
         "Syria is visa-free according to the MFA table, but ordinary-passport holders pay a border fee on arrival; the fee is not a visa-on-arrival classification.",
         "Tunisia and Ukraine are visa-free up to 90 days; Bosnia and Herzegovina is visa-free for no more than 90 days in 180; Panama is visa-free for three months.",
         "This does not establish residence, work, special-document, route, security or final-admission treatment."
@@ -74745,34 +74744,6 @@
       }
     },
     {
-      "id": "canada-palestine-ordinary-passport-israeli-eta-route",
-      "title": "Canadian ordinary passports: Palestinian Territory access via Israeli ETA",
-      "summary": "Palestine does not issue its own visas; Canadian access is routed through Israeli ports of entry, where Canada records a required ETA-IL for visa-exempt Canadians.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "CA"
-      ],
-      "conditions": [
-        "Travellers must pass through Israeli ports of entry and comply with Israeli entry requirements. Canadian travellers from visa-exempt countries need ETA-IL, applied for at least 72 hours before expected arrival.",
-        "If approved, ETA-IL permits entry to Israel for up to 90 days. This does not establish Palestinian Authority visa issuance, access to Gaza, permit requirements, border opening, residence, work, dual-national, document or final-admission treatment."
-      ],
-      "sourceIds": [
-        "canada-travel-ps"
-      ],
-      "application": {
-        "url": "https://www.gov.il/en/departments/topics/eta-il/govil-landing-page",
-        "label": "Israeli Population and Immigration Authority ETA-IL",
-        "steps": [
-          "Apply electronically at least 72 hours before expected arrival at an Israeli port of entry.",
-          "Travel with the Regular Canadian passport linked to the approved ETA-IL.",
-          "Comply with Israeli checkpoint, permit and final-admission rules for onward access to Palestinian territory."
-        ]
-      }
-    },
-    {
       "id": "canada-ordinary-passport-named-destinations-advance-visa",
       "title": "Canadian ordinary passports: named advance mission visa routes",
       "summary": "Government of Canada guidance describes a pre-departure mission-issued visa route for each listed destination, rather than an electronic or border-issued visa.",
@@ -74941,25 +74912,6 @@
       ]
     },
     {
-      "id": "ie-outbound-low-coverage-palestine-eta",
-      "title": "Irish ordinary passports: Palestinian-territory access via Israeli ETA-IL",
-      "summary": "The DFA says visa-exempt Irish citizens passing through Israeli-controlled crossings to Palestine need ETA-IL.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "IE"
-      ],
-      "conditions": [
-        "All entry and exit to Palestine is controlled by Israel. The required ETA-IL applies to travel through Israeli-controlled crossings, rather than constituting a Palestinian visa.",
-        "The authorization has its stated validity and multiple-entry limits, but checkpoints, Gaza access, closures, permits, residence, security screening and final admission remain separately controlled and may prevent access."
-      ],
-      "sourceIds": [
-        "ireland-dfa-ps-entry"
-      ]
-    },
-    {
       "id": "ie-outbound-low-coverage-visa-on-arrival",
       "title": "Irish ordinary passports: expressly available visitor visas on arrival",
       "summary": "Current Irish DFA guidance expressly describes a border-issued visitor visa route for each listed destination.",
@@ -75058,33 +75010,6 @@
       ]
     },
     {
-      "id": "germany-palestinian-territories-israeli-eta-route",
-      "title": "German ordinary passports: Palestinian Territories access via Israeli ETA",
-      "summary": "The Federal Foreign Office treats access to the Palestinian Territories through Israeli-controlled entry as requiring ETA-IL for otherwise visa-exempt German visitors.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "DE"
-      ],
-      "conditions": [
-        "An ETA-IL confirmation is required before entry to Israel and is checked by airlines before departure; ordinary German nationals need no visa for stays of up to three months.",
-        "This does not establish a Palestinian Authority visa, access to Gaza, permit requirements, checkpoint opening, Palestinian-ID-holder treatment or final admission."
-      ],
-      "sourceIds": [
-        "de-fo-ps"
-      ],
-      "application": {
-        "url": "https://www.gov.il/en/departments/topics/eta-il/govil-landing-page",
-        "label": "Israeli Population and Immigration Authority ETA-IL",
-        "steps": [
-          "Apply online before travel using the German ordinary passport to be used for entry.",
-          "Carry the approval and comply with Israeli carrier, checkpoint and final-admission rules."
-        ]
-      }
-    },
-    {
       "id": "germany-ordinary-passport-named-arrival-visa-routes",
       "title": "German ordinary passports: named visitor visas issued at arrival",
       "summary": "The Federal Foreign Office expressly identifies a border-issued short-visitor route for each listed German ordinary-passport destination.",
@@ -75123,7 +75048,6 @@
       "destinationCodes": [
         "IQ",
         "CU",
-        "GA",
         "GQ",
         "NG",
         "TD"
@@ -75132,13 +75056,12 @@
         "DE"
       ],
       "conditions": [
-        "IQ: federal Iraq ended visa-on-arrival issuance on 1 March 2025 and requires an e-visa before entry; Kurdistan has a distinct e-visa process. CU: the Cuban official tourism portal describes the internet tourist visa replacing the tourist card. GA: the temporary e-visa procedure is only for tourists. GQ: for air entry, an online e-visa is required; land entry requires mission processing. NG: since May 2025 only electronic visas are used, delivered with a QR code by email. TD: the entry visa must be applied for online at least seven days before travel.",
+        "IQ: federal Iraq ended visa-on-arrival issuance on 1 March 2025 and requires an e-visa before entry; Kurdistan has a distinct e-visa process. CU: the Cuban official tourism portal describes the internet tourist visa replacing the tourist card. GQ: for air entry, an online e-visa is required; land entry requires mission processing. NG: since May 2025 only electronic visas are used, delivered with a QR code by email. TD: the entry visa must be applied for online at least seven days before travel.",
         "This excludes separate non-tourist visa categories, route-specific limits, health forms, registration and final admission."
       ],
       "sourceIds": [
         "de-fo-iq",
         "cuba-tourism-entry",
-        "de-fo-ga",
         "de-fo-gq",
         "de-fo-ng",
         "de-fo-td"
@@ -75370,33 +75293,6 @@
       ]
     },
     {
-      "id": "france-palestinian-territories-israeli-eta-route",
-      "title": "French ordinary passports: Palestinian Territories access via Israeli ETA",
-      "summary": "France Diplomatie records an ETA-IL prerequisite for French short visitors entering through Israel, while no visa is required for Palestine.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "FR"
-      ],
-      "conditions": [
-        "Apply for ETA-IL online before departure for entry through Israel; the visa-free stay stated by the source is up to three months.",
-        "This does not establish access to Gaza, checkpoint opening, Israeli permit rules, Palestinian-ID-holder treatment, or final admission."
-      ],
-      "sourceIds": [
-        "fr-ps"
-      ],
-      "application": {
-        "url": "https://www.gov.il/en/departments/topics/eta-il/govil-landing-page",
-        "label": "Israeli Population and Immigration Authority ETA-IL",
-        "steps": [
-          "Apply online before travel using the French ordinary passport to be used for entry.",
-          "Carry the approval and comply with carrier and Israeli border requirements."
-        ]
-      }
-    },
-    {
       "id": "france-ordinary-passport-named-arrival-visa-routes",
       "title": "French ordinary passports: named visitor visas issued at arrival",
       "summary": "Official guidance identifies a border-issued visitor visa route for each listed French ordinary-passport destination.",
@@ -75574,26 +75470,6 @@
       ]
     },
     {
-      "id": "nl-outbound-palestinian-territories-eta",
-      "title": "Dutch ordinary passports: Palestinian Territories access via Israeli ETA-IL",
-      "summary": "The Dutch Foreign Ministry says no Palestinian visa is needed but records Israeli ETA-IL as the required pre-departure authorization for the Israeli-controlled access route.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "NL"
-      ],
-      "conditions": [
-        "The Palestinian Territories guidance says travel is always via Israel or Jordan. For the Israeli route, a Dutch ordinary-passport holder needs ETA-IL before departure; it permits an Israeli stay up to 90 days and is valid up to two years.",
-        "This does not establish a Palestinian Authority visa, access to Gaza, permit eligibility, Jordanian transit/entry requirements, checkpoint opening, Palestinian-ID-holder treatment or final admission."
-      ],
-      "sourceIds": [
-        "nl-ps",
-        "nl-il"
-      ]
-    },
-    {
       "id": "nl-outbound-arrival-visa",
       "title": "Dutch ordinary passports: expressly available visitor visas on arrival",
       "summary": "Current Dutch Foreign Ministry guidance expressly describes a border-issued visitor-visa route for each listed destination.",
@@ -75624,21 +75500,19 @@
         "LY",
         "IQ",
         "CU",
-        "GA",
         "NG"
       ],
       "passportCodes": [
         "NL"
       ],
       "conditions": [
-        "LY: the official Libyan eVisa introduced in July 2026 is stated as valid for 30 days. IQ, CU and GA: Dutch guidance directs ordinary Dutch-passport holders to named government eVisa systems. NG: the guidance expressly identifies Nigeria Immigration Service's eVisa route as an alternative to embassy processing.",
+        "LY: the official Libyan eVisa introduced in July 2026 is stated as valid for 30 days. IQ and CU: Dutch guidance directs ordinary Dutch-passport holders to named government eVisa systems. NG: the guidance expressly identifies Nigeria Immigration Service's eVisa route as an alternative to embassy processing.",
         "IQ Kurdistan-region procedures and Erbil airport issuance are distinct from the federal-Iraq eVisa baseline. Route-specific purpose, passport, preapproval, document, health, carrier and final-admission conditions remain applicable."
       ],
       "sourceIds": [
         "nl-ly",
         "nl-iq",
         "nl-cu",
-        "nl-ga",
         "nl-ng"
       ]
     },
@@ -87301,25 +87175,6 @@
       ]
     },
     {
-      "id": "es-current-palestinian-territories-eta-il",
-      "title": "Spanish ordinary passports: Palestinian-territory access via Israeli ETA-IL",
-      "summary": "MAEC says Spain is within the visa-exempt nationalities that must obtain Israel’s ETA-IL for the relevant access route to the Palestinian Territories.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "ES"
-      ],
-      "conditions": [
-        "The ETA-IL takes effect for access controlled by Israeli authorities; it is not a Palestinian visa.",
-        "Access to Gaza, West Bank crossings, permits, security controls, closures and final admission remain separately governed."
-      ],
-      "sourceIds": [
-        "maec-palestine-current-eta-il"
-      ]
-    },
-    {
       "id": "es-current-guyana-short-visitor-visa-free",
       "title": "Spanish ordinary passports: Guyana visa-free short visits",
       "summary": "MAEC states that EU-member nationals, including Spanish nationals, need no Guyana visa for tourist stays under one month.",
@@ -87610,25 +87465,6 @@
       ],
       "sourceIds": [
         "be-foreign-affairs-sierra-leone-entry-2026"
-      ]
-    },
-    {
-      "id": "belgian-ordinary-passport-palestinian-territory-eta",
-      "title": "Belgian ordinary passports: Occupied Palestinian Territory electronic travel authorisation",
-      "summary": "Current Belgian guidance says Belgian travellers must obtain ETA-IL before a short stay and expressly extends that requirement to entry into the Occupied Palestinian Territory from Jordan through Allenby Bridge.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "BE"
-      ],
-      "conditions": [
-        "For the stated short-visitor access route via Allenby Bridge, obtain ETA-IL before travel. This is a travel authorisation rather than a visa and applies to ordinary Belgian passports, not diplomatic or service passports.",
-        "Access to Gaza is prohibited and access, permit, security, purpose, carrier and final-admission restrictions remain separate."
-      ],
-      "sourceIds": [
-        "be-foreign-affairs-palestinian-territory-eta-2026"
       ]
     },
     {
@@ -92488,27 +92324,6 @@
           "After approval, present the required documents at the border for visa issuance."
         ]
       }
-    },
-    {
-      "id": "italy-palestinian-territories-israeli-eta-route",
-      "title": "Italian ordinary passports: Palestinian-territory access via Israeli ETA-IL",
-      "summary": "Italy's current Foreign Ministry guidance requires otherwise visa-exempt Italian short visitors to obtain ETA-IL for the Israeli-controlled access route to the Palestinian Territories.",
-      "status": "eta",
-      "destinationCodes": [
-        "PS"
-      ],
-      "passportCodes": [
-        "IT"
-      ],
-      "conditions": [
-        "Applies to a current ordinary Italian passport for a short visitor stay of up to 90 days through an Israeli-controlled entry route.",
-        "Obtain ETA-IL before boarding or reaching the border. It is an Israeli travel authorization and does not guarantee admission.",
-        "This does not establish a Palestinian Authority visa, access to Gaza, checkpoint opening, permit eligibility, Palestinian-ID-holder treatment or final admission.",
-        "Work, residence, long stays, diplomatic, service, special-document and dual-national treatment remain separate."
-      ],
-      "sourceIds": [
-        "italy-crisis-unit-palestinian-territories-entry-2026"
-      ]
     },
     {
       "id": "us-ordinary-passports-trinidad-and-tobago-short-visitor-waiver-2026",

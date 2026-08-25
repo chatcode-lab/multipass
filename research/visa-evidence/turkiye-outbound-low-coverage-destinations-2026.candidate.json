@@ -33,10 +33,9 @@
       "title": "Turkish ordinary passports: visa-free short visit",
       "summary": "Türkiye's current MFA table explicitly records the listed ordinary Turkish passports as visa-free for the stated short visitor scope.",
       "status": "visa_free",
-      "destinationCodes": ["PS", "SY", "TN", "UA", "PA", "BA"],
+      "destinationCodes": ["SY", "TN", "UA", "PA", "BA"],
       "passportCodes": ["TR"],
       "conditions": [
-        "Palestinian access is stated visa-free by the destination, but the MFA says Turkish citizens normally need an Israeli visa to reach it; the Egypt-to-Gaza exception is separate.",
         "Syria is visa-free according to the MFA table, but ordinary-passport holders pay a border fee on arrival; the fee is not a visa-on-arrival classification.",
         "Tunisia and Ukraine are visa-free up to 90 days; Bosnia and Herzegovina is visa-free for no more than 90 days in 180; Panama is visa-free for three months.",
         "This does not establish residence, work, special-document, route, security or final-admission treatment."
@@ -82,14 +81,6 @@
   "conflicts": [
     {
       "passportCode": "TR",
-      "destinationCode": "PS",
-      "snapshotStatus": "visa_required",
-      "officialStatus": "visa_free",
-      "explanation": "The current Türkiye MFA table says Palestinians do not apply a visa to Turkish citizens, while preserving the Israeli-access condition.",
-      "sourceIds": ["turkiye-mfa-current-traveller-visa-table"]
-    },
-    {
-      "passportCode": "TR",
       "destinationCode": "SY",
       "snapshotStatus": "evisa",
       "officialStatus": "visa_free",
@@ -106,6 +97,12 @@
     }
   ],
   "unresolved": [
+    {
+      "passportCode": "TR",
+      "destinationCode": "PS",
+      "reason": "The current MFA table separates the normal Israeli-visa route from an Egypt-to-Gaza exception. That route split cannot establish one Palestinian Territory status in the current destination-only model.",
+      "searchedOfficialDomains": ["mfa.gov.tr", "mfae.gov.ps", "gov.il", "iaa.gov.il"]
+    },
     {
       "passportCode": "TR",
       "destinationCode": "AF",

@@ -704,14 +704,6 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
   },
   {
     passportCode: "TR",
-    destinationCode: "PS",
-    status: "visa_free",
-    reason: "Türkiye's current Foreign Ministry tourist table says Palestinian authorities do not require Turkish citizens to obtain a visa, while retaining the separate Israeli-access condition.",
-    sourceUrl: "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
-    reviewedAt: "2026-08-21",
-  },
-  {
-    passportCode: "TR",
     destinationCode: "SY",
     status: "visa_free",
     reason: "Türkiye's current Foreign Ministry tourist table records Turkish citizens as visa-free for Syria; the stated ordinary-passport border fee is not an electronic visa.",

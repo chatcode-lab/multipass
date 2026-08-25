@@ -2860,6 +2860,16 @@ The other 168 cells remain unresolved. The secure eVisa portal asks whether an a
 
 No fallback classification changes: Australia and the UAE were already labelled `evisa`. This pass verifies those labels while preserving every unproven electronic route as visibly uncovered.
 
+## Passes 309–310 result: Palestinian Territory route-scope correction
+
+The exact 189-cell residual audit adds no supported Palestinian Territory relationship. Current official material consistently separates Israeli-controlled West Bank access from Gaza access, which is closed, prohibited, exceptional or permit-specific. Israel-only visa and ETA treatment was not copied into the `PS` column, and a direct Chinese description of the West Bank route was held because it still could not supply one territory-wide ordinary-visitor baseline.
+
+A corrective re-audit then reopened all nine previously supported `PS` rows. Independent legal, source and technical reviewers unanimously withdrew Türkiye's prior `visa_free` evidence and the Canadian, Irish, German, French, Dutch, Spanish, Belgian and Italian ETA evidence. Those policies described only Israeli-controlled or West Bank routes while expressly excluding Gaza; the data model has no route or subterritory dimension, so free-text caveats could not prevent the status from being presented as territory-wide. The Turkish and Irish source routes also failed current direct replay.
+
+Complete-matrix current-status evidence decreases from 39,823 to 39,814 of 44,974 relationships (88.5%), leaving 5,160 not covered. Middle East coverage decreases from 2,029 to 2,020 of 2,970 relationships (68.0%). Canonical evidence now contains 779 reviewed batches, 3,280 official source records and 1,920 policies. The displayed fallback labels and rankings do not change; the nine rows now appear honestly as unverified hypotheses on the status matrix and relationship pages.
+
+The same replacement pass removed superseded German and Dutch Gabon `evisa` associations from two older grouped policies. Both pairs remain verified as `visa_on_arrival` under the later current evidence that pre-travel authorization ends with physical visa-sticker issuance at Libreville airport.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
