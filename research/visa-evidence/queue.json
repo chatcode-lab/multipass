@@ -14086,6 +14086,37 @@
         "Separate fee-free reciprocal visas on arrival from true visa exemptions. Do not relabel a zero-fee border-issued visa as visa_free, and do not normalize eVisa portal availability as electronic issuance without proving the approved document is delivered before travel.",
         "Exclude ECOWAS rows already supported, citizenship, residence, work, study, transit, diplomatic or service passports, carrier/security fees, health declarations, snippets, secondary sources and inaccessible transport."
       ]
+    },
+    {
+      "id": "near-complete-destination-columns-final-residuals-2026",
+      "priority": 854,
+      "objective": "Recheck the exact 37 unsupported foreign-access cells across every destination column that had no more than two current-status gaps after Pass 313.",
+      "destinationCodes": [
+        "AZ", "BY", "BA", "KY", "EC", "GQ", "GA", "GE", "IL", "JM",
+        "KZ", "KE", "XK", "MO", "MS", "NU", "RU", "RS", "LK", "TW",
+        "BS", "UZ", "VA", "YE", "ZM"
+      ],
+      "passportCodes": [
+        "XK", "SS", "MO", "TN", "PS", "KN", "BB", "TW", "BA", "FJ",
+        "RS", "NR", "VA", "CG", "HK", "CN", "PT", "NZ", "IL", "SY"
+      ],
+      "sourceHints": [
+        "https://mvp.gov.ba/bs/org_cmd57sdlc000nn43u2rk8pgsd_638886957200216716",
+        "https://www.evisa.gov.az/en/countries",
+        "https://www.kdmid.ru/cons/visas/conditions-of-entry-foreign-citizens-in-russian-federation/",
+        "https://gov.ky/en/web/cbc/travel/visas-extensions/visitors-visas/list-of-countries-visa-required",
+        "https://www.pica.gov.jm/immigration/entry-visa-requirements",
+        "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+        "https://www.niueisland.com/discover-niue/travelling-to-niue",
+        "https://new.kenyalaw.org/akn/ke/act/ln/2012/64/eng@2025-05-30",
+        "https://www.eta.gov.lk/slvisa/"
+      ],
+      "notes": [
+        "Return an exact terminal partition for these 37 enumerated relationships only: XK-AZ; XK-BY; XK-BA; SS-BA; SS-KY; MO-EC; TN-GQ; XK-GA; TW-GE; XK-GE; PS-IL; VA-JM; CG-JM; XK-KZ; KN-KE; BA-XK; FJ-XK; HK-MO; CN-MO; XK-MS; PT-NU; NZ-NU; BB-RU; XK-RU; XK-RS; XK-LK; SY-LK; CN-TW; PS-TW; SS-BS; XK-UZ; RS-VA; NR-VA; IL-YE; XK-YE; RS-ZM; XK-ZM.",
+        "These are predominantly recognition, successor-state, special-document, historical-name and current-source-conflict cases. Do not infer a residual status from omission, generic portal access, an obsolete combined-country label or a rule limited to identity cards, residence, transit or third-country documents.",
+        "Distinguish a direct pre-travel visa issued on separate paper from an electronic visa, and preserve nationality/document splits that cannot be represented safely by one catalog-wide status.",
+        "Exclude snippets, secondary indexes, Timatic, diplomatic or service documents, work, study, residence, transit-only routes and conditional third-country-document waivers."
+      ]
     }
   ]
 }

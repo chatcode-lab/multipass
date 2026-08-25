@@ -154,17 +154,17 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "HK", "visa_required").supportsCurrentStatus).toBe(false);
   });
 
-  it("models Kenya's current ETA scope while leaving the misspelled Saint Kitts entry unresolved", () => {
+  it("models Kenya's current ETA scope and normalizes the unambiguous Saint Kitts spelling error", () => {
     expect(KENYA_EAC_ETA_EXEMPT_CODES).toHaveLength(6);
     expect(KENYA_90_DAY_ETA_EXEMPT_CODES).toHaveLength(42);
     expect(KENYA_60_DAY_ETA_EXEMPT_CODES).toHaveLength(28);
 
     const kenyaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "KE");
-    expect(kenyaPairs).toHaveLength(198);
+    expect(kenyaPairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("GY", "KE", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ID", "KE", "eta").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("KN", "KE", "visa_free").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KN", "KE", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("covers HKSAR access to 30 EU and Schengen destinations", () => {
@@ -2209,7 +2209,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("BA")).toHaveLength(197);
+    expect(pairsFor("BA")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("BA", "BA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BH", "BA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BH", "BA", "visa_free", "2026-09-30").supportsCurrentStatus).toBe(true);
@@ -2225,7 +2225,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("JP", "BA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "BA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "BA", snapshot.passports.SS.statuses.BA).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("XK", "BA", snapshot.passports.XK.statuses.BA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("XK", "BA", "visa_required").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("XK")).toHaveLength(197);
     expect(getVisaRelationshipEvidence("XK", "XK", "citizenship").supportsCurrentStatus).toBe(true);
@@ -4160,6 +4160,7 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode, status] of [
       ["KN", "GD", "visa_free"],
       ["KN", "JO", "visa_on_arrival"],
+      ["KN", "KE", "visa_free"],
       ["KN", "PA", "visa_free"],
       ["KP", "GD", "visa_required"],
       ["KP", "JO", "visa_on_arrival"],
@@ -4178,7 +4179,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["KN", "KE"],
       ["KP", "PA"],
       ["LC", "AF"],
       ["PK", "BD"],

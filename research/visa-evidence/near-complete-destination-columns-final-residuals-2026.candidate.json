@@ -1,0 +1,278 @@
+{
+  "batchId": "near-complete-destination-columns-final-residuals-2026",
+  "researchedAt": "2026-08-25",
+  "sources": [
+    {
+      "id": "bosnia-mfa-current-kosovo-separate-paper-visa-2026",
+      "title": "Bosnia and Herzegovina MFA: visas for holders of Kosovo travel documents",
+      "url": "https://mvp.gov.ba/bs/org_cmd57sdlc000nn43u2rk8pgsd_638886957200216716",
+      "publisher": "Ministry of Foreign Affairs of Bosnia and Herzegovina",
+      "jurisdiction": "Bosnia and Herzegovina",
+      "kind": "government-guidance",
+      "language": "Bosnian",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live MFA country guidance directly says a visa is necessary and identifies three Bosnia and Herzegovina embassies that issue it on separate paper to holders of Kosovo travel documents.",
+      "supportingExcerpt": "Ambasade BiH u Skoplju, Podgorici i Beogradu izdaju vize na posebom papiru nosiocima putnih isprava Kosova."
+    },
+    {
+      "id": "kenya-law-current-eta-exemption-schedule-2026",
+      "title": "Kenya Citizenship and Immigration Regulations, consolidated through Legal Notice 93 of 2025",
+      "url": "https://new.kenyalaw.org/akn/ke/act/ln/2012/64/eng%402025-05-30",
+      "publisher": "National Council for Law Reporting",
+      "jurisdiction": "Kenya",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The current official consolidation reproduces the operative eTA-exemption schedule and places the uniquely identifiable, misspelled Saint Kitts and Nevis entry in its 90-day nationality cohort.",
+      "supportingExcerpt": "St. Kitts and Navis"
+    }
+  ],
+  "policies": [
+    {
+      "id": "bosnia-current-kosovo-travel-document-separate-paper-visa-2026",
+      "title": "Kosovo travel documents: Bosnia and Herzegovina advance visa on separate paper",
+      "summary": "Bosnia and Herzegovina's current MFA guidance directly requires holders of Kosovo travel documents to obtain a visa and identifies the embassies that issue it on separate paper.",
+      "status": "visa_required",
+      "destinationCodes": ["BA"],
+      "passportCodes": ["XK"],
+      "conditions": [
+        "The visa is issued on separate paper by the Bosnia and Herzegovina embassies in Skopje, Podgorica or Belgrade and must be obtained before travel.",
+        "The result applies to an ordinary Kosovo travel document used for a short visitor journey; it does not imply diplomatic recognition or ordinary visa-sticker placement in the passport.",
+        "Transit, work, study, residence, diplomatic, official and other special-document treatment remain outside scope.",
+        "The MFA page is current and live, although its server currently presents an incomplete TLS certificate chain to some automated clients; recheck the consular route before travel."
+      ],
+      "sourceIds": ["bosnia-mfa-current-kosovo-separate-paper-visa-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "kenya-current-saint-kitts-nevis-90-day-eta-exemption-2026",
+      "title": "Saint Kitts and Nevis nationals: Kenya 90-day eTA exemption",
+      "summary": "Kenya's current legal eTA-exemption schedule places the uniquely identifiable Saint Kitts and Nevis nationality in its 90-day cohort, despite the recurring one-letter misspelling 'Navis'.",
+      "status": "visa_free",
+      "destinationCodes": ["KE"],
+      "passportCodes": ["KN"],
+      "effectiveFrom": "2025-05-30",
+      "conditions": [
+        "The exemption applies to nationals of Saint Kitts and Nevis for a stay not exceeding 90 days.",
+        "The official schedule says 'St. Kitts and Navis'. No country or passport issuer named Navis exists, and the uniquely identifying St. Kitts prefix makes this an unambiguous spelling error rather than a successor-state or document ambiguity.",
+        "The traveller is exempt from Kenya's eTA requirement; normal passport validity, purpose-of-stay and final-admission rules continue to apply.",
+        "Work, study, residence, diplomatic, official, service and other special-document treatment remain outside scope."
+      ],
+      "sourceIds": ["kenya-law-current-eta-exemption-schedule-2026"],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "XK",
+      "destinationCode": "AZ",
+      "reason": "Azerbaijan's current eVisa nationality list omits Kosovo, but omission does not establish Kosovo-passport recognition, traditional visa issuance or another normalized visitor route.",
+      "searchedOfficialDomains": ["evisa.gov.az", "mfa.gov.az", "migration.gov.az"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "BY",
+      "reason": "Belarus limits eVisa access to a named 67-country ordinary-passport cohort and does not map a Kosovo passport; the omitted complement cannot establish recognition or advance consular issuance.",
+      "searchedOfficialDomains": ["mfa.gov.by", "e-pasluga.by"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "BA",
+      "reason": "Bosnia and Herzegovina's current MFA selector names Sudan but does not publish a distinct South Sudan ordinary-passport result; the two states are not merged.",
+      "searchedOfficialDomains": ["mvp.gov.ba"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "KY",
+      "reason": "The Cayman Islands' current exhaustive-looking table names Sudan but not South Sudan, so its Sudan row cannot be transferred to a distinct South Sudan passport.",
+      "searchedOfficialDomains": ["gov.ky"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "EC",
+      "reason": "A 2017 Macao government announcement records an Ecuador waiver, but Ecuador is absent from the current Macao DSI passport-destination service; the historical and current official records cannot be reconciled.",
+      "searchedOfficialDomains": ["dsi.gov.mo", "gcs.gov.mo", "cancilleria.gob.ec"]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "GQ",
+      "reason": "Available official material proves an older one-way Equatorial Guinea-to-Tunisia waiver and current CEMAC treatment, not a current Tunisia-to-Equatorial Guinea ordinary-passport waiver or complete residual rule.",
+      "searchedOfficialDomains": ["guineaecuatorialpress.com", "diplomatie.gov.tn", "cemac.int"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GA",
+      "reason": "Gabon publishes a generic air-entry eVisa service, but its current nationality catalog does not map an ordinary Kosovo passport; UNMIK-related material is not equivalent.",
+      "searchedOfficialDomains": ["gouvernement.ga", "evisa.dgdi.ga", "dgdi.ga"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "GE",
+      "reason": "Georgia's current law and eVisa service do not publish a direct Taiwan ordinary-passport recognition, eligibility or consular visitor result.",
+      "searchedOfficialDomains": ["matsne.gov.ge", "evisa.gov.ge", "geoconsul.gov.ge"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GE",
+      "reason": "Georgia's current law and eVisa service do not publish a direct Kosovo ordinary-passport recognition, eligibility or consular visitor result.",
+      "searchedOfficialDomains": ["matsne.gov.ge", "evisa.gov.ge", "geoconsul.gov.ge"]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "IL",
+      "reason": "Israel's current entry services do not map an ordinary Palestinian Authority passport or document to a visitor visa, ETA or other destination-wide route.",
+      "searchedOfficialDomains": ["piba.gov.il", "israel-entry.piba.gov.il", "gov.il"]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "JM",
+      "reason": "Jamaica's current nationality table does not identify Holy See or Vatican City ordinary passports, so a visa-required complement is not inferred from omission.",
+      "searchedOfficialDomains": ["pica.gov.jm", "mfaft.gov.jm"]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "JM",
+      "reason": "Jamaica's current table expressly names the Democratic Republic of the Congo but not the distinct Republic of the Congo; the former row cannot be transferred.",
+      "searchedOfficialDomains": ["pica.gov.jm", "mfaft.gov.jm"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "KZ",
+      "reason": "Kazakhstan's current ordinary-passport table has no Kosovo row and the eVisa service requires named eligibility; omission cannot establish recognition or traditional visa issuance.",
+      "searchedOfficialDomains": ["gov.kz", "vmp.gov.kz"]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "XK",
+      "reason": "Kosovo's current Bosnia and Herzegovina waiver is expressly for a valid biometric identity card, not an ordinary passport, and no passport-wide visitor result is established.",
+      "searchedOfficialDomains": ["ambasadat.net", "kryeministri.rks-gov.net", "gzk.rks-gov.net"]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "XK",
+      "reason": "Kosovo's live MFA schedule lists Fiji as visa-free, while a later government decision introduces a Fiji visa regime upon Gazette publication; current publication or controlling status could not be established.",
+      "searchedOfficialDomains": ["ambasadat.net", "kryeministri.rks-gov.net", "gzk.rks-gov.net"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MO",
+      "reason": "Macao's passport-free visitor exemption requires a Hong Kong Permanent Identity Card or Re-entry Permit; the HKSAR-passport-only provision is limited to qualified transit and does not establish ordinary tourism.",
+      "searchedOfficialDomains": ["gov.mo", "fsm.gov.mo"]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "MO",
+      "reason": "Macao's PRC ordinary-passport provision is a qualified seven-day transit route, while regular Mainland tourism uses a Two-way Exit Permit and endorsement outside the passport-status taxonomy.",
+      "searchedOfficialDomains": ["gov.mo", "fsm.gov.mo"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "MS",
+      "reason": "Montserrat's generic eVisa application guidance does not establish Kosovo nationality eligibility, and Kosovo appears in neither current visa-required nor visa-not-required list.",
+      "searchedOfficialDomains": ["immigration.ms"]
+    },
+    {
+      "passportCode": "PT",
+      "destinationCode": "NU",
+      "reason": "Niue's current guidance limits the Portugal arrival-permit wording to permanent residents, so it does not establish a nationality-wide ordinary Portuguese-passport route.",
+      "searchedOfficialDomains": ["niueisland.com", "gov.nu"]
+    },
+    {
+      "passportCode": "NZ",
+      "destinationCode": "NU",
+      "reason": "Niue's current page gives internally inconsistent New Zealand guidance and separately refers to exemption stickers identifying Niueans, preventing a nationality-wide ordinary-passport result.",
+      "searchedOfficialDomains": ["niueisland.com", "gov.nu"]
+    },
+    {
+      "passportCode": "BB",
+      "destinationCode": "RU",
+      "reason": "Russia's current MFA country table says Barbados may use eVisa, while the current MFA eVisa nationality service omits Barbados; the two competent official systems conflict.",
+      "searchedOfficialDomains": ["kdmid.ru", "evisa.kdmid.ru", "mid.ru"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "RU",
+      "reason": "Russia's current MFA country table does not identify Kosovo and no primary source establishes Kosovo-passport recognition or a consular visitor-visa route.",
+      "searchedOfficialDomains": ["kdmid.ru", "evisa.kdmid.ru", "mid.ru"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "RS",
+      "reason": "Serbia's current nationality register does not identify Kosovo passports, and no destination-wide ordinary visitor classification is published for this document.",
+      "searchedOfficialDomains": ["mfa.gov.rs", "mup.gov.rs"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "LK",
+      "reason": "Sri Lanka directs Kosovo visitors to a sponsor-filed head-office application but does not state whether the exact route yields an ETA, endorsed visa or another approval; generic arrival ETA cannot be transferred.",
+      "searchedOfficialDomains": ["eta.gov.lk", "immigration.gov.lk"]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "LK",
+      "reason": "Sri Lanka directs Syrian visitors to a sponsor-filed head-office application but does not state whether the exact route yields an ETA, endorsed visa or another approval; generic visitor issuance cannot be transferred.",
+      "searchedOfficialDomains": ["eta.gov.lk", "immigration.gov.lk"]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "TW",
+      "reason": "Taiwan treats Mainland-area travellers through purpose-specific entry permits rather than a foreign-passport visitor visa, so an ordinary PRC passport alone has no safe normalized status.",
+      "searchedOfficialDomains": ["immigration.gov.tw", "boca.gov.tw"]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "TW",
+      "reason": "Taiwan's visa statute applies to foreign passports recognized or accepted by the ROC, but no current primary source establishes acceptance and a visitor route for an ordinary Palestinian passport.",
+      "searchedOfficialDomains": ["boca.gov.tw", "immigration.gov.tw"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "BS",
+      "reason": "The Bahamas' current eVisa selector names Sudan but not South Sudan, and its protected application endpoint does not supply a reproducible distinct South Sudan result.",
+      "searchedOfficialDomains": ["mofa.gov.bs", "bahamas.gov.bs"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "UZ",
+      "reason": "Uzbekistan's current named waiver and eVisa schedules do not map Kosovo, and omission cannot establish passport recognition or a consular tourist-visa route.",
+      "searchedOfficialDomains": ["gov.uz", "e-visa.gov.uz", "mfa.uz"]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "VA",
+      "reason": "Vatican visitor access follows Italy and Schengen; Serbia's waiver is biometric-passport-only and excludes Coordination Directorate passports, so one catalog-wide ordinary status would flatten a material document split.",
+      "searchedOfficialDomains": ["esteri.it", "eur-lex.europa.eu", "vatican.va"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "VA",
+      "reason": "Italy's current country page names Nauru while the current EU agreement register conditions the waiver on an agreement; the controlling Schengen-access outcome could not be reconciled.",
+      "searchedOfficialDomains": ["esteri.it", "consilium.europa.eu", "eur-lex.europa.eu", "vatican.va"]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "YE",
+      "reason": "Yemen's current official nationality selector returns no Israel record; omission does not establish a traditional visa, eVisa or entry prohibition.",
+      "searchedOfficialDomains": ["yemenevisa.org", "ipnaye.org"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "YE",
+      "reason": "Yemen's current official nationality selector returns no Kosovo record; omission does not establish recognition, a traditional visa or eVisa route.",
+      "searchedOfficialDomains": ["yemenevisa.org", "ipnaye.org"]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "ZM",
+      "reason": "Zambia's current no-visa list uses the obsolete combined label Serbia and Montenegro; that row does not state whether current Serbian passports, Montenegrin passports or both inherit it.",
+      "searchedOfficialDomains": ["zambiaimmigration.gov.zm", "eservices.zambiaimmigration.gov.zm"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "ZM",
+      "reason": "Kosovo appears in none of Zambia's current nationality category pages, and no residual complement is stated for an unrecognized or omitted passport.",
+      "searchedOfficialDomains": ["zambiaimmigration.gov.zm", "eservices.zambiaimmigration.gov.zm"]
+    }
+  ]
+}
