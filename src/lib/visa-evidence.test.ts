@@ -123,6 +123,16 @@ describe("visa relationship URLs", () => {
       .toMatchObject({ rejectedStatus: "visa_on_arrival" });
     expect(getVisaRelationshipEvidence("SS", "MM", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "evisa" });
+    expect(getVisaRelationshipEvidence("GE", "DO", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_required" });
+    expect(getVisaRelationshipEvidence("PG", "DO", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
+    expect(getVisaRelationshipEvidence("SS", "DO", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_required" });
+    for (const code of ["UY", "ID", "CU"] as const) {
+      expect(getVisaRelationshipEvidence(code, "GY", "unknown").reviewedUnknown)
+        .toMatchObject({ rejectedStatus: "visa_free" });
+    }
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
