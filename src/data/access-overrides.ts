@@ -4411,4 +4411,21 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://voa.specialbranch.gov.bd/public/voa-info.html",
     reviewedAt: "2026-08-26",
   },
+  {
+    passportCode: "CU",
+    destinationCode: "MN",
+    status: "visa_required",
+    reason: "Mongolia's current exemption schedule limits Cuba to diplomatic and official passports. Ordinary Cuban passports are outside the eVisa and border-tourist cohorts and follow the Foreign Ministry's express embassy-application residual.",
+    sourceUrl: "https://en.consul.mn/visa/c/82",
+    reviewedAt: "2026-08-26",
+  },
+  {
+    passportCode: "IN",
+    destinationCode: "HN",
+    status: "visa_free",
+    reason: "The current CA-4 schedule applies to Honduras and directly places Indian ordinary passports in Category A, defined as visa-exempt.",
+    sourceUrl: "https://www.cocesna.org/aipca/AIP_2656/Eurocontrol/COCESNA/2026-04-16-NON%20AIRAC/html/eAIP/ES-MS-GEN-1.3-es-ES.html",
+    reviewedAt: "2026-08-26",
+    effectiveFrom: "2026-04-16",
+  },
 ] as const;
