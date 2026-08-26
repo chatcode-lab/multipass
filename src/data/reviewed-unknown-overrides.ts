@@ -450,6 +450,27 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-09-26",
   },
+  {
+    passportCode: "NR",
+    destinationCode: "BZ",
+    rejectedStatus: "visa_free",
+    reason: "Belize Immigration's current nationality table gives Nauru the internally contradictory visa-required value YES - NO. It cannot support the imported visa-free label or establish a single replacement route.",
+    sourceIds: ["belize-immigration-nauru-contradictory-visa-table-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
+  {
+    passportCode: "AD",
+    destinationCode: "GT",
+    rejectedStatus: "visa_free",
+    reason: "Guatemala's current Foreign Ministry schedule places Andorra in both visa-exempt Category A and consular-visa Category B. The Migration Institute's category definitions confirm those outcomes are incompatible, so no passport-wide replacement is established.",
+    sourceIds: [
+      "guatemala-minex-current-visa-country-classification-2026",
+      "guatemala-igm-current-country-category-guidance-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

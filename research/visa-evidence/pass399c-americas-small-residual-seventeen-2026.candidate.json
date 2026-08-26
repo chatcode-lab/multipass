@@ -1,0 +1,269 @@
+{
+  "batchId": "pass399c-americas-small-residual-seventeen-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass399c-belize-live-nationality-table-2026",
+      "title": "Do you need a visa to travel to Belize?",
+      "url": "https://immigration.gov.bz/visa/visa-who-qualify/",
+      "publisher": "Government of Belize, Ministry of Immigration",
+      "jurisdiction": "Belize",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Belize Immigration's live Government table gives visitor visa YES/NO results by nationality. It omits Timor-Leste and South Sudan and gives Nauru the contradictory value YES - NO.",
+      "supportingExcerpt": "Nauru | YES - NO"
+    },
+    {
+      "id": "pass399c-ecuador-current-visitor-visa-list-2026",
+      "title": "Ecuador transitory visitor visa nationalities from 1 September 2025",
+      "url": "https://www.cancilleria.gob.ec/2025/08/30/ecuador-exigira-visa-de-transeunte-a-partir-del-1-de-septiembre-de-2025/",
+      "publisher": "Ministry of Foreign Affairs and Human Mobility",
+      "jurisdiction": "Ecuador",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Ecuador's current Foreign Ministry announcement gives its operative visitor-visa country list. It names the People's Republic of China but does not directly classify a Macao SAR passport.",
+      "supportingExcerpt": "a aquellos nacionales de los países a los que actualmente se les solicita visa"
+    },
+    {
+      "id": "pass399c-guatemala-minex-country-classification-2026",
+      "title": "Visas para extranjeros: country classification",
+      "url": "https://www.minex.gob.gt/din/26-visas-para-extranjeros",
+      "publisher": "Ministry of Foreign Affairs of Guatemala",
+      "jurisdiction": "Guatemala",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current official schedule was directly reviewed on 24 August and places Andorra in both Category A and Category B. The same endpoint returned HTTP 403 on the latest normal replay.",
+      "supportingExcerpt": "Categoría A Exento; Categoría B Visa consular; Categoría C Visa consultada."
+    },
+    {
+      "id": "pass399c-guatemala-igm-category-guidance-2026",
+      "title": "Clasificación de países",
+      "url": "https://igm.gob.gt/clasificacion-de-paises/",
+      "publisher": "Guatemalan Migration Institute",
+      "jurisdiction": "Guatemala",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Guatemala's migration authority defines Category A as visa-exempt and Category B as consular-visa treatment. It cannot reconcile a nationality placed in both cohorts by MINEX.",
+      "supportingExcerpt": "Los países que se encuentran en la categoría A, no necesitan visa"
+    },
+    {
+      "id": "pass399c-nicaragua-current-category-schedule-2026",
+      "title": "Nicaragua eAIP GEN 1.3: passenger entry, transit and exit",
+      "url": "https://www.cocesna.org/aipca/AIPMN/AIP_2506/Eurocontrol/NICARAGUA/2025-10-30-AIRAC/html/eAIP/ES-MN-GEN-1.3-es-ES.html",
+      "publisher": "Nicaraguan Institute of Civil Aeronautics / COCESNA eAIP",
+      "jurisdiction": "Nicaragua",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Nicaragua's current State aeronautical publication gives its ordinary-passport A/B/C schedule. The assigned passports are blank or not directly mapped, so no route is inferred.",
+      "supportingExcerpt": "debe de solicitar ante el consulado un aval de la Direccion General"
+    },
+    {
+      "id": "pass399c-panama-embassy-current-visitor-cohorts-2026",
+      "title": "Immigration and visas",
+      "url": "https://www.embassyofpanama.org/visas-1",
+      "publisher": "Embassy of Panama in the United States",
+      "jurisdiction": "Panama",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Panama's live Embassy page publishes separate named no-visa, authorised-visa and stamped-visa cohorts. It does not name Macao, Timor-Leste or South Sudan and states no all-other-passports complement.",
+      "supportingExcerpt": "If you are from one of the following countries ... you will need an authorized visa"
+    },
+    {
+      "id": "pass399c-panama-mire-authorized-visa-process-2026",
+      "title": "Servicios Consulares",
+      "url": "https://mire.gob.pa/servicios-consulares/",
+      "publisher": "Ministry of Foreign Affairs of Panama",
+      "jurisdiction": "Panama",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Panama's live Foreign Ministry page describes the National Migration Service authorisation prerequisite for an authorised visa, but it does not add a nationality complement.",
+      "supportingExcerpt": "previa autorización del Servicio Nacional de Migración"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "NR",
+      "destinationCode": "BZ",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Belize's live table says both YES and NO",
+      "explanation": "Belize Immigration's current nationality table gives Nauru the internally contradictory value YES - NO, so it cannot support the imported visa-free label or a visa-required replacement.",
+      "sourceIds": [
+        "pass399c-belize-live-nationality-table-2026"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "GT",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Guatemala places Andorra in both Category A and Category B",
+      "explanation": "Guatemala's current Foreign Ministry schedule places Andorra in both visa-exempt Category A and consular-visa Category B, so no single ordinary-passport result is safe.",
+      "sourceIds": [
+        "pass399c-guatemala-minex-country-classification-2026",
+        "pass399c-guatemala-igm-category-guidance-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "TL",
+      "destinationCode": "BZ",
+      "reason": "Belize Immigration/MFA material reviewed supplies general visitor procedures but no current direct ordinary-passport rule for this passport or closed residual schedule; no advance-visa complement is inferred.",
+      "searchedOfficialDomains": [
+        "immigration.gov.bz",
+        "mfa.gov.bz"
+      ]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "BZ",
+      "reason": "Belize Immigration's live nationality table gives Nauru the internally contradictory value YES - NO. No current official clarification resolves the visa liability or actual issuance route.",
+      "searchedOfficialDomains": [
+        "immigration.gov.bz",
+        "mfa.gov.bz"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "BZ",
+      "reason": "Belize Immigration/MFA material reviewed supplies general visitor procedures but no current direct ordinary-passport rule for this passport or closed residual schedule; no advance-visa complement is inferred.",
+      "searchedOfficialDomains": [
+        "immigration.gov.bz",
+        "mfa.gov.bz"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "EC",
+      "reason": "Ecuador's current visa list identifies the People's Republic of China, not a Macao SAR passport, and no current direct Macao record establishes Ecuador's visitor route. PRC or HKSAR treatment is not transferred.",
+      "searchedOfficialDomains": [
+        "cancilleria.gob.ec",
+        "consuladovirtual.gob.ec"
+      ]
+    },
+    {
+      "passportCode": "AD",
+      "destinationCode": "GT",
+      "reason": "The current MINEX schedule places Andorra in both Category A and Category B. Guatemala's category guidance cannot reconcile those contradictory visa-free and advance-consular outcomes.",
+      "searchedOfficialDomains": [
+        "igm.gob.gt",
+        "minex.gob.gt"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GT",
+      "reason": "Guatemalan official immigration/MFA pages are either access-blocked or generic and give no direct ordinary-passport visitor result for this code. CA-4 or neighbouring-state material is not transferred.",
+      "searchedOfficialDomains": [
+        "igm.gob.gt",
+        "minex.gob.gt"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "GT",
+      "reason": "Guatemalan official immigration/MFA pages are either access-blocked or generic and give no direct ordinary-passport visitor result for this code. CA-4 or neighbouring-state material is not transferred.",
+      "searchedOfficialDomains": [
+        "igm.gob.gt",
+        "minex.gob.gt"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GT",
+      "reason": "Guatemalan official immigration/MFA pages are either access-blocked or generic and give no direct ordinary-passport visitor result for this code. CA-4 or neighbouring-state material is not transferred.",
+      "searchedOfficialDomains": [
+        "igm.gob.gt",
+        "minex.gob.gt"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "GT",
+      "reason": "Guatemalan official immigration/MFA pages are either access-blocked or generic and give no direct ordinary-passport visitor result for this code. CA-4 or neighbouring-state material is not transferred.",
+      "searchedOfficialDomains": [
+        "igm.gob.gt",
+        "minex.gob.gt"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "NI",
+      "reason": "Nicaragua's current Category A schedule names Switzerland but leaves its ordinary-passport cell blank. No current Swiss or Nicaraguan authority fills that blank, so no route is inferred.",
+      "searchedOfficialDomains": [
+        "migob.gob.ni",
+        "cancilleria.gob.ni"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "NI",
+      "reason": "Macao is not directly mapped in Nicaragua's current A/B/C ordinary-passport schedule, and no current Macao passport-authority record directly names Nicaragua. Omission does not establish eVisa or another route.",
+      "searchedOfficialDomains": [
+        "migob.gob.ni",
+        "cancilleria.gob.ni"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "NI",
+      "reason": "South Africa is not directly mapped in Nicaragua's current A/B/C ordinary-passport schedule. No direct current South African or Nicaraguan authority establishes a passport-wide route.",
+      "searchedOfficialDomains": [
+        "migob.gob.ni",
+        "cancilleria.gob.ni"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "NI",
+      "reason": "Kosovo is not directly mapped in Nicaragua's current A/B/C ordinary-passport schedule, and no current Kosovo passport-authority evidence directly names Nicaragua. No complementary treatment is inferred.",
+      "searchedOfficialDomains": [
+        "migob.gob.ni",
+        "cancilleria.gob.ni"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "NI",
+      "reason": "South Sudan is not directly mapped in Nicaragua's current A/B/C ordinary-passport schedule, and no current authority establishes its issuance timing. Sudan's result is not transferred.",
+      "searchedOfficialDomains": [
+        "migob.gob.ni",
+        "cancilleria.gob.ni"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "PA",
+      "reason": "Panama's current Embassy schedule does not name Macao SAR in its no-visa, authorised-visa or stamped-visa cohorts, and no Macao issuer source establishes actual issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": [
+        "migracion.gob.pa",
+        "mire.gob.pa"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "PA",
+      "reason": "Panama's current Embassy schedule does not name Timor-Leste in its no-visa, authorised-visa or stamped-visa cohorts, and no Timorese issuer source establishes actual issuance timing. No complement is inferred.",
+      "searchedOfficialDomains": [
+        "migracion.gob.pa",
+        "mire.gob.pa"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "PA",
+      "reason": "Panama's current Embassy schedule names Sudan in its authorised-visa cohort but not the distinct State of South Sudan. The Foreign Ministry process cannot bridge that nationality gap, and no complement is inferred.",
+      "searchedOfficialDomains": [
+        "migracion.gob.pa",
+        "mire.gob.pa"
+      ]
+    }
+  ]
+}

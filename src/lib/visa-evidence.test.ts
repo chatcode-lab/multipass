@@ -146,6 +146,10 @@ describe("visa relationship URLs", () => {
       expect(getVisaRelationshipEvidence(code, "VU", "unknown").reviewedUnknown)
         .toMatchObject({ rejectedStatus: "visa_free" });
     }
+    expect(getVisaRelationshipEvidence("NR", "BZ", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
+    expect(getVisaRelationshipEvidence("AD", "GT", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("HK", "MO", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("CN", "MO", "unknown").reviewedUnknown)
