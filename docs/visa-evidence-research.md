@@ -3530,9 +3530,21 @@ Twenty-seven diagonal holds remain after the recovery pass. Burundi, Central Afr
 
 Foreign-relationship coverage therefore remains 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale foreign rows. Canonical evidence contains 855 reviewed batches, 3,604 official source records and 2,027 policies. The public regional matrices additionally gain 14 verified home cells.
 
+## Pass 387 result: near-complete destination closure replay
+
+The 52 remaining relationships in the 33 destination columns with no more than two foreign gaps receive a fresh exact replay. No relationship can be promoted safely. This is a terminal hold review rather than a bulk inference from nearly complete columns: a destination's other 197 verified rows do not establish the missing passport or travel-document treatment.
+
+Fifteen Kosovo-passport gaps remain unresolved because the reviewed destination authorities either publish named schedules that do not identify Kosovo, expose only a generic application surface, or require a recognition and document-handling decision that is not reproducible from the public source. Sri Lanka directly names Kosovo and Syria in sponsor-led head-office application routes, but its general ETA instructions do not establish whether those special applications produce an ETA, another pre-travel visa, or a border-issued instrument. Cape Verde directs travellers from an unlisted country to a mission rather than supplying an omission-based route.
+
+Thirteen French-territory, Niue and Vatican gaps remain held for document or residence conditions. France's current overseas schedules limit the Serbian and Ukrainian waivers to biometric passports and preserve Serbia's Coordination Directorate exclusion; the project does not treat every current ordinary passport as biometric. Niue's live page omits New Zealand from its detailed arrival-permit list while naming it in the FAQ, and qualifies Portugal by permanent residence. Vatican access occurs through Italy's external-border regime, where the same Serbian document split remains material.
+
+The other 24 exact gaps remain blocked by similarly non-uniform rules: Macao and Hong Kong resident permits cannot be reduced to PRC or HKSAR passport nationality; Taiwan, Palestinian and Kosovo document recognition needs direct treatment; Israel–Yemen and Palestine–Israel cannot be guessed from a missing portal choice; and legacy labels such as “Serbia and Montenegro” do not prove the current Serbian-passport result. No imported hypothesis, score or rank changes in this pass. Coverage remains 40,460 of 44,974 foreign relationships (90.0%), with all 4,514 pending relationships audit-covered.
+
+The replay did uncover one research-metadata error rather than a visa-status error. The Pass 364 Kosovo–Georgia hold had accidentally called the Georgian authority “Equatorial Guinean” and listed Equatorial Guinea domains. The note now correctly identifies Georgian authorities and records the Georgian eVisa and Foreign Ministry domains; its held outcome is unchanged.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 989 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 990 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
