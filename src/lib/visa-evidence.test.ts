@@ -2288,11 +2288,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "TV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps Marshall Islands evidence to current named and diplomatic-ties cohorts", () => {
+  it("covers the Marshall Islands named cohorts and express residual rule", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "MH");
 
-    expect(pairs).toHaveLength(128);
+    expect(pairs).toHaveLength(196);
     expect(getVisaRelationshipEvidence("MH", "MH", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "MH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "MH", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2303,8 +2303,8 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, "MH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     }
     expect(getVisaRelationshipEvidence("GT", "MH", snapshot.passports.GT.statuses.MH).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("BS", "MH", snapshot.passports.BS.statuses.MH).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("AL", "MH", snapshot.passports.AL.statuses.MH).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BS", "MH", snapshot.passports.BS.statuses.MH).supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AL", "MH", snapshot.passports.AL.statuses.MH).supportsCurrentStatus).toBe(true);
   });
 
   it("retains direct Kosovo waiver evidence while keeping negative route checks unresolved", () => {
@@ -2313,7 +2313,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "CH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NZ", "CV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CL", "KW", snapshot.passports.CL.statuses.KW).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("CM", "MH", snapshot.passports.CM.statuses.MH).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CM", "MH", snapshot.passports.CM.statuses.MH).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KR", "TT", snapshot.passports.KR.statuses.TT).supportsCurrentStatus).toBe(true);
   });
 

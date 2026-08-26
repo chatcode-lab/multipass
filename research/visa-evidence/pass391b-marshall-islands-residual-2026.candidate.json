@@ -1,0 +1,87 @@
+{
+  "batchId": "pass391b-marshall-islands-residual-recovery-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass391b-rmi-embassy-current-visa-groups",
+      "title": "Consular: visa, passport and immigration information",
+      "url": "https://www.rmiembassyus.org/consular",
+      "publisher": "Embassy of the Republic of the Marshall Islands in the United States",
+      "jurisdiction": "Marshall Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live official Embassy page publishes the visa groups, links the Immigration Division's current summary and states the residual rule.",
+      "supportingExcerpt": "Citizens from ALL OTHER countries not listed in A or B above must apply for visa PRIOR to traveling."
+    },
+    {
+      "id": "pass391b-rmi-immigration-march-2024-linked-schedule",
+      "title": "Summary of countries entitled for visa exemption, waiver or visa on arrival",
+      "url": "https://rmiimmigration.org/wp-content/uploads/2024/04/VOA-MARCH-2024.pdf",
+      "publisher": "Division of Immigration, Ministry of Justice, Immigration and Labor",
+      "jurisdiction": "Marshall Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Embassy page links this official two-page Immigration Division schedule as the most updated A/B country summary.",
+      "supportingExcerpt": "SUMMARY OF COUNTRIES ENTITLED FOR VISA EXEMPTION/WAIVER OR VISA ON ARRIVAL. As of March 2024."
+    },
+    {
+      "id": "pass391b-rmi-immigration-border-control-prior-visa",
+      "title": "Border Control",
+      "url": "https://rmiimmigration.org/border-control/",
+      "publisher": "Division of Immigration, Republic of the Marshall Islands",
+      "jurisdiction": "Marshall Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Immigration Division page states the operative pre-entry rule for non-exempt visa countries.",
+      "supportingExcerpt": "Non-Exempt Visa Countries must possess a prior entry visa before entering the RMI."
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass391b-rmi-named-groups-residual-prior-visa",
+      "title": "Marshall Islands residual prior-visa requirement",
+      "summary": "The current Embassy page expressly requires citizens outside its exemption and arrival groups to obtain a visa before travel, while its linked Immigration schedule enumerates those groups.",
+      "status": "visa_required",
+      "destinationCodes": ["MH"],
+      "passportCodes": [
+        "BS", "GD", "TT", "DM", "ME", "AL", "VE", "MD", "GY", "BH", "OM", "BY", "BO", "BW", "LS", "NA", "GH", "KE", "MW", "TZ", "TN", "ZM", "MZ", "UG", "SL", "ST", "UZ", "ZW", "CI", "MG", "SN", "NE", "TG", "GA", "GN", "MR", "GQ", "ML", "TD", "GW", "KM", "JO", "AO", "BT", "CM", "CG", "HT", "LA", "LR", "CF", "BI", "DJ", "CD", "NG", "LK", "KP", "SS", "ER", "ET", "IR", "LY", "SD", "BD", "SO", "YE", "IQ", "SY", "AF"
+      ],
+      "conditions": [
+        "Applies to ordinary-passport short visitors whose exact country is outside the current official exemption and arrival schedules.",
+        "The application must be lodged while the applicant is outside the Marshall Islands; admission and other entry requirements remain discretionary.",
+        "Guatemala is excluded because the official schedule lists it in both the visa-exempt and visa-on-arrival sections.",
+        "Hong Kong and Macao are excluded because the country-based residual rule does not directly resolve their separate SAR passport documents."
+      ],
+      "sourceIds": [
+        "pass391b-rmi-embassy-current-visa-groups",
+        "pass391b-rmi-immigration-march-2024-linked-schedule",
+        "pass391b-rmi-immigration-border-control-prior-visa"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "GT",
+      "destinationCode": "MH",
+      "reason": "The same current official summary names Guatemala in both the ordinary-passport visa-exempt section and the visa-on-arrival section, so issuance timing is internally contradictory.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MH",
+      "reason": "The current schedule and country-based residual rule do not directly classify the separate Hong Kong SAR passport document; no PRC nationality inference is made.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "MH",
+      "reason": "The current schedule and country-based residual rule do not directly classify the separate Macao SAR passport document; no PRC nationality inference is made.",
+      "searchedOfficialDomains": ["rmiembassyus.org", "rmiimmigration.org"]
+    }
+  ]
+}

@@ -3570,9 +3570,19 @@ Five diagonal cells remain held. Chad has no reproducible current ordinary-passp
 
 These promotions document statuses already displayed as `citizenship`; they do not change foreign access, mobility scores or ranks. Foreign coverage remains 40,469 of 44,974 relationships (90.0%), with 4,505 pending and every pending row audit-covered. Canonical evidence now contains 858 reviewed batches, 3,641 official source records and 2,050 policies. Only five home-country diagonal cells remain unverified.
 
+## Pass 391 result: Marshall Islands residual closure and two terminal replays
+
+The Marshall Islands gains 68 directly supported advance-visa relationships. Its live Embassy page names the exempt group, links the Immigration Division's two-page exemption and arrival schedule as the most updated summary, and expressly requires citizens of every other country to apply before travel. The Division's border-control page independently requires non-exempt visa countries to possess a prior entry visa filed from outside the Republic. This express complement is materially different from guessing based on a portal omission. All 68 fallback rows already said `visa_required`, so no access label, mobility score or rank changes.
+
+Three Marshall Islands rows remain held. Guatemala appears in both the ordinary-passport visa-exempt section and the visa-on-arrival section of the same schedule, so its issuance classification is internally contradictory. Hong Kong and Macao remain unassigned because the country-based residual wording does not directly resolve their separate SAR passport documents; no PRC nationality rule is transferred to them.
+
+Trinidad and Tobago's 107 pending rows and Myanmar's 91 pending rows receive fresh exact terminal replays without a safe promotion. Trinidad and Tobago publishes a current positive exemption list and a fully electronic visa workflow, but the workflow applies only after visa liability is independently established and the linked entitlement selector blocks a reproducible nationality result. Myanmar's current FAQ says 100 nationalities are eligible for its tourist product and that an approval letter is emailed before the visa is stamped at arrival, but it does not expose the complete nationality list; current Foreign Ministry arrival and bilateral schedules are positive named cohorts only. Neither destination receives an inferred residual complement, and no imported status is affirmatively disproved.
+
+Foreign coverage rises by 68 to 40,537 of 44,974 relationships (90.1%), leaving 4,437 pending. Canonical evidence contains 861 reviewed batches, 3,650 official source records and 2,051 policies. Every remaining pending relationship remains audit-covered.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,505 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 993 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,437 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 996 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.1% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
