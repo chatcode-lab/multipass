@@ -143,7 +143,7 @@ describe("evidence status matrix", () => {
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {
-    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-21");
+    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-26");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
 
     expect(summary.total).toBe(44_974);
