@@ -108,6 +108,17 @@ describe("evidence status matrix", () => {
     }
   });
 
+  it("counts the adjudicated Barbados-Russia and Nauru-Vatican routes as supported", () => {
+    const europe = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-26");
+    const vaticanIndex = europe.destinations.findIndex(({ code }) => code === "VA");
+    expect(europe.rows.find(({ passportCode }) => passportCode === "NR")!.cells[vaticanIndex].slice(0, 2))
+      .toEqual(["visa_required", 1]);
+
+    const russiaIndex = europe.destinations.findIndex(({ code }) => code === "RU");
+    expect(europe.rows.find(({ passportCode }) => passportCode === "BB")!.cells[russiaIndex].slice(0, 2))
+      .toEqual(["evisa", 1]);
+  });
+
   it("reports a complete four-state summary for every foreign-access relationship", () => {
     const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-21");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
@@ -115,8 +126,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_053);
-    expect(summary.notCovered.count).toBe(4_921);
+    expect(summary.covered).toBe(40_055);
+    expect(summary.notCovered.count).toBe(4_919);
     expect(summary.percent).toBe(89.1);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

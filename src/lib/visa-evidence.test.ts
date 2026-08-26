@@ -139,6 +139,14 @@ describe("visa relationship URLs", () => {
           .toMatchObject({ rejectedStatus: "visa_free" });
       }
     }
+    expect(getVisaRelationshipEvidence("PT", "NU", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_on_arrival" });
+    expect(getVisaRelationshipEvidence("HK", "MO", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
+    expect(getVisaRelationshipEvidence("CN", "MO", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_required" });
+    expect(getVisaRelationshipEvidence("RS", "VA", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
@@ -2296,10 +2304,10 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MV", "TR", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("YE", "TR", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("RU")).toHaveLength(197);
+    expect(pairsFor("RU")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("UA", "RU", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AT", "RU", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("BB", "RU", snapshot.passports.BB.statuses.RU).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("BB", "RU", snapshot.passports.BB.statuses.RU).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "RU", snapshot.passports.XK.statuses.RU).supportsCurrentStatus).toBe(false);
   });
 
@@ -2415,12 +2423,12 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("NR", "GI", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PG", "GI", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("VA")).toHaveLength(197);
+    expect(pairsFor("VA")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("VA", "VA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CH", "VA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "VA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "VA", snapshot.passports.RS.statuses.VA).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("NR", "VA", snapshot.passports.NR.statuses.VA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("NR", "VA", snapshot.passports.NR.statuses.VA).supportsCurrentStatus).toBe(true);
   });
 
   it("supports named outbound rows for Ukraine, Djibouti, and Comoros", () => {
@@ -4867,7 +4875,7 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["VA", "JM"], ["CG", "JM"], ["PT", "NU"], ["NZ", "NU"], ["RS", "VA"], ["NR", "VA"],
+      ["VA", "JM"], ["CG", "JM"], ["PT", "NU"], ["NZ", "NU"], ["RS", "VA"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
@@ -5937,6 +5945,8 @@ describe("official visa evidence", () => {
       "www.nvi.gov.tr",
       "www.kdmid.ru",
       "evisa.kdmid.ru",
+      "electronic-visa.kdmid.ru",
+      "government.ru",
       "kremlin.ru",
       "mfa.gov.md",
       "germania.mfa.gov.md",

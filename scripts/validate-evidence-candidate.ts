@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { z } from "zod";
 import { VERIFIED_ACCESS_OVERRIDES } from "../src/data/access-overrides";
+import { REVIEWED_UNKNOWN_OVERRIDES } from "../src/data/reviewed-unknown-overrides";
 import fallbackSnapshot from "../src/data/fallback.json" with { type: "json" };
 import queue from "../research/visa-evidence/queue.json" with { type: "json" };
 import type { DataSnapshot } from "../src/lib/types";
@@ -76,6 +77,9 @@ const queueBatch = queue.batches.find(({ id }) => id === candidate.batchId);
 const reviewedOverrideByPair = new Map(
   VERIFIED_ACCESS_OVERRIDES.map((item) => [`${item.passportCode}:${item.destinationCode}`, item.status]),
 );
+const reviewedUnknownByPair = new Map(
+  REVIEWED_UNKNOWN_OVERRIDES.map((item) => [`${item.passportCode}:${item.destinationCode}`, item]),
+);
 const forbiddenDiscoveryHosts = new Set(["wikipedia.org", "www.wikipedia.org", "reddit.com", "www.reddit.com"]);
 
 if (!queueBatch) throw new Error(`Batch ${candidate.batchId} is not in the research queue`);
@@ -138,7 +142,9 @@ for (const item of candidate.conflicts) {
   if (item.snapshotStatus === item.officialStatus) throw new Error(`Conflict ${pairKey} does not change the snapshot status`);
   const currentStatus = snapshot.passports[item.passportCode]?.statuses[item.destinationCode];
   const reviewedOverride = reviewedOverrideByPair.get(pairKey);
-  const alreadyApplied = reviewedOverride === currentStatus && item.officialStatus === currentStatus;
+  const reviewedUnknown = reviewedUnknownByPair.get(pairKey);
+  const alreadyApplied = (reviewedOverride === currentStatus && item.officialStatus === currentStatus)
+    || (currentStatus === "unknown" && reviewedUnknown?.rejectedStatus === item.snapshotStatus);
   if (item.snapshotStatus !== currentStatus && !alreadyApplied) {
     throw new Error(
       `Conflict ${pairKey} has stale snapshotStatus ${item.snapshotStatus}; current fallback is ${currentStatus}`,

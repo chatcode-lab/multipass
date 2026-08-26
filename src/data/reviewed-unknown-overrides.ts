@@ -334,6 +334,46 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-11-26",
   },
+  {
+    passportCode: "PT",
+    destinationCode: "NU",
+    rejectedStatus: "visa_on_arrival",
+    reason: "Niue's current arrival-permit schedule names Portugal only for permanent residents and requires all other travellers to apply before travel. Nationality alone cannot identify which route applies to an ordinary Portuguese passport holder.",
+    sourceIds: ["niue-tourism-current-entry-and-arrival-permit-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
+  {
+    passportCode: "HK",
+    destinationCode: "MO",
+    rejectedStatus: "visa_free",
+    reason: "Macao's normal exemption and one-year stay depend on a Hong Kong Permanent Identity Card, Re-entry Permit or another accepted residence document. The HKSAR passport alone is listed only for conditional seven-day transit, so one passport-wide visa-free category is overbroad.",
+    sourceIds: ["macao-psp-current-nonresident-entry-rules-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
+  {
+    passportCode: "CN",
+    destinationCode: "MO",
+    rejectedStatus: "visa_required",
+    reason: "Macao's normal mainland visitor route uses a Two-way Exit Permit with a Macao endorsement, while a PRC passport alone is listed only for conditional seven-day transit. No passport-wide replacement category represents those document routes.",
+    sourceIds: ["macao-psp-current-nonresident-entry-rules-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
+  {
+    passportCode: "RS",
+    destinationCode: "VA",
+    rejectedStatus: "visa_free",
+    reason: "Public access to Vatican City requires the Italian and Schengen access leg. Italy limits Serbia's waiver to biometric passports and excludes Coordination Directorate passports, which Serbia confirms remain a current issuance channel; no passport-wide category represents both cohorts.",
+    sourceIds: [
+      "italy-mfa-vancouver-microstate-travel-guidance",
+      "italy-mfa-current-short-stay-visa-exempt-list",
+      "serbia-mfa-current-coordination-directorate-passport-guidance-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);
