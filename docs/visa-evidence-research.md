@@ -3506,9 +3506,15 @@ Kuwait's exact 136-row residual was independently replayed without creating a du
 
 No policy or fallback correction is safe in this pass. Coverage remains 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale rows.
 
+## Pass 383 result: Honduras category-schedule recovery
+
+Honduras's final 31 foreign-passport relationships receive a new exact, queue-backed audit. The live SRE transparency index identifies Circular 015-DGAC-OSC-2024 as the country-category list updated 12 September 2024, but its attachment and country rows are not retrievable through normal replay. Current INM guidance proves how a Category B consular visa is issued after verification and how a Category C consulted visa requires prior written Migration authorization; it does not assign the remaining passports to either category. The current 16 April 2026 CA-4 aviation schedule likewise publishes only named classifications and says the consular or consulted requirement applies when appropriate, without an express unlisted-passport consequence.
+
+No category is transferred from Guatemala, El Salvador, Nicaragua or a historical CA-4 list. Third-country residence or visa, CA-4-origin, cruise-passenger, diplomatic and special-document exceptions remain conditional. China and Taiwan, Hong Kong British-document wording, Macao's omission, Sudan versus South Sudan and Kosovo recognition also prevent mechanical country-name matching. All 31 imported hypotheses therefore remain pending without a policy or fallback correction. Coverage stays at 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale rows.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 987 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 988 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
