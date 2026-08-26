@@ -3462,9 +3462,17 @@ Myanmar adds one relationship for Ethiopia. The current Tourism Ministry schedul
 
 Complete-matrix evidence rises to 40,342 of 44,974 foreign relationships (89.7%), leaving 4,632 pending and zero old or stale rows as of 26 August 2026. Canonical evidence contains 853 reviewed batches, 3,584 official source records and 2,012 policies.
 
+## Pass 378 result: high-residual source replay
+
+Fresh exact replays for Bangladesh and North Macedonia add no current-status policy. Bangladesh's 122 pending rows remain explicitly partitioned. The Police Special Branch's current visa-on-arrival rule is a collection of named and conditional routes: eligibility can depend on nationality group, missing local mission, reciprocity, origin, investment or invitation, prior clearance and the immigration officer's decision. Its machine-readable visa application produces a form to present through the diplomatic channel; it does not establish nationality-wide electronic issuance. The generic Immigration Rules wording does not publish the missing exhaustive exception schedule, so an all-other advance-visa complement is not inferred.
+
+North Macedonia's 137 pending rows also remain explicitly partitioned. The current English and Albanian MFA selector and entry pages timed out under normal replay before returning a stable selected-country card or underlying schedule. The reviewed Official Gazette law and treaty endpoints did not pass normal TLS certificate validation. An older candidate had proposed 118 advance-visa rows from the selector, but those results cannot be reproduced from a trustworthy current response and are not revived. Bosnia and Herzegovina's biometric-document split, Kosovo's recognition gap, and inaccessible instruments affecting Georgia, Botswana and Cuba remain material holds.
+
+Trinidad and Tobago's 107-row residual was rechecked without creating another duplicate partition. The current ministries publish a positive waiver list and say that eligible visa-required foreign nationals can use the eVisa workflow, but neither source supplies a closed visa-required complement or a reproducible nationality result. The latest instructions establish electronic delivery after approval, not eligibility for every omitted passport. Coverage therefore remains 40,342 of 44,974 (89.7%), with 4,632 pending; no imported status is endorsed or corrected in this pass.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,632 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 975 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.7% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,632 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 977 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.7% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
