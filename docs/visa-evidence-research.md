@@ -3332,6 +3332,20 @@ Saint Lucia's final 11 residuals also remain pending. Its current revised-law sc
 
 The Gambia correction adds one verified relationship. Current-status evidence rises to 40,100 of 44,974 foreign relationships (89.2%), leaving 4,874 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 848 reviewed batches, 3,559 official source records and 2,006 policies.
 
+## Pass 362 result: Bolivia, Honduras, Lebanon and Egypt residual audits
+
+Four destination audits cover 61 exact pending relationships without adding an unsupported policy. Bolivia's current Foreign Ministry guidance defines Groups I, II and III and says visas are issued through Bolivian embassies and consulates, but neither that page nor the linked live application portal publishes a closed current nationality-to-group mapping for the 20 residual passports. The 18 imported eVisa labels and the Lithuanian and Liechtenstein visa-free labels remain hypotheses rather than verified outcomes.
+
+Honduras's current CA-4 schedule directly supports named categories already in evidence, while the national Immigration and eAIP pages supply only generic process rules for the 31 residual passports. Those pages do not establish whether an unnamed passport is exempt, receives a consular visa, or qualifies for another route. Lebanon's General Security schedule leaves four relationships split by sex, prior authorization, occupation or internally broad wording. Egypt's current eVisa portal publishes a named eligibility list rather than a safe complement, and the reviewed Ministry of Interior nationality endpoints return an access-rejected template. Hong Kong and Israeli official guidance also describe route-specific or mixed outcomes that cannot be normalized into one passport-wide category. The four Lebanese and six Egyptian rows therefore remain pending.
+
+## Pass 363 result: Botswana, Vanuatu and Laos residual audits
+
+Botswana's final 13 relationships remain unresolved. Its live Embassy schedule says ten of the scoped passports are visa-free, while the live Botswana Tourism Organisation schedule says those same passports require visas. The central Government overview supplies neither a controlling nationality schedule nor a hierarchy between those sources. Macao, Timor-Leste and Kosovo are absent from both named schedules, and an Angolan record of a tourism-waiver agreement does not affirmatively establish ordinary-passport scope and current force.
+
+Vanuatu's six residuals likewise add no policy. Its current Immigration page places Bahrain, Monaco and Rwanda in both the exempt and non-exempt cohorts; Rwanda's own current table separately says its ordinary passports do not require a Vanuatu visa. Kyrgyzstan, North Macedonia and Mongolia are omission-only cases. Laos's current eVisa calculator exposes a named 162-country list, while its current Foreign Ministry waiver table and Immigration services do not map the remaining 36 foreign ordinary passports to another route. Named-list omission is not converted into advance-visa evidence.
+
+Passes 362 and 363 preserve 116 exact holds and document 13 current official-source conflicts. Complete-matrix evidence remains 40,100 of 44,974 foreign relationships (89.2%), with 4,874 pending and zero old or stale rows. Because these batches add no supported policy, canonical evidence remains at 848 reviewed batches, 3,559 official source records and 2,006 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

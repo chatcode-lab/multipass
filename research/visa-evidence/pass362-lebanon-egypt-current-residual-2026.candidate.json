@@ -1,0 +1,130 @@
+{
+  "batchId": "pass362-lebanon-egypt-current-residual-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass362-lebanon-general-security-current-nationality-rules",
+      "title": "The list of countries that have the right to a Lebanese visa",
+      "url": "https://www.general-security.gov.lb/en/posts/38",
+      "publisher": "General Directorate of General Security",
+      "jurisdiction": "Lebanon",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live General Directorate of General Security visitor-rules page is served from the Lebanese directorate's official .gov.lb domain and directly describes border and prior-authorisation visa rules.",
+      "supportingExcerpt": "Citizens coming from Indonesia, Ghana, Sierra Leone, or Egypt require a previous authorization from general security for tourism."
+    },
+    {
+      "id": "pass362-egypt-evisa-current-named-eligibility-and-delivery",
+      "title": "Egypt e-Visa Portal: FAQ and named eligibility roster",
+      "url": "https://visa2egypt.gov.eg/eVisa/FAQ?active=true",
+      "publisher": "Ministry of Interior of the Arab Republic of Egypt",
+      "jurisdiction": "Egypt",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live visa2egypt.gov.eg portal identifies the Ministry of Interior in its footer, publishes a named eligible-nationality list, and describes a pre-travel download link.",
+      "supportingExcerpt": "Nationals of the countries listed below may be issued with an e-Visa upon application on the Egypt e-Visa Portal."
+    },
+    {
+      "id": "pass362-egypt-moi-nationality-schedules-access-rejected",
+      "title": "Egypt Ministry of Interior foreigner nationality schedule endpoints",
+      "url": "https://moi.gov.eg/passports/foreigners/othercountryvisa",
+      "publisher": "Ministry of Interior of the Arab Republic of Egypt",
+      "jurisdiction": "Egypt",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The official moi.gov.eg endpoint negotiated valid TLS and HTTP 200 on replay, but returned an access-rejection page rather than the nationality schedule; it cannot support an omitted-nationality inference.",
+      "supportingExcerpt": "Access Rejected. Please consult with your GAIT Organization Admins."
+    },
+    {
+      "id": "pass362-hksar-egypt-combined-access-guidance",
+      "title": "Visa-free access or visa-on-arrival for HKSAR Passport",
+      "url": "https://www.immd.gov.hk/eng/service/travel_document/visa_free_access.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live HKSAR Immigration Department service page includes Egypt in its HKSAR-passport list but expressly combines visa-free and visa-on-arrival outcomes.",
+      "supportingExcerpt": "The information on visa-free access, visa-on-arrival and duration of stay is intended for general reference only."
+    },
+    {
+      "id": "pass362-israel-mfa-egypt-passport-table",
+      "title": "Visa-exemption table for Israeli citizens travelling abroad",
+      "url": "https://www.gov.il/BlobFolder/reports/examption_visa-israeli-heb/en/English_CONSULAR_DOCUMENTS_ISR_Visa_Abroad_Eng-25-06-24.pdf",
+      "publisher": "Ministry of Foreign Affairs, State of Israel",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live gov.il Ministry of Foreign Affairs PDF is dated 25 June 2024 and has a national-passport column, but its Egypt result contains a route-specific exception.",
+      "supportingExcerpt": "Egypt | req*. | yes | req. | *Exemption for a stay of up to 14 days through Tabba only."
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "LB",
+      "reason": "No current Lebanese official source directly establishes a nationwide ordinary Israeli-passport tourist route. General Security's public visitor page does not provide an Israeli-passport baseline; an Israel-specific admission rule must not be inferred or flattened into visa_required.",
+      "searchedOfficialDomains": ["general-security.gov.lb", "mfa.gov.lb"]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "LB",
+      "reason": "General Security grants Ghanaian tourists a one-month border visa under ticket, accommodation/contact and funds conditions, but separately requires prior authorisation for female Ghanaian tourists. It does not establish one gender-neutral ordinary-passport outcome.",
+      "searchedOfficialDomains": ["general-security.gov.lb", "mfa.gov.lb"]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "LB",
+      "reason": "General Security grants Egyptian tourists a one-month border visa under ticket, accommodation/contact and funds conditions, but separately requires prior authorisation for female Egyptian tourists. It does not establish one gender-neutral ordinary-passport outcome.",
+      "searchedOfficialDomains": ["general-security.gov.lb", "mfa.gov.lb"]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "LB",
+      "reason": "The General Security page includes Iraq in a broad automatic-tourist list, while a later Iraq-specific provision makes automatic visas conditional for traders, doctors and engineers. The page does not reconcile those scopes into one nationality-only ordinary-passport route.",
+      "searchedOfficialDomains": ["general-security.gov.lb", "mfa.gov.lb"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "EG",
+      "reason": "The HKSAR Immigration Department combines visa-free and visa-on-arrival outcomes for Egypt, so it cannot establish the normalized route. Egypt's live named eVisa roster does not directly assign HKSAR passports and no accessible current Ministry schedule clarifies the result.",
+      "searchedOfficialDomains": ["immd.gov.hk", "visa2egypt.gov.eg", "moi.gov.eg", "mfa.gov.eg"]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "EG",
+      "reason": "Israel's official passport table says visa required but retains a Tabba-to-Sharm route exception. Egypt's named eVisa roster does not assign Israel and no current nationwide Egyptian ordinary-passport issuance baseline was reproducible; do not flatten the geographic split.",
+      "searchedOfficialDomains": ["gov.il", "visa2egypt.gov.eg", "moi.gov.eg", "mfa.gov.eg"]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "EG",
+      "reason": "No current Egyptian or São Tomé and Príncipe official source directly establishes the ordinary short-visitor route or issuance timing. Egypt's named eVisa roster is not an exhaustive residual rule, and Ministry nationality schedules are inaccessible on replay.",
+      "searchedOfficialDomains": ["mne.gov.st", "smf.gov.st", "visa2egypt.gov.eg", "moi.gov.eg", "mfa.gov.eg"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "EG",
+      "reason": "No current Egyptian or Zimbabwean official source directly establishes the ordinary short-visitor route or issuance timing. Egypt's named eVisa roster is not an exhaustive residual rule, and Ministry nationality schedules are inaccessible on replay.",
+      "searchedOfficialDomains": ["zim.gov.zw", "visa2egypt.gov.eg", "moi.gov.eg", "mfa.gov.eg"]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "EG",
+      "reason": "No current Egyptian or Jordanian official source directly establishes a nationwide ordinary Jordanian-passport tourist route and issuance timing. Egypt's named eVisa roster does not assign Jordan; conditional residence or tour routes cannot supply the passport-only baseline.",
+      "searchedOfficialDomains": ["mfa.gov.jo", "visa2egypt.gov.eg", "moi.gov.eg", "mfa.gov.eg"]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "EG",
+      "reason": "No current Egyptian or Angolan official source directly establishes the ordinary short-visitor route or issuance timing. Egypt's named eVisa roster does not assign Angola and has no explicit exhaustive complement; Ministry nationality schedules are inaccessible on replay.",
+      "searchedOfficialDomains": ["mirex.gov.ao", "visa2egypt.gov.eg", "moi.gov.eg", "mfa.gov.eg"]
+    }
+  ]
+}

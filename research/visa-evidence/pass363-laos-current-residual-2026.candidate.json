@@ -1,0 +1,298 @@
+{
+  "batchId": "pass363-laos-current-residual-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass363-laos-live-evisa-country-calculator",
+      "title": "Lao eVisa country price calculator API",
+      "url": "https://mxf.laoevisa.gov.la/api/v1/component/getCountryPriceCalculator",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The public JSON endpoint is served with valid TLS from the Lao official eVisa domain and returns 162 named country records used by the live fee calculator.",
+      "supportingExcerpt": "country_name, stay_day, is_except, citizens, watchlist"
+    },
+    {
+      "id": "pass363-laos-evisa-info-eligibility-and-approval",
+      "title": "Lao Official Online Visa: Information",
+      "url": "https://laoevisa.gov.la/info",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live official Lao eVisa site identifies the Ministry of Foreign Affairs as issuer, links its eligibility list, and describes downloading the approval letter before travel.",
+      "supportingExcerpt": "Lao eVisa facility is available for these following countries: see list."
+    },
+    {
+      "id": "pass363-laos-evisa-faq-ordinary-passport-and-delivery",
+      "title": "Lao Official Online Visa: FAQ",
+      "url": "https://laoevisa.gov.la/faq",
+      "publisher": "Consular Department, Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live official FAQ defines the passport category, eVisa approval-letter email delivery, validity, stay and designated-port treatment.",
+      "supportingExcerpt": "Only Ordinary Passport is applicable to apply for eVisa."
+    },
+    {
+      "id": "pass363-laos-mofa-current-waiver-table",
+      "title": "List of countries having reached unilateral and bilateral visa exemption agreement with Laos",
+      "url": "https://www.mofa.gov.la/gweb/gweb/backend/web/index.php?r=site/downloadfile&file=_J372876QbPE3GhiLGXCOH/46f49ea89aaddb9e6ad50303373070a4.pdf",
+      "publisher": "Ministry of Foreign Affairs, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current 22 December 2025 Ministry of Foreign Affairs PDF is directly downloadable over valid TLS and distinguishes ordinary, official and diplomatic passport agreement categories.",
+      "supportingExcerpt": "List of countries having reached unilateral and bilateral visa exemption agreement with Laos"
+    },
+    {
+      "id": "pass363-laos-immigration-visa-category-service",
+      "title": "Department of Immigration visa-category service",
+      "url": "https://api.immigration.gov.la/visa-category/clients?lang=en&limit=50&offset=0&category=",
+      "publisher": "Department of Immigration, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The public Department of Immigration API responds over valid TLS with visa-category records, but exposes no residual nationality-specific issuance result.",
+      "supportingExcerpt": "Tourist Visa T-B3"
+    },
+    {
+      "id": "pass363-laos-immigration-checkpoint-services",
+      "title": "Laos international border checkpoints",
+      "url": "https://www.immigration.gov.la/en/checkpoints/category/category/?limit=8&offset=0",
+      "publisher": "Department of Immigration, Lao PDR",
+      "jurisdiction": "Laos",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Department of Immigration endpoint is accessible over valid TLS and labels port services, but does not map any held nationality to a visa-on-arrival result.",
+      "supportingExcerpt": "Visa on Arrival"
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "AF",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes an Afghan ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes an Algerian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "LA",
+      "reason": "The current Ministry waiver table records Bangladesh only for non-ordinary passport categories. No current official source establishes an ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Burundian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Cameroonian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Republic of the Congo ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Côte d’Ivoire ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Ghanaian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Guinean ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. The selector’s ambiguous country labels cannot identify Guinea.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Guinea-Bissau ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes an Iranian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes an Iraqi ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Jordanian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Lebanese ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Lesotho ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Liberian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Libyan ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Mozambican ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "NR",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Nauru ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Nigerien ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Nigerian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Pakistani ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Senegalese ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Sierra Leone ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Somali ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a South Sudanese ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Sudanese ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Surinamese ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes an Eswatini ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Syrian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "TO",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Tongan ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Ugandan ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Generic port visa-on-arrival service labels do not map Uganda.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Vatican travel-document ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Holy See document classes are not assumed equivalent to national ordinary passports.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Yemeni ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Generic port visa-on-arrival service labels do not map Yemen.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Zambian ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "LA",
+      "reason": "No current official source directly establishes a Zimbabwean ordinary-passport waiver, eVisa, visa-on-arrival, or advance-visa route. Named-list omission is not classified.",
+      "searchedOfficialDomains": ["mofa.gov.la", "laoevisa.gov.la", "mxf.laoevisa.gov.la", "immigration.gov.la"]
+    }
+  ]
+}
