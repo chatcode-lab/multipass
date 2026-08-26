@@ -150,6 +150,14 @@ describe("visa relationship URLs", () => {
       .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("AD", "GT", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_free" });
+    for (const code of ["UA", "RS"] as const) {
+      expect(getVisaRelationshipEvidence(code, "FW", "unknown").reviewedUnknown)
+        .toMatchObject({ rejectedStatus: "visa_free" });
+    }
+    for (const code of ["EC", "VU"] as const) {
+      expect(getVisaRelationshipEvidence(code, "FW", "unknown").reviewedUnknown)
+        .toMatchObject({ rejectedStatus: "visa_required" });
+    }
     expect(getVisaRelationshipEvidence("HK", "MO", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("CN", "MO", "unknown").reviewedUnknown)

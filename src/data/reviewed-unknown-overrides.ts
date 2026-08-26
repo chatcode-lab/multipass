@@ -471,6 +471,58 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-09-26",
   },
+  {
+    passportCode: "UA",
+    destinationCode: "FW",
+    rejectedStatus: "visa_free",
+    reason: "All four French West Indies components limit Ukraine's waiver to biometric passports. Ukraine still permits some older foreign-travel passports to remain valid through extension, so a passport-wide visa-free category erases a material document split.",
+    sourceIds: [
+      "france-drom-current-annex-ii-guadeloupe-martinique-2026",
+      "france-saint-martin-barthelemy-current-annex-ii-2026",
+      "ukraine-dms-current-biometric-passport-introduction-2026",
+      "ukraine-dms-current-wartime-passport-extension-2026",
+      "ukraine-cabinet-current-five-year-passport-extension-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
+  {
+    passportCode: "RS",
+    destinationCode: "FW",
+    rejectedStatus: "visa_free",
+    reason: "All four French West Indies components require a biometric Serbian passport and exclude Coordination Directorate passports, which Serbia confirms remain a live ordinary-passport channel. No passport-wide category represents both cohorts.",
+    sourceIds: [
+      "france-drom-current-annex-ii-guadeloupe-martinique-2026",
+      "france-saint-martin-barthelemy-current-annex-ii-2026",
+      "serbia-mfa-current-coordination-directorate-passport-guidance-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
+  {
+    passportCode: "EC",
+    destinationCode: "FW",
+    rejectedStatus: "visa_required",
+    reason: "Guadeloupe and Martinique waive ordinary Ecuadorian passports, while Saint-Martin and Saint-Barthélemy limit Ecuador's waiver to diplomatic or service passports. The combined French West Indies destination has no uniform ordinary-passport route.",
+    sourceIds: [
+      "france-drom-current-annex-ii-guadeloupe-martinique-2026",
+      "france-saint-martin-barthelemy-current-annex-ii-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
+  {
+    passportCode: "VU",
+    destinationCode: "FW",
+    rejectedStatus: "visa_required",
+    reason: "The French West Indies component schedules waive ordinary Vanuatu passports issued before 25 May 2015. Passport issue date is not encoded by the nationality-level matrix, and no current official validity chain proves that conditional cohort is empty.",
+    sourceIds: [
+      "france-drom-current-annex-ii-guadeloupe-martinique-2026",
+      "france-saint-martin-barthelemy-current-annex-ii-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

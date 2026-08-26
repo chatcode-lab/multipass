@@ -163,6 +163,20 @@ describe("passport calculations", () => {
         mobilityScore: 0,
       });
     }
+
+    for (const [code, importedStatus] of [
+      ["UA", "visa_free"],
+      ["RS", "visa_free"],
+      ["EC", "visa_required"],
+      ["VU", "visa_required"],
+    ] as const) {
+      expect(applyAccessOverrides({
+        code,
+        name: code,
+        statuses: { [code]: "citizenship", FW: importedStatus },
+        mobilityScore: importedStatus === "visa_free" ? 1 : 0,
+      })).toMatchObject({ statuses: { [code]: "citizenship", FW: "unknown" }, mobilityScore: 0 });
+    }
   });
 
   it("applies Ireland's reviewed advance-visa correction for Syria", () => {
