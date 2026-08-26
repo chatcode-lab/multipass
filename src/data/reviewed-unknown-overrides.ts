@@ -420,6 +420,36 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-09-26",
   },
+  {
+    passportCode: "BH",
+    destinationCode: "VU",
+    rejectedStatus: "visa_free",
+    reason: "Vanuatu Immigration's current visitor page places Bahrain in both its exempt and non-exempt country cohorts. Those cohorts require incompatible arrival-issued and advance-approved visitor routes, so the imported visa-free category is not safe and no single replacement is established.",
+    sourceIds: ["vanuatu-immigration-conflicting-bahrain-cohorts-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
+  {
+    passportCode: "MC",
+    destinationCode: "VU",
+    rejectedStatus: "visa_free",
+    reason: "Vanuatu Immigration's current visitor page places Monaco in both its exempt and non-exempt country cohorts. Those cohorts require incompatible arrival-issued and advance-approved visitor routes, so the imported visa-free category is not safe and no single replacement is established.",
+    sourceIds: ["vanuatu-dips-monaco-conflicting-visitor-lists-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
+  {
+    passportCode: "RW",
+    destinationCode: "VU",
+    rejectedStatus: "visa_free",
+    reason: "Rwanda's current ordinary-passport table says Vanuatu requires no visa, while Vanuatu Immigration places Rwanda in both its exempt and non-exempt cohorts. The conflicting current outcomes make the imported passport-wide visa-free category unsafe and establish no single replacement.",
+    sourceIds: [
+      "vanuatu-dips-live-visitor-visa-country-cohorts-2026",
+      "rwanda-dgie-current-ordinary-passport-vanuatu-visa-free-row-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

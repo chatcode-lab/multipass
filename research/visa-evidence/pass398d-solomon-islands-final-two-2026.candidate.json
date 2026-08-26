@@ -1,0 +1,78 @@
+{
+  "batchId": "pass398d-solomon-islands-final-two-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass398d-solomon-tourist-allowed-nationalities-2026",
+      "title": "Solomon Islands eVisa: Tourist allowed-nationalities dataset",
+      "url": "https://immigration.sig.gov.sb/evisa/global/get_allowed_nationalities?ptype=191C7C89-06BE-48AD-B4D6-4B16C2F55CB3",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Immigration Division visitor page links this Government eVisa host. The public Tourist-product endpoint returned a closed JSON nationality list during the current replay; neither Macao nor Montenegro appears.",
+      "supportingExcerpt": "{\"code_guid\":\"AFG\",\"description\":\"Afghanistan\"}"
+    },
+    {
+      "id": "pass398d-solomon-tourist-online-grant-2026",
+      "title": "Visitor Visa – Tourist",
+      "url": "https://immigration.gov.sb/visitor-visa-tourist/",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current Immigration Division page links the Government online application, describes online submission and says an approved visa grant letter is emailed for presentation at entry.",
+      "supportingExcerpt": "Once your visa is approved, we will send your visa grant letter through your email."
+    },
+    {
+      "id": "pass398d-solomon-visas-online-operational-2026",
+      "title": "Visas",
+      "url": "https://immigration.gov.sb/visas/",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Immigration Division category page says online application and payment are operational for visitor visa classes, but it does not assign every passport nationality to that service.",
+      "supportingExcerpt": "Online Application and Payment is now Operational"
+    },
+    {
+      "id": "pass398d-montenegro-solomon-visa-required-2026",
+      "title": "Solomon Islands: visa regime for citizens of Montenegro",
+      "url": "https://www.gov.me/en/diplomatic-missions/diplomatic-missions-to-montenegro/solomon-islands",
+      "publisher": "Government of Montenegro, Ministry of Foreign Affairs",
+      "jurisdiction": "Montenegro / Solomon Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current Montenegro Government country page directly requires its citizens to possess a visa for Solomon Islands and notes that no resident mission exists, but does not identify the issuance route.",
+      "supportingExcerpt": "Citizens of Montenegro must possess a visa to enter Solomon Islands."
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "SB",
+      "reason": "Solomon Islands' current Tourist eVisa nationality dataset does not identify the Macao SAR passport, and the generic online visitor guidance does not establish an unlisted-nationality complement. No PRC nationality or document result is transferred to Macao.",
+      "searchedOfficialDomains": [
+        "immigration.gov.sb",
+        "immigration.sig.gov.sb",
+        "dsi.gov.mo"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "SB",
+      "reason": "Montenegro's current Government page establishes visa liability but not whether issuance is electronic or consular. Solomon Islands' generic online visitor guidance does not override the Tourist eVisa dataset's lack of a Montenegro result, and omission is not treated as a residual route.",
+      "searchedOfficialDomains": [
+        "immigration.gov.sb",
+        "immigration.sig.gov.sb",
+        "gov.me"
+      ]
+    }
+  ]
+}

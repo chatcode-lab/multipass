@@ -142,6 +142,10 @@ describe("visa relationship URLs", () => {
     }
     expect(getVisaRelationshipEvidence("PT", "NU", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_on_arrival" });
+    for (const code of ["BH", "MC", "RW"] as const) {
+      expect(getVisaRelationshipEvidence(code, "VU", "unknown").reviewedUnknown)
+        .toMatchObject({ rejectedStatus: "visa_free" });
+    }
     expect(getVisaRelationshipEvidence("HK", "MO", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("CN", "MO", "unknown").reviewedUnknown)

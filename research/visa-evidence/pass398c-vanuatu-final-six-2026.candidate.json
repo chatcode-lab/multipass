@@ -1,0 +1,140 @@
+{
+  "batchId": "pass398c-vanuatu-final-six-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "vanuatu-dips-live-visitor-visa-country-cohorts-pass363",
+      "title": "Visa Upon Arrival",
+      "url": "https://immigration.gov.vu/visa-exempted-countries/",
+      "publisher": "Department of Immigration and Passport Services",
+      "jurisdiction": "Vanuatu",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Vanuatu Immigration’s live official visitor page publishes named exempt and non-exempt country cohorts, but lists Bahrain, Monaco and Rwanda in both.",
+      "supportingExcerpt": "COUNTRIES REQUIRING A VISITOR VISA TO ENTER VANUATU (NON-EXEMPTED COUNTRIES)"
+    },
+    {
+      "id": "vanuatu-dips-live-visitor-issuance-timing-pass363",
+      "title": "Visit Vanuatu",
+      "url": "https://immigration.gov.vu/visit/",
+      "publisher": "Department of Immigration and Passport Services",
+      "jurisdiction": "Vanuatu",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Vanuatu Immigration’s live visitor-category guidance distinguishes arrival-issued tourist visas for exempt countries from advance approval for non-exempt countries.",
+      "supportingExcerpt": "If you are from a non-exempted country, you must apply for the visa in advance and obtain approval before traveling to Vanuatu."
+    },
+    {
+      "id": "rwanda-dgie-current-ordinary-passport-vanuatu-row-pass363",
+      "title": "Rwandan Passport Holders – Visa-Free Countries",
+      "url": "https://www.migration.gov.rw/1-1/sops-1",
+      "publisher": "Directorate General of Immigration and Emigration",
+      "jurisdiction": "Rwanda",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Rwanda Immigration’s live passport table names Vanuatu and presents three passport columns, including its ordinary-passport route.",
+      "supportingExcerpt": "VANUATU | Visa not required | Visa not required | Visa not required"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "BH",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Vanuatu’s live list names Bahrain in both exempt and non-exempt cohorts",
+      "explanation": "The same current Vanuatu Immigration country list gives Bahrain incompatible exempt and non-exempt outcomes; no single status can replace the fallback.",
+      "sourceIds": [
+        "vanuatu-dips-live-visitor-visa-country-cohorts-pass363"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Vanuatu’s live list names Monaco in both exempt and non-exempt cohorts",
+      "explanation": "The same current Vanuatu Immigration country list gives Monaco incompatible exempt and non-exempt outcomes; no single status can replace the fallback.",
+      "sourceIds": [
+        "vanuatu-dips-live-visitor-visa-country-cohorts-pass363"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: current Rwanda and Vanuatu official sources conflict",
+      "explanation": "Rwanda’s current ordinary-passport table says Vanuatu requires no visa, while Vanuatu Immigration lists Rwanda in both cohorts; no authority resolves the conflict.",
+      "sourceIds": [
+        "vanuatu-dips-live-visitor-visa-country-cohorts-pass363",
+        "rwanda-dgie-current-ordinary-passport-vanuatu-row-pass363"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "BH",
+      "destinationCode": "VU",
+      "reason": "Vanuatu Immigration’s live country page places Bahrain in both exempt and non-exempt visitor-visa cohorts. Its timing guidance gives incompatible arrival and pre-approval outcomes, so neither is normalized.",
+      "searchedOfficialDomains": [
+        "immigration.gov.vu",
+        "mfaicet.gov.vu",
+        "mofa.gov.bh"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "VU",
+      "reason": "No current direct Vanuatu or Kyrgyz passport-authority source maps Kyrgyzstan to a Vanuatu visitor-visa cohort. Vanuatu Immigration’s omission is not treated as a residual non-exempt classification.",
+      "searchedOfficialDomains": [
+        "immigration.gov.vu",
+        "mfaicet.gov.vu",
+        "gov.kg",
+        "e-consul.gov.kg"
+      ]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "VU",
+      "reason": "Vanuatu Immigration’s live country page places Monaco in both exempt and non-exempt visitor-visa cohorts. Its timing guidance gives incompatible arrival and pre-approval outcomes, so neither is normalized.",
+      "searchedOfficialDomains": [
+        "immigration.gov.vu",
+        "mfaicet.gov.vu",
+        "gouv.mc"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "VU",
+      "reason": "No current direct Vanuatu or North Macedonian passport-authority source maps North Macedonia to a Vanuatu visitor-visa cohort. Vanuatu Immigration’s omission is not treated as a residual non-exempt classification.",
+      "searchedOfficialDomains": [
+        "immigration.gov.vu",
+        "mfaicet.gov.vu",
+        "mfa.gov.mk"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "VU",
+      "reason": "No current direct Vanuatu or Mongolian passport-authority source maps Mongolia to a Vanuatu visitor-visa cohort. Vanuatu Immigration’s omission is not treated as a residual non-exempt classification.",
+      "searchedOfficialDomains": [
+        "immigration.gov.vu",
+        "mfaicet.gov.vu",
+        "consul.mn"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "VU",
+      "reason": "Rwanda’s live ordinary-passport table says Vanuatu is visa-free, while Vanuatu Immigration puts Rwanda in both exempt and non-exempt cohorts. The conflicting current outcomes are retained unresolved.",
+      "searchedOfficialDomains": [
+        "immigration.gov.vu",
+        "migration.gov.rw",
+        "mfaicet.gov.vu"
+      ]
+    }
+  ]
+}
+
