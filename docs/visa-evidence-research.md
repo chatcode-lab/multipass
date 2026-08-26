@@ -3624,6 +3624,14 @@ Every one of the 4,437 relationships that remains unverified in the public matri
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
+## Pass 396 result: North Macedonia schedule and checker recovery
+
+North Macedonia's 137 pending destination relationships received two independent current replays: one followed the legal delegation and attempted to recover the operative nationality regulation, while the other attempted to reproduce the live MFA country checker and its underlying public data route. Neither pass produced a safe policy or a normalized correction. Coverage remains 40,537 of 44,974 foreign relationships (90.1%), with all 4,437 pending relationships audit-covered. The repository now contains 1,011 candidate files.
+
+The Ministry of Justice legislative database marks the Foreigners Law active through amendments published in September 2025. Article 38(6) delegates both the visa-required and visa-exempt nationality lists to a separate Government regulation, so the statute cannot be interpreted as an exhaustive advance-visa default for every unlisted passport. The official 2025 MFA work plan still describes the relevant implementing instrument as a proposed regulation, and no current enacted schedule was recovered from the Government, legislative database, Gazette or MFA material.
+
+The live MFA checker also timed out over normal trusted HTTPS before its HTML, assets, result schema or a selected-country response could be reproduced. Search-cache traces and the broad policies drafted from a working checker on 21 August are not treated as current evidence after that failure. The current MFA entry page supports limited EU, Schengen and document-conditioned routes already represented by canonical evidence, but not the remaining passport-only cohort. All 137 rows therefore remain held rather than being filled from an old selector cache, a statutory omission or a guessed complement.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
