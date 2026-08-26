@@ -3498,9 +3498,17 @@ New Zealand's 25-row replay identifies one imported-status error. Niue's current
 
 Verified coverage remains 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale rows. The pass adds four exact candidate audits covering 142 current passport-side gaps; one fallback category is rejected, and no unsupported replacement is promoted.
 
+## Pass 382 result: North Macedonia and Kuwait source recovery
+
+North Macedonia's 137-row residual receives a fresh exact hold audit. The current Law on Foreigners does not create an all-foreigners visa-required residual: Article 38(6) delegates both the visa-required and exempt nationality lists to a separate Government regulation. The accessible 2024 Government work programme describes that regulation as a proposal rather than proving publication or current force. All MFA selector, entry-guidance and localized routes currently resolve to the same host and time out under normal HTTP and HTTPS replay; the Gazette PDF also fails normal TLS certificate validation. No public selector API, static country schedule, stable selected-country result or current operative regulation can therefore support the older proposed advance-visa cohort. Document-conditioned EU, Schengen, United States, United Kingdom and Canadian routes remain outside a passport-wide baseline.
+
+Kuwait's exact 136-row residual was independently replayed without creating a duplicate candidate. The current MOI arrival endpoint returns a closed positive list of 53 passports, none of which is in the residual. Its eligibility checker returns false for arrival, online and electronic tourist routes for all 136, but that only disproves those products; it does not prove one unconditional embassy or sponsor-issued route. Decision 957/2019 requires entry permission while preserving decree-based exemptions and multiple issuance channels, and the proposed “all other nationalities” electronic category was not launched. Conditional GCC residence, occupation, sponsor and United States, United Kingdom or Schengen-document routes are not flattened into nationality rules.
+
+No policy or fallback correction is safe in this pass. Coverage remains 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale rows.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 986 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 987 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
