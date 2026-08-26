@@ -1,0 +1,58 @@
+{
+  "batchId": "pass375-drc-final-ordinary-passport-gaps-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass375-drc-mfa-current-consular-filing-2026",
+      "title": "Services",
+      "url": "https://diplomatie.gouv.cd/services/",
+      "publisher": "Ministry of Foreign Affairs, International Cooperation, Francophonie and Congolese Diaspora",
+      "jurisdiction": "Democratic Republic of the Congo",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live 2026 DRC Foreign Ministry service page identifies the competent embassy or consulate for a visa filing, but gives no nationality eligibility or exemption schedule.",
+      "supportingExcerpt": "Vous devez vous présenter personnellement auprès de l’ambassade ou du consulat ... compétent(e)."
+    },
+    {
+      "id": "pass375-drc-dgm-evisa-live-portal-2026",
+      "title": "EVISA DGM",
+      "url": "https://evisa.gouv.cd/",
+      "publisher": "Direction Générale de Migration",
+      "jurisdiction": "Democratic Republic of the Congo",
+      "kind": "official-portal",
+      "language": "French",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live DGM-linked portal exposes public country and visa API route names, but normal GET requests to /api/countries and /api/visa-types return its application shell rather than a nationality outcome.",
+      "supportingExcerpt": "l'application EVISA DGM ne fonctionne pas correctement si JavaScript est activé."
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "ZW",
+      "destinationCode": "CD",
+      "reason": "No current DRC or Zimbabwean primary source directly maps an ordinary Zimbabwean passport to visa-free entry or identifies an issuance route. The DRC portal has no reproducible nationality result and generic consular filing is not a nationality complement. SADC membership is not used as evidence of a waiver.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cd",
+        "dgm.cd",
+        "evisa.gouv.cd",
+        "zim.gov.zw",
+        "sadc.int"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "CD",
+      "reason": "No current DRC or Republic-of-the-Congo primary source directly maps an ordinary Republic-of-the-Congo passport to visa-free entry or identifies an issuance route. The DRC portal has no reproducible nationality result and generic consular filing is not a nationality complement. CEMAC does not establish this DRC destination rule, and similarly named Congo sources are not transferred.",
+      "searchedOfficialDomains": [
+        "diplomatie.gouv.cd",
+        "dgm.cd",
+        "evisa.gouv.cd",
+        "diplomatie.gouv.cg",
+        "cemac.int"
+      ]
+    }
+  ]
+}

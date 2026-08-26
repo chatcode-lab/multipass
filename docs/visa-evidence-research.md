@@ -3432,9 +3432,17 @@ The Republic of the Congo cannot safely inherit the generic `noneligible` advanc
 
 No policy, status, score, rank or coverage total changes. The Saudi destination remains at 196 of 198 verified foreign relationships, with the final two gaps now captured in exact current candidates rather than only a bulk residual audit.
 
+## Pass 375 result: final DRC and Kosovo relationship audits
+
+The Democratic Republic of the Congo's final two foreign-passport relationships remain pending. Its live eVisa surface returns the application shell rather than a reproducible Zimbabwean or Republic of the Congo nationality result, while the Foreign Ministry publishes only generic consular filing instructions. No current Zimbabwean, Republic of the Congo or regional primary source directly establishes either imported waiver. Portal availability and regional membership are not converted into a visa category.
+
+Kosovo's last two relationships also remain unresolved. Current Decision 02/237 permits Bosnia and Herzegovina citizens to enter with a valid biometric identity card; that document-specific facility does not establish the ordinary-passport row. Kosovo's live Foreign Ministry waiver page still names Fiji, but signed Decision 14/280 says Fiji enters the visa regime only upon publication in the Official Gazette. No direct current Gazette publication or later controlling rule was reproduced, and failure to find one is not proof that publication never occurred. The Fiji contradiction is retained without choosing either outcome speculatively.
+
+The two destination columns remain at 196 of 198 verified foreign relationships. No policy, status, score, rank or coverage total changes.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,757 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 968 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.4% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,757 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 970 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.4% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 

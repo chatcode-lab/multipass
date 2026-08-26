@@ -1,0 +1,95 @@
+{
+  "batchId": "pass375-kosovo-final-waiver-gaps-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass375-kosovo-mfa-live-visas-fiji-list-2026",
+      "title": "Kosovo Visas",
+      "url": "https://ambasadat.net/visas/",
+      "publisher": "Ministry of Foreign Affairs and Diaspora of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "government-guidance",
+      "language": "Albanian and English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Embassies of the Republic of Kosovo platform publishes the Ministry's inbound visa list, special document exemptions and in-person visitor-visa procedure.",
+      "supportingExcerpt": "Fixhi"
+    },
+    {
+      "id": "pass375-kosovo-bosnia-biometric-id-decision-2026",
+      "title": "Decision No. 02/237: Bosnia and Herzegovina biometric identity-card entry",
+      "url": "https://kryeministri.rks-gov.net/wp-content/uploads/2024/12/Decision-237.pdf",
+      "publisher": "Government of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The signed Government decision is currently hosted by the official Prime Minister domain and is the direct Bosnia and Herzegovina document-specific entry instrument.",
+      "supportingExcerpt": "with a valid biometric identity card"
+    },
+    {
+      "id": "pass375-kosovo-fiji-visa-amendment-gazette-condition-2026",
+      "title": "Decision No. 14/280 amending the Fiji visa-regime annex",
+      "url": "https://kryeministri.rks-gov.net/wp-content/uploads/2025/12/Vendimet-e-mbledhjes-se-280-te-te-Qeverise_.pdf",
+      "publisher": "Government of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "law",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The signed 19 December 2025 Government decision is currently hosted by the Prime Minister's official domain, adds Fiji to the visa regime, and conditions its effect on Gazette publication.",
+      "supportingExcerpt": "Vendimi hyn në fuqi ditën e publikimit në Gazetën Zyrtare të Republikës së Kosovës."
+    },
+    {
+      "id": "pass375-kosovo-official-gazette-register-2026",
+      "title": "Official Gazette of the Republic of Kosovo",
+      "url": "https://gzk.rks-gov.net/",
+      "publisher": "Official Gazette of the Republic of Kosovo",
+      "jurisdiction": "Kosovo",
+      "kind": "official-dataset",
+      "language": "Albanian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live official Gazette register is the competent publication service. Current searches did not retrieve an act directly establishing Decision 14/280's publication or a later Fiji visitor rule; that absence is not treated as proof of nonpublication.",
+      "supportingExcerpt": "Gazeta Zyrtare e Republikës së Kosovës"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "FJ",
+      "destinationCode": "XK",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: live waiver list conflicts with later signed Fiji visa amendment whose Gazette effect is unverified",
+      "explanation": "Kosovo's current MFA page expressly lists Fiji (Fixhi) in its waiver list, but signed Decision 14/280 adds Fiji to the visa regime only upon Official Gazette publication. No direct current publication or later controlling Fiji ordinary-passport act was reproducibly located, so neither the fallback nor an advance-visa correction can be selected.",
+      "sourceIds": [
+        "pass375-kosovo-mfa-live-visas-fiji-list-2026",
+        "pass375-kosovo-fiji-visa-amendment-gazette-condition-2026",
+        "pass375-kosovo-official-gazette-register-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "BA",
+      "destinationCode": "XK",
+      "reason": "The current direct Kosovo instrument establishes entry for Bosnia and Herzegovina citizens with a valid biometric identity card, not with an ordinary passport. The live Kosovo MFA page does not directly list Bosnia and Herzegovina in its ordinary-passport waiver list, and no current Kosovo or Bosnia primary source establishes a passport-wide short-tourist route. Do not transfer the biometric-ID-card arrangement, a Schengen residence/visa exception, recognition, or an unlisted-country residual to BA ordinary passports.",
+      "searchedOfficialDomains": [
+        "ambasadat.net",
+        "kryeministri.rks-gov.net",
+        "gzk.rks-gov.net",
+        "mpb.rks-gov.net",
+        "mvp.gov.ba"
+      ]
+    },
+    {
+      "passportCode": "FJ",
+      "destinationCode": "XK",
+      "reason": "The current Kosovo MFA page expressly lists Fiji (Fixhi) as visa-exempt, but signed Decision 14/280 adds Fiji to the visa regime only from Official Gazette publication. Current official Gazette replay did not directly establish that publication or retrieve a later controlling Fijian-ordinary-passport visitor rule. A conditional amendment is not treated as operative merely because the register search did not find a record, and the conflicting live list cannot by itself resolve legal current force.",
+      "searchedOfficialDomains": [
+        "ambasadat.net",
+        "kryeministri.rks-gov.net",
+        "gzk.rks-gov.net",
+        "mpb.rks-gov.net",
+        "foreignaffairs.gov.fj"
+      ]
+    }
+  ]
+}
