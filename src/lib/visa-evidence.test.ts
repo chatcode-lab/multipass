@@ -2448,7 +2448,7 @@ describe("official visa evidence", () => {
     const pairsFor = (destinationCode: string) => evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === destinationCode);
 
-    expect(pairsFor("UA")).toHaveLength(115);
+    expect(pairsFor("UA")).toHaveLength(125);
     expect(getVisaRelationshipEvidence("UA", "UA", "citizenship").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CL", "UA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KZ", "UA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -2608,9 +2608,9 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SG", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps conditional and explicitly stale outbound claims unresolved", () => {
+  it("replaces the stale Luxembourg and Malta Ukraine holds while preserving Turkmenistan", () => {
     for (const passportCode of ["LU", "MT"] as const) {
-      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(true);
     }
     expect(getVisaRelationshipEvidence("LV", "TM", snapshot.passports.LV.statuses.TM).supportsCurrentStatus).toBe(false);
   });
@@ -3626,13 +3626,13 @@ describe("official visa evidence", () => {
       ["RO", "PA", "visa_free"],
       ["RO", "DO", "visa_free"],
       ["CH", "BD", "visa_on_arrival"],
+      ["PT", "UA", "visa_free"],
     ] as const) {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
       expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
     }
 
     for (const [passportCode, destinationCode] of [
-      ["PT", "UA"],
       ["MX", "KW"],
       ["RU", "DJ"],
       ["RU", "SS"],
@@ -5145,7 +5145,7 @@ describe("official visa evidence", () => {
         ? "visa_on_arrival"
         : snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
-        .toBe(destinationCode === "SL");
+        .toBe(destinationCode === "SL" || destinationCode === "UA");
     }
   });
 
@@ -5169,7 +5169,7 @@ describe("official visa evidence", () => {
         ? "visa_on_arrival"
         : snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
-        .toBe(destinationCode === "SL");
+        .toBe(destinationCode === "SL" || (passportCode === "LU" && destinationCode === "UA"));
     }
   });
 
@@ -5193,7 +5193,7 @@ describe("official visa evidence", () => {
         ? "visa_on_arrival"
         : snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
-        .toBe(destinationCode === "SL");
+        .toBe(destinationCode === "SL" || (passportCode === "FI" && destinationCode === "UA"));
     }
   });
 
@@ -5348,14 +5348,14 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("supports exactly the current-force Ukraine waiver cohort from pass 282", () => {
+  it("supports the current-force Ukraine waiver cohorts through pass 358", () => {
     const supportedPassportCodes = [
       "VC", "UY", "KN", "AG", "PA", "PY", "GD", "PE", "DM", "EC",
       "GE", "BA", "NZ", "SA", "KR", "BN", "MH", "BY", "AM",
+      "AT", "BE", "CY", "CZ", "FI", "GR", "LU", "MT", "PT", "RO",
     ] as const;
     const unresolvedPassportCodes = [
-      "FI", "BE", "LU", "PT", "AT", "MT", "GR", "CZ", "MC", "CY", "RO", "AD", "VA",
-      "JP", "AZ", "TJ",
+      "MC", "AD", "VA", "JP", "AZ", "TJ",
     ] as const;
 
     for (const passportCode of supportedPassportCodes) {

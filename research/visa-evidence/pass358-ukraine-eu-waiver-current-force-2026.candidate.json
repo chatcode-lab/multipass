@@ -1,0 +1,100 @@
+{
+  "batchId": "pass358-ukraine-eu-waiver-current-force-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "ukraine-rada-eu-citizen-waiver-decree-current-edition-2026",
+      "title": "Presidential Decree No. 1131/2005: visa-free regime for citizens of EU Member States, Switzerland and Liechtenstein",
+      "url": "https://zakon.rada.gov.ua/laws/show/1131/2005/print",
+      "publisher": "President of Ukraine / Verkhovna Rada of Ukraine legislation portal",
+      "jurisdiction": "Ukraine",
+      "kind": "law",
+      "language": "Ukrainian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Verkhovna Rada print record identifies the Presidential Decree, displays its operative text as the current edition of Ukrainian legislation as of 26 August 2026, and carries no lost-force marker or superseding edition.",
+      "supportingExcerpt": "Установити з 1 вересня 2005 року безвізовий режим в'їзду в Україну ... для громадян держав - членів Європейського Союзу"
+    },
+    {
+      "id": "eu-current-member-states-directory-page-one-2026",
+      "title": "EU countries: current member-state directory, page one",
+      "url": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+      "publisher": "European Union, Directorate-General for Communication",
+      "jurisdiction": "European Union",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The EU's live official country directory identifies Austria, Belgium, Cyprus, Czechia, Finland, Greece, Luxembourg and Malta individually as EU Member States.",
+      "supportingExcerpt": "EU Member State"
+    },
+    {
+      "id": "eu-current-member-states-directory-page-two-2026",
+      "title": "EU countries: current member-state directory, page two",
+      "url": "https://european-union.europa.eu/principles-countries-history/eu-countries_en?page=1",
+      "publisher": "European Union, Directorate-General for Communication",
+      "jurisdiction": "European Union",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The EU's second live directory page identifies Portugal and Romania individually as EU Member States.",
+      "supportingExcerpt": "EU Member State"
+    },
+    {
+      "id": "luxembourg-mfa-current-ukraine-etourist-visa-2026",
+      "title": "e-Visas for certain countries",
+      "url": "https://mae.gouvernement.lu/en/directions-du-ministere/affaires-consulaires/services-to-citizens/voyages/e-visas.html",
+      "publisher": "Ministry of Foreign and European Affairs, Defence, Development Cooperation and Foreign Trade, Luxembourg",
+      "jurisdiction": "Luxembourg / Ukraine",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "Luxembourg MFA's live traveller page, updated 7 January 2026, says Luxembourg nationals need a pre-travel e-Tourist Visa for Ukraine. It conflicts with the later-replayed current-edition Ukrainian decree.",
+      "supportingExcerpt": "Luxembourg nationals can no longer obtain a tourist visa on arrival, but need to apply for an \"e-Tourist Visa\" before their travel"
+    }
+  ],
+  "policies": [
+    {
+      "id": "ukraine-current-eu-member-ordinary-passport-visa-waiver-pass358-2026",
+      "title": "Named EU ordinary passports: Ukraine short-visit visa waiver",
+      "summary": "Ukraine's live current-edition Presidential Decree waives visas for citizens of EU Member States entering or transiting Ukraine for stays not exceeding 90 days.",
+      "status": "visa_free",
+      "destinationCodes": ["UA"],
+      "passportCodes": ["AT", "BE", "CY", "CZ", "FI", "GR", "MT", "PT", "RO"],
+      "effectiveFrom": "2005-09-01",
+      "conditions": [
+        "Applies to a citizen of the named current EU Member State travelling on that state's standard ordinary passport for a short visitor entry or transit.",
+        "The Ukrainian Decree itself establishes the named EU-Member-State class; this is not an inference from EU or Schengen rules applicable elsewhere.",
+        "The Decree states a stay may not exceed 90 days. It does not itself state an 180-day calculation, so none is asserted here.",
+        "Work, residence, diplomatic, service, emergency and other special travel documents, wartime operational access, and final admission remain outside this baseline."
+      ],
+      "sourceIds": [
+        "ukraine-rada-eu-citizen-waiver-decree-current-edition-2026",
+        "eu-current-member-states-directory-page-one-2026",
+        "eu-current-member-states-directory-page-two-2026"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "ukraine-luxembourg-ordinary-passport-visa-waiver-pass358-2026",
+      "title": "Luxembourg ordinary passports: Ukraine short-visit visa waiver with official-source conflict",
+      "summary": "Ukraine's current-edition Presidential Decree waives visas for Luxembourg citizens as citizens of an EU Member State, while Luxembourg's January 2026 traveller page inconsistently directs its nationals to Ukraine's e-Tourist Visa service.",
+      "status": "visa_free",
+      "destinationCodes": ["UA"],
+      "passportCodes": ["LU"],
+      "effectiveFrom": "2005-09-01",
+      "conditions": [
+        "The Ukrainian destination law is the controlling admission rule and the Rada portal presents it as the current edition without a lost-force marker; the current EU directory confirms Luxembourg remains in the covered class.",
+        "Luxembourg's traveller page, updated 7 January 2026, directly conflicts by directing Luxembourg nationals to obtain an e-Tourist Visa. This discrepancy is preserved and keeps the relationship at medium confidence and on an early recheck cycle.",
+        "The Decree states a stay may not exceed 90 days. It does not itself state an 180-day calculation, so none is asserted here.",
+        "Work, residence, diplomatic, service, emergency and other special travel documents, wartime operational access, and final admission remain outside this baseline."
+      ],
+      "sourceIds": [
+        "ukraine-rada-eu-citizen-waiver-decree-current-edition-2026",
+        "eu-current-member-states-directory-page-one-2026",
+        "luxembourg-mfa-current-ukraine-etourist-visa-2026"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

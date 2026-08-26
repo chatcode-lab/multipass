@@ -142,6 +142,16 @@ describe("evidence status matrix", () => {
       .toEqual(["visa_free", 1]);
   });
 
+  it("counts the ten current EU-member Ukraine waivers as supported", () => {
+    const europe = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-26");
+    const ukraineIndex = europe.destinations.findIndex(({ code }) => code === "UA");
+
+    for (const passportCode of ["AT", "BE", "CY", "CZ", "FI", "GR", "LU", "MT", "PT", "RO"] as const) {
+      expect(europe.rows.find(({ passportCode: code }) => code === passportCode)!.cells[ukraineIndex].slice(0, 2))
+        .toEqual(["visa_free", 1]);
+    }
+  });
+
   it("reports a complete four-state summary for every foreign-access relationship", () => {
     const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-26");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
@@ -149,9 +159,9 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_089);
-    expect(summary.notCovered.count).toBe(4_885);
-    expect(summary.percent).toBe(89.1);
+    expect(summary.covered).toBe(40_099);
+    expect(summary.notCovered.count).toBe(4_875);
+    expect(summary.percent).toBe(89.2);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });
 });
