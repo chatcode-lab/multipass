@@ -4436,4 +4436,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
     reviewedAt: "2026-08-26",
   },
+  ...(["ID", "IN", "JO", "EG", "BD", "PK"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "SA",
+    status: "evisa" as const,
+    reason: "Visit Saudi's live nationality selector places this passport in Visa by Package, whose selection-specific ordinary OTHER route expressly offers an instant tourist eVisa through an approved integrated travel package.",
+    sourceUrl: "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
+    reviewedAt: "2026-08-26",
+  })),
 ] as const;

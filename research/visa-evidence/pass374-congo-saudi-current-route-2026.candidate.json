@@ -1,0 +1,70 @@
+{
+  "batchId": "pass374-congo-saudi-current-route-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass374-saudi-visit-country-selector-congo-2026",
+      "title": "Visit Saudi visa regulations: current country selector",
+      "url": "https://www.visitsaudi.com/bin/api/v1/geo/countries?locale=en",
+      "publisher": "Saudi Tourism Authority",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live country-group JSON is served by the Saudi Tourism Authority's official Visit Saudi domain and is consumed by its current visa-regulations interface.",
+      "supportingExcerpt": "Congo ... 249-democratic-republic-of-congo.png ... noneligible; Democratic Republic of the Congo ... 249-democratic-republic-of-congo.png ... noneligible."
+    },
+    {
+      "id": "pass374-saudi-visit-selector-identity-code-2026",
+      "title": "Visit Saudi visa-regulations selector implementation",
+      "url": "https://www.visitsaudi.com/static/frontend/js/chunks/9098-36cb30a8.js",
+      "publisher": "Saudi Tourism Authority",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current JavaScript bundle is served by the official Visit Saudi domain and fetches the live country-group and route-configuration endpoints for the visa-regulations interface.",
+      "supportingExcerpt": "id:e.countryName,title:e.countryName,src:e.flag,visaGroup:e.visaGroup"
+    },
+    {
+      "id": "pass374-saudi-visit-noneligible-other-route-2026",
+      "title": "Visit Saudi visa regulations: current noneligible route configuration",
+      "url": "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
+      "publisher": "Saudi Tourism Authority",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Visit Saudi route configuration identifies the visitor routes returned by the official nationality selector and its qualification answers.",
+      "supportingExcerpt": "The following documents are also required to obtain an Embassy/Consulate/Tasheer visa."
+    },
+    {
+      "id": "pass374-saudi-evisa-permitted-country-terms-2026",
+      "title": "Saudi eVisa Terms and Conditions",
+      "url": "https://visa.visitsaudi.com/Home/TermsConditions",
+      "publisher": "Saudi Ministry of Tourism",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Ministry of Tourism eVisa terms describe the official electronic-visa service and explicitly introduce its current permitted-country list.",
+      "supportingExcerpt": "The current list of countries whose citizens are entitled to apply for an eVisa is set out below."
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "CG",
+      "destinationCode": "SA",
+      "reason": "The Visit Saudi dataset has separate literal labels for Congo and Democratic Republic of the Congo, but gives both the same explicitly Democratic-Republic-of-the-Congo flag path and noneligible group. Its current frontend uses countryName itself as the selector ID and exposes neither ISO nor another stable sovereign-country identifier. The noneligible OTHER route is an advance Embassy/Consulate/Tasheer route only if the nationality record is exact. Current eVisa terms do not supply a Republic-of-the-Congo crosswalk or a separate consular rule. No current reproducible KSA MFA nationality result corroborates CG, so the DRC-marked result cannot be transferred to a Republic of the Congo ordinary passport.",
+      "searchedOfficialDomains": [
+        "visitsaudi.com",
+        "visa.visitsaudi.com",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa",
+        "saudiembassy.sa"
+      ]
+    }
+  ]
+}

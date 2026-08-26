@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
+import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
 import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
 import {
   ANGOLA_TOURIST_VISA_EXEMPT_CODES,
@@ -767,11 +768,19 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "QA", "evisa").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.HK.statuses.QA).toBe("visa_on_arrival");
 
-    expect(pairsFor("SA")).toHaveLength(83);
+    expect(pairsFor("SA")).toHaveLength(197);
     expect(getVisaRelationshipEvidence("GB", "SA", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RU", "SA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IL", "SA", "visa_on_arrival").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("BD", "SA", "visa_required").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CG", "SA", "visa_required").supportsCurrentStatus).toBe(false);
+    for (const passportCode of ["ID", "IN", "JO", "EG", "BD", "PK"] as const) {
+      expect(VERIFIED_ACCESS_OVERRIDES).toContainEqual(expect.objectContaining({
+        passportCode,
+        destinationCode: "SA",
+        status: "evisa",
+      }));
+      expect(getVisaRelationshipEvidence(passportCode, "SA", "evisa").supportsCurrentStatus).toBe(true);
+    }
     expect(snapshot.passports.BR.statuses.SA).toBe("evisa");
     expect(getVisaRelationshipEvidence("BR", "SA", "evisa").supportsCurrentStatus).toBe(true);
 
@@ -3251,7 +3260,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["UZ", "PS"],
       ["UZ", "SL"],
-      ["PH", "SA"],
     ] as const) {
       const status = destinationCode === "SL"
         ? "visa_on_arrival"
@@ -3264,6 +3272,8 @@ describe("official visa evidence", () => {
         ).supportsCurrentStatus,
       ).toBe(destinationCode === "SL");
     }
+    expect(snapshot.passports.PH.statuses.SA).toBe("visa_required");
+    expect(getVisaRelationshipEvidence("PH", "SA", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("covers reviewed Palestinian and Afghan residuals while preserving unavailable and unsupported routes", () => {
@@ -5260,7 +5270,6 @@ describe("official visa evidence", () => {
       ["LI", "SL"],
       ["LI", "TT"],
       ["AR", "CV"],
-      ["AR", "SA"],
     ] as const) {
       const status = destinationCode === "SL"
         ? "visa_on_arrival"
@@ -5268,6 +5277,8 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
         .toBe(destinationCode === "SL");
     }
+    expect(snapshot.passports.AR.statuses.SA).toBe("visa_required");
+    expect(getVisaRelationshipEvidence("AR", "SA", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("covers reviewed Mexican and Colombian routes while preserving final residual holds", () => {
@@ -5327,7 +5338,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["CL", "SA"],
       ["IL", "SA"],
       ["CH", "TT"],
       ["NZ", "TT"],
@@ -5336,6 +5346,8 @@ describe("official visa evidence", () => {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
     }
+    expect(snapshot.passports.CL.statuses.SA).toBe("visa_required");
+    expect(getVisaRelationshipEvidence("CL", "SA", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("corrects Brazil to Saudi eVisa while preserving Chilean and Peruvian final holds", () => {

@@ -3412,9 +3412,29 @@ Eleven Afghanistan and North Korea hypotheses also remain pending. Current Briti
 
 Pass 372 records 20 exact holds and one current operational-route conflict. Complete-matrix evidence remains 40,103 of 44,974 foreign relationships (89.2%), with 4,871 pending and zero old or stale rows. Canonical evidence remains at 849 reviewed batches, 3,569 official source records and 2,007 policies.
 
+## Pass 373 result: Saudi current-route partition and schedule recovery
+
+Saudi Arabia adds 114 current relationships from its live Tourism Authority nationality and selection-specific route APIs. One hundred and eight passports in the service's `noneligible` group receive the ordinary advance `visa_required` baseline: selecting `OTHER` directs those travellers to an Embassy, Consulate or Tasheer centre and publishes the advance application requirements. That result does not erase the separate routes for travellers who independently qualify through a valid United States, United Kingdom or Schengen visa or residence permit, GCC residence, pilgrimage or stopover products.
+
+Indonesia, India, Jordan, Egypt, Bangladesh and Pakistan change from the imported `visa_required` label to conditional package `evisa`. The live selector assigns each passport to `Visa by Package`, and the matching `OTHER` response expressly offers an instant tourist eVisa through a qualified integrated package. A licensed four-star hotel, round-trip flight, online visa and insurance, package-value and composition rules, and advance purchase remain material conditions. This is not treated as visa-free or arrival-issued access. The six corrections do not affect mobility scores or ranks because eVisa and advance visa are both outside the scored categories.
+
+Israel and the Republic of the Congo remain unresolved. The current country response omits Israel, while its one Congo record uses Democratic Republic of the Congo flag material and provides no reproducible Republic of the Congo crosswalk. The retained Israeli arrival label is therefore still an unverified fallback, not current-status evidence. Saudi Arabia now has verified evidence for 196 of 198 foreign passport relationships.
+
+Two parallel source-recovery audits add no speculative policy. The British Virgin Islands' recovered S.I. 26/2026 exempts only Territory-born children under age 11 with resident parents; it is not a foreign visitor nationality schedule, so all 96 scoped rows remain held. Trinidad and Tobago's current instructions and FAQ prove that approved entry visas are electronic and delivered by email, but the positive-only waiver list and authentication-blocked eligibility service do not publish a closed nationality complement. All 107 scoped rows remain held.
+
+Complete-matrix evidence rises to 40,217 of 44,974 foreign relationships (89.4%), leaving 4,757 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 850 reviewed batches, 3,569 official source records and 2,009 policies.
+
+## Pass 374 result: final Saudi relationship adjudication
+
+Saudi Arabia's two remaining foreign-passport relationships receive exact independent audits but remain pending. The current closed eVisa terms exclude Israel, while the live nationality API omits it; neither negative result establishes an Israeli visa on arrival, a consular route, passport recognition or destination-side refusal. Israel's current government guidance says a visa is required and separately prohibits citizen travel to Saudi Arabia, but that person-level outbound restriction is not proof of Saudi admission and is not normalized as `entry_restricted`.
+
+The Republic of the Congo cannot safely inherit the generic `noneligible` advance route. Visit Saudi currently returns separate `Congo` and `Democratic Republic of the Congo` labels, but both reuse Democratic Republic of the Congo flag material and the frontend identifies selections by mutable country name rather than ISO or another stable sovereign-country key. The route configuration proves what a correctly mapped noneligible selection receives; it does not prove which Congo record is CG. Current Saudi visa terms and Foreign Ministry material supply no reproducible crosswalk.
+
+No policy, status, score, rank or coverage total changes. The Saudi destination remains at 196 of 198 verified foreign relationships, with the final two gaps now captured in exact current candidates rather than only a bulk residual audit.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,871 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 963 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.2% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,757 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 968 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.4% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 

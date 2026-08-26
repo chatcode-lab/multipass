@@ -1,0 +1,70 @@
+{
+  "batchId": "pass374-israel-saudi-current-route-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass374-saudi-tourism-evisa-terms-2026",
+      "title": "Saudi eVisa Terms and Conditions",
+      "url": "https://visa.visitsaudi.com/Home/TermsConditions",
+      "publisher": "Saudi Ministry of Tourism",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live official tourism-domain terms identify the eVisa service as operated by the Ministry of Tourism and publish its current permitted-country list.",
+      "supportingExcerpt": "The current list of countries whose citizens are entitled to apply for an eVisa is set out below."
+    },
+    {
+      "id": "pass374-saudi-tourism-country-groups-api-2026",
+      "title": "Visit Saudi visa regulations: live country groups",
+      "url": "https://www.visitsaudi.com/bin/api/v1/geo/countries?locale=en",
+      "publisher": "Saudi Tourism Authority",
+      "jurisdiction": "Saudi Arabia",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current Saudi Tourism Authority API returned HTTP 200 JSON and is the country-group data used by the official visa-regulations experience.",
+      "supportingExcerpt": "countryName ... visaGroup"
+    },
+    {
+      "id": "pass374-israel-mfa-visa-abroad-table-2026",
+      "title": "Visa-exemption table for Israeli citizens",
+      "url": "https://www.gov.il/BlobFolder/reports/examption_visa-israeli-heb/en/ISR_Visa_Abroad_Eng.pdf",
+      "publisher": "Ministry of Foreign Affairs, State of Israel",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current Government of Israel PDF is headed 'Israelis Going Abroad', updated 9 January 2026, and distinguishes national from official passports.",
+      "supportingExcerpt": "Saudi Arabia ... req."
+    },
+    {
+      "id": "pass374-israel-nsc-enemy-state-prohibition-2026",
+      "title": "National Security Council travel guidance: statutory destination prohibition",
+      "url": "https://www.gov.il/he/pages/1tunisia",
+      "publisher": "National Security Council, State of Israel",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "Hebrew",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current gov.il National Security Council page was updated 26 March 2026 and directly describes the statutory travel prohibition and criminal consequence.",
+      "supportingExcerpt": "נאסר על אזרחי ישראל לבקר ... ערב הסעודית ... ביקור ... מהווה עבירה פלילית."
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "SA",
+      "reason": "Saudi Arabia's expressly closed eVisa list excludes Israel, so no eVisa policy is possible. Its live country-group API also has no Israel record, but neither source establishes an exhaustive Saudi arrival-visa, consular-visa, recognition or refusal rule. Israel's current MFA table says a national Israeli passport needs a visa, without identifying Saudi issuance timing; separately, Israel's National Security Council says an Israeli citizen's visit to Saudi Arabia is prohibited and criminal. That outbound prohibition does not prove the Saudi destination-admission category, so neither visa_on_arrival nor entry_restricted can be safely normalized for this pair.",
+      "searchedOfficialDomains": [
+        "visa.visitsaudi.com",
+        "visitsaudi.com",
+        "mofa.gov.sa",
+        "visa.mofa.gov.sa",
+        "gov.il"
+      ]
+    }
+  ]
+}

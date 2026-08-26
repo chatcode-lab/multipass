@@ -15529,6 +15529,89 @@
         "Sponsorship, security review, passport validity, carrier and final-admission requirements remain material; this is not an unsponsored entitlement, visa exemption or visa on arrival.",
         "Panama lacks exact current mappings, Dominican authorities conflict, and China/Hong Kong outcomes depend on residence, permit, travel-document or transit conditions that cannot be reduced to one ordinary-passport status."
       ]
+    },
+    {
+      "id": "pass373-saudi-current-route-adjudication-2026",
+      "priority": 921,
+      "objective": "Adjudicate Saudi Arabia's current pending ordinary-passport cohort through the live nationality selector and selection-specific route configuration.",
+      "destinationCodes": ["SA"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://www.visitsaudi.com/bin/api/v1/geo/countries?locale=en",
+        "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en"
+      ],
+      "notes": [
+        "Exact current supported packet: 108 noneligible passports use the advance Embassy/Consulate/Tasheer baseline when the official OTHER answer is selected, and six Visa by Package passports have a conditional package tourist eVisa.",
+        "The ordinary advance-visa baseline excludes travellers who independently qualify through U.S., U.K., Schengen or GCC visa/residence evidence, integrated packages, pilgrimage products or airline stopover routes.",
+        "Indonesia, India, Jordan, Egypt, Bangladesh and Pakistan change from fallback visa-required to conditional eVisa because the official OTHER result expressly offers an instant tourist eVisa through a qualified integrated travel package.",
+        "Israel and Republic of the Congo remain unresolved because the country dataset respectively omits Israel and exposes an ambiguous single Congo mapping."
+      ]
+    },
+    {
+      "id": "pass373-bvi-2026-order-schedule-recovery",
+      "priority": 922,
+      "objective": "Recover and adjudicate the British Virgin Islands' current 2026 visa-exemption order for the remaining ordinary-passport relationships.",
+      "destinationCodes": ["VG"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://laws.gov.vg/"
+      ],
+      "notes": [
+        "The official laws portal and direct PDF for S.I. 26/2026 were recovered and replayed.",
+        "The one-page order exempts only Territory-born children under age 11 whose parents are resident in the Territory; it is not a foreign ordinary-passport nationality schedule.",
+        "All 96 scoped relationships remain exact audit holds. No nationality result is inferred from the recovered instrument."
+      ]
+    },
+    {
+      "id": "pass373-trinidad-current-entitlement-recovery",
+      "priority": 923,
+      "objective": "Recover Trinidad and Tobago's current electronic-visa entitlement data for the remaining ordinary-passport relationships.",
+      "destinationCodes": ["TT"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://homelandsecurity.gov.tt/divisions/immigrationdivision/evisa-online/",
+        "https://foreign.gov.tt/documents/146/Document_2_-_September_2025_Visa_application_instructions.pdf",
+        "https://evisa.ttservices.online/tt-evisa-entitlement-online-ui/resources/docs/FAQ.pdf"
+      ],
+      "notes": [
+        "Current official instructions establish electronic issuance and email delivery for an applicant who is already entitled to use the eVisa route.",
+        "The public waiver list is positive-only, while the live entitlement selector cannot be replayed anonymously and publishes no closed nationality complement.",
+        "All 107 scoped relationships remain exact audit holds rather than being classified from workflow availability or list omission."
+      ]
+    },
+    {
+      "id": "pass374-israel-saudi-current-route-2026",
+      "priority": 924,
+      "objective": "Resolve the final Israeli ordinary-passport route into Saudi Arabia without confusing Israeli outbound restrictions with Saudi destination admission.",
+      "destinationCodes": ["SA"],
+      "passportCodes": ["IL"],
+      "sourceHints": [
+        "https://www.visitsaudi.com/bin/api/v1/geo/countries?locale=en",
+        "https://visa.visitsaudi.com/Home/TermsConditions",
+        "https://www.gov.il/en/pages/saudi_arabia"
+      ],
+      "notes": [
+        "The current closed Saudi eVisa country list excludes Israel, but that negative finding does not establish another destination-side route.",
+        "Current Israeli government guidance says a visa is required and separately prohibits citizen travel to Saudi Arabia. The outbound prohibition is not normalized as a Saudi entry restriction.",
+        "No current Saudi source directly establishes Israeli visa on arrival, consular issuance, passport recognition or refusal, so the exact relationship remains pending."
+      ]
+    },
+    {
+      "id": "pass374-congo-saudi-current-route-2026",
+      "priority": 925,
+      "objective": "Resolve the Republic of the Congo ordinary-passport route into Saudi Arabia from an unambiguous current official sovereign-country mapping.",
+      "destinationCodes": ["SA"],
+      "passportCodes": ["CG"],
+      "sourceHints": [
+        "https://www.visitsaudi.com/bin/api/v1/geo/countries?locale=en",
+        "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
+        "https://visa.visitsaudi.com/Home/TermsConditions"
+      ],
+      "notes": [
+        "The current Visit Saudi response exposes separate Congo labels but reuses Democratic Republic of the Congo flag material and supplies no ISO or stable sovereign-country identifier.",
+        "The noneligible OTHER branch is an advance Embassy, Consulate or Tasheer route, but the ambiguous response cannot safely attach that result to CG.",
+        "No current KSA visa or Foreign Ministry source supplies the missing Republic of the Congo crosswalk, so the exact relationship remains pending."
+      ]
     }
   ]
 }
