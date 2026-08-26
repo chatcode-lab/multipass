@@ -4371,4 +4371,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://portales.sre.gob.mx/guiadeviaje/103-ficha-de-paises/362-liberia",
     reviewedAt: "2026-08-25",
   },
+  {
+    passportCode: "BY",
+    destinationCode: "BD",
+    status: "visa_on_arrival",
+    reason: "Bangladesh Police Special Branch's current nationality-based rule permits tourists who are citizens of European countries, including Belarus, to obtain a physical visa on arrival in Dhaka.",
+    sourceUrl: "https://voa.specialbranch.gov.bd/public/voa-info.html",
+    reviewedAt: "2026-08-26",
+  },
 ] as const;

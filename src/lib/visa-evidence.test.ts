@@ -121,6 +121,8 @@ describe("visa relationship URLs", () => {
       .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("KR", "GW", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_on_arrival" });
+    expect(getVisaRelationshipEvidence("SS", "MM", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "evisa" });
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
@@ -1048,7 +1050,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "BT", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BT", "BT", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("BD")).toHaveLength(62);
+    expect(pairsFor("BD")).toHaveLength(77);
     expect(getVisaRelationshipEvidence("EG", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1065,6 +1067,10 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("BT", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NP", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BD", "BD", "citizenship").supportsCurrentStatus).toBe(true);
+    for (const passportCode of ["AD", "AL", "AT", "BA", "BE", "BY", "EE", "LT", "LU", "LV", "MK", "PL", "SM", "UA", "VA"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    }
+    expect(getVisaRelationshipEvidence("SS", "MM", "unknown").supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("PK")).toHaveLength(192);
     expect(getVisaRelationshipEvidence("MV", "PK", "visa_free").supportsCurrentStatus).toBe(true);
@@ -3456,7 +3462,7 @@ describe("official visa evidence", () => {
           destinationCode,
           status,
         ).supportsCurrentStatus,
-      ).toBe(destinationCode === "SL");
+      ).toBe(destinationCode === "SL" || (passportCode === "BE" && destinationCode === "BD"));
     }
   });
 
@@ -3502,7 +3508,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["AT", "BD"],
       ["NO", "BF"],
       ["NO", "CF"],
       ["DK", "IR"],
@@ -3516,6 +3521,7 @@ describe("official visa evidence", () => {
         ).supportsCurrentStatus,
       ).toBe(false);
     }
+    expect(getVisaRelationshipEvidence("AT", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
   it("closes supportable Swedish, Latvian, and Slovak final gaps conservatively", () => {
@@ -4809,7 +4815,10 @@ describe("official visa evidence", () => {
     }
     expect(getVisaRelationshipEvidence("KR", "CG", "visa_required").supportsCurrentStatus).toBe(true);
 
-    for (const passportCode of ["BE", "LU", "AT", "LV", "LT", "PL", "EE", "CL", "AD", "BR"] as const) {
+    for (const passportCode of ["BE", "LU", "AT", "LV", "LT", "PL", "EE", "AD"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["CL", "BR"] as const) {
       const status = snapshot.passports[passportCode].statuses.BD;
       expect(getVisaRelationshipEvidence(passportCode, "BD", status).supportsCurrentStatus).toBe(false);
     }
@@ -4920,12 +4929,12 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["RS", "TM"],
       ["RS", "VA"],
-      ["PL", "BD"],
       ["KZ", "SY"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
     }
+    expect(getVisaRelationshipEvidence("PL", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
   it("supports reviewed Czech and Bulgarian routes without guessing Hungarian gaps", () => {
@@ -4983,13 +4992,13 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["EE", "TD"],
-      ["EE", "BD"],
       ["LT", "BW"],
       ["LT", "TD"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
     }
+    expect(getVisaRelationshipEvidence("EE", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
   it("keeps remaining German, Italian and Spanish operationally ambiguous routes uncovered", () => {
@@ -5062,7 +5071,7 @@ describe("official visa evidence", () => {
         ? "visa_on_arrival"
         : snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
-        .toBe(destinationCode === "SL");
+        .toBe(destinationCode === "SL" || (passportCode === "BE" && destinationCode === "BD"));
     }
   });
 
@@ -6068,6 +6077,7 @@ describe("official visa evidence", () => {
       "embassymalawi.be",
       "dirco.gov.za",
       "www.thailand.go.th",
+      "tourism.gov.mm",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -1,0 +1,105 @@
+{
+  "batchId": "bangladesh-european-voa-myanmar-south-sudan-correction-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "bangladesh-special-branch-current-european-voa-2026-08-25",
+      "title": "Visa on Arrival in Bangladesh",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-info.html",
+      "publisher": "Special Branch, Bangladesh Police",
+      "jurisdiction": "Bangladesh / European countries",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Bangladesh Police Special Branch publishes the live border-visa eligibility rules on its official government domain; the response was last modified on 25 August 2026.",
+      "supportingExcerpt": "People from the following categories in European countries may obtain a Visa on Arrival ... Tourists."
+    },
+    {
+      "id": "bangladesh-special-branch-current-voa-workflow-2026-08-25",
+      "title": "Visa on Arrival general instructions",
+      "url": "https://voa.specialbranch.gov.bd/public/voa-instructions.html",
+      "publisher": "Special Branch, Bangladesh Police",
+      "jurisdiction": "Bangladesh",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Bangladesh Police Special Branch publishes the current application and border-stamping workflow on its official government domain; the response was last modified on 25 August 2026.",
+      "supportingExcerpt": "Citizens ... from ... European countries ... for tourism ... may get a visa on arrival."
+    },
+    {
+      "id": "myanmar-tourism-current-ordinary-passport-tourist-evisa-schedule-2026",
+      "title": "Electronic Visa: ordinary-passport tourist eligibility",
+      "url": "https://tourism.gov.mm/en/e-visa",
+      "publisher": "Ministry of Hotels and Tourism, Myanmar",
+      "jurisdiction": "Myanmar",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Myanmar's Ministry of Hotels and Tourism publishes a live, numbered 100-country ordinary-passport tourist-eVisa schedule on its official government domain.",
+      "supportingExcerpt": "Ordinary passport holders from the following countries ... are eligible to apply Tourist Visa."
+    },
+    {
+      "id": "myanmar-moip-live-faq-arrival-stamp-replay-2026",
+      "title": "Myanmar eVisa frequently asked questions: arrival issuance",
+      "url": "https://evisa.moip.gov.mm/assets/jsondata/faq.json",
+      "publisher": "Ministry of Immigration and Population, Myanmar",
+      "jurisdiction": "Myanmar",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-25",
+      "officialityEvidence": "The live JSON is delivered by Myanmar Immigration's official eVisa service and defines the approval-letter and border-stamping workflow.",
+      "supportingExcerpt": "Your visa will be issued and stamped inside your passport at the Myanmar Immigration Arrival counter."
+    }
+  ],
+  "policies": [
+    {
+      "id": "remaining-european-ordinary-passports-bangladesh-tourist-visa-on-arrival-2026",
+      "title": "Remaining European ordinary passports: Bangladesh tourist visa on arrival",
+      "summary": "Bangladesh Police Special Branch's current nationality-based European rule permits tourists holding the 15 listed residual European passports to obtain a physical visa on arrival in Dhaka.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["BD"],
+      "passportCodes": ["AD", "AL", "AT", "BA", "BE", "BY", "EE", "LT", "LU", "LV", "MK", "PL", "SM", "UA", "VA"],
+      "conditions": [
+        "Ordinary valid passport and short tourist visit only; each listed code is an unambiguous sovereign European state within the current nationality-based rule.",
+        "Obtain the single-entry visa at Hazrat Shahjalal International Airport in Dhaka for a maximum stay of 30 days; issuance remains subject to the immigration officer's document and compliance review.",
+        "Carry a return ticket and at least USD 500 in cash or a credit card, and pay the arrival fee in cash using an accepted currency.",
+        "Use the same port for entry and departure; official-ban, work, residence, transit, special-document, Bangladeshi-origin and final-admission rules remain separate."
+      ],
+      "sourceIds": [
+        "bangladesh-special-branch-current-european-voa-2026-08-25",
+        "bangladesh-special-branch-current-voa-workflow-2026-08-25"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://voa.specialbranch.gov.bd/",
+        "label": "Bangladesh Visa on Arrival",
+        "steps": [
+          "Register and submit the current arrival-visa acknowledgement workflow before departure.",
+          "Carry the approval or acknowledgement, passport, return ticket, funds and supporting documents to the arrival desk in Dhaka.",
+          "Pay the fee and receive the physical visa stamp after the immigration officer's review."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "BY",
+      "destinationCode": "BD",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "Bangladesh Police Special Branch's current nationality-based rule includes tourists who are citizens of European countries, which unambiguously includes Belarus, and places physical visa issuance at arrival.",
+      "sourceIds": [
+        "bangladesh-special-branch-current-european-voa-2026-08-25",
+        "bangladesh-special-branch-current-voa-workflow-2026-08-25"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "SS",
+      "destinationCode": "MM",
+      "reason": "Myanmar's current numbered 100-country ordinary-passport tourist-eVisa schedule excludes South Sudan, disproving the fallback eVisa. The remaining law, embassy and conditional arrival material does not establish one safe replacement visitor route.",
+      "searchedOfficialDomains": ["tourism.gov.mm", "evisa.moip.gov.mm", "mofa.gov.mm", "presoffministry.gov.mm"]
+    }
+  ]
+}

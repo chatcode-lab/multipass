@@ -100,6 +100,13 @@ describe("passport calculations", () => {
       statuses: { KR: "citizenship", GW: "visa_on_arrival" },
       mobilityScore: 1,
     })).toMatchObject({ statuses: { KR: "citizenship", GW: "unknown" }, mobilityScore: 0 });
+
+    expect(applyAccessOverrides({
+      code: "SS",
+      name: "South Sudan",
+      statuses: { SS: "citizenship", MM: "evisa" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { SS: "citizenship", MM: "unknown" }, mobilityScore: 0 });
   });
 
   it("applies Ireland's reviewed advance-visa correction for Syria", () => {
@@ -124,6 +131,15 @@ describe("passport calculations", () => {
         mobilityScore: 0,
       })).toMatchObject({ statuses: { [code]: "citizenship", [destinationCode]: officialStatus }, mobilityScore });
     }
+  });
+
+  it("applies Belarus's reviewed Bangladesh arrival-visa correction", () => {
+    expect(applyVerifiedAccessOverrides({
+      code: "BY",
+      name: "Belarus",
+      statuses: { BY: "citizenship", BD: "visa_required" },
+      mobilityScore: 0,
+    })).toMatchObject({ statuses: { BY: "citizenship", BD: "visa_on_arrival" }, mobilityScore: 1 });
   });
 
   it("applies the reviewed Malawi and Oman corrections", () => {

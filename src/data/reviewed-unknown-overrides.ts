@@ -117,6 +117,15 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-25",
     recheckBy: "2026-11-25",
   },
+  {
+    passportCode: "SS",
+    destinationCode: "MM",
+    rejectedStatus: "evisa",
+    reason: "Myanmar's current numbered 100-country ordinary-passport tourist-eVisa schedule excludes South Sudan, directly disproving the fallback eVisa, but current official material does not establish one safe replacement visitor route.",
+    sourceIds: ["myanmar-tourism-current-ordinary-passport-tourist-evisa-schedule-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

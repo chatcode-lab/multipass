@@ -66,6 +66,11 @@ describe("evidence status matrix", () => {
     const guineaBissauIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "GW");
     expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "KR")!.cells[guineaBissauIndex])
       .toEqual(["unknown", 0, -1, 0, 0]);
+
+    const asiaMatrix = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-26");
+    const myanmarIndex = asiaMatrix.destinations.findIndex(({ code }) => code === "MM");
+    expect(asiaMatrix.rows.find(({ passportCode }) => passportCode === "SS")!.cells[myanmarIndex])
+      .toEqual(["unknown", 0, -1, 0, 0]);
   });
 
   it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
@@ -94,6 +99,15 @@ describe("evidence status matrix", () => {
     expect(cell("MX", "LR").slice(0, 2)).toEqual(["visa_required", 1]);
   });
 
+  it("counts the refreshed Bangladesh European arrival cohort as supported", () => {
+    const asia = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-26");
+    const bangladeshIndex = asia.destinations.findIndex(({ code }) => code === "BD");
+    for (const passportCode of ["AD", "AL", "AT", "BA", "BE", "BY", "EE", "LT", "LU", "LV", "MK", "PL", "SM", "UA", "VA"] as const) {
+      expect(asia.rows.find((row) => row.passportCode === passportCode)!.cells[bangladeshIndex].slice(0, 2))
+        .toEqual(["visa_on_arrival", 1]);
+    }
+  });
+
   it("reports a complete four-state summary for every foreign-access relationship", () => {
     const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-21");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
@@ -101,9 +115,9 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_038);
-    expect(summary.notCovered.count).toBe(4_936);
-    expect(summary.percent).toBe(89);
+    expect(summary.covered).toBe(40_053);
+    expect(summary.notCovered.count).toBe(4_921);
+    expect(summary.percent).toBe(89.1);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });
 });
