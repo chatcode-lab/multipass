@@ -1264,11 +1264,12 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HK", "DZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DZ", "DZ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("NG")).toHaveLength(194);
+    expect(pairsFor("NG")).toHaveLength(195);
     expect(getVisaRelationshipEvidence("GH", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "NG", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "NG", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KN", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("NG", "NG", "citizenship").supportsCurrentStatus).toBe(false);
 
     expect(pairsFor("SN")).toHaveLength(198);
@@ -1524,11 +1525,12 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IE", "LS", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("LS", "LS", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SZ")).toHaveLength(195);
+    expect(pairsFor("SZ")).toHaveLength(196);
     expect(getVisaRelationshipEvidence("TW", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "SZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "SZ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CD", "SZ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "SZ", snapshot.passports.CN.statuses.SZ).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("SZ", "SZ", "citizenship").supportsCurrentStatus).toBe(false);
   });
@@ -3745,11 +3747,11 @@ describe("official visa evidence", () => {
       expect(snapshot.passports[passportCode].statuses.NG).toBe(status);
       expect(getVisaRelationshipEvidence(passportCode, "NG", status).supportsCurrentStatus).toBe(true);
     }
+    expect(getVisaRelationshipEvidence("KN", "NG", "visa_free").supportsCurrentStatus).toBe(true);
     for (const [passportCode, destinationCode] of [
       ["GE", "LC"],
       ["CD", "LC"],
       ["SS", "LC"],
-      ["KN", "NG"],
     ] as const) {
       expect(
         getVisaRelationshipEvidence(
@@ -3811,7 +3813,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["XK", "SZ"],
       ["CN", "SZ"],
-      ["CD", "SZ"],
       ["ZW", "CD"],
       ["CG", "CD"],
       ["HK", "GN"],
@@ -3826,6 +3827,7 @@ describe("official visa evidence", () => {
         ).supportsCurrentStatus,
       ).toBe(false);
     }
+    expect(getVisaRelationshipEvidence("CD", "SZ", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("covers Paraguay's express residual advance-visa rule while preserving current schedule conflicts", () => {
@@ -6113,6 +6115,7 @@ describe("official visa evidence", () => {
       "dirco.gov.za",
       "www.thailand.go.th",
       "tourism.gov.mm",
+      "www.sknis.gov.kn",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

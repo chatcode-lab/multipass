@@ -131,6 +131,17 @@ describe("evidence status matrix", () => {
       .toEqual(["visa_required", 1]);
   });
 
+  it("counts the adjudicated DR Congo-Eswatini and Saint Kitts-Nigeria routes as supported", () => {
+    const africa = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-08-26");
+    const eswatiniIndex = africa.destinations.findIndex(({ code }) => code === "SZ");
+    const nigeriaIndex = africa.destinations.findIndex(({ code }) => code === "NG");
+
+    expect(africa.rows.find(({ passportCode }) => passportCode === "CD")!.cells[eswatiniIndex].slice(0, 2))
+      .toEqual(["visa_required", 1]);
+    expect(africa.rows.find(({ passportCode }) => passportCode === "KN")!.cells[nigeriaIndex].slice(0, 2))
+      .toEqual(["visa_free", 1]);
+  });
+
   it("reports a complete four-state summary for every foreign-access relationship", () => {
     const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-21");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
@@ -138,8 +149,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_060);
-    expect(summary.notCovered.count).toBe(4_914);
+    expect(summary.covered).toBe(40_062);
+    expect(summary.notCovered.count).toBe(4_912);
     expect(summary.percent).toBe(89.1);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

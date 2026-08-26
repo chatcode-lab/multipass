@@ -1,0 +1,115 @@
+{
+  "batchId": "eswatini-nigeria-final-destination-gaps-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "eswatini-home-affairs-current-drc-advance-visitor-visa-2026",
+      "title": "Immigrants requiring visas to enter the Kingdom of Swaziland",
+      "url": "https://www.gov.sz/index.php?id=314",
+      "publisher": "Government of the Kingdom of Eswatini / Ministry of Home Affairs",
+      "jurisdiction": "Eswatini",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Home Affairs visitor page defines its Y/N visa table, marks DRC as visa-required, assigns applications to Home Affairs or foreign missions and limits border issuance to exceptional inability to apply before travel.",
+      "supportingExcerpt": "Visa required (Y=yes N=no) ... DRC Y"
+    },
+    {
+      "id": "saint-kitts-nigeria-reciprocal-visa-waiver-effective-2025",
+      "title": "Saint Kitts and Nevis secures reciprocal visa-free access with Nigeria",
+      "url": "https://www.sknis.gov.kn/2025/09/01/saint-kitts-and-nevis-secures-reciprocal-visa-free-access-with-nigeria/",
+      "publisher": "St. Kitts and Nevis Information Service / Office of the Prime Minister",
+      "jurisdiction": "Saint Kitts and Nevis / Nigeria",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live government information-service announcement directly records reciprocal nationality-wide visa-free entry and its 4 August 2025 effective date.",
+      "supportingExcerpt": "Visa-free access for citizens of both countries took effect on Monday, August 4, 2025."
+    }
+  ],
+  "policies": [
+    {
+      "id": "dr-congo-ordinary-passports-eswatini-advance-visitor-visa-2026",
+      "title": "DR Congo ordinary passports: Eswatini advance visitor visa",
+      "summary": "Eswatini Home Affairs directly marks DRC as visa-required and routes ordinary holiday, tourist and business visitor applications through the Ministry or foreign missions before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["SZ"],
+      "passportCodes": ["CD"],
+      "conditions": [
+        "Applies to an ordinary Democratic Republic of the Congo passport holder travelling to Eswatini for a short holiday, tourist or business visit.",
+        "The standard application is handled by the Ministry of Home Affairs or an Eswatini foreign mission before travel.",
+        "The page's border-visa clause requires an undertaking that the visitor could not apply beforehand; that exceptional route is not a passport-wide visa-on-arrival baseline.",
+        "Work, residence, special documents, carrier checks and final border admission remain separate."
+      ],
+      "sourceIds": ["eswatini-home-affairs-current-drc-advance-visitor-visa-2026"],
+      "confidence": "medium"
+    },
+    {
+      "id": "saint-kitts-nevis-ordinary-passports-nigeria-reciprocal-waiver-2025",
+      "title": "Saint Kitts and Nevis ordinary passports: Nigeria reciprocal visa waiver",
+      "summary": "Saint Kitts and Nevis' government reports that its nationals receive reciprocal visa-free entry to Nigeria from 4 August 2025.",
+      "status": "visa_free",
+      "destinationCodes": ["NG"],
+      "passportCodes": ["KN"],
+      "effectiveFrom": "2025-08-04",
+      "conditions": [
+        "Applies to an ordinary Saint Kitts and Nevis passport holder making a short visitor trip to Nigeria under the reciprocal waiver.",
+        "The official announcement does not state a maximum stay, so no duration is inferred.",
+        "Purpose restrictions, work, study, residence, special documents, health requirements, carrier checks and final immigration admission remain separate."
+      ],
+      "sourceIds": ["saint-kitts-nigeria-reciprocal-visa-waiver-effective-2025"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "BF",
+      "destinationCode": "MW",
+      "reason": "Malawi's 2026 Gazette makes Burkina Faso visa-subject, but the current Department simultaneously places it in Category One advance authorization and Category Two visa-on-arrival files. No published hierarchy resolves the issuance point.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "embassymalawi.be"]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "MW",
+      "reason": "Malawi's 2026 Gazette makes Cameroon visa-subject, but the current Department simultaneously places it in Category One advance authorization and Category Two visa-on-arrival files. No published hierarchy resolves the issuance point.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "embassymalawi.be"]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "MW",
+      "reason": "Malawi's 2026 Gazette makes Sri Lanka visa-subject, but the current Department simultaneously places it in Category One advance authorization and Category Two visa-on-arrival files. No published hierarchy resolves the issuance point.",
+      "searchedOfficialDomains": ["evisa.gov.mw", "embassymalawi.be"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "SZ",
+      "reason": "Eswatini's current nationality pages do not identify Kosovo and its generic eVisa product does not supply a Kosovo ordinary-passport result. No recognition or omission inference is made.",
+      "searchedOfficialDomains": ["gov.sz", "evisa.gov.sz", "rks-gov.net"]
+    },
+    {
+      "passportCode": "CN",
+      "destinationCode": "SZ",
+      "reason": "Eswatini's current pages conflict by placing China in visa-free and visa-required forms, while China's Foreign Ministry requires a visa. No current legal hierarchy resolves the ordinary Chinese passport baseline.",
+      "searchedOfficialDomains": ["gov.sz", "evisa.gov.sz", "mfa.gov.cn"]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "NG",
+      "reason": "Nigeria's current tourism eVisa workflow proves electronic delivery only after eligibility is established. A fee-table row does not map an ordinary Georgian passport to exemption or eVisa eligibility, and bilateral-waiver carve-outs prevent a complement inference.",
+      "searchedOfficialDomains": ["immigration.gov.ng", "geoconsul.gov.ge"]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "NG",
+      "reason": "Nigeria's current tourism eVisa service publishes no direct Eswatini ordinary-passport eligibility result, and the current single-entry table has no Swaziland or Eswatini row. Generic portal availability is insufficient.",
+      "searchedOfficialDomains": ["immigration.gov.ng", "gov.sz"]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "NG",
+      "reason": "Afghanistan appears in a current Nigeria fee appendix, but a fee row does not establish waiver or tourism-eVisa eligibility. The bilateral-waiver exception prevents inference from Nigeria's generic F5A service.",
+      "searchedOfficialDomains": ["immigration.gov.ng", "mfa.gov.af"]
+    }
+  ]
+}

@@ -3238,6 +3238,16 @@ Five independently reviewed residuals remain pending. Serbian Foreign Ministry p
 
 Current-status evidence rises from 40,058 to 40,060 of 44,974 relationships (89.1%), leaving 4,914 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 839 reviewed batches, 3,513 official source records and 1,969 policies.
 
+## Pass 352 result: DR Congo to Eswatini and Saint Kitts and Nevis to Nigeria
+
+Two imported labels retain their displayed status and gain current direct evidence. Eswatini Home Affairs marks DRC `Y` in its defined visa-required table and says visitor applications are handled by the Ministry or foreign missions. Its border-visa language requires proof that the traveller could not apply before travel, so that exceptional route does not displace the ordinary advance-visa baseline. CD to SZ remains `visa_required`.
+
+Saint Kitts and Nevis' government announced reciprocal visa-free access with Nigeria for nationals of both states, effective 4 August 2025. KN to NG remains `visa_free`. The announcement does not publish a maximum stay, so no duration is inferred. Older Nigerian fee and waiver tables are retained as maintenance risks rather than allowed to override the later direct bilateral announcement.
+
+Eight exact residuals remain pending. Malawi's January 2026 Gazette makes Burkina Faso, Cameroon and Sri Lanka visa-subject, but its current Department files simultaneously place all three in Category One advance authorization and Category Two arrival-visa cohorts. Eswatini's pages conflict over China and do not classify Kosovo. Nigeria's generic tourism-eVisa workflow and fee appendix do not directly establish Georgian, Eswatini or Afghan ordinary-passport eligibility. These contradictions and gaps are not converted into convenient default categories.
+
+Current-status evidence rises from 40,060 to 40,062 of 44,974 relationships (89.1%), leaving 4,912 pending and zero old or stale rows as of 26 August 2026. No fallback label, mobility score or rank changes. Canonical evidence now contains 840 reviewed batches, 3,515 official source records and 1,971 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
