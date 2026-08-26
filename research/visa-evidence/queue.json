@@ -15750,6 +15750,23 @@
         "INM and the current CA-4 eAIP describe consular and consulted issuance only when the traveller's assigned category requires it; neither source supplies an unlisted-passport complement.",
         "Third-country residence or visa, CA-4 origin, diplomatic and special-document exceptions remain conditional and must not be converted into ordinary-passport nationality rules."
       ]
+    },
+    {
+      "id": "pass384-bolivia-inbound-recovery-2026",
+      "priority": 934,
+      "objective": "Reconstruct Bolivia's current Group I/II/III nationality schedule and adjudicate its final twenty ordinary-passport visitor relationships.",
+      "destinationCodes": ["BO"],
+      "passportCodes": ["BJ", "BW", "CF", "GQ", "GW", "KI", "LI", "LR", "LS", "LT", "LY", "MH", "MO", "PG", "PW", "SB", "SS", "TO", "TV", "XK"],
+      "sourceHints": [
+        "https://cancilleria.gob.bo/mre/servicios/",
+        "https://visas.cancilleria.gob.bo/",
+        "https://servicios.cancilleria.gob.bo/visas/api/paises"
+      ],
+      "notes": [
+        "The live Foreign Ministry page defines tourist Groups I, II and III and advance consular issuance, but does not publish the nationality annex.",
+        "The application front end does not expose a terminal issuance result, and the country API fails normal TLS validation; neither surface can support a nationality mapping.",
+        "Do not infer Group II or III membership from omission, legacy country names, recognition assumptions or portal availability."
+      ]
     }
   ]
 }

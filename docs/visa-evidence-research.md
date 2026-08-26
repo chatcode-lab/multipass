@@ -3512,9 +3512,17 @@ Honduras's final 31 foreign-passport relationships receive a new exact, queue-ba
 
 No category is transferred from Guatemala, El Salvador, Nicaragua or a historical CA-4 list. Third-country residence or visa, CA-4-origin, cruise-passenger, diplomatic and special-document exceptions remain conditional. China and Taiwan, Hong Kong British-document wording, Macao's omission, Sudan versus South Sudan and Kosovo recognition also prevent mechanical country-name matching. All 31 imported hypotheses therefore remain pending without a policy or fallback correction. Coverage stays at 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale rows.
 
+## Pass 384 result: Bolivia nationality-group reconstruction
+
+Bolivia's final 20 foreign-passport relationships receive a new exact audit against the current Foreign Ministry surfaces. The live service page confirms the operative tourist framework: Group I travellers do not need a visa, Group II travellers need a visa, and Group III travellers need a visa after consular consultation with DIGEMIG. It also defines a visa as a document issued by Bolivian consulates and embassies abroad. A passport directly mapped to Group II or III would therefore normalize to an advance `visa_required` route, not eVisa or visa on arrival.
+
+The decisive nationality annex is not published on that page. The linked application portal exposes a form workflow rather than a terminal ordinary-passport eligibility or issuance result, its country endpoint fails normal TLS validation, and the residual records cannot be assigned reliably to a group. Lithuania's imported visa-free label and the 19 imported eVisa labels therefore remain hypotheses. Libya cannot be transferred from a legacy country record, Sudan cannot stand for South Sudan, Kosovo requires direct recognition and document treatment, and omission cannot assign any of the remaining small states to Group II or III.
+
+No policy, fallback correction, mobility score or rank changes. Coverage remains 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale rows. The exact partition records 20 unresolved relationships and zero supported policies or conflicts.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 988 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 989 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
