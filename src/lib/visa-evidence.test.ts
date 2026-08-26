@@ -1211,14 +1211,14 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("KP", "KP", "citizenship").supportsCurrentStatus).toBe(false);
   });
 
-  it("covers Botswana's bounded official schedules without flattening source conflicts", () => {
+  it("covers Botswana's bounded official schedules and operational API residuals", () => {
     const botswanaPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "BW");
     const currentBotswanaPairs = botswanaPairs.filter(({ passport, status }) =>
       snapshot.passports[passport.code].statuses.BW === status,
     );
 
-    expect(currentBotswanaPairs).toHaveLength(186);
+    expect(currentBotswanaPairs).toHaveLength(195);
     expect(getVisaRelationshipEvidence("US", "BW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RW", "BW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MZ", "BW", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1227,7 +1227,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("HU", "BW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BG", "BW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PL", "BW", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AO", "BW", snapshot.passports.AO.statuses.BW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AO", "BW", snapshot.passports.AO.statuses.BW).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BW", "BW", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -3755,7 +3755,7 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("covers the current Panama and Jordan residual schedules without flattening Botswana conflicts", () => {
+  it("covers the current Panama, Jordan, and Botswana residual schedules", () => {
     for (const passportCode of ["AD", "BB", "BY", "DK", "JM"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "PA", "visa_free").supportsCurrentStatus).toBe(true);
     }
@@ -3770,7 +3770,7 @@ describe("official visa evidence", () => {
       expect(snapshot.passports[passportCode].statuses.JO).toBe(status);
       expect(getVisaRelationshipEvidence(passportCode, "JO", status).supportsCurrentStatus).toBe(true);
     }
-    expect(getVisaRelationshipEvidence("AO", "BW", snapshot.passports.AO.statuses.BW).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AO", "BW", snapshot.passports.AO.statuses.BW).supportsCurrentStatus).toBe(true);
   });
 
   it("covers Türkiye's current residual routes while preserving Indonesia and Egypt holds", () => {
@@ -3967,7 +3967,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["OM", "BW"],
       ["GM", "LC"],
     ] as const) {
       expect(
@@ -3978,6 +3977,7 @@ describe("official visa evidence", () => {
         ).supportsCurrentStatus,
       ).toBe(false);
     }
+    expect(getVisaRelationshipEvidence("OM", "BW", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("closes the reviewed Central African, Ivorian, Kyrgyz, and Bahraini final gaps", () => {
@@ -5092,12 +5092,12 @@ describe("official visa evidence", () => {
 
     for (const [passportCode, destinationCode] of [
       ["EE", "TD"],
-      ["LT", "BW"],
       ["LT", "TD"],
     ] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(false);
     }
+    expect(getVisaRelationshipEvidence("LT", "BW", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("EE", "BD", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
@@ -5287,7 +5287,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AU", "CV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
-  it("preserves Cypriot, Romanian and Malaysian final route gaps as uncovered", () => {
+  it("preserves Cypriot and Malaysian gaps while resolving Romania to Botswana", () => {
     for (const sourceId of [
       "botswana-washington-embassy-romanian-list-2026",
       "botswana-tourism-romanian-required-list-2026",
@@ -5298,7 +5298,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["CY", "SL"],
       ["CY", "SS"],
-      ["RO", "BW"],
       ["RO", "IQ"],
       ["MY", "GW"],
       ["MY", "TM"],
@@ -5309,6 +5308,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
         .toBe(destinationCode === "SL");
     }
+    expect(getVisaRelationshipEvidence("RO", "BW", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("preserves Bruneian, Liechtenstein and Argentine final route gaps as uncovered", () => {
@@ -6240,6 +6240,7 @@ describe("official visa evidence", () => {
       "mmih.adlia.tj",
       "mfa.gov.az",
       "myanmarembassytokyo.org",
+      "evisa.gov.bw",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

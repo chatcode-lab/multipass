@@ -855,7 +855,8 @@
     "pass377-myanmar-current-residual-complement-2026",
     "solomon-islands-residual-visitor-visa-audit-2026",
     "pass386-remaining-citizenship-recovery-2026",
-    "pass388-final-home-citizenship-recovery-2026"
+    "pass388-final-home-citizenship-recovery-2026",
+    "pass389-botswana-live-api-residual-2026"
   ],
   "sources": [
     {
@@ -37046,6 +37047,26 @@
       "jurisdiction": "Yemen",
       "kind": "law",
       "language": "Arabic",
+      "reviewedAt": "2026-08-26"
+    },
+    {
+      "id": "pass389-botswana-evisa-nationality-api",
+      "title": "Botswana eVisa nationality and visa-requirement dictionary",
+      "url": "https://evisa.gov.bw/bw-evisa-api/api/v1/dictionary/nationalities",
+      "publisher": "Department of Immigration and Citizenship, Government of Botswana",
+      "jurisdiction": "Botswana",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26"
+    },
+    {
+      "id": "pass389-botswana-evisa-passport-type-api",
+      "title": "Botswana eVisa passport-type dictionary",
+      "url": "https://evisa.gov.bw/bw-evisa-api/api/v1/dictionary/passporttypes",
+      "publisher": "Department of Immigration and Citizenship, Government of Botswana",
+      "jurisdiction": "Botswana",
+      "kind": "official-dataset",
+      "language": "English",
       "reviewedAt": "2026-08-26"
     }
   ],
@@ -113699,6 +113720,34 @@
       ],
       "sourceIds": [
         "pass388-yemen-passport-law-ordinary-national-return"
+      ]
+    },
+    {
+      "id": "pass389-botswana-live-api-visa-free-cohort",
+      "title": "Botswana live eVisa API visa-free cohort",
+      "summary": "Botswana's operational eVisa nationality dictionary directly marks nine remaining ordinary-passport nationalities as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": [
+        "BW"
+      ],
+      "passportCodes": [
+        "AO",
+        "BH",
+        "DO",
+        "LT",
+        "MC",
+        "OM",
+        "QA",
+        "RO",
+        "SA"
+      ],
+      "conditions": [
+        "Applies to a valid ordinary passport for a short visitor journey; admission, permitted stay, sufficient funds, onward travel and other border conditions remain.",
+        "The live nationality dictionary and per-country checker were replayed on 26 August 2026; each listed nationality returned VisaNotRequired Y and the no-visa checker branch."
+      ],
+      "sourceIds": [
+        "pass389-botswana-evisa-nationality-api",
+        "pass389-botswana-evisa-passport-type-api"
       ]
     }
   ]

@@ -1,0 +1,73 @@
+{
+  "batchId": "pass389-botswana-live-api-residual-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass389-botswana-evisa-nationality-api",
+      "title": "Botswana eVisa nationality and visa-requirement dictionary",
+      "url": "https://evisa.gov.bw/bw-evisa-api/api/v1/dictionary/nationalities",
+      "publisher": "Department of Immigration and Citizenship, Government of Botswana",
+      "jurisdiction": "Botswana",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Government of Botswana eVisa service exposes its operational nationality dictionary and a direct VisaNotRequired field for each modeled nationality.",
+      "supportingExcerpt": "\"Description\":\"Angola\",\"VisaNotRequired\":\"Y\""
+    },
+    {
+      "id": "pass389-botswana-evisa-passport-type-api",
+      "title": "Botswana eVisa passport-type dictionary",
+      "url": "https://evisa.gov.bw/bw-evisa-api/api/v1/dictionary/passporttypes",
+      "publisher": "Department of Immigration and Citizenship, Government of Botswana",
+      "jurisdiction": "Botswana",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The operational Government eVisa service expressly distinguishes ordinary passports from diplomatic and official passports.",
+      "supportingExcerpt": "\"Code\":\"3\",\"Description\":\"Ordinary\""
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass389-botswana-live-api-visa-free-cohort",
+      "title": "Botswana live eVisa API visa-free cohort",
+      "summary": "Botswana's operational eVisa nationality dictionary directly marks nine remaining ordinary-passport nationalities as not requiring a visa.",
+      "status": "visa_free",
+      "destinationCodes": ["BW"],
+      "passportCodes": ["AO", "BH", "DO", "LT", "MC", "OM", "QA", "RO", "SA"],
+      "conditions": [
+        "Applies to a valid ordinary passport for a short visitor journey; admission, permitted stay, sufficient funds, onward travel and other border conditions remain.",
+        "The live nationality dictionary and per-country checker were replayed on 26 August 2026; each listed nationality returned VisaNotRequired Y and the no-visa checker branch."
+      ],
+      "sourceIds": ["pass389-botswana-evisa-nationality-api", "pass389-botswana-evisa-passport-type-api"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "TL",
+      "destinationCode": "BW",
+      "reason": "The live checker directly says a visa is required, but the generic online application surface does not establish whether an approved ordinary visitor document is electronically issued or a consular advance visa; the imported eVisa label remains unverified.",
+      "searchedOfficialDomains": ["evisa.gov.bw", "gov.bw"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "BW",
+      "reason": "Macao has no entry in the live nationality dictionary and the checker returns only that the country does not exist, which is not a visa outcome or a recognition decision.",
+      "searchedOfficialDomains": ["evisa.gov.bw", "gov.bw", "dsi.gov.mo"]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "BW",
+      "reason": "The live API marks a Holy See entry visa-free, while other current Botswana material uses Vatican City inconsistently; no official source maps the API label unambiguously to the catalog's ordinary Vatican passport.",
+      "searchedOfficialDomains": ["evisa.gov.bw", "gov.bw", "botswanaembassy.org", "botswanatourism.co.bw", "vatican.va"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "BW",
+      "reason": "Kosovo has no entry in the live nationality dictionary and the checker returns only that the country does not exist; no current direct source establishes recognition, document handling or a visitor-visa route.",
+      "searchedOfficialDomains": ["evisa.gov.bw", "gov.bw", "mfa-ks.net"]
+    }
+  ]
+}
