@@ -94,7 +94,7 @@ The `multipass-data-sync` Worker stages ten passport records per invocation. Fou
 
 Before publication, the Worker also evaluates every two- and three-passport combination and solves the exact minimum set cover for the destination catalog. That versioned analysis is published atomically with the access snapshot and exposed at `/api/v1/combination-insights`.
 
-The sync Worker keeps versioned per-passport staging keys, then publishes one complete `snapshot:current` value. The public application reads that single value and caches it in each Worker isolate for five minutes. Matrix, sitemap, and destination requests therefore do not multiply one page view into 199 billable KV reads. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
+The sync Worker keeps versioned per-passport staging keys, then publishes one complete `snapshot:current` value. The public application reads that single value through Cloudflare's edge cache (one-hour TTL), then caches the decoded snapshot in each Worker isolate for five minutes. Matrix, sitemap, and destination requests therefore do not multiply one page view into hundreds of billable KV reads; warm edge requests do not read KV at all. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
 
 Shareable tools use the same URL convention: each `set` query parameter is one option, and comma-separated codes form a combined option. `/compare?set=US,CA&set=PT` compares destination access; `/rank?set=US,CA&set=PT` places both options into the global ranking. Add `.md` before the query string for a text-first version.
 

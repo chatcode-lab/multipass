@@ -16,6 +16,8 @@ export interface DataContext {
 
 const LIVE_SNAPSHOT_KEY = "snapshot:current";
 const LIVE_SNAPSHOT_CACHE_MS = 5 * 60 * 1_000;
+const LIVE_SNAPSHOT_EDGE_CACHE_SECONDS = 60 * 60;
+const LIVE_SNAPSHOT_EDGE_CACHE_URL = "https://multipassrank.com/__internal/passport-data-snapshot";
 const fallback = reconcileSnapshot({
   ...(fallbackSnapshot as DataSnapshot),
   combinationInsights: fallbackCombinationInsights as CombinationInsights,
@@ -41,6 +43,44 @@ function reconcileSnapshot(snapshot: PublishedDataSnapshot): PublishedDataSnapsh
   };
 }
 
+function edgeCache(): Cache | undefined {
+  return typeof caches === "undefined"
+    ? undefined
+    : (caches as CacheStorage & { default: Cache }).default;
+}
+
+async function readPublishedSnapshot(kv: KVNamespace): Promise<PublishedDataSnapshot | null> {
+  const cache = edgeCache();
+  const cacheKey = new Request(LIVE_SNAPSHOT_EDGE_CACHE_URL);
+
+  if (cache) {
+    try {
+      const cached = await cache.match(cacheKey);
+      if (cached) return await cached.json<PublishedDataSnapshot>();
+    } catch (error) {
+      console.error("Unable to read the passport snapshot from edge cache", error);
+    }
+  }
+
+  const snapshot = await kv.get<PublishedDataSnapshot>(LIVE_SNAPSHOT_KEY, "json");
+  if (snapshot && cache) {
+    try {
+      await cache.put(
+        cacheKey,
+        new Response(JSON.stringify(snapshot), {
+          headers: {
+            "Cache-Control": `public, max-age=${LIVE_SNAPSHOT_EDGE_CACHE_SECONDS}`,
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }),
+      );
+    } catch (error) {
+      console.error("Unable to write the passport snapshot to edge cache", error);
+    }
+  }
+  return snapshot;
+}
+
 async function getLiveSnapshot(): Promise<PublishedDataSnapshot | null> {
   const kv = passportDataKv();
   if (!kv) return null;
@@ -48,8 +88,7 @@ async function getLiveSnapshot(): Promise<PublishedDataSnapshot | null> {
   const now = Date.now();
   if (liveSnapshotCache && liveSnapshotCache.expiresAt > now) return liveSnapshotCache.value;
 
-  const value = kv
-    .get<PublishedDataSnapshot>(LIVE_SNAPSHOT_KEY, "json")
+  const value = readPublishedSnapshot(kv)
     .then((snapshot) => snapshot ? reconcileSnapshot(snapshot) : null);
   liveSnapshotCache = { expiresAt: now + LIVE_SNAPSHOT_CACHE_MS, value };
 
