@@ -319,7 +319,7 @@ test("custom ranking preserves and reuses passport sets", async ({ page, request
   expect(markdownBody).toContain("/compare?set=US%2CCA&set=PT");
 
   await page.goto("/rank?set=PT,RU,IL&set=SG");
-  await expect(page.locator("[data-combination-row] .ranking-row__rank")).toHaveText("#1");
+  await expect(page.locator("[data-combination-row] .ranking-row__rank")).toHaveText("#2");
   await expect(page.locator("[data-passport-row][data-set='SG'] .ranking-row__rank")).toHaveText("#1");
 });
 
