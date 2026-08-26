@@ -1505,7 +1505,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IT", "CF", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CF", "CF", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GQ")).toHaveLength(197);
+    expect(pairsFor("GQ")).toHaveLength(198);
     expect(getVisaRelationshipEvidence("CM", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "GQ", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1514,6 +1514,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GQ", "GQ", "citizenship").supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("TR", "GQ", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BB", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TN", "GQ", "visa_free").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the reviewed Lesotho and Eswatini schedules conservatively", () => {
@@ -4505,7 +4506,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["PG", "AF"],
       ["PY", "AF"],
-      ["TN", "GQ"],
       ["VA", "BW"],
     ] as const) {
       expect(
@@ -6116,6 +6116,7 @@ describe("official visa evidence", () => {
       "www.thailand.go.th",
       "tourism.gov.mm",
       "www.sknis.gov.kn",
+      "minexteriores.gob.gq",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

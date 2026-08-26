@@ -3248,6 +3248,16 @@ Eight exact residuals remain pending. Malawi's January 2026 Gazette makes Burkin
 
 Current-status evidence rises from 40,060 to 40,062 of 44,974 relationships (89.1%), leaving 4,912 pending and zero old or stale rows as of 26 August 2026. No fallback label, mobility score or rank changes. Canonical evidence now contains 840 reviewed batches, 3,515 official source records and 1,971 policies.
 
+## Pass 353 result: Tunisia to Equatorial Guinea and near-complete-column holds
+
+Tunisia's final Equatorial Guinea row now gains current direct support as `visa_free`. Equatorial Guinea's Foreign Ministry register, last modified 5 February 2026, records the Tunisia visa-exemption agreement as ratified on 26 June 2018, applicable to all passport categories and concluded by exchange of verbal notes. A Government ratification report independently describes the reciprocal exemption for Tunisian citizens. The sources do not establish a current maximum stay, so none is inferred.
+
+The policy remains medium confidence. A 2019 Government report discussed an unsigned diplomatic, official and service-passport instrument, while the later current Foreign Ministry register expressly says all passports. The documents may describe distinct instruments, but that historical discrepancy is preserved rather than hidden. The Ministry PDF also currently requires TLS-certificate validation bypass for direct command-line retrieval; the normally accessible Government reports corroborate the relationship, and the transport risk is marked for early recheck.
+
+Thirty-two independently replayed residuals remain pending. Jamaica does not map Vatican City or the Republic of the Congo; Belize omits Timor-Leste and South Sudan and gives Nauru a contradictory `YES - NO` row; and Guyana's Foreign Ministry and landing-permit services conflict for Uruguay, Indonesia and Cuba. The BVI's current orders are special-class exemptions rather than a general nationality schedule. Kosovo remains unclassified by the reviewed Eurasian authorities. Ukrainian and Serbian access to five French overseas destinations still turns on live passport-subtype exclusions. Four Moroccan rows remain unsupported by a direct current nationality mapping. None is resolved by omission, predecessor-state wording, generic portal availability or a conditional document substitute.
+
+Current-status evidence rises from 40,062 to 40,063 of 44,974 relationships (89.1%), leaving 4,911 pending and zero old or stale rows as of 26 August 2026. The fallback label, mobility score and rank do not change. Canonical evidence now contains 841 reviewed batches, 3,518 official source records and 1,972 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
