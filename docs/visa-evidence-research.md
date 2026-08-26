@@ -3382,7 +3382,27 @@ Pass 367 records 183 exact holds and one already-exposed conflict. Complete-matr
 
 All 96 British Virgin Islands residuals remain pending. The previous Government visa-schedule URLs now return HTTP 404. The official laws portal is live and embeds the 2026 Visa Exemption Order, but the passport-specific schedule could not be extracted and verified safely from the current public response. Special permit and document classes are not generalized into nationality rules, and no prior mapping is carried forward merely because its replacement is inaccessible.
 
+The pass also rechecked exact existing partitions for Angola, Myanmar, Saudi Arabia, Solomon Islands and Kuwait. Their limitations remain current: named or conditional electronic, arrival, sponsor, residency and transit routes do not establish universal complements for omitted passports. Iran still lacks one exact current destination-only partition; its official eVisa endpoint presently loops through HTTP 307 redirects, so the older multi-destination audit cannot be mislabeled as complete Iran coverage.
+
 This replay adds no policy, conflict or coverage. Canonical evidence remains at 849 reviewed batches, 3,569 official source records and 2,007 policies.
+
+## Pass 369 result: Chad and high-residual African destination replay
+
+Chad now has an exact current 145-row residual audit. Its official eVisa transition pages establish that a traveller already known to be visa-subject must use the electronic system, but no current primary source maps the remaining nationalities into that class. The portal's displayed exemption list is not a safe closed complement because it omits known Emirati and Mauritanian waivers; Burkina Faso and Senegal may also depend on bilateral or community treatment. All 145 rows remain pending.
+
+Existing exact partitions for São Tomé and Príncipe (135 rows), Mali (157), Niger (158) and Guinea-Bissau (159) were rechecked against current official sources. São Tomé's eVisa service remains a workflow without a nationality schedule. Mali's generic required result has a known invalid-input default and unresolved regional exceptions. Niger publishes no nationality-complete schedule, and Guinea-Bissau's unauthenticated legacy visa host is stale and contaminated with unrelated content. These five destination audits cover 754 exact holds without adding a policy.
+
+## Pass 370 result: Côte d'Ivoire and named-schedule replay
+
+Côte d'Ivoire now has an exact current 133-row residual audit. Current SNEDAI and Foreign Ministry pages replay normally and establish physical airport delivery after electronic pre-enrolment and approval, but do not publish an exhaustive eligibility complement for the omitted passports. No residual relationship is promoted from workflow availability alone.
+
+Existing exact current partitions for North Macedonia (137 rows), Tunisia (153) and Liberia (159) were also replayed. North Macedonia's selector supplies named results but no authenticated exhaustive complement. Tunisia's eVisa remains a future implementation—the current procurement result says the platform tender was unsuccessful—and E-Consulat names no nationality schedule. Liberia's generic online and consular forms likewise do not establish nationality-complete issuance. The four audits cover 582 exact holds and leave coverage unchanged.
+
+## Pass 371 result: remaining high-residual partition check
+
+Exact current candidates were confirmed for Comoros and Iraq (166 rows each), Djibouti and South Sudan (168 each), Turkmenistan (170), Sudan and Syria (174 each), the Central African Republic (175), North Korea (185) and Afghanistan (187). Together they account for 1,733 current holds. Their continuing limitations are explicit: incomplete nationality schedules, document or sponsor conditions, federal versus regional rules, invitation and border-issuance splits, and official endpoints that fail trusted TLS or normal replay. None permits a safe omission complement.
+
+The Palestinian Territory is the remaining high-residual destination without a single exact current inbound partition. Its 198 rows depend on non-representable West Bank/Gaza, Israeli entry-document, registry, crossing and permit distinctions. Existing outbound and relationship-specific audits must not be presented as an inbound destination-wide completion. This is an explicit research gap, not a verified visa-required complement.
 
 ## Official bulk sources identified for later passes
 
