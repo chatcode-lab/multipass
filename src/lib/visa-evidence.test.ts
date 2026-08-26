@@ -349,7 +349,7 @@ describe("official visa evidence", () => {
     const barbadosPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "BB");
 
-    expect(barbadosPairs).toHaveLength(199);
+    expect(barbadosPairs).toHaveLength(200);
     expect(getVisaRelationshipEvidence("CG", "BB", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HT", "BB", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "BB", "visa_required").supportsCurrentStatus).toBe(true);
@@ -456,7 +456,7 @@ describe("official visa evidence", () => {
     const nepalPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "NP");
 
-    expect(new Set(nepalPairs.map(({ passport }) => passport.code)).size).toBe(198);
+    expect(new Set(nepalPairs.map(({ passport }) => passport.code)).size).toBe(199);
     expect(getVisaRelationshipEvidence("IN", "NP", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IR", "NP", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PK", "NP", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -909,7 +909,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "PS", snapshot.passports.US.statuses.PS).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("PS", "PS", "citizenship").supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("SY")).toHaveLength(24);
+    expect(pairsFor("SY")).toHaveLength(25);
     expect(getVisaRelationshipEvidence("BG", "SY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "SY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "SY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -918,14 +918,14 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("DE", "SY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GB", "SY", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SI", "SY", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("SY", "SY", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("SY", "SY", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("YE")).toHaveLength(196);
+    expect(pairsFor("YE")).toHaveLength(197);
     expect(getVisaRelationshipEvidence("HK", "YE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "YE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IL", "YE", snapshot.passports.IL.statuses.YE).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("XK", "YE", snapshot.passports.XK.statuses.YE).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("YE", "YE", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("YE", "YE", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the reviewed India, Sri Lanka, and Vietnam pass", () => {
@@ -980,7 +980,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "PH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "PH", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KH")).toHaveLength(198);
+    expect(pairsFor("KH")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("SG", "KH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "KH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "KH", "visa_required").supportsCurrentStatus).toBe(true);
@@ -992,11 +992,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("US", "KH", snapshot.passports.US.statuses.KH).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MV", "KH", "visa_free").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("LA")).toHaveLength(162);
+    expect(pairsFor("LA")).toHaveLength(163);
     expect(getVisaRelationshipEvidence("BY", "LA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "LA", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "LA", snapshot.passports.AF.statuses.LA).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("LA", "LA", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("LA", "LA", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the reviewed Mongolia and Uzbekistan routes", () => {
@@ -1066,7 +1066,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "BN", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BN", "BN", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KG")).toHaveLength(193);
+    expect(pairsFor("KG")).toHaveLength(194);
     expect(getVisaRelationshipEvidence("RS", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MV", "KG", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AL", "KG", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1087,7 +1087,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "KG", snapshot.passports.XK.statuses.KG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("CU", "KG", snapshot.passports.CU.statuses.KG).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("KP", "KG", snapshot.passports.KP.statuses.KG).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("KG", "KG", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("KG", "KG", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("covers mainland China's reviewed ordinary-passport baseline", () => {
@@ -1788,12 +1788,12 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "LC");
 
-    expect(pairs).toHaveLength(187);
+    expect(pairs).toHaveLength(188);
     expect(getVisaRelationshipEvidence("BR", "LC", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AU", "LC", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "LC", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CD", "LC", snapshot.passports.CD.statuses.LC).supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("LC", "LC", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("LC", "LC", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("covers the Dutch Caribbean's explicit waiver and residual visa rules", () => {
@@ -2111,7 +2111,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "GY");
 
-    expect(pairs).toHaveLength(195);
+    expect(pairs).toHaveLength(196);
     expect(getVisaRelationshipEvidence("QA", "GY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AL", "GY", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BO", "GY", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2119,7 +2119,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("MX", "GY", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CO", "GY", snapshot.passports.CO.statuses.GY).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ES", "GY", snapshot.passports.ES.statuses.GY).supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("GY", "GY", "citizenship").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("GY", "GY", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
   it("maps Suriname's complete visa-abolition partition without treating its entry fee as eVisa", () => {
@@ -4975,7 +4975,7 @@ describe("official visa evidence", () => {
     }
 
     expect(evidenceRelationshipPairs(snapshot.manifest).filter(({ destination }) => destination.code === "GD"))
-      .toHaveLength(198);
+      .toHaveLength(199);
 
     for (const [passportCode, destinationCode] of [["XK", "MN"], ["ID", "GM"]] as const) {
       const status = snapshot.passports[passportCode].statuses[destinationCode];
@@ -5440,10 +5440,11 @@ describe("official visa evidence", () => {
       "CD", "CI", "SZ", "MU", "NG", "RW", "ZA", "UG", "CR", "SV", "HN", "PA", "DO", "BS",
       "AF", "BN", "CN", "HK", "MO", "MN", "MM", "PK", "MC", "ME", "OM", "PG", "WS", "SB",
       "AO", "BW", "BF", "CM", "LS", "ML", "MR", "MA", "NE", "ST", "SN", "SL", "SS", "TN",
+      "BB", "GY", "GD", "LC", "KH", "KG", "LA", "NP", "SY", "YE",
     ] as const;
     const heldCodes = [
-      "BI", "CF", "TD", "EG", "GQ", "ER", "GA", "GN", "GW", "MZ", "BZ", "GY", "VE", "BB",
-      "CU", "DM", "GD", "LC", "VC", "KH", "KG", "LA", "NP", "KP", "PS", "SY", "YE",
+      "BI", "CF", "TD", "EG", "GQ", "ER", "GA", "GN", "GW", "MZ", "BZ", "VE", "CU", "DM",
+      "VC", "KP", "PS",
     ] as const;
 
     for (const code of supportedCodes) {
@@ -5490,6 +5491,14 @@ describe("official visa evidence", () => {
       "www.bvi.gov.vg",
       "gndembassyprc.mofa.gov.gd",
       "grenadaembassyusa.org",
+      "www.barbadoslawcourts.gov.bb",
+      "homeaffairs.govt.lc",
+      "npc.govt.lc",
+      "pressocm.gov.kh",
+      "digital.gov.kg",
+      "docstore.ohchr.org",
+      "nepalpassport.gov.np",
+      "agoye.gov.ye",
       "algiers.mofa.gov.bd",
       "laws.gov.gd",
       "grenadaparliament.gd",

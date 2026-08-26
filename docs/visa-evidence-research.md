@@ -3542,9 +3542,19 @@ The other 24 exact gaps remain blocked by similarly non-uniform rules: Macao and
 
 The replay did uncover one research-metadata error rather than a visa-status error. The Pass 364 Kosovo–Georgia hold had accidentally called the Georgian authority “Equatorial Guinean” and listed Equatorial Guinea domains. The note now correctly identifies Georgian authorities and records the Georgian eVisa and Foreign Ministry domains; its held outcome is unchanged.
 
+## Pass 388 result: ten additional home-citizenship cells
+
+Ten diagonal relationships gain direct official evidence: Barbados, Guyana, Grenada, Saint Lucia, Cambodia, Kyrgyzstan, Laos, Nepal, Syria and Yemen. Barbados, Grenada, Cambodia and Yemen have direct statutory or constitutional entry or return clauses. Guyana's current consular guidance goes further and confirms that a Guyanese citizen does not need a home-entry visa even when travelling on a foreign passport. The reviewed passport authorities in every promoted jurisdiction tie the standard national, ordinary, regular or general-civil document to the relevant citizens or nationals and preserve special-document distinctions.
+
+The sources are not treated as interchangeable templates. Cambodia's Constitution directly protects Khmer citizens' return. Kyrgyzstan's September 2024 service standard expressly serves citizens with a general-civil passport. Laos's official state submission quotes the passport decree's citizen right to hold a passport and enter or leave the country, while the live Foreign Ministry ordinary-passport service corroborates that document class. Nepal's current Passport Department requires original citizenship evidence and distinguishes regular from official and diplomatic passports. Syria's Interior Ministry describes the passport as a constitutional citizen right. Yemen's amended Passport Law both reserves ordinary passports to Yemeni nationals and protects return.
+
+Seventeen diagonal cells remain held: Burundi, Central African Republic, Chad, Egypt, Equatorial Guinea, Eritrea, Gabon, Guinea, Guinea-Bissau, Mozambique, Belize, Venezuela, Cuba, Dominica, Saint Vincent and the Grenadines, North Korea and Palestine. The reviewed sources for those jurisdictions remain indirect, non-current, application-only, document-specific or operationally split. No code identity, expired legal text, portal omission or foreign-passport rule is substituted for a direct ordinary-passport basis.
+
+These are evidence promotions only; the displayed diagonal status was already citizenship, so no mobility score, rank or foreign-access total changes. Foreign coverage remains 40,460 of 44,974 (90.0%). Canonical evidence contains 856 reviewed batches, 3,619 official source records and 2,037 policies.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 990 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 991 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
