@@ -3270,6 +3270,18 @@ Parallel replay added no Marshall Islands or Cabo Verde relationship. The Marsha
 
 Current-status evidence rises from 40,063 to 40,088 of 44,974 relationships (89.1%), leaving 4,886 pending and zero old or stale rows as of 26 August 2026. Cuba falls from 57 to 56 mobility points and from dense rank 83 to 85. India rises from 57 to 58 points and remains rank 83; its new score tier shifts all lower dense-rank tiers down by one. Canonical evidence now contains 842 reviewed batches, 3,518 official source records and 1,974 policies.
 
+## Pass 355 result: North Korea to Panama and near-complete holds
+
+North Korea's Panama row now gains current direct support as `visa_required`. Panama's live Embassy schedule lists the Republic of Korea separately in its no-visa cohort and “People's Republic of Korea” in the authorized-visa cohort. In that paired context, the latter is the North Korean passport rather than an unresolved generic Korea label. Panama's Foreign Ministry independently confirms that a consul may grant an authorized visa only after prior approval from the National Migration Service.
+
+The ordinary visitor applies in person at a Panamanian consulate, and the Embassy warns that authorization may take up to 60 business days and that travel should not be finalized before grant. The conditional Executive Decree 521 exception for travellers holding a qualifying valid visa or residence from a named third country remains a document-based alternative, not the unconditional North Korean ordinary-passport baseline. The policy stays medium confidence because the live English schedule uses a non-standard country name even though its separate South Korean entry and Panama's own current country registries resolve the intended state.
+
+Eighteen independently replayed relationships remain pending. Georgia does not establish ordinary tourist issuance for Taiwan or recognition and issuance for Kosovo. Zambia retains the legacy “Serbia and Montenegro” label and contradictory Serbian guidance, and none of its named cohorts maps Kosovo. Sri Lanka's new sponsor/head-office notice names Kosovo and Syria but does not identify issuance form or timing. Yemen does not establish Israeli or Kosovo passport eligibility. Taiwan's Mainland route uses separate travel documents and person-level qualifications, while no current source resolves Palestinian-document acceptance.
+
+Guatemala's current schedule places Andorra in both visa-exempt and consular-visa categories and does not directly map HKSAR, Macao, Kosovo or South Sudan ordinary passports. Panama's schedule omits Macao and Timor-Leste and names Sudan rather than South Sudan; no omission-based complement is inferred for those three. These rows remain visibly pending rather than inheriting a state name, special document or portal route.
+
+Current-status evidence rises from 40,088 to 40,089 of 44,974 relationships (89.1%), leaving 4,885 pending and zero old or stale rows as of 26 August 2026. The fallback label, mobility score and rank do not change. Canonical evidence now contains 843 reviewed batches, 3,518 official source records and 1,975 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

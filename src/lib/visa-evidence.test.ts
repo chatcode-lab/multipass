@@ -2022,7 +2022,7 @@ describe("official visa evidence", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "PA");
 
-    expect(pairs).toHaveLength(194);
+    expect(pairs).toHaveLength(195);
     expect(getVisaRelationshipEvidence("CU", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DO", "PA", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GN", "PA", "visa_required").supportsCurrentStatus).toBe(true);
@@ -2052,6 +2052,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("JP", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BG", "PA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PL", "PA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KP", "PA", "visa_required").supportsCurrentStatus).toBe(true);
   });
 
   it("maps Guyana's reconciled exemptions and residual visa-required baseline", () => {
@@ -4297,7 +4298,6 @@ describe("official visa evidence", () => {
     }
 
     for (const [passportCode, destinationCode] of [
-      ["KP", "PA"],
       ["LC", "AF"],
       ["PK", "BD"],
     ] as const) {
