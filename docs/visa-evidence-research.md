@@ -3580,9 +3580,17 @@ Trinidad and Tobago's 107 pending rows and Myanmar's 91 pending rows receive fre
 
 Foreign coverage rises by 68 to 40,537 of 44,974 relationships (90.1%), leaving 4,437 pending. Canonical evidence contains 861 reviewed batches, 3,650 official source records and 2,051 policies. Every remaining pending relationship remains audit-covered.
 
+## Pass 392 result: three current terminal schedule replays
+
+North Macedonia's 137 pending relationships, Bangladesh's 122 and Mali's 157 receive fresh exact replays without a safe policy or fallback correction. North Macedonia's Foreigners Law delegates both required and exempt nationality lists to a separate Government regulation. The operative regulation or annex remains unrecoverable, while normal MFA and Gazette replays time out or fail certificate validation; third-country visa and residence substitutions remain traveller-document conditions rather than passport-wide results.
+
+Bangladesh's Special Branch pages were independently replayed on their live Government hosts. They confirm physical arrival issuance and identify named cohorts, but the remaining routes depend on where Bangladesh has a mission, reciprocity, the traveller's country of departure, Bangladeshi origin, investment or invitation evidence, prior notice, official role, clearance or facts assessed at arrival. The Passport Rules' endorsed-visa baseline expressly preserves Government class exemptions, and the online MRV form still ends with printed documents and mission filing. Those authorities therefore do not establish the 122 residual passport-only classifications.
+
+Mali's Foreign Ministry assistant cannot currently supply trusted operational results because its normal HTTPS certificate validation fails. No insecure replay, invalid-input default, omission, special-document result or unverified regional exception is promoted. Coverage remains 40,537 of 44,974 foreign relationships (90.1%), with 4,437 pending and every pending row audit-covered. Canonical evidence now contains 864 reviewed batches, 3,655 official source records and 2,051 policies.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,437 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 996 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.1% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,437 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 999 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.1% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 

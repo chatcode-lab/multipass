@@ -6049,6 +6049,7 @@ describe("official visa evidence", () => {
       "service-public.gouv.tg",
       "amap.ml",
       "www.diplomatiemdc.gouv.ml",
+      "www.diplomatie.gouv.ml",
       "diplomatie.gouv.ne",
       "www.ambaniger-bruxelles.be",
       "www.amba-mali.be",
