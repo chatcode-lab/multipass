@@ -523,6 +523,28 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-11-26",
   },
+  {
+    passportCode: "FJ",
+    destinationCode: "XK",
+    rejectedStatus: "visa_free",
+    reason: "Kosovo's live Foreign Ministry list names Fiji as visa-exempt, while a later signed Government decision adds Fiji to the visa regime only upon Official Gazette publication. Current official records do not establish whether that condition occurred, so no single route is safe.",
+    sourceIds: [
+      "kosovo-mfa-live-fiji-short-stay-waiver-list-2026",
+      "kosovo-government-decision-14-280-fiji-gazette-condition-2026",
+      "kosovo-official-gazette-live-search-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
+  {
+    passportCode: "DO",
+    destinationCode: "MD",
+    rejectedStatus: "evisa",
+    reason: "Moldova's current Foreign Ministry page lists the Dominican Republic in both its required-visa and visa-exempt nationality lists. Its required-list footnote depends on qualifying third-country visas or residence permits and does not reconcile a passport-wide baseline.",
+    sourceIds: ["moldova-mfa-current-foreign-visa-regime-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);
