@@ -2160,18 +2160,30 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GB", "SH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps Solomon Islands' explicit waivers separate from concessional visa on arrival", () => {
+  it("maps Solomon Islands' explicit waivers, concessions, and current tourist eVisa cohort", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "SB");
 
-    expect(pairs).toHaveLength(79);
+    expect(pairs).toHaveLength(197);
     expect(getVisaRelationshipEvidence("FR", "SB", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "SB", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "SB", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IS", "SB", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.TW.statuses.SB).toBe("visa_required");
     expect(getVisaRelationshipEvidence("TW", "SB", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "SB", snapshot.passports.AF.statuses.SB).supportsCurrentStatus).toBe(false);
+    expect(VERIFIED_ACCESS_OVERRIDES.filter(({ destinationCode, status }) =>
+      destinationCode === "SB" && status === "evisa"
+    )).toHaveLength(118);
+    for (const passportCode of ["CL", "PA", "EC", "GY", "AF"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "SB", "evisa").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["MO", "ME"] as const) {
+      expect(getVisaRelationshipEvidence(
+        passportCode,
+        "SB",
+        snapshot.passports[passportCode].statuses.SB,
+      ).supportsCurrentStatus).toBe(false);
+    }
   });
 
   it("covers Papua New Guinea's named arrival, electronic, and advance-visa cohorts", () => {
@@ -5607,6 +5619,7 @@ describe("official visa evidence", () => {
       "solomons.gov.sb",
       "www.investsolomons.gov.sb",
       "immigration.gov.sb",
+      "immigration.sig.gov.sb",
       "ica.gov.pg",
       "evisa.ica.gov.pg",
       "www.immigration.ms",

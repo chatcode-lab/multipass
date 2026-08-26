@@ -4479,4 +4479,23 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://tourism.gov.mm/en/e-visa",
     reviewedAt: "2026-08-26",
   },
+  ...([
+    "CL", "HK", "MX", "UY", "VA", "CR", "PA", "MU", "PY", "PE", "UA", "GT",
+    "SV", "HN", "NI", "MK", "RS", "GE", "BA", "AL", "VE", "MD", "RU", "QA",
+    "TR", "ZA", "TL", "EC", "SA", "XK", "GY", "BH", "JM", "OM", "BY", "BO",
+    "BW", "SR", "KZ", "LS", "ID", "NA", "AZ", "SZ", "MA", "GH", "KE", "MW",
+    "TZ", "GM", "RW", "AM", "MN", "PH", "TN", "ZM", "CV", "MZ", "UG", "KG",
+    "SL", "BJ", "ST", "UZ", "ZW", "BF", "IN", "CI", "MG", "SN", "CU", "NE",
+    "TJ", "TG", "GA", "GN", "MR", "GQ", "ML", "TD", "GW", "VN", "DZ", "KM",
+    "JO", "AO", "BT", "KH", "CM", "CG", "HT", "LA", "LR", "CF", "BI", "TM",
+    "EG", "DJ", "LB", "MM", "CD", "NG", "LK", "KP", "SS", "ER", "ET", "IR",
+    "LY", "SD", "BD", "NP", "PK", "SO", "YE", "IQ", "SY", "AF",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "SB",
+    status: "evisa" as const,
+    reason: "The Solomon Islands Immigration Division's live Tourist product explicitly accepts this nationality, and an approved visa grant letter is delivered by email before travel.",
+    sourceUrl: "https://immigration.sig.gov.sb/evisa/global/get_allowed_nationalities?ptype=191C7C89-06BE-48AD-B4D6-4B16C2F55CB3",
+    reviewedAt: "2026-08-26",
+  })),
 ] as const;

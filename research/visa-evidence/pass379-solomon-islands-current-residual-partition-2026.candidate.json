@@ -1,0 +1,1647 @@
+{
+  "batchId": "solomon-islands-residual-visitor-visa-audit-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+      "title": "Solomon Islands eVisa: Tourist allowed-nationalities dataset",
+      "url": "https://immigration.sig.gov.sb/evisa/global/get_allowed_nationalities?ptype=191C7C89-06BE-48AD-B4D6-4B16C2F55CB3",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Immigration Division visitor page links immigration.sig.gov.sb as its online application. This public Tourist-product endpoint returned HTTP 200 JSON on 2026-08-26 and its closed list names every promoted catalog nationality, while omitting Macao and Montenegro.",
+      "supportingExcerpt": "{\"code_guid\":\"AFG\",\"description\":\"Afghanistan\"}"
+    },
+    {
+      "id": "solomon-islands-evisa-tourist-nationality-check-pass379",
+      "title": "Solomon Islands eVisa: Tourist nationality eligibility check",
+      "url": "https://immigration.sig.gov.sb/evisa/global/check_nationality?permit_type_class=191C7C89-06BE-48AD-B4D6-4B16C2F55CB3&nationality=Chile",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The same live public eVisa service returns ws_status 0 for a named Tourist nationality and returns an error for a non-list name. This is a reproducible product-specific eligibility result, not mere selectability.",
+      "supportingExcerpt": "\"ws_status\":0,\"ws_message\":\"Success\""
+    },
+    {
+      "id": "solomon-islands-immigration-tourist-electronic-grant-pass379",
+      "title": "Visitor Visa – Tourist",
+      "url": "https://immigration.gov.sb/visitor-visa-tourist/",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current Immigration Division page links the live online application and states the Tourist visitor purpose, email decision/grant mechanism and pre-entry grant-letter requirement.",
+      "supportingExcerpt": "Once your visa is approved, we will send your visa grant letter through your email."
+    },
+    {
+      "id": "solomon-islands-gazette-concessional-notice-pass379",
+      "title": "Legal Notice No. 128: concessional entry arrangement countries",
+      "url": "https://solomons.gov.sb/wp-content/uploads/2025/07/Gaz-No.-73-Sup-No.-37-Tuesday-24th-June-2025.pdf",
+      "publisher": "Solomon Islands Gazette / Minister for Commerce, Industry, Labour and Immigration",
+      "jurisdiction": "Solomon Islands",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live official Gazette PDF identifies the named concessional-entry schedule. It does not identify Macao or Montenegro and does not supply an unlisted-country complement.",
+      "supportingExcerpt": "specify that each country listed in the Schedule is a concessional entry arrangement country"
+    }
+  ],
+  "policies": [
+    {
+      "id": "solomon-islands-named-tourist-evisa-current-nationality-dataset-pass379",
+      "title": "Named ordinary passports: Solomon Islands electronic Tourist visa",
+      "summary": "The live official Tourist eVisa nationality dataset explicitly names this cohort, and the current Immigration visitor page sends an approved visa grant letter by email before travel.",
+      "status": "evisa",
+      "destinationCodes": [
+        "SB"
+      ],
+      "passportCodes": [
+        "CL",
+        "HK",
+        "MX",
+        "UY",
+        "VA",
+        "CR",
+        "PA",
+        "MU",
+        "PY",
+        "PE",
+        "UA",
+        "GT",
+        "SV",
+        "HN",
+        "NI",
+        "MK",
+        "RS",
+        "GE",
+        "BA",
+        "AL",
+        "VE",
+        "MD",
+        "RU",
+        "QA",
+        "TR",
+        "ZA",
+        "TL",
+        "EC",
+        "SA",
+        "XK",
+        "GY",
+        "BH",
+        "JM",
+        "OM",
+        "BY",
+        "BO",
+        "BW",
+        "SR",
+        "KZ",
+        "LS",
+        "ID",
+        "NA",
+        "AZ",
+        "SZ",
+        "MA",
+        "GH",
+        "KE",
+        "MW",
+        "TZ",
+        "GM",
+        "RW",
+        "AM",
+        "MN",
+        "PH",
+        "TN",
+        "ZM",
+        "CV",
+        "MZ",
+        "UG",
+        "KG",
+        "SL",
+        "BJ",
+        "ST",
+        "UZ",
+        "ZW",
+        "BF",
+        "IN",
+        "CI",
+        "MG",
+        "SN",
+        "CU",
+        "NE",
+        "TJ",
+        "TG",
+        "GA",
+        "GN",
+        "MR",
+        "GQ",
+        "ML",
+        "TD",
+        "GW",
+        "VN",
+        "DZ",
+        "KM",
+        "JO",
+        "AO",
+        "BT",
+        "KH",
+        "CM",
+        "CG",
+        "HT",
+        "LA",
+        "LR",
+        "CF",
+        "BI",
+        "TM",
+        "EG",
+        "DJ",
+        "LB",
+        "MM",
+        "CD",
+        "NG",
+        "LK",
+        "KP",
+        "SS",
+        "ER",
+        "ET",
+        "IR",
+        "LY",
+        "SD",
+        "BD",
+        "NP",
+        "PK",
+        "SO",
+        "YE",
+        "IQ",
+        "SY",
+        "AF"
+      ],
+      "conditions": [
+        "Use a valid ordinary passport of one of the named nationalities for tourism, leisure, holiday or social-visit travel. The Immigration page generally calls for a passport valid at least six months beyond travel, evidence of onward departure, funds and travel plans.",
+        "Submit the Tourist application and payment online. The Immigration page says a decision and, on approval, a visa grant letter are sent to the provided email; present that grant letter when entering Solomon Islands. This is electronic pre-travel visa issuance, not the separate physical-arrival route.",
+        "The Tourist product is single entry for up to 90 days from arrival. It does not establish work, business, study, residence, transit, yacht/crew, family, official, diplomatic, refugee, stateless or other special-document access.",
+        "The generic Tourist page says a 30-day visa on arrival may apply to eligible nationals, but it publishes no matching arrival cohort. This policy relies only on the closed electronic Tourist nationality dataset and does not transfer any arrival entitlement.",
+        "Approval remains discretionary; final admission, document authenticity, health, character and border-control requirements remain applicable."
+      ],
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ],
+      "confidence": "medium",
+      "application": {
+        "url": "https://immigration.sig.gov.sb/evisa/account/Apply?ReturnUrl=%2fevisa",
+        "label": "Solomon Islands Immigration eVisa Tourist application",
+        "steps": [
+          "Choose the Visitor / Tourist product and a nationality returned by the live Tourist allowed-nationalities dataset.",
+          "Submit the online application, payment and required valid-passport/travel documents.",
+          "Receive the emailed visa grant letter if approved and present it on entry."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CL",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MX",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "UY",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CR",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "PA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MU",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "UA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SV",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "HN",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "NI",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MK",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GE",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "AL",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "VE",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MD",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "RU",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "QA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TR",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TL",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "EC",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GY",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BH",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "JM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "OM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BY",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BO",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BW",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SR",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "KZ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "LS",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "NA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "AZ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SZ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GH",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "KE",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MW",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TZ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "AM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MN",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "PH",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TN",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ZM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CV",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MZ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "UG",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "KG",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SL",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BJ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ST",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "UZ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ZW",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BF",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "IN",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CI",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MG",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SN",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "NE",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TJ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TG",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GN",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MR",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GQ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ML",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TD",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "GW",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "VN",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "DZ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "KM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "JO",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "AO",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BT",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "KH",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CG",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "HT",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "LA",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "LR",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CF",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BI",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "TM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "EG",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "DJ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "LB",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "MM",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "CD",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "NG",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "LK",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ER",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "ET",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "IR",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "LY",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SD",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "BD",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "NP",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "PK",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SO",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "YE",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "IQ",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "SY",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The current official eVisa Tourist endpoint explicitly names this passport nationality as allowed; the official visitor page says an approved applicant receives a visa grant letter by email before entry. The current generic arrival wording is limited to eligible nationals and does not establish a border-issued alternative for this code.",
+      "sourceIds": [
+        "solomon-islands-evisa-tourist-nationality-dataset-pass379",
+        "solomon-islands-evisa-tourist-nationality-check-pass379",
+        "solomon-islands-immigration-tourist-electronic-grant-pass379"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MO",
+      "destinationCode": "SB",
+      "reason": "The live Tourist allowed-nationalities dataset has no Macao/SAR record. China treatment, portal availability, concession omission and any PRC passport rule cannot be transferred to a Macao SAR ordinary passport.",
+      "searchedOfficialDomains": [
+        "immigration.sig.gov.sb",
+        "immigration.gov.sb",
+        "solomons.gov.sb"
+      ]
+    },
+    {
+      "passportCode": "ME",
+      "destinationCode": "SB",
+      "reason": "The live Tourist allowed-nationalities dataset has no Montenegro record. Portal availability and omission from the concessional Gazette do not establish ordinary Montenegrin passport recognition or a visitor route.",
+      "searchedOfficialDomains": [
+        "immigration.sig.gov.sb",
+        "immigration.gov.sb",
+        "solomons.gov.sb"
+      ]
+    }
+  ]
+}
