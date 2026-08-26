@@ -4462,4 +4462,21 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-26",
     effectiveFrom: "2023-09-29",
   })),
+  ...(["CM", "IN", "RW", "TR"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "CV",
+    status: "visa_on_arrival" as const,
+    reason: "Cabo Verde's corrected 2026 Gazette schedule does not require this passport to obtain a visa before travel, while the current Immigration Authority expressly issues tourist visas at air or maritime frontier posts.",
+    sourceUrl: "https://boe.incv.cv/Bulletins/View/89461",
+    reviewedAt: "2026-08-26",
+    effectiveFrom: "2026-01-01",
+  })),
+  {
+    passportCode: "ET",
+    destinationCode: "MM",
+    status: "visa_on_arrival",
+    reason: "Myanmar's current ordinary-passport tourist schedule directly names Ethiopia. Approval is emailed before travel, but the official workflow issues and stamps the visa at the Immigration Arrival counter.",
+    sourceUrl: "https://tourism.gov.mm/en/e-visa",
+    reviewedAt: "2026-08-26",
+  },
 ] as const;

@@ -710,10 +710,23 @@ describe("official visa evidence", () => {
     expect(snapshot.passports.MD.statuses.VU).toBe("evisa");
     expect(getVisaRelationshipEvidence("BH", "VU", snapshot.passports.BH.statuses.VU).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("CV")).toHaveLength(161);
+    expect(pairsFor("CV")).toHaveLength(197);
     expect(getVisaRelationshipEvidence("US", "CV", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "CV", "visa_required").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AU", "CV", snapshot.passports.AU.statuses.CV).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AU", "CV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(VERIFIED_ACCESS_OVERRIDES.filter(({ destinationCode, status }) =>
+      destinationCode === "CV" && status === "visa_on_arrival"
+    )).toHaveLength(4);
+    for (const passportCode of ["CM", "IN", "RW", "TR"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "CV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["TW", "XK"] as const) {
+      expect(getVisaRelationshipEvidence(
+        passportCode,
+        "CV",
+        snapshot.passports[passportCode].statuses.CV,
+      ).supportsCurrentStatus).toBe(false);
+    }
 
     expect(MOZAMBIQUE_EVISA_ORDINARY_PASSPORT_CODES).toHaveLength(146);
     expect(pairsFor("MZ")).toHaveLength(198);
@@ -1022,10 +1035,16 @@ describe("official visa evidence", () => {
 
     const myanmarPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "MM");
-    expect(myanmarPairs).toHaveLength(107);
+    expect(myanmarPairs).toHaveLength(108);
     expect(getVisaRelationshipEvidence("SG", "MM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CN", "MM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MN", "MM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("ET", "MM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    expect(VERIFIED_ACCESS_OVERRIDES).toContainEqual(expect.objectContaining({
+      passportCode: "ET",
+      destinationCode: "MM",
+      status: "visa_on_arrival",
+    }));
     expect(getVisaRelationshipEvidence("AF", "MM", snapshot.passports.AF.statuses.MM).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("MM", "MM", "citizenship").supportsCurrentStatus).toBe(true);
   });
@@ -2279,7 +2298,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("XK", "ES", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "NO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "CH", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("NZ", "CV", snapshot.passports.NZ.statuses.CV).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("NZ", "CV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CL", "KW", snapshot.passports.CL.statuses.KW).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("CM", "MH", snapshot.passports.CM.statuses.MH).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("KR", "TT", snapshot.passports.KR.statuses.TT).supportsCurrentStatus).toBe(true);
@@ -5242,7 +5261,6 @@ describe("official visa evidence", () => {
     for (const [passportCode, destinationCode] of [
       ["SG", "DJ"],
       ["SG", "LR"],
-      ["AU", "CV"],
       ["AU", "SL"],
       ["IS", "TD"],
       ["IS", "VG"],
@@ -5253,6 +5271,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
         .toBe(destinationCode === "SL" || (passportCode === "SG" && destinationCode === "LR"));
     }
+    expect(getVisaRelationshipEvidence("AU", "CV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
   it("preserves Cypriot, Romanian and Malaysian final route gaps as uncovered", () => {
@@ -5284,7 +5303,6 @@ describe("official visa evidence", () => {
       ["BN", "MK"],
       ["LI", "SL"],
       ["LI", "TT"],
-      ["AR", "CV"],
     ] as const) {
       const status = destinationCode === "SL"
         ? "visa_on_arrival"
@@ -5292,6 +5310,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
         .toBe(destinationCode === "SL");
     }
+    expect(getVisaRelationshipEvidence("AR", "CV", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.AR.statuses.SA).toBe("visa_required");
     expect(getVisaRelationshipEvidence("AR", "SA", "visa_required").supportsCurrentStatus).toBe(true);
   });
@@ -6188,6 +6207,7 @@ describe("official visa evidence", () => {
       "minexteriores.gob.gq",
       "mmih.adlia.tj",
       "mfa.gov.az",
+      "myanmarembassytokyo.org",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -3452,9 +3452,19 @@ Parallel exact rechecks add no speculative policy. Panama's current named visa-f
 
 Complete-matrix evidence rises to 40,305 of 44,974 foreign relationships (89.6%), leaving 4,669 pending and zero old or stale rows as of 26 August 2026. Angola now has verified evidence for 194 of 198 foreign passports. Canonical evidence contains 851 reviewed batches, 3,574 official source records and 2,010 policies.
 
+## Pass 377 result: Cabo Verde border visas and Myanmar's Ethiopian route
+
+Cabo Verde adds 36 current ordinary-passport relationships from its corrected 2026 Gazette schedule and current Immigration Authority visitor guidance. Order 244/GMAI/2026 supplies the closed cohort that must obtain a visa before travel from 1 January 2026. For foreign visitors outside that cohort, the Immigration Authority expressly provides for tourist-visa issuance at an air or maritime frontier post. EASE pre-registration and the Airport Security Tax remain separate formalities and are not normalized as an ETA or visa.
+
+Cameroon, India, Rwanda and Türkiye change from the imported `visa_required` label to conditional `visa_on_arrival`; the other 32 newly supported rows were already labelled `visa_on_arrival` but lacked direct current evidence. Each corrected passport gains one mobility point and dense ranks are recomputed. Taiwan and Kosovo remain pending because the reviewed material does not directly establish recognition and operational handling of those travel documents. Cabo Verde now has verified evidence for 196 of 198 foreign passports.
+
+Myanmar adds one relationship for Ethiopia. The current Tourism Ministry schedule directly names Ethiopian ordinary passports, and the Immigration workflow sends approval before travel but issues and stamps the visa at the Immigration Arrival counter. It is therefore normalized as `visa_on_arrival` under the project's issuance-point taxonomy. The official FAQ also describes eVisa as distinct from visa on arrival; that product-label conflict is retained explicitly rather than concealed. Myanmar's other 91 residual relationships remain pending because the named official schedules do not establish an exhaustive all-other consular complement.
+
+Complete-matrix evidence rises to 40,342 of 44,974 foreign relationships (89.7%), leaving 4,632 pending and zero old or stale rows as of 26 August 2026. Canonical evidence contains 853 reviewed batches, 3,584 official source records and 2,012 policies.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,669 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 973 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.6% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,632 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 975 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.7% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
