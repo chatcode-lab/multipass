@@ -133,6 +133,12 @@ describe("visa relationship URLs", () => {
       expect(getVisaRelationshipEvidence(code, "GY", "unknown").reviewedUnknown)
         .toMatchObject({ rejectedStatus: "visa_free" });
     }
+    for (const code of ["UA", "RS"] as const) {
+      for (const destinationCode of ["GF", "PF", "YT", "NC", "RE"] as const) {
+        expect(getVisaRelationshipEvidence(code, destinationCode, "unknown").reviewedUnknown)
+          .toMatchObject({ rejectedStatus: "visa_free" });
+      }
+    }
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
@@ -6059,6 +6065,7 @@ describe("official visa evidence", () => {
       "www.gob.pe",
       "www.facebook.com",
       "tokyo.mfa.gov.rs",
+      "banjaluka.mfa.gov.rs",
       "evisa.gov.mn",
       "portales.sre.gob.mx",
       "evisa.rop.gov.om",

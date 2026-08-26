@@ -89,7 +89,12 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.MA.statuses.JO).toBe("unknown");
     expect(snapshot.passports.MA.mobilityScore).toBe(70);
     expect(snapshot.passports.UA.statuses.TN).toBe("unknown");
-    expect(snapshot.passports.UA.mobilityScore).toBe(148);
+    for (const destinationCode of ["GF", "PF", "YT", "NC", "RE"] as const) {
+      expect(snapshot.passports.UA.statuses[destinationCode], destinationCode).toBe("unknown");
+      expect(snapshot.passports.RS.statuses[destinationCode], destinationCode).toBe("unknown");
+    }
+    expect(snapshot.passports.UA.mobilityScore).toBe(143);
+    expect(snapshot.passports.RS.mobilityScore).toBe(126);
     expect(snapshot.passports.IE.statuses.SY).toBe("visa_required");
     expect(snapshot.passports.IE.statuses.TM).toBe("visa_required");
     expect(snapshot.passports.SG.statuses.LR).toBe("visa_required");
