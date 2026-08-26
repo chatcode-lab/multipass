@@ -3404,6 +3404,14 @@ Exact current candidates were confirmed for Comoros and Iraq (166 rows each), Dj
 
 The Palestinian Territory is the remaining high-residual destination without a single exact current inbound partition. Its 198 rows depend on non-representable West Bank/Gaza, Israeli entry-document, registry, crossing and permit distinctions. Existing outbound and relationship-specific audits must not be presented as an inbound destination-wide completion. This is an explicit research gap, not a verified visa-required complement.
 
+## Pass 372 result: low-gap Western passport replay
+
+Nine Western passport ETA hypotheses into the Palestinian Territory remain pending. Current official guidance directly establishes ETA-IL for Israeli-controlled entry, and Ireland expressly discusses the rule while crossing into Palestine, but that does not normalize a destination-wide Palestinian baseline. West Bank entry depends on route and Israeli control, while Gaza has materially different permit and closure conditions. France, Germany, the United Kingdom, Italy, Poland, Spain, the United States, Canada and Ireland therefore remain exact holds rather than receiving an overbroad `eta` policy.
+
+Eleven Afghanistan and North Korea hypotheses also remain pending. Current British, Canadian, Italian, Irish, German, Spanish and United States guidance frequently establishes visa liability, but does not establish an operational accepted issuer for the relevant ordinary visitor. The strongest initial proposal—United States-to-Afghanistan as advance `visa_required`—was rejected on independent review. The U.S. advisory says a visa is required before travel but also warns that Republic-era mission visas may be refused unless issued by authorities aligned with the de facto government; no cited current Afghan issuer is shown as available to ordinary U.S. tourist-passport applicants. That imported label is retained as an explicit evidentiary conflict, not promoted.
+
+Pass 372 records 20 exact holds and one current operational-route conflict. Complete-matrix evidence remains 40,103 of 44,974 foreign relationships (89.2%), with 4,871 pending and zero old or stale rows. Canonical evidence remains at 849 reviewed batches, 3,569 official source records and 2,007 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
