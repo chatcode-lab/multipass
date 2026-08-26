@@ -3228,6 +3228,16 @@ Four independently audited residuals remain pending. Canada confirms Central Afr
 
 Current-status evidence rises from 40,057 to 40,058 of 44,974 relationships (89.1%), leaving 4,916 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 838 reviewed batches, 3,509 official source records and 1,967 policies.
 
+## Pass 351 result: South Sudan into The Bahamas and Bosnia and Herzegovina
+
+South Sudan's Bahamas row changes from the imported `evisa` label to `visa_free`. The Bahamas' consolidated visa Regulations use a closed rule: a leisure visitor must apply for a visa when the visitor is a citizen of a country designated in the finite Second Schedule. That schedule names Sudan but does not name the distinct state of South Sudan. The Ministry of Foreign Affairs' live April 2026 visa-required cohort independently repeats the Sudan-only treatment. The eVisa workflow applies to visa-subject nationalities and therefore cannot support the imported South Sudan eVisa label. South Sudan gains one mobility point from 39 to 40 and moves from dense rank 99 to 98.
+
+South Sudan's Bosnia and Herzegovina row remains `visa_required` and is now supported. The current Foreigners Law requires a visa unless the issuing state is in the exempt cohort, normally requires acquisition before entry, assigns Visa C issuance to a diplomatic-consular post and covers tourist or private stays up to 90 days in any 180-day period. The closed exemption decision does not name South Sudan, and the current 2026 Gazette amendment chain changes only a temporary rule for Bahrain, Oman and Saudi Arabia. The exceptional urgent border visa is not treated as a passport-wide visa-on-arrival route.
+
+Five independently reviewed residuals remain pending. Serbian Foreign Ministry pages conflict over Serbia to Zambia, while Zambia retains the legacy “Serbia and Montenegro” label. Georgia's current law does not expose a replayable Taiwan eVisa cohort and Taiwan's direct notice is stale. Current DRC authorities do not establish the claimed Republic of the Congo or Zimbabwe ordinary-passport waivers. Cayman's current table names Sudan but has no South Sudan row, and its generic application service does not supply the missing nationality decision. None is resolved by transferring a predecessor name or inferring from omission.
+
+Current-status evidence rises from 40,058 to 40,060 of 44,974 relationships (89.1%), leaving 4,914 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 839 reviewed batches, 3,513 official source records and 1,969 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

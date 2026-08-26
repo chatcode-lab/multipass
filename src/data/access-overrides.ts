@@ -4396,6 +4396,14 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-26",
   },
   {
+    passportCode: "SS",
+    destinationCode: "BS",
+    status: "visa_free",
+    reason: "The Bahamas' closed statutory designated-country rule and current Ministry visa-required cohort name Sudan but do not designate the distinct state of South Sudan for a leisure-visitor visa.",
+    sourceUrl: "https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2015/2015-0005/2015-0005_2.pdf",
+    reviewedAt: "2026-08-26",
+  },
+  {
     passportCode: "BY",
     destinationCode: "BD",
     status: "visa_on_arrival",

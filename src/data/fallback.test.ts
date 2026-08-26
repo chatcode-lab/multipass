@@ -122,8 +122,11 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.US.mobilityScore).toBe(184);
     expect(snapshot.passports.BY.statuses.BD).toBe("visa_on_arrival");
     expect(snapshot.passports.BY.mobilityScore).toBe(81);
+    expect(snapshot.passports.SS.statuses.BS).toBe("visa_free");
+    expect(snapshot.passports.SS.statuses.BA).toBe("visa_required");
     expect(snapshot.passports.SS.statuses.MM).toBe("unknown");
-    expect(snapshot.passports.SS.mobilityScore).toBe(39);
+    expect(snapshot.passports.SS.mobilityScore).toBe(40);
+    expect(snapshot.manifest.passports.find(({ code }) => code === "SS")?.rank).toBe(98);
   });
 
   it("bundles Chad's reviewed eVisa transition while retaining Palestine's unresolved route", () => {

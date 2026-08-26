@@ -119,6 +119,18 @@ describe("evidence status matrix", () => {
       .toEqual(["evisa", 1]);
   });
 
+  it("counts South Sudan's adjudicated Bahamas and Bosnia routes as supported", () => {
+    const caribbean = buildEvidenceStatusRegion(snapshot.manifest, details, "CARIBBEAN", "2026-08-26");
+    const europe = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-26");
+    const bahamasIndex = caribbean.destinations.findIndex(({ code }) => code === "BS");
+    const bosniaIndex = europe.destinations.findIndex(({ code }) => code === "BA");
+
+    expect(caribbean.rows.find(({ passportCode }) => passportCode === "SS")!.cells[bahamasIndex].slice(0, 2))
+      .toEqual(["visa_free", 1]);
+    expect(europe.rows.find(({ passportCode }) => passportCode === "SS")!.cells[bosniaIndex].slice(0, 2))
+      .toEqual(["visa_required", 1]);
+  });
+
   it("reports a complete four-state summary for every foreign-access relationship", () => {
     const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-21");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
@@ -126,8 +138,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_058);
-    expect(summary.notCovered.count).toBe(4_916);
+    expect(summary.covered).toBe(40_060);
+    expect(summary.notCovered.count).toBe(4_914);
     expect(summary.percent).toBe(89.1);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });
