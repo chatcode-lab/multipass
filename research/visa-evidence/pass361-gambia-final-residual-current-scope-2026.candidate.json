@@ -1,0 +1,165 @@
+{
+  "batchId": "pass361-gambia-final-residual-current-scope-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass361-gambia-central-government-immigration-scope",
+      "title": "Immigration and Visas",
+      "url": "https://gambia.gov.gm/immigration-and-visas/",
+      "publisher": "Government of The Gambia",
+      "jurisdiction": "The Gambia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Current central Government visitor guidance, directly replayed over valid TLS. It gives general mission and airport routes but leaves reciprocal visa-exemption agreements unenumerated.",
+      "supportingExcerpt": "Entry visas must be obtained ... except the countries that do not require entry visas to The Gambia."
+    },
+    {
+      "id": "pass361-turkiye-mfa-current-gambia-ordinary-requirement",
+      "title": "Visa Requirements Applicable to Turkish Citizens",
+      "url": "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Türkiye",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Current Turkish MFA passport-requirements table, directly replayed over valid TLS, expressly distinguishes ordinary, special/service and diplomatic Turkish passports for The Gambia.",
+      "supportingExcerpt": "Gambiya: Umuma Mahsus Pasaport hamilleri vizeye tabidir."
+    },
+    {
+      "id": "pass361-turkiye-mfa-gambia-ankara-advance-route",
+      "title": "Notice to Turkish Citizens Traveling to The Gambia",
+      "url": "https://banjul-be.mfa.gov.tr/Mission/ShowInfoNote/374976",
+      "publisher": "Embassy of the Republic of Türkiye in Banjul",
+      "jurisdiction": "Türkiye",
+      "kind": "government-guidance",
+      "language": "Turkish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Live Turkish MFA Embassy notice, directly replayed over valid TLS, applies the requirement to all non-diplomatic Turkish citizens and directs a Gambian Embassy in Ankara application before travel.",
+      "supportingExcerpt": "Gambiya vizesi için Gambiya Cumhuriyeti’nin Ankara Büyükelçiliği’ne başvurulmalıdır."
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass361-tr-gm-ordinary-advance-visa-required",
+      "title": "Turkish ordinary passport holders require an advance Gambian visa",
+      "summary": "Current Turkish MFA country guidance requires a Gambian visa for ordinary Turkish passport holders, while The Gambia's current government guidance requires advance mission issuance and lists an embassy in Ankara.",
+      "passportCodes": ["TR"],
+      "destinationCodes": ["GM"],
+      "status": "visa_required",
+      "conditions": [
+        "Ordinary (umuma mahsus) Turkish passport, short visit.",
+        "Turkish MFA's live country table requires a visa. The Gambia's current government guidance requires visa-subject visitors to use a Gambian diplomatic mission in their country of origin and lists its current embassy in Ankara.",
+        "A Turkish Embassy notice dated 5 August 2020 independently directs non-diplomatic Turkish citizens to that Ankara mission. It is supporting route history rather than the currentness anchor.",
+        "The generic airport exception applies only where no Gambian diplomatic representative exists and therefore does not replace the Ankara advance route.",
+        "The diplomatic 90-day exemption and special/service documents are outside this ordinary-passport policy."
+      ],
+      "sourceIds": [
+        "pass361-gambia-central-government-immigration-scope",
+        "pass361-turkiye-mfa-current-gambia-ordinary-requirement",
+        "pass361-turkiye-mfa-gambia-ankara-advance-route"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "TR",
+      "destinationCode": "GM",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "Current Turkish MFA guidance expressly says ordinary Turkish passport holders require a Gambian visa; the Turkish Embassy's live notice gives an advance application route through the Gambian Embassy in Ankara. This directly contradicts the visa-free fallback.",
+      "sourceIds": [
+        "pass361-gambia-central-government-immigration-scope",
+        "pass361-turkiye-mfa-current-gambia-ordinary-requirement",
+        "pass361-turkiye-mfa-gambia-ankara-advance-route"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "MC",
+      "destinationCode": "GM",
+      "reason": "The valid-TLS central Government page does not expressly map a Monaco ordinary passport. Its unenumerated reciprocal exemptions and mission/airport alternatives cannot establish a nationality-wide route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "gouv.mc"]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GM",
+      "reason": "No valid-TLS current official source directly maps an HKSAR ordinary passport. PRC/SAR transfer and unenumerated exemption or mission wording are not a safe baseline.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "immd.gov.hk"]
+    },
+    {
+      "passportCode": "VA",
+      "destinationCode": "GM",
+      "reason": "No valid-TLS current official source directly maps a Vatican ordinary passport. Holy See diplomatic treatment and generic route wording do not establish a visitor baseline.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "vaticanstate.va"]
+    },
+    {
+      "passportCode": "PY",
+      "destinationCode": "GM",
+      "reason": "The central Government guidance does not name Paraguay and is not an exhaustive residual rule. Generic mission or airport wording cannot establish the applicable route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "mre.gov.py"]
+    },
+    {
+      "passportCode": "PE",
+      "destinationCode": "GM",
+      "reason": "The central Government guidance does not name Peru and is not an exhaustive residual rule. Generic mission or airport wording cannot establish the applicable route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "gob.pe"]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "GM",
+      "reason": "No valid-TLS current official source directly maps a Macao SAR ordinary passport. PRC/SAR transfer and unenumerated exemption or mission wording are not a safe baseline.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "gov.mo", "dsi.gov.mo"]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "GM",
+      "reason": "No valid-TLS current official source directly maps Taiwan ordinary passports. Recognition, mission and airport wording do not establish issuance timing or a nationality-wide visitor route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "boca.gov.tw"]
+    },
+    {
+      "passportCode": "GT",
+      "destinationCode": "GM",
+      "reason": "The central Government guidance does not name Guatemala and is not an exhaustive residual rule. Generic mission or airport wording cannot establish the applicable route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "minex.gob.gt"]
+    },
+    {
+      "passportCode": "MH",
+      "destinationCode": "GM",
+      "reason": "No valid-TLS current official source directly maps Marshall Islands ordinary passports. Diplomatic relations and generic mission/airport wording do not establish a visitor route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "rmiembassyus.org"]
+    },
+    {
+      "passportCode": "FM",
+      "destinationCode": "GM",
+      "reason": "The central Government guidance does not name Micronesia and is not an exhaustive residual rule. Generic mission or airport wording cannot establish the applicable route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "fsmgov.org"]
+    },
+    {
+      "passportCode": "PW",
+      "destinationCode": "GM",
+      "reason": "The central Government guidance does not name Palau and is not an exhaustive residual rule. Generic mission or airport wording cannot establish the applicable route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "palaugov.pw"]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GM",
+      "reason": "No valid-TLS current official source directly maps Kosovo ordinary passports. Recognition, mission and airport wording do not establish a visitor route or issuance timing.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "mfa-ks.net"]
+    },
+    {
+      "passportCode": "DO",
+      "destinationCode": "GM",
+      "reason": "The central Government guidance does not name the Dominican Republic and is not an exhaustive residual rule. Generic mission or airport wording cannot establish the applicable route.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "mirex.gob.do"]
+    },
+    {
+      "passportCode": "ID",
+      "destinationCode": "GM",
+      "reason": "The valid central Government page does not map Indonesian ordinary passports. The GID named schedule cannot be used because its direct HTTPS route currently fails normal TLS certificate validation; neither visa-free fallback nor a replacement route is proven.",
+      "searchedOfficialDomains": ["gambia.gov.gm", "gid.gov.gm", "mofa.gov.gm", "kemlu.go.id"]
+    }
+  ]
+}

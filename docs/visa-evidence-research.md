@@ -3314,6 +3314,24 @@ Ukraine's current in-force Foreigners Law establishes a visa baseline but expres
 
 The Pass 359 net effect is one newly verified relationship and no additional mobility point: Tajikistan becomes verified while Luxembourg, corrected in the preceding pass, becomes pending. Current-status evidence therefore returns to 40,099 of 44,974 foreign relationships (89.2%), leaving 4,875 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 847 reviewed batches, 3,556 official source records and 2,005 policies.
 
+## Pass 360 result: Bangladesh, Burkina Faso and Trinidad and Tobago residual audits
+
+Three complete destination-residual audits add no policy and make no silent complement inference. Bangladesh's current Special Branch visa-on-arrival guidance supports named and regional cohorts that are already covered, while its general application portal is a mission-visa workflow rather than proof of a passport-wide eVisa route. All 122 exact residual relationships therefore remain pending.
+
+Burkina Faso's official electronic-visa service is live, but the nationality and visa-configuration endpoint requires authenticated access and returns HTTP 401 to a public request. Neither the portal shell nor the Government's separate response to United States restrictions provides the closed ordinary-passport mapping needed for the 128 residual relationships. Trinidad and Tobago likewise publishes a current application workflow and a positive visa-exemption list, but the reviewed official pages do not expose a complete current nationality schedule for the remaining 107 rows. Portal availability is not treated as proof that every omitted passport is eVisa-eligible.
+
+These are freshness audits rather than coverage claims. The 357 exact relationships stay visibly pending, and complete-matrix evidence remains 40,099 of 44,974 (89.2%).
+
+## Pass 361 result: Turkish access to The Gambia and Saint Lucia residual audit
+
+Türkiye-to-The Gambia changes from the imported `visa_free` label to supported `visa_required`. Türkiye's current Foreign Ministry table expressly requires ordinary Turkish passport holders to obtain a Gambian visa. The Gambia's current central-government guidance says visa-subject visitors must use a Gambian mission in their country of origin, identifies the Embassy in Ankara, and limits airport processing to places without a Gambian diplomatic representative. A Turkish Embassy notice dated 5 August 2020 independently records that Ankara application route, but is supporting history rather than the currentness anchor.
+
+This is a substantive data correction. Türkiye loses one mobility point, from 107 to 106, while remaining at dense rank 54. The other 14 exact Gambian residuals remain pending because no current valid-TLS official source directly maps their ordinary passports; unnamed reciprocal exemptions and generic mission or airport language are not converted into a nationality-wide result.
+
+Saint Lucia's final 11 residuals also remain pending. Its current revised-law schedules put Georgia in the arrival-visa cohort, but the Government's waiver announcement gives no effective date and the House of Assembly's 19 August 2025 Order Paper still records the ordinary-passport agreement at First Reading. The schedules separately retain legacy `Zaire` in the arrival cohort while naming the Democratic Republic of the Congo in the prior-visa cohort. Those official conflicts leave Georgia and DR Congo unresolved. Schedule-only visa liability does not establish an actual issuance point for Tanzania, The Gambia, Uganda, Guinea, Mauritania or Vietnam, and omission does not establish routes for Vatican City, Timor-Leste or South Sudan.
+
+The Gambia correction adds one verified relationship. Current-status evidence rises to 40,100 of 44,974 foreign relationships (89.2%), leaving 4,874 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 848 reviewed batches, 3,559 official source records and 2,006 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

@@ -4428,4 +4428,12 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-26",
     effectiveFrom: "2026-04-16",
   },
+  {
+    passportCode: "TR",
+    destinationCode: "GM",
+    status: "visa_required",
+    reason: "Türkiye's current Foreign Ministry table requires ordinary Turkish passport holders to obtain a Gambian visa, while The Gambia's current government guidance directs visa-subject travellers to its mission in their country of origin and lists an embassy in Ankara.",
+    sourceUrl: "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa",
+    reviewedAt: "2026-08-26",
+  },
 ] as const;

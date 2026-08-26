@@ -142,6 +142,14 @@ describe("evidence status matrix", () => {
       .toEqual(["visa_free", 1]);
   });
 
+  it("counts the corrected Turkish route into The Gambia as supported", () => {
+    const africa = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-08-26");
+    const gambiaIndex = africa.destinations.findIndex(({ code }) => code === "GM");
+
+    expect(africa.rows.find(({ passportCode }) => passportCode === "TR")!.cells[gambiaIndex].slice(0, 2))
+      .toEqual(["visa_required", 1]);
+  });
+
   it("counts the nine supported EU-member and Tajikistan Ukraine waivers while preserving reviewed unknowns", () => {
     const europe = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-26");
     const ukraineIndex = europe.destinations.findIndex(({ code }) => code === "UA");
@@ -164,8 +172,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_099);
-    expect(summary.notCovered.count).toBe(4_875);
+    expect(summary.covered).toBe(40_100);
+    expect(summary.notCovered.count).toBe(4_874);
     expect(summary.percent).toBe(89.2);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

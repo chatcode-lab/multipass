@@ -1385,7 +1385,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("IL", "LY", snapshot.passports.IL.statuses.LY).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("TR", "LY", snapshot.passports.TR.statuses.LY).supportsCurrentStatus).toBe(false);
 
-    expect(pairsFor("GM")).toHaveLength(185);
+    expect(pairsFor("GM")).toHaveLength(186);
     expect(getVisaRelationshipEvidence("RU", "GM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("GH", "GM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "GM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1396,6 +1396,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("ST", "GM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MR", "GM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ME", "GM", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("TR", "GM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ID", "GM", snapshot.passports.ID.statuses.GM).supportsCurrentStatus).toBe(false);
     expect(getVisaRelationshipEvidence("GM", "GM", "citizenship").supportsCurrentStatus).toBe(true);
   });
@@ -5982,6 +5983,7 @@ describe("official visa evidence", () => {
       "mfa.gov.rs",
       "slgl.pravno-informacioni-sistem.rs",
       "www.mfa.gov.tr",
+      "banjul-be.mfa.gov.tr",
       "www.indembassyankara.gov.in",
       "www.oeacp.infosi.gov.ao",
       "evisa.gov.tr",
