@@ -16132,6 +16132,72 @@
         "The active Foreigners Law delegates both visa-required and visa-exempt nationality lists to a Government regulation, so the statute is not an exhaustive all-foreigners visa default.",
         "No current enacted schedule or reproducible selected-country result was recovered; the current MFA entry page resolves only already-canonical and document-conditioned cohorts."
       ]
+    },
+    {
+      "id": "pass397a-hong-kong-outbound-open-data-2026",
+      "priority": 957,
+      "objective": "Replay Hong Kong's official outbound open data against every current pending HKSAR ordinary-passport relationship.",
+      "destinationCodes": ["*"],
+      "passportCodes": ["HK"],
+      "sourceHints": [
+        "https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/VFA_list.csv"
+      ],
+      "notes": [
+        "Exact current partition: 32 pending outbound rows, zero policies and zero corrections.",
+        "The live Immigration Department dataset is a positive combined visa-free-or-visa-on-arrival list; it does not expose a terminal issuance category for these residuals.",
+        "No unlisted complement or PRC, BN(O), Certificate of Identity, Document of Identity, residence or special-document treatment is transferred to the HKSAR ordinary passport."
+      ]
+    },
+    {
+      "id": "pass397b-ukraine-current-outbound-residual-2026",
+      "priority": 958,
+      "objective": "Replay every pending Ukrainian ordinary-passport outbound route through current MFA traveller guidance and direct destination authorities.",
+      "destinationCodes": ["*"],
+      "passportCodes": ["UA"],
+      "sourceHints": [
+        "https://mfa.gov.ua/podorozhnim/krayini-svitu-poperedzhennya-ta-poradi-rezhim-vyizdu",
+        "https://tripadvisor.mfa.gov.ua/"
+      ],
+      "notes": [
+        "Exact current partition: 29 pending outbound rows, zero policies and zero corrections.",
+        "Both current Ukrainian MFA traveller endpoints returned HTTP 403 over normal trusted HTTPS; cached or indexed results are not publication evidence.",
+        "Historic schedules, wartime operational material and conditional third-country documents do not establish a current passport-only issuance route."
+      ]
+    },
+    {
+      "id": "pass397c-british-virgin-islands-current-legal-schedule-2026",
+      "priority": 959,
+      "objective": "Recover the current British Virgin Islands Visa Exemption Order nationality schedule for every pending ordinary-passport route.",
+      "destinationCodes": ["VG"],
+      "passportCodes": ["*"],
+      "sourceHints": [
+        "https://laws.gov.vg/inf-alpha/i?page=1",
+        "https://laws.gov.vg/laws/immigration-and-passport-visa-exemption-order",
+        "https://gov.vg/sites/default/files/2026-02/final_consolidated_index_with_user_guide_as_at_january_1%2C_2026.pdf"
+      ],
+      "notes": [
+        "Exact current partition: 96 pending inbound rows, zero policies and zero corrections.",
+        "The Attorney General's Laws in Force index now establishes that the 2009 parent Visa Exemption Order is current, and the 2024 Guyana amendment corroborates its survival.",
+        "The parent Order's reproduced text contains narrow class exemptions rather than a general nationality schedule; the 2024 Guyana addition is already canonical, and the 2026 Order is child-and-residence-specific."
+      ]
+    },
+    {
+      "id": "pass397d-serbia-holy-see-ordinary-passport-2026",
+      "priority": 960,
+      "objective": "Reconcile Serbia's Holy See visa guidance with the controlling Italian and Schengen access-leg document rules.",
+      "destinationCodes": ["VA"],
+      "passportCodes": ["RS"],
+      "sourceHints": [
+        "https://www.mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/holy-see",
+        "https://www.esteri.it/en/servizi-opportunita/ingressosoggiornoinitalia/visto_ingresso/paesi_esenti_visto/",
+        "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A02018R1806-20251230",
+        "https://banjaluka.mfa.gov.rs/lat/gradjani/usluge/putne-isprave"
+      ],
+      "notes": [
+        "Exact terminal partition: one current pending row, zero policies and zero normalized corrections.",
+        "Serbia's Holy See page broadly says national passports are visa-free, but Italy and the controlling EU rule limit the access-leg waiver to biometric Serbian passports and exclude Coordination Directorate passports.",
+        "Serbia confirms that Coordination Directorate passports remain in issuance. The bare RS passport code cannot represent that material document split, so reviewed unknown remains correct."
+      ]
     }
   ]
 }
