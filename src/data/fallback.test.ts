@@ -114,9 +114,12 @@ describe("bundled passport snapshot", () => {
     expect(snapshot.passports.MX.statuses.LR).toBe("visa_required");
     expect(snapshot.passports.MX.mobilityScore).toBe(157);
     expect(snapshot.passports.CA.statuses.LR).toBe("visa_required");
-    expect(snapshot.passports.CA.mobilityScore).toBe(184);
+    expect(snapshot.passports.CA.statuses.TM).toBe("visa_on_arrival");
+    expect(snapshot.passports.CA.mobilityScore).toBe(185);
     expect(snapshot.passports.PL.statuses.LR).toBe("visa_required");
     expect(snapshot.passports.PL.mobilityScore).toBe(183);
+    expect(snapshot.passports.US.statuses.BF).toBe("unknown");
+    expect(snapshot.passports.US.mobilityScore).toBe(184);
     expect(snapshot.passports.BY.statuses.BD).toBe("visa_on_arrival");
     expect(snapshot.passports.BY.mobilityScore).toBe(81);
     expect(snapshot.passports.SS.statuses.MM).toBe("unknown");

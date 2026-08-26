@@ -1,0 +1,125 @@
+{
+  "batchId": "canada-turkmenistan-us-burkina-adjudication-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "canada-turkmenistan-regular-passport-entry-2026",
+      "title": "Turkmenistan travel advice and advisories",
+      "url": "https://travel.gc.ca/destinations/turkmenistan",
+      "publisher": "Global Affairs Canada",
+      "jurisdiction": "Canada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Government of Canada's live Turkmenistan page, updated 8 July 2026, states the Regular Canadian passport tourist-visa and invitation conditions.",
+      "supportingExcerpt": "You must present a letter of invitation in support of your visa application."
+    },
+    {
+      "id": "turkmenistan-washington-embassy-current-ashgabat-arrival-visa-2026",
+      "title": "Requirements for the issuance of a visa",
+      "url": "https://usa.tmembassy.gov.tm/en/consular-services/visa",
+      "publisher": "Embassy of Turkmenistan in the United States",
+      "jurisdiction": "Turkmenistan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live MFA-managed embassy service explicitly includes residents of Canada and publishes the State Migration Service invitation and Ashgabat airport visa route.",
+      "supportingExcerpt": "You can also obtain a visa upon arrival at the International Airport of Ashgabat."
+    },
+    {
+      "id": "burkina-government-reciprocal-us-visa-measures-2025",
+      "title": "Government communiqué following United States visa restrictions",
+      "url": "https://gouvernement.gov.bf/communiques/communique-du-gouvernement-du-30-12-2025/",
+      "publisher": "Government Information Service of Burkina Faso / Ministry of Foreign Affairs",
+      "jurisdiction": "Burkina Faso",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The Government Information Service publishes the signed Foreign Minister communiqué and its downloadable scan on the official government domain.",
+      "supportingExcerpt": "appliquer aux ressortissants des États-Unis d’Amérique des mesures équivalentes en matière de visas"
+    },
+    {
+      "id": "us-state-burkina-faso-entry-2026",
+      "title": "Burkina Faso Travel Advisory",
+      "url": "https://travel.state.gov/en/international-travel/travel-advisories/burkina-faso.html",
+      "publisher": "U.S. Department of State",
+      "jurisdiction": "United States / Burkina Faso",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-23",
+      "officialityEvidence": "The State Department's current Burkina Faso guidance expressly reports the destination government's U.S.-national visa suspension and its effective date.",
+      "supportingExcerpt": "As of Dec 30, 2025, the Government of Burkina Faso suspended visas to Americans with limited exceptions."
+    }
+  ],
+  "policies": [
+    {
+      "id": "canadian-ordinary-passport-turkmenistan-conditional-ashgabat-arrival-visa-2026",
+      "title": "Canadian ordinary passports: conditional Turkmenistan visa on arrival",
+      "summary": "A Canadian ordinary-passport visitor with the required State Migration Service-certified invitation may obtain a visa on arrival at Ashgabat International Airport.",
+      "status": "visa_on_arrival",
+      "destinationCodes": ["TM"],
+      "passportCodes": ["CA"],
+      "conditions": [
+        "Global Affairs Canada's current Regular Canadian passport section says a tourist visa and invitation letter are required; the inviting person, company or authorized tourist agency must submit the invitation request to the State Migration Service.",
+        "The current Turkmen embassy service says a traveller may obtain the visa on arrival at Ashgabat International Airport by presenting a valid passport and an original or copy of a valid State Migration Service-certified invitation.",
+        "A tourist must arrange the certified invitation through a tourist agency. The embassy page expressly addresses legal residents of Canada alongside the United States and Mexico.",
+        "The arrival route is airport-specific and conditional on advance invitation approval. Passport validity, fees, registration, restricted areas, carrier checks and final admission remain separate."
+      ],
+      "sourceIds": ["canada-turkmenistan-regular-passport-entry-2026", "turkmenistan-washington-embassy-current-ashgabat-arrival-visa-2026"],
+      "confidence": "high",
+      "application": {
+        "url": "https://usa.tmembassy.gov.tm/en/consular-services/visa",
+        "label": "Turkmenistan visa and invitation guidance",
+        "steps": [
+          "Arrange a tourist agency or other eligible inviter and obtain a letter of invitation certified by the State Migration Service of Turkmenistan.",
+          "Travel through Ashgabat International Airport with the valid passport and the original or a copy of the valid certified invitation.",
+          "Present those documents and pay the applicable fee for physical visa issuance on arrival; approval and final admission remain with the authorities."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CA",
+      "destinationCode": "TM",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_on_arrival",
+      "explanation": "The fallback records only an advance visa, but Turkmenistan's current embassy guidance permits airport issuance at Ashgabat when the Canadian visitor carries the required certified invitation.",
+      "sourceIds": ["canada-turkmenistan-regular-passport-entry-2026", "turkmenistan-washington-embassy-current-ashgabat-arrival-visa-2026"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "BF",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved: visa issuance suspended with limited exceptions; entry and valid-visa treatment not established",
+      "explanation": "Burkina Faso announced reciprocal visa measures for U.S. nationals and current U.S. guidance confirms suspended visa issuance with limited exceptions. The imported functioning eVisa route is disproven, but the sources do not establish a total entry ban or one replacement category.",
+      "sourceIds": ["burkina-government-reciprocal-us-visa-measures-2025", "us-state-burkina-faso-entry-2026"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "CA",
+      "destinationCode": "CF",
+      "reason": "Canada confirms tourist-visa liability but no current authority source maps a Canadian ordinary passport to an actual Central African issuing channel and timing.",
+      "searchedOfficialDomains": ["travel.gc.ca", "international.gc.ca", "diplomatie.gouv.cf"]
+    },
+    {
+      "passportCode": "US",
+      "destinationCode": "TD",
+      "reason": "Chad's general eVisa reform does not reconcile current U.S.-specific guidance that visas are not routinely issued; still-valid older visas and exceptions prevent an entry-restricted classification.",
+      "searchedOfficialDomains": ["travel.state.gov", "evisa.td", "journalofficiel.gouv.td"]
+    },
+    {
+      "passportCode": "ES",
+      "destinationCode": "KP",
+      "reason": "Spain confirms tourist-visa liability, but no current official source establishes a Spanish ordinary passport's actual pretravel issuing channel and timing.",
+      "searchedOfficialDomains": ["exteriores.gob.es", "krld.pl", "mfa.gov.kp"]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "KP",
+      "reason": "The current DPRK Warsaw process is not nationality- or jurisdiction-specific, while Poland's direct ordinary-passport statement is stale and fee-conflicted with current embassy material.",
+      "searchedOfficialDomains": ["gov.pl", "krld.pl", "mfa.gov.kp"]
+    }
+  ]
+}

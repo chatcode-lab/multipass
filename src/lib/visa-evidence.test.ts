@@ -147,6 +147,8 @@ describe("visa relationship URLs", () => {
       .toMatchObject({ rejectedStatus: "visa_required" });
     expect(getVisaRelationshipEvidence("RS", "VA", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "visa_free" });
+    expect(getVisaRelationshipEvidence("US", "BF", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "evisa" });
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
@@ -1116,7 +1118,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("WS", "TJ", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TJ", "TJ", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("TM")).toHaveLength(28);
+    expect(pairsFor("TM")).toHaveLength(29);
     expect(getVisaRelationshipEvidence("SG", "TM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("JP", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("KR", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1130,7 +1132,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("QA", "TM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SM", "TM", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CA", "TM", snapshot.passports.CA.statuses.TM).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("CA", "TM", "visa_on_arrival").supportsCurrentStatus).toBe(true);
 
     expect(pairsFor("AF")).toHaveLength(11);
     expect(getVisaRelationshipEvidence("IN", "AF", "visa_required").supportsCurrentStatus).toBe(true);
@@ -5070,7 +5072,6 @@ describe("official visa evidence", () => {
       ["US", "PS"],
       ["CA", "AF"],
       ["CA", "GW"],
-      ["CA", "TM"],
       ["NO", "AF"],
       ["NO", "TD"],
       ["NO", "VG"],
@@ -6071,6 +6072,7 @@ describe("official visa evidence", () => {
       "reisitargalt.vm.ee",
       "romania.tmembassy.gov.tm",
       "japan.tmembassy.gov.tm",
+      "usa.tmembassy.gov.tm",
       "www.apicongo.cg",
       "tunisz.mfa.gov.hu",
       "www.gov.si",

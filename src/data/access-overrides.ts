@@ -4388,6 +4388,14 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-26",
   },
   {
+    passportCode: "CA",
+    destinationCode: "TM",
+    status: "visa_on_arrival",
+    reason: "Canada requires the State Migration Service-supported invitation, while Turkmenistan's current embassy guidance permits physical visa issuance at Ashgabat airport when the Canadian visitor presents the certified invitation.",
+    sourceUrl: "https://usa.tmembassy.gov.tm/en/consular-services/visa",
+    reviewedAt: "2026-08-26",
+  },
+  {
     passportCode: "BY",
     destinationCode: "BD",
     status: "visa_on_arrival",

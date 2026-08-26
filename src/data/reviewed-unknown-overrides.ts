@@ -374,6 +374,18 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-11-26",
   },
+  {
+    passportCode: "US",
+    destinationCode: "BF",
+    rejectedStatus: "evisa",
+    reason: "Burkina Faso's signed reciprocal-measures communiqué and current U.S. guidance establish suspended visa issuance to Americans with limited exceptions. This disproves a functioning passport-wide eVisa route, but does not establish valid-visa treatment, a total entry ban or one replacement category.",
+    sourceIds: [
+      "burkina-government-reciprocal-us-visa-measures-2025",
+      "us-state-burkina-faso-entry-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

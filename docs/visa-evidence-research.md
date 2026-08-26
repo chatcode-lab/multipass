@@ -3218,6 +3218,16 @@ Parallel official-source audits held nine other near-complete residuals. France,
 
 Current-status evidence rises from 40,055 to 40,057 of 44,974 relationships (89.1%), leaving 4,917 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 837 reviewed batches, 3,507 official source records and 1,966 policies.
 
+## Pass 350 result: Canadian Turkmenistan arrival route and U.S.-Burkina suspension
+
+Canada's Turkmenistan row now changes from `visa_required` to conditional `visa_on_arrival`. Global Affairs Canada's current Regular Canadian passport section requires a tourist visa and a letter of invitation requested through Turkmenistan's State Migration Service. Turkmenistan's live MFA-managed Washington Embassy page expressly addresses residents of Canada and permits physical visa issuance at Ashgabat International Airport when the traveller presents a valid passport and the original or a copy of the certified invitation. Tourists must arrange the invitation through an authorized tourist agency. This is an advance-approval condition followed by border issuance, not an eVisa. Canada's mobility score rises from 184 to 185 and its dense rank from 10 to 9.
+
+The imported U.S.-to-Burkina Faso `evisa` label is now reviewed unknown. Burkina Faso's signed 30 December 2025 Foreign Ministry communiqué applies reciprocal visa measures to U.S. nationals, and current U.S. guidance says visa issuance to Americans is suspended with limited exceptions. That evidence directly disproves a functioning passport-wide eVisa route. It does not establish treatment of already valid visas, a total visitor-entry prohibition or one replacement issuance route, so `entry_restricted` would overstate the official record. The correction is score-neutral because neither eVisa nor unknown contributes a mobility point.
+
+Four independently audited residuals remain pending. Canada confirms Central African Republic visa liability without a Canadian-specific issuing route. Chad's general May 2026 eVisa cutover does not reconcile current exact guidance that visas are not routinely issued to U.S. citizens, while older valid visas remain recognized. Spain confirms North Korean tourist-visa liability, but neither Spain nor the current DPRK Warsaw material supplies a Spanish ordinary-passport issuing route. The Polish government statement is stale and fee-conflicted with current embassy material, so it is not used to promote Poland to North Korea.
+
+Current-status evidence rises from 40,057 to 40,058 of 44,974 relationships (89.1%), leaving 4,916 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 838 reviewed batches, 3,509 official source records and 1,967 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
