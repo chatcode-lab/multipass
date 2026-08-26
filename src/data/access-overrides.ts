@@ -4372,6 +4372,22 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reviewedAt: "2026-08-25",
   },
   {
+    passportCode: "CA",
+    destinationCode: "LR",
+    status: "visa_required",
+    reason: "Canada's current Regular Canadian passport guidance requires a tourist visa, and Liberia's current embassy form requires non-Liberian passport holders outside the ECOWAS exception to obtain it before travel.",
+    sourceUrl: "https://travel.gc.ca/destinations/liberia",
+    reviewedAt: "2026-08-26",
+  },
+  {
+    passportCode: "PL",
+    destinationCode: "LR",
+    status: "visa_required",
+    reason: "Liberia's current embassy form requires all non-Liberian passport holders outside the express ECOWAS exception to obtain a visa before travel and publishes a tourist process for non-US citizens.",
+    sourceUrl: "https://www.liberianembassyus.org/sites/default/files/documents/Liberia_Visa_Application_Form_revised_2025-04-15.pdf",
+    reviewedAt: "2026-08-26",
+  },
+  {
     passportCode: "BY",
     destinationCode: "BD",
     status: "visa_on_arrival",

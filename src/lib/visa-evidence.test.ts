@@ -1576,7 +1576,7 @@ describe("official visa evidence", () => {
 
     expect(maliPairs).toHaveLength(41);
     expect(nigerPairs).toHaveLength(40);
-    expect(liberiaPairs).toHaveLength(38);
+    expect(liberiaPairs).toHaveLength(40);
     expect(getVisaRelationshipEvidence("GH", "ML", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DZ", "ML", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("MA", "ML", "visa_free").supportsCurrentStatus).toBe(true);
@@ -1596,6 +1596,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("GB", "LR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SI", "ML", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PL", "ML", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CA", "LR", "visa_required").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("PL", "LR", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("HU", "NE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SI", "NE", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ML", "ML", "citizenship").supportsCurrentStatus).toBe(false);
@@ -5947,6 +5949,7 @@ describe("official visa evidence", () => {
       "evisa.kdmid.ru",
       "electronic-visa.kdmid.ru",
       "government.ru",
+      "www.liberianembassyus.org",
       "kremlin.ru",
       "mfa.gov.md",
       "germania.mfa.gov.md",

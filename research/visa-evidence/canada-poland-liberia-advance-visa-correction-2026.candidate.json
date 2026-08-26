@@ -1,0 +1,168 @@
+{
+  "batchId": "canada-poland-liberia-advance-visa-correction-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "canada-liberia-regular-passport-entry-2026",
+      "title": "Liberia travel advice and advisories",
+      "url": "https://travel.gc.ca/destinations/liberia",
+      "publisher": "Global Affairs Canada",
+      "jurisdiction": "Canada",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-24",
+      "officialityEvidence": "The Government of Canada's live Liberia page, updated 29 July 2026, states the tourist-visa requirement in its Regular Canadian passport section.",
+      "supportingExcerpt": "Tourist visa: required"
+    },
+    {
+      "id": "liberia-washington-embassy-current-visa-requirements-2025",
+      "title": "Liberia visa requirements and application",
+      "url": "https://www.liberianembassyus.org/sites/default/files/documents/Liberia_Visa_Application_Form_revised_2025-04-15.pdf",
+      "publisher": "Embassy of the Republic of Liberia in the United States",
+      "jurisdiction": "Liberia",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live revised consular form is published by Liberia's embassy and gives the current prior-visa rule, ECOWAS exception, tourist purpose and non-US-citizen process.",
+      "supportingExcerpt": "All non-Liberian passport holders are required to obtain a visa ... prior to travelling to Liberia."
+    },
+    {
+      "id": "ecowas-current-member-states",
+      "title": "ECOWAS current Member States",
+      "url": "https://www.ecowas.int/member-states/",
+      "publisher": "Economic Community of West African States",
+      "jurisdiction": "ECOWAS",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-21",
+      "officialityEvidence": "The Commission's live official page identifies the current 12-member cohort and confirms that neither Canada nor Poland is within the embassy form's ECOWAS exception.",
+      "supportingExcerpt": "Benin, Cabo Verde, Côte d’Ivoire, Ghana, Guinea, Guinea Bissau, Liberia, Nigeria, Senegal, Sierra Leone, The Gambia, Togo."
+    }
+  ],
+  "policies": [
+    {
+      "id": "canadian-ordinary-passport-liberia-advance-tourist-visa-2026",
+      "title": "Canadian ordinary passports: Liberia advance tourist visa",
+      "summary": "A Canadian ordinary-passport tourist must obtain a Liberian visa before travelling.",
+      "status": "visa_required",
+      "destinationCodes": ["LR"],
+      "passportCodes": ["CA"],
+      "conditions": [
+        "Global Affairs Canada's current Regular Canadian passport section directly says that a tourist visa is required.",
+        "Liberia's current embassy requirements require non-Liberian passport holders, except ECOWAS passport holders, to obtain a visa before travel.",
+        "The form accepts tourist applications, requires the original passport and states a 12-working-day regular processing period; validity, health documents and final admission remain separate."
+      ],
+      "sourceIds": ["canada-liberia-regular-passport-entry-2026", "liberia-washington-embassy-current-visa-requirements-2025", "ecowas-current-member-states"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.liberianembassyus.org/sites/default/files/documents/Liberia_Visa_Application_Form_revised_2025-04-15.pdf",
+        "label": "Liberian Embassy visa application",
+        "processingTime": "The form states 12 working days for regular processing; expedited service is separately listed.",
+        "steps": [
+          "Complete and sign the current embassy form for a tourist visit.",
+          "Submit the form with the original passport, passport photograph, fee and a trackable prepaid return envelope unless collecting in person.",
+          "Allow the stated processing period and carry the issued visa and supporting entry documents when travelling."
+        ]
+      }
+    },
+    {
+      "id": "polish-ordinary-passport-liberia-advance-tourist-visa-2026",
+      "title": "Polish ordinary passports: Liberia advance tourist visa",
+      "summary": "A Polish ordinary-passport tourist is within Liberia's prior-visa rule for non-Liberian, non-ECOWAS passport holders.",
+      "status": "visa_required",
+      "destinationCodes": ["LR"],
+      "passportCodes": ["PL"],
+      "conditions": [
+        "Liberia's current embassy requirements apply to all non-Liberian passport holders and expressly exempt only ECOWAS passport holders from the prior-visa rule.",
+        "Poland is outside the stated ECOWAS exception. The same form publishes a non-US-citizen fee schedule and accepts a foreign country in the applicant address and passport fields.",
+        "The form accepts tourist applications, requires the original passport and states a 12-working-day regular processing period; mission jurisdiction, validity, health documents and final admission remain separate."
+      ],
+      "sourceIds": ["liberia-washington-embassy-current-visa-requirements-2025", "ecowas-current-member-states"],
+      "confidence": "high",
+      "application": {
+        "url": "https://www.liberianembassyus.org/sites/default/files/documents/Liberia_Visa_Application_Form_revised_2025-04-15.pdf",
+        "label": "Liberian Embassy visa application",
+        "processingTime": "The form states 12 working days for regular processing; applicants should confirm the competent mission before applying.",
+        "steps": [
+          "Confirm the competent Liberian mission for the applicant's place of residence, then complete and sign its current tourist-visa form.",
+          "Submit the required passport, photograph, fee and supporting documents before travel.",
+          "Carry the issued visa and supporting entry documents; issuance does not guarantee final admission."
+        ]
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CA",
+      "destinationCode": "LR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The fallback eVisa label is contradicted by Canada's passport-specific tourist-visa requirement and Liberia's current prior-travel embassy process.",
+      "sourceIds": ["canada-liberia-regular-passport-entry-2026", "liberia-washington-embassy-current-visa-requirements-2025", "ecowas-current-member-states"]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "LR",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_required",
+      "explanation": "The fallback eVisa label is contradicted by Liberia's universal prior-visa rule for non-Liberian passport holders outside its express ECOWAS exception.",
+      "sourceIds": ["liberia-washington-embassy-current-visa-requirements-2025", "ecowas-current-member-states"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "FR",
+      "destinationCode": "PS",
+      "reason": "Current French guidance maps normal Israel-controlled tourist entry to ETA-IL but does not establish one Palestine-wide status across the West Bank, Gaza and their different crossing rules.",
+      "searchedOfficialDomains": ["diplomatie.gouv.fr", "gov.il", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "PS",
+      "reason": "Current German guidance distinguishes Israel-controlled entry with ETA-IL from advance permission for a West-Bank-only route and does not establish one Palestine-wide passport status.",
+      "searchedOfficialDomains": ["auswaertiges-amt.de", "gov.il", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "PS",
+      "reason": "Current UK guidance distinguishes Israel's visa-free-plus-ETA route, Israeli-controlled Palestinian access and Gaza permits, so the fallback ETA cannot safely represent the whole destination.",
+      "searchedOfficialDomains": ["gov.uk", "gov.il", "iaa.gov.il", "cogat.mod.gov.il"]
+    },
+    {
+      "passportCode": "DE",
+      "destinationCode": "AF",
+      "reason": "The current Afghan consular page proves a residence- and jurisdiction-conditioned physical visa route, not a passport-wide German ordinary-passport visitor route.",
+      "searchedOfficialDomains": ["afghanconsulatemunich.de", "auswaertiges-amt.de"]
+    },
+    {
+      "passportCode": "GB",
+      "destinationCode": "AF",
+      "reason": "UK guidance requires a visa but says the Afghan Embassy in London is closed and does not establish a current issuing route or timing for an ordinary British passport.",
+      "searchedOfficialDomains": ["gov.uk", "mfa.gov.af", "moi.gov.af"]
+    },
+    {
+      "passportCode": "SC",
+      "destinationCode": "VG",
+      "reason": "No current BVI or Seychelles authority directly maps an ordinary Seychellois passport to a short-visitor route; neither a visa-free result nor a contradiction is inferred from omission.",
+      "searchedOfficialDomains": ["bvi.gov.vg", "laws.gov.vg", "mfa.gov.sc"]
+    },
+    {
+      "passportCode": "IT",
+      "destinationCode": "SS",
+      "reason": "Italy confirms visa liability and South Sudan operates an eVisa workflow, but no current official source maps Italian ordinary passports to that electronic route.",
+      "searchedOfficialDomains": ["viaggiaresicuri.it", "evisa.gov.ss", "mofaic.gov.ss"]
+    },
+    {
+      "passportCode": "CA",
+      "destinationCode": "GW",
+      "reason": "Canada says a tourist visa is required but gives no issuing channel or timing that distinguishes an advance visa from a preapproved arrival route.",
+      "searchedOfficialDomains": ["travel.gc.ca", "mne.gw", "imigracao.gw"]
+    },
+    {
+      "passportCode": "PL",
+      "destinationCode": "GW",
+      "reason": "No currently replayable Polish or Guinea-Bissau primary source establishes an ordinary Polish-passport visitor route and actual issuance timing.",
+      "searchedOfficialDomains": ["gov.pl", "mne.gw", "imigracao.gw"]
+    }
+  ]
+}
