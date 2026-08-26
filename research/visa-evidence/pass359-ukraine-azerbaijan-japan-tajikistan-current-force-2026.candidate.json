@@ -1,0 +1,114 @@
+{
+  "batchId": "pass359-ukraine-azerbaijan-japan-tajikistan-current-force-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "pass359-tajik-adlia-active-ukraine-treaty",
+      "title": "Agreement between Tajikistan and Ukraine on mutual travel of citizens",
+      "url": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=25532",
+      "publisher": "Ministry of Justice of the Republic of Tajikistan / ADLIA",
+      "jurisdiction": "Tajikistan / Ukraine",
+      "kind": "law",
+      "language": "Tajik and Russian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Accessible official Justice Ministry legal database record, which labels the bilateral agreement's document status Active and reproduces its Russian and Tajik text.",
+      "supportingExcerpt": "Document status: Active."
+    },
+    {
+      "id": "pass359-ukraine-rada-tajik-ordinary-passport-annex",
+      "title": "Ukraine-Tajikistan agreement on mutual travel of citizens",
+      "url": "https://zakon.rada.gov.ua/go/762_010",
+      "publisher": "Cabinet of Ministers of Ukraine / Verkhovna Rada legislation portal",
+      "jurisdiction": "Ukraine / Tajikistan",
+      "kind": "law",
+      "language": "Ukrainian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Accessible official Rada legislative record. Its annex names the Tajik ordinary foreign passport; the record's own current-text label is not used as the force proof.",
+      "supportingExcerpt": "загальногромадянський закордонний паспорт Республіки Таджикистан"
+    },
+    {
+      "id": "pass359-ukraine-rada-japan-waiver-decree",
+      "title": "Presidential Decree No. 1107/2005 on visa-free travel for Japanese citizens",
+      "url": "https://zakon.rada.gov.ua/go/1107/2005",
+      "publisher": "President of Ukraine / Verkhovna Rada legislation portal",
+      "jurisdiction": "Ukraine",
+      "kind": "law",
+      "language": "Ukrainian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Accessible official Rada record; it reports a current-text revision dated 2016-04-08 but does not affirmatively state that the decree remains in force.",
+      "supportingExcerpt": "Документ 1107/2005, поточна редакція — Редакція від 08.04.2016."
+    },
+    {
+      "id": "pass359-ukraine-rada-azerbaijan-waiver-treaty",
+      "title": "Ukraine-Azerbaijan agreement on visa-free travel of citizens",
+      "url": "https://zakon.rada.gov.ua/go/031_026",
+      "publisher": "Cabinet of Ministers of Ukraine / Verkhovna Rada legislation portal",
+      "jurisdiction": "Ukraine / Azerbaijan",
+      "kind": "law",
+      "language": "Ukrainian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Accessible official Rada treaty record; it has no affirmative in-force label and states that the treaty appendices are absent, preventing direct ordinary-passport verification there.",
+      "supportingExcerpt": "Документ 031_026, поточна редакція — Затвердження від 24.10.2002."
+    },
+    {
+      "id": "pass359-azerbaijan-mfa-current-reciprocal-list",
+      "title": "Visa-free countries",
+      "url": "https://mfa.gov.az/en/category/visa/visa-free-countries",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Azerbaijan",
+      "jurisdiction": "Azerbaijan / Ukraine",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live MFA page names Ukraine in its reciprocal 90-day all-valid-passport group, but the server's certificate failed normal TLS validation during this review; it is not accepted as reproducible force proof.",
+      "supportingExcerpt": "At present in accordance with bilateral intergovernmental agreements, a visa-free regime is being applied on the basis of reciprocity."
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass359-tajik-ordinary-passport-ukraine-active-waiver",
+      "title": "Tajik ordinary passport visa-free travel to Ukraine",
+      "summary": "The active Tajik Justice Ministry record for the bilateral agreement, read with Ukraine's annex naming Tajik general foreign passports, supports visa-free short visits to Ukraine.",
+      "status": "visa_free",
+      "destinationCodes": ["UA"],
+      "passportCodes": ["TJ"],
+      "conditions": [
+        "Tajik citizen holding a general foreign (ordinary) passport; not the separately listed diplomatic, service, child, or return documents.",
+        "No visa only for a stay not exceeding 90 days; a visa is required for more than 90 days, employment, or permanent residence.",
+        "Entry, exit, and transit use border checkpoints open to international traffic and remain subject to Ukraine's applicable stay and registration rules.",
+        "The Justice Ministry record is Active on 2026-08-26; it supplies no effective-date field, so no specific commencement date is asserted."
+      ],
+      "sourceIds": [
+        "pass359-tajik-adlia-active-ukraine-treaty",
+        "pass359-ukraine-rada-tajik-ordinary-passport-annex"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "AZ",
+      "destinationCode": "UA",
+      "reason": "The Rada treaty is not affirmatively marked in force and its ordinary-passport appendices are absent. Azerbaijan MFA's current reciprocal 90-day, regular-passport table is directionally supportive but failed normal TLS validation on replay; no independently accessible current force register was found. No direct current contradiction of the fallback was found.",
+      "searchedOfficialDomains": [
+        "zakon.rada.gov.ua",
+        "mfa.gov.ua",
+        "mfa.gov.az",
+        "frameworks.e-qanun.az",
+        "president.az"
+      ]
+    },
+    {
+      "passportCode": "JP",
+      "destinationCode": "UA",
+      "reason": "The Rada record identifies the Japanese-citizen waiver decree and a 2016 current-text revision, but provides no affirmative in-force status. The Japanese Embassy's directly found 2012 notice is historical, while current Ukrainian nationality tables are expressly only as of 2023 or unavailable by direct replay. No direct current contradiction of the fallback was found.",
+      "searchedOfficialDomains": [
+        "zakon.rada.gov.ua",
+        "mfa.gov.ua",
+        "dmsu.gov.ua",
+        "mofa.go.jp",
+        "ua.emb-japan.go.jp"
+      ]
+    }
+  ]
+}

@@ -149,6 +149,10 @@ describe("visa relationship URLs", () => {
       .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("US", "BF", "unknown").reviewedUnknown)
       .toMatchObject({ rejectedStatus: "evisa" });
+    expect(getVisaRelationshipEvidence("LU", "UA", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
+    expect(getVisaRelationshipEvidence("TW", "UA", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "evisa" });
   });
 
   it("keeps legacy St. Maarten URLs resolvable after correcting MF to French Saint Martin", () => {
@@ -2608,10 +2612,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SG", "SL", "visa_on_arrival").supportsCurrentStatus).toBe(true);
   });
 
-  it("replaces the stale Luxembourg and Malta Ukraine holds while preserving Turkmenistan", () => {
-    for (const passportCode of ["LU", "MT"] as const) {
-      expect(getVisaRelationshipEvidence(passportCode, "UA", snapshot.passports[passportCode].statuses.UA).supportsCurrentStatus).toBe(true);
-    }
+  it("supports Malta's Ukraine waiver while rejecting Luxembourg's conflicting imported label", () => {
+    expect(getVisaRelationshipEvidence("MT", "UA", snapshot.passports.MT.statuses.UA).supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("LU", "UA", snapshot.passports.LU.statuses.UA).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("LU", "UA", "unknown").reviewedUnknown)
+      .toMatchObject({ rejectedStatus: "visa_free" });
     expect(getVisaRelationshipEvidence("LV", "TM", snapshot.passports.LV.statuses.TM).supportsCurrentStatus).toBe(false);
   });
 
@@ -5169,7 +5174,7 @@ describe("official visa evidence", () => {
         ? "visa_on_arrival"
         : snapshot.passports[passportCode].statuses[destinationCode];
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus)
-        .toBe(destinationCode === "SL" || (passportCode === "LU" && destinationCode === "UA"));
+        .toBe(destinationCode === "SL");
     }
   });
 
@@ -5352,10 +5357,10 @@ describe("official visa evidence", () => {
     const supportedPassportCodes = [
       "VC", "UY", "KN", "AG", "PA", "PY", "GD", "PE", "DM", "EC",
       "GE", "BA", "NZ", "SA", "KR", "BN", "MH", "BY", "AM",
-      "AT", "BE", "CY", "CZ", "FI", "GR", "LU", "MT", "PT", "RO",
+      "AT", "BE", "CY", "CZ", "FI", "GR", "MT", "PT", "RO", "TJ",
     ] as const;
     const unresolvedPassportCodes = [
-      "MC", "AD", "VA", "JP", "AZ", "TJ",
+      "MC", "AD", "VA", "JP", "AZ", "LU",
     ] as const;
 
     for (const passportCode of supportedPassportCodes) {
@@ -6150,6 +6155,8 @@ describe("official visa evidence", () => {
       "tourism.gov.mm",
       "www.sknis.gov.kn",
       "minexteriores.gob.gq",
+      "mmih.adlia.tj",
+      "mfa.gov.az",
     ]);
     for (const source of OFFICIAL_VISA_SOURCES) {
       const url = new URL(source.url);

@@ -386,6 +386,31 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-09-26",
   },
+  {
+    passportCode: "LU",
+    destinationCode: "UA",
+    rejectedStatus: "visa_free",
+    reason: "Luxembourg's January 2026 Foreign Ministry guidance requires nationals to obtain a pre-travel e-Tourist Visa for Ukraine. Ukraine's linked application service cannot currently be replayed, while its direct visa-free country table is dated June 2023 and the decree record lacks an affirmative in-force label, so no single current replacement route is established.",
+    sourceIds: [
+      "luxembourg-mfa-current-ukraine-etourist-visa-2026",
+      "ukraine-mfa-luxembourg-legacy-visa-free-entry-table-2023",
+      "ukraine-rada-eu-citizen-waiver-decree-current-edition-2026",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
+  {
+    passportCode: "TW",
+    destinationCode: "UA",
+    rejectedStatus: "evisa",
+    reason: "Ukraine's current in-force eVisa regulation defines Annex 3 as the nationality list for electronic visas, and Taiwan is absent. The current default-visa law preserves statutory and treaty exceptions, so it does not establish one safe replacement visitor route.",
+    sourceIds: [
+      "ukraine-foreigners-law-current-default-visa-pass359",
+      "ukraine-evisa-requirements-current-exclusive-annex-pass359",
+    ],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-11-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);

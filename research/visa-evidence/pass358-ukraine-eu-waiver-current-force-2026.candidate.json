@@ -86,31 +86,33 @@
         "ukraine-mfa-luxembourg-legacy-visa-free-entry-table-2023"
       ],
       "confidence": "medium"
-    },
-    {
-      "id": "ukraine-luxembourg-ordinary-passport-visa-waiver-pass358-2026",
-      "title": "Luxembourg ordinary passports: Ukraine short-visit visa waiver with official-source conflict",
-      "summary": "Ukraine's current-edition Presidential Decree waives visas for Luxembourg citizens as citizens of an EU Member State, while Luxembourg's January 2026 traveller page inconsistently directs its nationals to Ukraine's e-Tourist Visa service.",
-      "status": "visa_free",
-      "destinationCodes": ["UA"],
-      "passportCodes": ["LU"],
-      "effectiveFrom": "2005-09-01",
-      "conditions": [
-        "The Ukrainian destination law is the controlling admission rule and the Rada portal presents it as the current edition without a lost-force marker; the current EU directory confirms Luxembourg remains in the covered class.",
-        "The Rada record does not explicitly label its legal status as in force. Ukraine MFA's June 2023 table directly corroborates Luxembourg's visa-free outcome but is not fresh enough to remove the currentness caveat.",
-        "Luxembourg's traveller page, updated 7 January 2026, directly conflicts by directing Luxembourg nationals to obtain an e-Tourist Visa. This discrepancy is preserved and keeps the relationship at medium confidence and on an early recheck cycle.",
-        "The Decree states a stay may not exceed 90 days. It does not itself state an 180-day calculation, so none is asserted here.",
-        "Work, residence, diplomatic, service, emergency and other special travel documents, wartime operational access, and final admission remain outside this baseline."
-      ],
-      "sourceIds": [
-        "ukraine-rada-eu-citizen-waiver-decree-current-edition-2026",
-        "eu-current-member-states-directory-page-one-2026",
-        "luxembourg-mfa-current-ukraine-etourist-visa-2026",
-        "ukraine-mfa-luxembourg-legacy-visa-free-entry-table-2023"
-      ],
-      "confidence": "medium"
     }
   ],
-  "conflicts": [],
-  "unresolved": []
+  "conflicts": [
+    {
+      "passportCode": "LU",
+      "destinationCode": "UA",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: current Luxembourg guidance requires a pre-travel e-Tourist Visa",
+      "explanation": "Luxembourg's current traveller guidance directly rejects visa-free travel, while the linked Ukrainian eVisa service cannot be replayed and Ukraine's own direct visa-free table is dated June 2023. No single current replacement route is safely established.",
+      "sourceIds": [
+        "luxembourg-mfa-current-ukraine-etourist-visa-2026",
+        "ukraine-mfa-luxembourg-legacy-visa-free-entry-table-2023",
+        "ukraine-rada-eu-citizen-waiver-decree-current-edition-2026"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "LU",
+      "destinationCode": "UA",
+      "reason": "Luxembourg's January 2026 guidance directly requires a pre-travel e-Tourist Visa, contradicting the indeterminate-force decree record and Ukraine's June 2023 visa-free table. The linked Ukrainian application service cannot be replayed, so eVisa is not promoted as a replacement.",
+      "searchedOfficialDomains": [
+        "mae.gouvernement.lu",
+        "zakon.rada.gov.ua",
+        "mfa.gov.ua",
+        "visa.mfa.gov.ua"
+      ]
+    }
+  ]
 }

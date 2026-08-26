@@ -142,14 +142,19 @@ describe("evidence status matrix", () => {
       .toEqual(["visa_free", 1]);
   });
 
-  it("counts the ten current EU-member Ukraine waivers as supported", () => {
+  it("counts the nine supported EU-member and Tajikistan Ukraine waivers while preserving reviewed unknowns", () => {
     const europe = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-26");
     const ukraineIndex = europe.destinations.findIndex(({ code }) => code === "UA");
 
-    for (const passportCode of ["AT", "BE", "CY", "CZ", "FI", "GR", "LU", "MT", "PT", "RO"] as const) {
+    for (const passportCode of ["AT", "BE", "CY", "CZ", "FI", "GR", "MT", "PT", "RO", "TJ"] as const) {
       expect(europe.rows.find(({ passportCode: code }) => code === passportCode)!.cells[ukraineIndex].slice(0, 2))
         .toEqual(["visa_free", 1]);
     }
+
+    expect(europe.rows.find(({ passportCode }) => passportCode === "LU")!.cells[ukraineIndex])
+      .toEqual(["unknown", 0, -1, 0, 0]);
+    expect(europe.rows.find(({ passportCode }) => passportCode === "TW")!.cells[ukraineIndex])
+      .toEqual(["unknown", 0, -1, 0, 0]);
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {
