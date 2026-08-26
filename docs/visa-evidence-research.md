@@ -3598,9 +3598,19 @@ South Sudan's verified Interior portal proves that an approved eVisa PDF can be 
 
 Djibouti's public official applicant-API frontend remains live and its delivered assets identify the eVisa service, but anonymous replay exposes no stable nationality eligibility or terminal decision. A form shell is not an eVisa entitlement. Sudan's live 2025 Passport Directorate periodicals confirm visit and tourist categories and a headquarters-approved counter-visa process at airports and border crossings, but publish no nationality schedule, exemption register or residual route. Djibouti's 168 and Sudan's 174 exact rows therefore remain held.
 
+## Pass 394 result: Syria, Liberia and São Tomé route recovery
+
+Three exact destination audits replay another 468 current pending relationships without a safe promotion or imported-status correction. Coverage remains 40,537 of 44,974 foreign relationships (90.1%), with 4,437 pending and 100% audit coverage. The repository now contains 1,005 candidate files.
+
+Syria's civil-aviation information, effective 27 March 2026, states an advance-visa default subject to exemptions, and current state reporting confirms that the July 2025 visa decision remains in force. Neither authority publishes the controlling nationality annex or assigns the electronic, border and waiver routes. The eVisa host fails normal TLS validation. All 174 rows therefore remain held rather than treating the default as exhaustive or guessing which 22 imported easier-access relationships are exceptions.
+
+Liberia's current Immigration Service portal exposes an important taxonomy problem. It issues preapproval and a QR code before travel, but takes biometrics and places the physical visa sticker at the airport; a proven eligible use would be `visa_on_arrival`, not `evisa`. The same service directs applicants who are in a country with a Liberian embassy to use the embassy instead, while the Service Delivery Charter adds host-letter, processing-time and unstated eligibility conditions. Those traveller- and location-dependent rules cannot support a passport-wide complement. All 159 residual rows remain unresolved.
+
+São Tomé and Príncipe's former eVisa host now redirects to a commercial travel-information site. It is no longer current government evidence for nationality eligibility or electronic issuance, and no replacement official closed schedule was recovered. The 134 imported eVisa labels and one visa-free label remain unverified hypotheses; the redirect is recorded as a source-integrity warning rather than silently followed.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,437 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 1,002 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.1% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,437 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 1,005 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.1% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 
