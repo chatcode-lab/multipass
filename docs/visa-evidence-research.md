@@ -3412,6 +3412,12 @@ Eleven Afghanistan and North Korea hypotheses also remain pending. Current Briti
 
 Pass 372 records 20 exact holds and one current operational-route conflict. Complete-matrix evidence remains 40,103 of 44,974 foreign relationships (89.2%), with 4,871 pending and zero old or stale rows. Canonical evidence remains at 849 reviewed batches, 3,569 official source records and 2,007 policies.
 
+## Residual audit coverage milestone
+
+Every one of the 4,871 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 963 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.2% because a reviewed inability to establish a route is different from proof of the route itself.
+
+Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
