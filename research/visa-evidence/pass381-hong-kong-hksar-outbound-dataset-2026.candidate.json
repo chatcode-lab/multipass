@@ -1,0 +1,346 @@
+{
+  "batchId": "hksar-passport-outbound-access",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "hksar-immd-passport-scope-2026",
+      "title": "Application for HKSAR Passport | Immigration Department",
+      "url": "https://www.immd.gov.hk/eng/service/travel_document/apply_for_hksar_passport.html?s=100101002",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live immd.gov.hk passport service is published by the issuing Immigration Department and defines the HKSAR Passport scope represented by catalog code HK.",
+      "supportingExcerpt": "a Chinese citizen; a permanent resident of the HKSAR"
+    },
+    {
+      "id": "hksar-immd-outbound-vfa-csv-current-2026",
+      "title": "Visa-free access or visa-on-arrival for HKSAR passport",
+      "url": "https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/VFA_list.csv",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current downloadable CSV is served directly from immd.gov.hk and expressly concerns visa-free access or visa-on-arrival for the HKSAR Passport.",
+      "supportingExcerpt": "Visa-free access or visa-on-arrival for HKSAR passport"
+    },
+    {
+      "id": "hksar-immd-vfa-data-specification-2026",
+      "title": "Data Specification for Visa-free Access or Visa-on-arrival for HKSAR Passport",
+      "url": "https://www.immd.gov.hk/opendata/eng/law-and-security/personal_documentation/data_specification_for_VFA_list.pdf",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The Immigration Department's official dataset specification identifies the CSV fields. It has no separate visa-free-versus-arrival issuance field.",
+      "supportingExcerpt": "Countries/Territories, Duration of Stay (up to), Notes, Remarks"
+    },
+    {
+      "id": "hksar-immd-vfa-live-page-2026",
+      "title": "Visa-free access or visa-on-arrival for HKSAR Passport",
+      "url": "https://www.immd.gov.hk/eng/service/travel_document/visa_free_access.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live Immigration Department page reproduces the current HKSAR-passport positive list and directs holders to verify with the receiving authority before travel.",
+      "supportingExcerpt": "intended for general reference only"
+    }
+  ],
+  "policies": [],
+  "conflicts": [],
+  "unresolved": [
+    {
+      "passportCode": "HK",
+      "destinationCode": "AF",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Afghanistan row. Its absence is not an exhaustive advance-visa or electronic-visa rule.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mfa.gov.af"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BD",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Bangladesh row. No issuance timing is established by its absence.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "visa.gov.bd"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "VG",
+      "reason": "The exact British Virgin Islands row gives one month but the official category combines visa-free access and visa on arrival; it cannot safely select one normalized status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "bvi.gov.vg"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "BF",
+      "reason": "The exact Burkina Faso row gives 14 days but the official category combines visa-free access and visa on arrival; it cannot determine whether the displayed eVisa is replaced by either route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "visaburkina.bf"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CF",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Central African Republic row. Its absence establishes no visitor route or issuance timing.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "diplomatie.gouv.cf"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TD",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Chad row. Its absence establishes no ordinary-passport issuance route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "evisa.td"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CN",
+      "reason": "The positive HKSAR dataset has no Mainland China row and cannot substitute a Home Return Permit, PRC passport, or other non-HKSAR document.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "nia.gov.cn"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "CI",
+      "reason": "The HKSAR dataset has no Côte d'Ivoire row. Its omission cannot establish electronic eligibility or distinguish pre-enrolment from airport visa issuance.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "snedai.com"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "DJ",
+      "reason": "The exact Djibouti row gives 14 days but the official category combines visa-free access and visa on arrival; it cannot safely verify the displayed arrival-issuance status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "evisa.gouv.dj"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "EG",
+      "reason": "The exact Egypt row gives 90 days but the official category combines visa-free access and visa on arrival; it cannot safely verify the displayed visa-free status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mfa.gov.eg"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GT",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Guatemala row. Its absence establishes no ordinary-passport issuance route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "minex.gob.gt"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GN",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Guinea row. Its absence cannot establish eVisa eligibility or issuance.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "diplomatie.gov.gn"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GW",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Guinea-Bissau row. Its absence establishes no arrival-issuance result.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "gov.gw"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "HN",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Honduras row. Its absence establishes no ordinary-passport issuance route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "inm.gob.hn"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IR",
+      "reason": "The exact Iran row gives 21 days but the official category combines visa-free access and visa on arrival; it cannot safely verify the displayed visa-free status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mfa.gov.ir"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "IQ",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Iraq row. Its absence establishes no federal ordinary-passport issuance route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mofa.gov.iq"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "LR",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Liberia row. Its absence cannot establish electronic eligibility or airport issuance.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "immigration.gov.lr"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MO",
+      "reason": "The HKSAR positive dataset has no Macao row and cannot substitute a Macao resident document, transit treatment, or other document class.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "dsi.gov.mo"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ML",
+      "reason": "The exact Mali row states that duration is determined on arrival but the official category combines visa-free access and visa on arrival; it cannot safely verify the displayed visa-free status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "diplomatiemdc.gouv.ml"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MH",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Marshall Islands row. Its absence establishes no visitor route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "rmi.gov"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "NE",
+      "reason": "The exact Niger row gives 14 days but the official category combines visa-free access and visa on arrival; it cannot safely verify the displayed visa-free status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "diplomatie.gouv.ne"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "KP",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no DPRK row. Its absence does not establish ordinary-passport visitor issuance or operational access.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mfa.gov.kp"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "MK",
+      "reason": "The exact North Macedonia row gives 90 days but the official category combines visa-free access and visa on arrival; it cannot safely verify the displayed visa-free status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mfa.gov.mk"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PK",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Pakistan row. Its absence establishes no ordinary-passport electronic or advance-visa result.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mofa.gov.pk"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "PS",
+      "reason": "The HKSAR dataset has no Palestinian Territory row and cannot flatten Israeli, crossing, permit, or territorial-route controls into an ETA result.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "gov.il"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "ST",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no São Tomé and Príncipe row. Its absence establishes no electronic visitor route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "migracao.st"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SS",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no South Sudan row. Its absence cannot establish electronic eligibility or issuance.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "evisa.gov.ss"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SD",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Sudan row. Its absence establishes no ordinary-passport issuance route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mofa.gov.sd"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "SY",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Syria row. Its absence cannot establish electronic, arrival, or advance issuance.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "mofaex.gov.sy"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GM",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Gambia row. Its absence establishes no ordinary-passport visitor route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "gambiaimmigration.gov.gm"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TN",
+      "reason": "The exact Tunisia row gives three months but the official category combines visa-free access and visa on arrival; it cannot safely verify the displayed visa-free status.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "diplomatie.gov.tn"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "TM",
+      "reason": "The HKSAR dataset is a positive visa-free-or-arrival list and has no Turkmenistan row. Its absence establishes no ordinary-passport issuance route.",
+      "searchedOfficialDomains": [
+        "immd.gov.hk",
+        "migration.gov.tm"
+      ]
+    }
+  ]
+}

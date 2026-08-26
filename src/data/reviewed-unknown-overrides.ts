@@ -411,6 +411,15 @@ export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
     reviewedAt: "2026-08-26",
     recheckBy: "2026-11-26",
   },
+  {
+    passportCode: "NZ",
+    destinationCode: "NU",
+    rejectedStatus: "visa_on_arrival",
+    reason: "Niue's current visitor page omits New Zealand from its detailed visa-waiver list and says every unlisted traveller needs a visa before travel, while the same page's FAQ expressly includes New Zealand among visa-waiver countries. These incompatible official instructions disprove one passport-wide arrival-visa category without establishing a safe replacement.",
+    sourceIds: ["niue-tourism-current-entry-and-arrival-permit-2026"],
+    reviewedAt: "2026-08-26",
+    recheckBy: "2026-09-26",
+  },
 ];
 
 const pairKeys = REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode, destinationCode }) => `${passportCode}:${destinationCode}`);
