@@ -1,0 +1,143 @@
+{
+  "batchId": "pass395c-israel-current-outbound-residual-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "israel-nsc-statutory-prohibited-destinations-replayed-2026",
+      "title": "National Security Council travel guidance and statutory destination prohibitions",
+      "url": "https://www.gov.il/he/pages/1tunisia",
+      "publisher": "National Security Council, State of Israel",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "he",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The gov.il page is published by Israel's National Security Council.",
+      "supportingExcerpt": "Israeli citizens may not visit Syria, Lebanon, Saudi Arabia, Yemen or Iraq, including Kurdistan, under the law."
+    },
+    {
+      "id": "egypt-london-consulate-israel-clearance-and-visa-replayed-2026",
+      "title": "Visas",
+      "url": "https://egyptconsulate.co.uk/visas/",
+      "publisher": "Consulate General of the Arab Republic of Egypt in London",
+      "jurisdiction": "Egypt",
+      "kind": "government-guidance",
+      "language": "en",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The page identifies itself as the Egyptian Consulate General in London and gives its official consular contacts.",
+      "supportingExcerpt": "Israel nationals are required to obtain clearance; after clearance, documents are provided to issue the visa."
+    },
+    {
+      "id": "indonesia-immigration-calling-visa-israel-replayed-2026",
+      "title": "List of Visa on Arrival, visa-exemption, and Calling Visa subjects",
+      "url": "https://kanwilsultra.imigrasi.go.id/wna/daftar-subjek-voa-bvk-calling-visa",
+      "publisher": "Directorate General of Immigration, Ministry of Immigration and Corrections",
+      "jurisdiction": "Indonesia",
+      "kind": "government-guidance",
+      "language": "id",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The official imigrasi.go.id regional Directorate General of Immigration site publishes the list.",
+      "supportingExcerpt": "Nationals of listed countries, including Israel, must obtain Immigration Directorate approval before a visa is issued."
+    },
+    {
+      "id": "chad-evisa-exclusive-applications-replayed-2026",
+      "title": "New visa tariffs in the Republic of Chad",
+      "url": "https://evisa.td/articles/8/nouvelles-tarifications-des-visas-en-republique-du-tchad",
+      "publisher": "Direction of Immigration and Emigration, Chad",
+      "jurisdiction": "Chad",
+      "kind": "official-portal",
+      "language": "fr",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The evisa.td notice identifies the Chad Direction of Immigration and Emigration and cites Decree 2299/2025.",
+      "supportingExcerpt": "All new visa applications must be submitted exclusively through the official evisa.td platform."
+    },
+    {
+      "id": "syria-gaca-advance-entry-visa-replayed-2026",
+      "title": "GEN 1.3 — Entry, Transit and Departure of Passengers and Crew",
+      "url": "https://eaip.gaca.gov.sy/section/40",
+      "publisher": "Syrian General Authority of Civil Aviation",
+      "jurisdiction": "Syria",
+      "kind": "official-dataset",
+      "language": "en",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The Syrian GACA electronic Aeronautical Information Publication identifies the issuing authority.",
+      "supportingExcerpt": "Entry visa obtained in advance from a Syrian diplomatic mission, unless exempt."
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "IQ",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "israeli_citizen_travel_prohibited_by_law",
+      "explanation": "Israel's statutory outbound prohibition is not a destination entry restriction or a normal visa category; no Iraqi ordinary-passport route is established.",
+      "sourceIds": ["israel-nsc-statutory-prohibited-destinations-replayed-2026"]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "LB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "israeli_citizen_travel_prohibited_by_law",
+      "explanation": "Israel's statutory outbound prohibition is not a destination entry restriction or a normal visa category; no Lebanese ordinary-passport route is established.",
+      "sourceIds": ["israel-nsc-statutory-prohibited-destinations-replayed-2026"]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "SA",
+      "snapshotStatus": "visa_on_arrival",
+      "officialStatus": "israeli_citizen_travel_prohibited_by_law",
+      "explanation": "Israel's statutory outbound prohibition directly contradicts an unconditional arrival-visa baseline; no Saudi ordinary-passport route is established.",
+      "sourceIds": ["israel-nsc-statutory-prohibited-destinations-replayed-2026"]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "SY",
+      "snapshotStatus": "evisa",
+      "officialStatus": "israeli_citizen_travel_prohibited_by_law",
+      "explanation": "Israel's statutory outbound prohibition directly contradicts an electronic-visa baseline; Syria's advance-visa default lacks an Israeli nationality result.",
+      "sourceIds": ["israel-nsc-statutory-prohibited-destinations-replayed-2026", "syria-gaca-advance-entry-visa-replayed-2026"]
+    },
+    {
+      "passportCode": "IL",
+      "destinationCode": "YE",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "israeli_citizen_travel_prohibited_by_law",
+      "explanation": "Israel's statutory outbound prohibition is not a destination entry restriction or a normal visa category; no Yemeni ordinary-passport route is established.",
+      "sourceIds": ["israel-nsc-statutory-prohibited-destinations-replayed-2026"]
+    }
+  ],
+  "unresolved": [
+    {"passportCode":"IL","destinationCode":"AF","reason":"No current Afghan or Israeli primary source establishes ordinary Israeli-passport visitor eligibility and an operational issuance route.","searchedOfficialDomains":["mfa.gov.af","moi.gov.af","gov.il","mfa.gov.il"]},
+    {"passportCode":"IL","destinationCode":"BD","reason":"Bangladesh has not published a reproducible ordinary Israeli-passport eligibility and issuance result; forms do not prove it.","searchedOfficialDomains":["voa.specialbranch.gov.bd","immi.specialbranch.gov.bd","visa.gov.bd","gov.il"]},
+    {"passportCode":"IL","destinationCode":"BF","reason":"No current Burkina Faso authority source maps an ordinary Israeli passport to a visitor eligibility result and issuance route.","searchedOfficialDomains":["evisa.gov.bf","mae.gov.bf","gov.il"]},
+    {"passportCode":"IL","destinationCode":"CF","reason":"The CAR Paris mission describes filing but does not map ordinary Israeli nationals to visa liability or eligibility.","searchedOfficialDomains":["paris.diplomatie.gouv.cf","diplomatie.gouv.cf","gov.il"]},
+    {"passportCode":"IL","destinationCode":"CI","reason":"Ivorian electronic material does not establish ordinary Israeli-passport eligibility or whether a visa is issued electronically or at arrival.","searchedOfficialDomains":["snedai.com","diplomatie.gouv.ci","gov.il"]},
+    {"passportCode":"IL","destinationCode":"DJ","reason":"Djibouti eVisa material has no reproducible ordinary Israeli-passport eligibility result; portal availability is insufficient.","searchedOfficialDomains":["evisa.gouv.dj","diplomatie.gouv.dj","gov.il"]},
+    {"passportCode":"IL","destinationCode":"EG","reason":"Egypt's published Israel clearance and London issuance workflow is conditioned on that mission's residence jurisdiction, not a global passport-only route.","searchedOfficialDomains":["egyptconsulate.co.uk","visa2egypt.gov.eg","gov.il"]},
+    {"passportCode":"IL","destinationCode":"GW","reason":"No current Guinea-Bissau or Israeli primary source establishes ordinary Israeli-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["mne.gov.gw","gov.il"]},
+    {"passportCode":"IL","destinationCode":"ID","reason":"Indonesia names Israel as a calling-visa subject but does not provide an ordinary-passport visitor issuance route after pre-clearance.","searchedOfficialDomains":["imigrasi.go.id","kanwilsultra.imigrasi.go.id","gov.il"]},
+    {"passportCode":"IL","destinationCode":"IR","reason":"No current Iranian authority source supplies an ordinary Israeli-passport visitor eligibility decision or issuance route.","searchedOfficialDomains":["evisa.mfa.ir","mfa.gov.ir","gov.il"]},
+    {"passportCode":"IL","destinationCode":"IQ","reason":"Israeli statutory travel prohibition is recorded as a conflict; it does not establish a destination-side normalized visitor route.","searchedOfficialDomains":["gov.il","mofa.gov.iq","evisa.iq"]},
+    {"passportCode":"IL","destinationCode":"KM","reason":"No current Comorian authority source maps an ordinary Israeli passport to a short-visitor waiver, electronic, arrival, or advance issuance route.","searchedOfficialDomains":["be-it.comoros.km","mirex.gov.km","gov.il"]},
+    {"passportCode":"IL","destinationCode":"KP","reason":"No current DPRK government or mission source establishes an available ordinary Israeli-passport visitor route and actual issuance timing.","searchedOfficialDomains":["mfa.gov.kp","krld.pl","gov.il"]},
+    {"passportCode":"IL","destinationCode":"KW","reason":"Kuwaiti official material does not establish one ordinary Israeli-passport tourist route independent of sponsor, residence, profession, or third-country-document conditions.","searchedOfficialDomains":["moi.gov.kw","e.gov.kw","gov.il"]},
+    {"passportCode":"IL","destinationCode":"LB","reason":"Israeli statutory travel prohibition is recorded as a conflict; it does not establish a destination-side normalized visitor route.","searchedOfficialDomains":["gov.il","mfa.gov.lb"]},
+    {"passportCode":"IL","destinationCode":"LR","reason":"Liberia's route depends on mission availability and preapproval; no official source maps the ordinary Israeli passport to a baseline route.","searchedOfficialDomains":["lis.gov.lr","visaonarrival.lis.gov.lr","gov.il"]},
+    {"passportCode":"IL","destinationCode":"LY","reason":"Libya's official electronic-platform material does not publish ordinary Israeli-passport eligibility or an actual issuance result.","searchedOfficialDomains":["lana.gov.ly","evisa.gov.ly","gov.il"]},
+    {"passportCode":"IL","destinationCode":"ML","reason":"No current Malian authority source establishes ordinary Israeli-passport visitor eligibility and issuance timing.","searchedOfficialDomains":["diplomatie.gouv.ml","evisa.gouv.ml","gov.il"]},
+    {"passportCode":"IL","destinationCode":"MK","reason":"North Macedonia's public visa material does not provide a reproducible ordinary Israeli-passport visitor result or issuance route.","searchedOfficialDomains":["mfa.gov.mk","mvr.gov.mk","gov.il"]},
+    {"passportCode":"IL","destinationCode":"NE","reason":"Niger's framework preserves bilateral and community exceptions; no current ordinary Israeli-passport schedule establishes the visitor route.","searchedOfficialDomains":["diplomatie.gouv.ne","interieur.gouv.ne","gov.il"]},
+    {"passportCode":"IL","destinationCode":"PK","reason":"Pakistan's current official material does not establish a usable ordinary Israeli-passport visitor issuance route.","searchedOfficialDomains":["mofa.gov.pk","visa.nadra.gov.pk","gov.il"]},
+    {"passportCode":"IL","destinationCode":"PS","reason":"Palestinian access is route-, permit-, and crossing-dependent; no single territorial ordinary Israeli-passport visitor status is established.","searchedOfficialDomains":["gov.il","cogat.mod.gov.il","moi.pna.ps"]},
+    {"passportCode":"IL","destinationCode":"SA","reason":"Israeli statutory travel prohibition is recorded as a conflict; it does not establish a destination-side normalized visitor route.","searchedOfficialDomains":["gov.il","visa.visitsaudi.com","mofa.gov.sa"]},
+    {"passportCode":"IL","destinationCode":"SD","reason":"Sudan's passport authority describes approval handling but does not map an ordinary Israeli passport to visitor eligibility and issuance timing.","searchedOfficialDomains":["passports.gov.sd","mofa.gov.sd","gov.il"]},
+    {"passportCode":"IL","destinationCode":"SS","reason":"South Sudan's eVisa service does not map ordinary Israeli-passport eligibility and actual pre-travel issuance; portal availability is insufficient.","searchedOfficialDomains":["evisa.gov.ss","mofa.gov.ss","gov.il"]},
+    {"passportCode":"IL","destinationCode":"ST","reason":"São Tomé and Príncipe's documented short-stay routes are conditional on other travel documents and do not publish Israeli eligibility.","searchedOfficialDomains":["mnec.gov.st","evisa.st","gov.il"]},
+    {"passportCode":"IL","destinationCode":"SY","reason":"Israeli statutory travel prohibition is recorded as a conflict; Syria's advance-visa default does not establish an Israeli nationality result.","searchedOfficialDomains":["gov.il","eaip.gaca.gov.sy","mofaex.gov.sy"]},
+    {"passportCode":"IL","destinationCode":"TD","reason":"Chad requires covered visa applications to use evisa.td, but its notice does not establish that an ordinary Israeli passport is visa-liable or electronically eligible.","searchedOfficialDomains":["evisa.td","dgee.td","gov.il"]},
+    {"passportCode":"IL","destinationCode":"TM","reason":"No current Turkmen authority source establishes ordinary Israeli-passport visitor eligibility and actual issuance timing.","searchedOfficialDomains":["migration.gov.tm","mfa.gov.tm","gov.il"]},
+    {"passportCode":"IL","destinationCode":"TN","reason":"Tunisia's e-Consulat describes process for visa-subject persons but does not identify the ordinary Israeli-passport baseline.","searchedOfficialDomains":["econsulat.tn","diplomatie.gov.tn","gov.il"]},
+    {"passportCode":"IL","destinationCode":"TT","reason":"Trinidad and Tobago's named waiver material and electronic service do not establish an ordinary Israeli-passport visitor eligibility result.","searchedOfficialDomains":["immigration.gov.tt","nationalsecurity.gov.tt","gov.il"]},
+    {"passportCode":"IL","destinationCode":"YE","reason":"Israeli statutory travel prohibition is recorded as a conflict; no Yemeni ordinary Israeli-passport visitor route is established.","searchedOfficialDomains":["gov.il","yemenevisa.org","moi.gov.ye"]}
+  ]
+}
