@@ -3520,6 +3520,16 @@ The decisive nationality annex is not published on that page. The linked applica
 
 No policy, fallback correction, mobility score or rank changes. Coverage remains 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale rows. The exact partition records 20 unresolved relationships and zero supported policies or conflicts.
 
+## Pass 386 result: remaining home-citizenship recovery
+
+Fourteen diagonal passport-to-home relationships gain current evidence: Angola, Botswana, Burkina Faso, Cameroon, Lesotho, Mali, Mauritania, Morocco, Niger, São Tomé and Príncipe, Senegal, Sierra Leone, South Sudan and Tunisia. The reviewed authorities tie the relevant national or ordinary passport directly to the issuer's citizens or nationals; Angola and Lesotho also expressly cover entry or travel into the home state, and Senegal separately provides a citizen return document when the passport is unavailable. The ordinary class remains distinct from refugee, alien, diplomatic, service, emergency and other special travel documents where the source makes that distinction.
+
+These are evidence promotions, not new travel privileges. Each fallback row was already displayed as `citizenship`, so no mobility score, rank or foreign-access total changes. Valid-document, identity, judicial, public-health, security and other lawful border controls remain applicable.
+
+Twenty-seven diagonal holds remain after the recovery pass. Burundi, Central African Republic, Chad, Egypt, Equatorial Guinea, Eritrea, Gabon, Guinea, Guinea-Bissau and Mozambique were rechecked without a sufficiently direct and reproducible ordinary-passport basis; the remaining Americas and Asia holds likewise remain pending. In particular, Mozambique's criminal-procedure identification rule does not safely prove that the standard national passport is confined to citizens, and code identity alone is never promoted as evidence.
+
+Foreign-relationship coverage therefore remains 40,460 of 44,974 (90.0%), with 4,514 pending and no old or stale foreign rows. Canonical evidence contains 855 reviewed batches, 3,604 official source records and 2,027 policies. The public regional matrices additionally gain 14 verified home cells.
+
 ## Residual audit coverage milestone
 
 Every one of the 4,514 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 989 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 90.0% because a reviewed inability to establish a route is different from proof of the route itself.
