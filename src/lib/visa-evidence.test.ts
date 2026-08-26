@@ -1673,16 +1673,31 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SO", "SO", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
-  it("maps Angola's Decree 189/23 tourist exemption schedule", () => {
+  it("maps Angola's Decree 189/23 exemption and preauthorised border-visa routes", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "AO");
 
-    expect(pairs).toHaveLength(106);
+    expect(pairs).toHaveLength(194);
     expect(getVisaRelationshipEvidence("NA", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("WS", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("PH", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ZA", "AO", snapshot.passports.ZA.statuses.AO).supportsCurrentStatus).toBe(true);
+    expect(VERIFIED_ACCESS_OVERRIDES.filter(({ destinationCode, status, sourceUrl }) =>
+      destinationCode === "AO"
+      && status === "visa_on_arrival"
+      && sourceUrl === "https://www.sme.gov.ao/ao/evisa/"
+    )).toHaveLength(88);
+    for (const passportCode of ["AF", "TW", "AD", "CU"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "AO", "visa_on_arrival").supportsCurrentStatus).toBe(true);
+    }
+    for (const passportCode of ["SS", "XK", "ST", "ZM"] as const) {
+      expect(getVisaRelationshipEvidence(
+        passportCode,
+        "AO",
+        snapshot.passports[passportCode].statuses.AO,
+      ).supportsCurrentStatus).toBe(false);
+    }
     expect(getVisaRelationshipEvidence("AO", "AO", "citizenship").supportsCurrentStatus).toBe(false);
   });
 

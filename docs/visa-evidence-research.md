@@ -3440,9 +3440,21 @@ Kosovo's last two relationships also remain unresolved. Current Decision 02/237 
 
 The two destination columns remain at 196 of 198 verified foreign relationships. No policy, status, score, rank or coverage total changes.
 
+## Pass 376 result: Angola's preauthorised border-visa route
+
+Angola adds 88 current ordinary-passport relationships from a jointly closed legal and operational route. Decree 189/23 Article 4 permits the tourist application online or through an Angolan mission, requires a decision within three working days, sends a pre-authorisation before travel, and then affixes the visa to the travel document only after confirmation at the frontier. The current SME page independently names each of the 88 passports in its country selector and routes every selection to the same tourist product. This is therefore normalized as conditional `visa_on_arrival`, not eVisa: the approval is electronic, but the visa itself is issued at the border.
+
+The route is tourism-only and requires advance approval, a passport valid for more than six months, a return ticket and a vaccination certificate when applicable; frontier confirmation and final admission remain separate. Eighty-four imported `visa_required` rows and four imported `evisa` rows—Andorra, Cuba, Guinea-Bissau and Venezuela—change to `visa_on_arrival`. Each affected passport gains one mobility point, and dense ranks are recomputed from the corrected scores.
+
+Four relationships remain pending. South Sudan and Kosovo are absent from the live selector; Sudan cannot be transferred to South Sudan, and no generic product statement proves acceptance of an unmapped document. São Tomé and Príncipe and Zambia are selectable, but Decree 189/23 expressly preserves treaty regimes. Current official waiver and facilitation records do not establish one controlling category for either imported `visa_free` row, so the easier labels are neither endorsed nor overwritten by the conditional border route.
+
+Parallel exact rechecks add no speculative policy. Panama's current named visa-free, authorised-visa and stamped-visa cohorts omit Macao and Timor-Leste and name Sudan rather than South Sudan, without an express residual complement. Nigeria's current F5A material proves electronic delivery for an eligible applicant but does not expose a reproducible nationality entitlement for Georgia, Eswatini or Afghanistan. Those six rows remain held.
+
+Complete-matrix evidence rises to 40,305 of 44,974 foreign relationships (89.6%), leaving 4,669 pending and zero old or stale rows as of 26 August 2026. Angola now has verified evidence for 194 of 198 foreign passports. Canonical evidence contains 851 reviewed batches, 3,574 official source records and 2,010 policies.
+
 ## Residual audit coverage milestone
 
-Every one of the 4,757 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 970 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.4% because a reviewed inability to establish a route is different from proof of the route itself.
+Every one of the 4,669 relationships that remains unverified in the public matrix now appears in at least one explicit candidate audit as a supported hypothesis, documented conflict or exact unresolved hold. The repository contains 973 candidate files, giving 100% research-audit coverage of the current pending set. This is not presented as 100% verified evidence: the public status remains 89.6% because a reviewed inability to establish a route is different from proof of the route itself.
 
 Run `npm run evidence:audit-coverage` to recompute the invariant. It scans the current corrected access snapshot, canonical evidence and every candidate partition, fails when a pending relationship has no audit record, and is now part of CI and the full deployment gate. Future data refreshes therefore cannot silently create an unaudited red cell.
 

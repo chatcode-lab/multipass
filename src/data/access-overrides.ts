@@ -4444,4 +4444,22 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.visitsaudi.com/bin/api/v2/evisa/config?locale=en",
     reviewedAt: "2026-08-26",
   })),
+  ...([
+    "AF", "AL", "AM", "AZ", "BH", "BD", "BY", "BJ", "BT", "BO", "BA", "BN",
+    "BF", "BI", "KH", "CM", "CF", "TD", "CO", "KM", "CG", "CD", "CR", "CI",
+    "CU", "DJ", "DM", "EC", "EG", "SV", "ER", "ET", "GA", "GM", "GE", "GH",
+    "GT", "GN", "GW", "HN", "IR", "IQ", "JO", "KZ", "KE", "KG", "LA", "LB",
+    "LR", "LY", "MK", "MY", "MV", "ML", "MR", "MD", "MN", "ME", "MM", "NP",
+    "NI", "NE", "NG", "KP", "OM", "PK", "PY", "PE", "SN", "SL", "SO", "LK",
+    "SD", "SY", "TW", "TJ", "TH", "TG", "TN", "TM", "UG", "UA", "UZ", "VE",
+    "VN", "YE", "LI", "AD",
+  ] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "AO",
+    status: "visa_on_arrival" as const,
+    reason: "Angola's current SME selector directly maps this passport to the tourist product. Decree 189/23 requires approval before travel but affixes the visa to the travel document only after frontier confirmation.",
+    sourceUrl: "https://www.sme.gov.ao/ao/evisa/",
+    reviewedAt: "2026-08-26",
+    effectiveFrom: "2023-09-29",
+  })),
 ] as const;
