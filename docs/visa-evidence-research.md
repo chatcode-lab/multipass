@@ -3346,6 +3346,24 @@ Vanuatu's six residuals likewise add no policy. Its current Immigration page pla
 
 Passes 362 and 363 preserve 116 exact holds and document 13 current official-source conflicts. Complete-matrix evidence remains 40,100 of 44,974 foreign relationships (89.2%), with 4,874 pending and zero old or stale rows. Because these batches add no supported policy, canonical evidence remains at 848 reviewed batches, 3,559 official source records and 2,006 policies.
 
+## Pass 364 result: final one- and two-cell destination audits
+
+Thirty-four exact relationships across 24 destinations remain pending after current pair-level review. Ten Kosovo routes into Azerbaijan, Belarus, Gabon, Georgia, Kazakhstan, Mongolia, Montserrat, Russia, Serbia and Uzbekistan lack a direct current official ordinary-passport mapping; named schedules either omit Kosovo or do not establish recognition and issuance timing. Recognition and omission are not treated as visa rules.
+
+Six other final-pair checks expose three non-normalizable conflicts. Palestinian access to Israel depends on registry, document, permit, crossing and individual-screening conditions rather than one ordinary-passport visitor result. Jordan's current table excludes Moroccan females aged 16–60 from the generally displayed arrival route. Vatican access through Italy and Schengen is limited to biometric Serbian passports and excludes Coordination Directorate documents that Serbia still issues. South Sudan-to-Cayman Islands, Macao-to-Ecuador and Taiwan-to-Georgia remain unsupported because the current sources do not map those exact passport documents.
+
+The remaining 18 two-cell checks also stay pending. Current sources leave conflicts or document-specific conditions for Eswatini, Zambia, Macao, Sri Lanka, Taiwan and Niue; other destination authorities supply only generic consular processes or omit the exact passports. Niue, for example, omits New Zealand from its detailed waiver list while separately saying the list includes New Zealand. No single source is silently preferred. This pass adds no policy or coverage.
+
+## Pass 365 result: Oman's sponsored tourist eVisa and final three-/four-cell audits
+
+Afghanistan, North Korea and Palestinian Territory now gain current direct support for Oman's sponsored tourist `evisa`. Oman's national government service, updated 5 August 2025 and owned by the Royal Oman Police, expressly makes the 30-day sponsored tourist visa available to tourists of all nationalities through tourism companies licensed in Oman. The live ROP eVisa FAQ identifies sponsored tourist visas as eVisa-system products and says an approved visa is delivered electronically before travel. Both official pages replay over valid TLS.
+
+The finding is deliberately conditional: it is not an unsponsored entitlement, exemption or visa on arrival. A licensed tourism company must sponsor the application; passport validity, security review, carrier checks, border control and final admission still apply. All three imported rows already displayed `evisa`, so mobility scores and ranks do not change.
+
+The other 43 exact relationships in the pass remain pending. Guinea's live PAF records are inactive for the three scoped passports; Malawi's current authorities disagree between advance and arrival issuance; Belize retains a contradictory `YES - NO` Nauru row; and Nigeria and Guyana lack exact single outcomes. Panama has no direct mapping for its three residuals, Dominican immigration and foreign-ministry sources conflict, and China/Hong Kong outcomes depend on residence, permit, travel-document or transit conditions. French West Indies rules split by component territory or passport subtype, Türkiye's four rows split by age or qualifying documents, and current Moroccan and Moldovan sources likewise leave document, eligibility or internally conflicting results.
+
+Pass 365 verifies three relationships and records 16 official-source conflicts without guessing their replacements. Complete-matrix evidence rises to 40,103 of 44,974 foreign relationships (89.2%), leaving 4,871 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 849 reviewed batches, 3,569 official source records and 2,007 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.

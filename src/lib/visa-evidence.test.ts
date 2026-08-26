@@ -386,7 +386,7 @@ describe("official visa evidence", () => {
     const omanPairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "OM");
 
-    expect(omanPairs).toHaveLength(220);
+    expect(omanPairs).toHaveLength(223);
     expect(getVisaRelationshipEvidence("DE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AE", "OM", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IN", "OM", "visa_free").supportsCurrentStatus).toBe(true);
@@ -395,7 +395,9 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TO", "OM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SS", "OM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TW", "OM", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "OM", "evisa").supportsCurrentStatus).toBe(false);
+    for (const passportCode of ["AF", "KP", "PS"] as const) {
+      expect(getVisaRelationshipEvidence(passportCode, "OM", "evisa").supportsCurrentStatus).toBe(true);
+    }
   });
 
   it("covers Jamaica's explicit ordinary-passport table without inferring omitted rows", () => {

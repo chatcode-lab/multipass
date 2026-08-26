@@ -150,6 +150,16 @@ describe("evidence status matrix", () => {
       .toEqual(["visa_required", 1]);
   });
 
+  it("counts Oman's reviewed sponsored tourist eVisa routes as supported", () => {
+    const middleEast = buildEvidenceStatusRegion(snapshot.manifest, details, "MIDDLE EAST", "2026-08-26");
+    const omanIndex = middleEast.destinations.findIndex(({ code }) => code === "OM");
+
+    for (const passportCode of ["AF", "KP", "PS"] as const) {
+      expect(middleEast.rows.find(({ passportCode: code }) => code === passportCode)!.cells[omanIndex].slice(0, 2))
+        .toEqual(["evisa", 1]);
+    }
+  });
+
   it("counts the nine supported EU-member and Tajikistan Ukraine waivers while preserving reviewed unknowns", () => {
     const europe = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-26");
     const ukraineIndex = europe.destinations.findIndex(({ code }) => code === "UA");
@@ -172,8 +182,8 @@ describe("evidence status matrix", () => {
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_100);
-    expect(summary.notCovered.count).toBe(4_874);
+    expect(summary.covered).toBe(40_103);
+    expect(summary.notCovered.count).toBe(4_871);
     expect(summary.percent).toBe(89.2);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });
