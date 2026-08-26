@@ -1,0 +1,288 @@
+{
+  "batchId": "pass366-five-cell-destinations-2026",
+  "researchedAt": "2026-08-26",
+  "sources": [
+    {
+      "id": "guatemala-minex-current-visa-classification-pass366",
+      "title": "Visas para extranjeros: country classification",
+      "url": "https://www.minex.gob.gt/din/26-visas-para-extranjeros",
+      "publisher": "Ministerio de Relaciones Exteriores de Guatemala",
+      "jurisdiction": "Guatemala",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Guatemala’s Foreign Ministry publishes the A/B/C nationality schedule; the current record places Andorra in both A and B.",
+      "supportingExcerpt": "Categoría “A” Exento; Categoría “B” Visa consular; Categoría “C” Visa consultada."
+    },
+    {
+      "id": "guatemala-igm-current-category-guidance-pass366",
+      "title": "Clasificación de países",
+      "url": "https://igm.gob.gt/clasificacion-de-paises/",
+      "publisher": "Instituto Guatemalteco de Migración",
+      "jurisdiction": "Guatemala",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Guatemala’s migration authority defines the visitor consequence of Category A while the MINEX schedule leaves assigned cells ambiguous or unnamed.",
+      "supportingExcerpt": "Los países que se encuentran en la categoría A, no necesitan visa para ingresar al territorio guatemalteco."
+    },
+    {
+      "id": "nicaragua-inac-current-category-schedule-pass366",
+      "title": "Nicaragua eAIP GEN 1.3: passenger entry, transit and exit",
+      "url": "https://www.cocesna.org/aipca/AIPMN/AIP_2506/Eurocontrol/NICARAGUA/2025-10-30-AIRAC/html/eAIP/ES-MN-GEN-1.3-es-ES.html",
+      "publisher": "Instituto Nicaragüense de Aeronáutica Civil / COCESNA eAIP",
+      "jurisdiction": "Nicaragua",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "Nicaragua’s official state eAIP supplies its A/B/C ordinary-passport entry schedule; the five assigned passports are not given a direct usable result.",
+      "supportingExcerpt": "debe de solicitar ante el consulado un aval de la Direccion General de Migración y Extranjería"
+    },
+    {
+      "id": "kyrgyz-evisa-mfa-application-gate-pass366",
+      "title": "Kyrgyz Republic eVisa application eligibility form",
+      "url": "https://www.evisa.e-gov.kg/step_1.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live MFA ordinary-document application uses a nationality selector and calls its same-origin eligibility gate; Taiwan and Kosovo are absent from the selector.",
+      "supportingExcerpt": "url: \"api.php?method=getList7\""
+    },
+    {
+      "id": "kyrgyz-evisa-current-tourist-result-pass366",
+      "title": "Kyrgyz Republic eVisa ordinary-passport Tourist result",
+      "url": "https://www.evisa.e-gov.kg/api.php?method=getVisaList_2",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The current same-origin result returns the ordinary Tourist product only after a positive gate; Afghanistan’s exact gate did not expose Tourist.",
+      "supportingExcerpt": "Tourist visa («TS») is issued to an applicant, intending to visit Kyrgyz Republic with purpose of tourism, for a period up to 30 days."
+    },
+    {
+      "id": "kyrgyz-evisa-current-confirmation-before-entry-pass366",
+      "title": "Kyrgyz Republic eVisa information and application FAQ",
+      "url": "https://www.evisa.e-gov.kg/get_information.php?lng=en",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live MFA FAQ establishes pre-entry electronic confirmation where eligibility has been positively established, but not for all nationality records.",
+      "supportingExcerpt": "After receiving your e-Visa confirmation through this portal, you can enter the Kyrgyz Republic during e-Visa validity period."
+    },
+    {
+      "id": "kyrgyz-mfa-current-waiver-conflict-pass366",
+      "title": "Visa information for foreign citizens",
+      "url": "https://mfa.gov.kg/en/osnovnoe-menyu/konsulskie-uslugi/vizovye-voprosy/vizovaya-informatsiya-dlya-inostrannykh-grazhdan",
+      "publisher": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+      "jurisdiction": "Kyrgyz Republic",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-08-26",
+      "officialityEvidence": "The live MFA guidance continues to name Cuba and North Korea in its former-USSR all-passport waiver group, conflicting with the current session-bound ordinary-passport portal outcome.",
+      "supportingExcerpt": "Куба ... КНДР"
+    }
+  ],
+  "policies": [],
+  "conflicts": [
+    {
+      "passportCode": "AD",
+      "destinationCode": "GT",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: Andorra appears in both Guatemala Category A and B",
+      "explanation": "The current official schedule gives incompatible visa-free and consular-visa classifications.",
+      "sourceIds": [
+        "guatemala-minex-current-visa-classification-pass366",
+        "guatemala-igm-current-category-guidance-pass366"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "KG",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: current waiver guidance and ordinary-passport endpoint conflict",
+      "explanation": "Current Kyrgyz official materials give incompatible Cuba ordinary-passport outcomes.",
+      "sourceIds": [
+        "kyrgyz-evisa-mfa-application-gate-pass366",
+        "kyrgyz-mfa-current-waiver-conflict-pass366"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "KG",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved: current waiver guidance and ordinary-passport endpoint conflict",
+      "explanation": "Current Kyrgyz official materials give incompatible North Korean ordinary-passport outcomes.",
+      "sourceIds": [
+        "kyrgyz-evisa-mfa-application-gate-pass366",
+        "kyrgyz-mfa-current-waiver-conflict-pass366"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "KG",
+      "snapshotStatus": "evisa",
+      "officialStatus": "unresolved: controlling Tourist gate is negative",
+      "explanation": "The exact Afghan nationality gate does not expose Tourist, contrary to fallback eVisa, but does not establish an alternative route.",
+      "sourceIds": [
+        "kyrgyz-evisa-mfa-application-gate-pass366",
+        "kyrgyz-evisa-current-tourist-result-pass366"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "AD",
+      "destinationCode": "GT",
+      "reason": "The current MINEX schedule places Andorra in both Category A and Category B. Official category guidance cannot reconcile the contradictory ordinary-passport outcomes.",
+      "searchedOfficialDomains": [
+        "minex.gob.gt",
+        "igm.gob.gt"
+      ]
+    },
+    {
+      "passportCode": "HK",
+      "destinationCode": "GT",
+      "reason": "MINEX United Kingdom wording concerns certain British passports connected to Hong Kong, not an HKSAR ordinary passport. No direct Guatemala or Hong Kong authority maps it.",
+      "searchedOfficialDomains": [
+        "minex.gob.gt",
+        "igm.gob.gt",
+        "immd.gov.hk"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "GT",
+      "reason": "No current Guatemalan authority directly classifies an ordinary Macao SAR passport. China wording, a conditional visa-holder route and omission do not establish a baseline.",
+      "searchedOfficialDomains": [
+        "minex.gob.gt",
+        "igm.gob.gt",
+        "dsi.gov.mo"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "GT",
+      "reason": "Kosovo is not expressly named in Guatemala’s current ordinary-passport categories. Generic process material does not resolve document recognition or issuance.",
+      "searchedOfficialDomains": [
+        "minex.gob.gt",
+        "igm.gob.gt",
+        "rks-gov.net"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "GT",
+      "reason": "Guatemala’s schedule’s Sudan row does not directly classify South Sudan. No separate current ordinary-passport route was recovered.",
+      "searchedOfficialDomains": [
+        "minex.gob.gt",
+        "igm.gob.gt",
+        "mofaic.gov.ss"
+      ]
+    },
+    {
+      "passportCode": "CH",
+      "destinationCode": "NI",
+      "reason": "Nicaragua’s current Category A schedule names Switzerland but leaves the ordinary-passport cell blank. No current Swiss or Nicaraguan authority fills that cell.",
+      "searchedOfficialDomains": [
+        "cocesna.org",
+        "migob.gob.ni",
+        "eda.admin.ch"
+      ]
+    },
+    {
+      "passportCode": "MO",
+      "destinationCode": "NI",
+      "reason": "Macao is not directly mapped in Nicaragua’s current A/B/C ordinary-passport schedule, and Macao’s authority does not directly name Nicaragua.",
+      "searchedOfficialDomains": [
+        "cocesna.org",
+        "migob.gob.ni",
+        "dsi.gov.mo"
+      ]
+    },
+    {
+      "passportCode": "ZA",
+      "destinationCode": "NI",
+      "reason": "South Africa is not directly mapped in Nicaragua’s current ordinary-passport schedule. No direct authority establishes a nationwide visitor route.",
+      "searchedOfficialDomains": [
+        "cocesna.org",
+        "migob.gob.ni",
+        "dirco.gov.za"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "NI",
+      "reason": "Kosovo is not directly mapped in Nicaragua’s schedule and no direct authority establishes recognition or issuance timing.",
+      "searchedOfficialDomains": [
+        "cocesna.org",
+        "migob.gob.ni",
+        "rks-gov.net"
+      ]
+    },
+    {
+      "passportCode": "SS",
+      "destinationCode": "NI",
+      "reason": "South Sudan is not directly mapped in Nicaragua’s schedule and no direct authority establishes issuance timing.",
+      "searchedOfficialDomains": [
+        "cocesna.org",
+        "migob.gob.ni",
+        "mofaic.gov.ss"
+      ]
+    },
+    {
+      "passportCode": "TW",
+      "destinationCode": "KG",
+      "reason": "Taiwan is absent from the current MFA application selector. China or portal omission cannot establish a Taiwan ordinary-passport route.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "boca.gov.tw"
+      ]
+    },
+    {
+      "passportCode": "XK",
+      "destinationCode": "KG",
+      "reason": "Kosovo is absent from the current MFA application selector. Recognition or portal omission cannot establish a Kosovo ordinary-passport route.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "rks-gov.net"
+      ]
+    },
+    {
+      "passportCode": "CU",
+      "destinationCode": "KG",
+      "reason": "Current MFA waiver guidance names Cuba visa-free, but the session-bound ordinary-passport endpoint says Visa free regime: no and offers Tourist. No controlling treaty-status source resolves the conflict.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "cancilleria.gob.cu"
+      ]
+    },
+    {
+      "passportCode": "KP",
+      "destinationCode": "KG",
+      "reason": "Current MFA waiver guidance names North Korea visa-free, but the session-bound ordinary-passport endpoint says Visa free regime: no and offers Tourist. No controlling treaty-status source resolves the conflict.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "mfa.gov.kp"
+      ]
+    },
+    {
+      "passportCode": "AF",
+      "destinationCode": "KG",
+      "reason": "Afghanistan’s exact current controlling gate does not expose Tourist (TS). Generic Tourist product text cannot supply a positive ordinary Afghan-passport eligibility result.",
+      "searchedOfficialDomains": [
+        "evisa.e-gov.kg",
+        "mfa.gov.kg",
+        "mfa.gov.af"
+      ]
+    }
+  ]
+}

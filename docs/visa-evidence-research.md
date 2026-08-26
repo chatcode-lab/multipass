@@ -3364,6 +3364,26 @@ The other 43 exact relationships in the pass remain pending. Guinea's live PAF r
 
 Pass 365 verifies three relationships and records 16 official-source conflicts without guessing their replacements. Complete-matrix evidence rises to 40,103 of 44,974 foreign relationships (89.2%), leaving 4,871 pending and zero old or stale rows as of 26 August 2026. Canonical evidence now contains 849 reviewed batches, 3,569 official source records and 2,007 policies.
 
+## Pass 366 result: five-cell destinations, Pakistan, Libya and Indonesia
+
+Thirty-nine exact relationships remain pending after current official-source replay. Guatemala places Andorra in both its visa-free and consular-visa categories. Kyrgyzstan's current ordinary-passport gate conflicts with separate waiver guidance for Cuba and North Korea, while the Afghan nationality gate does not offer the displayed tourist route but establishes no replacement. Nicaragua's residuals remain unnamed or conditional. These 15 five-cell relationships therefore add no policy.
+
+Pakistan's Afghan guidance splits by sponsor, security and mission conditions rather than establishing one nationality-wide eVisa result. Its other five residuals have no direct current tourist-issuance mapping. Libya's electronic configuration is unavailable or partial and Türkiye remains split by age; the eight residuals stay held. Indonesia's ten rows remain subject to Calling Visa clearance, recognition or conflicting regional guidance rather than one safely normalized status. In total, the pass records five official-source conflicts without changing coverage.
+
+## Pass 367 result: Cape Verde, Marshall Islands and Ukraine residual audits
+
+Cape Verde's six controlling official pages replay normally, but the corrected 2026 Gazette remains a named, non-exhaustive schedule. EASE pre-registration, airport tax and generic border competence do not establish issuance for the 38 omitted passports. The Marshall Islands' current law makes arrival issuance depend on diplomatic relations, while no complete current official nationality map establishes that class; the linked March 2024 country summary is dated and internally duplicates Guatemala. All 71 Marshall Islands residuals remain pending.
+
+Ukraine's dynamic residual partition now contains 74 foreign relationships. Luxembourg's live 7 January 2026 guidance continues to directly negate the imported visa-free label, which the site already exposes as reviewed unknown. During this replay, Ukraine's Rada, MFA, legal and eVisa endpoints returned HTTP 403 or timed out, so no claimed treaty, decree or nationality annex met the affirmative current and reproducible threshold. The general visa baseline preserves treaty and statutory exceptions and therefore cannot fill the visa-required residuals by omission. Taiwan, Japan, Azerbaijan, Andorra, Monaco and Vatican City likewise remain held rather than receiving guessed routes.
+
+Pass 367 records 183 exact holds and one already-exposed conflict. Complete-matrix evidence remains 40,103 of 44,974 foreign relationships (89.2%), with 4,871 pending and zero old or stale rows.
+
+## Pass 368 result: British Virgin Islands current-source replay
+
+All 96 British Virgin Islands residuals remain pending. The previous Government visa-schedule URLs now return HTTP 404. The official laws portal is live and embeds the 2026 Visa Exemption Order, but the passport-specific schedule could not be extracted and verified safely from the current public response. Special permit and document classes are not generalized into nationality rules, and no prior mapping is carried forward merely because its replacement is inaccessible.
+
+This replay adds no policy, conflict or coverage. Canonical evidence remains at 849 reviewed batches, 3,569 official source records and 2,007 policies.
+
 ## Official bulk sources identified for later passes
 
 - [Hong Kong Immigration Department inbound visa-requirement CSV](https://www.immd.gov.hk/opendata/eng/law-and-security/visas/visit_visa_entry_permit_requirements_HKSAR.csv), published through the [Hong Kong government data catalog](https://data.gov.hk/en-data/dataset/hk-immd-set4-visit-visa-entry-permit-requirements-hksar/resource/7721f67e-80e9-4306-b379-66a47c6a617a). It distinguishes ordinary, biometric, diplomatic, official, and special British documents, so normalization must preserve those exceptions rather than reducing every row mechanically.
