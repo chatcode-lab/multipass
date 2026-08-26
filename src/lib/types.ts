@@ -59,6 +59,10 @@ export interface DataSnapshot {
   passports: Record<string, PassportAccess>;
 }
 
+export interface PublishedDataSnapshot extends DataSnapshot {
+  combinationInsights: CombinationInsights;
+}
+
 export interface PassportSet {
   codes: string[];
 }

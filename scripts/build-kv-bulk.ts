@@ -2,11 +2,12 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import fallbackSnapshot from "../src/data/fallback.json";
 import fallbackInsights from "../src/data/combination-insights.json";
-import type { CombinationInsights, DataSnapshot } from "../src/lib/types";
+import type { CombinationInsights, DataSnapshot, PublishedDataSnapshot } from "../src/lib/types";
 
 const snapshot = fallbackSnapshot as DataSnapshot;
 const insights = fallbackInsights as CombinationInsights;
 const outputPath = resolve(process.argv[2] ?? ".wrangler/passport-bootstrap.json");
+const currentOutputPath = resolve(dirname(outputPath), "passport-current.json");
 const prefix = `snapshot:${snapshot.manifest.version}`;
 const entries = [
   { key: `${prefix}:manifest`, value: JSON.stringify(snapshot.manifest) },
@@ -19,4 +20,10 @@ const entries = [
 
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, JSON.stringify(entries), "utf8");
-process.stdout.write(`Wrote ${entries.length} KV entries for ${snapshot.manifest.version} to ${outputPath}\n`);
+await writeFile(currentOutputPath, JSON.stringify({
+  ...snapshot,
+  combinationInsights: insights,
+} satisfies PublishedDataSnapshot), "utf8");
+process.stdout.write(
+  `Wrote ${entries.length} staged KV entries to ${outputPath} and the single-read snapshot to ${currentOutputPath}\n`,
+);

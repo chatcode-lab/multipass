@@ -82,6 +82,10 @@ describe("sync worker", () => {
     expect(JSON.parse(kv.values.get("snapshot:pointer") ?? "{}").current).toBe(version);
     expect(kv.values.has(`snapshot:${version}:manifest`)).toBe(true);
     expect(kv.values.has(`snapshot:${version}:combination-insights`)).toBe(true);
+    const published = JSON.parse(kv.values.get("snapshot:current") ?? "{}");
+    expect(published.manifest.version).toBe(version);
+    expect(Object.keys(published.passports)).toHaveLength(199);
+    expect(published.combinationInsights.snapshotVersion).toBe(version);
     expect(kv.values.has("sync:state")).toBe(false);
   });
 });

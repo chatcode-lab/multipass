@@ -1,148 +1,106 @@
 import fallbackSnapshot from "@/data/fallback.json";
 import fallbackCombinationInsights from "@/data/combination-insights.json";
-import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
-import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
 import { env } from "cloudflare:workers";
 import { applyAccessOverrides, reconcileManifestPassportDetails } from "./passport";
-import type { CombinationInsights, DataSnapshot, PassportAccess, SnapshotManifest } from "./types";
-
-interface SnapshotPointer {
-  current: string;
-  previous?: string;
-}
+import type {
+  CombinationInsights,
+  DataSnapshot,
+  PassportAccess,
+  PublishedDataSnapshot,
+} from "./types";
 
 export interface DataContext {
-  manifest: SnapshotManifest;
+  manifest: PublishedDataSnapshot["manifest"];
   source: "live" | "fallback";
 }
 
-const fallback = fallbackSnapshot as DataSnapshot;
-const fallbackInsights = fallbackCombinationInsights as CombinationInsights;
+const LIVE_SNAPSHOT_KEY = "snapshot:current";
+const LIVE_SNAPSHOT_CACHE_MS = 5 * 60 * 1_000;
+const fallback = reconcileSnapshot({
+  ...(fallbackSnapshot as DataSnapshot),
+  combinationInsights: fallbackCombinationInsights as CombinationInsights,
+});
+
+let liveSnapshotCache: {
+  expiresAt: number;
+  value: Promise<PublishedDataSnapshot | null>;
+} | undefined;
 
 function passportDataKv(): KVNamespace | undefined {
   return env.PASSPORT_DATA;
 }
 
-async function reconcileLiveManifest(
-  kv: KVNamespace,
-  version: string,
-  manifest: SnapshotManifest,
-): Promise<SnapshotManifest> {
-  const affectedCodes = [...new Set([
-    ...VERIFIED_ACCESS_OVERRIDES.map(({ passportCode }) => passportCode),
-    ...REVIEWED_UNKNOWN_OVERRIDES.map(({ passportCode }) => passportCode),
-  ])];
-  if (!affectedCodes.length) return manifest;
-  const chunks = Array.from({ length: Math.ceil(affectedCodes.length / 100) }, (_, index) =>
-    affectedCodes.slice(index * 100, (index + 1) * 100),
+function reconcileSnapshot(snapshot: PublishedDataSnapshot): PublishedDataSnapshot {
+  const passports = Object.fromEntries(
+    Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]),
   );
-  const valueMaps = await Promise.all(chunks.map((chunk) =>
-    kv.get<PassportAccess>(chunk.map((code) => `snapshot:${version}:passport:${code}`), "json"),
-  ));
-  const corrected = Object.fromEntries(affectedCodes.flatMap((code) => {
-    const key = `snapshot:${version}:passport:${code}`;
-    const detail = valueMaps.find((values) => values.has(key))?.get(key);
-    return detail ? [[code, applyAccessOverrides(detail)] as const] : [];
-  }));
-  return reconcileManifestPassportDetails(manifest, corrected);
+  return {
+    ...snapshot,
+    manifest: reconcileManifestPassportDetails(snapshot.manifest, passports),
+    passports,
+  };
 }
 
-export async function getDataContext(locals: App.Locals): Promise<DataContext> {
-  void locals;
+async function getLiveSnapshot(): Promise<PublishedDataSnapshot | null> {
   const kv = passportDataKv();
-  if (kv) {
-    const pointer = await kv.get<SnapshotPointer>("snapshot:pointer", "json");
-    if (pointer?.current) {
-      const manifest = await kv.get<SnapshotManifest>(`snapshot:${pointer.current}:manifest`, "json");
-      if (manifest) return { manifest: await reconcileLiveManifest(kv, pointer.current, manifest), source: "live" };
-    }
-  }
+  if (!kv) return null;
 
-  return { manifest: fallback.manifest, source: "fallback" };
+  const now = Date.now();
+  if (liveSnapshotCache && liveSnapshotCache.expiresAt > now) return liveSnapshotCache.value;
+
+  const value = kv
+    .get<PublishedDataSnapshot>(LIVE_SNAPSHOT_KEY, "json")
+    .then((snapshot) => snapshot ? reconcileSnapshot(snapshot) : null);
+  liveSnapshotCache = { expiresAt: now + LIVE_SNAPSHOT_CACHE_MS, value };
+
+  try {
+    return await value;
+  } catch (error) {
+    // Do not pin a transient KV failure for five minutes. Callers still receive
+    // the bundled snapshot for this request and may retry on the next one.
+    liveSnapshotCache = undefined;
+    console.error("Unable to read the published passport snapshot", error);
+    return null;
+  }
+}
+
+async function getSnapshot(): Promise<{ snapshot: PublishedDataSnapshot; source: DataContext["source"] }> {
+  const live = await getLiveSnapshot();
+  return live ? { snapshot: live, source: "live" } : { snapshot: fallback, source: "fallback" };
+}
+
+export async function getDataContext(_locals: App.Locals): Promise<DataContext> {
+  const { snapshot, source } = await getSnapshot();
+  return { manifest: snapshot.manifest, source };
 }
 
 export async function getPassportAccess(
-  locals: App.Locals,
+  _locals: App.Locals,
   code: string,
-  version?: string,
+  _version?: string,
 ): Promise<PassportAccess | null> {
-  const normalizedCode = code.toUpperCase();
-  void locals;
-  const kv = passportDataKv();
-  if (kv) {
-    let snapshotVersion = version;
-    if (!snapshotVersion) {
-      const pointer = await kv.get<SnapshotPointer>("snapshot:pointer", "json");
-      snapshotVersion = pointer?.current;
-    }
-    if (snapshotVersion) {
-      const detail = await kv.get<PassportAccess>(
-        `snapshot:${snapshotVersion}:passport:${normalizedCode}`,
-        "json",
-      );
-      if (detail) return applyAccessOverrides(detail);
-    }
-  }
-
-  const fallbackDetail = fallback.passports[normalizedCode];
-  return fallbackDetail ? applyAccessOverrides(fallbackDetail) : null;
+  const { snapshot } = await getSnapshot();
+  return snapshot.passports[code.toUpperCase()] ?? null;
 }
 
 export async function getPassportAccessBatch(
-  locals: App.Locals,
+  _locals: App.Locals,
   codes: string[],
-  version?: string,
+  _version?: string,
 ): Promise<Record<string, PassportAccess>> {
-  const uniqueCodes = [...new Set(codes.map((code) => code.toUpperCase()))];
-  void locals;
-  const kv = passportDataKv();
-  if (kv) {
-    let snapshotVersion = version;
-    if (!snapshotVersion) {
-      const pointer = await kv.get<SnapshotPointer>("snapshot:pointer", "json");
-      snapshotVersion = pointer?.current;
-    }
-    if (snapshotVersion) {
-      const chunks = Array.from({ length: Math.ceil(uniqueCodes.length / 100) }, (_, index) =>
-        uniqueCodes.slice(index * 100, (index + 1) * 100),
-      );
-      const maps = await Promise.all(chunks.map((chunk) =>
-        kv.get<PassportAccess>(chunk.map((code) => `snapshot:${snapshotVersion}:passport:${code}`), "json"),
-      ));
-      const liveEntries = uniqueCodes.map((code) => {
-        const key = `snapshot:${snapshotVersion}:passport:${code}`;
-        const rawDetail = maps.find((map) => map.has(key))?.get(key) ?? fallback.passports[code];
-        const detail = rawDetail ? applyAccessOverrides(rawDetail) : undefined;
-        return [code, detail] as const;
-      });
-      return Object.fromEntries(liveEntries.filter((entry): entry is [string, PassportAccess] => Boolean(entry[1])));
-    }
-  }
-  const entries = await Promise.all(
-    uniqueCodes.map(async (code) => [code, await getPassportAccess(locals, code, version)] as const),
+  const { snapshot } = await getSnapshot();
+  return Object.fromEntries(
+    [...new Set(codes.map((code) => code.toUpperCase()))].flatMap((code) => {
+      const detail = snapshot.passports[code];
+      return detail ? [[code, detail] as const] : [];
+    }),
   );
-  return Object.fromEntries(entries.filter((entry): entry is [string, PassportAccess] => Boolean(entry[1])));
 }
 
 export async function getCombinationInsights(
-  locals: App.Locals,
-  version?: string,
+  _locals: App.Locals,
+  _version?: string,
 ): Promise<CombinationInsights> {
-  void locals;
-  const kv = passportDataKv();
-  if (kv) {
-    let snapshotVersion = version;
-    if (!snapshotVersion) {
-      const pointer = await kv.get<SnapshotPointer>("snapshot:pointer", "json");
-      snapshotVersion = pointer?.current;
-    }
-    if (snapshotVersion) {
-      const insights = await kv.get<CombinationInsights>(
-        `snapshot:${snapshotVersion}:combination-insights`,
-        "json",
-      );
-      if (insights) return insights;
-    }
-  }
-  return fallbackInsights;
+  const { snapshot } = await getSnapshot();
+  return snapshot.combinationInsights;
 }

@@ -9,6 +9,7 @@ import { analyzePassportCombinations } from "../src/lib/combination-insights";
 import type {
   Destination,
   PassportAccess,
+  PublishedDataSnapshot,
   SnapshotManifest,
   SourceCountry,
   SourcePassportDetail,
@@ -195,6 +196,11 @@ export async function runSyncBatch(env: Env): Promise<{ published: boolean; proc
     ),
   };
   const combinationInsights = analyzePassportCombinations(manifest, snapshotPassports);
+  const publishedSnapshot: PublishedDataSnapshot = {
+    manifest,
+    passports: snapshotPassports,
+    combinationInsights,
+  };
   const previousPointer = await env.PASSPORT_DATA.get<SnapshotPointer>("snapshot:pointer", "json");
   await env.PASSPORT_DATA.put(
     `snapshot:${state.version}:combination-insights`,
@@ -205,6 +211,10 @@ export async function runSyncBatch(env: Env): Promise<{ published: boolean; proc
     "snapshot:pointer",
     JSON.stringify({ current: state.version, previous: previousPointer?.current } satisfies SnapshotPointer),
   );
+  // The web application reads this single immutable-in-shape value instead of
+  // fetching 199 passport keys per request. Publish it last so readers never
+  // observe a partially staged snapshot.
+  await env.PASSPORT_DATA.put("snapshot:current", JSON.stringify(publishedSnapshot));
   await env.PASSPORT_DATA.delete("sync:state");
   return { published: true, processed: codes.length, remaining: 0, version: state.version };
 }
