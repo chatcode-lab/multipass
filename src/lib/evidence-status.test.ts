@@ -70,6 +70,19 @@ describe("evidence status matrix", () => {
     expect(asiaMatrix.rows.find(({ passportCode }) => passportCode === "SS")!.cells[myanmarIndex][5]).toBe(1);
   });
 
+  it("marks Palestinian Territory route cohorts as characterized but unverified", () => {
+    const middleEast = buildEvidenceStatusRegion(snapshot.manifest, details, "MIDDLE EAST", "2026-08-27");
+    const palestineIndex = middleEast.destinations.findIndex(({ code }) => code === "PS");
+    const cell = (passportCode: string) =>
+      middleEast.rows.find(({ passportCode: code }) => code === passportCode)!.cells[palestineIndex];
+
+    expect(cell("CA")[1]).toBe(0);
+    expect(cell("CA")[5]).toBe(1);
+    expect(cell("TR")[1]).toBe(0);
+    expect(cell("TR")[5]).toBe(1);
+    expect(cell("IL")[5]).toBe(0);
+  });
+
   it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
     const middleEast = buildEvidenceStatusRegion(snapshot.manifest, details, "MIDDLE EAST", "2026-08-25");
     const asia = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-25");
@@ -179,7 +192,7 @@ describe("evidence status matrix", () => {
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
     expect(summary.covered).toBe(40_537);
     expect(summary.notCovered.count).toBe(4_437);
-    expect(summary.characterized.count).toBeGreaterThan(0);
+    expect(summary.characterized.count).toBe(243);
     expect(summary.allowedStay.count).toBeGreaterThan(1_000);
     expect(summary.percent).toBe(90.1);
     expect(summary.fresh.count).toBeGreaterThan(0);

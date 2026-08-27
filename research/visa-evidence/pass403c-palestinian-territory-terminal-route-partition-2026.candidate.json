@@ -1,33 +1,92 @@
 {
   "batchId": "pass403c-palestinian-territory-terminal-route-partition-2026",
-  "researchedAt": "2026-08-26",
+  "researchedAt": "2026-08-27",
   "sources": [
     {
-      "id": "pass403c-israel-airports-authority-allenby-route-current-2026",
+      "id": "israel-airports-authority-allenby-territorial-route",
       "title": "Allenby Border Crossing: about",
       "url": "https://www.iaa.gov.il/en/land-border-crossings/alenbi/about/",
       "publisher": "Israel Airports Authority",
       "jurisdiction": "Israel / Palestinian Territory",
       "kind": "official-portal",
       "language": "English",
-      "reviewedAt": "2026-08-26",
-      "officialityEvidence": "Normal trusted HTTPS replay returned HTTP 200. The official crossing authority describes Allenby as serving Palestinian population and tourists with various citizenships, demonstrating route-specific administration rather than a single Palestinian destination passport class.",
+      "reviewedAt": "2026-08-27",
+      "officialityEvidence": "The Israel Airports Authority operates the Allenby crossing and currently describes its Palestinian, tourist, Israeli, Palestinian Authority and Jordanian roles.",
       "supportingExcerpt": "mainly for the Palestinian population and tourists with various citizenships."
     },
     {
-      "id": "pass403c-cogat-population-registry-transport-check-2026",
-      "title": "Population Registry",
-      "url": "https://www.gov.il/en/departments/units/population_registrar_unit",
-      "publisher": "Coordination of Government Activities in the Territories",
-      "jurisdiction": "Israel / Palestinian Territory",
+      "id": "israel-pia-entry-country-data",
+      "title": "Israel Entry country and passport-type data",
+      "url": "https://israel-entry.piba.gov.il/api/getalldata",
+      "publisher": "Israel Population and Immigration Authority",
+      "jurisdiction": "Israel",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-27",
+      "officialityEvidence": "The live Israel Entry API is operated by the Population and Immigration Authority and enumerates current national-passport entry treatment by country.",
+      "supportingExcerpt": "The dataset separates regular national passports that require a permit from those that do not."
+    },
+    {
+      "id": "israel-mfa-tourist-visa-country-table",
+      "title": "Tourist Visa Requirements for Foreign Nationals",
+      "url": "https://www.gov.il/en/departments/dynamiccollectors/ashrotzarim?skip=0",
+      "publisher": "Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-08-27",
+      "officialityEvidence": "The current government collector is published by Israel's Ministry of Foreign Affairs and distinguishes visa-required and visa-exempt foreign national passports.",
+      "supportingExcerpt": "Tourist Visa Requirements for Foreign Nationals"
+    },
+    {
+      "id": "canada-travel-ps",
+      "title": "Government of Canada: Israel and Palestine travel advice",
+      "url": "https://travel.gc.ca/destinations/israel-and-palestine",
+      "publisher": "Global Affairs Canada",
+      "jurisdiction": "Canada",
       "kind": "government-guidance",
       "language": "English",
-      "reviewedAt": "2026-08-26",
-      "officialityEvidence": "Normal trusted HTTPS replay returned HTTP 403. The unavailable COGAT page cannot supply a reproducible nationality or permit result, reinforcing that no selector/default is retained.",
-      "supportingExcerpt": "Population Registry"
+      "reviewedAt": "2026-08-27",
+      "officialityEvidence": "Global Affairs Canada publishes the current destination advice and expressly explains the interaction between Palestinian and Israeli entry rules.",
+      "supportingExcerpt": "Palestine does not issue its own visas."
     }
   ],
   "policies": [],
+  "conditional": [
+    {
+      "id": "palestinian-territory-israeli-controlled-route-eta-or-restricted",
+      "title": "Palestinian Territory access is route-dependent for ETA-IL passports",
+      "summary": "These ordinary passports normally use ETA-IL at Israeli-controlled entry points, while the accessible Palestinian area, crossing, permit and individual approval can produce a restricted outcome.",
+      "reason": "route_dependent",
+      "destinationCodes": ["PS"],
+      "passportCodes": ["SG", "JP", "KR", "AE", "SE", "BE", "DK", "FI", "FR", "DE", "IE", "IT", "LU", "NL", "NO", "ES", "AT", "GR", "MT", "PT", "CH", "HU", "PL", "GB", "AU", "CA", "CZ", "LV", "NZ", "SK", "SI", "HR", "EE", "LI", "LT", "IS", "US", "BG", "RO", "MC", "CY", "CL", "HK", "AD", "AR", "BR", "SM", "BB", "BS", "KN", "VC", "MX", "UY", "MU", "CR", "GD", "PA", "PY", "DM", "TT", "MO", "LC", "UA", "PE", "RS", "TW", "SB", "GT", "SV", "HN", "MH", "WS", "ME", "MK", "TO", "TV", "AL", "GE", "FM", "PW", "RU", "ZA", "BZ", "EC", "FJ", "VU", "JM", "NR", "PG", "XK", "BW", "BY", "SR", "DO", "LS", "SZ", "MW", "PH", "MN", "HT"],
+      "possibleStatuses": ["eta", "entry_restricted"],
+      "effectiveFrom": "2025-01-01",
+      "conditions": [
+        "The ETA-IL route applies through Israeli-controlled ports of entry and does not itself establish access to every part of the Palestinian Territory.",
+        "West Bank or Gaza access can depend on the crossing, current security restrictions, population-registry status, permit coordination and individual approval.",
+        "No route-independent Palestinian ordinary-passport nationality schedule was found, so this record does not change the ranking status."
+      ],
+      "sourceIds": ["israel-pia-entry-country-data", "israel-mfa-tourist-visa-country-table", "israel-airports-authority-allenby-territorial-route", "canada-travel-ps"],
+      "confidence": "high"
+    },
+    {
+      "id": "palestinian-territory-israeli-controlled-route-visa-or-restricted",
+      "title": "Palestinian Territory access is route-dependent for Israeli-visa-required passports",
+      "summary": "These ordinary passports normally require an Israeli visitor visa at Israeli-controlled entry points, while the accessible Palestinian area, crossing, permit and individual approval can produce a restricted outcome.",
+      "reason": "route_dependent",
+      "destinationCodes": ["PS"],
+      "passportCodes": ["MY", "BN", "SC", "AG", "VA", "CO", "NI", "BA", "KI", "MD", "VE", "QA", "TR", "KW", "MV", "TL", "SA", "BH", "GY", "OM", "CN", "BO", "KZ", "TH", "NA", "MA", "ID", "KE", "RW", "TZ", "GM", "AZ", "GH", "TN", "BJ", "UG", "AM", "CV", "ZM", "SL", "ZW", "MZ", "KG", "ST", "UZ", "BF", "CU", "TG", "CI", "GA", "IN", "MG", "SN", "DZ", "MR", "GQ", "NE", "GN", "ML", "TJ", "TD", "KM", "GW", "AO", "EG", "JO", "LR", "BI", "CM", "CF", "VN", "BT", "KH", "CG", "DJ", "LA", "CD", "NG", "TM", "MM", "ET", "LB", "SS", "SD", "LY", "LK", "ER", "IR", "BD", "KP", "NP", "SO", "YE", "PK", "IQ", "SY", "AF"],
+      "possibleStatuses": ["visa_required", "entry_restricted"],
+      "conditions": [
+        "The prior-visa route applies through Israeli-controlled ports of entry and does not itself establish access to every part of the Palestinian Territory.",
+        "West Bank or Gaza access can depend on the crossing, current security restrictions, population-registry status, permit coordination and individual approval.",
+        "No route-independent Palestinian ordinary-passport nationality schedule was found, so this record does not change the ranking status."
+      ],
+      "sourceIds": ["israel-pia-entry-country-data", "israel-mfa-tourist-visa-country-table", "israel-airports-authority-allenby-territorial-route", "canada-travel-ps"],
+      "confidence": "high"
+    }
+  ],
   "conflicts": [],
   "unresolved": [
     {

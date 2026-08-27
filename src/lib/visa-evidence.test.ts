@@ -216,6 +216,27 @@ describe("official visa evidence", () => {
     expect(CONDITIONAL_VISA_EVIDENCE.length).toBeGreaterThan(0);
   });
 
+  it("characterizes Palestinian Territory routes without changing passport ranks", () => {
+    const etaRoute = getVisaRelationshipEvidence("CA", "PS", "unknown", "2026-08-27");
+    expect(etaRoute.supportsCurrentStatus).toBe(false);
+    expect(etaRoute.evidenceLevel).toBe("conditional");
+    expect(etaRoute.conditional).toContainEqual(expect.objectContaining({
+      id: "palestinian-territory-israeli-controlled-route-eta-or-restricted",
+      possibleStatuses: ["eta", "entry_restricted"],
+    }));
+
+    const visaRoute = getVisaRelationshipEvidence("TR", "PS", "unknown", "2026-08-27");
+    expect(visaRoute.supportsCurrentStatus).toBe(false);
+    expect(visaRoute.conditional).toContainEqual(expect.objectContaining({
+      id: "palestinian-territory-israeli-controlled-route-visa-or-restricted",
+      possibleStatuses: ["visa_required", "entry_restricted"],
+    }));
+
+    const israeliRoute = getVisaRelationshipEvidence("IL", "PS", "unknown", "2026-08-27");
+    expect(israeliRoute.evidenceLevel).toBe("pending");
+    expect(israeliRoute.conditional).toEqual([]);
+  });
+
   it("derives source-faithful allowed stays for exact passport–destination relationships", () => {
     const schengen = getVisaRelationshipEvidence("JP", "DE", "visa_free", "2026-08-27");
     expect(schengen.allowedStays).toContainEqual(expect.objectContaining({
