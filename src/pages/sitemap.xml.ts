@@ -55,10 +55,15 @@ export const GET: APIRoute = async ({ locals }) => {
         : [],
     ),
   ];
+  const uniqueUrls = [...urls.reduce((byLocation, entry) => {
+    const existing = byLocation.get(entry.loc);
+    if (!existing || Number(entry.priority) > Number(existing.priority)) byLocation.set(entry.loc, entry);
+    return byLocation;
+  }, new Map<string, (typeof urls)[number]>()).values()];
   const lastModified = manifest.checkedAt.slice(0, 10) > "2026-08-20"
     ? manifest.checkedAt.slice(0, 10)
     : "2026-08-20";
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${uniqueUrls
     .map(
       ({ loc, priority }) =>
         `  <url><loc>${escapeXml(loc)}</loc><lastmod>${lastModified}</lastmod><priority>${priority}</priority></url>`,

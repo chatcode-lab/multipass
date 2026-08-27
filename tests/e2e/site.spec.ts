@@ -594,6 +594,9 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
 
   const sitemap = await request.get("/sitemap.xml");
   const xml = await sitemap.text();
+  const sitemapLocations = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+  expect(new Set(sitemapLocations).size).toBe(sitemapLocations.length);
+  expect(sitemapLocations.length).toBeLessThanOrEqual(50_000);
   expect(xml).toContain("<loc>https://multipassrank.com/destination/angola</loc>");
   expect(xml).toContain("<loc>https://multipassrank.com/belgium-angola-visa-free</loc>");
   expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-afghanistan-visa</loc>");
