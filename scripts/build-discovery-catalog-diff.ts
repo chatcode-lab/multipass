@@ -4,6 +4,7 @@
  * promoted. It intentionally performs no writes.
  */
 import fallbackSnapshot from "../src/data/fallback.json" with { type: "json" };
+import { applyAccessOverrides } from "../src/lib/passport";
 import { getVisaRelationshipEvidence, officialSourcesForPolicies, policiesForDestination } from "../src/lib/visa-evidence";
 import type { AccessStatus, DataSnapshot } from "../src/lib/types";
 
@@ -39,6 +40,9 @@ const response = await fetch(catalogUrl, {
 if (!response.ok) throw new Error(`Discovery catalog returned HTTP ${response.status}`);
 const catalog = await response.json() as Catalog;
 const snapshot = fallbackSnapshot as DataSnapshot;
+const details = Object.fromEntries(
+  Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]),
+);
 const passportByCode = new Map(snapshot.manifest.passports.map((passport) => [passport.code, passport]));
 const destinationByCode = new Map(snapshot.manifest.destinations.map((destination) => [destination.code, destination]));
 
@@ -65,7 +69,7 @@ for (const [passportCode, destinations] of Object.entries(catalog)) {
     if (passportCode === destinationCode || !catalogCell.status) continue;
     const destination = destinationByCode.get(destinationCode);
     if (!destination) continue;
-    const currentStatus = snapshot.passports[passportCode]?.statuses[destinationCode] ?? "unknown";
+    const currentStatus = details[passportCode]?.statuses[destinationCode] ?? "unknown";
     const evidence = getVisaRelationshipEvidence(passportCode, destinationCode, currentStatus);
     if (evidence.supportsCurrentStatus) continue;
     pendingByDestination.set(destinationCode, (pendingByDestination.get(destinationCode) ?? 0) + 1);

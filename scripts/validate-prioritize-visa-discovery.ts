@@ -7,6 +7,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 import { z } from "zod";
 import fallbackSnapshot from "../src/data/fallback.json" with { type: "json" };
+import { applyAccessOverrides } from "../src/lib/passport";
 import type { DataSnapshot } from "../src/lib/types";
 import { getVisaRelationshipEvidence } from "../src/lib/visa-evidence";
 
@@ -128,6 +129,9 @@ for (const filePath of files) {
 }
 
 const snapshot = fallbackSnapshot as DataSnapshot;
+const details = Object.fromEntries(
+  Object.entries(snapshot.passports).map(([codeValue, detail]) => [codeValue, applyAccessOverrides(detail)]),
+);
 const passportCodes = new Set(snapshot.manifest.passports.map(({ code: value }) => value));
 const destinationCodes = new Set(snapshot.manifest.destinations.map(({ code: value }) => value));
 const catalogs = await Promise.all(files.map(async (filePath) => {
@@ -137,7 +141,7 @@ const catalogs = await Promise.all(files.map(async (filePath) => {
 }));
 
 const prioritized = catalogs.flatMap(({ filePath, catalog }) => catalog.clues.map((clue) => {
-  const currentStatus = snapshot.passports[clue.passportCode]?.statuses[clue.destinationCode] ?? "unknown";
+  const currentStatus = details[clue.passportCode]?.statuses[clue.destinationCode] ?? "unknown";
   const evidenceLevel = getVisaRelationshipEvidence(clue.passportCode, clue.destinationCode, currentStatus).evidenceLevel;
   return {
     catalogId: catalog.catalogId,
