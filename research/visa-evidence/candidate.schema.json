@@ -48,6 +48,11 @@
           "conditions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
           "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
           "confidence": { "enum": ["high", "medium", "low"] },
+          "allowedStays": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/$defs/allowedStay" }
+          },
           "application": {
             "type": "object",
             "additionalProperties": false,
@@ -59,6 +64,37 @@
               "steps": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
             }
           }
+        }
+      }
+    },
+    "conditional": {
+      "type": "array",
+      "description": "Officially characterized relationships for which one passport-wide rank status would be misleading.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "summary", "reason", "destinationCodes", "passportCodes", "possibleStatuses", "sourceIds", "confidence"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "reason": { "enum": ["document_dependent", "demographic_dependent", "route_dependent", "purpose_dependent", "authority_discretion", "conflicting_official_sources", "official_schedule_incomplete", "other"] },
+          "destinationCodes": { "$ref": "#/$defs/codes" },
+          "passportCodes": { "$ref": "#/$defs/codes" },
+          "excludedPassportCodes": { "$ref": "#/$defs/codes" },
+          "possibleStatuses": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": { "enum": ["visa_free", "eta", "visa_on_arrival", "evisa", "visa_required", "entry_restricted"] }
+          },
+          "announcedOn": { "type": "string", "format": "date" },
+          "effectiveFrom": { "type": "string", "format": "date" },
+          "effectiveTo": { "type": "string", "format": "date" },
+          "conditions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } },
+          "allowedStays": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/allowedStay" } },
+          "confidence": { "enum": ["high", "medium", "low"] }
         }
       }
     },
@@ -95,6 +131,20 @@
   },
   "$defs": {
     "code": { "type": "string", "pattern": "^[A-Z]{2}$" },
-    "codes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/code" } }
+    "codes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/code" } },
+    "allowedStay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "basis"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "basis": { "enum": ["per_visit", "per_entry", "rolling_period", "calendar_period", "authority_discretion"] },
+        "maxDays": { "type": "integer", "minimum": 1 },
+        "withinDays": { "type": "integer", "minimum": 1 },
+        "passportCodes": { "$ref": "#/$defs/codes" },
+        "excludedPassportCodes": { "$ref": "#/$defs/codes" },
+        "notes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+      }
+    }
   }
 }

@@ -29,6 +29,18 @@ const application = z.strictObject({
   processingTime: z.string().min(1).optional(),
   steps: z.array(z.string().min(1)).min(1),
 });
+const allowedStay = z.strictObject({
+  label: z.string().min(1),
+  basis: z.enum(["per_visit", "per_entry", "rolling_period", "calendar_period", "authority_discretion"]),
+  maxDays: z.int().positive().optional(),
+  withinDays: z.int().positive().optional(),
+  passportCodes: z.array(code).min(1).optional(),
+  excludedPassportCodes: z.array(code).min(1).optional(),
+  notes: z.array(z.string().min(1)).min(1).optional(),
+}).superRefine((item, context) => {
+  if (item.withinDays && !item.maxDays) context.addIssue({ code: "custom", message: "withinDays requires maxDays" });
+  if (item.withinDays && item.maxDays && item.maxDays > item.withinDays) context.addIssue({ code: "custom", message: "maxDays cannot exceed withinDays" });
+});
 const policy = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: z.string().min(1),
@@ -44,12 +56,41 @@ const policy = z.strictObject({
   sourceIds: z.array(z.string()).min(1),
   confidence: z.enum(["high", "medium", "low"]),
   application: application.optional(),
+  allowedStays: z.array(allowedStay).min(1).optional(),
+});
+const conditionalStatus = z.enum(["visa_free", "eta", "visa_on_arrival", "evisa", "visa_required", "entry_restricted"]);
+const conditional = z.strictObject({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  title: z.string().min(1),
+  summary: z.string().min(1),
+  reason: z.enum([
+    "document_dependent",
+    "demographic_dependent",
+    "route_dependent",
+    "purpose_dependent",
+    "authority_discretion",
+    "conflicting_official_sources",
+    "official_schedule_incomplete",
+    "other",
+  ]),
+  destinationCodes: z.array(code).min(1),
+  passportCodes: z.array(code).min(1),
+  excludedPassportCodes: z.array(code).min(1).optional(),
+  possibleStatuses: z.array(conditionalStatus).min(2),
+  announcedOn: date.optional(),
+  effectiveFrom: date.optional(),
+  effectiveTo: date.optional(),
+  conditions: z.array(z.string().min(1)).optional(),
+  sourceIds: z.array(z.string()).min(1),
+  allowedStays: z.array(allowedStay).min(1).optional(),
+  confidence: z.enum(["high", "medium", "low"]),
 });
 const candidateSchema = z.strictObject({
   batchId: z.string().min(1),
   researchedAt: date,
   sources: z.array(source),
   policies: z.array(policy),
+  conditional: z.array(conditional).optional().default([]),
   conflicts: z.array(z.strictObject({
     passportCode: code,
     destinationCode: code,
@@ -85,6 +126,7 @@ const forbiddenDiscoveryHosts = new Set(["wikipedia.org", "www.wikipedia.org", "
 if (!queueBatch) throw new Error(`Batch ${candidate.batchId} is not in the research queue`);
 if (sourceIds.size !== candidate.sources.length) throw new Error("Source IDs must be unique");
 if (new Set(candidate.policies.map(({ id }) => id)).size !== candidate.policies.length) throw new Error("Policy IDs must be unique");
+if (new Set(candidate.conditional.map(({ id }) => id)).size !== candidate.conditional.length) throw new Error("Conditional evidence IDs must be unique");
 
 const allowedPassportCodes = queueBatch.passportCodes.includes("*")
   ? passportCodes
@@ -111,6 +153,10 @@ for (const item of candidate.policies) {
   for (const value of item.destinationCodes) if (!destinationCodes.has(value)) throw new Error(`${item.id} has unknown destination code ${value}`);
   for (const value of item.excludedPassportCodes ?? []) if (!passportCodes.has(value)) throw new Error(`${item.id} excludes unknown passport code ${value}`);
   for (const value of item.sourceIds) if (!sourceIds.has(value)) throw new Error(`${item.id} references unknown source ${value}`);
+  for (const stayRule of item.allowedStays ?? []) {
+    for (const value of stayRule.passportCodes ?? []) if (!item.passportCodes.includes(value)) throw new Error(`${item.id} stay rule has out-of-policy passport code ${value}`);
+    for (const value of stayRule.excludedPassportCodes ?? []) if (!passportCodes.has(value)) throw new Error(`${item.id} stay rule excludes unknown passport code ${value}`);
+  }
   for (const passportCode of item.passportCodes) {
     if (!allowedPassportCodes.has(passportCode)) throw new Error(`${item.id} has out-of-scope passport code ${passportCode}`);
     if (item.excludedPassportCodes?.includes(passportCode)) continue;
@@ -124,6 +170,26 @@ for (const item of candidate.policies) {
       pairStatuses.add(item.status);
       policyStatusesByPair.set(pairKey, pairStatuses);
     }
+  }
+}
+
+for (const item of candidate.conditional) {
+  if (new Set(item.passportCodes).size !== item.passportCodes.length) throw new Error(`${item.id} repeats a passport code`);
+  if (new Set(item.destinationCodes).size !== item.destinationCodes.length) throw new Error(`${item.id} repeats a destination code`);
+  if (new Set(item.possibleStatuses).size !== item.possibleStatuses.length) throw new Error(`${item.id} repeats a possible status`);
+  if (item.effectiveFrom && item.effectiveTo && item.effectiveFrom > item.effectiveTo) throw new Error(`${item.id} has an effectiveFrom date after effectiveTo`);
+  for (const value of item.passportCodes) {
+    if (!passportCodes.has(value)) throw new Error(`${item.id} has unknown passport code ${value}`);
+    if (!allowedPassportCodes.has(value)) throw new Error(`${item.id} has out-of-scope passport code ${value}`);
+  }
+  for (const value of item.destinationCodes) {
+    if (!destinationCodes.has(value)) throw new Error(`${item.id} has unknown destination code ${value}`);
+    if (!allowedDestinationCodes.has(value)) throw new Error(`${item.id} has out-of-scope destination code ${value}`);
+  }
+  for (const value of item.excludedPassportCodes ?? []) if (!passportCodes.has(value)) throw new Error(`${item.id} excludes unknown passport code ${value}`);
+  for (const value of item.sourceIds) if (!sourceIds.has(value)) throw new Error(`${item.id} references unknown source ${value}`);
+  for (const stayRule of item.allowedStays ?? []) {
+    for (const value of stayRule.passportCodes ?? []) if (!item.passportCodes.includes(value)) throw new Error(`${item.id} stay rule has out-of-scope passport code ${value}`);
   }
 }
 
@@ -193,4 +259,4 @@ for (const [pairKey, pairStatuses] of policyStatusesByPair) {
   }
 }
 
-process.stdout.write(`Validated ${candidate.batchId}: ${candidate.sources.length} sources, ${candidate.policies.length} policies, ${candidate.conflicts.length} conflicts, ${candidate.unresolved.length} unresolved.\n`);
+process.stdout.write(`Validated ${candidate.batchId}: ${candidate.sources.length} sources, ${candidate.policies.length} policies, ${candidate.conditional.length} conditional records, ${candidate.conflicts.length} conflicts, ${candidate.unresolved.length} unresolved.\n`);

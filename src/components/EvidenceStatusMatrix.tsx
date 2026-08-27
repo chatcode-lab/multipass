@@ -5,8 +5,8 @@ import { formatRegion } from "@/lib/geography";
 import { ACCESS_STATUSES, REGIONS, type AccessStatus, type Region } from "@/lib/types";
 import "@/styles/evidence-status.css";
 
-type VerificationFilter = "all" | "verified" | "pending";
-type EvidenceFreshness = "pending" | "stale" | "aging" | "recent" | "fresh";
+type VerificationFilter = "all" | "verified" | "characterized" | "pending";
+type EvidenceFreshness = "pending" | "characterized" | "stale" | "aging" | "recent" | "fresh";
 
 interface EvidenceStatusMatrixProps {
   initialRegion: Region;
@@ -68,7 +68,9 @@ function relationshipHref(
 
 function cellMatchesFilter(cell: EvidenceStatusCell, filter: VerificationFilter): boolean {
   if (filter === "all") return true;
-  return filter === "verified" ? cell[1] === 1 : cell[1] === 0;
+  if (filter === "verified") return cell[1] === 1;
+  if (filter === "characterized") return cell[5] === 1;
+  return cell[1] === 0 && cell[5] === 0;
 }
 
 function evidenceFreshness(reviewedAt: string | undefined, asOf: string): EvidenceFreshness {
@@ -85,6 +87,7 @@ function evidenceFreshness(reviewedAt: string | undefined, asOf: string): Eviden
 
 const FRESHNESS_LABELS: Record<EvidenceFreshness, string> = {
   pending: "not verified",
+  characterized: "officially characterized without one rank-grade status",
   stale: "verified more than 180 days ago",
   aging: "verified 91–180 days ago",
   recent: "verified 31–90 days ago",
@@ -92,7 +95,7 @@ const FRESHNESS_LABELS: Record<EvidenceFreshness, string> = {
 };
 
 const COMPLETION_BUCKETS = [
-  { key: "notCovered", label: "Not covered", detail: "No active matching evidence" },
+  { key: "notCovered", label: "No exact match", detail: "No active rank-grade evidence" },
   { key: "stale", label: "Stale", detail: "Reviewed 181+ days ago" },
   { key: "old", label: "Old", detail: "Reviewed 31–180 days ago" },
   { key: "fresh", label: "Fresh", detail: "Reviewed within 30 days" },
@@ -116,7 +119,7 @@ export default function EvidenceStatusMatrix({
   useEffect(() => {
     const controller = new AbortController();
     const refresh = requestKey ? `&refresh=${requestKey}` : "";
-    fetch(`/api/v1/evidence-status?region=${encodeURIComponent(region)}&schema=2${refresh}`, {
+    fetch(`/api/v1/evidence-status?region=${encodeURIComponent(region)}&schema=3${refresh}`, {
       signal: controller.signal,
       cache: requestKey ? "no-store" : "default",
     })
@@ -171,15 +174,17 @@ export default function EvidenceStatusMatrix({
 
   const visibleSummary = useMemo(() => {
     let verified = 0;
+    let characterized = 0;
     let pending = 0;
     for (const { row } of visibleRows) {
       for (const index of visibleDestinationIndexes) {
         if (row.cells[index][1]) verified += 1;
+        else if (row.cells[index][5]) characterized += 1;
         else pending += 1;
       }
     }
-    const total = verified + pending;
-    return { verified, pending, total, percent: total ? Number(((verified / total) * 100).toFixed(1)) : 0 };
+    const total = verified + characterized + pending;
+    return { verified, characterized, pending, total, percent: total ? Number(((verified / total) * 100).toFixed(1)) : 0 };
   }, [visibleDestinationIndexes, visibleRows]);
 
   return (
@@ -187,9 +192,11 @@ export default function EvidenceStatusMatrix({
       {matrix?.overall && (
         <section className="evidence-completion" aria-label="Overall evidence completion">
           <div className="evidence-completion__primary">
-            <span>Overall completion</span>
+            <span>Exact verification</span>
             <strong>{matrix.overall.percent}%</strong>
             <small>{matrix.overall.covered.toLocaleString()} of {matrix.overall.total.toLocaleString()} foreign-access relationships covered</small>
+            {matrix.overall.characterized.count > 0 && <small>{matrix.overall.characterized.count.toLocaleString()} more officially characterized without one rank-grade status</small>}
+            <small>{matrix.overall.allowedStay.count.toLocaleString()} relationships have a structured allowed-stay rule</small>
           </div>
           <div className="evidence-completion__buckets">
             {COMPLETION_BUCKETS.map(({ key, label, detail }) => (
@@ -209,7 +216,7 @@ export default function EvidenceStatusMatrix({
               <i className={`evidence-completion__bar-segment evidence-completion__bar-segment--${key}`} style={{ width: `${matrix.overall[key].percent}%` }} key={key} />
             ))}
           </div>
-          <p>Home/citizenship diagonal cells remain visible in the matrix but are excluded from the completion denominator.</p>
+          <p>Conditional and rejected classifications remain outside the exact percentage. Home/citizenship diagonal cells remain visible in the matrix but are excluded from the denominator.</p>
         </section>
       )}
 
@@ -247,8 +254,9 @@ export default function EvidenceStatusMatrix({
           <span className="sr-only">Filter by verification status</span>
           <select value={verificationFilter} onChange={(event) => setVerificationFilter(event.target.value as VerificationFilter)}>
             <option value="all">All evidence states</option>
-            <option value="pending">Pending only</option>
-            <option value="verified">Verified only</option>
+            <option value="verified">Exact evidence only</option>
+            <option value="characterized">Conditional / characterized</option>
+            <option value="pending">Unreviewed only</option>
           </select>
         </label>
         <button
@@ -276,6 +284,7 @@ export default function EvidenceStatusMatrix({
         <div className="evidence-status-summary" aria-live="polite">
           <span><strong>{visibleSummary.percent}%</strong> verified in view</span>
           <span><i className="verification-key verification-key--verified" />{visibleSummary.verified.toLocaleString()} verified</span>
+          <span><i className="verification-key verification-key--characterized" />{visibleSummary.characterized.toLocaleString()} characterized</span>
           <span><i className="verification-key verification-key--pending" />{visibleSummary.pending.toLocaleString()} pending</span>
           <span>{visibleRows.length} passports × {visibleDestinationIndexes.length} destinations</span>
           <span>Access checked {formatDate(matrix.checkedAt.slice(0, 10))}</span>
@@ -329,10 +338,16 @@ export default function EvidenceStatusMatrix({
                   {visibleDestinationIndexes.map((index) => {
                     const destination = matrix.destinations[index];
                     const cell = row.cells[index];
-                    const reviewedAt = cell[1] ? matrix.dates[cell[2]] : undefined;
-                    const freshness = evidenceFreshness(reviewedAt, matrix.asOf);
+                    const reviewedAt = cell[2] >= 0 ? matrix.dates[cell[2]] : undefined;
+                    const freshness = cell[5] ? "characterized" : evidenceFreshness(reviewedAt, matrix.asOf);
                     const matches = cellMatchesFilter(cell, verificationFilter);
-                    const label = `${passport.name} to ${destination.name}: ${STATUS_LABELS[cell[0]]}; ${reviewedAt ? `verified ${formatDate(reviewedAt)} from ${cell[4]} official ${cell[4] === 1 ? "source" : "sources"}; ${FRESHNESS_LABELS[freshness]}` : "official-source review pending"}. Open evidence record`;
+                    const evidenceDescription = cell[5]
+                      ? `officially characterized ${reviewedAt ? formatDate(reviewedAt) : ""}, but no single rank-grade status is safe`
+                      : reviewedAt
+                        ? `verified ${formatDate(reviewedAt)} from ${cell[4]} official ${cell[4] === 1 ? "source" : "sources"}; ${FRESHNESS_LABELS[freshness]}`
+                        : "official-source review pending";
+                    const stayDescription = cell[6] ? `; ${cell[6]} structured allowed-stay ${cell[6] === 1 ? "rule" : "rules"}` : "";
+                    const label = `${passport.name} to ${destination.name}: ${STATUS_LABELS[cell[0]]}; ${evidenceDescription}${stayDescription}. Open evidence record`;
                     return (
                       <td className={!matches ? "is-muted" : undefined} key={destination.code}>
                         <a
@@ -342,7 +357,7 @@ export default function EvidenceStatusMatrix({
                           title={label}
                         >
                           <strong>{STATUS_SHORT_LABELS[cell[0]]}</strong>
-                          <small>{reviewedAt ? `✓ ${formatDate(reviewedAt, true)}` : "Pending"}</small>
+                          <small>{cell[5] ? `◇ ${reviewedAt ? formatDate(reviewedAt, true) : "Reviewed"}` : reviewedAt ? `✓ ${formatDate(reviewedAt, true)}` : "Pending"}</small>
                         </a>
                       </td>
                     );
@@ -359,6 +374,7 @@ export default function EvidenceStatusMatrix({
         <span><i className="verification-key verification-key--recent" /><strong>31–90 days</strong> — recently verified</span>
         <span><i className="verification-key verification-key--aging" /><strong>91–180 days</strong> — review becoming due</span>
         <span><i className="verification-key verification-key--stale" /><strong>181+ days</strong> — stale verification</span>
+        <span><i className="verification-key verification-key--characterized" /><strong>Characterized</strong> — official evidence exists, but one rank-grade status would be misleading</span>
         <span><i className="verification-key verification-key--pending" /><strong>Red</strong> — no active canonical evidence yet</span>
         <span>Cell abbreviations: {ACCESS_STATUSES.map((status) => `${STATUS_SHORT_LABELS[status]} = ${STATUS_LABELS[status]}`).join(" · ")}</span>
       </div>

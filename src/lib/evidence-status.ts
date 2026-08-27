@@ -1,5 +1,12 @@
-import { OFFICIAL_VISA_SOURCES, VISA_POLICY_EVIDENCE, type VisaPolicyEvidence } from "@/data/visa-evidence";
-import { destinationSlug, policyApplies } from "./visa-evidence";
+import {
+  CONDITIONAL_VISA_EVIDENCE,
+  OFFICIAL_VISA_SOURCES,
+  VISA_POLICY_EVIDENCE,
+  type ConditionalVisaEvidence,
+  type VisaPolicyEvidence,
+} from "@/data/visa-evidence";
+import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
+import { allowedStayApplies, conditionalEvidenceApplies, destinationSlug, policyApplies } from "./visa-evidence";
 import type { AccessStatus, PassportAccess, Region, SnapshotManifest } from "./types";
 
 export type EvidenceStatusCell = readonly [
@@ -8,10 +15,12 @@ export type EvidenceStatusCell = readonly [
   reviewedAtIndex: number,
   policyCount: number,
   sourceCount: number,
+  characterized: 0 | 1,
+  stayRuleCount: number,
 ];
 
 export interface EvidenceStatusRegion {
-  schemaVersion: 2;
+  schemaVersion: 3;
   snapshotVersion: string;
   checkedAt: string;
   asOf: string;
@@ -34,9 +43,11 @@ export interface EvidenceStatusRegion {
   }>;
   summary: {
     verified: number;
+    characterized: number;
     pending: number;
     total: number;
     percent: number;
+    characterizedPercent: number;
   };
   overall: EvidenceCompletionSummary;
 }
@@ -53,6 +64,8 @@ export interface EvidenceCompletionSummary {
   total: number;
   covered: number;
   percent: number;
+  characterized: EvidenceCompletionBucket;
+  allowedStay: EvidenceCompletionBucket;
   notCovered: EvidenceCompletionBucket;
   stale: EvidenceCompletionBucket;
   old: EvidenceCompletionBucket;
@@ -62,11 +75,12 @@ export interface EvidenceCompletionSummary {
 interface EvidenceAccumulator {
   policyIds: Set<string>;
   sourceIds: Set<string>;
+  stayRuleIds: Set<string>;
   reviewedAt?: string;
 }
 
 function isPolicyActive(
-  policy: VisaPolicyEvidence,
+  policy: Pick<VisaPolicyEvidence | ConditionalVisaEvidence, "effectiveFrom" | "effectiveTo">,
   asOf: string,
 ): boolean {
   return (!policy.effectiveFrom || policy.effectiveFrom <= asOf)
@@ -91,8 +105,12 @@ function buildEvidenceByRelationship(
         const accumulator = evidenceByRelationship.get(key) ?? {
           policyIds: new Set<string>(),
           sourceIds: new Set<string>(),
+          stayRuleIds: new Set<string>(),
         };
         accumulator.policyIds.add(policy.id);
+        policy.allowedStays?.forEach((rule, index) => {
+          if (allowedStayApplies(rule, passport.code)) accumulator.stayRuleIds.add(`${policy.id}:${index}`);
+        });
         for (const sourceId of policy.sourceIds) {
           accumulator.sourceIds.add(sourceId);
           const reviewedAt = sourceById.get(sourceId)?.reviewedAt;
@@ -106,6 +124,42 @@ function buildEvidenceByRelationship(
   }
 
   return evidenceByRelationship;
+}
+
+function buildCharacterizationByRelationship(
+  manifest: SnapshotManifest,
+  destinationCodes: Set<string>,
+  asOf: string,
+): Map<string, EvidenceAccumulator> {
+  const sourceById = new Map(OFFICIAL_VISA_SOURCES.map((source) => [source.id, source]));
+  const result = new Map<string, EvidenceAccumulator>();
+  const add = (key: string, id: string, sourceIds: readonly string[], reviewedAt?: string) => {
+    const accumulator = result.get(key) ?? { policyIds: new Set<string>(), sourceIds: new Set<string>(), stayRuleIds: new Set<string>() };
+    accumulator.policyIds.add(id);
+    for (const sourceId of sourceIds) {
+      accumulator.sourceIds.add(sourceId);
+      const date = sourceById.get(sourceId)?.reviewedAt;
+      if (date && (!accumulator.reviewedAt || date > accumulator.reviewedAt)) accumulator.reviewedAt = date;
+    }
+    if (reviewedAt && (!accumulator.reviewedAt || reviewedAt > accumulator.reviewedAt)) accumulator.reviewedAt = reviewedAt;
+    result.set(key, accumulator);
+  };
+
+  for (const item of CONDITIONAL_VISA_EVIDENCE) {
+    if (!isPolicyActive(item, asOf)) continue;
+    for (const destinationCode of item.destinationCodes) {
+      if (!destinationCodes.has(destinationCode)) continue;
+      for (const passport of manifest.passports) {
+        if (!conditionalEvidenceApplies(item, passport.code, destinationCode)) continue;
+        add(`${passport.code}:${destinationCode}`, item.id, item.sourceIds);
+      }
+    }
+  }
+  for (const item of REVIEWED_UNKNOWN_OVERRIDES) {
+    if (!destinationCodes.has(item.destinationCode)) continue;
+    add(`${item.passportCode}:${item.destinationCode}`, `reviewed-unknown:${item.passportCode}:${item.destinationCode}`, item.sourceIds, item.reviewedAt);
+  }
+  return result;
 }
 
 function completionState(reviewedAt: string | undefined, asOf: string): EvidenceCompletionState {
@@ -135,12 +189,19 @@ export function buildEvidenceCompletionSummary(
     new Set(manifest.destinations.map(({ code }) => code)),
     asOf,
   );
+  const characterizationByRelationship = buildCharacterizationByRelationship(
+    manifest,
+    new Set(manifest.destinations.map(({ code }) => code)),
+    asOf,
+  );
   const counts: Record<EvidenceCompletionState, number> = {
     notCovered: 0,
     stale: 0,
     old: 0,
     fresh: 0,
   };
+  let characterized = 0;
+  let allowedStay = 0;
 
   for (const passport of manifest.passports) {
     for (const destination of manifest.destinations) {
@@ -149,6 +210,8 @@ export function buildEvidenceCompletionSummary(
       if (passport.code === destination.code) continue;
       const status = details[passport.code]?.statuses[destination.code] ?? "unknown";
       const evidence = evidenceByRelationship.get(`${passport.code}:${destination.code}:${status}`);
+      if (evidence?.reviewedAt && evidence.stayRuleIds.size > 0) allowedStay += 1;
+      if (!evidence?.reviewedAt && characterizationByRelationship.has(`${passport.code}:${destination.code}`)) characterized += 1;
       counts[completionState(evidence?.reviewedAt, asOf)] += 1;
     }
   }
@@ -160,6 +223,8 @@ export function buildEvidenceCompletionSummary(
     total,
     covered,
     percent: total ? Number(((covered / total) * 100).toFixed(1)) : 0,
+    characterized: bucket(characterized, total),
+    allowedStay: bucket(allowedStay, total),
     notCovered: bucket(counts.notCovered, total),
     stale: bucket(counts.stale, total),
     old: bucket(counts.old, total),
@@ -176,11 +241,16 @@ export function buildEvidenceStatusRegion(
   const destinations = manifest.destinations.filter((destination) => destination.region === region);
   const destinationCodes = new Set(destinations.map(({ code }) => code));
   const evidenceByRelationship = buildEvidenceByRelationship(manifest, destinationCodes, asOf);
+  const characterizationByRelationship = buildCharacterizationByRelationship(manifest, destinationCodes, asOf);
 
-  const dates = [...new Set([...evidenceByRelationship.values()].flatMap(({ reviewedAt }) => reviewedAt ? [reviewedAt] : []))]
+  const dates = [...new Set([
+    ...evidenceByRelationship.values(),
+    ...characterizationByRelationship.values(),
+  ].flatMap(({ reviewedAt }) => reviewedAt ? [reviewedAt] : []))]
     .sort();
   const dateIndex = new Map(dates.map((date, index) => [date, index]));
   let verified = 0;
+  let characterized = 0;
   let pending = 0;
   const rows = manifest.passports.map((passport) => {
     const detail = details[passport.code];
@@ -188,8 +258,22 @@ export function buildEvidenceStatusRegion(
       const status = detail?.statuses[destination.code] ?? "unknown";
       const evidence = evidenceByRelationship.get(`${passport.code}:${destination.code}:${status}`);
       if (!evidence?.reviewedAt) {
+        const conditional = characterizationByRelationship.get(`${passport.code}:${destination.code}`);
+        if (conditional?.reviewedAt) {
+          characterized += 1;
+          pending += 1;
+          return [
+            status,
+            0,
+            dateIndex.get(conditional.reviewedAt) ?? -1,
+            conditional.policyIds.size,
+            conditional.sourceIds.size,
+            1,
+            0,
+          ];
+        }
         pending += 1;
-        return [status, 0, -1, 0, 0];
+        return [status, 0, -1, 0, 0, 0, 0];
       }
       verified += 1;
       return [
@@ -198,6 +282,8 @@ export function buildEvidenceStatusRegion(
         dateIndex.get(evidence.reviewedAt) ?? -1,
         evidence.policyIds.size,
         evidence.sourceIds.size,
+        0,
+        evidence.stayRuleIds.size,
       ];
     });
     return { passportCode: passport.code, cells };
@@ -205,7 +291,7 @@ export function buildEvidenceStatusRegion(
   const total = verified + pending;
 
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     snapshotVersion: manifest.version,
     checkedAt: manifest.checkedAt,
     asOf,
@@ -225,9 +311,11 @@ export function buildEvidenceStatusRegion(
     rows,
     summary: {
       verified,
+      characterized,
       pending,
       total,
       percent: total ? Number(((verified / total) * 100).toFixed(1)) : 0,
+      characterizedPercent: total ? Number((((verified + characterized) / total) * 100).toFixed(1)) : 0,
     },
     overall: buildEvidenceCompletionSummary(manifest, details, asOf),
   };

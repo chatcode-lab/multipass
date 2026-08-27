@@ -264,6 +264,7 @@
 .verification-key--recent { background: #94b873; }
 .verification-key--aging { background: #d4bc55; }
 .verification-key--stale { background: #d09243; }
+.verification-key--characterized { background: #c99b42; }
 .verification-key--pending { background: #bd514d; }
 
 .evidence-status-loading,
@@ -485,6 +486,12 @@
   border-color: rgb(142 45 43 / 30%);
   background: #efc8c4;
   color: #762b29;
+}
+
+.evidence-cell--characterized {
+  border-color: color-mix(in srgb, #c99b42 48%, var(--line));
+  background: color-mix(in srgb, #c99b42 19%, var(--paper));
+  color: #6f4c11;
 }
 
 .evidence-cell--eta { box-shadow: inset 0 -3px #5a7a88; }

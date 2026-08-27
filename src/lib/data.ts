@@ -18,10 +18,15 @@ const LIVE_SNAPSHOT_KEY = "snapshot:current";
 const LIVE_SNAPSHOT_CACHE_MS = 5 * 60 * 1_000;
 const LIVE_SNAPSHOT_EDGE_CACHE_SECONDS = 60 * 60;
 const LIVE_SNAPSHOT_EDGE_CACHE_URL = "https://multipassrank.com/__internal/passport-data-snapshot";
-const fallback = reconcileSnapshot({
+const fallbackSource = {
   ...(fallbackSnapshot as DataSnapshot),
   combinationInsights: fallbackCombinationInsights as CombinationInsights,
-});
+};
+
+let fallbackCache: {
+  asOf: string;
+  value: PublishedDataSnapshot;
+} | undefined;
 
 let liveSnapshotCache: {
   expiresAt: number;
@@ -41,6 +46,18 @@ function reconcileSnapshot(snapshot: PublishedDataSnapshot): PublishedDataSnapsh
     manifest: reconcileManifestPassportDetails(snapshot.manifest, passports),
     passports,
   };
+}
+
+function getFallbackSnapshot(): PublishedDataSnapshot {
+  // Cloudflare Workers can freeze `Date` outside a request. Applying
+  // effective-date overrides at module initialization therefore risks
+  // retaining the raw snapshot for policies that are already in force. Build
+  // the corrected fallback lazily, then reuse it for the rest of the day.
+  const asOf = new Date().toISOString().slice(0, 10);
+  if (!fallbackCache || fallbackCache.asOf !== asOf) {
+    fallbackCache = { asOf, value: reconcileSnapshot(fallbackSource) };
+  }
+  return fallbackCache.value;
 }
 
 function edgeCache(): Cache | undefined {
@@ -105,7 +122,7 @@ async function getLiveSnapshot(): Promise<PublishedDataSnapshot | null> {
 
 async function getSnapshot(): Promise<{ snapshot: PublishedDataSnapshot; source: DataContext["source"] }> {
   const live = await getLiveSnapshot();
-  return live ? { snapshot: live, source: "live" } : { snapshot: fallback, source: "fallback" };
+  return live ? { snapshot: live, source: "live" } : { snapshot: getFallbackSnapshot(), source: "fallback" };
 }
 
 export async function getDataContext(_locals: App.Locals): Promise<DataContext> {

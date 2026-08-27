@@ -16,10 +16,10 @@ The application is intentionally direct: no accounts, lead forms, analytics, or 
 - Combines up to five passports and places the resulting set into the global ranking.
 - Compares individual or combined sets destination by destination, with regional filters and differences-only mode.
 - Gives every passport, destination, and verified passport–destination relationship a stable HTML and Markdown URL.
-- Publishes an inspectable evidence matrix showing which current access claims have official-source support and when they were reviewed.
+- Publishes an inspectable evidence matrix showing exact support, officially characterized conditional relationships, structured stay-limit coverage, and source-review dates.
 - Exposes same-origin JSON endpoints and an AI-oriented guide for reproducible comparisons.
 
-As of 24 August 2026, the official-source layer supports 39,314 of 44,974 foreign-access relationships (87.4%). The live [status page](https://multipassrank.com/status) is the current authority for progress.
+As of 27 August 2026, the official-source layer supports 40,537 of 44,974 foreign-access relationships (90.1%). Another 46 relationships are officially characterized without being forced into one misleading rank category, and 4,127 relationships have a structured allowed-stay rule. The live [status page](https://multipassrank.com/status) is the current authority for progress.
 
 Regional and language collections are generated from the registry in `src/lib/geography.ts`. Language groups use official or nationally designated administrative/working-language status rather than ethnicity or assumed individual fluency.
 
@@ -31,6 +31,7 @@ The distinction is deliberate:
 
 - `src/data/fallback.json` is a generated operational snapshot derived from the upstream feed. It is not covered by this repository's MIT license.
 - `src/data/reviewed-visa-evidence.json` contains reviewed policy and source metadata built from official government, treaty, gazette, immigration, and foreign-ministry material.
+- `src/data/allowed-stay-evidence.ts` adds reviewed, source-faithful stay rules to canonical policies; day numbers are stored only when the official wording is unambiguous.
 - `src/data/access-overrides.ts` contains only corrections for which the official taxonomy clearly disagrees with the upstream status.
 - Unsupported relationships remain visible in the product, but their evidence pages are marked incomplete and excluded from indexing.
 
@@ -94,7 +95,7 @@ The `multipass-data-sync` Worker stages ten passport records per invocation. Fou
 
 Before publication, the Worker also evaluates every two- and three-passport combination and solves the exact minimum set cover for the destination catalog. That versioned analysis is published atomically with the access snapshot and exposed at `/api/v1/combination-insights`.
 
-The sync Worker keeps versioned per-passport staging keys, then publishes one complete `snapshot:current` value. The public application reads that single value through Cloudflare's edge cache (one-hour TTL), then caches the decoded snapshot in each Worker isolate for five minutes. Matrix, sitemap, and destination requests therefore do not multiply one page view into hundreds of billable KV reads; warm edge requests do not read KV at all. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
+The sync Worker keeps the current per-passport generation and, at most, one rollback generation while publishing one complete `snapshot:current` value; older generations are removed. The public application reads that single value through Cloudflare's edge cache (one-hour TTL), then caches the decoded snapshot in each Worker isolate for five minutes. Matrix, sitemap, and destination requests therefore do not multiply one page view into hundreds of billable KV reads; warm edge requests do not read KV at all. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
 
 Shareable tools use the same URL convention: each `set` query parameter is one option, and comma-separated codes form a combined option. `/compare?set=US,CA&set=PT` compares destination access; `/rank?set=US,CA&set=PT` places both options into the global ranking. Add `.md` before the query string for a text-first version.
 
@@ -108,7 +109,7 @@ The destination directory also carries a concise UN M49/ISO-based disclosure of 
 
 Each tracked destination also has a dedicated `/destination/{slug}` page. A passport–destination result uses the canonical root URL `/{passport}-{destination}-{status}`, for example `/belgium-kenya-eta`. Recognized URLs with an outdated status suffix redirect to the current result.
 
-Official evidence is stored as policy-level records in `src/data/visa-evidence.ts`, so a single law or agreement can support many relationships without copying claims. Evidence pages with verified current status are indexable; incomplete placeholders are explicitly marked `noindex` and stay out of the sitemap.
+Official evidence is stored as policy-level records in `src/data/visa-evidence.ts`, so a single law or agreement can support many relationships without copying claims. Exact policies, conditional records, and allowed-stay rules remain separate: conditional evidence improves research visibility but never changes a score. Evidence pages with verified current status are indexable; incomplete placeholders are explicitly marked `noindex` and stay out of the sitemap.
 
 Narrow destination-authority corrections live in `src/data/access-overrides.ts` and are reapplied to every complete staged snapshot before scores and combination insights are published. For assisted evidence collection, generate a bounded packet with `npm run --silent evidence:packet -- <batch-id>`, then validate the model's candidate JSON with `npm run evidence:validate -- <candidate.json>`. The full small-model handoff and strong-review gate are documented in `docs/visa-evidence-model-handoff.md`.
 
@@ -120,7 +121,7 @@ npm run evidence:promote -- research/visa-evidence/<approved-batch-1>.candidate.
 
 Use `--replace` only to update candidates that are already promoted. `--from-head` is a recovery option that starts from the committed artifact before applying the selected candidates.
 
-The generated `src/data/reviewed-visa-evidence.json` contains only publishable source and policy fields. Candidate-only excerpts, confidence notes, conflicts, and unresolved-pair research remain outside the production bundle.
+The generated `src/data/reviewed-visa-evidence.json` contains only publishable source, policy, conditional, and stay-rule fields. Candidate-only excerpts, confidence notes, conflicts, and unresolved-pair research remain outside the production bundle.
 
 The priority-destination evidence program tracks 42 EU/Schengen and other widely used destinations, including the United Kingdom, United States, Canada, Australia, New Zealand, Japan, South Korea, Singapore, Hong Kong, Israel, and Taiwan. Report current-status evidence coverage without changing data:
 
@@ -130,6 +131,10 @@ npm run evidence:coverage -- --all --summary
 ```
 
 The first command reports the 42 initial priority destinations. The second reports active canonical evidence across the complete passport–destination matrix, with regional totals. Add `--incomplete` without `--summary` to list only destination columns that still have unsupported current-status cells.
+
+Non-official catalogs are accepted only in a quarantined discovery lane. `npm run evidence:discovery-diff -- --limit=100` compares catalog clues with current exact gaps and points researchers back to official targets; its output cannot be promoted. `npm run evidence:source-health` checks reviewed official portals read-only. A daily public GitHub Action records response hashes, JSON schedule counts, and identity markers, and fails when a required source disappears or changes pending review.
+
+For agents and programmatic clients, `GET /api/v1/visa/{PASSPORT}/{DESTINATION}` returns the current category, evidence level, structured allowed stay, conditions, official sources, and application route for one pair.
 
 Dataset JSON-LD identifies MultiPass Rank as creator and publisher and links to `/data-license`. The license covers the site’s original evidence metadata and presentation, not upstream access snapshots or official source documents.
 

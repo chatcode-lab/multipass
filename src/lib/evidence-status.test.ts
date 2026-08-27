@@ -44,33 +44,30 @@ describe("evidence status matrix", () => {
     const koreaIndex = current.destinations.findIndex(({ code }) => code === "KR");
 
     expect(currentSwissRow.cells[koreaIndex].slice(0, 2)).toEqual(["visa_free", 1]);
-    expect(expiredSwissRow.cells[koreaIndex]).toEqual(["visa_free", 0, -1, 0, 0]);
+    expect(expiredSwissRow.cells[koreaIndex]).toEqual(["visa_free", 0, -1, 0, 0, 0, 0]);
   });
 
-  it("keeps reviewed unknown relationships pending rather than claiming verified coverage", () => {
+  it("marks reviewed unknown relationships as characterized without claiming exact verification", () => {
     const matrix = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-08-25");
     const kosovoRow = matrix.rows.find(({ passportCode }) => passportCode === "XK")!;
     const azerbaijanIndex = matrix.destinations.findIndex(({ code }) => code === "AZ");
 
-    expect(kosovoRow.cells[azerbaijanIndex]).toEqual(["unknown", 0, -1, 0, 0]);
+    expect(kosovoRow.cells[azerbaijanIndex].slice(0, 2)).toEqual(["unknown", 0]);
+    expect(kosovoRow.cells[azerbaijanIndex][5]).toBe(1);
 
     const libyaMatrix = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-08-25");
     const libyaIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "LY");
-    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "TR")!.cells[libyaIndex])
-      .toEqual(["unknown", 0, -1, 0, 0]);
+    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "TR")!.cells[libyaIndex][5]).toBe(1);
 
     const tunisiaIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "TN");
-    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "UA")!.cells[tunisiaIndex])
-      .toEqual(["unknown", 0, -1, 0, 0]);
+    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "UA")!.cells[tunisiaIndex][5]).toBe(1);
 
     const guineaBissauIndex = libyaMatrix.destinations.findIndex(({ code }) => code === "GW");
-    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "KR")!.cells[guineaBissauIndex])
-      .toEqual(["unknown", 0, -1, 0, 0]);
+    expect(libyaMatrix.rows.find(({ passportCode }) => passportCode === "KR")!.cells[guineaBissauIndex][5]).toBe(1);
 
     const asiaMatrix = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-26");
     const myanmarIndex = asiaMatrix.destinations.findIndex(({ code }) => code === "MM");
-    expect(asiaMatrix.rows.find(({ passportCode }) => passportCode === "SS")!.cells[myanmarIndex])
-      .toEqual(["unknown", 0, -1, 0, 0]);
+    expect(asiaMatrix.rows.find(({ passportCode }) => passportCode === "SS")!.cells[myanmarIndex][5]).toBe(1);
   });
 
   it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
@@ -169,10 +166,8 @@ describe("evidence status matrix", () => {
         .toEqual(["visa_free", 1]);
     }
 
-    expect(europe.rows.find(({ passportCode }) => passportCode === "LU")!.cells[ukraineIndex])
-      .toEqual(["unknown", 0, -1, 0, 0]);
-    expect(europe.rows.find(({ passportCode }) => passportCode === "TW")!.cells[ukraineIndex])
-      .toEqual(["unknown", 0, -1, 0, 0]);
+    expect(europe.rows.find(({ passportCode }) => passportCode === "LU")!.cells[ukraineIndex][5]).toBe(1);
+    expect(europe.rows.find(({ passportCode }) => passportCode === "TW")!.cells[ukraineIndex][5]).toBe(1);
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {
@@ -184,6 +179,8 @@ describe("evidence status matrix", () => {
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
     expect(summary.covered).toBe(40_537);
     expect(summary.notCovered.count).toBe(4_437);
+    expect(summary.characterized.count).toBeGreaterThan(0);
+    expect(summary.allowedStay.count).toBeGreaterThan(1_000);
     expect(summary.percent).toBe(90.1);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

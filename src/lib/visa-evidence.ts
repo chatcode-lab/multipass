@@ -1,4 +1,12 @@
-import { OFFICIAL_VISA_SOURCES, VISA_POLICY_EVIDENCE, type OfficialVisaSource, type VisaPolicyEvidence } from "@/data/visa-evidence";
+import {
+  CONDITIONAL_VISA_EVIDENCE,
+  OFFICIAL_VISA_SOURCES,
+  VISA_POLICY_EVIDENCE,
+  type AllowedStayRule,
+  type ConditionalVisaEvidence,
+  type OfficialVisaSource,
+  type VisaPolicyEvidence,
+} from "@/data/visa-evidence";
 import { getReviewedUnknownOverride, type ReviewedUnknownOverride } from "@/data/reviewed-unknown-overrides";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "./types";
 export {
@@ -14,8 +22,11 @@ const SOURCE_BY_ID = new Map(OFFICIAL_VISA_SOURCES.map((source) => [source.id, s
 
 export interface VisaRelationshipEvidence {
   policies: VisaPolicyEvidence[];
+  conditional: ConditionalVisaEvidence[];
   sources: OfficialVisaSource[];
   supportsCurrentStatus: boolean;
+  evidenceLevel: "exact" | "conditional" | "rejected" | "pending";
+  allowedStays: AllowedStayRule[];
   reviewedAt?: string;
   reviewedUnknown?: ReviewedUnknownOverride;
 }
@@ -25,6 +36,29 @@ export function policyApplies(policy: VisaPolicyEvidence, passportCode: string, 
   if (policy.passportCodes && !policy.passportCodes.includes(passportCode)) return false;
   if (policy.excludedPassportCodes?.includes(passportCode)) return false;
   return true;
+}
+
+export function conditionalEvidenceApplies(
+  evidence: ConditionalVisaEvidence,
+  passportCode: string,
+  destinationCode: string,
+): boolean {
+  return evidence.destinationCodes.includes(destinationCode)
+    && evidence.passportCodes.includes(passportCode)
+    && !evidence.excludedPassportCodes?.includes(passportCode);
+}
+
+export function allowedStayApplies(rule: AllowedStayRule, passportCode: string): boolean {
+  if (rule.passportCodes && !rule.passportCodes.includes(passportCode)) return false;
+  return !rule.excludedPassportCodes?.includes(passportCode);
+}
+
+function activeDuring(
+  item: Pick<VisaPolicyEvidence | ConditionalVisaEvidence, "effectiveFrom" | "effectiveTo">,
+  asOf: string,
+): boolean {
+  return (!item.effectiveFrom || item.effectiveFrom <= asOf)
+    && (!item.effectiveTo || item.effectiveTo >= asOf);
 }
 
 export function getVisaRelationshipEvidence(
@@ -42,8 +76,12 @@ export function getVisaRelationshipEvidence(
       && (policy.status === currentStatus || Boolean(policy.effectiveTo))
     )
     .sort((first, second) => (second.effectiveFrom ?? second.announcedOn ?? "").localeCompare(first.effectiveFrom ?? first.announcedOn ?? ""));
+  const conditional = CONDITIONAL_VISA_EVIDENCE
+    .filter((item) => conditionalEvidenceApplies(item, passportCode, destinationCode))
+    .sort((first, second) => (second.effectiveFrom ?? second.announcedOn ?? "").localeCompare(first.effectiveFrom ?? first.announcedOn ?? ""));
   const sourceIds = new Set([
     ...policies.flatMap((policy) => [...policy.sourceIds]),
+    ...conditional.flatMap((item) => [...item.sourceIds]),
     ...(reviewedUnknown?.sourceIds ?? []),
   ]);
   const sources = [...sourceIds].flatMap((id) => {
@@ -51,14 +89,32 @@ export function getVisaRelationshipEvidence(
     return source ? [source] : [];
   });
   const reviewedAt = sources.map((source) => source.reviewedAt).sort().at(-1);
+  const supportsCurrentStatus = policies.some((policy) =>
+    policy.status === currentStatus && activeDuring(policy, asOf)
+  );
+  const activeConditional = conditional.filter((item) => activeDuring(item, asOf));
+  const allowedStays = policies
+    .filter((policy) => policy.status === currentStatus && activeDuring(policy, asOf))
+    .flatMap((policy) => policy.allowedStays?.filter((rule) => allowedStayApplies(rule, passportCode)) ?? [])
+    .filter((rule, index, items) => items.findIndex((candidate) =>
+      candidate.label === rule.label
+      && candidate.basis === rule.basis
+      && candidate.maxDays === rule.maxDays
+      && candidate.withinDays === rule.withinDays
+    ) === index);
   return {
     policies,
+    conditional,
     sources,
-    supportsCurrentStatus: policies.some((policy) =>
-      policy.status === currentStatus
-      && (!policy.effectiveFrom || policy.effectiveFrom <= asOf)
-      && (!policy.effectiveTo || policy.effectiveTo >= asOf)
-    ),
+    supportsCurrentStatus,
+    evidenceLevel: supportsCurrentStatus
+      ? "exact"
+      : activeConditional.length
+        ? "conditional"
+        : reviewedUnknown
+          ? "rejected"
+          : "pending",
+    allowedStays,
     reviewedAt,
     reviewedUnknown,
   };

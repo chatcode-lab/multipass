@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://multipassrank.com/schemas/visa-discovery-clue.json",
+  "title": "Quarantined MultiPass Rank visa discovery clue",
+  "description": "A non-official lead that only directs researchers to official verification targets. It cannot verify a policy or be promoted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "catalogId", "discoveredAt", "quarantine", "clues"],
+  "properties": {
+    "schemaVersion": { "const": "visa-discovery-clue/v1" },
+    "catalogId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "discoveredAt": { "type": "string", "format": "date" },
+    "quarantine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "productionImport", "verificationState"],
+      "properties": {
+        "classification": { "const": "non-official-discovery-only" },
+        "productionImport": { "const": "forbidden" },
+        "verificationState": { "const": "unverified" }
+      }
+    },
+    "clues": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/clue" }
+    }
+  },
+  "$defs": {
+    "code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "clue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "passportCode", "destinationCode", "reportedClaim", "triage", "discoverySources", "officialVerificationTargets"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "passportCode": { "$ref": "#/$defs/code" },
+        "destinationCode": { "$ref": "#/$defs/code" },
+        "reportedClaim": { "type": "string", "minLength": 1 },
+        "reportedStay": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["label"],
+          "properties": {
+            "label": { "type": "string", "minLength": 1 },
+            "reportedDays": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "triage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["expectedResearchValue", "rationale"],
+          "properties": {
+            "expectedResearchValue": { "enum": ["low", "medium", "high"] },
+            "rationale": { "type": "string", "minLength": 1 }
+          }
+        },
+        "discoverySources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "kind", "observedAt", "note"],
+            "properties": {
+              "url": { "type": "string", "format": "uri", "pattern": "^https?://" },
+              "kind": { "enum": ["commercial-catalog", "search-result", "traveller-report", "media", "academic", "other-unverified"] },
+              "observedAt": { "type": "string", "format": "date" },
+              "note": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "officialVerificationTargets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "authorityType", "verificationQuestion"],
+            "properties": {
+              "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+              "authorityType": { "enum": ["law-or-gazette", "immigration-authority", "foreign-ministry", "official-mission", "official-portal", "passport-authority", "treaty-register"] },
+              "verificationQuestion": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

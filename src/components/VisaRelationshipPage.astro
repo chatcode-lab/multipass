@@ -28,7 +28,9 @@ const reviewedDate = evidence.reviewedAt
   : null;
 const matchingApplication = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
 const title = `${passport.name} Passport to ${destination.name}: ${statusMeta.label} | MultiPass Rank`;
-const description = evidence.reviewedUnknown
+const description = evidence.evidenceLevel === "conditional"
+  ? `Official sources describe conditional access from ${passport.name} to ${destination.name}, but traveller-specific rules prevent one safe passport-wide rank category.`
+  : evidence.reviewedUnknown
   ? `Official review rejected the imported ${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} category for ${passport.name} passport travel to ${destination.name}. A single replacement route is not yet established.`
   : status === "entry_restricted"
   ? `Ordinary visitor entry to ${destination.name} on a ${passport.name} passport is currently restricted. See the effective rule, conditions, and official sources.`
@@ -84,6 +86,8 @@ const structuredData = [
         <span class:list={["evidence-state", evidence.supportsCurrentStatus && "evidence-state--verified"]}>
           {evidence.supportsCurrentStatus
             ? "Official evidence collected"
+            : evidence.evidenceLevel === "conditional"
+              ? "Officially characterized · conditional"
             : evidence.reviewedUnknown
               ? "Imported classification rejected"
               : "Official-source review pending"}
@@ -97,8 +101,21 @@ const structuredData = [
   <section class="evidence-layout">
     <div>
       <span class="eyebrow">Evidence review</span>
-      <h2>{evidence.reviewedUnknown ? "Why no single status is shown" : "How this access rule is documented"}</h2>
-      {evidence.reviewedUnknown ? (
+      <h2>{evidence.evidenceLevel === "conditional" || evidence.reviewedUnknown ? "Why no single status is shown" : "How this access rule is documented"}</h2>
+      {evidence.evidenceLevel === "conditional" ? (
+        <div class="conditional-evidence">
+          {evidence.conditional.map((item) => (
+            <article>
+              <span>{item.reason.replaceAll("_", " ")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+              <p><strong>Possible routes:</strong> {item.possibleStatuses.map((possibleStatus) => STATUS_META[possibleStatus].label).join(" · ")}</p>
+              {item.conditions?.length && <ul>{item.conditions.map((condition) => <li>{condition}</li>)}</ul>}
+            </article>
+          ))}
+          {evidence.reviewedUnknown && <p class="notice">{evidence.reviewedUnknown.reason}</p>}
+        </div>
+      ) : evidence.reviewedUnknown ? (
         <div class="notice">
           <p><strong>The imported {STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} label is not current.</strong></p>
           <p>{evidence.reviewedUnknown.reason}</p>
@@ -112,6 +129,13 @@ const structuredData = [
       <span class="eyebrow">What this status means</span>
       <h2>{statusMeta.label}</h2>
       <p>{statusMeta.description}. Authorities apply the current rule, and purpose, duration, passport type, or personal circumstances can change the applicable treatment.</p>
+      {evidence.allowedStays.length > 0 && (
+        <div class="allowed-stay-summary">
+          <span>Allowed stay</span>
+          {evidence.allowedStays.map((rule) => <strong>{rule.label}</strong>)}
+          <small>The official wording controls; extensions and individual admission decisions may differ.</small>
+        </div>
+      )}
       <a href={`/passport/${passport.slug}`}>Back to {passport.name} access list</a>
       <a href={`/destination/${destinationSlug(destination)}`}>All passports for {destination.name}</a>
     </aside>

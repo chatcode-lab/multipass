@@ -57,10 +57,11 @@ HTML pages also advertise their Markdown alternative with a \`<link rel="alterna
 
 - \`GET ${absoluteUrl("/api/v1/manifest")}\` — passport codes, slugs, ranks, scores, destinations, version, and checked date.
 - \`GET ${absoluteUrl("/api/v1/passports/US")}\` — destination status map for one passport code.
+- \`GET ${absoluteUrl("/api/v1/visa/US/JP")}\` — one relationship's current category, evidence level, structured allowed-stay rules, conditions, official sources, and application route.
 - \`GET ${absoluteUrl("/api/v1/combination-insights")}\` — exact best pair, best triple, minimum-cover set, marginal gains, snapshot version, and checked date.
 - \`POST ${absoluteUrl("/api/v1/compare")}\` with \`{"sets":[["US","CA"],["PT"]]}\` — complete scenario summaries and destination comparison rows.
 
-The POST endpoint accepts JSON, returns JSON, and is intentionally not cached. Public manifests, passport pages, and Markdown resources are cached at Cloudflare's edge.
+The POST endpoint accepts JSON, returns JSON, and is intentionally not cached. Public manifests, relationship evidence, passport pages, and Markdown resources are cached at Cloudflare's edge. Treat \`evidenceLevel: "conditional"\` as officially characterized but not as one exact rank-grade result; the current comparison status remains provisional in that case. An allowed-stay \`label\` preserves the official wording, while \`maxDays\` is present only for an unambiguous day count.
 
 ## Curated comparison pages
 

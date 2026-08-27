@@ -83,8 +83,12 @@ https://multipassrank.com/belgium-kenya-eta.md</code></pre>
     <ul>
       <li><a href="/api/v1/manifest"><code>GET /api/v1/manifest</code></a> lists valid codes, current ranks, scores, destinations, and the data version.</li>
       <li><a href="/api/v1/passports/US"><code>GET /api/v1/passports/US</code></a> returns every destination status for one passport.</li>
+      <li><a href="/api/v1/visa/US/JP"><code>GET /api/v1/visa/US/JP</code></a> returns one relationship with its evidence level, allowed stay, conditions, official sources, and application route.</li>
       <li><code>POST /api/v1/compare</code> with <code>{`{"sets":[["US","CA"],["PT"]]}`}</code> returns the complete comparison result.</li>
     </ul>
+    <p>
+      A <code>conditional</code> evidence level means official sources characterize the relationship but traveller-specific rules prevent one safe rank-grade status. For stay limits, preserve the returned <code>label</code>; <code>maxDays</code> appears only when the official rule gives an unambiguous day count.
+    </p>
 
     <h2>Friendly comparison pages</h2>
     <ul>

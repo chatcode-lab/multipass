@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "visa-discovery-clue/v1",
+  "catalogId": "example-only-not-an-evidence-candidate",
+  "discoveredAt": "2026-08-27",
+  "quarantine": {
+    "classification": "non-official-discovery-only",
+    "productionImport": "forbidden",
+    "verificationState": "unverified"
+  },
+  "clues": [
+    {
+      "id": "example-us-to-jp",
+      "passportCode": "US",
+      "destinationCode": "JP",
+      "reportedClaim": "An unverified catalog suggests a route; this text is not a normalized status claim.",
+      "triage": {
+        "expectedResearchValue": "medium",
+        "rationale": "A named official immigration page can be checked directly."
+      },
+      "discoverySources": [
+        {
+          "url": "https://example.invalid/unverified-catalog",
+          "kind": "commercial-catalog",
+          "observedAt": "2026-08-27",
+          "note": "Illustrative fixture only; never use as evidence."
+        }
+      ],
+      "officialVerificationTargets": [
+        {
+          "url": "https://www.moj.go.jp/isa/",
+          "authorityType": "immigration-authority",
+          "verificationQuestion": "Does a current page directly map an ordinary US passport to a visitor route and issuance timing?"
+        }
+      ]
+    }
+  ]
+}

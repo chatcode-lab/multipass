@@ -7,7 +7,7 @@ Effective 20 August 2026.
 
 ## Licensed material
 
-MultiPass Rank's original evidence metadata—including normalized country codes, source identifiers, source-review dates, timeline summaries, and original annotations—is available under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
+MultiPass Rank's original evidence metadata—including normalized country codes, source identifiers, source-review dates, structured stay metadata, conditional-evidence classifications, timeline summaries, and original annotations—is available under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
 Suggested attribution: “MultiPass Rank passport-access evidence metadata, multipassrank.com, version and access date.”
 

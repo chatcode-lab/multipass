@@ -5,13 +5,13 @@ import { getDataContext } from "@/lib/data";
 import { formatRegion } from "@/lib/geography";
 import { REGIONS, type Region } from "@/lib/types";
 
-type VerificationFilter = "all" | "verified" | "pending";
+type VerificationFilter = "all" | "verified" | "characterized" | "pending";
 
 const { manifest } = await getDataContext(Astro.locals);
 const requestedRegion = (Astro.url.searchParams.get("region") ?? "EUROPE").toUpperCase();
 const initialRegion = REGIONS.includes(requestedRegion as Region) ? requestedRegion as Region : "EUROPE";
 const requestedFilter = Astro.url.searchParams.get("state");
-const initialFilter: VerificationFilter = requestedFilter === "verified" || requestedFilter === "pending"
+const initialFilter: VerificationFilter = requestedFilter === "verified" || requestedFilter === "characterized" || requestedFilter === "pending"
   ? requestedFilter
   : "all";
 const regionCounts = Object.fromEntries(REGIONS.map((region) => [
@@ -41,7 +41,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=1800,
     <span class="eyebrow">Evidence coverage</span>
     <h1>Evidence coverage matrix.</h1>
     <p>
-      Review the current access classification, official-evidence state, and latest source-review date for every passport–destination relationship. Destinations load one region at a time to keep the audit usable.
+      Review the current access classification, exact or conditional official-evidence state, and latest source-review date for every passport–destination relationship. Destinations load one region at a time to keep the audit usable.
     </p>
     <div class="evidence-status-intro__meta">
       <span><strong>{manifest.passports.length}</strong> passport issuers</span>
@@ -50,7 +50,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=1800,
       <span>Access snapshot checked {checkedDate}</span>
     </div>
     <p class="evidence-status-intro__note">
-      The initial view is {formatRegion(initialRegion)}. Select a destination region to review its current coverage.
+      Exact evidence alone counts toward rank-grade completion. Conditional records identify officially reviewed relationships that cannot safely be reduced to one passport-wide status. The initial view is {formatRegion(initialRegion)}.
     </p>
   </header>
 

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
 import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
 import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
+import { REVIEWED_ALLOWED_STAYS } from "@/data/allowed-stay-evidence";
 import {
   ANGOLA_TOURIST_VISA_EXEMPT_CODES,
   AUSTRALIA_ETA_CODES,
@@ -11,6 +12,7 @@ import {
   CANADA_DOCUMENT_CONSTRAINED_ETA_CODES,
   CANADA_ETA_ORDINARY_PASSPORT_CODES,
   CANADA_VISITOR_VISA_REQUIRED_CODES,
+  CONDITIONAL_VISA_EVIDENCE,
   EU_EEA_SWISS_FREE_MOVEMENT_DESTINATION_CODES,
   EU_EEA_SWISS_FREE_MOVEMENT_PASSPORT_CODES,
   ECUADOR_EVISA_ORDINARY_PASSPORT_CODES,
@@ -205,6 +207,29 @@ describe("visa relationship URLs", () => {
 });
 
 describe("official visa evidence", () => {
+  it("keeps conditional official evidence outside exact rank verification", () => {
+    const evidence = getVisaRelationshipEvidence("DZ", "TR", "unknown", "2026-08-27");
+    expect(evidence.supportsCurrentStatus).toBe(false);
+    expect(evidence.evidenceLevel).toBe("conditional");
+    expect(evidence.conditional.map(({ id }) => id)).toContain("turkiye-algeria-demographic-and-document-split");
+    expect(evidence.conditional[0].possibleStatuses).toContain("evisa");
+    expect(CONDITIONAL_VISA_EVIDENCE.length).toBeGreaterThan(0);
+  });
+
+  it("derives source-faithful allowed stays for exact passport–destination relationships", () => {
+    const schengen = getVisaRelationshipEvidence("JP", "DE", "visa_free", "2026-08-27");
+    expect(schengen.allowedStays).toContainEqual(expect.objectContaining({
+      label: "Up to 90 days in any 180-day period",
+      maxDays: 90,
+      withinDays: 180,
+      basis: "rolling_period",
+    }));
+
+    const japan = getVisaRelationshipEvidence("TH", "JP", "visa_free", "2026-08-27");
+    expect(japan.allowedStays).toContainEqual(expect.objectContaining({ maxDays: 15 }));
+    expect(getVisaRelationshipEvidence("AF", "DE", "visa_required", "2026-08-27").allowedStays).toEqual([]);
+  });
+
   it("supports the seeded policy examples without claiming unsupported pairs", () => {
     expect(getVisaRelationshipEvidence("BE", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BE", "KE", "eta").supportsCurrentStatus).toBe(true);
@@ -6292,6 +6317,17 @@ describe("official visa evidence", () => {
     for (const policy of VISA_POLICY_EVIDENCE) {
       expect(policy.sourceIds.length, policy.id).toBeGreaterThan(0);
       for (const sourceId of policy.sourceIds) expect(knownSources.has(sourceId), `${policy.id}:${sourceId}`).toBe(true);
+      for (const rule of policy.allowedStays ?? []) {
+        expect(rule.label.length, policy.id).toBeGreaterThan(0);
+        if (rule.maxDays !== undefined) expect(rule.maxDays, policy.id).toBeGreaterThan(0);
+        if (rule.withinDays !== undefined) {
+          expect(rule.maxDays, policy.id).toBeDefined();
+          expect(rule.withinDays, policy.id).toBeGreaterThanOrEqual(rule.maxDays!);
+        }
+      }
+    }
+    for (const policyId of Object.keys(REVIEWED_ALLOWED_STAYS)) {
+      expect(policyIds, `Unknown allowed-stay policy ${policyId}`).toContain(policyId);
     }
   });
 });

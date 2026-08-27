@@ -27,11 +27,15 @@ You are collecting candidate evidence for one MultiPass Rank visa-policy batch.
 
 Read the attached research playbook, packet, and JSON schema completely. Browse the web, but cite only primary official sources: laws, gazettes, treaties, government datasets, immigration/border/foreign-ministry pages, or official embassy/consulate pages. Search engines, snippets, Wikipedia, Reddit, airlines, Timatic summaries, commercial passport indexes, travel agents, and blogs are discovery aids only and must never appear in sources.
 
-Treat every snapshot status in the packet as an unverified hypothesis. Open every cited URL. Confirm that the page itself supports the nationality, destination, ordinary-passport type, visitor purpose, access category, conditions, and any date you return. Distinguish announcement, publication, and effective dates. Do not infer a rule from silence, a catch-all label, a portal's branding, or a reciprocal rule that the source does not state.
+Treat every snapshot status in the packet as an unverified hypothesis. Open every cited URL. Confirm that the page itself supports the nationality, destination, ordinary-passport type, visitor purpose, access category, conditions, allowed stay, and any date you return. Distinguish announcement, publication, and effective dates. Do not infer a rule from silence, a catch-all label, a portal's branding, or a reciprocal rule that the source does not state.
+
+Record allowedStays only when the official source expressly describes time the visitor may remain. Preserve the source-faithful label. Set maxDays only for an unambiguous day count, and withinDays only for a rule such as 90 days in 180. Do not confuse permitted stay with passport validity, visa/ETA validity, application lead time, or processing time. Leave allowedStays absent when uncertain.
+
+If official evidence proves that different ordinary-passport holders in the same nationality receive materially different routes because of age, sex, document biometrics, supporting visas, route, or another traveller condition, do not force one status. Add a conditional record with at least two possibleStatuses and also keep the affected exact pair in unresolved. Conditional evidence is useful research coverage but never rank-grade verification.
 
 Use entry_restricted only when a current official source directly prohibits or suspends ordinary visitor entry. Preserve its exact document or nationality scope, effective time, valid-visa grandfathering, categorical exceptions, and discretionary waivers; otherwise leave the pair unresolved.
 
-Return exactly one JSON object matching candidate.schema.json and no surrounding prose or Markdown. Use ISO alpha-2 codes from the packet. Put unsupported pairs in unresolved. Put disagreements with the snapshot in conflicts. Use “not established” in a reason instead of guessing. Keep each supportingExcerpt to 25 words or fewer; it is for review only and will not be published. Set confidence to high only when a direct official source explicitly supports the complete normalized rule.
+Return exactly one JSON object matching candidate.schema.json and no surrounding prose or Markdown. Include conditional as an empty array when no conditional rule is found. Use ISO alpha-2 codes from the packet. Put unsupported pairs in unresolved. Put disagreements with the snapshot in conflicts. Use “not established” in a reason instead of guessing. Keep each supportingExcerpt to 25 words or fewer; it is for review only and will not be published. Set confidence to high only when a direct official source explicitly supports the complete normalized rule.
 
 Do not edit canonical source files. Do not propose travel, citizenship, or legal advice.
 ```
@@ -58,6 +62,7 @@ Before copying anything into [`src/data/visa-evidence.ts`](../src/data/visa-evid
 6. Store one group policy instead of duplicating hundreds of pair records.
 7. Add a narrow access override only when the official taxonomy clearly conflicts with upstream data.
 8. Run `npm run test:all` and manually open one relationship page for every status in the batch.
+9. Check every allowed-stay number against the surrounding source wording and reject conversions from months, authorization validity, or processing time.
 
 Reject the entire candidate if a source is invented, inaccessible, unofficial, or materially weaker than the claim. Keeping a pair unresolved is a successful research outcome.
 

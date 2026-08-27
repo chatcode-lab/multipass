@@ -31,6 +31,12 @@ const hypotheses = passportCodes.flatMap((passportCode) => destinationCodes.flat
 
 process.stdout.write(`${JSON.stringify({
   warning: "Every snapshot status is an unverified hypothesis. Return not established rather than guessing.",
+  researchRequirements: {
+    exactEvidence: "Use a policy only when an official source supports one rank-grade status for the complete scoped ordinary-passport cohort.",
+    conditionalEvidence: "Use conditional when official evidence proves multiple traveller-dependent routes; keep the exact pair unresolved.",
+    allowedStay: "Record only an expressly permitted visitor stay. Preserve its label and never substitute passport, visa/ETA validity, or processing time.",
+    discovery: "Non-official catalogs may suggest a lead but must not appear in sources; replay the responsible authority's current page.",
+  },
   batch,
   snapshot: {
     version: snapshot.manifest.version,

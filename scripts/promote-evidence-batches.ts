@@ -22,16 +22,24 @@ interface CandidatePolicy {
   [key: string]: unknown;
 }
 
+interface CandidateConditional {
+  id: string;
+  confidence: string;
+  [key: string]: unknown;
+}
+
 interface CandidateBatch {
   batchId: string;
   sources: CandidateSource[];
   policies: CandidatePolicy[];
+  conditional?: CandidateConditional[];
 }
 
 interface ReviewedArtifact {
   batchIds: string[];
   sources: Array<Omit<CandidateSource, "officialityEvidence" | "supportingExcerpt">>;
   policies: Array<Record<string, unknown> & { id: string }>;
+  conditional?: Array<Record<string, unknown> & { id: string }>;
 }
 
 const args = process.argv.slice(2);
@@ -63,6 +71,7 @@ const existingArtifact = fromHead
     { maxBuffer: 20 * 1024 * 1024 },
   )).stdout) as ReviewedArtifact
   : JSON.parse(await readFile(artifactPath, "utf8")) as ReviewedArtifact;
+existingArtifact.conditional ??= [];
 let committedArtifact: ReviewedArtifact | undefined;
 
 if (replace) {
@@ -86,11 +95,17 @@ if (replace) {
     }
 
     const previousPolicyIds = new Set(previous.policies.map(({ id }) => id));
+    const previousConditionalIds = new Set((previous.conditional ?? []).map(({ id }) => id));
     existingArtifact.batchIds = existingArtifact.batchIds.filter((id) => id !== previous.batchId);
     existingArtifact.policies = existingArtifact.policies.filter(({ id }) => !previousPolicyIds.has(id));
+    existingArtifact.conditional = existingArtifact.conditional?.filter(({ id }) => !previousConditionalIds.has(id));
 
-    const retainedSourceIds = new Set(existingArtifact.policies.flatMap(({ sourceIds }) =>
-      Array.isArray(sourceIds) ? sourceIds.filter((id): id is string => typeof id === "string") : []));
+    const retainedSourceIds = new Set([
+      ...existingArtifact.policies,
+      ...(existingArtifact.conditional ?? []),
+    ].flatMap(({ sourceIds }) => Array.isArray(sourceIds)
+      ? sourceIds.filter((id): id is string => typeof id === "string")
+      : []));
     const previousSourceIds = new Set(previous.sources.map(({ id }) => id));
     existingArtifact.sources = existingArtifact.sources.filter(({ id }) =>
       !previousSourceIds.has(id) || retainedSourceIds.has(id));
@@ -101,6 +116,7 @@ const batchIds = new Set(existingArtifact.batchIds);
 const reviewedSourceIds = new Set(existingArtifact.sources.map((source) => source.id));
 const sources = new Map(existingArtifact.sources.map((source) => [source.id, source]));
 const policies = new Map(existingArtifact.policies.map((policy) => [policy.id, policy]));
+const conditional = new Map((existingArtifact.conditional ?? []).map((item) => [item.id, item]));
 
 for (const batch of batches) {
   if (batchIds.has(batch.batchId)) throw new Error(`Duplicate promoted batch ${batch.batchId}`);
@@ -120,6 +136,12 @@ for (const batch of batches) {
       key !== "confidence")) as Record<string, unknown> & { id: string };
     if (policies.has(candidatePolicy.id)) throw new Error(`Duplicate promoted policy ${candidatePolicy.id}`);
     policies.set(candidatePolicy.id, policy);
+  }
+  for (const candidateItem of batch.conditional ?? []) {
+    const item = Object.fromEntries(Object.entries(candidateItem).filter(([key]) =>
+      key !== "confidence")) as Record<string, unknown> & { id: string };
+    if (conditional.has(candidateItem.id)) throw new Error(`Duplicate promoted conditional evidence ${candidateItem.id}`);
+    conditional.set(candidateItem.id, item);
   }
 }
 
@@ -145,6 +167,7 @@ const preserveCommittedOrder = <T extends string | { id: string }>(
 const artifact = {
   batchIds: [...batchIds],
   sources: [...sources.values()],
+  conditional: [...conditional.values()],
   policies: [...policies.values()],
 };
 
@@ -152,6 +175,7 @@ if (committedArtifact) {
   artifact.batchIds = preserveCommittedOrder(artifact.batchIds, committedArtifact.batchIds);
   artifact.sources = preserveCommittedOrder(artifact.sources, committedArtifact.sources);
   artifact.policies = preserveCommittedOrder(artifact.policies, committedArtifact.policies);
+  artifact.conditional = preserveCommittedOrder(artifact.conditional, committedArtifact.conditional ?? []);
 }
 
 await writeFile(

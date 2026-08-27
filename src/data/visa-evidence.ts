@@ -1,4 +1,5 @@
 import type { AccessStatus } from "@/lib/types";
+import { REVIEWED_ALLOWED_STAYS } from "./allowed-stay-evidence";
 import reviewedVisaEvidence from "./reviewed-visa-evidence.json";
 
 export type OfficialSourceKind = "law" | "government-guidance" | "official-portal" | "official-dataset";
@@ -21,6 +22,61 @@ export interface VisaApplicationGuide {
   steps: readonly string[];
 }
 
+export type AllowedStayBasis =
+  | "per_visit"
+  | "per_entry"
+  | "rolling_period"
+  | "calendar_period"
+  | "authority_discretion";
+
+/**
+ * A source-faithful visitor stay limit. `maxDays` is present only when the
+ * source gives an unambiguous number of days; `label` remains authoritative.
+ * Passport scoping lets one official schedule carry different limits without
+ * flattening them into a misleading destination-wide value.
+ */
+export interface AllowedStayRule {
+  label: string;
+  basis: AllowedStayBasis;
+  maxDays?: number;
+  withinDays?: number;
+  passportCodes?: readonly string[];
+  excludedPassportCodes?: readonly string[];
+  notes?: readonly string[];
+}
+
+export type ConditionalAccessReason =
+  | "document_dependent"
+  | "demographic_dependent"
+  | "route_dependent"
+  | "purpose_dependent"
+  | "authority_discretion"
+  | "conflicting_official_sources"
+  | "official_schedule_incomplete"
+  | "other";
+
+/**
+ * Official evidence that characterizes a relationship but cannot support one
+ * rank-grade AccessStatus for every ordinary-passport holder. These records
+ * improve research coverage without silently changing scores.
+ */
+export interface ConditionalVisaEvidence {
+  id: string;
+  title: string;
+  summary: string;
+  reason: ConditionalAccessReason;
+  destinationCodes: readonly string[];
+  passportCodes: readonly string[];
+  excludedPassportCodes?: readonly string[];
+  possibleStatuses: readonly Exclude<AccessStatus, "citizenship" | "unknown">[];
+  effectiveFrom?: string;
+  announcedOn?: string;
+  effectiveTo?: string;
+  conditions?: readonly string[];
+  sourceIds: readonly string[];
+  allowedStays?: readonly AllowedStayRule[];
+}
+
 export interface VisaPolicyEvidence {
   id: string;
   title: string;
@@ -35,12 +91,14 @@ export interface VisaPolicyEvidence {
   conditions?: readonly string[];
   sourceIds: readonly string[];
   application?: VisaApplicationGuide;
+  allowedStays?: readonly AllowedStayRule[];
 }
 
 const REVIEWED_VISA_EVIDENCE = reviewedVisaEvidence as unknown as {
   batchIds: readonly string[];
   sources: readonly OfficialVisaSource[];
   policies: readonly VisaPolicyEvidence[];
+  conditional?: readonly ConditionalVisaEvidence[];
 };
 
 export const RWANDA_VOA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
@@ -1928,6 +1986,12 @@ const EU_ADDITIONAL_WAIVER_POLICIES: readonly VisaPolicyEvidence[] = EU_ADDITION
         "The agreement does not itself establish access to Norway, Iceland, Switzerland, or Liechtenstein.",
       ],
       sourceIds,
+      allowedStays: [{
+        label: "Up to 90 days in any 180-day period",
+        maxDays: 90,
+        withinDays: 180,
+        basis: "rolling_period",
+      }],
     },
     {
       id: `eu-ordinary-passports-to-${agreement.code.toLowerCase()}`,
@@ -1943,11 +2007,93 @@ const EU_ADDITIONAL_WAIVER_POLICIES: readonly VisaPolicyEvidence[] = EU_ADDITION
         "Ireland is outside the agreement.",
       ],
       sourceIds,
+      allowedStays: [{
+        label: "Up to 90 days in any 180-day period",
+        maxDays: 90,
+        withinDays: 180,
+        basis: "rolling_period",
+      }],
     },
   ] satisfies VisaPolicyEvidence[];
 });
 
-export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
+export const CONDITIONAL_VISA_EVIDENCE: readonly ConditionalVisaEvidence[] = [
+  ...(REVIEWED_VISA_EVIDENCE.conditional ?? []),
+  {
+    id: "turkiye-algeria-demographic-and-document-split",
+    title: "Türkiye applies age- and document-dependent routes to Algerian visitors",
+    summary: "The official rule divides Algerian ordinary-passport holders between exemption, conditional eVisa eligibility, and prior-visa routes.",
+    reason: "demographic_dependent",
+    destinationCodes: ["TR"],
+    passportCodes: ["DZ"],
+    possibleStatuses: ["visa_free", "evisa", "visa_required"],
+    conditions: ["The applicable route depends on the traveller's age and qualifying supporting documents."],
+    sourceIds: ["turkiye-mfa-current-algeria-ordinary-visitor-regime-2026"],
+  },
+  {
+    id: "turkiye-egypt-demographic-and-document-split",
+    title: "Türkiye applies age- and document-dependent routes to Egyptian visitors",
+    summary: "The official rule divides Egyptian ordinary-passport holders between unconditional eVisa, conditional eVisa, and prior-visa routes.",
+    reason: "demographic_dependent",
+    destinationCodes: ["TR"],
+    passportCodes: ["EG"],
+    possibleStatuses: ["evisa", "visa_required"],
+    conditions: ["Age and qualifying third-country visas or residence permits affect eligibility."],
+    sourceIds: ["turkiye-mfa-current-egypt-ordinary-visitor-regime-2026"],
+  },
+  {
+    id: "turkiye-iraq-demographic-and-document-split",
+    title: "Türkiye applies age- and document-dependent routes to Iraqi visitors",
+    summary: "The official rule divides Iraqi ordinary-passport holders between visa exemption, conditional eVisa, and prior-visa routes.",
+    reason: "demographic_dependent",
+    destinationCodes: ["TR"],
+    passportCodes: ["IQ"],
+    possibleStatuses: ["visa_free", "evisa", "visa_required"],
+    conditions: ["The applicable route depends on age and qualifying supporting documents."],
+    sourceIds: ["turkiye-mfa-current-iraq-ordinary-visitor-regime-2026"],
+  },
+  {
+    id: "turkiye-libya-demographic-and-document-split",
+    title: "Türkiye applies age- and document-dependent routes to Libyan visitors",
+    summary: "The official rule divides Libyan ordinary-passport holders between visa exemption, conditional eVisa, and prior-visa routes.",
+    reason: "demographic_dependent",
+    destinationCodes: ["TR"],
+    passportCodes: ["LY"],
+    possibleStatuses: ["visa_free", "evisa", "visa_required"],
+    conditions: ["The applicable route depends on age and qualifying supporting documents."],
+    sourceIds: ["turkiye-mfa-current-libya-ordinary-visitor-regime-2026"],
+  },
+  {
+    id: "libya-turkiye-demographic-split",
+    title: "Libya's visitor checker returns different routes by traveller profile",
+    summary: "The official checker returns both exemption and electronic-application outcomes for Turkish ordinary-passport holders.",
+    reason: "demographic_dependent",
+    destinationCodes: ["LY"],
+    passportCodes: ["TR"],
+    possibleStatuses: ["visa_free", "evisa"],
+    sourceIds: [
+      "libya-lana-evisa-national-platform-activation-2026",
+      "libya-evisa-live-ordinary-passport-and-visa-types-2026",
+      "libya-evisa-live-turkey-country-configuration-2026",
+      "libya-evisa-live-turkey-age-checker-2026",
+    ],
+  },
+  {
+    id: "jordan-morocco-demographic-split",
+    title: "Jordan's arrival route for Moroccan visitors depends on traveller profile",
+    summary: "The official nationality table applies a demographic exception to the general visa-on-arrival route for Moroccan ordinary-passport holders.",
+    reason: "demographic_dependent",
+    destinationCodes: ["JO"],
+    passportCodes: ["MA"],
+    possibleStatuses: ["visa_on_arrival", "visa_required"],
+    sourceIds: [
+      "jordan-tourism-board-live-nationality-visa-table-2026",
+      "jordan-moi-current-restricted-nationalities-definition-2026",
+    ],
+  },
+];
+
+const BASE_VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
   ...REVIEWED_VISA_EVIDENCE.policies,
   ...EU_EEA_SWISS_FREE_MOVEMENT_POLICIES,
   ...EU_ADDITIONAL_WAIVER_POLICIES,
@@ -3779,3 +3925,8 @@ export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
     },
   },
 ] as const;
+
+export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POLICY_EVIDENCE.map((policy) => ({
+  ...policy,
+  allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id],
+}));

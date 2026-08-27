@@ -2,23 +2,27 @@ import type { OfficialVisaSource, VisaPolicyEvidence } from "@/data/visa-evidenc
 import { STATUS_META } from "./passport";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "./types";
-import { destinationSlug, visaRelationshipHref, type VisaRelationshipEvidence } from "./visa-evidence";
+import { allowedStayApplies, destinationSlug, visaRelationshipHref, type VisaRelationshipEvidence } from "./visa-evidence";
 
 function readableDate(value: string): string {
   return new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
     .format(new Date(`${value}T00:00:00Z`));
 }
 
-function policyMarkdown(policy: VisaPolicyEvidence, sources: Map<string, OfficialVisaSource>): string {
+function policyMarkdown(policy: VisaPolicyEvidence, sources: Map<string, OfficialVisaSource>, passportCode?: string): string {
   const date = policy.effectiveFrom ?? policy.announcedOn;
   const conditions = policy.conditions?.map((condition) => `  - ${escapeMarkdown(condition)}`).join("\n") ?? "";
   const sourceLines = policy.sourceIds.flatMap((sourceId) => {
     const source = sources.get(sourceId);
     return source ? [`  - [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.title)}](${source.url})`] : [];
   }).join("\n");
+  const stays = policy.allowedStays
+    ?.filter((rule) => !passportCode || allowedStayApplies(rule, passportCode))
+    .map((rule) => `  - Allowed stay: **${escapeMarkdown(rule.label)}**`)
+    .join("\n") ?? "";
   return `- **${date ? readableDate(date) : "Current official route"} — ${escapeMarkdown(policy.title)}** (${STATUS_META[policy.status].label})
   ${escapeMarkdown(policy.summary)}
-${conditions ? `${conditions}\n` : ""}  Official ${policy.sourceIds.length === 1 ? "source" : "sources"}:
+${stays ? `${stays}\n` : ""}${conditions ? `${conditions}\n` : ""}  Official ${policy.sourceIds.length === 1 ? "source" : "sources"}:
 ${sourceLines}`;
 }
 
@@ -32,7 +36,10 @@ export function visaRelationshipMarkdown(
   const statusMeta = STATUS_META[status];
   const sources = new Map(evidence.sources.map((source) => [source.id, source]));
   const application = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
-  const timeline = evidence.reviewedUnknown
+  const conditional = evidence.conditional.length
+    ? `Official sources characterize this relationship, but the applicable route depends on the traveller or document and cannot safely be reduced to one rank-grade category.\n\n${evidence.conditional.map((item) => `- **${escapeMarkdown(item.title)}**\n  ${escapeMarkdown(item.summary)}\n  - Reason: ${escapeMarkdown(item.reason.replaceAll("_", " "))}\n  - Possible routes: ${item.possibleStatuses.map((possibleStatus) => STATUS_META[possibleStatus].label).join(", ")}${item.conditions?.map((condition) => `\n  - ${escapeMarkdown(condition)}`).join("") ?? ""}`).join("\n\n")}`
+    : "";
+  const timeline = conditional || (evidence.reviewedUnknown
     ? `The imported **${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label}** classification was rejected during official-source review.
 
 ${escapeMarkdown(evidence.reviewedUnknown.reason)}
@@ -42,10 +49,12 @@ No single replacement category has been established. Recheck scheduled by ${read
 Official ${evidence.sources.length === 1 ? "source" : "sources"}:
 ${evidence.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.title)}](${source.url})`).join("\n")}`
     : evidence.policies.length
-    ? evidence.policies.map((policy) => policyMarkdown(policy, sources)).join("\n\n")
-    : "No official-source timeline has been completed for this relationship. The page remains excluded from search indexing until review is complete.";
+    ? evidence.policies.map((policy) => policyMarkdown(policy, sources, passport.code)).join("\n\n")
+    : "No official-source timeline has been completed for this relationship. The page remains excluded from search indexing until review is complete.");
   const evidenceStatus = evidence.supportsCurrentStatus
     ? "official evidence collected"
+    : evidence.evidenceLevel === "conditional"
+      ? "officially characterized; traveller-specific rule"
     : evidence.reviewedUnknown
       ? "imported classification rejected; replacement route unresolved"
       : "official-source review pending";
@@ -61,6 +70,13 @@ This page concerns ordinary short visits unless an official source states otherw
 
 ${timeline}
 
+${evidence.allowedStays.length ? `## Allowed stay
+
+${evidence.allowedStays.map((rule) => `- **${escapeMarkdown(rule.label)}**${rule.maxDays ? ` (machine-readable maximum: ${rule.maxDays} days)` : ""}`).join("\n")}
+
+Stay limits describe the cited visitor rule, not guaranteed admission or extensions. The source-faithful label controls if it differs from the normalized number.
+
+` : ""}
 ${application ? `## How to apply
 
 ${application.processingTime ?? "Follow the current instructions on the official portal."}

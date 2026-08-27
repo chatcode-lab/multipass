@@ -64,4 +64,16 @@ describe("published passport snapshot access", () => {
     expect(kvGet).not.toHaveBeenCalled();
     expect(cachePut).not.toHaveBeenCalled();
   }, 15_000);
+
+  it("applies effective-date overrides when falling back from KV", async () => {
+    kvGet.mockResolvedValue(null);
+    const data = await import("./data");
+
+    const context = await data.getDataContext(locals);
+    const batch = await data.getPassportAccessBatch(locals, ["MY", "CM"], context.manifest.version);
+
+    expect(context.source).toBe("fallback");
+    expect(batch.MY.statuses.AO).toBe("visa_on_arrival");
+    expect(batch.CM.statuses.CV).toBe("visa_on_arrival");
+  }, 15_000);
 });
