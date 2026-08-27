@@ -83,6 +83,32 @@ describe("evidence status matrix", () => {
     expect(cell("IL")[5]).toBe(0);
   });
 
+  it("marks Liberia's mission-dependent visa routes as characterized but unverified", () => {
+    const africa = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-08-27");
+    const liberiaIndex = africa.destinations.findIndex(({ code }) => code === "LR");
+    const cell = (passportCode: string) =>
+      africa.rows.find(({ passportCode: code }) => code === passportCode)!.cells[liberiaIndex];
+
+    expect(cell("AU")[1]).toBe(0);
+    expect(cell("AU")[5]).toBe(1);
+    expect(cell("AF")[1]).toBe(0);
+    expect(cell("AF")[5]).toBe(1);
+    expect(cell("SG").slice(0, 2)).toEqual(["visa_required", 1]);
+  });
+
+  it("marks Niger's residence-dependent visa routes as characterized but unverified", () => {
+    const africa = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-08-27");
+    const nigerIndex = africa.destinations.findIndex(({ code }) => code === "NE");
+    const cell = (passportCode: string) =>
+      africa.rows.find(({ passportCode: code }) => code === passportCode)!.cells[nigerIndex];
+
+    expect(cell("KR")[1]).toBe(0);
+    expect(cell("KR")[5]).toBe(1);
+    expect(cell("AF")[1]).toBe(0);
+    expect(cell("AF")[5]).toBe(1);
+    expect(cell("SG").slice(0, 2)).toEqual(["visa_required", 1]);
+  });
+
   it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
     const middleEast = buildEvidenceStatusRegion(snapshot.manifest, details, "MIDDLE EAST", "2026-08-25");
     const asia = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-25");
@@ -184,17 +210,17 @@ describe("evidence status matrix", () => {
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {
-    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-26");
+    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-27");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
 
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_537);
-    expect(summary.notCovered.count).toBe(4_437);
-    expect(summary.characterized.count).toBe(243);
+    expect(summary.covered).toBe(40_805);
+    expect(summary.notCovered.count).toBe(4_169);
+    expect(summary.characterized.count).toBe(560);
     expect(summary.allowedStay.count).toBeGreaterThan(1_000);
-    expect(summary.percent).toBe(90.1);
+    expect(summary.percent).toBe(90.7);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });
 });

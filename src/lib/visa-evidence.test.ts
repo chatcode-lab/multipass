@@ -237,6 +237,51 @@ describe("official visa evidence", () => {
     expect(israeliRoute.conditional).toEqual([]);
   });
 
+  it("characterizes Liberia's mission-dependent issuance route without changing passport ranks", () => {
+    const evidence = getVisaRelationshipEvidence("AU", "LR", "evisa", "2026-08-27");
+
+    expect(evidence.supportsCurrentStatus).toBe(false);
+    expect(evidence.evidenceLevel).toBe("conditional");
+    expect(evidence.conditional).toContainEqual(expect.objectContaining({
+      id: "liberia-mission-availability-determines-visa-route",
+      possibleStatuses: ["visa_on_arrival", "visa_required"],
+    }));
+  });
+
+  it("characterizes Niger's residence-dependent issuance route without changing passport ranks", () => {
+    const evidence = getVisaRelationshipEvidence("KR", "NE", "visa_required", "2026-08-27");
+
+    expect(evidence.supportsCurrentStatus).toBe(false);
+    expect(evidence.evidenceLevel).toBe("conditional");
+    expect(evidence.conditional).toContainEqual(expect.objectContaining({
+      id: "niger-residence-country-determines-visa-route",
+      possibleStatuses: ["visa_on_arrival", "visa_required"],
+    }));
+  });
+
+  it("uses São Tomé airport issuance as the easiest visa-liable residual route", () => {
+    for (const passportCode of ["SG", "MO", "PS", "SC"] as const) {
+      const evidence = getVisaRelationshipEvidence(passportCode, "ST", "visa_on_arrival", "2026-08-27");
+      expect(evidence.supportsCurrentStatus).toBe(true);
+      expect(evidence.evidenceLevel).toBe("exact");
+      expect(evidence.policies).toContainEqual(expect.objectContaining({
+        id: "sao-tome-residual-airport-arrival-visa-2026",
+      }));
+    }
+  });
+
+  it("uses Côte d’Ivoire's preapproved airport issuance for the visa-liable residual", () => {
+    for (const passportCode of ["CH", "BR", "IN", "AF"] as const) {
+      const evidence = getVisaRelationshipEvidence(passportCode, "CI", "visa_on_arrival", "2026-08-27");
+      expect(evidence.supportsCurrentStatus).toBe(true);
+      expect(evidence.evidenceLevel).toBe("exact");
+      expect(evidence.policies).toContainEqual(expect.objectContaining({
+        id: "cote-divoire-residual-preapproved-airport-visa-2026",
+      }));
+    }
+    expect(getVisaRelationshipEvidence("SG", "CI", "visa_free", "2026-08-27").supportsCurrentStatus).toBe(true);
+  });
+
   it("derives source-faithful allowed stays for exact passport–destination relationships", () => {
     const schengen = getVisaRelationshipEvidence("JP", "DE", "visa_free", "2026-08-27");
     expect(schengen.allowedStays).toContainEqual(expect.objectContaining({
@@ -1398,7 +1443,7 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AE", "CM", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("CM", "CM", "citizenship").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("CI")).toHaveLength(66);
+    expect(pairsFor("CI")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("GN", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BF", "CI", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("DE", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -1640,15 +1685,15 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("SZ", "SZ", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
-  it("keeps São Tomé's third-country-document waiver conditional", () => {
+  it("keeps São Tomé's third-country-document waiver separate from its residual arrival route", () => {
     const pairs = evidenceRelationshipPairs(snapshot.manifest)
       .filter(({ destination }) => destination.code === "ST");
 
-    expect(pairs).toHaveLength(64);
+    expect(pairs).toHaveLength(199);
     expect(getVisaRelationshipEvidence("CN", "ST", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RS", "ST", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("US", "ST", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AF", "ST", snapshot.passports.AF.statuses.ST).supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "ST", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("ST", "ST", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -3150,13 +3195,13 @@ describe("official visa evidence", () => {
     }
   });
 
-  it("supports narrow São Tomé waivers without inferring the residual complement", () => {
+  it("supports São Tomé's narrow waivers and separately sourced residual arrival route", () => {
     for (const passportCode of ["CH", "ZA"] as const) {
       expect(snapshot.passports[passportCode].statuses.ST).toBe("visa_free");
       expect(getVisaRelationshipEvidence(passportCode, "ST", "visa_free").supportsCurrentStatus).toBe(true);
     }
     for (const passportCode of ["AF", "SG"] as const) {
-      expect(getVisaRelationshipEvidence(passportCode, "ST", snapshot.passports[passportCode].statuses.ST).supportsCurrentStatus).toBe(false);
+      expect(getVisaRelationshipEvidence(passportCode, "ST", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     }
   });
 
@@ -3396,9 +3441,10 @@ describe("official visa evidence", () => {
     for (const destinationCode of ["BD", "KM", "GW"] as const) {
       expect(getVisaRelationshipEvidence("PS", destinationCode, "visa_on_arrival").supportsCurrentStatus).toBe(true);
     }
-    for (const destinationCode of ["BF", "KG", "ST"] as const) {
+    for (const destinationCode of ["BF", "KG"] as const) {
       expect(getVisaRelationshipEvidence("PS", destinationCode, "evisa").supportsCurrentStatus).toBe(true);
     }
+    expect(getVisaRelationshipEvidence("PS", "ST", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     for (const destinationCode of ["BO", "JO"] as const) {
       expect(getVisaRelationshipEvidence("PS", destinationCode, "visa_free").supportsCurrentStatus).toBe(true);
     }
@@ -3793,10 +3839,11 @@ describe("official visa evidence", () => {
       expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
     }
 
-    for (const destinationCode of ["AF", "CF", "CG", "GW", "IQ", "KW", "LR", "ML", "MM", "NE", "NG", "KP", "ST", "SS", "SD", "SY", "TM"] as const) {
+    for (const destinationCode of ["AF", "CF", "CG", "GW", "IQ", "KW", "LR", "ML", "MM", "NE", "NG", "KP", "SS", "SD", "SY", "TM"] as const) {
       expect(getVisaRelationshipEvidence("SC", destinationCode, "visa_required").supportsCurrentStatus).toBe(true);
       expect(snapshot.passports.SC.statuses[destinationCode]).toBe("visa_required");
     }
+    expect(getVisaRelationshipEvidence("SC", "ST", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.SC.statuses.TD).toBe("evisa");
     expect(getVisaRelationshipEvidence("SC", "TD", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("SC", "KG", "evisa").supportsCurrentStatus).toBe(true);
@@ -4197,7 +4244,6 @@ describe("official visa evidence", () => {
       ["CO", "CF", "visa_required"],
       ["CO", "TD", "evisa"],
       ["CO", "CG", "visa_required"],
-      ["CO", "CI", "evisa"],
       ["CO", "DJ", "evisa"],
       ["CO", "GD", "visa_required"],
       ["CO", "GW", "visa_required"],
@@ -4221,6 +4267,7 @@ describe("official visa evidence", () => {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
       expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
     }
+    expect(getVisaRelationshipEvidence("CO", "CI", "visa_on_arrival").supportsCurrentStatus).toBe(true);
 
     for (const [passportCode, destinationCode] of [
       ["BT", "MK"],
@@ -4857,13 +4904,14 @@ describe("official visa evidence", () => {
       ["MO", "GN", "evisa"],
       ["MO", "JO", "visa_on_arrival"],
       ["MO", "MK", "visa_free"],
-      ["MO", "ST", "evisa"],
       ["MO", "VU", "visa_free"],
       ["VE", "JO", "visa_on_arrival"],
     ] as const) {
       expect(getVisaRelationshipEvidence(passportCode, destinationCode, status).supportsCurrentStatus).toBe(true);
       expect(snapshot.passports[passportCode].statuses[destinationCode]).toBe(status);
     }
+
+    expect(getVisaRelationshipEvidence("MO", "ST", "visa_on_arrival").supportsCurrentStatus).toBe(true);
 
     for (const passportCode of ["IN", "MO"] as const) {
       expect(snapshot.passports[passportCode].statuses.SL).toBe("visa_on_arrival");
@@ -6107,6 +6155,7 @@ describe("official visa evidence", () => {
       "evisa.gov.sz",
       "www.smf.st",
       "mne.gov.st",
+      "turismo.gov.st",
       "www.cplp.org",
       "european-union.europa.eu",
       "www.paf.gov.gn",
