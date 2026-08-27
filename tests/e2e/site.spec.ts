@@ -730,8 +730,10 @@ test("public evidence matrix audits every passport against a destination region"
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Evidence coverage matrix.");
   await expect(page.locator(".evidence-matrix-table")).toBeVisible({ timeout: 15_000 });
-  await expect(page.locator(".evidence-completion")).toContainText("Overall completion");
-  await expect(page.locator(".evidence-completion")).toContainText("Not covered");
+  await expect(page.locator(".evidence-completion")).toContainText("Exact verification");
+  await expect(page.locator(".evidence-completion")).toContainText("officially characterized");
+  await expect(page.locator(".evidence-completion")).toContainText("structured allowed-stay rule");
+  await expect(page.locator(".evidence-completion")).toContainText("No exact match");
   await expect(page.locator(".evidence-completion")).toContainText("Stale");
   await expect(page.locator(".evidence-completion")).toContainText("Old");
   await expect(page.locator(".evidence-completion")).toContainText("Fresh");
