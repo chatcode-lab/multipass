@@ -5579,6 +5579,8 @@ describe("official visa evidence", () => {
       "www.dgsn.cm",
       "lesotholii.org",
       "sgg-mali.ml",
+      "sejours.police.gouv.ml",
+      "maliembassy.co.in",
       "www.ambamali-sn.ml",
       "www.msgg.gov.mr",
       "www.passeport.ma",

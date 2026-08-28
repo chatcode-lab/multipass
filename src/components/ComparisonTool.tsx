@@ -1,6 +1,7 @@
 import { Check, Copy, Plus, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ACCESS_EASE_WEIGHT, STATUS_META } from "@/lib/passport-shared";
+import { citizenshipCombinationNotices, citizenshipPolicyAnchor } from "@/lib/citizenship-compatibility";
 import { comparisonHref, flagEmojiFor, formatRegion, rankHref } from "@/lib/geography";
 import { destinationSlug, visaRelationshipHref } from "@/lib/visa-urls";
 import { ACCESS_STATUSES, REGIONS, type ComparisonResult, type PassportSummary, type Region } from "@/lib/types";
@@ -26,6 +27,10 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
   const firstRender = useRef(true);
   const byCode = useMemo(() => new Map(passports.map((passport) => [passport.code, passport])), [passports]);
   const validSets = useMemo(() => sets.filter((set) => set.length > 0), [sets]);
+  const compatibilityNotices = useMemo(
+    () => citizenshipCombinationNotices(result?.scenarios.map((scenario) => scenario.codes) ?? []),
+    [result],
+  );
 
   useEffect(() => {
     if (firstRender.current) {
@@ -135,6 +140,23 @@ export default function ComparisonTool({ passports, initialSets, initialResult }
               </article>
             ))}
           </div>
+
+          {compatibilityNotices.length > 0 && (
+            <aside className="citizenship-notices" aria-label="Citizenship compatibility notes">
+              <div className="citizenship-notices__heading">
+                <span className="eyebrow">Citizenship compatibility</span>
+                <p>These cautions do not restrict the mobility calculation.</p>
+              </div>
+              {compatibilityNotices.map(({ setIndex, policy, severity }) => (
+                <article className={`citizenship-notice citizenship-notice--${severity}`} key={`${setIndex}-${policy.code}`}>
+                  <span>Set {setIndex + 1} · {policy.country}</span>
+                  <strong>{policy.headline}</strong>
+                  <p>{policy.summary}</p>
+                  <a href={`/dual-citizenship-countries#${citizenshipPolicyAnchor(policy)}`}>Review rule and official sources</a>
+                </article>
+              ))}
+            </aside>
+          )}
 
           <nav className="table-view-actions" aria-label="Comparison view actions">
             <a className="button button--quiet" href={rankHref(validSets)}>View ranking</a>

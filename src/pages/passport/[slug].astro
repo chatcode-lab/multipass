@@ -8,6 +8,7 @@ import { getDataContext, getPassportAccess } from "@/lib/data";
 import { datasetMetadata } from "@/lib/dataset";
 import { collectionForRegion, comparisonHref, formatRegion, relatedPassports } from "@/lib/geography";
 import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
+import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship-compatibility";
 
 const { manifest, source } = await getDataContext(Astro.locals);
 const passport = manifest.passports.find((entry) => entry.slug === Astro.params.slug);
@@ -25,10 +26,11 @@ const regionalPassports = manifest.passports.filter((entry) => entry.region === 
 const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
 const regionCollection = collectionForRegion(passport.region);
 const comparisonPassports = relatedPassports(passport, manifest.passports);
+const citizenshipPolicy = citizenshipPolicyFor(passport.code);
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
 
 const title = `${passport.name} Passport Rank & Visa-Free Destinations | MultiPass Rank`;
-const description = `The ${passport.name} passport ranks #${passport.rank} with access to ${passport.mobilityScore} destinations without prior visa approval. See the complete destination list.`;
+const description = `The ${passport.name} passport ranks #${passport.rank} globally. See ${statusCounts.visa_free} visa-free countries, ${statusCounts.visa_on_arrival} visa-on-arrival destinations, and every current access category.`;
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -67,8 +69,8 @@ const structuredData = [
     <PassportCover codes={[passport.code]} names={[passport.name]} size="large" />
     <div class="passport-hero__content">
       <span class="eyebrow">{regionLabel} passport</span>
-      <h1>{passport.name}</h1>
-      <span class="passport-hero__meta">A complete, destination-by-destination access view.</span>
+      <h1>{passport.name} passport rank</h1>
+      <span class="passport-hero__meta">Visa-free countries and complete destination-by-destination access.</span>
       <div class="metric-strip">
         <div><span>Global rank</span><strong>#{passport.rank}</strong></div>
         <div><span>Mobility score</span><strong>{passport.mobilityScore}</strong></div>
@@ -105,6 +107,17 @@ const structuredData = [
     </div>
     <RegionMap code={passport.code} country={passport.name} region={passport.region} />
   </section>
+
+  {citizenshipPolicy && (
+    <aside class:list={["passport-citizenship-note", `passport-citizenship-note--${citizenshipPolicy.status}`]}>
+      <div>
+        <span class="eyebrow">Multiple-citizenship policy</span>
+        <h2>{citizenshipPolicy.headline}</h2>
+        <p>{citizenshipPolicy.summary}</p>
+      </div>
+      <a class="button button--quiet" href={`/dual-citizenship-countries#${citizenshipPolicyAnchor(citizenshipPolicy)}`}>Review official sources</a>
+    </aside>
+  )}
 
   <section class="section section--tight">
     <div class="section-heading">

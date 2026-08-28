@@ -18,6 +18,8 @@ The combined mobility score counts destinations reachable without prior visa app
 
 The calculator does not evaluate residence rights, work rights, tax treatment, military obligations, or consular protection. Visa rules can change and personal circumstances matter, so verify entry requirements with official authorities.
 
+[Review official-source dual-citizenship compatibility notes](${absoluteUrl("/dual-citizenship-countries")})
+
 [Calculate combined passport access](${absoluteUrl("/compare")})
 
 [Explore the exact best two- and three-passport combinations](${absoluteUrl("/best-passport-combination")})

@@ -22,6 +22,7 @@ const STATIC_PATHS = [
   "status",
   "compare",
   "dual-passport",
+  "dual-citizenship-countries",
   "best-passport-combination",
   "how-many-passports-to-cover-the-world",
   "how-many-passports-can-you-have",
@@ -43,7 +44,7 @@ export function escapeXml(value: string): string {
 
 export function sitemapLastModified(manifest: SnapshotManifest): string {
   const checkedAt = manifest.checkedAt.slice(0, 10);
-  return checkedAt > "2026-08-20" ? checkedAt : "2026-08-20";
+  return checkedAt > "2026-08-28" ? checkedAt : "2026-08-28";
 }
 
 export function sitemapRegionSlug(region: Region): string {

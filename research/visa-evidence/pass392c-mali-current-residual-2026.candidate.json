@@ -1,6 +1,6 @@
 {
   "batchId": "pass392c-mali-current-residual-2026",
-  "researchedAt": "2026-08-26",
+  "researchedAt": "2026-08-28",
   "sources": [
     {
       "id": "mali-mfa-live-assistant-transport-replay-2026",
@@ -10,12 +10,73 @@
       "jurisdiction": "Mali",
       "kind": "official-portal",
       "language": "French",
-      "reviewedAt": "2026-08-26",
+      "reviewedAt": "2026-08-28",
       "officialityEvidence": "Normal HTTPS replay fails certificate verification because the server certificate is expired. The page and any assistant/API result therefore cannot be retained as a trusted current official nationality decision.",
       "supportingExcerpt": "Mali Ministry of Foreign Affairs and International Cooperation"
+    },
+    {
+      "id": "pass392c-mali-border-police-current-entry-rules-2026",
+      "title": "Conditions d'entrée, de séjour et d'établissement des étrangers au Mali",
+      "url": "https://sejours.police.gouv.ml/",
+      "publisher": "Direction de la Police aux Frontières, Police Nationale du Mali",
+      "jurisdiction": "Mali",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-28",
+      "officialityEvidence": "The live Police Nationale border-police portal identifies the competent authority and reproduces the current general entry conditions and visa-issuance routes for foreign non-immigrants.",
+      "supportingExcerpt": "un visa d'entrée, sauf dispense"
+    },
+    {
+      "id": "pass392c-mali-official-journal-decree-05-322",
+      "title": "Décret n°05-322/P-RM du 19 juillet 2005",
+      "url": "https://sgg-mali.ml/JO/2005/mali-jo-2005-28.pdf",
+      "publisher": "Secrétariat Général du Gouvernement du Mali",
+      "jurisdiction": "Mali",
+      "kind": "law",
+      "language": "French",
+      "reviewedAt": "2026-08-28",
+      "officialityEvidence": "The document is the decree as published in Mali's official journal by the Secrétariat Général du Gouvernement and is linked from its official journal archive.",
+      "supportingExcerpt": "Le visa d'entrée est délivré, sous l'autorité du Ministre chargé de la Sécurité Intérieure"
+    },
+    {
+      "id": "pass392c-mali-new-delhi-digital-visa-workflow-2026",
+      "title": "New visa application procedure for Mali",
+      "url": "https://maliembassy.co.in/visa-form",
+      "publisher": "Embassy of the Republic of Mali in India",
+      "jurisdiction": "Mali / New Delhi consular jurisdiction",
+      "kind": "government-guidance",
+      "language": "French",
+      "reviewedAt": "2026-08-28",
+      "officialityEvidence": "Mali's embassy in New Delhi identifies the Foreign Ministry platform and publishes the resident-jurisdiction workflow, required documents, appointment and issuance steps.",
+      "supportingExcerpt": "Toutes les demandes de visa doivent désormais être effectuées à partir du portail numérique sécurisé"
     }
   ],
   "policies": [],
+  "conditional": [
+    {
+      "id": "pass392c-mali-unpublished-exemption-and-issuance-partition-2026",
+      "title": "Mali visa-unless-exempt baseline with unpublished nationality schedule",
+      "summary": "Mali's law and current border-police guidance require a visa unless an exemption applies and authorize issuance through immigration services or delegated diplomatic and consular agents. The public authorities reviewed do not publish a complete current exemption list or an exhaustive nationality allocation between advance and exceptional border issuance, so these residual relationships cannot safely be assigned one exact rank-grade status.",
+      "reason": "official_schedule_incomplete",
+      "destinationCodes": ["ML"],
+      "passportCodes": [
+        "SG", "JP", "CH", "FI", "BE", "LU", "IE", "NL", "AT", "DK", "MT", "NZ", "PT", "GR", "HU", "LV", "LT", "MY", "SK", "AU", "CZ", "EE", "IS", "HR", "LI", "MC", "CY", "RO", "CL", "BG", "AD", "AR", "BR", "HK", "BB", "BN", "IL", "BS", "MX", "VC", "UY", "KN", "AG", "VA", "CR", "PA", "MU", "PY", "PE", "LC", "GD", "TT", "UA", "DM", "TW", "SB", "GT", "WS", "SV", "MH", "TO", "HN", "TV", "ME", "NI", "FM", "MK", "KI", "PW", "GE", "BA", "AL", "VE", "QA", "TR", "ZA", "TL", "BZ", "EC", "MV", "FJ", "SA", "XK", "NR", "VU", "GY", "BH", "JM", "OM", "BY", "CN", "BO", "BW", "PG", "SR", "TH", "KZ", "DO", "LS", "ID", "NA", "AZ", "SZ", "KE", "MW", "TZ", "AM", "MN", "PH", "TN", "ZM", "MZ", "UG", "KG", "ST", "UZ", "ZW", "IN", "MG", "CU", "TJ", "GA", "GQ", "VN", "KM", "JO", "AO", "BT", "KH", "CM", "CG", "HT", "LA", "CF", "BI", "TM", "EG", "DJ", "LB", "MM", "CD", "LK", "KP", "SS", "ER", "ET", "IR", "LY", "SD", "BD", "NP", "PK", "SO", "YE", "IQ", "SY", "AF"
+      ],
+      "possibleStatuses": ["visa_free", "visa_on_arrival", "visa_required"],
+      "conditions": [
+        "The ordinary foreign non-immigrant baseline is a visa unless a separately established exemption applies.",
+        "Immigration services may issue entry visas; delegated diplomatic and consular agents issue only within their residence jurisdiction.",
+        "The New Delhi mission's digital workflow is an application and mission-routing process, not proof of electronic visa issuance for every nationality.",
+        "Existing exact exemptions and individual arrival or advance-visa findings remain governed by their direct official evidence; this record covers only the residual set."
+      ],
+      "sourceIds": [
+        "pass392c-mali-border-police-current-entry-rules-2026",
+        "pass392c-mali-official-journal-decree-05-322",
+        "pass392c-mali-new-delhi-digital-visa-workflow-2026"
+      ],
+      "confidence": "high"
+    }
+  ],
   "conflicts": [],
   "unresolved": [
     {

@@ -87,7 +87,8 @@ test("inline article links keep readable spacing and the footer groups its navig
   );
   await expect(footer.getByRole("link", { name: "Settlers Club" })).toBeVisible();
   const articleColumn = footer.locator(".site-footer__column").filter({ hasText: "Articles" });
-  await expect(articleColumn.getByRole("link")).toHaveCount(5);
+  await expect(articleColumn.getByRole("link")).toHaveCount(6);
+  await expect(articleColumn.getByRole("link", { name: "Dual-citizenship countries" })).toBeVisible();
   await expect(articleColumn.getByRole("link", { name: "Best passport combinations" })).toBeVisible();
 
   await page.goto("/data-license");
@@ -557,8 +558,36 @@ test("multiple-passport records review separates law, documents, and anecdotes",
   expect(coreSitemap).toContain("<loc>https://multipassrank.com/how-many-passports-can-you-have</loc>");
 });
 
+test("citizenship compatibility is source-backed, machine-readable, and non-blocking", async ({ page, request }) => {
+  await page.goto("/dual-citizenship-countries");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("citizenships actually be held together");
+  await expect(page.locator(".citizenship-policy-list > article")).toHaveCount(11);
+  await expect(page.locator("#india")).toContainText("does not allow Indian and foreign citizenship");
+  await expect(page.locator("#india").getByRole("link", { name: /Ministry of Home Affairs/ })).toBeVisible();
+
+  const markdown = await request.get("/dual-citizenship-countries.md");
+  expect(markdown.ok()).toBe(true);
+  expect(await markdown.text()).toContain("# Dual citizenship countries and passport compatibility");
+
+  const api = await request.get("/api/v1/citizenship-policies");
+  expect(api.ok()).toBe(true);
+  const policies = await api.json();
+  expect(policies.policies).toHaveLength(11);
+  expect(policies.policies.find((policy: { code: string }) => policy.code === "IN")?.status).toBe("generally_restricted");
+
+  await page.goto("/rank?set=IN,PT");
+  await expect(page.locator(".citizenship-notice")).toContainText("Set 1 · India");
+  await expect(page.locator("[data-combination-row]")).toBeVisible();
+
+  const rankMarkdown = await request.get("/rank.md?set=IN,PT");
+  expect(await rankMarkdown.text()).toContain("Citizenship compatibility notes");
+
+  const coreSitemap = await sitemapGroupText(request, "core.xml");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/dual-citizenship-countries</loc>");
+});
+
 test("dataset pages declare creator and license metadata", async ({ page }) => {
-  for (const path of ["/destinations", "/passport/belgium", "/destination/angola"]) {
+  for (const path of ["/destinations", "/passport/belgium", "/destination/angola", "/dual-citizenship-countries"]) {
     await page.goto(path);
     const datasets = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) =>
       scripts.flatMap((script) => {

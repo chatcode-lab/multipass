@@ -102,3 +102,32 @@ Avoid a generic “best citizenship” or acquisition guide until it can use off
 The supplied export covers 18 May–17 August 2026. Its strongest query families are the calculator and combined-passport concepts, so the rework keeps those phrases visible in the title, calculator label, explanatory copy, and Markdown homepage while leaving `/` canonical.
 
 Top traffic countries were the United States (79 clicks), United Kingdom (37), Canada (36), Germany (19), Australia (14), and France (13). These signals inform internal comparison links but are not sufficient evidence for automatically generated localization.
+
+## Search Console and citizenship update — 28 August 2026
+
+The new supplied export is an early seven-day view covering 20–26 August. It records 41 clicks and 13,529 impressions across countries. Query rows account for only 15 clicks and 3,050 impressions because Search Console withholds low-volume queries; query totals must not be treated as the site's complete demand.
+
+The clearest near-term opportunities remain close to the product rather than generic travel content:
+
+- “passport combo calculator” has 6 clicks from 7 impressions at average position 2.14;
+- “combined passport power” has 2 clicks from 3 impressions at 3.33;
+- “passport strength calculator” has 1 click from 5 impressions at 5.8;
+- “best passport combination” has 1 click from 15 impressions at 10.4;
+- “Tunisia passport rank” has 1 click from 40 impressions at 10.5.
+
+Country and destination pages create most impressions but still rank weakly. The highest-impression examples include the New Zealand destination page and passport pages for Hong Kong, Japan, Singapore, Pakistan, Morocco and Bangladesh. Country-page titles, descriptions and headings should state the exact passport rank and visa-free-country intent, while evidence depth and official-source citations remain the long-term differentiator. Mass-producing generic destination prose would increase crawl inventory without addressing that weakness.
+
+A four-market DataForSEO Labs review (United States, United Kingdom, India and the Philippines) cost approximately USD 0.20. Directional opportunities include:
+
+| Topic | Representative market volume | Difficulty signal |
+| --- | ---: | ---: |
+| dual citizenship | 40,500 US | 33 |
+| multiple citizenship | 40,500 US | 17 |
+| how many passports can you have | 1,300 US and 1,300 UK | 7 |
+| countries that allow dual citizenship | 1,600 US | 14 |
+| citizenship by descent | 2,900 US | 7 |
+| visa-free countries for Indian passport holders | 90,500 India | 15 |
+| Philippines passport visa-free countries | 4,400 Philippines | 0 |
+| best passport combination | 90 US | 0 |
+
+Grouped keyword tools can assign the same volume to close variants, so the 40,500 rows are topic signals rather than additive demand. The implementation response is one reviewed `/dual-citizenship-countries` dataset and compatibility layer, not hundreds of thin legal pages. The next useful enrichment is structured acquisition routes—birth, descent, naturalisation, marriage and restoration—with effective dates and official sources. Country-specific pages should be added only when that source record is substantial enough to answer the actual eligibility question.

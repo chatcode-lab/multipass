@@ -3,6 +3,7 @@ import RankingExplorer from "@/components/RankingExplorer.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccessBatch } from "@/lib/data";
 import { comparisonHref } from "@/lib/geography";
+import { citizenshipCombinationNotices, citizenshipPolicyAnchor } from "@/lib/citizenship-compatibility";
 import { comparePassportSets, denseRankByScore, parsePassportSets } from "@/lib/passport";
 import type { ComparisonResult } from "@/lib/types";
 
@@ -25,6 +26,7 @@ const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "shor
 );
 const markdownHref = `/rank.md${Astro.url.search}`;
 const comparisonUrl = result ? comparisonHref(result.scenarios.map((scenario) => scenario.codes)) : "/compare";
+const compatibilityNotices = citizenshipCombinationNotices(result?.scenarios.map((scenario) => scenario.codes) ?? []);
 const customTitle = result?.scenarios.length === 1
   ? `${result.scenarios[0].name} passport rank equivalent`
   : "Custom combined passport ranking";
@@ -87,6 +89,22 @@ const structuredData = {
           <span><b>Set {index + 1}</b><span>{scenario.name}</span><strong>#{customRanks?.get(scenario.mobilityScore) ?? scenario.rankEquivalent}</strong></span>
         ))}
       </div>
+    )}
+    {compatibilityNotices.length > 0 && (
+      <aside class="citizenship-notices" aria-label="Citizenship compatibility notes">
+        <div class="citizenship-notices__heading">
+          <span class="eyebrow">Citizenship compatibility</span>
+          <p>These cautions do not restrict the mobility calculation.</p>
+        </div>
+        {compatibilityNotices.map(({ setIndex, policy, severity }) => (
+          <article class:list={["citizenship-notice", `citizenship-notice--${severity}`]}>
+            <span>Set {setIndex + 1} · {policy.country}</span>
+            <strong>{policy.headline}</strong>
+            <p>{policy.summary}</p>
+            <a href={`/dual-citizenship-countries#${citizenshipPolicyAnchor(policy)}`}>Review rule and official sources</a>
+          </article>
+        ))}
+      </aside>
     )}
     {result && (
       <nav class="table-view-actions" aria-label="Ranking view actions">

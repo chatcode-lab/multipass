@@ -3789,3 +3789,9 @@ For a lower-capability model, use the stricter packet, schema, validation, and r
 - Application instructions do not promise admission or processing outcomes.
 - Unsupported pairs remain honest placeholders and are not added to the sitemap.
 - The source’s terms are respected; store factual metadata and links rather than republishing documents.
+
+## Pass 406 result: Mali residual officially characterized
+
+Mali's 157 exact residuals remain unresolved, but current official sources now characterize why one passport-wide answer is unsafe. The [Malian border-police portal](https://sejours.police.gouv.ml/) and [Decree No. 05-322 in the official journal](https://sgg-mali.ml/JO/2005/mali-jo-2005-28.pdf) establish a visa-unless-exempt baseline and authorize issuance through immigration services or delegated diplomatic and consular agents. The [Mali Embassy in New Delhi](https://maliembassy.co.in/visa-form) confirms that its current digital workflow routes an application to the mission competent for the applicant's country of residence; it does not establish electronically issued visas for all passports.
+
+The reviewed public authorities still do not publish a complete current exemption schedule or a nationality allocation between advance and exceptional border issuance. The 157 rows are therefore recorded as conditional `visa_free`, `visa_on_arrival`, or `visa_required` possibilities under `official_schedule_incomplete`, while their current rank statuses remain unchanged. Exact verified coverage stays at 40,805 of 44,974 relationships (90.7%); officially characterized coverage rises from 682 to 839 (1.9% of the matrix). No passport score, rank, relationship canonical URL, or relationship sitemap entry changes.

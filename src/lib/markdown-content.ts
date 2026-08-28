@@ -1,5 +1,6 @@
 import { collectionForRegion, comparisonHref, formatRegion, rankHref, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
+import { citizenshipCombinationNoticesMarkdown, citizenshipPolicyFor } from "./citizenship-compatibility";
 import { denseRankByScore, STATUS_META } from "./passport";
 import { REGIONS, type ComparisonResult, type PassportAccess, type PassportSummary, type SnapshotManifest } from "./types";
 
@@ -73,6 +74,7 @@ export function customRankingMarkdown(manifest: SnapshotManifest, result: Compar
     `- **Set ${index + 1}: ${escapeMarkdown(scenario.name)}** — custom rank #${customRanks.get(scenario.mobilityScore) ?? scenario.rankEquivalent}, mobility score ${scenario.mobilityScore}`,
   ).join("\n");
   const sets = scenarios.map((scenario) => scenario.codes);
+  const compatibility = citizenshipCombinationNoticesMarkdown(sets);
   return `# ${scenarios.length ? "Custom passport and combination ranking" : "Combined passport ranking"}
 
 ${scenarios.length
@@ -81,7 +83,7 @@ ${scenarios.length
 
 Data checked ${checkedDate(manifest)}.
 
-${scenarioSummary ? `## Selected sets\n\n${scenarioSummary}\n\n` : ""}| Rank | Passport or set | Mobility score | Type |
+${scenarioSummary ? `## Selected sets\n\n${scenarioSummary}\n\n` : ""}${compatibility ? `${compatibility}\n\n` : ""}| Rank | Passport or set | Mobility score | Type |
 | ---: | --- | ---: | --- |
 ${rows.map((row) => `| ${row.rank} | ${row.entry} | ${row.score} | ${row.type} |`).join("\n")}
 
@@ -129,6 +131,7 @@ export function passportMarkdown(
   const regionalPassports = manifest.passports.filter((entry) => entry.region === passport.region);
   const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
   const regionCollection = collectionForRegion(passport.region);
+  const citizenshipPolicy = citizenshipPolicyFor(passport.code);
   const comparisonLinks = relatedPassports(passport, manifest.passports).map((other) =>
     `- [Compare ${passport.name} and ${other.name}](${absoluteUrl(comparisonHref([[passport.code], [other.code]]))})`,
   );
@@ -160,7 +163,7 @@ Data checked ${checkedDate(manifest)}. Entry rules can change; verify official r
 
 ${regionCollection ? `- [See the ${regionCollection.heading}](${absoluteUrl(`/${regionCollection.slug}`)})\n` : ""}${comparisonLinks.join("\n")}
 
-${groups.join("\n\n")}`;
+${citizenshipPolicy ? `## Multiple-citizenship policy\n\n**${escapeMarkdown(citizenshipPolicy.headline)}** ${escapeMarkdown(citizenshipPolicy.summary)}\n\n${citizenshipPolicy.practicalNotes.map((note) => `- ${escapeMarkdown(note)}`).join("\n")}\n\n${citizenshipPolicy.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.label)}](${source.url})`).join("\n")}\n\n[Review all source-backed compatibility notes](${absoluteUrl("/dual-citizenship-countries")})\n\n` : ""}${groups.join("\n\n")}`;
 }
 
 export function comparisonMarkdown(result: ComparisonResult, title = "Passport comparison"): string {
@@ -181,11 +184,14 @@ export function comparisonMarkdown(result: ComparisonResult, title = "Passport c
     const headers = result.scenarios.map((scenario) => escapeMarkdown(scenario.name));
     return `## ${formatRegion(region)}\n\n| Destination | ${headers.join(" | ")} |\n| --- | ${headers.map(() => "---").join(" | ")} |\n${rows.join("\n")}`;
   });
+  const compatibility = citizenshipCombinationNoticesMarkdown(result.scenarios.map((scenario) => scenario.codes));
   return `# ${title}
 
 ${scenarioSummary.join("\n")}
 
 Data checked ${new Intl.DateTimeFormat("en", { dateStyle: "long", timeZone: "UTC" }).format(new Date(result.checkedAt))}.
+
+${compatibility ? `${compatibility}\n` : ""}
 
 ## Access legend
 

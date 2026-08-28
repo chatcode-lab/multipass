@@ -84,6 +84,7 @@ https://multipassrank.com/belgium-kenya-eta.md</code></pre>
       <li><a href="/api/v1/manifest"><code>GET /api/v1/manifest</code></a> lists valid codes, current ranks, scores, destinations, and the data version.</li>
       <li><a href="/api/v1/passports/US"><code>GET /api/v1/passports/US</code></a> returns every destination status for one passport.</li>
       <li><a href="/api/v1/visa/US/JP"><code>GET /api/v1/visa/US/JP</code></a> returns one relationship with its evidence level, allowed stay, conditions, official sources, and application route.</li>
+      <li><a href="/api/v1/citizenship-policies"><code>GET /api/v1/citizenship-policies</code></a> returns reviewed multiple-citizenship classifications, cautions, dates, and official sources.</li>
       <li><code>POST /api/v1/compare</code> with <code>{`{"sets":[["US","CA"],["PT"]]}`}</code> returns the complete comparison result.</li>
     </ul>
     <p>
@@ -101,7 +102,8 @@ https://multipassrank.com/belgium-kenya-eta.md</code></pre>
     <p>
       Mobility scores count visa-free, visa-on-arrival, and ETA access. For a combined set, each destination uses the easiest
       available status across that set. The rank equivalent compares that combined score with the single-passport ranking.
-      It does not measure residence, tax, consular, or citizenship-law benefits.
+      It does not measure residence, tax, consular, or citizenship-law benefits. Review the{" "}
+      <a href="/dual-citizenship-countries">citizenship compatibility register</a> before treating a hypothetical set as legally attainable.
     </p>
     <div class="method-callout">
       Plain-text discovery file: <a href="/llms.txt"><strong>/llms.txt</strong></a>. Full methodology: <a href="/methodology"><strong>/methodology</strong></a>.

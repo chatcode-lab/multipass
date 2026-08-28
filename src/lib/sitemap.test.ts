@@ -33,7 +33,8 @@ describe("sitemaps", () => {
     ];
     const urls = groups.flat().map(({ loc }) => loc);
 
-    expect(urls).toHaveLength(41_264);
+    expect(urls).toHaveLength(41_265);
+    expect(urls).toContain("https://multipassrank.com/dual-citizenship-countries");
     expect(new Set(urls).size).toBe(urls.length);
     expect(urls.every((url) => url.startsWith("https://multipassrank.com/") && !url.includes("?") && !url.endsWith(".md")))
       .toBe(true);

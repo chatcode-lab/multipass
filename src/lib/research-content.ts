@@ -158,7 +158,7 @@ The Council of Europe's nationality convention captures the underlying rule: eac
 
 More is not automatically better. MultiPass Rank's exhaustive travel experiment finds that the best pair and triple already cover most tracked destinations, while its purely mathematical all-destination solution requires a large passport set and ignores whether that set could legally or practically be held.
 
-[See the best two- and three-passport combinations](${absoluteUrl("/best-passport-combination")}) · [See the mathematical minimum for all tracked destinations](${absoluteUrl("/how-many-passports-to-cover-the-world")})
+[Review the official-source citizenship compatibility register](${absoluteUrl("/dual-citizenship-countries")}) · [See the best two- and three-passport combinations](${absoluteUrl("/best-passport-combination")}) · [See the mathematical minimum for all tracked destinations](${absoluteUrl("/how-many-passports-to-cover-the-world")})
 
 ## References
 
