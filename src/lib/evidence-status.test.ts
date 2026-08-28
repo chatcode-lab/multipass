@@ -109,6 +109,19 @@ describe("evidence status matrix", () => {
     expect(cell("SG").slice(0, 2)).toEqual(["visa_required", 1]);
   });
 
+  it("marks Bangladesh's mission- and route-dependent residuals as characterized but unverified", () => {
+    const asia = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-28");
+    const bangladeshIndex = asia.destinations.findIndex(({ code }) => code === "BD");
+    const cell = (passportCode: string) =>
+      asia.rows.find(({ passportCode: code }) => code === passportCode)!.cells[bangladeshIndex];
+
+    expect(cell("BR")[1]).toBe(0);
+    expect(cell("BR")[5]).toBe(1);
+    expect(cell("AF")[1]).toBe(0);
+    expect(cell("AF")[5]).toBe(1);
+    expect(cell("BE").slice(0, 2)).toEqual(["visa_on_arrival", 1]);
+  });
+
   it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
     const middleEast = buildEvidenceStatusRegion(snapshot.manifest, details, "MIDDLE EAST", "2026-08-25");
     const asia = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-25");
@@ -218,7 +231,7 @@ describe("evidence status matrix", () => {
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
     expect(summary.covered).toBe(40_805);
     expect(summary.notCovered.count).toBe(4_169);
-    expect(summary.characterized.count).toBe(560);
+    expect(summary.characterized.count).toBe(682);
     expect(summary.allowedStay.count).toBeGreaterThan(1_000);
     expect(summary.percent).toBe(90.7);
     expect(summary.fresh.count).toBeGreaterThan(0);
