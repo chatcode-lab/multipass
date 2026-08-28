@@ -1,5 +1,30 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test, type APIRequestContext } from "@playwright/test";
+
+async function sitemapIndexLocations(request: APIRequestContext): Promise<string[]> {
+  const response = await request.get("/sitemap.xml");
+  expect(response.ok()).toBe(true);
+  const xml = await response.text();
+  expect(xml).toContain("<sitemapindex");
+  return [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+}
+
+async function sitemapGroupText(request: APIRequestContext, filename: string): Promise<string> {
+  const location = (await sitemapIndexLocations(request)).find((entry) => entry.endsWith(`/sitemaps/${filename}`));
+  expect(location).toBeDefined();
+  const response = await request.get(new URL(location!).pathname);
+  expect(response.ok()).toBe(true);
+  return response.text();
+}
+
+async function indexedSitemapTexts(request: APIRequestContext): Promise<string[]> {
+  const locations = await sitemapIndexLocations(request);
+  return Promise.all(locations.map(async (location) => {
+    const response = await request.get(new URL(location).pathname);
+    expect(response.ok()).toBe(true);
+    return response.text();
+  }));
+}
 
 test("homepage renders a searchable passport ranking", async ({ page }) => {
   await page.goto("/");
@@ -401,11 +426,11 @@ test("regional, language, and indexed comparison pages render useful content", a
     expect(await markdown.text()).toContain(`# ${heading}`);
   }
 
-  const sitemap = await request.get("/sitemap.xml");
-  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/arabic</loc>");
-  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/french</loc>");
-  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/portuguese</loc>");
-  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/rank</loc>");
+  const coreSitemap = await sitemapGroupText(request, "core.xml");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/arabic</loc>");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/french</loc>");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/portuguese</loc>");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/rank</loc>");
 
   await page.goto("/compare/us-vs-uk");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("US vs UK");
@@ -446,8 +471,8 @@ test("eVisa and ETA guide is indexable and available as Markdown", async ({ page
   expect(markdown.ok()).toBe(true);
   expect(await markdown.text()).toContain("# eVisa vs ETA: what is the difference?");
 
-  const sitemap = await request.get("/sitemap.xml");
-  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/evisa-vs-eta</loc>");
+  const coreSitemap = await sitemapGroupText(request, "core.xml");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/evisa-vs-eta</loc>");
 });
 
 test("combination research publishes exact results, reproducible links, and Markdown", async ({ page, request }) => {
@@ -504,8 +529,7 @@ test("combination research publishes exact results, reproducible links, and Mark
 
   expect(fullSetCodes).toEqual(insights.minimumCover.codes);
 
-  const sitemap = await request.get("/sitemap.xml");
-  const xml = await sitemap.text();
+  const xml = await sitemapGroupText(request, "core.xml");
   expect(xml).toContain("<loc>https://multipassrank.com/best-passport-combination</loc>");
   expect(xml).toContain("<loc>https://multipassrank.com/how-many-passports-to-cover-the-world</loc>");
 });
@@ -529,8 +553,8 @@ test("multiple-passport records review separates law, documents, and anecdotes",
   expect(markdown.ok()).toBe(true);
   expect(await markdown.text()).toContain("There is **no universal numerical limit**");
 
-  const sitemap = await request.get("/sitemap.xml");
-  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/how-many-passports-can-you-have</loc>");
+  const coreSitemap = await sitemapGroupText(request, "core.xml");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/how-many-passports-can-you-have</loc>");
 });
 
 test("dataset pages declare creator and license metadata", async ({ page }) => {
@@ -592,11 +616,15 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
   expect(markdown.ok()).toBe(true);
   expect(markdown.headers()["x-robots-tag"]).toContain("noindex");
 
-  const sitemap = await request.get("/sitemap.xml");
-  const xml = await sitemap.text();
-  const sitemapLocations = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+  const sitemapTexts = await indexedSitemapTexts(request);
+  const xml = sitemapTexts.join("\n");
+  const sitemapLocations = sitemapTexts.flatMap((text) =>
+    [...text.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]));
   expect(new Set(sitemapLocations).size).toBe(sitemapLocations.length);
-  expect(sitemapLocations.length).toBeLessThanOrEqual(50_000);
+  for (const text of sitemapTexts) {
+    expect([...text.matchAll(/<url>/g)].length).toBeLessThanOrEqual(50_000);
+    expect(new TextEncoder().encode(text).length).toBeLessThanOrEqual(50 * 1024 * 1024);
+  }
   expect(xml).toContain("<loc>https://multipassrank.com/destination/angola</loc>");
   expect(xml).toContain("<loc>https://multipassrank.com/belgium-angola-visa-free</loc>");
   expect(xml).not.toContain("<loc>https://multipassrank.com/belgium-afghanistan-visa</loc>");
@@ -627,8 +655,8 @@ test("entry restrictions have a canonical evidence page and stale-status redirec
   expect(markdown.ok()).toBe(true);
   expect(await markdown.text()).toContain("# Israel passport to Maldives: Entry restricted");
 
-  const sitemap = await request.get("/sitemap.xml");
-  expect(await sitemap.text()).toContain("<loc>https://multipassrank.com/israel-maldives-entry-restricted</loc>");
+  const relationshipSitemap = await sitemapGroupText(request, "relationships-middle-east.xml");
+  expect(relationshipSitemap).toContain("<loc>https://multipassrank.com/israel-maldives-entry-restricted</loc>");
 });
 
 test("corrected Saint Martin URLs retain St. Maarten compatibility redirects", async ({ page, request }) => {
@@ -770,8 +798,7 @@ test("public evidence matrix audits every passport against a destination region"
     matrix.overall.covered + matrix.overall.notCovered.count,
   );
 
-  const sitemap = await request.get("/sitemap.xml");
-  const sitemapText = await sitemap.text();
+  const sitemapText = await sitemapGroupText(request, "core.xml");
   expect(sitemapText).not.toContain("evidence-status");
   expect(sitemapText).toContain("https://multipassrank.com/status");
 });
