@@ -87,9 +87,11 @@ test("inline article links keep readable spacing and the footer groups its navig
   );
   await expect(footer.getByRole("link", { name: "Settlers Club" })).toBeVisible();
   const articleColumn = footer.locator(".site-footer__column").filter({ hasText: "Articles" });
-  await expect(articleColumn.getByRole("link")).toHaveCount(6);
+  await expect(articleColumn.getByRole("link")).toHaveCount(8);
   await expect(articleColumn.getByRole("link", { name: "Dual-citizenship countries" })).toBeVisible();
   await expect(articleColumn.getByRole("link", { name: "Best passport combinations" })).toBeVisible();
+  await expect(articleColumn.getByRole("link", { name: "Citizenship by descent" })).toBeVisible();
+  await expect(articleColumn.getByRole("link", { name: "Best second passport for US citizens" })).toBeVisible();
 
   await page.goto("/data-license");
   await expect(page.locator(".prose p").filter({ hasText: "original evidence metadata" })).toContainText(
@@ -561,7 +563,7 @@ test("multiple-passport records review separates law, documents, and anecdotes",
 test("citizenship compatibility is source-backed, machine-readable, and non-blocking", async ({ page, request }) => {
   await page.goto("/dual-citizenship-countries");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("citizenships actually be held together");
-  await expect(page.locator(".citizenship-policy-list > article")).toHaveCount(11);
+  await expect(page.locator(".citizenship-policy-list > article")).toHaveCount(19);
   await expect(page.locator("#india")).toContainText("does not allow Indian and foreign citizenship");
   await expect(page.locator("#india").getByRole("link", { name: /Ministry of Home Affairs/ })).toBeVisible();
 
@@ -572,7 +574,7 @@ test("citizenship compatibility is source-backed, machine-readable, and non-bloc
   const api = await request.get("/api/v1/citizenship-policies");
   expect(api.ok()).toBe(true);
   const policies = await api.json();
-  expect(policies.policies).toHaveLength(11);
+  expect(policies.policies).toHaveLength(19);
   expect(policies.policies.find((policy: { code: string }) => policy.code === "IN")?.status).toBe("generally_restricted");
 
   await page.goto("/rank?set=IN,PT");
