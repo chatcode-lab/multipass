@@ -970,6 +970,8 @@ main { min-height: 68vh; }
 .passport-citizenship-note h2 { margin: 6px 0; color: var(--green); font-family: var(--serif); font-size: clamp(25px, 3vw, 34px); font-weight: 540; line-height: 1.05; }
 .passport-citizenship-note p { max-width: 800px; margin: 0; color: var(--ink-soft); font-size: 13px; }
 .passport-citizenship-note .button { flex: 0 0 auto; }
+.passport-citizenship-note__actions { flex: 0 0 auto; display: grid; justify-items: end; gap: 8px; }
+.passport-citizenship-note__actions .text-link { font-size: 10px; }
 
 .citizenship-guide { padding-bottom: 60px; }
 .citizenship-guide__hero { max-width: 1040px; }
@@ -1001,9 +1003,32 @@ main { min-height: 68vh; }
 .citizenship-policy-list article > ul { color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
 .citizenship-policy-list article > ul { padding-left: 18px; }
 .citizenship-policy-card__sources { display: grid; gap: 5px; margin-top: 18px; }
+.citizenship-policy-card__routes { display: grid; gap: 5px; margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line); }
+.citizenship-policy-card__routes > span { color: var(--burgundy); font-size: 9px; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
+.citizenship-policy-card__routes a { width: fit-content; color: var(--green); font-size: 10px; font-weight: 680; text-underline-offset: 3px; }
 .citizenship-policy-card__sources > span { color: var(--burgundy); font-size: 9px; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
 .citizenship-policy-card__sources a { width: fit-content; color: var(--green); font-size: 10px; font-weight: 680; text-underline-offset: 3px; }
 .citizenship-guide__limits { margin-top: 42px; }
+
+.acquisition-route-group { padding: 62px 0 28px; }
+.acquisition-route-group > header { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; padding-bottom: 20px; border-bottom: 1px solid var(--line-strong); }
+.acquisition-route-group > header .eyebrow { grid-column: 1; }
+.acquisition-route-group > header h2 { grid-column: 1; max-width: 760px; margin: 8px 0 0; color: var(--green); font-family: var(--serif); font-size: clamp(36px, 4.8vw, 58px); font-weight: 540; line-height: .98; }
+.acquisition-route-group > header > strong { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--burgundy); font-family: var(--serif); font-size: 50px; font-weight: 500; }
+.acquisition-route-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.acquisition-route-list > article { min-width: 0; padding: 28px 28px 34px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+.acquisition-route-list > article:nth-child(2n) { padding-right: 0; padding-left: 28px; border-left: 1px solid var(--line); }
+.acquisition-route-list article > strong { display: block; color: var(--ink); font-size: 14px; line-height: 1.4; }
+.acquisition-route-list article > p,
+.acquisition-route-list article > ul { color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
+.acquisition-route-list article > ul { padding-left: 18px; }
+.acquisition-route-card__facts { display: grid; gap: 0; margin: 18px 0 0; border-block: 1px solid var(--line); }
+.acquisition-route-card__facts div { padding: 12px 0; }
+.acquisition-route-card__facts div + div { border-top: 1px solid var(--line); }
+.acquisition-route-card__facts dt { color: var(--burgundy); font-size: 9px; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
+.acquisition-route-card__facts dd { margin: 4px 0 0; color: var(--ink-soft); font-size: 11px; line-height: 1.5; }
+.acquisition-route-card__transition { padding: 13px 15px; background: #fbf6e8; }
+.acquisition-route-card__transition strong { color: var(--ink); }
 
 .research-article { padding-bottom: 40px; }
 .research-hero { position: relative; max-width: 1080px; padding: 90px 0 72px; }
@@ -1101,6 +1126,26 @@ main { min-height: 68vh; }
 .coverage-sequence__numbers strong { color: var(--green); font-family: var(--serif); font-size: 25px; line-height: 1.1; }
 .research-set-line { margin: 24px 0 0; color: var(--ink-soft); font-size: 12px; }
 .research-set-line strong { color: var(--ink); }
+.second-passport-list { margin: 0; padding: 0; border-top: 1px solid var(--line-strong); list-style: none; }
+.second-passport-list > li { min-width: 0; display: grid; grid-template-columns: 34px 34px minmax(160px, 1fr) 132px 110px 90px; gap: 13px; align-items: center; min-height: 82px; border-bottom: 1px solid var(--line); }
+.second-passport-list__rank { color: var(--burgundy); font-family: var(--serif); font-size: 18px; }
+.second-passport-list > li > .country-flag { font-size: 23px; }
+.second-passport-list__identity { min-width: 0; display: grid; }
+.second-passport-list__identity a { width: fit-content; color: var(--green); font-weight: 720; text-decoration: none; }
+.second-passport-list__identity a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.second-passport-list__identity small,
+.second-passport-list__gain small,
+.second-passport-list__total small { color: var(--ink-soft); font-size: 8px; font-weight: 710; letter-spacing: .06em; line-height: 1.35; text-transform: uppercase; }
+.second-passport-list__gain,
+.second-passport-list__total { display: grid; padding-left: 18px; border-left: 1px solid var(--line); }
+.second-passport-list__gain strong,
+.second-passport-list__total strong { color: var(--green); font-family: var(--serif); font-size: 25px; line-height: 1.05; }
+.second-passport-list > li > details { position: relative; justify-self: end; }
+.second-passport-list > li > details summary { color: var(--green); font-size: 10px; font-weight: 720; cursor: pointer; }
+.second-passport-list > li > details[open] { grid-column: 3 / -1; justify-self: stretch; margin: -4px 0 16px; padding: 15px 18px; background: var(--paper-2); }
+.second-passport-list > li > details[open] summary { margin-bottom: 8px; }
+.second-passport-list > li > details p { margin: 0 0 9px; color: var(--ink-soft); font-size: 11px; line-height: 1.6; }
+.second-passport-list > li > details .research-actions a { color: var(--green); font-size: 10px; font-weight: 720; }
 
 .prose { max-width: 820px; padding: 70px 0 110px; }
 .prose h1 { margin: 10px 0 30px; color: var(--green); font-family: var(--serif); font-size: clamp(52px, 7vw, 88px); font-weight: 520; line-height: .98; letter-spacing: -.04em; }
@@ -1318,6 +1363,13 @@ main { min-height: 68vh; }
   .research-copy > section { padding: 58px 0; }
   .research-copy h2 { font-size: 37px; }
   .research-copy p { font-size: 16px; }
+  .second-passport-list > li { grid-template-columns: 26px 28px minmax(0, 1fr) 60px; gap: 9px; min-height: 76px; }
+  .second-passport-list__identity small { max-width: 170px; }
+  .second-passport-list__gain { justify-items: end; padding-left: 8px; }
+  .second-passport-list__gain small { display: none; }
+  .second-passport-list__total { display: none; }
+  .second-passport-list > li > details { grid-column: 3 / -1; justify-self: start; margin-top: -15px; padding-bottom: 10px; }
+  .second-passport-list > li > details[open] { grid-column: 1 / -1; margin: 0 0 12px; }
   .research-callout { margin-bottom: 60px; padding: 28px 22px; }
   .research-callout .research-actions { grid-template-columns: 1fr; }
   .research-callout .research-actions .text-link { grid-column: auto; }
@@ -1351,6 +1403,12 @@ main { min-height: 68vh; }
   .citizenship-policy-list { grid-template-columns: 1fr; }
   .citizenship-policy-list > article,
   .citizenship-policy-list > article:nth-child(2n) { padding: 24px 0; border-left: 0; }
+  .acquisition-route-group { padding-top: 48px; }
+  .acquisition-route-group > header h2 { font-size: 38px; }
+  .acquisition-route-group > header > strong { font-size: 40px; }
+  .acquisition-route-list { grid-template-columns: 1fr; }
+  .acquisition-route-list > article,
+  .acquisition-route-list > article:nth-child(2n) { padding: 24px 0; border-left: 0; }
   .agent-guide pre { margin-inline: -4px; padding: 18px; }
   .comparison-toolbar {
     grid-template-columns: repeat(2, minmax(0, 1fr));

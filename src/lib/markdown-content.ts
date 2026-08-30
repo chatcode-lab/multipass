@@ -1,6 +1,7 @@
 import { collectionForRegion, comparisonHref, formatRegion, rankHref, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import { citizenshipCombinationNoticesMarkdown, citizenshipPolicyFor } from "./citizenship-compatibility";
+import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "../data/citizenship-acquisition";
 import { denseRankByScore, STATUS_META } from "./passport";
 import { REGIONS, type ComparisonResult, type PassportAccess, type PassportSummary, type SnapshotManifest } from "./types";
 
@@ -132,6 +133,7 @@ export function passportMarkdown(
   const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
   const regionCollection = collectionForRegion(passport.region);
   const citizenshipPolicy = citizenshipPolicyFor(passport.code);
+  const citizenshipRoutes = CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(passport.code) ?? [];
   const comparisonLinks = relatedPassports(passport, manifest.passports).map((other) =>
     `- [Compare ${passport.name} and ${other.name}](${absoluteUrl(comparisonHref([[passport.code], [other.code]]))})`,
   );
@@ -161,9 +163,9 @@ Data checked ${checkedDate(manifest)}. Entry rules can change; verify official r
 
 ## Related rankings and comparisons
 
-${regionCollection ? `- [See the ${regionCollection.heading}](${absoluteUrl(`/${regionCollection.slug}`)})\n` : ""}${comparisonLinks.join("\n")}
+${regionCollection ? `- [See the ${regionCollection.heading}](${absoluteUrl(`/${regionCollection.slug}`)})\n` : ""}${passport.code === "US" ? `- [Best second passport for US travel access](${absoluteUrl("/best-second-passport-for-us-citizens")})\n` : ""}${comparisonLinks.join("\n")}
 
-${citizenshipPolicy ? `## Multiple-citizenship policy\n\n**${escapeMarkdown(citizenshipPolicy.headline)}** ${escapeMarkdown(citizenshipPolicy.summary)}\n\n${citizenshipPolicy.practicalNotes.map((note) => `- ${escapeMarkdown(note)}`).join("\n")}\n\n${citizenshipPolicy.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.label)}](${source.url})`).join("\n")}\n\n[Review all source-backed compatibility notes](${absoluteUrl("/dual-citizenship-countries")})\n\n` : ""}${groups.join("\n\n")}`;
+${citizenshipPolicy ? `## Multiple-citizenship policy\n\n**${escapeMarkdown(citizenshipPolicy.headline)}** ${escapeMarkdown(citizenshipPolicy.summary)}\n\n${citizenshipPolicy.practicalNotes.map((note) => `- ${escapeMarkdown(note)}`).join("\n")}\n\n${citizenshipPolicy.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.label)}](${source.url})`).join("\n")}\n\n[Review all source-backed compatibility notes](${absoluteUrl("/dual-citizenship-countries")})\n\n` : ""}${citizenshipRoutes.length ? `## Reviewed citizenship acquisition routes\n\n${citizenshipRoutes.map((route) => `- [${escapeMarkdown(route.title)}](${absoluteUrl(`/citizenship-by-descent#${route.id}`)})`).join("\n")}\n\n` : ""}${groups.join("\n\n")}`;
 }
 
 export function comparisonMarkdown(result: ComparisonResult, title = "Passport comparison"): string {

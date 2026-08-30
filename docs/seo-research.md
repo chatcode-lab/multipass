@@ -131,3 +131,13 @@ A four-market DataForSEO Labs review (United States, United Kingdom, India and t
 | best passport combination | 90 US | 0 |
 
 Grouped keyword tools can assign the same volume to close variants, so the 40,500 rows are topic signals rather than additive demand. The implementation response is one reviewed `/dual-citizenship-countries` dataset and compatibility layer, not hundreds of thin legal pages. The next useful enrichment is structured acquisition routes—birth, descent, naturalisation, marriage and restoration—with effective dates and official sources. Country-specific pages should be added only when that source record is substantial enough to answer the actual eligibility question.
+
+## Acquisition and US-complement implementation — 30 August 2026
+
+The next pass converts the low-difficulty “citizenship by descent” opportunity into a source-backed dataset rather than a generic affiliate-style guide. `/citizenship-by-descent` starts with 11 structured routes across eight countries and records route type, requirements, residence or language fields, transition notes, review date, and official sources. It also exposes a Markdown version and `/api/v1/citizenship-acquisition` JSON resource.
+
+Current-law conflicts are explicit. Portugal's Ministry of Justice overview still displays a five-year residence headline and labels the page as being updated, while its later 19 May 2026 reform notice sets seven years for EU or Portuguese-speaking-country nationals and ten years for other nationals. The route record follows the later effective law and preserves the transition note. Italy's descent record likewise avoids pre-2025 generational shorthand after the current Foreign Ministry guidance incorporated the 2025 Article 3-bis restrictions.
+
+`/best-second-passport-for-us-citizens` implements the first marginal-gain experiment from the research backlog. It evaluates every other passport against the United States, publishes the top ten by newly added easy-access destinations, links every result to reproducible rank and comparison URLs, and labels citizenship compatibility separately. The page never equates mobility gain with eligibility, acquisition ease, tax value, or legal compatibility.
+
+The multiple-citizenship register expands from 11 to 19 reviewed countries with Canada, Australia, France, Ireland, Italy, Brazil, Spain, and Israel. Calculator cautions remain non-blocking and appear only where an official policy has been reviewed; missing countries remain unknown.

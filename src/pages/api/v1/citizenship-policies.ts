@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import { CITIZENSHIP_POLICIES, CITIZENSHIP_POLICY_STATUS_META } from "@/data/citizenship-policies";
 
 export const GET: APIRoute = () => Response.json({
-  reviewedAt: "2026-08-28",
+  reviewedAt: "2026-08-30",
   scope: "Official-source, country-level multiple-citizenship policy summaries. Personal facts and the laws of every country in a combination still control.",
   statuses: CITIZENSHIP_POLICY_STATUS_META,
   policies: CITIZENSHIP_POLICIES,

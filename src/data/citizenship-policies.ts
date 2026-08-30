@@ -98,6 +98,168 @@ export const CITIZENSHIP_POLICIES: CitizenshipPolicy[] = [
     ],
   },
   {
+    code: "CA",
+    country: "Canada",
+    status: "generally_allowed",
+    headline: "Canada allows dual and multiple citizenship.",
+    summary: "Canadian law allows a Canadian citizen to take another citizenship and allows a person becoming Canadian to retain another citizenship, although the other country's rules may still cause loss.",
+    practicalNotes: [
+      "Dual Canadian citizens generally need a valid Canadian passport to board a flight to Canada; Canadian-American dual citizens have a specific US-passport exception.",
+      "Canada's rules do not protect the other citizenship from that country's loss or renunciation law.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [
+      {
+        label: "What is dual citizenship?",
+        publisher: "Immigration, Refugees and Citizenship Canada",
+        url: "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=356",
+      },
+      {
+        label: "Dual Canadian citizens need a valid Canadian passport",
+        publisher: "Government of Canada",
+        url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/dual-canadian-citizens-visit-canada.html",
+      },
+    ],
+  },
+  {
+    code: "AU",
+    country: "Australia",
+    status: "generally_allowed",
+    headline: "Australian citizens may hold another citizenship when the other country permits it.",
+    summary: "Australia's official citizenship guidance expressly recognizes dual and multiple citizenship; the law of every other country in the combination remains independently relevant.",
+    practicalNotes: [
+      "An Australian citizen remains subject to Australian law in Australia and to specified Australian laws while overseas.",
+      "Consular assistance can be limited in the country of the person's other nationality.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [{
+      label: "Australian Citizenship: Our Common Bond",
+      publisher: "Department of Home Affairs, Australia",
+      url: "https://immi.homeaffairs.gov.au/citizenship-subsite/files/our-common-bond-testable.pdf",
+    }],
+  },
+  {
+    code: "FR",
+    country: "France",
+    status: "generally_allowed",
+    headline: "France permits dual and multiple nationality.",
+    summary: "French law does not require a person becoming French to renounce an existing nationality, or a French citizen acquiring another nationality to renounce French nationality.",
+    practicalNotes: [
+      "A French multiple national is generally treated only as a national of the other country while in that country, which can limit French diplomatic protection.",
+      "A person becoming French declares which existing nationalities they intend to retain or renounce.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [{
+      label: "Peut-on avoir plusieurs nationalités en France ?",
+      publisher: "Service Public, French Republic",
+      url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F334",
+    }],
+  },
+  {
+    code: "IE",
+    country: "Ireland",
+    status: "generally_allowed",
+    headline: "Irish law allows a person to retain another citizenship.",
+    summary: "An Irish citizen does not have to give up Irish citizenship to become a citizen elsewhere, and a person does not have to give up another citizenship to become Irish by naturalisation, birth, or descent.",
+    practicalNotes: [
+      "The other country's law may still require renunciation or cause automatic loss.",
+      "Irish consular protection can be limited while a dual citizen is in the country of their other nationality.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [{
+      label: "Dual Citizenship",
+      publisher: "Immigration Service Delivery, Department of Justice, Ireland",
+      url: "https://www.irishimmigration.ie/how-to-become-a-citizen/dual-citizenship/",
+    }],
+  },
+  {
+    code: "IT",
+    country: "Italy",
+    status: "generally_allowed",
+    headline: "Italy generally permits an Italian citizen to retain a later foreign citizenship.",
+    summary: "Since Law No. 91/1992 took effect, acquiring a foreign citizenship does not ordinarily cause loss of Italian citizenship unless the person formally renounces it, subject to international agreements.",
+    practicalNotes: [
+      "Citizenship recognition by descent was materially restricted in 2025 for people born abroad who already hold another citizenship.",
+      "Historic loss, reacquisition, descent, and treaty cases require route-specific review.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [{
+      label: "Cittadinanza",
+      publisher: "Ministry of Foreign Affairs and International Cooperation, Italy",
+      url: "https://www.esteri.it/it/servizi-consolari-e-visti/normativa_consolare/serviziconsolari/cittadinanza/",
+    }],
+  },
+  {
+    code: "BR",
+    country: "Brazil",
+    status: "generally_allowed",
+    headline: "Brazil no longer removes nationality merely because another nationality was acquired.",
+    summary: "Constitutional Amendment No. 131 of 2023 removed voluntary acquisition of another nationality as an automatic ground for loss; loss now generally requires an express request or judicial cancellation in the defined cases.",
+    practicalNotes: [
+      "An express loss request cannot be accepted where it would create statelessness.",
+      "Renunciation does not prevent later reacquisition of original Brazilian nationality under the law.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [{
+      label: "Constitutional Amendment No. 131",
+      publisher: "Presidency of the Federative Republic of Brazil",
+      url: "https://www.presidencia.gov.br/ccivil_03/constituicao/emendas/emc/emc131.htm",
+    }],
+  },
+  {
+    code: "ES",
+    country: "Spain",
+    status: "conditional",
+    headline: "Spanish dual-nationality outcomes depend on origin, the other country, residence, and conservation procedures.",
+    summary: "Spain protects dual nationality without renunciation for specified Ibero-American countries, Andorra, the Philippines, Equatorial Guinea and Portugal; a bilateral convention separately covers France. Other acquisition and retention cases can require renunciation declarations or a timely declaration to conserve Spanish nationality.",
+    practicalNotes: [
+      "Some Spanish citizens resident abroad must declare their wish to retain Spanish nationality within three years of acquiring or exclusively using another nationality.",
+      "People born and resident abroad to a Spanish parent also born abroad can face a separate conservation deadline after majority or emancipation.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [
+      {
+        label: "Tener la Doble Nacionalidad",
+        publisher: "Ministry of Justice, Spain",
+        url: "https://www.mjusticia.gob.es/es/ciudadania/nacionalidad/que-es-nacionalidad/tener-doble-nacionalidad",
+      },
+      {
+        label: "Spanish Civil Code, Article 24",
+        publisher: "Official State Gazette, Spain",
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763",
+      },
+      {
+        label: "Spain–France nationality convention",
+        publisher: "Official State Gazette, Spain",
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2022-4916",
+      },
+    ],
+  },
+  {
+    code: "IL",
+    country: "Israel",
+    status: "conditional",
+    headline: "Israeli multiple-citizenship treatment depends strongly on the acquisition route.",
+    summary: "Israel has official procedures for citizens who already hold another nationality, but ordinary naturalisation of a permanent resident requires relinquishing the other citizenship or proving it will cease after naturalisation.",
+    practicalNotes: [
+      "Citizenship acquired through return, birth, residence, naturalisation, or grant can engage different rules.",
+      "A mobility combination containing Israel should not be treated as legally attainable without checking the person's acquisition route and the other country's law.",
+    ],
+    reviewedAt: "2026-08-30",
+    sources: [
+      {
+        label: "Naturalisation for permanent residents",
+        publisher: "Population and Immigration Authority, Israel",
+        url: "https://www.gov.il/en/service/request_for_citizenship_of_a_person_who_holds_pemanent_residency",
+      },
+      {
+        label: "Renounce Israeli citizenship to keep foreign citizenship",
+        publisher: "Population and Immigration Authority, Israel",
+        url: "https://www.gov.il/en/service/treatment_of_waiver_of_citizenship_for_applicant_who_keeps_previous_citizenship",
+      },
+    ],
+  },
+  {
     code: "IN",
     country: "India",
     status: "generally_restricted",

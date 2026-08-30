@@ -33,5 +33,6 @@ MultiPass Rank displays non-blocking cautions for reviewed conditional or genera
 
 - [Build a passport combination](${absoluteUrl("/compare")})
 - [Read how many passports one person can have](${absoluteUrl("/how-many-passports-can-you-have")})
+- [Explore reviewed citizenship acquisition routes](${absoluteUrl("/citizenship-by-descent")})
 - [Read the dual-passport mobility guide](${absoluteUrl("/dual-passport")})`, "/dual-citizenship-countries");
 };

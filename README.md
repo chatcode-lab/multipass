@@ -136,6 +136,8 @@ Non-official catalogs are accepted only in a quarantined discovery lane. `npm ru
 
 For agents and programmatic clients, `GET /api/v1/visa/{PASSPORT}/{DESTINATION}` returns the current category, evidence level, structured allowed stay, conditions, official sources, and application route for one pair.
 
+Citizenship-law research is deliberately separate from the mobility score. `/dual-citizenship-countries` and `GET /api/v1/citizenship-policies` expose reviewed retention and compatibility summaries; `/citizenship-by-descent` and `GET /api/v1/citizenship-acquisition` expose selected descent and naturalisation routes with current-law transition notes. Unreviewed countries and routes remain unknown rather than receiving inferred yes/no labels.
+
 Dataset JSON-LD identifies MultiPass Rank as creator and publisher and links to `/data-license`. The license covers the site’s original evidence metadata and presentation, not upstream access snapshots or official source documents.
 
 ## Cloudflare provisioning

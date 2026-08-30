@@ -13,6 +13,15 @@ interface CoverageMask {
   words: Uint32Array;
 }
 
+export interface SecondPassportCandidate {
+  code: string;
+  combinedAccessibleDestinations: number;
+  combinedMobilityScore: number;
+  marginalEasyDestinations: number;
+  candidateEasyDestinations: number;
+  gainedDestinationCodes: string[];
+}
+
 function popcount32(value: number): number {
   let current = value - ((value >>> 1) & 0x55555555);
   current = (current & 0x33333333) + ((current >>> 2) & 0x33333333);
@@ -302,4 +311,43 @@ export function analyzePassportCombinations(
       marginalGains: gains,
     },
   };
+}
+
+export function rankSecondPassportCandidates(
+  baseCode: string,
+  manifest: SnapshotManifest,
+  details: Record<string, PassportAccess>,
+): SecondPassportCandidate[] {
+  const normalizedBaseCode = baseCode.toUpperCase();
+  const base = details[normalizedBaseCode];
+  if (!base) throw new Error(`Missing passport detail for ${normalizedBaseCode}`);
+
+  const baseEasy = new Set(manifest.destinations
+    .filter((destination) => EASY_ACCESS.has(base.statuses[destination.code]))
+    .map((destination) => destination.code));
+
+  return manifest.passports
+    .filter((passport) => passport.code !== normalizedBaseCode)
+    .map((passport) => {
+      const candidate = details[passport.code];
+      if (!candidate) throw new Error(`Missing passport detail for ${passport.code}`);
+      const candidateEasyCodes = manifest.destinations
+        .filter((destination) => EASY_ACCESS.has(candidate.statuses[destination.code]))
+        .map((destination) => destination.code);
+      const gainedDestinationCodes = candidateEasyCodes.filter((code) => !baseEasy.has(code));
+      const combinedAccessibleDestinations = baseEasy.size + gainedDestinationCodes.length;
+      return {
+        code: passport.code,
+        combinedAccessibleDestinations,
+        combinedMobilityScore: Math.max(0, combinedAccessibleDestinations - 1),
+        marginalEasyDestinations: gainedDestinationCodes.length,
+        candidateEasyDestinations: candidateEasyCodes.length,
+        gainedDestinationCodes,
+      };
+    })
+    .sort((first, second) =>
+      second.combinedAccessibleDestinations - first.combinedAccessibleDestinations
+      || second.marginalEasyDestinations - first.marginalEasyDestinations
+      || second.candidateEasyDestinations - first.candidateEasyDestinations
+      || first.code.localeCompare(second.code));
 }

@@ -1,0 +1,181 @@
+---
+import PassportCover from "@/components/PassportCover";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CITIZENSHIP_POLICY_BY_CODE, CITIZENSHIP_POLICY_STATUS_META } from "@/data/citizenship-policies";
+import { getDataContext, getPassportAccessBatch } from "@/lib/data";
+import { datasetMetadata } from "@/lib/dataset";
+import { comparisonHref, flagEmojiFor, rankHref } from "@/lib/geography";
+import { rankSecondPassportCandidates } from "@/lib/combination-insights";
+
+const { manifest } = await getDataContext(Astro.locals);
+const details = await getPassportAccessBatch(Astro.locals, manifest.passports.map((passport) => passport.code), manifest.version);
+const candidates = rankSecondPassportCandidates("US", manifest, details);
+const topCandidates = candidates.slice(0, 10);
+const winner = topCandidates[0];
+const passportByCode = new Map(manifest.passports.map((passport) => [passport.code, passport]));
+const destinationByCode = new Map(manifest.destinations.map((destination) => [destination.code, destination]));
+const winnerPassport = passportByCode.get(winner.code)!;
+const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric" }).format(new Date(manifest.checkedAt));
+const description = `See which second passport adds the most easy-access destinations to a US passport in the current ${manifest.destinations.length}-destination dataset, with exact gains and direct comparison links.`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Best second passport for US citizens by marginal travel access",
+    description,
+    datePublished: "2026-08-30",
+    dateModified: manifest.checkedAt.slice(0, 10) > "2026-08-30" ? manifest.checkedAt : "2026-08-30",
+    author: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    publisher: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
+    mainEntityOfPage: "https://multipassrank.com/best-second-passport-for-us-citizens",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Second-passport marginal travel access for a United States passport",
+    description,
+    dateModified: manifest.checkedAt,
+    spatialCoverage: "Worldwide",
+    variableMeasured: ["Combined easy-access destinations", "Marginal easy-access destinations"],
+    ...datasetMetadata("https://multipassrank.com/best-second-passport-for-us-citizens"),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is the best second passport for a US citizen for visa-free travel?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `In the snapshot checked ${checkedDate}, ${winnerPassport.name} creates the highest easy-access total with a US passport: ${winner.combinedAccessibleDestinations} of ${manifest.destinations.length} tracked destinations, adding ${winner.marginalEasyDestinations} destinations beyond the US passport alone. This is a hypothetical travel-access result, not an acquisition recommendation.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is this the best dual citizenship for US citizens?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "It is the highest marginal short-visit access result in this dataset, not a general citizenship recommendation. The ranking does not measure eligibility, residence time, ancestry, cost, tax, military service, nationality retention, or processing risk.",
+        },
+      },
+    ],
+  },
+];
+
+Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800");
+---
+
+<BaseLayout
+  title="Best Second Passport for US Citizens by Travel Access | MultiPass Rank"
+  description={description}
+  canonical="/best-second-passport-for-us-citizens"
+  markdownHref="/best-second-passport-for-us-citizens.md"
+  ogType="article"
+  structuredData={structuredData}
+>
+  <article class="research-article">
+    <header class="research-hero">
+      <span class="eyebrow">US passport complement analysis · checked {checkedDate}</span>
+      <h1>The best second passport depends on what “best” means.</h1>
+      <p>
+        For short-visit access alone, we can answer exactly: test every passport against the US passport and count only the
+        destinations newly unlocked without prior visa approval.
+      </p>
+    </header>
+
+    <section class="research-results" aria-label="Highest marginal travel-access result">
+      <article class="research-result-card">
+        <div class="research-result-card__visual">
+          <PassportCover codes={["US", winner.code]} names={["United States", winnerPassport.name]} size="medium" />
+          <span>Highest marginal reach</span>
+        </div>
+        <div class="research-result-card__body">
+          <span class="eyebrow">Best in the current snapshot</span>
+          <h2>United States + {winnerPassport.name}</h2>
+          <p>
+            This pair reaches the largest easy-access set in the current data. It says nothing about whether a particular person
+            qualifies for, can retain, or should seek the second citizenship.
+          </p>
+          <dl class="research-metrics">
+            <div><dt>Combined access</dt><dd>{winner.combinedAccessibleDestinations}<small> / {manifest.destinations.length}</small></dd></div>
+            <div><dt>New destinations</dt><dd>+{winner.marginalEasyDestinations}</dd></div>
+            <div><dt>Combined score</dt><dd>{winner.combinedMobilityScore}</dd></div>
+          </dl>
+          <div class="research-actions">
+            <a class="button button--primary" href={rankHref([["US", winner.code]])}>View combined rank</a>
+            <a class="button button--quiet" href={comparisonHref([["US"], [winner.code]])}>Compare passports</a>
+            <a class="text-link" href={comparisonHref([["US", winner.code]])}>Combined destination list</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="research-cover-section">
+      <div class="research-section-heading">
+        <div><span class="eyebrow">Every candidate tested</span><h2>Top ten complements to a US passport.</h2></div>
+        <p>Easy access includes citizenship, visa-free entry, ETA, and visa on arrival. eVisa and advance visa routes do not increase this score.</p>
+      </div>
+      <ol class="second-passport-list">
+        {topCandidates.map((candidate, index) => {
+          const passport = passportByCode.get(candidate.code)!;
+          const policy = CITIZENSHIP_POLICY_BY_CODE.get(candidate.code);
+          const gainedNames = candidate.gainedDestinationCodes.map((code) => destinationByCode.get(code)?.name ?? code);
+          return (
+            <li>
+              <span class="second-passport-list__rank">{index + 1}</span>
+              <span class="country-flag" aria-hidden="true">{flagEmojiFor(candidate.code)}</span>
+              <div class="second-passport-list__identity">
+                <a href={`/passport/${passport.slug}`}>{passport.name}</a>
+                <small>{policy ? CITIZENSHIP_POLICY_STATUS_META[policy.status].shortLabel : "Compatibility not yet reviewed"}</small>
+              </div>
+              <div class="second-passport-list__gain">
+                <strong>+{candidate.marginalEasyDestinations}</strong><small>new easy-access destinations</small>
+              </div>
+              <div class="second-passport-list__total">
+                <strong>{candidate.combinedAccessibleDestinations}</strong><small>combined access</small>
+              </div>
+              <details>
+                <summary>See gains</summary>
+                <p>{gainedNames.length ? gainedNames.join(" · ") : "No additional easy-access destinations in this snapshot."}</p>
+                <div class="research-actions">
+                  <a href={rankHref([["US", candidate.code]])}>Rank set</a>
+                  <a href={comparisonHref([["US"], [candidate.code]])}>Compare</a>
+                </div>
+              </details>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+
+    <div class="research-copy">
+      <section>
+        <span class="eyebrow">Why the answer is narrow</span>
+        <h2>Is this the best dual citizenship for a US citizen?</h2>
+        <p>
+          Only if “best” means the largest marginal short-visit access set in this snapshot. A second high-ranking passport can add little when its visa exceptions mirror the US passport. A lower-ranked passport can
+          add more when the two access profiles complement each other. That is the only optimization performed here.
+        </p>
+        <p>
+          Acquisition can depend on <a href="/citizenship-by-descent">descent, legal residence, language, and current transition rules</a>.
+          Retention is separate again: review the <a href="/dual-citizenship-countries">official-source compatibility register</a> before
+          treating any pair as legally attainable.
+        </p>
+      </section>
+      <section>
+        <span class="eyebrow">Reproducible method</span>
+        <h2>Marginal gain, destination by destination.</h2>
+        <p>
+          For each of the other {manifest.passports.length - 1} passports, the analysis forms a two-passport set with the United States.
+          Each destination keeps the easier of the two current access categories. Candidates sort by combined easy-access count,
+          then marginal gain, then the candidate's own easy-access total.
+        </p>
+        <div class="research-actions">
+          <a class="button button--quiet" href="/methodology">Read the scoring method</a>
+          <a class="text-link" href="/best-passport-combination">See the unrestricted best pair</a>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

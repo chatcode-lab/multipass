@@ -23,7 +23,9 @@ const STATIC_PATHS = [
   "compare",
   "dual-passport",
   "dual-citizenship-countries",
+  "citizenship-by-descent",
   "best-passport-combination",
+  "best-second-passport-for-us-citizens",
   "how-many-passports-to-cover-the-world",
   "how-many-passports-can-you-have",
   "evisa-vs-eta",
@@ -44,7 +46,7 @@ export function escapeXml(value: string): string {
 
 export function sitemapLastModified(manifest: SnapshotManifest): string {
   const checkedAt = manifest.checkedAt.slice(0, 10);
-  return checkedAt > "2026-08-28" ? checkedAt : "2026-08-28";
+  return checkedAt > "2026-08-30" ? checkedAt : "2026-08-30";
 }
 
 export function sitemapRegionSlug(region: Region): string {

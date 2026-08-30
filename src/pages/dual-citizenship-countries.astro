@@ -4,6 +4,7 @@ import { CITIZENSHIP_POLICIES, CITIZENSHIP_POLICY_STATUS_META } from "@/data/cit
 import { datasetMetadata } from "@/lib/dataset";
 import { flagEmojiFor } from "@/lib/geography";
 import { citizenshipPolicyAnchor } from "@/lib/citizenship-compatibility";
+import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
 
 const description = "Compare official dual-citizenship rules for reviewed countries and check whether a proposed passport combination may require renunciation, retention, or age-specific review.";
 const groups = ["generally_restricted", "conditional", "generally_allowed"] as const;
@@ -13,7 +14,7 @@ const structuredData = [
     "@type": "Dataset",
     name: "Reviewed multiple-citizenship policies",
     description,
-    dateModified: "2026-08-28",
+    dateModified: "2026-08-30",
     spatialCoverage: CITIZENSHIP_POLICIES.map((policy) => policy.country),
     distribution: {
       "@type": "DataDownload",
@@ -66,7 +67,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
 >
   <article class="citizenship-guide">
     <header class="research-hero citizenship-guide__hero">
-      <span class="eyebrow">Official-source policy review · 28 August 2026</span>
+      <span class="eyebrow">Official-source policy review · 30 August 2026</span>
       <h1>Can these citizenships actually be held together?</h1>
       <p>
         A combined passport score is a useful hypothetical. Citizenship law is the constraint: some countries permit multiple
@@ -74,6 +75,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
       </p>
       <div class="research-actions research-actions--hero">
         <a class="button button--primary" href="/compare">Build a passport combination</a>
+        <a class="button button--quiet" href="/citizenship-by-descent">Review acquisition routes</a>
         <a class="button button--quiet" href="/how-many-passports-can-you-have">How many passports can one person have?</a>
       </div>
     </header>
@@ -108,6 +110,14 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
                 <strong>{policy.headline}</strong>
                 <p>{policy.summary}</p>
                 <ul>{policy.practicalNotes.map((note) => <li>{note}</li>)}</ul>
+                {CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(policy.code)?.length && (
+                  <div class="citizenship-policy-card__routes">
+                    <span>Reviewed acquisition routes</span>
+                    {CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(policy.code)!.map((route) => (
+                      <a href={`/citizenship-by-descent#${route.id}`}>{route.title}</a>
+                    ))}
+                  </div>
+                )}
                 <div class="citizenship-policy-card__sources">
                   <span>Official {policy.sources.length === 1 ? "source" : "sources"}</span>
                   {policy.sources.map((source) => <a href={source.url} rel="noreferrer">{source.publisher}: {source.label}</a>)}
@@ -129,9 +139,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
           citizenship, whether an exception applies, or what a competent authority would decide.
         </p>
         <p>
-          The next research passes will expand this register and separate acquisition routes—birth, descent, naturalisation,
-          marriage, restoration and exceptional grants—from retention rules. That structure is more useful than a simplistic
-          yes/no list and makes every future statement traceable to an official authority.
+          Acquisition is a separate question from retention. The first structured records for descent and residence routes are now
+          available in the <a href="/citizenship-by-descent">citizenship acquisition guide</a>; later passes will extend them without
+          inferring that an unreviewed route is unavailable.
         </p>
       </section>
     </section>
