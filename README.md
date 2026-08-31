@@ -6,7 +6,7 @@
 
 MultiPass Rank is an evidence-aware passport-ranking and multi-passport combination tool. It ranks 199 passports, compares access across 227 countries and territories, and answers the question ordinary rankings skip: **what does a set of passports cover together?**
 
-[Open the live tool](https://multipassrank.com) · [Browse destinations](https://multipassrank.com/destinations) · [Inspect evidence coverage](https://multipassrank.com/status) · [Read the AI guide](https://multipassrank.com/ai)
+[Open the live tool](https://multipassrank.com) · [Measure incremental gains](https://multipassrank.com/improve) · [Browse destinations](https://multipassrank.com/destinations) · [Inspect evidence coverage](https://multipassrank.com/status) · [Read the AI guide](https://multipassrank.com/ai)
 
 The application is intentionally direct: no accounts, lead forms, analytics, or commercial ranking adjustments. It was built with Codex through [chatcode.dev](https://chatcode.dev) in partnership with [Settlers Club](https://settlers.club), and is published as a [Chatcode Lab](https://chatcode.dev/lab/multipass-rank-passport-combination-calculator/) project.
 
@@ -15,11 +15,12 @@ The application is intentionally direct: no accounts, lead forms, analytics, or 
 - Ranks individual passports using visa-free, visa-on-arrival, and ETA access.
 - Combines up to five passports and places the resulting set into the global ranking.
 - Compares individual or combined sets destination by destination, with regional filters and differences-only mode.
+- Builds an ordered improvement sequence and shows what each added passport or set contributes beyond all preceding stages.
 - Gives every passport, destination, and verified passport–destination relationship a stable HTML and Markdown URL.
 - Publishes an inspectable evidence matrix showing exact support, officially characterized conditional relationships, structured stay-limit coverage, and source-review dates.
 - Exposes same-origin JSON endpoints and an AI-oriented guide for reproducible comparisons.
 
-As of 28 August 2026, the official-source layer supports 40,805 of 44,974 foreign-access relationships (90.7%). Another 682 relationships are officially characterized without being forced into one misleading rank category, and 4,127 relationships have a structured allowed-stay rule. The live [status page](https://multipassrank.com/status) is the current authority for progress.
+As of 31 August 2026, the official-source layer supports 40,805 of 44,974 foreign-access relationships (90.7%). Another 839 relationships are officially characterized without being forced into one misleading rank category, and 4,127 relationships have a structured allowed-stay rule. The live [status page](https://multipassrank.com/status) is the current authority for progress.
 
 Regional and language collections are generated from the registry in `src/lib/geography.ts`. Language groups use official or nationally designated administrative/working-language status rather than ethnicity or assumed individual fluency.
 
@@ -97,7 +98,7 @@ Before publication, the Worker also evaluates every two- and three-passport comb
 
 The sync Worker keeps the current per-passport generation and, at most, one rollback generation while publishing one complete `snapshot:current` value; older generations are removed. The public application reads that single value through Cloudflare's edge cache (one-hour TTL), then caches the decoded snapshot in each Worker isolate for five minutes. Matrix, sitemap, and destination requests therefore do not multiply one page view into hundreds of billable KV reads; warm edge requests do not read KV at all. Browsers only use same-origin `/api/v1/*` routes and never contact the upstream provider.
 
-Shareable tools use the same URL convention: each `set` query parameter is one option, and comma-separated codes form a combined option. `/compare?set=US,CA&set=PT` compares destination access; `/rank?set=US,CA&set=PT` places both options into the global ranking. Add `.md` before the query string for a text-first version.
+Shareable tools use the same URL convention: each `set` query parameter is one option, and comma-separated codes form a combined option. `/compare?set=US,CA&set=PT` compares destination access; `/rank?set=US,CA&set=PT` places both options into the global ranking. In `/improve?set=US&set=IT&set=IE,PT`, order is significant and every stage is measured against the cumulative preceding access. Add `.md` before the query string for a text-first version.
 
 The interactive builders intentionally cap manual combinations at five passports. Direct research links and the JSON comparison API accept up to ten passports per set so the exact world-coverage experiment remains reproducible.
 

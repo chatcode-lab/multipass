@@ -7,7 +7,7 @@ import {
 import { absoluteUrl, escapeMarkdown, markdownResponse } from "@/lib/markdown";
 
 export const GET: APIRoute = () => {
-  const routeTypes: CitizenshipAcquisitionRouteType[] = ["descent", "naturalisation", "marriage", "restoration"];
+  const routeTypes: CitizenshipAcquisitionRouteType[] = ["descent", "naturalisation", "marriage", "restoration", "exceptional"];
   const sections = routeTypes.flatMap((type) => {
     const routes = CITIZENSHIP_ACQUISITION_ROUTES.filter((route) => route.type === type);
     if (!routes.length) return [];
@@ -37,4 +37,3 @@ ${sections}
 - [Build a passport combination](${absoluteUrl("/compare")})
 - [Read the methodology](${absoluteUrl("/methodology")})`, "/citizenship-by-descent");
 };
-

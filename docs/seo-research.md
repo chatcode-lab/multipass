@@ -75,7 +75,7 @@ A US/English DataForSEO Labs check on 20 August 2026 found a larger question-led
 
 Prioritize experiments that produce new information from the dataset:
 
-1. **Best second passport for US, UK, Canadian, and EU-passport holders** — maximize marginal easy-access gain from a stated first passport; keep acquisition and legal feasibility explicitly out of scope.
+1. **Best second passport for US, UK, Canadian, and EU-passport holders** — distinguish the mathematical marginal-access result from documented acquisition routes, compatibility, and non-tourism rights; never turn access gain into an attainability claim.
 2. **Where the strongest passports still need visas** — map the remaining gaps for the leading passports and explain why headline ranks hide different exceptions.
 3. **Most complementary versus most redundant passport pairs** — rank overlap, unique gains, and regional distribution rather than raw combined score alone.
 4. **Regional set-cover experiments** — smallest passport set covering Africa, Asia, Europe, the Americas, the Caribbean, the Middle East, or Oceania.
@@ -116,6 +116,18 @@ The clearest near-term opportunities remain close to the product rather than gen
 - “Tunisia passport rank” has 1 click from 40 impressions at 10.5.
 
 Country and destination pages create most impressions but still rank weakly. The highest-impression examples include the New Zealand destination page and passport pages for Hong Kong, Japan, Singapore, Pakistan, Morocco and Bangladesh. Country-page titles, descriptions and headings should state the exact passport rank and visa-free-country intent, while evidence depth and official-source citations remain the long-term differentiator. Mass-producing generic destination prose would increase crawl inventory without addressing that weakness.
+
+## Incremental-gain and acquisition-intent update — 31 August 2026
+
+A US Google Ads keyword check through DataForSEO cost USD 0.09. “Best second passport for US citizens” reports about 40 monthly searches, rising to 70 in July 2026, while “improve passport” reports about 10; “passport combo” reports about 20. Most synthetic calculator variants return no measurable volume. The product therefore keeps `/improve` concise and utility-led while the existing US article remains the primary search-intent page.
+
+The US article now separates three questions that must not be collapsed into one ranking:
+
+- mathematical marginal short-visit access;
+- a documented route through which a person might acquire the nationality; and
+- non-tourism rights, especially EU citizenship rights to live, work and study across the Union.
+
+The UAE remains the travel-only maximum in the current snapshot, but the official UAE source limits citizenship to exceptional government nomination. It is labeled as a benchmark rather than a practical recommendation. Reviewed EU routes are presented as starting points for ancestry or residence research, never as assumptions about personal eligibility.
 
 A four-market DataForSEO Labs review (United States, United Kingdom, India and the Philippines) cost approximately USD 0.20. Directional opportunities include:
 

@@ -1,4 +1,4 @@
-import { collectionForRegion, comparisonHref, formatRegion, rankHref, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
+import { collectionForRegion, comparisonHref, formatRegion, improveHref, rankHref, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import { citizenshipCombinationNoticesMarkdown, citizenshipPolicyFor } from "./citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "../data/citizenship-acquisition";
@@ -159,6 +159,7 @@ Current profile: ${statusCounts.visa_free ?? 0} visa-free, ${statusCounts.visa_o
 Data checked ${checkedDate(manifest)}. Entry rules can change; verify official requirements before travel.
 
 [Compare the ${passport.name} passport](${absoluteUrl(`/compare?set=${passport.code}`)})
+[Measure additions to the ${passport.name} passport](${absoluteUrl(improveHref([[passport.code]]))})
 [Place the ${passport.name} passport in the global ranking](${absoluteUrl(`/rank?set=${passport.code}`)})
 
 ## Related rankings and comparisons

@@ -98,6 +98,36 @@ export interface ComparisonResult {
   checkedAt: string;
 }
 
+export interface ImprovementStage {
+  id: string;
+  addedCodes: string[];
+  cumulativeCodes: string[];
+  name: string;
+  cumulativeAccessibleDestinations: number;
+  mobilityScore: number;
+  rankEquivalent: number;
+  marginalEasyDestinations: number;
+  gainedDestinationCodes: string[];
+}
+
+export interface ImprovementCell extends ComparisonCell {
+  improved: boolean;
+  scoreGain: boolean;
+}
+
+export interface ImprovementRow {
+  destination: Destination;
+  cells: ImprovementCell[];
+  hasImprovement: boolean;
+  hasScoreGain: boolean;
+}
+
+export interface ImprovementResult {
+  stages: ImprovementStage[];
+  rows: ImprovementRow[];
+  checkedAt: string;
+}
+
 export interface CombinationCoverage {
   codes: string[];
   accessibleDestinations: number;

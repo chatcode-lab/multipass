@@ -19,6 +19,15 @@ export function flagEmojiFor(code: string): string {
     .join("");
 }
 
+export function improveHref(sets: readonly (readonly string[])[]): string {
+  const params = new URLSearchParams();
+  for (const set of sets) {
+    if (set.length) params.append("set", set.join(","));
+  }
+  const query = params.toString();
+  return `/improve${query ? `?${query}` : ""}`;
+}
+
 // A concise disclosure list of UN M49 / ISO-coded areas that are not modeled
 // as separate destinations by the upstream access dataset. Remote uninhabited
 // areas are intentionally omitted from this user-facing list.

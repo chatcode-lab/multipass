@@ -1,0 +1,55 @@
+---
+import ImprovePassportTool from "@/components/ImprovePassportTool";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext, getPassportAccessBatch } from "@/lib/data";
+import { improvePassportSets, parsePassportSets } from "@/lib/passport";
+import type { ImprovementResult } from "@/lib/types";
+
+const { manifest } = await getDataContext(Astro.locals);
+const requestedSets = Astro.url.searchParams.getAll("set");
+const sets = parsePassportSets(requestedSets, new Set(manifest.passports.map((passport) => passport.code)));
+let initialResult: ImprovementResult | null = null;
+if (sets.length) {
+  const codes = sets.flatMap((set) => set.codes);
+  if (new Set(codes).size === codes.length && codes.length <= 10) {
+    const details = await getPassportAccessBatch(Astro.locals, codes, manifest.version);
+    try {
+      initialResult = improvePassportSets(sets, manifest, details);
+    } catch {
+      initialResult = null;
+    }
+  }
+}
+Astro.response.headers.set("Cache-Control", requestedSets.length ? "private, no-store" : "public, max-age=300, s-maxage=3600");
+
+const description = "Build an ordered passport combination and measure exactly what each added passport or set contributes to easy-access destinations, cumulative score, and rank.";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Improve Passport incremental combination calculator",
+  url: "https://multipassrank.com/improve",
+  applicationCategory: "TravelApplication",
+  operatingSystem: "Any",
+  description,
+  featureList: "Ordered passport sets, marginal destination gains, cumulative passport score, regional filters",
+  isAccessibleForFree: true,
+};
+---
+
+<BaseLayout
+  title="Improve Passport — Incremental Passport Combination Calculator | MultiPass Rank"
+  description={description}
+  canonical="/improve"
+  markdownHref={`/improve.md${Astro.url.search}`}
+  noindex={requestedSets.length > 0}
+  structuredData={structuredData}
+>
+  <header class="page-intro page-intro--compare">
+    <span class="eyebrow">Incremental passport calculator</span>
+    <h1>See what every added passport actually gains.</h1>
+    <p>Start with what you hold, then add individual passports or sets. Every stage is measured against the combined access already accumulated before it.</p>
+  </header>
+  <section class="section section--tight">
+    <ImprovePassportTool passports={manifest.passports} initialSets={sets.map((set) => set.codes)} initialResult={initialResult} client:load />
+  </section>
+</BaseLayout>

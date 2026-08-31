@@ -2,9 +2,10 @@
 import PassportCover from "@/components/PassportCover";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { CITIZENSHIP_POLICY_BY_CODE, CITIZENSHIP_POLICY_STATUS_META } from "@/data/citizenship-policies";
+import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
 import { getDataContext, getPassportAccessBatch } from "@/lib/data";
 import { datasetMetadata } from "@/lib/dataset";
-import { comparisonHref, flagEmojiFor, rankHref } from "@/lib/geography";
+import { comparisonHref, flagEmojiFor, improveHref, PASSPORT_COLLECTIONS, rankHref } from "@/lib/geography";
 import { rankSecondPassportCandidates } from "@/lib/combination-insights";
 
 const { manifest } = await getDataContext(Astro.locals);
@@ -15,6 +16,11 @@ const winner = topCandidates[0];
 const passportByCode = new Map(manifest.passports.map((passport) => [passport.code, passport]));
 const destinationByCode = new Map(manifest.destinations.map((destination) => [destination.code, destination]));
 const winnerPassport = passportByCode.get(winner.code)!;
+const winnerRoutes = CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(winner.code) ?? [];
+const euCodes = new Set(PASSPORT_COLLECTIONS.find((collection) => collection.slug === "european-union")?.codes ?? []);
+const reviewedEuCandidates = candidates
+  .filter((candidate) => euCodes.has(candidate.code) && CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.has(candidate.code))
+  .slice(0, 6);
 const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric" }).format(new Date(manifest.checkedAt));
 const description = `See which second passport adds the most easy-access destinations to a US passport in the current ${manifest.destinations.length}-destination dataset, with exact gains and direct comparison links.`;
 const structuredData = [
@@ -24,7 +30,7 @@ const structuredData = [
     headline: "Best second passport for US citizens by marginal travel access",
     description,
     datePublished: "2026-08-30",
-    dateModified: manifest.checkedAt.slice(0, 10) > "2026-08-30" ? manifest.checkedAt : "2026-08-30",
+    dateModified: manifest.checkedAt.slice(0, 10) > "2026-08-31" ? manifest.checkedAt : "2026-08-31",
     author: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
     publisher: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com" },
     mainEntityOfPage: "https://multipassrank.com/best-second-passport-for-us-citizens",
@@ -48,7 +54,15 @@ const structuredData = [
         name: "What is the best second passport for a US citizen for visa-free travel?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: `In the snapshot checked ${checkedDate}, ${winnerPassport.name} creates the highest easy-access total with a US passport: ${winner.combinedAccessibleDestinations} of ${manifest.destinations.length} tracked destinations, adding ${winner.marginalEasyDestinations} destinations beyond the US passport alone. This is a hypothetical travel-access result, not an acquisition recommendation.`,
+          text: `In the snapshot checked ${checkedDate}, ${winnerPassport.name} creates the highest easy-access total with a US passport: ${winner.combinedAccessibleDestinations} of ${manifest.destinations.length} tracked destinations, adding ${winner.marginalEasyDestinations}. The UAE result is a mathematical benchmark, not a practical acquisition recommendation: its official route is limited to exceptional government nomination.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why might an EU passport be more useful to a US citizen than the travel-access winner?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Nationality of an EU country also confers EU citizenship rights, including rights to live, work and study in other EU countries. Those long-term rights are not counted by the short-visit mobility score, and acquisition still depends on a personal descent, residence or other legal route.",
         },
       },
       {
@@ -78,24 +92,21 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
     <header class="research-hero">
       <span class="eyebrow">US passport complement analysis · checked {checkedDate}</span>
       <h1>The best second passport depends on what “best” means.</h1>
-      <p>
-        For short-visit access alone, we can answer exactly: test every passport against the US passport and count only the
-        destinations newly unlocked without prior visa approval.
-      </p>
+      <p>For short-visit access alone, we can test every passport exactly. A useful second citizenship is a different question: it must be realistically obtainable and may matter more for where you can live, work, or study than for a handful of extra tourist entries.</p>
     </header>
 
     <section class="research-results" aria-label="Highest marginal travel-access result">
       <article class="research-result-card">
         <div class="research-result-card__visual">
           <PassportCover codes={["US", winner.code]} names={["United States", winnerPassport.name]} size="medium" />
-          <span>Highest marginal reach</span>
+          <span>Travel-only maximum</span>
         </div>
         <div class="research-result-card__body">
-          <span class="eyebrow">Best in the current snapshot</span>
+          <span class="eyebrow">Mathematical maximum · exceptional route</span>
           <h2>United States + {winnerPassport.name}</h2>
           <p>
-            This pair reaches the largest easy-access set in the current data. It says nothing about whether a particular person
-            qualifies for, can retain, or should seek the second citizenship.
+            This pair reaches the largest easy-access set in the current data, but the UAE is not a conventional second-passport option.
+            Its government describes acquisition only for narrow exceptional categories through official nomination—not an open application route for US citizens.
           </p>
           <dl class="research-metrics">
             <div><dt>Combined access</dt><dd>{winner.combinedAccessibleDestinations}<small> / {manifest.destinations.length}</small></dd></div>
@@ -105,10 +116,33 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
           <div class="research-actions">
             <a class="button button--primary" href={rankHref([["US", winner.code]])}>View combined rank</a>
             <a class="button button--quiet" href={comparisonHref([["US"], [winner.code]])}>Compare passports</a>
-            <a class="text-link" href={comparisonHref([["US", winner.code]])}>Combined destination list</a>
+            <a class="text-link" href={improveHref([["US"], [winner.code]])}>See incremental gains</a>
           </div>
+          {winnerRoutes.map((route) => <p class="research-source-note"><a href={`/citizenship-by-descent#${route.id}`}>{route.title}</a> · <a href={route.sources[0].url} rel="noreferrer">official UAE source</a></p>)}
         </div>
       </article>
+    </section>
+
+    <section class="research-cover-section eu-second-passport-section">
+      <div class="research-section-heading">
+        <div><span class="eyebrow">Beyond tourist access</span><h2>For many Americans, an eligible EU route is the strategic question.</h2></div>
+        <p>An EU-country passport may add fewer short-visit destinations than the UAE benchmark, but EU citizenship includes rights to live, work, and study across the Union. Eligibility—not score—is the first filter.</p>
+      </div>
+      <div class="eu-second-passport-grid">
+        {reviewedEuCandidates.map((candidate) => {
+          const passport = passportByCode.get(candidate.code)!;
+          const routes = CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(candidate.code)!;
+          return (
+            <article>
+              <div><span class="country-flag" aria-hidden="true">{flagEmojiFor(candidate.code)}</span><h3>{passport.name}</h3></div>
+              <p><strong>+{candidate.marginalEasyDestinations}</strong> short-visit destinations with a US passport</p>
+              <ul>{routes.map((route) => <li><a href={`/citizenship-by-descent#${route.id}`}>{route.title}</a></li>)}</ul>
+              <a class="text-link" href={improveHref([["US"], [candidate.code]])}>Measure the gain</a>
+            </article>
+          );
+        })}
+      </div>
+      <p class="research-source-note">The <a href="https://ec.europa.eu/justice/citizenship/index_en.html" rel="noreferrer">European Commission’s citizenship guide</a> describes the cross-EU rights. This page does not assume that every US citizen has an EU ancestry or residence route.</p>
     </section>
 
     <section class="research-cover-section">
@@ -120,6 +154,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
         {topCandidates.map((candidate, index) => {
           const passport = passportByCode.get(candidate.code)!;
           const policy = CITIZENSHIP_POLICY_BY_CODE.get(candidate.code);
+          const routes = CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(candidate.code) ?? [];
           const gainedNames = candidate.gainedDestinationCodes.map((code) => destinationByCode.get(code)?.name ?? code);
           return (
             <li>
@@ -127,7 +162,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
               <span class="country-flag" aria-hidden="true">{flagEmojiFor(candidate.code)}</span>
               <div class="second-passport-list__identity">
                 <a href={`/passport/${passport.slug}`}>{passport.name}</a>
-                <small>{policy ? CITIZENSHIP_POLICY_STATUS_META[policy.status].shortLabel : "Compatibility not yet reviewed"}</small>
+                <small>{routes.some((route) => route.type === "exceptional") ? "Exceptional nomination only" : routes.length ? `${routes.length} reviewed acquisition ${routes.length === 1 ? "route" : "routes"}` : policy ? CITIZENSHIP_POLICY_STATUS_META[policy.status].shortLabel : "Acquisition not yet reviewed"}</small>
               </div>
               <div class="second-passport-list__gain">
                 <strong>+{candidate.marginalEasyDestinations}</strong><small>new easy-access destinations</small>
@@ -141,6 +176,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
                 <div class="research-actions">
                   <a href={rankHref([["US", candidate.code]])}>Rank set</a>
                   <a href={comparisonHref([["US"], [candidate.code]])}>Compare</a>
+                  <a href={improveHref([["US"], [candidate.code]])}>Improve view</a>
                 </div>
               </details>
             </li>
@@ -162,6 +198,10 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
           Retention is separate again: review the <a href="/dual-citizenship-countries">official-source compatibility register</a> before
           treating any pair as legally attainable.
         </p>
+        <p>
+          It also misses rights outside tourism. Nationality of an EU member state automatically brings EU citizenship; the European Commission
+          describes rights to live, work, and study in another EU country. That can be strategically more valuable than maximizing this travel score.
+        </p>
       </section>
       <section>
         <span class="eyebrow">Reproducible method</span>
@@ -173,7 +213,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
         </p>
         <div class="research-actions">
           <a class="button button--quiet" href="/methodology">Read the scoring method</a>
-          <a class="text-link" href="/best-passport-combination">See the unrestricted best pair</a>
+          <a class="text-link" href="/improve?set=US">Build your own improvement sequence</a>
         </div>
       </section>
     </div>

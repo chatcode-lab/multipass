@@ -6,7 +6,7 @@ import StatusPill from "@/components/StatusPill";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccess } from "@/lib/data";
 import { datasetMetadata } from "@/lib/dataset";
-import { collectionForRegion, comparisonHref, formatRegion, relatedPassports } from "@/lib/geography";
+import { collectionForRegion, comparisonHref, formatRegion, improveHref, relatedPassports } from "@/lib/geography";
 import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
 import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
@@ -80,6 +80,7 @@ const structuredData = [
       </div>
       <div class="passport-hero__actions">
         <a class="button button--primary" href={`/compare?set=${passport.code}`}>Compare this passport</a>
+        <a class="button button--quiet" href={improveHref([[passport.code]])}>Improve this passport</a>
         <a class="button button--quiet" href={`/rank?set=${passport.code}`}>Place in ranking</a>
         <span class:list={["freshness", source === "fallback" && "freshness--fallback"]}>{source === "live" ? "Checked" : "Bundled snapshot"} {checkedDate}</span>
       </div>

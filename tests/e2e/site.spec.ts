@@ -144,6 +144,38 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   }
 });
 
+test("Improve Passport measures ordered cumulative gains for passport sets", async ({ page, request }) => {
+  await page.goto("/improve?set=US&set=IT&set=IE,PT");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("what every added passport actually gains");
+  await expect(page.locator(".improvement-stage")).toHaveCount(3);
+  await expect(page.locator(".improvement-stage").nth(0)).toContainText("base score");
+  await expect(page.locator(".improvement-stage").nth(1)).toContainText("new destinations");
+  await expect(page.getByRole("checkbox", { name: "New access only" })).toBeChecked();
+  await expect(page.locator(".improvement-cell--gain").first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Compare stages" })).toHaveAttribute(
+    "href",
+    "/compare?set=US&set=US%2CIT&set=US%2CIT%2CIE%2CPT",
+  );
+  await expect(page.getByRole("link", { name: "Rank final set" })).toHaveAttribute(
+    "href",
+    "/rank?set=US%2CIT%2CIE%2CPT",
+  );
+  await page.getByLabel("Filter improvement destinations by region").selectOption("AFRICA");
+  await expect(page.locator(".comparison-table__region")).toHaveCount(1);
+  await expect(page.locator(".comparison-table__region")).toContainText("Africa");
+
+  const markdown = await request.get("/improve.md?set=US&set=IT&set=IE,PT");
+  expect(markdown.ok()).toBe(true);
+  expect(await markdown.text()).toContain("Stage 3: Ireland + Portugal");
+
+  const api = await request.post("/api/v1/improve", { data: { sets: [["US"], ["IT"], ["IE", "PT"]] } });
+  expect(api.ok()).toBe(true);
+  const result = await api.json();
+  expect(result.stages).toHaveLength(3);
+  expect(result.stages[2].cumulativeCodes).toEqual(["US", "IT", "IE", "PT"]);
+  expect(result.stages[2].marginalEasyDestinations).toBeGreaterThanOrEqual(0);
+});
+
 test("comparison attribution is compact and only shown for a useful subset", async ({ page, request }) => {
   await page.goto("/compare?set=PT,RU,IL&set=SG");
   const israel = page.locator(".comparison-table tbody tr:not(.comparison-table__region)").filter({ hasText: "Israel" });
@@ -462,7 +494,9 @@ test("AI instructions expose URL, Markdown, and API conventions", async ({ page,
   const llms = await request.get("/llms.txt");
   expect(llms.ok()).toBe(true);
   expect(llms.headers()["content-type"]).toContain("text/plain");
-  expect(await llms.text()).toContain("Build comparison URLs");
+  const llmsBody = await llms.text();
+  expect(llmsBody).toContain("Build comparison URLs");
+  expect(llmsBody).toContain("Build incremental improvement URLs");
 });
 
 test("eVisa and ETA guide is indexable and available as Markdown", async ({ page, request }) => {
@@ -537,6 +571,24 @@ test("combination research publishes exact results, reproducible links, and Mark
   expect(xml).toContain("<loc>https://multipassrank.com/how-many-passports-to-cover-the-world</loc>");
 });
 
+test("the US second-passport article separates theoretical gain from obtainable routes", async ({ page, request }) => {
+  await page.goto("/best-second-passport-for-us-citizens");
+  await expect(page.locator(".research-result-card").first()).toContainText("not a conventional second-passport option");
+  await expect(page.locator(".research-result-card").first().getByRole("link", { name: "official UAE source" })).toHaveAttribute(
+    "href",
+    "https://u.ae/en/information-and-services/passports-and-traveling/emirati-nationality",
+  );
+  await expect(page.getByRole("heading", { name: "For many Americans, an eligible EU route is the strategic question." })).toBeVisible();
+  await expect(page.locator(".eu-second-passport-grid > article")).toHaveCount(6);
+  await expect(page.getByRole("link", { name: "See incremental gains" })).toHaveAttribute("href", "/improve?set=US&set=AE");
+
+  const markdown = await request.get("/best-second-passport-for-us-citizens.md");
+  expect(markdown.ok()).toBe(true);
+  const body = await markdown.text();
+  expect(body).toContain("**Important correction:** the United Arab Emirates is the mathematical travel-access winner");
+  expect(body).toContain("## EU routes may be strategically more useful");
+});
+
 test("multiple-passport records review separates law, documents, and anecdotes", async ({ page, request }) => {
   await page.goto("/how-many-passports-can-you-have");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("How many passports can one person have?");
@@ -563,7 +615,7 @@ test("multiple-passport records review separates law, documents, and anecdotes",
 test("citizenship compatibility is source-backed, machine-readable, and non-blocking", async ({ page, request }) => {
   await page.goto("/dual-citizenship-countries");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("citizenships actually be held together");
-  await expect(page.locator(".citizenship-policy-list > article")).toHaveCount(19);
+  await expect(page.locator(".citizenship-policy-list > article")).toHaveCount(20);
   await expect(page.locator("#india")).toContainText("does not allow Indian and foreign citizenship");
   await expect(page.locator("#india").getByRole("link", { name: /Ministry of Home Affairs/ })).toBeVisible();
 
@@ -574,8 +626,14 @@ test("citizenship compatibility is source-backed, machine-readable, and non-bloc
   const api = await request.get("/api/v1/citizenship-policies");
   expect(api.ok()).toBe(true);
   const policies = await api.json();
-  expect(policies.policies).toHaveLength(19);
+  expect(policies.policies).toHaveLength(20);
   expect(policies.policies.find((policy: { code: string }) => policy.code === "IN")?.status).toBe("generally_restricted");
+  expect(policies.policies.find((policy: { code: string }) => policy.code === "AE")?.status).toBe("conditional");
+
+  const acquisition = await request.get("/api/v1/citizenship-acquisition");
+  expect(acquisition.ok()).toBe(true);
+  const acquisitionData = await acquisition.json();
+  expect(acquisitionData.routes.find((route: { countryCode: string }) => route.countryCode === "AE")?.type).toBe("exceptional");
 
   await page.goto("/rank?set=IN,PT");
   await expect(page.locator(".citizenship-notice")).toContainText("Set 1 · India");

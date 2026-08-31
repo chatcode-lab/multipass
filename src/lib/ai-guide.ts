@@ -27,10 +27,19 @@ Add \`.md\` before the query string for a text-first result: \`${absoluteUrl("/c
 - The same limits and \`set\` convention apply to ranking and comparison URLs.
 - Markdown: \`${absoluteUrl("/rank.md?set=US,CA&set=PT")}\`
 
+## Build incremental improvement URLs
+
+- Start with a base passport and add one passport: \`${absoluteUrl("/improve?set=US&set=IT")}\`
+- Add a combined set at the next stage: \`${absoluteUrl("/improve?set=US&set=IT&set=IE,PT")}\`
+- Set order is significant. Each stage reports new easy-access destinations against the union of all earlier stages.
+- Each passport may appear once, with up to five stages and ten passports across the sequence.
+- Markdown: \`${absoluteUrl("/improve.md?set=US&set=IT&set=IE,PT")}\`
+
 ## Read pages as Markdown
 
 - Global ranking: [index.md](${absoluteUrl("/index.md")})
 - Custom combined ranking: \`${absoluteUrl("/rank.md?set=US,CA")}\`
+- Incremental passport gains: \`${absoluteUrl("/improve.md?set=US&set=IT&set=IE,PT")}\`
 - Country detail: \`${absoluteUrl("/passport/portugal.md")}\`
 - Regional ranking: \`${absoluteUrl("/europe.md")}\`
 - Destination directory: [destinations.md](${absoluteUrl("/destinations.md")})
@@ -65,6 +74,7 @@ HTML pages also advertise their Markdown alternative with a \`<link rel="alterna
 - \`GET ${absoluteUrl("/api/v1/citizenship-policies")}\` — reviewed multiple-citizenship policy classifications, cautions, dates, and official sources.
 - \`GET ${absoluteUrl("/api/v1/citizenship-acquisition")}\` — reviewed descent and naturalisation routes, requirements, transition notes, dates, and official sources.
 - \`POST ${absoluteUrl("/api/v1/compare")}\` with \`{"sets":[["US","CA"],["PT"]]}\` — complete scenario summaries and destination comparison rows.
+- \`POST ${absoluteUrl("/api/v1/improve")}\` with \`{"sets":[["US"],["IT"],["IE","PT"]]}\` — ordered cumulative stages, marginal gains, and destination rows.
 
 The POST endpoint accepts JSON, returns JSON, and is intentionally not cached. Public manifests, relationship evidence, passport pages, and Markdown resources are cached at Cloudflare's edge. Treat \`evidenceLevel: "conditional"\` as officially characterized but not as one exact rank-grade result; the current comparison status remains provisional in that case. An allowed-stay \`label\` preserves the official wording, while \`maxDays\` is present only for an unambiguous day count.
 

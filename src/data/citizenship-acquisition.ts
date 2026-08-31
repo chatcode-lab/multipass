@@ -1,6 +1,6 @@
 import type { CitizenshipPolicySource } from "./citizenship-policies";
 
-export type CitizenshipAcquisitionRouteType = "descent" | "naturalisation" | "marriage" | "restoration";
+export type CitizenshipAcquisitionRouteType = "descent" | "naturalisation" | "marriage" | "restoration" | "exceptional";
 
 export interface CitizenshipAcquisitionRoute {
   id: string;
@@ -22,6 +22,7 @@ export const CITIZENSHIP_ROUTE_TYPE_LABELS: Record<CitizenshipAcquisitionRouteTy
   naturalisation: "Residence and naturalisation",
   marriage: "Marriage or civil partnership",
   restoration: "Restoration or reacquisition",
+  exceptional: "Exceptional or nomination-only route",
 };
 
 export const CITIZENSHIP_ACQUISITION_ROUTES: CitizenshipAcquisitionRoute[] = [
@@ -266,6 +267,26 @@ export const CITIZENSHIP_ACQUISITION_ROUTES: CitizenshipAcquisitionRoute[] = [
       url: "https://www.esteri.it/it/servizi-consolari-e-visti/normativa_consolare/serviziconsolari/cittadinanza/",
     }],
   },
+  {
+    id: "united-arab-emirates-exceptional-nomination-2026",
+    countryCode: "AE",
+    country: "United Arab Emirates",
+    type: "exceptional",
+    title: "Emirati nationality through exceptional government nomination",
+    summary: "The UAE describes a narrow nomination framework for specified investors, doctors, specialists, inventors, scientists, intellectuals, artists and exceptional talents. It is not an ordinary citizenship application route open to a US citizen merely because they want a second passport.",
+    requirements: [
+      "The candidate must fall within a listed exceptional category and satisfy that category's professional, investment, recommendation or recognition conditions.",
+      "Acquisition is only through nomination by rulers' and crown princes' courts, executive councils, or the Cabinet based on federal-entity nominations.",
+      "An eligible candidate must take the oath, comply with UAE law and notify the government of another citizenship's acquisition or loss.",
+    ],
+    transitionNote: "The official framework says a naturalised citizen may retain the original nationality, but nomination remains exceptional and citizenship may be withdrawn if its conditions are breached.",
+    reviewedAt: "2026-08-31",
+    sources: [{
+      label: "Emirati nationality",
+      publisher: "Official Platform of the UAE Government",
+      url: "https://u.ae/en/information-and-services/passports-and-traveling/emirati-nationality",
+    }],
+  },
 ];
 
 export const CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY = new Map<string, CitizenshipAcquisitionRoute[]>(
@@ -274,4 +295,3 @@ export const CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY = new Map<string, Citizen
     CITIZENSHIP_ACQUISITION_ROUTES.filter((route) => route.countryCode === countryCode),
   ]),
 );
-

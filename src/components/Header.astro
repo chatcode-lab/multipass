@@ -6,6 +6,7 @@ const collectionPaths = new Set(PASSPORT_COLLECTIONS.map((collection) => `/${col
 const comparisonPaths = new Set(POPULAR_COMPARISONS.map((comparison) => `/${comparison.slug}`));
 const rankingActive = pathname === "/" || pathname === "/rank" || pathname.startsWith("/passport/") || collectionPaths.has(pathname);
 const compareActive = pathname.startsWith("/compare") || comparisonPaths.has(pathname);
+const improveActive = pathname === "/improve";
 ---
 
 <header class="site-header">
@@ -15,8 +16,9 @@ const compareActive = pathname.startsWith("/compare") || comparisonPaths.has(pat
   </a>
   <nav aria-label="Main navigation">
     <a href="/" aria-current={rankingActive ? "page" : undefined}>Ranking</a>
-    <a href="/destinations" aria-current={pathname === "/destinations" ? "page" : undefined}>Destinations</a>
+    <a class="nav-secondary" href="/destinations" aria-current={pathname === "/destinations" ? "page" : undefined}>Destinations</a>
     <a href="/compare" aria-current={compareActive ? "page" : undefined}>Compare</a>
-    <a href="/methodology" aria-current={pathname === "/methodology" ? "page" : undefined}>Methodology</a>
+    <a href="/improve" aria-current={improveActive ? "page" : undefined}>Improve</a>
+    <a class="nav-secondary" href="/methodology" aria-current={pathname === "/methodology" ? "page" : undefined}>Methodology</a>
   </nav>
 </header>

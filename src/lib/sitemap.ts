@@ -21,6 +21,7 @@ const STATIC_PATHS = [
   "destinations",
   "status",
   "compare",
+  "improve",
   "dual-passport",
   "dual-citizenship-countries",
   "citizenship-by-descent",
@@ -46,7 +47,7 @@ export function escapeXml(value: string): string {
 
 export function sitemapLastModified(manifest: SnapshotManifest): string {
   const checkedAt = manifest.checkedAt.slice(0, 10);
-  return checkedAt > "2026-08-30" ? checkedAt : "2026-08-30";
+  return checkedAt > "2026-08-31" ? checkedAt : "2026-08-31";
 }
 
 export function sitemapRegionSlug(region: Region): string {

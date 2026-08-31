@@ -260,6 +260,24 @@ export const CITIZENSHIP_POLICIES: CitizenshipPolicy[] = [
     ],
   },
   {
+    code: "AE",
+    country: "United Arab Emirates",
+    status: "conditional",
+    headline: "The UAE permits retention in its exceptional nomination framework, but nationality is not an ordinary application route.",
+    summary: "The UAE's 2021 framework allows naturalised people in specified exceptional categories to retain their original nationality, while limiting acquisition to government nomination through rulers' courts, executive councils, or the Cabinet.",
+    practicalNotes: [
+      "The named cohorts include selected investors, doctors, specialists, inventors, scientists, intellectuals, artists and exceptional talents; meeting a broad professional description does not create an application entitlement.",
+      "This makes a US–UAE combination mathematically valid for travel analysis but generally unrealistic as a conventional second-passport plan.",
+      "Citizenship can be withdrawn if the applicable conditions are breached.",
+    ],
+    reviewedAt: "2026-08-31",
+    sources: [{
+      label: "Emirati nationality",
+      publisher: "Official Platform of the UAE Government",
+      url: "https://u.ae/en/information-and-services/passports-and-traveling/emirati-nationality",
+    }],
+  },
+  {
     code: "IN",
     country: "India",
     status: "generally_restricted",

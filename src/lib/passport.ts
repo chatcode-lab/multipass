@@ -5,6 +5,7 @@ import {
   type ComparisonCell,
   type ComparisonResult,
   type Destination,
+  type ImprovementResult,
   type PassportAccess,
   type PassportSet,
   type PassportSummary,
@@ -34,6 +35,7 @@ const DESTINATION_NAME_OVERRIDES: Partial<Record<string, string>> = {
 
 export const MAX_PASSPORT_SETS = 5;
 export const MAX_PASSPORTS_PER_SET = 10;
+export const MAX_IMPROVEMENT_PASSPORTS = 10;
 
 export function normalizeCode(value: string): string {
   return value.trim().toUpperCase();
@@ -327,4 +329,83 @@ export function comparePassportSets(
   });
 
   return { scenarios, rows, checkedAt: manifest.checkedAt };
+}
+
+export function improvePassportSets(
+  sets: PassportSet[],
+  manifest: SnapshotManifest,
+  details: Record<string, PassportAccess>,
+): ImprovementResult {
+  if (sets.length === 0 || sets.length > MAX_PASSPORT_SETS) {
+    throw new Error("Choose between one and five ordered passport sets");
+  }
+
+  const summaries = new Map(manifest.passports.map((passport) => [passport.code, passport]));
+  const allCodes = sets.flatMap((set) => set.codes);
+  if (allCodes.length > MAX_IMPROVEMENT_PASSPORTS) {
+    throw new Error(`Choose no more than ${MAX_IMPROVEMENT_PASSPORTS} passports across the sequence`);
+  }
+  if (new Set(allCodes).size !== allCodes.length) {
+    throw new Error("Each passport can appear only once in an improvement sequence");
+  }
+  for (const set of sets) {
+    if (set.codes.length === 0 || set.codes.length > MAX_PASSPORTS_PER_SET) {
+      throw new Error("Each stage must contain between one and ten passports");
+    }
+    for (const code of set.codes) {
+      if (!summaries.has(code) || !details[code]) throw new Error(`Unknown passport code: ${code}`);
+    }
+  }
+
+  const cumulativeSets: PassportSet[] = [];
+  const cumulativeCodes: string[] = [];
+  for (const set of sets) {
+    cumulativeCodes.push(...set.codes);
+    cumulativeSets.push({ codes: [...cumulativeCodes] });
+  }
+  const cumulativeComparison = comparePassportSets(cumulativeSets, manifest, details);
+
+  const stages = cumulativeComparison.scenarios.map((scenario, index) => {
+    const previousCells = index > 0 ? cumulativeComparison.rows.map((row) => row.cells[index - 1]) : [];
+    const currentCells = cumulativeComparison.rows.map((row) => row.cells[index]);
+    const gainedDestinationCodes = manifest.destinations
+      .filter((_, destinationIndex) => {
+        const currentStatus = currentCells[destinationIndex]?.status ?? "unknown";
+        const previousStatus = previousCells[destinationIndex]?.status ?? "unknown";
+        return SCORED_STATUSES.has(currentStatus) && !SCORED_STATUSES.has(previousStatus);
+      })
+      .map((destination) => destination.code);
+    const names = sets[index].codes.map((code) => summaries.get(code)?.name ?? code);
+    const cumulativeAccessibleDestinations = currentCells.filter((cell) => SCORED_STATUSES.has(cell.status)).length;
+    return {
+      id: `stage-${index + 1}`,
+      addedCodes: [...sets[index].codes],
+      cumulativeCodes: [...scenario.codes],
+      name: names.join(" + "),
+      cumulativeAccessibleDestinations,
+      mobilityScore: scenario.mobilityScore,
+      rankEquivalent: scenario.rankEquivalent,
+      marginalEasyDestinations: index === 0 ? cumulativeAccessibleDestinations : gainedDestinationCodes.length,
+      gainedDestinationCodes,
+    };
+  });
+
+  const rows = cumulativeComparison.rows.map((row) => {
+    const cells = row.cells.map((cell, index) => {
+      const previousStatus = index > 0 ? row.cells[index - 1]?.status ?? "unknown" : "unknown";
+      return {
+        ...cell,
+        improved: index > 0 && ACCESS_EASE_WEIGHT[cell.status] > ACCESS_EASE_WEIGHT[previousStatus],
+        scoreGain: index > 0 && SCORED_STATUSES.has(cell.status) && !SCORED_STATUSES.has(previousStatus),
+      };
+    });
+    return {
+      destination: row.destination,
+      cells,
+      hasImprovement: cells.some((cell) => cell.improved),
+      hasScoreGain: cells.some((cell) => cell.scoreGain),
+    };
+  });
+
+  return { stages, rows, checkedAt: manifest.checkedAt };
 }

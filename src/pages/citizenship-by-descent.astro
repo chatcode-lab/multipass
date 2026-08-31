@@ -9,7 +9,7 @@ import { datasetMetadata } from "@/lib/dataset";
 import { flagEmojiFor } from "@/lib/geography";
 
 const description = "Compare reviewed citizenship-by-descent and residence-based naturalisation routes using current official government sources, requirements, review dates, and transition notes.";
-const routeTypes: CitizenshipAcquisitionRouteType[] = ["descent", "naturalisation", "marriage", "restoration"];
+const routeTypes: CitizenshipAcquisitionRouteType[] = ["descent", "naturalisation", "marriage", "restoration", "exceptional"];
 const activeTypes = routeTypes.filter((type) => CITIZENSHIP_ACQUISITION_ROUTES.some((route) => route.type === type));
 const countryCount = new Set(CITIZENSHIP_ACQUISITION_ROUTES.map((route) => route.countryCode)).size;
 const structuredData = [
@@ -18,7 +18,7 @@ const structuredData = [
     "@type": "Dataset",
     name: "Reviewed citizenship acquisition routes",
     description,
-    dateModified: "2026-08-30",
+    dateModified: "2026-08-31",
     spatialCoverage: [...new Set(CITIZENSHIP_ACQUISITION_ROUTES.map((route) => route.country))],
     distribution: {
       "@type": "DataDownload",
@@ -71,7 +71,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
 >
   <article class="citizenship-guide acquisition-guide">
     <header class="research-hero citizenship-guide__hero">
-      <span class="eyebrow">Official-source route review · 30 August 2026</span>
+      <span class="eyebrow">Official-source route review · 31 August 2026</span>
       <h1>Citizenship by descent—and what the shortcut leaves out.</h1>
       <p>
         A family connection can open a route, but dates, documents, residence, language, and nationality-retention rules decide the outcome.
@@ -148,4 +148,3 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
     </section>
   </article>
 </BaseLayout>
-

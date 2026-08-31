@@ -9,6 +9,7 @@ import {
   calculateMobilityScore,
   comparePassportSets,
   denseRankByScore,
+  improvePassportSets,
   normalizePassportDetail,
   parsePassportSets,
   rankEquivalent,
@@ -897,6 +898,41 @@ describe("passport calculations", () => {
     expect(result.rows[1].isEqual).toBe(true);
     expect(result.scenarios[0].mobilityScore).toBe(1);
     expect(result.scenarios[1].mobilityScore).toBe(1);
+  });
+
+  it("calculates ordered cumulative gains for passport sets", () => {
+    const manifest: SnapshotManifest = {
+      schemaVersion: 1,
+      version: "test",
+      checkedAt: "2026-01-01T00:00:00.000Z",
+      publishedAt: "2026-01-01T00:00:00.000Z",
+      destinations: [
+        { code: "AA", name: "Alpha", region: "EUROPE" },
+        { code: "BB", name: "Beta", region: "ASIA" },
+        { code: "CC", name: "Gamma", region: "AFRICA" },
+      ],
+      passports: [
+        { code: "AA", name: "Alpha", slug: "alpha", region: "EUROPE", mobilityScore: 1, rank: 1 },
+        { code: "BB", name: "Beta", slug: "beta", region: "ASIA", mobilityScore: 1, rank: 1 },
+      ],
+    };
+    const details: Record<string, PassportAccess> = {
+      AA: { code: "AA", name: "Alpha", mobilityScore: 1, statuses: { AA: "citizenship", BB: "visa_free", CC: "visa_required" } },
+      BB: { code: "BB", name: "Beta", mobilityScore: 1, statuses: { AA: "visa_required", BB: "citizenship", CC: "visa_free" } },
+    };
+
+    const result = improvePassportSets([{ codes: ["AA"] }, { codes: ["BB"] }], manifest, details);
+    expect(result.stages).toMatchObject([
+      { addedCodes: ["AA"], cumulativeCodes: ["AA"], cumulativeAccessibleDestinations: 2, marginalEasyDestinations: 2 },
+      { addedCodes: ["BB"], cumulativeCodes: ["AA", "BB"], cumulativeAccessibleDestinations: 3, marginalEasyDestinations: 1, gainedDestinationCodes: ["CC"] },
+    ]);
+    expect(result.rows.find((row) => row.destination.code === "CC")?.cells[1]).toMatchObject({
+      status: "visa_free",
+      improved: true,
+      scoreGain: true,
+    });
+    expect(() => improvePassportSets([{ codes: ["AA"] }, { codes: ["AA"] }], manifest, details))
+      .toThrow("Each passport can appear only once");
   });
 
   it("prefers an issuable visa route over an entry restriction", () => {
