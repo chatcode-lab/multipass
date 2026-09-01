@@ -1,0 +1,52 @@
+{
+  "batchId": "pass410-south-sudan-route-dependent-inbound-2026",
+  "researchedAt": "2026-09-01",
+  "sources": [
+    {
+      "id": "south-sudan-trade-hub-current-visitor-routes-2026",
+      "title": "South Sudan Trade Information Hub: Immigration services",
+      "url": "https://tradeinfohub.gov.ss/objective/66",
+      "publisher": "South Sudan Trade Information Hub, Ministry of Trade and Industry",
+      "jurisdiction": "South Sudan",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-09-01",
+      "officialityEvidence": "The live verified-TLS Government Trade Information Hub is managed by the Ministry of Trade and Industry and directly describes the current visitor-visa routes administered through the Ministry of Interior.",
+      "supportingExcerpt": "Most travelers can obtain visa on arrival; however, some nationalities may require a pre-approved visa."
+    },
+    {
+      "id": "south-sudan-interior-current-evisa-workflow-2026",
+      "title": "eVisa South Sudan",
+      "url": "https://www.evisa.gov.ss/",
+      "publisher": "Ministry of Interior, South Sudan National Police, Directorate of Civil Registry, Nationality, Passports and Immigration, Department of E-Visa and Immigration Service",
+      "jurisdiction": "South Sudan",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-09-01",
+      "officialityEvidence": "The live verified-TLS Government eVisa portal identifies the competent Interior and immigration authorities and describes online application, payment and delivery of a downloadable visa before travel.",
+      "supportingExcerpt": "Download your e-visa PDF from anywhere within 72 hours."
+    }
+  ],
+  "policies": [],
+  "conditional": [
+    {
+      "id": "south-sudan-nationality-dependent-visitor-visa-route",
+      "title": "South Sudan visitor-visa route depends on an unpublished nationality partition",
+      "summary": "South Sudan's current government guidance says most travellers can obtain a visa on arrival, while some nationalities require pre-approval; the linked Interior service supplies a pre-travel eVisa workflow but neither source publishes which ordinary passports use which route.",
+      "reason": "official_schedule_incomplete",
+      "destinationCodes": ["SS"],
+      "passportCodes": ["SG", "JP", "IT", "CH", "FI", "LU", "AT", "MT", "NZ", "PT", "GR", "HU", "LV", "LT", "MY", "EE", "IS", "HR", "LI", "MC", "CY", "RO", "CL", "BG", "AD", "AR", "SM", "BR", "HK", "BB", "BN", "IL", "BS", "MX", "VC", "UY", "KN", "AG", "VA", "CR", "PA", "MU", "PY", "PE", "LC", "GD", "TT", "UA", "DM", "TW", "SB", "GT", "WS", "SV", "MH", "CO", "TO", "HN", "TV", "ME", "NI", "FM", "MK", "KI", "PW", "RS", "GE", "BA", "AL", "VE", "RU", "QA", "TR", "ZA", "TL", "BZ", "EC", "KW", "MV", "FJ", "SA", "XK", "NR", "VU", "GY", "BH", "JM", "OM", "BY", "CN", "BO", "BW", "PG", "SR", "TH", "KZ", "DO", "LS", "ID", "NA", "AZ", "SZ", "MA", "GH", "MW", "GM", "AM", "MN", "PH", "TN", "ZM", "CV", "MZ", "KG", "SL", "BJ", "ST", "ZW", "BF", "IN", "CI", "MG", "SN", "CU", "NE", "TJ", "TG", "GA", "GN", "MR", "GQ", "ML", "TD", "GW", "VN", "DZ", "KM", "JO", "AO", "BT", "KH", "CM", "CG", "HT", "LA", "LR", "CF", "TM", "DJ", "LB", "MM", "CD", "NG", "LK", "KP", "ER", "ET", "IR", "LY", "SD", "BD", "NP", "PK", "YE", "IQ", "SY", "AF"],
+      "possibleStatuses": ["visa_on_arrival", "evisa"],
+      "conditions": [
+        "The Government Trade Information Hub says most travellers can obtain a visa on arrival, but some nationalities require a pre-approved visa or additional entry requirements.",
+        "The Hub links the Ministry of Interior eVisa service, which provides online application and a downloadable visa before travel.",
+        "Neither live source publishes the ordinary-passport nationality partition between the arrival and pre-approved routes.",
+        "The route therefore cannot be reduced to one passport-wide rank status; this characterization does not change imported scores, ranks or sitemap eligibility."
+      ],
+      "sourceIds": ["south-sudan-trade-hub-current-visitor-routes-2026", "south-sudan-interior-current-evisa-workflow-2026"],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [],
+  "unresolved": []
+}

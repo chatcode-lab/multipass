@@ -122,6 +122,19 @@ describe("evidence status matrix", () => {
     expect(cell("BE").slice(0, 2)).toEqual(["visa_on_arrival", 1]);
   });
 
+  it("marks South Sudan's unpublished arrival-or-eVisa partition as characterized", () => {
+    const africa = buildEvidenceStatusRegion(snapshot.manifest, details, "AFRICA", "2026-09-01");
+    const southSudanIndex = africa.destinations.findIndex(({ code }) => code === "SS");
+    const cell = (passportCode: string) =>
+      africa.rows.find(({ passportCode: code }) => code === passportCode)!.cells[southSudanIndex];
+
+    expect(cell("SG").slice(0, 2)).toEqual(["evisa", 0]);
+    expect(cell("SG")[5]).toBe(1);
+    expect(cell("AF").slice(0, 2)).toEqual(["evisa", 0]);
+    expect(cell("AF")[5]).toBe(1);
+    expect(cell("SO")[5]).toBe(0);
+  });
+
   it("counts Ireland's reviewed Syria and Turkmenistan routes as supported", () => {
     const middleEast = buildEvidenceStatusRegion(snapshot.manifest, details, "MIDDLE EAST", "2026-08-25");
     const asia = buildEvidenceStatusRegion(snapshot.manifest, details, "ASIA", "2026-08-25");
@@ -231,7 +244,7 @@ describe("evidence status matrix", () => {
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
     expect(summary.covered).toBe(40_941);
     expect(summary.notCovered.count).toBe(4_033);
-    expect(summary.characterized.count).toBe(839);
+    expect(summary.characterized.count).toBe(1_006);
     expect(summary.allowedStay.count).toBeGreaterThan(1_000);
     expect(summary.percent).toBe(91);
     expect(summary.fresh.count).toBeGreaterThan(0);
