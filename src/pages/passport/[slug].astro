@@ -10,6 +10,7 @@ import { collectionForRegion, comparisonHref, formatRegion, improveHref, related
 import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
 import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
+import { passportPageTitle } from "@/lib/seo-titles";
 
 const { manifest, source } = await getDataContext(Astro.locals);
 const passport = manifest.passports.find((entry) => entry.slug === Astro.params.slug);
@@ -31,7 +32,7 @@ const citizenshipPolicy = citizenshipPolicyFor(passport.code);
 const citizenshipRoutes = CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(passport.code) ?? [];
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
 
-const title = `${passport.name} Passport Rank & Visa-Free Destinations | MultiPass Rank`;
+const title = passportPageTitle(passport);
 const description = `The ${passport.name} passport ranks #${passport.rank} globally. See ${statusCounts.visa_free} visa-free countries, ${statusCounts.visa_on_arrival} visa-on-arrival destinations, and every current access category.`;
 const structuredData = [
   {

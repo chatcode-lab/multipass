@@ -129,6 +129,12 @@ The US article now separates three questions that must not be collapsed into one
 
 The UAE remains the travel-only maximum in the current snapshot, but the official UAE source limits citizenship to exceptional government nomination. It is labeled as a benchmark rather than a practical recommendation. Reviewed EU routes are presented as starting points for ancestry or residence research, never as assumptions about personal eligibility.
 
+## Bing title-length audit — 1 September 2026
+
+Bing Webmaster Tools reported 48 titles longer than 70 characters in its first 1,000 processed pages. The sample was a symptom of the shared templates rather than a 48-page exception: replaying the old generators across the bundled matrix produced 4,503 potential over-limit passport, destination and relationship titles.
+
+The title system now enforces a tested 70-character ceiling across every generated passport, destination and passport–destination combination. Passport pages prioritize the country, “Passport Rank” and “Visa-Free”; destination pages prioritize the destination and “Visa Requirements”; relationship pages keep both place names and the access category, dropping the brand suffix or using curated geographic abbreviations only when necessary. Headings, descriptions and structured data retain the longer explanatory language, so shortening the document title does not remove page context.
+
 A four-market DataForSEO Labs review (United States, United Kingdom, India and the Philippines) cost approximately USD 0.20. Directional opportunities include:
 
 | Topic | Representative market volume | Difficulty signal |

@@ -33,7 +33,7 @@ describe("sitemaps", () => {
     ];
     const urls = groups.flat().map(({ loc }) => loc);
 
-    expect(urls).toHaveLength(41_268);
+    expect(urls).toHaveLength(41_404);
     expect(urls).toContain("https://multipassrank.com/dual-citizenship-countries");
     expect(urls).toContain("https://multipassrank.com/citizenship-by-descent");
     expect(urls).toContain("https://multipassrank.com/best-second-passport-for-us-citizens");

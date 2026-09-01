@@ -61,6 +61,21 @@ test("homepage renders a searchable passport ranking", async ({ page }) => {
   }
 });
 
+test("generated document titles stay within the search-engine length recommendation", async ({ page }) => {
+  const samples = [
+    "/passport/st-vincent-and-the-grenadines",
+    "/destination/bonaire-st-eustatius-and-saba",
+    "/central-african-republic-antigua-and-barbuda-evisa",
+    "/improve",
+  ];
+
+  for (const path of samples) {
+    await page.goto(path);
+    const title = await page.title();
+    expect(title.length, `${path}: ${title}`).toBeLessThanOrEqual(70);
+  }
+});
+
 test("homepage calculator works without a framework-hydrated island", async ({ page }) => {
   await page.goto("/");
   const builder = page.locator("[data-passport-builder]");

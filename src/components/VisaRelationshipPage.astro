@@ -8,6 +8,7 @@ import { flagEmojiFor } from "@/lib/geography";
 import { STATUS_META } from "@/lib/passport";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "@/lib/types";
 import { destinationSlug, type VisaRelationshipEvidence, visaRelationshipHref } from "@/lib/visa-evidence";
+import { relationshipPageTitle } from "@/lib/seo-titles";
 
 interface Props {
   manifest: SnapshotManifest;
@@ -27,7 +28,7 @@ const reviewedDate = evidence.reviewedAt
   ? new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${evidence.reviewedAt}T00:00:00Z`))
   : null;
 const matchingApplication = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
-const title = `${passport.name} Passport to ${destination.name}: ${statusMeta.label} | MultiPass Rank`;
+const title = relationshipPageTitle(passport, destination, status);
 const description = evidence.evidenceLevel === "conditional"
   ? `Official sources describe conditional access from ${passport.name} to ${destination.name}, but traveller-specific rules prevent one safe passport-wide rank category.`
   : evidence.reviewedUnknown

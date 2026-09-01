@@ -223,17 +223,28 @@ describe("evidence status matrix", () => {
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {
-    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-08-28");
+    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-09-01");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
 
     expect(summary.total).toBe(44_974);
     expect(bucketTotal).toBe(summary.total);
     expect(summary.covered).toBe(summary.stale.count + summary.old.count + summary.fresh.count);
-    expect(summary.covered).toBe(40_805);
-    expect(summary.notCovered.count).toBe(4_169);
+    expect(summary.covered).toBe(40_941);
+    expect(summary.notCovered.count).toBe(4_033);
     expect(summary.characterized.count).toBe(839);
     expect(summary.allowedStay.count).toBeGreaterThan(1_000);
-    expect(summary.percent).toBe(90.7);
+    expect(summary.percent).toBe(91);
     expect(summary.fresh.count).toBeGreaterThan(0);
+  });
+
+  it("uses the recovered North Macedonia checker while preserving the missing HKSAR result", () => {
+    const europe = buildEvidenceStatusRegion(snapshot.manifest, details, "EUROPE", "2026-09-01");
+    const northMacedoniaIndex = europe.destinations.findIndex(({ code }) => code === "MK");
+    const cell = (passportCode: string) =>
+      europe.rows.find(({ passportCode: code }) => code === passportCode)!.cells[northMacedoniaIndex];
+
+    expect(cell("NZ").slice(0, 2)).toEqual(["visa_free", 1]);
+    expect(cell("LA").slice(0, 2)).toEqual(["visa_required", 1]);
+    expect(cell("HK").slice(0, 2)).toEqual(["visa_free", 0]);
   });
 });
