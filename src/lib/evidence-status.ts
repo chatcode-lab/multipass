@@ -151,7 +151,12 @@ function buildCharacterizationByRelationship(
       if (!destinationCodes.has(destinationCode)) continue;
       for (const passport of manifest.passports) {
         if (!conditionalEvidenceApplies(item, passport.code, destinationCode)) continue;
-        add(`${passport.code}:${destinationCode}`, item.id, item.sourceIds);
+        const key = `${passport.code}:${destinationCode}`;
+        add(key, item.id, item.sourceIds);
+        const accumulator = result.get(key)!;
+        item.allowedStays?.forEach((rule, index) => {
+          if (allowedStayApplies(rule, passport.code)) accumulator.stayRuleIds.add(`${item.id}:${index}`);
+        });
       }
     }
   }
@@ -210,8 +215,9 @@ export function buildEvidenceCompletionSummary(
       if (passport.code === destination.code) continue;
       const status = details[passport.code]?.statuses[destination.code] ?? "unknown";
       const evidence = evidenceByRelationship.get(`${passport.code}:${destination.code}:${status}`);
-      if (evidence?.reviewedAt && evidence.stayRuleIds.size > 0) allowedStay += 1;
-      if (!evidence?.reviewedAt && characterizationByRelationship.has(`${passport.code}:${destination.code}`)) characterized += 1;
+      const characterization = characterizationByRelationship.get(`${passport.code}:${destination.code}`);
+      if ((evidence?.stayRuleIds.size ?? 0) > 0 || (characterization?.stayRuleIds.size ?? 0) > 0) allowedStay += 1;
+      if (!evidence?.reviewedAt && characterization) characterized += 1;
       counts[completionState(evidence?.reviewedAt, asOf)] += 1;
     }
   }
@@ -269,7 +275,7 @@ export function buildEvidenceStatusRegion(
             conditional.policyIds.size,
             conditional.sourceIds.size,
             1,
-            0,
+            conditional.stayRuleIds.size,
           ];
         }
         pending += 1;

@@ -35,6 +35,8 @@ describe("comparison URLs", () => {
   it("matches curated comparisons in either order", () => {
     expect(getFriendlyComparison([["US"], ["PT"]])?.slug).toBe("portugal-vs-united-states-passport");
     expect(getFriendlyComparison([["pt"], ["us"]])?.slug).toBe("portugal-vs-united-states-passport");
+    expect(getFriendlyComparison([["SG"], ["US"]])?.slug).toBe("united-states-vs-singapore-passport");
+    expect(getFriendlyComparison([["CN"], ["HK"]])?.slug).toBe("hong-kong-vs-china-passport");
   });
 
   it("keeps arbitrary and combined comparisons on the query route", () => {

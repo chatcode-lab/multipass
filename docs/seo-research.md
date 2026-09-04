@@ -159,3 +159,11 @@ Current-law conflicts are explicit. Portugal's Ministry of Justice overview stil
 `/best-second-passport-for-us-citizens` implements the first marginal-gain experiment from the research backlog. It evaluates every other passport against the United States, publishes the top ten by newly added easy-access destinations, links every result to reproducible rank and comparison URLs, and labels citizenship compatibility separately. The page never equates mobility gain with eligibility, acquisition ease, tax value, or legal compatibility.
 
 The multiple-citizenship register expands from 11 to 19 reviewed countries with Canada, Australia, France, Ireland, Italy, Brazil, Spain, and Israel. Calculator cautions remain non-blocking and appear only where an official policy has been reviewed; missing countries remain unknown.
+
+## Demand-selected passport comparisons — 4 September 2026
+
+A US Google Ads search-volume replay through DataForSEO checked one neutral “country passport vs country passport” phrase for every pair among the current top 50 passports: 1,225 pairs for USD 0.18. Only four returned measurable volume in that exact neutral form, each at approximately 10 monthly searches: Singapore–Japan, Singapore–Malaysia, Singapore–Canada, and Canada–Australia. Search-volume tools suppress or group low-volume variants, so a zero is not treated as proof of no demand.
+
+The supplied Search Console export contributes first-party impressions for Canada–United Kingdom, Hong Kong–China, Taiwan–China, and Dominica–Saint Kitts and Nevis. United States–Singapore is added as the explicit top-ranked benchmark requested for the product. Combined with the seven earlier pages, the curated comparison set now contains 16 canonical pairs rather than all 1,225 permutations.
+
+Each selected URL renders live pair-specific scores, ranks, directional destination wins, equal results, and the complete comparison table; it is not a static keyword shell. Matching query-based comparisons redirect to the friendly canonical page, reverse set order resolves to the same page, Markdown alternatives remain available but out of the sitemap, and relevant passport pages provide internal links. The nine new HTML pages enter the core sitemap. Arbitrary comparisons remain functional and `noindex` on `/compare?set=...`.

@@ -3,6 +3,8 @@ import ComparisonTool from "@/components/ComparisonTool";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import type { PopularComparison } from "@/lib/geography";
 import type { ComparisonResult, SnapshotManifest } from "@/lib/types";
+import { ACCESS_EASE_WEIGHT } from "@/lib/passport-shared";
+import { comparisonPageTitle } from "@/lib/seo-titles";
 
 interface Props {
   comparison: PopularComparison;
@@ -13,6 +15,12 @@ interface Props {
 const { comparison, manifest, result } = Astro.props;
 const initialSets = comparison.sets.map((codes) => [...codes]);
 const [first, second] = result.scenarios;
+const firstWins = result.rows.filter(({ cells }) => ACCESS_EASE_WEIGHT[cells[0].status] > ACCESS_EASE_WEIGHT[cells[1].status]).length;
+const secondWins = result.rows.filter(({ cells }) => ACCESS_EASE_WEIGHT[cells[1].status] > ACCESS_EASE_WEIGHT[cells[0].status]).length;
+const equalDestinations = result.rows.length - firstWins - secondWins;
+const passportByCode = new Map(manifest.passports.map((passport) => [passport.code, passport]));
+const firstPassport = passportByCode.get(first.codes[0]);
+const secondPassport = passportByCode.get(second.codes[0]);
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -33,7 +41,7 @@ const structuredData = [
 ---
 
 <BaseLayout
-  title={`${comparison.heading} | MultiPass Rank`}
+  title={comparisonPageTitle(comparison.shortTitle)}
   description={comparison.description}
   canonical={`/${comparison.slug}`}
   markdownHref={`/${comparison.slug}.md`}
@@ -60,6 +68,14 @@ const structuredData = [
       <strong> #{first.rankEquivalent}</strong>. {second.name} scores <strong>{second.mobilityScore}</strong>, equivalent to
       <strong> #{second.rankEquivalent}</strong>. Use “Differences only” above to isolate destinations where their entry categories differ.
     </p>
+    <p>
+      Using the comparison table’s access hierarchy, {first.name} has the easier result in <strong>{firstWins}</strong> destinations,
+      {second.name} in <strong>{secondWins}</strong>, and they are equivalent in <strong>{equalDestinations}</strong>.
+    </p>
     <p>{comparison.context}</p>
+    <nav class="country-shortcuts" aria-label="Open the compared passport pages">
+      {firstPassport && <a href={`/passport/${firstPassport.slug}`}>View {first.name} passport</a>}
+      {secondPassport && <a href={`/passport/${secondPassport.slug}`}>View {second.name} passport</a>}
+    </nav>
   </section>
 </BaseLayout>

@@ -282,6 +282,78 @@ export const POPULAR_COMPARISONS: readonly PopularComparison[] = [
     context: "This page provides a practical travel-access view for a frequently relevant Lusophone comparison. It does not compare eligibility for citizenship or residence.",
     sets: [["BR"], ["PT"]],
   },
+  {
+    slug: "united-states-vs-singapore-passport",
+    shortTitle: "US vs Singapore",
+    heading: "United States vs Singapore passport comparison",
+    description: "Compare United States and Singapore passport strength, mobility scores, and every destination-level entry difference.",
+    context: "Singapore currently leads the single-passport ranking, making this a useful benchmark for the United States. The comparison measures short-visit access only, not whether either citizenship is obtainable.",
+    sets: [["US"], ["SG"]],
+  },
+  {
+    slug: "singapore-vs-japan-passport",
+    shortTitle: "Singapore vs Japan",
+    heading: "Singapore vs Japan passport comparison",
+    description: "Compare Singapore and Japan passport ranks, mobility scores, and access requirements for every tracked destination.",
+    context: "Both passports sit near the top of the ranking, so their destination-level exceptions are more informative than the small difference between their headline scores.",
+    sets: [["SG"], ["JP"]],
+  },
+  {
+    slug: "singapore-vs-malaysia-passport",
+    shortTitle: "Singapore vs Malaysia",
+    heading: "Singapore vs Malaysia passport comparison",
+    description: "Compare Singapore and Malaysia passport strength, global ranks, and destination-by-destination travel access.",
+    context: "This neighbouring-country comparison shows where two strong Southeast Asian passports diverge for short visits; it does not compare residence or work rights.",
+    sets: [["SG"], ["MY"]],
+  },
+  {
+    slug: "singapore-vs-canada-passport",
+    shortTitle: "Singapore vs Canada",
+    heading: "Singapore vs Canada passport comparison",
+    description: "Compare Singapore and Canadian passport ranks, mobility scores, and current access categories worldwide.",
+    context: "The table separates headline strength from the specific destinations where Singaporean and Canadian travellers receive different entry treatment.",
+    sets: [["SG"], ["CA"]],
+  },
+  {
+    slug: "canada-vs-australia-passport",
+    shortTitle: "Canada vs Australia",
+    heading: "Canada vs Australia passport comparison",
+    description: "Compare Canadian and Australian passport strength, global ranks, and entry requirements across every destination.",
+    context: "Canada and Australia have closely matched mobility profiles. The differences view identifies the comparatively small set of destinations that separates them.",
+    sets: [["CA"], ["AU"]],
+  },
+  {
+    slug: "canada-vs-united-kingdom-passport",
+    shortTitle: "Canada vs UK",
+    heading: "Canada vs United Kingdom passport comparison",
+    description: "Compare Canadian and British passport strength, mobility scores, and destination-level visa requirements.",
+    context: "This page compares short-stay border access. Commonwealth links, ancestry routes, residence rights, and citizenship eligibility are separate questions.",
+    sets: [["CA"], ["GB"]],
+  },
+  {
+    slug: "hong-kong-vs-china-passport",
+    shortTitle: "Hong Kong vs China",
+    heading: "Hong Kong vs China passport comparison",
+    description: "Compare Hong Kong SAR and mainland Chinese passport ranks, mobility scores, and destination access rules.",
+    context: "The index treats the HKSAR passport and the People's Republic of China ordinary passport as distinct travel documents. Mainland and Hong Kong entry permits are separate from third-country mobility.",
+    sets: [["HK"], ["CN"]],
+  },
+  {
+    slug: "taiwan-vs-china-passport",
+    shortTitle: "Taiwan vs China",
+    heading: "Taiwan vs China passport comparison",
+    description: "Compare Taiwan and China passport ranks, mobility scores, and entry categories for every tracked destination.",
+    context: "This page is a travel-document comparison. It does not attempt to resolve political status or replace the special permits used for travel across the Taiwan Strait.",
+    sets: [["TW"], ["CN"]],
+  },
+  {
+    slug: "dominica-vs-saint-kitts-and-nevis-passport",
+    shortTitle: "Dominica vs St Kitts",
+    heading: "Dominica vs Saint Kitts and Nevis passport comparison",
+    description: "Compare Dominica and Saint Kitts and Nevis passport ranks, scores, and destination-level entry requirements.",
+    context: "The comparison measures current short-visit access only. It does not compare citizenship-by-investment eligibility, due diligence, price, residence, or tax consequences.",
+    sets: [["DM"], ["KN"]],
+  },
 ] as const;
 
 export function getPopularComparison(slug: string | undefined): PopularComparison | undefined {
@@ -351,7 +423,17 @@ export function relatedPassports(
   passports: readonly PassportSummary[],
   limit = 4,
 ): PassportSummary[] {
-  const candidates = [...(RELATED_CODES[passport.code] ?? []), ...REGION_REFERENCE_CODES[passport.region]];
+  const comparisonCandidates = POPULAR_COMPARISONS.flatMap(({ sets }) => {
+    const [first, second] = sets;
+    if (first[0] === passport.code) return [second[0]];
+    if (second[0] === passport.code) return [first[0]];
+    return [];
+  });
+  const candidates = [
+    ...comparisonCandidates,
+    ...(RELATED_CODES[passport.code] ?? []),
+    ...REGION_REFERENCE_CODES[passport.region],
+  ];
   const byCode = new Map(passports.map((entry) => [entry.code, entry]));
   return [...new Set(candidates)]
     .filter((code) => code !== passport.code && byCode.has(code))

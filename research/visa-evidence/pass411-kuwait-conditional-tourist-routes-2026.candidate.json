@@ -1,0 +1,131 @@
+{
+  "batchId": "pass411-kuwait-conditional-tourist-routes-2026",
+  "researchedAt": "2026-09-04",
+  "sources": [
+    {
+      "id": "kuwait-moi-arrival-nationalities-2026-09",
+      "title": "Kuwait Visa: live visa-on-arrival nationality dataset",
+      "url": "https://kuwaitvisa.moi.gov.kw/kuwaitVisa/portal/getVisaOnArrivalCountries",
+      "publisher": "Ministry of Interior, State of Kuwait",
+      "jurisdiction": "Kuwait",
+      "kind": "official-dataset",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-09-04",
+      "officialityEvidence": "The live verified-TLS Ministry of Interior endpoint returned 53 nationality records, each expressly marked visaOnArrival true.",
+      "supportingExcerpt": "visaOnArrival: true"
+    },
+    {
+      "id": "kuwait-moi-tourist-instructions-2026-09",
+      "title": "Kuwait Visa: current tourist visa instructions",
+      "url": "https://kuwaitvisa.moi.gov.kw/assets/i18n/en.json",
+      "publisher": "Ministry of Interior, State of Kuwait",
+      "jurisdiction": "Kuwait",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-09-04",
+      "officialityEvidence": "The live no-cache English dataset is loaded by the current Ministry of Interior portal and describes nationality, residence, profession, document, fee and stay conditions.",
+      "supportingExcerpt": "Countries Eligible for E-Visa or Visa on Arrival"
+    },
+    {
+      "id": "kuwait-moi-tourist-route-config-2026-09",
+      "title": "Kuwait Visa: current tourist route configuration",
+      "url": "https://kuwaitvisa.moi.gov.kw/chunk-AAYBHDTR.js",
+      "publisher": "Ministry of Interior, State of Kuwait",
+      "jurisdiction": "Kuwait",
+      "kind": "official-dataset",
+      "language": "English and Arabic",
+      "reviewedAt": "2026-09-04",
+      "officialityEvidence": "The current first-party application bundle defines tourist eVisa categories based on GCC residence or valid US, UK or Schengen travel documents and names blocked nationality cohorts.",
+      "supportingExcerpt": "US, UK, or Schengen valid tourist visa holder"
+    }
+  ],
+  "policies": [],
+  "conditional": [
+    {
+      "id": "kuwait-document-dependent-tourist-evisa-or-advance-visa",
+      "title": "Kuwait tourist route depends on residence and third-country documents",
+      "summary": "For ordinary passports outside the exact GCC and named arrival cohorts, the current Kuwait Visa application exposes conditional electronic routes based on GCC residence, profession, or valid US, UK or Schengen documents; those facts cannot be inferred from nationality alone.",
+      "reason": "document_dependent",
+      "destinationCodes": ["KW"],
+      "passportCodes": ["CL", "AR", "BR", "BB", "BS", "MX", "VC", "UY", "KN", "AG", "CR", "PA", "MU", "PY", "PE", "LC", "GD", "TT", "DM", "TW", "SB", "GT", "WS", "SV", "MH", "TO", "HN", "TV", "ME", "NI", "FM", "MK", "KI", "PW", "BA", "AL", "VE", "MD", "RU", "ZA", "TL", "BZ", "EC", "MV", "FJ", "XK", "NR", "VU", "GY", "JM", "BY", "BO", "BW", "PG", "SR", "TH", "KZ", "DO", "LS", "ID", "NA", "AZ", "SZ", "MA", "GH", "KE", "MW", "TZ", "GM", "RW", "AM", "MN", "PH", "TN", "ZM", "CV", "MZ", "UG", "KG", "SL", "BJ", "ST", "UZ", "ZW", "BF", "IN", "CI", "MG", "SN", "CU", "NE", "TJ", "TG", "GA", "GN", "MR", "GQ", "ML", "TD", "GW", "VN", "DZ", "KM", "JO", "AO", "CM", "CG", "HT", "LR", "CF", "BI", "TM", "EG", "DJ", "LB", "MM", "CD", "NG", "LK", "KP", "SS", "ER", "ET", "IR", "LY", "SD", "BD", "NP", "PK", "SO", "YE", "IQ", "SY"],
+      "possibleStatuses": ["evisa", "visa_required"],
+      "conditions": [
+        "The portal defines electronic tourist categories using facts such as GCC residence and profession or a valid US, UK or Schengen visa or residence permit.",
+        "The finite nationality endpoint proves arrival eligibility only for its 53 named records; omission is not treated as proof of one residual status.",
+        "The applicable route therefore depends on documents and residence information that MultiPass Rank does not collect, so imported ranks remain unchanged."
+      ],
+      "sourceIds": ["kuwait-moi-arrival-nationalities-2026-09", "kuwait-moi-tourist-instructions-2026-09", "kuwait-moi-tourist-route-config-2026-09"],
+      "allowedStays": [
+        {
+          "label": "Maximum three months from the date of entry for a tourist visa holder",
+          "basis": "per_entry",
+          "notes": ["The issued visa, admission decision and individual conditions remain controlling; three months is preserved rather than converted to a fixed day count."]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "kuwait-china-conflicting-arrival-and-electronic-routes",
+      "title": "Kuwait's current visitor instructions and arrival endpoint disagree for China",
+      "summary": "The live English instructions name the People's Republic of China among countries eligible for eVisa or visa on arrival, while the live 53-record arrival endpoint omits China; electronic eligibility can also depend on residence or third-country documents.",
+      "reason": "conflicting_official_sources",
+      "destinationCodes": ["KW"],
+      "passportCodes": ["CN"],
+      "possibleStatuses": ["visa_on_arrival", "evisa", "visa_required"],
+      "conditions": [
+        "The instructions and machine-readable arrival dataset are served by the same current Ministry of Interior application but publish different nationality cohorts.",
+        "No rank correction is made until the Ministry's nationality-specific result is internally consistent."
+      ],
+      "sourceIds": ["kuwait-moi-arrival-nationalities-2026-09", "kuwait-moi-tourist-instructions-2026-09", "kuwait-moi-tourist-route-config-2026-09"],
+      "allowedStays": [
+        {
+          "label": "Maximum three months from the date of entry for a tourist visa holder",
+          "basis": "per_entry",
+          "notes": ["The issued visa, admission decision and individual conditions remain controlling; three months is preserved rather than converted to a fixed day count."]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "kuwait-israel-afghanistan-online-route-exclusions",
+      "title": "Kuwait's online tourist route excludes Israeli and Afghan nationality selections",
+      "summary": "The current application configuration blocks Israeli and Afghan nationalities from the ordinary tourist eVisa selection, but the reviewed official material does not establish one complete embassy, exceptional-entry or refusal outcome for every traveller.",
+      "reason": "official_schedule_incomplete",
+      "destinationCodes": ["KW"],
+      "passportCodes": ["IL", "AF"],
+      "possibleStatuses": ["visa_required", "entry_restricted"],
+      "conditions": [
+        "An online-application exclusion is not by itself treated as proof that all visitor entry is prohibited.",
+        "The exact ordinary-passport baseline remains pending until a controlling official entry or visa schedule resolves the non-electronic routes."
+      ],
+      "sourceIds": ["kuwait-moi-tourist-route-config-2026-09", "kuwait-moi-tourist-instructions-2026-09"],
+      "allowedStays": [
+        {
+          "label": "Maximum three months from the date of entry when a tourist visa is issued",
+          "basis": "per_entry",
+          "notes": ["This limit does not establish that a visa or admission route is available for a particular traveller."]
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "CN",
+      "destinationCode": "KW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved: visitor instructions include China but the live arrival endpoint omits it",
+      "explanation": "The portal's English instructions name the People's Republic of China as eVisa-or-arrival eligible, but its machine-readable visa-on-arrival list has no Chinese record, so neither label is promoted as exact.",
+      "sourceIds": ["kuwait-moi-arrival-nationalities-2026-09", "kuwait-moi-tourist-instructions-2026-09"]
+    },
+    {
+      "passportCode": "RS",
+      "destinationCode": "KW",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "unresolved: visitor instructions include Serbia but the live arrival endpoint omits it",
+      "explanation": "The portal's English instructions name Serbia as eVisa-or-arrival eligible, while its machine-readable arrival list omits Serbia and existing current Serbian official guidance requires a visa; the stronger exact record is retained pending reconciliation.",
+      "sourceIds": ["kuwait-moi-arrival-nationalities-2026-09", "kuwait-moi-tourist-instructions-2026-09"]
+    }
+  ],
+  "unresolved": []
+}

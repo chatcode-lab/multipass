@@ -296,6 +296,16 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AF", "DE", "visa_required", "2026-08-27").allowedStays).toEqual([]);
   });
 
+  it("preserves source-faithful stays attached to conditional routes", () => {
+    const kuwait = getVisaRelationshipEvidence("CL", "KW", "visa_required", "2026-09-04");
+
+    expect(kuwait.evidenceLevel).toBe("conditional");
+    expect(kuwait.allowedStays).toContainEqual(expect.objectContaining({
+      label: "Maximum three months from the date of entry for a tourist visa holder",
+      basis: "per_entry",
+    }));
+  });
+
   it("supports the seeded policy examples without claiming unsupported pairs", () => {
     expect(getVisaRelationshipEvidence("BE", "AO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BE", "KE", "eta").supportsCurrentStatus).toBe(true);

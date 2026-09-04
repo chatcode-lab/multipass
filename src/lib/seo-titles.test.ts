@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import fallback from "../data/fallback.json";
-import { destinationPageTitle, MAX_PAGE_TITLE_LENGTH, passportPageTitle, relationshipPageTitle } from "./seo-titles";
+import { POPULAR_COMPARISONS } from "./geography";
+import { comparisonPageTitle, destinationPageTitle, MAX_PAGE_TITLE_LENGTH, passportPageTitle, relationshipPageTitle } from "./seo-titles";
 import type { AccessStatus, DataSnapshot } from "./types";
 
 const snapshot = fallback as DataSnapshot;
@@ -25,6 +26,12 @@ describe("SEO page titles", () => {
           `${passport.name} to ${destination.name}`,
         ).toBeLessThanOrEqual(MAX_PAGE_TITLE_LENGTH);
       }
+    }
+  });
+
+  it("keeps every curated comparison title within the same limit", () => {
+    for (const comparison of POPULAR_COMPARISONS) {
+      expect(comparisonPageTitle(comparison.shortTitle).length, comparison.slug).toBeLessThanOrEqual(MAX_PAGE_TITLE_LENGTH);
     }
   });
 

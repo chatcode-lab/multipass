@@ -20,7 +20,7 @@ The application is intentionally direct: no accounts, lead forms, analytics, or 
 - Publishes an inspectable evidence matrix showing exact support, officially characterized conditional relationships, structured stay-limit coverage, and source-review dates.
 - Exposes same-origin JSON endpoints and an AI-oriented guide for reproducible comparisons.
 
-As of 1 September 2026, the official-source layer supports 40,941 of 44,974 foreign-access relationships (91.0%). Another 1,006 relationships are officially characterized without being forced into one misleading rank category, and 4,127 relationships have a structured allowed-stay rule. The live [status page](https://multipassrank.com/status) is the current authority for progress.
+As of 4 September 2026, the official-source layer supports 40,941 of 44,974 foreign-access relationships (91.0%). Another 1,142 relationships are officially characterized without being forced into one misleading rank category, and 4,263 relationships have a structured allowed-stay rule. The live [status page](https://multipassrank.com/status) is the current authority for progress.
 
 Regional and language collections are generated from the registry in `src/lib/geography.ts`. Language groups use official or nationally designated administrative/working-language status rather than ethnicity or assumed individual fluency.
 

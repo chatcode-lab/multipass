@@ -47,7 +47,7 @@ export function escapeXml(value: string): string {
 
 export function sitemapLastModified(manifest: SnapshotManifest): string {
   const checkedAt = manifest.checkedAt.slice(0, 10);
-  return checkedAt > "2026-09-01" ? checkedAt : "2026-09-01";
+  return checkedAt > "2026-09-04" ? checkedAt : "2026-09-04";
 }
 
 export function sitemapRegionSlug(region: Region): string {

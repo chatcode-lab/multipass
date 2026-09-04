@@ -93,9 +93,11 @@ export function getVisaRelationshipEvidence(
     policy.status === currentStatus && activeDuring(policy, asOf)
   );
   const activeConditional = conditional.filter((item) => activeDuring(item, asOf));
-  const allowedStays = policies
-    .filter((policy) => policy.status === currentStatus && activeDuring(policy, asOf))
-    .flatMap((policy) => policy.allowedStays?.filter((rule) => allowedStayApplies(rule, passportCode)) ?? [])
+  const allowedStays = [
+    ...policies.filter((policy) => policy.status === currentStatus && activeDuring(policy, asOf)),
+    ...activeConditional,
+  ]
+    .flatMap((item) => item.allowedStays?.filter((rule) => allowedStayApplies(rule, passportCode)) ?? [])
     .filter((rule, index, items) => items.findIndex((candidate) =>
       candidate.label === rule.label
       && candidate.basis === rule.basis

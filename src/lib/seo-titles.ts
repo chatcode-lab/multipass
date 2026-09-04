@@ -30,6 +30,10 @@ export function destinationPageTitle(destination: Pick<Destination, "name">): st
   return addBrandWhenItFits(`${destination.name} Visa Requirements`);
 }
 
+export function comparisonPageTitle(shortTitle: string): string {
+  return addBrandWhenItFits(`${shortTitle} Passport Comparison`);
+}
+
 export function relationshipPageTitle(
   passport: Pick<PassportSummary, "code" | "name">,
   destination: Pick<Destination, "code" | "name">,
