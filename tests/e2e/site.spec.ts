@@ -506,9 +506,18 @@ test("curated query comparisons become readable URLs with Markdown alternatives"
   expect(newComparisonMarkdown.ok()).toBe(true);
   expect(await newComparisonMarkdown.text()).toContain("# Hong Kong vs China passport comparison");
 
+  await page.goto("/compare?set=US&set=DE");
+  await expect(page).toHaveURL(/\/germany-vs-united-states-passport$/);
+
+  const demandComparisonMarkdown = await request.get("/india-vs-united-states-passport.md");
+  expect(demandComparisonMarkdown.ok()).toBe(true);
+  expect(await demandComparisonMarkdown.text()).toContain("# India vs United States passport comparison");
+
   const coreSitemap = await sitemapGroupText(request, "core.xml");
   expect(coreSitemap).toContain("<loc>https://multipassrank.com/united-states-vs-singapore-passport</loc>");
   expect(coreSitemap).toContain("<loc>https://multipassrank.com/hong-kong-vs-china-passport</loc>");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/germany-vs-united-states-passport</loc>");
+  expect(coreSitemap).toContain("<loc>https://multipassrank.com/india-vs-united-states-passport</loc>");
 });
 
 test("AI instructions expose URL, Markdown, and API conventions", async ({ page, request }) => {

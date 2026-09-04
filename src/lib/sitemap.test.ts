@@ -33,13 +33,15 @@ describe("sitemaps", () => {
     ];
     const urls = groups.flat().map(({ loc }) => loc);
 
-    expect(urls).toHaveLength(41_413);
+    expect(urls).toHaveLength(41_419);
     expect(urls).toContain("https://multipassrank.com/dual-citizenship-countries");
     expect(urls).toContain("https://multipassrank.com/citizenship-by-descent");
     expect(urls).toContain("https://multipassrank.com/best-second-passport-for-us-citizens");
     expect(urls).toContain("https://multipassrank.com/improve");
     expect(urls).toContain("https://multipassrank.com/united-states-vs-singapore-passport");
     expect(urls).toContain("https://multipassrank.com/hong-kong-vs-china-passport");
+    expect(urls).toContain("https://multipassrank.com/germany-vs-united-states-passport");
+    expect(urls).toContain("https://multipassrank.com/india-vs-united-states-passport");
     expect(new Set(urls).size).toBe(urls.length);
     expect(urls.every((url) => url.startsWith("https://multipassrank.com/") && !url.includes("?") && !url.endsWith(".md")))
       .toBe(true);
