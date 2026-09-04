@@ -61,12 +61,12 @@ const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toStri
     <!-- Privacy-friendly analytics by Plausible -->
     <script is:inline async src="https://plausible.io/js/pa-WucFieMfo1ohS1GhviZuL.js"></script>
     <script is:inline>
-      window.plausible = window.plausible || function (...args) {
+      window.plausible = window.plausible || ((...args) => {
         (window.plausible.q = window.plausible.q || []).push(args);
-      };
-      window.plausible.init = window.plausible.init || function (options) {
+      });
+      window.plausible.init = window.plausible.init || ((options) => {
         window.plausible.o = options || {};
-      };
+      });
       window.plausible.init();
     </script>
   </head>
