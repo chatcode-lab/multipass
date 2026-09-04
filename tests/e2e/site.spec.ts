@@ -61,6 +61,15 @@ test("homepage renders a searchable passport ranking", async ({ page }) => {
   }
 });
 
+test("every HTML page loads the shared Plausible analytics tag", async ({ page }) => {
+  for (const path of ["/", "/passport/singapore", "/destination/japan", "/compare"]) {
+    const response = await page.goto(path);
+    await expect(page.locator('script[src="https://plausible.io/js/pa-WucFieMfo1ohS1GhviZuL.js"]')).toHaveCount(1);
+    expect(await page.locator("head").evaluate(() => typeof window.plausible)).toBe("function");
+    expect(response?.headers()["content-security-policy"]).toContain("https://plausible.io");
+  }
+});
+
 test("generated document titles stay within the search-engine length recommendation", async ({ page }) => {
   const samples = [
     "/passport/st-vincent-and-the-grenadines",

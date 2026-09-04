@@ -16,7 +16,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     headers.set("Cloudflare-CDN-Cache-Control", `public, max-age=${edgeTtl}, stale-while-revalidate=${staleTtl}`);
     headers.set("Cache-Tag", "multipass-public");
   }
-  headers.set("Content-Security-Policy", "default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
+  headers.set("Content-Security-Policy", "default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
   headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=()");
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
