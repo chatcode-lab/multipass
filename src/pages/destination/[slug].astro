@@ -14,7 +14,12 @@ const { manifest, source } = await getDataContext(Astro.locals);
 const destination = resolveDestinationBySlug(Astro.params.slug, manifest);
 if (!destination) return Astro.rewrite("/404");
 const canonical = `/destination/${destinationSlug(destination)}`;
-if (Astro.params.slug !== destinationSlug(destination)) return Astro.redirect(canonical, 308);
+if (Astro.params.slug !== destinationSlug(destination)) {
+  return new Response(null, {
+    status: 308,
+    headers: { Location: canonical, "Cache-Control": "public, max-age=3600" },
+  });
+}
 const details = await getPassportAccessBatch(Astro.locals, manifest.passports.map((passport) => passport.code), manifest.version);
 const rows = manifest.passports.map((passport) => ({
   passport,

@@ -72,10 +72,12 @@ import {
 } from "@/data/visa-evidence";
 import type { DataSnapshot } from "./types";
 import {
+  couldBeVisaRelationshipSlug,
   destinationSlug,
   evidenceRelationshipPairs,
   getVisaRelationshipEvidence,
   resolveDestinationBySlug,
+  resolvePassportBySlug,
   resolveVisaRelationshipSlug,
   visaRelationshipHref,
 } from "./visa-evidence";
@@ -100,6 +102,25 @@ describe("visa relationship URLs", () => {
       destination: { code: "TD" },
       requestedStatus: "evisa",
     });
+  });
+
+  it("resolves conservative country and access-status spelling aliases", () => {
+    expect(resolvePassportBySlug("naoero", snapshot.manifest)).toMatchObject({ code: "NR" });
+    expect(resolvePassportBySlug("USA", snapshot.manifest)).toMatchObject({ code: "US" });
+    expect(resolveDestinationBySlug("naoero", snapshot.manifest)).toMatchObject({ code: "NR" });
+    expect(resolveDestinationBySlug("turkey", snapshot.manifest)).toMatchObject({ code: "TR" });
+    expect(resolveVisaRelationshipSlug("naoero-san-marino-visa-required", snapshot.manifest)).toMatchObject({
+      passport: { code: "NR" },
+      destination: { code: "SM" },
+      requestedStatus: "visa_required",
+    });
+    expect(resolveVisaRelationshipSlug("USA-angola-no-visa", snapshot.manifest)).toMatchObject({
+      passport: { code: "US" },
+      destination: { code: "AO" },
+      requestedStatus: "visa_free",
+    });
+    expect(couldBeVisaRelationshipSlug("belgium-angola-electronic-visa")).toBe(true);
+    expect(couldBeVisaRelationshipSlug("assets../.env")).toBe(false);
   });
 
   it("resolves reviewed unknown relationship URLs without treating them as verified", () => {

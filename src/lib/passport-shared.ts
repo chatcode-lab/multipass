@@ -1,5 +1,11 @@
 import type { AccessStatus } from "./types";
 
+const COUNTRY_NAME_OVERRIDES: Partial<Record<string, string>> = {
+  // The upstream feed briefly switched ISO NR to its Nauruan endonym,
+  // "Naoero". Keep the English product name and public URLs stable.
+  NR: "Nauru",
+};
+
 export const STATUS_META: Record<
   AccessStatus,
   { label: string; shortLabel: string; description: string }
@@ -56,6 +62,10 @@ export const ACCESS_EASE_WEIGHT: Record<AccessStatus, number> = {
   entry_restricted: 0,
   unknown: -1,
 };
+
+export function canonicalCountryName(code: string, value: string): string {
+  return COUNTRY_NAME_OVERRIDES[code.trim().toUpperCase()] ?? value.trim();
+}
 
 export function slugifyCountry(value: string): string {
   return value

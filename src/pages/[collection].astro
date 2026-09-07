@@ -7,7 +7,12 @@ import { getDataContext, getPassportAccess, getPassportAccessBatch } from "@/lib
 import { getPassportCollection, getPopularComparison, PASSPORT_COLLECTIONS, passportsInCollection } from "@/lib/geography";
 import { comparePassportSets } from "@/lib/passport";
 import type { AccessStatus, PassportAccess } from "@/lib/types";
-import { getVisaRelationshipEvidence, resolveVisaRelationshipSlug, visaRelationshipSlug } from "@/lib/visa-evidence";
+import {
+  couldBeVisaRelationshipSlug,
+  getVisaRelationshipEvidence,
+  resolveVisaRelationshipSlug,
+  visaRelationshipSlug,
+} from "@/lib/visa-evidence";
 
 const collection = getPassportCollection(Astro.params.collection);
 const comparison = getPopularComparison(Astro.params.collection);
@@ -19,6 +24,9 @@ if (comparison && Astro.params.collection !== comparison.slug) {
       "Cache-Control": "public, max-age=3600",
     },
   });
+}
+if (!collection && !comparison && !couldBeVisaRelationshipSlug(Astro.params.collection)) {
+  return Astro.rewrite("/404");
 }
 const { manifest, source } = await getDataContext(Astro.locals);
 const relationship = !collection && !comparison ? resolveVisaRelationshipSlug(Astro.params.collection, manifest) : null;
@@ -33,7 +41,10 @@ if (relationship && relationshipStatus) {
   if (relationshipStatus === "citizenship") {
     return new Response(null, {
       status: 308,
-      headers: { Location: `/passport/${relationship.passport.slug}`, "Cache-Control": "public, max-age=3600" },
+      headers: {
+        Location: `/passport/${relationship.passport.slug}`,
+        "Cache-Control": "public, max-age=3600",
+      },
     });
   }
   const canonicalSlug = visaRelationshipSlug(relationship.passport, relationship.destination, relationshipStatus);

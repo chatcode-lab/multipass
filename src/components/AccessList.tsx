@@ -80,7 +80,7 @@ export default function AccessList({ passport, destinations }: AccessListProps) 
                   return (
                   <a
                     className="access-row"
-                    href={visaRelationshipHref({ slug: slugifyCountry(passport.name) }, destination, destinationStatus)}
+                    href={visaRelationshipHref({ code: passport.code, slug: slugifyCountry(passport.name) }, destination, destinationStatus)}
                     aria-label={`${passport.name} passport to ${destination.name}: ${STATUS_META[destinationStatus].label}`}
                     key={destination.code}
                   >

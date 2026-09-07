@@ -16,7 +16,7 @@ import {
 } from "./types";
 import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
 import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
-import { ACCESS_EASE_WEIGHT, slugifyCountry } from "./passport-shared";
+import { ACCESS_EASE_WEIGHT, canonicalCountryName, slugifyCountry } from "./passport-shared";
 
 export { ACCESS_EASE_WEIGHT, STATUS_META, slugifyCountry } from "./passport-shared";
 
@@ -54,7 +54,7 @@ export function buildDestinationCatalog(countries: SourceCountry[]): Destination
     const code = normalizeCode(country.code);
     return {
       code,
-      name: DESTINATION_NAME_OVERRIDES[code] ?? country.country.trim(),
+      name: DESTINATION_NAME_OVERRIDES[code] ?? canonicalCountryName(code, country.country),
       region: normalizeRegion(country.region),
     };
   });
@@ -117,10 +117,15 @@ export function normalizePassportDetail(
   statuses[code] = "citizenship";
   return applyAccessOverrides({
     code,
-    name: detail.country.trim(),
+    name: canonicalCountryName(code, detail.country),
     statuses,
     mobilityScore: calculateMobilityScore(statuses),
   });
+}
+
+export function normalizePassportAccessIdentity(detail: PassportAccess): PassportAccess {
+  const name = canonicalCountryName(detail.code, detail.name);
+  return name === detail.name ? detail : { ...detail, name };
 }
 
 export function applyVerifiedAccessOverrides(detail: PassportAccess): PassportAccess {
@@ -174,16 +179,36 @@ export function reconcileManifestPassportDetails(
   const correctedScores = new Map(
     manifest.passports.map((passport) => [passport.code, details[passport.code]?.mobilityScore ?? passport.mobilityScore]),
   );
-  const changed = manifest.passports.some((passport) => correctedScores.get(passport.code) !== passport.mobilityScore);
-  if (!changed) return manifest;
+  const destinations = manifest.destinations.map((destination) => {
+    const name = DESTINATION_NAME_OVERRIDES[destination.code]
+      ?? canonicalCountryName(destination.code, destination.name);
+    return name === destination.name ? destination : { ...destination, name };
+  });
+  const identitiesChanged = destinations.some((destination, index) => destination !== manifest.destinations[index])
+    || manifest.passports.some((passport) => {
+      const name = canonicalCountryName(passport.code, passport.name);
+      return name !== passport.name || slugifyCountry(name) !== passport.slug;
+    });
+  const scoresChanged = manifest.passports.some(
+    (passport) => correctedScores.get(passport.code) !== passport.mobilityScore,
+  );
+  if (!identitiesChanged && !scoresChanged) return manifest;
 
   const ranks = denseRankByScore(correctedScores.values());
   return {
     ...manifest,
+    destinations,
     passports: manifest.passports
       .map((passport) => {
+        const name = canonicalCountryName(passport.code, passport.name);
         const mobilityScore = correctedScores.get(passport.code) ?? passport.mobilityScore;
-        return { ...passport, mobilityScore, rank: ranks.get(mobilityScore) ?? passport.rank };
+        return {
+          ...passport,
+          name,
+          slug: slugifyCountry(name),
+          mobilityScore,
+          rank: ranks.get(mobilityScore) ?? passport.rank,
+        };
       })
       .sort((first, second) => first.rank - second.rank || second.mobilityScore - first.mobilityScore || first.name.localeCompare(second.name)),
   };
@@ -220,10 +245,11 @@ export function buildPassportSummariesFromScores(
       const code = normalizeCode(country.code);
       const mobilityScore = scores[code];
       if (mobilityScore === undefined) throw new Error(`Missing normalized passport score for ${code}`);
+      const name = canonicalCountryName(code, country.country);
       return {
         code,
-        name: country.country.trim(),
-        slug: slugifyCountry(country.country),
+        name,
+        slug: slugifyCountry(name),
         region: normalizeRegion(country.region),
         mobilityScore,
         rank: orderedScores.indexOf(mobilityScore) + 1,

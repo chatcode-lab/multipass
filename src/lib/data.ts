@@ -1,7 +1,11 @@
 import fallbackSnapshot from "@/data/fallback.json";
 import fallbackCombinationInsights from "@/data/combination-insights.json";
 import { env } from "cloudflare:workers";
-import { applyAccessOverrides, reconcileManifestPassportDetails } from "./passport";
+import {
+  applyAccessOverrides,
+  normalizePassportAccessIdentity,
+  reconcileManifestPassportDetails,
+} from "./passport";
 import type {
   CombinationInsights,
   DataSnapshot,
@@ -39,7 +43,10 @@ function passportDataKv(): KVNamespace | undefined {
 
 function reconcileSnapshot(snapshot: PublishedDataSnapshot): PublishedDataSnapshot {
   const passports = Object.fromEntries(
-    Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]),
+    Object.entries(snapshot.passports).map(([code, detail]) => [
+      code,
+      normalizePassportAccessIdentity(applyAccessOverrides(detail)),
+    ]),
   );
   return {
     ...snapshot,

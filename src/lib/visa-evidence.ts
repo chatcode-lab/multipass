@@ -10,7 +10,9 @@ import {
 import { getReviewedUnknownOverride, type ReviewedUnknownOverride } from "@/data/reviewed-unknown-overrides";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "./types";
 export {
+  couldBeVisaRelationshipSlug,
   destinationSlug,
+  resolvePassportBySlug,
   resolveDestinationBySlug,
   resolveVisaRelationshipSlug,
   VISA_STATUS_SLUGS,

@@ -64,6 +64,7 @@ const structuredData = [
   description={description}
   canonical={canonical}
   markdownHref={markdownHref}
+  jsonHref={`/api/v1/visa/${passport.code}/${destination.code}`}
   noindex={!evidence.supportsCurrentStatus}
   structuredData={structuredData}
 >

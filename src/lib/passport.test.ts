@@ -11,6 +11,7 @@ import {
   denseRankByScore,
   improvePassportSets,
   normalizePassportDetail,
+  normalizePassportAccessIdentity,
   parsePassportSets,
   rankEquivalent,
   reconcileManifestPassportDetails,
@@ -21,6 +22,34 @@ import type { Destination, PassportAccess, PassportSummary, SnapshotManifest, So
 describe("passport calculations", () => {
   it("normalizes readable country slugs", () => {
     expect(slugifyCountry("São Tomé & Príncipe")).toBe("sao-tome-and-principe");
+  });
+
+  it("keeps ISO country identities stable when an upstream name changes", () => {
+    const detail = normalizePassportAccessIdentity({
+      code: "NR",
+      name: "Naoero",
+      statuses: { NR: "citizenship" },
+      mobilityScore: 0,
+    });
+    expect(detail.name).toBe("Nauru");
+
+    const manifest = reconcileManifestPassportDetails({
+      schemaVersion: 1,
+      version: "identity-test",
+      checkedAt: "2026-09-07T00:00:00.000Z",
+      publishedAt: "2026-09-07T00:00:00.000Z",
+      destinations: [{ code: "NR", name: "Naoero", region: "OCEANIA" }],
+      passports: [{
+        code: "NR",
+        name: "Naoero",
+        slug: "naoero",
+        region: "OCEANIA",
+        mobilityScore: 0,
+        rank: 1,
+      }],
+    }, { NR: detail });
+    expect(manifest.passports[0]).toMatchObject({ code: "NR", name: "Nauru", slug: "nauru" });
+    expect(manifest.destinations[0]).toMatchObject({ code: "NR", name: "Nauru" });
   });
 
   it("counts scored access and removes one home destination", () => {

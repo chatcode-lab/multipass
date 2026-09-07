@@ -10,6 +10,7 @@ interface Props {
   description: string;
   canonical?: string;
   markdownHref?: string;
+  jsonHref?: string;
   noindex?: boolean;
   robots?: string;
   ogType?: "website" | "article";
@@ -21,6 +22,7 @@ const {
   description,
   canonical = Astro.url.pathname,
   markdownHref,
+  jsonHref,
   noindex = false,
   robots,
   ogType = "website",
@@ -28,6 +30,13 @@ const {
 } = Astro.props;
 const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url.origin).toString();
 const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toString();
+const markdownUrl = markdownHref ? new URL(markdownHref, Astro.site ?? Astro.url.origin).toString() : undefined;
+const jsonUrl = jsonHref ? new URL(jsonHref, Astro.site ?? Astro.url.origin).toString() : undefined;
+const alternateHeaders = [
+  markdownUrl ? `<${markdownUrl}>; rel="alternate"; type="text/markdown"` : undefined,
+  jsonUrl ? `<${jsonUrl}>; rel="alternate"; type="application/json"` : undefined,
+].filter(Boolean);
+if (alternateHeaders.length) Astro.response.headers.append("Link", alternateHeaders.join(", "));
 ---
 
 <!doctype html>
@@ -44,7 +53,8 @@ const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toStri
     <link rel="help" type="text/plain" href="/llms.txt" title="Instructions for AI agents" />
     <link rel="preload" href={instrumentSansUrl} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={newsreaderUrl} as="font" type="font/woff2" crossorigin="anonymous" />
-    {markdownHref && <link rel="alternate" type="text/markdown" href={new URL(markdownHref, Astro.site ?? Astro.url.origin)} />}
+    {markdownUrl && <link rel="alternate" type="text/markdown" href={markdownUrl} />}
+    {jsonUrl && <link rel="alternate" type="application/json" href={jsonUrl} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="MultiPass Rank" />

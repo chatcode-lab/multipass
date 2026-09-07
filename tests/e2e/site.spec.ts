@@ -810,6 +810,31 @@ test("corrected Saint Martin URLs retain St. Maarten compatibility redirects", a
   expect(relationship.headers().location).toBe("/belgium-saint-martin-french-part-visa-free");
 });
 
+test("country and status aliases preserve stable canonical relationship URLs", async ({ page, request }) => {
+  const nauruRelationship = await request.get("/naoero-san-marino-visa-required", { maxRedirects: 0 });
+  expect(nauruRelationship.status()).toBe(308);
+  expect(nauruRelationship.headers().location).toBe("/nauru-san-marino-visa");
+
+  const oldPassport = await request.get("/passport/naoero", { maxRedirects: 0 });
+  expect(oldPassport.status()).toBe(308);
+  expect(oldPassport.headers().location).toBe("/passport/nauru");
+
+  const oldDestination = await request.get("/destination/naoero.md", { maxRedirects: 0 });
+  expect(oldDestination.status()).toBe(308);
+  expect(oldDestination.headers().location).toBe("/destination/nauru.md");
+
+  const commonSpelling = await request.get("/USA-angola-no-visa", { maxRedirects: 0 });
+  expect(commonSpelling.status()).toBe(308);
+  expect(commonSpelling.headers().location).toBe("/united-states-angola-visa-free");
+
+  await page.goto("/nauru-san-marino-visa");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Nauru to San Marino");
+
+  const probe = await request.get("/assets../.env", { maxRedirects: 0 });
+  expect(probe.status()).toBe(404);
+  expect(probe.headers()["cache-control"]).toContain("s-maxage=3600");
+});
+
 test("citizenship cells use passport pages instead of duplicate relationship URLs", async ({ page, request }) => {
   await page.goto("/destination/estonia");
   await expect(page.getByRole("link", { name: /Estonia.*Citizenship/ }))
@@ -856,6 +881,46 @@ test("passport and comparison status cells link to relationship evidence", async
     .first();
   await expect(tiedAngolaCell.getByRole("link", { name: /3 passports tie, open destination overview/ }))
     .toHaveAttribute("href", "/destination/angola#passports=PT,RU,IL");
+});
+
+test("high-demand evidence pages advertise machine formats and fit mobile screens", async ({ page }) => {
+  for (const path of ["/lebanon-morocco-visa", "/destination/montenegro", "/passport/hong-kong-sar-china"]) {
+    const response = await page.goto(path);
+    expect(response?.ok(), path).toBe(true);
+    const pageWidth = await page.evaluate(() => ({
+      viewport: window.innerWidth,
+      document: document.documentElement.scrollWidth,
+    }));
+    expect(pageWidth.document - pageWidth.viewport, path).toBeLessThanOrEqual(1);
+  }
+
+  const relationshipResponse = await page.goto("/lebanon-morocco-visa");
+  expect(relationshipResponse?.headers().link).toContain("/lebanon-morocco-visa.md");
+  expect(relationshipResponse?.headers().link).toContain("/api/v1/visa/LB/MA");
+  await expect(page.locator('link[rel="alternate"][type="application/json"]'))
+    .toHaveAttribute("href", "https://multipassrank.com/api/v1/visa/LB/MA");
+
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 620) {
+    const passportArt = await page.locator(".visa-relation-hero__passport").boundingBox();
+    const heading = await page.getByRole("heading", { level: 1 }).boundingBox();
+    expect(passportArt).not.toBeNull();
+    expect(heading).not.toBeNull();
+    expect(passportArt!.y + passportArt!.height).toBeLessThanOrEqual(heading!.y);
+
+    await page.goto("/destination/montenegro");
+    const controls = page.locator(".destination-access-toolbar input, .destination-access-toolbar select");
+    for (const control of await controls.all()) {
+      const bounds = await control.boundingBox();
+      expect(bounds).not.toBeNull();
+      expect(bounds!.x).toBeGreaterThanOrEqual(0);
+      expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(viewport.width);
+    }
+    const firstAccessLink = page.locator(".destination-access-grid a").first();
+    const accessBounds = await firstAccessLink.boundingBox();
+    expect(accessBounds).not.toBeNull();
+    expect(accessBounds!.height).toBeGreaterThanOrEqual(44);
+  }
 });
 
 test("destination passport filters support controls, query parameters, and tie-link hashes", async ({ page }) => {

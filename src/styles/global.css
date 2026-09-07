@@ -1568,11 +1568,19 @@ main { min-height: 68vh; }
   .status-summary > span { border-right: 0; border-bottom: 1px solid var(--line); }
   .status-summary > span:nth-last-child(-n + 2) { border-bottom: 0; }
   .destination-grid { grid-template-columns: 1fr; }
+  .destination-access-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+  .destination-access-toolbar .search-field,
+  .destination-access-toolbar .destination-access-filters { grid-column: 1 / -1; }
+  .destination-access-toolbar .result-count { grid-column: 2; justify-self: end; margin-left: 0; }
   .destination-hero,
   .visa-relation-hero { grid-template-columns: 1fr; gap: 26px; padding-top: 58px; }
   .destination-hero > .country-flag { width: 76px; font-size: 66px; }
   .destination-hero h1,
-  .visa-relation-hero h1 { font-size: 49px; }
+  .visa-relation-hero h1 { overflow-wrap: anywhere; font-size: clamp(42px, 13vw, 49px); }
   .visa-relation-hero__passport { min-height: 170px; }
   .visa-relation-hero__passport .passport-stack { justify-self: center; }
   .destination-access-grid { grid-template-columns: 1fr; }
@@ -1584,6 +1592,7 @@ main { min-height: 68vh; }
   .application-guide { grid-template-columns: 1fr; gap: 24px; margin-bottom: 58px; padding: 25px 22px; }
   .application-guide > .button { grid-column: auto; width: 100%; }
   .source-register li { grid-template-columns: 1fr; gap: 6px; align-content: center; padding-block: 15px; }
+  .source-register li a { overflow-wrap: anywhere; }
   .region-map__canvas { height: 220px; }
   .content-formats a { top: 12px; }
   .site-footer__nav { grid-template-columns: minmax(0, .85fr) minmax(0, 1.35fr); gap: 28px 30px; }

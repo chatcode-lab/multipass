@@ -11,10 +11,17 @@ import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
 import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
 import { passportPageTitle } from "@/lib/seo-titles";
+import { resolvePassportBySlug } from "@/lib/visa-evidence";
 
 const { manifest, source } = await getDataContext(Astro.locals);
-const passport = manifest.passports.find((entry) => entry.slug === Astro.params.slug);
+const passport = resolvePassportBySlug(Astro.params.slug, manifest);
 if (!passport) return Astro.rewrite("/404");
+if (Astro.params.slug !== passport.slug) {
+  return new Response(null, {
+    status: 308,
+    headers: { Location: `/passport/${passport.slug}`, "Cache-Control": "public, max-age=3600" },
+  });
+}
 const detail = await getPassportAccess(Astro.locals, passport.code, manifest.version);
 if (!detail) return Astro.rewrite("/404");
 
@@ -66,6 +73,7 @@ const structuredData = [
   description={description}
   canonical={`/passport/${passport.slug}`}
   markdownHref={`/passport/${passport.slug}.md`}
+  jsonHref={`/api/v1/passports/${passport.code}`}
   structuredData={structuredData}
 >
   <header class="passport-hero">

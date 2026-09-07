@@ -8,7 +8,7 @@ MultiPass Rank is an evidence-aware passport-ranking and multi-passport combinat
 
 [Open the live tool](https://multipassrank.com) · [Measure incremental gains](https://multipassrank.com/improve) · [Browse destinations](https://multipassrank.com/destinations) · [Inspect evidence coverage](https://multipassrank.com/status) · [Read the AI guide](https://multipassrank.com/ai)
 
-The application is intentionally direct: no accounts, lead forms, analytics, or commercial ranking adjustments. It was built with Codex through [chatcode.dev](https://chatcode.dev) in partnership with [Settlers Club](https://settlers.club), and is published as a [Chatcode Lab](https://chatcode.dev/lab/multipass-rank-passport-combination-calculator/) project.
+The application is intentionally direct: no accounts, lead forms, behavioral advertising, or commercial ranking adjustments. It uses cookie-free aggregate Plausible analytics to understand which tools and evidence pages are useful. It was built with Codex through [chatcode.dev](https://chatcode.dev) in partnership with [Settlers Club](https://settlers.club), and is published as a [Chatcode Lab](https://chatcode.dev/lab/multipass-rank-passport-combination-calculator/) project.
 
 ## What it does
 

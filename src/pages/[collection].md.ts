@@ -5,7 +5,13 @@ import { markdownResponse } from "@/lib/markdown";
 import { comparisonMarkdown, rankingMarkdown } from "@/lib/markdown-content";
 import { comparePassportSets } from "@/lib/passport";
 import type { AccessStatus } from "@/lib/types";
-import { getVisaRelationshipEvidence, resolveVisaRelationshipSlug, visaRelationshipSlug } from "@/lib/visa-evidence";
+import {
+  couldBeVisaRelationshipSlug,
+  getVisaRelationshipEvidence,
+  resolveVisaRelationshipSlug,
+  visaRelationshipHref,
+  visaRelationshipSlug,
+} from "@/lib/visa-evidence";
 import { visaRelationshipMarkdown } from "@/lib/visa-markdown";
 
 export const GET: APIRoute = async ({ locals, params }) => {
@@ -20,6 +26,15 @@ export const GET: APIRoute = async ({ locals, params }) => {
       },
     });
   }
+  if (!collection && !comparison && !couldBeVisaRelationshipSlug(params.collection)) {
+    return new Response("# Not found\n", {
+      status: 404,
+      headers: {
+        "Content-Type": "text/markdown; charset=utf-8",
+        "Cache-Control": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400",
+      },
+    });
+  }
   const { manifest } = await getDataContext(locals);
   if (!collection && !comparison) {
     const relationship = resolveVisaRelationshipSlug(params.collection, manifest);
@@ -30,7 +45,10 @@ export const GET: APIRoute = async ({ locals, params }) => {
     if (status === "citizenship") {
       return new Response(null, {
         status: 308,
-        headers: { Location: `/passport/${relationship.passport.slug}.md`, "Cache-Control": "public, max-age=3600" },
+        headers: {
+          Location: `${visaRelationshipHref(relationship.passport, relationship.destination, status)}.md`,
+          "Cache-Control": "public, max-age=3600",
+        },
       });
     }
     const canonicalSlug = visaRelationshipSlug(relationship.passport, relationship.destination, status);
