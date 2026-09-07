@@ -47,7 +47,12 @@ Two highlighted options
 https://multipassrank.com/rank?set=US,CA&amp;set=PT</code></pre>
 
     <h2>Request Markdown</h2>
-    <p>Add <code>.md</code> before the query string, or use the Markdown link published in each page’s HTML head.</p>
+    <p>
+      Send <code>Accept: text/markdown</code> to a normal HTML page URL to receive its native Markdown representation directly.
+      The response includes an estimated <code>x-markdown-tokens</code> count. Browsers still receive HTML by default.
+    </p>
+    <pre><code>curl -H 'Accept: text/markdown' https://multipassrank.com/passport/portugal</code></pre>
+    <p>Add <code>.md</code> before the query string when a client cannot set request headers, or use the Markdown link published in each page’s HTML head.</p>
     <pre><code>https://multipassrank.com/compare.md?set=US,CA&amp;set=PT
 https://multipassrank.com/rank.md?set=US,CA&amp;set=PT
 https://multipassrank.com/passport/portugal.md

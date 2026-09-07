@@ -8,6 +8,8 @@ MultiPass Rank is an evidence-aware passport-ranking and multi-passport combinat
 
 [Open the live tool](https://multipassrank.com) · [Measure incremental gains](https://multipassrank.com/improve) · [Browse destinations](https://multipassrank.com/destinations) · [Inspect evidence coverage](https://multipassrank.com/status) · [Read the AI guide](https://multipassrank.com/ai)
 
+Maintainers and agents should use the [SEO and agent-discovery playbook](docs/seo-aeo-playbook.md) as the canonical guide for indexing, evidence pages, URLs, mobile performance, sitemaps, and search/agent measurement.
+
 The application is intentionally direct: no accounts, lead forms, behavioral advertising, or commercial ranking adjustments. It uses cookie-free aggregate Plausible analytics to understand which tools and evidence pages are useful. It was built with Codex through [chatcode.dev](https://chatcode.dev) in partnership with [Settlers Club](https://settlers.club), and is published as a [Chatcode Lab](https://chatcode.dev/lab/multipass-rank-passport-combination-calculator/) project.
 
 ## What it does
@@ -16,7 +18,7 @@ The application is intentionally direct: no accounts, lead forms, behavioral adv
 - Combines up to five passports and places the resulting set into the global ranking.
 - Compares individual or combined sets destination by destination, with regional filters and differences-only mode.
 - Builds an ordered improvement sequence and shows what each added passport or set contributes beyond all preceding stages.
-- Gives every passport, destination, and verified passport–destination relationship a stable HTML and Markdown URL.
+- Gives every passport, destination, and verified passport–destination relationship a stable HTML and Markdown URL, with native Markdown content negotiation for agents.
 - Publishes an inspectable evidence matrix showing exact support, officially characterized conditional relationships, structured stay-limit coverage, and source-review dates.
 - Exposes same-origin JSON endpoints and an AI-oriented guide for reproducible comparisons.
 

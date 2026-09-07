@@ -1,4 +1,5 @@
 import { defineMiddleware } from "astro:middleware";
+import { acceptsMarkdown, appendVary, markdownPathFor } from "@/lib/markdown-negotiation";
 
 export const onRequest = defineMiddleware(async (context, next) => {
   if (context.url.hostname === "www.multipassrank.com") {
@@ -7,8 +8,16 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return Response.redirect(canonical, 308);
   }
 
-  const response = await next();
+  const negotiableMethod = ["GET", "HEAD"].includes(context.request.method);
+  const markdownPath = negotiableMethod
+    ? markdownPathFor(context.url.pathname)
+    : undefined;
+  const serveMarkdown = Boolean(markdownPath && acceptsMarkdown(context.request.headers.get("Accept")));
+  const response = serveMarkdown
+    ? await next(new URL(`${markdownPath}${context.url.search}`, context.url))
+    : await next();
   const headers = new Headers(response.headers);
+  if (markdownPath) headers.set("Vary", appendVary(headers.get("Vary"), "Accept"));
   const cacheControl = headers.get("Cache-Control");
   if (cacheControl?.includes("public") && !headers.has("Cloudflare-CDN-Cache-Control")) {
     const edgeTtl = cacheControl.match(/s-maxage=(\d+)/)?.[1] ?? cacheControl.match(/max-age=(\d+)/)?.[1] ?? "300";

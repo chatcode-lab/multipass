@@ -1,3 +1,5 @@
+import { estimateMarkdownTokens } from "./markdown-negotiation";
+
 const SITE_ORIGIN = "https://multipassrank.com";
 
 export function escapeMarkdown(value: string): string {
@@ -5,11 +7,13 @@ export function escapeMarkdown(value: string): string {
 }
 
 export function markdownResponse(markdown: string, canonicalPath: string, noindex = false): Response {
-  return new Response(`${markdown.trim()}\n`, {
+  const body = `${markdown.trim()}\n`;
+  return new Response(body, {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       "Cache-Control": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400",
       Link: `<${new URL(canonicalPath, SITE_ORIGIN)}>; rel="canonical"`,
+      "X-Markdown-Tokens": String(estimateMarkdownTokens(body)),
       ...(noindex ? { "X-Robots-Tag": "noindex, follow" } : {}),
     },
   });

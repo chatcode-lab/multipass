@@ -547,6 +547,45 @@ test("AI instructions expose URL, Markdown, and API conventions", async ({ page,
   expect(llmsBody).toContain("Build incremental improvement URLs");
 });
 
+test("HTML page URLs negotiate their native Markdown representations", async ({ request }) => {
+  const html = await request.get("/", { headers: { Accept: "text/html" } });
+  expect(html.ok()).toBe(true);
+  expect(html.headers()["content-type"]).toContain("text/html");
+  expect(html.headers().vary.toLowerCase()).toContain("accept");
+
+  const markdown = await request.get("/", { headers: { Accept: "text/markdown" } });
+  expect(markdown.ok()).toBe(true);
+  expect(markdown.headers()["content-type"]).toContain("text/markdown");
+  expect(markdown.headers().vary.toLowerCase()).toContain("accept");
+  expect(Number(markdown.headers()["x-markdown-tokens"])).toBeGreaterThan(0);
+  expect(markdown.headers().link).toContain("<https://multipassrank.com/>; rel=\"canonical\"");
+  expect(await markdown.text()).toContain("# Passport combination calculator and global passport ranking");
+
+  const markdownHead = await request.head("/", { headers: { Accept: "text/markdown" } });
+  expect(markdownHead.ok()).toBe(true);
+  expect(markdownHead.headers()["content-type"]).toContain("text/markdown");
+  expect(Number(markdownHead.headers()["x-markdown-tokens"])).toBeGreaterThan(0);
+
+  const passport = await request.get("/passport/portugal", { headers: { Accept: "text/markdown" } });
+  expect(passport.ok()).toBe(true);
+  expect(passport.headers()["content-type"]).toContain("text/markdown");
+  expect(await passport.text()).toContain("# Portugal passport rank");
+
+  const customRank = await request.get("/rank?set=US,CA", { headers: { Accept: "text/markdown" } });
+  expect(customRank.ok()).toBe(true);
+  expect(customRank.headers()["x-robots-tag"]).toContain("noindex");
+  expect(await customRank.text()).toContain("United States + Canada");
+
+  const htmlOnly = await request.get("/status", { headers: { Accept: "text/markdown" } });
+  expect(htmlOnly.ok()).toBe(true);
+  expect(htmlOnly.headers()["content-type"]).toContain("text/html");
+
+  const agentGuideHtml = await request.get("/ai", { headers: { Accept: "text/html" } });
+  expect(await agentGuideHtml.text()).toContain("Accept: text/markdown");
+  const llms = await request.get("/llms.txt");
+  expect(await llms.text()).toContain("Accept: text/markdown");
+});
+
 test("eVisa and ETA guide is indexable and available as Markdown", async ({ page, request }) => {
   await page.goto("/evisa-vs-eta");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("eVisa vs ETA: what is the difference?");

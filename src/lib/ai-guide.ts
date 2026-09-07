@@ -10,6 +10,13 @@ export function agentGuideMarkdown(): string {
 
 MultiPass Rank provides current, structured passport-access information for assistants, research tools, and human readers. Use ISO alpha-2 passport codes from the manifest and preserve the data-check date in answers.
 
+## Request Markdown directly
+
+- Send \`Accept: text/markdown\` to an HTML page URL to receive its native Markdown representation without changing the requested URL.
+- Example: \`curl -H 'Accept: text/markdown' ${absoluteUrl("/passport/portugal")}\`
+- The response uses \`Content-Type: text/markdown; charset=utf-8\`, varies on \`Accept\`, and includes an estimated \`x-markdown-tokens\` count.
+- Normal browser requests continue to receive HTML. Explicit \`.md\` URLs remain stable and are useful when a client cannot set request headers.
+
 ## Build comparison URLs
 
 - One passport: \`${absoluteUrl("/compare?set=US")}\`

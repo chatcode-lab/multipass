@@ -1,5 +1,7 @@
 # SEO research notes
 
+This file is the dated measurement and experiment log. For current operating rules, indexing policy, release checks, and the agent protocol, read [SEO and agent-discovery playbook](seo-aeo-playbook.md).
+
 Research was run on 19 August 2026 against DataForSEO's Google Ads US/English dataset and the site's Google Search Console exports. Search volumes are directional monthly averages, not traffic forecasts.
 
 ## Query themes
@@ -179,3 +181,9 @@ The 382-request demand-signals export contains 298 recognizable relationship req
 Routing accepts a bounded set of common country variants and unambiguous access-status spellings, then redirects to one current URL. Arbitrary strings are not fuzzy-matched. Unknown one-segment paths that cannot be relationship URLs now reach a cacheable 404 before passport data is loaded. HTML evidence and passport pages also advertise their Markdown and JSON representations through document and HTTP `Link` relations.
 
 The latest Search Console exports cover 827 impressions. Mobile contributes 560 (67.7%), desktop 258, and tablet nine. The Pages export has a slightly different 841-impression total and assigns 754 (89.7%) to relationship pages; `best-passport-combination` leads standalone content with 18 impressions, followed by the homepage with 13. The top countries are the United States (42), United Kingdom (37), United Arab Emirates (28), Lebanon (21), Saudi Arabia and South Africa (20 each), Australia and Canada (17 each), and Egypt (17). These results reinforce mobile-first testing on long relationship names, whole-cell touch targets, and compact filter controls rather than a new set of broad, thin articles.
+
+## Native Markdown negotiation — 7 September 2026
+
+Cloudflare's Markdown for Agents guidance and the linked agent-readiness skill recommend serving `text/markdown` when a client explicitly includes it in `Accept`. MultiPass Rank already maintains higher-quality native Markdown generators, so middleware now internally rewrites eligible HTML URLs to those representations instead of converting rendered HTML or depending on a paid-plan Cloudflare zone feature. Explicit `.md` URLs remain stable.
+
+Negotiated responses keep the HTML URL as the canonical resource, preserve query parameters and `noindex` policy, return `Content-Type: text/markdown; charset=utf-8`, declare `Vary: Accept`, and include a lightweight estimated `x-markdown-tokens` count. Requests without an explicit positive-quality `text/markdown` range continue to receive HTML. HTML-only routes, APIs, assets, and sitemaps do not negotiate.
