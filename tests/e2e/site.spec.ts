@@ -72,6 +72,22 @@ test("every HTML page loads the shared Plausible analytics tag", async ({ page }
   }
 });
 
+test("social previews use a correctly sized PNG image", async ({ request }) => {
+  const page = await request.get("/");
+  expect(page.ok()).toBe(true);
+  const html = await page.text();
+  expect(html).toContain('<meta property="og:image" content="https://multipassrank.com/og-image.png">');
+  expect(html).toContain('<meta property="og:image:type" content="image/png">');
+  expect(html).toContain('<meta property="og:image:width" content="1200">');
+  expect(html).toContain('<meta property="og:image:height" content="630">');
+  expect(html).toContain('<meta name="twitter:image" content="https://multipassrank.com/og-image.png">');
+
+  const image = await request.get("/og-image.png");
+  expect(image.ok()).toBe(true);
+  expect(image.headers()["content-type"]).toContain("image/png");
+  expect((await image.body()).byteLength).toBeGreaterThan(50_000);
+});
+
 test("generated document titles stay within the search-engine length recommendation", async ({ page }) => {
   const samples = [
     "/passport/st-vincent-and-the-grenadines",

@@ -187,3 +187,7 @@ The latest Search Console exports cover 827 impressions. Mobile contributes 560 
 Cloudflare's Markdown for Agents guidance and the linked agent-readiness skill recommend serving `text/markdown` when a client explicitly includes it in `Accept`. MultiPass Rank already maintains higher-quality native Markdown generators, so middleware now internally rewrites eligible HTML URLs to those representations instead of converting rendered HTML or depending on a paid-plan Cloudflare zone feature. Explicit `.md` URLs remain stable.
 
 Negotiated responses keep the HTML URL as the canonical resource, preserve query parameters and `noindex` policy, return `Content-Type: text/markdown; charset=utf-8`, declare `Vary: Accept`, and include a lightweight estimated `x-markdown-tokens` count. Requests without an explicit positive-quality `text/markdown` range continue to receive HTML. HTML-only routes, APIs, assets, and sitemaps do not negotiate.
+
+## Raster social preview — 7 September 2026
+
+The shared Open Graph artwork is now served as a real 1200×630 PNG with explicit MIME type, dimensions, and accessible description in both Open Graph and Twitter metadata. The 63 KB raster remains one cacheable global asset; the original SVG stays available as its editable source and as a compatibility target for previously cached metadata.

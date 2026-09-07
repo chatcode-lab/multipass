@@ -85,7 +85,7 @@ Cloudflare's 7 September exports show that agents primarily want precise relatio
 - passport–destination relationship URLs accounted for 5,799 of 7,884 requests (73.6%) in the popular-pages export;
 - Markdown accounted for 929 requests (11.8%), including 918 relationship-page requests;
 - 298 of 382 requests in the unmet-demand export were recognizable relationship requests;
-- the shared 1.6 KB Open Graph SVG received 1,753 requests and should remain one small, cacheable asset;
+- the shared Open Graph image received 1,753 requests; it is now one cacheable 1200×630 PNG rather than a per-page rendering workload;
 - PerplexityBot led one observed 24-hour bot snapshot, but one crawler snapshot MUST NOT determine product strategy.
 
 The most important AEO lesson is reliability, not special prose for bots. The upstream display name for ISO `NR` briefly changed from “Nauru” to “Naoero,” breaking established paths. Canonical ISO-backed naming and a permanent alias redirect fixed both old and new spellings. Stable identity beats mirroring a volatile supplier label.

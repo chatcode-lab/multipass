@@ -29,7 +29,7 @@ const {
   structuredData,
 } = Astro.props;
 const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url.origin).toString();
-const imageUrl = new URL("/og-image.svg", Astro.site ?? Astro.url.origin).toString();
+const imageUrl = new URL("/og-image.png", Astro.site ?? Astro.url.origin).toString();
 const markdownUrl = markdownHref ? new URL(markdownHref, Astro.site ?? Astro.url.origin).toString() : undefined;
 const jsonUrl = jsonHref ? new URL(jsonHref, Astro.site ?? Astro.url.origin).toString() : undefined;
 const alternateHeaders = [
@@ -62,10 +62,15 @@ if (alternateHeaders.length) Astro.response.headers.append("Link", alternateHead
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MultiPass Rank passport ranking and combination tools" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content="MultiPass Rank passport ranking and combination tools" />
     <title>{title}</title>
     {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <!-- Privacy-friendly analytics by Plausible -->
