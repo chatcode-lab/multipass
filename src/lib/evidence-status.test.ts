@@ -259,7 +259,7 @@ describe("evidence status matrix", () => {
     expect(summary.covered).toBe(40_941);
     expect(summary.notCovered.count).toBe(4_033);
     expect(summary.characterized.count).toBe(1_142);
-    expect(summary.allowedStay.count).toBe(4_263);
+    expect(summary.allowedStay.count).toBe(4_264);
     expect(summary.percent).toBe(91);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

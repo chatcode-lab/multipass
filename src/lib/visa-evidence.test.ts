@@ -76,6 +76,7 @@ import {
   destinationSlug,
   evidenceRelationshipPairs,
   getVisaRelationshipEvidence,
+  policyApplies,
   resolveDestinationBySlug,
   resolvePassportBySlug,
   resolveVisaRelationshipSlug,
@@ -2527,6 +2528,42 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("AT", "RU", "evisa").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BB", "RU", snapshot.passports.BB.statuses.RU).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("XK", "RU", snapshot.passports.XK.statuses.RU).supportsCurrentStatus).toBe(false);
+  });
+
+  it("honors the amended Chinese ordinary-passport waiver in Russia through its inclusive expiry", () => {
+    for (const asOf of ["2026-09-15", "2027-12-31"]) {
+      const evidence = getVisaRelationshipEvidence("CN", "RU", "visa_free", asOf);
+      expect(evidence.evidenceLevel).toBe("exact");
+      expect(evidence.supportsCurrentStatus).toBe(true);
+      expect(evidence.allowedStays).toContainEqual({ label: "Up to 30 days", basis: "per_visit", maxDays: 30 });
+      expect(evidence.policies).toContainEqual(expect.objectContaining({
+        id: "russia-china-ordinary-passport-waiver-extended-through-2027",
+        effectiveFrom: "2026-07-20",
+        effectiveTo: "2027-12-31",
+        sourceIds: [
+          "russia-china-waiver-decree-872-reviewed-20260915",
+          "russia-china-waiver-extension-decree-499-2026",
+        ],
+      }));
+      expect(evidence.policies).toContainEqual(expect.objectContaining({
+        id: "russia-china-temporary-ordinary-passport-visa-free",
+        effectiveTo: "2026-09-14",
+      }));
+    }
+    const expired = getVisaRelationshipEvidence("CN", "RU", "visa_free", "2028-01-01");
+    expect(expired.supportsCurrentStatus).toBe(false);
+    expect(expired.allowedStays).toEqual([]);
+  });
+
+  it("does not extend the Chinese ordinary-passport amendment to other documents or the reverse direction", () => {
+    const extension = VISA_POLICY_EVIDENCE.find(({ id }) =>
+      id === "russia-china-ordinary-passport-waiver-extended-through-2027");
+    expect(extension).toBeDefined();
+    expect(policyApplies(extension!, "CN", "RU")).toBe(true);
+    for (const passportCode of ["HK", "MO", "TW"]) {
+      expect(policyApplies(extension!, passportCode, "RU")).toBe(false);
+    }
+    expect(policyApplies(extension!, "RU", "CN")).toBe(false);
   });
 
   it("keeps Moldova, Montenegro, and the supported North Macedonia cohort aligned to reviewed official sources", () => {

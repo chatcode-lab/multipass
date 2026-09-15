@@ -10,6 +10,8 @@ MultiPass Rank is an evidence-aware passport-ranking and multi-passport combinat
 
 Maintainers and agents should use the [SEO and agent-discovery playbook](docs/seo-aeo-playbook.md) as the canonical guide for indexing, evidence pages, URLs, mobile performance, sitemaps, and search/agent measurement.
 
+The [country-indicators proposal](docs/country-indicators-plan.md) evaluates sourced development, education, health and safety context for passport profiles. It is exploratory and does not change the mobility ranking.
+
 The application is intentionally direct: no accounts, lead forms, behavioral advertising, or commercial ranking adjustments. It uses cookie-free aggregate Plausible analytics to understand which tools and evidence pages are useful. It was built with Codex through [chatcode.dev](https://chatcode.dev) in partnership with [Settlers Club](https://settlers.club), and is published as a [Chatcode Lab](https://chatcode.dev/lab/multipass-rank-passport-combination-calculator/) project.
 
 ## What it does
@@ -22,7 +24,7 @@ The application is intentionally direct: no accounts, lead forms, behavioral adv
 - Publishes an inspectable evidence matrix showing exact support, officially characterized conditional relationships, structured stay-limit coverage, and source-review dates.
 - Exposes same-origin JSON endpoints and an AI-oriented guide for reproducible comparisons.
 
-As of 4 September 2026, the official-source layer supports 40,941 of 44,974 foreign-access relationships (91.0%). Another 1,142 relationships are officially characterized without being forced into one misleading rank category, and 4,263 relationships have a structured allowed-stay rule. The live [status page](https://multipassrank.com/status) is the current authority for progress.
+As of 15 September 2026, the official-source layer supports 40,941 of 44,974 foreign-access relationships (91.0%). Another 1,142 relationships are officially characterized without being forced into one misleading rank category, and 4,264 relationships have a structured allowed-stay rule. The live [status page](https://multipassrank.com/status) is the current authority for deployed progress.
 
 Regional and language collections are generated from the registry in `src/lib/geography.ts`. Language groups use official or nationally designated administrative/working-language status rather than ethnicity or assumed individual fluency.
 
@@ -131,9 +133,12 @@ The priority-destination evidence program tracks 42 EU/Schengen and other widely
 ```bash
 npm run evidence:coverage
 npm run evidence:coverage -- --all --summary
+npm run evidence:expiries -- --as-of=2026-09-15 --days=30
 ```
 
 The first command reports the 42 initial priority destinations. The second reports active canonical evidence across the complete passport–destination matrix, with regional totals. Add `--incomplete` without `--summary` to list only destination columns that still have unsupported current-status cells.
+
+The expiry command is an offline review queue for dated policies within 30 days before or after the chosen date. Omit `--as-of` to use today. It preserves inclusive end dates and links to recorded sources; it does not fetch sources, infer successor rules, refresh verification dates or change access categories. Historical policies may already have reviewed successors and are not automatically new coverage gaps.
 
 Non-official catalogs are accepted only in a quarantined discovery lane. `npm run evidence:discovery-diff -- --limit=100` compares catalog clues with current exact gaps and points researchers back to official targets; its output cannot be promoted. `npm run evidence:source-health` checks reviewed official portals read-only. A daily public GitHub Action records response hashes, JSON schedule counts, and identity markers, and fails when a required source disappears or changes pending review.
 

@@ -7,6 +7,7 @@ import {
   renderSitemapIndex,
   renderSitemapUrlSet,
   sitemapIndexEntries,
+  sitemapLastModified,
 } from "./sitemap";
 import { REGIONS, type DataSnapshot } from "./types";
 
@@ -54,5 +55,12 @@ describe("sitemaps", () => {
     ], "2026-08-28");
 
     expect(xml).toContain("a=1&amp;b=2");
+  });
+
+  it("advertises the reviewed evidence update without replacing a later snapshot date", () => {
+    expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-03T00:00:00Z" }))
+      .toBe("2026-09-15");
+    expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-16T00:00:00Z" }))
+      .toBe("2026-09-16");
   });
 });

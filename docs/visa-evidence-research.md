@@ -31,7 +31,7 @@ Store rules at policy level. A regional agreement or nationality list should be 
 
 ## Research pass algorithm
 
-1. Choose one destination, regional agreement, or government dataset. Work in bounded batches.
+1. Choose one destination, regional agreement, or government dataset. Work in bounded batches. Check `npm run evidence:expiries` first for recent or approaching policy deadlines; the report is a review queue, not evidence that a successor exists.
 2. Export the current statuses for affected pairs and use them only as hypotheses.
 3. Search the destination’s official domains for visa, exemption, arrival, electronic visa, and travel-authorisation rules in the local language and English.
 4. Open the primary document. Confirm scope, status, dates, duration, passport type, and exceptions from the source itself.
@@ -3829,3 +3829,40 @@ Kuwait's 136 pending inbound relationships were replayed on 4 September 2026 aga
 The 133 general residuals are therefore characterized as document-dependent `evisa` or `visa_required` routes. China is separately characterized because the current English instructions include it in the eVisa-or-arrival list while the live machine-readable arrival endpoint omits it. Israel and Afghanistan remain a separate `visa_required` or `entry_restricted` characterization because the current application configuration blocks their ordinary online selection without proving that every exceptional route is unavailable. The same internal instructions include Serbia while the arrival endpoint omits it and stronger current Serbian evidence requires a visa, so that existing exact result remains controlling pending official reconciliation.
 
 Exact verified coverage stays at 40,941 of 44,974 relationships (91.0%), with 4,033 still awaiting one safe rank-grade category. Officially characterized coverage rises from 1,006 to 1,142, while structured allowed-stay coverage rises from 4,127 to 4,263 relationships. The source's “maximum three months” wording is preserved without converting a calendar period into an invented fixed day count. No passport score, rank, relationship canonical URL, or relationship sitemap entry changes.
+
+## Pass 412 result: September expiry audit and Russian waiver extension
+
+Research and independent review date: 15 September 2026. Reviewer `/root/review_pass412` independently reopened both decree sources, inspected the rendered amendment and approved candidate SHA-256 `a307bb80773763ef2935eca486531515bd5ae8111aa0d8abca4f9c523e21b643`. The unchanged candidate was then promoted into the local reviewed artifact. No access overrides, unrelated source review dates or production deployment were changed.
+
+Before promotion, the checkout supported 40,940 of 44,974 foreign-access relationships (91.0%), leaving 4,034 pending. The difference from Pass 411 was not a removed research file: the recorded Chinese ordinary-passport waiver in Russia expired on 14 September. The approved extension restores coverage to 40,941 of 44,974 (91.0%), with 4,033 pending. Structured allowed-stay coverage increases from 4,263 to 4,264 relationships; characterized coverage remains 1,142. The added evidence does not change the underlying visa-free access category or passport scores.
+
+The Russian MFA's [entry summary](https://www.kdmid.ru/cons/visas/conditions-of-entry-foreign-citizens-in-russian-federation/) still prints that old deadline. Its separate [China legal register](https://www.kdmid.ru/docs/china/regulatory-framework-for-bilateral-consular-relations/) links both [Decree 872](https://www.kdmid.ru/regulatory-frameworks/decrees-of-the-president/UP_%E2%84%96872_01.12.2025.php) and [amending Decree 499](https://www.kdmid.ru/regulatory-frameworks/decrees-of-the-president/UP_%E2%84%96499_20.07.2026.pdf). The latter's rendered page was inspected: it replaces the inclusive end date with 31 December 2027 and takes effect on signature, 20 July 2026. The original ordinary-passport scope, 30-day visit limit and purpose exclusions remain relevant. The inaccessible legal-publication portal and secondary reporting are not candidate citations; the candidate uses the accessible destination-MFA copies of the laws.
+
+The one-cell [candidate](../research/visa-evidence/pass412-russia-china-waiver-extension-2026.candidate.json) records an extension policy rather than rewriting the historical rule or refreshing the whole Russian nationality table. Exact validation passes with two official sources, one policy, no snapshot-category conflict and no unresolved cell inside this narrow batch. Regression tests confirm support on 15 September 2026 and the inclusive 31 December 2027 boundary, but not 1 January 2028, and reject scope leakage into Hong Kong, Macao, Taiwan or the reverse direction. This restores one exact relationship, not a new destination-wide schedule. The reverse Russian-passport route into China already has a 2027 expiry; the [Chinese embassy's current extension notice](https://ru.china-embassy.gov.cn/rus/lsfw_143010/zytz_142816/202605/t20260520_11914284.htm) was opened as a separate directional check, not assumed reciprocity.
+
+### Near-term rechecks
+
+The new offline `npm run evidence:expiries` command lists inclusive end dates in a configurable window with recorded source URLs. It does not fetch sources, promote candidates or renew policies. Historical rows can have already-approved successors and must not be counted automatically as gaps.
+
+- Bahrain, Oman and Saudi Arabia into Bosnia and Herzegovina: the [gazette decision](https://sluzbenilist.ba/page/akt/Wi2t0dd7Lq4%3D) was reopened and still states the temporary 1 June–30 September 2026 window and up to 60 days in total within it. Recheck the post-season rules before the end date.
+- Kazakhstan into Montenegro: the [MFA country page](https://www.gov.me/diplomatske-misije/ambasade-i-konzulati-crne-gore-u-svijetu/kazahstan) was reopened and still states 1 May–1 October 2026 and up to 30 days, alongside the ordinary advance-visa baseline. A future-dated baseline policy already exists; check it together with the exemption and document-conditioned exceptions.
+- China, Hong Kong and Macao into Cambodia: the stored policy ends 15 October 2026. The [recorded announcement URL](https://www.evisa.gov.kh/?vcode=-14) could not be freshly retrieved by either web browsing or normal HTTPS fetch in this session. Its review date is unchanged; no extension or withdrawal is inferred from retrieval failure.
+
+### Independent review and integration checks
+
+The independent reviewer verified publisher, ordinary-passport scope, purpose exclusions, dates, 30-day stay and literal excerpts before promotion, as required by [CONTRIBUTING.md](../CONTRIBUTING.md). Integration commands:
+
+```bash
+npm run evidence:validate -- research/visa-evidence/pass412-russia-china-waiver-extension-2026.candidate.json --exact
+npm run evidence:promote -- research/visa-evidence/pass412-russia-china-waiver-extension-2026.candidate.json
+npm run test:all
+npm run evidence:coverage -- --all --summary
+```
+
+Local built-preview checks returned 200 for `/china-russian-federation-visa-free`, its `.md` alternative and `/api/v1/visa/CN/RU`. HTML and Markdown contain both official citations, the extension date and the 30-day stay; JSON reports exact evidence and the matching policy fields. Native `Accept: text/markdown` negotiation also works, and `/china-russia-visa` redirects directly to the canonical visa-free URL with 308. The canonical page is indexable and present in `/sitemaps/relationships-asia.xml`: sitemap shards use the passport's region, not the destination's. The sitemap evidence-update floor is now 15 September 2026, preserving a later upstream snapshot date when present.
+
+The pre-promotion full suite had two date-sensitive failures: the sitemap expected 41,419 URLs but received 41,418, and Russia's evidence-pair test expected 198 including citizenship but received 197. Promotion restores both expected counts without weakening those assertions. The allowed-stay count assertion increases by exactly one for the newly structured 30-day rule. Local status JSON confirms 40,941 exact relationships and 4,264 structured stays. All 4,033 remaining gaps have research packets across 1,035 candidate files; none is silently promoted from list omission or conditional evidence.
+
+Final checks: `npm run test:all` passes, including typecheck, lint, all 396 tests, audit coverage and production build. The seven added regression tests cover expiry-queue behavior, the amendment's date/scope boundaries and meaningful sitemap modification dates. Exact candidate validation and `git diff --check` also pass. Publication is a separate, user-authorized step; the production workflow records the publishing commit and deployment outcome.
+
+The separate [country-indicators proposal](country-indicators-plan.md) records quality-of-life/education source discovery, reuse terms, a directly checked HDI sample and implementation boundaries. No country scores or new score-based SEO pages were published.
