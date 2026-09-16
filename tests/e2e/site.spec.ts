@@ -304,7 +304,21 @@ test("ranking rows support a five-passport comparison selection mode", async ({ 
   await rwandaRow.scrollIntoViewIfNeeded();
   await page.evaluate(() => document.fonts.ready);
   await expect(rwandaRow.locator("[data-ranking-select]")).toHaveCSS("transform", "none");
-  const beforeSelection = await rwandaRow.evaluate((element) => (element as HTMLElement).offsetTop);
+  const beforeSelection = await rwandaRow.evaluate(async (element) => {
+    // Offscreen rows use content-visibility, so scrolling can settle their
+    // estimated heights over several frames even after fonts are ready.
+    const row = element as HTMLElement;
+    let previous = row.offsetTop;
+    let stableFrames = 0;
+    for (let frame = 0; frame < 60; frame += 1) {
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+      const current = row.offsetTop;
+      stableFrames = current === previous ? stableFrames + 1 : 0;
+      previous = current;
+      if (stableFrames >= 3) return current;
+    }
+    throw new Error("Ranking layout did not settle before selection");
+  });
   const { button: rwandaButton } = await selectPassport("Rwanda");
   const afterSelection = await rwandaRow.evaluate((element) => (element as HTMLElement).offsetTop);
   expect(afterSelection).toBe(beforeSelection);
