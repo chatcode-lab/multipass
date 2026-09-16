@@ -3,6 +3,7 @@ import { STATUS_META } from "./passport";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "./types";
 import { allowedStayApplies, destinationSlug, visaRelationshipHref, type VisaRelationshipEvidence } from "./visa-evidence";
+import { isCurrentEvidence } from "./visa-indexing";
 
 function readableDate(value: string): string {
   return new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
@@ -35,11 +36,15 @@ export function visaRelationshipMarkdown(
 ): string {
   const statusMeta = STATUS_META[status];
   const sources = new Map(evidence.sources.map((source) => [source.id, source]));
-  const application = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
-  const conditional = evidence.conditional.length
-    ? `Official sources characterize this relationship, but the applicable route depends on the traveller or document and cannot safely be reduced to one rank-grade category.\n\n${evidence.conditional.map((item) => `- **${escapeMarkdown(item.title)}**\n  ${escapeMarkdown(item.summary)}\n  - Reason: ${escapeMarkdown(item.reason.replaceAll("_", " "))}\n  - Possible routes: ${item.possibleStatuses.map((possibleStatus) => STATUS_META[possibleStatus].label).join(", ")}${item.conditions?.map((condition) => `\n  - ${escapeMarkdown(condition)}`).join("") ?? ""}`).join("\n\n")}`
+  const application = evidence.policies.find((policy) => policy.status === status && isCurrentEvidence(policy) && policy.application)?.application;
+  const currentConditional = evidence.conditional.filter((item) => isCurrentEvidence(item));
+  const conditional = !evidence.supportsCurrentStatus && currentConditional.length
+    ? `Official sources characterize this relationship, but the applicable route depends on the traveller, documents, or official interpretation and cannot safely be reduced to one rank-grade category.\n\n${currentConditional.map((item) => `- **${escapeMarkdown(item.title)}**\n  ${escapeMarkdown(item.summary)}\n  - Reason: ${escapeMarkdown(item.reason.replaceAll("_", " "))}\n  - Possible routes: ${item.possibleStatuses.map((possibleStatus) => STATUS_META[possibleStatus].label).join(", ")}${item.conditions?.map((condition) => `\n  - ${escapeMarkdown(condition)}`).join("") ?? ""}\n  - Official sources:\n${item.sourceIds.flatMap((id) => {
+      const source = sources.get(id);
+      return source ? [`    - [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.title)}](${source.url})`] : [];
+    }).join("\n")}`).join("\n\n")}`
     : "";
-  const timeline = conditional || (evidence.reviewedUnknown
+  const correction = evidence.reviewedUnknown
     ? `The imported **${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label}** classification was rejected during official-source review.
 
 ${escapeMarkdown(evidence.reviewedUnknown.reason)}
@@ -48,7 +53,8 @@ No single replacement category has been established. Recheck scheduled by ${read
 
 Official ${evidence.sources.length === 1 ? "source" : "sources"}:
 ${evidence.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.title)}](${source.url})`).join("\n")}`
-    : evidence.policies.length
+    : "";
+  const timeline = [conditional, correction].filter(Boolean).join("\n\n") || (evidence.policies.length
     ? evidence.policies.map((policy) => policyMarkdown(policy, sources, passport.code)).join("\n\n")
     : "No official-source timeline has been completed for this relationship. The page remains excluded from search indexing until review is complete.");
   const evidenceStatus = evidence.supportsCurrentStatus
@@ -58,9 +64,11 @@ ${evidence.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${es
     : evidence.reviewedUnknown
       ? "imported classification rejected; replacement route unresolved"
       : "official-source review pending";
-  return `# ${escapeMarkdown(passport.name)} passport to ${escapeMarkdown(destination.name)}: ${statusMeta.label}
+  return `# ${escapeMarkdown(passport.name)} passport to ${escapeMarkdown(destination.name)}: ${evidence.supportsCurrentStatus ? statusMeta.label : "Visa requirements"}
 
-Current access classification: **${statusMeta.label}** — ${statusMeta.description}.
+${evidence.supportsCurrentStatus
+  ? `Current access classification: **${statusMeta.label}** — ${statusMeta.description}.`
+  : `Ranking dataset label: **${statusMeta.label}**. This is not a verified passport-wide entry rule. Read the conditions and official sources before relying on that label.`}
 
 Access data checked ${readableDate(manifest.checkedAt.slice(0, 10))}. Evidence status: **${evidenceStatus}**.
 

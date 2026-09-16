@@ -1,7 +1,7 @@
 # SEO and agent-discovery playbook
 
 - Status: canonical operating guide
-- Last reviewed: 7 September 2026
+- Last reviewed: 16 September 2026
 - Audience: maintainers, researchers, coding agents, and content agents
 
 This document turns the project's SEO, answer-engine optimization (AEO), indexing, evidence, performance, and analytics work into one set of current rules. It is intentionally both human-readable and agent-executable.
@@ -38,13 +38,15 @@ Treat the figures below as a dated baseline, not permanent constants. Recompute 
 | Tracked destinations | 227 | Countries and territories used in access calculations |
 | Foreign passport–destination relationships | 44,974 | Matrix cells excluding home/citizenship cells |
 | Exact current-status evidence | 40,941 (91.0%) | Relationships whose displayed category has active canonical official evidence |
-| Pending exact evidence | 4,033 | Visible but not eligible for indexation as verified relationship pages |
+| Pending exact evidence | 4,033 | Not exactly verified; substantive sourced explanations may still be eligible for search |
 | Pending relationships with an audit packet | 4,033 (100%) | Research queue coverage, not verification coverage |
 | Destinations at least 80% verified | 202 of 227 | Coverage breadth as of this review |
 | URLs in the production sitemap audit | 41,419 | Unique indexable canonical HTML URLs on 7 September 2026 |
 | Sitemap shards | 8 | One core shard and seven relationship shards, referenced by one sitemap index |
 
 Current exact-evidence coverage is uneven: Europe 99.1%, Oceania 99.6%, the Americas 98.5%, the Caribbean 95.5%, Asia 86.9%, Africa 82.5%, and the Middle East 72.2%. Coverage work should therefore be prioritized by user demand, risk, and remaining gaps—not merely by the easiest percentage increase.
+
+Search eligibility and exact verification are separate. Under the 16 September policy, the bundled snapshot also supports 1,142 searchable conditional/correction pages without increasing exact verification or altering scores. This is not a claim that all remaining evidence gaps are ready for indexing.
 
 The source boundary matters:
 
@@ -76,7 +78,7 @@ DataForSEO research is directional and secondary:
 - reported volume for grouped close variants is not additive;
 - a zero-volume result is not proof of zero demand.
 
-The comparison-page experiment is the model to follow. A broad check of 1,225 top-50 pairs found measurable demand for only a few neutral phrases. A smaller alias check and first-party Search Console evidence identified additional pairs. The result is 22 useful canonical comparison pages—not 1,225 thin permutations.
+The comparison-page experiment is the model to follow. A broad check of 1,225 top-50 pairs found measurable demand for only a few neutral phrases. A smaller alias check and first-party Search Console evidence identified additional pairs. This initially produced 22 canonical comparison pages; the 16 September pass adds six focused pairs, for 28 total. Crawl observations are selection signals, not proof of keyword volume.
 
 ### Agent demand
 
@@ -103,7 +105,9 @@ Every new route family needs an explicit canonical and indexing decision before 
 | Destination page | `/destination/kenya` | Yes | Yes | ISO-backed canonical slug |
 | Region/language collection | `/europe`, `/portuguese` | Yes | Yes | Registry-defined slug |
 | Verified relationship | `/belgium-kenya-eta` | Yes | Yes | Current access suffix only |
-| Pending/conditional/rejected relationship | current relationship URL | No (`noindex,follow`) | No | Current URL remains inspectable |
+| Substantive conditional explanation | current relationship URL | Yes, with neutral wording and complete official citations | Yes | Preserve the existing current-status URL; do not imply unconditional access |
+| Reviewed correction | current `status-unknown` URL | Yes, with sourced reasoning and a current review window | Yes | Old category redirects to the current URL |
+| Bare placeholder / insufficient evidence | current relationship URL | No (`noindex,follow`) | No | Current URL remains inspectable |
 | Citizenship self-pair | `/estonia-estonia-citizenship` | Redirect | No | `/passport/estonia` |
 | Curated comparison | `/portugal-vs-united-states-passport` | Yes | Yes | One order-independent friendly slug |
 | Arbitrary comparison | `/compare?set=US&set=PT` | No when parameters are present | No | `/compare`, except redirect to a curated pair |
@@ -124,7 +128,7 @@ The canonical format is:
 /{passport}-{destination}-{status}
 ```
 
-Allowed current status suffixes are `visa-free`, `eta`, `visa-on-arrival`, `evisa`, `visa`, `entry-restricted`, and `citizenship`.
+Allowed current status suffixes are `visa-free`, `eta`, `visa-on-arrival`, `evisa`, `visa`, `entry-restricted`, `status-unknown`, and `citizenship`.
 
 - A recognized relationship with a stale suffix MUST return a permanent redirect to its current category.
 - Common, unambiguous names and spellings MAY redirect: `usa`, `uk`, `turkey`, `e-visa`, `voa`, and similar bounded aliases.
@@ -140,14 +144,24 @@ For a passport–destination page:
 2. Resolve the live access category.
 3. Redirect a stale but recognized category suffix to the current suffix.
 4. If active official evidence supports that exact current category, return indexable HTML and include it in the appropriate relationship sitemap.
-5. If evidence is pending, conditional, rejected, or does not prove the displayed category, keep the page useful and crawlable but return `noindex,follow` and omit it from every sitemap.
-6. If the route does not identify a real relationship, return 404.
+5. Otherwise, a current reviewed conditional record can qualify when it has an explanation, nonempty conditions, possible routes, and complete citations to reviewed official sources. A reviewed correction can qualify when it has sourced reasoning and its recheck date has not passed. Neither case becomes exact verification or changes a rank.
+6. For these non-exact pages, use a neutral “Visa requirements” title and heading in Markdown, qualify the ranking dataset label, and explain what is uncertain in HTML, descriptions, and source-backed content. Cite the relevant sources alongside each conditional explanation. Historical or future-only records do not qualify as current conditional content.
+7. If there is only an imported classification, a bare placeholder, missing citations, or an overdue correction without other qualifying content, keep `noindex,follow` and omit the page from every sitemap.
+8. If the route does not identify a real relationship, return 404.
+
+`relationshipIsIndexable` and the corresponding policy-scope expansion in `src/lib/visa-indexing.ts` are the search contract. HTML, Markdown (including content negotiation), and sitemap inclusion MUST agree. `supportsCurrentStatus` remains the exact-verification contract for rankings and evidence coverage; do not repurpose it as an SEO flag.
+
+Search eligibility is an editorial decision, not a requirement to have independently verified every fact before Google will index a page. Useful conditional explanations can answer a real question. Conversely, having a source link alone does not make an otherwise empty page useful. See [Google's people-first content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content).
+
+Arbitrary complex tool states remain deliberately excluded, but a query string is not itself a reason to exclude useful content. Promote selected pairs to one stable, useful comparison page and redirect equivalent query orders and registered aliases there. Use canonicalization/redirects for genuine duplicates, not `noindex` merely to select the preferred URL. See [Google's canonicalization guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
 
 Do not block a `noindex` page in `robots.txt`: crawlers need to fetch the page to see the directive. `robots.txt` is for crawl management, not reliable removal from search.
 
+`noindex` does not prevent requests or directly save KV reads. It also removes eligibility for supporting links in Google AI Overviews and AI Mode, which require indexed, snippet-eligible pages. See [Google's AI Search requirements](https://developers.google.com/search/docs/appearance/ai-features).
+
 ### What the “Excluded by noindex” report means
 
-The 7 September review of the first 1,000 reported URLs found:
+Historical baseline under the previous exact-evidence-only policy: the 7 September review of the first 1,000 reported URLs found:
 
 - 923 relationship URLs and 77 parameterized tool URLs;
 - 154 relationship URLs that are now exact, current, and indexable;
@@ -156,7 +170,7 @@ The 7 September review of the first 1,000 reported URLs found:
 - 675 current relationship URLs that correctly remain `noindex`; and
 - all 77 query-tool URLs intentionally `noindex` to prevent unbounded duplicate scenarios.
 
-Therefore, “Excluded by noindex” is not automatically an error. Classify the sample first. Fix pages only when the evidence and canonical policy say they should be indexed. Search Console can report an old crawl long after the live response has changed.
+Therefore, “Excluded by noindex” is not automatically an error. Classify the sample first, and reassess whether the editorial policy still serves users. Search Console can report an old crawl long after the live response has changed. The 16 September revision explicitly relaxes the historical exact-evidence-only rule; it does not clear every exclusion indiscriminately. Monitor submitted sitemap URLs separately from arbitrary tool states when validating fixes.
 
 ## 5. Evidence and content quality
 
@@ -485,6 +499,7 @@ For comparison pages, add a friendly indexable route only when at least one of t
 | Generated title limits | [`src/lib/seo-titles.ts`](../src/lib/seo-titles.ts) |
 | Country names, collections, comparisons | [`src/lib/geography.ts`](../src/lib/geography.ts) |
 | Relationship URLs and evidence matching | [`src/lib/visa-evidence.ts`](../src/lib/visa-evidence.ts) |
+| Search eligibility independent of exact verification | [`src/lib/visa-indexing.ts`](../src/lib/visa-indexing.ts) |
 | Agent-facing instructions | [`src/lib/ai-guide.ts`](../src/lib/ai-guide.ts) |
 | Markdown negotiation and route eligibility | [`src/lib/markdown-negotiation.ts`](../src/lib/markdown-negotiation.ts) |
 | Canonical/alternate/robots metadata | [`src/layouts/BaseLayout.astro`](../src/layouts/BaseLayout.astro) |

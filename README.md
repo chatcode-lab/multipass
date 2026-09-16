@@ -38,7 +38,7 @@ The distinction is deliberate:
 - `src/data/reviewed-visa-evidence.json` contains reviewed policy and source metadata built from official government, treaty, gazette, immigration, and foreign-ministry material.
 - `src/data/allowed-stay-evidence.ts` adds reviewed, source-faithful stay rules to canonical policies; day numbers are stored only when the official wording is unambiguous.
 - `src/data/access-overrides.ts` contains only corrections for which the official taxonomy clearly disagrees with the upstream status.
-- Unsupported relationships remain visible in the product, but their evidence pages are marked incomplete and excluded from indexing.
+- Bare relationship placeholders remain excluded from indexing. Substantive official-source explanations can be indexed even when the applicable route is conditional or unresolved; search eligibility never means exact verification.
 
 See [NOTICE.md](NOTICE.md), the live [data license](https://multipassrank.com/data-license), and [docs/visa-evidence-research.md](docs/visa-evidence-research.md) before reusing data.
 
@@ -114,7 +114,7 @@ The destination directory also carries a concise UN M49/ISO-based disclosure of 
 
 Each tracked destination also has a dedicated `/destination/{slug}` page. A passport–destination result uses the canonical root URL `/{passport}-{destination}-{status}`, for example `/belgium-kenya-eta`. Recognized URLs with an outdated status suffix redirect to the current result.
 
-Official evidence is stored as policy-level records in `src/data/visa-evidence.ts`, so a single law or agreement can support many relationships without copying claims. Exact policies, conditional records, and allowed-stay rules remain separate: conditional evidence improves research visibility but never changes a score. Evidence pages with verified current status are indexable; incomplete placeholders are explicitly marked `noindex` and stay out of the sitemap.
+Official evidence is stored as policy-level records in `src/data/visa-evidence.ts`, so a single law or agreement can support many relationships without copying claims. Exact policies, conditional records, and allowed-stay rules remain separate: conditional evidence never changes a score. Search eligibility is a separate decision in `src/lib/visa-indexing.ts`: exact current policies, substantive current conditional explanations with complete official citations, and sourced corrections within their review window can be indexed. Unverified pages use neutral visa-requirements titles and qualify the ranking label rather than presenting it as an established entry rule. Bare placeholders remain `noindex` and outside the sitemap. HTML, Markdown, and sitemaps share this eligibility rule; the evidence-coverage percentage still measures exact verification only.
 
 Narrow destination-authority corrections live in `src/data/access-overrides.ts` and are reapplied to every complete staged snapshot before scores and combination insights are published. For assisted evidence collection, generate a bounded packet with `npm run --silent evidence:packet -- <batch-id>`, then validate the model's candidate JSON with `npm run evidence:validate -- <candidate.json>`. The full small-model handoff and strong-review gate are documented in `docs/visa-evidence-model-handoff.md`.
 

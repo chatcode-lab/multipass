@@ -5,6 +5,7 @@ import {
   getFriendlyComparison,
   getPassportCollection,
   getPopularComparison,
+  POPULAR_COMPARISONS,
   rankHref,
   UNTRACKED_DESTINATIONS,
 } from "./geography";
@@ -32,6 +33,18 @@ describe("language passport collections", () => {
 });
 
 describe("comparison URLs", () => {
+  it("gives each curated pair one canonical URL in either query order", () => {
+    const slugs = POPULAR_COMPARISONS.flatMap((item) => [item.slug, ...item.legacySlugs ?? []]);
+    expect(new Set(slugs).size).toBe(slugs.length);
+    for (const comparison of POPULAR_COMPARISONS) {
+      expect(comparisonHref(comparison.sets)).toBe(`/${comparison.slug}`);
+      expect(comparisonHref([...comparison.sets].reverse())).toBe(`/${comparison.slug}`);
+      for (const legacy of comparison.legacySlugs ?? []) {
+        expect(getPopularComparison(legacy)?.slug).toBe(comparison.slug);
+      }
+    }
+  });
+
   it("matches curated comparisons in either order", () => {
     expect(getFriendlyComparison([["US"], ["PT"]])?.slug).toBe("portugal-vs-united-states-passport");
     expect(getFriendlyComparison([["pt"], ["us"]])?.slug).toBe("portugal-vs-united-states-passport");

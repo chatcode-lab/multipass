@@ -145,7 +145,7 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await page.goto("/compare?set=BR&set=US");
   await expect(page.getByText("Brazil", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("United States", { exact: true }).first()).toBeVisible();
-  await expect(page.getByText("Differences only")).toBeVisible();
+  await expect(page.getByText("Differences only", { exact: true })).toBeVisible();
   await expect(page.getByRole("checkbox", { name: "Differences only" })).toBeChecked();
   await expect(page.locator("table.comparison-table")).toBeVisible();
   await page.getByLabel("Filter comparison destinations by region").selectOption("EUROPE");
@@ -812,7 +812,7 @@ test("destination and relationship pages expose official evidence and Markdown",
   await expect(page.getByRole("link", { name: /Register on the official Hong Kong government portal/ })).toHaveAttribute("href", /gov\.hk/);
 });
 
-test("relationship URLs redirect stale statuses and keep incomplete evidence out of search", async ({ page, request }) => {
+test("relationship URLs keep bare placeholders excluded but index sourced corrections", async ({ page, request }) => {
   await page.goto("/belgium-afghanistan-evisa");
   await expect(page).toHaveURL(/\/belgium-afghanistan-visa$/);
   await expect(page.getByText("Official-source review pending", { exact: true })).toBeVisible();
@@ -843,8 +843,83 @@ test("relationship URLs redirect stale statuses and keep incomplete evidence out
   await expect(page.getByText("Imported classification rejected", { exact: true })).toBeVisible();
   await expect(page.getByText(/No single replacement category is established/)).toBeVisible();
   await expect(page.locator('a[href="https://www.evisa.gov.az/en/countries"]')).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
+  await expect(page).toHaveTitle(/Visa requirements/);
+  expect(xml).toContain("<loc>https://multipassrank.com/kosovo-azerbaijan-status-unknown</loc>");
+  const correctionMarkdown = await request.get("/kosovo-azerbaijan-status-unknown.md");
+  expect(correctionMarkdown.headers()["x-robots-tag"]).toBeUndefined();
+  expect(await correctionMarkdown.text()).toContain("classification was rejected");
+});
+
+test("sourced conditional pages are searchable without asserting exact access", async ({ page, request }) => {
+  const path = "/algeria-turkiye-status-unknown";
+  await page.goto(path);
+  await expect(page).toHaveTitle(/Visa requirements/);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
+  await expect(page.locator(".visa-relation-hero .notice")).toContainText("not a verified passport-wide entry rule");
+  await expect(page.getByText("Officially characterized · conditional", { exact: true })).toBeVisible();
+  await expect(page.locator(".conditional-evidence .evidence-sources a").first()).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  for (const [url, headers] of [
+    [`${path}.md`, {}], [path, { Accept: "text/markdown" }],
+  ] as const) {
+    const markdown = await request.get(url, { headers });
+    expect(markdown.ok()).toBe(true);
+    expect(markdown.headers()["content-type"]).toContain("text/markdown");
+    expect(markdown.headers()["x-robots-tag"]).toBeUndefined();
+    expect(markdown.headers().link).toContain(`https://multipassrank.com${path}`);
+    const body = await markdown.text();
+    expect(body).toContain("# Algeria passport to Türkiye: Visa requirements");
+    expect(body).toContain("Official sources:");
+    expect(body).toContain("https://");
+    expect(body).not.toContain("Current access classification:");
+  }
+  const html = await request.get(path, { headers: { Accept: "text/html" } });
+  expect(html.headers()["content-type"]).toContain("text/html");
+  const evidence = await (await request.get("/api/v1/visa/DZ/TR")).json();
+  expect(evidence.status).toBe("unknown");
+  expect(evidence.evidenceLevel).toBe("conditional");
+  expect(await sitemapGroupText(request, "relationships-africa.xml"))
+    .toContain(`<loc>https://multipassrank.com${path}</loc>`);
+
+  await page.goto("/kyrgyzstan-niger-visa");
+  await expect(page).toHaveTitle(/Visa requirements/);
+  await expect(page.locator(".visa-relation-hero .notice")).toContainText("Ranking dataset label: Visa required");
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /conditional access/);
+});
+
+test("new focused comparisons consolidate queries and aliases without indexing arbitrary tools", async ({ page, request }) => {
+  const comparisons = [
+    ["RU", "US", "russia-vs-united-states-passport"],
+    ["US", "AE", "united-states-vs-united-arab-emirates-passport"],
+    ["BR", "US", "brazil-vs-united-states-passport"],
+    ["DE", "GB", "germany-vs-united-kingdom-passport"],
+    ["IN", "SG", "india-vs-singapore-passport"],
+    ["ZA", "MA", "south-africa-vs-morocco-passport"],
+  ];
+  const core = await sitemapGroupText(request, "core.xml");
+  for (const [first, second, slug] of comparisons) {
+    for (const [a, b] of [[first, second], [second, first]]) {
+      for (const extension of ["", ".md"]) {
+        const response = await request.get(`/compare${extension}?set=${a}&set=${b}`, { maxRedirects: 0 });
+        expect(response.status()).toBe(308);
+        expect(response.headers().location).toBe(`/${slug}${extension}`);
+      }
+    }
+    expect(core).toContain(`<loc>https://multipassrank.com/${slug}</loc>`);
+  }
+  const alias = await request.get("/united-states-vs-russia-passport", { maxRedirects: 0 });
+  expect(alias.status()).toBe(308);
+  expect(alias.headers().location).toBe("/russia-vs-united-states-passport");
+  const aliasMarkdown = await request.get("/united-states-vs-russia-passport.md", { maxRedirects: 0 });
+  expect(aliasMarkdown.headers().location).toBe("/russia-vs-united-states-passport.md");
+  await page.goto("/compare?set=AE&set=US");
+  await expect(page).toHaveURL(/\/united-states-vs-united-arab-emirates-passport$/);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
+  await expect(page.getByText(/not an ordinary second-citizenship recommendation/)).toBeVisible();
+  await page.goto("/compare?set=DE&set=JP");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
-  expect(xml).not.toContain("<loc>https://multipassrank.com/kosovo-azerbaijan-status-unknown</loc>");
 });
 
 test("entry restrictions have a canonical evidence page and stale-status redirect", async ({ page, request }) => {

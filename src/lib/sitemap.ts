@@ -1,7 +1,8 @@
 import { PASSPORT_COLLECTIONS, POPULAR_COMPARISONS } from "./geography";
 import type { PassportAccess, Region, SnapshotManifest } from "./types";
 import { REGIONS } from "./types";
-import { destinationSlug, evidenceRelationshipPairs, visaRelationshipHref } from "./visa-evidence";
+import { destinationSlug, visaRelationshipHref } from "./visa-evidence";
+import { indexableRelationshipPairs } from "./visa-indexing";
 
 export const SITEMAP_ORIGIN = "https://multipassrank.com";
 
@@ -47,8 +48,8 @@ export function escapeXml(value: string): string {
 
 export function sitemapLastModified(manifest: SnapshotManifest): string {
   const checkedAt = manifest.checkedAt.slice(0, 10);
-  // Latest reviewed evidence update, independent of upstream snapshot refreshes.
-  return checkedAt > "2026-09-15" ? checkedAt : "2026-09-15";
+  // Latest substantive evidence/content update, independent of snapshot refreshes.
+  return checkedAt > "2026-09-16" ? checkedAt : "2026-09-16";
 }
 
 export function sitemapRegionSlug(region: Region): string {
@@ -101,13 +102,11 @@ export function relationshipSitemapUrls(
   details: Record<string, PassportAccess>,
   passportRegion: Region,
 ): SitemapUrl[] {
-  return uniqueUrls(evidenceRelationshipPairs(manifest).flatMap(({ passport, destination, status }) =>
-    status !== "citizenship"
-      && passport.region === passportRegion
-      && details[passport.code]?.statuses[destination.code] === status
-      ? [{ loc: `${SITEMAP_ORIGIN}${visaRelationshipHref(passport, destination, status)}`, priority: "0.6" }]
-      : [],
-  ));
+  return uniqueUrls(indexableRelationshipPairs(manifest, details, passportRegion)
+    .map(({ passport, destination, status }) => ({
+      loc: `${SITEMAP_ORIGIN}${visaRelationshipHref(passport, destination, status)}`,
+      priority: "0.6",
+    })));
 }
 
 export function renderSitemapIndex(entries: readonly SitemapIndexEntry[]): string {

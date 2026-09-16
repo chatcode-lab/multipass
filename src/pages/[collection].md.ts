@@ -13,6 +13,7 @@ import {
   visaRelationshipSlug,
 } from "@/lib/visa-evidence";
 import { visaRelationshipMarkdown } from "@/lib/visa-markdown";
+import { relationshipIsIndexable } from "@/lib/visa-indexing";
 
 export const GET: APIRoute = async ({ locals, params }) => {
   const collection = getPassportCollection(params.collection);
@@ -59,7 +60,7 @@ export const GET: APIRoute = async ({ locals, params }) => {
     return markdownResponse(
       visaRelationshipMarkdown(manifest, relationship.passport, relationship.destination, status, evidence),
       `/${canonicalSlug}`,
-      !evidence.supportsCurrentStatus,
+      !relationshipIsIndexable(evidence),
     );
   }
   if (collection) {

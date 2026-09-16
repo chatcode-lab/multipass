@@ -38,8 +38,8 @@ export function relationshipPageTitle(
   passport: Pick<PassportSummary, "code" | "name">,
   destination: Pick<Destination, "code" | "name">,
   status: AccessStatus,
+  accessLabel = STATUS_META[status].label,
 ): string {
-  const accessLabel = STATUS_META[status].label;
   const descriptive = `${passport.name} Passport to ${destination.name}: ${accessLabel}`;
   const descriptiveTitle = addBrandWhenItFits(descriptive);
   if (descriptiveTitle.length <= MAX_PAGE_TITLE_LENGTH) return descriptiveTitle;

@@ -67,11 +67,11 @@ HTML pages also advertise their Markdown alternative with a \`<link rel="alterna
 - Destination overview: \`${absoluteUrl("/destination/kenya")}\`
 - One current relationship: \`${absoluteUrl("/belgium-kenya-eta")}\`
 - Relationship Markdown: \`${absoluteUrl("/belgium-kenya-eta.md")}\`
-- Relationship URLs use \`/{passport}-{destination}-{status}\`, where status is \`visa-free\`, \`eta\`, \`visa-on-arrival\`, \`evisa\`, \`visa\`, \`entry-restricted\`, or \`citizenship\`.
+- Relationship URLs use \`/{passport}-{destination}-{status}\`, where status is \`visa-free\`, \`eta\`, \`visa-on-arrival\`, \`evisa\`, \`visa\`, \`entry-restricted\`, \`status-unknown\`, or \`citizenship\`.
 - A recognized outdated status suffix redirects to the current canonical URL.
 - Common English country-name variants and unambiguous status spellings also redirect. Use the manifest's country codes and the canonical URL returned by the server when citing a result.
 - Focus a destination page on selected passport countries with \`#passports=PT,RU,IL\` or the equivalent \`?passports=PT,RU,IL\` query parameter.
-- Evidence coverage is incremental. Unsupported relationships are labeled, excluded from indexing, and should not be presented as officially verified.
+- Evidence coverage is incremental. Bare placeholders stay excluded from indexing, but substantive official-source conditional explanations and reviewed corrections may be indexed. Search eligibility does not mean exact verification: check the relationship API's \`evidenceLevel\`, read the conditions, and never present an unresolved ranking label as an established entry rule.
 
 HTML responses advertise available Markdown and JSON equivalents in both \`<link rel="alternate">\` elements and HTTP \`Link\` headers. Agents can inspect those relations instead of guessing another representation's URL.
 

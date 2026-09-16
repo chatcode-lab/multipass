@@ -34,7 +34,7 @@ describe("sitemaps", () => {
     ];
     const urls = groups.flat().map(({ loc }) => loc);
 
-    expect(urls).toHaveLength(41_419);
+    expect(urls).toHaveLength(42_567);
     expect(urls).toContain("https://multipassrank.com/dual-citizenship-countries");
     expect(urls).toContain("https://multipassrank.com/citizenship-by-descent");
     expect(urls).toContain("https://multipassrank.com/best-second-passport-for-us-citizens");
@@ -43,6 +43,10 @@ describe("sitemaps", () => {
     expect(urls).toContain("https://multipassrank.com/hong-kong-vs-china-passport");
     expect(urls).toContain("https://multipassrank.com/germany-vs-united-states-passport");
     expect(urls).toContain("https://multipassrank.com/india-vs-united-states-passport");
+    expect(urls).toContain("https://multipassrank.com/algeria-turkiye-status-unknown");
+    expect(urls).toContain("https://multipassrank.com/kosovo-azerbaijan-status-unknown");
+    expect(urls).toContain("https://multipassrank.com/russia-vs-united-states-passport");
+    expect(urls).not.toContain("https://multipassrank.com/belgium-afghanistan-visa");
     expect(new Set(urls).size).toBe(urls.length);
     expect(urls.every((url) => url.startsWith("https://multipassrank.com/") && !url.includes("?") && !url.endsWith(".md")))
       .toBe(true);
@@ -59,8 +63,8 @@ describe("sitemaps", () => {
 
   it("advertises the reviewed evidence update without replacing a later snapshot date", () => {
     expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-03T00:00:00Z" }))
-      .toBe("2026-09-15");
-    expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-16T00:00:00Z" }))
       .toBe("2026-09-16");
+    expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-17T00:00:00Z" }))
+      .toBe("2026-09-17");
   });
 });

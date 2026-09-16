@@ -9,6 +9,7 @@ import { STATUS_META } from "@/lib/passport";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "@/lib/types";
 import { destinationSlug, type VisaRelationshipEvidence, visaRelationshipHref } from "@/lib/visa-evidence";
 import { relationshipPageTitle } from "@/lib/seo-titles";
+import { isCurrentEvidence, relationshipIsIndexable } from "@/lib/visa-indexing";
 
 interface Props {
   manifest: SnapshotManifest;
@@ -27,12 +28,15 @@ const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long
 const reviewedDate = evidence.reviewedAt
   ? new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${evidence.reviewedAt}T00:00:00Z`))
   : null;
-const matchingApplication = evidence.policies.find((policy) => policy.status === status && policy.application)?.application;
-const title = relationshipPageTitle(passport, destination, status);
+const matchingApplication = evidence.policies.find((policy) => policy.status === status && isCurrentEvidence(policy) && policy.application)?.application;
+const currentConditional = evidence.conditional.filter((item) => isCurrentEvidence(item));
+const title = relationshipPageTitle(passport, destination, status, evidence.supportsCurrentStatus ? statusMeta.label : "Visa requirements");
 const description = evidence.evidenceLevel === "conditional"
   ? `Official sources describe conditional access from ${passport.name} to ${destination.name}, but traveller-specific rules prevent one safe passport-wide rank category.`
   : evidence.reviewedUnknown
   ? `Official review rejected the imported ${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} category for ${passport.name} passport travel to ${destination.name}. A single replacement route is not yet established.`
+  : !evidence.supportsCurrentStatus
+  ? `Check the evidence available for ${passport.name} passport travel to ${destination.name}. The ranking classification is awaiting independent official-source verification.`
   : status === "entry_restricted"
   ? `Ordinary visitor entry to ${destination.name} on a ${passport.name} passport is currently restricted. See the effective rule, conditions, and official sources.`
   : `${passport.name} passport holders currently have ${statusMeta.label.toLowerCase()} access to ${destination.name}. See official sources, evidence history, conditions, and application guidance.`;
@@ -65,7 +69,7 @@ const structuredData = [
   canonical={canonical}
   markdownHref={markdownHref}
   jsonHref={`/api/v1/visa/${passport.code}/${destination.code}`}
-  noindex={!evidence.supportsCurrentStatus}
+  noindex={!relationshipIsIndexable(evidence)}
   structuredData={structuredData}
 >
   <header class="visa-relation-hero">
@@ -77,13 +81,22 @@ const structuredData = [
       <h1>{passport.name} to {destination.name}</h1>
       <div class="visa-relation-status">
         <span class="country-flag" aria-hidden="true">{flagEmojiFor(destination.code)}</span>
-        <StatusPill status={status} />
-        <span>{statusMeta.description}</span>
+        {evidence.supportsCurrentStatus ? (
+          <><StatusPill status={status} /><span>{statusMeta.description}</span></>
+        ) : (
+          <span>{evidence.evidenceLevel === "conditional" ? "Conditional entry requirements" : "Entry requirements need confirmation"}</span>
+        )}
       </div>
       <p>
         This page separates the current comparison status from the official evidence collected for it.
         Rules shown here concern ordinary short visits unless a source states otherwise.
       </p>
+      {!evidence.supportsCurrentStatus && (
+        <p class="notice">
+          Ranking dataset label: <strong>{statusMeta.label}</strong>. This is not a verified passport-wide entry rule.
+          Read the conditions and official sources below before relying on that label.
+        </p>
+      )}
       <div class="visa-relation-meta">
         <span class:list={["evidence-state", evidence.supportsCurrentStatus && "evidence-state--verified"]}>
           {evidence.supportsCurrentStatus
@@ -106,13 +119,19 @@ const structuredData = [
       <h2>{evidence.evidenceLevel === "conditional" || evidence.reviewedUnknown ? "Why no single status is shown" : "How this access rule is documented"}</h2>
       {evidence.evidenceLevel === "conditional" ? (
         <div class="conditional-evidence">
-          {evidence.conditional.map((item) => (
+          {currentConditional.map((item) => (
             <article>
               <span>{item.reason.replaceAll("_", " ")}</span>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
               <p><strong>Possible routes:</strong> {item.possibleStatuses.map((possibleStatus) => STATUS_META[possibleStatus].label).join(" · ")}</p>
               {item.conditions?.length && <ul>{item.conditions.map((condition) => <li>{condition}</li>)}</ul>}
+              <div class="evidence-sources">
+                <strong>Official sources</strong>
+                {evidence.sources.filter((officialSource) => item.sourceIds.includes(officialSource.id)).map((officialSource) => (
+                  <a href={officialSource.url} rel="external">{officialSource.publisher}: {officialSource.title}</a>
+                ))}
+              </div>
             </article>
           ))}
           {evidence.reviewedUnknown && <p class="notice">{evidence.reviewedUnknown.reason}</p>}
@@ -129,8 +148,10 @@ const structuredData = [
     </div>
     <aside class="evidence-scope">
       <span class="eyebrow">What this status means</span>
-      <h2>{statusMeta.label}</h2>
-      <p>{statusMeta.description}. Authorities apply the current rule, and purpose, duration, passport type, or personal circumstances can change the applicable treatment.</p>
+      <h2>{evidence.supportsCurrentStatus ? statusMeta.label : "Confirm your route"}</h2>
+      <p>{evidence.supportsCurrentStatus
+        ? `${statusMeta.description}. Authorities apply the current rule, and purpose, duration, passport type, or personal circumstances can change the applicable treatment.`
+        : "The ranking label alone does not establish eligibility. Use the source-backed explanation and the relevant authority to confirm the rule for your documents, visit purpose, route, and personal circumstances."}</p>
       {evidence.allowedStays.length > 0 && (
         <div class="allowed-stay-summary">
           <span>Allowed stay</span>
@@ -174,3 +195,10 @@ const structuredData = [
     ) : <p class="notice">No source is attached yet. This relationship remains excluded from indexing until review is complete.</p>}
   </section>
 </BaseLayout>
+
+<style>
+  .visa-relation-hero .notice {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+</style>

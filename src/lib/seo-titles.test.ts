@@ -25,6 +25,9 @@ describe("SEO page titles", () => {
           relationshipPageTitle(passport, destination, status).length,
           `${passport.name} to ${destination.name}`,
         ).toBeLessThanOrEqual(MAX_PAGE_TITLE_LENGTH);
+        const neutralTitle = relationshipPageTitle(passport, destination, status, "Visa requirements");
+        expect(neutralTitle.length).toBeLessThanOrEqual(MAX_PAGE_TITLE_LENGTH);
+        expect(neutralTitle).toContain("Visa requirements");
       }
     }
   });

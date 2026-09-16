@@ -138,12 +138,13 @@ export function officialSourcesForPolicies(policies: readonly VisaPolicyEvidence
   });
 }
 
-export function evidenceRelationshipPairs(manifest: SnapshotManifest): Array<{ passport: PassportSummary; destination: Destination; status: AccessStatus }> {
+export function evidenceRelationshipPairs(
+  manifest: SnapshotManifest,
+  asOf = new Date().toISOString().slice(0, 10),
+): Array<{ passport: PassportSummary; destination: Destination; status: AccessStatus }> {
   const pairs = new Map<string, { passport: PassportSummary; destination: Destination; status: AccessStatus }>();
-  const today = new Date().toISOString().slice(0, 10);
   for (const policy of VISA_POLICY_EVIDENCE) {
-    if (policy.effectiveFrom && policy.effectiveFrom > today) continue;
-    if (policy.effectiveTo && policy.effectiveTo < today) continue;
+    if (!activeDuring(policy, asOf)) continue;
     for (const destinationCode of policy.destinationCodes) {
       const destination = manifest.destinations.find((entry) => entry.code === destinationCode);
       if (!destination) continue;

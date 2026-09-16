@@ -402,6 +402,62 @@ export const POPULAR_COMPARISONS: readonly PopularComparison[] = [
     context: "This is a travel-mobility comparison, not an assessment of Italian citizenship by descent, residence rights, taxation, or whether either citizenship can be acquired.",
     sets: [["IT"], ["US"]],
   },
+  // Bounded expansion from observed crawl URLs and a European benchmark, not
+  // assumed keyword volume. Each exposes live scores and destination differences.
+  {
+    slug: "russia-vs-united-states-passport",
+    legacySlugs: ["united-states-vs-russia-passport", "russian-federation-vs-united-states-passport"],
+    shortTitle: "Russia vs US",
+    heading: "Russia vs United States passport comparison",
+    description: "Compare Russian and United States passport scores and the destinations where each has easier entry requirements.",
+    context: "A higher overall score does not mean easier entry to every destination. Inspect the Russian and US destination differences individually; the mobility comparison does not establish citizenship eligibility or compatibility.",
+    sets: [["RU"], ["US"]],
+  },
+  {
+    slug: "united-states-vs-united-arab-emirates-passport",
+    legacySlugs: ["united-arab-emirates-vs-united-states-passport"],
+    shortTitle: "US vs UAE",
+    heading: "United States vs UAE passport comparison",
+    description: "Compare United States and UAE passport rankings, mobility scores, and destination-level visa requirements.",
+    context: "Treat the UAE passport as a mobility benchmark, not an ordinary second-citizenship recommendation. This comparison says nothing about your ability to obtain or retain either nationality; the citizenship guides cover those separate questions.",
+    sets: [["US"], ["AE"]],
+  },
+  {
+    slug: "brazil-vs-united-states-passport",
+    legacySlugs: ["united-states-vs-brazil-passport"],
+    shortTitle: "Brazil vs US",
+    heading: "Brazil vs United States passport comparison",
+    description: "Compare Brazilian and United States passport strength and see which destinations distinguish their travel access.",
+    context: "Compare Brazil and the US destination by destination, including access within the Americas and beyond. Short-visit categories do not measure regional residence arrangements, work permission, or eligibility for a second citizenship.",
+    sets: [["BR"], ["US"]],
+  },
+  {
+    slug: "germany-vs-united-kingdom-passport",
+    legacySlugs: ["united-kingdom-vs-germany-passport"],
+    shortTitle: "Germany vs UK",
+    heading: "Germany vs United Kingdom passport comparison",
+    description: "Compare German and British passport rankings, mobility scores, and short-visit entry rules worldwide.",
+    context: "The German and British passport scores describe visitor access, not the right to live, work, or study in Europe. Use the destination differences alongside the separate citizenship and residence information relevant to your situation.",
+    sets: [["DE"], ["GB"]],
+  },
+  {
+    slug: "india-vs-singapore-passport",
+    legacySlugs: ["singapore-vs-india-passport"],
+    shortTitle: "India vs Singapore",
+    heading: "India vs Singapore passport comparison",
+    description: "Compare Indian and Singapore passport scores, ranks, and visa requirements for every tracked destination.",
+    context: "This is a benchmark of two Asian passports, not a proposed dual-citizenship combination. Each destination keeps its actual access category, and citizenship acquisition or retention must be considered separately.",
+    sets: [["IN"], ["SG"]],
+  },
+  {
+    slug: "south-africa-vs-morocco-passport",
+    legacySlugs: ["morocco-vs-south-africa-passport"],
+    shortTitle: "South Africa vs Morocco",
+    heading: "South Africa vs Morocco passport comparison",
+    description: "Compare South African and Moroccan passport rankings and destination-level entry requirements across the world.",
+    context: "Use the region filter to compare these African passports within Africa, Europe, or another destination region. Their overall scores can hide different regional access patterns; visa-free visits do not establish residence or employment rights.",
+    sets: [["ZA"], ["MA"]],
+  },
 ] as const;
 
 export function getPopularComparison(slug: string | undefined): PopularComparison | undefined {
