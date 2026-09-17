@@ -60,6 +60,8 @@ describe("relationship search eligibility", () => {
     }, asOf)).toBe(false);
   });
 
+  // This exhaustively checks the catalog twice; shared CI runners can exceed
+  // Vitest's five-second default even when every eligibility assertion passes.
   it("uses the same eligibility rule for every sitemap cell without inflating exact coverage", () => {
     const paths = new Set(REGIONS.flatMap((region) => indexableRelationshipPairs(snapshot.manifest, details, region, asOf))
       .map(({ passport, destination, status }) => visaRelationshipHref(passport, destination, status)));
@@ -79,7 +81,7 @@ describe("relationship search eligibility", () => {
     }
     expect(exact).toBe(40_941);
     expect(additional).toBe(1_142);
-  });
+  }, 20_000);
 
   it("gives conditional Markdown a neutral heading, qualified label, and direct citations", () => {
     const passport = snapshot.manifest.passports.find(({ code }) => code === "DZ")!;
