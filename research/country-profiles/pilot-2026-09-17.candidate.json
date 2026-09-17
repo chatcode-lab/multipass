@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "researcher": "root",
+  "retrievedAt": "2026-09-17",
+  "sources": [
+    { "id": "us-naturalisation", "publisher": "US Citizenship and Immigration Services", "title": "I am a lawful permanent resident of 5 years", "url": "https://www.uscis.gov/citizenship/learn-about-citizenship/citizenship-and-naturalization/i-am-a-lawful-permanent-resident-of-5-years", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "hk-naturalisation", "publisher": "Hong Kong Immigration Department", "title": "Application for naturalisation as a Chinese national", "url": "https://www.immd.gov.hk/eng/services/chinese_nationality/Application_for_Naturalization_as_a_Chinese_National.html", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "in-act", "publisher": "India Ministry of Home Affairs", "title": "Citizenship Act 1955 — consolidated text", "url": "https://indiancitizenshiponline.nic.in/Documents/UserGuide/Citizenship_Act_1955_16042019.pdf", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "ae-act", "publisher": "UAE Federal Authority for Identity, Citizenship, Customs & Port Security", "title": "Federal Law 17 of 1972 — nationality and passports (updated 20 September 2021)", "url": "https://icp.gov.ae/wp-content/uploads/2022/08/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%AC%D9%86%D8%B3%D9%8A%D8%A9-%D9%88%D8%AC%D9%88%D8%A7%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%81%D8%B1-.pdf", "language": "ar", "retrievedAt": "2026-09-17" },
+    { "id": "pt-reform", "publisher": "Portugal Ministry of Justice", "title": "Nationality-law changes effective 19 May 2026", "url": "https://justica.gov.pt/Noticias/Lei-da-Nacionalidade-novas-regras-entram-em-vigor-a-19-de-maio", "language": "pt", "retrievedAt": "2026-09-17" },
+    { "id": "de-naturalisation", "publisher": "German Federal Government — Make it in Germany", "title": "The path to German citizenship", "url": "https://www.make-it-in-germany.com/en/visa-residence/living-permanently/naturalisation", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "fr-naturalisation", "publisher": "French Republic — Service Public", "title": "Naturalisation française par décret", "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2213", "language": "fr", "retrievedAt": "2026-09-17" },
+    { "id": "fr-language", "publisher": "French Republic — Service Public", "title": "Proof of French-language level for nationality", "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F11926", "language": "fr", "retrievedAt": "2026-09-17" },
+    { "id": "ie-naturalisation", "publisher": "Ireland — Immigration Service Delivery", "title": "How to become an Irish citizen guide", "url": "https://www.irishimmigration.ie/how-to-become-an-irish-citizen-guide/", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "ca-naturalisation", "publisher": "Immigration, Refugees and Citizenship Canada", "title": "Canadian citizenship: who can apply", "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/adult-minor/who.html", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "sg-citizenship", "publisher": "Singapore Immigration & Checkpoints Authority", "title": "Becoming a Singapore citizen", "url": "https://www.ica.gov.sg/reside/citizenship/apply", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "us-tax-abroad", "publisher": "US Internal Revenue Service", "title": "US citizens and resident aliens abroad", "url": "https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "us-tax-residence", "publisher": "US Internal Revenue Service", "title": "Topic 851: resident and nonresident aliens", "url": "https://www.irs.gov/taxtopics/tc851", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "gb-tax-residence", "publisher": "UK Government / HM Revenue & Customs", "title": "UK residence and tax on foreign income", "url": "https://www.gov.uk/tax-foreign-income/residence", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "sg-tax-residence", "publisher": "Inland Revenue Authority of Singapore", "title": "Working out my tax residency", "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "sg-tax-overseas", "publisher": "Inland Revenue Authority of Singapore", "title": "Income received from overseas", "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not/income-received-from-overseas", "language": "en", "retrievedAt": "2026-09-17" }
+  ],
+  "topics": [
+    {
+      "code": "US", "topic": "citizenship", "title": "United States Citizenship Requirements",
+      "summary": "The ordinary US naturalisation route combines five years as a lawful permanent resident with continuous residence, physical presence, English and civics requirements.",
+      "scope": "Ordinary adult five-year lawful-permanent-resident route; marriage, military service and citizenship through parents are separate.",
+      "jurisdiction": "United States citizenship", "routeId": "united-states-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Permanent and continuous residence", "text": "Age 18 or over, at least five years as a lawful permanent resident, and five years of continuous US residence immediately before filing.", "state": "documented", "sourceIds": ["us-naturalisation"], "locator": "General Eligibility Requirements", "constraint": { "value": 5, "unit": "years", "basis": "permanent_residence", "cohort": "Ordinary adult five-year LPR route" } },
+        { "id": "presence", "label": "Physical presence is separate", "text": "At least 30 months physically in the US within the preceding five years, plus three months in the responsible state or USCIS district.", "state": "documented", "sourceIds": ["us-naturalisation"], "locator": "General Eligibility Requirements — presence and jurisdiction" },
+        { "id": "language", "label": "English", "text": "Basic reading, writing and speaking are required, with exceptions for qualifying applicants. USCIS does not assign a CEFR level here.", "state": "conditional", "sourceIds": ["us-naturalisation"], "locator": "English requirement; exceptions and accommodations" },
+        { "id": "civics", "label": "Civics, character and oath", "text": "Civics knowledge, good moral character, attachment to constitutional principles and an oath are separate requirements; consult current test and exception guidance.", "state": "conditional", "sourceIds": ["us-naturalisation"], "locator": "General Eligibility Requirements" },
+        { "id": "application", "label": "Form N-400", "text": "Use USCIS Form N-400 and its current instructions after checking which naturalisation route applies.", "state": "documented", "sourceIds": ["us-naturalisation"], "locator": "Form N-400; Additional Resources" }
+      ],
+      "limits": ["Continuous residence and physical presence are different tests. Absences and exemptions need individual review; this summary is not an approval or processing-time prediction."]
+    },
+    {
+      "code": "HK", "topic": "citizenship", "title": "Hong Kong: Chinese Nationality Requirements",
+      "summary": "Hong Kong administers applications for Chinese nationality. Its passport listing does not represent a separate Hong Kong citizenship law.",
+      "scope": "Naturalisation as a Chinese national through the Hong Kong Immigration Department; right of abode and passport issuance are separate matters.",
+      "jurisdiction": "Chinese nationality administered in the Hong Kong SAR", "routeId": "hong-kong-chinese-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "eligibility", "label": "Legal basis", "text": "Article 7 covers foreign or stateless applicants willing to follow China's constitution and laws who have close Chinese relatives, have settled in China, or have other legitimate reasons.", "state": "conditional", "sourceIds": ["hk-naturalisation"], "locator": "Eligibility — Article 7" },
+        { "id": "residence", "label": "Residence and local ties", "text": "Officials consider right of abode, habitual residence, family, income, taxes, character and intention to remain. This guide sets no universal naturalisation residence-year threshold.", "state": "conditional", "sourceIds": ["hk-naturalisation"], "locator": "Factors to be Considered in an Application" },
+        { "id": "language", "label": "Chinese language", "text": "Sufficient Chinese-language knowledge is a listed factor; no numeric proficiency level is specified in this guide.", "state": "conditional", "sourceIds": ["hk-naturalisation"], "locator": "Factors — language knowledge" },
+        { "id": "multiple", "label": "Other nationality", "text": "Article 8 states that an approved naturalisation applicant cannot retain foreign nationality.", "state": "documented", "sourceIds": ["hk-naturalisation"], "locator": "Eligibility — Article 8" },
+        { "id": "application", "label": "Application evidence", "text": "Use the Immigration Department's nationality application and provide identity, residence and applicable family or other-reason evidence. Each case is assessed on its merits.", "state": "conditional", "sourceIds": ["hk-naturalisation"], "locator": "Applying; Supporting Documents" }
+      ],
+      "limits": ["Do not describe seven years of Hong Kong residence as automatic Chinese citizenship. This page does not decide right of abode or entitlement to an HKSAR passport."]
+    },
+    {
+      "code": "IN", "topic": "citizenship", "title": "India Citizenship Requirements",
+      "summary": "India's ordinary naturalisation qualifications separate the immediately preceding year from a longer residence or government-service history, with statutory exceptions.",
+      "scope": "Ordinary Section 6 naturalisation for a person of full age and capacity who is not an illegal migrant; special CAA and registration routes are excluded.",
+      "jurisdiction": "Indian citizenship", "routeId": "india-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Immediately preceding period", "text": "Residence in India or service of a government in India throughout the preceding 12 months, or a combination; special circumstances can permit limited relaxation.", "state": "conditional", "sourceIds": ["in-act"], "locator": "Third Schedule (c), PDF page 17" },
+        { "id": "earlier", "label": "Earlier qualifying history", "text": "At least 11 years of residence or qualifying government service in the 14 years before that final 12-month period, subject to statutory exceptions.", "state": "conditional", "sourceIds": ["in-act"], "locator": "Third Schedule (d), PDF page 17" },
+        { "id": "language", "label": "Language", "text": "Adequate knowledge of a language in the Constitution's Eighth Schedule is required. The Act does not express this as a CEFR level.", "state": "documented", "sourceIds": ["in-act"], "locator": "Third Schedule (f), PDF page 17" },
+        { "id": "other", "label": "Other qualifications", "text": "Good character, qualifying future residence/service intentions and the other Schedule conditions apply. A certificate and oath are needed; qualifying time alone does not confer citizenship.", "state": "conditional", "sourceIds": ["in-act"], "locator": "Section 6; Third Schedule (a), (e), (g)" },
+        { "id": "multiple", "label": "Renunciation procedure", "text": "This pilot does not establish the current document-level renunciation procedure. Do not treat this route as permission to keep another citizenship or an OCI card as Indian citizenship.", "state": "not_established", "sourceIds": ["in-act"], "locator": "Sections 6, 7A–7B and 9; Third Schedule" }
+      ],
+      "limits": ["The ordinary route is not a universal 12-year countdown. Registration, OCI-related eligibility, CAA and distinguished-service waivers require their own legal and procedural checks."]
+    },
+    {
+      "code": "AE", "topic": "citizenship", "title": "UAE Citizenship: Routes and Limitations",
+      "summary": "UAE law distinguishes residence-based grants from exceptional talent provisions. Neither a strong passport rank nor residence alone establishes an obtainable second citizenship.",
+      "scope": "Selected provisions of the nationality law currently linked by ICP, in its 20 September 2021 consolidation. Operational availability and all implementing rules are not established here.",
+      "jurisdiction": "United Arab Emirates nationality",
+      "facts": [
+        { "id": "residence", "label": "Residence is not an automatic entitlement", "text": "Article 8 permits a grant to other qualifying applicants after 30 years of lawful continuous residence, including 20 after the law, with livelihood, conduct and Arabic conditions.", "state": "conditional", "sourceIds": ["ae-act"], "locator": "Article 8, PDF page 2" },
+        { "id": "exceptional", "label": "Exceptional categories", "text": "Article 9 bis permits grants for investors, entrepreneurs, specialised professionals and talented people under implementing conditions. This is not an open citizenship-by-investment guarantee.", "state": "conditional", "sourceIds": ["ae-act"], "locator": "Article 9 bis, PDF page 3" },
+        { "id": "language", "label": "Arabic and other conditions", "text": "Article 12 bis lists Arabic, lawful residence, livelihood, qualifications, conduct, security approval and oath; specified exceptional applicants can be exempted from some or all conditions.", "state": "conditional", "sourceIds": ["ae-act"], "locator": "Article 12 bis, PDF page 3" },
+        { "id": "multiple", "label": "Prior nationality", "text": "Article 11 generally requires renunciation for naturalisation but excepts Article 9 bis acquisitions. Do not generalise this exception to every applicant.", "state": "conditional", "sourceIds": ["ae-act"], "locator": "Article 11, PDF page 3" },
+        { "id": "application", "label": "Practical availability", "text": "The cited law does not establish an accessible application path or success probability for an ordinary foreign resident. These remain unverified in this pilot.", "state": "not_established", "sourceIds": ["ae-act"], "locator": "Articles 8, 9 bis and 12 bis" }
+      ],
+      "limits": ["Do not recommend this as an ordinary second-passport purchase for US citizens or other foreign residents. The statute and practical application availability are different questions.", "The linked ICP consolidation is dated 2021; this is not a claim that all later implementing measures have been reviewed."]
+    },
+    {
+      "code": "PT", "topic": "citizenship", "title": "Portugal Citizenship Requirements",
+      "summary": "Portugal's ordinary residence route has different minimum periods by nationality, with a transition for applications pending before the May 2026 reform.",
+      "scope": "Ordinary residence-based naturalisation under the reform effective 19 May 2026; not a complete survey of descent or family routes.",
+      "jurisdiction": "Portuguese nationality", "routeId": "portugal-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence-eu", "label": "EU and Portuguese-speaking-country nationals", "text": "Seven years of legal residence for nationals of EU member states or countries with Portuguese as an official language.", "state": "documented", "sourceIds": ["pt-reform"], "locator": "Naturalização — minimum legal-residence periods", "effectiveFrom": "2026-05-19", "constraint": { "value": 7, "unit": "years", "basis": "legal_residence", "cohort": "EU or Portuguese-official-language-country nationals" } },
+        { "id": "residence-other", "label": "Other nationalities", "text": "Ten years of legal residence for nationals of other states; this is an eligibility period, not a processing estimate.", "state": "documented", "sourceIds": ["pt-reform"], "locator": "Naturalização — minimum legal-residence periods", "constraint": { "value": 10, "unit": "years", "basis": "legal_residence", "cohort": "Nationals of other states" } },
+        { "id": "integration", "label": "Civic knowledge and other conditions", "text": "The reform adds cultural and civic knowledge, a democratic-rule-of-law declaration, specified criminal and sanctions checks, and self-support requirements.", "state": "documented", "sourceIds": ["pt-reform"], "locator": "Naturalização — Article 6(1)" },
+        { "id": "language", "label": "Exact language standard", "text": "This reform notice does not establish the current accepted language certificates or a CEFR level. Those details remain unverified in this pilot.", "state": "not_established", "sourceIds": ["pt-reform"], "locator": "Naturalização; Regulamentação complementar" },
+        { "id": "transition", "label": "Application date matters", "text": "The notice applies the new rules to applications after entry into force; pending cases retain the previous law. It also flags implementing rules needed for practical operation.", "state": "conditional", "sourceIds": ["pt-reform"], "locator": "Regulamentação complementar" }
+      ],
+      "limits": ["This review does not establish whether every implementing procedure is now available. Check the competent nationality service before filing.", "Descent, marriage, statelessness and child-specific routes are not interchangeable with this ordinary adult route."]
+    },
+    {
+      "code": "DE", "topic": "citizenship", "title": "Germany Citizenship Requirements",
+      "summary": "Germany's federal naturalisation guide combines lawful residence, B1 German or accepted proof, civic knowledge and qualifying residence status.",
+      "scope": "Ordinary naturalisation as described by the federal government; personal exceptions require the responsible local authority.",
+      "jurisdiction": "German nationality", "routeId": "germany-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Residence and status", "text": "The federal guide states more than five years of lawful residence plus a permanent right or qualifying permit. A study permit alone is not sufficient.", "state": "conditional", "sourceIds": ["de-naturalisation"], "locator": "Requirements for naturalisation, first two bullets" },
+        { "id": "language", "label": "German language", "text": "B1 oral and written German, or accepted German school, vocational or university proof.", "state": "documented", "sourceIds": ["de-naturalisation"], "locator": "Requirements — language", "language": { "framework": "CEFR", "level": "B1", "skills": ["oral", "written"] } },
+        { "id": "civics", "label": "Civic knowledge", "text": "The naturalisation or Life in Germany test normally proves civic knowledge; specified German qualifications can replace it.", "state": "conditional", "sourceIds": ["de-naturalisation"], "locator": "Requirements — legal and social system" },
+        { "id": "other", "label": "Other conditions", "text": "The guide also requires self-support, criminal-record disclosure and commitments to the constitutional order and Germany's historical responsibility.", "state": "conditional", "sourceIds": ["de-naturalisation"], "locator": "Requirements — remaining conditions" },
+        { "id": "multiple", "label": "Keeping another nationality", "text": "German law allows a naturalised person to retain prior nationality. The other country's law must be checked separately.", "state": "documented", "sourceIds": ["de-naturalisation"], "locator": "Option for multiple citizenships" },
+        { "id": "application", "label": "Where to apply", "text": "Apply to the competent local naturalisation authority and check its document requirements before filing.", "state": "documented", "sourceIds": ["de-naturalisation"], "locator": "Naturalisation process and fees" }
+      ],
+      "limits": ["Family co-naturalisation and statutory exceptions can change the result. This page does not decide individual eligibility or predict processing time."]
+    },
+    {
+      "code": "FR", "topic": "citizenship", "title": "France Citizenship Requirements",
+      "summary": "French naturalisation by decree normally requires five years of residence. Language evidence, civic examination and integration are separate conditions.",
+      "scope": "Adult naturalisation by decree for an applicant living in France; not nationality by marriage, descent or a decision on an exemption.",
+      "jurisdiction": "French nationality", "routeId": "france-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Ordinary residence period", "text": "Five years generally. Defined cases have a two-year period or no minimum; the applicant's main professional and family interests must be in France at the decree.", "state": "conditional", "sourceIds": ["fr-naturalisation"], "locator": "Step 1 — place and minimum duration of residence", "constraint": { "value": 5, "unit": "years", "basis": "legal_residence", "cohort": "Ordinary adult route; statutory reductions and exemptions separate" } },
+        { "id": "language", "label": "French language", "text": "The current proof guide requires B2 French, oral and written. Accepted qualifications/tests, accommodations and exemptions must be checked for the applicant's situation.", "state": "conditional", "sourceIds": ["fr-language"], "locator": "Nationalité française par décret — level and accepted evidence", "language": { "framework": "CEFR", "level": "B2", "skills": ["oral", "written"] } },
+        { "id": "civics", "label": "Civics and integration", "text": "Civic examination, assimilation, professional integration and conduct are assessed separately from the language certificate.", "state": "conditional", "sourceIds": ["fr-naturalisation"], "locator": "Step 1 — assimilation, professional integration and conduct" },
+        { "id": "application", "label": "Application and decision", "text": "Follow the official step-by-step service for evidence, submission, interview and the decree. Meeting a residence period does not guarantee naturalisation.", "state": "conditional", "sourceIds": ["fr-naturalisation"], "locator": "Steps 3–8 — dossier, submission, interview and decision" }
+      ],
+      "limits": ["Different routes and exemptions have separate evidence requirements. A French passport is a later document, not the naturalisation application itself."]
+    },
+    {
+      "code": "IE", "topic": "citizenship", "title": "Ireland Citizenship Requirements",
+      "summary": "Ireland's ordinary adult naturalisation route uses reckonable residence, including a continuous final year, rather than simply time since arrival.",
+      "scope": "Ordinary adult residence-based naturalisation; spouse, refugee, descent and minor routes need separate checks.",
+      "jurisdiction": "Irish citizenship", "routeId": "ireland-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Five years within nine", "text": "Normally five years of reckonable legal residence in the last nine, including the continuous year immediately before applying.", "state": "documented", "sourceIds": ["ie-naturalisation"], "locator": "Core residency requirements — 5 in 9 rule", "constraint": { "value": 5, "unit": "years", "basis": "legal_residence", "withinYears": 9, "cohort": "Ordinary adult applicant" } },
+        { "id": "absences", "label": "Final-year absences", "text": "The guide allows 70 days away in the final year, with up to 30 more only for exceptional circumstances accepted by the Minister.", "state": "conditional", "sourceIds": ["ie-naturalisation"], "locator": "70 Days Absence Rule" },
+        { "id": "excluded", "label": "Reckonable permission", "text": "Stamp 2/2A student periods normally do not count, but a discretionary exception covers certain dependent young adults who arrived legally as children. Gaps in permission do not count.", "state": "conditional", "sourceIds": ["ie-naturalisation"], "locator": "Time That Does Not Count; Reckonable Residence for Young Adults" },
+        { "id": "language", "label": "Language level", "text": "No numeric language level is established by this pilot. Do not treat a missing level as a verified exemption.", "state": "not_established", "sourceIds": ["ie-naturalisation"], "locator": "Eligibility and supporting-document guidance" },
+        { "id": "application", "label": "Prepare the application", "text": "Check immigration-permission dates and provide identity and residence evidence for the required years through the official citizenship process.", "state": "documented", "sourceIds": ["ie-naturalisation"], "locator": "Residency Proofs; How to prove your identity" }
+      ],
+      "limits": ["Reckonable residence and proof of residence are different checks. This is not an automatic entitlement or a processing-time estimate."]
+    },
+    {
+      "code": "CA", "topic": "citizenship", "title": "Canada Citizenship Requirements",
+      "summary": "Canada's adult citizenship route counts physical presence and qualifying status. Language proof uses CLB/NCLC, not an assumed European-language equivalent.",
+      "scope": "Adult permanent-resident citizenship grant; child, descent and exceptional routes are separate.",
+      "jurisdiction": "Canadian citizenship", "routeId": "canada-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Physical presence", "text": "At least 1,095 days within the five years before signing, including at least 730 days as a permanent resident.", "state": "documented", "sourceIds": ["ca-naturalisation"], "locator": "Adults — physical presence", "constraint": { "value": 1095, "unit": "days", "basis": "physical_presence", "withinYears": 5, "cohort": "Adult permanent-resident applicant" } },
+        { "id": "credits", "label": "Earlier residence credit", "text": "Eligible temporary-resident or protected-person days count at half a day, capped at 365 credited days within the eligibility window.", "state": "conditional", "sourceIds": ["ca-naturalisation"], "locator": "Time as temporary resident or protected person" },
+        { "id": "language", "label": "English or French", "text": "Applicants aged 18–54 need CLB/NCLC 4 in speaking and listening, subject to the official waiver rules.", "state": "conditional", "sourceIds": ["ca-naturalisation"], "locator": "Prove your language skills", "language": { "framework": "CLB/NCLC", "level": "4", "skills": ["speaking", "listening"] } },
+        { "id": "test", "label": "Test and oath", "text": "Adults aged 18–54 must pass the citizenship test; adults take the oath, subject to available waivers.", "state": "conditional", "sourceIds": ["ca-naturalisation"], "locator": "Citizenship test; oath; waivers" },
+        { "id": "tax", "label": "Tax filing and eligibility checks", "text": "If required under tax law, file returns for at least three of the preceding five years. Permanent-resident status and prohibitions must also be checked.", "state": "conditional", "sourceIds": ["ca-naturalisation"], "locator": "Permanent resident; income taxes; prohibited persons" }
+      ],
+      "limits": ["Use IRCC's presence calculation and application instructions. Qualifying to apply does not guarantee approval; do not translate CLB/NCLC into CEFR without an authoritative mapping."]
+    },
+    {
+      "code": "SG", "topic": "citizenship", "title": "Singapore Citizenship Requirements",
+      "summary": "Two years as a permanent resident is an application threshold for Singapore's ordinary adult route, not a promise of citizenship after two years.",
+      "scope": "Adult permanent-resident application; spouses, students, children and aged parents have separately defined eligibility routes.",
+      "jurisdiction": "Singapore citizenship", "routeId": "singapore-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Permanent residence first", "text": "An applicant aged at least 21 can apply after at least two years as a Singapore permanent resident.", "state": "documented", "sourceIds": ["sg-citizenship"], "locator": "Eligibility — first row", "constraint": { "value": 2, "unit": "years", "basis": "permanent_residence", "cohort": "Permanent resident aged 21 or over" } },
+        { "id": "assessment", "label": "Discretionary assessment", "text": "ICA considers family ties, contributions, qualifications, age, family profile and residence history. Eligibility to submit is not approval.", "state": "conditional", "sourceIds": ["sg-citizenship"], "locator": "Factors considered by ICA" },
+        { "id": "language", "label": "Language level", "text": "ICA's cited eligibility page does not establish a numeric language level. None is asserted here.", "state": "not_established", "sourceIds": ["sg-citizenship"], "locator": "Eligibility" },
+        { "id": "civics", "label": "After in-principle approval", "text": "Applicants aged 16–60 must complete the Singapore Citizenship Journey. Citizenship follows completion of the required formalities.", "state": "conditional", "sourceIds": ["sg-citizenship"], "locator": "Completion of Formalities" },
+        { "id": "service", "label": "National Service", "text": "ICA highlights National Service obligations for male citizens and permanent residents, with exemptions and cohort-specific rules. Review these before applying.", "state": "conditional", "sourceIds": ["sg-citizenship"], "locator": "National Service Obligation" },
+        { "id": "application", "label": "Official application", "text": "Use ICA's e-Service and the relevant document checklist; family applicants must make their required declarations.", "state": "documented", "sourceIds": ["sg-citizenship"], "locator": "Singpass Requirement; Documents Required" }
+      ],
+      "limits": ["Permanent residence must be obtained separately. This page does not establish permission to retain another nationality; review the linked multiple-citizenship policy and ICA's formalities."]
+    },
+    {
+      "code": "US", "topic": "taxes", "title": "United States Tax Residence & Foreign Income",
+      "summary": "US citizens and resident aliens generally remain within the federal worldwide-income framework while abroad; reliefs and filing obligations need separate checks.",
+      "scope": "US federal individual income-tax scope, including citizens abroad and resident/nonresident aliens; not state taxes or a calculation of tax due.",
+      "jurisdiction": "United States federal individual taxation",
+      "facts": [
+        { "id": "citizens", "label": "Citizens living abroad", "text": "US citizens and resident aliens abroad generally report taxable worldwide income under the same federal framework as those living in the US.", "state": "documented", "sourceIds": ["us-tax-abroad"], "locator": "Opening paragraphs" },
+        { "id": "residence", "label": "Tax residence for non-citizens", "text": "The green-card or substantial-presence test can establish resident-alien status. The presence test weights days across three years and has exclusions and exceptions.", "state": "conditional", "sourceIds": ["us-tax-residence"], "locator": "Resident aliens; Green card test; Substantial presence test" },
+        { "id": "relief", "label": "Relief is not automatic exemption", "text": "Foreign earned-income exclusions and foreign tax credits may help eligible taxpayers, but claiming them requires a US return and satisfying the relevant rules.", "state": "conditional", "sourceIds": ["us-tax-abroad"], "locator": "Foreign tax benefits" },
+        { "id": "nonresident", "label": "Nonresident-alien treatment", "text": "Nonresident aliens follow different source-income rules; do not apply the citizen-abroad summary merely because someone visits the US.", "state": "conditional", "sourceIds": ["us-tax-residence"], "locator": "Taxation of nonresident aliens" },
+        { "id": "reporting", "label": "Foreign accounts and filing", "text": "Foreign financial accounts can trigger separate reporting. Check the IRS-linked FBAR rules and filing guidance rather than assuming no tax due means no reporting.", "state": "conditional", "sourceIds": ["us-tax-abroad"], "locator": "Foreign financial accounts; When to file" }
+      ],
+      "limits": ["No tax rates, filing thresholds, state-tax rules or individual treaty outcomes are calculated here. Multiple citizenship does not merge the tax rules of the countries involved."]
+    },
+    {
+      "code": "GB", "topic": "taxes", "title": "United Kingdom Tax Residence & Foreign Income",
+      "summary": "UK personal tax residence depends on the Statutory Residence Test, not passport ownership or a single 183-day shortcut.",
+      "scope": "Individual UK residence and baseline foreign-income treatment; special reliefs, treaties and individual liabilities require separate assessment.",
+      "jurisdiction": "United Kingdom individual taxation",
+      "facts": [
+        { "id": "year", "label": "Tax year", "text": "Residence is considered for the UK tax year, 6 April to 5 April, and may change from one year to the next.", "state": "documented", "sourceIds": ["gb-tax-residence"], "locator": "Work out your residence status; If your situation changes" },
+        { "id": "residence", "label": "Residence tests", "text": "Consider automatic overseas tests, automatic UK tests and sufficient ties. Spending 183 days in the UK is one test, not the only route to residence.", "state": "conditional", "sourceIds": ["gb-tax-residence"], "locator": "UK tests; Overseas tests" },
+        { "id": "foreign", "label": "Foreign income", "text": "Residents normally pay UK tax on UK and foreign income. Non-residents generally pay UK tax on UK income rather than foreign income.", "state": "conditional", "sourceIds": ["gb-tax-residence"], "locator": "Opening residence and tax summary" },
+        { "id": "split", "label": "Moving during a tax year", "text": "Split-year treatment has conditions; moving country does not by itself establish the applicable split-year case.", "state": "conditional", "sourceIds": ["gb-tax-residence"], "locator": "Your residence status when you move" },
+        { "id": "application", "label": "Check your circumstances", "text": "Use HMRC's residence checker and detailed guidance with your travel days, work pattern, homes and family ties.", "state": "documented", "sourceIds": ["gb-tax-residence"], "locator": "Get help working out your residence status" }
+      ],
+      "limits": ["This is the baseline residence framework, not a review of new-resident relief, domicile transitions, treaty residence, capital-gains exceptions or rates. Obtain advice for the relevant tax year."]
+    },
+    {
+      "code": "SG", "topic": "taxes", "title": "Singapore Tax Residence & Foreign Income",
+      "summary": "Singapore distinguishes residence, Singapore-source income and overseas income. Its general overseas-income treatment has important exceptions.",
+      "scope": "Individual income-tax residence and overseas-income guidance, not corporate taxation or a personalised effective tax rate.",
+      "jurisdiction": "Singapore individual taxation",
+      "facts": [
+        { "id": "residence", "label": "Citizens and permanent residents", "text": "Citizens and permanent residents who normally reside in Singapore, apart from temporary absences, are tax residents under IRAS guidance.", "state": "conditional", "sourceIds": ["sg-tax-residence"], "locator": "Tax residents — first category" },
+        { "id": "foreigners", "label": "Foreign individuals", "text": "Foreigners may qualify through 183 days of stay/work in the previous calendar year, continuous stay/work across three consecutive years, or qualifying continuous employment spanning two calendar years with at least 183 total days including adjacent presence. The last concession excludes directors, public entertainers and professionals.", "state": "conditional", "sourceIds": ["sg-tax-residence"], "locator": "Tax residents — foreigner categories" },
+        { "id": "foreign", "label": "Overseas income", "text": "Overseas income received in Singapore is generally not taxable for individuals, including deposits to a Singapore bank account; this is not a blanket exemption.", "state": "conditional", "sourceIds": ["sg-tax-overseas"], "locator": "Opening summary" },
+        { "id": "exceptions", "label": "Important exceptions", "text": "Exceptions include Singapore partnerships, overseas work or business incidental to Singapore activity, work in Singapore for a foreign employer, and overseas Singapore-government employment.", "state": "conditional", "sourceIds": ["sg-tax-overseas"], "locator": "Taxable overseas income — items 1–5" },
+        { "id": "reporting", "label": "Taxable income and relief", "text": "Taxable overseas income must be reported in its relevant category. Double-tax relief may be available when the same income is taxed overseas.", "state": "conditional", "sourceIds": ["sg-tax-overseas"], "locator": "Reporting overseas income" },
+        { "id": "year", "label": "Income year versus assessment year", "text": "Assessment generally follows the income year: Year of Assessment 2026 concerns income earned in calendar 2025.", "state": "documented", "sourceIds": ["sg-tax-residence"], "locator": "Income earned in Singapore is taxable" }
+      ],
+      "limits": ["Citizenship alone does not make an individual tax-free. Check work location, income class, residence, clearance and treaty rules; no rates or personal tax bill are estimated here."]
+    }
+  ]
+}

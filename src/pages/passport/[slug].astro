@@ -2,6 +2,7 @@
 import AccessList from "@/components/AccessList";
 import PassportCover from "@/components/PassportCover";
 import RegionMap from "@/components/RegionMap.astro";
+import CountryIndicators from "@/components/CountryIndicators.astro";
 import StatusPill from "@/components/StatusPill";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext, getPassportAccess } from "@/lib/data";
@@ -12,6 +13,8 @@ import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
 import { passportPageTitle } from "@/lib/seo-titles";
 import { resolvePassportBySlug } from "@/lib/visa-evidence";
+import { countryTopics, countryTopicHref, TOPIC_LABELS } from "@/lib/country-profiles";
+import { countryIndicators } from "@/lib/country-indicators";
 
 const { manifest, source } = await getDataContext(Astro.locals);
 const passport = resolvePassportBySlug(Astro.params.slug, manifest);
@@ -111,6 +114,8 @@ const structuredData = [
         The detailed list below separates these from eVisas, traditional visas, and any officially documented entry restrictions.
       </p>
       <nav class="country-shortcuts" aria-label={`Explore ${passport.name} passport comparisons`}>
+        {countryTopics(passport.code).map((topic) => <a href={countryTopicHref(passport.slug, topic.topic)}>{TOPIC_LABELS[topic.topic]}</a>)}
+        {countryIndicators(passport.code).length > 0 && <a href="#country-indicators-heading">Living indicators</a>}
         {regionCollection && <a href={`/${regionCollection.slug}`}>See {regionCollection.name} ranking</a>}
         {passport.code === "US" && <a href="/best-second-passport-for-us-citizens">Best second passport by marginal access</a>}
         {comparisonPassports.map((other) => (
@@ -120,6 +125,10 @@ const structuredData = [
     </div>
     <RegionMap code={passport.code} country={passport.name} region={passport.region} />
   </section>
+
+  {countryTopics(passport.code).length > 0 && <section class="passport-topic-links" aria-label="Citizenship and tax context">
+    {countryTopics(passport.code).map((topic) => <article><a href={countryTopicHref(passport.slug, topic.topic)}>{TOPIC_LABELS[topic.topic]} →</a><p>{topic.summary}</p></article>)}
+  </section>}
 
   {citizenshipPolicy && (
     <aside class:list={["passport-citizenship-note", `passport-citizenship-note--${citizenshipPolicy.status}`]}>
@@ -148,4 +157,8 @@ const structuredData = [
     <a class="status-guide-link" href="/evisa-vs-eta">Not sure how an ETA differs from an eVisa?</a>
     <AccessList passport={detail} destinations={manifest.destinations} client:visible />
   </section>
+  <CountryIndicators code={passport.code} />
 </BaseLayout>
+<style>
+  .passport-topic-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-bottom:24px}.passport-topic-links article{border:1px solid var(--line);padding:18px 20px;min-width:0}.passport-topic-links a{color:var(--green);font-weight:700;font-size:14px;text-underline-offset:4px}.passport-topic-links p{color:var(--ink-soft);font-size:13px;line-height:1.5;margin:8px 0 0}
+</style>

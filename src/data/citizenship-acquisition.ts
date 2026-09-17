@@ -1,4 +1,6 @@
 import type { CitizenshipPolicySource } from "./citizenship-policies";
+import { COUNTRY_TOPICS, COUNTRY_PROFILE_REVIEW, countryTopicSources } from "../lib/country-profiles";
+import type { CountryTopic } from "../lib/country-profile-schema";
 
 export type CitizenshipAcquisitionRouteType = "descent" | "naturalisation" | "marriage" | "restoration" | "exceptional";
 
@@ -15,6 +17,8 @@ export interface CitizenshipAcquisitionRoute {
   transitionNote?: string;
   reviewedAt: string;
   sources: CitizenshipPolicySource[];
+  structuredRequirements?: CountryTopic["facts"];
+  scope?: string;
 }
 
 export const CITIZENSHIP_ROUTE_TYPE_LABELS: Record<CitizenshipAcquisitionRouteType, string> = {
@@ -25,7 +29,7 @@ export const CITIZENSHIP_ROUTE_TYPE_LABELS: Record<CitizenshipAcquisitionRouteTy
   exceptional: "Exceptional or nomination-only route",
 };
 
-export const CITIZENSHIP_ACQUISITION_ROUTES: CitizenshipAcquisitionRoute[] = [
+const LEGACY_CITIZENSHIP_ACQUISITION_ROUTES: CitizenshipAcquisitionRoute[] = [
   {
     id: "portugal-descent-2026",
     countryCode: "PT",
@@ -288,6 +292,22 @@ export const CITIZENSHIP_ACQUISITION_ROUTES: CitizenshipAcquisitionRoute[] = [
     }],
   },
 ];
+
+// Retain route IDs and old API fields, but use the same approved requirements as
+// the new topic pages. Records not re-reviewed keep their original review date.
+export const CITIZENSHIP_ACQUISITION_ROUTES: CitizenshipAcquisitionRoute[] = LEGACY_CITIZENSHIP_ACQUISITION_ROUTES.map((route) => {
+  const topic = COUNTRY_TOPICS.find((entry) => entry.routeId === route.id);
+  if (!topic) return route;
+  return {
+    ...route, summary: topic.summary, scope: topic.scope,
+    requirements: topic.facts.map((fact) => `${fact.label}: ${fact.text}`),
+    residenceRequirement: topic.facts.filter((fact) => fact.id.startsWith("residence")).map((fact) => fact.text).join(" ") || undefined,
+    languageRequirement: topic.facts.find((fact) => fact.id === "language")?.text,
+    transitionNote: [...topic.facts.filter((fact) => fact.id === "transition").map((fact) => fact.text), ...topic.limits].join(" "),
+    reviewedAt: COUNTRY_PROFILE_REVIEW.reviewedAt, structuredRequirements: topic.facts,
+    sources: countryTopicSources(topic).map((source) => ({ label: source.title, publisher: source.publisher, url: source.url })),
+  };
+});
 
 export const CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY = new Map<string, CitizenshipAcquisitionRoute[]>(
   [...new Set(CITIZENSHIP_ACQUISITION_ROUTES.map((route) => route.countryCode))].map((countryCode) => [

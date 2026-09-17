@@ -34,7 +34,7 @@ describe("sitemaps", () => {
     ];
     const urls = groups.flat().map(({ loc }) => loc);
 
-    expect(urls).toHaveLength(42_567);
+    expect(urls).toHaveLength(42_580);
     expect(urls).toContain("https://multipassrank.com/dual-citizenship-countries");
     expect(urls).toContain("https://multipassrank.com/citizenship-by-descent");
     expect(urls).toContain("https://multipassrank.com/best-second-passport-for-us-citizens");
@@ -63,7 +63,7 @@ describe("sitemaps", () => {
 
   it("advertises the reviewed evidence update without replacing a later snapshot date", () => {
     expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-03T00:00:00Z" }))
-      .toBe("2026-09-16");
+      .toBe("2026-09-17");
     expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-17T00:00:00Z" }))
       .toBe("2026-09-17");
   });

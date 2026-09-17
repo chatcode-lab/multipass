@@ -1,0 +1,19 @@
+---
+import { countryIndicators, indicatorDisplay, INDICATOR_SCOPE, INDICATOR_REVIEW } from "@/lib/country-indicators";
+interface Props { code: string }
+const rows = countryIndicators(Astro.props.code);
+---
+{rows.length > 0 && <section class="country-indicators" aria-labelledby="country-indicators-heading">
+  <header><div><span class="eyebrow">Country context · separate from passport rank</span><h2 id="country-indicators-heading">Living in this country</h2></div><p>{INDICATOR_SCOPE}</p></header>
+  <div class="country-indicators__grid">{rows.map((row) => <article>
+    <h3>{row.definition.label}</h3><p class="country-indicators__value"><strong>{indicatorDisplay(row)}</strong><span>{row.definition.unit} · {row.period}</span></p>
+    <p>{row.definition.description}</p><p>{row.providerEntityName} · {row.geographicScope}</p>
+    {row.unavailableReason && <p>{row.unavailableReason}</p>}
+    <a href={row.source.url} rel="external">{row.source.publisher} · {row.source.edition}</a>
+    <details><summary>Source, reuse and review</summary><p>{row.source.attribution}</p><p>Source reviewed {INDICATOR_REVIEW.reviewedAt}. Next review due {INDICATOR_REVIEW.recheckBy}.</p><a href={row.source.dataUrl} rel="external">Source data</a>{" · "}<a href={row.source.licenceUrl} rel="external">{row.source.licence}</a></details>
+  </article>)}</div>
+  <p><a href={`/api/v1/country-profiles/${Astro.props.code}`}>Country profile and source data (JSON)</a></p>
+</section>}
+<style>
+  .country-indicators{border-top:1px solid var(--line);padding:42px 0}.country-indicators>header{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:24px}.country-indicators h2{font-family:var(--serif);color:var(--green);font-size:38px;line-height:1.1;font-weight:550;margin:8px 0 0}.country-indicators p{font-size:12px;color:var(--ink-soft)}.country-indicators__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.country-indicators article{min-width:0;background:var(--white);border:1px solid var(--line);padding:24px}.country-indicators h3{font-size:15px;color:var(--green);margin:0}.country-indicators__value{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:16px 0}.country-indicators__value strong{font-family:var(--serif);font-size:40px;color:var(--green);font-weight:550;line-height:1}.country-indicators a{color:var(--green);font-size:11px;text-underline-offset:3px;overflow-wrap:anywhere}.country-indicators details{margin-top:14px;font-size:11px;color:var(--ink-soft)}.country-indicators summary{cursor:pointer}.country-indicators .eyebrow{font-size:10px}@media(max-width:620px){.country-indicators>header,.country-indicators__grid{grid-template-columns:1fr;gap:12px}.country-indicators article{padding:20px}}
+</style>

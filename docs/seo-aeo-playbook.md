@@ -1,7 +1,7 @@
 # SEO and agent-discovery playbook
 
 - Status: canonical operating guide
-- Last reviewed: 16 September 2026
+- Last reviewed: 17 September 2026
 - Audience: maintainers, researchers, coding agents, and content agents
 
 This document turns the project's SEO, answer-engine optimization (AEO), indexing, evidence, performance, and analytics work into one set of current rules. It is intentionally both human-readable and agent-executable.
@@ -227,6 +227,29 @@ Before adding a new indexable page family, require all four:
 4. a maintainable internal-link and refresh path.
 
 If any is missing, keep the feature interactive, API-only, or `noindex` until it matures.
+
+### Country-topic pages: bounded first pilot, 17 September 2026
+
+Separate pages can address different search intents; a deeper URL or a larger page count is not, by itself, a ranking improvement. The first pilot adds ten citizenship pages (PT, DE, FR, IE, CA, US, SG, AE, HK, IN) and three individual-tax pages (US, GB, SG). Their scope is deliberately limited and visible. The existing passport ranking and access pages remain the hubs.
+
+| Resource | Intent and publication rule |
+| --- | --- |
+| `/passport/{slug}` | Existing travel rank and visa-access intent. Preserve its canonical, heading, score and access table; add short topic summaries and ordinary HTML links. |
+| `/passport/{slug}/citizenship` | Source-backed acquisition requirements: route/cohort, residence versus presence, language, civic conditions, exceptions and official process. Never imply a complete nationality-law review from one route. |
+| `/passport/{slug}/taxes` | Individual tax residence and scoped foreign-income obligations. Not a passport tax rate, corporate-tax guide, or personal tax calculation. |
+| Living indicators on the hub | First pilot: HDI and life expectancy for eleven statistical geographies, including the UK tax-only pilot. Native values, units, observation years, edition, geographic scope and licences. No `/living` or per-indicator pages until a distinct, substantial answer exists. |
+| `.md` / negotiated Markdown | The same facts and caveats, with the HTML topic URL as canonical. Explicit Markdown remains supported; `Vary: Accept` separates negotiated responses. |
+| `/api/v1/country-profiles/{CODE}` | Additive API; existing passport-access APIs stay unchanged. Discover available topics and preserve claim state, source locator, legal cohort and observation year. |
+
+Each published child **MUST self-canonicalize**, have a unique title within the existing 70-character budget, breadcrumbs, parent/sibling links, and a core-sitemap entry. Do not canonicalize a distinct citizenship or tax answer to its parent. Unknown countries or unpublished topics return a real 404, not generic indexable placeholders. A substantive reviewed page may contain explicitly unresolved fields without being excluded from search; missing language evidence is not a verified exemption.
+
+Legal publication requires independently reviewed candidates and a hash-bound review record. The approved artifact powers HTML, Markdown, JSON and the five migrated legacy acquisition records. UAE coverage is explicitly limited to the ICP-hosted 2021 statutory consolidation; operational availability remains unresolved. Hong Kong means Chinese nationality administered in the SAR, not a separate nationality or automatic citizenship after seven years.
+
+Indicators describe residents/statistical geographies, not rights conferred on passport holders. Never combine or average them for a passport set. Keep upstream licences separate from our evidence-metadata licence. All enrichment is bundled and server-rendered: no per-field KV reads, upstream browser fetches or new client-side framework.
+
+**Measurement:** establish a pre-launch baseline and inspect each topic family in Search Console after indexing. Track indexed canonicals, impressions/clicks for naturalisation/language/residency and tax-residence queries, clicks between hubs and topics, and agent requests to the Markdown/JSON variants. Monitor existing passport queries for cannibalisation or traffic loss. Compare equivalent countries/devices and observation windows; do not claim success from raw new-URL impressions or guarantee a ranking increase. No paid keyword request was needed for this pilot.
+
+**Next gates:** PISA needs actual aggregate-table/quality review; Big Mac needs country-specific observations and reuse approval; more legal countries need scoped independent source checks. Do not generate 199 citizenship/tax pages merely because the routes exist. See [country-profile collection contract](country-profile-enrichment.md) and [pilot candidate workflow](../research/country-profiles/README.md).
 
 ## 6. On-page and structured-data rules
 

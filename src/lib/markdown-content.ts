@@ -1,5 +1,7 @@
 import { collectionForRegion, comparisonHref, formatRegion, improveHref, rankHref, relatedPassports, UNTRACKED_DESTINATIONS } from "./geography";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
+import { countryTopicLinksMarkdown } from "./country-profiles";
+import { countryIndicatorsMarkdown } from "./country-indicators";
 import { citizenshipCombinationNoticesMarkdown, citizenshipPolicyFor } from "./citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "../data/citizenship-acquisition";
 import { denseRankByScore, STATUS_META } from "./passport";
@@ -166,6 +168,7 @@ Data checked ${checkedDate(manifest)}. Entry rules can change; verify official r
 
 ${regionCollection ? `- [See the ${regionCollection.heading}](${absoluteUrl(`/${regionCollection.slug}`)})\n` : ""}${passport.code === "US" ? `- [Best second passport for US travel access](${absoluteUrl("/best-second-passport-for-us-citizens")})\n` : ""}${comparisonLinks.join("\n")}
 
+${countryTopicLinksMarkdown(passport.code, passport.slug)}${countryIndicatorsMarkdown(passport.code)}
 ${citizenshipPolicy ? `## Multiple-citizenship policy\n\n**${escapeMarkdown(citizenshipPolicy.headline)}** ${escapeMarkdown(citizenshipPolicy.summary)}\n\n${citizenshipPolicy.practicalNotes.map((note) => `- ${escapeMarkdown(note)}`).join("\n")}\n\n${citizenshipPolicy.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.label)}](${source.url})`).join("\n")}\n\n[Review all source-backed compatibility notes](${absoluteUrl("/dual-citizenship-countries")})\n\n` : ""}${citizenshipRoutes.length ? `## Reviewed citizenship acquisition routes\n\n${citizenshipRoutes.map((route) => `- [${escapeMarkdown(route.title)}](${absoluteUrl(`/citizenship-by-descent#${route.id}`)})`).join("\n")}\n\n` : ""}${groups.join("\n\n")}`;
 }
 

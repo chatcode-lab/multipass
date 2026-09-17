@@ -1,0 +1,73 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDataContext } from "@/lib/data";
+import { resolvePassportBySlug } from "@/lib/visa-evidence";
+import { countryTopic, countryTopics, countryTopicHref, countryTopicSources, COUNTRY_PROFILE_REVIEW, PROFILE_CACHE_CONTROL, PROFILE_DISCLAIMERS, TOPIC_LABELS } from "@/lib/country-profiles";
+import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship-compatibility";
+
+const { manifest } = await getDataContext(Astro.locals);
+const passport = resolvePassportBySlug(Astro.params.slug, manifest);
+const topic = passport && countryTopic(passport.code, Astro.params.topic);
+if (!passport || !topic) return Astro.rewrite("/404");
+const canonical = countryTopicHref(passport.slug, topic.topic);
+if (Astro.params.slug !== passport.slug) return Astro.redirect(canonical, 308);
+Astro.response.headers.set("Cache-Control", PROFILE_CACHE_CONTROL);
+const sources = countryTopicSources(topic);
+const policy = citizenshipPolicyFor(passport.code);
+const sourceFor = (id: string) => sources.find((source) => source.id === id)!;
+const structuredData = [{
+  "@context": "https://schema.org", "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Passport ranking", item: "https://multipassrank.com/" },
+    { "@type": "ListItem", position: 2, name: passport.name, item: `https://multipassrank.com/passport/${passport.slug}` },
+    { "@type": "ListItem", position: 3, name: TOPIC_LABELS[topic.topic], item: `https://multipassrank.com${canonical}` },
+  ],
+}, {
+  "@context": "https://schema.org", "@type": "Article", headline: topic.title,
+  description: topic.summary, datePublished: "2026-09-17", dateModified: COUNTRY_PROFILE_REVIEW.reviewedAt,
+  author: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com/" },
+  mainEntityOfPage: `https://multipassrank.com${canonical}`,
+  citation: sources.map((source) => source.url),
+}];
+---
+<BaseLayout title={`${topic.title} | MultiPass Rank`} description={topic.summary} canonical={canonical} markdownHref={`${canonical}.md`} jsonHref={`/api/v1/country-profiles/${passport.code}`} ogType="article" structuredData={structuredData}>
+  <article class="country-topic">
+    <nav class="topic-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Ranking</a><span aria-hidden="true">/</span>
+      <a href={`/passport/${passport.slug}`}>{passport.name}</a><span aria-hidden="true">/</span>
+      <span aria-current="page">{TOPIC_LABELS[topic.topic]}</span>
+    </nav>
+    <header class="page-intro">
+      <span class="eyebrow">Beyond travel access</span>
+      <h1>{topic.title}</h1>
+      <p>{topic.summary}</p>
+      <div class="visa-relation-meta"><span>Sources reviewed <time datetime={COUNTRY_PROFILE_REVIEW.reviewedAt}>{COUNTRY_PROFILE_REVIEW.reviewedAt}</time></span><span>{sources.length} official {sources.length === 1 ? "source" : "sources"}</span></div>
+    </header>
+    <nav class="country-shortcuts" aria-label="Country topics">
+      <a href={`/passport/${passport.slug}`}>Passport rank & travel access</a>
+      {countryTopics(passport.code).map((entry) => <a href={countryTopicHref(passport.slug, entry.topic)} aria-current={entry.topic === topic.topic ? "page" : undefined}>{TOPIC_LABELS[entry.topic]}</a>)}
+    </nav>
+    <aside class="topic-scope">
+      <strong>{topic.jurisdiction}</strong>
+      <p>{topic.scope}</p>
+      <p>{PROFILE_DISCLAIMERS[topic.topic]}</p>
+    </aside>
+    <div class="topic-facts">
+      {topic.facts.map((fact) => <section id={fact.id} class:list={["topic-fact", fact.state === "not_established" && "topic-fact--unresolved"]}>
+        <div><span class="eyebrow">{fact.state === "not_established" ? "Not established in this pass" : fact.state === "conditional" ? "Conditions apply" : "Official-source summary"}</span><h2>{fact.label}</h2></div>
+        <div><p>{fact.text}</p>{fact.effectiveFrom && <p class="topic-date">Effective from <time datetime={fact.effectiveFrom}>{fact.effectiveFrom}</time></p>}
+          <div class="topic-citations">{fact.sourceIds.map((id) => <a href={sourceFor(id).url} rel="external">{sourceFor(id).publisher}</a>)}<span>{fact.locator}</span></div>
+        </div>
+      </section>)}
+    </div>
+    <section class="topic-limits"><h2>Scope and limitations</h2><ul>{topic.limits.map((limit) => <li>{limit}</li>)}</ul>
+      <p>Next review due <time datetime={COUNTRY_PROFILE_REVIEW.recheckBy}>{COUNTRY_PROFILE_REVIEW.recheckBy}</time>. An official update can change these requirements sooner.</p>
+      {topic.topic === "citizenship" && policy && <a class="text-link" href={`/dual-citizenship-countries#${citizenshipPolicyAnchor(policy)}`}>Check multiple-citizenship policy and its review date</a>}
+    </section>
+    <section class="topic-sources"><h2>Official sources</h2><ol>{sources.map((source) => <li><a href={source.url} rel="external">{source.title}</a><span>{source.publisher} · Retrieved {source.retrievedAt} · {source.language.toUpperCase()}</span></li>)}</ol></section>
+    <nav class="topic-actions" aria-label="Related resources"><a class="button button--primary" href={`/passport/${passport.slug}`}>Back to passport profile</a><a class="button button--quiet" href={`/api/v1/country-profiles/${passport.code}`}>Structured data (JSON)</a></nav>
+  </article>
+</BaseLayout>
+<style>
+  .country-topic{max-width:1040px;margin-inline:auto;padding-bottom:24px}.topic-breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:46px;font-size:12px;color:var(--ink-soft)}.topic-breadcrumbs a{text-underline-offset:3px}.country-topic .page-intro{padding:35px 0 24px}.country-topic h1{font-size:clamp(42px,6vw,76px);overflow-wrap:anywhere}.country-topic .country-shortcuts{margin:0 0 26px}.country-shortcuts [aria-current=page]{background:var(--green-tint);border-color:var(--green)}.topic-scope{border-left:3px solid var(--green);background:var(--paper-2);padding:20px 24px;margin-bottom:30px}.topic-scope p{font-size:13px;color:var(--ink-soft);margin:8px 0 0}.topic-fact{display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1fr);gap:35px;border-top:1px solid var(--line);padding:28px 0;scroll-margin-top:20px}.topic-fact h2,.topic-limits h2,.topic-sources h2{font-family:var(--serif);font-size:30px;line-height:1.1;font-weight:560;color:var(--green);margin:6px 0 0}.topic-fact p{margin:0}.topic-fact--unresolved>div:last-child{border-left:2px solid #b98b26;padding-left:16px}.topic-fact .eyebrow{font-size:9px}.topic-citations{display:grid;gap:4px;margin-top:12px;font-size:11px;color:var(--ink-soft);overflow-wrap:anywhere}.topic-citations a{color:var(--green);text-underline-offset:3px;width:fit-content}.topic-citations span{font-size:10px}.topic-date{font-size:12px;color:var(--ink-soft)}.topic-limits,.topic-sources{border-top:1px solid var(--line);padding:30px 0}.topic-limits li,.topic-limits p{color:var(--ink-soft);font-size:14px}.topic-limits li+li{margin-top:8px}.topic-sources ol{padding-left:20px}.topic-sources li{padding:8px 0;font-size:14px;overflow-wrap:anywhere}.topic-sources li span{display:block;color:var(--ink-soft);font-size:11px;margin-top:4px}.topic-sources a{color:var(--green);text-underline-offset:3px}.topic-actions{display:flex;gap:10px;flex-wrap:wrap}@media(max-width:620px){.topic-breadcrumbs{margin-top:36px;font-size:11px}.topic-fact{grid-template-columns:1fr;gap:14px;padding-block:24px}.topic-scope{padding:18px}.topic-actions{display:grid}.topic-actions .button{width:100%}.country-topic .page-intro>p{font-size:17px}}
+</style>

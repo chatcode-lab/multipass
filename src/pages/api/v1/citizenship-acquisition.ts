@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import { CITIZENSHIP_ACQUISITION_ROUTES, CITIZENSHIP_ROUTE_TYPE_LABELS } from "@/data/citizenship-acquisition";
 
 export const GET: APIRoute = () => Response.json({
-  reviewedAt: "2026-08-31",
+  reviewedAt: CITIZENSHIP_ACQUISITION_ROUTES.map((route) => route.reviewedAt).sort().at(-1),
   scope: "Official-source summaries of selected citizenship acquisition routes. A route record does not establish individual eligibility or compatibility with another nationality.",
   routeTypes: CITIZENSHIP_ROUTE_TYPE_LABELS,
   routes: CITIZENSHIP_ACQUISITION_ROUTES,

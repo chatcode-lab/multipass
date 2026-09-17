@@ -7,6 +7,10 @@ import {
 } from "@/data/citizenship-acquisition";
 import { datasetMetadata } from "@/lib/dataset";
 import { flagEmojiFor } from "@/lib/geography";
+import { getDataContext } from "@/lib/data";
+import { countryTopic, countryTopicHref } from "@/lib/country-profiles";
+
+const { manifest } = await getDataContext(Astro.locals);
 
 const description = "Compare reviewed citizenship-by-descent and residence-based naturalisation routes using current official government sources, requirements, review dates, and transition notes.";
 const routeTypes: CitizenshipAcquisitionRouteType[] = ["descent", "naturalisation", "marriage", "restoration", "exceptional"];
@@ -18,7 +22,7 @@ const structuredData = [
     "@type": "Dataset",
     name: "Reviewed citizenship acquisition routes",
     description,
-    dateModified: "2026-08-31",
+    dateModified: "2026-09-17",
     spatialCoverage: [...new Set(CITIZENSHIP_ACQUISITION_ROUTES.map((route) => route.country))],
     distribution: {
       "@type": "DataDownload",
@@ -71,7 +75,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
 >
   <article class="citizenship-guide acquisition-guide">
     <header class="research-hero citizenship-guide__hero">
-      <span class="eyebrow">Official-source route review · 31 August 2026</span>
+      <span class="eyebrow">Official-source routes · see each record's review date</span>
       <h1>Citizenship by descent—and what the shortcut leaves out.</h1>
       <p>
         A family connection can open a route, but dates, documents, residence, language, and nationality-retention rules decide the outcome.
@@ -112,6 +116,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
                 </div>
                 <strong>{route.title}</strong>
                 <p>{route.summary}</p>
+                {route.scope && <p><strong>Reviewed scope:</strong> {route.scope} Selected requirements, not a complete eligibility checklist.</p>}
                 <ul>{route.requirements.map((requirement) => <li>{requirement}</li>)}</ul>
                 {(route.residenceRequirement || route.languageRequirement) && (
                   <dl class="acquisition-route-card__facts">
@@ -121,6 +126,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
                 )}
                 {route.transitionNote && <p class="acquisition-route-card__transition"><strong>Current-law note:</strong> {route.transitionNote}</p>}
                 <div class="citizenship-policy-card__sources">
+                  {countryTopic(route.countryCode, "citizenship") && <a href={countryTopicHref(manifest.passports.find((entry) => entry.code === route.countryCode)!.slug, "citizenship")}>Detailed country requirements and limitations</a>}
                   <span>Official {route.sources.length === 1 ? "source" : "sources"}</span>
                   {route.sources.map((source) => <a href={source.url} rel="noreferrer">{source.publisher}: {source.label}</a>)}
                 </div>

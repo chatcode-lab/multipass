@@ -17,6 +17,7 @@ ${routes.map((route) => `### ${escapeMarkdown(route.country)} — ${escapeMarkdo
 
 ${escapeMarkdown(route.summary)}
 
+${route.scope ? `**Reviewed scope:** ${escapeMarkdown(route.scope)} Selected requirements, not a complete eligibility checklist.\n\n` : ""}
 ${route.requirements.map((requirement) => `- ${escapeMarkdown(requirement)}`).join("\n")}
 ${route.residenceRequirement ? `\n**Residence:** ${escapeMarkdown(route.residenceRequirement)}\n` : ""}${route.languageRequirement ? `\n**Language:** ${escapeMarkdown(route.languageRequirement)}\n` : ""}${route.transitionNote ? `\n**Current-law note:** ${escapeMarkdown(route.transitionNote)}\n` : ""}
 Official sources:

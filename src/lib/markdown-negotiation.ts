@@ -39,6 +39,9 @@ export function markdownPathFor(pathname: string): string | undefined {
   if (parts.length === 2 && ["compare", "destination", "passport"].includes(parts[0])) {
     return `/${parts[0]}/${parts[1]}.md`;
   }
+  if (parts.length === 3 && parts[0] === "passport" && ["citizenship", "taxes"].includes(parts[2])) {
+    return `${clean}.md`;
+  }
   return undefined;
 }
 

@@ -1,6 +1,8 @@
 # Country indicators alongside passport access
 
-Research date: 15 September 2026. Status: proposal and source feasibility checks; no country-score UI, public endpoint or bulk score import has been shipped.
+Research date: 15 September 2026. Updated 17 September: the first reviewed pilot implements HDI and life expectancy on eleven passport profiles, with HTML/Markdown/JSON parity and bundled data. PISA and other proposed metrics remain uncollected; this is not catalog-wide coverage.
+
+Follow-up: [Country-profile enrichment and next-goal handoff](country-profile-enrichment.md), researched 16 September, extends this proposal with citizenship requirements, tax context, regional rights, everyday price data, a shared schema and a catalog-wide collection plan. Its later API checks also demonstrate why the observation years below must be rechecked at import time rather than treated as fixed latest editions.
 
 ## Recommendation
 

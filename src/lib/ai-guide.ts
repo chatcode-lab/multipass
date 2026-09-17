@@ -77,6 +77,7 @@ HTML responses advertise available Markdown and JSON equivalents in both \`<link
 
 ## JSON API
 
+- \`GET ${absoluteUrl("/api/v1/country-profiles/SG")}\` — reviewed citizenship/tax topics and living indicators, including claim-level official sources, scope, units, observation years and missing states. An uncollected topic is not an unavailable legal route.
 - \`GET ${absoluteUrl("/api/v1/manifest")}\` — passport codes, slugs, ranks, scores, destinations, version, and checked date.
 - \`GET ${absoluteUrl("/api/v1/passports/US")}\` — destination status map for one passport code.
 - \`GET ${absoluteUrl("/api/v1/visa/US/JP")}\` — one relationship's current category, evidence level, structured allowed-stay rules, conditions, official sources, and application route.
@@ -93,6 +94,8 @@ The POST endpoint accepts JSON, returns JSON, and is intentionally not cached. P
 ${friendlyComparisons}
 
 ## Interpret the data
+
+Country-topic pages use \`/passport/{canonical-slug}/citizenship\` or \`/passport/{canonical-slug}/taxes\` only where substantive reviewed content exists. Example: [Singapore citizenship](${absoluteUrl("/passport/singapore/citizenship")}) and [Singapore tax context](${absoluteUrl("/passport/singapore/taxes")}). Append \`.md\` or request \`Accept: text/markdown\`. Follow published links rather than assuming every topic exists for every country. Unpublished topics return 404, not placeholders. Keep applicant cohort, conditions and review dates with legal claims. A missing language level is not an exemption; statistical observation years are not review years. Do not add or average living indicators across passport combinations.
 
 The mobility score counts visa-free, visa-on-arrival, and ETA access. eVisa, visa-required, and entry-restricted destinations do not increase the score. For combined sets, each destination uses the easiest status available from any passport in that set, then receives a rank equivalent against the single-passport ranking.
 

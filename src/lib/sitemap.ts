@@ -3,6 +3,7 @@ import type { PassportAccess, Region, SnapshotManifest } from "./types";
 import { REGIONS } from "./types";
 import { destinationSlug, visaRelationshipHref } from "./visa-evidence";
 import { indexableRelationshipPairs } from "./visa-indexing";
+import { countryTopics, countryTopicHref } from "./country-profiles";
 
 export const SITEMAP_ORIGIN = "https://multipassrank.com";
 
@@ -49,7 +50,7 @@ export function escapeXml(value: string): string {
 export function sitemapLastModified(manifest: SnapshotManifest): string {
   const checkedAt = manifest.checkedAt.slice(0, 10);
   // Latest substantive evidence/content update, independent of snapshot refreshes.
-  return checkedAt > "2026-09-16" ? checkedAt : "2026-09-16";
+  return checkedAt > "2026-09-17" ? checkedAt : "2026-09-17";
 }
 
 export function sitemapRegionSlug(region: Region): string {
@@ -90,6 +91,10 @@ export function coreSitemapUrls(manifest: SnapshotManifest): SitemapUrl[] {
       loc: `${SITEMAP_ORIGIN}/passport/${passport.slug}`,
       priority: "0.8",
     })),
+    ...manifest.passports.flatMap((passport) => countryTopics(passport.code).map((topic) => ({
+      loc: `${SITEMAP_ORIGIN}${countryTopicHref(passport.slug, topic.topic)}`,
+      priority: "0.7",
+    }))),
     ...manifest.destinations.map((destination) => ({
       loc: `${SITEMAP_ORIGIN}/destination/${destinationSlug(destination)}`,
       priority: "0.7",
