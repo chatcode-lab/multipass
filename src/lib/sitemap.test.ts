@@ -10,6 +10,7 @@ import {
   sitemapLastModified,
 } from "./sitemap";
 import { REGIONS, type DataSnapshot } from "./types";
+import { COUNTRY_TOPICS } from "./country-profiles";
 
 const snapshot = fallbackSnapshot as DataSnapshot;
 const details = Object.fromEntries(
@@ -34,7 +35,8 @@ describe("sitemaps", () => {
     ];
     const urls = groups.flat().map(({ loc }) => loc);
 
-    expect(urls).toHaveLength(42_580);
+    // Retain the complete existing inventory, plus every approved topic.
+    expect(urls).toHaveLength(42_567 + COUNTRY_TOPICS.length);
     expect(urls).toContain("https://multipassrank.com/dual-citizenship-countries");
     expect(urls).toContain("https://multipassrank.com/citizenship-by-descent");
     expect(urls).toContain("https://multipassrank.com/best-second-passport-for-us-citizens");

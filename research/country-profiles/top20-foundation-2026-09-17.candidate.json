@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "researcher": "/root",
+  "retrievedAt": "2026-09-17",
+  "sources": [
+    { "id": "top20-gb-naturalisation", "publisher": "UK Government", "title": "Apply for citizenship with indefinite leave or settled status", "url": "https://www.gov.uk/apply-citizenship-indefinite-leave-to-remain", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gb-an", "publisher": "UK Visas and Immigration", "title": "Form AN guidance, July 2026", "url": "https://www.gov.uk/government/publications/form-an-guidance/form-an-guidance-accessible", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-ie-residence", "publisher": "Irish Revenue", "title": "How to know if you are resident for tax purposes", "url": "https://www.revenue.ie/en/jobs-and-pensions/tax-residence/resident-for-tax-purposes.aspx", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-ie-scope", "publisher": "Irish Revenue", "title": "Tax residence: overview", "url": "https://www.revenue.ie/en/jobs-and-pensions/tax-residence/index.aspx", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-ie-ordinary", "publisher": "Irish Revenue", "title": "How to know if you are ordinarily resident for tax purposes", "url": "https://www.revenue.ie/en/jobs-and-pensions/tax-residence/ordinarily-resident-tax-purposes.aspx", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-ca-folio", "publisher": "Canada Revenue Agency", "title": "Income Tax Folio S5-F1-C1: determining an individual's residence status", "url": "https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-5-international-residency/folio-1-residency/income-tax-folio-s5-f1-c1-determining-individual-s-residence-status.html", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-ca-nonresidents", "publisher": "Canada Revenue Agency", "title": "Non-residents of Canada", "url": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/non-residents-canada.html", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-hk-nonresidents", "publisher": "Hong Kong Inland Revenue Department", "title": "What you need to know as a non-resident individual", "url": "https://www.ird.gov.hk/eng/tax/ind_nr.htm", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-hk-employment", "publisher": "Hong Kong Inland Revenue Department", "title": "Employee's income", "url": "https://www.ird.gov.hk/eng/tax/ere_inc.htm", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-hk-profits", "publisher": "Hong Kong Inland Revenue Department", "title": "Profits tax", "url": "https://www.ird.gov.hk/eng/tax/bus_pft.htm", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-hk-property", "publisher": "Hong Kong Government", "title": "Property owner's tax obligations", "url": "https://www.gov.hk/en/residents/taxes/property/propertyobligations.htm", "language": "en", "retrievedAt": "2026-09-17" }
+  ],
+  "topics": [
+    {
+      "code": "GB", "topic": "citizenship", "title": "United Kingdom Citizenship Requirements",
+      "summary": "The ordinary adult British naturalisation route: residence, settlement, absence limits, language evidence and the Life in the UK requirement.",
+      "scope": "Selected requirements for ordinary adult naturalisation under section 6(1), not the separate British-spouse route, registration, descent or Crown-service exceptions.",
+      "jurisdiction": "United Kingdom: British citizenship", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Five-year residence route", "text": "The ordinary route requires five years of UK residence and presence in the UK exactly five years before the application is received. Immigration-law compliance and the detailed rules for permitted absences still apply.", "state": "conditional", "sourceIds": ["top20-gb-naturalisation"], "locator": "Eligibility; Residency requirements; When to apply", "constraint": { "value": 5, "unit": "years", "basis": "legal_residence", "cohort": "Ordinary adult section 6(1) applicants, subject to presence, absence and immigration conditions" } },
+        { "id": "settlement", "label": "Settlement before applying", "text": "The usual route requires indefinite leave or settled status held for 12 months. The British-spouse route has different timing; qualifying pre-settled-status cases also need a separate assessment.", "state": "conditional", "sourceIds": ["top20-gb-naturalisation"], "locator": "Eligibility and fees; If you have pre-settled status" },
+        { "id": "absences", "label": "Absence limits", "text": "The usual limits are 450 days abroad in the five-year period and 90 days in its final 12 months. Home Office discretion is conditional, not an automatic waiver.", "state": "conditional", "sourceIds": ["top20-gb-naturalisation", "top20-gb-an"], "locator": "Time spent outside the UK; Form AN section 5" },
+        { "id": "language", "label": "Language evidence and exemptions", "text": "An approved English speaking-and-listening qualification at CEFR B1 or higher is one accepted route. Qualifying degrees and listed nationalities offer alternatives. Age 65 or over gives an exemption; qualifying long-term medical conditions require supporting evidence. Welsh and Scottish Gaelic are also recognised.", "state": "conditional", "sourceIds": ["top20-gb-an"], "locator": "Sections 9.2 and 9.3", "language": { "framework": "CEFR", "level": "B1", "skills": ["speaking", "listening"] } },
+        { "id": "integration", "label": "Life in the UK and other conditions", "text": "Applicants normally pass the Life in the UK test, meet the good-character requirement and intend to keep their main home in the UK. The knowledge requirements have age and medical exemptions. Naturalisation is not an entitlement.", "state": "conditional", "sourceIds": ["top20-gb-naturalisation", "top20-gb-an"], "locator": "Eligibility; Form AN sections 1, 8, 9 and 10" },
+        { "id": "dual-nationality", "label": "Check both nationalities", "text": "The UK permits dual nationality, but becoming British may affect an existing nationality under the other country's law. Check that law before applying.", "state": "conditional", "sourceIds": ["top20-gb-an"], "locator": "Section 14.2" }
+      ],
+      "limits": ["These are selected eligibility conditions, not an approval guarantee or processing-time estimate.", "Minors, spouses, registration routes, exceptional residence discretion and the evidence checklist require their own official guidance."]
+    },
+    {
+      "code": "IE", "topic": "taxes", "title": "Ireland Tax Residence and Foreign Income",
+      "summary": "Irish tax residence, ordinary residence and domicile are separate tests. Together they affect the treatment of Irish and foreign income.",
+      "scope": "Baseline individual income-tax context, not an assessment of domicile, treaty entitlement, remittance-basis eligibility or a special relief.",
+      "jurisdiction": "Ireland: individual income tax",
+      "facts": [
+        { "id": "residence", "label": "Annual and two-year day tests", "text": "Tax residence normally follows 183 or more days in a calendar year, or 280 or more across that year and the preceding year. A year with 30 days or fewer does not make you resident under these tests.", "state": "conditional", "sourceIds": ["top20-ie-residence"], "locator": "How to know if you are resident for tax purposes" },
+        { "id": "days", "label": "How days are counted", "text": "Any part of a day normally counts. Revenue describes exceptions for staying airside and certain unavoidable departure delays. An arrival-year residence election is a separate, conditional option.", "state": "conditional", "sourceIds": ["top20-ie-residence"], "locator": "A day; Can you choose to be tax resident?" },
+        { "id": "worldwide", "label": "Residence and domicile together", "text": "A person who is both resident and domiciled in Ireland is generally taxed on worldwide income, subject to applicable treaty relief. Residence alone is not a complete description of every person's foreign-income treatment.", "state": "conditional", "sourceIds": ["top20-ie-scope"], "locator": "Overview" },
+        { "id": "ordinary-residence", "label": "Obligations can continue after departure", "text": "Three consecutive resident tax years establish ordinary residence from the fourth year. It continues for three tax years after leaving, potentially extending income-tax obligations; Revenue lists exceptions for particular foreign income.", "state": "conditional", "sourceIds": ["top20-ie-ordinary"], "locator": "How to know if you are ordinarily resident for tax purposes" },
+        { "id": "nonresident", "label": "Irish income can remain taxable", "text": "Someone neither resident nor domiciled can still owe tax on Irish-source income and foreign employment income for duties performed in Ireland. Ordinary residence and domicile must also be checked rather than treating departure as automatic exemption.", "state": "conditional", "sourceIds": ["top20-ie-scope"], "locator": "Non-residents" }
+      ],
+      "limits": ["Domicile is not established by the passport shown on this page. Non-domiciled treatment, treaties and split-year relief need individual review.", "This summary does not calculate tax rates, social insurance, capital taxes or filing liabilities."]
+    },
+    {
+      "code": "CA", "topic": "taxes", "title": "Canada Tax Residence and Foreign Income",
+      "summary": "Canada distinguishes factual residence, deemed residence and treaty non-residence when determining individual income-tax obligations.",
+      "scope": "Selected CRA individual-residence principles; not a personal residence determination, provincial calculation or review of departure taxes.",
+      "jurisdiction": "Canada: individual income tax",
+      "facts": [
+        { "id": "residence", "label": "Residential ties matter", "text": "CRA examines all relevant circumstances. A home, spouse or common-law partner, and dependants in Canada are significant ties; the passport alone does not settle residence.", "state": "conditional", "sourceIds": ["top20-ca-folio"], "locator": "Paragraphs 1.8 and 1.10–1.15" },
+        { "id": "deemed-residence", "label": "The 183-day rule is not the only test", "text": "Without factual residence, sojourning in Canada for at least 183 days in a calendar year can establish deemed residence for the whole year. Not every presence is sojourning; treaty rules can override this result.", "state": "conditional", "sourceIds": ["top20-ca-folio"], "locator": "Paragraphs 1.30–1.33 and 1.37" },
+        { "id": "worldwide", "label": "Foreign-income scope", "text": "Factual residents generally face worldwide-income taxation for their resident part of the year. Deemed residents normally face it for the whole year. Applicable treaty tie-breakers can instead establish deemed non-residence.", "state": "conditional", "sourceIds": ["top20-ca-folio"], "locator": "Summary; paragraphs 1.32 and 1.37–1.39" },
+        { "id": "nonresident", "label": "Canadian-source income after leaving", "text": "Non-residents can owe Canadian tax on Canadian-source income. Withholding and return requirements depend on the income type; employment, business, rent and pensions do not all follow the same procedure. Tell Canadian payers your residence status and country.", "state": "conditional", "sourceIds": ["top20-ca-nonresidents"], "locator": "Your tax obligations; Part XIII tax; Part I tax" }
+      ],
+      "limits": ["A day count or passport is not a substitute for checking residence facts and the applicable treaty.", "Rates, provincial rules, departure deemed-disposition rules and special cohorts are outside this baseline."]
+    },
+    {
+      "code": "HK", "topic": "taxes", "title": "Hong Kong Tax Scope and Foreign Income",
+      "summary": "Hong Kong applies distinct salaries, profits and property tax rules. Non-residence or receiving money overseas does not by itself settle liability.",
+      "scope": "Selected Hong Kong individual employment, business and rental-income rules; not mainland Chinese taxation or an analysis of a multinational corporate structure.",
+      "jurisdiction": "Hong Kong Special Administrative Region: individual tax context",
+      "facts": [
+        { "id": "nonresident", "label": "Non-residents can owe tax", "text": "Services performed in Hong Kong under employment or a service contract can create liability whether or not the person is resident. IRD treats non-residence as a factual question, not a passport category.", "state": "conditional", "sourceIds": ["top20-hk-nonresidents"], "locator": "Opening guidance on non-resident individuals" },
+        { "id": "employment", "label": "Overseas payment is not enough", "text": "IRD's employer guidance includes remuneration from a non-Hong Kong company among reportable employee income, whether paid locally or abroad. That payment location alone is not an exemption; the applicable employment and relief rules still need assessment.", "state": "conditional", "sourceIds": ["top20-hk-employment"], "locator": "Income chargeable to Salaries Tax; non-Hong Kong company payments, IR56B items 11 and 13" },
+        { "id": "profits", "label": "Business profits depend on source", "text": "For a Hong Kong trade, profession or business, the ordinary profits-tax charge concerns profits arising in or derived from Hong Kong, excluding capital-asset sale profits. Both residents and non-residents can be liable; identifying source is fact-sensitive.", "state": "conditional", "sourceIds": ["top20-hk-profits"], "locator": "The Scope of the Charge" },
+        { "id": "property", "label": "Hong Kong rental income", "text": "Letting Hong Kong property creates reporting and tax obligations. Owners must keep rental records, report income and notify liability when required. A received return must be completed even if there was no rental income.", "state": "conditional", "sourceIds": ["top20-hk-property"], "locator": "Tax Obligations as a Property Owner" }
+      ],
+      "limits": ["This is not a claim that foreign income is always exempt or that holding an HKSAR passport establishes tax residence.", "Treaty certificates, employee exemptions, corporate foreign-sourced income rules, rates and special regimes are outside this selected individual baseline."]
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 Research date: 16 September 2026. Implementation update: 17 September 2026. The first bounded pilot implements ten citizenship topics, three tax topics and 22 HDI/life-expectancy observations for eleven profiles. Publication uses independent, hash-bound review artifacts; the full 199-passport collection below remains a next-goal plan. No paid research API was used.
 
+The top-20 expansion covers every frozen displayed rank through 20, including ties: 47 passports, not 20 rows. All 94 cohort citizenship/tax topics and both indicator outcomes per profile are independently approved; India remains from the pilot. Its [scope and release checks](../research/country-profiles/top20-plan.md) distinguish reviewed collection from deployment and from exhaustive legal certainty. Incremental topics carry their own review; absent facts and unavailable statistics never become zero or a blanket approval.
+
 This extends [the country-indicators proposal](country-indicators-plan.md) and follows the provenance, canonical-URL and cost constraints in [the SEO/AEO playbook](seo-aeo-playbook.md). The objective is to make existing passport pages more useful to people and agents, not to invent another overall passport score.
 
 ## Recommended product scope

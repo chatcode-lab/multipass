@@ -1,5 +1,5 @@
 import type { CitizenshipPolicySource } from "./citizenship-policies";
-import { COUNTRY_TOPICS, COUNTRY_PROFILE_REVIEW, countryTopicSources } from "../lib/country-profiles";
+import { COUNTRY_TOPICS, countryTopicSources } from "../lib/country-profiles";
 import type { CountryTopic } from "../lib/country-profile-schema";
 
 export type CitizenshipAcquisitionRouteType = "descent" | "naturalisation" | "marriage" | "restoration" | "exceptional";
@@ -304,7 +304,7 @@ export const CITIZENSHIP_ACQUISITION_ROUTES: CitizenshipAcquisitionRoute[] = LEG
     residenceRequirement: topic.facts.filter((fact) => fact.id.startsWith("residence")).map((fact) => fact.text).join(" ") || undefined,
     languageRequirement: topic.facts.find((fact) => fact.id === "language")?.text,
     transitionNote: [...topic.facts.filter((fact) => fact.id === "transition").map((fact) => fact.text), ...topic.limits].join(" "),
-    reviewedAt: COUNTRY_PROFILE_REVIEW.reviewedAt, structuredRequirements: topic.facts,
+    reviewedAt: topic.review.reviewedAt, structuredRequirements: topic.facts,
     sources: countryTopicSources(topic).map((source) => ({ label: source.title, publisher: source.publisher, url: source.url })),
   };
 });

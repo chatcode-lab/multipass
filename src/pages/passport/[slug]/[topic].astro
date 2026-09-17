@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDataContext } from "@/lib/data";
 import { resolvePassportBySlug } from "@/lib/visa-evidence";
-import { countryTopic, countryTopics, countryTopicHref, countryTopicSources, COUNTRY_PROFILE_REVIEW, PROFILE_CACHE_CONTROL, PROFILE_DISCLAIMERS, TOPIC_LABELS } from "@/lib/country-profiles";
+import { countryTopic, countryTopics, countryTopicHref, countryTopicSources, PROFILE_CACHE_CONTROL, PROFILE_DISCLAIMERS, TOPIC_LABELS } from "@/lib/country-profiles";
 import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship-compatibility";
 
 const { manifest } = await getDataContext(Astro.locals);
@@ -24,7 +24,7 @@ const structuredData = [{
   ],
 }, {
   "@context": "https://schema.org", "@type": "Article", headline: topic.title,
-  description: topic.summary, datePublished: "2026-09-17", dateModified: COUNTRY_PROFILE_REVIEW.reviewedAt,
+  description: topic.summary, datePublished: topic.review.reviewedAt, dateModified: topic.review.reviewedAt,
   author: { "@type": "Organization", name: "MultiPass Rank", url: "https://multipassrank.com/" },
   mainEntityOfPage: `https://multipassrank.com${canonical}`,
   citation: sources.map((source) => source.url),
@@ -41,7 +41,7 @@ const structuredData = [{
       <span class="eyebrow">Beyond travel access</span>
       <h1>{topic.title}</h1>
       <p>{topic.summary}</p>
-      <div class="visa-relation-meta"><span>Sources reviewed <time datetime={COUNTRY_PROFILE_REVIEW.reviewedAt}>{COUNTRY_PROFILE_REVIEW.reviewedAt}</time></span><span>{sources.length} official {sources.length === 1 ? "source" : "sources"}</span></div>
+      <div class="visa-relation-meta"><span>Sources reviewed <time datetime={topic.review.reviewedAt}>{topic.review.reviewedAt}</time></span><span>{sources.length} official {sources.length === 1 ? "source" : "sources"}</span></div>
     </header>
     <nav class="country-shortcuts" aria-label="Country topics">
       <a href={`/passport/${passport.slug}`}>Passport rank & travel access</a>
@@ -61,7 +61,7 @@ const structuredData = [{
       </section>)}
     </div>
     <section class="topic-limits"><h2>Scope and limitations</h2><ul>{topic.limits.map((limit) => <li>{limit}</li>)}</ul>
-      <p>Next review due <time datetime={COUNTRY_PROFILE_REVIEW.recheckBy}>{COUNTRY_PROFILE_REVIEW.recheckBy}</time>. An official update can change these requirements sooner.</p>
+      <p>Next review due <time datetime={topic.review.recheckBy}>{topic.review.recheckBy}</time>. An official update can change these requirements sooner.</p>
       {topic.topic === "citizenship" && policy && <a class="text-link" href={`/dual-citizenship-countries#${citizenshipPolicyAnchor(policy)}`}>Check multiple-citizenship policy and its review date</a>}
     </section>
     <section class="topic-sources"><h2>Official sources</h2><ol>{sources.map((source) => <li><a href={source.url} rel="external">{source.title}</a><span>{source.publisher} · Retrieved {source.retrievedAt} · {source.language.toUpperCase()}</span></li>)}</ol></section>

@@ -1,14 +1,23 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import cohort from "../../research/country-profiles/top20-cohort-2026-09-17.json" with { type: "json" };
+import pilot from "../../src/data/country-profiles.json" with { type: "json" };
+import expansions from "../../src/data/country-profile-expansions.json" with { type: "json" };
+import type { CountryProfileBatch } from "../../src/lib/country-profile-schema";
 
-test("all pilot topics have matching HTML, Markdown, API, canonical and sitemap content", async ({ request }) => {
+const approvedTopics = ([pilot, ...expansions] as CountryProfileBatch[]).flatMap((batch) => batch.topics);
+
+test("all approved topics and top-20 indicators have matching public representations", async ({ request }) => {
+  test.setTimeout(120_000);
   const sitemap = await (await request.get("/sitemaps/core.xml")).text();
   let topicCount = 0;
-  for (const code of ["PT", "DE", "FR", "IE", "CA", "US", "SG", "AE", "HK", "IN", "GB"]) {
+  for (const code of [...cohort.passports.map((passport) => passport.code), "IN"]) {
     const api = await request.get(`/api/v1/country-profiles/${code}`);
     expect(api.ok()).toBe(true);
     const profile = await api.json();
     expect(profile.indicators.observations).toHaveLength(2);
+    expect(profile.topics.map((topic: { topic: string }) => topic.topic).sort()).toEqual(approvedTopics.filter((topic) => topic.code === code).map((topic) => topic.topic).sort());
+    if (code === "MC") expect(profile.indicators.observations.find((row: { metric: string }) => row.metric === "hdi")).toMatchObject({ value: null, period: null, availability: "not_reported" });
     for (const topic of profile.topics) {
       topicCount += 1;
       const path = new URL(topic.url).pathname;
@@ -19,6 +28,7 @@ test("all pilot topics have matching HTML, Markdown, API, canonical and sitemap 
       expect(body).not.toContain('content="noindex');
       expect(body).toContain(`href="${topic.url}.md"`);
       expect(body).toContain("BreadcrumbList");
+      expect(body).toContain(`Sources reviewed <time datetime="${topic.review.reviewedAt}"`);
       expect(body).toContain('pa-WucFieMfo1ohS1GhviZuL.js');
       expect(sitemap).toContain(`<loc>${topic.url}</loc>`);
       const md = await request.get(`${path}.md`);
@@ -31,7 +41,7 @@ test("all pilot topics have matching HTML, Markdown, API, canonical and sitemap 
       for (const fact of topic.facts) expect(markdown).toContain(fact.text);
     }
   }
-  expect(topicCount).toBe(13);
+  expect(topicCount).toBe(approvedTopics.length);
   const guideHtml = await (await request.get("/citizenship-by-descent")).text();
   const guideMarkdown = await (await request.get("/citizenship-by-descent.md")).text();
   const routes = await (await request.get("/api/v1/citizenship-acquisition")).json();
@@ -43,7 +53,7 @@ test("all pilot topics have matching HTML, Markdown, API, canonical and sitemap 
 });
 
 test("unsupported topics are real 404s and country aliases retain the topic", async ({ request }) => {
-  for (const path of ["/passport/afghanistan/taxes", "/passport/singapore/living", "/passport/nonesuch/citizenship", "/passport/united-kingdom/citizenship.md"]) {
+  for (const path of ["/passport/afghanistan/taxes", "/passport/singapore/living", "/passport/nonesuch/citizenship", "/passport/india/taxes.md"]) {
     expect((await request.get(path)).status()).toBe(404);
   }
   const alias = await request.get("/passport/usa/taxes", { maxRedirects: 0 });
@@ -55,6 +65,23 @@ test("unsupported topics are real 404s and country aliases retain the topic", as
   const uncollected = await (await request.get("/api/v1/country-profiles/AF")).json();
   expect(uncollected.topics).toEqual([]);
   expect(uncollected.coverage.citizenship).toBe("not_collected");
+  expect(uncollected.review).toBeNull();
+  expect(uncollected.indicators).toMatchObject({ coverage: "not_collected", review: null, observations: [] });
+});
+
+test("missing Monaco HDI is honest and parent pages expose reviewed topics", async ({ page, request }) => {
+  await page.goto("/passport/monaco");
+  await expect(page.locator(".country-indicators")).toContainText("Not reported");
+  await expect(page.locator(".country-indicators")).not.toContainText("null");
+  const markdown = await (await request.get("/passport/monaco.md")).text();
+  expect(markdown).toContain("Not reported");
+  expect(markdown).not.toContain("year null");
+  for (const passport of cohort.passports) {
+    const topics = approvedTopics.filter((topic) => topic.code === passport.code);
+    if (!topics.length) continue;
+    const body = await (await request.get(`/passport/${passport.slug}`)).text();
+    for (const topic of topics) expect(body).toContain(`href="/passport/${passport.slug}/${topic.topic}"`);
+  }
 });
 
 test("country pages remain readable and source-linked at narrow mobile widths", async ({ page }) => {

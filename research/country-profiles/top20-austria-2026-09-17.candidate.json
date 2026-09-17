@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "researcher": "/root",
+  "retrievedAt": "2026-09-17",
+  "sources": [
+    { "id": "top20-at-residence", "publisher": "Federal Ministry of the Interior, Austria", "title": "Verleihung der Staatsbürgerschaft nach zehn Jahren", "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/staatsbuergerschaft/1/Verleihung-nach-zehn-Jahren", "language": "de", "retrievedAt": "2026-09-17" },
+    { "id": "top20-at-general", "publisher": "Federal Ministry of the Interior, Austria", "title": "Allgemeine Einbürgerungsvoraussetzungen", "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/staatsbuergerschaft/1/Seite.260421", "language": "de", "retrievedAt": "2026-09-17" },
+    { "id": "top20-at-language", "publisher": "Federal Chancellery and oesterreich.gv.at", "title": "Integrationsvereinbarung: Modul 2", "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/Seite.120500", "language": "de", "retrievedAt": "2026-09-17" },
+    { "id": "top20-at-six-years", "publisher": "Federal Ministry of the Interior, Austria", "title": "Vorzeitige Verleihung der Staatsbürgerschaft nach sechs Jahren", "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/staatsbuergerschaft/1/Vorzeitige-Verleihung-nach-sechs-Jahren", "language": "de", "retrievedAt": "2026-09-17" },
+    { "id": "top20-at-nationality", "publisher": "Federal Ministry of the Interior, Austria", "title": "Doppelstaatsbürgerschaft", "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/staatsbuergerschaft/Seite.260430", "language": "de", "retrievedAt": "2026-09-17" },
+    { "id": "top20-at-tax", "publisher": "Federal Ministry of Finance, Austria", "title": "Persönliche Steuerpflicht", "url": "https://www.bmf.gv.at/themen/steuern/arbeitnehmerveranlagung/allgemeines-zur-lohn-und-einkommenssteuer/persoenliche-steuerpflicht.html", "language": "de", "retrievedAt": "2026-09-17" }
+  ],
+  "topics": [
+    {
+      "code": "AT", "topic": "citizenship", "title": "Austria Citizenship Requirements",
+      "summary": "Austria's ordinary residence route separates ten years of lawful residence from five years of settlement, with language, support and nationality conditions.",
+      "scope": "Ordinary adult residence-based grant, with selected shorter-route distinctions. Not a determination of personal eligibility or every statutory exception.",
+      "jurisdiction": "Austrian citizenship", "routeId": "austria-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Ten years, including five settled", "text": "The ordinary route requires ten lawful, uninterrupted years, including five with qualifying settlement status. Settlement is not identical to any residence permission or to permanent-residence status alone; the authority lists several qualifying permits.", "state": "conditional", "sourceIds": ["top20-at-residence"], "locator": "Voraussetzungen; meanings of rechtmäßiger Aufenthalt and niedergelassen", "constraint": { "value": 10, "unit": "years", "basis": "legal_residence", "cohort": "Ordinary adult route, including five years with qualifying settlement status" } },
+        { "id": "residence-absence", "label": "Absences and the decision date", "text": "The guidance permits at most 20% of the relevant period outside Austria. Actual residence must be evidenced, and the period is assessed through the decision date, not frozen at application.", "state": "conditional", "sourceIds": ["top20-at-residence"], "locator": "Ununterbrochener Aufenthalt" },
+        { "id": "shorter-routes", "label": "Six years for defined cohorts", "text": "Six qualifying years can suffice for EEA nationals, Austrian-born applicants, specified Austrian-spouse or registered-partner cases, B2 German, or demonstrated sustained integration. General naturalisation conditions still apply; none is an unconditional shortcut.", "state": "conditional", "sourceIds": ["top20-at-six-years"], "locator": "Voraussetzungen: six-year period and alternatives" },
+        { "id": "language", "label": "German and civic knowledge", "text": "The ordinary language baseline is CEFR B1 through Module 2 or accepted equivalent evidence. A separate citizenship test covers democratic principles and Austrian and provincial history. Educational evidence and statutory exemptions require individual checking; B2 belongs to a shorter-route alternative.", "state": "conditional", "sourceIds": ["top20-at-language", "top20-at-general", "top20-at-six-years"], "locator": "Integrationsvereinbarung: Module and Modul 2; general knowledge requirements; six-year B2 alternative" },
+        { "id": "support-conduct", "label": "Support, conduct and application", "text": "The ordinary support test uses qualifying regular income for 36 months within the preceding six years, including the final six months before application. Criminal, immigration and security conditions also apply. Apply personally to the competent provincial authority, which determines required documents.", "state": "conditional", "sourceIds": ["top20-at-general"], "locator": "Hinreichend gesicherter Lebensunterhalt; other prerequisites; Verfahrensablauf" },
+        { "id": "renunciation", "label": "Previous nationality usually relinquished", "text": "Applicants normally give up their prior nationality. Where it is not lost automatically, Austria generally first issues an assurance, followed by release within two years if possible and reasonable. Only the competent authority decides exceptions; do not renounce without checking the sequence.", "state": "conditional", "sourceIds": ["top20-at-nationality"], "locator": "Erwerb der österreichischen Staatsbürgerschaft durch ausländische Staatsangehörige" }
+      ],
+      "limits": ["This baseline does not exhaust disability, refugee, family, restitution, exceptional-merit or other statutory exceptions. Income sufficiency and acceptable evidence need authority assessment.", "Austrian rules on voluntary acquisition of another nationality by an existing citizen are separate from this inbound naturalisation route. Check both nationality laws before taking action."]
+    },
+    {
+      "code": "AT", "topic": "taxes", "title": "Austria Tax Residence and Foreign Income",
+      "summary": "Austria connects ordinary personal income-tax liability to residence and habitual presence, with worldwide-income rules and treaty qualifications.",
+      "scope": "Baseline individual income-tax residence and source-income scope in the Finance Ministry's 2026 guidance. No personal tax calculation or special-regime recommendation.",
+      "jurisdiction": "Austrian personal income tax",
+      "facts": [
+        { "id": "residence", "label": "Home or habitual presence", "text": "Unlimited liability can arise from a suitable dwelling used recurrently or habitual presence. After six months' presence it applies retrospectively. Citizenship is not decisive, and six months is not a universal tax-free allowance.", "state": "conditional", "sourceIds": ["top20-at-tax"], "locator": "Unbeschränkte Steuerpflicht" },
+        { "id": "worldwide", "label": "Worldwide income baseline", "text": "Ordinary unlimited liability generally includes domestic and foreign income. Applicable treaty allocations and relief must still be checked; a general liability rule does not determine the final bill.", "state": "conditional", "sourceIds": ["top20-at-tax"], "locator": "Welteinkommen; Doppelbesteuerungsabkommen" },
+        { "id": "nonresidents", "label": "Austrian income can remain taxable", "text": "Without Austrian residence or habitual presence, Austrian-source income such as employment or specified pensions can still create limited liability. Qualifying EU/EEA taxpayers may elect different treatment; the election has its own income conditions.", "state": "conditional", "sourceIds": ["top20-at-tax"], "locator": "Beschränkte Steuerpflicht; EU/EEA election" },
+        { "id": "workers", "label": "Employment can affect the start date", "text": "The guidance treats foreign employees with at least a six-month work permission or contract as unlimited taxpayers from arrival. Seasonal stays exceeding six months can also backdate liability. Border-worker treaty rules need separate assessment.", "state": "conditional", "sourceIds": ["top20-at-tax"], "locator": "Foreign employees, seasonal employees and cross-border workers" }
+      ],
+      "limits": ["No rates, annual allowances, complete category-specific source rules, social-insurance treatment or eligibility for special relief are asserted. Residence and treaty facts must be checked for the individual."]
+    }
+  ]
+}

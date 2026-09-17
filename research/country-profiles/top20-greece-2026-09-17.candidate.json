@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "researcher": "/root",
+  "retrievedAt": "2026-09-17",
+  "sources": [
+    { "id": "top20-gr-requirements", "publisher": "Greece Ministry of Interior, General Secretariat of Citizenship", "title": "Naturalisation requirements, updated 30 January 2026", "url": "https://www.ypes.gr/wp-content/uploads/2026/02/Proypotheseis20260130.pdf", "language": "el", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gr-application", "publisher": "Greece Ministry of Interior, General Secretariat of Citizenship", "title": "Application and supporting documents, updated 27 November 2024", "url": "https://www.ypes.gr/wp-content/uploads/2024/11/202411-Dikaiologitika-20241127.pdf", "language": "el", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gr-code", "publisher": "Greece Ministry of Interior; consolidation supplied by NOMOS", "title": "Greek Citizenship Code: informational consolidation through 17 September 2025", "url": "https://www.ypes.gr/kodikas-ellinikis-ithageneias/", "language": "el", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gr-exam-rules", "publisher": "Greece Ministry of Interior, General Secretariat of Citizenship", "title": "Decision 10787 of 26 February 2025: naturalisation knowledge examination", "url": "https://www.ypes.gr/wp-content/uploads/2025/03/apof10787-20250226.pdf", "language": "el", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gr-dual-nationality", "publisher": "Greece Ministry of Foreign Affairs, Embassy in Japan", "title": "Greek citizenship: consular guidance on dual nationality", "url": "https://www.mfa.gr/missionsabroad/japan/other-services/ellenike-ithageneia.html", "language": "el", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gr-tax-residence", "publisher": "Greece Independent Authority for Public Revenue (AADE)", "title": "Tax residence for natural persons (ITC)", "url": "https://www.aade.gr/en/greeks-abroad-non-residents/income-taxation/tax-residence-natural-persons-itc", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gr-tax-foreign", "publisher": "Greece Independent Authority for Public Revenue (AADE)", "title": "Taxation of foreign-source income obtained by Greek tax residents", "url": "https://www.aade.gr/en/greeks-abroad-non-residents/income-taxation/taxation-non-greek-sourced-income-obtained-greek-tax-residents-pit", "language": "en", "retrievedAt": "2026-09-17" },
+    { "id": "top20-gr-tax-nonresident", "publisher": "Greece Independent Authority for Public Revenue (AADE)", "title": "Taxation of Greek-source income obtained by nonresidents", "url": "https://www.aade.gr/en/greeks-abroad-non-residents/income-taxation/taxation-greek-sourced-income-obtained-non-residents-pit", "language": "en", "retrievedAt": "2026-09-17" }
+  ],
+  "topics": [
+    {
+      "code": "GR", "topic": "citizenship", "title": "Greek citizenship by naturalisation",
+      "summary": "Ordinary naturalisation combines qualifying residence with language, civic knowledge and economic/social integration. Seven years is the main residence period, not a guarantee of citizenship or a processing estimate.",
+      "scope": "Adult naturalisation for people without Greek ancestry living lawfully in Greece; descent and expatriate ethnic-Greek routes are separate.",
+      "jurisdiction": "Greece", "routeId": "top20-gr-naturalisation", "routeType": "naturalisation",
+      "facts": [
+        {
+          "id": "residence", "label": "Residence period depends on status",
+          "text": "The main rule is seven consecutive lawful years with an accepted residence title. Other valid titles generally require twelve; temporary titles are not accepted. EU citizens, stateless people, parents with custody of a Greek-national child born in Greece, and spouses of Greek citizens with a child have a three-year route. Birth with continuous residence in Greece and specified diplomatic-spouse cases have further exceptions. A residence investment is not automatic citizenship.",
+          "state": "conditional", "sourceIds": ["top20-gr-requirements"], "locator": "Pages 1–2: accepted titles, seven-year rule, three-year cohorts and special cases",
+          "constraint": { "value": 7, "unit": "years", "basis": "legal_residence", "cohort": "Ordinary applicant holding a listed accepted residence title; consecutive lawful years before application, excluding reduced or exceptional cohorts" }
+        },
+        {
+          "id": "personal-conditions", "label": "Personal and status conditions",
+          "text": "Applicants must be adults and satisfy the criminal-record, lawful-status and public-order/security conditions. Deportation or unresolved lawful-stay status can prevent approval. Time as a foreign diplomatic or administrative official does not count toward the residence period.",
+          "state": "conditional", "sourceIds": ["top20-gr-code"], "locator": "Articles 5(1)(a)–(d), 5B and 7(5)"
+        },
+        {
+          "id": "language", "label": "Greek language and civic knowledge",
+          "text": "The PEGP examination assesses understanding and production of spoken and written Greek at a level analogous to B1, alongside geography, history, culture and political institutions. Obtain the knowledge certificate before applying unless an educational exemption applies; a residence permit's language requirement is not a substitute.",
+          "state": "conditional", "sourceIds": ["top20-gr-exam-rules", "top20-gr-application"], "locator": "Decision 10787 Article 1, page 2; application guide page 1, prerequisite",
+          "language": { "framework": "PEGP examination: official B1-equivalent description", "level": "Analogous to B1", "skills": ["spoken comprehension", "spoken production", "written comprehension", "written production"] }
+        },
+        {
+          "id": "test-adaptations", "label": "Educational exemptions and oral assessment",
+          "text": "Specified Greek-school completion or Greek-language Greek-university qualifications exempt applicants from PEGP. The age-62 cohort, applicants with KEPA-certified disability of at least 67%, and applicants with qualifying diagnosed learning difficulties preventing a written test can use a special oral examination instead; this is not a blanket exemption from knowledge requirements. Documentation and the exam authority's age-calculation rules apply.",
+          "state": "conditional", "sourceIds": ["top20-gr-application", "top20-gr-exam-rules", "top20-gr-code"], "locator": "Application guide page 1: nine school grades, six secondary grades and university alternatives; Code Article 7(3)–(4); Decision 10787 Article 2, page 4: age counted by birth year and disability documents"
+        },
+        {
+          "id": "integration", "label": "Income and integration evidence",
+          "text": "Economic integration includes adequate income and tax/social-insurance compliance. Evidence normally covers at least five years for the seven-year route, three for the three-year route, and seven for the twelve-year route. Household and disability provisions qualify the income assessment; stable social ties must also be demonstrated.",
+          "state": "conditional", "sourceIds": ["top20-gr-requirements"], "locator": "Pages 3–4: economic/social integration, evidence periods, spouse income and disability qualification; no fixed current income amount inferred from the historical table"
+        },
+        {
+          "id": "application-and-oath", "label": "Application and completion",
+          "text": "Apply to the regional Citizenship Directorate for the place of residence with the prescribed documents. Following approval, citizenship is acquired by taking the oath within one year of publication; missing that deadline revokes the decision. Physical-disability accommodations can allow an oath at home or by video.",
+          "state": "conditional", "sourceIds": ["top20-gr-application", "top20-gr-code"], "locator": "Application guide page 1; Code Article 9(1), (3) and (5)"
+        },
+        {
+          "id": "dual-nationality", "label": "Keeping an existing nationality",
+          "text": "Greek consular guidance says Greece accepts dual nationality. This does not establish whether another country lets the applicant retain its citizenship, or resolve an individual's military, renunciation or nationality-loss obligations.",
+          "state": "conditional", "sourceIds": ["top20-gr-dual-nationality"], "locator": "Final section for non-ethnic-Greek applicants, point A; not the page's outdated residence period"
+        }
+      ],
+      "limits": [
+        "General information, not individual eligibility advice. The Ministry's January 2026 requirements guide supplies current residence cohorts; its historical income table is not a current universal threshold.",
+        "The Ministry labels its September 2025 Code consolidation informational. The consular dual-nationality source also contains obsolete residence guidance, which is not used here. Check the responsible Directorate and current examination instructions for the exact application and any later amendments."
+      ]
+    },
+    {
+      "code": "GR", "topic": "taxes", "title": "Greece personal tax context",
+      "summary": "Greek tax residence depends on personal connections and presence, not a passport alone. Residents generally have worldwide-income obligations; nonresidents can still owe tax on Greek-source income, subject to applicable treaties.",
+      "scope": "Baseline personal income taxation; not eligibility for special incoming-resident regimes, tax-rate calculations, social contributions or property-tax advice.",
+      "jurisdiction": "Greece",
+      "facts": [
+        {
+          "id": "residence", "label": "Home, vital interests and presence",
+          "text": "A permanent/principal residence, habitual abode or centre of vital interests can establish Greek residence. More than 183 cumulative days in any twelve months also normally establishes residence from the first day. The day test has an exception for exclusively tourist, medical or similar private stays not exceeding 365 days, including short absences; it does not erase the separate connection tests.",
+          "state": "conditional", "sourceIds": ["top20-gr-tax-residence"], "locator": "Tax residency criteria, Article 4 ITC: connection tests and twelve-month presence rule"
+        },
+        {
+          "id": "officials-abroad", "label": "Specified Greek officials abroad",
+          "text": "Greek-national consular, diplomatic and equivalent public officials or civil servants working abroad are separately treated as Greek tax residents. This is a defined official-service rule, not a general worldwide-tax rule for every Greek passport holder abroad.",
+          "state": "conditional", "sourceIds": ["top20-gr-tax-residence"], "locator": "Tax residency criteria, Article 4 ITC, point (b)"
+        },
+        {
+          "id": "worldwide-and-relief", "label": "Foreign income and relief",
+          "text": "Residents are generally taxed on taxable worldwide income. Applicable treaties govern allocation of taxing rights. Foreign income tax can be credited, subject to conditions and a cap equal to Greek tax attributable to that income; treaty documentation and income classification matter. This is not an automatic exemption for overseas earnings.",
+          "state": "conditional", "sourceIds": ["top20-gr-tax-foreign"], "locator": "Article 3 worldwide scope; treaty application and Greek residence certificate; Foreign tax credit, Article 9 cap"
+        },
+        {
+          "id": "nonresident", "label": "Greek-source income remains relevant",
+          "text": "Nonresidents are taxable on relevant Greek-source income, including Greek work, property and specified business, pension or investment income. Treaty benefits require checking the agreement and providing a residence certificate. Nonresident treatment is not blanket tax exemption; deductions and presumptive-income rules can differ from those for residents.",
+          "state": "conditional", "sourceIds": ["top20-gr-tax-nonresident"], "locator": "Opening Article 3 rule; Greek sourced income under Article 5; treaty certificate and Important Note qualifications"
+        }
+      ],
+      "limits": ["General information only. AADE or a qualified adviser must assess actual residence, income source, treaty relief and filing duties. No special tax regime, personal liability or exemption is established by this profile."]
+    }
+  ]
+}

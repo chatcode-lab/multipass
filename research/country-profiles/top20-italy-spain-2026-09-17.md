@@ -1,0 +1,21 @@
+# Italy / Spain candidate research notes
+
+Researcher: `/root/top20_italy_spain`. Retrieval date: 17 September 2026. This is research, not independent approval.
+
+Candidate: [top20-italy-spain-2026-09-17.candidate.json](top20-italy-spain-2026-09-17.candidate.json). Four topics, 29 facts, 22 primary official sources. The candidate passed `countryProfileCandidateSchema.parse` locally. No application artifacts were edited.
+
+## Source-reading record and reviewer cautions
+
+- Every candidate source was opened and its cited text read. The Ministry of the Interior's central Article 9 page, Italian Foreign Ministry overview, Constitutional Court judgment, BOE legislation, Spanish application service and Spanish tax pages were readable through the web tool.
+- The Milan Prefecture page returned HTTP 403 through the web tool but its actual HTML was successfully read with terminal `curl`. Relevant headings are `ACQUISTO DELLA CITTADINANZA PER RESIDENZA LEGALE ININTERROTTA IN ITALIA (art. 9)`, `Occorre allegare all'istanza` and `REQUISITI REDDITUALI`. Its local reduced-cohort lettering is inconsistent with the central Ministry page, so the candidate does not use Milan to establish reduced-cohort periods. Nor does it reproduce Milan's internally inconsistent count of language-certifying bodies.
+- Normattiva's web-tool date/article URLs failed, but the exact date-pinned URLs in the candidate were successfully retrieved with `curl`; cited article bodies were read, not inferred from search snippets. Preserve the order `~art2!vig=2026-09-17`, with the article before the date. A query for Law 91 Article 9 unexpectedly returned Article 9.1; that response was not used for Article 9. The central Interior Ministry supplies that route evidence instead.
+- Current TUIR Article 2 showed its text as applicable through 31 December 2026. Normattiva's default consolidated landing page showed a repeal headline, which requires reading the future instrument's application clause. Legislative Decree 117/2026 is enacted, but annex Article 377 starts application on 1 January 2027 and Article 376 ties repeals to that date. Both actual Gazette articles were opened and read. The candidate explicitly retains September 2026 law rather than using future replacement numbering.
+- TUIR Articles 2, 3, 7, 23, 165 and 169 were read at the pinned date. Italian Revenue Agency pages and its 2024 residence circular were not accessible through the initial web attempts; no claim relies on those inaccessible pages. The candidate instead cites the actual legislation.
+- Italy's Article 2(2-bis) citizenship-linked residence presumption contains a transitional/implementing-decree qualification. The candidate documents the existence and qualified scope of that presumption, but does not assert a current list of foreign jurisdictions. That list remains a follow-up.
+- Italy's language fact uses the Constitutional Court's own statement of Article 9.1, its proof alternatives and existing exemptions, plus the operative severe-learning-limitations ruling. The distinct oath exemption is present in Normattiva Article 10's judgment annotation. The record does not turn age alone into either exemption.
+- Spain's residence reductions and renunciation exceptions are kept separate. The France instruction expressly states that the bilateral renunciation exception does not reduce residence time. The DELE-exempt nationalities are in Royal Decree 1004/2015 Article 6(5), distinct from the two-year cohort. Order JUS/1625/2016 Article 10(5), in the October 2022 consolidation, supplies waiver timing and the Spanish-schooling/ESO qualification.
+- Exact CEFR levels are retained in text. No structured tested-skill array was inferred merely from the level, because the selected requirement sources do not independently enumerate the examination components. No numerical absence allowance was inferred for either citizenship route.
+
+## Remaining scope
+
+No personal eligibility, complete citizenship-retention analysis, special inbound tax regime, tax-rate calculation, wealth-tax survey or foreign-asset reporting determination is provided. An independent reviewer must open the cited authorities, verify claim scope and bind approval to the exact candidate bytes before publication.

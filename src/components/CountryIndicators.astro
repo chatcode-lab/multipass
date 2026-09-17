@@ -6,7 +6,7 @@ const rows = countryIndicators(Astro.props.code);
 {rows.length > 0 && <section class="country-indicators" aria-labelledby="country-indicators-heading">
   <header><div><span class="eyebrow">Country context · separate from passport rank</span><h2 id="country-indicators-heading">Living in this country</h2></div><p>{INDICATOR_SCOPE}</p></header>
   <div class="country-indicators__grid">{rows.map((row) => <article>
-    <h3>{row.definition.label}</h3><p class="country-indicators__value"><strong>{indicatorDisplay(row)}</strong><span>{row.definition.unit} · {row.period}</span></p>
+    <h3>{row.definition.label}</h3><p class="country-indicators__value"><strong>{indicatorDisplay(row)}</strong>{row.period && <span>{row.definition.unit} · {row.period}</span>}</p>
     <p>{row.definition.description}</p><p>{row.providerEntityName} · {row.geographicScope}</p>
     {row.unavailableReason && <p>{row.unavailableReason}</p>}
     <a href={row.source.url} rel="external">{row.source.publisher} · {row.source.edition}</a>

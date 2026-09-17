@@ -11,7 +11,7 @@ export const indicatorCandidateSchema = z.object({
     code: z.string().regex(/^[A-Z]{2}$/), providerEntityCode: z.string().regex(/^[A-Z]{3}$/),
     providerEntityName: z.string(), geographicScope: z.string(),
     metric: z.enum(["hdi", "life_expectancy"]), sourceId: z.string(),
-    period: z.string().regex(/^\d{4}$/), value: z.number().nullable(),
+    period: z.string().regex(/^\d{4}$/).nullable(), value: z.number().nullable(),
     availability: z.enum(["available", "not_reported", "scope_mismatch"]),
     unavailableReason: z.string().optional(),
   }).strict()).min(1),
@@ -23,7 +23,7 @@ export const indicatorCandidateSchema = z.object({
     if (!sources.has(row.sourceId)) ctx.addIssue({ code: "custom", message: "Missing indicator source." });
     if (row.availability !== "available") {
       if (row.value !== null || !row.unavailableReason) ctx.addIssue({ code: "custom", message: "Missing values require a null and reason." });
-    } else if (row.value === null || row.value < 0 || row.value > (row.metric === "hdi" ? 1 : 130)) {
+    } else if (row.period === null || row.value === null || row.value < 0 || row.value > (row.metric === "hdi" ? 1 : 130)) {
       ctx.addIssue({ code: "custom", message: "Invalid indicator value." });
     }
   }

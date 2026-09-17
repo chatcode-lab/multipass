@@ -61,3 +61,6 @@ export const countryProfileReviewSchema = z.object({
 
 export type CountryTopic = z.infer<typeof countryTopicSchema>;
 export type CountryProfileCandidate = z.infer<typeof countryProfileCandidateSchema>;
+export type CountryProfileReview = z.infer<typeof countryProfileReviewSchema>;
+export type ReviewedCountryTopic = CountryTopic & { review: CountryProfileReview };
+export type CountryProfileBatch = CountryProfileCandidate & { review: CountryProfileReview; id?: string };
