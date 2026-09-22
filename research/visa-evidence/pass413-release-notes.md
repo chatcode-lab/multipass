@@ -44,3 +44,17 @@ Independent visa-source approvals are complete. Local final gates pass: 158 Astr
 The first check run exposed expected stale rank/stay-count assertions and the new official prefecture host missing from the explicit source allowlist; only the derived expectations and independently reviewed exact hostname were updated. A new test initially expected 301 instead of the application's existing 308 redirect; the test was corrected without changing redirect behavior. Independent review also identified and resolved the end-only timeline label issue described above.
 
 Normal-URL production API reads before release confirm all three routes already say visa-free but have pending evidence and no structured stay, using the live snapshot checked 18 September 2026. Deployment and post-release normal-URL checks remain pending.
+
+## Published and verified
+
+Release commit: `a1d4babbf7a2fbe2b45c8a49a83a33d6556075a3`. [Cloudflare deployment 35785224276](https://github.com/chatcode-lab/multipass/actions/runs/35785224276) and [CI 35785224213](https://github.com/chatcode-lab/multipass/actions/runs/35785224213) both completed successfully on 22 September 2026. Independent final integration approval is recorded in the security/integration review, including exact implementation hashes.
+
+Post-release normal public URLs, with no cache-busting query, confirm:
+
+- NI→HK and SB→HK: `visa_free`, `exact`, structured maximum 30 days.
+- BR→GF: `visa_free`, `exact`, 30 days in 180, explicit 31 January 2027 policy endpoint.
+- All three previous `-visa` URLs return 308 to their `-visa-free` canonical pages. Canonical HTML is indexable, historical end dates are visible, native Markdown works, and `Accept: text/markdown` matches it. Americas/Oceania relationship sitemaps contain the new canonical URLs and not the old prior-visa URLs.
+- The live status API reports 40,941 / 44,974 exact relationships (91%), 4,033 not exact, 1,142 characterized and 4,267 structured-stay relationships. All three newly reconciled source reviews are fresh. Upstream snapshot checkedAt remains 18 September: source verification was updated without pretending to refetch the whole feed.
+- GitHub Dependabot alert 11 is `fixed`, with fixed_at `2026-09-22T21:12:47Z`, not merely awaiting rescan. Full and production npm audits both have zero reported vulnerabilities.
+
+No production cache purge, KV migration, bulk external refresh or new per-request data fetch was needed. User-provided CSV/image attachments remain untouched and uncommitted. Remaining priority: substantive rechecks of the imminent Bosnia/Montenegro/Cambodia deadlines noted above, then the separately recorded citizenship-law gaps. The French Guiana successor must be re-reviewed before its trial endpoint.
