@@ -41,3 +41,16 @@ The first narrow post-Cambodia test run correctly required registering the three
 Final local gates pass: 158 Astro files with zero diagnostics, lint, **440 unit tests across 17 files**, complete pending audit, production build and all **96 desktop/mobile browser tests**. The new browser test verifies all seven relationship APIs and Markdown variants, bounded stay values, deduplicated timeline entries, future Bosnia policy visibility and narrow-screen overflow. The separate [independent integration review](pass414-integration-review.md) approves the final implementation hashes, immutable-artifact preservation and exact scoped combination counterfactual.
 
 Deployment and normal-URL production verification follow below when complete. User CSV/image attachments remain untouched and must not be committed.
+
+## Published and production-verified
+
+Release commit: `3e6e3a82e05ec63fb6b1a9ec6e4344298d9b8439`. [Cloudflare deployment 35788156551](https://github.com/chatcode-lab/multipass/actions/runs/35788156551) and hosted [CI run 35788156512](https://github.com/chatcode-lab/multipass/actions/runs/35788156512), including its browser job, both completed successfully on 22 September.
+
+Normal public URLs, without a cache-busting parameter or production cache purge, confirm:
+
+- All seven relationship APIs return the refreshed single policy, current `visa_free` / `exact` classification, correct 60/30/14-day structured stay, explicit endpoint and sources reviewed on 22 September. Upstream checkedAt remains 18 September.
+- Representative Bosnia, Montenegro and Cambodia HTML pages are indexable and contain one policy timeline event. Legacy `-visa` URLs redirect with 308 to the current canonical `-visa-free` pages. Native `.md` and negotiated `Accept: text/markdown` responses match.
+- Bosnia's destination Markdown includes the reviewed 1 October successor. Relationship sitemaps contain all seven current canonical URLs in the **passport-region** groups: three in Middle East, four in Asia. The first smoke-check used destination-region grouping and was corrected to the existing sitemap contract; no sitemap implementation change was needed.
+- The live matrix reports **40,941 / 44,974** exact relationships, **4,033** not exact, **1,142** characterized and **4,271** with structured stay rules. The four newly structured Europe-destination cells are exact, have their new stay rules and show the 22 September scoped review date.
+
+No KV migration, bulk upstream re-import, snapshot restamping or country-profile publication was performed. Remaining legal and successor gaps are explicit above.
