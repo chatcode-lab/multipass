@@ -43,11 +43,23 @@ The first browser run found two instances of an old date-sensitive matrix assert
 
 Commit/push/deployment and live checks remain separate operational gates at the time of this pre-release record.
 
+## Production verification — 22 September 2026
+
+Released commit `4d770a67ec187504614c44d7a0a852f495396dd2`. Both [deployment](https://github.com/chatcode-lab/multipass/actions/runs/35755631551) and [CI, including browser tests](https://github.com/chatcode-lab/multipass/actions/runs/35755631772) completed successfully.
+
+A read-only production audit made 662 requests with three concurrent workers, without cache-busting the checked content. All 73 profile APIs exactly matched the approved local JSON; all 145 topic pages matched fact text, scope, limitations, source locators, links and review dates. Explicit and negotiated Markdown exactly matched the approved renderer. Parent indicator Markdown, parent topic links, all topic sitemap entries, canonical/robots/format/cache/security headers, aliases and unsupported-topic 404s passed. Production layouts and visible source links passed at 320px and 390px, including long country names and the explicit Taiwan/Vatican missing indicators. Separate browser-context accessibility checks passed on Vatican taxes, St. Vincent citizenship and the refreshed Singapore citizenship page.
+
+The production visa matrix reports **40,938 of 44,974** exact matches, not the bundled test snapshot's 40,941. A region-by-region read-only comparison isolated three differences: BR→GF, SB→HK and NI→HK. The live snapshot labels these visa-free while the bundled snapshot labels them visa-required; all three live cells remain **unverified**. The same live count was returned with normal caching and the explicit refresh endpoint. This is not new visa evidence or a classification correction in this release. Reconcile the three current upstream/evidence disagreements in a separately source-reviewed visa pass; do not publish either label as newly verified from this diagnostic.
+
+GitHub also reported an open, separate moderate transitive dependency advisory for `devalue` 5.9.0 ([alert 11](https://github.com/chatcode-lab/multipass/security/dependabot/11), GHSA-9rgm-9g3h-6x36). The installed dependency is used by Astro and its React integration. This data release did not change dependencies or establish exploitability; a focused security update and regression pass remains a follow-up. Unrelated user CSVs/screenshots were left untracked and untouched.
+
 ## Follow-up priorities
 
 - Resolve Saint Lucia's current ordinary citizenship eligibility/retention text, Dominica's conflicting historical residence wording, Peru's nationality-law commencement and Solomon Islands' 2026 bill status before presenting firmer conclusions. Keep proposals and future announcements distinct from operative rules.
 - Recheck the enacted text and commencement for Dominica's announced January 2027 tax change before applying it. Posted older compilations and inaccessible updated authorities remain visible limitations, not a guarantee of complete amendment-chain coverage.
 - Retain the scheduled visa-expiry follow-ups in the triage note. Profile coverage does not change the visa matrix's verified percentage.
+- Investigate BR→GF, SB→HK and NI→HK against current official sources, preserving the live pending state until independent evidence supports a correction. Keep the live and bundled coverage counts distinct.
+- Address the separately reported `devalue` advisory with an appropriate patched dependency and the usual regression checks.
 - Legal-topic reviews are due by 21 December 2026, sooner for identified changes; this is a review target, not an automatic refresh guarantee.
 
 This goal retains the established two-indicator scope. PISA, Big Mac and other new metric families remain separate follow-ups needing their own quality/reuse review; expanding country coverage and refreshing existing families must not be replaced by a smaller experimental metric feature.
