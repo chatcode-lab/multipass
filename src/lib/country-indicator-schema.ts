@@ -6,6 +6,8 @@ export const indicatorCandidateSchema = z.object({
     id: z.string(), publisher: z.string(), attribution: z.string(), title: z.string(),
     url: z.url(), dataUrl: z.url(), licenceUrl: z.url(), licence: z.string(), edition: z.string(),
     sourceSha256: z.string().regex(/^[a-f0-9]{64}$/),
+    dataEncoding: z.enum(["utf-8", "windows-1252"]).optional(),
+    geographyUrl: z.url().optional(), geographySha256: z.string().regex(/^[a-f0-9]{64}$/).optional(),
   }).strict()).min(1),
   observations: z.array(z.object({
     code: z.string().regex(/^[A-Z]{2}$/), providerEntityCode: z.string().regex(/^[A-Z]{3}$/),
@@ -18,6 +20,9 @@ export const indicatorCandidateSchema = z.object({
 }).strict().superRefine((data, ctx) => {
   const identities = data.observations.map((entry) => `${entry.code}/${entry.metric}`);
   const sources = new Set(data.sources.map((source) => source.id));
+  for (const source of data.sources) {
+    if (Boolean(source.geographyUrl) !== Boolean(source.geographySha256)) ctx.addIssue({ code: "custom", message: "A geography registry reference requires both its URL and payload hash." });
+  }
   if (new Set(identities).size !== identities.length || sources.size !== data.sources.length) ctx.addIssue({ code: "custom", message: "Duplicate indicator or source." });
   for (const row of data.observations) {
     if (!sources.has(row.sourceId)) ctx.addIssue({ code: "custom", message: "Missing indicator source." });

@@ -36,11 +36,20 @@ export const countryTopicSchema = z.object({
 export const countryProfileCandidateSchema = z.object({
   schemaVersion: z.literal(1), researcher: z.string().min(1), retrievedAt: date,
   sources: z.array(sourceSchema).min(1), topics: z.array(countryTopicSchema).min(1),
+  // A correction is a new reviewed batch, never an edit to historical approval.
+  supersedes: z.array(z.object({
+    code: z.string().regex(/^[A-Z]{2}$/), topic: z.enum(["citizenship", "taxes"]),
+    candidateSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  }).strict()).min(1).optional(),
 }).strict().superRefine((data, ctx) => {
   const sources = new Set(data.sources.map((source) => source.id));
   const ids = data.topics.map((topic) => `${topic.code}/${topic.topic}`);
   if (sources.size !== data.sources.length || new Set(ids).size !== ids.length) {
     ctx.addIssue({ code: "custom", message: "Duplicate source or topic identity." });
+  }
+  const replacedIds = (data.supersedes ?? []).map((entry) => `${entry.code}/${entry.topic}`);
+  if (new Set(replacedIds).size !== replacedIds.length || replacedIds.some((id) => !ids.includes(id))) {
+    ctx.addIssue({ code: "custom", message: "Each supersession must identify exactly one replacement topic in this candidate." });
   }
   for (const topic of data.topics) {
     if (new Set(topic.facts.map((fact) => fact.id)).size !== topic.facts.length) {

@@ -10,7 +10,7 @@ const rows = countryIndicators(Astro.props.code);
     <p>{row.definition.description}</p><p>{row.providerEntityName} · {row.geographicScope}</p>
     {row.unavailableReason && <p>{row.unavailableReason}</p>}
     <a href={row.source.url} rel="external">{row.source.publisher} · {row.source.edition}</a>
-    <details><summary>Source, reuse and review</summary><p>{row.source.attribution}</p><p>Source reviewed {INDICATOR_REVIEW.reviewedAt}. Next review due {INDICATOR_REVIEW.recheckBy}.</p><a href={row.source.dataUrl} rel="external">Source data</a>{" · "}<a href={row.source.licenceUrl} rel="external">{row.source.licence}</a></details>
+    <details><summary>Source, reuse and review</summary><p>{row.source.attribution}</p><p>Source reviewed {INDICATOR_REVIEW.reviewedAt}. Next review due {INDICATOR_REVIEW.recheckBy}.</p><a href={row.source.dataUrl} rel="external">Source data</a>{row.source.geographyUrl && <>{" · "}<a href={row.source.geographyUrl} rel="external">Source geography registry</a></>}{" · "}<a href={row.source.licenceUrl} rel="external">{row.source.licence}</a></details>
   </article>)}</div>
   <p><a href={`/api/v1/country-profiles/${Astro.props.code}`}>Country profile and source data (JSON)</a></p>
 </section>}

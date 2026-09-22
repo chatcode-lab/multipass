@@ -26,7 +26,8 @@ export function countryIndicatorsMarkdown(code: string): string {
   if (!rows.length) return "";
   const sections = rows.map((row) => {
     const period = row.period ? ` ${row.definition.unit} · observation year ${row.period}` : "";
-    return `### ${row.definition.label}\n\n${indicatorDisplay(row)}${period}. ${row.definition.description}\n\nGeography: ${row.providerEntityName} (${row.providerEntityCode}); ${row.geographicScope}. ${row.unavailableReason ?? ""}\n\n[${row.source.publisher}: ${row.source.title}](${row.source.url}) — ${row.source.edition}. [Data](${row.source.dataUrl}). [${row.source.licence}](${row.source.licenceUrl}). ${row.source.attribution}`;
+    const geography = row.source.geographyUrl ? ` [Source geography registry](${row.source.geographyUrl}).` : "";
+    return `### ${row.definition.label}\n\n${indicatorDisplay(row)}${period}. ${row.definition.description}\n\nGeography: ${row.providerEntityName} (${row.providerEntityCode}); ${row.geographicScope}. ${row.unavailableReason ?? ""}\n\n[${row.source.publisher}: ${row.source.title}](${row.source.url}) — ${row.source.edition}. [Data](${row.source.dataUrl}).${geography} [${row.source.licence}](${row.source.licenceUrl}). ${row.source.attribution}`;
   });
   return `## Living in this country: selected indicators\n\n${INDICATOR_SCOPE}\n\n${sections.join("\n\n")}\n\nSources reviewed ${INDICATOR_REVIEW.reviewedAt}. Review due ${INDICATOR_REVIEW.recheckBy}.\n\n`;
 }

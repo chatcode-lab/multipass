@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import topicsArtifact from "../data/country-profiles.json";
@@ -8,6 +9,7 @@ import type { CountryProfileBatch } from "./country-profile-schema";
 import { compileCountryProfileBatches } from "./country-profile-catalog";
 import expansions from "../data/country-profile-expansions.json";
 import cohort from "../../research/country-profiles/top20-cohort-2026-09-17.json";
+import nextCohort from "../../research/country-profiles/ranks21-40-cohort-2026-09-22.json";
 import { indicatorCandidateSchema, parseIndicatorCsv } from "./country-indicator-schema";
 import { COUNTRY_TOPICS, countryProfileJson, countryTopic, countryTopicMarkdown, countryTopicSources } from "./country-profiles";
 import { countryIndicators, indicatorDisplay, countryIndicatorsMarkdown } from "./country-indicators";
@@ -18,17 +20,29 @@ import { coreSitemapUrls } from "./sitemap";
 import type { SnapshotManifest } from "./types";
 
 describe("country-profile publication", () => {
+  it("refuses pilot republication even when the candidate and approval are unchanged", () => {
+    const path = "src/data/country-profiles.json";
+    const before = readFileSync(path, "utf8");
+    const result = spawnSync(process.execPath, ["--import", "tsx", "scripts/publish-country-profiles.ts",
+      "research/country-profiles/pilot-2026-09-17.candidate.json",
+      "research/country-profiles/pilot-2026-09-17.review.json", "topics"], { encoding: "utf8" });
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toContain("legal pilot is immutable");
+    expect(readFileSync(path, "utf8")).toBe(before);
+  });
+
   it("publishes only independently reviewed exact candidate bytes", () => {
     for (const [name, artifact, schema] of [
       ["pilot-2026-09-17", topicsArtifact, countryProfileCandidateSchema],
-      ["top20-indicators-2026-09-17", indicatorsArtifact, indicatorCandidateSchema],
+      [(indicatorsArtifact as { id?: string }).id ?? "top20-indicators-2026-09-17", indicatorsArtifact, indicatorCandidateSchema],
     ] as const) {
       const raw = readFileSync(`research/country-profiles/${name}.candidate.json`, "utf8");
       const candidate = schema.parse(JSON.parse(raw));
       const review = countryProfileReviewSchema.parse(JSON.parse(readFileSync(`research/country-profiles/${name}.review.json`, "utf8")));
       expect(review.reviewer).not.toBe(candidate.researcher);
       expect(review.candidateSha256).toBe(createHash("sha256").update(raw).digest("hex"));
-      expect(artifact).toEqual({ ...candidate, review });
+      const id = (artifact as { id?: string }).id;
+      expect(artifact).toEqual({ ...candidate, review, ...(id ? { id } : {}) });
       expect(review.reviewedAt >= candidate.retrievedAt && review.recheckBy > review.reviewedAt).toBe(true);
     }
     for (const batch of expansions as CountryProfileBatch[]) {
@@ -62,9 +76,9 @@ describe("country-profile publication", () => {
     expect(topicsArtifact.topics.filter((topic) => topic.topic === "citizenship").map((topic) => topic.code).sort())
       .toEqual(["AE", "CA", "DE", "FR", "HK", "IE", "IN", "PT", "SG", "US"]);
     expect(topicsArtifact.topics.filter((topic) => topic.topic === "taxes").map((topic) => topic.code).sort()).toEqual(["GB", "SG", "US"]);
-    const approved = ([topicsArtifact, ...expansions] as CountryProfileBatch[]).flatMap((batch) => batch.topics);
+    const approved = compileCountryProfileBatches([topicsArtifact, ...expansions] as CountryProfileBatch[]).topics.map(({ review: _review, ...topic }) => topic);
     expect(COUNTRY_TOPICS.map(({ review: _review, ...topic }) => topic)).toEqual(approved);
-    for (const topic of topicsArtifact.topics) expect(countryTopic(topic.code, topic.topic)).toMatchObject(topic);
+    for (const topic of topicsArtifact.topics) expect(countryTopic(topic.code, topic.topic)).toBeDefined();
     expect(countryTopic("SG", "living")).toBeUndefined();
     const missing = countryProfileJson("AF", "afghanistan");
     expect(missing.topics).toEqual([]);
@@ -75,6 +89,35 @@ describe("country-profile publication", () => {
     expect(countryProfileJson("MC", "monaco").indicators.review).toEqual(indicatorsArtifact.review);
   });
 
+  it("allows a scoped hash-bound correction without rewriting history or unrelated reviews", () => {
+    const pilot = topicsArtifact as CountryProfileBatch;
+    const original = pilot.topics[0];
+    const corrected: CountryProfileBatch = {
+      ...pilot, id: "correction", retrievedAt: "2026-09-22",
+      topics: [{ ...original, summary: "A newly reviewed, corrected summary for this one specific topic." }],
+      supersedes: [{ code: original.code, topic: original.topic, candidateSha256: pilot.review.candidateSha256 }],
+      review: { ...pilot.review, reviewedAt: "2026-09-22", candidateSha256: "c".repeat(64) },
+    };
+    const catalog = compileCountryProfileBatches([pilot, corrected]);
+    expect(catalog.topics).toHaveLength(pilot.topics.length);
+    expect(catalog.topics[0]).toMatchObject({ summary: corrected.topics[0].summary, review: corrected.review });
+    expect(catalog.topics[1].review).toEqual(pilot.review);
+    expect(pilot.topics[0]).toBe(original);
+    expect(() => compileCountryProfileBatches([corrected])).toThrow("active predecessor");
+    expect(() => compileCountryProfileBatches([pilot, corrected, corrected])).toThrow("active predecessor");
+    expect(() => compileCountryProfileBatches([pilot, { ...corrected, supersedes: [{ ...corrected.supersedes![0], candidateSha256: "b".repeat(64) }] }])).toThrow("active predecessor");
+    expect(() => compileCountryProfileBatches([pilot, { ...corrected, retrievedAt: "2026-09-16" }])).toThrow("predate");
+    expect(() => compileCountryProfileBatches([pilot, { ...corrected, review: pilot.review }])).toThrow("reuse");
+    const linkedPilot = { ...pilot, topics: [{ ...original, routeId: "existing-acquisition-route" }] };
+    expect(() => compileCountryProfileBatches([linkedPilot, { ...corrected, topics: [{ ...corrected.topics[0], routeId: undefined }] }])).toThrow("preserve the linked acquisition route");
+    expect(() => compileCountryProfileBatches([linkedPilot, { ...corrected, topics: [{ ...corrected.topics[0], routeId: "different-route" }] }])).toThrow("preserve the linked acquisition route");
+    expect(compileCountryProfileBatches([linkedPilot, { ...corrected, topics: [{ ...corrected.topics[0], routeId: "existing-acquisition-route" }] }]).topics[0].routeId).toBe("existing-acquisition-route");
+    const candidate = { schemaVersion: corrected.schemaVersion, researcher: corrected.researcher, retrievedAt: corrected.retrievedAt, sources: corrected.sources, topics: corrected.topics, supersedes: corrected.supersedes };
+    expect(countryProfileCandidateSchema.safeParse(candidate).success).toBe(true);
+    expect(countryProfileCandidateSchema.safeParse({ ...candidate, supersedes: [...candidate.supersedes!, ...candidate.supersedes!] }).success).toBe(false);
+    expect(countryProfileCandidateSchema.safeParse({ ...candidate, supersedes: [{ ...candidate.supersedes![0], code: "ZZ" }] }).success).toBe(false);
+  });
+
   it("covers both reviewed topics for every tied top-20 passport without dropping India", () => {
     expect(cohort.passports).toHaveLength(47);
     for (const passport of cohort.passports) {
@@ -83,6 +126,35 @@ describe("country-profile publication", () => {
     }
     expect(countryTopic("IN", "citizenship")).toBeDefined();
     expect(COUNTRY_TOPICS.length).toBeGreaterThanOrEqual(95);
+  });
+
+  it("covers all tied ranks 21–40 while retaining every earlier approved profile", () => {
+    expect(nextCohort.passports).toHaveLength(25);
+    const passports = [...cohort.passports, ...nextCohort.passports];
+    expect(new Set(passports.map((passport) => passport.code)).size).toBe(72);
+    for (const passport of passports) {
+      expect(countryProfileJson(passport.code, passport.slug).topics.map((topic) => topic.topic).sort(), passport.code)
+        .toEqual(["citizenship", "taxes"]);
+    }
+    expect(COUNTRY_TOPICS).toHaveLength(145);
+    expect(countryTopic("IN", "citizenship")).toBeDefined();
+    expect(countryTopic("IN", "taxes")).toBeUndefined();
+  });
+
+  it("refreshes only Singapore citizenship and retains narrow new-cohort caveats", () => {
+    const singapore = countryProfileJson("SG", "singapore");
+    expect(singapore.review).toBeNull();
+    expect(singapore.topics.find((topic) => topic.topic === "citizenship")?.review.reviewedAt).toBe("2026-09-22");
+    expect(singapore.topics.find((topic) => topic.topic === "taxes")?.review.reviewedAt).toBe("2026-09-17");
+    expect(countryTopic("SG", "citizenship")?.facts).toHaveLength(10);
+    const vatican = countryTopic("VA", "taxes")!;
+    expect(vatican.facts.find((fact) => fact.id === "ranks2140-va-tax-general-baseline-unresolved")?.state).toBe("not_established");
+    const israel = countryTopic("IL", "citizenship")!;
+    expect(israel.facts.find((fact) => fact.id === "ranks2140-il-citizenship-current-procedure-unresolved")?.state).toBe("not_established");
+    expect(israel.facts.every((fact) => !fact.constraint && !fact.language)).toBe(true);
+    expect(countryTopic("SM", "citizenship")?.facts.find((fact) => fact.id === "ranks2140-sm-citizenship-residence")?.constraint)
+      .toMatchObject({ value: 20, basis: "legal_residence" });
+    expect(countryTopic("BB", "citizenship")?.facts.find((fact) => fact.id === "language")?.state).toBe("not_established");
   });
 
   it("keeps scoped requirements and citations identical in topic JSON and Markdown", () => {
@@ -177,13 +249,15 @@ describe("country-profile publication", () => {
 describe("country indicators", () => {
   it("retains actual observation periods, precision, attribution and geography", () => {
     expect(cohort.passports).toHaveLength(47);
-    expect(indicatorsArtifact.observations).toHaveLength(96);
-    expect([...new Set(indicatorsArtifact.observations.map((row) => row.code))].sort()).toEqual([...cohort.passports.map((row) => row.code), "IN"].sort());
-    for (const { code } of [...cohort.passports, { code: "IN" }]) {
+    expect(nextCohort.passports).toHaveLength(25);
+    expect(indicatorsArtifact.observations).toHaveLength(146);
+    expect([...new Set(indicatorsArtifact.observations.map((row) => row.code))].sort()).toEqual([...cohort.passports.map((row) => row.code), ...nextCohort.passports.map((row) => row.code), "IN"].sort());
+    for (const { code } of [...cohort.passports, ...nextCohort.passports, { code: "IN" }]) {
       expect(countryIndicators(code).map((row) => row.metric).sort()).toEqual(["hdi", "life_expectancy"]);
     }
     for (const row of indicatorsArtifact.observations.filter((row) => row.availability === "available")) expect(row.period).toBe(row.metric === "hdi" ? "2023" : "2024");
-    expect(indicatorsArtifact.observations.filter((row) => row.availability === "available")).toHaveLength(95);
+    expect(indicatorsArtifact.observations.filter((row) => row.availability === "available")).toHaveLength(140);
+    expect(indicatorsArtifact.observations.filter((row) => row.availability !== "available").map((row) => `${row.code}/${row.metric}`).sort()).toEqual(["MC/hdi", "MO/hdi", "TW/hdi", "TW/life_expectancy", "VA/hdi", "VA/life_expectancy"]);
     expect(countryIndicators("MC").find((row) => row.metric === "hdi")).toMatchObject({ value: null, period: null, availability: "not_reported", providerEntityCode: "MCO" });
     expect(countryIndicatorsMarkdown("MC")).toContain("Not reported");
     expect(countryIndicatorsMarkdown("MC")).not.toContain("year null");
@@ -192,7 +266,15 @@ describe("country indicators", () => {
     expect(indicatorDisplay(portugal[1])).toBe("82.4");
     expect(portugal[1].value).toBeCloseTo(82.3829268292683);
     expect(countryIndicators("HK")[0].geographicScope).toContain("not mainland China");
-    expect(countryIndicators("MO")).toEqual([]);
+    expect(countryIndicators("MO").find((row) => row.metric === "life_expectancy")).toMatchObject({ availability: "available", providerEntityCode: "MAC" });
+    expect(countryIndicators("MO")[0].geographicScope).toContain("not mainland China or Hong Kong");
+    for (const code of ["VA", "TW"]) {
+      expect(countryIndicators(code).every((row) => row.value === null && row.availability === "not_reported")).toBe(true);
+      expect(countryIndicatorsMarkdown(code)).not.toContain("year null");
+    }
+    expect(indicatorsArtifact.sources[0].dataEncoding).toBe("windows-1252");
+    expect(indicatorsArtifact.sources[0].sourceSha256).toBe("61ed82e5b66c88dfca8ff9fac775c63981ecab6a254862af97acacc41c143117");
+    expect(indicatorsArtifact.sources[1].geographySha256).toMatch(/^[a-f0-9]{64}$/);
     expect(countryIndicatorsMarkdown("PT")).toContain("CC BY 3.0 IGO");
     expect(countryIndicatorsMarkdown("PT")).toContain("observation year 2024");
     const candidate = JSON.parse(readFileSync("research/country-profiles/indicators-pilot.candidate.json", "utf8"));
@@ -202,6 +284,12 @@ describe("country indicators", () => {
     candidate.observations[0].unavailableReason = "Provider does not report this entity.";
     expect(indicatorCandidateSchema.safeParse(candidate).success).toBe(true);
     candidate.observations[1].period = null;
+    expect(indicatorCandidateSchema.safeParse(candidate).success).toBe(false);
+  });
+
+  it("requires complete registry provenance when a registry is cited", () => {
+    const candidate = JSON.parse(readFileSync("research/country-profiles/ranks21-40-indicators-raw-2026-09-22.candidate.json", "utf8"));
+    delete candidate.sources[1].geographySha256;
     expect(indicatorCandidateSchema.safeParse(candidate).success).toBe(false);
   });
 

@@ -1102,6 +1102,10 @@ test("public evidence matrix audits every passport against a destination region"
   expect(legacy.status()).toBe(301);
   expect(legacy.headers().location).toMatch(/\/status\?region=EUROPE&state=pending$/);
 
+  const matrixResponse = page.waitForResponse((response) => {
+    const url = new URL(response.url());
+    return url.pathname === "/api/v1/evidence-status" && url.searchParams.get("region") === "EUROPE";
+  });
   const response = await page.goto("/status?region=EUROPE");
   expect(response?.headers()["x-robots-tag"]).toBeUndefined();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
@@ -1127,12 +1131,18 @@ test("public evidence matrix audits every passport against a destination region"
   await expect(germanyCell)
     .toHaveAttribute("href", "/japan-germany-visa-free");
   await expect(germanyCell).toContainText("✓ 20 Aug");
-  await expect(germanyCell).toHaveClass(/evidence-cell--fresh/);
 
-  const api = await request.get("/api/v1/evidence-status?region=EUROPE");
+  const api = await matrixResponse;
   expect(api.ok()).toBe(true);
   expect(api.headers()["x-robots-tag"]).toBe("noindex, nofollow");
   const matrix = await api.json();
+  // Evidence ages naturally; use the exact response date rendered by the UI.
+  const ageInDays = Math.max(0, Math.floor(
+    (Date.parse(`${matrix.asOf}T00:00:00Z`) - Date.parse("2026-08-20T00:00:00Z")) / 86_400_000,
+  ));
+  expect(Number.isFinite(ageInDays)).toBe(true);
+  const freshness = ageInDays <= 30 ? "fresh" : ageInDays <= 90 ? "recent" : ageInDays <= 180 ? "aging" : "stale";
+  await expect(germanyCell).toHaveClass(new RegExp(`\\bevidence-cell--${freshness}\\b`));
   expect(matrix.summary.total).toBe(199 * 52);
   expect(matrix.summary.verified).toBeGreaterThan(0);
   expect(matrix.summary.pending).toBeGreaterThan(0);

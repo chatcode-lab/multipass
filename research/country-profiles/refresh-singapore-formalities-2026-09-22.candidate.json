@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "researcher": "/root",
+  "retrievedAt": "2026-09-22",
+  "sources": [
+    { "id": "sg-refresh-20260922-apply", "publisher": "Singapore Immigration & Checkpoints Authority", "title": "Becoming a Singapore citizen", "url": "https://www.ica.gov.sg/reside/citizenship/apply", "language": "en", "retrievedAt": "2026-09-22" },
+    { "id": "sg-refresh-20260922-renounce", "publisher": "Singapore Immigration & Checkpoints Authority — AskGov", "title": "Foreign renunciation before Singapore citizenship registration", "url": "https://ask.gov.sg/ica/questions/clxwrieja001bq3htzcsmfx75", "language": "en", "retrievedAt": "2026-09-22" },
+    { "id": "sg-refresh-20260922-upload", "publisher": "Singapore Immigration & Checkpoints Authority — AskGov", "title": "Submitting foreign renunciation documents", "url": "https://ask.gov.sg/ica/questions/clxwriejb001lq3htufgg8up4", "language": "en", "retrievedAt": "2026-09-22" },
+    { "id": "sg-refresh-20260922-final-proof", "publisher": "Singapore Immigration & Checkpoints Authority — AskGov", "title": "Acceptable final foreign renunciation documents", "url": "https://ask.gov.sg/ica/questions/clxwriejb001nq3htgxhwwpbh", "language": "en", "retrievedAt": "2026-09-22" },
+    { "id": "sg-refresh-20260922-difficulty", "publisher": "Singapore Immigration & Checkpoints Authority — AskGov", "title": "Difficulties renouncing foreign citizenship", "url": "https://ask.gov.sg/ica/questions/clxwriejc001rq3htspnukgpf", "language": "en", "retrievedAt": "2026-09-22" }
+  ],
+  "topics": [
+    {
+      "code": "SG", "topic": "citizenship", "title": "Singapore Citizenship Requirements",
+      "summary": "Two years as a permanent resident is an application threshold, not a citizenship guarantee. ICA separately requires completion formalities and foreign-renunciation evidence for its specified adult cohort.",
+      "scope": "Adult permanent-resident application and selected completion formalities; spouses, students, children and aged parents have separately defined eligibility routes.",
+      "jurisdiction": "Singapore citizenship", "routeId": "singapore-naturalisation-2026", "routeType": "naturalisation",
+      "facts": [
+        { "id": "residence", "label": "Permanent residence first", "text": "An applicant aged at least 21 can apply after at least two years as a Singapore permanent resident.", "state": "documented", "sourceIds": ["sg-refresh-20260922-apply"], "locator": "Eligibility — first row", "constraint": { "value": 2, "unit": "years", "basis": "permanent_residence", "cohort": "Permanent resident aged 21 or over" } },
+        { "id": "assessment", "label": "Discretionary assessment", "text": "ICA considers family ties, contributions, qualifications, age, family profile and residence history. Eligibility to submit is not approval.", "state": "conditional", "sourceIds": ["sg-refresh-20260922-apply"], "locator": "Factors considered by ICA" },
+        { "id": "language", "label": "Language level", "text": "ICA's cited eligibility page does not establish a numeric language level. None is asserted here.", "state": "not_established", "sourceIds": ["sg-refresh-20260922-apply"], "locator": "Eligibility" },
+        { "id": "civics", "label": "After in-principle approval", "text": "Applicants aged 16–60 must complete the Singapore Citizenship Journey. Citizenship follows completion of the required formalities.", "state": "conditional", "sourceIds": ["sg-refresh-20260922-apply"], "locator": "Completion of Formalities" },
+        { "id": "service", "label": "National Service", "text": "ICA highlights National Service obligations for male citizens and permanent residents, with exemptions and cohort-specific rules. Review these before applying.", "state": "conditional", "sourceIds": ["sg-refresh-20260922-apply"], "locator": "National Service Obligation" },
+        { "id": "application", "label": "Official application", "text": "Use ICA's e-Service and the relevant document checklist; family applicants must make their required declarations.", "state": "documented", "sourceIds": ["sg-refresh-20260922-apply"], "locator": "Singpass Requirement; Documents Required" },
+        { "id": "foreign-renunciation", "label": "Foreign renunciation before registration", "text": "ICA's FAQ directs successful applicants older than 21 to use its approval letter to renounce their foreign citizenship with the relevant foreign authority, then bring the resulting evidence to complete Singapore registration. This is not an instruction to renounce before ICA approval.", "state": "conditional", "sourceIds": ["sg-refresh-20260922-renounce"], "locator": "Answer: successful applicants above 21; ICA approval letter; foreign renunciation document before registration formalities" },
+        { "id": "foreign-renunciation-upload", "label": "Upload route depends on application date", "text": "For applications before 26 June 2024, ICA directs applicants to the additional-document upload in the earlier citizenship service. Applications on or after that date use the separately linked service. Upload a copy of the foreign-renunciation letter; request ICA assistance if upload fails.", "state": "conditional", "sourceIds": ["sg-refresh-20260922-upload"], "locator": "Answer: applications submitted before versus on or after 26 June 2024; upload assistance" },
+        { "id": "foreign-renunciation-evidence", "label": "Final evidence must come from the foreign authority", "text": "ICA gives an authority letter confirming cessation or renunciation of the foreign nationality, or that the person is no longer its citizen, as examples of acceptable final evidence. The examples do not establish every country's renunciation procedure.", "state": "documented", "sourceIds": ["sg-refresh-20260922-final-proof"], "locator": "Answer: examples of acceptable final renunciation documents" },
+        { "id": "foreign-renunciation-difficulty", "label": "Difficulty requires individual consideration", "text": "If renunciation is difficult, ICA invites an enquiry with documentary proof from the foreign embassy for consideration. That invitation is not a guaranteed waiver or general permission to retain another nationality.", "state": "conditional", "sourceIds": ["sg-refresh-20260922-difficulty"], "locator": "Answer: documentary proof from the foreign embassy; acceptability for citizenship registration" }
+      ],
+      "limits": [
+        "Permanent residence must be obtained separately; the minimum PR period is neither processing time nor approval.",
+        "The renunciation FAQ uses an age-above-21 cohort. Do not infer an exemption for an applicant exactly 21 or generalize it to minors; follow the individual ICA approval letter and obtain clarification where needed.",
+        "Foreign renunciation law and its document requirements remain jurisdiction-specific. This page does not determine another country's loss-of-nationality rules or permission for dual citizenship."
+      ]
+    }
+  ],
+  "supersedes": [
+    { "code": "SG", "topic": "citizenship", "candidateSha256": "456ccdc58839a538a9ce8611b8e65a04e43a8c06b87dcfdcc90fc808f61cf6c4" }
+  ]
+}

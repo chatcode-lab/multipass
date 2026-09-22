@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "researcher": "/root",
+  "retrievedAt": "2026-09-22",
+  "sources": [
+    {
+      "id": "ranks2140-ua-citizenship-law",
+      "publisher": "Verkhovna Rada of Ukraine",
+      "title": "Law 2235-III on citizenship of Ukraine, consolidation effective 10 May 2026",
+      "url": "https://zakon.rada.gov.ua/laws/show/2235-14/print",
+      "language": "uk",
+      "retrievedAt": "2026-09-22"
+    },
+    {
+      "id": "ranks2140-ua-naturalisation",
+      "publisher": "State Migration Service of Ukraine",
+      "title": "Admission to citizenship of Ukraine: current Article 9 service guidance",
+      "url": "https://dmsu.gov.ua/poslugi/nabuttya-gromadyanstva-ukrajni/prijnyattya-do-gromadyanstva-ukrajni.html",
+      "language": "uk",
+      "retrievedAt": "2026-09-22"
+    },
+    {
+      "id": "ranks2140-ua-language-exam",
+      "publisher": "National Commission on State Language Standards of Ukraine",
+      "title": "How to take the examination for acquiring citizenship",
+      "url": "https://mova.gov.ua/gromadskosti/zapitannya-vidpovidi/yak-sklasty-ispyt-iz-metoiu-nabuttia-hromadianstva",
+      "language": "uk",
+      "retrievedAt": "2026-09-22"
+    },
+    {
+      "id": "ranks2140-ua-simplified-list",
+      "publisher": "Cabinet of Ministers of Ukraine / Verkhovna Rada legal register",
+      "title": "Resolution 1412: simplified-citizenship nationality list, amended through 30 June 2026",
+      "url": "https://zakon.rada.gov.ua/laws/show/1412-2025-%D0%BF/print",
+      "language": "uk",
+      "retrievedAt": "2026-09-22"
+    },
+    {
+      "id": "ranks2140-ua-simplified-guidance",
+      "publisher": "State Migration Service of Ukraine",
+      "title": "Acquisition and restoration for nationals of simplified-procedure countries",
+      "url": "https://dmsu.gov.ua/poslugi/nabuttya-gromadyanstva-ukrajni/asf.html",
+      "language": "uk",
+      "retrievedAt": "2026-09-22"
+    },
+    {
+      "id": "ranks2140-ua-tax-code",
+      "publisher": "Verkhovna Rada of Ukraine",
+      "title": "Tax Code of Ukraine, consolidation effective 17 September 2026",
+      "url": "https://zakon.rada.gov.ua/laws/show/2755-17/print",
+      "language": "uk",
+      "retrievedAt": "2026-09-22"
+    },
+    {
+      "id": "ranks2140-ua-filing2026",
+      "publisher": "State Tax Service of Ukraine",
+      "title": "2026 declaration campaign: principal personal-income return obligations",
+      "url": "https://www.tax.gov.ua/deklaratsiyna-kampaniya-2026/osnovni-vipadki-podannya-deklaratsii",
+      "language": "uk",
+      "retrievedAt": "2026-09-22"
+    }
+  ],
+  "topics": [
+    {
+      "code": "UA",
+      "topic": "citizenship",
+      "title": "Ukraine citizenship and naturalisation requirements",
+      "summary": "Ordinary naturalisation requires five years of continuous residence, an immigration permit, lawful means and language/civic examinations. The 2026 multiple-citizenship framework is conditional and does not make every nationality or applicant eligible for simplified treatment.",
+      "scope": "Selected adult ordinary Article 9 naturalisation requirements in the current Citizenship Law, with the listed-nationality declaration route under Article 10-1. Special family, protection, military and territorial-origin cohorts are distinguished but not fully modelled.",
+      "jurisdiction": "Ukraine: citizenship",
+      "routeType": "naturalisation",
+      "facts": [
+        {
+          "id": "residence",
+          "label": "Five continuous years under the statutory definition",
+          "text": "The ordinary Article 9 route requires continuous residence in Ukraine during the preceding five years. Article 1 defines continuity through permanent residence, allowing private trips of no more than ninety days each and no more than 180 days in a year. Documented business, education, treatment and rehabilitation trips do not break continuity under the stated exception. Mere visits or a nominal address do not establish the ordinary qualifying period.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-citizenship-law", "ranks2140-ua-naturalisation"],
+          "locator": "Citizenship Law Article 1 definitions of permanent and continuous residence; Article 9 part two point 3; DMS service condition 3",
+          "constraint": {
+            "value": 5,
+            "unit": "years",
+            "basis": "permanent_residence",
+            "cohort": "Ordinary adult Article 9 route, preceding five continuous years as defined in Article 1; private-trip limits and documented-purpose exceptions apply"
+          }
+        },
+        {
+          "id": "status-means-cohorts",
+          "label": "Immigration permission, means and separate cohorts",
+          "text": "An immigration permit and lawful sources of subsistence are ordinary requirements in addition to residence. Article 9 has separate reduced periods or exemptions for specified spouses, protection/statelessness, overseas-Ukrainian-status, military, merit and state-interest cohorts. Those exceptions have their own conditions and do not shorten the ordinary five-year route for every applicant.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-citizenship-law", "ranks2140-ua-naturalisation"],
+          "locator": "Citizenship Law Article 9 part two points 3-5 and following exception paragraphs; Article 1 lawful-subsistence definition; DMS service conditions 3-5"
+        },
+        {
+          "id": "language-civics",
+          "label": "Ukrainian language certificate and civic examinations",
+          "text": "Ordinary applicants must know the constitutional foundations and history of Ukraine and meet the state-language standard. The Language Commission's citizenship examination awards a state certificate at intermediate first degree B1 after a successful result of seventy to one hundred percent. The language examination is separate from the constitutional/history examinations; passing it alone does not confer citizenship. No separate skill-level equivalence is inferred here.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-citizenship-law", "ranks2140-ua-language-exam"],
+          "locator": "Citizenship Law Article 9 part two point 2; Language Commission FAQ, successful result and B1 certificate paragraphs"
+        },
+        {
+          "id": "examination-exceptions",
+          "label": "Exemptions and deferred examinations are different",
+          "text": "The Act exempts the specified legally incapacitated and medically evidenced mental-disorder or sight, hearing and speech-disability cohorts from the examinations. Certain merit, state-interest, military and specified temporary-residence cohorts instead submit a commitment to pass within two years. That deferral is not a blanket waiver, and the ordinary applicant cannot assume it applies.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-citizenship-law", "ranks2140-ua-naturalisation"],
+          "locator": "Citizenship Law Article 9 examination-exemption and examination-commitment paragraphs; Article 1 definition of examination commitment; DMS conditions 1-2 and exception notes"
+        },
+        {
+          "id": "conduct-grant",
+          "label": "Legal compliance, security screening and presidential grant",
+          "text": "The ordinary applicant declares recognition of and compliance with Ukraine's Constitution and laws. Article 9 bars specified serious criminal and national-security cases, with narrowly defined exceptions requiring their own assessment. Acquisition under this article takes effect on the date of the relevant presidential decree; satisfying a residence period or submitting documents is not acquisition.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-citizenship-law", "ranks2140-ua-naturalisation"],
+          "locator": "Citizenship Law Article 9 part two point 1, exclusion/exception paragraphs and final acquisition-date paragraph"
+        },
+        {
+          "id": "multiple-nationality",
+          "label": "Listed-nationality declarations do not waive eligibility",
+          "text": "Articles 5-1 and 10-1 recognise specified multiple-citizenship situations. Nationals on the Cabinet's simplified-procedure list may submit a declaration recognising themselves as Ukrainian citizens, while still satisfying the applicable Article 9 conditions and pre-admission examinations. The current list includes, for example, the United States, Canada, the United Kingdom and Moldova. It is not permission for every nationality combination. Applicants also holding an unlisted or designated aggressor/occupying-state nationality face the separate undertaking to terminate that nationality, subject to the Act's specific exceptions.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-citizenship-law", "ranks2140-ua-simplified-list", "ranks2140-ua-simplified-guidance"],
+          "locator": "Citizenship Law Articles 5-1 and 10-1 opening three paragraphs; Cabinet Resolution 1412 list as amended by Resolutions 589/2026 and 826/2026; DMS simplified-procedure guidance"
+        },
+        {
+          "id": "renunciation-and-loss",
+          "label": "Other-nationality obligations and loss rules remain",
+          "text": "Depending on the applicant's cohort, the Act requires the appropriate recognition, renunciation, absence-of-nationality declaration or undertaking to terminate foreign citizenship. The ordinary termination undertaking includes producing proof within two years of acquiring Ukrainian citizenship. Article 19 retains specified loss grounds, including certain voluntary foreign acquisitions and failure to fulfil acquisition commitments; termination occurs through the relevant presidential decree. A Ukrainian declaration does not itself decide whether another country retains or removes its nationality.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-citizenship-law"],
+          "locator": "Citizenship Law Article 1 termination-undertaking definition; Article 9 document alternatives; Article 10-1 cohort distinctions; Article 19 points 1-2 and decree-date paragraph"
+        }
+      ],
+      "limits": [
+        "The ordinary adult route is not a complete checklist for family, descent/territorial origin, protection, statelessness, military, restoration or exceptional cases. Wartime and nationality/territory-specific restrictions require individual current assessment; no military participation is recommended or presented as an ordinary shortcut.",
+        "The Citizenship Law consolidation is dated 10 May 2026. The simplified-country list was expanded in May and June 2026; the earlier five-country announcement is not the current full list. A transitional July 2026 filing window is not advertised as still open.",
+        "This profile does not establish an approval guarantee, processing time, immigration-permit availability or the effect of a Ukrainian declaration under another country's law. Official document and examination procedures should be checked before applying."
+      ]
+    },
+    {
+      "code": "UA",
+      "topic": "taxes",
+      "title": "Ukraine tax residence and foreign income",
+      "summary": "Ukraine uses a hierarchy of residence connections rather than a standalone 183-day rule. Resident foreign income, nonresident Ukrainian-source income, treaty relief and reporting obligations require separate assessment, especially when living abroad.",
+      "scope": "Selected individual residence, source-income, foreign-income credit and filing provisions of the Tax Code consolidated on 17 September 2026, with the State Tax Service's 2026 declaration guidance. Not a personal tax calculation or comprehensive wartime-relief guide.",
+      "jurisdiction": "Ukraine: individual income tax",
+      "facts": [
+        {
+          "id": "residence-hierarchy",
+          "label": "Residence, permanent home and centre of vital interests",
+          "text": "The individual-residence definition begins with a place of residence in Ukraine. If there is also a foreign residence, it considers a permanent home and then closer personal or economic connections. Permanent residence of family members or business registration is sufficient, but not exclusive, evidence of the centre of vital interests. Fewer than 183 days abroad or in Ukraine is not by itself the complete residence decision.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-tax-code"],
+          "locator": "Tax Code Article 14.1.213(c), permanent-home and centre-of-vital-interests paragraphs"
+        },
+        {
+          "id": "days-and-nationality",
+          "label": "Day count is a fallback, not the only test",
+          "text": "If the centre of vital interests cannot be determined, or there is no permanent home in either country, at least 183 days in Ukraine in the tax year establishes residence under this provision; arrival and departure days count. If the preceding tests still cannot determine status, Ukrainian citizenship is a fallback. The provision also addresses self-determination of a main home and self-employment registration, while electronic-resident status alone is not sufficient evidence of the centre of vital interests.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-tax-code"],
+          "locator": "Tax Code Article 14.1.213, day-count, citizenship, main-home/self-employment and electronic-resident paragraphs"
+        },
+        {
+          "id": "income-scope",
+          "label": "Resident foreign income and nonresident local income",
+          "text": "The individual income-tax framework includes both Ukrainian and foreign income for residents, subject to statutory exclusions and applicable treaty provisions. Nonresidents are generally taxed on Ukrainian-source income, with a specified diplomatic-income exception. Source and income category matter; an overseas account or a foreign passport is not itself a tax exemption.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-tax-code"],
+          "locator": "Tax Code Articles 13.3, 162.1-162.2, 163.1-163.2 and 170.11.1"
+        },
+        {
+          "id": "foreign-credit",
+          "label": "Foreign-tax relief needs the right treaty and evidence",
+          "text": "Treaty rules prevail where the Code expressly recognises a different treaty rule. A permitted reduction for foreign tax is claimed in the annual return and requires official proof of the tax paid and its base, with legalisation unless the applicable treaty provides otherwise. The credit is subject to the Code's cap and exclusions, including the specified capital/property and indirect taxes; paying any foreign charge does not automatically settle Ukrainian liability.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-tax-code"],
+          "locator": "Tax Code Articles 3.2, 13.4-13.5 and 170.11.2-170.11.4"
+        },
+        {
+          "id": "filing",
+          "label": "Foreign income can require an annual return",
+          "text": "Taxable foreign income ordinarily triggers an annual return. The tax authority also identifies foreign nationals who become Ukrainian tax residents, residents controlling foreign companies and residents departing for permanent residence abroad as filing cohorts. Excluded income and other express filing exceptions must be checked; the departure rule specifies filing no later than sixty calendar days before departure, not an automatic nonresidence date.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-tax-code", "ranks2140-ua-filing2026"],
+          "locator": "Tax Code Articles 170.11.1-170.11.2 and 179.3; State Tax Service 2026 campaign, principal filing cohorts and exceptions"
+        },
+        {
+          "id": "multiple-nationality-limit",
+          "label": "Do not apply the unlawful-dual-nationality clause universally",
+          "text": "Article 14.1.213 contains a particular foreign-tax-credit restriction where a Ukrainian citizen holds another nationality contrary to law. The Citizenship Law now recognises specified multiple-citizenship cases. The tax wording therefore must not be restated as denying foreign-tax credits to every lawful dual national; whether a particular case falls within it and the applicable treaty requires separate legal assessment.",
+          "state": "conditional",
+          "sourceIds": ["ranks2140-ua-tax-code", "ranks2140-ua-citizenship-law"],
+          "locator": "Tax Code Article 14.1.213 paragraph beginning 'Якщо всупереч закону'; Citizenship Law Article 5-1"
+        }
+      ],
+      "limits": [
+        "General information only. This does not determine an individual's domestic or treaty residence, worldwide tax bill, treaty tie-breaker, credit entitlement, social contributions or military levy. The citizenship fallback is part of a sequence, not a universal passport-based taxation rule.",
+        "Detailed wartime, displaced-person, humanitarian-assistance, reporting-deadline, controlled-foreign-company and business-regime exceptions are outside this baseline. Living abroad or receiving foreign assistance is not enough to infer a tax or filing result from this summary.",
+        "The Code's displayed consolidation is dated 17 September 2026. The 2026 declaration campaign is operational corroboration, not a replacement for the law or a claim that every listed obligation applies to every reader."
+      ]
+    }
+  ]
+}

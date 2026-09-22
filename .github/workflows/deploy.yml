@@ -26,6 +26,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:all
+      - run: npm run profiles:coverage -- --require-complete
       - name: Deploy sync worker
         run: npm run worker:deploy
         env:

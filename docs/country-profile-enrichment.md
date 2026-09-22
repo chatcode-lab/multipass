@@ -4,6 +4,8 @@ Research date: 16 September 2026. Implementation update: 17 September 2026. The 
 
 The top-20 expansion covers every frozen displayed rank through 20, including ties: 47 passports, not 20 rows. All 94 cohort citizenship/tax topics and both indicator outcomes per profile are independently approved; India remains from the pilot. Its [scope and release checks](../research/country-profiles/top20-plan.md) distinguish reviewed collection from deployment and from exhaustive legal certainty. Incremental topics carry their own review; absent facts and unavailable statistics never become zero or a blanket approval.
 
+The [22 September ranks 21–40 expansion](../research/country-profiles/ranks21-40-plan.md) adds 25 tied passports, targeting a combined 72-passport cohort plus the retained India pilot: 145 legal topics and 146 indicator collection outcomes. It also introduces explicit hash-bound legal supersession for reviewed corrections and raw-byte statistical source provenance. Consult that plan for actual approval and deployment status. This pass extends the existing two indicator families; PISA, Big Mac and other proposed families below are not silently included in its completion figures.
+
 This extends [the country-indicators proposal](country-indicators-plan.md) and follows the provenance, canonical-URL and cost constraints in [the SEO/AEO playbook](seo-aeo-playbook.md). The objective is to make existing passport pages more useful to people and agents, not to invent another overall passport score.
 
 ## Recommended product scope

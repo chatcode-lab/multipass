@@ -8,6 +8,7 @@ import { indicatorCandidateSchema } from "../src/lib/country-indicator-schema";
 
 const [candidatePath, reviewPath, kind, batchId] = process.argv.slice(2);
 if (!candidatePath || !reviewPath) throw new Error("Usage: tsx scripts/publish-country-profiles.ts <candidate.json> <review.json> [indicators|topics] [expansion-batch-id]");
+if (kind !== "indicators" && !batchId) throw new Error("The legal pilot is immutable. Publish a new reviewed batch with explicit supersedes references instead.");
 const raw = await readFile(candidatePath, "utf8");
 if (kind && !["indicators", "topics"].includes(kind)) throw new Error("Unknown artifact kind");
 const candidate = kind === "indicators" ? indicatorCandidateSchema.parse(JSON.parse(raw)) : countryProfileCandidateSchema.parse(JSON.parse(raw));
@@ -28,10 +29,16 @@ if (batchId) {
   console.log(`Published approved expansion ${batchId}; retained all prior topics and their reviews. Deployment is separate.`);
 } else {
   const path = new URL(`../src/data/${kind === "indicators" ? "country-indicators" : "country-profiles"}.json`, import.meta.url);
-  if (kind !== "indicators") {
-    const existing = JSON.parse(await readFile(new URL("../src/data/country-profile-expansions.json", import.meta.url), "utf8")) as CountryProfileBatch[];
-    compileCountryProfileBatches([{ ...countryProfileCandidateSchema.parse(candidate), review }, ...existing]);
+  let id: string | undefined;
+  if (kind === "indicators") {
+    id = basename(candidatePath).replace(/\.candidate\.json$/, "");
+    if (!/^[a-z0-9-]+$/.test(id) || basename(candidatePath) !== `${id}.candidate.json` || basename(reviewPath) !== `${id}.review.json`) throw new Error("Indicator audit filenames must share a safe ID.");
+    const previous = JSON.parse(await readFile(path, "utf8"));
+    const next = indicatorCandidateSchema.parse(candidate);
+    if (previous.retrievedAt > next.retrievedAt) throw new Error("Cannot roll indicators back to an older collection.");
+    const identities = new Set(next.observations.map((row) => `${row.code}/${row.metric}`));
+    if (previous.observations.some((row: { code: string; metric: string }) => !identities.has(`${row.code}/${row.metric}`))) throw new Error("Indicator refresh cannot silently discard a previous collection outcome.");
   }
-  await writeFile(path, `${JSON.stringify({ ...candidate, review }, null, 2)}\n`);
+  await writeFile(path, `${JSON.stringify({ ...candidate, review, ...(id ? { id } : {}) }, null, 2)}\n`);
   console.log(`Published approved ${kind ?? "country-topic"} artifact with ${candidate.sources.length} sources. Deployment is separate.`);
 }
