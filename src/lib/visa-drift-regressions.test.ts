@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
 import reviewedEvidence from "@/data/reviewed-visa-evidence.json";
-import { VISA_POLICY_EVIDENCE } from "@/data/visa-evidence";
+import { REVIEWED_POLICY_REFRESHES, VISA_POLICY_EVIDENCE } from "@/data/visa-evidence";
 import { applyAccessOverrides, calculateMobilityScore, reconcileManifestPassportDetails } from "./passport";
 import { getVisaRelationshipEvidence } from "./visa-evidence";
 import type { AccessStatus, DataSnapshot, PassportAccess } from "./types";
@@ -80,5 +80,77 @@ describe("reviewed September 2026 live/fallback drift", () => {
       expect(snapshot.manifest.passports.find((passport) => passport.code === code)?.mobilityScore).toBe(detail.mobilityScore);
     }
     expect(reconcileManifestPassportDetails(snapshot.manifest, snapshot.passports)).toEqual(snapshot.manifest);
+  });
+});
+
+describe("autumn 2026 seasonal visa boundaries", () => {
+  it("preserves old evidence artifacts but shows one reviewed same-scope timeline record", () => {
+    for (const [previousId, replacementId] of Object.entries(REVIEWED_POLICY_REFRESHES)) {
+      const previous = reviewedEvidence.policies.find(({ id }) => id === previousId)!;
+      const replacement = VISA_POLICY_EVIDENCE.find(({ id }) => id === replacementId)!;
+      expect(previous).toBeDefined();
+      expect(VISA_POLICY_EVIDENCE.some(({ id }) => id === previousId)).toBe(false);
+      expect(replacement).toMatchObject({
+        status: previous.status,
+        passportCodes: previous.passportCodes,
+        destinationCodes: previous.destinationCodes,
+        effectiveFrom: previous.effectiveFrom,
+      });
+      expect(replacement.effectiveTo).toBe(previous.effectiveTo);
+      expect(replacement.sourceIds).not.toEqual(previous.sourceIds);
+      for (const id of previous.sourceIds) {
+        expect(reviewedEvidence.sources.find((source) => source.id === id)?.reviewedAt).toMatch(/^2026-08-/);
+      }
+    }
+  });
+
+  it.each(["BH", "OM", "SA"])("applies Bosnia's documented %s post-season visa baseline, not before", (code) => {
+    expect(normalized(code, "BA", "visa_free", "2026-09-30"))
+      .toMatchObject({ mobilityScore: 1, statuses: { BA: "visa_free" } });
+    expect(getVisaRelationshipEvidence(code, "BA", "visa_free", "2026-09-30").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence(code, "BA", "visa_required", "2026-09-30").supportsCurrentStatus).toBe(false);
+    expect(normalized(code, "BA", "visa_free", "2026-10-01"))
+      .toMatchObject({ mobilityScore: 0, statuses: { BA: "visa_required" } });
+    expect(getVisaRelationshipEvidence(code, "BA", "visa_required", "2026-10-01").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence(code, "BA", "visa_free", "2026-10-01").supportsCurrentStatus).toBe(false);
+    expect(normalized("QA", "BA", "visa_free", "2026-10-01").statuses.BA).toBe("visa_free");
+  });
+
+  it.each(["CN", "HK", "MO"])("stops scoring the %s Cambodia trial after its inclusive endpoint", (code) => {
+    expect(normalized(code, "KH", "visa_free", "2026-10-15"))
+      .toMatchObject({ mobilityScore: 1, statuses: { KH: "visa_free" } });
+    expect(getVisaRelationshipEvidence(code, "KH", "visa_free", "2026-10-15").supportsCurrentStatus).toBe(true);
+
+    for (const staleStatus of ["visa_free", "visa_required", "evisa"] as const) {
+      expect(normalized(code, "KH", staleStatus, "2026-10-16"))
+        .toMatchObject({ mobilityScore: 0, statuses: { [code]: "citizenship", KH: "unknown" } });
+    }
+    const afterExpiry = getVisaRelationshipEvidence(code, "KH", "unknown", "2026-10-16");
+    expect(afterExpiry.supportsCurrentStatus).toBe(false);
+    expect(afterExpiry.allowedStays).toHaveLength(0);
+  });
+
+  it("keeps Montenegro's explicit Kazakhstan successor rather than guessing from expiry", () => {
+    expect(normalized("KZ", "ME", "visa_free", "2026-10-01"))
+      .toMatchObject({ mobilityScore: 1, statuses: { ME: "visa_free" } });
+    expect(getVisaRelationshipEvidence("KZ", "ME", "visa_free", "2026-10-01").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KZ", "ME", "visa_required", "2026-10-01").supportsCurrentStatus).toBe(false);
+    expect(normalized("KZ", "ME", "visa_free", "2026-10-02"))
+      .toMatchObject({ mobilityScore: 0, statuses: { ME: "visa_required" } });
+    expect(getVisaRelationshipEvidence("KZ", "ME", "visa_required", "2026-10-02").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("KZ", "ME", "visa_free", "2026-10-02").supportsCurrentStatus).toBe(false);
+  });
+
+  it("uses UTC midnight for the Cambodia transition without affecting neighbouring cohorts", () => {
+    vi.useFakeTimers();
+    const detail = { code: "CN", name: "China", mobilityScore: 1, statuses: { CN: "citizenship" as const, KH: "visa_free" as const } };
+    vi.setSystemTime(new Date("2026-10-15T23:59:59.999Z"));
+    expect(applyAccessOverrides(detail).statuses.KH).toBe("visa_free");
+    vi.setSystemTime(new Date("2026-10-16T00:00:00.000Z"));
+    expect(applyAccessOverrides(detail).statuses.KH).toBe("unknown");
+    expect(normalized("SG", "KH", "visa_free", "2026-10-16").statuses.KH).toBe("visa_free");
+    expect(normalized("MW", "KH", "evisa", "2026-10-16").statuses.KH).toBe("evisa");
+    const partial = { code: "CN", name: "China", mobilityScore: 0, statuses: { CN: "citizenship" as const } };
+    expect(applyAccessOverrides(partial)).toBe(partial);
   });
 });

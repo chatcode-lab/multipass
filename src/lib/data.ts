@@ -34,6 +34,8 @@ let fallbackCache: {
 
 let liveSnapshotCache: {
   expiresAt: number;
+  asOf: string;
+  raw: Promise<PublishedDataSnapshot | null>;
   value: Promise<PublishedDataSnapshot | null>;
 } | undefined;
 
@@ -110,11 +112,22 @@ async function getLiveSnapshot(): Promise<PublishedDataSnapshot | null> {
   if (!kv) return null;
 
   const now = Date.now();
-  if (liveSnapshotCache && liveSnapshotCache.expiresAt > now) return liveSnapshotCache.value;
+  const asOf = new Date(now).toISOString().slice(0, 10);
+  if (liveSnapshotCache && liveSnapshotCache.expiresAt > now) {
+    if (liveSnapshotCache.asOf !== asOf) {
+      // Reapply date-bound policies at UTC midnight, without another edge/KV
+      // read or extending the upstream snapshot's five-minute memory lifetime.
+      liveSnapshotCache.asOf = asOf;
+      liveSnapshotCache.value = liveSnapshotCache.raw
+        .then((snapshot) => snapshot ? reconcileSnapshot(snapshot) : null);
+    }
+    return liveSnapshotCache.value;
+  }
 
-  const value = readPublishedSnapshot(kv)
+  const raw = readPublishedSnapshot(kv);
+  const value = raw
     .then((snapshot) => snapshot ? reconcileSnapshot(snapshot) : null);
-  liveSnapshotCache = { expiresAt: now + LIVE_SNAPSHOT_CACHE_MS, value };
+  liveSnapshotCache = { expiresAt: now + LIVE_SNAPSHOT_CACHE_MS, asOf, raw, value };
 
   try {
     return await value;

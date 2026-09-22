@@ -37,6 +37,30 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...([
+    ["BH", "https://www.mvp.gov.ba/en/org_cmd57sdlc000nn43u2rk8pgsd_639185064814075651"],
+    ["OM", "https://www.mvp.gov.ba/en/org_cmd57sdlc000nn43u2rk8pgsd_639185066739711338"],
+    ["SA", "https://www.mvp.gov.ba/en/org_cmd57sdlc000nn43u2rk8pgsd_639185068629890721"],
+  ] as const).map(([passportCode, sourceUrl]) => ({
+    passportCode,
+    destinationCode: "BA" as const,
+    status: "visa_required" as const,
+    reason: "Bosnia and Herzegovina's current MFA nationality guidance explicitly requires an ordinary-passport visa for stays after 30 September 2026. The seasonal waiver is not an ongoing passport-only exemption.",
+    sourceUrl,
+    reviewedAt: "2026-09-22",
+    effectiveFrom: "2026-10-01",
+  })),
+  ...(["CN", "HK", "MO"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "KH" as const,
+    status: "unknown" as const,
+    // A conservative expiry safeguard, not a verified successor category.
+    // Fresh government corroboration confirms the trial, not a successor.
+    reason: "The reviewed Cambodia tourist-waiver trial ends on 15 October 2026. A renewal or successor category has not been independently verified; do not keep scoring a stale visa-free snapshot after the trial.",
+    sourceUrl: "https://akp.gov.kh/post/detail/373161",
+    reviewedAt: "2026-09-22",
+    effectiveFrom: "2026-10-16",
+  })),
   ...(["NI", "SB"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "HK" as const,

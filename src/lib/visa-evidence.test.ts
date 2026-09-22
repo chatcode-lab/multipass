@@ -43,6 +43,7 @@ import {
   NEW_ZEALAND_STANDARD_NZETA_CODES,
   NEW_ZEALAND_VISITOR_VISA_REQUIRED_CODES,
   OFFICIAL_VISA_SOURCES,
+  REVIEWED_POLICY_REFRESHES,
   PALAU_PRECLEARANCE_ETA_ORDINARY_PASSPORT_CODES,
   RWANDA_VOA_ORDINARY_PASSPORT_CODES,
   SAMOA_VOA_ORDINARY_PASSPORT_CODES,
@@ -5674,6 +5675,9 @@ describe("official visa evidence", () => {
       "homeaffairs.govt.lc",
       "npc.govt.lc",
       "pressocm.gov.kh",
+      "akp.gov.kh",
+      "kh.china-embassy.gov.cn",
+      "www.gcs.gov.mo",
       "digital.gov.kg",
       "docstore.ohchr.org",
       "nepalpassport.gov.np",
@@ -6463,7 +6467,9 @@ describe("official visa evidence", () => {
       }
     }
     for (const policyId of Object.keys(REVIEWED_ALLOWED_STAYS)) {
-      expect(policyIds, `Unknown allowed-stay policy ${policyId}`).toContain(policyId);
+      // Archived annotations remain auditable when a complete same-scope
+      // reviewed replacement supplies its own current structured stay.
+      expect(policyIds, `Unknown allowed-stay policy ${policyId}`).toContain(REVIEWED_POLICY_REFRESHES[policyId] ?? policyId);
     }
   });
 });

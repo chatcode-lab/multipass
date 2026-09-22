@@ -3933,7 +3933,33 @@ const DATED_POLICY_SUCCESSIONS: Record<string, { codes: string[]; through: strin
   "french-guiana-ordinary-passport-advance-visa-complement": { codes: ["BR"], through: "2026-07-30" },
 };
 
+// A complete, independently reviewed same-scope refresh replaces the displayed
+// record, not the archived artifact. Keep one timeline event for one policy.
+export const REVIEWED_POLICY_REFRESHES: Readonly<Record<string, string>> = {
+  "cambodia-temporary-prc-hksar-macao-tourist-visa-exemption": "pass414-kh-chinese-tourist-trial-through-october15",
+  "bosnia-direct-gulf-ordinary-passports-temporary-visa-free-2026": "pass414-ba-gulf-seasonal-waiver-through-september-2026",
+  "montenegro-kazakhstan-seasonal-30-days": "pass414-me-kazakhstan-seasonal-waiver-through-october-1",
+  "montenegro-kazakhstan-advance-visa-from-october-2026": "pass414-me-kazakhstan-prior-visa-from-october-2",
+};
+const policyById = new Map(BASE_VISA_POLICY_EVIDENCE.map((policy) => [policy.id, policy]));
+const refreshScope = (policy: VisaPolicyEvidence) => JSON.stringify({
+  status: policy.status,
+  passportCodes: policy.passportCodes ? [...policy.passportCodes].sort() : null,
+  excludedPassportCodes: [...(policy.excludedPassportCodes ?? [])].sort(),
+  destinationCodes: [...policy.destinationCodes].sort(),
+  effectiveFrom: policy.effectiveFrom ?? null,
+  effectiveTo: policy.effectiveTo ?? null,
+});
+for (const [previousId, replacementId] of Object.entries(REVIEWED_POLICY_REFRESHES)) {
+  const previous = policyById.get(previousId);
+  const replacement = policyById.get(replacementId);
+  if (!previous || !replacement || refreshScope(previous) !== refreshScope(replacement)) {
+    throw new Error(`Reviewed refresh must preserve the exact policy scope: ${previousId} -> ${replacementId}`);
+  }
+}
+
 export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POLICY_EVIDENCE.flatMap((policy) => {
+  if (REVIEWED_POLICY_REFRESHES[policy.id]) return [];
   const enriched = { ...policy, allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id] };
   const succession = DATED_POLICY_SUCCESSIONS[policy.id];
   if (!succession) return [enriched];

@@ -823,6 +823,43 @@ test("reviewed Hong Kong and French Guiana successors agree across public format
   }
 });
 
+test("seasonal waiver rechecks expose bounded stays consistently across public formats", async ({ page, request }) => {
+  const cases = [
+    { passport: "BH", destination: "BA", path: "/bahrain-bosnia-and-herzegovina-visa-free", days: 60, until: "2026-09-30", basis: "calendar_period" },
+    { passport: "OM", destination: "BA", path: "/oman-bosnia-and-herzegovina-visa-free", days: 60, until: "2026-09-30", basis: "calendar_period" },
+    { passport: "SA", destination: "BA", path: "/saudi-arabia-bosnia-and-herzegovina-visa-free", days: 60, until: "2026-09-30", basis: "calendar_period" },
+    { passport: "KZ", destination: "ME", path: "/kazakhstan-montenegro-visa-free", days: 30, until: "2026-10-01", basis: "per_visit" },
+    { passport: "CN", destination: "KH", path: "/china-cambodia-visa-free", days: 14, until: "2026-10-15", basis: "per_entry" },
+    { passport: "HK", destination: "KH", path: "/hong-kong-sar-china-cambodia-visa-free", days: 14, until: "2026-10-15", basis: "per_entry" },
+    { passport: "MO", destination: "KH", path: "/macao-sar-china-cambodia-visa-free", days: 14, until: "2026-10-15", basis: "per_entry" },
+  ];
+  for (const entry of cases) {
+    const api = await (await request.get(`/api/v1/visa/${entry.passport}/${entry.destination}`)).json();
+    expect(api).toMatchObject({ status: "visa_free", evidenceLevel: "exact" });
+    expect(api.policies).toHaveLength(1);
+    expect(api.policies[0]).toMatchObject({ effectiveTo: entry.until });
+    expect(api.policies[0].id).toMatch(/^pass414-/);
+    expect(api.allowedStays).toEqual([expect.objectContaining({ maxDays: entry.days, basis: entry.basis })]);
+    const markdown = await request.get(`${entry.path}.md`);
+    expect(markdown.ok()).toBe(true);
+    expect(await markdown.text()).toContain(`${entry.days} days`);
+    const negotiated = await request.get(entry.path, { headers: { accept: "text/markdown" } });
+    expect(negotiated.headers()["content-type"]).toContain("text/markdown");
+    expect(await negotiated.text()).toBe(await markdown.text());
+  }
+  for (const entry of [cases[0], cases[3], cases[4]]) {
+    await page.goto(entry.path);
+    await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
+    await expect(page.locator(".evidence-timeline article")).toHaveCount(1);
+    await expect(page.locator(`.evidence-timeline__meta time[datetime="${entry.until}"]`)).toBeVisible();
+    const sizes = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: window.innerWidth }));
+    expect(sizes.document - sizes.viewport).toBeLessThanOrEqual(1);
+  }
+  const bosnia = await request.get("/destination/bosnia-and-herzegovina.md");
+  expect(await bosnia.text()).toContain("October 1, 2026");
+  expect(await bosnia.text()).toContain("visa from 1 October 2026");
+});
+
 test("destination and relationship pages expose official evidence and Markdown", async ({ page, request }) => {
   await page.goto("/destination/angola");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Angola visa requirements");
