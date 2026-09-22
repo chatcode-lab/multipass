@@ -1,0 +1,82 @@
+{
+  "batchId": "pass413-hong-kong-live-drift-2026",
+  "researchedAt": "2026-09-22",
+  "sources": [
+    {
+      "id": "pass413-hk-immd-visitor-schedule-20260922",
+      "title": "Visit Visa / Entry Permit Requirements for the Hong Kong Special Administrative Region",
+      "url": "https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html",
+      "publisher": "Immigration Department, Government of the Hong Kong Special Administrative Region",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-09-22",
+      "officialityEvidence": "The destination Immigration Department's current visitor-requirements chapter was actually retrieved over ordinary public HTTPS. Part II table rows 141 and 175 explicitly give Nicaragua and Solomon Islands a 30-day visa-free visit period with no prior-visa requirement. The page footer is dated 26 August 2026. General and Part II instructions state the visitor-purpose and admission conditions.",
+      "supportingExcerpt": "Visa free period for visit not exceeding"
+    },
+    {
+      "id": "pass413-hk-immd-nicaragua-solomon-announcement-20260727",
+      "title": "Visa-free access to Nicaragua and Solomon Islands for HKSAR passport holders",
+      "url": "https://www.info.gov.hk/gia/general/202607/27/P2026072700708.htm",
+      "publisher": "Hong Kong Immigration Department via Government Information Services",
+      "jurisdiction": "Hong Kong Special Administrative Region",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-09-22",
+      "officialityEvidence": "The official HKSAR government press release was actually retrieved over ordinary public HTTPS. Although its headline concerns outbound HKSAR travel, its second substantive paragraph separately and explicitly grants Nicaragua and Solomon Islands nationals visa-free Hong Kong visits of up to 30 days effective 26 August 2026. The release is dated and issued 27 July 2026.",
+      "supportingExcerpt": "nationals of Nicaragua and Solomon Islands may visit Hong Kong visa-free for a stay of up to 30 days."
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass413-hk-nicaragua-solomon-ordinary-visitor-waiver-20260826",
+      "title": "Nicaragua and Solomon Islands: Hong Kong visitor waiver",
+      "summary": "Ordinary Nicaraguan and Solomon Islands passport holders may visit Hong Kong visa-free for up to 30 days from 26 August 2026. The current destination visitor schedule and the announcement's explicit inbound provision agree on the scope and permitted stay.",
+      "status": "visa_free",
+      "destinationCodes": ["HK"],
+      "passportCodes": ["NI", "SB"],
+      "announcedOn": "2026-07-27",
+      "effectiveFrom": "2026-08-26",
+      "conditions": [
+        "This is the ordinary nationality-based visitor route, not a diplomatic-passport, resident-document or direct-airside-transit exception.",
+        "The visa-free visit must not exceed 30 days. A person intending to stay longer than the permitted visa-free period must obtain the appropriate visa or entry permit before travelling.",
+        "Visitors must have adequate funds for their stay without working and onward or return tickets, except when in transit to Chinese Mainland or the Macao Special Administrative Region.",
+        "Visitor status does not permit paid or unpaid employment, establishing or joining a business, or entering a school as a student. Work, study, business establishment and residence require the appropriate permission unless a separate Part I entitlement applies.",
+        "Meeting the stated conditions does not guarantee admission; the immigration authority retains its power to refuse permission to land."
+      ],
+      "sourceIds": [
+        "pass413-hk-immd-visitor-schedule-20260922",
+        "pass413-hk-immd-nicaragua-solomon-announcement-20260727"
+      ],
+      "confidence": "high",
+      "allowedStays": [
+        {
+          "label": "Up to 30 days",
+          "basis": "per_visit",
+          "maxDays": 30,
+          "notes": ["The announcement expressly describes permitted visitor stay; this is not passport validity, visa validity or processing time."]
+        }
+      ]
+    }
+  ],
+  "conditional": [],
+  "conflicts": [
+    {
+      "passportCode": "NI",
+      "destinationCode": "HK",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "The bundled fallback and existing prior-visa cohort retain visa_required. The current official schedule explicitly gives Nicaragua a 30-day visitor waiver, and the 27 July 2026 destination announcement makes the inbound waiver effective 26 August 2026. The separately inspected live API already reports visa_free but pending evidence; that live hypothesis is now supported, not a reason to preserve the stale bundled rule.",
+      "sourceIds": ["pass413-hk-immd-visitor-schedule-20260922", "pass413-hk-immd-nicaragua-solomon-announcement-20260727"]
+    },
+    {
+      "passportCode": "SB",
+      "destinationCode": "HK",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "visa_free",
+      "explanation": "The bundled fallback and existing prior-visa cohort retain visa_required. The current official schedule explicitly gives Solomon Islands a 30-day visitor waiver, and the 27 July 2026 destination announcement makes the inbound waiver effective 26 August 2026. The separately inspected live API already reports visa_free but pending evidence; neither reciprocity nor omission from a visa-required list is used to prove this correction.",
+      "sourceIds": ["pass413-hk-immd-visitor-schedule-20260922", "pass413-hk-immd-nicaragua-solomon-announcement-20260727"]
+    }
+  ],
+  "unresolved": []
+}

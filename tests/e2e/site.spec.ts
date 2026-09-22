@@ -781,6 +781,48 @@ test("dataset pages declare creator and license metadata", async ({ page }) => {
   }
 });
 
+test("reviewed Hong Kong and French Guiana successors agree across public formats", async ({ page, request }) => {
+  const cases = [
+    { passport: "NI", destination: "HK", path: "/nicaragua-hong-kong-sar-china", policy: "pass413-hk-nicaragua-solomon-ordinary-visitor-waiver-20260826", from: "2026-08-26" },
+    { passport: "SB", destination: "HK", path: "/solomon-islands-hong-kong-sar-china", policy: "pass413-hk-nicaragua-solomon-ordinary-visitor-waiver-20260826", from: "2026-08-26" },
+    { passport: "BR", destination: "GF", path: "/brazil-french-guiana", policy: "pass413-french-guiana-brazil-temporary-ordinary-visa-free", from: "2026-07-31" },
+  ];
+  for (const entry of cases) {
+    const canonical = `${entry.path}-visa-free`;
+    const old = await request.get(`${entry.path}-visa`, { maxRedirects: 0 });
+    expect(old.status()).toBe(308);
+    expect(old.headers().location).toBe(canonical);
+    const api = await (await request.get(`/api/v1/visa/${entry.passport}/${entry.destination}`)).json();
+    expect(api).toMatchObject({ status: "visa_free", evidenceLevel: "exact" });
+    expect(api.allowedStays).toEqual(expect.arrayContaining([expect.objectContaining({ maxDays: 30 })]));
+    expect(api.policies).toEqual(expect.arrayContaining([expect.objectContaining({ id: entry.policy, effectiveFrom: entry.from })]));
+    if (entry.destination === "GF") {
+      expect(api.policies.find((policy: { id: string }) => policy.id === entry.policy).effectiveTo).toBe("2027-01-31");
+      expect(api.allowedStays[0].withinDays).toBe(180);
+    }
+    await page.goto(canonical);
+    await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /^index,/);
+    const historyEnd = entry.destination === "GF" ? "2026-07-30" : "2026-08-25";
+    await expect(page.locator(`.evidence-timeline__meta time[datetime="${historyEnd}"]`)).toBeVisible();
+    await expect(page.locator(".evidence-timeline article").filter({ hasText: "(historical:" }).locator(".evidence-timeline__meta"))
+      .toContainText("Through");
+    if (entry.destination === "GF") {
+      await expect(page.locator('.evidence-timeline__meta time[datetime="2027-01-31"]')).toBeVisible();
+    }
+    const sizes = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: window.innerWidth }));
+    expect(sizes.document - sizes.viewport).toBeLessThanOrEqual(1);
+    const markdown = await request.get(`${canonical}.md`);
+    expect(markdown.ok()).toBe(true);
+    expect(await markdown.text()).toContain("30 days");
+    expect(await markdown.text()).toContain(entry.destination === "GF" ? "Through July 30, 2026" : "Through August 25, 2026");
+    if (entry.destination === "GF") expect(await markdown.text()).toContain("July 31, 2026 – January 31, 2027");
+    const negotiated = await request.get(canonical, { headers: { accept: "text/markdown" } });
+    expect(negotiated.headers()["content-type"]).toContain("text/markdown");
+    expect(await negotiated.text()).toBe(await markdown.text());
+  }
+});
+
 test("destination and relationship pages expose official evidence and Markdown", async ({ page, request }) => {
   await page.goto("/destination/angola");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Angola visa requirements");

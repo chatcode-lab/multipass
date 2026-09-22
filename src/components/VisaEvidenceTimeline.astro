@@ -35,7 +35,8 @@ const formatDate = (value: string) => new Intl.DateTimeFormat("en", {
           <div class="evidence-timeline__marker" aria-hidden="true"></div>
           <article>
             <div class="evidence-timeline__meta">
-              {date ? <time datetime={date}>{formatDate(date)}</time> : <span>Current official route</span>}
+              {date ? <time datetime={date}>{formatDate(date)}</time> : !policy.effectiveTo && <span>Current official route</span>}
+              {policy.effectiveTo && <span>{date ? "– " : "Through "}<time datetime={policy.effectiveTo}>{formatDate(policy.effectiveTo)}</time></span>}
               <span>{STATUS_META[policy.status].label}</span>
             </div>
             <h3>{policy.title}</h3>

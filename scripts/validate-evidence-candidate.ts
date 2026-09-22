@@ -116,7 +116,9 @@ const destinationCodes = new Set(snapshot.manifest.destinations.map(({ code: val
 const sourceIds = new Set(candidate.sources.map(({ id }) => id));
 const queueBatch = queue.batches.find(({ id }) => id === candidate.batchId);
 const reviewedOverrideByPair = new Map(
-  VERIFIED_ACCESS_OVERRIDES.map((item) => [`${item.passportCode}:${item.destinationCode}`, item.status]),
+  // Dated expiry guards are not assertions of a verified replacement category.
+  VERIFIED_ACCESS_OVERRIDES.filter((item) => item.status !== "unknown")
+    .map((item) => [`${item.passportCode}:${item.destinationCode}`, item.status]),
 );
 const reviewedUnknownByPair = new Map(
   REVIEWED_UNKNOWN_OVERRIDES.map((item) => [`${item.passportCode}:${item.destinationCode}`, item]),

@@ -12,6 +12,9 @@ function readableDate(value: string): string {
 
 function policyMarkdown(policy: VisaPolicyEvidence, sources: Map<string, OfficialVisaSource>, passportCode?: string): string {
   const date = policy.effectiveFrom ?? policy.announcedOn;
+  const period = policy.effectiveTo
+    ? `${date ? `${readableDate(date)} – ` : "Through "}${readableDate(policy.effectiveTo)}`
+    : date ? readableDate(date) : "Current official route";
   const conditions = policy.conditions?.map((condition) => `  - ${escapeMarkdown(condition)}`).join("\n") ?? "";
   const sourceLines = policy.sourceIds.flatMap((sourceId) => {
     const source = sources.get(sourceId);
@@ -21,7 +24,7 @@ function policyMarkdown(policy: VisaPolicyEvidence, sources: Map<string, Officia
     ?.filter((rule) => !passportCode || allowedStayApplies(rule, passportCode))
     .map((rule) => `  - Allowed stay: **${escapeMarkdown(rule.label)}**`)
     .join("\n") ?? "";
-  return `- **${date ? readableDate(date) : "Current official route"} — ${escapeMarkdown(policy.title)}** (${STATUS_META[policy.status].label})
+  return `- **${period} — ${escapeMarkdown(policy.title)}** (${STATUS_META[policy.status].label})
   ${escapeMarkdown(policy.summary)}
 ${stays ? `${stays}\n` : ""}${conditions ? `${conditions}\n` : ""}  Official ${policy.sourceIds.length === 1 ? "source" : "sources"}:
 ${sourceLines}`;

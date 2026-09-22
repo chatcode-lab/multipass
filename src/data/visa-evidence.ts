@@ -3926,7 +3926,33 @@ const BASE_VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
   },
 ] as const;
 
-export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POLICY_EVIDENCE.map((policy) => ({
-  ...policy,
-  allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id],
-}));
+// Keep approved research artifacts immutable while ending only the superseded
+// nationality slices. The other members retain their original evidence dates.
+const DATED_POLICY_SUCCESSIONS: Record<string, { codes: string[]; through: string }> = {
+  "hong-kong-current-prior-visa-list": { codes: ["NI", "SB"], through: "2026-08-25" },
+  "french-guiana-ordinary-passport-advance-visa-complement": { codes: ["BR"], through: "2026-07-30" },
+};
+
+export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POLICY_EVIDENCE.flatMap((policy) => {
+  const enriched = { ...policy, allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id] };
+  const succession = DATED_POLICY_SUCCESSIONS[policy.id];
+  if (!succession) return [enriched];
+  if (!policy.passportCodes) throw new Error(`Dated succession needs an explicit cohort: ${policy.id}`);
+  return [
+    {
+      ...enriched,
+      passportCodes: policy.passportCodes.filter((code) => !succession.codes.includes(code)),
+      // This historical Brazil-only condition is not a current cohort rule.
+      conditions: policy.id === "french-guiana-ordinary-passport-advance-visa-complement"
+        ? policy.conditions?.filter((condition) => !condition.startsWith("Brazil's listed"))
+        : policy.conditions,
+    },
+    {
+      ...enriched,
+      id: `${policy.id}-before-${succession.through}`,
+      title: `${policy.title} (historical: ${succession.codes.join(" / ")})`,
+      passportCodes: policy.passportCodes.filter((code) => succession.codes.includes(code)),
+      effectiveTo: succession.through,
+    },
+  ];
+});

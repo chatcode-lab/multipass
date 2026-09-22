@@ -37,6 +37,36 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...(["NI", "SB"] as const).map((passportCode) => ({
+    passportCode,
+    destinationCode: "HK" as const,
+    status: "visa_free" as const,
+    reason: "Hong Kong's Immigration Department explicitly grants Nicaragua and Solomon Islands ordinary visitors visa-free stays of up to 30 days from 26 August 2026.",
+    sourceUrl: "https://www.info.gov.hk/gia/general/202607/27/P2026072700708.htm",
+    reviewedAt: "2026-09-22",
+    effectiveFrom: "2026-08-26",
+  })),
+  {
+    passportCode: "BR",
+    destinationCode: "GF",
+    status: "visa_free",
+    reason: "The 31 July 2026 order grants Brazilian ordinary-passport visitors 30 days in 180 in French Guiana; the prefecture explicitly identifies 31 January 2027 as the temporary trial's endpoint.",
+    sourceUrl: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054594286",
+    reviewedAt: "2026-09-22",
+    effectiveFrom: "2026-07-31",
+    effectiveTo: "2027-01-31",
+  },
+  {
+    passportCode: "BR",
+    destinationCode: "GF",
+    status: "unknown",
+    // An expiry safeguard, NOT a verified access category. Replace this guard
+    // only after independent review of a renewal or the successor regime.
+    reason: "The reviewed French Guiana trial has ended. Neither a renewed waiver nor a single post-trial ordinary-passport category has been verified; do not reuse stale visa-free or prior-visa snapshot data.",
+    sourceUrl: "https://www.guyane.gouv.fr/Actions-de-l-Etat/Cooperation/Cooperation-transfrontaliere-France-Bresil/Entree-en-Guyane-fin-de-l-obligation-de-visa-de-court-sejour-pour-les-Bresiliens",
+    reviewedAt: "2026-09-22",
+    effectiveFrom: "2027-02-01",
+  },
   ...(["ES", "SE", "BE", "FR", "GB", "NL", "AT", "DK", "AU", "MX", "SC", "RU", "KW"] as const)
     .map((passportCode) => ({
       passportCode,

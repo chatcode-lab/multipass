@@ -6283,6 +6283,7 @@ describe("official visa evidence", () => {
       "france-visas.gouv.fr",
       "www.immigration.interieur.gouv.fr",
       "www.legifrance.gouv.fr",
+      "www.guyane.gouv.fr",
       "attorneygeneralchambers.com",
       "externalaffairs.govt.lc",
       "npc.govt.lc",
