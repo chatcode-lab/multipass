@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { CITIZENSHIP_POLICIES, CITIZENSHIP_POLICY_STATUS_META } from "@/data/citizenship-policies";
 import { datasetMetadata } from "@/lib/dataset";
 import { flagEmojiFor } from "@/lib/geography";
-import { citizenshipPolicyAnchor } from "@/lib/citizenship-compatibility";
+import { citizenshipPolicyAnchor, CITIZENSHIP_ENFORCEMENT_SCOPE } from "@/lib/citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
 
 const description = "Compare official dual-citizenship rules for reviewed countries and check whether a proposed passport combination may require renunciation, retention, or age-specific review.";
@@ -91,6 +91,11 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
       <p>This is an intentionally small, source-backed first release—not a guessed world map. Unreviewed countries produce no calculator warning yet.</p>
     </div>
 
+    <section class="citizenship-enforcement" aria-labelledby="citizenship-enforcement-heading">
+      <h2 id="citizenship-enforcement-heading">Dual citizenship: legal rules versus enforcement</h2>
+      <p>{CITIZENSHIP_ENFORCEMENT_SCOPE}</p>
+    </section>
+
     {groups.map((status) => {
       const policies = CITIZENSHIP_POLICIES.filter((policy) => policy.status === status);
       return (
@@ -147,3 +152,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=86400
     </section>
   </article>
 </BaseLayout>
+<style>
+  .citizenship-enforcement{border-left:3px solid var(--green);background:var(--paper-2);padding:20px 24px;margin-top:24px}
+  .citizenship-enforcement h2{font-family:var(--serif);color:var(--green);font-size:28px;font-weight:550;line-height:1.1;margin:0 0 10px}
+  .citizenship-enforcement p{color:var(--ink-soft);font-size:14px;margin:0;max-width:850px}
+</style>

@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import fallback from "@/data/fallback.json";
 import { getVisaRelationshipEvidence, visaRelationshipHref } from "./visa-evidence";
 import { applyAccessOverrides } from "./passport";
@@ -6,10 +6,13 @@ import { indexableRelationshipPairs, relationshipIsIndexable } from "./visa-inde
 import { visaRelationshipMarkdown } from "./visa-markdown";
 import { REGIONS, type DataSnapshot } from "./types";
 
-const asOf = "2026-09-16";
+const asOf = "2026-09-28";
 const snapshot = fallback as DataSnapshot;
+vi.useFakeTimers();
+vi.setSystemTime(new Date(`${asOf}T12:00:00Z`));
 const details = Object.fromEntries(Object.entries(snapshot.passports)
   .map(([code, detail]) => [code, applyAccessOverrides(detail)]));
+vi.useRealTimers();
 const conditional = getVisaRelationshipEvidence("DZ", "TR", "unknown", asOf);
 
 describe("relationship search eligibility", () => {
@@ -43,20 +46,30 @@ describe("relationship search eligibility", () => {
     expect(relationshipIsIndexable(evidence, asOf)).toBe(false);
   });
 
+  it("does not silently renew expired correction-only indexing windows", () => {
+    for (const [passport, destination] of [["RW", "VU"], ["US", "BF"], ["DO", "MD"], ["LU", "UA"], ["MC", "VU"], ["AD", "GT"], ["BH", "VU"], ["NZ", "NU"], ["NR", "BZ"], ["FJ", "XK"]]) {
+      const evidence = getVisaRelationshipEvidence(passport, destination, "unknown", asOf);
+      expect(evidence.reviewedUnknown?.recheckBy).toBe("2026-09-26");
+      expect(relationshipIsIndexable(evidence, "2026-09-26")).toBe(true);
+      expect(relationshipIsIndexable(evidence, "2026-09-27")).toBe(false);
+      expect(evidence.supportsCurrentStatus).toBe(false);
+    }
+  });
+
   it("rejects incomplete citations, empty explanations, and future or expired conditions", () => {
     const evidence = { ...conditional, reviewedUnknown: undefined };
     expect(relationshipIsIndexable({ ...evidence, sources: [] }, asOf)).toBe(false);
     for (const change of [
       { summary: " " }, { conditions: [] }, { conditions: [" "] },
       { sourceIds: ["missing-source"] }, { possibleStatuses: [] },
-      { effectiveFrom: "2026-09-17" }, { effectiveTo: "2026-09-15" },
+      { effectiveFrom: "2026-09-29" }, { effectiveTo: "2026-09-27" },
     ]) {
       expect(relationshipIsIndexable({
         ...evidence, conditional: evidence.conditional.map((item) => ({ ...item, ...change })),
       }, asOf)).toBe(false);
     }
     expect(relationshipIsIndexable({
-      ...evidence, sources: evidence.sources.map((source) => ({ ...source, reviewedAt: "2026-09-17" })),
+      ...evidence, sources: evidence.sources.map((source) => ({ ...source, reviewedAt: "2026-09-29" })),
     }, asOf)).toBe(false);
   });
 
@@ -80,7 +93,7 @@ describe("relationship search eligibility", () => {
       }
     }
     expect(exact).toBe(40_941);
-    expect(additional).toBe(1_142);
+    expect(additional).toBe(1_132);
   }, 20_000);
 
   it("gives conditional Markdown a neutral heading, qualified label, and direct citations", () => {

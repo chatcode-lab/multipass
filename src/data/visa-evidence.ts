@@ -101,6 +101,13 @@ const REVIEWED_VISA_EVIDENCE = reviewedVisaEvidence as unknown as {
   conditional?: readonly ConditionalVisaEvidence[];
 };
 
+export const BERMUDA_2026_VISITOR_POLICIES = REVIEWED_VISA_EVIDENCE.policies.filter(({ id }) => [
+  "pass415-bm-2026-bona-fide-visitor-visa-free",
+  "pass415-bm-2026-hong-kong-macao-visitor-exceptions",
+  "pass415-bm-2026-controlled-nationalities-required-authorization",
+].includes(id));
+if (BERMUDA_2026_VISITOR_POLICIES.length !== 3) throw new Error("Missing reviewed Bermuda 2026 policy cohort");
+
 export const RWANDA_VOA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
   .find(({ id }) => id === "rwanda-universal-ordinary-passport-visa-on-arrival")
   ?.passportCodes ?? [];
@@ -3933,9 +3940,18 @@ const DATED_POLICY_SUCCESSIONS: Record<string, { codes: string[]; through: strin
   "french-guiana-ordinary-passport-advance-visa-complement": { codes: ["BR"], through: "2026-07-30" },
 };
 
+// BR 99/2026 expressly revokes the complete 2025 Order on 17 September.
+// Preserve both old cohorts in the audit artifact and public history, but do
+// not let them prove today's category after the new Schedule takes effect.
+const REVIEWED_POLICY_END_DATES: Readonly<Record<string, string>> = {
+  "bermuda-unlisted-nationals-visa-free-bona-fide-visits": "2026-09-16",
+  "bermuda-listed-nationals-conditional-travel-authorization-required": "2026-09-16",
+};
+
 // A complete, independently reviewed same-scope refresh replaces the displayed
 // record, not the archived artifact. Keep one timeline event for one policy.
 export const REVIEWED_POLICY_REFRESHES: Readonly<Record<string, string>> = {
+  "vietnam-bilateral-ordinary-passport-short-stay-waivers": "pass415-vn-bilateral-ordinary-thirty-day-waivers",
   "cambodia-temporary-prc-hksar-macao-tourist-visa-exemption": "pass414-kh-chinese-tourist-trial-through-october15",
   "bosnia-direct-gulf-ordinary-passports-temporary-visa-free-2026": "pass414-ba-gulf-seasonal-waiver-through-september-2026",
   "montenegro-kazakhstan-seasonal-30-days": "pass414-me-kazakhstan-seasonal-waiver-through-october-1",
@@ -3957,10 +3973,15 @@ for (const [previousId, replacementId] of Object.entries(REVIEWED_POLICY_REFRESH
     throw new Error(`Reviewed refresh must preserve the exact policy scope: ${previousId} -> ${replacementId}`);
   }
 }
+for (const id of Object.keys(REVIEWED_POLICY_END_DATES)) {
+  if (!policyById.has(id)) throw new Error(`Cannot end a missing reviewed policy: ${id}`);
+}
 
 export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POLICY_EVIDENCE.flatMap((policy) => {
   if (REVIEWED_POLICY_REFRESHES[policy.id]) return [];
   const enriched = { ...policy, allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id] };
+  const reviewedEnd = REVIEWED_POLICY_END_DATES[policy.id];
+  if (reviewedEnd) return [{ ...enriched, title: `${policy.title} (historical)`, effectiveTo: reviewedEnd }];
   const succession = DATED_POLICY_SUCCESSIONS[policy.id];
   if (!succession) return [enriched];
   if (!policy.passportCodes) throw new Error(`Dated succession needs an explicit cohort: ${policy.id}`);

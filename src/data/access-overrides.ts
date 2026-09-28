@@ -1,5 +1,6 @@
 import type { AccessStatus } from "@/lib/types";
 import {
+  BERMUDA_2026_VISITOR_POLICIES,
   COOK_ISLANDS_VISITOR_PERMIT_ON_ARRIVAL_PASSPORT_CODES,
   ECUADOR_EVISA_ORDINARY_PASSPORT_CODES,
   MALDIVES_VOA_ORDINARY_PASSPORT_CODES,
@@ -835,6 +836,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.bermudalaws.bm/Laws/Consolidated%20Law/2025/Bermuda%20Immigration%20and%20Protection%20%28Prohibition%20of%20Entry%29%20%28No.%202%29%20Order%202025",
     reviewedAt: "2026-08-21",
     effectiveFrom: "2025-07-17",
+    effectiveTo: "2026-09-16",
   })),
   {
     passportCode: "MO",
@@ -844,7 +846,19 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     sourceUrl: "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-visitor-visa-national-list",
     reviewedAt: "2026-08-21",
     effectiveFrom: "2025-07-17",
+    effectiveTo: "2026-09-16",
   },
+  // Reapply the complete approved schedule to new imports, including the
+  // unchanged corrections formerly backed by the now-revoked 2025 Order.
+  ...BERMUDA_2026_VISITOR_POLICIES.flatMap((policy) => (policy.passportCodes ?? []).map((passportCode) => ({
+    passportCode,
+    destinationCode: "BM" as const,
+    status: policy.status,
+    reason: policy.summary,
+    sourceUrl: "https://www.bermudalaws.bm/Laws/Consolidated%20Law/2026/Bermuda%20Immigration%20and%20Protection%20(Prohibition%20of%20Entry)%20Order%202026",
+    reviewedAt: "2026-09-28",
+    effectiveFrom: "2026-09-17",
+  }))),
   {
     passportCode: "HT",
     destinationCode: "SR",

@@ -1,13 +1,16 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
 import { buildEvidenceCompletionSummary, buildEvidenceStatusRegion } from "./evidence-status";
 import { applyAccessOverrides } from "./passport";
 import type { DataSnapshot } from "./types";
 
 const snapshot = fallbackSnapshot as DataSnapshot;
+vi.useFakeTimers();
+vi.setSystemTime(new Date("2026-09-28T12:00:00Z"));
 const details = Object.fromEntries(
   Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]),
 );
+vi.useRealTimers();
 
 describe("evidence status matrix", () => {
   it("aligns every passport with every destination in the selected region", () => {
@@ -250,7 +253,7 @@ describe("evidence status matrix", () => {
   });
 
   it("reports a complete four-state summary for every foreign-access relationship", () => {
-    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-09-01");
+    const summary = buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-09-28");
     const bucketTotal = summary.notCovered.count + summary.stale.count + summary.old.count + summary.fresh.count;
 
     expect(summary.total).toBe(44_974);
@@ -259,7 +262,7 @@ describe("evidence status matrix", () => {
     expect(summary.covered).toBe(40_941);
     expect(summary.notCovered.count).toBe(4_033);
     expect(summary.characterized.count).toBe(1_142);
-    expect(summary.allowedStay.count).toBe(4_271);
+    expect(summary.allowedStay.count).toBe(4_404);
     expect(summary.percent).toBe(91);
     expect(summary.fresh.count).toBeGreaterThan(0);
   });

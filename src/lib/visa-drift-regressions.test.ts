@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
 import reviewedEvidence from "@/data/reviewed-visa-evidence.json";
-import { REVIEWED_POLICY_REFRESHES, VISA_POLICY_EVIDENCE } from "@/data/visa-evidence";
+import { BERMUDA_2026_VISITOR_POLICIES, REVIEWED_POLICY_REFRESHES, VISA_POLICY_EVIDENCE } from "@/data/visa-evidence";
 import { applyAccessOverrides, calculateMobilityScore, reconcileManifestPassportDetails } from "./passport";
 import { getVisaRelationshipEvidence } from "./visa-evidence";
 import type { AccessStatus, DataSnapshot, PassportAccess } from "./types";
@@ -16,6 +16,72 @@ function normalized(code: string, destination: string, status: AccessStatus, asO
   const statuses = { [code]: "citizenship" as const, [destination]: status };
   return applyAccessOverrides({ code, name: code, statuses, mobilityScore: calculateMobilityScore(statuses) });
 }
+
+describe("Bermuda's September 2026 order and Vietnam stay enrichment", () => {
+  const changed = [
+    ["BW", "visa_free", "visa_required"], ["NR", "visa_free", "visa_required"],
+    ["NI", "visa_free", "visa_required"], ["PS", "visa_free", "visa_required"],
+    ["LC", "visa_free", "visa_required"], ["ID", "visa_required", "visa_free"],
+    ["TW", "visa_required", "visa_free"],
+  ] as const;
+
+  it.each(changed)("dates %s's changed category from the operative day, not the announcement", (code, before, after) => {
+    expect(normalized(code, "BM", before, "2026-09-16").statuses.BM).toBe(before);
+    expect(normalized(code, "BM", before, "2026-09-17").statuses.BM).toBe(after);
+    expect(getVisaRelationshipEvidence(code, "BM", before, "2026-09-16").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence(code, "BM", after, "2026-09-17").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence(code, "BM", before, "2026-09-17").supportsCurrentStatus).toBe(false);
+    expect(snapshot.passports[code].statuses.BM).toBe(after);
+    expect(snapshot.passports[code].mobilityScore).toBe(calculateMobilityScore(snapshot.passports[code].statuses));
+  });
+
+  it("preserves the whole reviewed partition against future upstream imports, idempotently", () => {
+    const codes = new Set<string>();
+    for (const policy of BERMUDA_2026_VISITOR_POLICIES) {
+      expect(policy.passportCodes).toBeDefined();
+      for (const code of policy.passportCodes ?? []) {
+        expect(codes.has(code)).toBe(false);
+        codes.add(code);
+        for (const inputStatus of ["visa_free", "visa_required"] as const) {
+          const detail = normalized(code, "BM", inputStatus, "2026-09-28");
+          expect(detail.statuses.BM).toBe(policy.status);
+          expect(detail.mobilityScore).toBe(calculateMobilityScore(detail.statuses));
+          expect(applyAccessOverrides(detail)).toEqual(detail);
+        }
+      }
+    }
+    expect(codes.size).toBe(199);
+    expect(reconcileManifestPassportDetails(snapshot.manifest, snapshot.passports)).toEqual(snapshot.manifest);
+    expect(snapshot.manifest.checkedAt).toBe("2026-08-26T05:08:41.773Z");
+    for (const code of ["CY", "HK", "MO", "PE"]) {
+      expect(normalized(code, "BM", "visa_required", "2026-09-28").statuses.BM).toBe("visa_free");
+    }
+  });
+
+  it("preserves revoked policy artifacts while ending their current applicability", () => {
+    for (const id of ["bermuda-unlisted-nationals-visa-free-bona-fide-visits", "bermuda-listed-nationals-conditional-travel-authorization-required"]) {
+      const archived = reviewedEvidence.policies.find((policy) => policy.id === id)!;
+      const historical = VISA_POLICY_EVIDENCE.find((policy) => policy.id === id)!;
+      expect(archived.effectiveTo).toBeUndefined();
+      expect(historical).toMatchObject({ effectiveTo: "2026-09-16", sourceIds: archived.sourceIds, passportCodes: archived.passportCodes });
+    }
+  });
+
+  it("does not flatten months into days or a passport-scoped limit into a group rule", () => {
+    const bermuda = getVisaRelationshipEvidence("ID", "BM", "visa_free", "2026-09-28");
+    expect(bermuda.allowedStays).toHaveLength(1);
+    expect(bermuda.allowedStays[0].label).toContain("whichever is greater");
+    expect(bermuda.allowedStays[0].maxDays).toBeUndefined();
+    expect(bermuda.allowedStays[0].withinDays).toBeUndefined();
+    expect(bermuda.allowedStays[0].notes?.join(" ")).toContain("operational advisory");
+    const singapore = getVisaRelationshipEvidence("SG", "VN", "visa_free", "2026-09-28");
+    expect(singapore.allowedStays).toHaveLength(1);
+    expect(singapore.allowedStays[0]).toMatchObject({ maxDays: 30, basis: "per_visit" });
+    const kazakhstan = getVisaRelationshipEvidence("KZ", "VN", "visa_free", "2026-09-28");
+    expect(kazakhstan.allowedStays).toHaveLength(2);
+    expect(kazakhstan.allowedStays[1]).toMatchObject({ maxDays: 90, withinDays: 180, passportCodes: ["KZ"] });
+  });
+});
 
 describe("reviewed September 2026 live/fallback drift", () => {
   it.each(["NI", "SB"])("dates the %s Hong Kong successor without overlapping categories", (code) => {
@@ -94,8 +160,8 @@ describe("autumn 2026 seasonal visa boundaries", () => {
         status: previous.status,
         passportCodes: previous.passportCodes,
         destinationCodes: previous.destinationCodes,
-        effectiveFrom: previous.effectiveFrom,
       });
+      expect(replacement.effectiveFrom).toBe(previous.effectiveFrom);
       expect(replacement.effectiveTo).toBe(previous.effectiveTo);
       expect(replacement.sourceIds).not.toEqual(previous.sourceIds);
       for (const id of previous.sourceIds) {

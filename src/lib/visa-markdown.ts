@@ -22,7 +22,7 @@ function policyMarkdown(policy: VisaPolicyEvidence, sources: Map<string, Officia
   }).join("\n");
   const stays = policy.allowedStays
     ?.filter((rule) => !passportCode || allowedStayApplies(rule, passportCode))
-    .map((rule) => `  - Allowed stay: **${escapeMarkdown(rule.label)}**`)
+    .map((rule) => `  - Allowed stay: **${escapeMarkdown(rule.label)}**${rule.notes?.map((note) => `\n    - ${escapeMarkdown(note)}`).join("") ?? ""}`)
     .join("\n") ?? "";
   return `- **${period} — ${escapeMarkdown(policy.title)}** (${STATUS_META[policy.status].label})
   ${escapeMarkdown(policy.summary)}
@@ -77,17 +77,16 @@ Access data checked ${readableDate(manifest.checkedAt.slice(0, 10))}. Evidence s
 
 This page concerns ordinary short visits unless an official source states otherwise. Authorities apply the current rule, and individual circumstances can change the applicable treatment.
 
-## Evidence timeline
-
-${timeline}
-
 ${evidence.allowedStays.length ? `## Allowed stay
 
-${evidence.allowedStays.map((rule) => `- **${escapeMarkdown(rule.label)}**${rule.maxDays ? ` (machine-readable maximum: ${rule.maxDays} days)` : ""}`).join("\n")}
+${evidence.allowedStays.map((rule) => `- **${escapeMarkdown(rule.label)}**${rule.maxDays ? ` (machine-readable maximum: ${rule.maxDays} days)` : ""}${rule.notes?.map((note) => `\n  - ${escapeMarkdown(note)}`).join("") ?? ""}`).join("\n")}
 
 Stay limits describe the cited visitor rule, not guaranteed admission or extensions. The source-faithful label controls if it differs from the normalized number.
 
-` : ""}
+` : ""}## Evidence timeline
+
+${timeline}
+
 ${application ? `## How to apply
 
 ${application.processingTime ?? "Follow the current instructions on the official portal."}

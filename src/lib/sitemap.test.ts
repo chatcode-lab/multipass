@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import fallbackSnapshot from "@/data/fallback.json";
 import { applyAccessOverrides } from "./passport";
 import {
@@ -13,9 +13,18 @@ import { REGIONS, type DataSnapshot } from "./types";
 import { COUNTRY_TOPICS } from "./country-profiles";
 
 const snapshot = fallbackSnapshot as DataSnapshot;
+vi.useFakeTimers();
+vi.setSystemTime(new Date("2026-09-28T12:00:00Z"));
 const details = Object.fromEntries(
   Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]),
 );
+vi.useRealTimers();
+
+beforeEach(() => {
+  vi.useFakeTimers();
+  vi.setSystemTime(new Date("2026-09-28T12:00:00Z"));
+});
+afterEach(() => vi.useRealTimers());
 
 describe("sitemaps", () => {
   it("keeps the submitted URL as an index of one core and seven regional relationship shards", () => {
@@ -35,8 +44,9 @@ describe("sitemaps", () => {
     ];
     const urls = groups.flat().map(({ loc }) => loc);
 
-    // Retain the complete existing inventory, plus every approved topic.
-    expect(urls).toHaveLength(42_567 + COUNTRY_TOPICS.length);
+    // Ten reviewed-unknown windows expired on September 26; do not extend
+    // their search eligibility without reviewing the evidence again.
+    expect(urls).toHaveLength(42_557 + COUNTRY_TOPICS.length);
     expect(urls).toContain("https://multipassrank.com/dual-citizenship-countries");
     expect(urls).toContain("https://multipassrank.com/citizenship-by-descent");
     expect(urls).toContain("https://multipassrank.com/best-second-passport-for-us-citizens");
@@ -65,8 +75,8 @@ describe("sitemaps", () => {
 
   it("advertises the reviewed evidence update without replacing a later snapshot date", () => {
     expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-03T00:00:00Z" }))
-      .toBe("2026-09-17");
-    expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-17T00:00:00Z" }))
-      .toBe("2026-09-17");
+      .toBe("2026-09-28");
+    expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-29T00:00:00Z" }))
+      .toBe("2026-09-29");
   });
 });

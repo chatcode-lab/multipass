@@ -2,6 +2,8 @@
 
 This file is the dated measurement and experiment log. For current operating rules, indexing policy, release checks, and the agent protocol, read [SEO and agent-discovery playbook](seo-aeo-playbook.md).
 
+Latest review: [28 September 2026 — mobile demand, passport landing pages, Bermuda and Vietnam](search-review-2026-09-28.md). Includes export limits, week-over-week measurements, implemented experiments and the next evidence queue; no paid keyword calls were needed.
+
 Research was run on 19 August 2026 against DataForSEO's Google Ads US/English dataset and the site's Google Search Console exports. Search volumes are directional monthly averages, not traffic forecasts.
 
 ## Query themes

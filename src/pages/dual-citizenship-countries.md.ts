@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { CITIZENSHIP_POLICIES, CITIZENSHIP_POLICY_STATUS_META } from "@/data/citizenship-policies";
 import { absoluteUrl, escapeMarkdown, markdownResponse } from "@/lib/markdown";
+import { CITIZENSHIP_ENFORCEMENT_SCOPE } from "@/lib/citizenship-compatibility";
 
 export const GET: APIRoute = () => {
   const groups = (["generally_restricted", "conditional", "generally_allowed"] as const).map((status) => {
@@ -24,6 +25,10 @@ Reviewed ${policy.reviewedAt}.`).join("\n\n");
 A combined passport score is a hypothetical mobility calculation. Citizenship retention depends on every country's law and may change with birth, descent, naturalisation, age, residence, marriage or an exception.
 
 This first release contains ${CITIZENSHIP_POLICIES.length} official-source country reviews. Unreviewed countries are not assumed to permit or prohibit multiple citizenship.
+
+## Dual citizenship: legal rules versus enforcement
+
+${CITIZENSHIP_ENFORCEMENT_SCOPE}
 
 ${groups}
 

@@ -4,7 +4,8 @@ import { countryTopicLinksMarkdown } from "./country-profiles";
 import { countryIndicatorsMarkdown } from "./country-indicators";
 import { citizenshipCombinationNoticesMarkdown, citizenshipPolicyFor } from "./citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "../data/citizenship-acquisition";
-import { denseRankByScore, STATUS_META } from "./passport";
+import { denseRankByScore, rankEquivalent, STATUS_META } from "./passport";
+import { visaRelationshipHref } from "./visa-urls";
 import { REGIONS, type ComparisonResult, type PassportAccess, type PassportSummary, type SnapshotManifest } from "./types";
 
 function checkedDate(manifest: SnapshotManifest): string {
@@ -20,8 +21,9 @@ export function rankingMarkdown(
   passports: PassportSummary[],
   scoped = false,
 ): string {
-  const rows = passports.map((passport, index) => scoped
-    ? `| ${index + 1} | [${escapeMarkdown(passport.name)}](${absoluteUrl(`/passport/${passport.slug}`)}) | ${passport.rank} | ${passport.mobilityScore} | ${formatRegion(passport.region)} |`
+  const groupRanks = denseRankByScore(passports.map((passport) => passport.mobilityScore));
+  const rows = passports.map((passport) => scoped
+    ? `| ${groupRanks.get(passport.mobilityScore)} | [${escapeMarkdown(passport.name)}](${absoluteUrl(`/passport/${passport.slug}`)}) | ${passport.rank} | ${passport.mobilityScore} | ${formatRegion(passport.region)} |`
     : `| ${passport.rank} | [${escapeMarkdown(passport.name)}](${absoluteUrl(`/passport/${passport.slug}`)}) | ${passport.mobilityScore} | ${formatRegion(passport.region)} |`,
   );
   return `# ${title}
@@ -132,7 +134,7 @@ export function passportMarkdown(
   detail: PassportAccess,
 ): string {
   const regionalPassports = manifest.passports.filter((entry) => entry.region === passport.region);
-  const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
+  const regionalRank = rankEquivalent(passport.mobilityScore, regionalPassports);
   const regionCollection = collectionForRegion(passport.region);
   const citizenshipPolicy = citizenshipPolicyFor(passport.code);
   const citizenshipRoutes = CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(passport.code) ?? [];
@@ -148,7 +150,7 @@ export function passportMarkdown(
       .filter((destination) => destination.region === region)
       .map((destination) => {
         const status = detail.statuses[destination.code] ?? "unknown";
-        return `| ${escapeMarkdown(destination.name)} | ${destination.code} | ${STATUS_META[status].label} |`;
+        return `| [${escapeMarkdown(destination.name)}](${absoluteUrl(visaRelationshipHref(passport, destination, status))}) | ${destination.code} | ${STATUS_META[status].label} |`;
       });
     return `## ${formatRegion(region)}\n\n| Destination | Code | Access |\n| --- | --- | --- |\n${rows.join("\n")}`;
   });

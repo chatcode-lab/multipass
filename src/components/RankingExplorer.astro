@@ -136,7 +136,7 @@ const serializedInitialSets = JSON.stringify(initialSets).replaceAll("<", "\\u00
             <div class="ranking-row">
               <a class="ranking-row__link" href={`/passport/${passport.slug}`} aria-label={`View ${passport.name} passport details`}></a>
               <strong class="ranking-row__rank">
-                #{scoped ? passports.findIndex((candidate) => candidate.code === passport.code) + 1 : entry.rank}
+                #{entry.rank}
                 {scoped && <small>global #{passport.rank}</small>}
               </strong>
               <span class="ranking-row__passport">

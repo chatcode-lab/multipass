@@ -39,7 +39,7 @@ const description = evidence.evidenceLevel === "conditional"
   ? `Check the evidence available for ${passport.name} passport travel to ${destination.name}. The ranking classification is awaiting independent official-source verification.`
   : status === "entry_restricted"
   ? `Ordinary visitor entry to ${destination.name} on a ${passport.name} passport is currently restricted. See the effective rule, conditions, and official sources.`
-  : `${passport.name} passport holders currently have ${statusMeta.label.toLowerCase()} access to ${destination.name}. See official sources, evidence history, conditions, and application guidance.`;
+  : `${destination.name} entry requirements for ${passport.name} passport holders: ${statusMeta.label}. Check allowed stays, conditions, and official sources.`;
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -97,6 +97,13 @@ const structuredData = [
           Read the conditions and official sources below before relying on that label.
         </p>
       )}
+      {evidence.supportsCurrentStatus && evidence.allowedStays.length > 0 && (
+        <div class="allowed-stay-summary">
+          <span>Allowed stay under the reviewed rule</span>
+          {evidence.allowedStays.map((rule) => <><strong>{rule.label}</strong>{rule.notes?.map((note) => <small>{note}</small>)}</>)}
+          <small>Subject to the <a href="#official-evidence">official conditions below</a>; not a guarantee of admission or an extension.</small>
+        </div>
+      )}
       <div class="visa-relation-meta">
         <span class:list={["evidence-state", evidence.supportsCurrentStatus && "evidence-state--verified"]}>
           {evidence.supportsCurrentStatus
@@ -113,7 +120,7 @@ const structuredData = [
     </div>
   </header>
 
-  <section class="evidence-layout">
+  <section class="evidence-layout" id="official-evidence">
     <div>
       <span class="eyebrow">Evidence review</span>
       <h2>{evidence.evidenceLevel === "conditional" || evidence.reviewedUnknown ? "Why no single status is shown" : "How this access rule is documented"}</h2>
@@ -152,10 +159,10 @@ const structuredData = [
       <p>{evidence.supportsCurrentStatus
         ? `${statusMeta.description}. Authorities apply the current rule, and purpose, duration, passport type, or personal circumstances can change the applicable treatment.`
         : "The ranking label alone does not establish eligibility. Use the source-backed explanation and the relevant authority to confirm the rule for your documents, visit purpose, route, and personal circumstances."}</p>
-      {evidence.allowedStays.length > 0 && (
+      {!evidence.supportsCurrentStatus && evidence.allowedStays.length > 0 && (
         <div class="allowed-stay-summary">
           <span>Allowed stay</span>
-          {evidence.allowedStays.map((rule) => <strong>{rule.label}</strong>)}
+          {evidence.allowedStays.map((rule) => <><strong>{rule.label}</strong>{rule.notes?.map((note) => <small>{note}</small>)}</>)}
           <small>The official wording controls; extensions and individual admission decisions may differ.</small>
         </div>
       )}

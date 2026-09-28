@@ -12,6 +12,7 @@ import { ACCESS_STATUSES, type AccessStatus } from "@/lib/types";
 import { citizenshipPolicyAnchor, citizenshipPolicyFor } from "@/lib/citizenship-compatibility";
 import { CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY } from "@/data/citizenship-acquisition";
 import { passportPageTitle } from "@/lib/seo-titles";
+import { rankEquivalent } from "@/lib/passport";
 import { resolvePassportBySlug } from "@/lib/visa-evidence";
 import { countryTopics, countryTopicHref, TOPIC_LABELS } from "@/lib/country-profiles";
 import { countryIndicators } from "@/lib/country-indicators";
@@ -35,7 +36,7 @@ const checkedDate = new Intl.DateTimeFormat("en", { day: "numeric", month: "long
 );
 const regionLabel = formatRegion(passport.region);
 const regionalPassports = manifest.passports.filter((entry) => entry.region === passport.region);
-const regionalRank = regionalPassports.findIndex((entry) => entry.code === passport.code) + 1;
+const regionalRank = rankEquivalent(passport.mobilityScore, regionalPassports);
 const regionCollection = collectionForRegion(passport.region);
 const comparisonPassports = relatedPassports(passport, manifest.passports);
 const citizenshipPolicy = citizenshipPolicyFor(passport.code);
@@ -43,7 +44,7 @@ const citizenshipRoutes = CITIZENSHIP_ACQUISITION_ROUTES_BY_COUNTRY.get(passport
 Astro.response.headers.set("Cache-Control", "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400");
 
 const title = passportPageTitle(passport);
-const description = `The ${passport.name} passport ranks #${passport.rank} globally. See ${statusCounts.visa_free} visa-free countries, ${statusCounts.visa_on_arrival} visa-on-arrival destinations, and every current access category.`;
+const description = `${passport.name} passport: rank #${passport.rank}, mobility score ${passport.mobilityScore}. See ${statusCounts.visa_free} visa-free destinations, ${statusCounts.visa_on_arrival} visas on arrival, ${statusCounts.eta} ETAs, and entry requirements.`;
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -91,6 +92,7 @@ const structuredData = [
         <div><span>Destinations tracked</span><strong>{manifest.destinations.length}</strong></div>
       </div>
       <div class="passport-hero__actions">
+        <a class="button button--quiet" href="#passport-access">View visa-free countries</a>
         <a class="button button--primary" href={`/compare?set=${passport.code}`}>Compare this passport</a>
         <a class="button button--quiet" href={improveHref([[passport.code]])}>Improve this passport</a>
         <a class="button button--quiet" href={`/rank?set=${passport.code}`}>Place in ranking</a>
@@ -144,9 +146,9 @@ const structuredData = [
     </aside>
   )}
 
-  <section class="section section--tight">
+  <section class="section section--tight" id="passport-access">
     <div class="section-heading">
-      <div><span class="eyebrow">All destinations</span><h2>Access details</h2><a class="text-link" href="/destinations">Browse the destination directory</a></div>
+      <div><span class="eyebrow">All destinations</span><h2>Visa-free countries and entry requirements</h2><a class="text-link" href="/destinations">Browse the destination directory</a></div>
       <p>Entry rules can change without notice. Treat this as a comparison tool and verify official requirements before travel.</p>
     </div>
     <div class="status-summary" aria-label="Access type totals">

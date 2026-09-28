@@ -6025,6 +6025,8 @@ describe("official visa evidence", () => {
       "en.baochinhphu.vn",
       "baochinhphu.vn",
       "mofa.gov.vn",
+      "web.mofa.gov.vn",
+      "hochiminhcity.mfa.gov.sg",
       "vanban.chinhphu.vn",
       "congbao.cdnchinhphu.vn",
       "vbpl.moj.gov.vn",

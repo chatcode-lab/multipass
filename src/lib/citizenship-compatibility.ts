@@ -4,6 +4,8 @@ import {
   type CitizenshipPolicy,
 } from "@/data/citizenship-policies";
 
+export const CITIZENSHIP_ENFORCEMENT_SCOPE = "This guide documents reviewed citizenship rules, not how often authorities detect another nationality or enforce a rule. We do not have comparable enforcement statistics and do not rank countries by enforcement. A lack of reported cases is not evidence that a combination is permitted. Check the rules for acquisition, retention, nationality choice, and any required procedure separately, using the official sources for each country.";
+
 export interface CitizenshipCombinationNotice {
   setIndex: number;
   setCodes: string[];

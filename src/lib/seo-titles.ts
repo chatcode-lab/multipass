@@ -23,7 +23,9 @@ function addBrandWhenItFits(title: string): string {
 }
 
 export function passportPageTitle(passport: Pick<PassportSummary, "name">): string {
-  return addBrandWhenItFits(`${passport.name} Passport Rank & Visa-Free`);
+  const title = `${passport.name} Passport Ranking & Visa-Free Countries`;
+  if (title.length <= MAX_PAGE_TITLE_LENGTH) return addBrandWhenItFits(title);
+  return addBrandWhenItFits(`${passport.name} Passport Rank & Visa-Free List`);
 }
 
 export function destinationPageTitle(destination: Pick<Destination, "name">): string {

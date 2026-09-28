@@ -7,6 +7,10 @@ import type { AccessStatus, DataSnapshot } from "./types";
 const snapshot = fallback as DataSnapshot;
 
 describe("SEO page titles", () => {
+  it("spells out the passport-ranking and visa-free-list intent", () => {
+    expect(passportPageTitle({ name: "Barbados" })).toBe("Barbados Passport Ranking & Visa-Free Countries | MultiPass Rank");
+    expect(passportPageTitle({ name: "Sri Lanka" })).toContain("Passport Ranking & Visa-Free Countries");
+  });
   it("keeps every passport and destination title within Bing's recommended limit", () => {
     for (const passport of snapshot.manifest.passports) {
       expect(passportPageTitle(passport).length, passport.name).toBeLessThanOrEqual(MAX_PAGE_TITLE_LENGTH);
