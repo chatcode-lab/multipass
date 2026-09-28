@@ -48,3 +48,11 @@ Root's final local release gates pass: **160 Astro files with zero diagnostics**
 The supplied seven CSVs remain untracked and must not be included in the release. Deployment and normal-URL production checks follow after publication.
 
 Follow-up work: independently re-review the ten expired correction cases; investigate Vietnam's separate unilateral re-entry wording against operative amended law; monitor the imminent seasonal endpoints from Pass 414. This pass does not claim to resolve those legal gaps or add a new country-indicator family.
+
+## Published and verified
+
+Release commit: `6e30a59d46fa715127081edd26079c5f5401a7b1`. [Cloudflare deployment](https://github.com/chatcode-lab/multipass/actions/runs/36486617983) and [hosted CI, including browser tests](https://github.com/chatcode-lab/multipass/actions/runs/36486618161) both completed successfully on 28 September.
+
+Normal production URLs, without cache-busting or a cache purge, confirm all seven changed Bermuda APIs are exact and have the new current category. All seven old suffixes redirect permanently to the current canonical HTML URL, and the corresponding passport-region sitemap shards contain only the new variants. Singapore and Kazakhstan expose respectively one and two properly scoped stay rules; native and negotiated Markdown agree with HTML. Bermuda's nonnumeric statutory wording and operational caveat remain present. The passport landing title/list anchor and canonical Markdown evidence links are live.
+
+All eight public sitemap shards total **42,702 unique canonical URLs**. The production matrix reports **40,941 exact**, **4,033 not exact**, **1,142 characterized** and **4,404 with structured stays**, matching the local review. The active independently scheduled upstream snapshot is `2026-09-28T03:05:12.583Z`; this release did not trigger a bulk refresh or alter that timestamp. Mobile summaries were additionally visually inspected at 320 px after the automated 320/390 px checks.
