@@ -33,6 +33,14 @@ All eight candidate validators and independent source reviews pass. Typecheck re
 
 The [independent integration review](pass416-integration-review.md) approves publication with no blockers. It independently confirms approved-packet parity, unchanged historical records, and **134,922** date-specific sitemap/page eligibility comparisons with zero mismatches. A separate reviewer checked all ten rendered HTML/Markdown/API routes on mobile and their relationship-sitemap membership.
 
+## Production verification
+
+Release commit: `75ce4366b52e1fa047a1e22a0966a2cea1e94866`. [Cloudflare deployment](https://github.com/chatcode-lab/multipass/actions/runs/36550149275) and [hosted CI, including browser tests](https://github.com/chatcode-lab/multipass/actions/runs/36550149649) both completed successfully on 29 September.
+
+Normal production URLs, without cache-busting or a cache purge, confirm all ten updated reasons, source dates, unknown statuses, five renewed deadlines and the Moldova conditional explanation. HTML, explicit `.md`, negotiated Markdown and the JSON API agree. All ten HTML routes fit a 390-pixel viewport without horizontal overflow. The live status response confirms the unchanged coverage figures above. All eight sitemap shards contain **42,708 unique URLs**, including exactly six of the ten cases; the four expired cases remain excluded. The live snapshot uses `nauru`, unlike the bundled historical `naoero` spelling: the initial smoke-check membership assumption was corrected, and both old HTML/Markdown aliases were separately verified to return 308 redirects to the current canonical URL. All corrected sitemap checks pass.
+
+Separate security follow-up: GitHub reported two moderate Undici WebSocket decompression denial-of-service alerts during this push ([alert 12](https://github.com/chatcode-lab/multipass/security/dependabot/12), [alert 13](https://github.com/chatcode-lab/multipass/security/dependabot/13)). The inspected local dependency paths are Astro → unifont → Undici 8.10.0 and Wrangler → Miniflare → Undici 7.29.0; the reported patched versions are 8.10.2 and 7.29.1 respectively. This data release does not modify dependencies or claim exploitability has been assessed. Address those alerts in a dedicated security update with dependency/build checks.
+
 ## Next useful work
 
 1. Review Vietnam's unilateral-policy re-entry wording against operative amended law, separately from the already reviewed bilateral stays. Do not copy the bilateral rules across that scope.
