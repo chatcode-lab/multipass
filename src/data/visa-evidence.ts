@@ -3951,6 +3951,8 @@ const REVIEWED_POLICY_END_DATES: Readonly<Record<string, string>> = {
 // A complete, independently reviewed same-scope refresh replaces the displayed
 // record, not the archived artifact. Keep one timeline event for one policy.
 export const REVIEWED_POLICY_REFRESHES: Readonly<Record<string, string>> = {
+  "vietnam-resolution44-12-nationals-visa-exempt": "pass417-vn-resolution44-current-entry-conditions",
+  "vietnam-resolution229-12-nationals-visa-exempt": "pass417-vn-resolution229-current-tourist-entry-conditions",
   "vietnam-bilateral-ordinary-passport-short-stay-waivers": "pass415-vn-bilateral-ordinary-thirty-day-waivers",
   "cambodia-temporary-prc-hksar-macao-tourist-visa-exemption": "pass414-kh-chinese-tourist-trial-through-october15",
   "bosnia-direct-gulf-ordinary-passports-temporary-visa-free-2026": "pass414-ba-gulf-seasonal-waiver-through-september-2026",

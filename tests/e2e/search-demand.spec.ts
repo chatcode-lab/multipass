@@ -67,6 +67,49 @@ test("reviewed stay limits retain scope and caveats on narrow relationship pages
   }
 });
 
+test("Vietnam unilateral waivers expose corrected re-entry conditions in every format", async ({ page, request }) => {
+  for (const [code, slug, label, end] of [
+    ["GB", "united-kingdom", "45 days from the date of entry", "2028-03-14"],
+    ["BE", "belgium", "45 days from the date of entry for tourism", "2028-08-14"],
+  ]) {
+    const api = await request.get(`/api/v1/visa/${code}/VN`);
+    expect(api.status()).toBe(200);
+    const evidence = await api.json();
+    expect(evidence).toMatchObject({ status: "visa_free", evidenceLevel: "exact", supportsCurrentStatus: true, reviewedAt: "2026-09-29" });
+    expect(evidence.allowedStays).toHaveLength(1);
+    expect(evidence.allowedStays[0]).toMatchObject({ label, maxDays: 45, basis: "per_entry" });
+    const policy = evidence.policies.find((item: { id: string }) => item.id.startsWith("pass417-"));
+    expect(policy.effectiveTo).toBe(end);
+    expect(policy.conditions.join(" ")).not.toContain("at least 30 days outside");
+
+    const path = `/${slug}-vietnam-visa-free`;
+    const markdown = await (await request.get(`${path}.md`)).text();
+    const negotiated = await request.get(path, { headers: { Accept: "text/markdown" } });
+    expect(negotiated.headers()["content-type"]).toContain("text/markdown");
+    expect(await negotiated.text()).toBe(markdown);
+    expect(markdown).toContain(label);
+    expect(markdown).not.toContain("at least 30 days outside");
+
+    for (const width of [320, 390]) {
+      await page.setViewportSize({ width, height: 844 });
+      await page.goto(path);
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
+      await expect(page.locator(".visa-relation-hero .allowed-stay-summary strong")).toHaveText(label);
+      const timeline = page.locator("#official-evidence");
+      await expect(timeline).not.toContainText("at least 30 days outside");
+      for (const condition of policy.conditions) {
+        await expect(timeline).toContainText(condition);
+        expect(markdown).toContain(condition);
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);
+    }
+  }
+  await page.goto("/destination/vietnam");
+  await expect(page.locator(".evidence-timeline")).not.toContainText("at least 30 days outside");
+  await expect(page.getByRole("heading", { name: "Vietnam: Resolution 44 twelve-country 45-day waiver", exact: true })).toHaveCount(1);
+  await expect(page.getByRole("heading", { name: "Vietnam: Resolution 229 twelve-country 45-day tourism waiver", exact: true })).toHaveCount(1);
+});
+
 test("changed Bermuda categories redirect and appear only under current canonical sitemap URLs", async ({ request }) => {
   const paths = [
     ["botswana", "visa-free", "visa", "africa"],
