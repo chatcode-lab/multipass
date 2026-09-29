@@ -15,7 +15,7 @@ import {
   type SourcePassportDetail,
 } from "./types";
 import { VERIFIED_ACCESS_OVERRIDES } from "@/data/access-overrides";
-import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
+import { getReviewedUnknownOverrides } from "@/data/reviewed-unknown-overrides";
 import { ACCESS_EASE_WEIGHT, canonicalCountryName, slugifyCountry } from "./passport-shared";
 
 export { ACCESS_EASE_WEIGHT, STATUS_META, slugifyCountry } from "./passport-shared";
@@ -154,14 +154,14 @@ export function applyVerifiedAccessOverrides(detail: PassportAccess): PassportAc
 
 export function applyAccessOverrides(detail: PassportAccess): PassportAccess {
   const verifiedDetail = applyVerifiedAccessOverrides(detail);
-  const applicable = REVIEWED_UNKNOWN_OVERRIDES.filter(({ passportCode }) => passportCode === verifiedDetail.code);
+  const applicable = getReviewedUnknownOverrides().filter(({ passportCode }) => passportCode === verifiedDetail.code);
   if (!applicable.length) return verifiedDetail;
 
   const statuses = { ...verifiedDetail.statuses };
   let changed = false;
   for (const override of applicable) {
     // Do not mask a future upstream correction or a stronger verified override.
-    // This negative finding rejects only the exact imported category reviewed.
+    // Withhold only the exact imported category whose evidence is unresolved.
     if (statuses[override.destinationCode] !== override.rejectedStatus) continue;
     statuses[override.destinationCode] = "unknown";
     changed = true;

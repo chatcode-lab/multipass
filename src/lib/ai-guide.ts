@@ -72,6 +72,7 @@ HTML pages also advertise their Markdown alternative with a \`<link rel="alterna
 - Common English country-name variants and unambiguous status spellings also redirect. Use the manifest's country codes and the canonical URL returned by the server when citing a result.
 - Focus a destination page on selected passport countries with \`#passports=PT,RU,IL\` or the equivalent \`?passports=PT,RU,IL\` query parameter.
 - Evidence coverage is incremental. Bare placeholders stay excluded from indexing, but substantive official-source conditional explanations and reviewed corrections may be indexed. Search eligibility does not mean exact verification: check the relationship API's \`evidenceLevel\`, read the conditions, and never present an unresolved ranking label as an established entry rule.
+- Relationship JSON also exposes \`supportsCurrentStatus\`, \`reviewedAt\` and, where applicable, \`reviewedCorrection\` with its reason, source IDs, \`lastRecheckedAt\` and \`recheckBy\`. The legacy \`rejected\` evidence level means the imported label is withheld, not that every possible route is disproved. Recheck targets are research deadlines, not legal expiry dates; an inconclusive recheck does not renew them.
 
 HTML responses advertise available Markdown and JSON equivalents in both \`<link rel="alternate">\` elements and HTTP \`Link\` headers. Agents can inspect those relations instead of guessing another representation's URL.
 

@@ -70,7 +70,7 @@ export function getVisaRelationshipEvidence(
   asOf = new Date().toISOString().slice(0, 10),
 ): VisaRelationshipEvidence {
   const reviewedUnknown = currentStatus === "unknown"
-    ? getReviewedUnknownOverride(passportCode, destinationCode)
+    ? getReviewedUnknownOverride(passportCode, destinationCode, asOf)
     : undefined;
   const policies = VISA_POLICY_EVIDENCE
     .filter((policy) =>
@@ -79,7 +79,11 @@ export function getVisaRelationshipEvidence(
     )
     .sort((first, second) => (second.effectiveFrom ?? second.announcedOn ?? "").localeCompare(first.effectiveFrom ?? first.announcedOn ?? ""));
   const conditional = CONDITIONAL_VISA_EVIDENCE
-    .filter((item) => conditionalEvidenceApplies(item, passportCode, destinationCode))
+    .filter((item) => conditionalEvidenceApplies(item, passportCode, destinationCode)
+      && item.sourceIds.every((id) => {
+        const source = SOURCE_BY_ID.get(id);
+        return source && source.reviewedAt <= asOf;
+      }))
     .sort((first, second) => (second.effectiveFrom ?? second.announcedOn ?? "").localeCompare(first.effectiveFrom ?? first.announcedOn ?? ""));
   const sourceIds = new Set([
     ...policies.flatMap((policy) => [...policy.sourceIds]),
@@ -122,6 +126,21 @@ export function getVisaRelationshipEvidence(
     reviewedAt,
     reviewedUnknown,
   };
+}
+
+/** Identical research-deadline wording for people and Markdown clients. */
+export function correctionRecheckNote(
+  correction: ReviewedUnknownOverride,
+  asOf = new Date().toISOString().slice(0, 10),
+): string {
+  const format = (value: string) => new Intl.DateTimeFormat("en", {
+    day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+  }).format(new Date(`${value}T00:00:00Z`));
+  const last = correction.lastRecheckedAt ? `Last recheck: ${format(correction.lastRecheckedAt)}. ` : "";
+  const target = correction.recheckBy < asOf
+    ? `Further verification remains overdue (previous target: ${format(correction.recheckBy)}).`
+    : `Next recheck target: ${format(correction.recheckBy)}.`;
+  return `${last}${target} Research targets are not legal expiry dates.`;
 }
 
 export function policiesForDestination(destinationCode: string): VisaPolicyEvidence[] {

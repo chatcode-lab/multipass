@@ -75,7 +75,7 @@ describe("sitemaps", () => {
 
   it("advertises the reviewed evidence update without replacing a later snapshot date", () => {
     expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-03T00:00:00Z" }))
-      .toBe("2026-09-28");
+      .toBe("2026-09-29");
     expect(sitemapLastModified({ ...snapshot.manifest, checkedAt: "2026-09-29T00:00:00Z" }))
       .toBe("2026-09-29");
   });

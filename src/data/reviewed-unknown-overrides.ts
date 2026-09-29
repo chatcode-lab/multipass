@@ -1,4 +1,5 @@
 import type { AccessStatus } from "@/lib/types";
+import { REVIEWED_UNKNOWN_RECHECKS, type ReviewedUnknownRecheck } from "./reviewed-unknown-rechecks";
 
 export interface ReviewedUnknownOverride {
   passportCode: string;
@@ -8,11 +9,13 @@ export interface ReviewedUnknownOverride {
   sourceIds: readonly string[];
   reviewedAt: string;
   recheckBy: string;
+  lastRecheckedAt?: string;
 }
 
 /**
- * Exact relationships where current official evidence disproves the imported
- * category but does not establish one passport-wide replacement. These remain
+ * Historical correction decisions withholding an imported category where
+ * no safe passport-wide replacement was established. Dated rechecks can narrow
+ * an earlier interpretation without rewriting this audit history. These remain
  * pending in evidence coverage and must never be treated as verified policies.
  */
 export const REVIEWED_UNKNOWN_OVERRIDES: readonly ReviewedUnknownOverride[] = [
@@ -555,8 +558,54 @@ if (new Set(pairKeys).size !== pairKeys.length) {
 export function getReviewedUnknownOverride(
   passportCode: string,
   destinationCode: string,
+  asOf = new Date().toISOString().slice(0, 10),
 ): ReviewedUnknownOverride | undefined {
-  return REVIEWED_UNKNOWN_OVERRIDES.find((override) =>
-    override.passportCode === passportCode && override.destinationCode === destinationCode
-  );
+  const key = `${passportCode}:${destinationCode}`;
+  const base = baseByPair.get(key);
+  return base ? projectRechecks(base, rechecksByPair.get(key) ?? [], asOf) : undefined;
+}
+
+const baseByPair = new Map(REVIEWED_UNKNOWN_OVERRIDES.map((item) => [`${item.passportCode}:${item.destinationCode}`, item]));
+const recheckKeys = new Set<string>();
+const rechecksByPair = new Map<string, ReviewedUnknownRecheck[]>();
+for (const item of [...REVIEWED_UNKNOWN_RECHECKS].sort((a, b) => a.checkedAt.localeCompare(b.checkedAt))) {
+  const pair = `${item.passportCode}:${item.destinationCode}`;
+  const base = baseByPair.get(pair);
+  const key = `${pair}:${item.checkedAt}`;
+  if (!base || base.rejectedStatus !== item.rejectedStatus || recheckKeys.has(key)
+    || !/^\d{4}-\d{2}-\d{2}$/.test(item.checkedAt) || item.checkedAt <= base.reviewedAt
+    || !item.reason.trim() || !item.sourceIds.length
+    || (item.recheckBy !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(item.recheckBy) || item.recheckBy <= item.checkedAt))) {
+    throw new Error(`Invalid reviewed-unknown recheck: ${key}`);
+  }
+  recheckKeys.add(key);
+  rechecksByPair.set(pair, [...(rechecksByPair.get(pair) ?? []), item]);
+}
+
+function projectRechecks(
+  base: ReviewedUnknownOverride,
+  rechecks: readonly ReviewedUnknownRecheck[],
+  asOf: string,
+): ReviewedUnknownOverride {
+  let current = base;
+  for (const recheck of rechecks) {
+    if (recheck.checkedAt > asOf) continue;
+    current = {
+      ...current,
+      reason: recheck.reason,
+      sourceIds: recheck.sourceIds,
+      lastRecheckedAt: recheck.checkedAt,
+      // A failed/inconclusive recheck updates the explanation, not eligibility.
+      ...(recheck.recheckBy ? { reviewedAt: recheck.checkedAt, recheckBy: recheck.recheckBy } : {}),
+    };
+  }
+  return current;
+}
+
+/** Resolve follow-ups at request time, never freezing a date in a Worker isolate. */
+export function getReviewedUnknownOverrides(
+  asOf = new Date().toISOString().slice(0, 10),
+): readonly ReviewedUnknownOverride[] {
+  return REVIEWED_UNKNOWN_OVERRIDES.map((base) => projectRechecks(base,
+    rechecksByPair.get(`${base.passportCode}:${base.destinationCode}`) ?? [], asOf));
 }

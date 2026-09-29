@@ -83,6 +83,12 @@ https://multipassrank.com/belgium-kenya-eta.md</code></pre>
       and never present an unresolved ranking label as an established entry rule.
     </p>
     <p>
+      The API also exposes <code>supportsCurrentStatus</code>, <code>reviewedAt</code>, and, when applicable,
+      <code>reviewedCorrection</code> with its explanation, source IDs, last recheck and research deadline.
+      The legacy <code>rejected</code> evidence level means the imported label is withheld, not that every possible route is disproved.
+      A recheck deadline is not a visa rule's legal expiry; an inconclusive recheck does not renew it.
+    </p>
+    <p>
       Destination pages can focus on up to five passport countries with <code>#passports=PT,RU,IL</code> or the equivalent
       <code>?passports=PT,RU,IL</code> query parameter. Tied combined-access cells generate this filter automatically.
     </p>

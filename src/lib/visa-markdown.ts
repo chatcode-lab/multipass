@@ -2,7 +2,7 @@ import type { OfficialVisaSource, VisaPolicyEvidence } from "@/data/visa-evidenc
 import { STATUS_META } from "./passport";
 import { absoluteUrl, escapeMarkdown } from "./markdown";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "./types";
-import { allowedStayApplies, destinationSlug, visaRelationshipHref, type VisaRelationshipEvidence } from "./visa-evidence";
+import { allowedStayApplies, correctionRecheckNote, destinationSlug, visaRelationshipHref, type VisaRelationshipEvidence } from "./visa-evidence";
 import { isCurrentEvidence } from "./visa-indexing";
 
 function readableDate(value: string): string {
@@ -48,11 +48,11 @@ export function visaRelationshipMarkdown(
     }).join("\n")}`).join("\n\n")}`
     : "";
   const correction = evidence.reviewedUnknown
-    ? `The imported **${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label}** classification was rejected during official-source review.
+    ? `The imported **${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label}** classification is withheld pending clarification of the official evidence.
 
 ${escapeMarkdown(evidence.reviewedUnknown.reason)}
 
-No single replacement category has been established. Recheck scheduled by ${readableDate(evidence.reviewedUnknown.recheckBy)}.
+No single replacement category has been established. ${correctionRecheckNote(evidence.reviewedUnknown)}
 
 Official ${evidence.sources.length === 1 ? "source" : "sources"}:
 ${evidence.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${escapeMarkdown(source.title)}](${source.url})`).join("\n")}`
@@ -65,7 +65,7 @@ ${evidence.sources.map((source) => `- [${escapeMarkdown(source.publisher)}: ${es
     : evidence.evidenceLevel === "conditional"
       ? "officially characterized; traveller-specific rule"
     : evidence.reviewedUnknown
-      ? "imported classification rejected; replacement route unresolved"
+      ? "imported classification withheld; replacement route unresolved"
       : "official-source review pending";
   return `# ${escapeMarkdown(passport.name)} passport to ${escapeMarkdown(destination.name)}: ${evidence.supportsCurrentStatus ? statusMeta.label : "Visa requirements"}
 

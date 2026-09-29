@@ -919,7 +919,7 @@ test("relationship URLs keep bare placeholders excluded but index sourced correc
   expect(rejected.headers().location).toBe("/kosovo-azerbaijan-status-unknown");
 
   await page.goto("/kosovo-azerbaijan-status-unknown");
-  await expect(page.getByText("Imported classification rejected", { exact: true })).toBeVisible();
+  await expect(page.getByText("Imported classification withheld", { exact: true })).toBeVisible();
   await expect(page.getByText(/No single replacement category is established/)).toBeVisible();
   await expect(page.locator('a[href="https://www.evisa.gov.az/en/countries"]')).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index,follow,max-image-preview:large");
@@ -927,7 +927,7 @@ test("relationship URLs keep bare placeholders excluded but index sourced correc
   expect(xml).toContain("<loc>https://multipassrank.com/kosovo-azerbaijan-status-unknown</loc>");
   const correctionMarkdown = await request.get("/kosovo-azerbaijan-status-unknown.md");
   expect(correctionMarkdown.headers()["x-robots-tag"]).toBeUndefined();
-  expect(await correctionMarkdown.text()).toContain("classification was rejected");
+  expect(await correctionMarkdown.text()).toContain("classification is withheld pending clarification");
 });
 
 test("sourced conditional pages are searchable without asserting exact access", async ({ page, request }) => {
@@ -966,6 +966,43 @@ test("sourced conditional pages are searchable without asserting exact access", 
   await expect(page).toHaveTitle(/Visa requirements/);
   await expect(page.locator(".visa-relation-hero .notice")).toContainText("Ranking dataset label: Visa required");
   await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /conditional access/);
+});
+
+test("dated correction rechecks agree across HTML, Markdown and the agent API", async ({ page, request }) => {
+  const cases = [
+    { passport: "US", destination: "BF", path: "/united-states-burkina-faso-status-unknown", indexable: true, due: "2026-10-29", conditional: false },
+    { passport: "DO", destination: "MD", path: "/dominican-republic-moldova-status-unknown", indexable: true, due: "2026-09-26", conditional: true },
+    { passport: "NZ", destination: "NU", path: "/new-zealand-niue-status-unknown", indexable: false, due: "2026-09-26", conditional: false },
+    { passport: "AD", destination: "GT", path: "/andorra-guatemala-status-unknown", indexable: false, due: "2026-09-26", conditional: false },
+  ];
+  for (const item of cases) {
+    const api = await request.get(`/api/v1/visa/${item.passport}/${item.destination}`);
+    expect(api.status()).toBe(200);
+    const body = await api.json();
+    expect(body.status).toBe("unknown");
+    expect(body.supportsCurrentStatus).toBe(false);
+    expect(body.reviewedCorrection.lastRecheckedAt).toBe("2026-09-29");
+    expect(body.reviewedCorrection.recheckBy).toBe(item.due);
+    expect(body.reviewedAt).toBe("2026-09-29");
+    expect(body.evidenceLevel).toBe(item.conditional ? "conditional" : "rejected");
+
+    await page.goto(item.path);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", item.indexable ? "index,follow,max-image-preview:large" : /noindex/);
+    await expect(page.locator("#official-evidence")).toContainText(body.reviewedCorrection.reason);
+    if (!item.conditional) {
+      await expect(page.locator("#official-evidence")).toContainText("Research targets are not legal expiry dates");
+      if (!item.indexable) await expect(page.locator("#official-evidence")).toContainText("Further verification remains overdue");
+    }
+    const md = await request.get(`${item.path}.md`);
+    const markdown = await md.text();
+    expect(markdown).toContain(body.reviewedCorrection.reason);
+    expect(markdown).toContain("withheld pending clarification");
+    const negotiated = await request.get(item.path, { headers: { Accept: "text/markdown" } });
+    expect(negotiated.headers()["content-type"]).toContain("text/markdown");
+    expect(await negotiated.text()).toBe(markdown);
+    const width = await page.evaluate(() => ({ content: document.documentElement.scrollWidth, viewport: window.innerWidth }));
+    expect(width.content).toBeLessThanOrEqual(width.viewport);
+  }
 });
 
 test("new focused comparisons consolidate queries and aliases without indexing arbitrary tools", async ({ page, request }) => {

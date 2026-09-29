@@ -6318,6 +6318,8 @@ describe("official visa evidence", () => {
       "pgrweb.go.cr",
       "www.minex.gob.gt",
       "igm.gob.gt",
+      "extranjeria.igm.gob.gt",
+      "eu-ua.kmu.gov.ua",
       "www.congreso.gob.gt",
       "www.gub.uy",
       "www.chile.gob.cl",

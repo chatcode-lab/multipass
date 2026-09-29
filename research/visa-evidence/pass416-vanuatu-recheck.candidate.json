@@ -1,0 +1,90 @@
+{
+  "batchId": "pass416-vanuatu-recheck",
+  "researchedAt": "2026-09-29",
+  "sources": [
+    {
+      "id": "pass416-vu-live-opposing-country-lists",
+      "title": "Visa exempted countries",
+      "url": "https://immigration.gov.vu/visa-exempted-countries/",
+      "publisher": "Department of Immigration and Passport Services",
+      "jurisdiction": "Vanuatu",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-09-29",
+      "officialityEvidence": "The destination immigration department publishes both named visitor-entry cohorts on its official government website. The opened page places Bahrain, Monaco and Rwanda in both cohorts; it does not identify which entry supersedes the other.",
+      "supportingExcerpt": "COUNTRIES REQUIRING A VISITOR VISA TO ENTER VANUATU (NON-EXEMPTED COUNTRIES)"
+    },
+    {
+      "id": "pass416-vu-live-tourist-issuance-timing",
+      "title": "Visit Vanuatu",
+      "url": "https://immigration.gov.vu/visit/",
+      "publisher": "Department of Immigration and Passport Services",
+      "jurisdiction": "Vanuatu",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-09-29",
+      "officialityEvidence": "The same destination authority's opened tourist instructions expressly distinguish a visa obtained on arrival by exempt-country travellers from advance application and approval for non-exempt-country travellers. This timing rule does not resolve the contradictory country assignments.",
+      "supportingExcerpt": "If you are from a non-exempted country, you must apply for the visa in advance and obtain approval before traveling to Vanuatu."
+    },
+    {
+      "id": "pass416-rw-ordinary-passport-vanuatu-row",
+      "title": "List of countries that Rwandan passport holders travel visa free",
+      "url": "https://www.migration.gov.rw/1-1/sops-1",
+      "publisher": "Rwanda Directorate General of Immigration and Emigration",
+      "jurisdiction": "Rwanda",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-09-29",
+      "officialityEvidence": "Rwanda's immigration authority publishes separate ordinary, service and diplomatic passport columns. The opened Vanuatu row says no visa is required in all three; it neither corrects Vanuatu's opposing country lists nor states that an arrival visa is unnecessary under Vanuatu's own terminology.",
+      "supportingExcerpt": "VANUATU | Visa not required | Visa not required | Visa not required"
+    }
+  ],
+  "policies": [],
+  "conditional": [],
+  "conflicts": [
+    {
+      "passportCode": "BH",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The current destination schedule explicitly assigns Bahrain to both exempt and non-exempt visitor cohorts. The tourist instructions attach arrival issuance to the former and advance approval to the latter. This is a substantive internal contradiction, not an established replacement for the snapshot label.",
+      "sourceIds": ["pass416-vu-live-opposing-country-lists", "pass416-vu-live-tourist-issuance-timing"]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "The current destination schedule explicitly assigns Monaco to both exempt and non-exempt visitor cohorts. The tourist instructions attach arrival issuance to the former and advance approval to the latter. No opened current authority correction selects one route.",
+      "sourceIds": ["pass416-vu-live-opposing-country-lists", "pass416-vu-live-tourist-issuance-timing"]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "VU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "unresolved",
+      "explanation": "Vanuatu explicitly assigns Rwanda to both opposing visitor cohorts, while Rwanda's ordinary-passport table separately states no visa is required. The origin-government wording does not resolve destination-side liability or issuance timing; one current normalized route is not established.",
+      "sourceIds": ["pass416-vu-live-opposing-country-lists", "pass416-vu-live-tourist-issuance-timing", "pass416-rw-ordinary-passport-vanuatu-row"]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "BH",
+      "destinationCode": "VU",
+      "reason": "Current ordinary-passport visitor route not established. Bahrain remains expressly present in both opposing destination lists, whose tourist issuance instructions differ. No current legal or administrative correction was established; portal availability cannot select a cohort. No replacement status or new review deadline is proposed.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "evisa.gov.vu", "tradeportal.gov.vu", "gov.vu", "mofa.gov.bh"]
+    },
+    {
+      "passportCode": "MC",
+      "destinationCode": "VU",
+      "reason": "Current ordinary-passport visitor route not established. Monaco remains expressly present in both opposing destination lists, whose tourist issuance instructions differ. No current legal or administrative correction was established. The unavailable historical regulation is not proof of current force or scope; no replacement status or new review deadline is proposed.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "evisa.gov.vu", "tradeportal.gov.vu", "gov.vu", "gouv.mc"]
+    },
+    {
+      "passportCode": "RW",
+      "destinationCode": "VU",
+      "reason": "Current ordinary-passport visitor route not established. Rwanda remains in both opposing destination lists. Rwanda's no-visa ordinary-passport row does not settle whether Vanuatu issues an arrival visa or requires preapproval. No current authority correction was established, and no replacement status or new review deadline is proposed.",
+      "searchedOfficialDomains": ["immigration.gov.vu", "evisa.gov.vu", "tradeportal.gov.vu", "gov.vu", "migration.gov.rw"]
+    }
+  ]
+}

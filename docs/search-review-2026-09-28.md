@@ -65,6 +65,8 @@ Next priorities:
 
 ## Reproducibility
 
+Follow-up on 29 September: [Pass 416](../research/visa-evidence/pass416-release-notes.md) rechecked the ten expired corrections with independent source review. Five correction windows were substantively reconfirmed; Moldova gained a conditional explanation. Four remain expired and all ten remain exact-unknown. The next research priority is the separate Vietnam unilateral re-entry wording, not another automatic deadline extension.
+
 Sum integer click/impression columns; compute CTR from aggregate clicks divided by aggregate impressions, never the mean of row CTRs. Weight displayed daily positions by impressions. Weekly windows are contiguous and non-overlapping; last-week growth uses Sep13–19 as denominator. Page-family counts classify supplied URLs only. The user exports are not committed.
 
 SHA-256 identifiers: Chart `1cc3ab4242cc68d5762e22e4a82f8d70dd5dea7e2261c250cf89c91e9cb09e0a`; Countries `1acee6bd44b015701bfdb1885dc52de9628b8348e6244c50ae1c1575449c39c7`; Devices `ee2e54ecc827c7df10614ca2c6e86b7b03d51b8fb8f2d94f32a1d93ffbaae38c`; Filters `72ff01f37ed0327a79ace7619f2d5c8e46552e0f30ebf6adfeba45332d7231e3`; Pages `6a60e69372485e291f894bb8f28c81c38be17ea23c7b46774176d32f15d9beaf`; Queries `117aeec1cffd4bd88bb00e24e321e0aa751ebd0d9b7f3d2ce113753b81351602`; Search appearance `e60415cf9691835536ab715b82a90d8dc57d9114bf94f54fa2384f1bceef0b90`.

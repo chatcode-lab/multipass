@@ -1,0 +1,104 @@
+{
+  "batchId": "pass416-moldova-recheck",
+  "researchedAt": "2026-09-29",
+  "sources": [
+    {
+      "id": "pass416-moldova-romanian-dominican-required-dominica-exempt",
+      "title": "Regimul de vize",
+      "url": "https://mfa.gov.md/ro/content/regimul-de-vize",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "official-dataset",
+      "language": "Romanian",
+      "reviewedAt": "2026-09-29",
+      "officialityEvidence": "The actual central MFA Romanian page opened both through web browsing and a clean local browser. It names Republica Dominicană with footnote 2 in the visa-required list and separately names Uniunea Dominica in the exempt list. Footnote 2 expressly exempts holders of specified valid foreign visas or residence permits.",
+      "supportingExcerpt": "Republica Dominicană"
+    },
+    {
+      "id": "pass416-moldova-english-dominican-translation-discrepancy",
+      "title": "Visa regime for foreigners",
+      "url": "https://mfa.gov.md/en/content/visa-regime-foreigners",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-09-29",
+      "officialityEvidence": "The actual central MFA English page opened. It repeats Dominican Republic in required and exempt lists; the linked Romanian counterpart has two distinct country names at those positions. The English discrepancy is retained rather than silently treated as corrected by the authority.",
+      "supportingExcerpt": "Dominican Republic [2]"
+    },
+    {
+      "id": "pass416-moldova-evisa-type-c-pdf-issuance",
+      "title": "10 lucruri pe care trebuie sa le cunoşti despre serviciul eVisa",
+      "url": "https://www.evisa.gov.md/Info/ThingsYouShouldKnow?c=ro-RO",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "official-portal",
+      "language": "Romanian",
+      "reviewedAt": "2026-09-29",
+      "officialityEvidence": "The central MFA links this government portal. Although web extraction returned 502, a clean local browser directly retrieved HTTP 200 and the complete substantive FAQ. It offers type-C applications to all foreign visa applicants for listed purposes including tourism and private visits; approval produces a PDF visa that must be printed for border presentation.",
+      "supportingExcerpt": "În caz de aprobare, aplicantul va recepţiona eVisa în format PDF."
+    },
+    {
+      "id": "pass416-moldova-tourism-passport-requirements",
+      "title": "Types of visas / requirements",
+      "url": "https://mfa.gov.md/en/content/types-visas-requirements",
+      "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+      "jurisdiction": "Moldova",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-09-29",
+      "officialityEvidence": "The actual central MFA page opened. Its C/T section expressly covers tourism for third-state citizens with a travel passport and separately states the documentary requirements; official missions and long-stay purposes appear in different sections.",
+      "supportingExcerpt": "Tourism (C/T) – it is issued to third-state citizens who wish to travel to the Republic of Moldova for tourism."
+    }
+  ],
+  "policies": [],
+  "conditional": [
+    {
+      "id": "pass416-dominican-moldova-document-dependent-visitor-routes",
+      "title": "Dominican Republic ordinary passports: Moldova foreign-document waiver or advance eVisa",
+      "summary": "The Romanian MFA schedule requires Dominican Republic citizens to hold a visa unless they hold a qualifying valid foreign visa or residence permit. The official electronic service issues type-C tourist and private-visit visas as PDFs before travel. The English exemption entry is a naming discrepancy with the Romanian entry for Dominica, not affirmative Romanian evidence of an unconditional Dominican Republic waiver.",
+      "reason": "document_dependent",
+      "destinationCodes": ["MD"],
+      "passportCodes": ["DO"],
+      "possibleStatuses": ["evisa", "visa_free"],
+      "conditions": [
+        "Scope is a Dominican Republic citizen travelling on an ordinary national passport for a short tourist or private visit; Dominica is a different nationality and is not included in this candidate.",
+        "Footnote 2 exempts holders of a valid residence permit or visa, excluding a transit visa, issued by an EU Member State, a Schengen state, the United Kingdom of Great Britain and Northern Ireland, the United States of America or Canada; travel is permitted during that document's validity.",
+        "Without the qualifying document-based exemption, the Romanian schedule explicitly lists the Dominican Republic as visa-required. The official eVisa FAQ permits foreign visa applicants to request a type-C visa for tourism or private visits, with PDF issuance on approval and a printed visa presented with the travel document at the border.",
+        "The electronic application entails completing the application, uploading supporting documents, paying the fee and receiving the approved PDF before travel; mere portal access or appearance in a selector is not used as eligibility proof.",
+        "The tourist visa requirements include a passport issued within the preceding ten years and valid for at least three months beyond intended departure, accommodation evidence, return travel evidence, sufficient means and medical insurance. Invitation requirements apply where the authority requires them.",
+        "The central English page still misaligns the exempt nationality with the Romanian counterpart. The current consolidated Law 257/2013 could not be opened, so the linguistic reconciliation remains an evidence-based interpretation and confidence is medium.",
+        "No passport-wide rank status, effective date or allowed-stay number is asserted. This conditional record remains paired with an unresolved exact cell."
+      ],
+      "sourceIds": [
+        "pass416-moldova-romanian-dominican-required-dominica-exempt",
+        "pass416-moldova-english-dominican-translation-discrepancy",
+        "pass416-moldova-evisa-type-c-pdf-issuance",
+        "pass416-moldova-tourism-passport-requirements"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "conflicts": [
+    {
+      "passportCode": "DO",
+      "destinationCode": "MD",
+      "snapshotStatus": "evisa",
+      "officialStatus": "conditional: advance eVisa or visa-free entry according to qualifying third-country documents",
+      "explanation": "A single passport-wide eVisa label loses the explicit footnote-2 exemption. The fresh Romanian comparison also shows that the old required/exempt contradiction is not present in that language: the exempt row is Uniunea Dominica. The English naming discrepancy persists and consolidated-law retrieval failed, so no rank-grade replacement is proposed.",
+      "sourceIds": [
+        "pass416-moldova-romanian-dominican-required-dominica-exempt",
+        "pass416-moldova-english-dominican-translation-discrepancy",
+        "pass416-moldova-evisa-type-c-pdf-issuance"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "passportCode": "DO",
+      "destinationCode": "MD",
+      "reason": "One nationality-wide status is not established because the Romanian MFA expressly provides a valid-foreign-document waiver alongside its visa-required Dominican Republic row. The actual eVisa FAQ establishes advance PDF issuance for type-C tourism and private visits, permitting a useful conditional characterization. The English exemption row conflicts linguistically with the Romanian Dominica row; an accessible current consolidated Law 257/2013 or authority correction remains desirable to independently confirm the naming reconciliation.",
+      "searchedOfficialDomains": ["mfa.gov.md", "evisa.gov.md", "legis.md", "iasi.mfa.gov.md", "india.mfa.gov.md", "border.gov.md", "igm.gov.md", "particip.gov.md"]
+    }
+  ]
+}

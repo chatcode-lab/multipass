@@ -38,6 +38,8 @@ The recommended workflow is:
 
 Read [docs/visa-evidence-model-handoff.md](docs/visa-evidence-model-handoff.md) and [docs/visa-evidence-research.md](docs/visa-evidence-research.md) before starting. Keeping a relationship unresolved is preferable to publishing an inference.
 
+For follow-up corrections, preserve the earlier source records and append new reads with unique IDs. Dated follow-ups belong in `src/data/reviewed-unknown-rechecks.ts`; consumers must resolve them with the request's `asOf` date. Only a freshly reconfirmed and independently reviewed correction may renew `recheckBy`. An inconclusive attempt can improve the explanation and record `lastRecheckedAt`, but must not silently restore search eligibility or imply a new legal effective date. Research deadlines and visa-rule expiry dates are different.
+
 ## Product changes
 
 - Preserve HTML, Markdown, and machine-readable URL compatibility.

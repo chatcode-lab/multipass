@@ -25,6 +25,10 @@ export const GET: APIRoute = async ({ locals, params }) => {
     destination: { code: destination.code, name: destination.name },
     status,
     evidenceLevel: evidence.evidenceLevel,
+    supportsCurrentStatus: evidence.supportsCurrentStatus,
+    reviewedAt: evidence.reviewedAt,
+    // Additive v1 metadata: unresolved corrections are not verified visa rules.
+    reviewedCorrection: evidence.reviewedUnknown,
     allowedStays: evidence.allowedStays,
     policies: evidence.policies.map((policy) => ({
       id: policy.id,

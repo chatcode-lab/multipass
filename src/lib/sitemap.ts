@@ -50,7 +50,7 @@ export function escapeXml(value: string): string {
 export function sitemapLastModified(manifest: SnapshotManifest): string {
   const checkedAt = manifest.checkedAt.slice(0, 10);
   // Latest substantive evidence/content update, independent of snapshot refreshes.
-  return checkedAt > "2026-09-28" ? checkedAt : "2026-09-28";
+  return checkedAt > "2026-09-29" ? checkedAt : "2026-09-29";
 }
 
 export function sitemapRegionSlug(region: Region): string {

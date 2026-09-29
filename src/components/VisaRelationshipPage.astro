@@ -7,7 +7,7 @@ import { DATASET_CREATOR } from "@/lib/dataset";
 import { flagEmojiFor } from "@/lib/geography";
 import { STATUS_META } from "@/lib/passport";
 import type { AccessStatus, Destination, PassportSummary, SnapshotManifest } from "@/lib/types";
-import { destinationSlug, type VisaRelationshipEvidence, visaRelationshipHref } from "@/lib/visa-evidence";
+import { correctionRecheckNote, destinationSlug, type VisaRelationshipEvidence, visaRelationshipHref } from "@/lib/visa-evidence";
 import { relationshipPageTitle } from "@/lib/seo-titles";
 import { isCurrentEvidence, relationshipIsIndexable } from "@/lib/visa-indexing";
 
@@ -34,7 +34,7 @@ const title = relationshipPageTitle(passport, destination, status, evidence.supp
 const description = evidence.evidenceLevel === "conditional"
   ? `Official sources describe conditional access from ${passport.name} to ${destination.name}, but traveller-specific rules prevent one safe passport-wide rank category.`
   : evidence.reviewedUnknown
-  ? `Official review rejected the imported ${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} category for ${passport.name} passport travel to ${destination.name}. A single replacement route is not yet established.`
+  ? `The imported ${STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} category for ${passport.name} passport travel to ${destination.name} is withheld while official evidence remains unresolved.`
   : !evidence.supportsCurrentStatus
   ? `Check the evidence available for ${passport.name} passport travel to ${destination.name}. The ranking classification is awaiting independent official-source verification.`
   : status === "entry_restricted"
@@ -111,7 +111,7 @@ const structuredData = [
             : evidence.evidenceLevel === "conditional"
               ? "Officially characterized · conditional"
             : evidence.reviewedUnknown
-              ? "Imported classification rejected"
+              ? "Imported classification withheld"
               : "Official-source review pending"}
         </span>
         <span>{source === "live" ? "Access data checked" : "Bundled access snapshot"} {checkedDate}</span>
@@ -145,9 +145,9 @@ const structuredData = [
         </div>
       ) : evidence.reviewedUnknown ? (
         <div class="notice">
-          <p><strong>The imported {STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} label is not current.</strong></p>
+          <p><strong>The imported {STATUS_META[evidence.reviewedUnknown.rejectedStatus].label.toLowerCase()} label is withheld pending clarification of the official evidence.</strong></p>
           <p>{evidence.reviewedUnknown.reason}</p>
-          <p>No single replacement category is established. This relationship remains pending in evidence coverage and is scheduled for recheck by {new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${evidence.reviewedUnknown.recheckBy}T00:00:00Z`))}.</p>
+          <p>No single replacement category is established. This relationship remains pending in evidence coverage. {correctionRecheckNote(evidence.reviewedUnknown)}</p>
         </div>
       ) : (
         <VisaEvidenceTimeline policies={evidence.policies} sources={evidence.sources} passports={manifest.passports} />

@@ -5,7 +5,7 @@ import {
   type ConditionalVisaEvidence,
   type VisaPolicyEvidence,
 } from "@/data/visa-evidence";
-import { REVIEWED_UNKNOWN_OVERRIDES } from "@/data/reviewed-unknown-overrides";
+import { getReviewedUnknownOverrides } from "@/data/reviewed-unknown-overrides";
 import { allowedStayApplies, conditionalEvidenceApplies, destinationSlug, policyApplies } from "./visa-evidence";
 import type { AccessStatus, PassportAccess, Region, SnapshotManifest } from "./types";
 
@@ -147,6 +147,10 @@ function buildCharacterizationByRelationship(
 
   for (const item of CONDITIONAL_VISA_EVIDENCE) {
     if (!isPolicyActive(item, asOf)) continue;
+    if (!item.sourceIds.every((id) => {
+      const source = sourceById.get(id);
+      return source && source.reviewedAt <= asOf;
+    })) continue;
     for (const destinationCode of item.destinationCodes) {
       if (!destinationCodes.has(destinationCode)) continue;
       for (const passport of manifest.passports) {
@@ -160,7 +164,7 @@ function buildCharacterizationByRelationship(
       }
     }
   }
-  for (const item of REVIEWED_UNKNOWN_OVERRIDES) {
+  for (const item of getReviewedUnknownOverrides(asOf)) {
     if (!destinationCodes.has(item.destinationCode)) continue;
     add(`${item.passportCode}:${item.destinationCode}`, `reviewed-unknown:${item.passportCode}:${item.destinationCode}`, item.sourceIds, item.reviewedAt);
   }

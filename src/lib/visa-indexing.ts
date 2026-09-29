@@ -4,7 +4,7 @@ import {
   type ConditionalVisaEvidence,
   type OfficialVisaSource,
 } from "@/data/visa-evidence";
-import { REVIEWED_UNKNOWN_OVERRIDES, type ReviewedUnknownOverride } from "@/data/reviewed-unknown-overrides";
+import { getReviewedUnknownOverrides, type ReviewedUnknownOverride } from "@/data/reviewed-unknown-overrides";
 import { evidenceRelationshipPairs, type VisaRelationshipEvidence } from "./visa-evidence";
 import type { AccessStatus, Destination, PassportAccess, PassportSummary, Region, SnapshotManifest } from "./types";
 
@@ -86,7 +86,7 @@ export function indexableRelationshipPairs(
       for (const destinationCode of item.destinationCodes) add(passportCode, destinationCode);
     }
   }
-  for (const item of REVIEWED_UNKNOWN_OVERRIDES) {
+  for (const item of getReviewedUnknownOverrides(asOf)) {
     if (usefulCorrection(item, OFFICIAL_SOURCES, asOf)) add(item.passportCode, item.destinationCode, "unknown");
   }
   return [...pairs.values()];
