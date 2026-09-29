@@ -36,3 +36,17 @@ Final local gates pass: **163 files with zero typecheck diagnostics**, lint, **4
 Normal local preview requests confirm eight sitemap shards with **42,708 unique URLs**, unchanged from pass 416. Status totals are 40,941 exact, 4,033 not exact, 1,142 characterized and 4,428 stay-covered relationships; the 24 genuinely rechecked cells move into the fresh bucket (380 fresh, 40,561 old, zero stale). All seven user analytics CSV exports remain untracked and excluded from publication.
 
 The [independent integration review](pass417-integration-review.md) approves the exact evidence, code and dependency hashes with no blockers. The reviewer separately passed 319 focused tests and checked rendered HTML, explicit/negotiated Markdown, JSON APIs, destination timeline deduplication and 320/390-pixel layouts. Publication remains subject to the hosted checks and live verification recorded below.
+
+## Published release and live verification
+
+Runtime commit: [`f8711f6e0ceba3d721f97ac2f4dcdd54d58ef72a`](https://github.com/chatcode-lab/multipass/commit/f8711f6e0ceba3d721f97ac2f4dcdd54d58ef72a). Both [CI](https://github.com/chatcode-lab/multipass/actions/runs/36570450151) and [Cloudflare deployment](https://github.com/chatcode-lab/multipass/actions/runs/36570449833) completed successfully on 29 September 2026. GitHub automatically marked dependency alerts #12 and #13 **fixed** at 12:47:10 UTC; neither was manually dismissed.
+
+Normal production URLs, without cache-busting or a forced data refresh, confirm:
+
+- All 24 relationship APIs retain exact `visa_free` evidence, report the 29 September review, and expose one 45-day stay with the correct cohort-specific 2028 endpoint.
+- UK and Belgium HTML, explicit `.md` and negotiated `Accept: text/markdown` responses contain the approved conditions; both Markdown forms are byte-identical. The pages remain indexable and fit 320/390-pixel viewports without horizontal overflow.
+- The Vietnam destination timeline shows each corrected resolution once and no longer asserts the former 30-day interval. Singapore and Kazakhstan retain their separate bilateral routes.
+- The status API reports 40,941/44,974 exact relationships (91.0%), 4,428 stay-covered, 1,142 characterized, 4,033 not exact, 380 fresh, 40,561 old and zero stale. An initial ad-hoc assertion treated numeric `covered` as a bucket; correcting the check to the documented numeric field passed without any application change.
+- All eight sitemap shards respond successfully and contain exactly 42,708 unique URLs, unchanged from the preceding release.
+
+Remaining limits: this focused review does not close any of the 4,033 unresolved exact-coverage gaps or revalidate unrelated Vietnam routes. Future legal expiry checks and eventual removal of the version-specific dependency override remain required.
