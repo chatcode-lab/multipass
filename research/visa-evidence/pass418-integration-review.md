@@ -47,4 +47,12 @@ After the final reverse-policy build, I independently reopened ME → RU. It rem
 
 Root reports the final complete gate passed: typecheck for 164 files without diagnostics, lint, all 481 unit tests in 21 files, pending audit coverage 4,036/4,036 and production build. The complete browser suite was still running when this review was written; its outcome and production checks belong in the release record.
 
-Current exact coverage remains 40,938/44,974 (91.0%); five structured-stay additions raise current stay coverage from 4,421 to 4,426. The reverse visa change is future-dated. No unrelated source dates, raw upstream snapshot, paid data operation or country-indicator observation was changed. User analytics exports remain outside this reviewed release scope.
+On the bundled local snapshot, current exact coverage remains 40,938/44,974 (91.0%); five structured-stay additions raise bundled current stay coverage from 4,421 to 4,426. These are local bundled-snapshot counts, not production daily-feed totals. The reverse visa change is future-dated. No unrelated source dates, raw upstream snapshot, paid data operation or country-indicator observation was changed. User analytics exports remain outside this reviewed release scope.
+
+## Independent production-count qualification
+
+After deployment, I independently fetched all seven normal regional evidence-status URLs and compared their live cells against the built bundled preview. Production reports **40,898 exact relationships, 4,394 with structured stays and 4,076 pending** on 20 October. Normal sitemap requests return eight shards with **42,665 unique URLs**, compared with 42,705 in the bundled preview.
+
+The live feed has 185 category differences from the bundled snapshot: TD 144, TH 33, MA 1, TZ 1, AI 1, IL 1 and SB 4. Exactly forty formerly exact bundled relationships no longer match the live category: Thailand 33; Chad/PS, Morocco/AL, Tanzania/NG, Anguilla/TW and Israel/CO one each; Solomon Islands/CO and /PS two. Thirty-two Thai differences also lose their matching structured-stay annotation. These results independently reproduce root's production comparison; they do not establish which changed visa category is legally correct.
+
+**None of the forty exact-support losses involves a Pass 418 scope pair**: KZ/BY/RU/SA/TR → ME, ME → RU or CN/HK/MO → KH. The discrepancy is separate daily-feed drift, not a category change introduced by this release. New official-source research and any corrections remain a next bounded task; this follow-up makes no runtime changes and does not approve those differing feed values as verified evidence.
