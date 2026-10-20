@@ -88,7 +88,7 @@ describe("Vietnam's reviewed unilateral visitor waivers", () => {
     try {
       const details = Object.fromEntries(Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]));
       const completion = buildEvidenceCompletionSummary(snapshot.manifest, details, asOf);
-      expect(completion).toMatchObject({ total: 44_974, covered: 40_941, notCovered: { count: 4_033 }, allowedStay: { count: 4_428 } });
+      expect(completion).toMatchObject({ total: 44_974, covered: 40_941, notCovered: { count: 4_033 }, allowedStay: { count: 4_432 } });
     } finally {
       vi.useRealTimers();
     }

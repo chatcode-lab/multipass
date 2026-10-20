@@ -1124,9 +1124,11 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "PH", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "PH", "visa_required").supportsCurrentStatus).toBe(true);
 
-    expect(pairsFor("KH")).toHaveLength(199);
+    // This assertion records the trial while it was legally in force.
+    expect(evidenceRelationshipPairs(snapshot.manifest, "2026-10-15")
+      .filter(({ destination }) => destination.code === "KH")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("SG", "KH", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("CN", "KH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("CN", "KH", "visa_free", "2026-10-15").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AF", "KH", "visa_required").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("AU", "KH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("IE", "KH", "visa_on_arrival").supportsCurrentStatus).toBe(true);
@@ -2604,7 +2606,7 @@ describe("official visa evidence", () => {
 
     expect(pairsFor("BA")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("BA", "BA", "citizenship").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("BH", "BA", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("BH", "BA", "visa_required", "2026-10-01").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BH", "BA", "visa_free", "2026-09-30").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TR", "BA", "visa_free").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("RU", "BA", "visa_free").supportsCurrentStatus).toBe(true);
@@ -3074,7 +3076,7 @@ describe("official visa evidence", () => {
     }
     expect(getVisaRelationshipEvidence("AM", "UA", snapshot.passports.AM.statuses.UA).supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("BA", "BA", "citizenship").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("HK", "KH", "visa_free").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("HK", "KH", "visa_free", "2026-10-15").supportsCurrentStatus).toBe(true);
   });
 
   it("supports reviewed Burkinabè, Israeli, and Sri Lankan outbound rows", () => {
@@ -6264,6 +6266,8 @@ describe("official visa evidence", () => {
       "www.kdmid.ru",
       "evisa.kdmid.ru",
       "electronic-visa.kdmid.ru",
+      "mid.ru",
+      "montenegro.mid.ru",
       "government.ru",
       "www.liberianembassyus.org",
       "kremlin.ru",

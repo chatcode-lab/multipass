@@ -151,7 +151,9 @@ describe("reviewed September 2026 live/fallback drift", () => {
 
 describe("autumn 2026 seasonal visa boundaries", () => {
   it("preserves old evidence artifacts but shows one reviewed same-scope timeline record", () => {
-    for (const [previousId, replacementId] of Object.entries(REVIEWED_POLICY_REFRESHES)) {
+    for (const [previousId, immediateReplacementId] of Object.entries(REVIEWED_POLICY_REFRESHES)) {
+      let replacementId = immediateReplacementId;
+      while (REVIEWED_POLICY_REFRESHES[replacementId]) replacementId = REVIEWED_POLICY_REFRESHES[replacementId];
       const previous = reviewedEvidence.policies.find(({ id }) => id === previousId)!;
       const replacement = VISA_POLICY_EVIDENCE.find(({ id }) => id === replacementId)!;
       expect(previous).toBeDefined();
@@ -164,8 +166,12 @@ describe("autumn 2026 seasonal visa boundaries", () => {
       expect(replacement.effectiveFrom).toBe(previous.effectiveFrom);
       expect(replacement.effectiveTo).toBe(previous.effectiveTo);
       expect(replacement.sourceIds).not.toEqual(previous.sourceIds);
+      const replacementRead = replacement.sourceIds.map((id) =>
+        reviewedEvidence.sources.find((source) => source.id === id)!.reviewedAt).sort()[0];
       for (const id of previous.sourceIds) {
-        expect(reviewedEvidence.sources.find((source) => source.id === id)?.reviewedAt).toMatch(/^2026-08-/);
+        const originalRead = reviewedEvidence.sources.find((source) => source.id === id)?.reviewedAt;
+        expect(originalRead).toBeDefined();
+        expect(originalRead! < replacementRead).toBe(true);
       }
     }
   });

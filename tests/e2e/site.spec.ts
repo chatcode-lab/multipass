@@ -824,6 +824,7 @@ test("reviewed Hong Kong and French Guiana successors agree across public format
 });
 
 test("seasonal waiver rechecks expose bounded stays consistently across public formats", async ({ page, request }) => {
+  const today = new Date().toISOString().slice(0, 10);
   const cases = [
     { passport: "BH", destination: "BA", path: "/bahrain-bosnia-and-herzegovina-visa-free", days: 60, until: "2026-09-30", basis: "calendar_period" },
     { passport: "OM", destination: "BA", path: "/oman-bosnia-and-herzegovina-visa-free", days: 60, until: "2026-09-30", basis: "calendar_period" },
@@ -835,23 +836,41 @@ test("seasonal waiver rechecks expose bounded stays consistently across public f
   ];
   for (const entry of cases) {
     const api = await (await request.get(`/api/v1/visa/${entry.passport}/${entry.destination}`)).json();
-    expect(api).toMatchObject({ status: "visa_free", evidenceLevel: "exact" });
-    expect(api.policies).toHaveLength(1);
-    expect(api.policies[0]).toMatchObject({ effectiveTo: entry.until });
-    expect(api.policies[0].id).toMatch(/^pass414-/);
-    expect(api.allowedStays).toEqual([expect.objectContaining({ maxDays: entry.days, basis: entry.basis })]);
-    const markdown = await request.get(`${entry.path}.md`);
+    const expired = today > entry.until;
+    const status = expired ? (entry.destination === "KH" ? "unknown" : "visa_required") : "visa_free";
+    expect(api).toMatchObject({ status, supportsCurrentStatus: status !== "unknown" });
+    if (expired) {
+      expect(api.allowedStays.some((stay: { maxDays?: number }) => stay.maxDays === entry.days)).toBe(false);
+      expect(api.policies.some((policy: { status: string; effectiveTo?: string }) => policy.status === "visa_free"
+        && (!policy.effectiveTo || policy.effectiveTo >= today))).toBe(false);
+    } else {
+      expect(api.policies).toHaveLength(1);
+      expect(api.policies[0]).toMatchObject({ effectiveTo: entry.until });
+      expect(api.allowedStays).toEqual([expect.objectContaining({ maxDays: entry.days, basis: entry.basis })]);
+    }
+    const path = expired ? entry.path.replace(/visa-free$/, status === "unknown" ? "status-unknown" : "visa") : entry.path;
+    if (expired) {
+      const old = await request.get(entry.path, { maxRedirects: 0 });
+      expect([301, 308]).toContain(old.status());
+      expect(new URL(old.headers().location, "https://multipassrank.com").pathname).toBe(path);
+    }
+    const markdown = await request.get(`${path}.md`);
     expect(markdown.ok()).toBe(true);
-    expect(await markdown.text()).toContain(`${entry.days} days`);
-    const negotiated = await request.get(entry.path, { headers: { accept: "text/markdown" } });
+    if (!expired) expect(await markdown.text()).toContain(`${entry.days} days`);
+    const negotiated = await request.get(path, { headers: { accept: "text/markdown" } });
     expect(negotiated.headers()["content-type"]).toContain("text/markdown");
     expect(await negotiated.text()).toBe(await markdown.text());
   }
   for (const entry of [cases[0], cases[3], cases[4]]) {
     await page.goto(entry.path);
-    await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
-    await expect(page.locator(".evidence-timeline article")).toHaveCount(1);
-    await expect(page.locator(`.evidence-timeline__meta time[datetime="${entry.until}"]`)).toBeVisible();
+    if (today <= entry.until) {
+      await expect(page.getByText("Official evidence collected", { exact: true })).toBeVisible();
+      await expect(page.locator(".evidence-timeline article")).toHaveCount(1);
+      await expect(page.locator(`.evidence-timeline__meta time[datetime="${entry.until}"]`)).toBeVisible();
+    } else {
+      await expect(page).toHaveURL(new RegExp(`${entry.destination === "KH" ? "status-unknown" : "visa"}$`));
+      await expect(page.locator(".visa-relation-hero")).not.toContainText(`${entry.days} days`);
+    }
     const sizes = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: window.innerWidth }));
     expect(sizes.document - sizes.viewport).toBeLessThanOrEqual(1);
   }

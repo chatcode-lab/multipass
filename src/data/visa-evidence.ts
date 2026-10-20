@@ -3936,6 +3936,7 @@ const BASE_VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = [
 // Keep approved research artifacts immutable while ending only the superseded
 // nationality slices. The other members retain their original evidence dates.
 const DATED_POLICY_SUCCESSIONS: Record<string, { codes: string[]; through: string }> = {
+  "russia-ordinary-passports-visa-free-30-days": { codes: ["ME"], through: "2026-10-31" },
   "hong-kong-current-prior-visa-list": { codes: ["NI", "SB"], through: "2026-08-25" },
   "french-guiana-ordinary-passport-advance-visa-complement": { codes: ["BR"], through: "2026-07-30" },
 };
@@ -3951,6 +3952,10 @@ const REVIEWED_POLICY_END_DATES: Readonly<Record<string, string>> = {
 // A complete, independently reviewed same-scope refresh replaces the displayed
 // record, not the archived artifact. Keep one timeline event for one policy.
 export const REVIEWED_POLICY_REFRESHES: Readonly<Record<string, string>> = {
+  "pass414-me-kazakhstan-prior-visa-from-october-2": "pass418-me-kazakhstan-prior-visa-from-october-2",
+  "montenegro-belarus-russia-temporary-30-days": "pass418-me-belarus-russia-waiver-through-october-31",
+  "montenegro-saudi-turkiye-temporary-30-days": "pass418-me-saudi-turkiye-waiver-through-october-31",
+  "montenegro-belarus-russia-saudi-turkiye-advance-visa-from-november-2026": "pass418-me-four-passports-prior-visa-from-november-1",
   "vietnam-resolution44-12-nationals-visa-exempt": "pass417-vn-resolution44-current-entry-conditions",
   "vietnam-resolution229-12-nationals-visa-exempt": "pass417-vn-resolution229-current-tourist-entry-conditions",
   "vietnam-bilateral-ordinary-passport-short-stay-waivers": "pass415-vn-bilateral-ordinary-thirty-day-waivers",

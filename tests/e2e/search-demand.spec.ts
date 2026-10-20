@@ -110,6 +110,72 @@ test("Vietnam unilateral waivers expose corrected re-entry conditions in every f
   await expect(page.getByRole("heading", { name: "Vietnam: Resolution 229 twelve-country 45-day tourism waiver", exact: true })).toHaveCount(1);
 });
 
+test("Montenegro's current stays and November change agree across public formats on mobile", async ({ page, request }) => {
+  const today = new Date().toISOString().slice(0, 10);
+  for (const [code, slug] of [
+    ["KZ", "kazakhstan"], ["BY", "belarus"], ["RU", "russian-federation"], ["SA", "saudi-arabia"], ["TR", "turkiye"],
+  ]) {
+    const requiresVisa = code === "KZ" || today >= "2026-11-01";
+    const status = requiresVisa ? "visa_required" : "visa_free";
+    const path = `/${slug}-montenegro-${requiresVisa ? "visa" : "visa-free"}`;
+    const apiResponse = await request.get(`/api/v1/visa/${code}/ME`);
+    expect(apiResponse.status()).toBe(200);
+    const api = await apiResponse.json();
+    expect(api).toMatchObject({ status, evidenceLevel: "exact", reviewedAt: "2026-10-20" });
+    expect(api.allowedStays).toHaveLength(1);
+    expect(api.allowedStays[0].maxDays).toBe(requiresVisa ? 90 : 30);
+    if (requiresVisa) {
+      expect(api.allowedStays[0]).toMatchObject({ withinDays: 180, basis: "calendar_period" });
+      expect(api.allowedStays[0].label).toContain("from first entry, subject to the issued visa");
+    }
+    const policy = api.policies.find((item: { id: string; status: string }) => item.id.startsWith("pass418-") && item.status === status);
+    expect(policy).toBeDefined();
+    const markdown = await (await request.get(`${path}.md`)).text();
+    const negotiated = await request.get(path, { headers: { Accept: "text/markdown" } });
+    expect(negotiated.headers()["content-type"]).toContain("text/markdown");
+    expect(await negotiated.text()).toBe(markdown);
+    expect(markdown).toContain(api.allowedStays[0].label);
+    for (const width of [320, 390]) {
+      await page.setViewportSize({ width, height: 844 });
+      await page.goto(path);
+      await expect(page.locator(".visa-relation-hero .allowed-stay-summary strong")).toHaveText(api.allowedStays[0].label);
+      await expect(page.getByRole("heading", { name: policy.title, exact: true })).toHaveCount(1);
+      for (const condition of policy.conditions) {
+        await expect(page.locator("#official-evidence")).toContainText(condition);
+        expect(markdown).toContain(condition);
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);
+    }
+  }
+});
+
+test("Russia's separately verified Montenegrin visa notice follows its scheduled date", async ({ page, request }) => {
+  const requiresVisa = new Date().toISOString().slice(0, 10) >= "2026-11-01";
+  const suffix = requiresVisa ? "visa" : "visa-free";
+  const path = `/montenegro-russian-federation-${suffix}`;
+  const other = await request.get(`/montenegro-russian-federation-${requiresVisa ? "visa-free" : "visa"}`, { maxRedirects: 0 });
+  expect([301, 308]).toContain(other.status());
+  expect(new URL(other.headers().location, "https://multipassrank.com").pathname).toBe(path);
+  const api = await (await request.get("/api/v1/visa/ME/RU")).json();
+  expect(api).toMatchObject({ status: requiresVisa ? "visa_required" : "visa_free", evidenceLevel: "exact" });
+  const markdown = await (await request.get(`${path}.md`)).text();
+  const negotiated = await request.get(path, { headers: { Accept: "text/markdown" } });
+  expect(await negotiated.text()).toBe(markdown);
+  if (requiresVisa) {
+    expect(api.reviewedAt).toBe("2026-10-20");
+    expect(api.allowedStays).toHaveLength(0);
+    expect(markdown).toContain("https://mid.ru/ru/foreign_policy/news/2154483/");
+  }
+  const destinationMarkdown = await (await request.get("/destination/russian-federation.md")).text();
+  expect(destinationMarkdown).toContain("Montenegrin ordinary visitors: Russian visa required from 1 November 2026");
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto(path);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://multipassrank.com${path}`);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);
+  }
+});
+
 test("changed Bermuda categories redirect and appear only under current canonical sitemap URLs", async ({ request }) => {
   const paths = [
     ["botswana", "visa-free", "visa", "africa"],

@@ -2606,7 +2606,18 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reason: "Russia's Foreign Ministry country table, current as of July 2026, expressly records this ordinary-passport visa-free route.",
     sourceUrl: "https://www.kdmid.ru/cons/visas/conditions-of-entry-foreign-citizens-in-russian-federation/",
     reviewedAt: "2026-08-21",
+    // The independently reviewed October statement ends only Montenegro's waiver.
+    ...(passportCode === "ME" ? { effectiveTo: "2026-10-31" } : {}),
   })),
+  {
+    passportCode: "ME",
+    destinationCode: "RU",
+    status: "visa_required",
+    reason: "Russia's Foreign Ministry expressly confirms that Montenegrin visitors will need visas from 1 November 2026 following termination of the bilateral agreement; the embassy describes regular consular issuance before travel.",
+    sourceUrl: "https://mid.ru/ru/foreign_policy/news/2154483/",
+    reviewedAt: "2026-10-20",
+    effectiveFrom: "2026-11-01",
+  },
   ...(["CU", "EC", "SD", "SS", "ZA"] as const).map((passportCode) => ({
     passportCode,
     destinationCode: "MD" as const,

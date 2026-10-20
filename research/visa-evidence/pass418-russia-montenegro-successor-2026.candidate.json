@@ -1,0 +1,63 @@
+{
+  "batchId": "pass418-russia-montenegro-successor-2026",
+  "researchedAt": "2026-10-20",
+  "sources": [
+    {
+      "id": "pass418-ru-mfa-montenegro-treaty-end",
+      "title": "Russian MFA: Montenegrin citizens must obtain visas following the mutual-travel agreement's termination",
+      "url": "https://mid.ru/ru/foreign_policy/news/2154483/",
+      "publisher": "Ministry of Foreign Affairs of the Russian Federation",
+      "jurisdiction": "Russia",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-10-20",
+      "officialityEvidence": "Actual complete operative first question and answer read from ordinary trusted Node HTTPS, HTTP 200, on the Russian MFA's official domain after the web reader returned 502. Visible timestamp: 14 October 2026, 09:15; document number 1660-14-10-2026. The MFA's own Telegram publication links to this exact government-hosted page. The statement expressly addresses Montenegrin citizens visiting Russia, not merely the opposite direction.",
+      "supportingExcerpt": "Соответственно, гражданам Черногории также придется получать визы для поездок в Россию."
+    },
+    {
+      "id": "pass418-ru-podgorica-regular-visa-procedure",
+      "title": "Russian Embassy in Montenegro: regular visa submission, review and issuance",
+      "url": "https://montenegro.mid.ru/ru/consular-services/foreigners/vizovye_voprosy/",
+      "publisher": "Embassy of the Russian Federation in Montenegro",
+      "jurisdiction": "Russia",
+      "kind": "government-guidance",
+      "language": "Russian",
+      "reviewedAt": "2026-10-20",
+      "officialityEvidence": "Actual visa-requirements, tourist basis and issuance-timing sections read through ordinary trusted HTTPS, HTTP 200, after following the visa link from the Embassy's actual consular section. The mission is published on an official mid.ru subdomain. These operative sections positively describe original-passport documentation, a printed signed application, tourist reception confirmation, mission review and later issuance. Historical bilateral introduction and separate 2019 regional eVisa instructions are excluded from support.",
+      "supportingExcerpt": "Посольство рассматривает визовые обращения, принимает решения и выдает российские визы"
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass418-ru-montenegro-ordinary-visitors-prior-visa-november",
+      "title": "Montenegrin ordinary visitors: Russian visa required from 1 November 2026",
+      "summary": "Montenegrin ordinary-passport visitors need a Russian visa for new entries from 1 November 2026 following termination of the bilateral mutual-travel agreement. Russia's Foreign Ministry expressly confirms the obligation; the Russian mission's regular visitor-visa procedure establishes issuance after consular review before travel.",
+      "status": "visa_required",
+      "destinationCodes": ["RU"],
+      "passportCodes": ["ME"],
+      "announcedOn": "2026-10-14",
+      "effectiveFrom": "2026-11-01",
+      "conditions": [
+        "This is the ordinary-passport short-visit baseline for new entries. Diplomatic, official, residence, crew, transit and individually applicable exemptions remain separate; no visitor admission or visa approval is guaranteed.",
+        "The Russian MFA says Montenegro notified Russia on 28 September 2026 of termination of the agreement dated 24 September 2008, describes practical implementation from 1 November, and expressly states that Montenegrin citizens will also have to obtain visas to visit Russia. The original agreement date is not a new September 2026 rule date.",
+        "The regular mission procedure requires a complete document packet including an original passport with visa pages and a printed signed application. A tourist basis is confirmation from a Russian tourism organization; the mission reviews the documents and issues visas afterward, potentially requesting further documents or an interview. The online application form is not itself an eVisa or an arrival visa.",
+        "The mission page's historical bilateral introduction and 2019 regional eVisa sections do not establish the new baseline. Current unified-eVisa nationality eligibility must be separately established; it is not inferred from portal availability or a list omission.",
+        "No uniform new allowed-stay number is established here. The old bilateral 30-day waiver must not remain current stay evidence after the agreement ends, and the mission's dated table is not converted into a newly verified nationality-wide allowance. This record does not determine departure rights of a traveller admitted before 1 November."
+      ],
+      "sourceIds": ["pass418-ru-mfa-montenegro-treaty-end", "pass418-ru-podgorica-regular-visa-procedure"],
+      "confidence": "high"
+    }
+  ],
+  "conditional": [],
+  "conflicts": [
+    {
+      "passportCode": "ME",
+      "destinationCode": "RU",
+      "snapshotStatus": "visa_free",
+      "officialStatus": "visa_required",
+      "explanation": "The undated fallback visa-free category is incompatible with Russia's express scheduled visa obligation for Montenegrin visitors from 1 November 2026. This is a future conflict only: the candidate does not change the ordinary baseline before that date. The mission's positive regular visa process, rather than eVisa-list omission or assumed reciprocity, establishes the proposed normalized route.",
+      "sourceIds": ["pass418-ru-mfa-montenegro-treaty-end", "pass418-ru-podgorica-regular-visa-procedure"]
+    }
+  ],
+  "unresolved": []
+}
