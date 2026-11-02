@@ -1,0 +1,59 @@
+# MultiPass Rank
+
+> Passport rankings, combined-passport coverage, comparisons, and official-source visa evidence for ordinary short-term visits.
+
+## Start here
+
+- [Full AI-agent guide](https://multipassrank.com/ai.md): Detailed URL conventions, API examples, evidence states, and interpretation rules.
+- [Methodology](https://multipassrank.com/methodology.md): Scoring, ties, data sources, and limitations.
+- [Current manifest](https://multipassrank.com/api/v1/manifest): JSON with valid ISO alpha-2 codes, country slugs, destinations, ranks, snapshot version, and checked date.
+- [Sitemap](https://multipassrank.com/sitemap.xml): Index of published canonical pages.
+- [Dataset license](https://multipassrank.com/data-license.md): Original metadata and third-party source boundaries.
+
+## Passport and destination data
+
+- [Global passport ranking](https://multipassrank.com/index.md): Single-passport ranks and scores.
+- [Destination directory](https://multipassrank.com/destinations.md): Find entry requirements by destination rather than passport.
+- [Example passport](https://multipassrank.com/passport/singapore.md): Passport access and links to reviewed country topics.
+- [Example destination](https://multipassrank.com/destination/thailand.md): Access by passport nationality and official evidence timeline.
+- [Example relationship](https://multipassrank.com/mexico-thailand-evisa.md): One passport-destination rule, conditions, allowed stay, sources, and application guidance.
+- [Example citizenship topic](https://multipassrank.com/passport/singapore/citizenship.md): Reviewed requirements, applicant scope, and official sources.
+- [Example tax topic](https://multipassrank.com/passport/singapore/taxes.md): Reviewed tax context and its jurisdictional limits.
+
+## Build comparison URLs
+
+Use passport codes from the manifest. Each repeated `set` parameter is a separate option; commas combine passports within that option. Comparison and ranking URLs accept up to five sets with up to ten passports per set; the visual editor caps manual sets at five passports.
+
+- [Compare two passports](https://multipassrank.com/compare.md?set=US&set=PT): United States versus Portugal.
+- [Compare a combined set](https://multipassrank.com/compare.md?set=US,CA&set=PT): United States plus Canada versus Portugal.
+
+## Build custom ranking URLs
+
+- [Rank one combined set](https://multipassrank.com/rank.md?set=US,CA): Insert the combined set into the global ranking.
+- [Rank multiple options](https://multipassrank.com/rank.md?set=US,CA&set=PT): Highlight several individual or combined options.
+
+## Build incremental improvement URLs
+
+Order matters: each stage measures its gain against all preceding stages combined. Up to five stages and ten distinct passports across the sequence are supported.
+
+- [Improve a base passport](https://multipassrank.com/improve.md?set=US&set=IT): Add Italy after the United States.
+- [Add a combined stage](https://multipassrank.com/improve.md?set=US&set=IT&set=IE,PT): Add Ireland and Portugal together at the next stage.
+
+## Structured JSON
+
+- [One passport](https://multipassrank.com/api/v1/passports/US): Destination status map.
+- [One relationship](https://multipassrank.com/api/v1/visa/US/JP): Current category, evidenceLevel, supportsCurrentStatus, reviewedAt, conditions, allowed stays, and official sources.
+- [Country profile](https://multipassrank.com/api/v1/country-profiles/SG): Published citizenship/tax topics and living indicators with sources, units, observation years, and missing states.
+- [Combination research](https://multipassrank.com/api/v1/combination-insights): Best pairs, triples, minimum-cover sets, and marginal gains with their snapshot date.
+- [Citizenship compatibility](https://multipassrank.com/api/v1/citizenship-policies): Reviewed multiple-citizenship rules and cautions.
+- [Citizenship acquisition](https://multipassrank.com/api/v1/citizenship-acquisition): Reviewed routes and requirements.
+
+For JSON calculations, POST `{"sets":[["US","CA"],["PT"]]}` to https://multipassrank.com/api/v1/compare, or POST `{"sets":[["US"],["IT"],["IE","PT"]]}` to https://multipassrank.com/api/v1/improve. Send `Content-Type: application/json`. These POST responses are not cached.
+
+## Formats and interpretation
+
+HTML is the default. Send `Accept: text/markdown` to supported HTML URLs for native Markdown, or append `.md` before the query string. Follow advertised Markdown/JSON alternatives and canonical redirects instead of guessing country slugs or visa-status suffixes. Same-country relationships use `/passport/{slug}`. Published country topics exist only where reviewed content is available.
+
+Read current values and checked dates from the linked resources; this static file contains no live scores or coverage counts. Preserve source-review dates, conditions, and statistical observation years in answers. Search indexing does not imply verification: check `evidenceLevel` and `supportsCurrentStatus`. Conditional, pending, or rejected evidence must not be presented as an exact verified entry rule. Research recheck deadlines are not legal expiry dates. Preserve allowed-stay labels; visa validity, first-use windows, and processing times are not permitted stays.
+
+Mobility scores count visa-free, visa-on-arrival, and ETA access, not eVisa or prior-visa destinations. Combined sets use the easiest available access per destination. Hypothetical passport combinations do not establish that multiple citizenship is permitted or obtainable. Travel access does not grant residence, work, study, or tax benefits; do not add or average country living indicators across passports. Cite the canonical evidence page and official authorities, and verify requirements before travel.

@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type APIRequestContext } from "@playwright/test";
+import { readFile } from "node:fs/promises";
 
 async function sitemapIndexLocations(request: APIRequestContext): Promise<string[]> {
   const response = await request.get("/sitemap.xml");
@@ -570,6 +571,7 @@ test("curated query comparisons become readable URLs with Markdown alternatives"
 test("AI instructions expose URL, Markdown, and API conventions", async ({ page, request }) => {
   await page.goto("/ai");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("AI companion");
+  await expect(page.locator('link[rel~="describedby"][href="/llms.txt"]')).toHaveCount(1);
   await expect(page.getByText("POST /api/v1/compare", { exact: true })).toBeVisible();
   await expect(page.locator("pre").filter({ hasText: "One combined rank" })).toContainText(
     "https://multipassrank.com/rank?set=US,CA",
@@ -578,9 +580,28 @@ test("AI instructions expose URL, Markdown, and API conventions", async ({ page,
   const llms = await request.get("/llms.txt");
   expect(llms.ok()).toBe(true);
   expect(llms.headers()["content-type"]).toContain("text/plain");
+  expect(llms.headers()["cache-control"]).toContain("s-maxage=86400");
+  expect(llms.headers().link).toBe('<https://multipassrank.com/ai>; rel="canonical"');
+  expect(llms.headers()["x-content-type-options"]).toBe("nosniff");
   const llmsBody = await llms.text();
   expect(llmsBody).toContain("Build comparison URLs");
   expect(llmsBody).toContain("Build incremental improvement URLs");
+  expect(llmsBody).toBe(await readFile(new URL("../../public/llms.txt", import.meta.url), "utf8"));
+  expect(llmsBody).toContain("https://multipassrank.com/ai.md");
+  expect(llmsBody).toContain("supportsCurrentStatus");
+  for (const [, href] of llmsBody.matchAll(/\]\((https:\/\/multipassrank\.com\/[^)]+)\)/g)) {
+    const url = new URL(href);
+    const linked = await request.get(`${url.pathname}${url.search}`);
+    expect(linked.ok(), href).toBe(true);
+  }
+
+  const markdownAccept = await request.get("/llms.txt", { headers: { Accept: "text/markdown" } });
+  expect(markdownAccept.headers()["content-type"]).toContain("text/plain");
+  expect(await markdownAccept.text()).toBe(llmsBody);
+  const head = await request.head("/llms.txt");
+  expect(head.ok()).toBe(true);
+  expect(head.headers()["content-type"]).toContain("text/plain");
+  expect(await head.body()).toHaveLength(0);
 });
 
 test("HTML page URLs negotiate their native Markdown representations", async ({ request }) => {

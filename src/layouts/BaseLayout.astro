@@ -50,7 +50,7 @@ if (alternateHeaders.length) Astro.response.headers.append("Link", alternateHead
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
-    <link rel="help" type="text/plain" href="/llms.txt" title="Instructions for AI agents" />
+    <link rel="help describedby" type="text/plain" href="/llms.txt" title="Instructions for AI agents" />
     <link rel="preload" href={instrumentSansUrl} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={newsreaderUrl} as="font" type="font/woff2" crossorigin="anonymous" />
     {markdownUrl && <link rel="alternate" type="text/markdown" href={markdownUrl} />}

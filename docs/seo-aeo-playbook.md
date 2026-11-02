@@ -299,7 +299,7 @@ AEO is an interface-design problem. Make the reliable answer easy to discover, p
 ### Required discovery surfaces
 
 - `/ai` and `/ai.md`: human- and agent-readable usage guide;
-- `/llms.txt`: lightweight discovery entry point;
+- `/llms.txt`: static discovery entry point maintained in `public/llms.txt`, with cache/MIME/canonical headers in `public/_headers`; keep live counts and scores out of this file and link to the detailed `/ai.md` guide;
 - Markdown alternatives for major pages and every relationship page;
 - native Markdown from eligible HTML URLs when a client sends `Accept: text/markdown`;
 - same-origin JSON APIs for manifest, passport detail, relationship evidence, compare, improve, combination insights, citizenship policy, and citizenship acquisition;
