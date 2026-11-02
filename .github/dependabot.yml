@@ -6,6 +6,10 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    # Routine major migrations are manual; security updates are not restricted.
+    allow:
+      - dependency-name: "*"
+        update-types: [version-update:semver-minor, version-update:semver-patch]
     groups:
       security-updates:
         applies-to: security-updates

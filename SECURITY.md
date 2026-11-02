@@ -17,7 +17,7 @@ Security reports may cover the application at `multipassrank.com`, its same-orig
 
 ## Dependency maintenance
 
-Run `npm run security:audit` to check production and development dependencies. CI and deployment reject active advisories at every severity; an unavailable audit service is a failed check, not a clean result. Weekly Dependabot updates group compatible runtime and tooling changes, with a separate security-update group. Updates still require review and the complete test suite before merging.
+Run `npm run security:audit` to check production and development dependencies. CI and deployment reject active advisories at every severity; an unavailable audit service is a failed check, not a clean result. Weekly Dependabot updates group routine minor/patch runtime and tooling changes, with a separate security-update group. Routine major migrations are manual: the `allow.update-types` filter [does not restrict security updates](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#update-types-allow). Updates still require review and the complete test suite before merging.
 
 The November 2026 refresh raises the patched dependency floors and removes the obsolete Miniflare/Undici override. The narrow `minimatch@^10.0.0` override uses `11.0.1` because the [globparts amplification fix](https://github.com/advisories/GHSA-g3hv-75wg-m249) has no v10 backport. This is a major transitive change, not an assumed compatible patch: its current ESLint and TypeScript-ESLint consumers require explicit glob/ignore coverage, lint and typecheck validation. Remove this override when upstream consumers adopt the fixed major themselves. Do not broaden it to older Minimatch API generations or suppress the audit instead.
 
