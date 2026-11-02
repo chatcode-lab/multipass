@@ -148,7 +148,13 @@ test("a shared comparison renders scenarios and difference controls", async ({ p
   await expect(page.getByText("Differences only", { exact: true })).toBeVisible();
   await expect(page.getByRole("checkbox", { name: "Differences only" })).toBeChecked();
   await expect(page.locator("table.comparison-table")).toBeVisible();
-  await page.getByLabel("Filter comparison destinations by region").selectOption("EUROPE");
+  const regionFilter = page.getByLabel("Filter comparison destinations by region");
+  // SSR controls are visible before React attaches their change handlers.
+  await expect.poll(() => regionFilter.evaluate((element) => {
+    const island = element.closest("astro-island");
+    return Boolean(island && !island.hasAttribute("ssr"));
+  })).toBe(true);
+  await regionFilter.selectOption("EUROPE");
   await expect(page.locator(".comparison-table__region")).toHaveCount(1);
   await expect(page.locator(".comparison-table__region")).toContainText("Europe");
   await expect(page.locator("td.comparison-cell--best").first()).toBeVisible();
@@ -1298,6 +1304,7 @@ test("public evidence matrix audits every passport against a destination region"
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator(".content-formats a")).toHaveAccessibleName(".md Markdown version of this page");
   const results = await new AxeBuilder({ page }).analyze();
   expect(results.violations).toEqual([]);
 });
