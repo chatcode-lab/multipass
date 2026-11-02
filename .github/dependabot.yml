@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns: ["*"]
+      runtime-updates:
+        dependency-type: production
+        update-types: [minor, patch]
+      tooling-updates:
+        dependency-type: development
+        update-types: [minor, patch]
