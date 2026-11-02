@@ -1092,26 +1092,27 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("VN", "VN", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
-  it("covers Thailand's current ordinary-passport schedules", () => {
-    const thailandPairs = evidenceRelationshipPairs(snapshot.manifest)
+  it("preserves Thailand's pre-reform ordinary-passport evidence before its September boundary", () => {
+    const thailandPairs = evidenceRelationshipPairs(snapshot.manifest, "2026-09-14")
       .filter(({ destination }) => destination.code === "TH");
 
     expect(thailandPairs).toHaveLength(199);
-    const netherlandsEvidence = getVisaRelationshipEvidence("NL", "TH", "visa_free");
+    const netherlandsEvidence = getVisaRelationshipEvidence("NL", "TH", "visa_free", "2026-09-14");
     expect(netherlandsEvidence.supportsCurrentStatus).toBe(true);
     expect(netherlandsEvidence.policies.map(({ id }) => id)).toContain(
       "thailand-current-60-day-waiver-until-gazette-transition-2026",
     );
-    expect(netherlandsEvidence.reviewedAt).toBe("2026-08-25");
-    const ethiopiaEvidence = getVisaRelationshipEvidence("ET", "TH", "visa_on_arrival");
+    const historical = netherlandsEvidence.policies.find(({ id }) => id === "thailand-current-60-day-waiver-until-gazette-transition-2026")!;
+    expect(historical.sourceIds.every((id) => OFFICIAL_VISA_SOURCES.find((source) => source.id === id)?.reviewedAt === "2026-08-25")).toBe(true);
+    const ethiopiaEvidence = getVisaRelationshipEvidence("ET", "TH", "visa_on_arrival", "2026-09-14");
     expect(ethiopiaEvidence.supportsCurrentStatus).toBe(true);
     expect(ethiopiaEvidence.policies.map(({ id }) => id)).toContain(
       "thailand-current-15-day-voa-until-gazette-transition-2026",
     );
-    expect(getVisaRelationshipEvidence("IN", "TH", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AZ", "TH", "evisa").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("AZ", "TH", "visa_on_arrival").supportsCurrentStatus).toBe(false);
-    expect(getVisaRelationshipEvidence("AF", "TH", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IN", "TH", "visa_free", "2026-09-14").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AZ", "TH", "evisa", "2026-09-14").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("AZ", "TH", "visa_on_arrival", "2026-09-14").supportsCurrentStatus).toBe(false);
+    expect(getVisaRelationshipEvidence("AF", "TH", "evisa", "2026-09-14").supportsCurrentStatus).toBe(true);
     expect(getVisaRelationshipEvidence("TH", "TH", "citizenship").supportsCurrentStatus).toBe(true);
   });
 
@@ -6266,6 +6267,11 @@ describe("official visa evidence", () => {
       "www.kdmid.ru",
       "evisa.kdmid.ru",
       "electronic-visa.kdmid.ru",
+      "ratchakitcha.soc.go.th",
+      "thailand.prd.go.th",
+      "www.thaiembassy.at",
+      "mexico.thaiembassy.org",
+      "kualalumpur.thaiembassy.org",
       "mid.ru",
       "montenegro.mid.ru",
       "government.ru",

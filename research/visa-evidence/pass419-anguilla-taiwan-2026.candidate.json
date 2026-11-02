@@ -1,0 +1,82 @@
+{
+  "batchId": "pass419-anguilla-taiwan-2026",
+  "researchedAt": "2026-11-02",
+  "sources": [
+    {
+      "id": "pass419-ai-taiwan-current-nationality-row",
+      "title": "Anguilla eVisa government nationality schedule: Taiwan",
+      "url": "https://evisa.gov.ai/Countries",
+      "publisher": "Department of Immigration, Government of Anguilla",
+      "jurisdiction": "Anguilla",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-11-02",
+      "officialityEvidence": "Actual complete government portal table read through ordinary trusted HTTPS with curl after the browsing reader timed out. The row explicitly names Taiwan (Province of China), TW/TWN, and Visa Required. The footer identifies the Government of Anguilla Immigration Department, its address and gov.ai contact; the homepage links this table as its visa-nationality list.",
+      "supportingExcerpt": "Taiwan (Province of China) TW TWN Visa Required"
+    },
+    {
+      "id": "pass419-ai-current-pdf-visa-and-stay-guidance",
+      "title": "Anguilla eVisa: electronic PDF issuance and permitted visitor stays",
+      "url": "https://evisa.gov.ai/",
+      "publisher": "Department of Immigration, Government of Anguilla",
+      "jurisdiction": "Anguilla",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-11-02",
+      "officialityEvidence": "The actual complete homepage was read over ordinary trusted HTTPS. The three-step process explicitly requires downloading and printing the eVisa PDF; its Who should apply section links the government nationality table. Separate Single Entry and Multiple Entry sections expressly distinguish ninety consecutive days of stay from the single-entry use window and multiple-entry visa validity. Supporting UK/US/Canadian visa or residence exemptions remain separate.",
+      "supportingExcerpt": "Multiple stays of up to 90 consecutive days per visit."
+    },
+    {
+      "id": "pass419-ai-current-electronic-visitor-application",
+      "title": "Anguilla electronic visitor-visa application and approval conditions",
+      "url": "https://evisa.gov.ai/Applications/Apply",
+      "publisher": "Department of Immigration, Government of Anguilla",
+      "jurisdiction": "Anguilla",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-11-02",
+      "officialityEvidence": "Actual government application page read through ordinary trusted HTTPS. Its disclaimer positively describes an approved electronic visa authorizing travel, electronic processing after payment, later border inspection and possible revocation. Its two visitor-visa types match the homepage's electronic PDF issuance. No form was submitted, no private account was used, and a selector option alone is not the evidence.",
+      "supportingExcerpt": "If your electronic visa application is approved, it establishes that you are eligible to travel to Anguilla"
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass419-ai-taiwan-ordinary-visitor-electronic-visa",
+      "title": "Taiwan ordinary visitors: Anguilla eVisa before travel",
+      "summary": "Anguilla's current government nationality table explicitly requires a visa for Taiwan passport holders. Its visitor service issues an electronic visa PDF before travel, with single or multiple visitor stays of up to ninety consecutive days per visit, subject to admission.",
+      "status": "evisa",
+      "destinationCodes": ["AI"],
+      "passportCodes": ["TW"],
+      "conditions": [
+        "This is the ordinary Taiwanese passport-only visitor baseline. A valid UK, US or Canadian visa or residence permit supplies a separately documented exemption; it is not a nationality-wide Taiwanese waiver.",
+        "The official portal requires a passport with at least six months of validity and supporting information including accommodation. Additional documents may be requested; minors have separate consent and document requirements.",
+        "A single-entry eVisa permits a single stay of up to ninety consecutive days; a multiple-entry eVisa permits stays up to ninety consecutive days per visit. The separate ninety-day single-entry use window and one-year multiple-entry visa validity are not permitted-stay durations.",
+        "An approved eVisa authorizes travel but does not guarantee entry. Immigration inspects the visitor on arrival, and the authorization can be revoked. Business or employment requiring a separate permit is not authorized merely by the visitor eVisa.",
+        "The portal currently warns of processing delays. Its stated processing guidance is not a guarantee; obtain approval and the printable PDF before travel. No new legal commencement date is established by this current guidance."
+      ],
+      "sourceIds": ["pass419-ai-taiwan-current-nationality-row", "pass419-ai-current-pdf-visa-and-stay-guidance", "pass419-ai-current-electronic-visitor-application"],
+      "confidence": "high",
+      "allowedStays": [
+        {
+          "label": "Up to 90 consecutive days per visit",
+          "basis": "per_visit",
+          "maxDays": 90,
+          "notes": ["The single-entry visa covers one such stay; multiple-entry permission covers separate visits. This is not the deadline for first use or the visa's overall validity, and admission remains subject to Immigration."]
+        }
+      ],
+      "application": {
+        "url": "https://evisa.gov.ai/Applications/Apply",
+        "label": "Apply through Anguilla's official electronic visitor-visa service",
+        "steps": [
+          "Select the single-entry or multiple-entry visitor visa and complete the official application in English using the passport details.",
+          "Provide the passport, photograph, accommodation and other required supporting documents; follow the portal's instruction to email documentation with the application number where requested.",
+          "Pay the required application and visa charges through the official service and await the decision; allow extra time while the published delay warning applies.",
+          "After approval, download and print the eVisa PDF and travel with the passport used for the application. Approval does not guarantee admission."
+        ]
+      }
+    }
+  ],
+  "conditional": [],
+  "conflicts": [],
+  "unresolved": []
+}

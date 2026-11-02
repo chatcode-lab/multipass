@@ -87,7 +87,7 @@ describe("Montenegro's independently reviewed autumn transitions", () => {
     vi.setSystemTime(new Date("2026-10-20T12:00:00Z"));
     const details = Object.fromEntries(Object.entries(snapshot.passports).map(([code, detail]) => [code, applyAccessOverrides(detail)]));
     expect(buildEvidenceCompletionSummary(snapshot.manifest, details, "2026-10-20"))
-      .toMatchObject({ total: 44_974, covered: 40_938, allowedStay: { count: 4_426 }, notCovered: { count: 4_036 } });
+      .toMatchObject({ total: 44_974, covered: 40_938, allowedStay: { count: 4_518 }, notCovered: { count: 4_036 } });
     for (const code of ["CN", "HK", "MO"]) {
       expect(details[code].statuses.KH).toBe("unknown");
       expect(getVisaRelationshipEvidence(code, "KH", "unknown").allowedStays).toHaveLength(0);

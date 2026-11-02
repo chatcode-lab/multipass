@@ -754,13 +754,13 @@ describe("passport calculations", () => {
     })).toMatchObject({ statuses: { NI: "citizenship", GE: "visa_required" }, mobilityScore: 0 });
   });
 
-  it("applies Thailand's reviewed visa-on-arrival corrections", () => {
+  it("applies Thailand's current electronic-visa correction after the former arrival route ends", () => {
     expect(applyVerifiedAccessOverrides({
       code: "ET",
       name: "Ethiopia",
       statuses: { ET: "citizenship", TH: "visa_free" },
       mobilityScore: 1,
-    })).toMatchObject({ statuses: { ET: "citizenship", TH: "visa_on_arrival" }, mobilityScore: 1 });
+    })).toMatchObject({ statuses: { ET: "citizenship", TH: "evisa" }, mobilityScore: 0 });
   });
 
   it("applies Armenia's live ordinary-passport checker corrections", () => {

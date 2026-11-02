@@ -109,6 +109,10 @@ const candidateSchema = z.strictObject({
 
 const candidatePath = process.argv[2];
 if (!candidatePath) throw new Error("Usage: npm run evidence:validate -- <candidate.json>");
+const flags = process.argv.slice(3);
+const unknownFlag = flags.find((flag) => flag !== "--exact");
+if (unknownFlag) throw new Error(`Unknown validation argument: ${unknownFlag}`);
+const requireExactAssignment = flags.includes("--exact");
 const candidate = candidateSchema.parse(JSON.parse(await readFile(resolve(candidatePath), "utf8")));
 const snapshot = fallbackSnapshot as DataSnapshot;
 const passportCodes = new Set(snapshot.manifest.passports.map(({ code: value }) => value));
@@ -236,7 +240,7 @@ const requiresCompleteForeignPartition = queueBatch.passportCodes.includes("*")
 const requiresCompleteCatalogPartition = queueBatch.passportCodes.includes("*")
   && queueBatch.destinationCodes.length === 1
   && candidate.batchId.endsWith("-complete-visitor-entry-refresh");
-if (requiresCompleteForeignPartition || requiresCompleteCatalogPartition) {
+if (requireExactAssignment || requiresCompleteForeignPartition || requiresCompleteCatalogPartition) {
   for (const passportCode of allowedPassportCodes) {
     for (const destinationCode of allowedDestinationCodes) {
       if (requiresCompleteForeignPartition && passportCode === destinationCode) continue;

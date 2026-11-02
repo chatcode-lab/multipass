@@ -988,6 +988,7 @@ test("sourced conditional pages are searchable without asserting exact access", 
 });
 
 test("dated correction rechecks agree across HTML, Markdown and the agent API", async ({ page, request }) => {
+  const today = new Date().toISOString().slice(0, 10);
   const cases = [
     { passport: "US", destination: "BF", path: "/united-states-burkina-faso-status-unknown", indexable: true, due: "2026-10-29", conditional: false },
     { passport: "DO", destination: "MD", path: "/dominican-republic-moldova-status-unknown", indexable: true, due: "2026-09-26", conditional: true },
@@ -995,6 +996,7 @@ test("dated correction rechecks agree across HTML, Markdown and the agent API", 
     { passport: "AD", destination: "GT", path: "/andorra-guatemala-status-unknown", indexable: false, due: "2026-09-26", conditional: false },
   ];
   for (const item of cases) {
+    const indexable = item.conditional || (item.indexable && item.due >= today);
     const api = await request.get(`/api/v1/visa/${item.passport}/${item.destination}`);
     expect(api.status()).toBe(200);
     const body = await api.json();
@@ -1006,11 +1008,11 @@ test("dated correction rechecks agree across HTML, Markdown and the agent API", 
     expect(body.evidenceLevel).toBe(item.conditional ? "conditional" : "rejected");
 
     await page.goto(item.path);
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", item.indexable ? "index,follow,max-image-preview:large" : /noindex/);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", indexable ? "index,follow,max-image-preview:large" : /noindex/);
     await expect(page.locator("#official-evidence")).toContainText(body.reviewedCorrection.reason);
     if (!item.conditional) {
       await expect(page.locator("#official-evidence")).toContainText("Research targets are not legal expiry dates");
-      if (!item.indexable) await expect(page.locator("#official-evidence")).toContainText("Further verification remains overdue");
+      if (!indexable) await expect(page.locator("#official-evidence")).toContainText("Further verification remains overdue");
     }
     const md = await request.get(`${item.path}.md`);
     const markdown = await md.text();

@@ -164,7 +164,8 @@ describe("autumn 2026 seasonal visa boundaries", () => {
         destinationCodes: previous.destinationCodes,
       });
       expect(replacement.effectiveFrom).toBe(previous.effectiveFrom);
-      expect(replacement.effectiveTo).toBe(previous.effectiveTo);
+      const thailandRepeal = ["thailand-60-day-ordinary-passport-visa-exemption", "thailand-15-day-ordinary-passport-visa-on-arrival"].includes(previousId);
+      expect(replacement.effectiveTo).toBe(thailandRepeal ? "2026-09-14" : previous.effectiveTo);
       expect(replacement.sourceIds).not.toEqual(previous.sourceIds);
       const replacementRead = replacement.sourceIds.map((id) =>
         reviewedEvidence.sources.find((source) => source.id === id)!.reviewedAt).sort()[0];

@@ -10,6 +10,7 @@ import {
   RWANDA_VOA_ORDINARY_PASSPORT_CODES,
   SAMOA_VOA_ORDINARY_PASSPORT_CODES,
   SEYCHELLES_ETA_ORDINARY_PASSPORT_CODES,
+  THAILAND_2026_VISITOR_POLICIES,
   TRINIDAD_AND_TOBAGO_EVISA_ORDINARY_PASSPORT_CODES,
   UNITED_KINGDOM_VISITOR_VISA_CODES,
   VANUATU_VOA_ORDINARY_PASSPORT_CODES,
@@ -38,6 +39,25 @@ export const US_PP10998_DESTINATION_CODES = ["US", "GU", "MP", "PR", "VI"] as co
  * upstream category. Prefer a reviewed policy cohort over duplicated pairs.
  */
 export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
+  ...THAILAND_2026_VISITOR_POLICIES.flatMap((policy) => (policy.passportCodes ?? []).map((passportCode) => ({
+    passportCode,
+    destinationCode: "TH" as const,
+    status: policy.status,
+    reason: policy.summary,
+    sourceUrl: "https://consular.mfa.go.th/th/content/1-9-69-00",
+    reviewedAt: "2026-11-02",
+    // The preferred-route partition changes then; existing bilateral treaty
+    // commencement dates are deliberately not invented in the evidence records.
+    effectiveFrom: "2026-09-15",
+  }))),
+  {
+    passportCode: "TW",
+    destinationCode: "AI",
+    status: "evisa",
+    reason: "Anguilla's current government nationality schedule explicitly requires a visa for Taiwanese passports; its service issues an approved electronic PDF before travel. Supporting foreign-document exemptions are separate.",
+    sourceUrl: "https://evisa.gov.ai/Countries",
+    reviewedAt: "2026-11-02",
+  },
   ...([
     ["BH", "https://www.mvp.gov.ba/en/org_cmd57sdlc000nn43u2rk8pgsd_639185064814075651"],
     ["OM", "https://www.mvp.gov.ba/en/org_cmd57sdlc000nn43u2rk8pgsd_639185066739711338"],
@@ -1567,6 +1587,7 @@ export const VERIFIED_ACCESS_OVERRIDES: readonly VerifiedAccessOverride[] = [
     reason: "Thailand's current Consular Affairs schedule places this ordinary passport in the 15-day visa-on-arrival cohort, not the visa-exemption cohort.",
     sourceUrl: "https://image.mfa.go.th/mfa/0/zE6021nSnu/0303/VOA.pdf",
     reviewedAt: "2026-08-20",
+    effectiveTo: "2026-09-14",
   })),
   {
     passportCode: "TV",

@@ -108,6 +108,10 @@ export const BERMUDA_2026_VISITOR_POLICIES = REVIEWED_VISA_EVIDENCE.policies.fil
 ].includes(id));
 if (BERMUDA_2026_VISITOR_POLICIES.length !== 3) throw new Error("Missing reviewed Bermuda 2026 policy cohort");
 
+export const THAILAND_2026_VISITOR_POLICIES = REVIEWED_VISA_EVIDENCE.policies
+  .filter(({ id }) => id.startsWith("pass419-thailand-"));
+if (THAILAND_2026_VISITOR_POLICIES.length !== 7) throw new Error("Missing reviewed Thailand September 2026 policy cohort");
+
 export const RWANDA_VOA_ORDINARY_PASSPORT_CODES = REVIEWED_VISA_EVIDENCE.policies
   .find(({ id }) => id === "rwanda-universal-ordinary-passport-visa-on-arrival")
   ?.passportCodes ?? [];
@@ -3945,6 +3949,11 @@ const DATED_POLICY_SUCCESSIONS: Record<string, { codes: string[]; through: strin
 // Preserve both old cohorts in the audit artifact and public history, but do
 // not let them prove today's category after the new Schedule takes effect.
 const REVIEWED_POLICY_END_DATES: Readonly<Record<string, string>> = {
+  "thailand-60-day-ordinary-passport-visa-exemption": "2026-09-14",
+  "thailand-current-60-day-waiver-until-gazette-transition-2026": "2026-09-14",
+  "thailand-15-day-ordinary-passport-visa-on-arrival": "2026-09-14",
+  "thailand-current-15-day-voa-until-gazette-transition-2026": "2026-09-14",
+  "thailand-global-evisa-foreign-ordinary-passports": "2026-09-14",
   "bermuda-unlisted-nationals-visa-free-bona-fide-visits": "2026-09-16",
   "bermuda-listed-nationals-conditional-travel-authorization-required": "2026-09-16",
 };
@@ -3952,6 +3961,8 @@ const REVIEWED_POLICY_END_DATES: Readonly<Record<string, string>> = {
 // A complete, independently reviewed same-scope refresh replaces the displayed
 // record, not the archived artifact. Keep one timeline event for one policy.
 export const REVIEWED_POLICY_REFRESHES: Readonly<Record<string, string>> = {
+  "thailand-60-day-ordinary-passport-visa-exemption": "thailand-current-60-day-waiver-until-gazette-transition-2026",
+  "thailand-15-day-ordinary-passport-visa-on-arrival": "thailand-current-15-day-voa-until-gazette-transition-2026",
   "pass414-me-kazakhstan-prior-visa-from-october-2": "pass418-me-kazakhstan-prior-visa-from-october-2",
   "montenegro-belarus-russia-temporary-30-days": "pass418-me-belarus-russia-waiver-through-october-31",
   "montenegro-saudi-turkiye-temporary-30-days": "pass418-me-saudi-turkiye-waiver-through-october-31",
@@ -3963,6 +3974,18 @@ export const REVIEWED_POLICY_REFRESHES: Readonly<Record<string, string>> = {
   "bosnia-direct-gulf-ordinary-passports-temporary-visa-free-2026": "pass414-ba-gulf-seasonal-waiver-through-september-2026",
   "montenegro-kazakhstan-seasonal-30-days": "pass414-me-kazakhstan-seasonal-waiver-through-october-1",
   "montenegro-kazakhstan-advance-visa-from-october-2026": "pass414-me-kazakhstan-prior-visa-from-october-2",
+};
+
+// Refine only the independently reread passport slice of a broader record.
+// This changes its public presentation, not its archived evidence or legal dates.
+export const REVIEWED_POLICY_REFINEMENTS: Readonly<Record<string, readonly string[]>> = {
+  "anguilla-live-selector-evisa-eligible-ordinary-passports": ["pass419-ai-taiwan-ordinary-visitor-electronic-visa"],
+  "thailand-bilateral-14-day-ordinary-passport-visa-exemption": [
+    "pass419-thailand-bilateral-14-day-ordinary-tourist-current-2026",
+    "pass419-thailand-bilateral-30-day-ordinary-tourist-current-2026",
+  ],
+  "thailand-bilateral-30-day-ordinary-passport-visa-exemption": ["pass419-thailand-bilateral-90-day-ordinary-tourist-current-2026"],
+  "thailand-bilateral-90-day-ordinary-passport-visa-exemption": ["pass419-thailand-bilateral-90-day-ordinary-tourist-current-2026"],
 };
 const policyById = new Map(BASE_VISA_POLICY_EVIDENCE.map((policy) => [policy.id, policy]));
 const refreshScope = (policy: VisaPolicyEvidence) => JSON.stringify({
@@ -3980,22 +4003,47 @@ for (const [previousId, replacementId] of Object.entries(REVIEWED_POLICY_REFRESH
     throw new Error(`Reviewed refresh must preserve the exact policy scope: ${previousId} -> ${replacementId}`);
   }
 }
+const refinedPassportCodes = new Map<string, Set<string>>();
+for (const [previousId, replacementIds] of Object.entries(REVIEWED_POLICY_REFINEMENTS)) {
+  const previous = policyById.get(previousId);
+  if (!previous?.passportCodes || REVIEWED_POLICY_REFRESHES[previousId]) {
+    throw new Error(`Reviewed refinement needs an explicit unreplaced cohort: ${previousId}`);
+  }
+  const removed = new Set<string>();
+  for (const replacementId of replacementIds) {
+    const replacement = policyById.get(replacementId);
+    if (!replacement?.passportCodes
+      || refreshScope({ ...replacement, passportCodes: previous.passportCodes }) !== refreshScope(previous)) {
+      throw new Error(`Reviewed refinement must preserve status, destination and legal dates: ${previousId} -> ${replacementId}`);
+    }
+    const overlap = replacement.passportCodes.filter((code) => previous.passportCodes!.includes(code));
+    if (!overlap.length || overlap.some((code) => removed.has(code))) {
+      throw new Error(`Reviewed refinement needs non-overlapping passport slices: ${previousId} -> ${replacementId}`);
+    }
+    overlap.forEach((code) => removed.add(code));
+  }
+  if (!removed.size) throw new Error(`Reviewed refinement cannot be empty: ${previousId}`);
+  refinedPassportCodes.set(previousId, removed);
+}
 for (const id of Object.keys(REVIEWED_POLICY_END_DATES)) {
   if (!policyById.has(id)) throw new Error(`Cannot end a missing reviewed policy: ${id}`);
 }
 
 export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POLICY_EVIDENCE.flatMap((policy) => {
   if (REVIEWED_POLICY_REFRESHES[policy.id]) return [];
-  const enriched = { ...policy, allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id] };
+  const refined = refinedPassportCodes.get(policy.id);
+  const passportCodes = refined ? policy.passportCodes!.filter((code) => !refined.has(code)) : policy.passportCodes;
+  if (passportCodes?.length === 0) return [];
+  const enriched = { ...policy, passportCodes, allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id] };
   const reviewedEnd = REVIEWED_POLICY_END_DATES[policy.id];
   if (reviewedEnd) return [{ ...enriched, title: `${policy.title} (historical)`, effectiveTo: reviewedEnd }];
   const succession = DATED_POLICY_SUCCESSIONS[policy.id];
   if (!succession) return [enriched];
-  if (!policy.passportCodes) throw new Error(`Dated succession needs an explicit cohort: ${policy.id}`);
+  if (!passportCodes) throw new Error(`Dated succession needs an explicit cohort: ${policy.id}`);
   return [
     {
       ...enriched,
-      passportCodes: policy.passportCodes.filter((code) => !succession.codes.includes(code)),
+      passportCodes: passportCodes.filter((code) => !succession.codes.includes(code)),
       // This historical Brazil-only condition is not a current cohort rule.
       conditions: policy.id === "french-guiana-ordinary-passport-advance-visa-complement"
         ? policy.conditions?.filter((condition) => !condition.startsWith("Brazil's listed"))
@@ -4005,7 +4053,7 @@ export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POL
       ...enriched,
       id: `${policy.id}-before-${succession.through}`,
       title: `${policy.title} (historical: ${succession.codes.join(" / ")})`,
-      passportCodes: policy.passportCodes.filter((code) => succession.codes.includes(code)),
+      passportCodes: passportCodes.filter((code) => succession.codes.includes(code)),
       effectiveTo: succession.through,
     },
   ];
