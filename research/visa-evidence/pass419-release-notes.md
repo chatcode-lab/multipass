@@ -67,4 +67,23 @@ No fallback snapshot, combination-insights artifact, country-profile fact, depen
 
 ## Publication
 
-Commit/deployment identifiers and actual production results will be recorded after the hosted checks and normal production probes complete. No cache purge, KV migration, extra upstream sync or synthetic live-data substitution is required.
+Runtime commit: [`d51f7496038d3e76d5069f34a24c7e80633e8434`](https://github.com/chatcode-lab/multipass/commit/d51f7496038d3e76d5069f34a24c7e80633e8434). Both [Cloudflare deployment](https://github.com/chatcode-lab/multipass/actions/runs/41528836398) and [hosted CI](https://github.com/chatcode-lab/multipass/actions/runs/41528836483) succeeded on 2 November. Hosted typecheck, lint, unit, profile, audit and build checks pass; the browser job independently reports **118 / 118 passed**, without failed or flaky tests.
+
+Normal production requests across all seven regional matrices use live snapshot `2026-10-28T03-05-34-556Z`, checked `2026-11-02T02:45:33.799Z`, as of 2 November. They now report **40,932 / 44,974 exact (91.0%)**, **4,042** pending, **1,142** characterized and **4,518** stay-covered. Fresh is 205, old 40,727 and stale zero. This is **34 restored live exact relationships** and **124 additional live stay-covered relationships**, not the bundled preview's different baseline. All 198 foreign Thai cells are exact, reviewed 2 November and expose exactly one current stay; the live partition is 78 visa-free, three VOA, 117 eVisa plus retained Thai citizenship.
+
+Nine representative relationships were checked on actual production URLs: NL/MX/ET/AZ/SC/TL/CL/KR → TH and TW → AI. API, indexable HTML, explicit Markdown and negotiated Markdown agree on the correct current route and stay. All nine fit 320px and 390px browser viewports without document overflow. Four obsolete visa-type spellings return HTTP 308 to the correct canonical route. Normal production APIs also reconfirm all five previously reviewed November Montenegro/Russia successors, retaining their actual 20 October source dates and qualified stays rather than mechanically restamping them.
+
+All eight normal live sitemap shards return successfully and contain **42,694 unique URLs**, all with the substantive 2 November modification floor. Reviewed current routes are present; obsolete Thai/Anguilla variants and Russia's expired Montenegrin waiver variant are absent. The six fewer live URLs than the bundled preview exactly match these remaining **exact-support** differences, not a claim that every raw category is otherwise identical:
+
+| Passport → destination | Live upstream category | Bundled category | This pass |
+| --- | --- | --- | --- |
+| AL → MA | Visa-free | Prior visa | Researched; destination confirmation unresolved |
+| NG → TZ | VOA | eVisa | Researched; ordinary visitor issuance unresolved |
+| PS → TD | eVisa | Prior visa | New destination-side proof still needed |
+| CO → IL | Visa-free | Prior visa | New destination-side proof still needed |
+| CO → SB | eVisa | Prior visa | New destination-side proof still needed |
+| PS → SB | eVisa | Prior visa | New destination-side proof still needed |
+
+The original thirty-three-pair Thailand lead batch is superseded in research scope by this pass's full Thai candidate; do not research the old pending-publication announcement as though no Gazette successor has been recovered. Further destination-wide Chad research, followed by Israel/Solomon Islands exceptions and renewed Morocco/Tanzania authority retrieval, is useful. Cambodia's adopted post-trial successor remains a separate open source task; an extension request is not adoption. Existing citizenship-law gaps and most global evidence age remain explicit, not solved by this bounded visa refresh.
+
+No cache-busting parameter, purge, KV migration, extra upstream sync or synthetic live-data substitution was used for these checks. Seven user CSV exports remain untracked. GitHub also reports outstanding dependency security alerts on push; this evidence-only release does not modify dependencies or assert those alerts are resolved.
