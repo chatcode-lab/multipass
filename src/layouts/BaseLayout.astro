@@ -92,7 +92,7 @@ if (alternateHeaders.length) Astro.response.headers.append("Link", alternateHead
       <main id="main-content">
         {markdownHref && (
           <div class="content-formats">
-            <a href={markdownHref} aria-label="View this page as Markdown"><span aria-hidden="true">.md</span> Markdown</a>
+            <a href={markdownHref} aria-label=".md Markdown version of this page"><span aria-hidden="true">.md</span> Markdown</a>
           </div>
         )}
         <slot />

@@ -1298,6 +1298,7 @@ test("public evidence matrix audits every passport against a destination region"
 
 test("key pages have no automatically detectable accessibility violations", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator(".content-formats a")).toHaveAccessibleName(".md Markdown version of this page");
   const results = await new AxeBuilder({ page }).analyze();
   expect(results.violations).toEqual([]);
 });
