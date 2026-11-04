@@ -1,3 +1,7 @@
+---
+import { PROJECT_CREDIT, SITE_CREDIT_TEXT } from "@/lib/site-credit";
+---
+
 <footer class="site-footer">
   <div class="site-footer__about">
     <a class="brand brand--footer" href="/">
@@ -34,11 +38,7 @@
       <a href="/ai">For AI agents</a>
     </div>
   </nav>
-  <div class="site-footer__credits" aria-label="Built using chatcode.dev in partnership with Settlers Club">
-    <span>Built using <a class="chatcode-link" href="https://chatcode.dev" rel="noreferrer">chatcode.dev</a></span>
-    <span>in partnership with</span>
-    <a class="settlers-logo" href="https://settlers.club" rel="noreferrer" aria-label="Settlers Club">
-      <img src="/settlers-club-logo.svg" alt="Settlers Club" width="360" height="100" loading="lazy" />
-    </a>
+  <div class="site-footer__credits" aria-label={SITE_CREDIT_TEXT}>
+    <span>Built using <a class="chatcode-link" href={PROJECT_CREDIT.href} rel="noreferrer">{PROJECT_CREDIT.name}</a>{" – "}{PROJECT_CREDIT.description}</span>
   </div>
 </footer>

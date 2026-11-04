@@ -126,9 +126,10 @@ test("inline article links keep readable spacing and the footer groups its navig
   const footer = page.locator(".site-footer");
   await expect(footer.locator(".site-footer__credits")).toHaveAttribute(
     "aria-label",
-    "Built using chatcode.dev in partnership with Settlers Club",
+    "Built using chatcode.dev – remote shell for AI agents",
   );
-  await expect(footer.getByRole("link", { name: "Settlers Club" })).toBeVisible();
+  await expect(footer.locator('a[href="https://settlers.club"]')).toHaveCount(0);
+  await expect(footer.locator(".site-footer__credits")).toHaveText("Built using chatcode.dev – remote shell for AI agents");
   const articleColumn = footer.locator(".site-footer__column").filter({ hasText: "Articles" });
   await expect(articleColumn.getByRole("link")).toHaveCount(8);
   await expect(articleColumn.getByRole("link", { name: "Dual-citizenship countries" })).toBeVisible();
@@ -566,6 +567,43 @@ test("curated query comparisons become readable URLs with Markdown alternatives"
   expect(coreSitemap).toContain("<loc>https://multipassrank.com/hong-kong-vs-china-passport</loc>");
   expect(coreSitemap).toContain("<loc>https://multipassrank.com/germany-vs-united-states-passport</loc>");
   expect(coreSitemap).toContain("<loc>https://multipassrank.com/india-vs-united-states-passport</loc>");
+});
+
+test("project credits are consistent across HTML, Markdown and errors", async ({ page, request }) => {
+  const credit = "Built using [chatcode.dev](https://chatcode.dev) – remote shell for AI agents";
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    for (const path of ["/", "/passport/singapore", "/compare?set=US&set=PT", "/destination/thailand", "/passport/singapore/citizenship", "/passport/not-a-country"]) {
+      await page.goto(path);
+      const footer = page.locator(".site-footer__credits");
+      await expect(footer).toHaveText("Built using chatcode.dev – remote shell for AI agents");
+      await expect(footer.locator("a")).toHaveAttribute("href", "https://chatcode.dev");
+      await expect(page.locator('a[href*="settlers.club"], img[src*="settlers-club"]')).toHaveCount(0);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
+    }
+  }
+  for (const path of [
+    "/index.md", "/europe.md", "/compare.md?set=US&set=PT", "/rank.md?set=US,PT",
+    "/improve.md?set=US&set=PT", "/destination/thailand.md", "/passport/singapore.md",
+    "/passport/singapore/citizenship.md", "/passport/singapore/taxes.md", "/mexico-thailand-evisa.md",
+    "/best-passport-combination.md", "/ai.md", "/data-license.md", "/methodology.md",
+    "/not-a-real-page.md", "/passport/not-a-country.md", "/passport/not-a-country/taxes.md",
+    "/destination/not-a-country.md", "/compare/not-a-real-page.md",
+  ]) {
+    const response = await request.get(path);
+    expect(response.status(), path).toBe(path.includes("not-a-") ? 404 : 200);
+    expect(response.headers()["content-type"]).toContain("text/markdown");
+    const body = await response.text();
+    expect(body.trimEnd().endsWith(credit), path).toBe(true);
+    expect(body.split(credit), path).toHaveLength(2);
+    expect(body, path).not.toContain("settlers.club");
+  }
+  const explicit = await request.get("/passport/singapore.md");
+  const negotiated = await request.get("/passport/singapore", { headers: { Accept: "text/markdown" } });
+  expect(await negotiated.text()).toBe(await explicit.text());
+  const head = await request.head("/passport/singapore.md");
+  expect(head.ok()).toBe(true);
+  expect(await head.body()).toHaveLength(0);
 });
 
 test("AI instructions expose URL, Markdown, and API conventions", async ({ page, request }) => {
