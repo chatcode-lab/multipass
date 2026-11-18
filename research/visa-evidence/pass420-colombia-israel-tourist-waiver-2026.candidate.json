@@ -1,0 +1,78 @@
+{
+  "batchId": "pass420-colombia-israel-tourist-waiver-2026",
+  "researchedAt": "2026-11-18",
+  "sources": [
+    {
+      "id": "pass420-co-resolution-12189-israel",
+      "title": "Resolution 12189 of 2026: Colombian short-stay exemption for Israeli nationals",
+      "url": "https://cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_12189_2026.htm",
+      "publisher": "Ministry of Foreign Affairs of Colombia / Colombian Official Gazette",
+      "jurisdiction": "Colombia",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual official compiled resolution read, including Israel's explicit short-stay exemption, waiver list, repeal of Resolution 8558, publication in Diario Oficial 53.614 on 3 September, and operative next-day commencement. The ministry's compilation identifies 4 September 2026.",
+      "supportingExcerpt": "Rige a partir del 4 de septiembre de 2026"
+    },
+    {
+      "id": "pass420-co-resolution-5488-consolidated-short-stay",
+      "title": "Consolidated Resolution 5488: short-stay conditions and permitted duration",
+      "url": "https://cancilleria.gov.co/normograma/compilacion/docs/resolucion_minrelaciones_5488_2022.htm",
+      "publisher": "Ministry of Foreign Affairs of Colombia / Colombian Official Gazette",
+      "jurisdiction": "Colombia",
+      "kind": "law",
+      "language": "Spanish",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual consolidated Article 3 read. Israel is named under the amended List A. No paid local services or wages are allowed under this waiver; Migración Colombia issues the applicable permission. The paragraph defines the short stay as less than 90 days and extension up to 180 only in cases permitted by the rules.",
+      "supportingExcerpt": "cuya duración es menor de 90 días y que puede ser extensible hasta 180 días"
+    },
+    {
+      "id": "pass420-co-mfa-reciprocal-ordinary-tourists",
+      "title": "Colombian Foreign Ministry confirms ordinary-passport tourist scope",
+      "url": "https://cancilleria.gov.co/sala-de-prensa/noticias/colombia-fortalece-sus-relaciones-con-israel-y-restablece-la-exencion-de-visa-para-viajeros-colombianos",
+      "publisher": "Ministry of Foreign Affairs of Colombia",
+      "jurisdiction": "Colombia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual 11 September ministry notice explicitly confirms ordinary-passport tourism in both directions and identifies Resolution 12189. Use Colombia's legislated duration wording for the Colombian direction, not the distinct twelve-month visitor limit described here for Colombians going to Israel.",
+      "supportingExcerpt": "los titulares de pasaportes ordinarios de ambos países que viajen con fines turísticos"
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass420-co-israeli-ordinary-short-stay-waiver",
+      "title": "Israeli ordinary passports: Colombia short-stay visa exemption",
+      "summary": "Colombia's Resolution 12189 restored visa exemption for Israeli short visitors from 4 September 2026, including ordinary-passport tourism. Migración Colombia determines the permission and actual stay at entry.",
+      "status": "visa_free",
+      "destinationCodes": ["CO"],
+      "passportCodes": ["IL"],
+      "effectiveFrom": "2026-09-04",
+      "conditions": [
+        "Short-stay activities under this exemption must not generate pay for services, salary or wages in Colombia. Employment, residence and other long-stay purposes are separate.",
+        "The consolidated resolution defines a short stay as less than 90 days. Any extension requires separate eligibility and approval; the visa exemption is not an extension."
+      ],
+      "sourceIds": ["pass420-co-resolution-12189-israel", "pass420-co-resolution-5488-consolidated-short-stay", "pass420-co-mfa-reciprocal-ordinary-tourists"],
+      "confidence": "high",
+      "allowedStays": [
+        {
+          "label": "Short stay under 90 days; extension only if permitted",
+          "basis": "per_visit",
+          "notes": ["The immigration authority determines the actual period at entry. This does not establish a nationality-specific extension limit."]
+        }
+      ]
+    }
+  ],
+  "conditional": [],
+  "conflicts": [
+    {
+      "passportCode": "IL",
+      "destinationCode": "CO",
+      "snapshotStatus": "evisa",
+      "officialStatus": "visa_free",
+      "explanation": "The currently applied eVisa category predates Colombia's domestic repeal and explicit restoration of ordinary short-stay visa exemption for Israel on 4 September 2026.",
+      "sourceIds": ["pass420-co-resolution-12189-israel", "pass420-co-resolution-5488-consolidated-short-stay"]
+    }
+  ],
+  "unresolved": []
+}

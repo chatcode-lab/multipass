@@ -903,7 +903,7 @@ describe("official visa evidence", () => {
 
     expect(pairsFor("CO")).toHaveLength(199);
     expect(getVisaRelationshipEvidence("HK", "CO", "visa_free").supportsCurrentStatus).toBe(true);
-    expect(getVisaRelationshipEvidence("IL", "CO", "evisa").supportsCurrentStatus).toBe(true);
+    expect(getVisaRelationshipEvidence("IL", "CO", "visa_free").supportsCurrentStatus).toBe(true);
     expect(snapshot.passports.IL.statuses.CO).toBe("evisa");
   });
 
@@ -2321,8 +2321,8 @@ describe("official visa evidence", () => {
     expect(getVisaRelationshipEvidence("TW", "SB", "visa_required").supportsCurrentStatus).toBe(true);
     expect(VERIFIED_ACCESS_OVERRIDES.filter(({ destinationCode, status }) =>
       destinationCode === "SB" && status === "evisa"
-    )).toHaveLength(118);
-    for (const passportCode of ["CL", "PA", "EC", "GY", "AF"] as const) {
+    )).toHaveLength(120);
+    for (const passportCode of ["CL", "PA", "EC", "GY", "AF", "CO", "PS"] as const) {
       expect(getVisaRelationshipEvidence(passportCode, "SB", "evisa").supportsCurrentStatus).toBe(true);
     }
     for (const passportCode of ["MO", "ME"] as const) {
@@ -4318,7 +4318,6 @@ describe("official visa evidence", () => {
       ["CO", "ML", "visa_required"],
       ["CO", "MK", "visa_free"],
       ["CO", "PA", "visa_free"],
-      ["CO", "SB", "visa_required"],
       ["CO", "TN", "visa_required"],
       ["CO", "UA", "visa_free"],
       ["CO", "TT", "visa_free"],

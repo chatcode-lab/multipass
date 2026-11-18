@@ -1,0 +1,100 @@
+{
+  "batchId": "pass420-israel-colombia-tourist-eta-2026",
+  "researchedAt": "2026-11-18",
+  "sources": [
+    {
+      "id": "pass420-il-bogota-waiver-commencement",
+      "title": "Israel's Embassy announces the Colombian tourist visa exemption and ETA-IL",
+      "url": "https://embassies.gov.il/colombia/en/node/10730",
+      "publisher": "Embassy of Israel in Colombia / Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual bilateral exemption announcement read. The Israeli mission names 1 September 2026, expressly requires ETA-IL for Colombians travelling to Israel, and links the PIBA application.",
+      "supportingExcerpt": "a measure that will come into effect as of September 1, 2026."
+    },
+    {
+      "id": "pass420-il-bogota-current-eta",
+      "title": "Current embassy confirmation of ETA-IL for Colombian travellers",
+      "url": "https://embassies.gov.il/colombia/en/services",
+      "publisher": "Embassy of Israel in Colombia / Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual mission consular service page read. Its current introductory notice expressly says that Colombians need no visa but must complete the ETA-IL form.",
+      "supportingExcerpt": "it is mandatory to complete the ETA-IL form."
+    },
+    {
+      "id": "pass420-il-bogota-eta-approval-guide",
+      "title": "Israeli embassy guide to obtaining ETA-IL approval",
+      "url": "https://embassies.gov.il/colombia/en/node/6873",
+      "publisher": "Embassy of Israel in Colombia / Ministry of Foreign Affairs",
+      "jurisdiction": "Israel",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual embassy application guide read. It directs visa-exempt applicants to the Population and Immigration Authority form, states the qualified 90-day visitor ceiling, and distinguishes that stay from the authorization's longer validity. Older pilot-fee wording is not used.",
+      "supportingExcerpt": "stay for up to 90 days or less upon receipt of approval to enter"
+    },
+    {
+      "id": "pass420-co-mfa-israel-waiver-stay",
+      "title": "Colombian Foreign Ministry confirms ordinary-passport tourism and the bilateral stay limit",
+      "url": "https://cancilleria.gov.co/sala-de-prensa/noticias/colombia-fortalece-sus-relaciones-con-israel-y-restablece-la-exencion-de-visa-para-viajeros-colombianos",
+      "publisher": "Ministry of Foreign Affairs of Colombia",
+      "jurisdiction": "Colombia",
+      "kind": "government-guidance",
+      "language": "Spanish",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual 11 September announcement read. It states the ordinary-tourist scope and describes the Colombian traveller limit as at most 90 days within 12 months, subject to each country's procedures. Israel's explicit ETA-IL guidance governs that local procedure.",
+      "supportingExcerpt": "por un periodo no superior a 90 días dentro de un lapso de 12 meses"
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass420-il-colombian-ordinary-tourists-eta",
+      "title": "Colombian ordinary tourists: visa exemption with ETA-IL",
+      "summary": "Israel restored the tourist visa exemption for Colombian ordinary passport holders from 1 September 2026. They must obtain ETA-IL approval before travel; this is a travel authorization, not a visa.",
+      "status": "eta",
+      "destinationCodes": ["IL"],
+      "passportCodes": ["CO"],
+      "effectiveFrom": "2026-09-01",
+      "conditions": [
+        "This is the ordinary-passport tourism baseline. Work, residence, special documents and other immigration categories are separate.",
+        "The Israeli embassy continues to require ETA-IL even though no tourist visa is needed. The authorization's validity is separate from how long a visitor may stay; admission and the period granted remain subject to immigration control."
+      ],
+      "sourceIds": ["pass420-il-bogota-waiver-commencement", "pass420-il-bogota-current-eta", "pass420-il-bogota-eta-approval-guide", "pass420-co-mfa-israel-waiver-stay"],
+      "confidence": "high",
+      "allowedStays": [
+        {
+          "label": "Up to 90 days within 12 months, subject to admission",
+          "basis": "rolling_period",
+          "maxDays": 90,
+          "notes": ["Colombia's ministry describes this time window for Colombian travellers. Follow the stay granted by Israeli immigration; the ETA itself is not a stay permit."]
+        }
+      ],
+      "application": {
+        "url": "https://israel-entry.piba.gov.il/apply-for-an-eta-il-1",
+        "label": "Apply through the official ETA-IL service",
+        "steps": [
+          "Use the Population and Immigration Authority form linked by the Israeli Embassy and enter the details of the ordinary Colombian passport you will travel with.",
+          "Submit the ETA-IL application and obtain approval before travel.",
+          "Travel with the same passport and retain the authorization for inspection. The border authority decides admission and length of stay."
+        ]
+      }
+    }
+  ],
+  "conditional": [],
+  "conflicts": [
+    {
+      "passportCode": "CO",
+      "destinationCode": "IL",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "eta",
+      "explanation": "Israel restored the ordinary tourist waiver but still requires ETA-IL. The earlier bundled visa category is superseded, and the live imported visa-free category does not capture the mandatory authorization.",
+      "sourceIds": ["pass420-il-bogota-waiver-commencement", "pass420-il-bogota-current-eta"]
+    }
+  ],
+  "unresolved": []
+}

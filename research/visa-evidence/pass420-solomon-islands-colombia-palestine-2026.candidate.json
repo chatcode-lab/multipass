@@ -1,0 +1,118 @@
+{
+  "batchId": "pass420-solomon-islands-colombia-palestine-2026",
+  "researchedAt": "2026-11-18",
+  "sources": [
+    {
+      "id": "pass420-sb-tourist-nationalities",
+      "title": "Current nationality list for the Solomon Islands Tourist visa product",
+      "url": "https://immigration.sig.gov.sb/evisa/global/get_allowed_nationalities?ptype=191C7C89-06BE-48AD-B4D6-4B16C2F55CB3",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "official-dataset",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual public JSON for the Tourist product read, not a generic country/identity list. The rows pair COL with Colombia and PLS with Palestinian. PLS is the portal's internal identifier for catalog passport PS.",
+      "supportingExcerpt": "Palestinian"
+    },
+    {
+      "id": "pass420-sb-tourist-colombia-validation",
+      "title": "Tourist visa product eligibility check: Colombia",
+      "url": "https://immigration.sig.gov.sb/evisa/global/check_nationality?permit_type_class=191C7C89-06BE-48AD-B4D6-4B16C2F55CB3&nationality=Colombia",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "The official Tourist eligibility check returns ws_status 0 for Colombia. This public product validation does not submit an application or establish individual approval.",
+      "supportingExcerpt": "Success"
+    },
+    {
+      "id": "pass420-sb-tourist-palestinian-validation",
+      "title": "Tourist visa product eligibility check: Palestinian",
+      "url": "https://immigration.sig.gov.sb/evisa/global/check_nationality?permit_type_class=191C7C89-06BE-48AD-B4D6-4B16C2F55CB3&nationality=Palestinian",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "official-portal",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "The official Tourist eligibility check returns ws_status 0 for the product's exact designation Palestinian. This public product validation does not submit an application or establish individual approval.",
+      "supportingExcerpt": "Success"
+    },
+    {
+      "id": "pass420-sb-current-tourist-visa-guide",
+      "title": "Tourist visa application, electronic visa grant and arrival documents",
+      "url": "https://immigration.gov.sb/visitor-visa-tourist/",
+      "publisher": "Solomon Islands Immigration Division",
+      "jurisdiction": "Solomon Islands",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Actual official Tourist product guidance read. It links the electronic application, lists the required supporting documents, and explicitly describes email delivery of the approved visa grant and presentation at entry. It does not treat an approval as an instruction to collect the visa at the border.",
+      "supportingExcerpt": "You must present a copy of your visa grant letter when you enter Solomon Islands."
+    },
+    {
+      "id": "pass420-sb-gazette-128-concessional-entry",
+      "title": "Legal Notice No. 128: concessional-entry countries schedule",
+      "url": "https://solomons.gov.sb/wp-content/uploads/2025/07/Gaz-No.-73-Sup-No.-37-Tuesday-24th-June-2025.pdf",
+      "publisher": "Solomon Islands Gazette / Ministry of Commerce, Industry, Labour and Immigration",
+      "jurisdiction": "Solomon Islands",
+      "kind": "law",
+      "language": "English",
+      "reviewedAt": "2026-11-18",
+      "officialityEvidence": "Gazette Supplement No. 37, pp. 293–294, Legal Notice No. 128. Neither Colombia nor Palestine is on this concessional-entry schedule. This is corroboration, not a deduction of eVisa eligibility from an omission.",
+      "supportingExcerpt": "LIST OF CONCESSIONAL ENTRY ARRANGEMENT COUNTRIES"
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass420-sb-colombia-palestine-tourist-evisa",
+      "title": "Colombian and Palestinian ordinary passports: Solomon Islands tourist eVisa",
+      "summary": "Solomon Islands Immigration currently accepts both nationalities for the Tourist visa product. It sends the approved visa grant letter by email before travel; this is an eVisa, not a visa on arrival.",
+      "status": "evisa",
+      "destinationCodes": ["SB"],
+      "passportCodes": ["CO", "PS"],
+      "conditions": [
+        "This concerns ordinary passports for short tourism, not diplomatic, service, special travel documents, transit, work or residence. The Tourist nationality menu displays Colombia and Palestinian.",
+        "Supply a valid passport biodata page, a cover letter explaining the visit, travel itinerary and return or onward ticket, hotel confirmation if using a hotel, and evidence of sufficient funds as required.",
+        "Wait for approval before travelling and bring a copy of the emailed grant. Follow the dated conditions of the issued grant; current public official descriptions do not establish a consistent numerical stay for these two passport relationships."
+      ],
+      "sourceIds": [
+        "pass420-sb-tourist-nationalities",
+        "pass420-sb-tourist-colombia-validation",
+        "pass420-sb-tourist-palestinian-validation",
+        "pass420-sb-current-tourist-visa-guide",
+        "pass420-sb-gazette-128-concessional-entry"
+      ],
+      "confidence": "high",
+      "application": {
+        "url": "https://immigration.gov.sb/visitor-visa-tourist/",
+        "label": "Open the official Solomon Islands Tourist visa guide and application",
+        "steps": [
+          "Use Apply Online on the official Tourist visa page. Register with an email address you can access, sign in, and complete the Tourist application with your passport details.",
+          "Attach the requested passport and travel documents, submit the application, and follow any further instructions in your account.",
+          "Wait for the visa decision and approved grant letter by email before travelling. Bring a copy to present on entry."
+        ]
+      }
+    }
+  ],
+  "conditional": [],
+  "conflicts": [
+    {
+      "passportCode": "CO",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The advance visa requirement remains, but the destination's current Tourist eligibility check and pre-travel electronic grant establish an electronic route rather than solely consular issuance.",
+      "sourceIds": ["pass420-sb-tourist-colombia-validation", "pass420-sb-current-tourist-visa-guide"]
+    },
+    {
+      "passportCode": "PS",
+      "destinationCode": "SB",
+      "snapshotStatus": "visa_required",
+      "officialStatus": "evisa",
+      "explanation": "The advance visa requirement remains, but the destination's current Tourist eligibility check and pre-travel electronic grant establish an electronic route not identified by the previous issuer schedule.",
+      "sourceIds": ["pass420-sb-tourist-palestinian-validation", "pass420-sb-current-tourist-visa-guide"]
+    }
+  ],
+  "unresolved": []
+}
