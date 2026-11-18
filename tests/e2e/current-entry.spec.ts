@@ -70,3 +70,51 @@ test("Taiwan's Anguilla route has one refreshed policy and a stay distinct from 
     expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);
   }
 });
+
+test("Solomon Islands shows the verified advance electronic grant without an assumed stay", async ({ page, request }) => {
+  for (const [code, slug] of [["CO", "colombia"], ["PS", "palestinian-territory"]]) {
+    const path = `/${slug}-solomon-islands-evisa`;
+    const apiResponse = await request.get(`/api/v1/visa/${code}/SB`);
+    expect(apiResponse.ok()).toBe(true);
+    const api = await apiResponse.json();
+    expect(api).toMatchObject({ status: "evisa", evidenceLevel: "exact", reviewedAt: "2026-11-18", allowedStays: [] });
+    const old = await request.get(`/${slug}-solomon-islands-visa`, { maxRedirects: 0 });
+    expect(old.status()).toBe(308);
+    expect(new URL(old.headers().location, "https://multipassrank.com").pathname).toBe(path);
+
+    const markdown = await request.get(`${path}.md`);
+    expect(markdown.ok()).toBe(true);
+    const guide = api.policies.find((item: { id: string }) => item.id === "pass420-sb-colombia-palestine-tourist-evisa").application;
+    for (const step of guide.steps) expect(await markdown.text()).toContain(step);
+    await page.goto(path);
+    await expect(page.locator(".application-guide a")).toHaveAttribute("href", guide.url);
+    await expect(page.locator(".visa-relation-hero .allowed-stay-summary")).toHaveCount(0);
+  }
+});
+
+test("Colombia–Israel distinguishes the mandatory ETA from the reverse visa waiver", async ({ page, request }) => {
+  for (const [pair, status, old, current, date, stay] of [
+    ["CO/IL", "eta", "/colombia-israel-visa-free", "/colombia-israel-eta", "2026-09-01", "Up to 90 days within 12 months, subject to admission"],
+    ["IL/CO", "visa_free", "/israel-colombia-evisa", "/israel-colombia-visa-free", "2026-09-04", "Short stay under 90 days; extension only if permitted"],
+  ] as const) {
+    const api = await request.get(`/api/v1/visa/${pair}`);
+    expect(api.ok()).toBe(true);
+    expect(await api.json()).toMatchObject({
+      status,
+      evidenceLevel: "exact",
+      reviewedAt: "2026-11-18",
+      policies: expect.arrayContaining([expect.objectContaining({ status, effectiveFrom: date })]),
+      allowedStays: [expect.objectContaining({ label: stay })],
+    });
+    const redirect = await request.get(old, { maxRedirects: 0 });
+    expect(redirect.status()).toBe(308);
+    expect(new URL(redirect.headers().location, "https://multipassrank.com").pathname).toBe(current);
+    const explicit = await request.get(`${current}.md`);
+    const negotiated = await request.get(current, { headers: { Accept: "text/markdown" } });
+    expect(negotiated.headers()["content-type"]).toContain("text/markdown");
+    expect(await negotiated.text()).toBe(await explicit.text());
+    expect(await explicit.text()).toContain(stay);
+    await page.goto(current);
+    await expect(page.locator(".visa-relation-hero .allowed-stay-summary strong")).toHaveText(stay);
+  }
+});

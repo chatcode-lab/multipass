@@ -3943,6 +3943,8 @@ const DATED_POLICY_SUCCESSIONS: Record<string, { codes: string[]; through: strin
   "russia-ordinary-passports-visa-free-30-days": { codes: ["ME"], through: "2026-10-31" },
   "hong-kong-current-prior-visa-list": { codes: ["NI", "SB"], through: "2026-08-25" },
   "french-guiana-ordinary-passport-advance-visa-complement": { codes: ["BR"], through: "2026-07-30" },
+  "israel-visitor-visa-required-ordinary-passports": { codes: ["CO"], through: "2026-08-31" },
+  "colombia-other-ordinary-passports-electronic-visitor-visa": { codes: ["IL"], through: "2026-09-03" },
 };
 
 // BR 99/2026 expressly revokes the complete 2025 Order on 17 September.
@@ -3987,6 +3989,18 @@ export const REVIEWED_POLICY_REFINEMENTS: Readonly<Record<string, readonly strin
   "thailand-bilateral-30-day-ordinary-passport-visa-exemption": ["pass419-thailand-bilateral-90-day-ordinary-tourist-current-2026"],
   "thailand-bilateral-90-day-ordinary-passport-visa-exemption": ["pass419-thailand-bilateral-90-day-ordinary-tourist-current-2026"],
 };
+
+// Current destination guidance can supersede an older issuer's description
+// without establishing a date of legal change. Keep the older source and scope
+// in the audit artifact; remove only the superseded destination from public proof.
+const REVIEWED_UNDATED_DESTINATION_REPLACEMENTS: Readonly<Record<string, { destination: string; replacementId: string }>> = {
+  "colombian-ordinary-passport-solomon-islands-consular-visitor-visa-2026": {
+    destination: "SB", replacementId: "pass420-sb-colombia-palestine-tourist-evisa",
+  },
+  "palestinian-ordinary-passport-2026-advance-visa-cohort": {
+    destination: "SB", replacementId: "pass420-sb-colombia-palestine-tourist-evisa",
+  },
+};
 const policyById = new Map(BASE_VISA_POLICY_EVIDENCE.map((policy) => [policy.id, policy]));
 const refreshScope = (policy: VisaPolicyEvidence) => JSON.stringify({
   status: policy.status,
@@ -4028,13 +4042,28 @@ for (const [previousId, replacementIds] of Object.entries(REVIEWED_POLICY_REFINE
 for (const id of Object.keys(REVIEWED_POLICY_END_DATES)) {
   if (!policyById.has(id)) throw new Error(`Cannot end a missing reviewed policy: ${id}`);
 }
+for (const [previousId, { destination, replacementId }] of Object.entries(REVIEWED_UNDATED_DESTINATION_REPLACEMENTS)) {
+  const previous = policyById.get(previousId);
+  const replacement = policyById.get(replacementId);
+  if (!previous?.passportCodes?.length || !replacement?.passportCodes?.length
+    || !previous.destinationCodes.includes(destination) || !replacement.destinationCodes.includes(destination)
+    || previous.status === replacement.status
+    || previous.effectiveFrom || previous.effectiveTo || replacement.effectiveFrom || replacement.effectiveTo
+    || previous.passportCodes.some((code) => !replacement.passportCodes!.includes(code)
+      || previous.excludedPassportCodes?.includes(code) || replacement.excludedPassportCodes?.includes(code))) {
+    throw new Error(`Undated replacement must directly verify the entire destination slice: ${previousId} -> ${replacementId}`);
+  }
+}
 
 export const VISA_POLICY_EVIDENCE: readonly VisaPolicyEvidence[] = BASE_VISA_POLICY_EVIDENCE.flatMap((policy) => {
   if (REVIEWED_POLICY_REFRESHES[policy.id]) return [];
   const refined = refinedPassportCodes.get(policy.id);
   const passportCodes = refined ? policy.passportCodes!.filter((code) => !refined.has(code)) : policy.passportCodes;
   if (passportCodes?.length === 0) return [];
-  const enriched = { ...policy, passportCodes, allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id] };
+  const replacedDestination = REVIEWED_UNDATED_DESTINATION_REPLACEMENTS[policy.id]?.destination;
+  const destinationCodes = replacedDestination ? policy.destinationCodes.filter((code) => code !== replacedDestination) : policy.destinationCodes;
+  if (!destinationCodes.length) return [];
+  const enriched = { ...policy, passportCodes, destinationCodes, allowedStays: policy.allowedStays ?? REVIEWED_ALLOWED_STAYS[policy.id] };
   const reviewedEnd = REVIEWED_POLICY_END_DATES[policy.id];
   if (reviewedEnd) return [{ ...enriched, title: `${policy.title} (historical)`, effectiveTo: reviewedEnd }];
   const succession = DATED_POLICY_SUCCESSIONS[policy.id];
