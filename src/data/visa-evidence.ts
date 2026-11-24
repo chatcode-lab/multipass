@@ -3981,6 +3981,7 @@ export const REVIEWED_POLICY_REFRESHES: Readonly<Record<string, string>> = {
 // Refine only the independently reread passport slice of a broader record.
 // This changes its public presentation, not its archived evidence or legal dates.
 export const REVIEWED_POLICY_REFINEMENTS: Readonly<Record<string, readonly string[]>> = {
+  "ireland-listed-ordinary-passport-visa-required": ["pass421-ie-tunisian-ordinary-tourist-visa"],
   "anguilla-live-selector-evisa-eligible-ordinary-passports": ["pass419-ai-taiwan-ordinary-visitor-electronic-visa"],
   "thailand-bilateral-14-day-ordinary-passport-visa-exemption": [
     "pass419-thailand-bilateral-14-day-ordinary-tourist-current-2026",

@@ -1,5 +1,20 @@
 import { expect, test } from "@playwright/test";
 
+test("Tunisia's Ireland visitor guidance distinguishes a fee waiver from admission", async ({ page, request }) => {
+  const path = "/tunisia-ireland-visa";
+  const api = await (await request.get("/api/v1/visa/TN/IE")).json();
+  expect(api).toMatchObject({ status: "visa_required", evidenceLevel: "exact", reviewedAt: "2026-11-24" });
+  expect(api.allowedStays).toEqual([expect.objectContaining({ maxDays: 90, basis: "per_visit" })]);
+  const step = "If applying from Tunisia, the Honorary Consulate of Ireland in Tunisia";
+  await page.goto(path);
+  await expect(page.locator(".application-guide")).toContainText(step);
+  await expect(page.locator(".visa-relation-hero .allowed-stay-summary")).toContainText("border officer may grant less");
+  expect(await (await request.get(path + ".md")).text()).toContain(step);
+  const other = await (await request.get("/api/v1/visa/DZ/IE")).json();
+  expect(other.policies.map((p: { id: string }) => p.id)).toContain("ireland-listed-ordinary-passport-visa-required");
+  expect(JSON.stringify(other)).not.toContain("pass421-ie-");
+});
+
 test("Thailand's adopted visitor partition exposes the correct current stay in every format", async ({ page, request }) => {
   for (const [code, slug, status, suffix, days] of [
     ["NL", "netherlands", "visa_free", "visa-free", 30],
