@@ -896,7 +896,8 @@
     "pass419-thailand-current-entry-scope-2026",
     "pass420-solomon-islands-colombia-palestine-2026",
     "pass420-israel-colombia-tourist-eta-2026",
-    "pass420-colombia-israel-tourist-waiver-2026"
+    "pass420-colombia-israel-tourist-waiver-2026",
+    "pass421-ireland-tunisia-tourist-2026"
   ],
   "sources": [
     {
@@ -38518,6 +38519,66 @@
       "kind": "government-guidance",
       "language": "Spanish",
       "reviewedAt": "2026-11-18"
+    },
+    {
+      "id": "pass421-ie-nationalities",
+      "title": "Visa and non-visa required nationalities",
+      "url": "https://www.irishimmigration.ie/visa-non-visa-required-nationalities/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24"
+    },
+    {
+      "id": "pass421-ie-fees",
+      "title": "Entry visa fees and nationality exemptions",
+      "url": "https://www.irishimmigration.ie/preclearance-and-entry-visas-fees/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24"
+    },
+    {
+      "id": "pass421-ie-tourism",
+      "title": "Short Stay C tourist visa application and decision",
+      "url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24"
+    },
+    {
+      "id": "pass421-ie-faq",
+      "title": "Where to apply for the Irish Short Stay C tourist visa",
+      "url": "https://www.irishimmigration.ie/coming-to-visit-ireland/frequently-asked-questions/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24"
+    },
+    {
+      "id": "pass421-ie-tunis-submission",
+      "title": "Embassy visa instructions for applications lodged in Tunisia",
+      "url": "https://api.ireland.ie/en/uae/abudhabi/services/visas/visas-for-ireland/",
+      "publisher": "Embassy of Ireland, Abu Dhabi",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24"
+    },
+    {
+      "id": "pass421-ie-visitor-permission",
+      "title": "Initial visitor permission at the Irish border",
+      "url": "https://www.irishimmigration.ie/extension-of-visitor-permission/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24"
     }
   ],
   "conditional": [
@@ -118908,6 +118969,46 @@
           ]
         }
       ]
+    },
+    {
+      "id": "pass421-ie-tunisian-ordinary-tourist-visa",
+      "title": "Tunisian ordinary passports: visa required, visa fee waived",
+      "summary": "A Tunisian tourist normally needs an Irish Short Stay C visa before travel. Tunisian nationality waives the Irish visa application fee, not the visa requirement. Additional local submission charges may apply.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "IE"
+      ],
+      "passportCodes": [
+        "TN"
+      ],
+      "conditions": [
+        "This is the ordinary tourist route without a separate document-based exemption, such as a qualifying Irish residence permit.",
+        "The visa allows travel to the border, not automatic admission. If admitted, leave by the date given by the immigration officer."
+      ],
+      "sourceIds": [
+        "pass421-ie-nationalities",
+        "pass421-ie-fees",
+        "pass421-ie-tourism",
+        "pass421-ie-faq",
+        "pass421-ie-tunis-submission",
+        "pass421-ie-visitor-permission"
+      ],
+      "allowedStays": [
+        {
+          "label": "Up to 90 days on initial visitor permission; the border officer may grant less",
+          "basis": "per_visit",
+          "maxDays": 90
+        }
+      ],
+      "application": {
+        "url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/",
+        "label": "Irish tourist visa instructions and AVATS application",
+        "steps": [
+          "Apply from your country of ordinary residence. In AVATS select Short Stay (C) and Visit Tourist, then print and sign the summary.",
+          "Submit the summary, passport and supporting documents as instructed. If applying from Tunisia, the Honorary Consulate of Ireland in Tunisia can forward the file to the Irish Embassy in Abu Dhabi. If you live elsewhere, follow the instructions for that location.",
+          "Tunisian nationals are exempt from the Irish visa fee. Check locally for submission charges and any proof of exemption. Wait for the visa in your passport before travelling."
+        ]
+      }
     }
   ]
 }

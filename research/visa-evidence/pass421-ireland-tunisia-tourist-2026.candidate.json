@@ -1,0 +1,124 @@
+{
+  "batchId": "pass421-ireland-tunisia-tourist-2026",
+  "researchedAt": "2026-11-24",
+  "sources": [
+    {
+      "id": "pass421-ie-nationalities",
+      "title": "Visa and non-visa required nationalities",
+      "url": "https://www.irishimmigration.ie/visa-non-visa-required-nationalities/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24",
+      "officialityEvidence": "The public nationality table embedded by ISD (table 19077, row 4649) answers Yes for Tunisia. The page separately describes document and residence exemptions.",
+      "supportingExcerpt": "Tunisia"
+    },
+    {
+      "id": "pass421-ie-fees",
+      "title": "Entry visa fees and nationality exemptions",
+      "url": "https://www.irishimmigration.ie/preclearance-and-entry-visas-fees/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24",
+      "officialityEvidence": "Tunisia is explicitly listed in the nationality fee exemptions. ISD distinguishes the government fee from submission or other local charges.",
+      "supportingExcerpt": "Nationalities Exempt from Visa Fees"
+    },
+    {
+      "id": "pass421-ie-tourism",
+      "title": "Short Stay C tourist visa application and decision",
+      "url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24",
+      "officialityEvidence": "The official procedure distinguishes the online application from submission of documents and the approved Irish visa placed in the passport before travel.",
+      "supportingExcerpt": "We will place an Irish visa into a blank page of your passport or travel document."
+    },
+    {
+      "id": "pass421-ie-faq",
+      "title": "Where to apply for the Irish Short Stay C tourist visa",
+      "url": "https://www.irishimmigration.ie/coming-to-visit-ireland/frequently-asked-questions/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24",
+      "officialityEvidence": "ISD specifies ordinary residence and the Visit Tourist AVATS option.",
+      "supportingExcerpt": "from the country where you are ordinarily resident"
+    },
+    {
+      "id": "pass421-ie-tunis-submission",
+      "title": "Embassy visa instructions for applications lodged in Tunisia",
+      "url": "https://api.ireland.ie/en/uae/abudhabi/services/visas/visas-for-ireland/",
+      "publisher": "Embassy of Ireland, Abu Dhabi",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24",
+      "officialityEvidence": "The Tunisia section of the Embassy site names the honorary consulate as a submission option and Abu Dhabi as the processing office. This concerns where the person applies, not their nationality.",
+      "supportingExcerpt": "There is no Irish Visa Facilitation Services Global (VFS) office in Tunisia."
+    },
+    {
+      "id": "pass421-ie-visitor-permission",
+      "title": "Initial visitor permission at the Irish border",
+      "url": "https://www.irishimmigration.ie/extension-of-visitor-permission/",
+      "publisher": "Immigration Service Delivery",
+      "jurisdiction": "Ireland",
+      "kind": "government-guidance",
+      "language": "English",
+      "reviewedAt": "2026-11-24",
+      "officialityEvidence": "The introduction expressly limits initial discretionary visitor permission at the border to 90 days, irrespective of visa requirement. Separate extensions are not included.",
+      "supportingExcerpt": "The maximum amount of time that you can be given to visit at the border is 90 days"
+    }
+  ],
+  "policies": [
+    {
+      "id": "pass421-ie-tunisian-ordinary-tourist-visa",
+      "title": "Tunisian ordinary passports: visa required, visa fee waived",
+      "summary": "A Tunisian tourist normally needs an Irish Short Stay C visa before travel. Tunisian nationality waives the Irish visa application fee, not the visa requirement. Additional local submission charges may apply.",
+      "status": "visa_required",
+      "destinationCodes": [
+        "IE"
+      ],
+      "passportCodes": [
+        "TN"
+      ],
+      "conditions": [
+        "This is the ordinary tourist route without a separate document-based exemption, such as a qualifying Irish residence permit.",
+        "The visa allows travel to the border, not automatic admission. If admitted, leave by the date given by the immigration officer."
+      ],
+      "sourceIds": [
+        "pass421-ie-nationalities",
+        "pass421-ie-fees",
+        "pass421-ie-tourism",
+        "pass421-ie-faq",
+        "pass421-ie-tunis-submission",
+        "pass421-ie-visitor-permission"
+      ],
+      "confidence": "high",
+      "allowedStays": [
+        {
+          "label": "Up to 90 days on initial visitor permission; the border officer may grant less",
+          "basis": "per_visit",
+          "maxDays": 90
+        }
+      ],
+      "application": {
+        "url": "https://www.irishimmigration.ie/coming-to-visit-ireland/how-to-apply-for-a-short-stay-c-visit-tourist-visa/",
+        "label": "Irish tourist visa instructions and AVATS application",
+        "steps": [
+          "Apply from your country of ordinary residence. In AVATS select Short Stay (C) and Visit Tourist, then print and sign the summary.",
+          "Submit the summary, passport and supporting documents as instructed. If applying from Tunisia, the Honorary Consulate of Ireland in Tunisia can forward the file to the Irish Embassy in Abu Dhabi. If you live elsewhere, follow the instructions for that location.",
+          "Tunisian nationals are exempt from the Irish visa fee. Check locally for submission charges and any proof of exemption. Wait for the visa in your passport before travelling."
+        ]
+      }
+    }
+  ],
+  "conditional": [],
+  "conflicts": [],
+  "unresolved": []
+}
